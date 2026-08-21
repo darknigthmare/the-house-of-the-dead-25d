@@ -1,0 +1,93 @@
+[gd_resource type="Resource" script_class="RouteGraph" load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://src/rail/route_graph.gd" id="1_graph"]
+[ext_resource type="Script" path="res://src/rail/route_condition.gd" id="2_condition"]
+
+[sub_resource type="Resource" id="RouteCondition_hatch_opened"]
+script = ExtResource("2_condition")
+context_key = &"hatch_opened"
+comparison = 5
+compare_value = true
+
+[sub_resource type="Resource" id="RouteCondition_hatch_missed"]
+script = ExtResource("2_condition")
+context_key = &"hatch_missed"
+comparison = 5
+compare_value = true
+
+[sub_resource type="Resource" id="RouteCondition_scientist_saved"]
+script = ExtResource("2_condition")
+context_key = &"scientist_saved"
+comparison = 5
+compare_value = true
+
+[sub_resource type="Resource" id="RouteCondition_scientist_lost"]
+script = ExtResource("2_condition")
+context_key = &"scientist_lost"
+comparison = 5
+compare_value = true
+
+[resource]
+script = ExtResource("1_graph")
+entry_segment_id = &"chained_hatch"
+connections = Array[Dictionary]([{
+"conditions": [SubResource("RouteCondition_hatch_opened")],
+"from": &"chained_hatch",
+"label": "Hatch opened — underground passage",
+"priority": 100,
+"to": &"underground_passage"
+}, {
+"conditions": [SubResource("RouteCondition_hatch_missed")],
+"from": &"chained_hatch",
+"label": "Hatch missed — great doors",
+"priority": 90,
+"to": &"great_doors"
+}, {
+"conditions": [],
+"from": &"underground_passage",
+"label": "Underground to library",
+"priority": 0,
+"to": &"library_rescue"
+}, {
+"conditions": [],
+"from": &"great_doors",
+"label": "Great doors to library",
+"priority": 0,
+"to": &"library_rescue"
+}, {
+"conditions": [SubResource("RouteCondition_scientist_saved")],
+"from": &"library_rescue",
+"label": "Scientist saved — raised bridge",
+"priority": 100,
+"to": &"raised_bridge"
+}, {
+"conditions": [SubResource("RouteCondition_scientist_lost")],
+"from": &"library_rescue",
+"label": "Scientist lost — lower stairs",
+"priority": 90,
+"to": &"lower_stairs"
+}, {
+"conditions": [],
+"from": &"raised_bridge",
+"label": "Raised bridge to roof",
+"priority": 0,
+"to": &"roof_approach"
+}, {
+"conditions": [],
+"from": &"lower_stairs",
+"label": "Lower stairs to roof",
+"priority": 0,
+"to": &"roof_approach"
+}, {
+"conditions": [],
+"from": &"roof_approach",
+"label": "Roof to Hangedman",
+"priority": 0,
+"to": &"hangedman_battle"
+}, {
+"conditions": [],
+"from": &"hangedman_battle",
+"label": "Hangedman defeated",
+"priority": 0,
+"to": &"chapter_complete"
+}])

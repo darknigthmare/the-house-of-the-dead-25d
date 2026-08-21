@@ -1,0 +1,78 @@
+; Engine configuration file.
+; The House of the Dead 2.5D - Godot 4.7.1
+
+config_version=5
+
+[application]
+
+config/name="The House of the Dead 2.5D"
+run/main_scene="res://scenes/main.tscn"
+config/features=PackedStringArray("4.7", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[autoload]
+
+GameSession="*res://src/core/game_session.gd"
+SettingsManager="*res://src/core/settings_manager.gd"
+SaveManager="*res://src/core/save_manager.gd"
+LocalizationManager="*res://src/core/localization_manager.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="canvas_items"
+window/handheld/orientation=1
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/default_filters/use_nearest_mipmap_filter=false
+textures/canvas_textures/default_texture_filter=0
+environment/defaults/default_clear_color=Color(0.008, 0.012, 0.018, 1)
+
+[audio]
+
+driver/enable_input=false
+
+[input]
+
+p1_fire={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"button_index":1), Object(InputEventJoypadButton,"device":0,"button_index":0)]
+}
+p1_reload={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"physical_keycode":82), Object(InputEventMouseButton,"button_index":2), Object(InputEventJoypadButton,"device":0,"button_index":1)]
+}
+p1_join={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"physical_keycode":49), Object(InputEventJoypadButton,"device":0,"button_index":7)]
+}
+p2_fire={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"physical_keycode":70), Object(InputEventJoypadButton,"device":1,"button_index":0)]
+}
+p2_reload={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"physical_keycode":71), Object(InputEventJoypadButton,"device":1,"button_index":1)]
+}
+p2_join={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"physical_keycode":50), Object(InputEventJoypadButton,"device":1,"button_index":7)]
+}
+pause_game={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"physical_keycode":4194305), Object(InputEventJoypadButton,"device":-1,"button_index":6)]
+}
+ui_cancel={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"physical_keycode":4194305), Object(InputEventJoypadButton,"device":-1,"button_index":1)]
+}
+
+[internationalization]
+
+locale/fallback="en"

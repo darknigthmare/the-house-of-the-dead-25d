@@ -1,0 +1,69 @@
+[gd_resource type="Resource" script_class="RouteGraph" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://src/rail/route_graph.gd" id="1_graph"]
+[ext_resource type="Script" path="res://src/rail/route_condition.gd" id="2_condition"]
+
+[sub_resource type="Resource" id="RouteCondition_all_saved"]
+script = ExtResource("2_condition")
+context_key = &"all_scientists_saved"
+comparison = 5
+compare_value = true
+
+[sub_resource type="Resource" id="RouteCondition_rescue_incomplete"]
+script = ExtResource("2_condition")
+context_key = &"scientist_rescue_incomplete"
+comparison = 5
+compare_value = true
+
+[resource]
+script = ExtResource("1_graph")
+entry_segment_id = &"chariot_rematch"
+connections = Array[Dictionary]([{
+"conditions": [],
+"from": &"chariot_rematch",
+"label": "Chariot rematch to Hangedman rematch",
+"priority": 0,
+"to": &"hangedman_rematch"
+}, {
+"conditions": [],
+"from": &"hangedman_rematch",
+"label": "Hangedman rematch to bonus gate",
+"priority": 0,
+"to": &"bonus_gate"
+}, {
+"conditions": [SubResource("RouteCondition_all_saved")],
+"from": &"bonus_gate",
+"label": "All scientists saved — bonus room",
+"priority": 100,
+"to": &"bonus_room"
+}, {
+"conditions": [SubResource("RouteCondition_rescue_incomplete")],
+"from": &"bonus_gate",
+"label": "Rescue incomplete — final waves",
+"priority": 90,
+"to": &"final_waves"
+}, {
+"conditions": [],
+"from": &"bonus_room",
+"label": "Bonus room to final waves",
+"priority": 0,
+"to": &"final_waves"
+}, {
+"conditions": [],
+"from": &"final_waves",
+"label": "Final waves to Curien",
+"priority": 0,
+"to": &"curien_confrontation"
+}, {
+"conditions": [],
+"from": &"curien_confrontation",
+"label": "Curien to Magician",
+"priority": 0,
+"to": &"magician_battle"
+}, {
+"conditions": [],
+"from": &"magician_battle",
+"label": "Magician defeated",
+"priority": 0,
+"to": &"chapter_complete"
+}])

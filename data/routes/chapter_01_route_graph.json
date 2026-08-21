@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "chapter_id": "chapter_01",
+  "start": "bridge_scientist_rescue",
+  "terminal": "chapter_complete",
+  "nodes": [
+    {
+      "id": "bridge_scientist_rescue",
+      "kind": "rescue_branch",
+      "label": "Bridge scientist rescue",
+      "next": [
+        {
+          "condition": "scientist_saved",
+          "node": "mansion_entrance"
+        },
+        {
+          "condition": "scientist_lost",
+          "node": "under_bridge"
+        }
+      ]
+    },
+    {
+      "id": "mansion_entrance",
+      "kind": "route",
+      "label": "Enter through the mansion entrance",
+      "next": [
+        "foyer_choice"
+      ]
+    },
+    {
+      "id": "under_bridge",
+      "kind": "route",
+      "label": "Pass beneath the bridge",
+      "next": [
+        "foyer_choice"
+      ]
+    },
+    {
+      "id": "foyer_choice",
+      "kind": "action_branch",
+      "label": "Foyer route split",
+      "next": [
+        {
+          "condition": "door_lock_destroyed",
+          "node": "upper_stairs"
+        },
+        {
+          "condition": "door_lock_intact",
+          "node": "ground_hall"
+        }
+      ]
+    },
+    {
+      "id": "upper_stairs",
+      "kind": "route",
+      "label": "Upper-floor route",
+      "next": [
+        "sophie_corridor"
+      ]
+    },
+    {
+      "id": "ground_hall",
+      "kind": "route",
+      "label": "Ground-floor route",
+      "next": [
+        "sophie_corridor"
+      ]
+    },
+    {
+      "id": "sophie_corridor",
+      "kind": "story",
+      "label": "Reach Sophie",
+      "next": [
+        "chariot_battle"
+      ]
+    },
+    {
+      "id": "chariot_battle",
+      "kind": "boss",
+      "boss_id": "chariot",
+      "label": "Chariot battle",
+      "next": [
+        "chapter_complete"
+      ]
+    }
+  ]
+}

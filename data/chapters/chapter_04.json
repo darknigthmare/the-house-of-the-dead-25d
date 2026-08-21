@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "id": "chapter_04",
+  "number": 4,
+  "title": "THE HOUSE OF THE DEAD",
+  "arcade_date": "December 18, 1998",
+  "canonical_source": "The House of the Dead (1996 arcade)",
+  "summary": "The agents survive Chariot and Hangedman rematches, breach Curien's final defenses, and face his unfinished masterpiece, Magician.",
+  "start": "chariot_rematch",
+  "route_graph": "res://data/routes/chapter_04_route_graph.json",
+  "rescues_expected": 0,
+  "rematches": [
+    {
+      "id": "chariot",
+      "encounter_node": "chariot_rematch"
+    },
+    {
+      "id": "hangedman",
+      "encounter_node": "hangedman_rematch"
+    }
+  ],
+  "bonus_condition": {
+    "id": "all_scientists_saved",
+    "description": "Rescue every scientist in Chapters 1-3 to open the hidden supply room."
+  },
+  "boss": {
+    "id": "magician",
+    "name": "Magician",
+    "type": "Type 0",
+    "encounter_node": "magician_battle",
+    "arena": "Curien's laboratory",
+    "weak_point": "unarmored limbs during attack openings"
+  },
+  "completion": {
+    "next_chapter": "ending"
+  }
+}

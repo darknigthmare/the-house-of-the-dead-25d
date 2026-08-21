@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "chapter_id": "chapter_02",
+  "start": "chained_hatch",
+  "terminal": "chapter_complete",
+  "nodes": [
+    {
+      "id": "chained_hatch",
+      "kind": "action_branch",
+      "label": "Chained hatch route split",
+      "next": [
+        {
+          "condition": "hatch_opened",
+          "node": "underground_passage"
+        },
+        {
+          "condition": "hatch_missed",
+          "node": "great_doors"
+        }
+      ]
+    },
+    {
+      "id": "underground_passage",
+      "kind": "route",
+      "label": "Underground passage",
+      "next": [
+        "library_rescue"
+      ]
+    },
+    {
+      "id": "great_doors",
+      "kind": "route",
+      "label": "Mansion doors",
+      "next": [
+        "library_rescue"
+      ]
+    },
+    {
+      "id": "library_rescue",
+      "kind": "rescue_branch",
+      "label": "Library scientist rescue",
+      "next": [
+        {
+          "condition": "scientist_saved",
+          "node": "raised_bridge"
+        },
+        {
+          "condition": "scientist_lost",
+          "node": "lower_stairs"
+        }
+      ]
+    },
+    {
+      "id": "raised_bridge",
+      "kind": "route",
+      "label": "High library route",
+      "next": [
+        "roof_approach"
+      ]
+    },
+    {
+      "id": "lower_stairs",
+      "kind": "route",
+      "label": "Low library route",
+      "next": [
+        "roof_approach"
+      ]
+    },
+    {
+      "id": "roof_approach",
+      "kind": "story",
+      "label": "Rooftop approach",
+      "next": [
+        "hangedman_battle"
+      ]
+    },
+    {
+      "id": "hangedman_battle",
+      "kind": "boss",
+      "boss_id": "hangedman",
+      "label": "Hangedman battle",
+      "next": [
+        "chapter_complete"
+      ]
+    }
+  ]
+}

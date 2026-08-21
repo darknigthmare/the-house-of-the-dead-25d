@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "id": "chapter_03",
+  "number": 3,
+  "title": "TRUTH",
+  "arcade_date": "December 18, 1998",
+  "canonical_source": "The House of the Dead (1996 arcade)",
+  "summary": "Rogan and G descend into Curien's research complex, protect a scientist who can unlock the secure route, and battle Hermit in the tunnel network.",
+  "start": "elevator_switch",
+  "route_graph": "res://data/routes/chapter_03_route_graph.json",
+  "rescues_expected": 3,
+  "boss": {
+    "id": "hermit",
+    "name": "Hermit",
+    "type": "Type 6803",
+    "encounter_node": "hermit_battle",
+    "arena": "subterranean tunnel",
+    "weak_point": "head during attack openings"
+  },
+  "completion": {
+    "next_chapter": "chapter_04"
+  }
+}

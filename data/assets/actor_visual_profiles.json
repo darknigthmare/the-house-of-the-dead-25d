@@ -1,0 +1,1273 @@
+{
+  "schema_version": 2,
+  "global": {
+    "style": "hand-painted 1990s arcade horror sprite art",
+    "directions": [
+      "front",
+      "front_left",
+      "left",
+      "back_left",
+      "back",
+      "back_right",
+      "right",
+      "front_right"
+    ],
+    "frame_states": [
+      "idle",
+      "move_contact_a",
+      "move_passing",
+      "move_contact_b",
+      "action_windup",
+      "action_strike",
+      "hit_recoil",
+      "death_fall"
+    ],
+    "render_modes": [
+      "arcade_25d",
+      "hd_25d"
+    ],
+    "filter_arcade": true,
+    "filter_hd": false,
+    "feet_grounded": true,
+    "billboard_default": "fixed_y",
+    "right_profile_policy": "mirrored_left_profile_with_documented_provenance"
+  },
+  "profiles": {
+    "thomas_rogan": {
+      "canonical_name": "thomas_rogan",
+      "palette": [
+        "tan",
+        "white",
+        "black"
+      ],
+      "fixed_costume": "tan suit, white shirt, black tie",
+      "forbidden": [
+        "HOTD III outfit",
+        "rifle"
+      ],
+      "atlas_id": "thomas_rogan",
+      "visual_status": "dedicated_fan_made_v2",
+      "directions": [
+        "front",
+        "front_left",
+        "left",
+        "back_left",
+        "back",
+        "back_right",
+        "right",
+        "front_right"
+      ],
+      "frame_states": [
+        "idle",
+        "move_contact_a",
+        "move_passing",
+        "move_contact_b",
+        "action_windup",
+        "action_strike",
+        "hit_recoil",
+        "death_fall"
+      ]
+    },
+    "agent_g": {
+      "canonical_name": "agent_g",
+      "palette": [
+        "navy",
+        "blue",
+        "black"
+      ],
+      "fixed_costume": "dark navy suit and AMS handgun",
+      "forbidden": [
+        "aged version",
+        "sunglasses"
+      ],
+      "atlas_id": "agent_g",
+      "visual_status": "dedicated_fan_made_v2",
+      "directions": [
+        "front",
+        "front_left",
+        "left",
+        "back_left",
+        "back",
+        "back_right",
+        "right",
+        "front_right"
+      ],
+      "frame_states": [
+        "idle",
+        "move_contact_a",
+        "move_passing",
+        "move_contact_b",
+        "action_windup",
+        "action_strike",
+        "hit_recoil",
+        "death_fall"
+      ]
+    },
+    "sophie_richards": {
+      "canonical_name": "sophie_richards",
+      "palette": [
+        "red",
+        "cream",
+        "blonde"
+      ],
+      "fixed_costume": "red 1990s DBR suit",
+      "forbidden": [
+        "military gear"
+      ],
+      "atlas_id": "sophie_richards",
+      "visual_status": "dedicated_fan_made_v2",
+      "directions": [
+        "front",
+        "front_left",
+        "left",
+        "back_left",
+        "back",
+        "back_right",
+        "right",
+        "front_right"
+      ],
+      "frame_states": [
+        "idle",
+        "move_contact_a",
+        "move_passing",
+        "move_contact_b",
+        "action_windup",
+        "action_strike",
+        "hit_recoil",
+        "death_fall"
+      ]
+    },
+    "dbr_scientist": {
+      "canonical_name": "dbr_scientist",
+      "palette": [
+        "aged ivory",
+        "charcoal",
+        "burgundy"
+      ],
+      "fixed_costume": "1990s lab coat, tie, trousers",
+      "forbidden": [
+        "hazmat suit",
+        "modern PPE"
+      ],
+      "atlas_id": "dbr_scientist",
+      "visual_status": "dedicated_fan_made_v2",
+      "directions": [
+        "front",
+        "front_left",
+        "left",
+        "back_left",
+        "back",
+        "back_right",
+        "right",
+        "front_right"
+      ],
+      "frame_states": [
+        "idle",
+        "move_contact_a",
+        "move_passing",
+        "move_contact_b",
+        "action_windup",
+        "action_strike",
+        "hit_recoil",
+        "death_fall"
+      ]
+    },
+    "dr_curien": {
+      "canonical_name": "dr_curien",
+      "palette": [
+        "black",
+        "charcoal",
+        "cold gray"
+      ],
+      "fixed_costume": "long black laboratory coat and formal suit",
+      "forbidden": [
+        "white coat",
+        "weapons"
+      ],
+      "atlas_id": "dr_curien",
+      "visual_status": "dedicated_fan_made_v2",
+      "directions": [
+        "front",
+        "front_left",
+        "left",
+        "back_left",
+        "back",
+        "back_right",
+        "right",
+        "front_right"
+      ],
+      "frame_states": [
+        "idle",
+        "move_contact_a",
+        "move_passing",
+        "move_contact_b",
+        "action_windup",
+        "action_strike",
+        "hit_recoil",
+        "death_fall"
+      ]
+    },
+    "mutant_bat": {
+      "canonical_name": "mutant_bat",
+      "palette": [
+        "charcoal brown",
+        "leathery gray",
+        "red"
+      ],
+      "fixed_costume": "none",
+      "forbidden": [
+        "cute styling"
+      ],
+      "atlas_id": "mutant_bat",
+      "visual_status": "dedicated_fan_made_v2",
+      "directions": [
+        "front",
+        "front_left",
+        "left",
+        "back_left",
+        "back",
+        "back_right",
+        "right",
+        "front_right"
+      ],
+      "frame_states": [
+        "idle",
+        "move_contact_a",
+        "move_passing",
+        "move_contact_b",
+        "action_windup",
+        "action_strike",
+        "hit_recoil",
+        "death_fall"
+      ]
+    },
+    "chariot": {
+      "canonical_name": "chariot",
+      "palette": [
+        "rust",
+        "black",
+        "weakpoint red"
+      ],
+      "fixed_costume": "patched armor, mask and bardiche",
+      "forbidden": [
+        "sword",
+        "bare head"
+      ],
+      "atlas_id": "chariot",
+      "visual_status": "dedicated_fan_made_v2",
+      "directions": [
+        "front",
+        "front_left",
+        "left",
+        "back_left",
+        "back",
+        "back_right",
+        "right",
+        "front_right"
+      ],
+      "frame_states": [
+        "idle",
+        "move_contact_a",
+        "move_passing",
+        "move_contact_b",
+        "action_windup",
+        "action_strike",
+        "hit_recoil",
+        "death_fall"
+      ]
+    },
+    "hangedman": {
+      "canonical_name": "hangedman",
+      "palette": [
+        "black",
+        "brown",
+        "red lens"
+      ],
+      "fixed_costume": "avian head, ears, wings and claws",
+      "forbidden": [
+        "humanoid coat"
+      ],
+      "atlas_id": "hangedman",
+      "visual_status": "dedicated_fan_made_v2",
+      "directions": [
+        "front",
+        "front_left",
+        "left",
+        "back_left",
+        "back",
+        "back_right",
+        "right",
+        "front_right"
+      ],
+      "frame_states": [
+        "idle",
+        "move_contact_a",
+        "move_passing",
+        "move_contact_b",
+        "action_windup",
+        "action_strike",
+        "hit_recoil",
+        "death_fall"
+      ]
+    },
+    "hermit": {
+      "canonical_name": "hermit",
+      "palette": [
+        "charcoal",
+        "diseased brown",
+        "olive"
+      ],
+      "fixed_costume": "armored spider carapace",
+      "forbidden": [
+        "human torso"
+      ],
+      "atlas_id": "hermit",
+      "visual_status": "dedicated_fan_made_v2",
+      "directions": [
+        "front",
+        "front_left",
+        "left",
+        "back_left",
+        "back",
+        "back_right",
+        "right",
+        "front_right"
+      ],
+      "frame_states": [
+        "idle",
+        "move_contact_a",
+        "move_passing",
+        "move_contact_b",
+        "action_windup",
+        "action_strike",
+        "hit_recoil",
+        "death_fall"
+      ]
+    },
+    "magician": {
+      "canonical_name": "magician",
+      "palette": [
+        "black",
+        "synthetic red",
+        "fire orange"
+      ],
+      "fixed_costume": "biomechanical plates and exposed red fibers",
+      "forbidden": [
+        "robe",
+        "handheld weapon"
+      ],
+      "atlas_id": "magician",
+      "visual_status": "dedicated_fan_made_v2",
+      "directions": [
+        "front",
+        "front_left",
+        "left",
+        "back_left",
+        "back",
+        "back_right",
+        "right",
+        "front_right"
+      ],
+      "frame_states": [
+        "idle",
+        "move_contact_a",
+        "move_passing",
+        "move_contact_b",
+        "action_windup",
+        "action_strike",
+        "hit_recoil",
+        "death_fall"
+      ]
+    },
+    "sam_a1": {
+      "canonical_name": "Sam",
+      "palette": [
+        "blue gray",
+        "dirty navy"
+      ],
+      "fixed_costume": "bare torso and torn trousers",
+      "forbidden": [
+        "armor",
+        "firearms"
+      ],
+      "atlas_id": "sam_a1",
+      "visual_status": "dedicated_fan_made_v2",
+      "directions": [
+        "front",
+        "front_left",
+        "left",
+        "back_left",
+        "back",
+        "back_right",
+        "right",
+        "front_right"
+      ],
+      "frame_states": [
+        "idle",
+        "move_contact_a",
+        "move_passing",
+        "move_contact_b",
+        "action_windup",
+        "action_strike",
+        "hit_recoil",
+        "death_fall"
+      ]
+    },
+    "neil_a2": {
+      "canonical_name": "Neil",
+      "palette": [
+        "desaturated flesh",
+        "charcoal",
+        "oxidized material"
+      ],
+      "fixed_costume": "distinct resilient swiping walker silhouette",
+      "forbidden": [
+        "modern tactical gear",
+        "unlisted firearms",
+        "copied arcade pixels"
+      ],
+      "atlas_id": "neil_a2",
+      "visual_status": "dedicated_fan_made_v2",
+      "directions": [
+        "front",
+        "front_left",
+        "left",
+        "back_left",
+        "back",
+        "back_right",
+        "right",
+        "front_right"
+      ],
+      "frame_states": [
+        "idle",
+        "move_contact_a",
+        "move_passing",
+        "move_contact_b",
+        "action_windup",
+        "action_strike",
+        "hit_recoil",
+        "death_fall"
+      ]
+    },
+    "cyril_a3": {
+      "canonical_name": "Cyril",
+      "palette": [
+        "cold gray",
+        "charcoal",
+        "oxidized steel"
+      ],
+      "fixed_costume": "torn work trousers and fire axe",
+      "forbidden": [
+        "firearms",
+        "tactical gear"
+      ],
+      "atlas_id": "cyril_a3",
+      "visual_status": "dedicated_fan_made_v2",
+      "directions": [
+        "front",
+        "front_left",
+        "left",
+        "back_left",
+        "back",
+        "back_right",
+        "right",
+        "front_right"
+      ],
+      "frame_states": [
+        "idle",
+        "move_contact_a",
+        "move_passing",
+        "move_contact_b",
+        "action_windup",
+        "action_strike",
+        "hit_recoil",
+        "death_fall"
+      ]
+    },
+    "kageo_b1": {
+      "canonical_name": "Kageo",
+      "palette": [
+        "desaturated flesh",
+        "charcoal",
+        "oxidized material"
+      ],
+      "fixed_costume": "distinct slow humid swiper silhouette",
+      "forbidden": [
+        "modern tactical gear",
+        "unlisted firearms",
+        "copied arcade pixels"
+      ],
+      "atlas_id": "kageo_b1",
+      "visual_status": "dedicated_fan_made_v2",
+      "directions": [
+        "front",
+        "front_left",
+        "left",
+        "back_left",
+        "back",
+        "back_right",
+        "right",
+        "front_right"
+      ],
+      "frame_states": [
+        "idle",
+        "move_contact_a",
+        "move_passing",
+        "move_contact_b",
+        "action_windup",
+        "action_strike",
+        "hit_recoil",
+        "death_fall"
+      ]
+    },
+    "bourbon_b2": {
+      "canonical_name": "Bourbon",
+      "palette": [
+        "desaturated flesh",
+        "charcoal",
+        "oxidized material"
+      ],
+      "fixed_costume": "distinct resilient humid walker silhouette",
+      "forbidden": [
+        "modern tactical gear",
+        "unlisted firearms",
+        "copied arcade pixels"
+      ],
+      "atlas_id": "bourbon_b2",
+      "visual_status": "dedicated_fan_made_v2",
+      "directions": [
+        "front",
+        "front_left",
+        "left",
+        "back_left",
+        "back",
+        "back_right",
+        "right",
+        "front_right"
+      ],
+      "frame_states": [
+        "idle",
+        "move_contact_a",
+        "move_passing",
+        "move_contact_b",
+        "action_windup",
+        "action_strike",
+        "hit_recoil",
+        "death_fall"
+      ]
+    },
+    "ebitan_a_b3": {
+      "canonical_name": "Ebitan a",
+      "palette": [
+        "desaturated flesh",
+        "charcoal",
+        "oxidized material"
+      ],
+      "fixed_costume": "distinct aquatic lurcher silhouette",
+      "forbidden": [
+        "modern tactical gear",
+        "unlisted firearms",
+        "copied arcade pixels"
+      ],
+      "atlas_id": "ebitan_a_b3",
+      "visual_status": "dedicated_fan_made_v2",
+      "directions": [
+        "front",
+        "front_left",
+        "left",
+        "back_left",
+        "back",
+        "back_right",
+        "right",
+        "front_right"
+      ],
+      "frame_states": [
+        "idle",
+        "move_contact_a",
+        "move_passing",
+        "move_contact_b",
+        "action_windup",
+        "action_strike",
+        "hit_recoil",
+        "death_fall"
+      ]
+    },
+    "ebitan_b_b4": {
+      "canonical_name": "Ebitan b",
+      "palette": [
+        "desaturated flesh",
+        "charcoal",
+        "oxidized material"
+      ],
+      "fixed_costume": "distinct ceiling drop swordsman silhouette with jagged sword",
+      "forbidden": [
+        "modern tactical gear",
+        "unlisted firearms",
+        "copied arcade pixels"
+      ],
+      "atlas_id": "ebitan_b_b4",
+      "visual_status": "dedicated_fan_made_v2",
+      "directions": [
+        "front",
+        "front_left",
+        "left",
+        "back_left",
+        "back",
+        "back_right",
+        "right",
+        "front_right"
+      ],
+      "frame_states": [
+        "idle",
+        "move_contact_a",
+        "move_passing",
+        "move_contact_b",
+        "action_windup",
+        "action_strike",
+        "hit_recoil",
+        "death_fall"
+      ]
+    },
+    "samson_c1": {
+      "canonical_name": "Samson",
+      "palette": [
+        "desaturated flesh",
+        "charcoal",
+        "oxidized material"
+      ],
+      "fixed_costume": "distinct chainsaw heavy silhouette with chainsaw",
+      "forbidden": [
+        "modern tactical gear",
+        "unlisted firearms",
+        "copied arcade pixels"
+      ],
+      "atlas_id": "samson_c1",
+      "visual_status": "dedicated_fan_made_v2",
+      "directions": [
+        "front",
+        "front_left",
+        "left",
+        "back_left",
+        "back",
+        "back_right",
+        "right",
+        "front_right"
+      ],
+      "frame_states": [
+        "idle",
+        "move_contact_a",
+        "move_passing",
+        "move_contact_b",
+        "action_windup",
+        "action_strike",
+        "hit_recoil",
+        "death_fall"
+      ]
+    },
+    "bentley_c2": {
+      "canonical_name": "Bentley",
+      "palette": [
+        "desaturated flesh",
+        "charcoal",
+        "oxidized material"
+      ],
+      "fixed_costume": "distinct barrel throwing heavy silhouette with barrel",
+      "forbidden": [
+        "modern tactical gear",
+        "unlisted firearms",
+        "copied arcade pixels"
+      ],
+      "atlas_id": "bentley_c2",
+      "visual_status": "dedicated_fan_made_v2",
+      "directions": [
+        "front",
+        "front_left",
+        "left",
+        "back_left",
+        "back",
+        "back_right",
+        "right",
+        "front_right"
+      ],
+      "frame_states": [
+        "idle",
+        "move_contact_a",
+        "move_passing",
+        "move_contact_b",
+        "action_windup",
+        "action_strike",
+        "hit_recoil",
+        "death_fall"
+      ]
+    },
+    "burner_c3": {
+      "canonical_name": "Burner",
+      "palette": [
+        "desaturated flesh",
+        "charcoal",
+        "oxidized material"
+      ],
+      "fixed_costume": "distinct blowtorch heavy silhouette with blowtorch",
+      "forbidden": [
+        "modern tactical gear",
+        "unlisted firearms",
+        "copied arcade pixels"
+      ],
+      "atlas_id": "burner_c3",
+      "visual_status": "dedicated_fan_made_v2",
+      "directions": [
+        "front",
+        "front_left",
+        "left",
+        "back_left",
+        "back",
+        "back_right",
+        "right",
+        "front_right"
+      ],
+      "frame_states": [
+        "idle",
+        "move_contact_a",
+        "move_passing",
+        "move_contact_b",
+        "action_windup",
+        "action_strike",
+        "hit_recoil",
+        "death_fall"
+      ]
+    },
+    "simon_d1": {
+      "canonical_name": "Simon",
+      "palette": [
+        "desaturated flesh",
+        "charcoal",
+        "oxidized material"
+      ],
+      "fixed_costume": "distinct muscular thrower silhouette with scene object or civilian",
+      "forbidden": [
+        "modern tactical gear",
+        "unlisted firearms",
+        "copied arcade pixels"
+      ],
+      "atlas_id": "simon_d1",
+      "visual_status": "dedicated_fan_made_v2",
+      "directions": [
+        "front",
+        "front_left",
+        "left",
+        "back_left",
+        "back",
+        "back_right",
+        "right",
+        "front_right"
+      ],
+      "frame_states": [
+        "idle",
+        "move_contact_a",
+        "move_passing",
+        "move_contact_b",
+        "action_windup",
+        "action_strike",
+        "hit_recoil",
+        "death_fall"
+      ]
+    },
+    "gilmore_d2": {
+      "canonical_name": "Gilmore",
+      "palette": [
+        "desaturated flesh",
+        "charcoal",
+        "oxidized material"
+      ],
+      "fixed_costume": "distinct sledgehammer brute silhouette with sledgehammer",
+      "forbidden": [
+        "modern tactical gear",
+        "unlisted firearms",
+        "copied arcade pixels"
+      ],
+      "atlas_id": "gilmore_d2",
+      "visual_status": "dedicated_fan_made_v2",
+      "directions": [
+        "front",
+        "front_left",
+        "left",
+        "back_left",
+        "back",
+        "back_right",
+        "right",
+        "front_right"
+      ],
+      "frame_states": [
+        "idle",
+        "move_contact_a",
+        "move_passing",
+        "move_contact_b",
+        "action_windup",
+        "action_strike",
+        "hit_recoil",
+        "death_fall"
+      ]
+    },
+    "harris_d3": {
+      "canonical_name": "Harris",
+      "palette": [
+        "desaturated flesh",
+        "charcoal",
+        "oxidized material"
+      ],
+      "fixed_costume": "distinct ball and chain brute silhouette with ball and chain",
+      "forbidden": [
+        "modern tactical gear",
+        "unlisted firearms",
+        "copied arcade pixels"
+      ],
+      "atlas_id": "harris_d3",
+      "visual_status": "dedicated_fan_made_v2",
+      "directions": [
+        "front",
+        "front_left",
+        "left",
+        "back_left",
+        "back",
+        "back_right",
+        "right",
+        "front_right"
+      ],
+      "frame_states": [
+        "idle",
+        "move_contact_a",
+        "move_passing",
+        "move_contact_b",
+        "action_windup",
+        "action_strike",
+        "hit_recoil",
+        "death_fall"
+      ]
+    },
+    "robert_d4": {
+      "canonical_name": "Robert",
+      "palette": [
+        "desaturated flesh",
+        "charcoal",
+        "oxidized material"
+      ],
+      "fixed_costume": "distinct armored arm brute silhouette with metallic arm",
+      "forbidden": [
+        "modern tactical gear",
+        "unlisted firearms",
+        "copied arcade pixels"
+      ],
+      "atlas_id": "robert_d4",
+      "visual_status": "dedicated_fan_made_v2",
+      "directions": [
+        "front",
+        "front_left",
+        "left",
+        "back_left",
+        "back",
+        "back_right",
+        "right",
+        "front_right"
+      ],
+      "frame_states": [
+        "idle",
+        "move_contact_a",
+        "move_passing",
+        "move_contact_b",
+        "action_windup",
+        "action_strike",
+        "hit_recoil",
+        "death_fall"
+      ]
+    },
+    "rubin_e1": {
+      "canonical_name": "Rubin",
+      "palette": [
+        "desaturated flesh",
+        "charcoal",
+        "oxidized material"
+      ],
+      "fixed_costume": "distinct rolling claw raider silhouette with hand claw",
+      "forbidden": [
+        "modern tactical gear",
+        "unlisted firearms",
+        "copied arcade pixels"
+      ],
+      "atlas_id": "rubin_e1",
+      "visual_status": "dedicated_fan_made_v2",
+      "directions": [
+        "front",
+        "front_left",
+        "left",
+        "back_left",
+        "back",
+        "back_right",
+        "right",
+        "front_right"
+      ],
+      "frame_states": [
+        "idle",
+        "move_contact_a",
+        "move_passing",
+        "move_contact_b",
+        "action_windup",
+        "action_strike",
+        "hit_recoil",
+        "death_fall"
+      ]
+    },
+    "drake_e2": {
+      "canonical_name": "Drake",
+      "palette": [
+        "desaturated flesh",
+        "charcoal",
+        "oxidized material"
+      ],
+      "fixed_costume": "distinct dagger throwing raider silhouette with dagger",
+      "forbidden": [
+        "modern tactical gear",
+        "unlisted firearms",
+        "copied arcade pixels"
+      ],
+      "atlas_id": "drake_e2",
+      "visual_status": "dedicated_fan_made_v2",
+      "directions": [
+        "front",
+        "front_left",
+        "left",
+        "back_left",
+        "back",
+        "back_right",
+        "right",
+        "front_right"
+      ],
+      "frame_states": [
+        "idle",
+        "move_contact_a",
+        "move_passing",
+        "move_contact_b",
+        "action_windup",
+        "action_strike",
+        "hit_recoil",
+        "death_fall"
+      ]
+    },
+    "moody_e3": {
+      "canonical_name": "Moody",
+      "palette": [
+        "desaturated flesh",
+        "charcoal",
+        "oxidized material"
+      ],
+      "fixed_costume": "distinct tethered claw raider silhouette with tethered iron claw",
+      "forbidden": [
+        "modern tactical gear",
+        "unlisted firearms",
+        "copied arcade pixels"
+      ],
+      "atlas_id": "moody_e3",
+      "visual_status": "dedicated_fan_made_v2",
+      "directions": [
+        "front",
+        "front_left",
+        "left",
+        "back_left",
+        "back",
+        "back_right",
+        "right",
+        "front_right"
+      ],
+      "frame_states": [
+        "idle",
+        "move_contact_a",
+        "move_passing",
+        "move_contact_b",
+        "action_windup",
+        "action_strike",
+        "hit_recoil",
+        "death_fall"
+      ]
+    },
+    "parlor_e4": {
+      "canonical_name": "Parlor",
+      "palette": [
+        "desaturated flesh",
+        "charcoal",
+        "oxidized material"
+      ],
+      "fixed_costume": "distinct laser dagger raider silhouette with laser dagger generator",
+      "forbidden": [
+        "modern tactical gear",
+        "unlisted firearms",
+        "copied arcade pixels"
+      ],
+      "atlas_id": "parlor_e4",
+      "visual_status": "dedicated_fan_made_v2",
+      "directions": [
+        "front",
+        "front_left",
+        "left",
+        "back_left",
+        "back",
+        "back_right",
+        "right",
+        "front_right"
+      ],
+      "frame_states": [
+        "idle",
+        "move_contact_a",
+        "move_passing",
+        "move_contact_b",
+        "action_windup",
+        "action_strike",
+        "hit_recoil",
+        "death_fall"
+      ]
+    },
+    "kenfis_f1": {
+      "canonical_name": "Kenfis",
+      "palette": [
+        "brown gray",
+        "bone"
+      ],
+      "fixed_costume": "none",
+      "forbidden": [
+        "full flight",
+        "collar"
+      ],
+      "atlas_id": "kenfis_f1",
+      "visual_status": "dedicated_fan_made_v2",
+      "directions": [
+        "front",
+        "front_left",
+        "left",
+        "back_left",
+        "back",
+        "back_right",
+        "right",
+        "front_right"
+      ],
+      "frame_states": [
+        "idle",
+        "move_contact_a",
+        "move_passing",
+        "move_contact_b",
+        "action_windup",
+        "action_strike",
+        "hit_recoil",
+        "death_fall"
+      ]
+    },
+    "saruzou_f2": {
+      "canonical_name": "Saruzou",
+      "palette": [
+        "desaturated flesh",
+        "charcoal",
+        "oxidized material"
+      ],
+      "fixed_costume": "distinct paired leaping beast silhouette",
+      "forbidden": [
+        "modern tactical gear",
+        "unlisted firearms",
+        "copied arcade pixels"
+      ],
+      "atlas_id": "saruzou_f2",
+      "visual_status": "dedicated_fan_made_v2",
+      "directions": [
+        "front",
+        "front_left",
+        "left",
+        "back_left",
+        "back",
+        "back_right",
+        "right",
+        "front_right"
+      ],
+      "frame_states": [
+        "idle",
+        "move_contact_a",
+        "move_passing",
+        "move_contact_b",
+        "action_windup",
+        "action_strike",
+        "hit_recoil",
+        "death_fall"
+      ]
+    },
+    "bouere_f3": {
+      "canonical_name": "Bouere",
+      "palette": [
+        "desaturated flesh",
+        "charcoal",
+        "oxidized material"
+      ],
+      "fixed_costume": "distinct aquatic leaping beast silhouette",
+      "forbidden": [
+        "modern tactical gear",
+        "unlisted firearms",
+        "copied arcade pixels"
+      ],
+      "atlas_id": "bouere_f3",
+      "visual_status": "dedicated_fan_made_v2",
+      "directions": [
+        "front",
+        "front_left",
+        "left",
+        "back_left",
+        "back",
+        "back_right",
+        "right",
+        "front_right"
+      ],
+      "frame_states": [
+        "idle",
+        "move_contact_a",
+        "move_passing",
+        "move_contact_b",
+        "action_windup",
+        "action_strike",
+        "hit_recoil",
+        "death_fall"
+      ]
+    },
+    "devilon_f4": {
+      "canonical_name": "Devilon",
+      "palette": [
+        "charcoal brown",
+        "leathery gray",
+        "red"
+      ],
+      "fixed_costume": "none",
+      "forbidden": [
+        "cute styling"
+      ],
+      "atlas_id": "devilon_f4",
+      "visual_status": "dedicated_fan_made_v2",
+      "directions": [
+        "front",
+        "front_left",
+        "left",
+        "back_left",
+        "back",
+        "back_right",
+        "right",
+        "front_right"
+      ],
+      "frame_states": [
+        "idle",
+        "move_contact_a",
+        "move_passing",
+        "move_contact_b",
+        "action_windup",
+        "action_strike",
+        "hit_recoil",
+        "death_fall"
+      ]
+    },
+    "murrer_g1": {
+      "canonical_name": "Murrer",
+      "palette": [
+        "desaturated flesh",
+        "charcoal",
+        "oxidized material"
+      ],
+      "fixed_costume": "distinct swarming lunging worm silhouette",
+      "forbidden": [
+        "modern tactical gear",
+        "unlisted firearms",
+        "copied arcade pixels"
+      ],
+      "atlas_id": "murrer_g1",
+      "visual_status": "dedicated_fan_made_v2",
+      "directions": [
+        "front",
+        "front_left",
+        "left",
+        "back_left",
+        "back",
+        "back_right",
+        "right",
+        "front_right"
+      ],
+      "frame_states": [
+        "idle",
+        "move_contact_a",
+        "move_passing",
+        "move_contact_b",
+        "action_windup",
+        "action_strike",
+        "hit_recoil",
+        "death_fall"
+      ]
+    },
+    "name_g2": {
+      "canonical_name": "Name",
+      "palette": [
+        "muted pink",
+        "beige"
+      ],
+      "fixed_costume": "none",
+      "forbidden": [
+        "humanoid posture"
+      ],
+      "atlas_id": "name_g2",
+      "visual_status": "dedicated_fan_made_v2",
+      "directions": [
+        "front",
+        "front_left",
+        "left",
+        "back_left",
+        "back",
+        "back_right",
+        "right",
+        "front_right"
+      ],
+      "frame_states": [
+        "idle",
+        "move_contact_a",
+        "move_passing",
+        "move_contact_b",
+        "action_windup",
+        "action_strike",
+        "hit_recoil",
+        "death_fall"
+      ]
+    },
+    "taran_g3": {
+      "canonical_name": "Taran",
+      "palette": [
+        "desaturated flesh",
+        "charcoal",
+        "oxidized material"
+      ],
+      "fixed_costume": "distinct ceiling drop insectoid silhouette",
+      "forbidden": [
+        "modern tactical gear",
+        "unlisted firearms",
+        "copied arcade pixels"
+      ],
+      "atlas_id": "taran_g3",
+      "visual_status": "dedicated_fan_made_v2",
+      "directions": [
+        "front",
+        "front_left",
+        "left",
+        "back_left",
+        "back",
+        "back_right",
+        "right",
+        "front_right"
+      ],
+      "frame_states": [
+        "idle",
+        "move_contact_a",
+        "move_passing",
+        "move_contact_b",
+        "action_windup",
+        "action_strike",
+        "hit_recoil",
+        "death_fall"
+      ]
+    }
+  }
+}

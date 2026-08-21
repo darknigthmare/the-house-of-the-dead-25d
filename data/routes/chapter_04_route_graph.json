@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "chapter_id": "chapter_04",
+  "start": "chariot_rematch",
+  "terminal": "chapter_complete",
+  "nodes": [
+    {
+      "id": "chariot_rematch",
+      "kind": "boss",
+      "boss_id": "chariot",
+      "label": "Chariot rematch",
+      "next": [
+        "hangedman_rematch"
+      ]
+    },
+    {
+      "id": "hangedman_rematch",
+      "kind": "boss",
+      "boss_id": "hangedman",
+      "label": "Hangedman rematch",
+      "next": [
+        "bonus_gate"
+      ]
+    },
+    {
+      "id": "bonus_gate",
+      "kind": "campaign_branch",
+      "label": "All-scientists bonus gate",
+      "next": [
+        {
+          "condition": "all_scientists_saved",
+          "node": "bonus_room"
+        },
+        {
+          "condition": "scientist_rescue_incomplete",
+          "node": "final_waves"
+        }
+      ]
+    },
+    {
+      "id": "bonus_room",
+      "kind": "bonus",
+      "label": "Hidden supply room",
+      "next": [
+        "final_waves"
+      ]
+    },
+    {
+      "id": "final_waves",
+      "kind": "combat",
+      "label": "Final laboratory waves",
+      "next": [
+        "curien_confrontation"
+      ]
+    },
+    {
+      "id": "curien_confrontation",
+      "kind": "story",
+      "label": "Confront Dr. Curien",
+      "next": [
+        "magician_battle"
+      ]
+    },
+    {
+      "id": "magician_battle",
+      "kind": "boss",
+      "boss_id": "magician",
+      "label": "Magician battle",
+      "next": [
+        "chapter_complete"
+      ]
+    }
+  ]
+}

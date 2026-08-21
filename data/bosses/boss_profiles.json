@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "bosses": [
+    {"id":"chariot","type":"27","health":34,"score":1500,"weak_zone":"armor_opening","phases":[{"id":"armor","vulnerable":["head"]},{"id":"armor_break","vulnerable":["head","torso"]},{"id":"exposed_body","vulnerable":["all"]}],"rematch":true},
+    {"id":"hangedman","type":"041","health":38,"score":1500,"weak_zone":"body_during_charge","phases":[{"id":"bat_swarm","vulnerable":[]},{"id":"flight","vulnerable":["body"]},{"id":"rapid_charge","vulnerable":["body"]}],"rematch":true},
+    {"id":"hermit","type":"6803","health":44,"score":1500,"weak_zone":"head","phases":[{"id":"guarded_head","vulnerable":["projectiles"]},{"id":"charges","vulnerable":["head"]},{"id":"web_barrage","vulnerable":["head","web"]}],"rematch":false},
+    {"id":"magician","type":"0","health":68,"score":2500,"weak_zone":"exposed_red_tissue","phases":[{"id":"ground_dash","vulnerable":["exposed"]},{"id":"fireball","vulnerable":["exposed","fireball"]},{"id":"aerial_finale","vulnerable":["exposed","fireball"]}],"rematch":false}
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "id": "chapter_02",
+  "number": 2,
+  "title": "REVENGE",
+  "arcade_date": "December 18, 1998",
+  "canonical_source": "The House of the Dead (1996 arcade)",
+  "summary": "The agents push through the mansion's underground and library routes before pursuing Hangedman onto the roof.",
+  "start": "chained_hatch",
+  "route_graph": "res://data/routes/chapter_02_route_graph.json",
+  "rescues_expected": 6,
+  "boss": {
+    "id": "hangedman",
+    "name": "Hangedman",
+    "type": "Type 041",
+    "encounter_node": "hangedman_battle",
+    "arena": "mansion rooftop",
+    "weak_point": "exposed body after the bat swarm is cleared"
+  },
+  "completion": {
+    "next_chapter": "chapter_03"
+  }
+}

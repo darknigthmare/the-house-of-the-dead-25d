@@ -1,0 +1,93 @@
+[gd_resource type="Resource" script_class="RouteGraph" load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://src/rail/route_graph.gd" id="1_graph"]
+[ext_resource type="Script" path="res://src/rail/route_condition.gd" id="2_condition"]
+
+[sub_resource type="Resource" id="RouteCondition_left_elevator"]
+script = ExtResource("2_condition")
+context_key = &"left_elevator_selected"
+comparison = 5
+compare_value = true
+
+[sub_resource type="Resource" id="RouteCondition_right_elevator"]
+script = ExtResource("2_condition")
+context_key = &"right_elevator_selected"
+comparison = 5
+compare_value = true
+
+[sub_resource type="Resource" id="RouteCondition_scientist_saved"]
+script = ExtResource("2_condition")
+context_key = &"scientist_saved"
+comparison = 5
+compare_value = true
+
+[sub_resource type="Resource" id="RouteCondition_scientist_lost"]
+script = ExtResource("2_condition")
+context_key = &"scientist_lost"
+comparison = 5
+compare_value = true
+
+[resource]
+script = ExtResource("1_graph")
+entry_segment_id = &"elevator_switch"
+connections = Array[Dictionary]([{
+"conditions": [SubResource("RouteCondition_left_elevator")],
+"from": &"elevator_switch",
+"label": "Left elevator selected",
+"priority": 100,
+"to": &"left_elevator"
+}, {
+"conditions": [SubResource("RouteCondition_right_elevator")],
+"from": &"elevator_switch",
+"label": "Right elevator selected",
+"priority": 90,
+"to": &"right_elevator"
+}, {
+"conditions": [],
+"from": &"left_elevator",
+"label": "Left elevator to scientist",
+"priority": 0,
+"to": &"scientist_rescue"
+}, {
+"conditions": [],
+"from": &"right_elevator",
+"label": "Right elevator to scientist",
+"priority": 0,
+"to": &"scientist_rescue"
+}, {
+"conditions": [SubResource("RouteCondition_scientist_saved")],
+"from": &"scientist_rescue",
+"label": "Scientist saved — security door",
+"priority": 100,
+"to": &"security_door"
+}, {
+"conditions": [SubResource("RouteCondition_scientist_lost")],
+"from": &"scientist_rescue",
+"label": "Scientist lost — vent route",
+"priority": 90,
+"to": &"vent_key_route"
+}, {
+"conditions": [],
+"from": &"security_door",
+"label": "Security door to tunnel",
+"priority": 0,
+"to": &"curien_tunnel"
+}, {
+"conditions": [],
+"from": &"vent_key_route",
+"label": "Vent route to tunnel",
+"priority": 0,
+"to": &"curien_tunnel"
+}, {
+"conditions": [],
+"from": &"curien_tunnel",
+"label": "Tunnel to Hermit",
+"priority": 0,
+"to": &"hermit_battle"
+}, {
+"conditions": [],
+"from": &"hermit_battle",
+"label": "Hermit defeated",
+"priority": 0,
+"to": &"chapter_complete"
+}])

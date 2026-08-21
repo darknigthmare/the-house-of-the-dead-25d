@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "chapter_id": "chapter_03",
+  "start": "elevator_switch",
+  "terminal": "chapter_complete",
+  "nodes": [
+    {
+      "id": "elevator_switch",
+      "kind": "action_branch",
+      "label": "Elevator selection",
+      "next": [
+        {
+          "condition": "left_elevator_selected",
+          "node": "left_elevator"
+        },
+        {
+          "condition": "right_elevator_selected",
+          "node": "right_elevator"
+        }
+      ]
+    },
+    {
+      "id": "left_elevator",
+      "kind": "route",
+      "label": "Left elevator",
+      "next": [
+        "scientist_rescue"
+      ]
+    },
+    {
+      "id": "right_elevator",
+      "kind": "route",
+      "label": "Right elevator",
+      "next": [
+        "scientist_rescue"
+      ]
+    },
+    {
+      "id": "scientist_rescue",
+      "kind": "rescue_branch",
+      "label": "Rear-attack scientist rescue",
+      "next": [
+        {
+          "condition": "scientist_saved",
+          "node": "security_door"
+        },
+        {
+          "condition": "scientist_lost",
+          "node": "vent_key_route"
+        }
+      ]
+    },
+    {
+      "id": "security_door",
+      "kind": "route",
+      "label": "Scientist opens the security door",
+      "next": [
+        "curien_tunnel"
+      ]
+    },
+    {
+      "id": "vent_key_route",
+      "kind": "route",
+      "label": "Vent and access-key route",
+      "next": [
+        "curien_tunnel"
+      ]
+    },
+    {
+      "id": "curien_tunnel",
+      "kind": "story",
+      "label": "Pursue Curien through the tunnel",
+      "next": [
+        "hermit_battle"
+      ]
+    },
+    {
+      "id": "hermit_battle",
+      "kind": "boss",
+      "boss_id": "hermit",
+      "label": "Hermit battle",
+      "next": [
+        "chapter_complete"
+      ]
+    }
+  ]
+}

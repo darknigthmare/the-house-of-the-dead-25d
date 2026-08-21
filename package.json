@@ -1,0 +1,16 @@
+{
+  "name": "the-house-of-the-dead-25d",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node scripts/qa.mjs --data-only && node scripts/verify_sprite_atlas_v2.mjs && node scripts/verify_campaign_routes.mjs && node scripts/verify_enemy_roster.mjs",
+    "qa": "node scripts/qa.mjs && node scripts/verify_sprite_atlas_v2.mjs && node scripts/verify_campaign_routes.mjs && node scripts/verify_enemy_roster.mjs",
+    "qa:web": "node scripts/qa.mjs --web-only && node scripts/verify_sprite_atlas_v2.mjs",
+    "fix:web-accessibility": "node scripts/patch-web-accessibility.mjs",
+    "verify:web": "node scripts/verify-web-build.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

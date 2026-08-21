@@ -1,0 +1,93 @@
+[gd_resource type="Resource" script_class="RouteGraph" load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://src/rail/route_graph.gd" id="1_graph"]
+[ext_resource type="Script" path="res://src/rail/route_condition.gd" id="2_condition"]
+
+[sub_resource type="Resource" id="RouteCondition_scientist_saved"]
+script = ExtResource("2_condition")
+context_key = &"scientist_saved"
+comparison = 5
+compare_value = true
+
+[sub_resource type="Resource" id="RouteCondition_scientist_lost"]
+script = ExtResource("2_condition")
+context_key = &"scientist_lost"
+comparison = 5
+compare_value = true
+
+[sub_resource type="Resource" id="RouteCondition_door_destroyed"]
+script = ExtResource("2_condition")
+context_key = &"door_lock_destroyed"
+comparison = 5
+compare_value = true
+
+[sub_resource type="Resource" id="RouteCondition_door_intact"]
+script = ExtResource("2_condition")
+context_key = &"door_lock_intact"
+comparison = 5
+compare_value = true
+
+[resource]
+script = ExtResource("1_graph")
+entry_segment_id = &"bridge_scientist_rescue"
+connections = Array[Dictionary]([{
+"conditions": [SubResource("RouteCondition_scientist_saved")],
+"from": &"bridge_scientist_rescue",
+"label": "Scientist saved — mansion entrance",
+"priority": 100,
+"to": &"mansion_entrance"
+}, {
+"conditions": [SubResource("RouteCondition_scientist_lost")],
+"from": &"bridge_scientist_rescue",
+"label": "Scientist lost — under bridge",
+"priority": 90,
+"to": &"under_bridge"
+}, {
+"conditions": [],
+"from": &"mansion_entrance",
+"label": "Entrance to foyer",
+"priority": 0,
+"to": &"foyer_choice"
+}, {
+"conditions": [],
+"from": &"under_bridge",
+"label": "Under bridge to foyer",
+"priority": 0,
+"to": &"foyer_choice"
+}, {
+"conditions": [SubResource("RouteCondition_door_destroyed")],
+"from": &"foyer_choice",
+"label": "Destroyed lock — upper stairs",
+"priority": 100,
+"to": &"upper_stairs"
+}, {
+"conditions": [SubResource("RouteCondition_door_intact")],
+"from": &"foyer_choice",
+"label": "Intact lock — ground hall",
+"priority": 90,
+"to": &"ground_hall"
+}, {
+"conditions": [],
+"from": &"upper_stairs",
+"label": "Upper route to Sophie",
+"priority": 0,
+"to": &"sophie_corridor"
+}, {
+"conditions": [],
+"from": &"ground_hall",
+"label": "Ground route to Sophie",
+"priority": 0,
+"to": &"sophie_corridor"
+}, {
+"conditions": [],
+"from": &"sophie_corridor",
+"label": "Sophie to Chariot",
+"priority": 0,
+"to": &"chariot_battle"
+}, {
+"conditions": [],
+"from": &"chariot_battle",
+"label": "Chariot defeated",
+"priority": 0,
+"to": &"chapter_complete"
+}])

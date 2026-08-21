@@ -1,0 +1,1242 @@
+{
+  "schema_version": 3,
+  "health_scale": {
+    "kind": "relative_gameplay_index",
+    "minimum": 1,
+    "maximum": 8,
+    "note": "Relative production values only; not measured arcade HP until the licensed reference build is frame-tested."
+  },
+  "visual_policy": {
+    "kind": "dedicated_fan_made_directional_atlases_v2",
+    "note": "Every enemy type has a unique 8-direction x 8-state fan-made atlas. No ROM or video-extracted pixels are used."
+  },
+  "profiles": [
+    {
+      "id": "sam_a1",
+      "canonical_name": "Sam",
+      "aliases": [],
+      "type": "A-1",
+      "chapters": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "archetype": "common_biting_walker",
+      "health": 3,
+      "relative_hp": 3,
+      "speed": 1,
+      "attacks": [
+        "close_bite"
+      ],
+      "weapon": null,
+      "projectile": null,
+      "weakness": {
+        "primary_zone": "head",
+        "rule": "single_headshot_candidate"
+      },
+      "weak_zone": "head",
+      "dismemberment": true,
+      "dismemberment_profile": {
+        "parts": [
+          "head",
+          "left_arm",
+          "right_arm",
+          "left_leg",
+          "right_leg"
+        ],
+        "behavior_change": "lost_arms_disable_corresponding_swipes"
+      },
+      "score": 80,
+      "visual_base": "res://assets/sprites_v2/enemies/sam_a1/sam_a1__v2__action_cycle__8dirx8f.png",
+      "visual_status": "dedicated_fan_made_v2",
+      "verification_status": {
+        "identity": "verified_canonical_roster",
+        "chapters": "cross_checked",
+        "behavior": "cross_checked",
+        "relative_hp": "design_estimate",
+        "visual": "dedicated_fan_made_directional_v2"
+      },
+      "atlas_id": "sam_a1"
+    },
+    {
+      "id": "neil_a2",
+      "canonical_name": "Neil",
+      "aliases": [
+        "Nail"
+      ],
+      "type": "A-2",
+      "chapters": [
+        1,
+        2,
+        3
+      ],
+      "archetype": "resilient_swiping_walker",
+      "health": 4,
+      "relative_hp": 4,
+      "speed": 1.02,
+      "attacks": [
+        "arm_swipe",
+        "headbutt_when_disarmed"
+      ],
+      "weapon": null,
+      "projectile": null,
+      "weakness": {
+        "primary_zone": "head",
+        "rule": "single_headshot_candidate"
+      },
+      "weak_zone": "head",
+      "dismemberment": true,
+      "dismemberment_profile": {
+        "parts": [
+          "head",
+          "left_arm",
+          "right_arm",
+          "left_leg",
+          "right_leg"
+        ],
+        "behavior_change": "both_arms_lost_selects_headbutt"
+      },
+      "score": 80,
+      "visual_base": "res://assets/sprites_v2/enemies/neil_a2/neil_a2__v2__action_cycle__8dirx8f.png",
+      "visual_status": "dedicated_fan_made_v2",
+      "verification_status": {
+        "identity": "verified_canonical_roster",
+        "chapters": "cross_checked",
+        "behavior": "cross_checked",
+        "relative_hp": "design_estimate",
+        "visual": "dedicated_fan_made_directional_v2"
+      },
+      "atlas_id": "neil_a2"
+    },
+    {
+      "id": "cyril_a3",
+      "canonical_name": "Cyril",
+      "aliases": [],
+      "type": "A-3",
+      "chapters": [
+        1,
+        2,
+        3
+      ],
+      "archetype": "axe_melee_thrower",
+      "health": 5,
+      "relative_hp": 5,
+      "speed": 0.94,
+      "attacks": [
+        "axe_swing",
+        "axe_throw"
+      ],
+      "weapon": {
+        "kind": "hand_axe",
+        "breakable": true
+      },
+      "projectile": {
+        "kind": "thrown_axe",
+        "destructible": true
+      },
+      "weakness": {
+        "primary_zone": "head",
+        "secondary_zones": [
+          "torso"
+        ],
+        "rule": "headshot_not_assumed_single_hit"
+      },
+      "weak_zone": "head",
+      "dismemberment": true,
+      "dismemberment_profile": {
+        "parts": [
+          "head",
+          "left_arm",
+          "right_arm",
+          "left_leg",
+          "right_leg"
+        ],
+        "behavior_change": "weapon_arm_loss_disables_axe_attack"
+      },
+      "score": 80,
+      "visual_base": "res://assets/sprites_v2/enemies/cyril_a3/cyril_a3__v2__action_cycle__8dirx8f.png",
+      "visual_status": "dedicated_fan_made_v2",
+      "verification_status": {
+        "identity": "verified_canonical_roster",
+        "chapters": "cross_checked",
+        "behavior": "cross_checked",
+        "relative_hp": "design_estimate",
+        "visual": "dedicated_fan_made_directional_v2"
+      },
+      "atlas_id": "cyril_a3"
+    },
+    {
+      "id": "kageo_b1",
+      "canonical_name": "Kageo",
+      "aliases": [],
+      "type": "B-1",
+      "chapters": [
+        1,
+        3
+      ],
+      "archetype": "slow_humid_swiper",
+      "health": 2,
+      "relative_hp": 2,
+      "speed": 0.72,
+      "attacks": [
+        "arm_swipe"
+      ],
+      "weapon": null,
+      "projectile": null,
+      "weakness": {
+        "primary_zone": "torso",
+        "rule": "low_resilience"
+      },
+      "weak_zone": "torso",
+      "dismemberment": true,
+      "dismemberment_profile": {
+        "parts": [
+          "head",
+          "left_arm",
+          "right_arm"
+        ],
+        "behavior_change": "arm_loss_removes_corresponding_swipe"
+      },
+      "score": 80,
+      "visual_base": "res://assets/sprites_v2/enemies/kageo_b1/kageo_b1__v2__action_cycle__8dirx8f.png",
+      "visual_status": "dedicated_fan_made_v2",
+      "verification_status": {
+        "identity": "verified_canonical_roster",
+        "chapters": "cross_checked",
+        "behavior": "cross_checked",
+        "relative_hp": "design_estimate",
+        "visual": "dedicated_fan_made_directional_v2"
+      },
+      "atlas_id": "kageo_b1"
+    },
+    {
+      "id": "bourbon_b2",
+      "canonical_name": "Bourbon",
+      "aliases": [],
+      "type": "B-2",
+      "chapters": [
+        1,
+        3
+      ],
+      "archetype": "resilient_humid_walker",
+      "health": 5,
+      "relative_hp": 5,
+      "speed": 0.76,
+      "attacks": [
+        "heavy_swipe",
+        "close_bite"
+      ],
+      "weapon": null,
+      "projectile": null,
+      "weakness": {
+        "primary_zone": "head",
+        "rule": "resilient_body"
+      },
+      "weak_zone": "head",
+      "dismemberment": true,
+      "dismemberment_profile": {
+        "parts": [
+          "head",
+          "left_arm",
+          "right_arm"
+        ],
+        "behavior_change": "arm_loss_reduces_attack_options"
+      },
+      "score": 80,
+      "visual_base": "res://assets/sprites_v2/enemies/bourbon_b2/bourbon_b2__v2__action_cycle__8dirx8f.png",
+      "visual_status": "dedicated_fan_made_v2",
+      "verification_status": {
+        "identity": "verified_canonical_roster",
+        "chapters": "cross_checked",
+        "behavior": "cross_checked",
+        "relative_hp": "design_estimate",
+        "visual": "dedicated_fan_made_directional_v2"
+      },
+      "atlas_id": "bourbon_b2"
+    },
+    {
+      "id": "ebitan_a_b3",
+      "canonical_name": "Ebitan a",
+      "aliases": [
+        "Ebitan A"
+      ],
+      "type": "B-3",
+      "chapters": [
+        1,
+        2,
+        3
+      ],
+      "archetype": "aquatic_lurcher",
+      "health": 3,
+      "relative_hp": 3,
+      "speed": 0.9,
+      "attacks": [
+        "water_emerge",
+        "close_bite",
+        "arm_swipe"
+      ],
+      "weapon": null,
+      "projectile": null,
+      "weakness": {
+        "primary_zone": "head",
+        "secondary_zones": [
+          "torso"
+        ],
+        "rule": "wet_habitat_ambusher"
+      },
+      "weak_zone": "head",
+      "dismemberment": true,
+      "dismemberment_profile": {
+        "parts": [
+          "head",
+          "left_arm",
+          "right_arm"
+        ],
+        "behavior_change": "arm_loss_reduces_attack_options"
+      },
+      "score": 80,
+      "visual_base": "res://assets/sprites_v2/enemies/ebitan_a_b3/ebitan_a_b3__v2__action_cycle__8dirx8f.png",
+      "visual_status": "dedicated_fan_made_v2",
+      "verification_status": {
+        "identity": "verified_canonical_roster",
+        "chapters": "cross_checked",
+        "behavior": "cross_checked",
+        "relative_hp": "design_estimate",
+        "visual": "dedicated_fan_made_directional_v2"
+      },
+      "atlas_id": "ebitan_a_b3"
+    },
+    {
+      "id": "ebitan_b_b4",
+      "canonical_name": "Ebitan b",
+      "aliases": [
+        "Ebitan B"
+      ],
+      "type": "B-4",
+      "chapters": [
+        1,
+        2
+      ],
+      "archetype": "ceiling_drop_swordsman",
+      "health": 3,
+      "relative_hp": 3,
+      "speed": 1,
+      "attacks": [
+        "ceiling_drop",
+        "jagged_sword_slash",
+        "vomit_burst"
+      ],
+      "weapon": {
+        "kind": "jagged_sword",
+        "breakable": true
+      },
+      "projectile": {
+        "kind": "vomit_burst",
+        "destructible": false
+      },
+      "weakness": {
+        "primary_zone": "head",
+        "rule": "interrupt_during_drop"
+      },
+      "weak_zone": "head",
+      "dismemberment": true,
+      "dismemberment_profile": {
+        "parts": [
+          "head",
+          "weapon_arm"
+        ],
+        "behavior_change": "weapon_arm_loss_disables_sword_slash"
+      },
+      "score": 80,
+      "visual_base": "res://assets/sprites_v2/enemies/ebitan_b_b4/ebitan_b_b4__v2__action_cycle__8dirx8f.png",
+      "visual_status": "dedicated_fan_made_v2",
+      "verification_status": {
+        "identity": "verified_canonical_roster",
+        "chapters": "cross_checked",
+        "behavior": "cross_checked",
+        "relative_hp": "design_estimate",
+        "visual": "dedicated_fan_made_directional_v2"
+      },
+      "atlas_id": "ebitan_b_b4"
+    },
+    {
+      "id": "samson_c1",
+      "canonical_name": "Samson",
+      "aliases": [],
+      "type": "C-1",
+      "chapters": [
+        1,
+        2
+      ],
+      "archetype": "chainsaw_heavy",
+      "health": 7,
+      "relative_hp": 7,
+      "speed": 0.72,
+      "attacks": [
+        "chainsaw_guard",
+        "chainsaw_sweep",
+        "shoulder_charge"
+      ],
+      "weapon": {
+        "kind": "chainsaw",
+        "breakable": false,
+        "deflects_front_fire": true
+      },
+      "projectile": null,
+      "weakness": {
+        "primary_zone": "head",
+        "secondary_zones": [
+          "torso",
+          "weapon_arm"
+        ],
+        "rule": "two_headshot_candidate"
+      },
+      "weak_zone": "head",
+      "dismemberment": true,
+      "dismemberment_profile": {
+        "parts": [
+          "head",
+          "weapon_arm",
+          "belly"
+        ],
+        "behavior_change": "weapon_arm_loss_disables_chainsaw_guard"
+      },
+      "score": 80,
+      "visual_base": "res://assets/sprites_v2/enemies/samson_c1/samson_c1__v2__action_cycle__8dirx8f.png",
+      "visual_status": "dedicated_fan_made_v2",
+      "verification_status": {
+        "identity": "verified_canonical_roster",
+        "chapters": "cross_checked",
+        "behavior": "cross_checked",
+        "relative_hp": "design_estimate",
+        "visual": "dedicated_fan_made_directional_v2"
+      },
+      "atlas_id": "samson_c1"
+    },
+    {
+      "id": "bentley_c2",
+      "canonical_name": "Bentley",
+      "aliases": [],
+      "type": "C-2",
+      "chapters": [
+        2,
+        3,
+        4
+      ],
+      "archetype": "barrel_throwing_heavy",
+      "health": 8,
+      "relative_hp": 8,
+      "speed": 0.64,
+      "attacks": [
+        "barrel_throw",
+        "belly_charge",
+        "shoulder_tackle"
+      ],
+      "weapon": {
+        "kind": "barrel",
+        "breakable": true
+      },
+      "projectile": {
+        "kind": "thrown_barrel",
+        "destructible": true
+      },
+      "weakness": {
+        "primary_zone": "torso",
+        "secondary_zones": [
+          "head"
+        ],
+        "rule": "high_body_resilience"
+      },
+      "weak_zone": "torso",
+      "dismemberment": true,
+      "dismemberment_profile": {
+        "parts": [
+          "head",
+          "left_arm",
+          "right_arm",
+          "belly"
+        ],
+        "behavior_change": "arm_loss_disables_barrel_throw"
+      },
+      "score": 80,
+      "visual_base": "res://assets/sprites_v2/enemies/bentley_c2/bentley_c2__v2__action_cycle__8dirx8f.png",
+      "visual_status": "dedicated_fan_made_v2",
+      "verification_status": {
+        "identity": "verified_canonical_roster",
+        "chapters": "cross_checked",
+        "behavior": "cross_checked",
+        "relative_hp": "design_estimate",
+        "visual": "dedicated_fan_made_directional_v2"
+      },
+      "atlas_id": "bentley_c2"
+    },
+    {
+      "id": "burner_c3",
+      "canonical_name": "Burner",
+      "aliases": [],
+      "type": "C-3",
+      "chapters": [
+        3
+      ],
+      "archetype": "blowtorch_heavy",
+      "health": 7,
+      "relative_hp": 7,
+      "speed": 0.7,
+      "attacks": [
+        "blowtorch_guard",
+        "flame_sweep",
+        "shoulder_charge"
+      ],
+      "weapon": {
+        "kind": "blowtorch",
+        "breakable": true
+      },
+      "projectile": {
+        "kind": "short_flame_jet",
+        "destructible": false
+      },
+      "weakness": {
+        "primary_zone": "head",
+        "secondary_zones": [
+          "torso",
+          "weapon_arm"
+        ],
+        "rule": "weapon_interrupt_window"
+      },
+      "weak_zone": "head",
+      "dismemberment": true,
+      "dismemberment_profile": {
+        "parts": [
+          "head",
+          "weapon_arm",
+          "belly"
+        ],
+        "behavior_change": "weapon_arm_loss_disables_flame_sweep"
+      },
+      "score": 80,
+      "visual_base": "res://assets/sprites_v2/enemies/burner_c3/burner_c3__v2__action_cycle__8dirx8f.png",
+      "visual_status": "dedicated_fan_made_v2",
+      "verification_status": {
+        "identity": "verified_canonical_roster",
+        "chapters": "cross_checked",
+        "behavior": "cross_checked",
+        "relative_hp": "design_estimate",
+        "visual": "dedicated_fan_made_directional_v2"
+      },
+      "atlas_id": "burner_c3"
+    },
+    {
+      "id": "simon_d1",
+      "canonical_name": "Simon",
+      "aliases": [],
+      "type": "D-1",
+      "chapters": [
+        1,
+        2
+      ],
+      "archetype": "muscular_thrower",
+      "health": 6,
+      "relative_hp": 6,
+      "speed": 0.78,
+      "attacks": [
+        "shoulder_tackle",
+        "barrel_throw",
+        "civilian_throw"
+      ],
+      "weapon": {
+        "kind": "scene_object_or_civilian",
+        "breakable": false
+      },
+      "projectile": {
+        "kind": "thrown_barrel",
+        "destructible": true
+      },
+      "weakness": {
+        "primary_zone": "torso",
+        "rule": "interrupt_throw_windup"
+      },
+      "weak_zone": "torso",
+      "dismemberment": true,
+      "dismemberment_profile": {
+        "parts": [
+          "head",
+          "left_arm",
+          "right_arm"
+        ],
+        "behavior_change": "arm_loss_disables_throw_attacks"
+      },
+      "score": 80,
+      "visual_base": "res://assets/sprites_v2/enemies/simon_d1/simon_d1__v2__action_cycle__8dirx8f.png",
+      "visual_status": "dedicated_fan_made_v2",
+      "verification_status": {
+        "identity": "verified_canonical_roster",
+        "chapters": "cross_checked",
+        "behavior": "cross_checked",
+        "relative_hp": "design_estimate",
+        "visual": "dedicated_fan_made_directional_v2"
+      },
+      "atlas_id": "simon_d1"
+    },
+    {
+      "id": "gilmore_d2",
+      "canonical_name": "Gilmore",
+      "aliases": [],
+      "type": "D-2",
+      "chapters": [
+        2,
+        4
+      ],
+      "archetype": "sledgehammer_brute",
+      "health": 7,
+      "relative_hp": 7,
+      "speed": 0.72,
+      "attacks": [
+        "sledgehammer_swing",
+        "sledgehammer_overhead"
+      ],
+      "weapon": {
+        "kind": "sledgehammer",
+        "breakable": true
+      },
+      "projectile": null,
+      "weakness": {
+        "primary_zone": "head",
+        "secondary_zones": [
+          "torso"
+        ],
+        "rule": "interrupt_weapon_windup"
+      },
+      "weak_zone": "head",
+      "dismemberment": true,
+      "dismemberment_profile": {
+        "parts": [
+          "head",
+          "weapon_arm",
+          "off_arm"
+        ],
+        "behavior_change": "weapon_arm_loss_disables_hammer_attacks"
+      },
+      "score": 80,
+      "visual_base": "res://assets/sprites_v2/enemies/gilmore_d2/gilmore_d2__v2__action_cycle__8dirx8f.png",
+      "visual_status": "dedicated_fan_made_v2",
+      "verification_status": {
+        "identity": "verified_canonical_roster",
+        "chapters": "cross_checked",
+        "behavior": "cross_checked",
+        "relative_hp": "design_estimate",
+        "visual": "dedicated_fan_made_directional_v2"
+      },
+      "atlas_id": "gilmore_d2"
+    },
+    {
+      "id": "harris_d3",
+      "canonical_name": "Harris",
+      "aliases": [],
+      "type": "D-3",
+      "chapters": [
+        3,
+        4
+      ],
+      "archetype": "ball_and_chain_brute",
+      "health": 7,
+      "relative_hp": 7,
+      "speed": 0.76,
+      "attacks": [
+        "chain_spin",
+        "chain_slam",
+        "advancing_chain_swing"
+      ],
+      "weapon": {
+        "kind": "ball_and_chain",
+        "breakable": true
+      },
+      "projectile": null,
+      "weakness": {
+        "primary_zone": "head",
+        "secondary_zones": [
+          "torso"
+        ],
+        "rule": "interrupt_chain_windup"
+      },
+      "weak_zone": "head",
+      "dismemberment": true,
+      "dismemberment_profile": {
+        "parts": [
+          "head",
+          "weapon_arm",
+          "off_arm"
+        ],
+        "behavior_change": "weapon_arm_loss_disables_chain_attacks"
+      },
+      "score": 80,
+      "visual_base": "res://assets/sprites_v2/enemies/harris_d3/harris_d3__v2__action_cycle__8dirx8f.png",
+      "visual_status": "dedicated_fan_made_v2",
+      "verification_status": {
+        "identity": "verified_canonical_roster",
+        "chapters": "cross_checked",
+        "behavior": "cross_checked",
+        "relative_hp": "design_estimate",
+        "visual": "dedicated_fan_made_directional_v2"
+      },
+      "atlas_id": "harris_d3"
+    },
+    {
+      "id": "robert_d4",
+      "canonical_name": "Robert",
+      "aliases": [],
+      "type": "D-4",
+      "chapters": [
+        3,
+        4
+      ],
+      "archetype": "armored_arm_brute",
+      "health": 8,
+      "relative_hp": 8,
+      "speed": 0.8,
+      "attacks": [
+        "metal_arm_guard",
+        "metal_arm_smash",
+        "shoulder_charge"
+      ],
+      "weapon": {
+        "kind": "metallic_arm",
+        "breakable": false,
+        "deflects_front_fire": true
+      },
+      "projectile": null,
+      "weakness": {
+        "primary_zone": "torso",
+        "secondary_zones": [
+          "head"
+        ],
+        "immune_zones": [
+          "metallic_arm"
+        ],
+        "rule": "avoid_armored_arm"
+      },
+      "weak_zone": "torso",
+      "dismemberment": true,
+      "dismemberment_profile": {
+        "parts": [
+          "head",
+          "organic_arm",
+          "left_leg",
+          "right_leg"
+        ],
+        "protected_parts": [
+          "metallic_arm"
+        ],
+        "behavior_change": "organic_arm_loss_reduces_attack_options"
+      },
+      "score": 80,
+      "visual_base": "res://assets/sprites_v2/enemies/robert_d4/robert_d4__v2__action_cycle__8dirx8f.png",
+      "visual_status": "dedicated_fan_made_v2",
+      "verification_status": {
+        "identity": "verified_canonical_roster",
+        "chapters": "cross_checked",
+        "behavior": "cross_checked",
+        "relative_hp": "design_estimate",
+        "visual": "dedicated_fan_made_directional_v2"
+      },
+      "atlas_id": "robert_d4"
+    },
+    {
+      "id": "rubin_e1",
+      "canonical_name": "Rubin",
+      "aliases": [],
+      "type": "E-1",
+      "chapters": [
+        2
+      ],
+      "archetype": "rolling_claw_raider",
+      "health": 2,
+      "relative_hp": 2,
+      "speed": 1.58,
+      "attacks": [
+        "evasive_roll",
+        "claw_slash",
+        "close_bite"
+      ],
+      "weapon": {
+        "kind": "hand_claw",
+        "breakable": true
+      },
+      "projectile": null,
+      "weakness": {
+        "primary_zone": "head",
+        "rule": "vulnerable_after_roll"
+      },
+      "weak_zone": "head",
+      "dismemberment": true,
+      "dismemberment_profile": {
+        "parts": [
+          "head",
+          "claw_arm",
+          "off_arm"
+        ],
+        "behavior_change": "claw_arm_loss_disables_claw_slash"
+      },
+      "score": 80,
+      "visual_base": "res://assets/sprites_v2/enemies/rubin_e1/rubin_e1__v2__action_cycle__8dirx8f.png",
+      "visual_status": "dedicated_fan_made_v2",
+      "verification_status": {
+        "identity": "verified_canonical_roster",
+        "chapters": "cross_checked",
+        "behavior": "cross_checked",
+        "relative_hp": "design_estimate",
+        "visual": "dedicated_fan_made_directional_v2"
+      },
+      "atlas_id": "rubin_e1"
+    },
+    {
+      "id": "drake_e2",
+      "canonical_name": "Drake",
+      "aliases": [],
+      "type": "E-2",
+      "chapters": [
+        2
+      ],
+      "archetype": "dagger_throwing_raider",
+      "health": 2,
+      "relative_hp": 2,
+      "speed": 1.5,
+      "attacks": [
+        "dagger_throw",
+        "close_bite"
+      ],
+      "weapon": {
+        "kind": "dagger",
+        "breakable": true
+      },
+      "projectile": {
+        "kind": "thrown_dagger",
+        "destructible": true
+      },
+      "weakness": {
+        "primary_zone": "head",
+        "rule": "interrupt_dagger_windup"
+      },
+      "weak_zone": "head",
+      "dismemberment": true,
+      "dismemberment_profile": {
+        "parts": [
+          "head",
+          "left_arm",
+          "right_arm"
+        ],
+        "behavior_change": "throwing_arm_loss_disables_dagger_throw"
+      },
+      "score": 80,
+      "visual_base": "res://assets/sprites_v2/enemies/drake_e2/drake_e2__v2__action_cycle__8dirx8f.png",
+      "visual_status": "dedicated_fan_made_v2",
+      "verification_status": {
+        "identity": "verified_canonical_roster",
+        "chapters": "cross_checked",
+        "behavior": "cross_checked",
+        "relative_hp": "design_estimate",
+        "visual": "dedicated_fan_made_directional_v2"
+      },
+      "atlas_id": "drake_e2"
+    },
+    {
+      "id": "moody_e3",
+      "canonical_name": "Moody",
+      "aliases": [],
+      "type": "E-3",
+      "chapters": [
+        3,
+        4
+      ],
+      "archetype": "tethered_claw_raider",
+      "health": 3,
+      "relative_hp": 3,
+      "speed": 1.48,
+      "attacks": [
+        "iron_claw_launch",
+        "close_bite"
+      ],
+      "weapon": {
+        "kind": "tethered_iron_claw",
+        "breakable": true
+      },
+      "projectile": {
+        "kind": "launched_iron_claw",
+        "destructible": true
+      },
+      "weakness": {
+        "primary_zone": "head",
+        "rule": "interrupt_claw_launch"
+      },
+      "weak_zone": "head",
+      "dismemberment": true,
+      "dismemberment_profile": {
+        "parts": [
+          "head",
+          "claw_arm",
+          "off_arm"
+        ],
+        "behavior_change": "claw_arm_loss_disables_projectile"
+      },
+      "score": 80,
+      "visual_base": "res://assets/sprites_v2/enemies/moody_e3/moody_e3__v2__action_cycle__8dirx8f.png",
+      "visual_status": "dedicated_fan_made_v2",
+      "verification_status": {
+        "identity": "verified_canonical_roster",
+        "chapters": "cross_checked",
+        "behavior": "cross_checked",
+        "relative_hp": "design_estimate",
+        "visual": "dedicated_fan_made_directional_v2"
+      },
+      "atlas_id": "moody_e3"
+    },
+    {
+      "id": "parlor_e4",
+      "canonical_name": "Parlor",
+      "aliases": [],
+      "type": "E-4",
+      "chapters": [
+        3,
+        4
+      ],
+      "archetype": "laser_dagger_raider",
+      "health": 4,
+      "relative_hp": 4,
+      "speed": 1.5,
+      "attacks": [
+        "laser_dagger_throw",
+        "close_bite"
+      ],
+      "weapon": {
+        "kind": "laser_dagger_generator",
+        "breakable": true
+      },
+      "projectile": {
+        "kind": "laser_dagger",
+        "destructible": true,
+        "supply": "unlimited"
+      },
+      "weakness": {
+        "primary_zone": "head",
+        "rule": "interrupt_dagger_windup"
+      },
+      "weak_zone": "head",
+      "dismemberment": true,
+      "dismemberment_profile": {
+        "parts": [
+          "head",
+          "weapon_arm",
+          "off_arm"
+        ],
+        "behavior_change": "weapon_arm_loss_disables_projectile"
+      },
+      "score": 80,
+      "visual_base": "res://assets/sprites_v2/enemies/parlor_e4/parlor_e4__v2__action_cycle__8dirx8f.png",
+      "visual_status": "dedicated_fan_made_v2",
+      "verification_status": {
+        "identity": "verified_canonical_roster",
+        "chapters": "cross_checked",
+        "behavior": "cross_checked",
+        "relative_hp": "design_estimate",
+        "visual": "dedicated_fan_made_directional_v2"
+      },
+      "atlas_id": "parlor_e4"
+    },
+    {
+      "id": "kenfis_f1",
+      "canonical_name": "Kenfis",
+      "aliases": [],
+      "type": "F-1",
+      "chapters": [
+        1
+      ],
+      "archetype": "serpentine_charge_beast",
+      "health": 1,
+      "relative_hp": 1,
+      "speed": 1.72,
+      "attacks": [
+        "swerve_charge",
+        "close_bite"
+      ],
+      "weapon": null,
+      "projectile": null,
+      "weakness": {
+        "primary_zone": "body",
+        "rule": "one_body_hit_candidate"
+      },
+      "weak_zone": "body",
+      "dismemberment": false,
+      "dismemberment_profile": {
+        "parts": [],
+        "behavior_change": "none"
+      },
+      "score": 80,
+      "visual_base": "res://assets/sprites_v2/enemies/kenfis_f1/kenfis_f1__v2__action_cycle__8dirx8f.png",
+      "visual_status": "dedicated_fan_made_v2",
+      "verification_status": {
+        "identity": "verified_canonical_roster",
+        "chapters": "cross_checked",
+        "behavior": "cross_checked",
+        "relative_hp": "design_estimate",
+        "visual": "dedicated_fan_made_directional_v2"
+      },
+      "atlas_id": "kenfis_f1"
+    },
+    {
+      "id": "saruzou_f2",
+      "canonical_name": "Saruzou",
+      "aliases": [],
+      "type": "F-2",
+      "chapters": [
+        1
+      ],
+      "archetype": "paired_leaping_beast",
+      "health": 2,
+      "relative_hp": 2,
+      "speed": 1.62,
+      "attacks": [
+        "paired_flank",
+        "leap_bite"
+      ],
+      "weapon": null,
+      "projectile": null,
+      "weakness": {
+        "primary_zone": "body",
+        "rule": "track_during_leap"
+      },
+      "weak_zone": "body",
+      "dismemberment": false,
+      "dismemberment_profile": {
+        "parts": [],
+        "behavior_change": "none"
+      },
+      "score": 80,
+      "visual_base": "res://assets/sprites_v2/enemies/saruzou_f2/saruzou_f2__v2__action_cycle__8dirx8f.png",
+      "visual_status": "dedicated_fan_made_v2",
+      "verification_status": {
+        "identity": "verified_canonical_roster",
+        "chapters": "cross_checked",
+        "behavior": "cross_checked",
+        "relative_hp": "design_estimate",
+        "visual": "dedicated_fan_made_directional_v2"
+      },
+      "atlas_id": "saruzou_f2"
+    },
+    {
+      "id": "bouere_f3",
+      "canonical_name": "Bouere",
+      "aliases": [
+        "Buer"
+      ],
+      "type": "F-3",
+      "chapters": [
+        1
+      ],
+      "archetype": "aquatic_leaping_beast",
+      "health": 1,
+      "relative_hp": 1,
+      "speed": 1.7,
+      "attacks": [
+        "water_leap",
+        "aerial_bite"
+      ],
+      "weapon": null,
+      "projectile": null,
+      "weakness": {
+        "primary_zone": "body",
+        "rule": "one_body_hit_candidate"
+      },
+      "weak_zone": "body",
+      "dismemberment": false,
+      "dismemberment_profile": {
+        "parts": [],
+        "behavior_change": "none"
+      },
+      "score": 80,
+      "visual_base": "res://assets/sprites_v2/enemies/bouere_f3/bouere_f3__v2__action_cycle__8dirx8f.png",
+      "visual_status": "dedicated_fan_made_v2",
+      "verification_status": {
+        "identity": "verified_canonical_roster",
+        "chapters": "cross_checked",
+        "behavior": "cross_checked",
+        "relative_hp": "design_estimate",
+        "visual": "dedicated_fan_made_directional_v2"
+      },
+      "atlas_id": "bouere_f3"
+    },
+    {
+      "id": "devilon_f4",
+      "canonical_name": "Devilon",
+      "aliases": [],
+      "type": "F-4",
+      "chapters": [
+        1,
+        2,
+        4
+      ],
+      "archetype": "flying_suicide_swarm",
+      "health": 1,
+      "relative_hp": 1,
+      "speed": 1.95,
+      "attacks": [
+        "swarm_orbit",
+        "dive_strike"
+      ],
+      "weapon": null,
+      "projectile": null,
+      "weakness": {
+        "primary_zone": "body",
+        "rule": "one_body_hit_candidate"
+      },
+      "weak_zone": "body",
+      "dismemberment": false,
+      "dismemberment_profile": {
+        "parts": [],
+        "behavior_change": "none"
+      },
+      "score": 80,
+      "visual_base": "res://assets/sprites_v2/enemies/devilon_f4/devilon_f4__v2__action_cycle__8dirx8f.png",
+      "visual_status": "dedicated_fan_made_v2",
+      "verification_status": {
+        "identity": "verified_canonical_roster",
+        "chapters": "cross_checked",
+        "behavior": "cross_checked",
+        "relative_hp": "design_estimate",
+        "visual": "dedicated_fan_made_directional_v2"
+      },
+      "atlas_id": "devilon_f4"
+    },
+    {
+      "id": "murrer_g1",
+      "canonical_name": "Murrer",
+      "aliases": [],
+      "type": "G-1",
+      "chapters": [
+        1,
+        2
+      ],
+      "archetype": "swarming_lunging_worm",
+      "health": 1,
+      "relative_hp": 1,
+      "speed": 1.55,
+      "attacks": [
+        "group_squirm",
+        "lunge_bite"
+      ],
+      "weapon": null,
+      "projectile": null,
+      "weakness": {
+        "primary_zone": "body",
+        "rule": "one_body_hit_candidate"
+      },
+      "weak_zone": "body",
+      "dismemberment": false,
+      "dismemberment_profile": {
+        "parts": [],
+        "behavior_change": "none"
+      },
+      "score": 80,
+      "visual_base": "res://assets/sprites_v2/enemies/murrer_g1/murrer_g1__v2__action_cycle__8dirx8f.png",
+      "visual_status": "dedicated_fan_made_v2",
+      "verification_status": {
+        "identity": "verified_canonical_roster",
+        "chapters": "cross_checked",
+        "behavior": "cross_checked",
+        "relative_hp": "design_estimate",
+        "visual": "dedicated_fan_made_directional_v2"
+      },
+      "atlas_id": "murrer_g1"
+    },
+    {
+      "id": "name_g2",
+      "canonical_name": "Name",
+      "aliases": [],
+      "type": "G-2",
+      "chapters": [
+        1
+      ],
+      "archetype": "wall_crawling_spitter",
+      "health": 1,
+      "relative_hp": 1,
+      "speed": 1.62,
+      "attacks": [
+        "wall_crawl",
+        "spit_projectile",
+        "close_bite"
+      ],
+      "weapon": null,
+      "projectile": {
+        "kind": "organic_spit",
+        "destructible": true
+      },
+      "weakness": {
+        "primary_zone": "body",
+        "rule": "one_body_hit_candidate"
+      },
+      "weak_zone": "body",
+      "dismemberment": false,
+      "dismemberment_profile": {
+        "parts": [],
+        "behavior_change": "none"
+      },
+      "score": 80,
+      "visual_base": "res://assets/sprites_v2/enemies/name_g2/name_g2__v2__action_cycle__8dirx8f.png",
+      "visual_status": "dedicated_fan_made_v2",
+      "verification_status": {
+        "identity": "verified_canonical_roster",
+        "chapters": "cross_checked",
+        "behavior": "cross_checked",
+        "relative_hp": "design_estimate",
+        "visual": "dedicated_fan_made_directional_v2"
+      },
+      "atlas_id": "name_g2"
+    },
+    {
+      "id": "taran_g3",
+      "canonical_name": "Taran",
+      "aliases": [],
+      "type": "G-3",
+      "chapters": [
+        3
+      ],
+      "archetype": "ceiling_drop_insectoid",
+      "health": 1,
+      "relative_hp": 1,
+      "speed": 1.58,
+      "attacks": [
+        "ground_crawl",
+        "ceiling_drop",
+        "lunge_bite"
+      ],
+      "weapon": null,
+      "projectile": null,
+      "weakness": {
+        "primary_zone": "body",
+        "rule": "one_body_hit_candidate"
+      },
+      "weak_zone": "body",
+      "dismemberment": false,
+      "dismemberment_profile": {
+        "parts": [],
+        "behavior_change": "none"
+      },
+      "score": 80,
+      "visual_base": "res://assets/sprites_v2/enemies/taran_g3/taran_g3__v2__action_cycle__8dirx8f.png",
+      "visual_status": "dedicated_fan_made_v2",
+      "verification_status": {
+        "identity": "verified_canonical_roster",
+        "chapters": "cross_checked",
+        "behavior": "cross_checked",
+        "relative_hp": "design_estimate",
+        "visual": "dedicated_fan_made_directional_v2"
+      },
+      "atlas_id": "taran_g3"
+    }
+  ],
+  "unverified_numeric_fields": [
+    "health",
+    "relative_hp",
+    "speed"
+  ],
+  "note": "Canonical identities, type codes, chapter presence and signature behaviors are separated from relative production tuning. No ROM or video-extracted asset is referenced."
+}
