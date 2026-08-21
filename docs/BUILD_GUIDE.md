@@ -60,8 +60,12 @@ chmod +x The_House_of_the_Dead_25D.x86_64
 ./The_House_of_the_Dead_25D.x86_64
 ```
 
-## Publication and clean-machine gates
+The publication target is [GitHub release v0.1.0](https://github.com/darknigthmare/the-house-of-the-dead-25d/releases/tag/v0.1.0). Produce these archives from the committed `HEAD`, upload them, download them again and verify every hash before declaring the release bundle complete.
 
-GitHub repository/release, Vercel deployment and public HTTP/browser QA are pending. Record exact commit and production URL only after they exist, then repeat COOP/COEP, WASM MIME, PCK/WASM 200, page-error, P1/P2, responsive and axe checks publicly.
+## Verified publication and remaining hardware gates
 
-On a clean Windows 64-bit machine or VM, extract only the Windows archive, start the executable and verify menu, one encounter, six shots, both reload methods and two-player join. Physical Gun4IR/Sinden devices remain separate hardware gates.
+The public repository is <https://github.com/darknigthmare/the-house-of-the-dead-25d>, commit `d98487bca5592418e80342221f671538ed40058a`. GitHub Actions run 32434278324 completed green in 20 seconds for `npm test`, `qa:web` and `verify:web`.
+
+Production is live at <https://the-house-of-the-dead-25d.vercel.app> through deployment `dpl_Hs23gpsUfidKJeEDPs1K45NeWYyW`, status `READY`, build 980 ms. Public checks verified root/WASM/PCK HTTP 200, WASM `application/wasm`, COOP/COEP, WebGL2, `crossOriginIsolated=true`, title, live P1/P2 with two HUDs/two crosshairs, PCK/WASM network 200, zero console/page errors and axe at 23 passes/0 violations.
+
+On a clean physical Windows 64-bit machine, extract only the Windows archive, start the executable and verify menu, one encounter, six shots, both reload methods and two-player join. Physical Gun4IR/Sinden devices, deep profiling on named hardware and exact comparison with a licensed reference build remain separate unverified gates.

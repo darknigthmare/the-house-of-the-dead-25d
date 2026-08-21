@@ -1,6 +1,6 @@
 # Professional Changelog
 
-## Directional Sprite V2 and pre-publication verification — 2026-08-21
+## Directional Sprite V2 and verified public release — 2026-08-21
 
 - Replaced the organic-actor presentation with 35 unique 2048×2048 RGBA directional atlases: eight directions and eight action states, 64 cells per actor and 2,240 cells total.
 - Added automatic camera-relative direction resolution, manifest-atomic loading and runtime idle/move/wind-up/strike/hit/death transitions.
@@ -11,9 +11,13 @@
 - Produced final Windows (202,088,128 bytes), Linux (166,452,720 bytes) and nine-file Web (132,826,890 bytes) exports. Windows headless startup passed; Web PCK is 92,982,496 bytes and WASM 39,513,091 bytes.
 - Verified five Web quality imports at quality 0.92: alpha unchanged, PSNR 35.31–35.81 dB and MAE 2.72–2.86/255. `qa:web` passes 256/256 and `verify:web` is OK.
 - Verified local Chromium with agent-browser 0.34: Godot 4.7.1 WebGL2 single-thread, `crossOriginIsolated=true`, PCK/WASM 200, live P1/P2 two-HUD/two-crosshair view, three target viewport shapes, zero page errors and axe 4.12 at 23 passes/0 violations.
+- Published commit `d98487bca5592418e80342221f671538ed40058a` to the public repository at <https://github.com/darknigthmare/the-house-of-the-dead-25d>.
+- Verified GitHub Actions run 32434278324 green in 20 seconds for `npm test`, `qa:web` and `verify:web`.
+- Deployed production to <https://the-house-of-the-dead-25d.vercel.app> as `dpl_Hs23gpsUfidKJeEDPs1K45NeWYyW`: `READY`, 980 ms build, root/WASM/PCK HTTP 200, `application/wasm`, and COOP/COEP present.
+- Repeated Chromium QA against production: title and live P1/P2 with two HUDs/two crosshairs, PCK/WASM 200, zero console/page errors and axe at 23 passes/0 violations.
 - Recorded caveated local cached-menu vitals: TTFB 2.39 ms, FCP/LCP 99.13 ms and CLS 0.
 - Recorded the honest art boundary: eight compact states per direction are game-ready, but are not a complete licensed arcade animation library.
-- Archives/SHA-256, GitHub publication, Vercel production deployment and public production QA remain pending.
+- Prepared the [GitHub v0.1.0 release target](https://github.com/darknigthmare/the-house-of-the-dead-25d/releases/tag/v0.1.0); release archives and SHA-256 are generated from the committed `HEAD` immediately after this documentation update.
 
 ## 0.1.0 — 2026-08-16
 

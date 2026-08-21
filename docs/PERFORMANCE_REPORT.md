@@ -6,7 +6,7 @@ The runtime uses one rail camera, atlas-based `Sprite3D` actors, camera-relative
 
 Target: stable 60 fps at 1280×720 on a mid-range Windows PC, invariant gameplay timing, bounded encounter allocations and a compatibility-renderer Web build.
 
-## Final pre-publication artifacts — 2026-08-21
+## Published artifacts — 2026-08-21
 
 | Platform | Size | Check |
 |---|---:|---|
@@ -24,6 +24,10 @@ Chromium through agent-browser 0.34 ran Godot 4.7.1 WebGL2/Emscripten single-thr
 
 Cached local menu navigation measured TTFB 2.39 ms, FCP 99.13 ms, LCP 99.13 ms and CLS 0. These are local cached menu figures, not network production metrics or full-gameplay performance evidence.
 
+## Production observation
+
+Vercel deployment `dpl_Hs23gpsUfidKJeEDPs1K45NeWYyW` is `READY` at <https://the-house-of-the-dead-25d.vercel.app>; its reported build duration is 980 ms. The production root, 39,513,091-byte WASM and 92,982,496-byte PCK return HTTP 200. WASM is served as `application/wasm`, COOP/COEP are present and `crossOriginIsolated=true` in Chromium. Production QA observed title rendering, WebGL2, live P1/P2 with two HUDs/two crosshairs, zero console/page errors, network PCK/WASM 200 and axe at 23 passes/0 violations.
+
 ## Open measurements
 
-A full release run must still record average frame time, 1% low, peak actors, process/GPU memory, first-spawn and boss-transition hitches at 4:3 and 16:9 on named hardware. Two `ObjectDB` instances reported when gameplay/campaign smokes shut down remain a non-blocking cleanup diagnostic. No steady-state leak conclusion is inferred. Production Vercel metrics are pending deployment.
+Deep profiling must still record average frame time, 1% low, peak actors, process/GPU memory, first-spawn and boss-transition hitches at 4:3 and 16:9 on named hardware. Two `ObjectDB` instances reported when gameplay/campaign smokes shut down remain a non-blocking cleanup diagnostic. No steady-state leak conclusion is inferred. A clean physical Windows machine, physical light guns and exact comparison with a licensed reference build remain separate validation gates; Vercel production delivery itself is verified.

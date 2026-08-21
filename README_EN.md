@@ -33,7 +33,7 @@ npm.cmd run qa:web
 npm.cmd run verify:web
 ```
 
-## Verified pre-publication snapshot — August 21, 2026
+## Verified publication snapshot — August 21, 2026
 
 `npm.cmd test` passes 252/252 and `npm.cmd run qa` passes 257/257, including 232 core assertions, 57 manifest-atomicity assertions and a directional smoke covering 35 bindings, seven representatives and all eight directions. The 35 2048×2048 RGBA atlases contain 64 cells each, for 2,240 cells; all 25 enemies have dedicated profiles. The final visual audit passes after repairing clipped parts, Samson's death cell and chroma fringes.
 
@@ -41,9 +41,11 @@ Runtime smokes validate two players, four chapters, six shots, off-screen reload
 
 Final exports measure 202,088,128 bytes on Windows (headless startup passed), 166,452,720 bytes on Linux and 132,826,890 bytes for nine Web files. The 92,982,496-byte PCK remains below 100,000,000 by 7,017,504 bytes; WASM is 39,513,091 bytes. `qa:web` passes 256/256 and `verify:web` is OK.
 
-In local Chromium through agent-browser 0.34, the Godot 4.7.1 single-threaded WebGL2 build reports `crossOriginIsolated=true`, PCK/WASM HTTP 200, and a working title/menu followed by live P1/P2 with two HUDs and two crosshairs. Viewports 1280×720, 390×844 and 844×390 pass with zero page errors. Axe 4.12 reports 23 passes and 0 violations. Cached menu figures — TTFB 2.39 ms, FCP/LCP 99.13 ms, CLS 0 — are not full-campaign performance evidence.
+The Vercel production build runs Godot 4.7.1 single-threaded WebGL2 with `crossOriginIsolated=true`. The document, WASM and PCK return HTTP 200, WASM uses `application/wasm`, and COOP/COEP headers are present. Production Chromium QA shows the title followed by live P1/P2 with two HUDs and two crosshairs; PCK/WASM load with 200 responses, console and page errors remain at zero, and Axe reports 23 passes with 0 violations. Cached local menu figures — TTFB 2.39 ms, FCP/LCP 99.13 ms, CLS 0 — are not full-campaign performance evidence.
 
-The compact eight-state cycle per direction is a detailed playable baseline, not a complete licensed arcade animation library. Physical devices, a clean Windows machine, archives/SHA-256, GitHub, Vercel and public QA remain pending.
+The public repository is [darknigthmare/the-house-of-the-dead-25d](https://github.com/darknigthmare/the-house-of-the-dead-25d), at commit [`d98487b`](https://github.com/darknigthmare/the-house-of-the-dead-25d/commit/d98487bca5592418e80342221f671538ed40058a). [GitHub Actions run 32434278324](https://github.com/darknigthmare/the-house-of-the-dead-25d/actions/runs/32434278324) is green (`npm test`, `qa:web`, `verify:web`, 20 s). Production is live at [the-house-of-the-dead-25d.vercel.app](https://the-house-of-the-dead-25d.vercel.app) through deployment `dpl_Hs23gpsUfidKJeEDPs1K45NeWYyW`, status `READY`, built in 980 ms. The [GitHub v0.1.0 release](https://github.com/darknigthmare/the-house-of-the-dead-25d/releases/tag/v0.1.0) is the target for archives produced from this same verified state.
+
+The compact eight-state cycle per direction is a detailed playable baseline, not a complete licensed arcade animation library. The remaining unverified gates are installation on a clean physical Windows machine, physical light guns, deep profiling on named hardware and exact comparison against a licensed reference build.
 
 ## Legal status
 
