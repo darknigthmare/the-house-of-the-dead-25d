@@ -60,12 +60,12 @@ chmod +x The_House_of_the_Dead_25D.x86_64
 ./The_House_of_the_Dead_25D.x86_64
 ```
 
-The publication target is [GitHub release v0.1.0](https://github.com/darknigthmare/the-house-of-the-dead-25d/releases/tag/v0.1.0). Produce these archives from the committed `HEAD`, upload them, download them again and verify every hash before declaring the release bundle complete.
+The [GitHub release v0.1.0](https://github.com/darknigthmare/the-house-of-the-dead-25d/releases/tag/v0.1.0) is published at exact tag commit `4f222998e1225cde3f2933477344cf782f84f6a8`. Its remote assets report `uploaded`: Linux 121,139,247 bytes (`4b43df0004b9e16f014b94c99357421ec631f038791cd25acab9a97d9df6c17a`), Source 137,825,223 bytes (`3643a7d94028e70d89c69f015a4408b353342f251026ecf6fba899a44814703a`), Web 102,962,391 bytes (`c40bdad9aa9852ae0348c6efe926119acaf5fe1b08bc8460965c959a9ffe944c`), Windows 130,767,749 bytes (`f8d0338aa8a727fb6088d697cc6ba888bec6ed84275ddbaccac73afe5f9d5a1a`) and `SHA256SUMS.txt` 421 bytes. Remote ZIP digests match the local manifest.
 
 ## Verified publication and remaining hardware gates
 
-The public repository is <https://github.com/darknigthmare/the-house-of-the-dead-25d>, commit `d98487bca5592418e80342221f671538ed40058a`. GitHub Actions run 32434278324 completed green in 20 seconds for `npm test`, `qa:web` and `verify:web`.
+The public repository is <https://github.com/darknigthmare/the-house-of-the-dead-25d>; v0.1.0 is anchored to tag commit `4f222998e1225cde3f2933477344cf782f84f6a8`. GitHub Actions runs 32435148599 (tag, 28 seconds) and 32435035804 (documentation, 38 seconds) completed green.
 
-Production is live at <https://the-house-of-the-dead-25d.vercel.app> through deployment `dpl_Hs23gpsUfidKJeEDPs1K45NeWYyW`, status `READY`, build 980 ms. Public checks verified root/WASM/PCK HTTP 200, WASM `application/wasm`, COOP/COEP, WebGL2, `crossOriginIsolated=true`, title, live P1/P2 with two HUDs/two crosshairs, PCK/WASM network 200, zero console/page errors and axe at 23 passes/0 violations.
+Git-connected `main` production is `Ready` at <https://the-house-of-the-dead-25d.vercel.app>. Public checks verified root/WASM/PCK HTTP 200, WASM `application/wasm`, COOP/COEP, WebGL2, `crossOriginIsolated=true`, title, live P1/P2 with two HUDs/two crosshairs, PCK/WASM network 200, zero console/page errors and axe at 23 passes/0 violations.
 
 On a clean physical Windows 64-bit machine, extract only the Windows archive, start the executable and verify menu, one encounter, six shots, both reload methods and two-player join. Physical Gun4IR/Sinden devices, deep profiling on named hardware and exact comparison with a licensed reference build remain separate unverified gates.

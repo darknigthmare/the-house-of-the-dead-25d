@@ -11,13 +11,13 @@
 - Produced final Windows (202,088,128 bytes), Linux (166,452,720 bytes) and nine-file Web (132,826,890 bytes) exports. Windows headless startup passed; Web PCK is 92,982,496 bytes and WASM 39,513,091 bytes.
 - Verified five Web quality imports at quality 0.92: alpha unchanged, PSNR 35.31–35.81 dB and MAE 2.72–2.86/255. `qa:web` passes 256/256 and `verify:web` is OK.
 - Verified local Chromium with agent-browser 0.34: Godot 4.7.1 WebGL2 single-thread, `crossOriginIsolated=true`, PCK/WASM 200, live P1/P2 two-HUD/two-crosshair view, three target viewport shapes, zero page errors and axe 4.12 at 23 passes/0 violations.
-- Published commit `d98487bca5592418e80342221f671538ed40058a` to the public repository at <https://github.com/darknigthmare/the-house-of-the-dead-25d>.
-- Verified GitHub Actions run 32434278324 green in 20 seconds for `npm test`, `qa:web` and `verify:web`.
-- Deployed production to <https://the-house-of-the-dead-25d.vercel.app> as `dpl_Hs23gpsUfidKJeEDPs1K45NeWYyW`: `READY`, 980 ms build, root/WASM/PCK HTTP 200, `application/wasm`, and COOP/COEP present.
+- Published the public repository at <https://github.com/darknigthmare/the-house-of-the-dead-25d> and the v0.1.0 tag at exact commit `4f222998e1225cde3f2933477344cf782f84f6a8`.
+- Verified final GitHub Actions runs 32435148599 (tag, 28 seconds) and 32435035804 (documentation, 38 seconds) green.
+- Kept Git-connected `main` production `Ready` at <https://the-house-of-the-dead-25d.vercel.app>; root/WASM/PCK return HTTP 200 with `application/wasm` and COOP/COEP present.
 - Repeated Chromium QA against production: title and live P1/P2 with two HUDs/two crosshairs, PCK/WASM 200, zero console/page errors and axe at 23 passes/0 violations.
 - Recorded caveated local cached-menu vitals: TTFB 2.39 ms, FCP/LCP 99.13 ms and CLS 0.
 - Recorded the honest art boundary: eight compact states per direction are game-ready, but are not a complete licensed arcade animation library.
-- Prepared the [GitHub v0.1.0 release target](https://github.com/darknigthmare/the-house-of-the-dead-25d/releases/tag/v0.1.0); release archives and SHA-256 are generated from the committed `HEAD` immediately after this documentation update.
+- Published [GitHub v0.1.0](https://github.com/darknigthmare/the-house-of-the-dead-25d/releases/tag/v0.1.0) with Source (137,825,223 bytes), Windows (130,767,749 bytes), Linux (121,139,247 bytes), Web (102,962,391 bytes) and `SHA256SUMS.txt` (421 bytes). Remote asset states are `uploaded`, and every remote ZIP digest matches the local SHA-256 manifest.
 
 ## 0.1.0 — 2026-08-16
 

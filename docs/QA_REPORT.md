@@ -28,13 +28,16 @@ This report separates static validation, Godot runtime smokes, exported-artifact
 | live browser P1/P2 | passed | title/menu then two HUDs and two crosshairs |
 | responsive browser | passed | 1280×720, 390×844, 844×390 |
 | axe 4.12 | 23 passes, 0 violations | canvas has `role=main`; current three-view local pass |
-| public GitHub | commit `d98487bca5592418e80342221f671538ed40058a` | <https://github.com/darknigthmare/the-house-of-the-dead-25d> |
-| GitHub Actions | run 32434278324 green in 20 s | `npm test`, `qa:web`, `verify:web` |
-| Vercel production | `dpl_Hs23gpsUfidKJeEDPs1K45NeWYyW`, `READY`, build 980 ms | <https://the-house-of-the-dead-25d.vercel.app> |
+| public GitHub release | v0.1.0 at exact tag commit `4f222998e1225cde3f2933477344cf782f84f6a8` | <https://github.com/darknigthmare/the-house-of-the-dead-25d/releases/tag/v0.1.0> |
+| release assets | all remote states `uploaded`; sizes and ZIP SHA-256 digests match local files | Linux 121,139,247; Source 137,825,223; Web 102,962,391; Windows 130,767,749; `SHA256SUMS.txt` 421 bytes |
+| GitHub Actions | runs 32435148599 (tag, 28 s) and 32435035804 (documentation, 38 s) green | final release/tag and documentation checks |
+| Vercel production | Git-connected `main`, `Ready` | <https://the-house-of-the-dead-25d.vercel.app> |
 | public HTTP | root/WASM/PCK 200; WASM `application/wasm`; COOP/COEP present | production artifact delivery and isolation headers |
 | public Chromium | title, WebGL2, `crossOriginIsolated=true`, zero console/page errors | deployed Godot startup and clean browser runtime |
 | public live P1/P2 | two HUDs and two crosshairs; PCK/WASM network 200 | deployed two-player presentation |
 | public axe | 23 passes, 0 violations | production accessibility scan |
+
+The release ZIP digests verified locally and remotely are Linux `4b43df0004b9e16f014b94c99357421ec631f038791cd25acab9a97d9df6c17a`, Source `3643a7d94028e70d89c69f015a4408b353342f251026ecf6fba899a44814703a`, Web `c40bdad9aa9852ae0348c6efe926119acaf5fe1b08bc8460965c959a9ffe944c` and Windows `f8d0338aa8a727fb6088d697cc6ba888bec6ed84275ddbaccac73afe5f9d5a1a`.
 
 The PCK remains below 100,000,000 bytes by 7,017,504 bytes. Gameplay/campaign smokes report two leaked `ObjectDB` instances at shutdown; this is a non-blocking diagnostic, not a clean leak audit.
 
