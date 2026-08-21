@@ -45,7 +45,7 @@ $checksumLines = foreach ($archive in $archives) {
 	$hash = (Get-FileHash -Algorithm SHA256 -LiteralPath $archive.FullName).Hash.ToLowerInvariant()
 	"$hash  $($archive.Name)"
 }
-Set-Content -LiteralPath $checksumFile -Value $checksumLines -Encoding utf8NoBOM
+[System.IO.File]::WriteAllLines($checksumFile, [string[]]$checksumLines, [System.Text.UTF8Encoding]::new($false))
 
 Write-Output "Release artifacts created in $releaseRoot"
 Get-Content -LiteralPath $checksumFile
