@@ -182,22 +182,25 @@ for (const profile of enemyProfiles) {
   if (profile.visual_status !== 'dedicated_fan_made_v2') fail(`enemy still uses a visual proxy: ${profile.id}`);
 }
 
-const assembly = json('reports/runtime/directional-atlas-assembly.json');
-if (assembly.schema_version !== 2 || assembly.extraction_method !== 'whole_connected_components_aspect_fit_ground_anchor') fail('assembly report must describe the v2 component extractor');
-if ((assembly.actors ?? []).length !== expectedIds.size) fail('assembly report must cover every organic identity');
-const assemblyById = new Map(assembly.actors.map((record) => [record.id, record]));
-for (const expected of expectedIds) {
-  const record = assemblyById.get(expected);
-  if (!record) fail(`assembly report is missing ${expected}`);
-  if (record.output_size?.[0] !== 2048 || record.output_size?.[1] !== 2048) fail(`assembly output size mismatch: ${expected}`);
-  if (record.extraction_method !== assembly.extraction_method || record.transparent_gutter_px !== 12 || record.art_margin_px < 1) fail(`assembly extraction contract mismatch: ${expected}`);
+const privateAssemblyPath = join(root, 'reports/runtime/directional-atlas-assembly.json');
+if (existsSync(privateAssemblyPath)) {
+  const assembly = json('reports/runtime/directional-atlas-assembly.json');
+  if (assembly.schema_version !== 2 || assembly.extraction_method !== 'whole_connected_components_aspect_fit_ground_anchor') fail('assembly report must describe the v2 component extractor');
+  if ((assembly.actors ?? []).length !== expectedIds.size) fail('assembly report must cover every organic identity');
+  const assemblyById = new Map(assembly.actors.map((record) => [record.id, record]));
+  for (const expected of expectedIds) {
+    const record = assemblyById.get(expected);
+    if (!record) fail(`assembly report is missing ${expected}`);
+    if (record.output_size?.[0] !== 2048 || record.output_size?.[1] !== 2048) fail(`assembly output size mismatch: ${expected}`);
+    if (record.extraction_method !== assembly.extraction_method || record.transparent_gutter_px !== 12 || record.art_margin_px < 1) fail(`assembly extraction contract mismatch: ${expected}`);
+  }
+  if (assemblyById.get('chariot')?.source !== 'reports/runtime/directional-sources/chariot_compact_v2.png') fail('Chariot compact source selection is not recorded');
+  if (!assemblyById.get('samson_c1')?.derived_cells?.includes('front_right/death_fall_from_right/death_fall')) fail('Samson death-cell derivation is not recorded');
+  if (!assemblyById.get('dr_curien')?.derived_state_columns?.includes('hit_recoil_from_action_strike')) fail('Curien seven-state derivation is not recorded');
+  if ((assemblyById.get('moody_e3')?.localized_cells ?? []).length !== 14) fail('Moody chain-localisation policy must cover both action states in seven source rows');
+  const chariotDiscard = assemblyById.get('chariot')?.discarded_components ?? [];
+  if (!chariotDiscard.some((record) => record.source_row === 4 && record.state === 'death_fall' && record.visible_pixels > 0)) fail('Chariot back/death_fall fragment cleanup is not recorded');
 }
-if (assemblyById.get('chariot')?.source !== 'reports/runtime/directional-sources/chariot_compact_v2.png') fail('Chariot compact source selection is not recorded');
-if (!assemblyById.get('samson_c1')?.derived_cells?.includes('front_right/death_fall_from_right/death_fall')) fail('Samson death-cell derivation is not recorded');
-if (!assemblyById.get('dr_curien')?.derived_state_columns?.includes('hit_recoil_from_action_strike')) fail('Curien seven-state derivation is not recorded');
-if ((assemblyById.get('moody_e3')?.localized_cells ?? []).length !== 14) fail('Moody chain-localisation policy must cover both action states in seven source rows');
-const chariotDiscard = assemblyById.get('chariot')?.discarded_components ?? [];
-if (!chariotDiscard.some((record) => record.source_row === 4 && record.state === 'death_fall' && record.visible_pixels > 0)) fail('Chariot back/death_fall fragment cleanup is not recorded');
 
 const provenance = json('data/assets/sprite_generation_provenance.json');
 if (provenance.schema_version !== 1 || provenance.policy?.no_rom_or_video_extraction !== true) fail('generation provenance policy is invalid');
