@@ -14,11 +14,11 @@ func _run() -> void:
 	game.configure({"mode": "arcade", "players": 1, "demo": true})
 	for frame in 4:
 		await process_frame
-	_check(game.sprite_atlas_library.actor_ids().size() == 35, "all dedicated identities resolve through the library")
+	_check(game.sprite_atlas_library.actor_ids().size() == 38, "all dedicated identities resolve through the library")
 	for alias_id in ["scientist", "sophie", "curien", "axe_creature"]:
 		_check(game.sprite_atlas_library.has_actor(alias_id), "alias resolves: %s" % alias_id)
 
-	var representatives := ["sam_a1", "devilon_f4", "mutant_bat", "dbr_scientist", "hangedman", "hermit", "magician"]
+	var representatives := ["sam_a1", "devilon_f4", "mutant_bat", "dbr_scientist", "scientist_male_blue", "scientist_male_gray", "scientist_female_lab", "hangedman", "hermit", "magician"]
 	for index in representatives.size():
 		var actor_id: String = representatives[index]
 		var actor: Node3D = game._create_actor(
@@ -71,7 +71,7 @@ func _run() -> void:
 	game.queue_free()
 	await process_frame
 	if failures.is_empty():
-		print("DIRECTIONAL SPRITE SMOKE OK: 35 bindings, 7 representatives, 8 directions, death and cleanup states.")
+		print("DIRECTIONAL SPRITE SMOKE OK: 38 bindings, 10 representatives, 8 directions, death and cleanup states.")
 		quit(0)
 		return
 	for failure in failures:

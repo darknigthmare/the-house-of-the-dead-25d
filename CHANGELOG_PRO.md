@@ -1,5 +1,19 @@
 # Professional Changelog
 
+## 0.2.0 content-completion candidate — 2026-08-24
+
+- Expanded the directional Sprite3D contract to 38 unique 2048×2048 RGBA atlases and 2,432 addressable cells, adding three dedicated scientist identities while preserving eight camera-relative directions and eight gameplay states per actor.
+- Added 25 behavior-backed enemy profiles with dedicated visuals, body hitbox profiles, projectile metadata and runtime distinctions instead of texture-only archetype swaps.
+- Added 20 individual environment material families (60 albedo/normal/ORM maps), 33 node layouts, 14 props, six intact/broken destructibles, animated fog/dust/wind/bat accents and manifest-driven runtime integration.
+- Added seven projectile cutouts, three HUD families, four boss weak-point diagrams, node-specific scientist bindings and accurate destructible/non-destructible projectile lifetime rules.
+- Added 28 deterministic original procedural cues across effects, interface, ambience, short music loops and non-intelligible radio punctuations. Licensed Sega voices, music and effects remain explicitly external.
+- Reduced imported sprite textures from 87.4 MiB to 27.64 MiB and environment imports from 55.8 MiB to 12.63 MiB while preserving alpha/normal/ORM profiles; 124 import contracts verify with zero mismatches.
+- Fixed exported-resource validation by using `ResourceLoader` for imported textures in the environment, enemy and gameplay-support libraries. Local Chromium first exposed the defect; the re-exported build has no console errors.
+- Passed `npm.cmd test` 271/271 and complete `npm.cmd run qa` 280/280, plus warning-free gameplay, score, initials and full-campaign smokes through all chapters, bosses/rematches, 15/15 scientists, ending and credits.
+- Exported Windows (161,321,616 bytes), Linux (125,686,208 bytes) and nine-file Web (92,060,382 bytes) builds. PCK is 52,215,988 bytes, WASM 39,513,091 bytes, Windows remained alive during an eight-second startup smoke, `qa:web` passes 275/275 and `verify:web` is OK.
+- Verified local Vercel/Chromium with agent-browser 0.34: Godot 4.7.1 WebGL2 single-thread, `crossOriginIsolated=true`, accessible 1258×622 game canvas, visible menu/P1/gameplay/HUD/continue/pause, no blocked network resource and zero console errors.
+- Kept the release boundary explicit: these are original fan-made replacement assets and verified project behavior, not exact Sega-master or revision-specific arcade certification.
+
 ## Directional Sprite V2 and verified public release — 2026-08-21
 
 - Replaced the organic-actor presentation with 35 unique 2048×2048 RGBA directional atlases: eight directions and eight action states, 64 cells per actor and 2,240 cells total.

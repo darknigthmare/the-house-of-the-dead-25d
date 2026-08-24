@@ -8,11 +8,11 @@ The repository contains original fan-made OpenAI artwork only. No Sega model, fr
 
 ## Active directional-atlas convention — v2
 
-The active runtime contract contains **35 dedicated, identity-specific atlases** under `assets/sprites_v2/`. It covers Thomas Rogan, Agent G, Sophie Richards, the DBR scientist, Dr. Curien, the four bosses, the mutant bat and 25 canonical enemy profiles. No two v2 identities share a proxy atlas.
+The active asset contract contains **38 dedicated, identity-specific atlases** under `assets/sprites_v2/`. It covers Thomas Rogan, Agent G, Sophie Richards, the DBR scientist, three additional scientist variants, Dr. Curien, the four bosses, the mutant bat and 25 canonical enemy profiles. No two v2 identities share a proxy atlas.
 
 - Each final PNG is 2048×2048 RGBA.
 - The atlas is eight columns by eight rows: 64 cells of 256×256 pixels.
-- The 35 atlases therefore expose 2,240 addressable direction/state cells.
+- The 38 atlases therefore expose 2,432 addressable direction/state cells.
 - Row order: `front`, `front_left`, `left`, `back_left`, `back`, `back_right`, `right`, `front_right`.
 - Column order: `idle`, `move_contact_a`, `move_passing`, `move_contact_b`, `action_windup`, `action_strike`, `hit_recoil`, `death_fall`.
 - Every cell keeps a 12-pixel transparent gutter plus a 2-pixel art margin, so visible pixels remain at least 14 pixels away from an atlas boundary.
@@ -39,7 +39,7 @@ The targeted repair cases are explicit and reproducible:
 - Dr. Curien's seven-state source maps `hit_recoil` from the complete `action_strike` cell instead of retaining two clipped partial figures.
 - Moody's action columns 4 and 5 use a 196-pixel target body height, 86% of the 228-pixel usable area. The chain is localized and shortened horizontally while retaining the body, claw head and terminal spike; the policy covers both action cells in all seven authored rows.
 
-The final automated atlas audit reports **PASS** for all 35 atlases and 2,240 cells. It found zero empty cells, zero transparent-gutter violations, zero silhouettes touching the inner cut-risk boundary and zero keyed-green fringe pixels under its acceptance rule. The final visual re-audit also reports no blocking sprite cut. These results validate atlas isolation; they do not turn the compact eight-state cycle into a complete licensed arcade animation library.
+The current atlas audit contract covers all 38 atlases and 2,432 cells, including `scientist_male_blue`, `scientist_male_gray` and `scientist_female_lab`. Its deterministic checks reject empty cells, transparent-gutter violations, silhouettes touching the inner cut-risk boundary and retained keyed-green fringe pixels. These checks validate atlas isolation; they do not turn the compact eight-state cycle into a complete licensed arcade animation library.
 
 Each v2 atlas is intentionally one compact eight-state **action cycle**. It is not presented as a complete licensed animation library with separate multi-frame clips for every idle, walk, run, attack, localized hit, dismemberment, boss phase and death variation. Those richer per-clip sources remain an integration target when authorized assets become available.
 
@@ -68,4 +68,4 @@ Humanoid campaign actors use separate head, torso, left-arm, right-arm and leg h
 9. No visible pixel enters the 12-pixel gutter or touches its inner cut-risk boundary.
 10. Keyed green is absent from semi-transparent edge pixels under the repository verifier's despill rule.
 
-Repository QA automates PNG signature, RGBA/alpha declaration, exact dimensions, 8×8 layout, 35 unique bindings, 64 non-empty cells per atlas, the 12-pixel gutter, likely boundary clipping, green-edge despill, Moody action-scale stability and provenance consistency. Origin stability, artistic continuity and multi-angle collision alignment remain visual acceptance gates.
+Repository QA automates PNG signature, RGBA/alpha declaration, exact dimensions, 8×8 layout, 38 unique bindings, 64 non-empty cells per atlas, the 12-pixel gutter, likely boundary clipping, green-edge despill, Moody action-scale stability and provenance consistency. Origin stability, artistic continuity and multi-angle collision alignment remain visual acceptance gates.

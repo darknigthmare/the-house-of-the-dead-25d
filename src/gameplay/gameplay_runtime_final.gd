@@ -378,6 +378,7 @@ func _session_accuracy() -> int:
 func _update_hud() -> void:
 	if players.size() < 2 or p1_status == null:
 		return
+	_update_support_hud()
 	p1_status.text = _player_status_text(0)
 	p2_status.text = _player_status_text(1) if bool(players[1].active) else "P2  PRESS 2 TO JOIN"
 	if current_boss != null and is_instance_valid(current_boss):
@@ -413,6 +414,7 @@ func _set_subtitle(text_value: String, duration: float) -> void:
 	subtitle_label.text = text_value
 	panel.visible = true
 	subtitle_expires_at = Time.get_ticks_msec() + int(duration * 1000.0)
+	_play_subtitle_punctuation(text_value)
 
 
 func _feed(message: String, color: Color) -> void:

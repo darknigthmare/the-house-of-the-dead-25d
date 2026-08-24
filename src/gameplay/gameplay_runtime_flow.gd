@@ -154,6 +154,7 @@ func _begin_chapter(index: int) -> void:
 		return
 	chapter_index = clampi(index, 0, chapters.size() - 1)
 	current_chapter = chapters[chapter_index] as Dictionary
+	_set_music_for_chapter(chapter_index)
 	chapter_scientists_saved = 0
 	chapter_scientists_total = 0
 	_clear_actors()
@@ -273,6 +274,7 @@ func _begin_training() -> void:
 		return
 	current_chapter = (chapters[0] as Dictionary).duplicate(true)
 	chapter_index = 0
+	_set_music_for_chapter(chapter_index)
 	var training := _find_node(current_chapter, "garden_rescue")
 	if training.is_empty():
 		training = (current_chapter.get("nodes", []) as Array)[0] as Dictionary

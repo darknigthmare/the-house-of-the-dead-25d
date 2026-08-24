@@ -1,21 +1,38 @@
 extends Node
 
 const GAMEPLAY_SCENE := preload("res://scenes/gameplay/gameplay.tscn")
+const AudioCueLibraryType := preload("res://src/audio/audio_cue_library.gd")
 const BACKDROP_PATH := "res://assets/environments/mansion-exterior.png"
+const AUDIO_CUE_MANIFEST_PATH := "res://data/audio/audio_cues.json"
+const UI_CUE_IDS: Array[String] = ["ui_navigate", "ui_confirm", "ui_back", "ui_credit", "ui_join"]
 
 var menu_layer: CanvasLayer
 var menu_root: Control
 var content_panel: PanelContainer
 var active_game: Node
 var attract_timer: float = 0.0
+var current_menu: String = "home"
+var ui_audio_library = null
+var ui_audio_player: AudioStreamPlayer
+var last_navigation_cued_focus_id: int = 0
 
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	var saved_settings := SaveManager.data.get("settings", {}) as Dictionary
 	SettingsManager.load_dictionary(saved_settings)
+	_build_ui_audio()
 	_build_menu()
 	_show_home()
+
+
+func _input(event: InputEvent) -> void:
+	if active_game != null or not _is_navigation_event(event):
+		return
+	var focus_owner := get_viewport().gui_get_focus_owner()
+	var previous_focus_id := focus_owner.get_instance_id() if focus_owner != null else 0
+	call_deferred("_play_navigation_if_focus_changed", previous_focus_id)
+	attract_timer = 0.0
 
 
 func _process(delta: float) -> void:
@@ -30,6 +47,83 @@ func _process(delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if active_game == null and (event is InputEventKey or event is InputEventMouseButton or event is InputEventJoypadButton):
 		attract_timer = 0.0
+	if active_game != null or not (event is InputEventKey):
+		return
+	var key_event := event as InputEventKey
+	if not key_event.pressed or key_event.echo:
+		return
+	var keycode := key_event.keycode
+	if current_menu == "home" and keycode == KEY_1:
+		_play_ui_cue("ui_credit")
+		_launch_game("arcade", 1, false)
+		get_viewport().set_input_as_handled()
+	elif current_menu == "home" and keycode == KEY_2:
+		_play_ui_cue("ui_join")
+		_launch_game("arcade", 2, false)
+		get_viewport().set_input_as_handled()
+	elif current_menu != "home" and keycode == KEY_ESCAPE:
+		_play_ui_cue("ui_back")
+		_show_home()
+		get_viewport().set_input_as_handled()
+
+
+func _build_ui_audio() -> void:
+	ui_audio_library = AudioCueLibraryType.new()
+	if not ui_audio_library.load_manifest(AUDIO_CUE_MANIFEST_PATH):
+		push_warning("Main UI audio disabled: %s" % str(ui_audio_library.last_error))
+		ui_audio_library = null
+		return
+	ui_audio_player = AudioStreamPlayer.new()
+	ui_audio_player.name = "InterfaceAudio"
+	ui_audio_player.bus = &"Interface"
+	add_child(ui_audio_player)
+	for cue_id: String in UI_CUE_IDS:
+		ui_audio_library.build_stream(cue_id)
+
+
+func _play_ui_cue(cue_id: String) -> void:
+	if not _ui_audio_allowed() or not ui_audio_library.has_cue(cue_id):
+		return
+	var stream: AudioStreamWAV = ui_audio_library.build_stream(cue_id)
+	if stream == null:
+		return
+	ui_audio_player.stop()
+	ui_audio_player.stream = stream
+	ui_audio_player.play()
+
+
+func _ui_audio_allowed() -> bool:
+	return (
+		ui_audio_library != null
+		and ui_audio_player != null
+		and active_game == null
+		and menu_layer != null
+		and menu_layer.visible
+	)
+
+
+func _is_navigation_event(event: InputEvent) -> bool:
+	if event is InputEventKey:
+		var key_event := event as InputEventKey
+		return key_event.pressed and not key_event.echo and key_event.keycode in [KEY_UP, KEY_DOWN, KEY_LEFT, KEY_RIGHT, KEY_TAB]
+	if event is InputEventJoypadButton:
+		var button_event := event as InputEventJoypadButton
+		return button_event.pressed and button_event.button_index in [JOY_BUTTON_DPAD_UP, JOY_BUTTON_DPAD_DOWN, JOY_BUTTON_DPAD_LEFT, JOY_BUTTON_DPAD_RIGHT]
+	if event is InputEventJoypadMotion:
+		var motion_event := event as InputEventJoypadMotion
+		return motion_event.axis in [JOY_AXIS_LEFT_X, JOY_AXIS_LEFT_Y] and absf(motion_event.axis_value) >= 0.75
+	return false
+
+
+func _play_navigation_if_focus_changed(previous_focus_id: int) -> void:
+	if not _ui_audio_allowed():
+		return
+	var focus_owner := get_viewport().gui_get_focus_owner()
+	var focus_id := focus_owner.get_instance_id() if focus_owner != null else 0
+	if focus_id == 0 or focus_id == previous_focus_id or focus_id == last_navigation_cued_focus_id:
+		return
+	last_navigation_cued_focus_id = focus_id
+	_play_ui_cue("ui_navigate")
 
 
 func _build_menu() -> void:
@@ -145,23 +239,29 @@ func _heading(box: VBoxContainer, text_value: String, subtext: String = "") -> v
 	box.add_child(HSeparator.new())
 
 
-func _menu_button(box: VBoxContainer, label_text: String, callback: Callable, disabled: bool = false) -> Button:
+func _menu_button(box: VBoxContainer, label_text: String, callback: Callable, disabled: bool = false, cue_id: String = "ui_confirm") -> Button:
 	var button := Button.new()
 	button.text = label_text
 	button.custom_minimum_size = Vector2(0.0, 42.0)
 	button.alignment = HORIZONTAL_ALIGNMENT_LEFT
 	button.disabled = disabled
 	button.add_theme_font_size_override("font_size", 17)
-	button.pressed.connect(callback)
+	button.pressed.connect(_on_menu_button_pressed.bind(callback, cue_id))
 	box.add_child(button)
 	return button
 
 
+func _on_menu_button_pressed(callback: Callable, cue_id: String) -> void:
+	_play_ui_cue(cue_id)
+	callback.call()
+
+
 func _show_home() -> void:
+	current_menu = "home"
 	var box := _clear_scrollable_content()
 	_heading(box, "INSERT COIN", _ui_text("Campagne complète en quatre chapitres • 1–2 joueurs locaux", "Complete four-chapter campaign • 1–2 local players"))
-	_menu_button(box, _ui_text("JOUER — ARCADE AUTHENTIQUE", "PLAY — AUTHENTIC ARCADE"), _launch_game.bind("arcade", 1, false))
-	_menu_button(box, _ui_text("COOP LOCALE — 2 JOUEURS", "LOCAL CO-OP — 2 PLAYERS"), _launch_game.bind("arcade", 2, false))
+	_menu_button(box, _ui_text("JOUER — ARCADE AUTHENTIQUE", "PLAY — AUTHENTIC ARCADE"), _launch_game.bind("arcade", 1, false), false, "ui_credit")
+	_menu_button(box, _ui_text("COOP LOCALE — 2 JOUEURS", "LOCAL CO-OP — 2 PLAYERS"), _launch_game.bind("arcade", 2, false), false, "ui_join")
 	_menu_button(box, _ui_text("ENTRAÎNEMENT", "TRAINING"), _launch_game.bind("training", 1, false))
 	_menu_button(box, "BOSS RUSH", _launch_game.bind("boss_rush", 1, false))
 	_menu_button(box, _ui_text("SÉLECTION DE CHAPITRE", "CHAPTER SELECT"), _show_chapters)
@@ -175,6 +275,7 @@ func _show_home() -> void:
 
 
 func _show_leaderboard() -> void:
+	current_menu = "leaderboard"
 	var box := _clear_scrollable_content()
 	_heading(box, _ui_text("CLASSEMENT LOCAL", "LOCAL LEADERBOARD"), _ui_text("Les dix meilleurs scores enregistrés sur cette machine.", "The ten best scores saved on this machine."))
 	var scores := (SaveManager.data.get("high_scores", []) as Array).duplicate(true)
@@ -199,10 +300,11 @@ func _show_leaderboard() -> void:
 			row.add_theme_font_size_override("font_size", 16)
 			row.add_theme_color_override("font_color", Color("#f2ede2") if index > 2 else Color("#d8b46a"))
 			box.add_child(row)
-	_menu_button(box, _ui_text("← RETOUR", "← BACK"), _show_home)
+	_menu_button(box, _ui_text("← RETOUR", "← BACK"), _show_home, false, "ui_back")
 
 
 func _show_chapters() -> void:
+	current_menu = "chapters"
 	var box := _clear_content()
 	_heading(box, _ui_text("SÉLECTION DE CHAPITRE", "CHAPTER SELECT"), _ui_text("Choisissez une séquence déjà découverte.", "Choose a previously discovered sequence."))
 	var chapter_entries: Array[Dictionary] = [
@@ -218,10 +320,11 @@ func _show_chapters() -> void:
 		if not unlocked:
 			chapter_label += _ui_text("  •  VERROUILLÉ", "  •  LOCKED")
 		_menu_button(box, chapter_label, _launch_game.bind("chapter_select", 1, false, chapter_number), not unlocked)
-	_menu_button(box, _ui_text("← RETOUR", "← BACK"), _show_home)
+	_menu_button(box, _ui_text("← RETOUR", "← BACK"), _show_home, false, "ui_back")
 
 
 func _show_settings() -> void:
+	current_menu = "settings"
 	var box := _clear_scrollable_content()
 	_heading(box, _ui_text("CALIBRATION & OPTIONS", "CALIBRATION & SETTINGS"), _ui_text("Les assistances sont séparées du mode Arcade Authentique.", "Assists are kept separate from Authentic Arcade mode."))
 	var language_row := HBoxContainer.new()
@@ -233,7 +336,10 @@ func _show_settings() -> void:
 	language_choice.add_item("Français")
 	language_choice.add_item("English")
 	language_choice.selected = 0 if str(SettingsManager.get_value("language", "fr")) == "fr" else 1
-	language_choice.item_selected.connect(func(index: int) -> void: SettingsManager.set_value("language", "fr" if index == 0 else "en"))
+	language_choice.item_selected.connect(func(index: int) -> void:
+		SettingsManager.set_value("language", "fr" if index == 0 else "en")
+		_play_ui_cue("ui_confirm")
+	)
 	language_row.add_child(language_choice)
 	box.add_child(language_row)
 	_add_setting_toggle(box, _ui_text("Cadrage authentique 4:3", "Authentic 4:3 framing"), "authentic_ratio")
@@ -273,16 +379,18 @@ func _show_settings() -> void:
 	calibration_text.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	calibration_text.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	calibration.add_child(calibration_text)
-	_menu_button(box, _ui_text("← ENREGISTRER & RETOUR", "← SAVE & BACK"), _save_settings_and_return)
+	_menu_button(box, _ui_text("← ENREGISTRER & RETOUR", "← SAVE & BACK"), _save_settings_and_return, false, "ui_back")
 
 
 func _add_setting_toggle(box: VBoxContainer, label_text: String, key: String) -> void:
 	var toggle := CheckButton.new()
 	toggle.text = label_text
 	toggle.button_pressed = bool(SettingsManager.get_value(key, false))
-	toggle.toggled.connect(func(value: bool) -> void: SettingsManager.set_value(key, value))
+	toggle.toggled.connect(func(value: bool) -> void:
+		SettingsManager.set_value(key, value)
+		_play_ui_cue("ui_confirm")
+	)
 	box.add_child(toggle)
-
 
 func _add_setting_slider(box: VBoxContainer, label_text: String, key: String) -> void:
 	var container := VBoxContainer.new()
@@ -309,12 +417,10 @@ func _add_setting_slider(box: VBoxContainer, label_text: String, key: String) ->
 	container.add_child(slider)
 	box.add_child(container)
 
-
 func _save_settings_and_return() -> void:
 	SaveManager.set_settings(SettingsManager.export_dictionary())
 	SaveManager.write_save()
 	_show_home()
-
 
 func _ui_text(french: String, english: String) -> String:
 	return english if str(SettingsManager.get_value("language", "fr")) == "en" else french
@@ -336,7 +442,6 @@ func _launch_game(mode: String, player_count: int = 1, demo: bool = false, chapt
 	configuration.merge(SettingsManager.export_dictionary(), true)
 	if active_game.has_method("configure"):
 		active_game.configure(configuration)
-
 
 func _on_game_exit() -> void:
 	if active_game != null:

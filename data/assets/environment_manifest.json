@@ -1,0 +1,1183 @@
+{
+  "schema_version": 1,
+  "asset_policy": "Original fan-made OpenAI Images replacements; no ROM, video frame, commercial logo, voice or music extraction.",
+  "materials": {
+    "garden_mud_moss": {
+      "albedo": "res://assets/environments_v2/materials/garden_mud_moss/garden_mud_moss_albedo.png",
+      "normal": "res://assets/environments_v2/materials/garden_mud_moss/garden_mud_moss_normal.png",
+      "orm": "res://assets/environments_v2/materials/garden_mud_moss/garden_mud_moss_orm.png",
+      "roughness": 0.94,
+      "metallic": 0,
+      "normal_scale": 0.55,
+      "uv_scale": [
+        3,
+        8
+      ]
+    },
+    "garden_flagstone": {
+      "albedo": "res://assets/environments_v2/materials/garden_flagstone/garden_flagstone_albedo.png",
+      "normal": "res://assets/environments_v2/materials/garden_flagstone/garden_flagstone_normal.png",
+      "orm": "res://assets/environments_v2/materials/garden_flagstone/garden_flagstone_orm.png",
+      "roughness": 0.88,
+      "metallic": 0,
+      "normal_scale": 0.72,
+      "uv_scale": [
+        3,
+        8
+      ]
+    },
+    "estate_weathered_stone": {
+      "albedo": "res://assets/environments_v2/materials/estate_weathered_stone/estate_weathered_stone_albedo.png",
+      "normal": "res://assets/environments_v2/materials/estate_weathered_stone/estate_weathered_stone_normal.png",
+      "orm": "res://assets/environments_v2/materials/estate_weathered_stone/estate_weathered_stone_orm.png",
+      "roughness": 0.91,
+      "metallic": 0,
+      "normal_scale": 0.62,
+      "uv_scale": [
+        2,
+        6
+      ]
+    },
+    "mansion_damp_plaster": {
+      "albedo": "res://assets/environments_v2/materials/mansion_damp_plaster/mansion_damp_plaster_albedo.png",
+      "normal": "res://assets/environments_v2/materials/mansion_damp_plaster/mansion_damp_plaster_normal.png",
+      "orm": "res://assets/environments_v2/materials/mansion_damp_plaster/mansion_damp_plaster_orm.png",
+      "roughness": 0.86,
+      "metallic": 0,
+      "normal_scale": 0.42,
+      "uv_scale": [
+        2,
+        5
+      ]
+    },
+    "mansion_dark_wood_panel": {
+      "albedo": "res://assets/environments_v2/materials/mansion_dark_wood_panel/mansion_dark_wood_panel_albedo.png",
+      "normal": "res://assets/environments_v2/materials/mansion_dark_wood_panel/mansion_dark_wood_panel_normal.png",
+      "orm": "res://assets/environments_v2/materials/mansion_dark_wood_panel/mansion_dark_wood_panel_orm.png",
+      "roughness": 0.72,
+      "metallic": 0,
+      "normal_scale": 0.48,
+      "uv_scale": [
+        2,
+        5
+      ]
+    },
+    "mansion_marble_floor": {
+      "albedo": "res://assets/environments_v2/materials/mansion_marble_floor/mansion_marble_floor_albedo.png",
+      "normal": "res://assets/environments_v2/materials/mansion_marble_floor/mansion_marble_floor_normal.png",
+      "orm": "res://assets/environments_v2/materials/mansion_marble_floor/mansion_marble_floor_orm.png",
+      "roughness": 0.43,
+      "metallic": 0,
+      "normal_scale": 0.26,
+      "uv_scale": [
+        3,
+        8
+      ]
+    },
+    "mansion_worn_red_carpet": {
+      "albedo": "res://assets/environments_v2/materials/mansion_worn_red_carpet/mansion_worn_red_carpet_albedo.png",
+      "normal": "res://assets/environments_v2/materials/mansion_worn_red_carpet/mansion_worn_red_carpet_normal.png",
+      "orm": "res://assets/environments_v2/materials/mansion_worn_red_carpet/mansion_worn_red_carpet_orm.png",
+      "roughness": 0.96,
+      "metallic": 0,
+      "normal_scale": 0.32,
+      "uv_scale": [
+        1,
+        8
+      ]
+    },
+    "mansion_oak_door": {
+      "albedo": "res://assets/environments_v2/materials/mansion_oak_door/mansion_oak_door_albedo.png",
+      "normal": "res://assets/environments_v2/materials/mansion_oak_door/mansion_oak_door_normal.png",
+      "orm": "res://assets/environments_v2/materials/mansion_oak_door/mansion_oak_door_orm.png",
+      "roughness": 0.78,
+      "metallic": 0,
+      "normal_scale": 0.53,
+      "uv_scale": [
+        1,
+        2
+      ]
+    },
+    "library_dark_oak_shelf": {
+      "albedo": "res://assets/environments_v2/materials/library_dark_oak_shelf/library_dark_oak_shelf_albedo.png",
+      "normal": "res://assets/environments_v2/materials/library_dark_oak_shelf/library_dark_oak_shelf_normal.png",
+      "orm": "res://assets/environments_v2/materials/library_dark_oak_shelf/library_dark_oak_shelf_orm.png",
+      "roughness": 0.75,
+      "metallic": 0,
+      "normal_scale": 0.49,
+      "uv_scale": [
+        1,
+        3
+      ]
+    },
+    "sewer_wet_brick": {
+      "albedo": "res://assets/environments_v2/materials/sewer_wet_brick/sewer_wet_brick_albedo.png",
+      "normal": "res://assets/environments_v2/materials/sewer_wet_brick/sewer_wet_brick_normal.png",
+      "orm": "res://assets/environments_v2/materials/sewer_wet_brick/sewer_wet_brick_orm.png",
+      "roughness": 0.82,
+      "metallic": 0,
+      "normal_scale": 0.76,
+      "uv_scale": [
+        2,
+        6
+      ]
+    },
+    "sewer_slick_stone": {
+      "albedo": "res://assets/environments_v2/materials/sewer_slick_stone/sewer_slick_stone_albedo.png",
+      "normal": "res://assets/environments_v2/materials/sewer_slick_stone/sewer_slick_stone_normal.png",
+      "orm": "res://assets/environments_v2/materials/sewer_slick_stone/sewer_slick_stone_orm.png",
+      "roughness": 0.58,
+      "metallic": 0,
+      "normal_scale": 0.63,
+      "uv_scale": [
+        3,
+        8
+      ]
+    },
+    "sewer_rusted_iron": {
+      "albedo": "res://assets/environments_v2/materials/sewer_rusted_iron/sewer_rusted_iron_albedo.png",
+      "normal": "res://assets/environments_v2/materials/sewer_rusted_iron/sewer_rusted_iron_normal.png",
+      "orm": "res://assets/environments_v2/materials/sewer_rusted_iron/sewer_rusted_iron_orm.png",
+      "roughness": 0.83,
+      "metallic": 0.62,
+      "normal_scale": 0.71,
+      "uv_scale": [
+        2,
+        5
+      ]
+    },
+    "roof_weathered_slate": {
+      "albedo": "res://assets/environments_v2/materials/roof_weathered_slate/roof_weathered_slate_albedo.png",
+      "normal": "res://assets/environments_v2/materials/roof_weathered_slate/roof_weathered_slate_normal.png",
+      "orm": "res://assets/environments_v2/materials/roof_weathered_slate/roof_weathered_slate_orm.png",
+      "roughness": 0.89,
+      "metallic": 0,
+      "normal_scale": 0.66,
+      "uv_scale": [
+        3,
+        8
+      ]
+    },
+    "roof_gothic_stone": {
+      "albedo": "res://assets/environments_v2/materials/roof_gothic_stone/roof_gothic_stone_albedo.png",
+      "normal": "res://assets/environments_v2/materials/roof_gothic_stone/roof_gothic_stone_normal.png",
+      "orm": "res://assets/environments_v2/materials/roof_gothic_stone/roof_gothic_stone_orm.png",
+      "roughness": 0.91,
+      "metallic": 0,
+      "normal_scale": 0.61,
+      "uv_scale": [
+        2,
+        6
+      ]
+    },
+    "lab_painted_metal": {
+      "albedo": "res://assets/environments_v2/materials/lab_painted_metal/lab_painted_metal_albedo.png",
+      "normal": "res://assets/environments_v2/materials/lab_painted_metal/lab_painted_metal_normal.png",
+      "orm": "res://assets/environments_v2/materials/lab_painted_metal/lab_painted_metal_orm.png",
+      "roughness": 0.61,
+      "metallic": 0.54,
+      "normal_scale": 0.43,
+      "uv_scale": [
+        2,
+        5
+      ]
+    },
+    "lab_grated_floor": {
+      "albedo": "res://assets/environments_v2/materials/lab_grated_floor/lab_grated_floor_albedo.png",
+      "normal": "res://assets/environments_v2/materials/lab_grated_floor/lab_grated_floor_normal.png",
+      "orm": "res://assets/environments_v2/materials/lab_grated_floor/lab_grated_floor_orm.png",
+      "roughness": 0.69,
+      "metallic": 0.72,
+      "normal_scale": 0.78,
+      "uv_scale": [
+        3,
+        8
+      ]
+    },
+    "lab_rusted_pipe": {
+      "albedo": "res://assets/environments_v2/materials/lab_rusted_pipe/lab_rusted_pipe_albedo.png",
+      "normal": "res://assets/environments_v2/materials/lab_rusted_pipe/lab_rusted_pipe_normal.png",
+      "orm": "res://assets/environments_v2/materials/lab_rusted_pipe/lab_rusted_pipe_orm.png",
+      "roughness": 0.76,
+      "metallic": 0.66,
+      "normal_scale": 0.64,
+      "uv_scale": [
+        2,
+        5
+      ]
+    },
+    "lab_grimy_glass": {
+      "albedo": "res://assets/environments_v2/materials/lab_grimy_glass/lab_grimy_glass_albedo.png",
+      "normal": "res://assets/environments_v2/materials/lab_grimy_glass/lab_grimy_glass_normal.png",
+      "orm": "res://assets/environments_v2/materials/lab_grimy_glass/lab_grimy_glass_orm.png",
+      "roughness": 0.24,
+      "metallic": 0,
+      "normal_scale": 0.16,
+      "uv_scale": [
+        1,
+        2
+      ]
+    },
+    "lab_bio_machine_panel": {
+      "albedo": "res://assets/environments_v2/materials/lab_bio_machine_panel/lab_bio_machine_panel_albedo.png",
+      "normal": "res://assets/environments_v2/materials/lab_bio_machine_panel/lab_bio_machine_panel_normal.png",
+      "orm": "res://assets/environments_v2/materials/lab_bio_machine_panel/lab_bio_machine_panel_orm.png",
+      "roughness": 0.57,
+      "metallic": 0.48,
+      "normal_scale": 0.52,
+      "uv_scale": [
+        2,
+        4
+      ]
+    },
+    "hermit_web_membrane": {
+      "albedo": "res://assets/environments_v2/materials/hermit_web_membrane/hermit_web_membrane_albedo.png",
+      "normal": "res://assets/environments_v2/materials/hermit_web_membrane/hermit_web_membrane_normal.png",
+      "orm": "res://assets/environments_v2/materials/hermit_web_membrane/hermit_web_membrane_orm.png",
+      "roughness": 0.71,
+      "metallic": 0,
+      "normal_scale": 0.74,
+      "uv_scale": [
+        2,
+        5
+      ]
+    }
+  },
+  "styles": {
+    "garden": {
+      "floor": "garden_mud_moss",
+      "wall": "estate_weathered_stone",
+      "column": "estate_weathered_stone",
+      "accent": "garden_flagstone",
+      "backdrop": "res://assets/environments/mansion-exterior.png",
+      "ambient": "#52635d",
+      "fog": "#394a48",
+      "light": "#91a9a1",
+      "open_ceiling": true,
+      "layout": "garden_path",
+      "effects": [
+        "rain",
+        "mist",
+        "lightning"
+      ]
+    },
+    "mansion": {
+      "floor": "mansion_marble_floor",
+      "wall": "mansion_damp_plaster",
+      "column": "mansion_dark_wood_panel",
+      "ceiling": "mansion_damp_plaster",
+      "accent": "mansion_worn_red_carpet",
+      "backdrop": "res://assets/environments/mansion-hall.png",
+      "ambient": "#62584d",
+      "fog": "#302c29",
+      "light": "#d28a5a",
+      "open_ceiling": false,
+      "layout": "mansion_hall",
+      "effects": [
+        "dust",
+        "sconce_flicker"
+      ],
+      "door": "mansion_oak_door"
+    },
+    "sewer": {
+      "floor": "sewer_slick_stone",
+      "wall": "sewer_wet_brick",
+      "column": "sewer_rusted_iron",
+      "ceiling": "sewer_wet_brick",
+      "accent": "sewer_rusted_iron",
+      "backdrop": "res://assets/environments/underground-tunnel.png",
+      "ambient": "#405b55",
+      "fog": "#263d39",
+      "light": "#82b593",
+      "open_ceiling": false,
+      "layout": "sewer_channel",
+      "effects": [
+        "water_flow",
+        "drips",
+        "mist"
+      ]
+    },
+    "roof": {
+      "floor": "roof_weathered_slate",
+      "wall": "roof_gothic_stone",
+      "column": "roof_gothic_stone",
+      "accent": "sewer_rusted_iron",
+      "backdrop": "res://assets/environments/mansion-exterior.png",
+      "ambient": "#46536c",
+      "fog": "#2a3346",
+      "light": "#9fb2d0",
+      "open_ceiling": true,
+      "layout": "roof_parapet",
+      "effects": [
+        "rain",
+        "wind",
+        "distant_bats",
+        "lightning"
+      ]
+    },
+    "laboratory": {
+      "floor": "lab_grated_floor",
+      "wall": "lab_painted_metal",
+      "column": "lab_rusted_pipe",
+      "ceiling": "lab_painted_metal",
+      "accent": "lab_bio_machine_panel",
+      "backdrop": "res://assets/environments/curien-laboratory.png",
+      "ambient": "#3d7967",
+      "fog": "#1f5546",
+      "light": "#56d2a3",
+      "open_ceiling": false,
+      "layout": "laboratory_bay",
+      "effects": [
+        "steam",
+        "monitor_scan",
+        "alarm_beacon"
+      ],
+      "glass": "lab_grimy_glass"
+    }
+  },
+  "nodes": {
+    "garden_rescue": {
+      "style": "garden",
+      "layout": "estate_arrival",
+      "props": [
+        {
+          "id": "estate_gate",
+          "position": [
+            0,
+            1.5,
+            -18
+          ]
+        },
+        {
+          "id": "garden_lamp",
+          "position": [
+            -4.2,
+            0.8,
+            -8.5
+          ]
+        },
+        {
+          "id": "dead_tree",
+          "position": [
+            4.8,
+            1.8,
+            -15
+          ]
+        }
+      ]
+    },
+    "mansion_entrance": {
+      "style": "garden",
+      "layout": "front_steps",
+      "props": [
+        {
+          "id": "estate_gate",
+          "position": [
+            0,
+            1.5,
+            -20
+          ]
+        },
+        {
+          "id": "garden_lamp",
+          "position": [
+            4,
+            0.8,
+            -9
+          ]
+        }
+      ]
+    },
+    "under_bridge": {
+      "style": "sewer",
+      "layout": "bridge_channel",
+      "props": [
+        {
+          "id": "stone_bridge_arch",
+          "position": [
+            0,
+            2,
+            -17
+          ]
+        }
+      ]
+    },
+    "foyer_choice": {
+      "style": "mansion",
+      "layout": "foyer_crossroad",
+      "props": [
+        {
+          "id": "mansion_double_door",
+          "position": [
+            0,
+            1.6,
+            -17
+          ]
+        },
+        {
+          "id": "mansion_chandelier",
+          "position": [
+            0,
+            3.8,
+            -11
+          ]
+        },
+        {
+          "id": "mansion_sconce",
+          "position": [
+            -4.6,
+            2,
+            -10
+          ]
+        },
+        {
+          "id": "mansion_sconce",
+          "position": [
+            4.6,
+            2,
+            -10
+          ]
+        }
+      ]
+    },
+    "upper_stairs": {
+      "style": "mansion",
+      "layout": "upper_staircase",
+      "props": [
+        {
+          "id": "mansion_chandelier",
+          "position": [
+            0,
+            4,
+            -12
+          ]
+        },
+        {
+          "id": "mansion_portrait",
+          "position": [
+            -4.5,
+            2.2,
+            -14
+          ]
+        },
+        {
+          "id": "mansion_sconce",
+          "position": [
+            4.6,
+            2.1,
+            -11
+          ]
+        }
+      ]
+    },
+    "ground_hall": {
+      "style": "mansion",
+      "layout": "collapsed_hall",
+      "props": [
+        {
+          "id": "mansion_portrait",
+          "position": [
+            -4.6,
+            2.1,
+            -13
+          ]
+        },
+        {
+          "id": "mansion_sconce",
+          "position": [
+            -4.7,
+            2,
+            -9
+          ]
+        },
+        {
+          "id": "mansion_sconce",
+          "position": [
+            4.7,
+            2,
+            -13
+          ]
+        }
+      ],
+      "effects": [
+        "dust",
+        "collapse_dust",
+        "sconce_flicker"
+      ]
+    },
+    "sophie_antechamber": {
+      "style": "mansion",
+      "layout": "portrait_antechamber",
+      "props": [
+        {
+          "id": "mansion_portrait",
+          "position": [
+            0,
+            2.3,
+            -16
+          ]
+        },
+        {
+          "id": "mansion_sconce",
+          "position": [
+            -4.4,
+            2,
+            -12
+          ]
+        },
+        {
+          "id": "mansion_sconce",
+          "position": [
+            4.4,
+            2,
+            -12
+          ]
+        }
+      ]
+    },
+    "sophie_corridor": {
+      "style": "mansion",
+      "layout": "narrow_corridor",
+      "props": [
+        {
+          "id": "mansion_sconce",
+          "position": [
+            -4.5,
+            2,
+            -10
+          ]
+        },
+        {
+          "id": "mansion_sconce",
+          "position": [
+            4.5,
+            2,
+            -14
+          ]
+        }
+      ]
+    },
+    "chariot_battle": {
+      "style": "mansion",
+      "layout": "chariot_arena",
+      "props": [
+        {
+          "id": "mansion_chandelier",
+          "position": [
+            0,
+            4.2,
+            -14
+          ]
+        },
+        {
+          "id": "mansion_sconce",
+          "position": [
+            -4.8,
+            2.1,
+            -13
+          ]
+        },
+        {
+          "id": "mansion_sconce",
+          "position": [
+            4.8,
+            2.1,
+            -13
+          ]
+        }
+      ],
+      "effects": [
+        "dust",
+        "sconce_flicker"
+      ]
+    },
+    "chain_plate": {
+      "style": "mansion",
+      "layout": "hatch_gallery",
+      "props": [
+        {
+          "id": "mansion_double_door",
+          "position": [
+            0,
+            1.6,
+            -18
+          ]
+        },
+        {
+          "id": "mansion_chandelier",
+          "position": [
+            0,
+            4,
+            -12
+          ]
+        }
+      ]
+    },
+    "underground_passage": {
+      "style": "sewer",
+      "layout": "low_tunnel"
+    },
+    "great_doors": {
+      "style": "mansion",
+      "layout": "great_doors",
+      "props": [
+        {
+          "id": "mansion_double_door",
+          "position": [
+            0,
+            1.7,
+            -18
+          ]
+        }
+      ]
+    },
+    "library_rescue": {
+      "style": "mansion",
+      "layout": "library",
+      "wall": "library_dark_oak_shelf",
+      "column": "library_dark_oak_shelf",
+      "props": [
+        {
+          "id": "library_bookcase",
+          "position": [
+            -4.5,
+            2,
+            -13
+          ]
+        },
+        {
+          "id": "library_bookcase",
+          "position": [
+            4.5,
+            2,
+            -13
+          ]
+        },
+        {
+          "id": "mansion_chandelier",
+          "position": [
+            0,
+            4,
+            -12
+          ]
+        }
+      ]
+    },
+    "raised_bridge": {
+      "style": "mansion",
+      "layout": "raised_bridge"
+    },
+    "lower_stairs": {
+      "style": "sewer",
+      "layout": "lower_stairs"
+    },
+    "roof_approach": {
+      "style": "roof",
+      "layout": "roof_approach",
+      "props": [
+        {
+          "id": "roof_gargoyle",
+          "position": [
+            -4.6,
+            1.3,
+            -11
+          ]
+        }
+      ]
+    },
+    "roof_rescue": {
+      "style": "roof",
+      "layout": "roof_ledge",
+      "props": [
+        {
+          "id": "roof_gargoyle",
+          "position": [
+            4.6,
+            1.3,
+            -12
+          ]
+        }
+      ]
+    },
+    "hangedman_battle": {
+      "style": "roof",
+      "layout": "hangedman_arena",
+      "props": [
+        {
+          "id": "roof_gargoyle",
+          "position": [
+            -4.7,
+            1.3,
+            -12
+          ]
+        },
+        {
+          "id": "roof_gargoyle",
+          "position": [
+            4.7,
+            1.3,
+            -12
+          ]
+        }
+      ]
+    },
+    "elevator_switch": {
+      "style": "laboratory",
+      "layout": "elevator_lobby",
+      "props": [
+        {
+          "id": "lab_pipe_cluster",
+          "position": [
+            -4.8,
+            1.7,
+            -13
+          ]
+        },
+        {
+          "id": "lab_vent_fan",
+          "position": [
+            4.7,
+            2.6,
+            -14
+          ]
+        },
+        {
+          "id": "lab_control_console",
+          "position": [
+            0,
+            1.1,
+            -15
+          ]
+        }
+      ]
+    },
+    "left_elevator": {
+      "style": "laboratory",
+      "layout": "upper_research",
+      "props": [
+        {
+          "id": "lab_specimen_tank",
+          "position": [
+            4.2,
+            1.6,
+            -12
+          ]
+        },
+        {
+          "id": "lab_control_console",
+          "position": [
+            -4.2,
+            1.1,
+            -13
+          ]
+        }
+      ]
+    },
+    "right_elevator": {
+      "style": "sewer",
+      "layout": "service_lift",
+      "props": [
+        {
+          "id": "lab_pipe_cluster",
+          "position": [
+            -4.5,
+            1.7,
+            -13
+          ]
+        }
+      ]
+    },
+    "back_attack_rescue": {
+      "style": "laboratory",
+      "layout": "specimen_bay",
+      "props": [
+        {
+          "id": "lab_specimen_tank",
+          "position": [
+            -4.2,
+            1.6,
+            -11
+          ]
+        },
+        {
+          "id": "lab_specimen_tank",
+          "position": [
+            4.2,
+            1.6,
+            -14
+          ]
+        },
+        {
+          "id": "lab_control_console",
+          "position": [
+            0,
+            1.1,
+            -16
+          ]
+        }
+      ]
+    },
+    "security_door": {
+      "style": "laboratory",
+      "layout": "high_bridge",
+      "props": [
+        {
+          "id": "lab_pipe_cluster",
+          "position": [
+            4.5,
+            1.7,
+            -14
+          ]
+        },
+        {
+          "id": "lab_control_console",
+          "position": [
+            -4.3,
+            1.1,
+            -13
+          ]
+        }
+      ]
+    },
+    "vent_key_route": {
+      "style": "sewer",
+      "layout": "vent_conduit",
+      "props": [
+        {
+          "id": "lab_vent_fan",
+          "position": [
+            4.6,
+            2.6,
+            -13
+          ]
+        }
+      ]
+    },
+    "curien_tunnel": {
+      "style": "laboratory",
+      "layout": "curien_tunnel",
+      "props": [
+        {
+          "id": "lab_pipe_cluster",
+          "position": [
+            -4.5,
+            1.7,
+            -13
+          ]
+        },
+        {
+          "id": "lab_specimen_tank",
+          "position": [
+            4.2,
+            1.6,
+            -15
+          ]
+        },
+        {
+          "id": "lab_control_console",
+          "position": [
+            -4,
+            1.1,
+            -16
+          ]
+        }
+      ]
+    },
+    "hermit_battle": {
+      "style": "laboratory",
+      "layout": "hermit_tunnel",
+      "wall": "hermit_web_membrane",
+      "ceiling": "hermit_web_membrane",
+      "effects": [
+        "web_drift",
+        "mist"
+      ]
+    },
+    "chariot_rematch": {
+      "style": "laboratory",
+      "layout": "rematch_arena",
+      "props": [
+        {
+          "id": "lab_control_console",
+          "position": [
+            4.3,
+            1.1,
+            -15
+          ]
+        }
+      ]
+    },
+    "hangedman_rematch": {
+      "style": "roof",
+      "layout": "rematch_roof",
+      "props": [
+        {
+          "id": "roof_gargoyle",
+          "position": [
+            -4.7,
+            1.3,
+            -12
+          ]
+        }
+      ]
+    },
+    "bonus_gate": {
+      "style": "laboratory",
+      "layout": "bonus_gate",
+      "props": [
+        {
+          "id": "lab_pipe_cluster",
+          "position": [
+            -4.5,
+            1.7,
+            -13
+          ]
+        },
+        {
+          "id": "lab_control_console",
+          "position": [
+            4.2,
+            1.1,
+            -14
+          ]
+        }
+      ]
+    },
+    "bonus_room": {
+      "style": "laboratory",
+      "layout": "supply_cache"
+    },
+    "final_waves": {
+      "style": "laboratory",
+      "layout": "final_horde",
+      "props": [
+        {
+          "id": "lab_specimen_tank",
+          "position": [
+            -4.3,
+            1.6,
+            -13
+          ]
+        },
+        {
+          "id": "lab_specimen_tank",
+          "position": [
+            4.3,
+            1.6,
+            -13
+          ]
+        },
+        {
+          "id": "lab_control_console",
+          "position": [
+            0,
+            1.1,
+            -16
+          ]
+        }
+      ]
+    },
+    "curien_confrontation": {
+      "style": "laboratory",
+      "layout": "bioreactor",
+      "props": [
+        {
+          "id": "lab_pipe_cluster",
+          "position": [
+            -4.6,
+            1.7,
+            -13
+          ]
+        },
+        {
+          "id": "lab_pipe_cluster",
+          "position": [
+            4.6,
+            1.7,
+            -13
+          ]
+        },
+        {
+          "id": "lab_control_console",
+          "position": [
+            0,
+            1.1,
+            -16
+          ]
+        }
+      ],
+      "effects": [
+        "steam",
+        "monitor_scan",
+        "alarm_beacon",
+        "electrical_arc"
+      ]
+    },
+    "magician_battle": {
+      "style": "laboratory",
+      "layout": "magician_arena",
+      "props": [
+        {
+          "id": "lab_specimen_tank",
+          "position": [
+            -4.4,
+            1.6,
+            -15
+          ]
+        },
+        {
+          "id": "lab_specimen_tank",
+          "position": [
+            4.4,
+            1.6,
+            -15
+          ]
+        },
+        {
+          "id": "lab_control_console",
+          "position": [
+            0,
+            1.1,
+            -17
+          ]
+        }
+      ],
+      "effects": [
+        "steam",
+        "alarm_beacon",
+        "electrical_arc",
+        "embers"
+      ]
+    }
+  },
+  "destructibles": {
+    "c01_foyer_door_lock": {
+      "intact": "res://assets/environments_v2/destructibles/c01_foyer_door_lock/c01_foyer_door_lock_intact.png",
+      "broken": "res://assets/environments_v2/destructibles/c01_foyer_door_lock/c01_foyer_door_lock_broken.png",
+      "pixel_size": 0.0045,
+      "world_scale": 0.72
+    },
+    "c02_chained_hatch_plate": {
+      "intact": "res://assets/environments_v2/destructibles/c02_chained_hatch_plate/c02_chained_hatch_plate_intact.png",
+      "broken": "res://assets/environments_v2/destructibles/c02_chained_hatch_plate/c02_chained_hatch_plate_broken.png",
+      "pixel_size": 0.0049,
+      "world_scale": 0.84
+    },
+    "c03_elevator_route_switch": {
+      "intact": "res://assets/environments_v2/destructibles/c03_elevator_route_switch/c03_elevator_route_switch_intact.png",
+      "broken": "res://assets/environments_v2/destructibles/c03_elevator_route_switch/c03_elevator_route_switch_broken.png",
+      "pixel_size": 0.0043,
+      "world_scale": 0.68
+    },
+    "c03_vent_key_container": {
+      "intact": "res://assets/environments_v2/destructibles/c03_vent_key_container/c03_vent_key_container_intact.png",
+      "broken": "res://assets/environments_v2/destructibles/c03_vent_key_container/c03_vent_key_container_broken.png",
+      "pixel_size": 0.0042,
+      "world_scale": 0.66
+    },
+    "c04_bonus_gate_seal": {
+      "intact": "res://assets/environments_v2/destructibles/c04_bonus_gate_seal/c04_bonus_gate_seal_intact.png",
+      "broken": "res://assets/environments_v2/destructibles/c04_bonus_gate_seal/c04_bonus_gate_seal_broken.png",
+      "pixel_size": 0.0052,
+      "world_scale": 1.05
+    },
+    "c04_emergency_supply_crate": {
+      "intact": "res://assets/environments_v2/destructibles/c04_emergency_supply_crate/c04_emergency_supply_crate_intact.png",
+      "broken": "res://assets/environments_v2/destructibles/c04_emergency_supply_crate/c04_emergency_supply_crate_broken.png",
+      "pixel_size": 0.0046,
+      "world_scale": 0.82
+    }
+  },
+  "props": {
+    "mansion_chandelier": {
+      "path": "res://assets/environments_v2/props/mansion_chandelier/mansion_chandelier.png",
+      "hframes": 2,
+      "pixel_size": 0.0064,
+      "world_scale": 1.5,
+      "animate": "flicker"
+    },
+    "mansion_sconce": {
+      "path": "res://assets/environments_v2/props/mansion_sconce/mansion_sconce.png",
+      "hframes": 2,
+      "pixel_size": 0.0055,
+      "world_scale": 0.72,
+      "animate": "flicker"
+    },
+    "mansion_double_door": {
+      "path": "res://assets/environments_v2/props/mansion_double_door/mansion_double_door.png",
+      "hframes": 2,
+      "pixel_size": 0.007,
+      "world_scale": 2.7
+    },
+    "library_bookcase": {
+      "path": "res://assets/environments_v2/props/library_bookcase/library_bookcase.png",
+      "hframes": 1,
+      "pixel_size": 0.0065,
+      "world_scale": 2
+    },
+    "mansion_portrait": {
+      "path": "res://assets/environments_v2/props/mansion_portrait/mansion_portrait.png",
+      "hframes": 1,
+      "pixel_size": 0.0052,
+      "world_scale": 0.9
+    },
+    "lab_control_console": {
+      "path": "res://assets/environments_v2/props/lab_control_console/lab_control_console.png",
+      "hframes": 2,
+      "pixel_size": 0.0065,
+      "world_scale": 1.5,
+      "animate": "pulse"
+    },
+    "estate_gate": {
+      "path": "res://assets/environments_v2/props/estate_gate/estate_gate.png",
+      "hframes": 2,
+      "pixel_size": 0.0065,
+      "world_scale": 2.7
+    },
+    "garden_lamp": {
+      "path": "res://assets/environments_v2/props/garden_lamp/garden_lamp.png",
+      "hframes": 2,
+      "pixel_size": 0.0062,
+      "world_scale": 1.25,
+      "animate": "flicker"
+    },
+    "dead_tree": {
+      "path": "res://assets/environments_v2/props/dead_tree/dead_tree.png",
+      "hframes": 1,
+      "pixel_size": 0.0072,
+      "world_scale": 2.3
+    },
+    "stone_bridge_arch": {
+      "path": "res://assets/environments_v2/props/stone_bridge_arch/stone_bridge_arch.png",
+      "hframes": 1,
+      "pixel_size": 0.0074,
+      "world_scale": 2.8
+    },
+    "roof_gargoyle": {
+      "path": "res://assets/environments_v2/props/roof_gargoyle/roof_gargoyle.png",
+      "hframes": 1,
+      "pixel_size": 0.0064,
+      "world_scale": 1.05
+    },
+    "lab_specimen_tank": {
+      "path": "res://assets/environments_v2/props/lab_specimen_tank/lab_specimen_tank.png",
+      "hframes": 2,
+      "pixel_size": 0.0064,
+      "world_scale": 1.55,
+      "animate": "pulse"
+    },
+    "lab_pipe_cluster": {
+      "path": "res://assets/environments_v2/props/lab_pipe_cluster/lab_pipe_cluster.png",
+      "hframes": 1,
+      "pixel_size": 0.0065,
+      "world_scale": 1.65
+    },
+    "lab_vent_fan": {
+      "path": "res://assets/environments_v2/props/lab_vent_fan/lab_vent_fan.png",
+      "hframes": 2,
+      "pixel_size": 0.0062,
+      "world_scale": 1.15,
+      "animate": "frame_toggle"
+    }
+  }
+}

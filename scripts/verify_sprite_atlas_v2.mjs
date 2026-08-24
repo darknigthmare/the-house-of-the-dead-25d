@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto';
 import { existsSync, readFileSync } from 'node:fs';
 import { resolve, join } from 'node:path';
 import { inflateSync } from 'node:zlib';
@@ -5,7 +6,9 @@ import { inflateSync } from 'node:zlib';
 const root = resolve(import.meta.dirname, '..');
 const expectedDirections = ['front', 'front_left', 'left', 'back_left', 'back', 'back_right', 'right', 'front_right'];
 const expectedStates = ['idle', 'move_contact_a', 'move_passing', 'move_contact_b', 'action_windup', 'action_strike', 'hit_recoil', 'death_fall'];
-const fixedActors = ['thomas_rogan', 'agent_g', 'sophie_richards', 'dbr_scientist', 'dr_curien', 'mutant_bat', 'chariot', 'hangedman', 'hermit', 'magician'];
+const scientistActors = ['scientist_male_blue', 'scientist_male_gray', 'scientist_female_lab'];
+const fixedActors = ['thomas_rogan', 'agent_g', 'sophie_richards', 'dbr_scientist', 'dr_curien', 'mutant_bat', 'chariot', 'hangedman', 'hermit', 'magician', ...scientistActors];
+const scientistSourceStates = ['idle', 'alarm', 'flee_a', 'flee_b', 'cower', 'rescue_wave', 'hit', 'death'];
 
 function fail(message) {
   throw new Error(`SPRITE V2: ${message}`);
@@ -143,6 +146,23 @@ function validateMoodyBodyScale(image) {
 }
 
 
+const scientistGroup = json('reports/runtime/group_scientists_v2.json');
+const scientistGroupAssets = scientistGroup.assets ?? {};
+if (scientistGroup.asset_count !== scientistActors.length) fail('scientist source group count mismatch');
+if (JSON.stringify(Object.keys(scientistGroupAssets)) !== JSON.stringify(scientistActors)) fail('scientist source group IDs or order mismatch');
+for (const scientistId of scientistActors) {
+  const record = scientistGroupAssets[scientistId];
+  if (!record || record.accepted !== true) fail(`scientist source is not accepted: ${scientistId}`);
+  if (record.observed_columns !== 8 || record.observed_rows !== 6) fail(`scientist source layout mismatch: ${scientistId}`);
+  if (JSON.stringify(record.observed_state_columns) !== JSON.stringify(scientistSourceStates)) fail(`scientist source-state order mismatch: ${scientistId}`);
+  if (JSON.stringify(record.observed_direction_rows) !== JSON.stringify(['front', 'front_left', 'left', 'back_left', 'back', 'front_right'])) fail(`scientist source-direction order mismatch: ${scientistId}`);
+  if (!String(record.selected_source_path).startsWith('reports/runtime/directional-sources/scientists/')) fail(`scientist selected source path mismatch: ${scientistId}`);
+  if (!/^[a-f0-9]{64}$/.test(record.sha256)) fail(`scientist selected source hash is invalid: ${scientistId}`);
+  if (!existsSync(join(root, record.selected_source_path))) fail(`scientist selected source is missing: ${scientistId}`);
+  const sourceHash = createHash('sha256').update(readFileSync(join(root, record.selected_source_path))).digest('hex');
+  if (sourceHash !== record.sha256) fail(`scientist selected source hash mismatch: ${scientistId}`);
+}
+
 const manifest = json('data/assets/sprite_manifest.json');
 if (manifest.schema_version !== 2) fail('manifest schema must be 2');
 const layout = manifest.atlas_layout ?? {};
@@ -164,6 +184,19 @@ for (const asset of assets) {
   paths.add(asset.path);
   if (asset.contract_version !== 2 || asset.status !== 'dedicated_fan_made_v2') fail(`asset is not dedicated v2: ${asset.id}`);
   if (asset.right_profile_source !== 'mirrored_left_profile') fail(`right-profile provenance missing: ${asset.id}`);
+  if (scientistActors.includes(asset.id)) {
+    const sourceRecord = scientistGroupAssets[asset.id];
+    if (asset.role !== 'civilian') fail(`scientist role mismatch: ${asset.id}`);
+    if (asset.source_sheet_path !== sourceRecord.selected_source_path) fail(`scientist source path diverges: ${asset.id}`);
+    if (asset.source_sheet_sha256 !== sourceRecord.sha256) fail(`scientist source hash diverges: ${asset.id}`);
+    if (asset.source_direction_rows !== 6 || asset.source_state_columns !== 8) fail(`scientist source dimensions diverge: ${asset.id}`);
+    if (JSON.stringify(asset.source_state_names) !== JSON.stringify(scientistSourceStates)) fail(`scientist source-state provenance diverges: ${asset.id}`);
+    if ((asset.derived_state_columns ?? []).length !== 0) fail(`scientist states must not be synthesized: ${asset.id}`);
+    if (asset.back_right_source !== 'mirrored_from_back_left') fail(`scientist back-right provenance missing: ${asset.id}`);
+    const directionProvenance = asset.direction_provenance ?? {};
+    if (directionProvenance.right?.operation !== 'mirror_horizontal' || directionProvenance.right?.source_direction !== 'left') fail(`scientist right mirror provenance mismatch: ${asset.id}`);
+    if (directionProvenance.back_right?.operation !== 'mirror_horizontal' || directionProvenance.back_right?.source_direction !== 'back_left') fail(`scientist back-right mirror provenance mismatch: ${asset.id}`);
+  }
   if (String(asset.path).includes('/sprites/')) fail(`legacy atlas is active: ${asset.id}`);
   const relative = String(asset.path).replace('res://', '');
   const absolute = join(root, relative);
@@ -193,6 +226,15 @@ if (existsSync(privateAssemblyPath)) {
     if (!record) fail(`assembly report is missing ${expected}`);
     if (record.output_size?.[0] !== 2048 || record.output_size?.[1] !== 2048) fail(`assembly output size mismatch: ${expected}`);
     if (record.extraction_method !== assembly.extraction_method || record.transparent_gutter_px !== 12 || record.art_margin_px < 1) fail(`assembly extraction contract mismatch: ${expected}`);
+    if (scientistActors.includes(expected)) {
+      const sourceRecord = scientistGroupAssets[expected];
+      if (record.source_group_manifest !== 'reports/runtime/group_scientists_v2.json') fail(`scientist assembly group provenance mismatch: ${expected}`);
+      if (record.source !== sourceRecord.selected_source_path || record.source_sha256 !== sourceRecord.sha256) fail(`scientist assembly source diverges: ${expected}`);
+      if (JSON.stringify(record.source_state_names) !== JSON.stringify(scientistSourceStates)) fail(`scientist assembly source states diverge: ${expected}`);
+      if (JSON.stringify(record.source_direction_names) !== JSON.stringify(sourceRecord.observed_direction_rows)) fail(`scientist assembly source directions diverge: ${expected}`);
+      if (record.direction_provenance?.right?.source_direction !== 'left') fail(`scientist assembly right provenance mismatch: ${expected}`);
+      if (record.direction_provenance?.back_right?.source_direction !== 'back_left') fail(`scientist assembly back-right provenance mismatch: ${expected}`);
+    }
   }
   if (assemblyById.get('chariot')?.source !== 'reports/runtime/directional-sources/chariot_compact_v2.png') fail('Chariot compact source selection is not recorded');
   if (!assemblyById.get('samson_c1')?.derived_cells?.includes('front_right/death_fall_from_right/death_fall')) fail('Samson death-cell derivation is not recorded');

@@ -379,6 +379,114 @@
         "death_fall"
       ]
     },
+    "scientist_male_blue": {
+      "canonical_name": "scientist_male_blue",
+      "palette": [
+        "pale blue",
+        "white",
+        "navy"
+      ],
+      "fixed_costume": "worn pale-blue laboratory coat, white shirt, navy trousers, black shoes and thin eyeglasses",
+      "forbidden": [
+        "weapons",
+        "hazmat suit",
+        "modern PPE"
+      ],
+      "atlas_id": "scientist_male_blue",
+      "visual_status": "dedicated_fan_made_v2",
+      "directions": [
+        "front",
+        "front_left",
+        "left",
+        "back_left",
+        "back",
+        "back_right",
+        "right",
+        "front_right"
+      ],
+      "frame_states": [
+        "idle",
+        "move_contact_a",
+        "move_passing",
+        "move_contact_b",
+        "action_windup",
+        "action_strike",
+        "hit_recoil",
+        "death_fall"
+      ]
+    },
+    "scientist_male_gray": {
+      "canonical_name": "scientist_male_gray",
+      "palette": [
+        "medium gray",
+        "burgundy",
+        "charcoal"
+      ],
+      "fixed_costume": "wrinkled medium-gray laboratory coat, dark burgundy turtleneck, charcoal trousers and brown shoes",
+      "forbidden": [
+        "weapons",
+        "hazmat suit",
+        "modern PPE"
+      ],
+      "atlas_id": "scientist_male_gray",
+      "visual_status": "dedicated_fan_made_v2",
+      "directions": [
+        "front",
+        "front_left",
+        "left",
+        "back_left",
+        "back",
+        "back_right",
+        "right",
+        "front_right"
+      ],
+      "frame_states": [
+        "idle",
+        "move_contact_a",
+        "move_passing",
+        "move_contact_b",
+        "action_windup",
+        "action_strike",
+        "hit_recoil",
+        "death_fall"
+      ]
+    },
+    "scientist_female_lab": {
+      "canonical_name": "scientist_female_lab",
+      "palette": [
+        "aged ivory",
+        "muted teal",
+        "charcoal"
+      ],
+      "fixed_costume": "worn off-white laboratory coat, muted teal blouse, charcoal trousers, black shoes and dark low bun",
+      "forbidden": [
+        "weapons",
+        "hazmat suit",
+        "modern PPE"
+      ],
+      "atlas_id": "scientist_female_lab",
+      "visual_status": "dedicated_fan_made_v2",
+      "directions": [
+        "front",
+        "front_left",
+        "left",
+        "back_left",
+        "back",
+        "back_right",
+        "right",
+        "front_right"
+      ],
+      "frame_states": [
+        "idle",
+        "move_contact_a",
+        "move_passing",
+        "move_contact_b",
+        "action_windup",
+        "action_strike",
+        "hit_recoil",
+        "death_fall"
+      ]
+    },
     "sam_a1": {
       "canonical_name": "Sam",
       "palette": [

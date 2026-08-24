@@ -102,6 +102,7 @@ func _dispose(game: Node) -> void:
 	game.free()
 	await process_frame
 	await process_frame
+	await create_timer(0.05).timeout
 
 
 func _remove_temp_log(log_path: String) -> void:

@@ -2,7 +2,7 @@
 
 An original fan-made recreation of the 1997 arcade rail shooter, built with Godot 4.7.1. Organic actors use animated sprites inside a real 3D world: perspective, occlusion, camera rails, body hit zones and collisions remain three-dimensional.
 
-The V2 visual pipeline provides 35 unique 2048×2048 RGBA directional atlases. Each atlas contains eight views — front, front-left, left, back-left, back, back-right, right and front-right — and eight states — idle, three movement poses, wind-up, strike, hit and fall/death. This yields 64 cells per actor and 2,240 verified cells. The resolver automatically selects the camera-relative view to create the requested fake-3D effect.
+The current worktree V2 visual contract provides 38 unique 2048×2048 RGBA directional atlases. Each atlas contains eight views — front, front-left, left, back-left, back, back-right, right and front-right — and eight states — idle, three movement poses, wind-up, strike, hit and fall/death. This yields 64 cells per actor and 2,432 addressable cells. The set now includes dedicated `scientist_male_blue`, `scientist_male_gray` and `scientist_female_lab` atlases.
 
 The project includes a playable four-chapter campaign with branches, scientists, breakables, Chariot, Hangedman, Hermit, Magician, final-chapter rematches, three endings, credits, score, lives, ammunition, continues and two-player local co-op. Training, Boss Rush, Chapter Select and a local leaderboard are also available.
 
@@ -33,17 +33,17 @@ npm.cmd run qa:web
 npm.cmd run verify:web
 ```
 
-## Verified publication snapshot — August 21, 2026
+## Local v0.2.0 validation — August 24, 2026
 
-`npm.cmd test` passes 252/252 and `npm.cmd run qa` passes 257/257, including 232 core assertions, 57 manifest-atomicity assertions and a directional smoke covering 35 bindings, seven representatives and all eight directions. The 35 2048×2048 RGBA atlases contain 64 cells each, for 2,240 cells; all 25 enemies have dedicated profiles. The final visual audit passes after repairing clipped parts, Samson's death cell and chroma fringes.
+The v0.2.0 wave provides 38 directional atlases/2,432 cells, 25 unique enemy profiles, 20 individual environment materials, 33 environment nodes, six destructibles, 14 props, seven projectile cutouts, three HUD families, four boss weak-point diagrams and 28 original procedural audio cues. `npm.cmd test` passes 271/271 and the complete `npm.cmd run qa` orchestration passes 280/280.
 
-Runtime smokes validate two players, four chapters, six shots, off-screen reload, independent gamepad aim, `+120`/`-100` score events, `COD` initials and the complete campaign: Chariot, Hangedman, Hermit, both rematches, Magician, 15/15 scientists, ending and credits. Two `ObjectDB` instances remain reported at gameplay/campaign smoke shutdown without blocking either result.
+Warning-free runtime smokes validate two players, four chapters, six shots, off-screen reload, destructible and non-destructible projectile rules, independent gamepad aim, `+120`/`-100` score events, `COD` initials and the complete campaign: Chariot, Hangedman, Hermit, both rematches, Magician, 15/15 scientists, ending and credits.
 
-Final exports measure 202,088,128 bytes on Windows (headless startup passed), 166,452,720 bytes on Linux and 132,826,890 bytes for nine Web files. The 92,982,496-byte PCK remains below 100,000,000 by 7,017,504 bytes; WASM is 39,513,091 bytes. `qa:web` passes 256/256 and `verify:web` is OK.
+The v0.2.0 exports measure 161,321,616 bytes on Windows, 125,686,208 bytes on Linux and 92,060,382 bytes for nine Web files. PCK is 52,215,988 bytes and WASM is 39,513,091 bytes. The Windows executable remained alive during an eight-second startup smoke; `qa:web` passes 275/275 and `verify:web` is OK.
 
-The Vercel production build runs Godot 4.7.1 single-threaded WebGL2 with `crossOriginIsolated=true`. The document, WASM and PCK return HTTP 200, WASM uses `application/wasm`, and COOP/COEP headers are present. Production Chromium QA shows the title followed by live P1/P2 with two HUDs and two crosshairs; PCK/WASM load with 200 responses, console and page errors remain at zero, and Axe reports 23 passes with 0 violations. Cached local menu figures — TTFB 2.39 ms, FCP/LCP 99.13 ms, CLS 0 — are not full-campaign performance evidence.
+Local Chromium QA served through Vercel with production headers runs Godot 4.7.1 single-threaded WebGL2 with `crossOriginIsolated=true`. It exposed and led to a fix for using `FileAccess` with imported textures; asset loaders now use `ResourceLoader`. After re-export, the console remains error-free, the accessible canvas measures 1258×622, and the menu, P1 start, environments, HUD, continue and pause are visible. No network resource remains blocked.
 
-The public repository is [darknigthmare/the-house-of-the-dead-25d](https://github.com/darknigthmare/the-house-of-the-dead-25d). [GitHub release v0.1.0](https://github.com/darknigthmare/the-house-of-the-dead-25d/releases/tag/v0.1.0) is published and anchored to exact tag commit [`4f22299`](https://github.com/darknigthmare/the-house-of-the-dead-25d/commit/4f222998e1225cde3f2933477344cf782f84f6a8). Its Source, Windows, Linux and Web archives plus `SHA256SUMS.txt` are available; remote asset sizes and SHA-256 digests match the local files. GitHub Actions runs [32435148599](https://github.com/darknigthmare/the-house-of-the-dead-25d/actions/runs/32435148599) (tag, 28 s) and [32435035804](https://github.com/darknigthmare/the-house-of-the-dead-25d/actions/runs/32435035804) (documentation, 38 s) are green. The `main` branch remains connected to Vercel and production is `Ready` at [the-house-of-the-dead-25d.vercel.app](https://the-house-of-the-dead-25d.vercel.app).
+The public repository remains [darknigthmare/the-house-of-the-dead-25d](https://github.com/darknigthmare/the-house-of-the-dead-25d), and the historical v0.1.0 production remains available at [the-house-of-the-dead-25d.vercel.app](https://the-house-of-the-dead-25d.vercel.app). At this validation point, v0.2.0 is a verified local candidate: its commit, archives, tag, GitHub release and new deployment are not yet claimed.
 
 The compact eight-state cycle per direction is a detailed playable baseline, not a complete licensed arcade animation library. The remaining unverified gates are installation on a clean physical Windows machine, physical light guns, deep profiling on named hardware and exact comparison against a licensed reference build.
 

@@ -1,12 +1,13 @@
 {
   "name": "the-house-of-the-dead-25d",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node scripts/qa.mjs --data-only && node scripts/verify_sprite_atlas_v2.mjs && node scripts/verify_campaign_routes.mjs && node scripts/verify_enemy_roster.mjs",
-    "qa": "node scripts/qa.mjs && node scripts/verify_sprite_atlas_v2.mjs && node scripts/verify_campaign_routes.mjs && node scripts/verify_enemy_roster.mjs",
-    "qa:web": "node scripts/qa.mjs --web-only && node scripts/verify_sprite_atlas_v2.mjs",
+    "test": "node scripts/qa.mjs --data-only && node scripts/verify_sprite_atlas_v2.mjs && node scripts/verify_campaign_routes.mjs && node scripts/verify_enemy_roster.mjs && node scripts/verify_environment_assets.mjs && node scripts/verify_gameplay_support_assets.mjs && node scripts/optimize_texture_imports.mjs --check",
+    "qa": "node scripts/qa.mjs && node scripts/verify_sprite_atlas_v2.mjs && node scripts/verify_campaign_routes.mjs && node scripts/verify_enemy_roster.mjs && node scripts/verify_environment_assets.mjs && node scripts/verify_gameplay_support_assets.mjs && node scripts/optimize_texture_imports.mjs --check",
+    "qa:web": "node scripts/qa.mjs --web-only && node scripts/verify_sprite_atlas_v2.mjs && node scripts/verify_environment_assets.mjs && node scripts/verify_gameplay_support_assets.mjs && node scripts/optimize_texture_imports.mjs --check",
+    "prepare:textures": "node scripts/optimize_texture_imports.mjs",
     "fix:web-accessibility": "node scripts/patch-web-accessibility.mjs",
     "verify:web": "node scripts/verify-web-build.mjs"
   },

@@ -20,9 +20,14 @@ for (const relative of [
   'reports/runtime/group_humans_bosses.json',
   'reports/runtime/group_enemies_ad.json',
   'reports/runtime/group_enemies_eg.json',
+  'reports/runtime/group_scientists_v2.json',
 ]) {
   const group = readJson(relative);
-  for (const record of group.assets ?? group.actors ?? []) {
+  const grouped = group.assets ?? group.actors ?? [];
+  const records = Array.isArray(grouped)
+    ? grouped
+    : Object.entries(grouped).map(([id, record]) => ({ id, ...record }));
+  for (const record of records) {
     if (generationById.has(record.id)) throw new Error(`Duplicate ImageGen provenance ID: ${record.id}`);
     generationById.set(record.id, record);
   }
@@ -56,6 +61,9 @@ const fixed = [
   { id: 'hangedman', role: 'boss', folder: 'bosses' },
   { id: 'hermit', role: 'boss', folder: 'bosses' },
   { id: 'magician', role: 'boss', folder: 'bosses' },
+  { id: 'scientist_male_blue', role: 'civilian', folder: 'npcs' },
+  { id: 'scientist_male_gray', role: 'civilian', folder: 'npcs' },
+  { id: 'scientist_female_lab', role: 'civilian', folder: 'npcs' },
 ];
 const actors = [
   ...fixed,
@@ -66,7 +74,7 @@ for (const actor of actors) {
   if (ids.has(actor.id)) throw new Error(`Duplicate sprite-contract ID: ${actor.id}`);
   ids.add(actor.id);
 }
-if (actors.length !== 35) throw new Error(`Expected 35 dedicated organic identities, got ${actors.length}`);
+if (actors.length !== 38) throw new Error(`Expected 38 dedicated organic identities, got ${actors.length}`);
 
 const oldVisualPath = new Map(enemies.profiles.map((profile) => [profile.id, profile.visual_base]));
 const airborne = new Set(['mutant_bat', 'devilon_f4', 'hangedman']);
@@ -95,6 +103,10 @@ const manifestAssets = actors.map((actor) => {
     source_state_columns: record.source_state_columns,
     derived_state_columns: record.derived_state_columns,
     state_column_map: record.state_column_map,
+    ...(record.source_group_manifest ? {
+      source_state_names: record.source_state_names,
+      direction_provenance: record.direction_provenance,
+    } : {}),
     generated: today,
     contract_version: 2,
     status: 'dedicated_fan_made_v2',
@@ -138,6 +150,9 @@ const provenanceAssets = actors.map((actor) => {
   if (generation.selected_source_path !== assemblyRecord.source) {
     throw new Error(`Selected source diverges from assembly report: ${actor.id}`);
   }
+  if (generation.sha256 && generation.sha256 !== assemblyRecord.source_sha256) {
+    throw new Error(`Selected source hash diverges from assembly report: ${actor.id}`);
+  }
   const generatedDerivedStates = generation.derived_state_columns ?? [];
   return {
     id: actor.id,
@@ -162,7 +177,7 @@ const provenanceAssets = actors.map((actor) => {
     notes: generation.notes ?? '',
   };
 });
-if (provenanceAssets.length !== 35) throw new Error(`Expected 35 provenance records, got ${provenanceAssets.length}`);
+if (provenanceAssets.length !== 38) throw new Error(`Expected 38 provenance records, got ${provenanceAssets.length}`);
 writeJson('data/assets/sprite_generation_provenance.json', {
   schema_version: 1,
   generated_on: today,
@@ -176,12 +191,30 @@ writeJson('data/assets/sprite_generation_provenance.json', {
 });
 
 const priorProfiles = legacyVisuals.profiles ?? {};
+const scientistVisualDefaults = {
+  scientist_male_blue: {
+    palette: ['pale blue', 'white', 'navy'],
+    fixed_costume: 'worn pale-blue laboratory coat, white shirt, navy trousers, black shoes and thin eyeglasses',
+    forbidden: ['weapons', 'hazmat suit', 'modern PPE'],
+  },
+  scientist_male_gray: {
+    palette: ['medium gray', 'burgundy', 'charcoal'],
+    fixed_costume: 'wrinkled medium-gray laboratory coat, dark burgundy turtleneck, charcoal trousers and brown shoes',
+    forbidden: ['weapons', 'hazmat suit', 'modern PPE'],
+  },
+  scientist_female_lab: {
+    palette: ['aged ivory', 'muted teal', 'charcoal'],
+    fixed_costume: 'worn off-white laboratory coat, muted teal blouse, charcoal trousers, black shoes and dark low bun',
+    forbidden: ['weapons', 'hazmat suit', 'modern PPE'],
+  },
+};
 const visualProfiles = {};
 for (const actor of actors) {
   const enemy = enemies.profiles.find((profile) => profile.id === actor.id);
   const inherited = priorProfiles[actor.id]
     ?? (actor.id === 'cyril_a3' ? priorProfiles.axe_creature : undefined)
     ?? (actor.id === 'devilon_f4' ? priorProfiles.mutant_bat : undefined)
+    ?? scientistVisualDefaults[actor.id]
     ?? {};
   const weapon = enemy?.weapon?.kind ? ` with ${enemy.weapon.kind.replaceAll('_', ' ')}` : '';
   visualProfiles[actor.id] = {

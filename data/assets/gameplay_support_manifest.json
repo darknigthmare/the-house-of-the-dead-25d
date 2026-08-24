@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "asset_policy": "original fan-made OpenAI Images replacements; no licensed extraction",
+  "projectiles": {
+    "thrown_axe": {
+      "id": "thrown_axe",
+      "path": "res://assets/gameplay_v2/projectiles/thrown_axe.png",
+      "source_sha256": "e708eb248dc212ca6ab31ec6a70c71719dfba5155f1e98bdc568191276711ef4",
+      "sha256": "ec0b472424b5c3d390f79bcc1f636cdf98493674efda38e9186a24444cb9ba8d",
+      "size": [
+        512,
+        512
+      ]
+    },
+    "thrown_dagger": {
+      "id": "thrown_dagger",
+      "path": "res://assets/gameplay_v2/projectiles/thrown_dagger.png",
+      "source_sha256": "beddc7f9d4924838ad485777e9ee83be8638bd0e15b4bcfc11d6792191bf6ac1",
+      "sha256": "1de9023c686b0082e9c70d823c17de03c0dde75b455d58c78396ab0c29e7829f",
+      "size": [
+        512,
+        512
+      ]
+    },
+    "thrown_barrel": {
+      "id": "thrown_barrel",
+      "path": "res://assets/gameplay_v2/projectiles/thrown_barrel.png",
+      "source_sha256": "7bdc63a9070a11abd5b2f90bda57fba7b68abf8d0853936a8356c1f654686db5",
+      "sha256": "23459a05670dd1afee79e2ca67b871dbe0a243ad31b7476d15b48f4de4c8ac57",
+      "size": [
+        512,
+        512
+      ]
+    },
+    "organic_spit": {
+      "id": "organic_spit",
+      "path": "res://assets/gameplay_v2/projectiles/organic_spit.png",
+      "source_sha256": "0f097d21e40381725e2759c206971a5973adb5f951b849f2c1944373bca4d9a1",
+      "sha256": "6290e867348dd5d45372745b9c4234021cef55ac8b4a8ff362da2084620dedb6",
+      "size": [
+        512,
+        512
+      ]
+    },
+    "iron_claw": {
+      "id": "iron_claw",
+      "path": "res://assets/gameplay_v2/projectiles/iron_claw.png",
+      "source_sha256": "febbb610ddc8953157163784791ff0f0d51be44458392bc021b51e47070c346b",
+      "sha256": "2738b09fdb56f3223d4bb0990c0932195ce918636fbb5e73d3b41fb4c37325ed",
+      "size": [
+        512,
+        512
+      ]
+    },
+    "hermit_web_ball": {
+      "id": "hermit_web_ball",
+      "path": "res://assets/gameplay_v2/projectiles/hermit_web_ball.png",
+      "source_sha256": "04eb820ab20db094354f5bab068aa7cb5639c44269dfc909d208712e629f3739",
+      "sha256": "e87b0344c633205cc8e32fd2c83a57b3a335fff1484aa63981eaa619047f8ca6",
+      "size": [
+        512,
+        512
+      ]
+    },
+    "magician_fireball": {
+      "id": "magician_fireball",
+      "path": "res://assets/gameplay_v2/projectiles/magician_fireball.png",
+      "source_sha256": "e8d5bc7a77e59d6be9932da99d2db9c7bcc1d424b2d5fc4d21e5b77bcfe1ef17",
+      "sha256": "cdd11ca04ad0649b44fb8fac948f90dc9163adf026c9dce35a6d05ce730d6570",
+      "size": [
+        512,
+        512
+      ]
+    }
+  },
+  "ui": {
+    "bullet_round": {
+      "id": "bullet_round",
+      "path": "res://assets/gameplay_v2/ui/bullet_round.png",
+      "source_sha256": "fb230d685948d076ea7be34deedbcfbcdee323da14075ed615114aac17a8ace7",
+      "sha256": "a5c4e379349d3b21d0bb2475ada4abbace66d0de6a4f63e0bdfe0b9d72995e83",
+      "size": [
+        256,
+        256
+      ]
+    },
+    "reload_offscreen_icon": {
+      "id": "reload_offscreen_icon",
+      "path": "res://assets/gameplay_v2/ui/reload_offscreen_icon.png",
+      "source_sha256": "6502ce2df7600eacc91b9dff7b69d67c834ea2a36fdfc1562d1f23ab459dcdf9",
+      "sha256": "79efa890b110d1a07dd03135eeb8b57497e1f076efe890ae077613afd87145f3",
+      "size": [
+        256,
+        256
+      ]
+    },
+    "life_torch": {
+      "id": "life_torch",
+      "path": "res://assets/gameplay_v2/ui/life_torch.png",
+      "source_sha256": "44cff730404765a0fd9992348c0ba8a1b6aaff685364d8b77d9a2528bd3abb7d",
+      "sha256": "11fe164b3463621488851ff4b7fb69e49b1e3bf28f6f51412b923cf09e0365bf",
+      "size": [
+        2048,
+        256
+      ],
+      "hframes": 8,
+      "fps": 9.0
+    }
+  },
+  "weakpoints": {
+    "chariot": {
+      "id": "weakpoint_chariot",
+      "path": "res://assets/gameplay_v2/weakpoints/weakpoint_chariot.png",
+      "source_sha256": "9280fceba9bd8e1e8fec1e00a63a2c0f25c2ae8d5b0bda8c20cb1f7a6f17668c",
+      "sha256": "0bad2f1b5994ac1cf7b507f67b6e82f69043d5fbdcaa0895cbbc62b3b52b8e2f",
+      "size": [
+        384,
+        384
+      ]
+    },
+    "hangedman": {
+      "id": "weakpoint_hangedman",
+      "path": "res://assets/gameplay_v2/weakpoints/weakpoint_hangedman.png",
+      "source_sha256": "8da67ade0a212fb86cfecf9a0744e756a7f712aac34fb8bb389cd7e8d6655c96",
+      "sha256": "a12cff3f93836431d65c4a61279a9ba98d74b46ea4be62cd12bb776123e03ea6",
+      "size": [
+        384,
+        384
+      ]
+    },
+    "hermit": {
+      "id": "weakpoint_hermit",
+      "path": "res://assets/gameplay_v2/weakpoints/weakpoint_hermit.png",
+      "source_sha256": "02d843e7228828d5f9d5d8dd44bc4f2685a2c5fd813b10778ac6e709b4da5858",
+      "sha256": "c691bc8b41a804e7b3cc9f7c5f812f629a4dbb05652bbaa24c331e108fea2f96",
+      "size": [
+        384,
+        384
+      ]
+    },
+    "magician": {
+      "id": "weakpoint_magician",
+      "path": "res://assets/gameplay_v2/weakpoints/weakpoint_magician.png",
+      "source_sha256": "d101980ed553684059395ebca0c6551a4b0cb57e90b31626913433c3b928a2bd",
+      "sha256": "e159fed1ba51b680c23084323ebf20640a8ab2dc36000a1bd3faa425b3d8e84d",
+      "size": [
+        384,
+        384
+      ]
+    }
+  },
+  "generation_manifest_sha256": "72b013f936b2a6e3b13cda68ce1dd25264f2c37cb8bcc8d11c34620945d770d6",
+  "failures": []
+}

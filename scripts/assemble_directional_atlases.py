@@ -25,6 +25,7 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE_ROOT = ROOT / "reports" / "runtime" / "directional-sources"
 OUTPUT_ROOT = ROOT / "assets" / "sprites_v2"
+SCIENTIST_GROUP_MANIFEST = "reports/runtime/group_scientists_v2.json"
 CELL_SIZE = 256
 CELL_INSET = 12
 ART_MARGIN = 2
@@ -52,6 +53,16 @@ FRAME_STATES = (
     "death_fall",
 )
 
+SCIENTIST_SOURCE_STATES = (
+    "idle",
+    "alarm",
+    "flee_a",
+    "flee_b",
+    "cower",
+    "rescue_wave",
+    "hit",
+    "death",
+)
 
 @dataclass(frozen=True)
 class ActorSpec:
@@ -60,6 +71,7 @@ class ActorSpec:
     source_columns: int = SOURCE_COLUMNS
     state_column_map: tuple[int, ...] = tuple(range(SOURCE_COLUMNS))
     source_name: str = ""
+    source_group_manifest: str = ""
 
 
 ACTORS = (
@@ -98,7 +110,86 @@ ACTORS = (
     ActorSpec("hangedman", "bosses", 7, (0, 1, 2, 3, 4, 5, 5, 6)),
     ActorSpec("hermit", "bosses"),
     ActorSpec("magician", "bosses"),
+    ActorSpec("scientist_male_blue", "npcs", source_group_manifest=SCIENTIST_GROUP_MANIFEST),
+    ActorSpec("scientist_male_gray", "npcs", source_group_manifest=SCIENTIST_GROUP_MANIFEST),
+    ActorSpec("scientist_female_lab", "npcs", source_group_manifest=SCIENTIST_GROUP_MANIFEST),
 )
+
+
+def resolve_source(spec: ActorSpec) -> tuple[Path, dict[str, object] | None]:
+    """Resolve and validate an actor source, including grouped scientist metadata."""
+    if not spec.source_group_manifest:
+        return SOURCE_ROOT / (spec.source_name or f"{spec.actor_id}.png"), None
+
+    manifest_path = ROOT / spec.source_group_manifest
+    if not manifest_path.exists():
+        raise FileNotFoundError(manifest_path)
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    assets = manifest.get("assets", {})
+    if not isinstance(assets, dict):
+        raise ValueError(f"Scientist source manifest assets must be an object: {manifest_path}")
+    record = assets.get(spec.actor_id)
+    if not isinstance(record, dict):
+        raise ValueError(f"Scientist source manifest is missing {spec.actor_id}")
+    if record.get("accepted") is not True:
+        raise ValueError(f"Scientist source was not accepted: {spec.actor_id}")
+    if int(record.get("observed_columns", 0)) != spec.source_columns:
+        raise ValueError(f"Scientist source column count mismatch: {spec.actor_id}")
+    if tuple(record.get("observed_state_columns", ())) != SCIENTIST_SOURCE_STATES:
+        raise ValueError(f"Scientist source state order mismatch: {spec.actor_id}")
+
+    selected = record.get("selected_source_path", "")
+    if not isinstance(selected, str) or not selected:
+        raise ValueError(f"Scientist selected source path is missing: {spec.actor_id}")
+    source_path = (ROOT / selected).resolve()
+    try:
+        source_path.relative_to(ROOT.resolve())
+    except ValueError as error:
+        raise ValueError(f"Scientist source escapes the project root: {selected}") from error
+    if not source_path.exists():
+        raise FileNotFoundError(source_path)
+    expected_sha256 = str(record.get("sha256", ""))
+    actual_sha256 = hashlib.sha256(source_path.read_bytes()).hexdigest()
+    if actual_sha256 != expected_sha256:
+        raise ValueError(f"Scientist source hash mismatch: {spec.actor_id}")
+    return source_path, record
+
+
+def direction_row_plan(
+    row_count: int,
+    declared_rows: tuple[str, ...] = (),
+) -> tuple[tuple[int, bool], ...]:
+    """Map canonical output rows to authored rows and explicit mirror operations."""
+    if declared_rows:
+        if len(declared_rows) != row_count or len(set(declared_rows)) != row_count:
+            raise ValueError("Declared source directions must be unique and match detected rows")
+        source_by_direction = {
+            direction: index for index, direction in enumerate(declared_rows)
+        }
+        plan: list[tuple[int, bool]] = []
+        for direction in DIRECTIONS:
+            if direction in source_by_direction:
+                plan.append((source_by_direction[direction], False))
+            elif direction == "right" and "left" in source_by_direction:
+                plan.append((source_by_direction["left"], True))
+            elif direction == "back_right" and "back_left" in source_by_direction:
+                plan.append((source_by_direction["back_left"], True))
+            else:
+                raise ValueError(f"Cannot derive required direction {direction}")
+        return tuple(plan)
+
+    if row_count == 7:
+        row_map = (0, 1, 2, 3, 4, 5, 2, 6)
+        mirrored_rows = (6,)
+    elif row_count == 6:
+        row_map = (0, 1, 2, 3, 4, 3, 2, 5)
+        mirrored_rows = (5, 6)
+    else:
+        raise ValueError(f"Unsupported source direction count: {row_count}")
+    return tuple(
+        (source_row, final_row in mirrored_rows)
+        for final_row, source_row in enumerate(row_map)
+    )
 
 
 def smoothstep(edge_a: float, edge_b: float, value: np.ndarray) -> np.ndarray:
@@ -521,7 +612,7 @@ def compose_moody_chain_cell(
 
 
 def build_actor(spec: ActorSpec) -> dict[str, object]:
-    source_path = SOURCE_ROOT / (spec.source_name or f"{spec.actor_id}.png")
+    source_path, source_manifest_record = resolve_source(spec)
     if not source_path.exists():
         raise FileNotFoundError(source_path)
     source = Image.open(source_path).convert("RGB")
@@ -534,6 +625,21 @@ def build_actor(spec: ActorSpec) -> dict[str, object]:
     column_spans = foreground_spans(source_alpha, axis=0)
     if len(row_spans) not in (6, 7):
         raise ValueError(f"Expected six or seven direction bands, detected {len(row_spans)}: {row_spans}")
+    declared_direction_rows: tuple[str, ...] = ()
+    source_state_names = FRAME_STATES
+    if source_manifest_record is not None:
+        declared_direction_rows = tuple(
+            str(value)
+            for value in source_manifest_record.get("observed_direction_rows", ())
+        )
+        source_state_names = tuple(
+            str(value)
+            for value in source_manifest_record.get("observed_state_columns", ())
+        )
+    source_direction_names = declared_direction_rows or (
+        ("front", "front_left", "left", "back_left", "back", "back_right", "front_right")
+        if len(row_spans) == 7 else ("front", "front_left", "left", "back_left", "back", "front_right")
+    )
     row_bounds = grid_bounds(row_spans, source.height)
     column_bounds = [
         round(index * source.width / spec.source_columns)
@@ -594,15 +700,21 @@ def build_actor(spec: ActorSpec) -> dict[str, object]:
             extraction_metrics[(source_row, source_column)] = metrics
 
     atlas = Image.new("RGBA", (CELL_SIZE * 8, CELL_SIZE * 8), (0, 0, 0, 0))
-    row_map = (0, 1, 2, 3, 4, 5, 2, 6) if len(row_spans) == 7 else (0, 1, 2, 3, 4, 3, 2, 5)
-    mirrored_rows = (6,) if len(row_spans) == 7 else (5, 6)
+    row_plan = direction_row_plan(len(row_spans), declared_direction_rows)
+    direction_provenance = {
+        DIRECTIONS[final_row]: {
+            "operation": "mirror_horizontal" if mirrored else "authored",
+            "source_direction": source_direction_names[source_row],
+        }
+        for final_row, (source_row, mirrored) in enumerate(row_plan)
+    }
     cell_alpha_counts: list[int] = []
     derived_cells: list[str] = []
     final_cells: dict[tuple[int, int], Image.Image] = {}
-    for final_row, source_row in enumerate(row_map):
+    for final_row, (source_row, mirrored) in enumerate(row_plan):
         for column, source_column in enumerate(spec.state_column_map):
             cell = extracted[(source_row, source_column)].copy()
-            if final_row in mirrored_rows:
+            if mirrored:
                 cell = cell.transpose(Image.Transpose.FLIP_LEFT_RIGHT)
             alpha = np.asarray(cell.getchannel("A"))
             visible = int(np.count_nonzero(alpha))
@@ -653,13 +765,19 @@ def build_actor(spec: ActorSpec) -> dict[str, object]:
         "output_size": list(atlas.size),
         "directions": list(DIRECTIONS),
         "frame_states": list(FRAME_STATES),
+        "source_state_names": list(source_state_names),
         "source_direction_rows": len(row_spans),
+        "source_direction_names": list(source_direction_names),
         "source_state_columns": spec.source_columns,
         "derived_state_columns": ["hit_recoil_from_action_strike"] if spec.source_columns == 7 else [],
         "derived_cells": derived_cells,
         "state_column_map": list(spec.state_column_map),
+        "direction_provenance": direction_provenance,
         "right_profile": "mirrored_from_left_profile",
-        "back_right": "generated" if len(row_spans) == 7 else "mirrored_from_back_left",
+        "back_right": "mirrored_from_back_left"
+        if direction_provenance["back_right"]["operation"] == "mirror_horizontal"
+        else "generated",
+        "source_group_manifest": spec.source_group_manifest or None,
         "detected_row_spans": row_spans,
         "detected_column_spans": column_spans,
         "regular_column_bounds": column_bounds,
@@ -687,8 +805,8 @@ def main() -> int:
     parser.add_argument("--report", default="reports/runtime/directional-atlas-assembly.json")
     args = parser.parse_args()
 
-    if len(ACTORS) != 35 or len({spec.actor_id for spec in ACTORS}) != 35:
-        raise SystemExit("Directional actor contract must contain 35 unique identities")
+    if len(ACTORS) != 38 or len({spec.actor_id for spec in ACTORS}) != 38:
+        raise SystemExit("Directional actor contract must contain 38 unique identities")
     requested = set(args.actor)
     specs = [spec for spec in ACTORS if not requested or spec.actor_id in requested]
     unknown = requested.difference(spec.actor_id for spec in ACTORS)

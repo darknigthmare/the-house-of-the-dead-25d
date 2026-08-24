@@ -55,6 +55,7 @@ func _run() -> void:
 	game.free()
 	await process_frame
 	await process_frame
+	await create_timer(0.2).timeout
 	quit(0)
 
 
@@ -63,4 +64,5 @@ func _fail(message: String, game: Node = null) -> void:
 	if game != null and is_instance_valid(game):
 		game.free()
 		await process_frame
+		await create_timer(0.2).timeout
 	quit(1)

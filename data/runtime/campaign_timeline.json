@@ -13,334 +13,1691 @@
       "rescues_expected": 6,
       "nodes": [
         {
-          "id": "garden_rescue", "duration": 8.5, "style": "garden",
-          "objective": "SAVE THE SCIENTIST", "dialogue": "Help! They're everywhere!",
-          "rail": {"x": -0.5, "y": 1.62, "z": 5.2, "sweep": 0.9},
-          "civilian": {"position": [1.65, 0.0, -10.5], "deadline": 7.0, "dialogue": "Please, save me!"},
+          "id": "garden_rescue",
+          "duration": 8.5,
+          "style": "garden",
+          "objective": "SAVE THE SCIENTIST",
+          "dialogue": "Help! They're everywhere!",
+          "rail": {
+            "x": -0.5,
+            "y": 1.62,
+            "z": 5.2,
+            "sweep": 0.9
+          },
+          "civilian": {
+            "position": [
+              1.65,
+              0,
+              -10.5
+            ],
+            "deadline": 7,
+            "dialogue": "Please, save me!",
+            "actor_id": "scientist_male_blue"
+          },
           "spawns": [
-            {"delay": 0.6, "actor": "neil_a2", "position": [-1.5, 0.0, -11.8], "attack_delay": 4.1, "targets_civilian": true, "behavior": "walk"},
-            {"delay": 1.7, "actor": "cyril_a3", "position": [0.15, 0.0, -13.1], "attack_delay": 5.0, "behavior": "charge"},
-            {"delay": 3.1, "actor": "devilon_f4", "position": [2.6, 2.0, -13.4], "attack_delay": 5.2, "behavior": "flight_swarm"}
+            {
+              "delay": 0.6,
+              "actor": "neil_a2",
+              "position": [
+                -1.5,
+                0,
+                -11.8
+              ],
+              "attack_delay": 4.1,
+              "targets_civilian": true,
+              "behavior": "walk"
+            },
+            {
+              "delay": 1.7,
+              "actor": "cyril_a3",
+              "position": [
+                0.15,
+                0,
+                -13.1
+              ],
+              "attack_delay": 5,
+              "behavior": "charge"
+            },
+            {
+              "delay": 3.1,
+              "actor": "devilon_f4",
+              "position": [
+                2.6,
+                2,
+                -13.4
+              ],
+              "attack_delay": 5.2,
+              "behavior": "flight_swarm"
+            }
           ],
-          "next_success": "mansion_entrance", "next_failure": "under_bridge"
+          "next_success": "mansion_entrance",
+          "next_failure": "under_bridge"
         },
         {
-          "id": "mansion_entrance", "duration": 8.0, "style": "garden",
-          "objective": "CLEAR THE MAIN ENTRANCE", "dialogue": "The front entrance is still open!",
-          "rail": {"x": 0.6, "y": 1.68, "z": 4.7, "sweep": -0.8},
-          "civilian": {"position": [-1.1, 0.0, -10.2], "deadline": 6.5, "dialogue": "They followed me from the courtyard!"},
+          "id": "mansion_entrance",
+          "duration": 8,
+          "style": "garden",
+          "objective": "CLEAR THE MAIN ENTRANCE",
+          "dialogue": "The front entrance is still open!",
+          "rail": {
+            "x": 0.6,
+            "y": 1.68,
+            "z": 4.7,
+            "sweep": -0.8
+          },
+          "civilian": {
+            "position": [
+              -1.1,
+              0,
+              -10.2
+            ],
+            "deadline": 6.5,
+            "dialogue": "They followed me from the courtyard!",
+            "actor_id": "scientist_male_gray"
+          },
           "spawns": [
-            {"delay": 0.4, "actor": "bourbon_b2", "position": [-1.9, 0.0, -12.0], "attack_delay": 5.1, "behavior": "heavy_weapon"},
-            {"delay": 1.5, "actor": "neil_a2", "position": [1.7, 0.0, -11.4], "attack_delay": 4.7, "targets_civilian": true, "behavior": "walk"},
-            {"delay": 3.0, "actor": "ebitan_a_b3", "position": [0.1, 0.0, -13.2], "attack_delay": 4.9, "behavior": "aquatic_weave"}
+            {
+              "delay": 0.4,
+              "actor": "bourbon_b2",
+              "position": [
+                -1.9,
+                0,
+                -12
+              ],
+              "attack_delay": 5.1,
+              "behavior": "heavy_weapon"
+            },
+            {
+              "delay": 1.5,
+              "actor": "neil_a2",
+              "position": [
+                1.7,
+                0,
+                -11.4
+              ],
+              "attack_delay": 4.7,
+              "targets_civilian": true,
+              "behavior": "walk"
+            },
+            {
+              "delay": 3,
+              "actor": "ebitan_a_b3",
+              "position": [
+                0.1,
+                0,
+                -13.2
+              ],
+              "attack_delay": 4.9,
+              "behavior": "aquatic_weave"
+            }
           ],
           "next": "foyer_choice"
         },
         {
-          "id": "under_bridge", "duration": 8.5, "style": "sewer",
-          "objective": "ESCAPE THE WATERWAY", "dialogue": "We have to go beneath the bridge.",
-          "rail": {"x": -0.8, "y": 1.3, "z": 4.8, "sweep": 0.5},
-          "civilian": {"position": [1.35, 0.0, -9.9], "deadline": 6.4, "dialogue": "The creatures drove me into the waterway!"},
+          "id": "under_bridge",
+          "duration": 8.5,
+          "style": "sewer",
+          "objective": "ESCAPE THE WATERWAY",
+          "dialogue": "We have to go beneath the bridge.",
+          "rail": {
+            "x": -0.8,
+            "y": 1.3,
+            "z": 4.8,
+            "sweep": 0.5
+          },
+          "civilian": {
+            "position": [
+              1.35,
+              0,
+              -9.9
+            ],
+            "deadline": 6.4,
+            "dialogue": "The creatures drove me into the waterway!",
+            "actor_id": "scientist_female_lab"
+          },
           "spawns": [
-            {"delay": 0.5, "actor": "ebitan_b_b4", "position": [-2.0, 0.0, -10.0], "attack_delay": 3.9, "targets_civilian": true, "behavior": "aquatic_weave"},
-            {"delay": 1.4, "actor": "saruzou_f2", "position": [1.7, 0.0, -12.2], "attack_delay": 4.5, "behavior": "ceiling_drop"},
-            {"delay": 3.3, "actor": "cyril_a3", "position": [0.0, 0.0, -14.0], "attack_delay": 5.5, "behavior": "charge"}
+            {
+              "delay": 0.5,
+              "actor": "ebitan_b_b4",
+              "position": [
+                -2,
+                0,
+                -10
+              ],
+              "attack_delay": 3.9,
+              "targets_civilian": true,
+              "behavior": "aquatic_weave"
+            },
+            {
+              "delay": 1.4,
+              "actor": "saruzou_f2",
+              "position": [
+                1.7,
+                0,
+                -12.2
+              ],
+              "attack_delay": 4.5,
+              "behavior": "ceiling_drop"
+            },
+            {
+              "delay": 3.3,
+              "actor": "cyril_a3",
+              "position": [
+                0,
+                0,
+                -14
+              ],
+              "attack_delay": 5.5,
+              "behavior": "charge"
+            }
           ],
           "next": "foyer_choice"
         },
         {
-          "id": "foyer_choice", "duration": 9.0, "style": "mansion",
-          "objective": "BREAK THE DOOR LOCK", "dialogue": "Choose quickly — the creatures are closing in.",
-          "rail": {"x": 0.0, "y": 1.72, "z": 5.1, "sweep": 1.2},
-          "civilian": {"position": [1.15, 0.0, -10.1], "deadline": 6.8, "dialogue": "Please! Get this door open!"},
-          "breakable": {"position": [-2.1, 1.05, -10.3], "health": 2, "pickup": "medal", "score": 200},
+          "id": "foyer_choice",
+          "duration": 9,
+          "style": "mansion",
+          "objective": "BREAK THE DOOR LOCK",
+          "dialogue": "Choose quickly — the creatures are closing in.",
+          "rail": {
+            "x": 0,
+            "y": 1.72,
+            "z": 5.1,
+            "sweep": 1.2
+          },
+          "civilian": {
+            "position": [
+              1.15,
+              0,
+              -10.1
+            ],
+            "deadline": 6.8,
+            "dialogue": "Please! Get this door open!",
+            "actor_id": "scientist_male_blue"
+          },
+          "breakable": {
+            "position": [
+              -2.1,
+              1.05,
+              -10.3
+            ],
+            "health": 2,
+            "pickup": "medal",
+            "score": 200,
+            "asset": "c01_foyer_door_lock"
+          },
           "spawns": [
-            {"delay": 0.8, "actor": "kageo_b1", "position": [1.6, 0.0, -11.3], "attack_delay": 4.6, "targets_civilian": true, "behavior": "ceiling_drop"},
-            {"delay": 2.0, "actor": "samson_c1", "position": [-0.2, 0.0, -13.2], "attack_delay": 5.7, "behavior": "heavy_weapon"},
-            {"delay": 3.5, "actor": "devilon_f4", "position": [2.4, 2.2, -13.6], "attack_delay": 5.4, "behavior": "flight_swarm"}
+            {
+              "delay": 0.8,
+              "actor": "kageo_b1",
+              "position": [
+                1.6,
+                0,
+                -11.3
+              ],
+              "attack_delay": 4.6,
+              "targets_civilian": true,
+              "behavior": "ceiling_drop"
+            },
+            {
+              "delay": 2,
+              "actor": "samson_c1",
+              "position": [
+                -0.2,
+                0,
+                -13.2
+              ],
+              "attack_delay": 5.7,
+              "behavior": "heavy_weapon"
+            },
+            {
+              "delay": 3.5,
+              "actor": "devilon_f4",
+              "position": [
+                2.4,
+                2.2,
+                -13.6
+              ],
+              "attack_delay": 5.4,
+              "behavior": "flight_swarm"
+            }
           ],
-          "next_success": "upper_stairs", "next_failure": "ground_hall"
+          "next_success": "upper_stairs",
+          "next_failure": "ground_hall"
         },
         {
-          "id": "upper_stairs", "duration": 7.5, "style": "mansion",
-          "objective": "PROTECT THE UPPER LANDING", "dialogue": "Rogan! Over here!",
-          "rail": {"x": 0.9, "y": 2.15, "z": 4.4, "sweep": -1.0},
-          "civilian": {"position": [-1.7, 0.0, -10.5], "deadline": 6.2},
+          "id": "upper_stairs",
+          "duration": 7.5,
+          "style": "mansion",
+          "objective": "PROTECT THE UPPER LANDING",
+          "dialogue": "Rogan! Over here!",
+          "rail": {
+            "x": 0.9,
+            "y": 2.15,
+            "z": 4.4,
+            "sweep": -1
+          },
+          "civilian": {
+            "position": [
+              -1.7,
+              0,
+              -10.5
+            ],
+            "deadline": 6.2,
+            "actor_id": "scientist_male_gray"
+          },
           "spawns": [
-            {"delay": 0.5, "actor": "simon_d1", "position": [0.5, 0.0, -10.8], "attack_delay": 3.8, "targets_civilian": true, "behavior": "jump"},
-            {"delay": 2.0, "actor": "burner_c3", "position": [2.0, 0.0, -13.5], "attack_delay": 5.2, "behavior": "throw_projectile"}
+            {
+              "delay": 0.5,
+              "actor": "simon_d1",
+              "position": [
+                0.5,
+                0,
+                -10.8
+              ],
+              "attack_delay": 3.8,
+              "targets_civilian": true,
+              "behavior": "jump"
+            },
+            {
+              "delay": 2,
+              "actor": "burner_c3",
+              "position": [
+                2,
+                0,
+                -13.5
+              ],
+              "attack_delay": 5.2,
+              "behavior": "throw_projectile"
+            }
           ],
           "next": "sophie_antechamber"
         },
         {
-          "id": "ground_hall", "duration": 7.5, "style": "mansion",
-          "objective": "CROSS THE COLLAPSING HALL", "dialogue": "The floor won't hold!",
-          "rail": {"x": -1.0, "y": 1.25, "z": 4.2, "sweep": 0.8},
-          "civilian": {"position": [1.25, 0.0, -10.0], "deadline": 6.2, "dialogue": "I'm trapped on this side!"},
+          "id": "ground_hall",
+          "duration": 7.5,
+          "style": "mansion",
+          "objective": "CROSS THE COLLAPSING HALL",
+          "dialogue": "The floor won't hold!",
+          "rail": {
+            "x": -1,
+            "y": 1.25,
+            "z": 4.2,
+            "sweep": 0.8
+          },
+          "civilian": {
+            "position": [
+              1.25,
+              0,
+              -10
+            ],
+            "deadline": 6.2,
+            "dialogue": "I'm trapped on this side!",
+            "actor_id": "scientist_female_lab"
+          },
           "spawns": [
-            {"delay": 0.4, "actor": "taran_g3", "position": [-1.9, 0.0, -10.5], "attack_delay": 3.8, "targets_civilian": true, "behavior": "armored_advance"},
-            {"delay": 1.9, "actor": "gilmore_d2", "position": [1.8, 0.0, -11.4], "attack_delay": 4.5, "behavior": "charge"},
-            {"delay": 3.1, "actor": "bouere_f3", "position": [0.0, 0.0, -13.8], "attack_delay": 5.0, "behavior": "jump"}
+            {
+              "delay": 0.4,
+              "actor": "taran_g3",
+              "position": [
+                -1.9,
+                0,
+                -10.5
+              ],
+              "attack_delay": 3.8,
+              "targets_civilian": true,
+              "behavior": "armored_advance"
+            },
+            {
+              "delay": 1.9,
+              "actor": "gilmore_d2",
+              "position": [
+                1.8,
+                0,
+                -11.4
+              ],
+              "attack_delay": 4.5,
+              "behavior": "charge"
+            },
+            {
+              "delay": 3.1,
+              "actor": "bouere_f3",
+              "position": [
+                0,
+                0,
+                -13.8
+              ],
+              "attack_delay": 5,
+              "behavior": "jump"
+            }
           ],
           "next": "sophie_antechamber"
         },
         {
-          "id": "sophie_antechamber", "duration": 7.5, "style": "mansion",
-          "objective": "SAVE THE RESEARCHER", "dialogue": "Sophie is just beyond this room!",
-          "rail": {"x": 0.45, "y": 1.62, "z": 4.3, "sweep": -0.55},
-          "civilian": {"position": [-1.4, 0.0, -10.4], "deadline": 6.2, "dialogue": "Hurry! They're guarding the corridor!"},
+          "id": "sophie_antechamber",
+          "duration": 7.5,
+          "style": "mansion",
+          "objective": "SAVE THE RESEARCHER",
+          "dialogue": "Sophie is just beyond this room!",
+          "rail": {
+            "x": 0.45,
+            "y": 1.62,
+            "z": 4.3,
+            "sweep": -0.55
+          },
+          "civilian": {
+            "position": [
+              -1.4,
+              0,
+              -10.4
+            ],
+            "deadline": 6.2,
+            "dialogue": "Hurry! They're guarding the corridor!",
+            "actor_id": "scientist_male_blue"
+          },
           "spawns": [
-            {"delay": 0.5, "actor": "moody_e3", "position": [0.2, 0.0, -10.7], "attack_delay": 3.9, "targets_civilian": true, "behavior": "ceiling_drop"},
-            {"delay": 1.8, "actor": "robert_d4", "position": [1.9, 0.0, -12.4], "attack_delay": 4.8, "behavior": "heavy_weapon"},
-            {"delay": 3.1, "actor": "murrer_g1", "position": [-2.0, 2.0, -13.3], "attack_delay": 5.0, "behavior": "flight_swarm"}
+            {
+              "delay": 0.5,
+              "actor": "moody_e3",
+              "position": [
+                0.2,
+                0,
+                -10.7
+              ],
+              "attack_delay": 3.9,
+              "targets_civilian": true,
+              "behavior": "ceiling_drop"
+            },
+            {
+              "delay": 1.8,
+              "actor": "robert_d4",
+              "position": [
+                1.9,
+                0,
+                -12.4
+              ],
+              "attack_delay": 4.8,
+              "behavior": "heavy_weapon"
+            },
+            {
+              "delay": 3.1,
+              "actor": "murrer_g1",
+              "position": [
+                -2,
+                2,
+                -13.3
+              ],
+              "attack_delay": 5,
+              "behavior": "flight_swarm"
+            }
           ],
           "next": "sophie_corridor"
         },
         {
-          "id": "sophie_corridor", "duration": 7.5, "style": "mansion",
-          "objective": "REACH SOPHIE", "dialogue": "Rogan... the creatures... Curien made them...",
-          "rail": {"x": 0.0, "y": 1.58, "z": 4.0, "sweep": 0.35},
-          "civilian": {"actor_id": "sophie", "position": [0.0, 0.0, -10.8], "deadline": 7.0, "dialogue": "Rogan!"},
+          "id": "sophie_corridor",
+          "duration": 7.5,
+          "style": "mansion",
+          "objective": "REACH SOPHIE",
+          "dialogue": "Rogan... the creatures... Curien made them...",
+          "rail": {
+            "x": 0,
+            "y": 1.58,
+            "z": 4,
+            "sweep": 0.35
+          },
+          "civilian": {
+            "actor_id": "sophie",
+            "position": [
+              0,
+              0,
+              -10.8
+            ],
+            "deadline": 7,
+            "dialogue": "Rogan!"
+          },
           "spawns": [
-            {"delay": 1.0, "actor": "bentley_c2", "position": [-1.8, 0.0, -12.2], "attack_delay": 4.4, "targets_civilian": true, "behavior": "armored_advance"},
-            {"delay": 2.4, "actor": "parlor_e4", "position": [1.6, 0.0, -13.5], "attack_delay": 5.0, "behavior": "charge"}
+            {
+              "delay": 1,
+              "actor": "bentley_c2",
+              "position": [
+                -1.8,
+                0,
+                -12.2
+              ],
+              "attack_delay": 4.4,
+              "targets_civilian": true,
+              "behavior": "armored_advance"
+            },
+            {
+              "delay": 2.4,
+              "actor": "parlor_e4",
+              "position": [
+                1.6,
+                0,
+                -13.5
+              ],
+              "attack_delay": 5,
+              "behavior": "charge"
+            }
           ],
           "next": "chariot_battle"
         },
         {
-          "id": "chariot_battle", "type": "boss", "boss": "chariot", "duration": 60.0, "style": "mansion",
-          "objective": "DESTROY CHARIOT", "dialogue": "Chariot, Type 27. Aim for the opening in its armor.",
-          "rail": {"x": 0.0, "y": 1.7, "z": 7.5, "sweep": 0.0}, "spawns": [], "next": "chapter_complete"
+          "id": "chariot_battle",
+          "type": "boss",
+          "boss": "chariot",
+          "duration": 60,
+          "style": "mansion",
+          "objective": "DESTROY CHARIOT",
+          "dialogue": "Chariot, Type 27. Aim for the opening in its armor.",
+          "rail": {
+            "x": 0,
+            "y": 1.7,
+            "z": 7.5,
+            "sweep": 0
+          },
+          "spawns": [],
+          "next": "chapter_complete"
         }
       ]
     },
     {
-      "id": "chapter_02", "title": "REVENGE", "style": "mansion",
+      "id": "chapter_02",
+      "title": "REVENGE",
+      "style": "mansion",
       "intro": "The agents push deeper into Curien's mansion, where every rescue and every shot changes the route.",
-      "start": "chain_plate", "boss": "hangedman", "rescues_expected": 6,
+      "start": "chain_plate",
+      "boss": "hangedman",
+      "rescues_expected": 6,
       "nodes": [
         {
-          "id": "chain_plate", "duration": 8.5, "style": "mansion", "objective": "SHOOT THE CHAINED HATCH", "dialogue": "That plate may open another path.",
-          "rail": {"x": -0.4, "y": 1.6, "z": 4.8, "sweep": 0.9},
-          "civilian": {"position": [1.25, 0.0, -10.1], "deadline": 6.5, "dialogue": "The hatch controls are jammed!"},
-          "breakable": {"position": [1.9, 1.1, -10.0], "health": 3, "pickup": "medal"},
+          "id": "chain_plate",
+          "duration": 8.5,
+          "style": "mansion",
+          "objective": "SHOOT THE CHAINED HATCH",
+          "dialogue": "That plate may open another path.",
+          "rail": {
+            "x": -0.4,
+            "y": 1.6,
+            "z": 4.8,
+            "sweep": 0.9
+          },
+          "civilian": {
+            "position": [
+              1.25,
+              0,
+              -10.1
+            ],
+            "deadline": 6.5,
+            "dialogue": "The hatch controls are jammed!",
+            "actor_id": "scientist_male_gray"
+          },
+          "breakable": {
+            "position": [
+              1.9,
+              1.1,
+              -10
+            ],
+            "health": 3,
+            "pickup": "medal",
+            "asset": "c02_chained_hatch_plate"
+          },
           "spawns": [
-            {"delay": 0.6, "actor": "harris_d3", "position": [-1.6, 0.0, -11.0], "attack_delay": 4.2, "targets_civilian": true, "behavior": "throw_projectile"},
-            {"delay": 1.9, "actor": "rubin_e1", "position": [0.1, 0.0, -13.1], "attack_delay": 5.2, "behavior": "jump"},
-            {"delay": 3.2, "actor": "devilon_f4", "position": [2.2, 2.1, -12.7], "attack_delay": 4.8, "behavior": "flight_swarm"}
-          ], "next_success": "underground_passage", "next_failure": "great_doors"
+            {
+              "delay": 0.6,
+              "actor": "harris_d3",
+              "position": [
+                -1.6,
+                0,
+                -11
+              ],
+              "attack_delay": 4.2,
+              "targets_civilian": true,
+              "behavior": "throw_projectile"
+            },
+            {
+              "delay": 1.9,
+              "actor": "rubin_e1",
+              "position": [
+                0.1,
+                0,
+                -13.1
+              ],
+              "attack_delay": 5.2,
+              "behavior": "jump"
+            },
+            {
+              "delay": 3.2,
+              "actor": "devilon_f4",
+              "position": [
+                2.2,
+                2.1,
+                -12.7
+              ],
+              "attack_delay": 4.8,
+              "behavior": "flight_swarm"
+            }
+          ],
+          "next_success": "underground_passage",
+          "next_failure": "great_doors"
         },
         {
-          "id": "underground_passage", "duration": 8.0, "style": "sewer", "objective": "CLEAR THE UNDERGROUND ROUTE", "dialogue": "The tunnel leads beneath the library.",
-          "rail": {"x": 0.7, "y": 1.3, "z": 4.5, "sweep": -0.8},
-          "civilian": {"position": [1.3, 0.0, -9.8], "deadline": 6.1, "dialogue": "I hid in the tunnel when the alarms started!"},
+          "id": "underground_passage",
+          "duration": 8,
+          "style": "sewer",
+          "objective": "CLEAR THE UNDERGROUND ROUTE",
+          "dialogue": "The tunnel leads beneath the library.",
+          "rail": {
+            "x": 0.7,
+            "y": 1.3,
+            "z": 4.5,
+            "sweep": -0.8
+          },
+          "civilian": {
+            "position": [
+              1.3,
+              0,
+              -9.8
+            ],
+            "deadline": 6.1,
+            "dialogue": "I hid in the tunnel when the alarms started!",
+            "actor_id": "scientist_female_lab"
+          },
           "spawns": [
-            {"delay": 0.3, "actor": "ebitan_a_b3", "position": [-2.0, 0.0, -9.8], "attack_delay": 3.5, "targets_civilian": true, "behavior": "aquatic_weave"},
-            {"delay": 1.6, "actor": "drake_e2", "position": [1.7, 0.0, -11.8], "attack_delay": 4.4, "behavior": "throw_projectile"},
-            {"delay": 3.0, "actor": "gilmore_d2", "position": [0.0, 0.0, -13.8], "attack_delay": 5.2, "behavior": "charge"}
-          ], "next": "library_rescue"
+            {
+              "delay": 0.3,
+              "actor": "ebitan_a_b3",
+              "position": [
+                -2,
+                0,
+                -9.8
+              ],
+              "attack_delay": 3.5,
+              "targets_civilian": true,
+              "behavior": "aquatic_weave"
+            },
+            {
+              "delay": 1.6,
+              "actor": "drake_e2",
+              "position": [
+                1.7,
+                0,
+                -11.8
+              ],
+              "attack_delay": 4.4,
+              "behavior": "throw_projectile"
+            },
+            {
+              "delay": 3,
+              "actor": "gilmore_d2",
+              "position": [
+                0,
+                0,
+                -13.8
+              ],
+              "attack_delay": 5.2,
+              "behavior": "charge"
+            }
+          ],
+          "next": "library_rescue"
         },
         {
-          "id": "great_doors", "duration": 8.0, "style": "mansion", "objective": "DEFEND THE GREAT DOORS", "dialogue": "No time for the hatch — through the doors!",
-          "rail": {"x": -0.8, "y": 1.75, "z": 4.6, "sweep": 1.0},
-          "civilian": {"position": [-1.2, 0.0, -10.0], "deadline": 6.2, "dialogue": "Don't leave me behind the doors!"},
+          "id": "great_doors",
+          "duration": 8,
+          "style": "mansion",
+          "objective": "DEFEND THE GREAT DOORS",
+          "dialogue": "No time for the hatch — through the doors!",
+          "rail": {
+            "x": -0.8,
+            "y": 1.75,
+            "z": 4.6,
+            "sweep": 1
+          },
+          "civilian": {
+            "position": [
+              -1.2,
+              0,
+              -10
+            ],
+            "deadline": 6.2,
+            "dialogue": "Don't leave me behind the doors!",
+            "actor_id": "scientist_male_blue"
+          },
           "spawns": [
-            {"delay": 0.4, "actor": "samson_c1", "position": [1.8, 0.0, -11.2], "attack_delay": 4.8, "behavior": "heavy_weapon"},
-            {"delay": 1.6, "actor": "kageo_b1", "position": [-1.8, 0.0, -11.7], "attack_delay": 4.3, "targets_civilian": true, "behavior": "ceiling_drop"},
-            {"delay": 3.0, "actor": "murrer_g1", "position": [0.0, 2.3, -13.4], "attack_delay": 5.1, "behavior": "flight_swarm"}
-          ], "next": "library_rescue"
+            {
+              "delay": 0.4,
+              "actor": "samson_c1",
+              "position": [
+                1.8,
+                0,
+                -11.2
+              ],
+              "attack_delay": 4.8,
+              "behavior": "heavy_weapon"
+            },
+            {
+              "delay": 1.6,
+              "actor": "kageo_b1",
+              "position": [
+                -1.8,
+                0,
+                -11.7
+              ],
+              "attack_delay": 4.3,
+              "targets_civilian": true,
+              "behavior": "ceiling_drop"
+            },
+            {
+              "delay": 3,
+              "actor": "murrer_g1",
+              "position": [
+                0,
+                2.3,
+                -13.4
+              ],
+              "attack_delay": 5.1,
+              "behavior": "flight_swarm"
+            }
+          ],
+          "next": "library_rescue"
         },
         {
-          "id": "library_rescue", "duration": 8.5, "style": "mansion", "objective": "SAVE THE LIBRARIAN", "dialogue": "Don't shoot! I'm human!",
-          "rail": {"x": 0.4, "y": 1.7, "z": 4.7, "sweep": -0.7},
-          "civilian": {"position": [-1.5, 0.0, -10.6], "deadline": 6.4},
+          "id": "library_rescue",
+          "duration": 8.5,
+          "style": "mansion",
+          "objective": "SAVE THE LIBRARIAN",
+          "dialogue": "Don't shoot! I'm human!",
+          "rail": {
+            "x": 0.4,
+            "y": 1.7,
+            "z": 4.7,
+            "sweep": -0.7
+          },
+          "civilian": {
+            "position": [
+              -1.5,
+              0,
+              -10.6
+            ],
+            "deadline": 6.4,
+            "actor_id": "scientist_male_gray"
+          },
           "spawns": [
-            {"delay": 0.5, "actor": "parlor_e4", "position": [0.2, 0.0, -10.8], "attack_delay": 3.9, "targets_civilian": true, "behavior": "charge"},
-            {"delay": 2.0, "actor": "burner_c3", "position": [2.0, 0.0, -13.0], "attack_delay": 5.1, "behavior": "throw_projectile"},
-            {"delay": 3.4, "actor": "ebitan_b_b4", "position": [-2.2, 0.0, -13.7], "attack_delay": 5.2, "behavior": "aquatic_weave"}
-          ], "next_success": "raised_bridge", "next_failure": "lower_stairs"
+            {
+              "delay": 0.5,
+              "actor": "parlor_e4",
+              "position": [
+                0.2,
+                0,
+                -10.8
+              ],
+              "attack_delay": 3.9,
+              "targets_civilian": true,
+              "behavior": "charge"
+            },
+            {
+              "delay": 2,
+              "actor": "burner_c3",
+              "position": [
+                2,
+                0,
+                -13
+              ],
+              "attack_delay": 5.1,
+              "behavior": "throw_projectile"
+            },
+            {
+              "delay": 3.4,
+              "actor": "ebitan_b_b4",
+              "position": [
+                -2.2,
+                0,
+                -13.7
+              ],
+              "attack_delay": 5.2,
+              "behavior": "aquatic_weave"
+            }
+          ],
+          "next_success": "raised_bridge",
+          "next_failure": "lower_stairs"
         },
         {
-          "id": "raised_bridge", "duration": 7.8, "style": "mansion", "objective": "CROSS THE RAISED BRIDGE", "dialogue": "The upper switch is active.",
-          "rail": {"x": 1.0, "y": 2.0, "z": 4.3, "sweep": -1.1},
-          "civilian": {"position": [1.35, 0.0, -10.0], "deadline": 6.0, "dialogue": "The bridge controls are over here!"},
+          "id": "raised_bridge",
+          "duration": 7.8,
+          "style": "mansion",
+          "objective": "CROSS THE RAISED BRIDGE",
+          "dialogue": "The upper switch is active.",
+          "rail": {
+            "x": 1,
+            "y": 2,
+            "z": 4.3,
+            "sweep": -1.1
+          },
+          "civilian": {
+            "position": [
+              1.35,
+              0,
+              -10
+            ],
+            "deadline": 6,
+            "dialogue": "The bridge controls are over here!",
+            "actor_id": "scientist_female_lab"
+          },
           "spawns": [
-            {"delay": 0.5, "actor": "devilon_f4", "position": [-2.0, 2.0, -10.0], "attack_delay": 3.7, "behavior": "flight_swarm"},
-            {"delay": 1.3, "actor": "murrer_g1", "position": [1.9, 2.3, -11.2], "attack_delay": 4.2, "targets_civilian": true, "behavior": "flight_swarm"},
-            {"delay": 2.8, "actor": "bentley_c2", "position": [0.0, 0.0, -13.5], "attack_delay": 5.0, "behavior": "armored_advance"}
-          ], "next": "roof_approach"
+            {
+              "delay": 0.5,
+              "actor": "devilon_f4",
+              "position": [
+                -2,
+                2,
+                -10
+              ],
+              "attack_delay": 3.7,
+              "behavior": "flight_swarm"
+            },
+            {
+              "delay": 1.3,
+              "actor": "murrer_g1",
+              "position": [
+                1.9,
+                2.3,
+                -11.2
+              ],
+              "attack_delay": 4.2,
+              "targets_civilian": true,
+              "behavior": "flight_swarm"
+            },
+            {
+              "delay": 2.8,
+              "actor": "bentley_c2",
+              "position": [
+                0,
+                0,
+                -13.5
+              ],
+              "attack_delay": 5,
+              "behavior": "armored_advance"
+            }
+          ],
+          "next": "roof_approach"
         },
         {
-          "id": "lower_stairs", "duration": 7.8, "style": "sewer", "objective": "FIGHT THROUGH THE LOWER STAIRS", "dialogue": "The bridge is blocked. Go down!",
-          "rail": {"x": -1.0, "y": 1.25, "z": 4.1, "sweep": 1.0},
-          "civilian": {"position": [-1.3, 0.0, -10.0], "deadline": 6.0, "dialogue": "I couldn't reach the upper bridge!"},
+          "id": "lower_stairs",
+          "duration": 7.8,
+          "style": "sewer",
+          "objective": "FIGHT THROUGH THE LOWER STAIRS",
+          "dialogue": "The bridge is blocked. Go down!",
+          "rail": {
+            "x": -1,
+            "y": 1.25,
+            "z": 4.1,
+            "sweep": 1
+          },
+          "civilian": {
+            "position": [
+              -1.3,
+              0,
+              -10
+            ],
+            "deadline": 6,
+            "dialogue": "I couldn't reach the upper bridge!",
+            "actor_id": "scientist_male_blue"
+          },
           "spawns": [
-            {"delay": 0.4, "actor": "taran_g3", "position": [1.8, 0.0, -10.4], "attack_delay": 3.8, "behavior": "armored_advance"},
-            {"delay": 1.6, "actor": "neil_a2", "position": [-1.7, 0.0, -11.8], "attack_delay": 4.4, "targets_civilian": true, "behavior": "walk"},
-            {"delay": 3.1, "actor": "saruzou_f2", "position": [0.2, 0.0, -13.6], "attack_delay": 5.0, "behavior": "ceiling_drop"}
-          ], "next": "roof_approach"
+            {
+              "delay": 0.4,
+              "actor": "taran_g3",
+              "position": [
+                1.8,
+                0,
+                -10.4
+              ],
+              "attack_delay": 3.8,
+              "behavior": "armored_advance"
+            },
+            {
+              "delay": 1.6,
+              "actor": "neil_a2",
+              "position": [
+                -1.7,
+                0,
+                -11.8
+              ],
+              "attack_delay": 4.4,
+              "targets_civilian": true,
+              "behavior": "walk"
+            },
+            {
+              "delay": 3.1,
+              "actor": "saruzou_f2",
+              "position": [
+                0.2,
+                0,
+                -13.6
+              ],
+              "attack_delay": 5,
+              "behavior": "ceiling_drop"
+            }
+          ],
+          "next": "roof_approach"
         },
         {
-          "id": "roof_approach", "duration": 7.5, "style": "roof", "objective": "REACH THE ROOFTOP", "dialogue": "Something is circling above us.",
-          "rail": {"x": 0.0, "y": 2.1, "z": 4.2, "sweep": 1.3},
-          "civilian": {"position": [0.0, 0.0, -10.0], "deadline": 5.8, "dialogue": "The bats are blocking the roof!"},
+          "id": "roof_approach",
+          "duration": 7.5,
+          "style": "roof",
+          "objective": "REACH THE ROOFTOP",
+          "dialogue": "Something is circling above us.",
+          "rail": {
+            "x": 0,
+            "y": 2.1,
+            "z": 4.2,
+            "sweep": 1.3
+          },
+          "civilian": {
+            "position": [
+              0,
+              0,
+              -10
+            ],
+            "deadline": 5.8,
+            "dialogue": "The bats are blocking the roof!",
+            "actor_id": "scientist_male_gray"
+          },
           "spawns": [
-            {"delay": 0.5, "actor": "devilon_f4", "position": [-2.5, 2.2, -10.2], "attack_delay": 3.8, "targets_civilian": true, "behavior": "flight_swarm"},
-            {"delay": 1.0, "actor": "murrer_g1", "position": [0.0, 2.7, -11.5], "attack_delay": 4.0, "behavior": "flight_swarm"},
-            {"delay": 1.5, "actor": "devilon_f4", "position": [2.4, 2.1, -12.3], "attack_delay": 4.2, "behavior": "flight_swarm"}
-          ], "next": "roof_rescue"
+            {
+              "delay": 0.5,
+              "actor": "devilon_f4",
+              "position": [
+                -2.5,
+                2.2,
+                -10.2
+              ],
+              "attack_delay": 3.8,
+              "targets_civilian": true,
+              "behavior": "flight_swarm"
+            },
+            {
+              "delay": 1,
+              "actor": "murrer_g1",
+              "position": [
+                0,
+                2.7,
+                -11.5
+              ],
+              "attack_delay": 4,
+              "behavior": "flight_swarm"
+            },
+            {
+              "delay": 1.5,
+              "actor": "devilon_f4",
+              "position": [
+                2.4,
+                2.1,
+                -12.3
+              ],
+              "attack_delay": 4.2,
+              "behavior": "flight_swarm"
+            }
+          ],
+          "next": "roof_rescue"
         },
         {
-          "id": "roof_rescue", "duration": 7.5, "style": "roof", "objective": "SAVE THE ROOFTOP SCIENTIST", "dialogue": "Hangedman is coming back!",
-          "rail": {"x": -0.4, "y": 2.0, "z": 4.4, "sweep": -0.9},
-          "civilian": {"position": [1.45, 0.0, -10.3], "deadline": 6.0, "dialogue": "Please! Get me away from the ledge!"},
+          "id": "roof_rescue",
+          "duration": 7.5,
+          "style": "roof",
+          "objective": "SAVE THE ROOFTOP SCIENTIST",
+          "dialogue": "Hangedman is coming back!",
+          "rail": {
+            "x": -0.4,
+            "y": 2,
+            "z": 4.4,
+            "sweep": -0.9
+          },
+          "civilian": {
+            "position": [
+              1.45,
+              0,
+              -10.3
+            ],
+            "deadline": 6,
+            "dialogue": "Please! Get me away from the ledge!",
+            "actor_id": "scientist_female_lab"
+          },
           "spawns": [
-            {"delay": 0.4, "actor": "devilon_f4", "position": [0.6, 2.0, -10.8], "attack_delay": 3.7, "targets_civilian": true, "behavior": "flight_swarm"},
-            {"delay": 1.5, "actor": "cyril_a3", "position": [-1.8, 0.0, -12.2], "attack_delay": 4.6, "behavior": "charge"},
-            {"delay": 2.9, "actor": "bourbon_b2", "position": [1.9, 0.0, -13.5], "attack_delay": 5.1, "behavior": "heavy_weapon"}
-          ], "next": "hangedman_battle"
+            {
+              "delay": 0.4,
+              "actor": "devilon_f4",
+              "position": [
+                0.6,
+                2,
+                -10.8
+              ],
+              "attack_delay": 3.7,
+              "targets_civilian": true,
+              "behavior": "flight_swarm"
+            },
+            {
+              "delay": 1.5,
+              "actor": "cyril_a3",
+              "position": [
+                -1.8,
+                0,
+                -12.2
+              ],
+              "attack_delay": 4.6,
+              "behavior": "charge"
+            },
+            {
+              "delay": 2.9,
+              "actor": "bourbon_b2",
+              "position": [
+                1.9,
+                0,
+                -13.5
+              ],
+              "attack_delay": 5.1,
+              "behavior": "heavy_weapon"
+            }
+          ],
+          "next": "hangedman_battle"
         },
         {
-          "id": "hangedman_battle", "type": "boss", "boss": "hangedman", "duration": 60.0, "style": "roof",
-          "objective": "DESTROY HANGEDMAN", "dialogue": "First eliminate the bats, then fire during its charge.",
-          "rail": {"x": 0.0, "y": 1.8, "z": 7.4, "sweep": 0.0}, "spawns": [], "next": "chapter_complete"
+          "id": "hangedman_battle",
+          "type": "boss",
+          "boss": "hangedman",
+          "duration": 60,
+          "style": "roof",
+          "objective": "DESTROY HANGEDMAN",
+          "dialogue": "First eliminate the bats, then fire during its charge.",
+          "rail": {
+            "x": 0,
+            "y": 1.8,
+            "z": 7.4,
+            "sweep": 0
+          },
+          "spawns": [],
+          "next": "chapter_complete"
         }
       ]
     },
     {
-      "id": "chapter_03", "title": "TRUTH", "style": "laboratory",
+      "id": "chapter_03",
+      "title": "TRUTH",
+      "style": "laboratory",
       "intro": "Below the mansion lies Curien's research complex — and the truth behind the experiments.",
-      "start": "elevator_switch", "boss": "hermit", "rescues_expected": 3,
+      "start": "elevator_switch",
+      "boss": "hermit",
+      "rescues_expected": 3,
       "nodes": [
         {
-          "id": "elevator_switch", "duration": 8.5, "style": "laboratory", "objective": "CHOOSE AN ELEVATOR", "dialogue": "The switch controls both elevators.",
-          "rail": {"x": 0.2, "y": 1.55, "z": 4.6, "sweep": 0.9},
-          "breakable": {"position": [-2.0, 1.25, -10.2], "health": 2, "pickup": "medal"},
+          "id": "elevator_switch",
+          "duration": 8.5,
+          "style": "laboratory",
+          "objective": "CHOOSE AN ELEVATOR",
+          "dialogue": "The switch controls both elevators.",
+          "rail": {
+            "x": 0.2,
+            "y": 1.55,
+            "z": 4.6,
+            "sweep": 0.9
+          },
+          "breakable": {
+            "position": [
+              -2,
+              1.25,
+              -10.2
+            ],
+            "health": 2,
+            "pickup": "medal",
+            "asset": "c03_elevator_route_switch"
+          },
           "spawns": [
-            {"delay": 0.5, "actor": "gilmore_d2", "position": [1.7, 0.0, -11.0], "attack_delay": 4.0, "behavior": "charge"},
-            {"delay": 1.7, "actor": "ebitan_b_b4", "position": [0.0, 0.0, -12.5], "attack_delay": 4.5, "behavior": "aquatic_weave"},
-            {"delay": 3.1, "actor": "robert_d4", "position": [-1.5, 0.0, -13.6], "attack_delay": 5.4, "behavior": "heavy_weapon"}
-          ], "next_success": "left_elevator", "next_failure": "right_elevator"
+            {
+              "delay": 0.5,
+              "actor": "gilmore_d2",
+              "position": [
+                1.7,
+                0,
+                -11
+              ],
+              "attack_delay": 4,
+              "behavior": "charge"
+            },
+            {
+              "delay": 1.7,
+              "actor": "ebitan_b_b4",
+              "position": [
+                0,
+                0,
+                -12.5
+              ],
+              "attack_delay": 4.5,
+              "behavior": "aquatic_weave"
+            },
+            {
+              "delay": 3.1,
+              "actor": "robert_d4",
+              "position": [
+                -1.5,
+                0,
+                -13.6
+              ],
+              "attack_delay": 5.4,
+              "behavior": "heavy_weapon"
+            }
+          ],
+          "next_success": "left_elevator",
+          "next_failure": "right_elevator"
         },
         {
-          "id": "left_elevator", "duration": 7.5, "style": "laboratory", "objective": "SECURE THE UPPER LAB", "dialogue": "Left elevator — upper research wing.",
-          "rail": {"x": -0.7, "y": 2.0, "z": 4.4, "sweep": 0.8},
-          "civilian": {"position": [1.25, 0.0, -10.0], "deadline": 6.0, "dialogue": "The upper lab is overrun!"},
+          "id": "left_elevator",
+          "duration": 7.5,
+          "style": "laboratory",
+          "objective": "SECURE THE UPPER LAB",
+          "dialogue": "Left elevator — upper research wing.",
+          "rail": {
+            "x": -0.7,
+            "y": 2,
+            "z": 4.4,
+            "sweep": 0.8
+          },
+          "civilian": {
+            "position": [
+              1.25,
+              0,
+              -10
+            ],
+            "deadline": 6,
+            "dialogue": "The upper lab is overrun!",
+            "actor_id": "scientist_male_blue"
+          },
           "spawns": [
-            {"delay": 0.4, "actor": "drake_e2", "position": [-1.8, 0.0, -10.5], "attack_delay": 3.8, "targets_civilian": true, "behavior": "throw_projectile"},
-            {"delay": 1.5, "actor": "rubin_e1", "position": [1.8, 0.0, -12.0], "attack_delay": 4.5, "behavior": "jump"},
-            {"delay": 3.0, "actor": "murrer_g1", "position": [0.0, 2.0, -13.4], "attack_delay": 4.8, "behavior": "flight_swarm"}
-          ], "next": "back_attack_rescue"
+            {
+              "delay": 0.4,
+              "actor": "drake_e2",
+              "position": [
+                -1.8,
+                0,
+                -10.5
+              ],
+              "attack_delay": 3.8,
+              "targets_civilian": true,
+              "behavior": "throw_projectile"
+            },
+            {
+              "delay": 1.5,
+              "actor": "rubin_e1",
+              "position": [
+                1.8,
+                0,
+                -12
+              ],
+              "attack_delay": 4.5,
+              "behavior": "jump"
+            },
+            {
+              "delay": 3,
+              "actor": "murrer_g1",
+              "position": [
+                0,
+                2,
+                -13.4
+              ],
+              "attack_delay": 4.8,
+              "behavior": "flight_swarm"
+            }
+          ],
+          "next": "back_attack_rescue"
         },
         {
-          "id": "right_elevator", "duration": 7.5, "style": "sewer", "objective": "SECURE THE SERVICE LEVEL", "dialogue": "Right elevator — maintenance level.",
-          "rail": {"x": 0.8, "y": 1.3, "z": 4.4, "sweep": -0.8},
-          "civilian": {"position": [-1.25, 0.0, -10.0], "deadline": 6.0, "dialogue": "I was servicing the lower lift!"},
+          "id": "right_elevator",
+          "duration": 7.5,
+          "style": "sewer",
+          "objective": "SECURE THE SERVICE LEVEL",
+          "dialogue": "Right elevator — maintenance level.",
+          "rail": {
+            "x": 0.8,
+            "y": 1.3,
+            "z": 4.4,
+            "sweep": -0.8
+          },
+          "civilian": {
+            "position": [
+              -1.25,
+              0,
+              -10
+            ],
+            "deadline": 6,
+            "dialogue": "I was servicing the lower lift!",
+            "actor_id": "scientist_male_gray"
+          },
           "spawns": [
-            {"delay": 0.4, "actor": "taran_g3", "position": [1.8, 0.0, -10.3], "attack_delay": 3.7, "targets_civilian": true, "behavior": "armored_advance"},
-            {"delay": 1.6, "actor": "bentley_c2", "position": [-1.6, 0.0, -12.2], "attack_delay": 4.9, "behavior": "armored_advance"},
-            {"delay": 3.0, "actor": "kageo_b1", "position": [0.0, 0.0, -13.6], "attack_delay": 5.1, "behavior": "ceiling_drop"}
-          ], "next": "back_attack_rescue"
+            {
+              "delay": 0.4,
+              "actor": "taran_g3",
+              "position": [
+                1.8,
+                0,
+                -10.3
+              ],
+              "attack_delay": 3.7,
+              "targets_civilian": true,
+              "behavior": "armored_advance"
+            },
+            {
+              "delay": 1.6,
+              "actor": "bentley_c2",
+              "position": [
+                -1.6,
+                0,
+                -12.2
+              ],
+              "attack_delay": 4.9,
+              "behavior": "armored_advance"
+            },
+            {
+              "delay": 3,
+              "actor": "kageo_b1",
+              "position": [
+                0,
+                0,
+                -13.6
+              ],
+              "attack_delay": 5.1,
+              "behavior": "ceiling_drop"
+            }
+          ],
+          "next": "back_attack_rescue"
         },
         {
-          "id": "back_attack_rescue", "duration": 8.5, "style": "laboratory", "objective": "SAVE THE SCIENTIST", "dialogue": "Behind me! Get it off me!",
-          "rail": {"x": -0.2, "y": 1.65, "z": 4.7, "sweep": 0.6},
-          "civilian": {"position": [1.5, 0.0, -10.6], "deadline": 6.0},
+          "id": "back_attack_rescue",
+          "duration": 8.5,
+          "style": "laboratory",
+          "objective": "SAVE THE SCIENTIST",
+          "dialogue": "Behind me! Get it off me!",
+          "rail": {
+            "x": -0.2,
+            "y": 1.65,
+            "z": 4.7,
+            "sweep": 0.6
+          },
+          "civilian": {
+            "position": [
+              1.5,
+              0,
+              -10.6
+            ],
+            "deadline": 6,
+            "actor_id": "scientist_female_lab"
+          },
           "spawns": [
-            {"delay": 0.4, "actor": "harris_d3", "position": [0.3, 0.0, -10.7], "attack_delay": 3.8, "targets_civilian": true, "behavior": "throw_projectile"},
-            {"delay": 1.8, "actor": "ebitan_a_b3", "position": [-1.8, 0.0, -12.3], "attack_delay": 4.6, "behavior": "aquatic_weave"},
-            {"delay": 3.3, "actor": "burner_c3", "position": [2.1, 0.0, -13.7], "attack_delay": 5.3, "behavior": "throw_projectile"}
-          ], "next_success": "security_door", "next_failure": "vent_key_route"
+            {
+              "delay": 0.4,
+              "actor": "harris_d3",
+              "position": [
+                0.3,
+                0,
+                -10.7
+              ],
+              "attack_delay": 3.8,
+              "targets_civilian": true,
+              "behavior": "throw_projectile"
+            },
+            {
+              "delay": 1.8,
+              "actor": "ebitan_a_b3",
+              "position": [
+                -1.8,
+                0,
+                -12.3
+              ],
+              "attack_delay": 4.6,
+              "behavior": "aquatic_weave"
+            },
+            {
+              "delay": 3.3,
+              "actor": "burner_c3",
+              "position": [
+                2.1,
+                0,
+                -13.7
+              ],
+              "attack_delay": 5.3,
+              "behavior": "throw_projectile"
+            }
+          ],
+          "next_success": "security_door",
+          "next_failure": "vent_key_route"
         },
         {
-          "id": "security_door", "duration": 7.5, "style": "laboratory", "objective": "CROSS THE HIGH BRIDGE", "dialogue": "I'll open the security door!",
-          "rail": {"x": 1.0, "y": 2.1, "z": 4.1, "sweep": -1.0},
+          "id": "security_door",
+          "duration": 7.5,
+          "style": "laboratory",
+          "objective": "CROSS THE HIGH BRIDGE",
+          "dialogue": "I'll open the security door!",
+          "rail": {
+            "x": 1,
+            "y": 2.1,
+            "z": 4.1,
+            "sweep": -1
+          },
           "spawns": [
-            {"delay": 0.5, "actor": "devilon_f4", "position": [-2.0, 2.3, -10.2], "attack_delay": 3.9, "behavior": "flight_swarm"},
-            {"delay": 1.7, "actor": "parlor_e4", "position": [1.8, 0.0, -11.7], "attack_delay": 4.5, "behavior": "charge"},
-            {"delay": 3.0, "actor": "bouere_f3", "position": [0.0, 0.0, -13.4], "attack_delay": 4.9, "behavior": "jump"}
-          ], "next": "curien_tunnel"
+            {
+              "delay": 0.5,
+              "actor": "devilon_f4",
+              "position": [
+                -2,
+                2.3,
+                -10.2
+              ],
+              "attack_delay": 3.9,
+              "behavior": "flight_swarm"
+            },
+            {
+              "delay": 1.7,
+              "actor": "parlor_e4",
+              "position": [
+                1.8,
+                0,
+                -11.7
+              ],
+              "attack_delay": 4.5,
+              "behavior": "charge"
+            },
+            {
+              "delay": 3,
+              "actor": "bouere_f3",
+              "position": [
+                0,
+                0,
+                -13.4
+              ],
+              "attack_delay": 4.9,
+              "behavior": "jump"
+            }
+          ],
+          "next": "curien_tunnel"
         },
         {
-          "id": "vent_key_route", "duration": 7.8, "style": "sewer", "objective": "FIND THE ACCESS KEY", "dialogue": "The door is locked. Through the conduit!",
-          "rail": {"x": -1.0, "y": 1.15, "z": 4.0, "sweep": 1.0},
-          "breakable": {"position": [1.7, 0.8, -9.8], "health": 2, "pickup": "life"},
+          "id": "vent_key_route",
+          "duration": 7.8,
+          "style": "sewer",
+          "objective": "FIND THE ACCESS KEY",
+          "dialogue": "The door is locked. Through the conduit!",
+          "rail": {
+            "x": -1,
+            "y": 1.15,
+            "z": 4,
+            "sweep": 1
+          },
+          "breakable": {
+            "position": [
+              1.7,
+              0.8,
+              -9.8
+            ],
+            "health": 2,
+            "pickup": "life",
+            "asset": "c03_vent_key_container"
+          },
           "spawns": [
-            {"delay": 0.4, "actor": "ebitan_b_b4", "position": [-1.6, 0.0, -10.5], "attack_delay": 3.7, "behavior": "aquatic_weave"},
-            {"delay": 1.6, "actor": "saruzou_f2", "position": [0.0, 0.0, -12.0], "attack_delay": 4.3, "behavior": "ceiling_drop"},
-            {"delay": 3.0, "actor": "samson_c1", "position": [1.8, 0.0, -13.7], "attack_delay": 5.1, "behavior": "heavy_weapon"}
-          ], "next": "curien_tunnel"
+            {
+              "delay": 0.4,
+              "actor": "ebitan_b_b4",
+              "position": [
+                -1.6,
+                0,
+                -10.5
+              ],
+              "attack_delay": 3.7,
+              "behavior": "aquatic_weave"
+            },
+            {
+              "delay": 1.6,
+              "actor": "saruzou_f2",
+              "position": [
+                0,
+                0,
+                -12
+              ],
+              "attack_delay": 4.3,
+              "behavior": "ceiling_drop"
+            },
+            {
+              "delay": 3,
+              "actor": "samson_c1",
+              "position": [
+                1.8,
+                0,
+                -13.7
+              ],
+              "attack_delay": 5.1,
+              "behavior": "heavy_weapon"
+            }
+          ],
+          "next": "curien_tunnel"
         },
         {
-          "id": "curien_tunnel", "duration": 7.5, "style": "laboratory", "objective": "PURSUE CURIEN", "dialogue": "Curien! This ends now!",
-          "rail": {"x": 0.0, "y": 1.55, "z": 4.2, "sweep": 0.5},
-          "civilian": {"position": [1.3, 0.0, -10.1], "deadline": 6.0, "dialogue": "Curien went toward the underground chamber!"},
+          "id": "curien_tunnel",
+          "duration": 7.5,
+          "style": "laboratory",
+          "objective": "PURSUE CURIEN",
+          "dialogue": "Curien! This ends now!",
+          "rail": {
+            "x": 0,
+            "y": 1.55,
+            "z": 4.2,
+            "sweep": 0.5
+          },
+          "civilian": {
+            "position": [
+              1.3,
+              0,
+              -10.1
+            ],
+            "deadline": 6,
+            "dialogue": "Curien went toward the underground chamber!",
+            "actor_id": "scientist_male_blue"
+          },
           "spawns": [
-            {"delay": 0.5, "actor": "neil_a2", "position": [-1.8, 0.0, -10.5], "attack_delay": 3.9, "targets_civilian": true, "behavior": "walk"},
-            {"delay": 1.5, "actor": "cyril_a3", "position": [1.8, 0.0, -11.6], "attack_delay": 4.2, "behavior": "charge"},
-            {"delay": 2.8, "actor": "murrer_g1", "position": [0.0, 2.2, -13.3], "attack_delay": 4.8, "behavior": "flight_swarm"}
-          ], "next": "hermit_battle"
+            {
+              "delay": 0.5,
+              "actor": "neil_a2",
+              "position": [
+                -1.8,
+                0,
+                -10.5
+              ],
+              "attack_delay": 3.9,
+              "targets_civilian": true,
+              "behavior": "walk"
+            },
+            {
+              "delay": 1.5,
+              "actor": "cyril_a3",
+              "position": [
+                1.8,
+                0,
+                -11.6
+              ],
+              "attack_delay": 4.2,
+              "behavior": "charge"
+            },
+            {
+              "delay": 2.8,
+              "actor": "murrer_g1",
+              "position": [
+                0,
+                2.2,
+                -13.3
+              ],
+              "attack_delay": 4.8,
+              "behavior": "flight_swarm"
+            }
+          ],
+          "next": "hermit_battle"
         },
         {
-          "id": "hermit_battle", "type": "boss", "boss": "hermit", "duration": 60.0, "style": "sewer",
-          "objective": "DESTROY HERMIT", "dialogue": "Its head is vulnerable only when exposed. Shoot the web projectiles.",
-          "rail": {"x": 0.0, "y": 1.45, "z": 7.2, "sweep": 0.0}, "spawns": [], "next": "chapter_complete"
+          "id": "hermit_battle",
+          "type": "boss",
+          "boss": "hermit",
+          "duration": 60,
+          "style": "sewer",
+          "objective": "DESTROY HERMIT",
+          "dialogue": "Its head is vulnerable only when exposed. Shoot the web projectiles.",
+          "rail": {
+            "x": 0,
+            "y": 1.45,
+            "z": 7.2,
+            "sweep": 0
+          },
+          "spawns": [],
+          "next": "chapter_complete"
         }
       ]
     },
     {
-      "id": "chapter_04", "title": "THE HOUSE OF THE DEAD", "style": "laboratory",
+      "id": "chapter_04",
+      "title": "THE HOUSE OF THE DEAD",
+      "style": "laboratory",
       "intro": "At the heart of the complex, Curien prepares his masterpiece. The dead rise for one final assault.",
-      "start": "chariot_rematch", "boss": "magician", "rescues_expected": 0,
+      "start": "chariot_rematch",
+      "boss": "magician",
+      "rescues_expected": 0,
       "nodes": [
         {
-          "id": "chariot_rematch", "type": "boss", "boss": "chariot", "duration": 55.0, "style": "laboratory",
-          "objective": "DESTROY CHARIOT — REMATCH", "dialogue": "Chariot has been rebuilt. Break through the weakened armor.",
-          "rail": {"x": 0.0, "y": 1.65, "z": 7.3, "sweep": 0.0}, "spawns": [], "next": "hangedman_rematch"
+          "id": "chariot_rematch",
+          "type": "boss",
+          "boss": "chariot",
+          "duration": 55,
+          "style": "laboratory",
+          "objective": "DESTROY CHARIOT — REMATCH",
+          "dialogue": "Chariot has been rebuilt. Break through the weakened armor.",
+          "rail": {
+            "x": 0,
+            "y": 1.65,
+            "z": 7.3,
+            "sweep": 0
+          },
+          "spawns": [],
+          "next": "hangedman_rematch"
         },
         {
-          "id": "hangedman_rematch", "type": "boss", "boss": "hangedman", "duration": 50.0, "style": "roof",
-          "objective": "DESTROY HANGEDMAN — REMATCH", "dialogue": "Hangedman attacks again with a smaller formation.",
-          "rail": {"x": 0.0, "y": 1.85, "z": 7.3, "sweep": 0.0}, "spawns": [], "next": "bonus_gate"
+          "id": "hangedman_rematch",
+          "type": "boss",
+          "boss": "hangedman",
+          "duration": 50,
+          "style": "roof",
+          "objective": "DESTROY HANGEDMAN — REMATCH",
+          "dialogue": "Hangedman attacks again with a smaller formation.",
+          "rail": {
+            "x": 0,
+            "y": 1.85,
+            "z": 7.3,
+            "sweep": 0
+          },
+          "spawns": [],
+          "next": "bonus_gate"
         },
         {
-          "id": "bonus_gate", "duration": 5.0, "style": "laboratory", "objective": "SECURE THE FINAL SUPPLY ROUTE", "dialogue": "A hidden room opens only for agents who saved every scientist.",
-          "rail": {"x": 0.0, "y": 1.55, "z": 4.5, "sweep": 0.2},
-          "breakable": {"position": [0.0, 1.0, -10.0], "health": 3, "pickup": "frog"},
-          "spawns": [], "next_success": "bonus_room", "next_failure": "final_waves"
+          "id": "bonus_gate",
+          "duration": 5,
+          "style": "laboratory",
+          "objective": "SECURE THE FINAL SUPPLY ROUTE",
+          "dialogue": "A hidden room opens only for agents who saved every scientist.",
+          "rail": {
+            "x": 0,
+            "y": 1.55,
+            "z": 4.5,
+            "sweep": 0.2
+          },
+          "breakable": {
+            "position": [
+              0,
+              1,
+              -10
+            ],
+            "health": 3,
+            "pickup": "frog",
+            "asset": "c04_bonus_gate_seal"
+          },
+          "spawns": [],
+          "next_success": "bonus_room",
+          "next_failure": "final_waves"
         },
         {
-          "id": "bonus_room", "duration": 6.5, "style": "laboratory", "objective": "COLLECT THE HIDDEN SUPPLIES", "dialogue": "All scientists saved. The emergency cache is yours.",
-          "rail": {"x": 0.0, "y": 1.55, "z": 4.0, "sweep": 0.4},
-          "breakable": {"position": [-1.5, 0.8, -9.5], "health": 1, "pickup": "life"},
+          "id": "bonus_room",
+          "duration": 6.5,
+          "style": "laboratory",
+          "objective": "COLLECT THE HIDDEN SUPPLIES",
+          "dialogue": "All scientists saved. The emergency cache is yours.",
+          "rail": {
+            "x": 0,
+            "y": 1.55,
+            "z": 4,
+            "sweep": 0.4
+          },
+          "breakable": {
+            "position": [
+              -1.5,
+              0.8,
+              -9.5
+            ],
+            "health": 1,
+            "pickup": "life",
+            "asset": "c04_emergency_supply_crate"
+          },
           "spawns": [
-            {"delay": 1.0, "actor": "taran_g3", "position": [1.7, 0.0, -11.0], "attack_delay": 4.0, "behavior": "armored_advance"},
-            {"delay": 2.0, "actor": "harris_d3", "position": [0.0, 0.0, -12.8], "attack_delay": 4.7, "behavior": "throw_projectile"}
-          ], "next": "final_waves"
+            {
+              "delay": 1,
+              "actor": "taran_g3",
+              "position": [
+                1.7,
+                0,
+                -11
+              ],
+              "attack_delay": 4,
+              "behavior": "armored_advance"
+            },
+            {
+              "delay": 2,
+              "actor": "harris_d3",
+              "position": [
+                0,
+                0,
+                -12.8
+              ],
+              "attack_delay": 4.7,
+              "behavior": "throw_projectile"
+            }
+          ],
+          "next": "final_waves"
         },
         {
-          "id": "final_waves", "duration": 10.0, "style": "laboratory", "objective": "SURVIVE THE FINAL HORDE", "dialogue": "This is Curien's last line of defense!",
-          "rail": {"x": 0.5, "y": 1.6, "z": 4.2, "sweep": -1.1},
+          "id": "final_waves",
+          "duration": 10,
+          "style": "laboratory",
+          "objective": "SURVIVE THE FINAL HORDE",
+          "dialogue": "This is Curien's last line of defense!",
+          "rail": {
+            "x": 0.5,
+            "y": 1.6,
+            "z": 4.2,
+            "sweep": -1.1
+          },
           "spawns": [
-            {"delay": 0.3, "actor": "parlor_e4", "position": [-2.2, 0.0, -10.4], "attack_delay": 3.8, "behavior": "charge"},
-            {"delay": 1.0, "actor": "bentley_c2", "position": [2.0, 0.0, -11.2], "attack_delay": 4.4, "behavior": "armored_advance"},
-            {"delay": 1.8, "actor": "ebitan_a_b3", "position": [0.0, 0.0, -12.1], "attack_delay": 4.2, "behavior": "aquatic_weave"},
-            {"delay": 2.6, "actor": "devilon_f4", "position": [-1.5, 2.3, -13.0], "attack_delay": 4.6, "behavior": "flight_swarm"},
-            {"delay": 3.4, "actor": "bouere_f3", "position": [1.5, 0.0, -13.8], "attack_delay": 5.0, "behavior": "jump"}
-          ], "next": "curien_confrontation"
+            {
+              "delay": 0.3,
+              "actor": "parlor_e4",
+              "position": [
+                -2.2,
+                0,
+                -10.4
+              ],
+              "attack_delay": 3.8,
+              "behavior": "charge"
+            },
+            {
+              "delay": 1,
+              "actor": "bentley_c2",
+              "position": [
+                2,
+                0,
+                -11.2
+              ],
+              "attack_delay": 4.4,
+              "behavior": "armored_advance"
+            },
+            {
+              "delay": 1.8,
+              "actor": "ebitan_a_b3",
+              "position": [
+                0,
+                0,
+                -12.1
+              ],
+              "attack_delay": 4.2,
+              "behavior": "aquatic_weave"
+            },
+            {
+              "delay": 2.6,
+              "actor": "devilon_f4",
+              "position": [
+                -1.5,
+                2.3,
+                -13
+              ],
+              "attack_delay": 4.6,
+              "behavior": "flight_swarm"
+            },
+            {
+              "delay": 3.4,
+              "actor": "bouere_f3",
+              "position": [
+                1.5,
+                0,
+                -13.8
+              ],
+              "attack_delay": 5,
+              "behavior": "jump"
+            }
+          ],
+          "next": "curien_confrontation"
         },
         {
-          "id": "curien_confrontation", "duration": 7.0, "style": "laboratory", "objective": "CONFRONT CURIEN", "dialogue": "My masterpiece will cleanse this world. Magician — obey me!",
-          "rail": {"x": 0.0, "y": 1.6, "z": 4.0, "sweep": 0.3},
+          "id": "curien_confrontation",
+          "duration": 7,
+          "style": "laboratory",
+          "objective": "CONFRONT CURIEN",
+          "dialogue": "My masterpiece will cleanse this world. Magician — obey me!",
+          "rail": {
+            "x": 0,
+            "y": 1.6,
+            "z": 4,
+            "sweep": 0.3
+          },
           "spawns": [
-            {"delay": 2.0, "actor": "murrer_g1", "position": [-2.0, 2.2, -12.0], "attack_delay": 4.8, "behavior": "flight_swarm"},
-            {"delay": 2.4, "actor": "devilon_f4", "position": [2.0, 2.1, -12.4], "attack_delay": 5.0, "behavior": "flight_swarm"}
-          ], "next": "magician_battle"
+            {
+              "delay": 2,
+              "actor": "murrer_g1",
+              "position": [
+                -2,
+                2.2,
+                -12
+              ],
+              "attack_delay": 4.8,
+              "behavior": "flight_swarm"
+            },
+            {
+              "delay": 2.4,
+              "actor": "devilon_f4",
+              "position": [
+                2,
+                2.1,
+                -12.4
+              ],
+              "attack_delay": 5,
+              "behavior": "flight_swarm"
+            }
+          ],
+          "next": "magician_battle"
         },
         {
-          "id": "magician_battle", "type": "boss", "boss": "magician", "duration": 75.0, "style": "laboratory",
-          "objective": "DESTROY MAGICIAN", "dialogue": "Magician rejects Curien and strikes him down. Fire at the exposed red tissue and destroy every fireball.",
-          "rail": {"x": 0.0, "y": 1.65, "z": 7.1, "sweep": 0.0}, "spawns": [], "next": "chapter_complete"
+          "id": "magician_battle",
+          "type": "boss",
+          "boss": "magician",
+          "duration": 75,
+          "style": "laboratory",
+          "objective": "DESTROY MAGICIAN",
+          "dialogue": "Magician rejects Curien and strikes him down. Fire at the exposed red tissue and destroy every fireball.",
+          "rail": {
+            "x": 0,
+            "y": 1.65,
+            "z": 7.1,
+            "sweep": 0
+          },
+          "spawns": [],
+          "next": "chapter_complete"
         }
       ]
     }

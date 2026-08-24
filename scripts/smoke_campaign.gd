@@ -147,3 +147,4 @@ func _dispose(game: Node) -> void:
 	game.free()
 	await process_frame
 	await process_frame
+	await create_timer(0.05).timeout

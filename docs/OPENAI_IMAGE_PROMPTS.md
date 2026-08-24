@@ -53,12 +53,32 @@ The output paths, generation focus and post-processing provenance are recorded i
 
 ## 2026-08-21 directional production
 
-The fixed prompt above was specialized with one canonical identity block per actor: silhouette, anatomy, costume/armor, weapon or carried object, palette, scale, anchor and forbidden elements. The 35 selected outputs cover 25 canonical enemy profiles, the mutant bat, five human/narrative actors and four bosses. Rejected/corrected generations, relaunch counts, selected-source hashes and any duplicated state stripe are documented in:
+The fixed prompt above was specialized with one canonical identity block per actor: silhouette, anatomy, costume/armor, weapon or carried object, palette, scale, anchor and forbidden elements. The completed 38-output contract covers 25 canonical enemy profiles, the mutant bat, eight human/narrative actors and four bosses. The three added civilian identities are `scientist_male_blue`, `scientist_male_gray` and `scientist_female_lab`. Rejected/corrected generations, relaunch counts, selected-source hashes and any duplicated state stripe are documented in:
 
-- `data/assets/sprite_generation_provenance.json` — public, sanitized 35-asset provenance;
+- `data/assets/sprite_generation_provenance.json` — public, sanitized 38-asset provenance;
 - `reports/runtime/group_humans_bosses.json` — local selection audit for ten identities;
 - `reports/runtime/group_enemies_ad.json` — local selection audit for 13 identities;
 - `reports/runtime/group_enemies_eg.json` — local selection audit for 11 identities;
-- `reports/runtime/directional-atlas-assembly.json` — local final assembly report for all 35 atlases.
+- `reports/runtime/directional-atlas-assembly.json` — local final assembly report for all 38 atlases.
 
 The selected source sheets under `reports/runtime/directional-sources/` are local production/QA intermediates and are ignored by Git. The public deliverables are the transparent atlases under `assets/sprites_v2/` plus sanitized hashes and generation references; no absolute machine path or API key is recorded.
+
+## 2026-08-24 environment and gameplay-support production
+
+All requests used the built-in OpenAI ImageGen tool and asked for original fan-made 1990s arcade-horror artwork without copied official pixels, text, logos, UI labels, watermarks, screenshots or extracted geometry.
+
+### Individual material prompt contract
+
+Use case: `stylized-concept`. Asset: square seamless surface source viewed straight-on with even diffuse lighting, no perspective, objects, borders, text or baked shadow. Keep the palette and wear appropriate to the named garden, mansion, sewer, roof or laboratory surface. Twenty selected sources are deterministically converted into 1024×1024 albedo, 512×512 normal and 256×256 packed ORM outputs.
+
+### Prop and destructible prompt contract
+
+Use case: `transparent-background`. Asset: one complete isolated environment object, readable silhouette, hand-painted low-poly 1997 arcade-horror style, stable scale and no floor/cast shadow. Two-state requests show two equal side-by-side objects with only the intended flame, indicator, open/closed or intact/broken state changing. The tracked contract contains 14 prop atlases and six two-state destructibles.
+
+The second prop wave specializes that contract for `mansion_chandelier`, `mansion_sconce`, `mansion_double_door`, `library_bookcase`, `mansion_portrait` and `lab_control_console`. Where the downloaded RGB source flattened a pale checkerboard, deterministic edge-connected flood fill, narrow alpha feathering and despill remove only the exterior matte; light stone, candle wax, flames and portrait details remain protected.
+
+### Projectile, HUD and weak-point prompt contract
+
+Use case: `transparent-background`. Asset: centered isolated cutout with a strong arcade-readable silhouette and no label or frame decoration. Seven projectile requests cover thrown axe, thrown dagger, thrown barrel, organic spit, iron claw, Hermit web ball and Magician fireball. Three HUD families cover an eight-frame life torch, a bullet round and a reload-offscreen icon. Four monochrome boss diagrams mark only the intended red weak zones for Chariot, Hangedman, Hermit and Magician.
+
+Selected production sources are local ignored intermediates under `reports/runtime/environment-sources/`. Public normalized outputs and sanitized hashes live under `assets/environments_v2/`, `assets/gameplay_v2/` and `data/assets/`. Environment provenance contains exactly 40 records: 20 materials, 14 props and six destructibles. No Sega asset or licensed-source directory contributed pixels to this wave.

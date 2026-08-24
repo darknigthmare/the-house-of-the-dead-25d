@@ -2,7 +2,7 @@ class_name SpriteAtlasLibrary
 extends RefCounted
 
 const REQUIRED_SCHEMA_VERSION := 2
-const REQUIRED_ASSET_COUNT := 35
+const REQUIRED_ASSET_COUNT := 38
 const REQUIRED_COLUMNS := 8
 const REQUIRED_ROWS := 8
 const REQUIRED_DIRECTIONS := [

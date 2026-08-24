@@ -1,0 +1,349 @@
+#!/usr/bin/env node
+
+import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
+import { join, relative, resolve } from 'node:path';
+import { inflateSync } from 'node:zlib';
+
+const root = resolve(import.meta.dirname, '..');
+const manifestPath = join(root, 'data', 'assets', 'environment_manifest.json');
+const provenancePath = join(root, 'data', 'assets', 'environment_generation_provenance.json');
+const outputRoot = join(root, 'assets', 'environments_v2');
+
+const EXPECTED_MATERIALS = [
+  'garden_mud_moss', 'garden_flagstone', 'estate_weathered_stone',
+  'mansion_damp_plaster', 'mansion_dark_wood_panel', 'mansion_marble_floor',
+  'mansion_worn_red_carpet', 'mansion_oak_door', 'library_dark_oak_shelf',
+  'sewer_wet_brick', 'sewer_slick_stone', 'sewer_rusted_iron',
+  'roof_weathered_slate', 'roof_gothic_stone', 'lab_painted_metal',
+  'lab_grated_floor', 'lab_rusted_pipe', 'lab_grimy_glass',
+  'lab_bio_machine_panel', 'hermit_web_membrane',
+];
+const EXPECTED_NODES = [
+  'garden_rescue', 'mansion_entrance', 'under_bridge', 'foyer_choice',
+  'upper_stairs', 'ground_hall', 'sophie_antechamber', 'sophie_corridor',
+  'chariot_battle', 'chain_plate', 'underground_passage', 'great_doors',
+  'library_rescue', 'raised_bridge', 'lower_stairs', 'roof_approach',
+  'roof_rescue', 'hangedman_battle', 'elevator_switch', 'left_elevator',
+  'right_elevator', 'back_attack_rescue', 'security_door', 'vent_key_route',
+  'curien_tunnel', 'hermit_battle', 'chariot_rematch', 'hangedman_rematch',
+  'bonus_gate', 'bonus_room', 'final_waves', 'curien_confrontation',
+  'magician_battle',
+];
+const EXPECTED_DESTRUCTIBLES = [
+  'c01_foyer_door_lock', 'c02_chained_hatch_plate',
+  'c03_elevator_route_switch', 'c03_vent_key_container',
+  'c04_bonus_gate_seal', 'c04_emergency_supply_crate',
+];
+const EXPECTED_PROPS = [
+  'mansion_chandelier', 'mansion_sconce', 'mansion_double_door',
+  'library_bookcase', 'mansion_portrait', 'lab_control_console',
+  'estate_gate', 'garden_lamp', 'dead_tree', 'stone_bridge_arch',
+  'roof_gargoyle', 'lab_specimen_tank', 'lab_pipe_cluster', 'lab_vent_fan',
+];
+
+let assertions = 0;
+const failures = [];
+
+function check(condition, message) {
+  assertions += 1;
+  if (!condition) failures.push(message);
+}
+
+function checkExactKeys(actualObject, expected, label) {
+  const actual = Object.keys(actualObject ?? {}).sort();
+  const wanted = [...expected].sort();
+  check(JSON.stringify(actual) === JSON.stringify(wanted), `${label}: expected ${wanted.join(', ')}, got ${actual.join(', ')}`);
+}
+
+function projectPath(resourcePath) {
+  check(typeof resourcePath === 'string' && resourcePath.startsWith('res://'), `invalid resource path: ${resourcePath}`);
+  return join(root, String(resourcePath).replace(/^res:\/\//, '').replaceAll('/', '\\'));
+}
+
+function listFiles(directory) {
+  if (!existsSync(directory)) return [];
+  return readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
+    const path = join(directory, entry.name);
+    return entry.isDirectory() ? listFiles(path) : [path];
+  });
+}
+
+function paeth(a, b, c) {
+  const p = a + b - c;
+  const pa = Math.abs(p - a);
+  const pb = Math.abs(p - b);
+  const pc = Math.abs(p - c);
+  return pa <= pb && pa <= pc ? a : (pb <= pc ? b : c);
+}
+
+function decodePng(path) {
+  const file = readFileSync(path);
+  check(file.subarray(0, 8).equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10])), `${relative(root, path)} has a valid PNG signature`);
+  let offset = 8;
+  let width = 0;
+  let height = 0;
+  let bitDepth = 0;
+  let colorType = 0;
+  let interlace = 0;
+  const idat = [];
+  while (offset + 12 <= file.length) {
+    const length = file.readUInt32BE(offset);
+    const type = file.toString('ascii', offset + 4, offset + 8);
+    const data = file.subarray(offset + 8, offset + 8 + length);
+    if (type === 'IHDR') {
+      width = data.readUInt32BE(0);
+      height = data.readUInt32BE(4);
+      bitDepth = data[8];
+      colorType = data[9];
+      interlace = data[12];
+    } else if (type === 'IDAT') {
+      idat.push(data);
+    } else if (type === 'IEND') {
+      break;
+    }
+    offset += length + 12;
+  }
+  check(bitDepth === 8, `${relative(root, path)} uses 8-bit channels`);
+  check(interlace === 0, `${relative(root, path)} is non-interlaced`);
+  const channels = ({ 0: 1, 2: 3, 4: 2, 6: 4 })[colorType];
+  check(Boolean(channels), `${relative(root, path)} uses a supported RGB/RGBA color type`);
+  if (!channels) throw new Error(`Unsupported PNG color type ${colorType}: ${path}`);
+  const packed = inflateSync(Buffer.concat(idat));
+  const stride = width * channels;
+  const pixels = Buffer.alloc(stride * height);
+  let sourceOffset = 0;
+  for (let y = 0; y < height; y += 1) {
+    const filter = packed[sourceOffset];
+    sourceOffset += 1;
+    for (let x = 0; x < stride; x += 1) {
+      const raw = packed[sourceOffset + x];
+      const left = x >= channels ? pixels[y * stride + x - channels] : 0;
+      const up = y > 0 ? pixels[(y - 1) * stride + x] : 0;
+      const upperLeft = y > 0 && x >= channels ? pixels[(y - 1) * stride + x - channels] : 0;
+      let value = raw;
+      if (filter === 1) value = raw + left;
+      else if (filter === 2) value = raw + up;
+      else if (filter === 3) value = raw + Math.floor((left + up) / 2);
+      else if (filter === 4) value = raw + paeth(left, up, upperLeft);
+      else if (filter !== 0) throw new Error(`Unsupported PNG filter ${filter}: ${path}`);
+      pixels[y * stride + x] = value & 255;
+    }
+    sourceOffset += stride;
+  }
+  check(sourceOffset === packed.length, `${relative(root, path)} scanlines have the expected length`);
+  return { width, height, colorType, channels, pixels };
+}
+
+function channelStats(image, channel) {
+  let min = 255;
+  let max = 0;
+  let sum = 0;
+  const count = image.width * image.height;
+  for (let index = channel; index < image.pixels.length; index += image.channels) {
+    const value = image.pixels[index];
+    min = Math.min(min, value);
+    max = Math.max(max, value);
+    sum += value;
+  }
+  return { min, max, mean: sum / count };
+}
+
+function edgeDelta(image) {
+  let sum = 0;
+  let count = 0;
+  const channels = Math.min(image.channels, 3);
+  for (let y = 0; y < image.height; y += 1) {
+    for (let c = 0; c < channels; c += 1) {
+      const left = image.pixels[(y * image.width) * image.channels + c];
+      const right = image.pixels[(y * image.width + image.width - 1) * image.channels + c];
+      sum += Math.abs(left - right);
+      count += 1;
+    }
+  }
+  for (let x = 0; x < image.width; x += 1) {
+    for (let c = 0; c < channels; c += 1) {
+      const top = image.pixels[x * image.channels + c];
+      const bottom = image.pixels[((image.height - 1) * image.width + x) * image.channels + c];
+      sum += Math.abs(top - bottom);
+      count += 1;
+    }
+  }
+  return sum / Math.max(1, count);
+}
+
+function alphaCoverage(image, startX = 0, endX = image.width) {
+  check(image.channels === 4, 'alpha coverage requires RGBA data');
+  let visible = 0;
+  let partial = 0;
+  const total = (endX - startX) * image.height;
+  for (let y = 0; y < image.height; y += 1) {
+    for (let x = startX; x < endX; x += 1) {
+      const alpha = image.pixels[(y * image.width + x) * image.channels + 3];
+      if (alpha > 0) visible += 1;
+      if (alpha > 0 && alpha < 255) partial += 1;
+    }
+  }
+  return { visible: visible / total, partial: partial / total };
+}
+
+function fileDigest(path) {
+  const data = readFileSync(path);
+  let hash = 2166136261;
+  for (const byte of data) {
+    hash ^= byte;
+    hash = Math.imul(hash, 16777619);
+  }
+  return hash >>> 0;
+}
+
+function meanPixelDelta(first, second) {
+  check(first.width === second.width && first.height === second.height && first.channels === second.channels, 'state images share one pixel contract');
+  let sum = 0;
+  for (let index = 0; index < first.pixels.length; index += 1) sum += Math.abs(first.pixels[index] - second.pixels[index]);
+  return sum / Math.max(1, first.pixels.length);
+}
+
+function loadJson(path) {
+  check(existsSync(path), `${relative(root, path)} exists`);
+  return JSON.parse(readFileSync(path, 'utf8'));
+}
+
+const manifest = loadJson(manifestPath);
+const provenance = loadJson(provenancePath);
+
+check(manifest.schema_version === 1, 'environment manifest schema is 1');
+check(provenance.schema_version === 1, 'environment provenance schema is 1');
+checkExactKeys(manifest.materials, EXPECTED_MATERIALS, 'material contract');
+checkExactKeys(manifest.nodes, EXPECTED_NODES, 'campaign-node contract');
+checkExactKeys(manifest.destructibles, EXPECTED_DESTRUCTIBLES, 'destructible contract');
+checkExactKeys(manifest.props, EXPECTED_PROPS, 'prop contract');
+checkExactKeys(manifest.styles, ['garden', 'mansion', 'sewer', 'roof', 'laboratory'], 'style contract');
+
+const referencedMaterials = new Set();
+const supportedEffects = new Set([
+  'alarm_beacon', 'collapse_dust', 'distant_bats', 'drips', 'dust', 'electrical_arc', 'embers', 'lightning',
+  'mist', 'monitor_scan', 'rain', 'sconce_flicker', 'steam', 'water_flow', 'web_drift', 'wind',
+]);
+
+for (const [styleId, style] of Object.entries(manifest.styles)) {
+  for (const key of ['floor', 'wall', 'column', 'accent']) {
+    check(Boolean(manifest.materials[style[key]]), `${styleId}.${key} references a material`);
+    if (manifest.materials[style[key]]) referencedMaterials.add(style[key]);
+  }
+  for (const key of ['ceiling', 'door', 'glass']) {
+    if (!style[key]) continue;
+    check(Boolean(manifest.materials[style[key]]), `${styleId}.${key} references a material`);
+    if (manifest.materials[style[key]]) referencedMaterials.add(style[key]);
+  }
+  const backdrop = projectPath(style.backdrop);
+  check(existsSync(backdrop), `${styleId} backdrop exists`);
+  check(typeof style.layout === 'string' && style.layout.length > 0, `${styleId} has a layout`);
+  check(Array.isArray(style.effects), `${styleId} effects are data-driven`);
+  for (const effect of style.effects ?? []) check(supportedEffects.has(effect), `${styleId} effect ${effect} is supported`);
+}
+
+for (const [nodeId, node] of Object.entries(manifest.nodes)) {
+  check(Boolean(manifest.styles[node.style]), `${nodeId} references style ${node.style}`);
+  check(typeof node.layout === 'string' && node.layout.length > 0, `${nodeId} has a layout`);
+  for (const key of ['floor', 'wall', 'column', 'ceiling', 'accent', 'door', 'glass']) {
+    if (!node[key]) continue;
+    check(Boolean(manifest.materials[node[key]]), `${nodeId}.${key} references a material`);
+    if (manifest.materials[node[key]]) referencedMaterials.add(node[key]);
+  }
+  for (const placement of node.props ?? []) {
+    check(Boolean(manifest.props[placement.id]), `${nodeId} prop ${placement.id} exists`);
+    check(Array.isArray(placement.position) && placement.position.length === 3 && placement.position.every(Number.isFinite), `${nodeId} prop ${placement.id} has a 3D position`);
+  }
+  for (const effect of node.effects ?? []) check(supportedEffects.has(effect), `${nodeId} effect ${effect} is supported`);
+}
+
+for (const materialId of EXPECTED_MATERIALS) {
+  check(referencedMaterials.has(materialId), `${materialId} is referenced by a runtime style or node`);
+}
+
+for (const materialId of EXPECTED_MATERIALS) {
+  const profile = manifest.materials[materialId];
+  const expected = { albedo: [1024, 1024], normal: [512, 512], orm: [256, 256] };
+  for (const [kind, dimensions] of Object.entries(expected)) {
+    const path = projectPath(profile[kind]);
+    check(existsSync(path), `${materialId} ${kind} exists`);
+    const image = decodePng(path);
+    check(image.width === dimensions[0] && image.height === dimensions[1], `${materialId} ${kind} is ${dimensions.join('x')}`);
+    check(image.colorType === 2, `${materialId} ${kind} is RGB`);
+    if (kind === 'albedo') check(edgeDelta(image) <= 0.25, `${materialId} albedo closes its tile edges (delta ${edgeDelta(image).toFixed(3)})`);
+    if (kind === 'normal') {
+      const red = channelStats(image, 0);
+      const green = channelStats(image, 1);
+      const blue = channelStats(image, 2);
+      check(blue.mean >= 220, `${materialId} normal has a valid positive-Z average`);
+      check(red.max - red.min >= 2 || green.max - green.min >= 2, `${materialId} normal contains surface variation`);
+    }
+    if (kind === 'orm') {
+      const ao = channelStats(image, 0);
+      const roughness = channelStats(image, 1);
+      const metallic = channelStats(image, 2);
+      check(ao.min >= 115 && ao.max <= 255, `${materialId} AO stays in its authored range`);
+      check(Math.abs(roughness.mean / 255 - profile.roughness) <= 0.06, `${materialId} ORM roughness matches the manifest`);
+      check(metallic.max - metallic.min <= 1, `${materialId} ORM metallic channel is stable`);
+      check(Math.abs(metallic.mean / 255 - profile.metallic) <= 0.01, `${materialId} ORM metallic matches the manifest`);
+    }
+  }
+}
+
+for (const destructibleId of EXPECTED_DESTRUCTIBLES) {
+  const profile = manifest.destructibles[destructibleId];
+  const images = {};
+  for (const state of ['intact', 'broken']) {
+    const path = projectPath(profile[state]);
+    check(existsSync(path), `${destructibleId} ${state} exists`);
+    const image = decodePng(path);
+    images[state] = { image, path };
+    check(image.width === 1024 && image.height === 1024, `${destructibleId} ${state} is 1024x1024`);
+    check(image.colorType === 6, `${destructibleId} ${state} is RGBA`);
+    const alpha = alphaCoverage(image);
+    check(alpha.visible > 0.005 && alpha.visible < 0.92, `${destructibleId} ${state} has useful transparent coverage`);
+    check(alpha.partial > 0, `${destructibleId} ${state} retains antialiased alpha`);
+  }
+  check(fileDigest(images.intact.path) !== fileDigest(images.broken.path), `${destructibleId} intact and broken states differ`);
+  check(meanPixelDelta(images.intact.image, images.broken.image) >= 2.0, `${destructibleId} states have a meaningful visual difference`);
+}
+
+for (const propId of EXPECTED_PROPS) {
+  const profile = manifest.props[propId];
+  const path = projectPath(profile.path);
+  check(existsSync(path), `${propId} atlas exists`);
+  const image = decodePng(path);
+  const frames = Number(profile.hframes);
+  check(Number.isInteger(frames) && frames >= 1, `${propId} declares valid hframes`);
+  check(image.width === 1024 * frames && image.height === 1024, `${propId} atlas dimensions match hframes`);
+  check(image.colorType === 6, `${propId} atlas is RGBA`);
+  for (let frame = 0; frame < frames; frame += 1) {
+    const alpha = alphaCoverage(image, frame * 1024, (frame + 1) * 1024);
+    check(alpha.visible > 0.005 && alpha.visible < 0.92, `${propId} frame ${frame} has useful transparent coverage`);
+    check(alpha.partial > 0, `${propId} frame ${frame} retains antialiased alpha`);
+  }
+}
+
+check(Array.isArray(provenance.assets), 'provenance contains asset records');
+check(provenance.assets.length === 40, 'provenance records all 40 generated assets');
+check(Array.isArray(provenance.failures) && provenance.failures.length === 0, 'provenance reports zero generation failures');
+const provenanceIds = provenance.assets.map((entry) => entry.id).sort();
+const allIds = [...EXPECTED_MATERIALS, ...EXPECTED_DESTRUCTIBLES, ...EXPECTED_PROPS].sort();
+check(JSON.stringify(provenanceIds) === JSON.stringify(allIds), 'provenance IDs match the environment contract');
+for (const entry of provenance.assets) {
+  check(entry.status === 'original_fan_made', `${entry.id} records original fan-made status`);
+  check(typeof entry.source_sha256 === 'string' && /^[a-f0-9]{64}$/.test(entry.source_sha256), `${entry.id} has a SHA-256 source fingerprint`);
+  for (const output of Object.values(entry.outputs ?? {})) check(existsSync(join(root, output.replaceAll('/', '\\'))), `${entry.id} provenance output exists: ${output}`);
+}
+
+const generatedPngs = listFiles(outputRoot).filter((path) => path.toLowerCase().endsWith('.png'));
+check(generatedPngs.length === 86, `generated tree contains exactly 86 PNG files (got ${generatedPngs.length})`);
+
+if (failures.length > 0) {
+  console.error(`ENVIRONMENT ASSET VERIFY FAILED: ${failures.length}/${assertions} assertions failed`);
+  for (const failure of failures) console.error(`- ${failure}`);
+  process.exit(1);
+}
+
+const bytes = generatedPngs.reduce((sum, path) => sum + statSync(path).size, 0);
+console.log(`ENVIRONMENT ASSET VERIFY PASSED: ${assertions} assertions; 20 materials, 33 nodes, 6 destructibles, 14 props; ${(bytes / 1024 / 1024).toFixed(2)} MiB source PNG`);

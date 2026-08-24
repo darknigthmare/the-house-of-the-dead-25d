@@ -2,13 +2,15 @@ extends "res://src/gameplay/gameplay_runtime_presentation.gd"
 
 
 func _add_backdrop(style: String) -> void:
-	var path := "res://assets/environments/mansion-hall.png"
-	if style in ["garden", "roof"]:
+	var path := str(environment_scene_profile.get("backdrop", ""))
+	if path.is_empty() and style in ["garden", "roof"]:
 		path = "res://assets/environments/mansion-exterior.png"
-	elif style == "laboratory":
+	elif path.is_empty() and style == "laboratory":
 		path = "res://assets/environments/curien-laboratory.png"
-	elif style == "sewer":
+	elif path.is_empty() and style == "sewer":
 		path = "res://assets/environments/underground-tunnel.png"
+	elif path.is_empty():
+		path = "res://assets/environments/mansion-hall.png"
 	var quad := MeshInstance3D.new()
 	quad.name = "PaintedDepthBackdrop"
 	var mesh := QuadMesh.new()

@@ -16,12 +16,14 @@ var _failures: int = 0
 func _initialize() -> void:
 	var library: SpriteAtlasLibrary = AtlasLibraryType.new()
 	_expect_true(library.load_manifest(MANIFEST_PATH), "valid v2 manifest loads")
-	_expect_equal(library.actor_ids().size(), 35, "manifest commits exactly 35 v2 profiles")
+	_expect_equal(library.actor_ids().size(), 38, "manifest commits exactly 38 v2 profiles")
 	_expect_equal(library.aliases.size(), EXPECTED_ALIASES.size(), "manifest commits the complete alias table")
 	for alias_id: String in EXPECTED_ALIASES:
 		var canonical_id := str(EXPECTED_ALIASES[alias_id])
 		_expect_equal(library.canonical_id(alias_id), canonical_id, "alias %s resolves canonically" % alias_id)
 		_expect_true(library.has_actor(alias_id), "alias %s resolves to a loaded profile" % alias_id)
+	for scientist_id: String in ["scientist_male_blue", "scientist_male_gray", "scientist_female_lab"]:
+		_expect_true(library.has_actor(scientist_id), "dedicated scientist profile resolves: %s" % scientist_id)
 	for actor_id: String in library.actor_ids():
 		_expect_equal(int(library.get_profile(actor_id).get("contract_version", 0)), 2, "%s uses contract v2" % actor_id)
 	_expect_false(library.has_actor("unknown_actor"), "unknown actor has no implicit profile")

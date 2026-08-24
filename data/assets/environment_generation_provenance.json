@@ -1,0 +1,971 @@
+{
+  "schema_version": 1,
+  "generated_asset_policy": "original fan-made replacements; no ROM/video extraction",
+  "assets": [
+    {
+      "id": "garden_mud_moss",
+      "kind": "tileable_material",
+      "source": "reports/runtime/environment-sources/materials_a/garden_mud_moss.png",
+      "source_sha256": "9bb2865d7e3e5ea0325c76c6d259d6c594b7506e9b0cc9b67e52a0c273554532",
+      "outputs": {
+        "albedo": "assets/environments_v2/materials/garden_mud_moss/garden_mud_moss_albedo.png",
+        "normal": "assets/environments_v2/materials/garden_mud_moss/garden_mud_moss_normal.png",
+        "orm": "assets/environments_v2/materials/garden_mud_moss/garden_mud_moss_orm.png"
+      },
+      "dimensions": {
+        "albedo": [
+          1024,
+          1024
+        ],
+        "normal": [
+          512,
+          512
+        ],
+        "orm": [
+          256,
+          256
+        ]
+      },
+      "roughness": 0.94,
+      "metallic": 0.0,
+      "generator": "OpenAI Images built-in source plus deterministic local processing",
+      "status": "original_fan_made"
+    },
+    {
+      "id": "garden_flagstone",
+      "kind": "tileable_material",
+      "source": "reports/runtime/environment-sources/materials_a/garden_flagstone.png",
+      "source_sha256": "8f9da4602607b37681fca409b791493697b89b4fbb1228908ea2f6267f652cc7",
+      "outputs": {
+        "albedo": "assets/environments_v2/materials/garden_flagstone/garden_flagstone_albedo.png",
+        "normal": "assets/environments_v2/materials/garden_flagstone/garden_flagstone_normal.png",
+        "orm": "assets/environments_v2/materials/garden_flagstone/garden_flagstone_orm.png"
+      },
+      "dimensions": {
+        "albedo": [
+          1024,
+          1024
+        ],
+        "normal": [
+          512,
+          512
+        ],
+        "orm": [
+          256,
+          256
+        ]
+      },
+      "roughness": 0.88,
+      "metallic": 0.0,
+      "generator": "OpenAI Images built-in source plus deterministic local processing",
+      "status": "original_fan_made"
+    },
+    {
+      "id": "estate_weathered_stone",
+      "kind": "tileable_material",
+      "source": "reports/runtime/environment-sources/materials_a/estate_weathered_stone.png",
+      "source_sha256": "6d0ce1d94cb04313ef778cf1b9962b065c009c644bcedff5be0dd1ac80bd3fd1",
+      "outputs": {
+        "albedo": "assets/environments_v2/materials/estate_weathered_stone/estate_weathered_stone_albedo.png",
+        "normal": "assets/environments_v2/materials/estate_weathered_stone/estate_weathered_stone_normal.png",
+        "orm": "assets/environments_v2/materials/estate_weathered_stone/estate_weathered_stone_orm.png"
+      },
+      "dimensions": {
+        "albedo": [
+          1024,
+          1024
+        ],
+        "normal": [
+          512,
+          512
+        ],
+        "orm": [
+          256,
+          256
+        ]
+      },
+      "roughness": 0.91,
+      "metallic": 0.0,
+      "generator": "OpenAI Images built-in source plus deterministic local processing",
+      "status": "original_fan_made"
+    },
+    {
+      "id": "mansion_damp_plaster",
+      "kind": "tileable_material",
+      "source": "reports/runtime/environment-sources/materials_a/mansion_damp_plaster.png",
+      "source_sha256": "cf8e6d60c56d71caa8c12ef268b6727168107c860a61ca61f43783572230661f",
+      "outputs": {
+        "albedo": "assets/environments_v2/materials/mansion_damp_plaster/mansion_damp_plaster_albedo.png",
+        "normal": "assets/environments_v2/materials/mansion_damp_plaster/mansion_damp_plaster_normal.png",
+        "orm": "assets/environments_v2/materials/mansion_damp_plaster/mansion_damp_plaster_orm.png"
+      },
+      "dimensions": {
+        "albedo": [
+          1024,
+          1024
+        ],
+        "normal": [
+          512,
+          512
+        ],
+        "orm": [
+          256,
+          256
+        ]
+      },
+      "roughness": 0.86,
+      "metallic": 0.0,
+      "generator": "OpenAI Images built-in source plus deterministic local processing",
+      "status": "original_fan_made"
+    },
+    {
+      "id": "mansion_dark_wood_panel",
+      "kind": "tileable_material",
+      "source": "reports/runtime/environment-sources/materials_a/mansion_dark_wood_panel.png",
+      "source_sha256": "7a0771594056622b0d70957350398691e6571d02fcbe22f4d2eb01112bed4f26",
+      "outputs": {
+        "albedo": "assets/environments_v2/materials/mansion_dark_wood_panel/mansion_dark_wood_panel_albedo.png",
+        "normal": "assets/environments_v2/materials/mansion_dark_wood_panel/mansion_dark_wood_panel_normal.png",
+        "orm": "assets/environments_v2/materials/mansion_dark_wood_panel/mansion_dark_wood_panel_orm.png"
+      },
+      "dimensions": {
+        "albedo": [
+          1024,
+          1024
+        ],
+        "normal": [
+          512,
+          512
+        ],
+        "orm": [
+          256,
+          256
+        ]
+      },
+      "roughness": 0.72,
+      "metallic": 0.0,
+      "generator": "OpenAI Images built-in source plus deterministic local processing",
+      "status": "original_fan_made"
+    },
+    {
+      "id": "mansion_marble_floor",
+      "kind": "tileable_material",
+      "source": "reports/runtime/environment-sources/materials_a/mansion_marble_floor.png",
+      "source_sha256": "8caaf7fc4b03743c7715ca1e77da95fe3292100b5c3273f834b91bcfb1a75bf7",
+      "outputs": {
+        "albedo": "assets/environments_v2/materials/mansion_marble_floor/mansion_marble_floor_albedo.png",
+        "normal": "assets/environments_v2/materials/mansion_marble_floor/mansion_marble_floor_normal.png",
+        "orm": "assets/environments_v2/materials/mansion_marble_floor/mansion_marble_floor_orm.png"
+      },
+      "dimensions": {
+        "albedo": [
+          1024,
+          1024
+        ],
+        "normal": [
+          512,
+          512
+        ],
+        "orm": [
+          256,
+          256
+        ]
+      },
+      "roughness": 0.43,
+      "metallic": 0.0,
+      "generator": "OpenAI Images built-in source plus deterministic local processing",
+      "status": "original_fan_made"
+    },
+    {
+      "id": "mansion_worn_red_carpet",
+      "kind": "tileable_material",
+      "source": "reports/runtime/environment-sources/materials_a/mansion_worn_red_carpet.png",
+      "source_sha256": "27cc515874e4586cc9070ce1856c53843ddb821bed2db299521cbb65358ad2a2",
+      "outputs": {
+        "albedo": "assets/environments_v2/materials/mansion_worn_red_carpet/mansion_worn_red_carpet_albedo.png",
+        "normal": "assets/environments_v2/materials/mansion_worn_red_carpet/mansion_worn_red_carpet_normal.png",
+        "orm": "assets/environments_v2/materials/mansion_worn_red_carpet/mansion_worn_red_carpet_orm.png"
+      },
+      "dimensions": {
+        "albedo": [
+          1024,
+          1024
+        ],
+        "normal": [
+          512,
+          512
+        ],
+        "orm": [
+          256,
+          256
+        ]
+      },
+      "roughness": 0.96,
+      "metallic": 0.0,
+      "generator": "OpenAI Images built-in source plus deterministic local processing",
+      "status": "original_fan_made"
+    },
+    {
+      "id": "mansion_oak_door",
+      "kind": "tileable_material",
+      "source": "reports/runtime/environment-sources/materials_a/mansion_oak_door.png",
+      "source_sha256": "8948c531cdc2e8fd1255ce032ea35a2faf28b1fd6a5aa96198fdb29984ddc986",
+      "outputs": {
+        "albedo": "assets/environments_v2/materials/mansion_oak_door/mansion_oak_door_albedo.png",
+        "normal": "assets/environments_v2/materials/mansion_oak_door/mansion_oak_door_normal.png",
+        "orm": "assets/environments_v2/materials/mansion_oak_door/mansion_oak_door_orm.png"
+      },
+      "dimensions": {
+        "albedo": [
+          1024,
+          1024
+        ],
+        "normal": [
+          512,
+          512
+        ],
+        "orm": [
+          256,
+          256
+        ]
+      },
+      "roughness": 0.78,
+      "metallic": 0.0,
+      "generator": "OpenAI Images built-in source plus deterministic local processing",
+      "status": "original_fan_made"
+    },
+    {
+      "id": "library_dark_oak_shelf",
+      "kind": "tileable_material",
+      "source": "reports/runtime/environment-sources/materials_a/library_dark_oak_shelf.png",
+      "source_sha256": "88215e00116d31ba28d7db06dff8b100dcfc4fd26492029383382eafa316638d",
+      "outputs": {
+        "albedo": "assets/environments_v2/materials/library_dark_oak_shelf/library_dark_oak_shelf_albedo.png",
+        "normal": "assets/environments_v2/materials/library_dark_oak_shelf/library_dark_oak_shelf_normal.png",
+        "orm": "assets/environments_v2/materials/library_dark_oak_shelf/library_dark_oak_shelf_orm.png"
+      },
+      "dimensions": {
+        "albedo": [
+          1024,
+          1024
+        ],
+        "normal": [
+          512,
+          512
+        ],
+        "orm": [
+          256,
+          256
+        ]
+      },
+      "roughness": 0.75,
+      "metallic": 0.0,
+      "generator": "OpenAI Images built-in source plus deterministic local processing",
+      "status": "original_fan_made"
+    },
+    {
+      "id": "sewer_wet_brick",
+      "kind": "tileable_material",
+      "source": "reports/runtime/environment-sources/materials_a/sewer_wet_brick.png",
+      "source_sha256": "e54a1c45bf7b63a7789a300598d84aeec418091f71cf5738290eb530e8262cb9",
+      "outputs": {
+        "albedo": "assets/environments_v2/materials/sewer_wet_brick/sewer_wet_brick_albedo.png",
+        "normal": "assets/environments_v2/materials/sewer_wet_brick/sewer_wet_brick_normal.png",
+        "orm": "assets/environments_v2/materials/sewer_wet_brick/sewer_wet_brick_orm.png"
+      },
+      "dimensions": {
+        "albedo": [
+          1024,
+          1024
+        ],
+        "normal": [
+          512,
+          512
+        ],
+        "orm": [
+          256,
+          256
+        ]
+      },
+      "roughness": 0.82,
+      "metallic": 0.0,
+      "generator": "OpenAI Images built-in source plus deterministic local processing",
+      "status": "original_fan_made"
+    },
+    {
+      "id": "sewer_slick_stone",
+      "kind": "tileable_material",
+      "source": "reports/runtime/environment-sources/materials_b/sewer_slick_stone.png",
+      "source_sha256": "a7ca866968dc52ee3ace26f9295b849cca49f1a4ee714ed7e8dc317bb9b6224a",
+      "outputs": {
+        "albedo": "assets/environments_v2/materials/sewer_slick_stone/sewer_slick_stone_albedo.png",
+        "normal": "assets/environments_v2/materials/sewer_slick_stone/sewer_slick_stone_normal.png",
+        "orm": "assets/environments_v2/materials/sewer_slick_stone/sewer_slick_stone_orm.png"
+      },
+      "dimensions": {
+        "albedo": [
+          1024,
+          1024
+        ],
+        "normal": [
+          512,
+          512
+        ],
+        "orm": [
+          256,
+          256
+        ]
+      },
+      "roughness": 0.58,
+      "metallic": 0.0,
+      "generator": "OpenAI Images built-in source plus deterministic local processing",
+      "status": "original_fan_made"
+    },
+    {
+      "id": "sewer_rusted_iron",
+      "kind": "tileable_material",
+      "source": "reports/runtime/environment-sources/materials_b/sewer_rusted_iron.png",
+      "source_sha256": "40b42db34d53c80d9b4ec07f984b0f9006066d2f49c5e123b9a922dacea57d16",
+      "outputs": {
+        "albedo": "assets/environments_v2/materials/sewer_rusted_iron/sewer_rusted_iron_albedo.png",
+        "normal": "assets/environments_v2/materials/sewer_rusted_iron/sewer_rusted_iron_normal.png",
+        "orm": "assets/environments_v2/materials/sewer_rusted_iron/sewer_rusted_iron_orm.png"
+      },
+      "dimensions": {
+        "albedo": [
+          1024,
+          1024
+        ],
+        "normal": [
+          512,
+          512
+        ],
+        "orm": [
+          256,
+          256
+        ]
+      },
+      "roughness": 0.83,
+      "metallic": 0.62,
+      "generator": "OpenAI Images built-in source plus deterministic local processing",
+      "status": "original_fan_made"
+    },
+    {
+      "id": "roof_weathered_slate",
+      "kind": "tileable_material",
+      "source": "reports/runtime/environment-sources/materials_b/roof_weathered_slate.png",
+      "source_sha256": "03555535f0065024170821cad78f83768fc2152b995ef2855cd3dfcd8d7dcbed",
+      "outputs": {
+        "albedo": "assets/environments_v2/materials/roof_weathered_slate/roof_weathered_slate_albedo.png",
+        "normal": "assets/environments_v2/materials/roof_weathered_slate/roof_weathered_slate_normal.png",
+        "orm": "assets/environments_v2/materials/roof_weathered_slate/roof_weathered_slate_orm.png"
+      },
+      "dimensions": {
+        "albedo": [
+          1024,
+          1024
+        ],
+        "normal": [
+          512,
+          512
+        ],
+        "orm": [
+          256,
+          256
+        ]
+      },
+      "roughness": 0.89,
+      "metallic": 0.0,
+      "generator": "OpenAI Images built-in source plus deterministic local processing",
+      "status": "original_fan_made"
+    },
+    {
+      "id": "roof_gothic_stone",
+      "kind": "tileable_material",
+      "source": "reports/runtime/environment-sources/materials_b/roof_gothic_stone.png",
+      "source_sha256": "9e497ca435b7a199c44656d5fc5f65761a0f884b1485dec87a28a8f8e3851906",
+      "outputs": {
+        "albedo": "assets/environments_v2/materials/roof_gothic_stone/roof_gothic_stone_albedo.png",
+        "normal": "assets/environments_v2/materials/roof_gothic_stone/roof_gothic_stone_normal.png",
+        "orm": "assets/environments_v2/materials/roof_gothic_stone/roof_gothic_stone_orm.png"
+      },
+      "dimensions": {
+        "albedo": [
+          1024,
+          1024
+        ],
+        "normal": [
+          512,
+          512
+        ],
+        "orm": [
+          256,
+          256
+        ]
+      },
+      "roughness": 0.91,
+      "metallic": 0.0,
+      "generator": "OpenAI Images built-in source plus deterministic local processing",
+      "status": "original_fan_made"
+    },
+    {
+      "id": "lab_painted_metal",
+      "kind": "tileable_material",
+      "source": "reports/runtime/environment-sources/materials_b/lab_painted_metal.png",
+      "source_sha256": "0db4003815a532e4ddc5205a0bb88c0114854d5997ad25f6098230ad155a372c",
+      "outputs": {
+        "albedo": "assets/environments_v2/materials/lab_painted_metal/lab_painted_metal_albedo.png",
+        "normal": "assets/environments_v2/materials/lab_painted_metal/lab_painted_metal_normal.png",
+        "orm": "assets/environments_v2/materials/lab_painted_metal/lab_painted_metal_orm.png"
+      },
+      "dimensions": {
+        "albedo": [
+          1024,
+          1024
+        ],
+        "normal": [
+          512,
+          512
+        ],
+        "orm": [
+          256,
+          256
+        ]
+      },
+      "roughness": 0.61,
+      "metallic": 0.54,
+      "generator": "OpenAI Images built-in source plus deterministic local processing",
+      "status": "original_fan_made"
+    },
+    {
+      "id": "lab_grated_floor",
+      "kind": "tileable_material",
+      "source": "reports/runtime/environment-sources/materials_b/lab_grated_floor.png",
+      "source_sha256": "e850d0a619f16bb2dcb85b27bdca825946567e1dcf3f04c7b6560d743b72fffa",
+      "outputs": {
+        "albedo": "assets/environments_v2/materials/lab_grated_floor/lab_grated_floor_albedo.png",
+        "normal": "assets/environments_v2/materials/lab_grated_floor/lab_grated_floor_normal.png",
+        "orm": "assets/environments_v2/materials/lab_grated_floor/lab_grated_floor_orm.png"
+      },
+      "dimensions": {
+        "albedo": [
+          1024,
+          1024
+        ],
+        "normal": [
+          512,
+          512
+        ],
+        "orm": [
+          256,
+          256
+        ]
+      },
+      "roughness": 0.69,
+      "metallic": 0.72,
+      "generator": "OpenAI Images built-in source plus deterministic local processing",
+      "status": "original_fan_made"
+    },
+    {
+      "id": "lab_rusted_pipe",
+      "kind": "tileable_material",
+      "source": "reports/runtime/environment-sources/materials_b/lab_rusted_pipe.png",
+      "source_sha256": "56f010ede8497c71d78f4de826b0cb51bce1142aecf3e0770aec8cc824260b2e",
+      "outputs": {
+        "albedo": "assets/environments_v2/materials/lab_rusted_pipe/lab_rusted_pipe_albedo.png",
+        "normal": "assets/environments_v2/materials/lab_rusted_pipe/lab_rusted_pipe_normal.png",
+        "orm": "assets/environments_v2/materials/lab_rusted_pipe/lab_rusted_pipe_orm.png"
+      },
+      "dimensions": {
+        "albedo": [
+          1024,
+          1024
+        ],
+        "normal": [
+          512,
+          512
+        ],
+        "orm": [
+          256,
+          256
+        ]
+      },
+      "roughness": 0.76,
+      "metallic": 0.66,
+      "generator": "OpenAI Images built-in source plus deterministic local processing",
+      "status": "original_fan_made"
+    },
+    {
+      "id": "lab_grimy_glass",
+      "kind": "tileable_material",
+      "source": "reports/runtime/environment-sources/materials_b/lab_grimy_glass.png",
+      "source_sha256": "7544e9be96c0af719960d430742e263c5ea1ddd2c990eb12ac8b9dd7e123b21f",
+      "outputs": {
+        "albedo": "assets/environments_v2/materials/lab_grimy_glass/lab_grimy_glass_albedo.png",
+        "normal": "assets/environments_v2/materials/lab_grimy_glass/lab_grimy_glass_normal.png",
+        "orm": "assets/environments_v2/materials/lab_grimy_glass/lab_grimy_glass_orm.png"
+      },
+      "dimensions": {
+        "albedo": [
+          1024,
+          1024
+        ],
+        "normal": [
+          512,
+          512
+        ],
+        "orm": [
+          256,
+          256
+        ]
+      },
+      "roughness": 0.24,
+      "metallic": 0.0,
+      "generator": "OpenAI Images built-in source plus deterministic local processing",
+      "status": "original_fan_made"
+    },
+    {
+      "id": "lab_bio_machine_panel",
+      "kind": "tileable_material",
+      "source": "reports/runtime/environment-sources/materials_b/lab_bio_machine_panel.png",
+      "source_sha256": "21eb2b385f231e3f74cb9570c1fa7ea968a109ca79220211e9423fb66ded1d66",
+      "outputs": {
+        "albedo": "assets/environments_v2/materials/lab_bio_machine_panel/lab_bio_machine_panel_albedo.png",
+        "normal": "assets/environments_v2/materials/lab_bio_machine_panel/lab_bio_machine_panel_normal.png",
+        "orm": "assets/environments_v2/materials/lab_bio_machine_panel/lab_bio_machine_panel_orm.png"
+      },
+      "dimensions": {
+        "albedo": [
+          1024,
+          1024
+        ],
+        "normal": [
+          512,
+          512
+        ],
+        "orm": [
+          256,
+          256
+        ]
+      },
+      "roughness": 0.57,
+      "metallic": 0.48,
+      "generator": "OpenAI Images built-in source plus deterministic local processing",
+      "status": "original_fan_made"
+    },
+    {
+      "id": "hermit_web_membrane",
+      "kind": "tileable_material",
+      "source": "reports/runtime/environment-sources/materials_b/hermit_web_membrane.png",
+      "source_sha256": "9eb8fa8d565391adaab1a040acab22f7ade0271ac0f9084737552fd7be1c3346",
+      "outputs": {
+        "albedo": "assets/environments_v2/materials/hermit_web_membrane/hermit_web_membrane_albedo.png",
+        "normal": "assets/environments_v2/materials/hermit_web_membrane/hermit_web_membrane_normal.png",
+        "orm": "assets/environments_v2/materials/hermit_web_membrane/hermit_web_membrane_orm.png"
+      },
+      "dimensions": {
+        "albedo": [
+          1024,
+          1024
+        ],
+        "normal": [
+          512,
+          512
+        ],
+        "orm": [
+          256,
+          256
+        ]
+      },
+      "roughness": 0.71,
+      "metallic": 0.0,
+      "generator": "OpenAI Images built-in source plus deterministic local processing",
+      "status": "original_fan_made"
+    },
+    {
+      "id": "c01_foyer_door_lock",
+      "kind": "two_state_destructible",
+      "source": "reports/runtime/environment-sources/destructibles/c01_foyer_door_lock.png",
+      "source_sha256": "b369f9106d9f394a7bb2ef185e47a44ea29a992666ed4d66b62e6e0592a45131",
+      "outputs": {
+        "intact": "assets/environments_v2/destructibles/c01_foyer_door_lock/c01_foyer_door_lock_intact.png",
+        "broken": "assets/environments_v2/destructibles/c01_foyer_door_lock/c01_foyer_door_lock_broken.png"
+      },
+      "dimensions": {
+        "intact": [
+          1024,
+          1024
+        ],
+        "broken": [
+          1024,
+          1024
+        ]
+      },
+      "generator": "OpenAI Images built-in source plus deterministic split/crop",
+      "status": "original_fan_made"
+    },
+    {
+      "id": "c02_chained_hatch_plate",
+      "kind": "two_state_destructible",
+      "source": "reports/runtime/environment-sources/destructibles/c02_chained_hatch_plate.png",
+      "source_sha256": "d0487b43540b98e3c47dbf9711897a2f0c8a7856dedbc270d366ff648017be65",
+      "outputs": {
+        "intact": "assets/environments_v2/destructibles/c02_chained_hatch_plate/c02_chained_hatch_plate_intact.png",
+        "broken": "assets/environments_v2/destructibles/c02_chained_hatch_plate/c02_chained_hatch_plate_broken.png"
+      },
+      "dimensions": {
+        "intact": [
+          1024,
+          1024
+        ],
+        "broken": [
+          1024,
+          1024
+        ]
+      },
+      "generator": "OpenAI Images built-in source plus deterministic split/crop",
+      "status": "original_fan_made"
+    },
+    {
+      "id": "c03_elevator_route_switch",
+      "kind": "two_state_destructible",
+      "source": "reports/runtime/environment-sources/destructibles/c03_elevator_route_switch.png",
+      "source_sha256": "ba8aa45549b2ca0f08e3c29e6f308e1048d1a80e8c41b31725d0c4f234e4d924",
+      "outputs": {
+        "intact": "assets/environments_v2/destructibles/c03_elevator_route_switch/c03_elevator_route_switch_intact.png",
+        "broken": "assets/environments_v2/destructibles/c03_elevator_route_switch/c03_elevator_route_switch_broken.png"
+      },
+      "dimensions": {
+        "intact": [
+          1024,
+          1024
+        ],
+        "broken": [
+          1024,
+          1024
+        ]
+      },
+      "generator": "OpenAI Images built-in source plus deterministic split/crop",
+      "status": "original_fan_made"
+    },
+    {
+      "id": "c03_vent_key_container",
+      "kind": "two_state_destructible",
+      "source": "reports/runtime/environment-sources/destructibles/c03_vent_key_container.png",
+      "source_sha256": "6539d6712a4c79e003b96b1a1ab5874a09f79928d425cb85290103b580dfe525",
+      "outputs": {
+        "intact": "assets/environments_v2/destructibles/c03_vent_key_container/c03_vent_key_container_intact.png",
+        "broken": "assets/environments_v2/destructibles/c03_vent_key_container/c03_vent_key_container_broken.png"
+      },
+      "dimensions": {
+        "intact": [
+          1024,
+          1024
+        ],
+        "broken": [
+          1024,
+          1024
+        ]
+      },
+      "generator": "OpenAI Images built-in source plus deterministic split/crop",
+      "status": "original_fan_made"
+    },
+    {
+      "id": "c04_bonus_gate_seal",
+      "kind": "two_state_destructible",
+      "source": "reports/runtime/environment-sources/destructibles/c04_bonus_gate_seal.png",
+      "source_sha256": "59316e6347b70aafba06b6e0711a3aadbebbc759bbdc384d1ab249fc3ffa62f6",
+      "outputs": {
+        "intact": "assets/environments_v2/destructibles/c04_bonus_gate_seal/c04_bonus_gate_seal_intact.png",
+        "broken": "assets/environments_v2/destructibles/c04_bonus_gate_seal/c04_bonus_gate_seal_broken.png"
+      },
+      "dimensions": {
+        "intact": [
+          1024,
+          1024
+        ],
+        "broken": [
+          1024,
+          1024
+        ]
+      },
+      "generator": "OpenAI Images built-in source plus deterministic split/crop",
+      "status": "original_fan_made"
+    },
+    {
+      "id": "c04_emergency_supply_crate",
+      "kind": "two_state_destructible",
+      "source": "reports/runtime/environment-sources/destructibles/c04_emergency_supply_crate.png",
+      "source_sha256": "88702da3b1e22e250e48da54999c683cab985bb5623facdb5a605be0a101b044",
+      "outputs": {
+        "intact": "assets/environments_v2/destructibles/c04_emergency_supply_crate/c04_emergency_supply_crate_intact.png",
+        "broken": "assets/environments_v2/destructibles/c04_emergency_supply_crate/c04_emergency_supply_crate_broken.png"
+      },
+      "dimensions": {
+        "intact": [
+          1024,
+          1024
+        ],
+        "broken": [
+          1024,
+          1024
+        ]
+      },
+      "generator": "OpenAI Images built-in source plus deterministic split/crop",
+      "status": "original_fan_made"
+    },
+    {
+      "id": "mansion_chandelier",
+      "kind": "environment_prop",
+      "source": "reports/runtime/environment-sources/props_a/mansion_chandelier.png",
+      "source_sha256": "65db11e41b632d5688ec073375cd1fdd3e72298a8fe9bd880e7f4ed4d31bdefa",
+      "outputs": {
+        "atlas": "assets/environments_v2/props/mansion_chandelier/mansion_chandelier.png"
+      },
+      "dimensions": [
+        2048,
+        1024
+      ],
+      "frames": 2,
+      "pixel_size": 0.0064,
+      "world_scale": 1.5,
+      "generator": "OpenAI Images built-in source plus deterministic alpha/crop",
+      "status": "original_fan_made"
+    },
+    {
+      "id": "mansion_sconce",
+      "kind": "environment_prop",
+      "source": "reports/runtime/environment-sources/props_a/mansion_sconce.png",
+      "source_sha256": "eb7e3ccc4fa62f274b51df57f77391595d0b8f392f7d8661dff9f2295a2b2fab",
+      "outputs": {
+        "atlas": "assets/environments_v2/props/mansion_sconce/mansion_sconce.png"
+      },
+      "dimensions": [
+        2048,
+        1024
+      ],
+      "frames": 2,
+      "pixel_size": 0.0055,
+      "world_scale": 0.72,
+      "generator": "OpenAI Images built-in source plus deterministic alpha/crop",
+      "status": "original_fan_made"
+    },
+    {
+      "id": "mansion_double_door",
+      "kind": "environment_prop",
+      "source": "reports/runtime/environment-sources/props_a/mansion_double_door.png",
+      "source_sha256": "84c206d7051b84cf8d460b4e41c430b7672a43e17c5dc9c242b33e70a1f7ae41",
+      "outputs": {
+        "atlas": "assets/environments_v2/props/mansion_double_door/mansion_double_door.png"
+      },
+      "dimensions": [
+        2048,
+        1024
+      ],
+      "frames": 2,
+      "pixel_size": 0.007,
+      "world_scale": 2.7,
+      "generator": "OpenAI Images built-in source plus deterministic alpha/crop",
+      "status": "original_fan_made"
+    },
+    {
+      "id": "library_bookcase",
+      "kind": "environment_prop",
+      "source": "reports/runtime/environment-sources/props_a/library_bookcase.png",
+      "source_sha256": "73fc3c5740c55318baa4bdc86471a00c8e98282a85a31ed2b4464fa0cc9c78b0",
+      "outputs": {
+        "atlas": "assets/environments_v2/props/library_bookcase/library_bookcase.png"
+      },
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "frames": 1,
+      "pixel_size": 0.0065,
+      "world_scale": 2.0,
+      "generator": "OpenAI Images built-in source plus deterministic alpha/crop",
+      "status": "original_fan_made"
+    },
+    {
+      "id": "mansion_portrait",
+      "kind": "environment_prop",
+      "source": "reports/runtime/environment-sources/props_a/mansion_portrait.png",
+      "source_sha256": "c61d67471cbb000f8591f9b32d4d6e1ec2a8019f22fc1d3753e3901e3fe541fc",
+      "outputs": {
+        "atlas": "assets/environments_v2/props/mansion_portrait/mansion_portrait.png"
+      },
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "frames": 1,
+      "pixel_size": 0.0052,
+      "world_scale": 0.9,
+      "generator": "OpenAI Images built-in source plus deterministic alpha/crop",
+      "status": "original_fan_made"
+    },
+    {
+      "id": "lab_control_console",
+      "kind": "environment_prop",
+      "source": "reports/runtime/environment-sources/props_a/lab_control_console.png",
+      "source_sha256": "cc2370be5e4a7a079989c9e09eb5196a22695d834bde9b9bd60e365a644f9a73",
+      "outputs": {
+        "atlas": "assets/environments_v2/props/lab_control_console/lab_control_console.png"
+      },
+      "dimensions": [
+        2048,
+        1024
+      ],
+      "frames": 2,
+      "pixel_size": 0.0065,
+      "world_scale": 1.5,
+      "generator": "OpenAI Images built-in source plus deterministic alpha/crop",
+      "status": "original_fan_made"
+    },
+    {
+      "id": "estate_gate",
+      "kind": "environment_prop",
+      "source": "reports/runtime/environment-sources/props_b/estate_gate.png",
+      "source_sha256": "00b1ef4be0e25b836b80d1322d223e9d47dcc978243fa4e10c3b9b941c04ce99",
+      "outputs": {
+        "atlas": "assets/environments_v2/props/estate_gate/estate_gate.png"
+      },
+      "dimensions": [
+        2048,
+        1024
+      ],
+      "frames": 2,
+      "pixel_size": 0.0065,
+      "world_scale": 2.7,
+      "generator": "OpenAI Images built-in source plus deterministic alpha/crop",
+      "status": "original_fan_made"
+    },
+    {
+      "id": "garden_lamp",
+      "kind": "environment_prop",
+      "source": "reports/runtime/environment-sources/props_b/garden_lamp.png",
+      "source_sha256": "c9f930de979a03ca13eb04928a4a7d8c563fef0b79578ae1c9b7a96612de13d0",
+      "outputs": {
+        "atlas": "assets/environments_v2/props/garden_lamp/garden_lamp.png"
+      },
+      "dimensions": [
+        2048,
+        1024
+      ],
+      "frames": 2,
+      "pixel_size": 0.0062,
+      "world_scale": 1.25,
+      "generator": "OpenAI Images built-in source plus deterministic alpha/crop",
+      "status": "original_fan_made"
+    },
+    {
+      "id": "dead_tree",
+      "kind": "environment_prop",
+      "source": "reports/runtime/environment-sources/props_b/dead_tree.png",
+      "source_sha256": "bad2ba83aa7163d6d668b2e8afb114fab8be3f8963fe63c150981de1d2ea77db",
+      "outputs": {
+        "atlas": "assets/environments_v2/props/dead_tree/dead_tree.png"
+      },
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "frames": 1,
+      "pixel_size": 0.0072,
+      "world_scale": 2.3,
+      "generator": "OpenAI Images built-in source plus deterministic alpha/crop",
+      "status": "original_fan_made"
+    },
+    {
+      "id": "stone_bridge_arch",
+      "kind": "environment_prop",
+      "source": "reports/runtime/environment-sources/props_b/stone_bridge_arch.png",
+      "source_sha256": "af3f14efb36739e11ec215f5244242b16f6b7c9f373e23aed055c4bed00b98d7",
+      "outputs": {
+        "atlas": "assets/environments_v2/props/stone_bridge_arch/stone_bridge_arch.png"
+      },
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "frames": 1,
+      "pixel_size": 0.0074,
+      "world_scale": 2.8,
+      "generator": "OpenAI Images built-in source plus deterministic alpha/crop",
+      "status": "original_fan_made"
+    },
+    {
+      "id": "roof_gargoyle",
+      "kind": "environment_prop",
+      "source": "reports/runtime/environment-sources/props_b/roof_gargoyle.png",
+      "source_sha256": "88cabd9c1a56b7c69d1e400b1840de37e1d9faf8896e5a0090af6ec0d03b596a",
+      "outputs": {
+        "atlas": "assets/environments_v2/props/roof_gargoyle/roof_gargoyle.png"
+      },
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "frames": 1,
+      "pixel_size": 0.0064,
+      "world_scale": 1.05,
+      "generator": "OpenAI Images built-in source plus deterministic alpha/crop",
+      "status": "original_fan_made"
+    },
+    {
+      "id": "lab_specimen_tank",
+      "kind": "environment_prop",
+      "source": "reports/runtime/environment-sources/props_b/lab_specimen_tank.png",
+      "source_sha256": "a9a980db337c77439bca90adde6d3cbd24533d1f74038815c47052a19eb45e06",
+      "outputs": {
+        "atlas": "assets/environments_v2/props/lab_specimen_tank/lab_specimen_tank.png"
+      },
+      "dimensions": [
+        2048,
+        1024
+      ],
+      "frames": 2,
+      "pixel_size": 0.0064,
+      "world_scale": 1.55,
+      "generator": "OpenAI Images built-in source plus deterministic alpha/crop",
+      "status": "original_fan_made"
+    },
+    {
+      "id": "lab_pipe_cluster",
+      "kind": "environment_prop",
+      "source": "reports/runtime/environment-sources/props_b/lab_pipe_cluster.png",
+      "source_sha256": "25ad01c2166b2ef7aad434ef8ffe7b37169592740ec7d6f73f1292dbdda29233",
+      "outputs": {
+        "atlas": "assets/environments_v2/props/lab_pipe_cluster/lab_pipe_cluster.png"
+      },
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "frames": 1,
+      "pixel_size": 0.0065,
+      "world_scale": 1.65,
+      "generator": "OpenAI Images built-in source plus deterministic alpha/crop",
+      "status": "original_fan_made"
+    },
+    {
+      "id": "lab_vent_fan",
+      "kind": "environment_prop",
+      "source": "reports/runtime/environment-sources/props_b/lab_vent_fan.png",
+      "source_sha256": "5ce2d499e63126d8a875597fec5da9ca99f08177bdf19ffc95ecdd8267a87b75",
+      "outputs": {
+        "atlas": "assets/environments_v2/props/lab_vent_fan/lab_vent_fan.png"
+      },
+      "dimensions": [
+        2048,
+        1024
+      ],
+      "frames": 2,
+      "pixel_size": 0.0062,
+      "world_scale": 1.15,
+      "generator": "OpenAI Images built-in source plus deterministic alpha/crop",
+      "status": "original_fan_made"
+    }
+  ],
+  "failures": []
+}

@@ -1,9 +1,11 @@
 extends "res://src/gameplay/gameplay_runtime_flow.gd"
 
+const EnvironmentMotionControllerScript := preload("res://src/gameplay/environment_motion_controller.gd")
+
 
 func _spawn_enemy(spawn: Dictionary) -> Node3D:
 	var actor_id := str(spawn.get("actor", "sam_a1"))
-	var stats := (ACTOR_STATS.get(actor_id, ACTOR_STATS.sam_a1) as Dictionary).duplicate(true)
+	var stats := _runtime_stats_for_actor(actor_id)
 	var position_data := spawn.get("position", [0.0, 0.0, -11.0]) as Array
 	var actor_position := Vector3(float(position_data[0]), float(position_data[1]), float(position_data[2]))
 	var actor := _create_actor(actor_id, actor_position, stats, "enemy")
@@ -24,7 +26,8 @@ func _spawn_enemy(spawn: Dictionary) -> Node3D:
 	actor.set_meta("jump_height", float(stats.get("jump_height", 1.15)))
 	actor.set_meta("drop_height", float(stats.get("drop_height", 4.2)))
 	actor.set_meta("drop_duration", float(stats.get("drop_duration", 1.1)))
-	actor.set_meta("projectile_actor", str(stats.get("projectile_actor", "murrer_g1")))
+	actor.set_meta("projectile_asset", str(stats.get("projectile_asset", "")))
+	actor.set_meta("projectile_destructible", bool(stats.get("projectile_destructible", true)))
 	actor.set_meta("projectile_speed", float(stats.get("projectile_speed", 4.0)))
 	actor.set_meta("armor_zones", (stats.get("armor_zones", []) as Array).duplicate())
 	actor.set_meta("armor_durability", float(stats.get("armor_durability", 0.0)))
@@ -46,11 +49,33 @@ func _normalize_enemy_behavior(legacy_pattern: String, profile_default: String) 
 			return legacy_pattern if not legacy_pattern.is_empty() else profile_default
 
 
+func _runtime_stats_for_actor(actor_id: String) -> Dictionary:
+	var stats := enemy_profile_library.to_runtime_stats(actor_id)
+	if stats.is_empty():
+		stats = (ACTOR_STATS.get(actor_id, ACTOR_STATS.sam_a1) as Dictionary).duplicate(true)
+	# Burner attacks with its blowtorch at close range; Magician's fireball is
+	# deliberately never reused as a visual substitute for the flame jet.
+	if actor_id == "burner_c3":
+		stats["behavior"] = "heavy_weapon"
+		stats.erase("projectile_asset")
+		stats.erase("projectile_destructible")
+	return stats
+
 func _spawn_civilian(data: Dictionary) -> void:
 	var position_data := data.get("position", [1.6, 0.0, -10.5]) as Array
 	var actor_id := str(data.get("actor_id", "scientist"))
+	if actor_id == "scientist":
+		var candidates: Array[String] = ["scientist_male_blue", "scientist_male_gray", "scientist_female_lab"]
+		for offset in candidates.size():
+			var candidate := candidates[(scientists_total + offset) % candidates.size()]
+			if not sprite_atlas_library.get_profile(candidate).is_empty():
+				actor_id = candidate
+				break
 	active_civilian = _create_actor(actor_id, Vector3(float(position_data[0]), float(position_data[1]), float(position_data[2])), {"health": 1.0, "speed": 0.0, "scale": 0.94, "score": 0}, "civilian")
 	active_civilian.set_meta("deadline", node_elapsed + float(data.get("deadline", 7.0)))
+	active_civilian.set_meta("rescued", false)
+	active_civilian.set_meta("escape_sign", -1.0 if active_civilian.position.x < 0.0 else 1.0)
+	active_civilian.set_meta("rescued_age", 0.0)
 	scientists_total += 1
 	chapter_scientists_total += 1
 	_play_sfx("danger")
@@ -59,8 +84,22 @@ func _spawn_civilian(data: Dictionary) -> void:
 
 func _spawn_breakable(data: Dictionary) -> void:
 	var position_data := data.get("position", [0.0, 0.7, -9.0]) as Array
-	var actor := _create_actor("medal", Vector3(float(position_data[0]), float(position_data[1]), float(position_data[2])), {"health": float(data.get("health", 2.0)), "speed": 0.0, "scale": 0.42, "score": int(data.get("score", 200))}, "breakable")
+	var fallback_assets := {
+		"foyer_choice": "c01_foyer_door_lock", "chain_plate": "c02_chained_hatch_plate",
+		"elevator_switch": "c03_elevator_route_switch", "vent_key_route": "c03_vent_key_container",
+		"bonus_gate": "c04_bonus_gate_seal", "bonus_room": "c04_emergency_supply_crate"
+	}
+	var asset_id := str(data.get("asset", fallback_assets.get(current_node_id, "")))
+	var profile := environment_asset_library.get_destructible(asset_id)
+	var actor_stats := {
+		"health": float(data.get("health", 2.0)), "speed": 0.0,
+		"scale": float(profile.get("world_scale", 0.72)), "score": int(data.get("score", 200)),
+		"custom_texture": str(profile.get("intact", ITEM_TEXTURES.medal)),
+		"pixel_size": float(profile.get("pixel_size", 0.0045))
+	}
+	var actor := _create_actor(asset_id if not asset_id.is_empty() else "medal", Vector3(float(position_data[0]), float(position_data[1]), float(position_data[2])), actor_stats, "breakable")
 	actor.set_meta("pickup", str(data.get("pickup", "medal")))
+	actor.set_meta("broken_texture", str(profile.get("broken", "")))
 	actor.set_meta("branch_target", true)
 
 
@@ -76,6 +115,7 @@ func _create_actor(actor_id: String, actor_position: Vector3, stats: Dictionary,
 	actor.set_meta("score", int(stats.get("score", 80)))
 	actor.set_meta("visual_scale", float(stats.get("scale", 1.0)))
 	actor.set_meta("behavior", str(stats.get("behavior", "walk")))
+	actor.set_meta("hitbox_profile", str(stats.get("hitbox_profile", "humanoid")))
 	actor.set_meta("dead", false)
 	actor.set_meta("attacks", 0)
 	actor.set_meta("animation_time", 0.0)
@@ -93,16 +133,24 @@ func _create_actor(actor_id: String, actor_position: Vector3, stats: Dictionary,
 	var sprite := Sprite3D.new()
 	sprite.name = "Sprite3D"
 	if role == "breakable":
-		var item_path := str(ITEM_TEXTURES.get(actor_id, ""))
+		var item_path := str(stats.get("custom_texture", ITEM_TEXTURES.get(actor_id, "")))
 		if item_path.is_empty():
 			push_error("No item texture for breakable: %s" % actor_id)
 		else:
 			sprite.texture = load(item_path) as Texture2D
-		sprite.pixel_size = 0.0075 * actor_scale
-		sprite.position.y = 0.95 * actor_scale
+		sprite.pixel_size = float(stats.get("pixel_size", 0.0075))
+		sprite.position.y = 0.0
 		sprite.billboard = BaseMaterial3D.BILLBOARD_FIXED_Y
 		sprite.alpha_cut = SpriteBase3D.ALPHA_CUT_DISCARD
-		sprite.texture_filter = BaseMaterial3D.TEXTURE_FILTER_NEAREST
+		sprite.texture_filter = BaseMaterial3D.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
+	elif role == "projectile":
+		var projectile_profile := gameplay_support_library.get_projectile(actor_id)
+		sprite.texture = gameplay_support_library.load_texture(projectile_profile)
+		sprite.pixel_size = float(stats.get("pixel_size", 0.0025)) * actor_scale
+		sprite.position.y = 0.0
+		sprite.billboard = BaseMaterial3D.BILLBOARD_ENABLED
+		sprite.alpha_cut = SpriteBase3D.ALPHA_CUT_DISCARD
+		sprite.texture_filter = BaseMaterial3D.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
 	else:
 		_configure_actor_sprite(sprite, actor_id, actor_scale)
 	sprite.modulate = Color.from_string(str(stats.get("tint", "#ffffff")), Color.WHITE)
@@ -114,16 +162,35 @@ func _create_actor(actor_id: String, actor_position: Vector3, stats: Dictionary,
 	shadow.position = Vector3(0.0, 0.025, 0.0)
 	actor.add_child(shadow)
 
-	if role == "enemy" or role == "boss":
-		_add_hit_zone(actor, "head", Vector3(0.0, 1.68, 0.0) * actor_scale, Vector3(0.34, 0.34, 0.3) * actor_scale, 2.0)
-		_add_hit_zone(actor, "torso", Vector3(0.0, 1.05, 0.0) * actor_scale, Vector3(0.62, 0.72, 0.34) * actor_scale, 1.0)
-		_add_hit_zone(actor, "left_arm", Vector3(-0.52, 1.08, 0.0) * actor_scale, Vector3(0.23, 0.62, 0.25) * actor_scale, 0.78)
-		_add_hit_zone(actor, "right_arm", Vector3(0.52, 1.08, 0.0) * actor_scale, Vector3(0.23, 0.62, 0.25) * actor_scale, 0.78)
-		_add_hit_zone(actor, "legs", Vector3(0.0, 0.42, 0.0) * actor_scale, Vector3(0.52, 0.52, 0.28) * actor_scale, 0.68)
-	else:
-		_add_hit_zone(actor, "body", Vector3(0.0, 1.0, 0.0) * actor_scale, Vector3(0.58, 1.05, 0.32) * actor_scale, 1.0)
+	_add_actor_hit_zones(actor, role, actor_scale)
 	active_actors.append(actor)
 	return actor
+
+func _add_actor_hit_zones(actor: Node3D, role: String, actor_scale: float) -> void:
+	if role not in ["enemy", "boss"]:
+		var body_y := 0.45 if role == "projectile" else 1.0
+		var body_size := Vector3(0.48, 0.48, 0.24) if role == "projectile" else Vector3(0.58, 1.05, 0.32)
+		_add_hit_zone(actor, "body", Vector3(0.0, body_y, 0.0) * actor_scale, body_size * actor_scale, 1.0)
+		return
+	match str(actor.get_meta("hitbox_profile", "humanoid")):
+		"flying_small":
+			_add_hit_zone(actor, "body", Vector3(0.0, 0.62, 0.0) * actor_scale, Vector3(0.72, 0.56, 0.34) * actor_scale, 1.0)
+		"low_creature", "crawler":
+			_add_hit_zone(actor, "head", Vector3(0.0, 0.66, 0.12) * actor_scale, Vector3(0.38, 0.3, 0.35) * actor_scale, 1.4)
+			_add_hit_zone(actor, "torso", Vector3(0.0, 0.38, -0.12) * actor_scale, Vector3(0.78, 0.42, 0.62) * actor_scale, 1.0)
+		"heavy_humanoid":
+			_add_hit_zone(actor, "head", Vector3(0.0, 1.78, 0.0) * actor_scale, Vector3(0.4, 0.4, 0.34) * actor_scale, 2.0)
+			_add_hit_zone(actor, "torso", Vector3(0.0, 1.05, 0.0) * actor_scale, Vector3(0.84, 0.82, 0.42) * actor_scale, 1.0)
+			_add_hit_zone(actor, "left_arm", Vector3(-0.68, 1.1, 0.0) * actor_scale, Vector3(0.28, 0.68, 0.28) * actor_scale, 0.78)
+			_add_hit_zone(actor, "right_arm", Vector3(0.68, 1.1, 0.0) * actor_scale, Vector3(0.28, 0.68, 0.28) * actor_scale, 0.78)
+			_add_hit_zone(actor, "legs", Vector3(0.0, 0.42, 0.0) * actor_scale, Vector3(0.68, 0.54, 0.34) * actor_scale, 0.68)
+		_:
+			_add_hit_zone(actor, "head", Vector3(0.0, 1.68, 0.0) * actor_scale, Vector3(0.34, 0.34, 0.3) * actor_scale, 2.0)
+			_add_hit_zone(actor, "torso", Vector3(0.0, 1.05, 0.0) * actor_scale, Vector3(0.62, 0.72, 0.34) * actor_scale, 1.0)
+			_add_hit_zone(actor, "left_arm", Vector3(-0.52, 1.08, 0.0) * actor_scale, Vector3(0.23, 0.62, 0.25) * actor_scale, 0.78)
+			_add_hit_zone(actor, "right_arm", Vector3(0.52, 1.08, 0.0) * actor_scale, Vector3(0.23, 0.62, 0.25) * actor_scale, 0.78)
+			_add_hit_zone(actor, "legs", Vector3(0.0, 0.42, 0.0) * actor_scale, Vector3(0.52, 0.52, 0.28) * actor_scale, 0.68)
+
 
 
 func _add_hit_zone(actor: Node3D, zone: String, local_position: Vector3, zone_size: Vector3, multiplier: float) -> void:
@@ -175,7 +242,19 @@ func _update_actors(delta: float) -> void:
 				actor.set_meta("attack_animation_timer", maxf(float(actor.get_meta("attack_animation_timer", 0.0)), 0.16))
 		_animate_actor(actor)
 		if role == "civilian":
-			if state == "node" and node_elapsed >= float(actor.get_meta("deadline", 999.0)):
+			if bool(actor.get_meta("rescued", false)):
+				var rescued_age := float(actor.get_meta("rescued_age", 0.0)) + delta
+				actor.set_meta("rescued_age", rescued_age)
+				var escape_sign := float(actor.get_meta("escape_sign", 1.0))
+				actor.position.x += escape_sign * delta * 1.45
+				actor.position.z -= delta * 0.72
+				actor.set_meta("visual_forward", Vector3(escape_sign, 0.0, -0.5).normalized())
+				if rescued_age >= 1.65:
+					active_actors.erase(actor)
+					if actor == active_civilian:
+						active_civilian = null
+					actor.queue_free()
+			elif state == "node" and node_elapsed >= float(actor.get_meta("deadline", 999.0)):
 				_kill_civilian(actor, false)
 			continue
 		if role != "enemy" and role != "projectile":
@@ -229,7 +308,7 @@ func _update_actors(delta: float) -> void:
 
 func _animate_actor(actor: Node3D) -> void:
 	var sprite := actor.get_node_or_null("Sprite3D") as Sprite3D
-	if sprite == null or str(actor.get_meta("role", "enemy")) == "breakable":
+	if sprite == null or str(actor.get_meta("role", "enemy")) in ["breakable", "projectile"]:
 		return
 	var local_frame := 0
 	var attack_timer := float(actor.get_meta("attack_animation_timer", 0.0))
@@ -272,13 +351,12 @@ func _actor_attack(actor: Node3D) -> void:
 
 
 func _spawn_enemy_projectile(owner: Node3D) -> Node3D:
-	var projectile_id := str(owner.get_meta("projectile_actor", "murrer_g1"))
-	var projectile_profile := (ACTOR_STATS.get(projectile_id, ACTOR_STATS.murrer_g1) as Dictionary).duplicate(true)
-	projectile_profile.health = 1.0
-	projectile_profile.speed = float(owner.get_meta("projectile_speed", 4.0))
-	projectile_profile.scale = minf(0.48, float(projectile_profile.get("scale", 0.42)))
-	projectile_profile.score = 0
-	var projectile := _create_actor(projectile_id, owner.position + Vector3(0.0, 1.1, 0.45), projectile_profile, "projectile")
+	var projectile_id := str(owner.get_meta("projectile_asset", ""))
+	if gameplay_support_library.get_projectile(projectile_id).is_empty():
+		return null
+	var projectile_stats := {"health": 1.0, "speed": float(owner.get_meta("projectile_speed", 4.0)), "scale": 0.72, "score": 0, "pixel_size": 0.0026}
+	var projectile := _create_actor(projectile_id, owner.position + Vector3(0.0, 1.1, 0.45), projectile_stats, "projectile")
+	projectile.set_meta("destructible", bool(owner.get_meta("projectile_destructible", true)))
 	projectile.set_meta("behavior", "projectile_weave")
 	projectile.set_meta("pattern", "projectile_weave")
 	projectile.set_meta("lane", owner.position.x)
@@ -364,7 +442,12 @@ func _damage_actor(actor: Node3D, zone: String, multiplier: float, player_index:
 		_kill_civilian(actor, true, player_index)
 		return
 	if role == "projectile":
-		_play_sfx("hit")
+		if not bool(actor.get_meta("destructible", true)):
+			_play_sfx("empty")
+			_spawn_impact(actor.global_position + Vector3.UP * 0.5, "armor")
+			_feed("PROJECTILE ARMORED", Color(0.8, 0.78, 0.68))
+			return
+		_play_sfx("projectile_intercept")
 		_spawn_impact(actor.global_position + Vector3.UP * 0.5, "projectile")
 		_feed("PROJECTILE DESTROYED", Color("#e2cc8c"))
 		_kill_actor(actor, -1, false)
@@ -429,6 +512,10 @@ func _kill_actor(actor: Node3D, player_index: int, award: bool) -> void:
 	if role == "breakable":
 		branch_success = true
 		_apply_pickup(str(actor.get_meta("pickup", "medal")), player_index)
+		var broken_path := str(actor.get_meta("broken_texture", ""))
+		var breakable_sprite := actor.get_node_or_null("Sprite3D") as Sprite3D
+		if breakable_sprite != null and not broken_path.is_empty():
+			breakable_sprite.texture = load(broken_path) as Texture2D
 	if actor == current_boss:
 		_on_boss_defeated()
 	var sprite := actor.get_node_or_null("Sprite3D") as Sprite3D
@@ -437,8 +524,10 @@ func _kill_actor(actor: Node3D, player_index: int, award: bool) -> void:
 			actor.set_meta("animation_state", 7)
 			_apply_directional_sprite_frame(actor, 7)
 		var tween := actor.create_tween()
-		tween.tween_property(sprite, "modulate:a", 0.0, 0.65)
-		tween.parallel().tween_property(actor, "position:y", actor.position.y - 0.45, 0.65)
+		if role == "breakable":
+			tween.tween_interval(0.42)
+		tween.tween_property(sprite, "modulate:a", 0.0, 0.5)
+		tween.parallel().tween_property(actor, "position:y", actor.position.y - 0.35, 0.5)
 		tween.tween_callback(actor.queue_free)
 	active_actors.erase(actor)
 
@@ -462,6 +551,9 @@ func _rescue_civilian(civilian: Node3D) -> void:
 	if not is_instance_valid(civilian) or bool(civilian.get_meta("dead", false)) or bool(civilian.get_meta("rescued", false)):
 		return
 	civilian.set_meta("rescued", true)
+	civilian.set_meta("rescued_age", 0.0)
+	civilian.set_meta("speed", 1.35)
+	civilian.set_meta("animation_time", 0.0)
 	branch_success = true
 	scientists_saved += 1
 	chapter_scientists_saved += 1
@@ -506,6 +598,7 @@ func _damage_player(player_index: int, amount: int, source: String, score_penalt
 	if player_index < 0 or player_index >= players.size() or not bool(players[player_index].active):
 		return
 	players[player_index].lives = maxi(0, int(players[player_index].lives) - amount)
+	_play_sfx("hit")
 	if score_penalty:
 		_add_score(player_index, -100, "PLAYER HIT", "player_%d" % (player_index + 1), source)
 	if not bool(configuration.get("reduced_shake", false)):
@@ -526,7 +619,7 @@ func _first_active_player() -> int:
 
 func _has_active_hostiles() -> bool:
 	for actor in active_actors:
-		if is_instance_valid(actor) and not bool(actor.get_meta("dead", false)) and str(actor.get_meta("role", "")) in ["enemy", "boss"]:
+		if is_instance_valid(actor) and not bool(actor.get_meta("dead", false)) and str(actor.get_meta("role", "")) in ["enemy", "boss", "projectile"]:
 			return true
 	return false
 
@@ -594,15 +687,21 @@ func _start_boss(boss_id: String) -> void:
 	boss_phase = 0
 	boss_attack_timer = 2.8
 	boss_weak_window = 2.0
+	if str(configuration.get("mode", "")) == "boss_rush":
+		_set_music_for_boss(boss_id)
+	_play_sfx("boss_telegraph")
 	var stats := _boss_stats(boss_id)
 	boss_max_health = float(stats.health)
 	current_boss = _create_actor(boss_id, Vector3(0.0, 0.0 if boss_id != "hangedman" else 1.4, -10.5), {"health": boss_max_health, "speed": 0.0, "scale": float(stats.scale), "score": int(stats.score)}, "boss")
 	current_boss.set_meta("boss_id", boss_id)
+	current_boss.set_meta("telegraph_played", false)
 	boss_panel.visible = true
 	boss_name_label.text = "%s — TYPE %s" % [str(stats.name), str(stats.type)]
 	boss_health_bar.max_value = boss_max_health
 	boss_health_bar.value = boss_max_health
 	boss_weak_label.text = str(stats.weak_hint)
+	var weakpoint_profile := gameplay_support_library.get_weakpoint(boss_id)
+	boss_weakpoint_texture.texture = gameplay_support_library.load_texture(weakpoint_profile)
 	objective_label.text = "DESTROY THE BOSS"
 	_set_subtitle(str(stats.intro), 4.2)
 	if boss_id == "hangedman":
@@ -641,9 +740,13 @@ func _update_boss(delta: float) -> void:
 			current_boss.position.y = 0.3 + absf(cos(t * 1.8)) * 1.4
 	if boss_attack_timer > 0.0 and boss_attack_timer <= 0.34:
 		current_boss.set_meta("attack_animation_timer", maxf(float(current_boss.get_meta("attack_animation_timer", 0.0)), boss_attack_timer))
+		if not bool(current_boss.get_meta("telegraph_played", false)):
+			current_boss.set_meta("telegraph_played", true)
+			_play_sfx("boss_telegraph")
 	if boss_attack_timer <= 0.0:
 		current_boss.set_meta("attack_animation_timer", maxf(float(current_boss.get_meta("attack_animation_timer", 0.0)), 0.16))
 		_boss_attack(boss_id)
+		current_boss.set_meta("telegraph_played", false)
 		boss_attack_timer = maxf(0.75, 2.8 - float(boss_phase) * 0.55)
 		boss_weak_window = 1.2
 	boss_health_bar.value = float(current_boss.get_meta("health", 0.0))
@@ -651,11 +754,15 @@ func _update_boss(delta: float) -> void:
 
 func _boss_attack(boss_id: String) -> void:
 	if boss_id in ["hermit", "magician"]:
-		var projectile_id := "name_g2" if boss_id == "hermit" else "kenfis_f1"
-		var projectile := _create_actor(projectile_id, current_boss.position + Vector3(0.0, 1.2, 0.5), {"health": 1.0, "speed": 4.2, "scale": 0.42, "score": 80}, "enemy")
-		projectile.set_meta("pattern", "weave")
-		projectile.set_meta("lane", current_boss.position.x)
-		projectile.set_meta("attack_at", node_elapsed + 1.2)
+		current_boss.set_meta("projectile_asset", "hermit_web_ball" if boss_id == "hermit" else "magician_fireball")
+		current_boss.set_meta("projectile_destructible", true)
+		current_boss.set_meta("projectile_speed", 4.25 if boss_id == "hermit" else 5.0)
+		var projectile := _spawn_enemy_projectile(current_boss)
+		if projectile != null:
+			projectile.set_meta("lane", current_boss.position.x)
+			projectile.set_meta("attack_at", node_elapsed + (1.2 if boss_id == "hermit" else 0.92))
+			projectile.set_meta("target_civilian", false)
+			_play_sfx("boss_web_projectile" if boss_id == "hermit" else "boss_projectile")
 	else:
 		_damage_player(_first_active_player(), 1, "boss")
 	_play_sfx("danger")
@@ -716,15 +823,18 @@ func _on_boss_defeated() -> void:
 func _build_environment(style: String) -> void:
 	for child in world_root.get_children():
 		child.queue_free()
+	environment_scene_profile = environment_asset_library.get_scene_profile(current_node_id, style)
+	style = str(environment_scene_profile.get("style", style))
+	_set_ambience_for_style(style)
 	var environment_node := WorldEnvironment.new()
 	var environment := Environment.new()
 	environment.background_mode = Environment.BG_COLOR
 	environment.background_color = Color("#080b0f")
 	environment.ambient_light_source = Environment.AMBIENT_SOURCE_COLOR
-	environment.ambient_light_color = Color("#62706c") if style != "laboratory" else Color("#3d7967")
+	environment.ambient_light_color = Color(str(environment_scene_profile.get("ambient", "#62706c")))
 	environment.ambient_light_energy = 0.43
 	environment.fog_enabled = true
-	environment.fog_light_color = Color("#394a48") if style != "laboratory" else Color("#1f5546")
+	environment.fog_light_color = Color(str(environment_scene_profile.get("fog", "#394a48")))
 	environment.fog_density = 0.016
 	environment.fog_aerial_perspective = 0.38
 	environment_node.environment = environment
@@ -756,11 +866,15 @@ func _build_environment(style: String) -> void:
 		if index % 2 == 0:
 			var light := OmniLight3D.new()
 			light.position = Vector3(-3.9 if index % 4 == 0 else 3.9, 2.8, z)
-			light.light_color = Color("#d28a5a") if style != "laboratory" else Color("#56d2a3")
+			light.light_color = Color(str(environment_scene_profile.get("light", "#d28a5a")))
 			light.light_energy = 2.1
 			light.omni_range = 6.0
 			light.shadow_enabled = false
 			world_root.add_child(light)
+	_apply_environment_materials()
+	_build_environment_layout()
+	_spawn_environment_props()
+	_spawn_environment_effects()
 	_add_backdrop(style)
 
 
@@ -778,6 +892,151 @@ func _add_box(node_name: String, at: Vector3, dimensions: Vector3, color: Color)
 	instance.material_override = material
 	world_root.add_child(instance)
 
+
+
+func _apply_environment_materials() -> void:
+	for child in world_root.get_children():
+		var instance := child as MeshInstance3D
+		if instance == null:
+			continue
+		var lower_name := instance.name.to_lower()
+		var material_id := ""
+		if lower_name == "floor":
+			material_id = str(environment_scene_profile.get("floor", ""))
+		elif "wall" in lower_name:
+			material_id = str(environment_scene_profile.get("wall", ""))
+		elif "column" in lower_name:
+			material_id = str(environment_scene_profile.get("column", ""))
+		elif lower_name == "ceiling":
+			material_id = str(environment_scene_profile.get("ceiling", environment_scene_profile.get("wall", "")))
+		if not material_id.is_empty():
+			instance.material_override = environment_asset_library.create_material(material_id)
+
+
+func _build_environment_layout() -> void:
+	var layout := str(environment_scene_profile.get("layout", "mansion_hall"))
+	var accent := str(environment_scene_profile.get("accent", environment_scene_profile.get("floor", "")))
+	if not accent.is_empty():
+		_add_material_box("ProfileAccent", Vector3(0.0, 0.025, -10.0), Vector3(2.25, 0.06, 24.0), accent)
+	if "stair" in layout:
+		for step_index in 8:
+			_add_material_box("Stair_%02d" % step_index, Vector3(0.0, 0.12 + step_index * 0.18, -11.0 - step_index * 0.58), Vector3(5.4, 0.24, 0.72), accent)
+	if "bridge" in layout or "channel" in layout:
+		_add_material_box("BridgeLeft", Vector3(-3.55, 0.18, -11.0), Vector3(4.2, 0.36, 22.0), str(environment_scene_profile.get("floor", accent)))
+		_add_material_box("BridgeRight", Vector3(3.55, 0.18, -11.0), Vector3(4.2, 0.36, 22.0), str(environment_scene_profile.get("floor", accent)))
+		_add_material_box("BridgeRailL", Vector3(-1.4, 0.75, -11.0), Vector3(0.16, 1.25, 22.0), str(environment_scene_profile.get("column", accent)))
+		_add_material_box("BridgeRailR", Vector3(1.4, 0.75, -11.0), Vector3(0.16, 1.25, 22.0), str(environment_scene_profile.get("column", accent)))
+	if "library" in layout:
+		for shelf_index in 5:
+			var z := -4.0 - shelf_index * 4.6
+			_add_material_box("LibraryShelfL_%02d" % shelf_index, Vector3(-5.25, 2.0, z), Vector3(1.0, 4.0, 3.2), str(environment_scene_profile.get("wall", accent)))
+			_add_material_box("LibraryShelfR_%02d" % shelf_index, Vector3(5.25, 2.0, z), Vector3(1.0, 4.0, 3.2), str(environment_scene_profile.get("wall", accent)))
+	if "roof" in layout:
+		_add_material_box("RoofParapetL", Vector3(-5.45, 0.75, -10.0), Vector3(1.1, 1.5, 25.0), str(environment_scene_profile.get("wall", accent)))
+		_add_material_box("RoofParapetR", Vector3(5.45, 0.75, -10.0), Vector3(1.1, 1.5, 25.0), str(environment_scene_profile.get("wall", accent)))
+	if _layout_is_laboratory(layout):
+		for rib_index in 6:
+			var z := -3.0 - rib_index * 4.7
+			_add_material_box("LabRibL_%02d" % rib_index, Vector3(-5.55, 2.5, z), Vector3(0.34, 5.0, 0.42), str(environment_scene_profile.get("column", accent)))
+			_add_material_box("LabRibR_%02d" % rib_index, Vector3(5.55, 2.5, z), Vector3(0.34, 5.0, 0.42), str(environment_scene_profile.get("column", accent)))
+		var glass_material := str(environment_scene_profile.get("glass", environment_scene_profile.get("wall", accent)))
+		if not glass_material.is_empty():
+			_add_material_box("LabGlassPanelL", Vector3(-3.85, 2.25, -13.0), Vector3(0.18, 3.5, 5.6), glass_material)
+			_add_material_box("LabGlassPanelR", Vector3(3.85, 2.25, -13.0), Vector3(0.18, 3.5, 5.6), glass_material)
+	var uses_door_portal := layout in ["foyer_crossroad", "great_doors", "portrait_antechamber", "bonus_gate"] or "door" in layout or "gate" in layout or "entrance" in layout
+	if uses_door_portal:
+		_add_material_box("EndPortalL", Vector3(-2.3, 2.0, -21.5), Vector3(1.3, 4.0, 0.65), str(environment_scene_profile.get("column", accent)))
+		_add_material_box("EndPortalR", Vector3(2.3, 2.0, -21.5), Vector3(1.3, 4.0, 0.65), str(environment_scene_profile.get("column", accent)))
+		var door_material := str(environment_scene_profile.get("door", environment_scene_profile.get("wall", accent)))
+		if not door_material.is_empty():
+			_add_material_box("EndPortalDoor", Vector3(0.0, 2.0, -21.66), Vector3(3.3, 4.0, 0.26), door_material)
+
+
+func _layout_is_laboratory(layout: String) -> bool:
+	for marker in ["lab", "elevator", "research", "specimen", "bioreactor", "horde", "rematch", "supply", "bonus", "arena"]:
+		if marker in layout:
+			return true
+	return false
+
+
+func _add_material_box(node_name: String, at: Vector3, dimensions: Vector3, material_id: String) -> void:
+	var instance := MeshInstance3D.new()
+	instance.name = node_name
+	var mesh := BoxMesh.new()
+	mesh.size = dimensions
+	instance.mesh = mesh
+	instance.position = at
+	instance.material_override = environment_asset_library.create_material(material_id)
+	world_root.add_child(instance)
+
+
+func _spawn_environment_props() -> void:
+	for placement_value in environment_scene_profile.get("props", []) as Array:
+		var placement := placement_value as Dictionary
+		var prop_id := str(placement.get("id", ""))
+		var profile := environment_asset_library.get_prop(prop_id)
+		if profile.is_empty():
+			continue
+		var sprite := Sprite3D.new()
+		sprite.name = "Prop_%s" % prop_id
+		sprite.texture = load(str(profile.get("path", ""))) as Texture2D
+		sprite.hframes = maxi(1, int(profile.get("hframes", 1)))
+		sprite.frame = 0
+		sprite.pixel_size = float(profile.get("pixel_size", 0.0065))
+		sprite.scale = Vector3.ONE * float(profile.get("world_scale", 1.0))
+		sprite.billboard = BaseMaterial3D.BILLBOARD_FIXED_Y
+		sprite.alpha_cut = SpriteBase3D.ALPHA_CUT_DISCARD
+		sprite.texture_filter = BaseMaterial3D.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
+		var position_data := placement.get("position", [0.0, 0.0, -12.0]) as Array
+		if position_data.size() >= 3:
+			sprite.position = Vector3(float(position_data[0]), float(position_data[1]), float(position_data[2]))
+		world_root.add_child(sprite)
+		var animation_mode := str(profile.get("animate", ""))
+		if not animation_mode.is_empty():
+			var controller := EnvironmentMotionControllerScript.new()
+			controller.configure_target(sprite, animation_mode)
+			world_root.add_child(controller)
+		if animation_mode == "flicker":
+			var light := OmniLight3D.new()
+			light.position = sprite.position + Vector3(0.0, 0.9, 0.35)
+			light.light_color = Color("#e7a061")
+			light.light_energy = 1.45
+			light.omni_range = 4.2
+			world_root.add_child(light)
+			var light_controller := EnvironmentMotionControllerScript.new()
+			light_controller.configure_target(light, "sconce")
+			world_root.add_child(light_controller)
+
+
+func _spawn_environment_effects() -> void:
+	var effects := environment_scene_profile.get("effects", []) as Array
+	var mote_effects: Dictionary = {}
+	for effect_value in effects:
+		var effect_id := str(effect_value)
+		var resolved_mote := effect_id
+		if effect_id in ["drips", "water_flow"]:
+			resolved_mote = "mist"
+		elif effect_id == "collapse_dust":
+			resolved_mote = "dust"
+		if resolved_mote in ["rain", "dust", "mist", "steam", "web_drift", "embers", "wind", "distant_bats"]:
+			mote_effects[resolved_mote] = true
+		if effect_id in ["lightning", "sconce_flicker", "alarm_beacon", "electrical_arc", "monitor_scan"]:
+			var light := OmniLight3D.new()
+			light.position = Vector3(0.0, 3.7, -11.0)
+			light.light_color = Color("#a9c9e8") if effect_id == "lightning" else Color(str(environment_scene_profile.get("light", "#56d2a3")))
+			light.light_energy = 1.8
+			light.omni_range = 10.0
+			world_root.add_child(light)
+			var controller := EnvironmentMotionControllerScript.new()
+			controller.configure_target(light, "lightning" if effect_id == "lightning" else ("alarm" if effect_id == "alarm_beacon" else "sconce"))
+			world_root.add_child(controller)
+	for mote_id in mote_effects:
+		var motes := EnvironmentMotionControllerScript.new()
+		motes.name = "Decorative_%s" % mote_id
+		motes.position = Vector3(0.0, 2.8, -10.0)
+		var mote_count := 32 if str(mote_id) == "rain" else (10 if str(mote_id) == "distant_bats" else 16)
+		motes.configure_motes(str(mote_id), mote_count, Vector3(6.0, 3.0, 13.0))
+		world_root.add_child(motes)
 
 func _add_backdrop(style: String) -> void:
 	var path := "res://assets/environments/mansion-exterior.png" if style in ["garden", "roof"] else "res://assets/environments/mansion-hall.png"

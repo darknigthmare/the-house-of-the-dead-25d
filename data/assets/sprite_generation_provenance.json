@@ -213,6 +213,66 @@
       "notes": "Black biomechanical plates, exposed synthetic red fibers and small palm-bound fire orb are consistent; no robe or weapon. The relaunch removed dash shadows. Root normalization must derive back_right from back_left."
     },
     {
+      "id": "scientist_male_blue",
+      "provider": "openai_imagegen",
+      "generation_reference": "01a02431-6fc2-7b43-a31b-277292e22726/exec-c47020e8-abd0-40d9-90b3-22d120f2044a.png",
+      "selected_source_path": "reports/runtime/directional-sources/scientists/scientist_male_blue.png",
+      "selected_source_sha256": "c8d237aa4c4ba3ad7de6650a61ce8e339e7fb38d76d51291db76bb72f6ef0fb6",
+      "observed_rows": 6,
+      "observed_columns": 8,
+      "selected_rows": 6,
+      "selected_columns": 8,
+      "relaunch_count": 1,
+      "derived_state_columns": [],
+      "derived_directions": {
+        "right": "mirrored_from_left_profile",
+        "back_right": "mirrored_from_back_left"
+      },
+      "final_atlas_path": "assets/sprites_v2/npcs/scientist_male_blue/scientist_male_blue__v2__action_cycle__8dirx8f.png",
+      "final_atlas_sha256": "03e0c4e199c692a9fd338a66df7d13669bfc39581bf9562a224b9e7b44ab9756",
+      "notes": "Eight actions are clear and all figures are complete. Identity, pale-blue coat, glasses and scale remain coherent; rear rows conceal the face. No text, logo, weapon, visible grid or scene."
+    },
+    {
+      "id": "scientist_male_gray",
+      "provider": "openai_imagegen",
+      "generation_reference": "01a02431-a72c-7322-936d-f6debca11192/exec-5bd93727-53aa-4bec-8cae-c985418303bb.png",
+      "selected_source_path": "reports/runtime/directional-sources/scientists/scientist_male_gray.png",
+      "selected_source_sha256": "565b3ad174f7968e7d82a6ac5fe02a369e56023d5306b5f4a67d186f983d71d1",
+      "observed_rows": 6,
+      "observed_columns": 8,
+      "selected_rows": 6,
+      "selected_columns": 8,
+      "relaunch_count": 1,
+      "derived_state_columns": [],
+      "derived_directions": {
+        "right": "mirrored_from_left_profile",
+        "back_right": "mirrored_from_back_left"
+      },
+      "final_atlas_path": "assets/sprites_v2/npcs/scientist_male_gray/scientist_male_gray__v2__action_cycle__8dirx8f.png",
+      "final_atlas_sha256": "c8e77df49d79d1cce5ae8cb802f3e66c0d62d2da9d4f4ce03f79a9f1f10d5dc9",
+      "notes": "Eight actions are clear and all figures are complete. Identity, moustache, gray coat and burgundy turtleneck remain coherent; rear rows conceal the face. No text, logo, weapon, visible grid or scene."
+    },
+    {
+      "id": "scientist_female_lab",
+      "provider": "openai_imagegen",
+      "generation_reference": "01a02127-6bd7-76f2-b285-a59902d3bc1f/exec-f2751b45-dbca-4b4f-bfba-1d175cc45d6f.png",
+      "selected_source_path": "reports/runtime/directional-sources/scientists/scientist_female_lab.png",
+      "selected_source_sha256": "e412f05c4c3aabbf4d9f4f1c23da2b7c18ae88134ac1f5812440cc879658d229",
+      "observed_rows": 6,
+      "observed_columns": 8,
+      "selected_rows": 6,
+      "selected_columns": 8,
+      "relaunch_count": 1,
+      "derived_state_columns": [],
+      "derived_directions": {
+        "right": "mirrored_from_left_profile",
+        "back_right": "mirrored_from_back_left"
+      },
+      "final_atlas_path": "assets/sprites_v2/npcs/scientist_female_lab/scientist_female_lab__v2__action_cycle__8dirx8f.png",
+      "final_atlas_sha256": "1a26f681637cb396b71e1a70a30e35b05188274717dd6681725762fde4bc1bf0",
+      "notes": "The targeted edit preserved the stronger six-row sheet while attempting the seventh band. Eight actions remain clear and all figures are complete. Identity, low bun, off-white coat and teal blouse remain coherent; rear rows conceal the face. No text, logo, weapon, visible grid or scene."
+    },
+    {
       "id": "sam_a1",
       "provider": "openai_imagegen",
       "generation_reference": "01a00811-e655-7262-8c79-852788f57b9b/exec-f8918b33-b026-4935-acdc-c1c76c5e2d9b.png",

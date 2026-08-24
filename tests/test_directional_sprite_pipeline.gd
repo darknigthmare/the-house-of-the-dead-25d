@@ -49,8 +49,10 @@ static func collect_checks() -> Array[Dictionary]:
 
 	var library = AtlasLibraryType.new()
 	checks.append(_check(library.load_manifest("res://data/assets/sprite_manifest.json"), true, "directional manifest loads"))
-	checks.append(_check(library.actor_ids().size(), 35, "manifest exposes every dedicated organic identity"))
+	checks.append(_check(library.actor_ids().size(), 38, "manifest exposes every dedicated organic identity"))
 	checks.append(_check(library.has_actor("scientist"), true, "civilian alias resolves"))
+	for scientist_id: String in ["scientist_male_blue", "scientist_male_gray", "scientist_female_lab"]:
+		checks.append(_check(library.has_actor(scientist_id), true, "dedicated scientist profile resolves: %s" % scientist_id))
 	checks.append(_check(library.has_actor("mutant_bat"), true, "Hangedman bat has a dedicated atlas"))
 	checks.append(_check(library.get_profile("unknown_actor").is_empty(), true, "unknown actors never fall back to Sam"))
 	return checks

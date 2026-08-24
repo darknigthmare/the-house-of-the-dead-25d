@@ -43,11 +43,18 @@ func _run() -> void:
 		push_error("SMOKE: P1 gamepad aim was not independent")
 		quit(1)
 		return
+	var projectile_rules_ok: bool = await _exercise_projectile_rules(game)
+	if not projectile_rules_ok:
+		push_error("SMOKE: projectile destructibility/hostile lifetime rules regressed")
+		quit(1)
+		return
 	print("SMOKE OFFSCREEN RELOAD: 6")
 	print("SMOKE INDEPENDENT GAMEPAD AIM: OK")
+	print("SMOKE PROJECTILE RULES: OK")
 	main.free()
 	await process_frame
 	await process_frame
+	await create_timer(0.05).timeout
 	quit(0)
 
 
@@ -61,3 +68,31 @@ func _exercise_gamepad_aim(game: Node, players: Array) -> bool:
 	game.call("_unhandled_input", event)
 	game.call("_update_crosshairs", 0.1)
 	return Vector2(players[0].cursor).x > p1_before.x and Vector2(players[1].cursor) == p2_before
+
+
+func _exercise_projectile_rules(game: Node) -> bool:
+	game.call("_clear_actors")
+	await process_frame
+	var active := game.get("active_actors") as Array
+	var armored := Node3D.new()
+	game.add_child(armored)
+	armored.set_meta("role", "projectile")
+	armored.set_meta("destructible", false)
+	active.append(armored)
+	game.call("_damage_actor", armored, "body", 1.0, 0)
+	if bool(armored.get_meta("dead", false)) or not active.has(armored):
+		return false
+	if not bool(game.call("_has_active_hostiles")):
+		return false
+	active.erase(armored)
+	armored.free()
+	var vulnerable := Node3D.new()
+	game.add_child(vulnerable)
+	vulnerable.set_meta("role", "projectile")
+	vulnerable.set_meta("destructible", true)
+	active.append(vulnerable)
+	game.call("_damage_actor", vulnerable, "body", 1.0, 0)
+	var destroyed := bool(vulnerable.get_meta("dead", false)) and not active.has(vulnerable)
+	var none_active := not bool(game.call("_has_active_hostiles"))
+	vulnerable.free()
+	return destroyed and none_active

@@ -15,9 +15,12 @@ const json = (path) => JSON.parse(readFileSync(join(root, path), 'utf8'));
 const required = [
   'project.godot', 'scenes/main.tscn', 'scenes/gameplay/gameplay.tscn',
   'data/assets/sprite_manifest.json', 'data/assets/actor_visual_profiles.json',
+  'data/assets/environment_manifest.json', 'data/assets/gameplay_support_manifest.json',
+  'data/audio/audio_cues.json',
   'docs/REFERENCE_MATRIX.md', 'docs/ROUTE_GRAPH.md', 'docs/GAMEPLAY_RULES.md',
   'docs/FIDELITY_REPORT.md', 'docs/SPRITE_PRODUCTION_BIBLE.md',
-  'docs/ASSET_LICENSE_MANIFEST.md', 'docs/MISSING_LICENSED_ASSETS.md'
+  'docs/ASSET_LICENSE_MANIFEST.md', 'docs/MISSING_LICENSED_ASSETS.md',
+  'docs/CONTENT_ASSET_CATALOG.md'
 ];
 for (const file of required) check(existsSync(join(root, file)), `required file: ${file}`);
 
@@ -25,7 +28,7 @@ const manifest = json('data/assets/sprite_manifest.json');
 check(manifest.schema_version === 2, 'sprite manifest schema is 2');
 check(manifest.atlas_layout?.columns === 8 && manifest.atlas_layout?.rows === 8, 'directional atlas layout is 8x8');
 check(manifest.atlas_layout?.cell_count === 64, 'directional atlas contains 64 cells');
-check(manifest.assets.length === 35, 'all thirty-five organic identities have dedicated atlases');
+check(manifest.assets.length === 38, 'all thirty-eight organic identities have dedicated atlases');
 for (const asset of manifest.assets) {
   const relative = asset.path.replace('res://', '');
   const full = join(root, relative);
@@ -87,7 +90,7 @@ if (!args.has('--data-only') && !args.has('--web-only')) {
   const exe = join(root, '.tools', 'godot-4.7.1', 'Godot_v4.7.1-stable_win64_console.exe');
   check(existsSync(exe), 'local Godot 4.7.1 console exists');
   if (existsSync(exe)) {
-    const importRun = spawnSync(exe, ['--headless', '--editor', '--path', root, '--quit-after', '3'], { encoding: 'utf8', timeout: 120000 });
+    const importRun = spawnSync(exe, ['--headless', '--path', root, '--import'], { encoding: 'utf8', timeout: 120000 });
     check(importRun.status === 0, 'Godot headless import/editor parse');
     if (importRun.status !== 0) process.stderr.write(`${importRun.stdout ?? ''}${importRun.stderr ?? ''}`);
     if (existsSync(join(root, 'tests', 'test_runner.gd'))) {
@@ -98,6 +101,10 @@ if (!args.has('--data-only') && !args.has('--web-only')) {
     }
     const directionalRuns = [
       ['res://tests/test_sprite_atlas_library_atomic.gd', 'transactional sprite manifest test'],
+      ['res://tests/test_environment_asset_library.gd', 'environment asset library test'],
+      ['res://tests/test_gameplay_support_library.gd', 'gameplay support library test'],
+      ['res://tests/test_enemy_profile_library.gd', 'enemy profile runtime contract test'],
+      ['res://tests/test_procedural_audio.gd', 'procedural audio content test'],
       ['res://scripts/smoke_directional_sprites.gd', 'directional sprite runtime smoke'],
     ];
     for (const [script, label] of directionalRuns) {

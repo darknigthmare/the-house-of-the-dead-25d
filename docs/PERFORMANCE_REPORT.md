@@ -1,33 +1,60 @@
 # Performance Report
 
-## Budget and implementation
+## Current v0.2.0 content budget
 
-The runtime uses one rail camera, atlas-based `Sprite3D` actors, camera-relative eight-direction resolution, simple procedural geometry and deterministic `delta`-based gameplay clocks. The 35 2048×2048 RGBA atlases expose 64 cells each without allocating a new texture for every state. Environments and active encounters are released at route boundaries.
+The runtime uses one rail camera, atlas-based `Sprite3D` actors, camera-relative eight-direction resolution, procedural 3D layout geometry and deterministic `delta`-based gameplay clocks.
 
-Target: stable 60 fps at 1280×720 on a mid-range Windows PC, invariant gameplay timing, bounded encounter allocations and a compatibility-renderer Web build.
+The current verified content contract contains:
 
-## Published artifacts — 2026-08-21
+- 38 dedicated directional atlases and 2,432 animation cells;
+- 25 dedicated enemy profiles and unique enemy types;
+- 20 environment materials and 33 route-node environment profiles;
+- 6 destructible profiles and 14 decorative prop profiles;
+- 28 deterministic procedural audio cues, including five ambience loops and four short original music loops.
 
-| Platform | Size | Check |
+The environment source PNG set totals 75.67 MiB. The static import audit covers 124 texture files with zero profile mismatches. These are source/content measurements, not runtime resident-memory measurements.
+
+## Target
+
+The target remains stable 60 fps at 1280×720 on a mid-range Windows PC, invariant gameplay timing, bounded encounter allocations and a compatibility-renderer Web build. No v0.2.0 frame-time capture on named hardware has yet demonstrated that target, so it remains a target rather than a measured result.
+
+Atlas reuse avoids a separate texture allocation for every direction/state cell. Route transitions release active encounter and environment nodes, while procedural audio avoids shipping unlicensed Sega recordings. These implementation choices reduce obvious allocation pressure, but they do not replace profiling.
+
+## Current build measurements
+
+| Platform | Current v0.2.0 size | Verified check |
 |---|---:|---|
-| Windows x64 | 202,088,128 bytes | headless startup passed |
-| Linux x64 | 166,452,720 bytes | export produced |
-| Web total | 132,826,890 bytes / nine files | `qa:web` 256/256; `verify:web` OK |
-| Web PCK | 92,982,496 bytes | 7,017,504 bytes below 100,000,000 |
-| Web WASM | 39,513,091 bytes | HTTP 200 with correct MIME locally |
+| Windows x64 | 161,321,616 bytes | Godot 4.7.1 export succeeded; hidden launch remained active for eight seconds |
+| Linux x64 | 125,686,208 bytes | Godot 4.7.1 export succeeded |
+| Web total | 92,060,382 bytes across nine files | Godot 4.7.1 export succeeded; `qa:web` 275/275; `verify:web` OK |
+| Web PCK | 52,215,988 bytes | current payload observed |
+| Web WASM | 39,513,091 bytes | current payload observed |
 
-Five quality-sensitive Web imports use quality 0.92. Their alpha channels are unchanged; measured PSNR is 35.31–35.81 dB and MAE 2.72–2.86/255.
+The Windows launch smoke demonstrates startup continuity on the development machine only. It is not a frame-rate benchmark, a full playthrough or a clean-machine installation test.
 
-## Local browser observation
+## Current runtime verification
 
-Chromium through agent-browser 0.34 ran Godot 4.7.1 WebGL2/Emscripten single-threaded with `crossOriginIsolated=true`, PCK/WASM HTTP 200 and zero page errors. Title/menu and live P1/P2 with two HUDs/two crosshairs rendered at 1280×720, 390×844 and 844×390. Axe 4.12 returned 23 passes and 0 violations.
+The complete v0.2.0 local QA orchestration passed 280/280 checks. The procedural-audio suite passed 354 assertions across 28 distinct cues, including safe peak amplitudes and deterministic stream dimensions. Godot gameplay and full-campaign smokes completed after cleanup without a shutdown warning or leaked-instance report.
 
-Cached local menu navigation measured TTFB 2.39 ms, FCP 99.13 ms, LCP 99.13 ms and CLS 0. These are local cached menu figures, not network production metrics or full-gameplay performance evidence.
+## Local Web observation
 
-## Production observation
+After the ResourceLoader correction, the current Web export was served through the local Vercel configuration and inspected with agent-browser 0.34. The browser reported zero console errors and `crossOriginIsolated=true`. The Godot canvas measured 1258×622, exposed `role=main` with an `aria-label`, and rendered the menu, gameplay, HUD and continue surfaces.
 
-Vercel deployment `dpl_Hs23gpsUfidKJeEDPs1K45NeWYyW` is `READY` at <https://the-house-of-the-dead-25d.vercel.app>; its reported build duration is 980 ms. The production root, 39,513,091-byte WASM and 92,982,496-byte PCK return HTTP 200. WASM is served as `application/wasm`, COOP/COEP are present and `crossOriginIsolated=true` in Chromium. Production QA observed title rendering, WebGL2, live P1/P2 with two HUDs/two crosshairs, zero console/page errors, network PCK/WASM 200 and axe at 23 passes/0 violations.
+The inspected navigation contained 31 performance entries and no blocked resource. This proves successful local resource delivery for that run; it is not a latency benchmark, network-production sample or frame-time profile.
 
-## Open measurements
+## Publication boundary
 
-Deep profiling must still record average frame time, 1% low, peak actors, process/GPU memory, first-spawn and boss-transition hitches at 4:3 and 16:9 on named hardware. Two `ObjectDB` instances reported when gameplay/campaign smokes shut down remain a non-blocking cleanup diagnostic. No steady-state leak conclusion is inferred. A clean physical Windows machine, physical light guns and exact comparison with a licensed reference build remain separate validation gates; Vercel production delivery itself is verified.
+Current v0.2.0 source/build archives, SHA-256 sums, GitHub release and Vercel production deployment have not yet been produced or verified. Previously published v0.1.0 artifact and browser measurements remain historical baselines only.
+
+## Required profiling pass
+
+Record the following for both faithful 4:3 and composed 16:9 gameplay on named hardware:
+
+- average frame time, 1% low and worst observed frame;
+- peak visible actors, projectiles, impacts and decorative motes;
+- process memory, GPU memory and atlas residency;
+- first encounter spawn, route transition and every boss-phase hitch;
+- audio generation/cache cost and simultaneous bus activity;
+- chapter-transition loading time and Web PCK/WASM startup behavior.
+
+A clean physical Windows machine and physical light guns remain separate functional/performance gates. Exact comparison with an authorized licensed Sega arcade reference build also remains unverified.
