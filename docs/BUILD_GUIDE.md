@@ -9,7 +9,7 @@
 
 The portable editor may be stored under `.tools/godot-4.7.1/`. `.tools`, licensed/reference folders and ignored raw generation sources stay outside Git.
 
-## Current v0.2.0 validation
+## Current v0.2.1 validation
 
 Run the complete local orchestration:
 
@@ -47,7 +47,7 @@ npm.cmd run qa:web
 npm.cmd run verify:web
 ```
 
-Current v0.2.0 outputs and verified sizes:
+Current v0.2.1 outputs and verified sizes (binary payloads unchanged from v0.2.0):
 
 | Output | Size | Verification |
 |---|---:|---|
@@ -59,7 +59,7 @@ Current v0.2.0 outputs and verified sizes:
 
 Every Web export rewrites `index.html`; rerun the accessibility patch before Web QA.
 
-After the ResourceLoader correction, local Vercel serving plus agent-browser 0.34 verified zero console errors, `crossOriginIsolated=true`, a 1258×622 canvas with `role=main` and an `aria-label`, visible menu/gameplay/HUD/continue surfaces, 31 performance entries and no blocked resource. This is local Web evidence, not a public Vercel production deployment.
+After the ResourceLoader correction, local Vercel serving plus agent-browser 0.34 verified zero console errors, `crossOriginIsolated=true`, an accessible 1258×622 canvas, menu/gameplay/HUD/continue and no blocked resource. Production v0.2.1 repeats the isolation, accessible-canvas and menu/P1/continue checks with zero console/page errors.
 
 ## Asset rebuilds
 
@@ -92,12 +92,12 @@ chmod +x The_House_of_the_Dead_25D.x86_64
 ./The_House_of_the_Dead_25D.x86_64
 ```
 
-The published v0.2.0 set contains Source (227,860,921 bytes), Windows (90,978,140), Linux (81,014,969), Web (62,151,092) and `SHA256SUMS.txt`; every uploaded ZIP digest matches its local SHA-256.
+The published v0.2.1 set contains Source (227,864,129 bytes, SHA-256 `1c402e679cfb9c7e20dadba4fb73f88692ca229a8bf237fce6cbcb2a4d5f13fd`), Windows (90,978,140, `17c0b671904712b86c8dd1eb0974b82887f9191cd87de9b6dc7f051b3fb0b2ca`), Linux (81,014,969, `69bec7bfeb195fb36f7069fd547a522ac48e84e255888c9844309026f15bcd9d`) and Web (62,151,092, `8c559faf6d5285a7831510f4e42a41047a4f596340463401dd7e6a032f401522`) plus the 421-byte manifest. Every remote digest matches locally.
 
-## Published v0.2.0
+## Published v0.2.1
 
-The exact content commit is [`d79f86a`](https://github.com/darknigthmare/the-house-of-the-dead-25d/commit/d79f86ac9f1e3f990ff6fdc9535d165a2ca7db21), published through the [v0.2.0 tag and GitHub release](https://github.com/darknigthmare/the-house-of-the-dead-25d/releases/tag/v0.2.0).
+The exact corrected-source commit is [`c13d525`](https://github.com/darknigthmare/the-house-of-the-dead-25d/commit/c13d525d63dc9ef4e92d30c0ab5851047fa76f66), published through the [v0.2.1 tag and GitHub release](https://github.com/darknigthmare/the-house-of-the-dead-25d/releases/tag/v0.2.1). Clean Linux run `32784226344` passes all three workflow commands.
 
-Vercel deployment `dpl_548ttUkKWa3tHvBQzkDDQzmNgx6Z` is `Ready` at <https://the-house-of-the-dead-25d.vercel.app>. Root, PCK and WASM return HTTP 200, WASM uses `application/wasm`, and COOP/COEP are present. Public Chromium confirms `crossOriginIsolated=true`, a 1258×622 canvas, visible menu/P1/gameplay/continue and zero console/page errors.
+Vercel deployment `dpl_3f4W7BXUfgMjeFjVh5wGd8N4xuzs` is `Ready` at <https://the-house-of-the-dead-25d.vercel.app>. Root, PCK and WASM return HTTP 200, WASM uses `application/wasm`, and COOP/COEP are present. Public Chromium confirms `crossOriginIsolated=true`, an accessible 1258×622 canvas, visible menu/P1/continue and zero console/page errors. v0.2.0 remains available as immutable history and is marked superseded for source use.
 
 On a clean physical Windows 64-bit machine, extract only the Windows archive and verify startup, menu, one encounter, six shots, both reload methods and two-player join. A clean-machine run, physical Gun4IR/Sinden/two-light-gun calibration, named-hardware profiling and exact authorized Sega-reference comparison remain unverified gates.

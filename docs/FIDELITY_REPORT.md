@@ -1,6 +1,6 @@
 # Fidelity Report
 
-## v0.2.0 status — published release, 2026-08-24
+## v0.2.1 status — verified distribution, 2026-08-25
 
 This report separates two different claims:
 
@@ -8,6 +8,8 @@ This report separates two different claims:
 2. **exact Sega arcade certification**, which cannot be completed without an authorized revision-identifiable arcade build and the licensed Sega source masters.
 
 The first claim is verified below. The second remains explicitly blocked and is not implied by the project name, the Arcade Authentique mode or the breadth of the current campaign.
+v0.2.1 changes source-validation portability only: ignored private reports are optional, tracked manifests/provenance remain mandatory and asset paths validate on Windows/POSIX. The replacement assets, gameplay, exports and fidelity boundary are unchanged from v0.2.0.
+
 
 ## Original replacement contract — verified
 
@@ -29,7 +31,7 @@ This is a production-ready replacement contract, not a claim that the generated 
 - Score QA records `+120` and `-100`; initials accept `COD` and transition to credits.
 - Arcade, Training, Boss Rush and Chapter Select remain implemented. These local structural checks do not certify revision-exact Sega timings.
 
-## Validator checkpoints — 2026-08-24
+## Validator checkpoints — 2026-08-25
 
 | Checkpoint | Verified result |
 |---|---|
@@ -54,9 +56,9 @@ This is a production-ready replacement contract, not a claim that the generated 
 | Linux export | 125,686,208 bytes |
 | Web export | 92,060,382 bytes total; PCK 52,215,988 bytes; WASM 39,513,091 bytes |
 | Web static QA | `qa:web`: 275/275; `verify:web`: OK |
-| public browser | Vercel `dpl_548ttUkKWa3tHvBQzkDDQzmNgx6Z` `Ready`; no console/page errors; `crossOriginIsolated=true`; accessible 1258×622 canvas; menu, P1 gameplay, HUD and continue visible |
+| public browser | Vercel `dpl_3f4W7BXUfgMjeFjVh5wGd8N4xuzs` `Ready`; no console/page errors; `crossOriginIsolated=true`; accessible 1258×622 canvas; menu and P1/continue visible |
 
-These results are anchored to exact commit [`d79f86a`](https://github.com/darknigthmare/the-house-of-the-dead-25d/commit/d79f86ac9f1e3f990ff6fdc9535d165a2ca7db21), the public [v0.2.0 release](https://github.com/darknigthmare/the-house-of-the-dead-25d/releases/tag/v0.2.0) and `Ready` production at <https://the-house-of-the-dead-25d.vercel.app>. Uploaded Source/Windows/Linux/Web ZIP SHA-256 digests match local files; root/PCK/WASM return HTTP 200 with WASM MIME and COOP/COEP verified.
+These results are anchored to exact commit [`c13d525`](https://github.com/darknigthmare/the-house-of-the-dead-25d/commit/c13d525d63dc9ef4e92d30c0ab5851047fa76f66), [release v0.2.1](https://github.com/darknigthmare/the-house-of-the-dead-25d/releases/tag/v0.2.1), clean run `32784226344` and `Ready` production at <https://the-house-of-the-dead-25d.vercel.app>. All uploaded digests match locally; root/PCK/WASM return HTTP 200 with WASM MIME and COOP/COEP verified. This certifies distribution integrity, not exact Sega arcade timing/assets.
 
 ## Exact Sega arcade certification — blocked
 

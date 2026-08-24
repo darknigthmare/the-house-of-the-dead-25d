@@ -37,7 +37,9 @@ npm.cmd run verify:web
 
 La v0.2.1 corrige l’autovalidation du ZIP source public : les rapports ImageGen privés restent volontairement ignorés, tandis que les manifestes et provenances suivis par Git restent obligatoirement vérifiés. Elle corrige aussi les séparateurs de chemins Windows qui bloquaient le vérificateur de décors sous Linux.
 
-Le run GitHub Actions [`32783693892`](https://github.com/darknigthmare/the-house-of-the-dead-25d/actions/runs/32783693892) passe `npm test`, `qa:web` et `verify:web` sur un checkout Linux propre. Le contenu de jeu et les binaires exportés sont identiques à v0.2.0; la [release v0.2.1](https://github.com/darknigthmare/the-house-of-the-dead-25d/releases/tag/v0.2.1) devient la distribution source recommandée sans déplacer ni réécrire v0.2.0.
+Le run GitHub Actions final [`32784226344`](https://github.com/darknigthmare/the-house-of-the-dead-25d/actions/runs/32784226344) passe `npm test`, `qa:web` et `verify:web` sur un checkout Linux propre. Le contenu de jeu et les binaires exportés sont identiques à v0.2.0; la [release v0.2.1](https://github.com/darknigthmare/the-house-of-the-dead-25d/releases/tag/v0.2.1) devient la distribution source recommandée sans déplacer ni réécrire v0.2.0.
+
+La release pointe sur le commit/tag exact `c13d525d63dc9ef4e92d30c0ab5851047fa76f66`; le run final [`32784226344`](https://github.com/darknigthmare/the-house-of-the-dead-25d/actions/runs/32784226344) est vert. Les cinq fichiers GitHub sont `uploaded` : Source 227 864 129 octets (`1c402e67…`), Windows 90 978 140 (`17c0b671…`), Linux 81 014 969 (`69bec7bf…`), Web 62 151 092 (`8c559faf…`) et manifeste 421 octets. Le déploiement Vercel `dpl_3f4W7BXUfgMjeFjVh5wGd8N4xuzs` est `Ready`; racine/PCK/WASM répondent 200 et Chromium public reste sans erreur avec isolation active.
 
 ## Release publique v0.2.0 — 24 août 2026
 

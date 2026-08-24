@@ -1,6 +1,6 @@
 # Performance Report
 
-## Current v0.2.0 content budget
+## Current v0.2.1 content budget
 
 The runtime uses one rail camera, atlas-based `Sprite3D` actors, camera-relative eight-direction resolution, procedural 3D layout geometry and deterministic `delta`-based gameplay clocks.
 
@@ -16,13 +16,13 @@ The environment source PNG set totals 75.67 MiB. The static import audit covers 
 
 ## Target
 
-The target remains stable 60 fps at 1280×720 on a mid-range Windows PC, invariant gameplay timing, bounded encounter allocations and a compatibility-renderer Web build. No v0.2.0 frame-time capture on named hardware has yet demonstrated that target, so it remains a target rather than a measured result.
+The target remains stable 60 fps at 1280×720 on a mid-range Windows PC, invariant gameplay timing, bounded encounter allocations and a compatibility-renderer Web build. No v0.2.1 frame-time capture on named hardware has yet demonstrated that target, so it remains a target rather than a measured result.
 
 Atlas reuse avoids a separate texture allocation for every direction/state cell. Route transitions release active encounter and environment nodes, while procedural audio avoids shipping unlicensed Sega recordings. These implementation choices reduce obvious allocation pressure, but they do not replace profiling.
 
 ## Current build measurements
 
-| Platform | Current v0.2.0 size | Verified check |
+| Platform | Current v0.2.1 size | Verified check |
 |---|---:|---|
 | Windows x64 | 161,321,616 bytes | Godot 4.7.1 export succeeded; hidden launch remained active for eight seconds |
 | Linux x64 | 125,686,208 bytes | Godot 4.7.1 export succeeded |
@@ -34,17 +34,17 @@ The Windows launch smoke demonstrates startup continuity on the development mach
 
 ## Current runtime verification
 
-The complete v0.2.0 local QA orchestration passed 280/280 checks. The procedural-audio suite passed 354 assertions across 28 distinct cues, including safe peak amplitudes and deterministic stream dimensions. Godot gameplay and full-campaign smokes completed after cleanup without a shutdown warning or leaked-instance report.
+The complete v0.2.1 local QA orchestration passed 280/280 checks against the unchanged runtime payload. The procedural-audio suite passed 354 assertions across 28 distinct cues, including safe peak amplitudes and deterministic stream dimensions. Godot gameplay and full-campaign smokes completed after cleanup without a shutdown warning or leaked-instance report.
 
-## Local Web observation
+## Production Web observation
 
-After the ResourceLoader correction, Vercel deployment `dpl_548ttUkKWa3tHvBQzkDDQzmNgx6Z` reached `Ready` production at <https://the-house-of-the-dead-25d.vercel.app>. Public Chromium reported zero console/page errors and `crossOriginIsolated=true`; the 1258×622 Godot canvas rendered the menu, P1 gameplay, HUD and continue surfaces.
+After the ResourceLoader and source-QA corrections, v0.2.1 Vercel deployment `dpl_3f4W7BXUfgMjeFjVh5wGd8N4xuzs` reached `Ready` production at <https://the-house-of-the-dead-25d.vercel.app>. Public Chromium reported zero console/page errors and `crossOriginIsolated=true`; the accessible 1258×622 Godot canvas rendered the menu and P1/continue flow.
 
 Public root, PCK and WASM probes return HTTP 200, WASM uses `application/wasm`, and COOP/COEP are present. This proves successful production resource delivery for that run; it is not a latency benchmark or frame-time profile.
 
 ## Published release evidence
 
-The v0.2.0 evidence is anchored to commit [`d79f86a`](https://github.com/darknigthmare/the-house-of-the-dead-25d/commit/d79f86ac9f1e3f990ff6fdc9535d165a2ca7db21) and the public [v0.2.0 release](https://github.com/darknigthmare/the-house-of-the-dead-25d/releases/tag/v0.2.0). Source (227,860,921 bytes), Windows (90,978,140), Linux (81,014,969) and Web (62,151,092) are uploaded, with remote ZIP SHA-256 digests matching local files.
+The corrected source evidence is anchored to commit [`c13d525`](https://github.com/darknigthmare/the-house-of-the-dead-25d/commit/c13d525d63dc9ef4e92d30c0ab5851047fa76f66) and [release v0.2.1](https://github.com/darknigthmare/the-house-of-the-dead-25d/releases/tag/v0.2.1). Source (227,864,129 bytes), Windows (90,978,140), Linux (81,014,969), Web (62,151,092) and the 421-byte manifest are uploaded with matching remote digests. The executable/Web payloads are unchanged, so v0.2.0 runtime measurements remain the applicable performance evidence.
 
 ## Required profiling pass
 

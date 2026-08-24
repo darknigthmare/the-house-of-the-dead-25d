@@ -1,6 +1,18 @@
 # QA Report
 
-This report records the published v0.2.0 evidence separately from historical v0.1.0 results. An older export or deployment is not evidence for the current revision.
+This report records the v0.2.1 source-distribution hotfix, the unchanged v0.2.0 gameplay-content evidence and historical v0.1.0 separately. An older export or deployment is not evidence for the current revision.
+
+## Verified distribution hotfix — 2026-08-25 (v0.2.1)
+
+| Surface | Observed result | Proven scope |
+|---|---|---|
+| package/tag | `0.2.1`; `v0.2.1` resolves to `c13d525d63dc9ef4e92d30c0ab5851047fa76f66` | exact released source |
+| clean Linux CI | run `32784226344` passed in 33 seconds | `npm test`, `qa:web`, `verify:web` from checkout without private reports |
+| GitHub release | public; five assets `uploaded` | Source 227,864,129; Windows 90,978,140; Linux 81,014,969; Web 62,151,092; manifest 421 bytes; all remote digests matched |
+| production | Vercel `dpl_3f4W7BXUfgMjeFjVh5wGd8N4xuzs` `Ready` | root/PCK/WASM 200; WASM MIME; COOP/COEP |
+| public browser | zero console/page errors; isolation true; accessible 1258×622 canvas; menu and P1/continue visible | production runtime startup and core visible flow |
+
+The source hotfix changes QA portability only. Gameplay content and exported Windows/Linux/Web payloads are unchanged from v0.2.0; the detailed gameplay evidence follows.
 
 ## Verified release — 2026-08-24 (v0.2.0)
 
@@ -41,7 +53,7 @@ Exact commit [`d79f86a`](https://github.com/darknigthmare/the-house-of-the-dead-
 
 Vercel deployment `dpl_548ttUkKWa3tHvBQzkDDQzmNgx6Z` is `Ready` at <https://the-house-of-the-dead-25d.vercel.app>. Root/PCK/WASM return HTTP 200, WASM uses `application/wasm`, and COOP/COEP are present. Public browser QA confirms `crossOriginIsolated=true`, a 1258×622 canvas, menu, P1 gameplay and continue, with zero console/page errors. This does not prove exact arcade-reference timing or every failure branch.
 
-The following v0.2.0 gates remain unverified:
+The following v0.2.1 gates remain unverified:
 
 - installation and startup on a clean physical Windows 64-bit machine;
 - physical Gun4IR, Sinden or other light-gun calibration, including two-device play;
