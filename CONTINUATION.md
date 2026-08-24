@@ -1,8 +1,8 @@
 # Continuation
 
-## Current state — local v0.2.0 worktree
+## Current state — published v0.2.0 plus v0.2.1 source-QA candidate
 
-The package version is `0.2.0`. The current local Godot 4.7.1 worktree contains the four-chapter data-driven campaign, local 2P, 4:3 framing, rail camera, Sprite3D actors, 3D hit zones/collisions, scientists, breakables, scoring, six-round ammunition, lives, continues, routes, four bosses, chapter-four rematches, three endings, credits, Training, Boss Rush and Chapter Select.
+The package version is `0.2.1`. The current local Godot 4.7.1 worktree contains the four-chapter data-driven campaign, local 2P, 4:3 framing, rail camera, Sprite3D actors, 3D hit zones/collisions, scientists, breakables, scoring, six-round ammunition, lives, continues, routes, four bosses, chapter-four rematches, three endings, credits, Training, Boss Rush and Chapter Select.
 
 The original replacement-content contract is integrated:
 
@@ -14,6 +14,8 @@ The original replacement-content contract is integrated:
 - manifest-driven runtime integration for node-specific environments, PBR surfaces, props/decorative motion, projectile visuals, breakables, civilians and support HUD.
 
 The environment, enemy-profile and gameplay-support loaders use `ResourceLoader` for export-safe resource resolution. The correction is covered by successful Windows, Linux and Web exports rather than editor-only parsing.
+GitHub Actions run `32781391274` exposed a source-distribution-only defect after its 271/271 data checks: `scripts/verify_sprite_atlas_v2.mjs` required an ignored private scientist report that is intentionally absent from clean checkouts. The v0.2.1 candidate always validates the tracked manifest/provenance contract and performs the stronger private source-sheet cross-check only when those reports exist. Normal and tracked-only `npm.cmd test` pass, and tracked-only `qa:web`/`verify:web` pass with the private reports restored afterward.
+
 
 This replacement contract is verified locally. It must not be described as exact Sega arcade certification: no authorized Sega reference build, revision/operator configuration or licensed visual/audio masters were available.
 
@@ -44,9 +46,9 @@ Completed the v0.2.0 original content-completion and runtime-integration pass, c
 - Web static checks: `qa:web` 275/275 and `verify:web` OK;
 - local browser: Vercel local server plus agent-browser 0.34, no console errors, `crossOriginIsolated=true`, accessible canvas at 1258×622, with menu, gameplay, HUD and continue visible.
 
-The raw Windows, Linux and Web exports are locally verified, but no v0.2.0 commit, push, tag, packaged archive, GitHub release or Vercel deployment is recorded by this checkpoint. The previously published v0.1.0 release remains historical evidence only and must not be presented as containing the v0.2.0 worktree.
+The content is anchored to exact commit `d79f86ac9f1e3f990ff6fdc9535d165a2ca7db21` and the public [v0.2.0 GitHub release](https://github.com/darknigthmare/the-house-of-the-dead-25d/releases/tag/v0.2.0). Source (227,860,921 bytes), Windows (90,978,140), Linux (81,014,969) and Web (62,151,092) are uploaded with remote ZIP SHA-256 digests matching local files. Vercel deployment `dpl_548ttUkKWa3tHvBQzkDDQzmNgx6Z` is `Ready` at <https://the-house-of-the-dead-25d.vercel.app>; root/PCK/WASM return HTTP 200, WASM uses `application/wasm`, COOP/COEP are present, and public Chromium reports isolation true, a 1258×622 canvas, visible menu/P1/gameplay/continue and zero console/page errors.
 
-## Main modified areas in the v0.2.0 worktree
+## Main delivered areas in v0.2.0
 
 - `assets/sprites_v2/`, `assets/environments_v2/`, `assets/gameplay_v2/`;
 - `data/assets/`, `data/audio/`, `data/runtime/campaign_timeline.json`;
@@ -54,16 +56,15 @@ The raw Windows, Linux and Web exports are locally verified, but no v0.2.0 commi
 - asset-build/verification scripts and deterministic tests;
 - README, licensing, missing-assets, production, catalog and continuation documentation.
 
-The worktree also contains generated Godot import metadata. Review it selectively before staging; do not assume every unrelated or ignored workspace file belongs in a release.
+The release contains the reviewed Godot import metadata required by its texture contracts; ignored tools, caches, licensed/reference folders and ImageGen source sheets remain outside the public package.
 
 ## Next exact task
 
-1. Review the complete v0.2.0 diff and stage only project-owned source, normalized assets, manifests, tests and documentation.
-2. Create and record the v0.2.0 commit from that reviewed staged candidate.
-3. Package the verified Windows, Linux and Web exports plus the source archive, then generate and verify `SHA256SUMS.txt`.
-4. Create the v0.2.0 tag, push the commit/tag, publish the GitHub release and upload the verified archives.
-5. Deploy the same v0.2.0 Web candidate to Vercel, then repeat HTTP, isolation, console and visible-flow checks against production.
-6. Separately retain clean physical Windows, two-light-gun, named-hardware profiling and authorized Sega reference comparison as unverified gates.
+1. Commit and push the v0.2.1 source-verification candidate without moving the public v0.2.0 tag.
+2. Wait for a green GitHub Actions clean checkout on `main`, then create the annotated v0.2.1 tag.
+3. Repackage from the exact v0.2.1 commit, verify local and uploaded SHA-256 digests, publish the patch release and mark v0.2.0 as superseded without deleting it.
+4. Deploy the same v0.2.1 commit to Vercel and repeat public HTTP, isolation, console and visible-flow checks.
+5. Separately complete clean physical Windows, two-light-gun, named-hardware profiling and authorized Sega reference comparison as unverified gates.
 
 ## Commands to resume
 
@@ -80,12 +81,13 @@ npm.cmd run verify:web
 git diff --check
 ```
 
-Run packaging, checksum and publication commands only after the v0.2.0 candidate has been reviewed, staged and committed.
+Keep v0.2.0 artifacts immutable. Publish the source-QA correction as v0.2.1 only after a green clean-checkout workflow, then repeat packaging, checksum and public QA.
 
 ## Precautions
 
 - Preserve unrelated local changes. Do not stage `.tools`, `.godot`, licensed/reference folders, ignored ImageGen source sheets, secrets or unrelated parent-repository files.
 - Treat the current sprites, environments, UI and procedural audio as original replacement assets, never as extracted or certified Sega masters.
 - Do not claim “100% arcade faithful”, exact timings, exact ending thresholds or exact audio until an authorized reference build is measured.
-- Do not infer a v0.2.0 commit, tag, GitHub release or Vercel deployment from the package version or from the previously published v0.1.0 state.
+- Anchor v0.2.0 publication claims to commit `d79f86a`, its public GitHub release and Vercel deployment `dpl_548ttUkKWa3tHvBQzkDDQzmNgx6Z`, not to package metadata alone.
+- Never move or rewrite the public v0.2.0 tag; publish the source-QA correction as v0.2.1 only after clean CI passes.
 - Keep physical Windows installation, physical light-gun calibration, deep named-hardware profiling and authorized reference comparison as separate unverified gates.

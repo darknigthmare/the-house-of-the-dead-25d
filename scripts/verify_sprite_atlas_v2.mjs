@@ -146,21 +146,29 @@ function validateMoodyBodyScale(image) {
 }
 
 
-const scientistGroup = json('reports/runtime/group_scientists_v2.json');
-const scientistGroupAssets = scientistGroup.assets ?? {};
-if (scientistGroup.asset_count !== scientistActors.length) fail('scientist source group count mismatch');
-if (JSON.stringify(Object.keys(scientistGroupAssets)) !== JSON.stringify(scientistActors)) fail('scientist source group IDs or order mismatch');
-for (const scientistId of scientistActors) {
-  const record = scientistGroupAssets[scientistId];
-  if (!record || record.accepted !== true) fail(`scientist source is not accepted: ${scientistId}`);
-  if (record.observed_columns !== 8 || record.observed_rows !== 6) fail(`scientist source layout mismatch: ${scientistId}`);
-  if (JSON.stringify(record.observed_state_columns) !== JSON.stringify(scientistSourceStates)) fail(`scientist source-state order mismatch: ${scientistId}`);
-  if (JSON.stringify(record.observed_direction_rows) !== JSON.stringify(['front', 'front_left', 'left', 'back_left', 'back', 'front_right'])) fail(`scientist source-direction order mismatch: ${scientistId}`);
-  if (!String(record.selected_source_path).startsWith('reports/runtime/directional-sources/scientists/')) fail(`scientist selected source path mismatch: ${scientistId}`);
-  if (!/^[a-f0-9]{64}$/.test(record.sha256)) fail(`scientist selected source hash is invalid: ${scientistId}`);
-  if (!existsSync(join(root, record.selected_source_path))) fail(`scientist selected source is missing: ${scientistId}`);
-  const sourceHash = createHash('sha256').update(readFileSync(join(root, record.selected_source_path))).digest('hex');
-  if (sourceHash !== record.sha256) fail(`scientist selected source hash mismatch: ${scientistId}`);
+const scientistGroupPath = 'reports/runtime/group_scientists_v2.json';
+const scientistGroupAvailable = existsSync(join(root, scientistGroupPath));
+let scientistGroupAssets = {};
+if (!scientistGroupAvailable) {
+  console.log('SPRITE V2 NOTE: private scientist source reports are absent; validating tracked manifest and provenance contracts.');
+}
+if (scientistGroupAvailable) {
+  const scientistGroup = json(scientistGroupPath);
+  scientistGroupAssets = scientistGroup.assets ?? {};
+  if (scientistGroup.asset_count !== scientistActors.length) fail('scientist source group count mismatch');
+  if (JSON.stringify(Object.keys(scientistGroupAssets)) !== JSON.stringify(scientistActors)) fail('scientist source group IDs or order mismatch');
+  for (const scientistId of scientistActors) {
+    const record = scientistGroupAssets[scientistId];
+    if (!record || record.accepted !== true) fail(`scientist source is not accepted: ${scientistId}`);
+    if (record.observed_columns !== 8 || record.observed_rows !== 6) fail(`scientist source layout mismatch: ${scientistId}`);
+    if (JSON.stringify(record.observed_state_columns) !== JSON.stringify(scientistSourceStates)) fail(`scientist source-state order mismatch: ${scientistId}`);
+    if (JSON.stringify(record.observed_direction_rows) !== JSON.stringify(['front', 'front_left', 'left', 'back_left', 'back', 'front_right'])) fail(`scientist source-direction order mismatch: ${scientistId}`);
+    if (!String(record.selected_source_path).startsWith('reports/runtime/directional-sources/scientists/')) fail(`scientist selected source path mismatch: ${scientistId}`);
+    if (!/^[a-f0-9]{64}$/.test(record.sha256)) fail(`scientist selected source hash is invalid: ${scientistId}`);
+    if (!existsSync(join(root, record.selected_source_path))) fail(`scientist selected source is missing: ${scientistId}`);
+    const sourceHash = createHash('sha256').update(readFileSync(join(root, record.selected_source_path))).digest('hex');
+    if (sourceHash !== record.sha256) fail(`scientist selected source hash mismatch: ${scientistId}`);
+  }
 }
 
 const manifest = json('data/assets/sprite_manifest.json');
@@ -185,12 +193,17 @@ for (const asset of assets) {
   if (asset.contract_version !== 2 || asset.status !== 'dedicated_fan_made_v2') fail(`asset is not dedicated v2: ${asset.id}`);
   if (asset.right_profile_source !== 'mirrored_left_profile') fail(`right-profile provenance missing: ${asset.id}`);
   if (scientistActors.includes(asset.id)) {
-    const sourceRecord = scientistGroupAssets[asset.id];
     if (asset.role !== 'civilian') fail(`scientist role mismatch: ${asset.id}`);
-    if (asset.source_sheet_path !== sourceRecord.selected_source_path) fail(`scientist source path diverges: ${asset.id}`);
-    if (asset.source_sheet_sha256 !== sourceRecord.sha256) fail(`scientist source hash diverges: ${asset.id}`);
+    if (!String(asset.source_sheet_path).startsWith('reports/runtime/directional-sources/scientists/')) fail(`scientist manifest source path mismatch: ${asset.id}`);
+    if (!/^[a-f0-9]{64}$/.test(asset.source_sheet_sha256)) fail(`scientist manifest source hash is invalid: ${asset.id}`);
     if (asset.source_direction_rows !== 6 || asset.source_state_columns !== 8) fail(`scientist source dimensions diverge: ${asset.id}`);
     if (JSON.stringify(asset.source_state_names) !== JSON.stringify(scientistSourceStates)) fail(`scientist source-state provenance diverges: ${asset.id}`);
+    if (scientistGroupAvailable) {
+      const sourceRecord = scientistGroupAssets[asset.id];
+      if (!sourceRecord) fail(`scientist source record is missing: ${asset.id}`);
+      if (asset.source_sheet_path !== sourceRecord.selected_source_path) fail(`scientist source path diverges: ${asset.id}`);
+      if (asset.source_sheet_sha256 !== sourceRecord.sha256) fail(`scientist source hash diverges: ${asset.id}`);
+    }
     if ((asset.derived_state_columns ?? []).length !== 0) fail(`scientist states must not be synthesized: ${asset.id}`);
     if (asset.back_right_source !== 'mirrored_from_back_left') fail(`scientist back-right provenance missing: ${asset.id}`);
     const directionProvenance = asset.direction_provenance ?? {};
@@ -228,6 +241,7 @@ if (existsSync(privateAssemblyPath)) {
     if (record.extraction_method !== assembly.extraction_method || record.transparent_gutter_px !== 12 || record.art_margin_px < 1) fail(`assembly extraction contract mismatch: ${expected}`);
     if (scientistActors.includes(expected)) {
       const sourceRecord = scientistGroupAssets[expected];
+      if (!sourceRecord) fail(`scientist assembly source record is unavailable: ${expected}`);
       if (record.source_group_manifest !== 'reports/runtime/group_scientists_v2.json') fail(`scientist assembly group provenance mismatch: ${expected}`);
       if (record.source !== sourceRecord.selected_source_path || record.source_sha256 !== sourceRecord.sha256) fail(`scientist assembly source diverges: ${expected}`);
       if (JSON.stringify(record.source_state_names) !== JSON.stringify(scientistSourceStates)) fail(`scientist assembly source states diverge: ${expected}`);

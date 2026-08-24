@@ -1,8 +1,8 @@
 # QA Report
 
-This report separates the current v0.2.0 working-tree evidence from historical v0.1.0 release evidence. An older export or deployment is not evidence for the current revision.
+This report records the published v0.2.0 evidence separately from historical v0.1.0 results. An older export or deployment is not evidence for the current revision.
 
-## Verified snapshot — 2026-08-24 (v0.2.0 working tree)
+## Verified release — 2026-08-24 (v0.2.0)
 
 | Surface | Observed result | Proven scope |
 |---|---|---|
@@ -35,19 +35,19 @@ The 28 audio cues are original procedural temporary replacements covering gamepl
 
 ## Evidence boundaries
 
-The current local QA proves the declared atlas, route, enemy, environment, gameplay-support, audio and import contracts. The Godot runs prove parsing, core two-player gun behavior and the complete automated campaign success path through credits. The current Windows, Linux and Web exports were produced successfully; the Windows launch smoke proves only that the executable stayed active for eight seconds on the development machine.
+The v0.2.0 QA proves the declared atlas, route, enemy, environment, gameplay-support, audio and import contracts. The Godot runs prove parsing, core two-player gun behavior and the complete automated campaign success path through credits. Windows, Linux and Web exports were produced successfully; the Windows launch smoke proves only that the executable stayed active for eight seconds on the development machine.
 
-The local browser evidence proves that the current Web export loads after the ResourceLoader correction, preserves cross-origin isolation, exposes an accessible canvas and reaches menu, gameplay, HUD and continue without console errors or blocked resources. It is not a public-production deployment check and does not prove exact arcade-reference timing or every failure branch.
+Exact commit [`d79f86a`](https://github.com/darknigthmare/the-house-of-the-dead-25d/commit/d79f86ac9f1e3f990ff6fdc9535d165a2ca7db21) is published through the [v0.2.0 GitHub release](https://github.com/darknigthmare/the-house-of-the-dead-25d/releases/tag/v0.2.0). Source (227,860,921 bytes), Windows (90,978,140), Linux (81,014,969) and Web (62,151,092) are uploaded, and remote ZIP SHA-256 digests match local files.
+
+Vercel deployment `dpl_548ttUkKWa3tHvBQzkDDQzmNgx6Z` is `Ready` at <https://the-house-of-the-dead-25d.vercel.app>. Root/PCK/WASM return HTTP 200, WASM uses `application/wasm`, and COOP/COEP are present. Public browser QA confirms `crossOriginIsolated=true`, a 1258×622 canvas, menu, P1 gameplay and continue, with zero console/page errors. This does not prove exact arcade-reference timing or every failure branch.
 
 The following v0.2.0 gates remain unverified:
 
-- current source/build archives and their final SHA-256 manifest;
-- v0.2.0 GitHub release, Vercel production deployment and public HTTP/browser probes;
 - installation and startup on a clean physical Windows 64-bit machine;
 - physical Gun4IR, Sinden or other light-gun calibration, including two-device play;
 - sustained frame-time, 1% low, CPU/GPU memory and hitch profiling on named hardware;
 - exact route, score, timing, dialogue and ending comparison against an authorized licensed Sega arcade reference build.
 
-## Historical publication boundary
+## Historical v0.1.0 boundary
 
-The repository has a previously verified v0.1.0 GitHub release and Vercel deployment. Those artifacts predate the v0.2.0 atlas, environment, gameplay-support and procedural-audio expansion, so their sizes, hashes, browser checks and publication status must not be reused as v0.2.0 evidence.
+The verified v0.1.0 release remains historical evidence only. Its sizes, hashes and browser checks predate the v0.2.0 atlas, environment, gameplay-support and procedural-audio expansion and must not be reused as v0.2.0 evidence.

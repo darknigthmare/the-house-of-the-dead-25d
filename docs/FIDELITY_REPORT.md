@@ -1,6 +1,6 @@
 # Fidelity Report
 
-## v0.2.0 status — verified local worktree, 2026-08-24
+## v0.2.0 status — published release, 2026-08-24
 
 This report separates two different claims:
 
@@ -54,9 +54,9 @@ This is a production-ready replacement contract, not a claim that the generated 
 | Linux export | 125,686,208 bytes |
 | Web export | 92,060,382 bytes total; PCK 52,215,988 bytes; WASM 39,513,091 bytes |
 | Web static QA | `qa:web`: 275/275; `verify:web`: OK |
-| local browser | local Vercel server + agent-browser 0.34; no console errors; `crossOriginIsolated=true`; accessible 1258×622 canvas; menu, gameplay, HUD and continue visible |
+| public browser | Vercel `dpl_548ttUkKWa3tHvBQzkDDQzmNgx6Z` `Ready`; no console/page errors; `crossOriginIsolated=true`; accessible 1258×622 canvas; menu, P1 gameplay, HUD and continue visible |
 
-These results and raw exports apply to the current local v0.2.0 worktree. They do not identify a v0.2.0 Git commit, tag, packaged release archive or deployment.
+These results are anchored to exact commit [`d79f86a`](https://github.com/darknigthmare/the-house-of-the-dead-25d/commit/d79f86ac9f1e3f990ff6fdc9535d165a2ca7db21), the public [v0.2.0 release](https://github.com/darknigthmare/the-house-of-the-dead-25d/releases/tag/v0.2.0) and `Ready` production at <https://the-house-of-the-dead-25d.vercel.app>. Uploaded Source/Windows/Linux/Web ZIP SHA-256 digests match local files; root/PCK/WASM return HTTP 200 with WASM MIME and COOP/COEP verified.
 
 ## Exact Sega arcade certification — blocked
 

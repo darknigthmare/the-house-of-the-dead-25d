@@ -38,13 +38,13 @@ The complete v0.2.0 local QA orchestration passed 280/280 checks. The procedural
 
 ## Local Web observation
 
-After the ResourceLoader correction, the current Web export was served through the local Vercel configuration and inspected with agent-browser 0.34. The browser reported zero console errors and `crossOriginIsolated=true`. The Godot canvas measured 1258×622, exposed `role=main` with an `aria-label`, and rendered the menu, gameplay, HUD and continue surfaces.
+After the ResourceLoader correction, Vercel deployment `dpl_548ttUkKWa3tHvBQzkDDQzmNgx6Z` reached `Ready` production at <https://the-house-of-the-dead-25d.vercel.app>. Public Chromium reported zero console/page errors and `crossOriginIsolated=true`; the 1258×622 Godot canvas rendered the menu, P1 gameplay, HUD and continue surfaces.
 
-The inspected navigation contained 31 performance entries and no blocked resource. This proves successful local resource delivery for that run; it is not a latency benchmark, network-production sample or frame-time profile.
+Public root, PCK and WASM probes return HTTP 200, WASM uses `application/wasm`, and COOP/COEP are present. This proves successful production resource delivery for that run; it is not a latency benchmark or frame-time profile.
 
-## Publication boundary
+## Published release evidence
 
-Current v0.2.0 source/build archives, SHA-256 sums, GitHub release and Vercel production deployment have not yet been produced or verified. Previously published v0.1.0 artifact and browser measurements remain historical baselines only.
+The v0.2.0 evidence is anchored to commit [`d79f86a`](https://github.com/darknigthmare/the-house-of-the-dead-25d/commit/d79f86ac9f1e3f990ff6fdc9535d165a2ca7db21) and the public [v0.2.0 release](https://github.com/darknigthmare/the-house-of-the-dead-25d/releases/tag/v0.2.0). Source (227,860,921 bytes), Windows (90,978,140), Linux (81,014,969) and Web (62,151,092) are uploaded, with remote ZIP SHA-256 digests matching local files.
 
 ## Required profiling pass
 

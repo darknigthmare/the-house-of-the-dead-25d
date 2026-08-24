@@ -1,6 +1,13 @@
 # Professional Changelog
 
-## 0.2.0 content-completion candidate — 2026-08-24
+## 0.2.1 source-verification hotfix candidate — 2026-08-25
+
+- Removed the public-source verifier's mandatory dependency on ignored private ImageGen reports. Tracked atlas manifests and provenance remain mandatory; extended source-sheet cross-checks still run whenever the private reports are locally available.
+- Reproduced GitHub Actions run `32781391274`: its 271/271 data checks passed before the previous verifier failed on missing `reports/runtime/group_scientists_v2.json`.
+- Verified `npm.cmd test` both with the private reports present and with both private scientist/assembly reports temporarily absent. The reports were restored after the simulation; `qa:web` 275/275 and `verify:web` also pass in tracked-only mode.
+- The gameplay content and exported binaries are unchanged. The candidate will become v0.2.1 only after a green clean GitHub Actions checkout; the public v0.2.0 tag is not moved or rewritten.
+
+## 0.2.0 content-completion release — 2026-08-24
 
 - Expanded the directional Sprite3D contract to 38 unique 2048×2048 RGBA atlases and 2,432 addressable cells, adding three dedicated scientist identities while preserving eight camera-relative directions and eight gameplay states per actor.
 - Added 25 behavior-backed enemy profiles with dedicated visuals, body hitbox profiles, projectile metadata and runtime distinctions instead of texture-only archetype swaps.
@@ -12,6 +19,9 @@
 - Passed `npm.cmd test` 271/271 and complete `npm.cmd run qa` 280/280, plus warning-free gameplay, score, initials and full-campaign smokes through all chapters, bosses/rematches, 15/15 scientists, ending and credits.
 - Exported Windows (161,321,616 bytes), Linux (125,686,208 bytes) and nine-file Web (92,060,382 bytes) builds. PCK is 52,215,988 bytes, WASM 39,513,091 bytes, Windows remained alive during an eight-second startup smoke, `qa:web` passes 275/275 and `verify:web` is OK.
 - Verified local Vercel/Chromium with agent-browser 0.34: Godot 4.7.1 WebGL2 single-thread, `crossOriginIsolated=true`, accessible 1258×622 game canvas, visible menu/P1/gameplay/HUD/continue/pause, no blocked network resource and zero console errors.
+- Published exact content commit [`d79f86a`](https://github.com/darknigthmare/the-house-of-the-dead-25d/commit/d79f86ac9f1e3f990ff6fdc9535d165a2ca7db21) through the public [v0.2.0 tag and GitHub release](https://github.com/darknigthmare/the-house-of-the-dead-25d/releases/tag/v0.2.0).
+- Uploaded Source (227,860,921 bytes), Windows (90,978,140), Linux (81,014,969), Web (62,151,092) and `SHA256SUMS.txt`; every remote ZIP digest matches its local SHA-256.
+- Promoted Vercel deployment `dpl_548ttUkKWa3tHvBQzkDDQzmNgx6Z` to `Ready` production at <https://the-house-of-the-dead-25d.vercel.app>. Root/PCK/WASM return HTTP 200 with `application/wasm` and COOP/COEP; public Chromium reports isolation true, a 1258×622 canvas, visible menu/P1/gameplay/continue and zero console/page errors.
 - Kept the release boundary explicit: these are original fan-made replacement assets and verified project behavior, not exact Sega-master or revision-specific arcade certification.
 
 ## Directional Sprite V2 and verified public release — 2026-08-21

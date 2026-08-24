@@ -33,7 +33,7 @@ npm.cmd run qa:web
 npm.cmd run verify:web
 ```
 
-## Local v0.2.0 validation — August 24, 2026
+## Public v0.2.0 release — August 24, 2026
 
 The v0.2.0 wave provides 38 directional atlases/2,432 cells, 25 unique enemy profiles, 20 individual environment materials, 33 environment nodes, six destructibles, 14 props, seven projectile cutouts, three HUD families, four boss weak-point diagrams and 28 original procedural audio cues. `npm.cmd test` passes 271/271 and the complete `npm.cmd run qa` orchestration passes 280/280.
 
@@ -43,7 +43,7 @@ The v0.2.0 exports measure 161,321,616 bytes on Windows, 125,686,208 bytes on Li
 
 Local Chromium QA served through Vercel with production headers runs Godot 4.7.1 single-threaded WebGL2 with `crossOriginIsolated=true`. It exposed and led to a fix for using `FileAccess` with imported textures; asset loaders now use `ResourceLoader`. After re-export, the console remains error-free, the accessible canvas measures 1258×622, and the menu, P1 start, environments, HUD, continue and pause are visible. No network resource remains blocked.
 
-The public repository remains [darknigthmare/the-house-of-the-dead-25d](https://github.com/darknigthmare/the-house-of-the-dead-25d), and the historical v0.1.0 production remains available at [the-house-of-the-dead-25d.vercel.app](https://the-house-of-the-dead-25d.vercel.app). At this validation point, v0.2.0 is a verified local candidate: its commit, archives, tag, GitHub release and new deployment are not yet claimed.
+v0.2.0 is published at exact commit [`d79f86a`](https://github.com/darknigthmare/the-house-of-the-dead-25d/commit/d79f86ac9f1e3f990ff6fdc9535d165a2ca7db21) through the [v0.2.0 GitHub tag and release](https://github.com/darknigthmare/the-house-of-the-dead-25d/releases/tag/v0.2.0). The Source (227,860,921 bytes), Windows (90,978,140), Linux (81,014,969) and Web (62,151,092) archives are uploaded, and their remote SHA-256 digests match the local files. Vercel deployment `dpl_548ttUkKWa3tHvBQzkDDQzmNgx6Z` is `Ready` at [the-house-of-the-dead-25d.vercel.app](https://the-house-of-the-dead-25d.vercel.app): root, PCK and WASM return HTTP 200, WASM uses `application/wasm`, and COOP/COEP are present. Public Chromium QA confirms `crossOriginIsolated=true`, a 1258×622 canvas, visible menu, P1 start, gameplay and continue, with zero console or page errors.
 
 The compact eight-state cycle per direction is a detailed playable baseline, not a complete licensed arcade animation library. The remaining unverified gates are installation on a clean physical Windows machine, physical light guns, deep profiling on named hardware and exact comparison against a licensed reference build.
 

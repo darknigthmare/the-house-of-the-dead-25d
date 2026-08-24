@@ -92,12 +92,12 @@ chmod +x The_House_of_the_Dead_25D.x86_64
 ./The_House_of_the_Dead_25D.x86_64
 ```
 
-The current v0.2.0 archives and SHA-256 manifest have not yet been produced or verified.
+The published v0.2.0 set contains Source (227,860,921 bytes), Windows (90,978,140), Linux (81,014,969), Web (62,151,092) and `SHA256SUMS.txt`; every uploaded ZIP digest matches its local SHA-256.
 
-## Publication boundary
+## Published v0.2.0
 
-The previously published [GitHub release v0.1.0](https://github.com/darknigthmare/the-house-of-the-dead-25d/releases/tag/v0.1.0) and its Vercel deployment are historical baselines. They do not contain the current v0.2.0 content wave.
+The exact content commit is [`d79f86a`](https://github.com/darknigthmare/the-house-of-the-dead-25d/commit/d79f86ac9f1e3f990ff6fdc9535d165a2ca7db21), published through the [v0.2.0 tag and GitHub release](https://github.com/darknigthmare/the-house-of-the-dead-25d/releases/tag/v0.2.0).
 
-Before publishing v0.2.0, package the exact committed tree, compare local and uploaded SHA-256 sums, rerun public browser/Web checks, then verify the public commit and HTTP assets. No v0.2.0 GitHub release or Vercel production deployment is claimed here.
+Vercel deployment `dpl_548ttUkKWa3tHvBQzkDDQzmNgx6Z` is `Ready` at <https://the-house-of-the-dead-25d.vercel.app>. Root, PCK and WASM return HTTP 200, WASM uses `application/wasm`, and COOP/COEP are present. Public Chromium confirms `crossOriginIsolated=true`, a 1258×622 canvas, visible menu/P1/gameplay/continue and zero console/page errors.
 
 On a clean physical Windows 64-bit machine, extract only the Windows archive and verify startup, menu, one encounter, six shots, both reload methods and two-player join. A clean-machine run, physical Gun4IR/Sinden/two-light-gun calibration, named-hardware profiling and exact authorized Sega-reference comparison remain unverified gates.
