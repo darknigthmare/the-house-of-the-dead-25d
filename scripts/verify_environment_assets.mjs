@@ -57,7 +57,8 @@ function checkExactKeys(actualObject, expected, label) {
 
 function projectPath(resourcePath) {
   check(typeof resourcePath === 'string' && resourcePath.startsWith('res://'), `invalid resource path: ${resourcePath}`);
-  return join(root, String(resourcePath).replace(/^res:\/\//, '').replaceAll('/', '\\'));
+  const relativePath = String(resourcePath).replace(/^res:\/\//, '').replaceAll('\\', '/');
+  return join(root, relativePath);
 }
 
 function listFiles(directory) {
@@ -333,7 +334,10 @@ check(JSON.stringify(provenanceIds) === JSON.stringify(allIds), 'provenance IDs 
 for (const entry of provenance.assets) {
   check(entry.status === 'original_fan_made', `${entry.id} records original fan-made status`);
   check(typeof entry.source_sha256 === 'string' && /^[a-f0-9]{64}$/.test(entry.source_sha256), `${entry.id} has a SHA-256 source fingerprint`);
-  for (const output of Object.values(entry.outputs ?? {})) check(existsSync(join(root, output.replaceAll('/', '\\'))), `${entry.id} provenance output exists: ${output}`);
+  for (const output of Object.values(entry.outputs ?? {})) {
+    const normalizedOutput = String(output).replaceAll('\\', '/');
+    check(existsSync(join(root, normalizedOutput)), `${entry.id} provenance output exists: ${output}`);
+  }
 }
 
 const generatedPngs = listFiles(outputRoot).filter((path) => path.toLowerCase().endsWith('.png'));

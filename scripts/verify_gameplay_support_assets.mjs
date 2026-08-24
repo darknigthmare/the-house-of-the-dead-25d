@@ -30,7 +30,7 @@ const expectedUi = ["life_torch", "bullet_round", "reload_offscreen_icon"];
 const expectedBosses = ["chariot", "hangedman", "hermit", "magician"];
 
 const verifyPng = (entry, id, expectedWidth, expectedHeight) => {
-  const relative = entry?.path?.replace("res://", "") ?? "";
+  const relative = entry?.path?.replace("res://", "").replaceAll("\\", "/") ?? "";
   const full = join(root, relative);
   check(relative.length > 0 && existsSync(full), `asset exists: ${id}`);
   if (!existsSync(full)) return;
