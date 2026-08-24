@@ -1,6 +1,6 @@
 # Continuation
 
-## Current state — published v0.2.0 plus v0.2.1 source-QA candidate
+## Current state — release-ready v0.2.1 source-QA hotfix
 
 The package version is `0.2.1`. The current local Godot 4.7.1 worktree contains the four-chapter data-driven campaign, local 2P, 4:3 framing, rail camera, Sprite3D actors, 3D hit zones/collisions, scientists, breakables, scoring, six-round ammunition, lives, continues, routes, four bosses, chapter-four rematches, three endings, credits, Training, Boss Rush and Chapter Select.
 
@@ -14,8 +14,8 @@ The original replacement-content contract is integrated:
 - manifest-driven runtime integration for node-specific environments, PBR surfaces, props/decorative motion, projectile visuals, breakables, civilians and support HUD.
 
 The environment, enemy-profile and gameplay-support loaders use `ResourceLoader` for export-safe resource resolution. The correction is covered by successful Windows, Linux and Web exports rather than editor-only parsing.
-GitHub Actions run `32781391274` exposed a source-distribution-only defect after its 271/271 data checks: `scripts/verify_sprite_atlas_v2.mjs` required an ignored private scientist report that is intentionally absent from clean checkouts. The v0.2.1 candidate always validates the tracked manifest/provenance contract and performs the stronger private source-sheet cross-check only when those reports exist. Normal and tracked-only `npm.cmd test` pass, and tracked-only `qa:web`/`verify:web` pass with the private reports restored afterward.
 
+GitHub Actions runs `32781391274` and `32783351280` exposed two source-distribution-only issues: a mandatory ignored scientist report, then Windows-only environment paths. The v0.2.1 verifier always validates tracked manifest/provenance data, optionally cross-checks private reports when present and resolves JSON asset paths on Windows or POSIX. Local QA passes in normal and tracked-only modes; clean Linux run `32783693892` passes `npm test`, `qa:web` and `verify:web` in 37 seconds.
 
 This replacement contract is verified locally. It must not be described as exact Sega arcade certification: no authorized Sega reference build, revision/operator configuration or licensed visual/audio masters were available.
 
@@ -60,11 +60,11 @@ The release contains the reviewed Godot import metadata required by its texture 
 
 ## Next exact task
 
-1. Commit and push the v0.2.1 source-verification candidate without moving the public v0.2.0 tag.
-2. Wait for a green GitHub Actions clean checkout on `main`, then create the annotated v0.2.1 tag.
-3. Repackage from the exact v0.2.1 commit, verify local and uploaded SHA-256 digests, publish the patch release and mark v0.2.0 as superseded without deleting it.
-4. Deploy the same v0.2.1 commit to Vercel and repeat public HTTP, isolation, console and visible-flow checks.
-5. Separately complete clean physical Windows, two-light-gun, named-hardware profiling and authorized Sega reference comparison as unverified gates.
+1. Commit and push these v0.2.1 release documents, then require another green GitHub Actions checkout.
+2. Tag that exact green commit as v0.2.1, rebuild the release archives and verify every SHA-256 locally and after upload.
+3. Publish v0.2.1, mark v0.2.0 as superseded without deleting it, and deploy the same Web candidate to Vercel.
+4. Repeat public HTTP, isolation, console and visible-flow checks, then record the final commit/release/deployment evidence.
+5. Keep clean physical Windows, two-light-gun, named-hardware profiling and authorized Sega reference comparison as separate unverified gates.
 
 ## Commands to resume
 

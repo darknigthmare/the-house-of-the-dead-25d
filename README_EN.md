@@ -33,6 +33,12 @@ npm.cmd run qa:web
 npm.cmd run verify:web
 ```
 
+## v0.2.1 distribution hotfix — August 25, 2026
+
+v0.2.1 fixes public source-ZIP self-validation: private ImageGen reports remain intentionally ignored while tracked manifests and provenance stay mandatory. It also removes Windows-only path separators that blocked the environment verifier on Linux.
+
+GitHub Actions run [`32783693892`](https://github.com/darknigthmare/the-house-of-the-dead-25d/actions/runs/32783693892) passes `npm test`, `qa:web` and `verify:web` from a clean Linux checkout. Gameplay content and exported binaries are identical to v0.2.0; [release v0.2.1](https://github.com/darknigthmare/the-house-of-the-dead-25d/releases/tag/v0.2.1) is the recommended source distribution without moving or rewriting v0.2.0.
+
 ## Public v0.2.0 release — August 24, 2026
 
 The v0.2.0 wave provides 38 directional atlases/2,432 cells, 25 unique enemy profiles, 20 individual environment materials, 33 environment nodes, six destructibles, 14 props, seven projectile cutouts, three HUD families, four boss weak-point diagrams and 28 original procedural audio cues. `npm.cmd test` passes 271/271 and the complete `npm.cmd run qa` orchestration passes 280/280.

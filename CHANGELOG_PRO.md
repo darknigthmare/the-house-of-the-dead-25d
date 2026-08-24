@@ -1,11 +1,13 @@
 # Professional Changelog
 
-## 0.2.1 source-verification hotfix candidate — 2026-08-25
+## 0.2.1 source-verification hotfix — 2026-08-25
 
 - Removed the public-source verifier's mandatory dependency on ignored private ImageGen reports. Tracked atlas manifests and provenance remain mandatory; extended source-sheet cross-checks still run whenever the private reports are locally available.
 - Reproduced GitHub Actions run `32781391274`: its 271/271 data checks passed before the previous verifier failed on missing `reports/runtime/group_scientists_v2.json`.
 - Verified `npm.cmd test` both with the private reports present and with both private scientist/assembly reports temporarily absent. The reports were restored after the simulation; `qa:web` 275/275 and `verify:web` also pass in tracked-only mode.
-- The gameplay content and exported binaries are unchanged. The candidate will become v0.2.1 only after a green clean GitHub Actions checkout; the public v0.2.0 tag is not moved or rewritten.
+- Removed Windows-only separator rewriting from the environment verifier and hardened gameplay-support path normalization after clean run `32783351280` exposed the POSIX failure.
+- Verified clean Linux GitHub Actions run [`32783693892`](https://github.com/darknigthmare/the-house-of-the-dead-25d/actions/runs/32783693892): `npm test`, `qa:web` and `verify:web` all passed in 37 seconds.
+- Gameplay content and exported binaries are unchanged. v0.2.1 is the corrected source distribution; the public v0.2.0 tag and artifacts remain immutable.
 
 ## 0.2.0 content-completion release — 2026-08-24
 
