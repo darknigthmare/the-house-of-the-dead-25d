@@ -234,6 +234,7 @@ func _load_sprite_manifest() -> bool:
 		return false
 	directional_sprite_resolver.direction_count = 8
 	directional_sprite_resolver.frames_per_direction = 8
+	directional_sprite_resolver.direction_hysteresis_degrees = 3.0
 	directional_sprite_resolver.mirror_symmetric_directions = false
 	directional_sprite_resolver.direction_order.assign([0, 1, 2, 3, 4, 5, 6, 7])
 	return true
@@ -284,13 +285,18 @@ func _apply_directional_sprite_frame(actor: Node3D, local_frame: int) -> int:
 	var camera_position := actor.global_position - actor_forward
 	if camera_3d != null:
 		camera_position = camera_3d.global_position
-	return directional_sprite_resolver.apply_to_sprite(
+	var previous_direction := int(actor.get_meta("direction_index", -1))
+	var resolved_direction := directional_sprite_resolver.apply_to_sprite(
 		sprite,
 		actor_forward,
 		camera_position,
 		actor.global_position,
-		clampi(local_frame, 0, 7)
+		clampi(local_frame, 0, 7),
+		previous_direction
 	)
+	if resolved_direction >= 0:
+		actor.set_meta("direction_index", resolved_direction)
+	return resolved_direction
 
 
 func _setup_players(requested_count: int) -> void:

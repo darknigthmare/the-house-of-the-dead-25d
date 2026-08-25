@@ -11,6 +11,7 @@ static func collect_checks() -> Array[Dictionary]:
 	checks.append(_check(resolver.direction_count, 8, "resolver has eight view sectors"))
 	checks.append(_check(resolver.frames_per_direction, 8, "resolver has eight frames per direction"))
 	checks.append(_check(resolver.direction_order, [0, 1, 2, 3, 4, 5, 6, 7], "resolver keeps canonical row order"))
+	checks.append(_check(resolver.direction_hysteresis_degrees, 3.0, "resolver enables a three degree sector hysteresis"))
 
 	for direction in 8:
 		var angle := -float(direction) * TAU / 8.0
@@ -25,6 +26,16 @@ static func collect_checks() -> Array[Dictionary]:
 	var after_boundary := resolver.resolve(Vector3.FORWARD, Vector3(sin(deg_to_rad(22.51)), 0.0, -cos(deg_to_rad(22.51))) * 10.0, Vector3.ZERO, 0) as Dictionary
 	checks.append(_check(int(before_boundary.direction), 0, "sector stays front before 22.5 degree boundary"))
 	checks.append(_check(int(after_boundary.direction), 7, "sector changes after 22.5 degree boundary"))
+
+	var jitter_inside := resolver.resolve(Vector3.FORWARD, Vector3(sin(deg_to_rad(25.49)), 0.0, -cos(deg_to_rad(25.49))) * 10.0, Vector3.ZERO, 0, 0) as Dictionary
+	var crossed_margin := resolver.resolve(Vector3.FORWARD, Vector3(sin(deg_to_rad(25.51)), 0.0, -cos(deg_to_rad(25.51))) * 10.0, Vector3.ZERO, 0, 0) as Dictionary
+	checks.append(_check(int(jitter_inside.candidate_direction), 7, "boundary jitter identifies the neighboring candidate sector"))
+	checks.append(_check(int(jitter_inside.direction), 0, "hysteresis retains the prior sector inside its margin"))
+	checks.append(_check(int(crossed_margin.direction), 7, "hysteresis changes sector after crossing its margin"))
+	var reverse_jitter := resolver.resolve(Vector3.FORWARD, Vector3(sin(deg_to_rad(20.0)), 0.0, -cos(deg_to_rad(20.0))) * 10.0, Vector3.ZERO, 0, 7) as Dictionary
+	var reverse_crossed := resolver.resolve(Vector3.FORWARD, Vector3(sin(deg_to_rad(19.49)), 0.0, -cos(deg_to_rad(19.49))) * 10.0, Vector3.ZERO, 0, 7) as Dictionary
+	checks.append(_check(int(reverse_jitter.direction), 7, "reverse boundary jitter retains the neighboring prior sector"))
+	checks.append(_check(int(reverse_crossed.direction), 0, "reverse traversal changes only after the full margin"))
 
 	resolver.mirror_symmetric_directions = true
 	var mirrored := resolver.resolve(Vector3.FORWARD, Vector3(7.071, 0.0, -7.071), Vector3.ZERO, 3) as Dictionary

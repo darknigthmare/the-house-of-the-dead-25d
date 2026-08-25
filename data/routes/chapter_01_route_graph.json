@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
   "chapter_id": "chapter_01",
-  "start": "bridge_scientist_rescue",
+  "start": "garden_rescue",
   "terminal": "chapter_complete",
   "nodes": [
     {
-      "id": "bridge_scientist_rescue",
+      "id": "garden_rescue",
       "kind": "rescue_branch",
-      "label": "Bridge scientist rescue",
+      "label": "Garden scientist rescue",
       "next": [
         {
           "condition": "scientist_saved",
@@ -55,13 +55,21 @@
       "kind": "route",
       "label": "Upper-floor route",
       "next": [
-        "sophie_corridor"
+        "sophie_antechamber"
       ]
     },
     {
       "id": "ground_hall",
       "kind": "route",
       "label": "Ground-floor route",
+      "next": [
+        "sophie_antechamber"
+      ]
+    },
+    {
+      "id": "sophie_antechamber",
+      "kind": "story",
+      "label": "Approach Sophie's antechamber",
       "next": [
         "sophie_corridor"
       ]

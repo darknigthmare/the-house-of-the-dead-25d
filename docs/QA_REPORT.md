@@ -1,6 +1,30 @@
 # QA Report
 
-This report records the published v0.3.0 release, then preserves the v0.2.1 source-distribution hotfix, v0.2.0 gameplay-content evidence and historical v0.1.0 separately. An older export or deployment is not evidence for the current revision.
+This report first records the current unpublished working tree, then preserves the published v0.3.0 release, the v0.2.1 source-distribution hotfix, v0.2.0 gameplay-content evidence and historical v0.1.0 separately. An older export or deployment is not evidence for the current revision.
+
+## Current unpublished v0.4.0 release candidate — 2026-08-25
+
+This evidence covers the route/component/content-cleanup wave and fresh local exports after v0.3.0. It does not describe a commit, push, tag, GitHub release or deployment.
+
+| Surface | Observed result | Proven scope |
+|---|---|---|
+| repository/data suite | `npm.cmd test`: **278/278 passed** | route graph alignment, manifests, current asset inventory and static runtime contracts |
+| Godot deterministic core | **286 assertions passed** | core rules, `RouteOutcomePolicy`, four runtime component contracts and bidirectional sector-hysteresis boundaries |
+| content-family audit | **746 checks / 6 warnings / 0 errors** | 4 active breakables / 4 uses and 74/74 unique audited binaries; all route graph nodes/starts/edges align with the active timeline |
+| focused runtime smokes | gameplay, complete campaign, score QA and initials/credits each passed inside the aggregate gate | current playable success path and focused interactions after the component integration |
+| complete QA orchestration | strengthened `npm.cmd run qa`: **292/292 passed** | Godot libraries, directional and finale smokes, gameplay, full campaign, score, initials and every static content verifier |
+| Windows x64 export | **182,039,024 bytes**; SHA-256 `4c4ebc7e…`; hidden launch remained active for eight seconds | local Godot 4.7.1 candidate starts on the development machine |
+| Linux x64 export | **146,403,616 bytes**; SHA-256 `1ad3d1c3…` | local Godot 4.7.1 export completed |
+| Web export | **112,777,790 bytes / nine files**; PCK **72,933,396**; WASM **39,513,091**; `qa:web` **282/282**; `verify:web` passed | current tracked payload is below the 100,000,000-byte PCK gate and has the accessibility patch |
+
+`RouteOutcomePolicy` separates civilian rescue state from breakable-route success. `PickupController`, `BreakableObject`, `CivilianController` and `EnemySpawnEvent` are instantiated by the active runtime and covered by deterministic tests; a civilian deadline announces expiration but cannot cause an invisible timer-only death.
+Local Vercel serving plus agent-browser 0.35 reports `crossOriginIsolated=true`, one visible 1258×566 canvas with `role=main` and an accessible name, loaded PCK/WASM resources, no framework overlay, no browser error and only the three expected Godot information logs.
+
+
+Directional resolution now keeps the previous sector through a three-degree angular margin. Tests cover forward and reverse traversal across the 22.5-degree boundary; this changes only atlas-row stability, not combat, collisions or authored frames.
+
+The two unused Chapter 4 destructible profiles and their four PNGs, together with the unreferenced AMS item PNG, were removed from the active tree. Their PNGs and Godot import sidecars remain recoverable through Git history. The six remaining audit warnings are intentional and visible: three reference-pending enemy placements, 38/38 right-facing profiles mirrored from left, 25/38 back-right rows mirrored from back-left, and the compact eight-semantic-state atlas contract without true per-state multi-frame clips.
+
 
 ## Published release — 2026-08-25 (v0.3.0)
 
@@ -8,8 +32,8 @@ This evidence applies to immutable tag `v0.3.0` at exact commit `8add70a31a75192
 
 | Surface | Observed result | Proven scope |
 |---|---|---|
-| repository/data suite | `npm.cmd test`: **272/272** | current static data, manifests, runtime contracts and content gates |
-| complete local orchestration | `npm.cmd run qa`: **282/282** | current release-candidate QA command completed |
+| repository/data suite | `npm.cmd test`: **272/272** | v0.3.0 release data, manifests, runtime contracts and content gates |
+| complete local orchestration | `npm.cmd run qa`: **282/282** | v0.3.0 release-candidate QA command completed |
 | deterministic/runtime libraries | core **235**; sprite-atlas atomicity **63**; environment library **115**; gameplay-support library **33**; enemy profiles **210** | typed deterministic contracts and manifest loaders |
 | procedural audio | **354 assertions / 28 distinct cues** | dimensions, duration, loop, signature and safe-amplitude contracts for original temporary audio |
 | directional runtime smoke | **38 bindings / 10 representatives / 8 directions**, with cleanup and no leaked instance | all directional views plus live state/death cleanup sampling |

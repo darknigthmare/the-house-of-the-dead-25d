@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "chapter_id": "chapter_02",
-  "start": "chained_hatch",
+  "start": "chain_plate",
   "terminal": "chapter_complete",
   "nodes": [
     {
-      "id": "chained_hatch",
+      "id": "chain_plate",
       "kind": "action_branch",
       "label": "Chained hatch route split",
       "next": [
@@ -70,6 +70,14 @@
       "id": "roof_approach",
       "kind": "story",
       "label": "Rooftop approach",
+      "next": [
+        "roof_rescue"
+      ]
+    },
+    {
+      "id": "roof_rescue",
+      "kind": "rescue",
+      "label": "Final rooftop scientist rescue",
       "next": [
         "hangedman_battle"
       ]

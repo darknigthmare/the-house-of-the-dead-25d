@@ -47,22 +47,22 @@ connections = Array[Dictionary]([{
 "from": &"left_elevator",
 "label": "Left elevator to scientist",
 "priority": 0,
-"to": &"scientist_rescue"
+"to": &"back_attack_rescue"
 }, {
 "conditions": [],
 "from": &"right_elevator",
 "label": "Right elevator to scientist",
 "priority": 0,
-"to": &"scientist_rescue"
+"to": &"back_attack_rescue"
 }, {
 "conditions": [SubResource("RouteCondition_scientist_saved")],
-"from": &"scientist_rescue",
+"from": &"back_attack_rescue",
 "label": "Scientist saved — security door",
 "priority": 100,
 "to": &"security_door"
 }, {
 "conditions": [SubResource("RouteCondition_scientist_lost")],
-"from": &"scientist_rescue",
+"from": &"back_attack_rescue",
 "label": "Scientist lost — vent route",
 "priority": 90,
 "to": &"vent_key_route"

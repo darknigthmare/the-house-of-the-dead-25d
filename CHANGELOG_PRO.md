@@ -1,5 +1,17 @@
 # Professional Changelog
 
+## 0.4.0 release candidate — route and runtime-component integrity — 2026-08-25
+
+- Aligned all four secondary route graphs with the active campaign timeline: matching node IDs, start nodes and edges, including `sophie_antechamber` and `roof_rescue`.
+- Added deterministic `RouteOutcomePolicy` resolution so a civilian rescue cannot satisfy a breakable-driven branch; the foyer lock, chain plate and elevator switch require destruction of their exact authored asset.
+- Integrated `PickupController`, `BreakableObject`, `CivilianController` and `EnemySpawnEvent` into the active runtime. Their deterministic tests cover one-shot collection, durability/rewards, visible-contact-only civilian loss and authored spawn scheduling.
+- Added a three-degree eight-sector directional hysteresis. Each actor retains its previous view until the camera crosses the full margin, preventing rapid front/diagonal/side flicker without changing hitboxes, combat timing or the atlas cells.
+- Removed the unused `c04_bonus_gate_seal` and `c04_emergency_supply_crate` profiles and four PNGs, plus the unreferenced `ams-eater-custom.png`; all removed files and import sidecars remain recoverable from Git history.
+- Reduced the content audit to **746 checks / 6 warnings / 0 errors**, with **4 breakables / 4 uses** and **74/74 unique audited binaries**. The six retained warnings are three reference-pending placements and the three explicit directional-animation limitations.
+- Verified `npm.cmd test` at **278/278**, the **286-assertion** Godot deterministic core and the strengthened `npm.cmd run qa` at **292/292**, including gameplay, complete campaign, score and initials/credits smokes.
+- Hardened the release packager: Windows, Linux and Web exports are all mandatory, checksums cover the exact four expected ZIPs, and an unexpected archive now aborts packaging instead of contaminating the release set.
+- Fresh Godot 4.7.1 exports succeed: Windows **182,039,024 bytes**, Linux **146,403,616**, Web **112,777,790 across nine files**, including a **72,933,396-byte** PCK. Windows remained active for the eight-second startup smoke; `qa:web` passes **282/282** and `verify:web` passes. Local Chromium reports isolation true, one accessible 1258×566 main canvas, loaded PCK/WASM, no page errors and only the three expected Godot information logs. No release archive/package publication, commit, push, tag, GitHub release or deployment is claimed yet. Exact Sega-reference fidelity remains unverified without an authorized reference build and licensed masters.
+
 ## 0.3.0 attack-readability and environment-content release — 2026-08-25
 
 - Reworked hostile damage readability. Ordinary and boss-support melee attacks now require a visible attacker, a completed wind-up and real 3D contact before damage can be applied; the remaining legacy depth-threshold path that could damage the player without a readable strike was removed.

@@ -89,13 +89,44 @@ function defaultBehavior(profile) {
   return "walk";
 }
 
+function runtimeEdges(chapter) {
+  const edges = [];
+  for (const node of chapter.nodes ?? []) {
+    for (const key of ["next", "next_success", "next_failure"]) {
+      const target = node[key];
+      if (typeof target === "string" && target.length > 0) edges.push(`${node.id}->${target}`);
+    }
+  }
+  return edges.sort();
+}
+
+function graphEdges(graph) {
+  const edges = [];
+  for (const node of graph.nodes ?? []) {
+    for (const target of node.next ?? []) {
+      const targetId = typeof target === "string" ? target : target?.node;
+      if (typeof targetId === "string" && targetId.length > 0) edges.push(`${node.id}->${targetId}`);
+    }
+  }
+  return edges.sort();
+}
+
 for (const chapter of campaign.chapters) {
   const graph = readJson(`data/routes/${chapter.id}_route_graph.json`);
+  const chapterMetadata = readJson(`data/chapters/${chapter.id}.json`);
   const runtimeIds = new Set(chapter.nodes.map((node) => node.id));
   const graphIds = new Set(graph.nodes.map((node) => node.id));
   const activeOnly = [...runtimeIds].filter((id) => !graphIds.has(id));
   const graphOnly = [...graphIds].filter((id) => !runtimeIds.has(id));
-  warn(activeOnly.length === 0 && graphOnly.length === 0, `${chapter.id}: runtime/route graph drift; active-only=${activeOnly.join(",") || "none"}; graph-only=${graphOnly.join(",") || "none"}`);
+  check(activeOnly.length === 0 && graphOnly.length === 0, `${chapter.id}: runtime/route graph node drift; active-only=${activeOnly.join(",") || "none"}; graph-only=${graphOnly.join(",") || "none"}`);
+  check(String(graph.start ?? "") === String(chapter.start ?? ""), `${chapter.id}: route graph start ${graph.start} differs from runtime start ${chapter.start}`);
+  check(String(chapterMetadata.start ?? "") === String(chapter.start ?? ""), `${chapter.id}: chapter metadata start ${chapterMetadata.start} differs from runtime start ${chapter.start}`);
+  const activeEdges = runtimeEdges(chapter);
+  const secondaryEdges = graphEdges(graph);
+  check(
+    JSON.stringify(activeEdges) === JSON.stringify(secondaryEdges),
+    `${chapter.id}: runtime/route graph edge drift; active=${activeEdges.join(",")}; graph=${secondaryEdges.join(",")}`,
+  );
 
   for (const node of chapter.nodes) {
     const location = `${chapter.id}/${node.id}`;
@@ -350,10 +381,34 @@ check(curienFinaleRuntimeWired, "Curien finale staging is incomplete in the acti
 check(curienSmokeSource.includes("Magician creates a dedicated visible story projectile"), "Curien finale smoke lacks visible-projectile coverage");
 check(curienSmokeSource.includes("minimum five-second hold"), "Curien finale smoke lacks persistent-corpse coverage");
 
-const sourceFiles = walkFiles(join(root, "src")).filter((path) => extname(path) === ".gd");
-for (const controller of ["pickup_controller.gd", "breakable_object.gd", "civilian_controller.gd", "enemy_spawn_event.gd"]) {
-  const references = sourceFiles.filter((path) => !path.endsWith(controller) && readFileSync(path, "utf8").includes(controller));
-  warn(references.length > 0, `${controller} is not instantiated or preloaded by the active runtime`);
+const runtimeComponentContracts = [
+  {
+    id: "pickup_controller.gd",
+    tokens: ["PickupControllerScript.new()", 'name = "PickupController"', "collect_by_shot(player_index)"],
+  },
+  {
+    id: "breakable_object.gd",
+    tokens: ["BreakableObjectScript.new()", 'name = "BreakableObject"', "breakable_controller.take_damage(1.0, player_index)"],
+  },
+  {
+    id: "civilian_controller.gd",
+    tokens: ["CivilianControllerScript.new()", 'name = "CivilianController"', "advance_danger(delta)", "confirm_visible_loss(resolved_reason)"],
+  },
+  {
+    id: "enemy_spawn_event.gd",
+    tokens: ["EnemySpawnEventScript.new()", "configure_from_dictionary(spawn)", 'set_meta("spawn_event", spawn_event)'],
+  },
+];
+for (const contract of runtimeComponentContracts) {
+  for (const token of contract.tokens) {
+    check(combatSource.includes(token), `${contract.id} active runtime contract is missing ${token}`);
+  }
+}
+const runtimeComponentTestPath = join(root, "tests/test_runtime_components.gd");
+check(existsSync(runtimeComponentTestPath), "runtime component integration test exists");
+const runtimeComponentTestSource = existsSync(runtimeComponentTestPath) ? readFileSync(runtimeComponentTestPath, "utf8") : "";
+for (const controller of ["PickupType.new()", "BreakableType.new()", "CivilianType.new()", "SpawnEventType.new()"]) {
+  check(runtimeComponentTestSource.includes(controller), `runtime component test does not instantiate ${controller}`);
 }
 
 console.log(`CONTENT FAMILY AUDIT: ${checks} checks, ${warnings.length} warnings, ${errors.length} errors`);

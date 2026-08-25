@@ -24,7 +24,7 @@
       "kind": "route",
       "label": "Left elevator",
       "next": [
-        "scientist_rescue"
+        "back_attack_rescue"
       ]
     },
     {
@@ -32,11 +32,11 @@
       "kind": "route",
       "label": "Right elevator",
       "next": [
-        "scientist_rescue"
+        "back_attack_rescue"
       ]
     },
     {
-      "id": "scientist_rescue",
+      "id": "back_attack_rescue",
       "kind": "rescue_branch",
       "label": "Rear-attack scientist rescue",
       "next": [

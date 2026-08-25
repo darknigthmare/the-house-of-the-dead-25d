@@ -29,7 +29,7 @@ The older 4×4 files under `assets/sprites/` remain legacy provenance/migration 
 
 ## Current original replacement families
 
-The environment completion wave contains 40 sanitized provenance records: 20 individual material sources converted to albedo, normal and ORM maps, 14 prop atlases and six destructibles with intact/broken outputs. `data/assets/environment_manifest.json` describes all 33 campaign nodes. These files are original fan-made replacements, not Sega source textures or verified arcade geometry.
+The active environment completion contract contains 38 sanitized provenance records: 20 individual material sources converted to albedo, normal and ORM maps, 14 prop atlases and four breakables with intact/broken outputs. `data/assets/environment_manifest.json` describes all 33 campaign nodes. The final bonus-gate seal and emergency supply crate from the earlier production wave were removed as obsolete active assets and remain recoverable through Git history. These files are original fan-made replacements, not Sega source textures or verified arcade geometry.
 
 The gameplay-support wave contains seven projectile cutouts, three HUD families (`life_torch`, `bullet_round`, `reload_offscreen_icon`) and four boss weak-point diagrams. They are original project artwork and do not claim to reproduce captured Sega pixels.
 

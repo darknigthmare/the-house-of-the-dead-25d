@@ -671,50 +671,6 @@
       "status": "original_fan_made"
     },
     {
-      "id": "c04_bonus_gate_seal",
-      "kind": "two_state_destructible",
-      "source": "reports/runtime/environment-sources/destructibles/c04_bonus_gate_seal.png",
-      "source_sha256": "59316e6347b70aafba06b6e0711a3aadbebbc759bbdc384d1ab249fc3ffa62f6",
-      "outputs": {
-        "intact": "assets/environments_v2/destructibles/c04_bonus_gate_seal/c04_bonus_gate_seal_intact.png",
-        "broken": "assets/environments_v2/destructibles/c04_bonus_gate_seal/c04_bonus_gate_seal_broken.png"
-      },
-      "dimensions": {
-        "intact": [
-          1024,
-          1024
-        ],
-        "broken": [
-          1024,
-          1024
-        ]
-      },
-      "generator": "OpenAI Images built-in source plus deterministic split/crop",
-      "status": "original_fan_made"
-    },
-    {
-      "id": "c04_emergency_supply_crate",
-      "kind": "two_state_destructible",
-      "source": "reports/runtime/environment-sources/destructibles/c04_emergency_supply_crate.png",
-      "source_sha256": "88702da3b1e22e250e48da54999c683cab985bb5623facdb5a605be0a101b044",
-      "outputs": {
-        "intact": "assets/environments_v2/destructibles/c04_emergency_supply_crate/c04_emergency_supply_crate_intact.png",
-        "broken": "assets/environments_v2/destructibles/c04_emergency_supply_crate/c04_emergency_supply_crate_broken.png"
-      },
-      "dimensions": {
-        "intact": [
-          1024,
-          1024
-        ],
-        "broken": [
-          1024,
-          1024
-        ]
-      },
-      "generator": "OpenAI Images built-in source plus deterministic split/crop",
-      "status": "original_fan_made"
-    },
-    {
       "id": "mansion_chandelier",
       "kind": "environment_prop",
       "source": "reports/runtime/environment-sources/props_a/mansion_chandelier.png",

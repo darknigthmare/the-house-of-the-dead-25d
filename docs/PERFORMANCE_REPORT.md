@@ -1,5 +1,21 @@
 # Performance Report
 
+## v0.4.0 release candidate — 2026-08-25
+
+The current Godot 4.7.1 candidate exports successfully and starts on the development Windows machine. These are size and startup gates, not a frame-time profile.
+
+| Platform | Local candidate measurement | Verified check |
+|---|---:|---|
+| Windows x64 | **182,039,024 bytes** | hidden launch remained active for eight seconds |
+| Linux x64 | **146,403,616 bytes** | export completed |
+| Web total | **112,777,790 bytes across nine files** | `qa:web` 282/282; `verify:web` passed |
+| Web PCK | **72,933,396 bytes** | below the 100,000,000-byte Web gate |
+| Web WASM | **39,513,091 bytes** | unchanged engine payload |
+
+Local Chromium reports `crossOriginIsolated=true`, one visible accessible 1258×566 main canvas, loaded PCK/WASM resources, no page error and the expected WebGL2 single-thread Godot information logs. This is a rendering/startup gate, not frame pacing evidence.
+
+The strengthened full QA passes 292/292 and includes the complete campaign and interaction smokes. Stable 60 fps, 1% low, CPU/GPU frame time, memory residency and physical light-gun latency remain unprofiled on named hardware; the eight-second Windows check proves startup only.
+
 ## Published v0.3.0 release — 2026-08-25
 
 Immutable tag `v0.3.0` at exact commit `8add70a31a751928ea12c247ca584d8b030b2139` was exported with Godot 4.7.1 and exercised through static, executable-startup, source-distribution and browser gates before publication.

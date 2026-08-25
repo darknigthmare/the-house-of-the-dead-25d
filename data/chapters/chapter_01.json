@@ -6,7 +6,7 @@
   "arcade_date": "December 18, 1998",
   "canonical_source": "The House of the Dead (1996 arcade)",
   "summary": "Rogan and G enter Curien's estate after Sophie's distress call, rescue the surviving researchers, and confront Chariot inside the mansion.",
-  "start": "bridge_scientist_rescue",
+  "start": "garden_rescue",
   "route_graph": "res://data/routes/chapter_01_route_graph.json",
   "rescues_expected": 6,
   "boss": {

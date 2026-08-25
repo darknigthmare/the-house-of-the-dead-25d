@@ -1,6 +1,7 @@
 extends "res://src/gameplay/gameplay_runtime_base.gd"
 
 const EnvironmentPropStateControllerScript := preload("res://src/gameplay/environment_prop_state_controller.gd")
+const RouteOutcomePolicyScript := preload("res://src/rail/route_outcome_policy.gd")
 
 
 func _process(delta: float) -> void:
@@ -268,17 +269,13 @@ func _environment_prop_state_context(node_completing: bool) -> Dictionary:
 		and spawn_cursor >= spawns.size()
 		and not _has_active_hostiles()
 	)
-	var breakable_id := ""
-	if current_node.has("breakable"):
-		var breakable := current_node.get("breakable", {}) as Dictionary
-		breakable_id = str(breakable.get("asset", ""))
 	return {
 		"node_elapsed": node_elapsed,
 		"encounter_clear": encounter_clear,
 		"node_completing": node_completing,
 		"branch_success": branch_success,
 		"breakable_destroyed": not destroyed_breakable_id.is_empty(),
-		"breakable_id": breakable_id,
+		"breakable_id": destroyed_breakable_id,
 		"boss_phase": boss_phase,
 	}
 
@@ -306,16 +303,17 @@ func _finish_node() -> void:
 	if active_civilian != null and is_instance_valid(active_civilian) and not bool(active_civilian.get_meta("dead", false)):
 		_rescue_civilian(active_civilian)
 	_update_environment_prop_state_events(true)
+	var route_success := RouteOutcomePolicyScript.branch_succeeded(current_node, branch_success, destroyed_breakable_id)
 	var next_id := str(current_node.get("next", "chapter_complete"))
 	if current_node.has("next_success"):
-		next_id = str(current_node.get("next_success")) if branch_success else str(current_node.get("next_failure"))
+		next_id = str(current_node.get("next_success")) if route_success else str(current_node.get("next_failure"))
 	if next_id == "chapter_complete":
 		_complete_chapter()
 		return
 	current_node_id = next_id
 	state = "node_transition"
 	state_timer = 1.5
-	_show_overlay("ROUTE UPDATED", "Conséquence : %s" % ("SUCCÈS" if branch_success else "PROGRESSION"), state_timer)
+	_show_overlay("ROUTE UPDATED", "Conséquence : %s" % ("SUCCÈS" if route_success else "PROGRESSION"), state_timer)
 
 
 func _complete_chapter() -> void:

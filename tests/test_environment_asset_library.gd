@@ -15,7 +15,7 @@ func _initialize() -> void:
 	_expect_equal(library.materials.size(), 20, "library exposes twenty individual materials")
 	_expect_equal(library.styles.size(), 5, "library exposes five environment styles")
 	_expect_equal(library.nodes.size(), 33, "library exposes all campaign sequence profiles")
-	_expect_equal(library.destructibles.size(), 6, "library exposes six two-state destructibles")
+	_expect_equal(library.destructibles.size(), 4, "library exposes four active two-state destructibles")
 	_expect_equal(library.props.size(), 14, "library exposes fourteen environment props")
 	_expect_equal(library.animated_effects.size(), 4, "library exposes four authored animated environment effects")
 	for effect_id: String in ["drips", "water_flow", "electrical_arc", "monitor_scan"]:
@@ -77,10 +77,10 @@ func _initialize() -> void:
 	foyer_door_sprite.hframes = 2
 	PropStateControllerType.configure_sprite(foyer_door_sprite, "mansion_double_door", 0, foyer_door)
 	_expect_false(PropStateControllerType.apply_pending_event(foyer_door_sprite, {"branch_success": true, "breakable_destroyed": false, "node_completing": false, "breakable_id": "c01_foyer_door_lock"}), "civilian success alone cannot open the foyer door")
-	_expect_false(PropStateControllerType.apply_pending_event(foyer_door_sprite, {"branch_success": true, "breakable_destroyed": true, "node_completing": false, "breakable_id": "wrong_lock"}), "unrelated breakable cannot open the foyer door")
-	_expect_true(PropStateControllerType.apply_pending_event(foyer_door_sprite, {"branch_success": true, "breakable_destroyed": true, "node_completing": false, "breakable_id": "c01_foyer_door_lock"}), "destroying the foyer lock opens its door")
+	_expect_false(PropStateControllerType.apply_pending_event(foyer_door_sprite, {"branch_success": false, "breakable_destroyed": true, "node_completing": false, "breakable_id": "wrong_lock"}), "unrelated breakable cannot open the foyer door")
+	_expect_true(PropStateControllerType.apply_pending_event(foyer_door_sprite, {"branch_success": false, "breakable_destroyed": true, "node_completing": false, "breakable_id": "c01_foyer_door_lock"}), "destroying the foyer lock opens its door without a shared branch flag")
 	_expect_equal(foyer_door_sprite.frame, 1, "foyer door displays its open frame")
-	_expect_false(PropStateControllerType.apply_pending_event(foyer_door_sprite, {"branch_success": true, "breakable_destroyed": true, "node_completing": false, "breakable_id": "c01_foyer_door_lock"}), "door state event is one-shot")
+	_expect_false(PropStateControllerType.apply_pending_event(foyer_door_sprite, {"branch_success": false, "breakable_destroyed": true, "node_completing": false, "breakable_id": "c01_foyer_door_lock"}), "door state event is one-shot")
 
 	var specimen_bay := library.get_scene_profile("back_attack_rescue", "laboratory")
 	var specimen_props := specimen_bay.get("props", []) as Array

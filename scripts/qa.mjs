@@ -21,7 +21,8 @@ const required = [
   'docs/FIDELITY_REPORT.md', 'docs/SPRITE_PRODUCTION_BIBLE.md',
   'docs/ASSET_LICENSE_MANIFEST.md', 'docs/MISSING_LICENSED_ASSETS.md',
   'docs/CONTENT_ASSET_CATALOG.md',
-  'scripts/smoke_curien_finale.gd'
+  'scripts/smoke_curien_finale.gd', 'scripts/smoke_gameplay.gd',
+  'scripts/smoke_campaign.gd', 'scripts/smoke_score_qa.gd', 'scripts/smoke_initials.gd'
 ];
 for (const file of required) check(existsSync(join(root, file)), `required file: ${file}`);
 
@@ -100,7 +101,7 @@ if (!args.has('--data-only') && !args.has('--web-only')) {
       process.stdout.write(testRun.stdout ?? '');
       if (testRun.status !== 0) process.stderr.write(testRun.stderr ?? '');
     }
-    const directionalRuns = [
+    const runtimeRuns = [
       ['res://tests/test_sprite_atlas_library_atomic.gd', 'transactional sprite manifest test'],
       ['res://tests/test_environment_asset_library.gd', 'environment asset library test'],
       ['res://tests/test_gameplay_support_library.gd', 'gameplay support library test'],
@@ -108,8 +109,12 @@ if (!args.has('--data-only') && !args.has('--web-only')) {
       ['res://tests/test_procedural_audio.gd', 'procedural audio content test'],
       ['res://scripts/smoke_directional_sprites.gd', 'directional sprite runtime smoke'],
       ['res://scripts/smoke_curien_finale.gd', 'Curien finale narrative smoke'],
+      ['res://scripts/smoke_gameplay.gd', 'gameplay interaction smoke'],
+      ['res://scripts/smoke_campaign.gd', 'full campaign smoke'],
+      ['res://scripts/smoke_score_qa.gd', 'score audit smoke'],
+      ['res://scripts/smoke_initials.gd', 'initials and credits smoke'],
     ];
-    for (const [script, label] of directionalRuns) {
+    for (const [script, label] of runtimeRuns) {
       const run = spawnSync(exe, ['--headless', '--path', root, '--script', script], { encoding: 'utf8', timeout: 120000 });
       check(run.status === 0, label);
       process.stdout.write(run.stdout ?? '');

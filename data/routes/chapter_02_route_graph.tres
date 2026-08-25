@@ -29,16 +29,16 @@ compare_value = true
 
 [resource]
 script = ExtResource("1_graph")
-entry_segment_id = &"chained_hatch"
+entry_segment_id = &"chain_plate"
 connections = Array[Dictionary]([{
 "conditions": [SubResource("RouteCondition_hatch_opened")],
-"from": &"chained_hatch",
+"from": &"chain_plate",
 "label": "Hatch opened — underground passage",
 "priority": 100,
 "to": &"underground_passage"
 }, {
 "conditions": [SubResource("RouteCondition_hatch_missed")],
-"from": &"chained_hatch",
+"from": &"chain_plate",
 "label": "Hatch missed — great doors",
 "priority": 90,
 "to": &"great_doors"
@@ -81,7 +81,13 @@ connections = Array[Dictionary]([{
 }, {
 "conditions": [],
 "from": &"roof_approach",
-"label": "Roof to Hangedman",
+"label": "Roof approach to rescue",
+"priority": 0,
+"to": &"roof_rescue"
+}, {
+"conditions": [],
+"from": &"roof_rescue",
+"label": "Roof rescue to Hangedman",
 "priority": 0,
 "to": &"hangedman_battle"
 }, {

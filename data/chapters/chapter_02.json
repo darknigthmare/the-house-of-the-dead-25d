@@ -6,7 +6,7 @@
   "arcade_date": "December 18, 1998",
   "canonical_source": "The House of the Dead (1996 arcade)",
   "summary": "The agents push through the mansion's underground and library routes before pursuing Hangedman onto the roof.",
-  "start": "chained_hatch",
+  "start": "chain_plate",
   "route_graph": "res://data/routes/chapter_02_route_graph.json",
   "rescues_expected": 6,
   "boss": {

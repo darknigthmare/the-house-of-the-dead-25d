@@ -36,8 +36,6 @@ const breakableAssets = {
   chain_plate: "c02_chained_hatch_plate",
   elevator_switch: "c03_elevator_route_switch",
   vent_key_route: "c03_vent_key_container",
-  bonus_gate: "c04_bonus_gate_seal",
-  bonus_room: "c04_emergency_supply_crate",
 };
 
 const timeline = JSON.parse(fs.readFileSync(timelinePath, "utf8"));

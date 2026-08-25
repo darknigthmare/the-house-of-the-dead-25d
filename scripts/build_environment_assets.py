@@ -54,8 +54,6 @@ DESTRUCTIBLE_IDS = (
     "c02_chained_hatch_plate",
     "c03_elevator_route_switch",
     "c03_vent_key_container",
-    "c04_bonus_gate_seal",
-    "c04_emergency_supply_crate",
 )
 
 PROP_SPECS: dict[str, dict[str, Any]] = {

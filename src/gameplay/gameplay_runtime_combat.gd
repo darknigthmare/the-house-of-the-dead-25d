@@ -1,6 +1,10 @@
 extends "res://src/gameplay/gameplay_runtime_flow.gd"
 
 const EnvironmentMotionControllerScript := preload("res://src/gameplay/environment_motion_controller.gd")
+const PickupControllerScript := preload("res://src/gameplay/pickup_controller.gd")
+const BreakableObjectScript := preload("res://src/gameplay/breakable_object.gd")
+const CivilianControllerScript := preload("res://src/gameplay/civilian_controller.gd")
+const EnemySpawnEventScript := preload("res://src/gameplay/enemy_spawn_event.gd")
 const DEFAULT_ATTACK_TELEGRAPH_SECONDS := 0.65
 const DEFAULT_MELEE_RANGE := 2.5
 const DEFAULT_PROJECTILE_MIN_VISIBLE_TRAVEL := 3.0
@@ -11,11 +15,15 @@ const BOSS_MELEE_RECOVERY_SECONDS := 0.55
 
 
 func _spawn_enemy(spawn: Dictionary) -> Node3D:
+	var spawn_event: EnemySpawnEvent = EnemySpawnEventScript.new()
+	spawn_event.configure_from_dictionary(spawn)
+	spawn = spawn_event.to_spawn_dictionary()
 	var actor_id := str(spawn.get("actor", "sam_a1"))
 	var stats := _runtime_stats_for_actor(actor_id)
 	var position_data := spawn.get("position", [0.0, 0.0, -11.0]) as Array
 	var actor_position := Vector3(float(position_data[0]), float(position_data[1]), float(position_data[2]))
 	var actor := _create_actor(actor_id, actor_position, stats, "enemy")
+	actor.set_meta("spawn_event", spawn_event)
 	var behavior := str(stats.get("behavior", "walk"))
 	if spawn.has("behavior"):
 		behavior = str(spawn.behavior)
@@ -89,6 +97,11 @@ func _spawn_civilian(data: Dictionary) -> void:
 				actor_id = candidate
 				break
 	active_civilian = _create_actor(actor_id, Vector3(float(position_data[0]), float(position_data[1]), float(position_data[2])), {"health": 1.0, "speed": 0.0, "scale": 0.94, "score": 0}, "civilian")
+	var civilian_controller: CivilianController = CivilianControllerScript.new()
+	civilian_controller.name = "CivilianController"
+	civilian_controller.configure(data)
+	active_civilian.add_child(civilian_controller)
+	civilian_controller.enter_danger()
 	active_civilian.set_meta("deadline", node_elapsed + float(data.get("deadline", 7.0)))
 	active_civilian.set_meta("deadline_expired", false)
 	active_civilian.set_meta("rescued", false)
@@ -127,8 +140,7 @@ func _spawn_breakable(data: Dictionary) -> void:
 	var position_data := data.get("position", [0.0, 0.7, -9.0]) as Array
 	var fallback_assets := {
 		"foyer_choice": "c01_foyer_door_lock", "chain_plate": "c02_chained_hatch_plate",
-		"elevator_switch": "c03_elevator_route_switch", "vent_key_route": "c03_vent_key_container",
-		"bonus_gate": "c04_bonus_gate_seal", "bonus_room": "c04_emergency_supply_crate"
+		"elevator_switch": "c03_elevator_route_switch", "vent_key_route": "c03_vent_key_container"
 	}
 	var asset_id := str(data.get("asset", fallback_assets.get(current_node_id, "")))
 	var profile := environment_asset_library.get_destructible(asset_id)
@@ -139,6 +151,14 @@ func _spawn_breakable(data: Dictionary) -> void:
 		"pixel_size": float(profile.get("pixel_size", 0.0045))
 	}
 	var actor := _create_actor(asset_id if not asset_id.is_empty() else "medal", Vector3(float(position_data[0]), float(position_data[1]), float(position_data[2])), actor_stats, "breakable")
+	var breakable_controller: BreakableObject = BreakableObjectScript.new()
+	breakable_controller.name = "BreakableObject"
+	breakable_controller.configure({
+		"id": asset_id,
+		"health": float(data.get("health", 2.0)),
+		"reward": {"pickup": str(data.get("pickup", "medal"))},
+	})
+	actor.add_child(breakable_controller)
 	actor.set_meta("pickup", str(data.get("pickup", "medal")))
 	actor.set_meta("broken_texture", str(profile.get("broken", "")))
 	actor.set_meta("branch_target", true)
@@ -163,6 +183,15 @@ func _spawn_pickup(data: Dictionary) -> void:
 	}
 	var pickup_id := str(data.get("id", "%s_%d" % [pickup_type, active_actors.size()]))
 	var actor := _create_actor(pickup_id, Vector3(float(position_data[0]), float(position_data[1]), float(position_data[2])), actor_stats, "pickup")
+	var pickup_controller: PickupController = PickupControllerScript.new()
+	pickup_controller.name = "PickupController"
+	pickup_controller.configure({
+		"id": pickup_id,
+		"pickup": pickup_type,
+		"motion": str(data.get("motion", "bob")),
+		"phase": float(data.get("phase", active_actors.size())) * 0.71,
+	})
+	actor.add_child(pickup_controller)
 	actor.set_meta("pickup", pickup_type)
 	actor.set_meta("pickup_origin_y", actor.position.y)
 	actor.set_meta("pickup_motion", str(data.get("motion", "bob")))
@@ -305,12 +334,16 @@ func _update_actors(delta: float) -> void:
 		_animate_actor(actor)
 		if role == "pickup":
 			var pickup_origin_y := float(actor.get_meta("pickup_origin_y", actor.position.y))
-			var pickup_phase := float(actor.get_meta("pickup_phase", 0.0))
-			var pickup_motion := str(actor.get_meta("pickup_motion", "bob"))
-			actor.position.y = pickup_origin_y + (absf(sin(age * 3.6 + pickup_phase)) * 0.22 if pickup_motion == "hop" else sin(age * 2.5 + pickup_phase) * 0.09)
+			var pickup_controller := actor.get_node_or_null("PickupController") as PickupController
+			if pickup_controller != null:
+				actor.position.y = pickup_origin_y + pickup_controller.vertical_offset(age)
+			else:
+				var pickup_phase := float(actor.get_meta("pickup_phase", 0.0))
+				var pickup_motion := str(actor.get_meta("pickup_motion", "bob"))
+				actor.position.y = pickup_origin_y + (absf(sin(age * 3.6 + pickup_phase)) * 0.22 if pickup_motion == "hop" else sin(age * 2.5 + pickup_phase) * 0.09)
 			var pickup_sprite := actor.get_node_or_null("Sprite3D") as Sprite3D
 			if pickup_sprite != null:
-				pickup_sprite.modulate.a = 0.88 + sin(age * 4.0 + pickup_phase) * 0.12
+				pickup_sprite.modulate.a = pickup_controller.alpha_at(age) if pickup_controller != null else 1.0
 			continue
 		if role == "civilian":
 			if bool(actor.get_meta("rescued", false)):
@@ -325,8 +358,15 @@ func _update_actors(delta: float) -> void:
 					if actor == active_civilian:
 						active_civilian = null
 					actor.queue_free()
-			elif state == "node" and node_elapsed >= float(actor.get_meta("deadline", 999.0)):
-				_expire_civilian_rescue_window(actor)
+			elif state == "node":
+				var civilian_controller := actor.get_node_or_null("CivilianController") as CivilianController
+				var rescue_window_expired := (
+					civilian_controller.advance_danger(delta)
+					if civilian_controller != null
+					else node_elapsed >= float(actor.get_meta("deadline", 999.0))
+				)
+				if rescue_window_expired:
+					_expire_civilian_rescue_window(actor)
 			continue
 		if role != "enemy" and role != "projectile":
 			continue
@@ -546,7 +586,7 @@ func _actor_attack(actor: Node3D) -> bool:
 		if bool(actor.get_meta("target_civilian", false)):
 			if not _has_live_civilian_target(actor):
 				return false
-			_kill_civilian(active_civilian, false)
+			_kill_civilian(active_civilian, false, 0, &"enemy_melee_contact")
 		else:
 			_damage_player(_first_active_player(), 1, "enemy_melee")
 		performed = true
@@ -617,7 +657,7 @@ func _resolve_projectile_contact(projectile: Node3D) -> bool:
 		return false
 	if can_damage and has_contact:
 		if target_is_civilian:
-			_kill_civilian(active_civilian, false)
+			_kill_civilian(active_civilian, false, 0, &"enemy_projectile_contact")
 		else:
 			_damage_player(_first_active_player(), 1, "enemy_projectile")
 		_kill_actor(projectile, -1, false)
@@ -706,8 +746,12 @@ func _damage_actor(actor: Node3D, zone: String, multiplier: float, player_index:
 		_kill_civilian(actor, true, player_index)
 		return
 	if role == "pickup":
+		var pickup_controller := actor.get_node_or_null("PickupController") as PickupController
+		if pickup_controller == null or not pickup_controller.collect_by_shot(player_index):
+			return
 		_play_sfx("rescue")
 		_spawn_impact(actor.global_position + Vector3.UP * 0.45, "pickup")
+		_apply_pickup(str(actor.get_meta("pickup", "medal")), player_index)
 		_kill_actor(actor, player_index, false)
 		return
 	if role == "projectile":
@@ -720,6 +764,19 @@ func _damage_actor(actor: Node3D, zone: String, multiplier: float, player_index:
 		_spawn_impact(actor.global_position + Vector3.UP * 0.5, "projectile")
 		_feed("PROJECTILE DESTROYED", Color("#e2cc8c"))
 		_kill_actor(actor, -1, false)
+		return
+	if role == "breakable":
+		var breakable_controller := actor.get_node_or_null("BreakableObject") as BreakableObject
+		if breakable_controller == null or not breakable_controller.take_damage(1.0, player_index):
+			return
+		var durability := breakable_controller.durability
+		actor.set_meta("health", durability)
+		actor.set_meta("hit_timer", 0.22)
+		actor.set_meta("last_hit_zone", zone)
+		_play_sfx("hit")
+		_spawn_impact(actor.global_position + Vector3(0.0, 1.15, 0.05), zone)
+		if breakable_controller.is_broken:
+			_kill_actor(actor, player_index, true)
 		return
 	if role == "enemy":
 		var armor_zones := actor.get_meta("armor_zones", []) as Array
@@ -743,8 +800,6 @@ func _damage_actor(actor: Node3D, zone: String, multiplier: float, player_index:
 		_play_sfx("empty")
 		return
 	var damage := multiplier
-	if role in ["breakable", "pickup"]:
-		damage = 1.0
 	var health := float(actor.get_meta("health", 1.0)) - damage
 	actor.set_meta("health", health)
 	actor.set_meta("hit_timer", 0.22)
@@ -780,16 +835,17 @@ func _kill_actor(actor: Node3D, player_index: int, award: bool) -> void:
 		_add_score(player_index, int(actor.get_meta("score", 80)), "TARGET DOWN", str(actor.get_meta("actor_id", "enemy")), kill_shot_type)
 	if role == "breakable":
 		destroyed_breakable_id = str(actor.get_meta("actor_id", ""))
-		branch_success = true
-		_apply_pickup(str(actor.get_meta("pickup", "medal")), player_index)
+		var pickup_type := str(actor.get_meta("pickup", "medal"))
+		var breakable_controller := actor.get_node_or_null("BreakableObject") as BreakableObject
+		if breakable_controller != null:
+			pickup_type = str(breakable_controller.get_reward().get("pickup", pickup_type))
+		_apply_pickup(pickup_type, player_index)
 		var broken_path := str(actor.get_meta("broken_texture", ""))
 		var breakable_sprite := actor.get_node_or_null("Sprite3D") as Sprite3D
 		if breakable_sprite != null and not broken_path.is_empty():
 			breakable_sprite.texture = load(broken_path) as Texture2D
 	if actor == current_boss:
 		_on_boss_defeated()
-	if role == "pickup" and player_index >= 0:
-		_apply_pickup(str(actor.get_meta("pickup", "medal")), player_index)
 	var sprite := actor.get_node_or_null("Sprite3D") as Sprite3D
 	if sprite != null:
 		if role != "breakable" and sprite.hframes * sprite.vframes >= 64:
@@ -804,8 +860,12 @@ func _kill_actor(actor: Node3D, player_index: int, award: bool) -> void:
 	active_actors.erase(actor)
 
 
-func _kill_civilian(civilian: Node3D, by_player: bool, player_index: int = 0) -> void:
+func _kill_civilian(civilian: Node3D, by_player: bool, player_index: int = 0, visible_reason: StringName = &"enemy_melee_contact") -> void:
 	if not is_instance_valid(civilian) or bool(civilian.get_meta("dead", false)):
+		return
+	var civilian_controller := civilian.get_node_or_null("CivilianController") as CivilianController
+	var resolved_reason := &"friendly_fire" if by_player else visible_reason
+	if civilian_controller != null and not civilian_controller.confirm_visible_loss(resolved_reason):
 		return
 	all_scientists_saved = false
 	branch_success = false
@@ -821,6 +881,9 @@ func _kill_civilian(civilian: Node3D, by_player: bool, player_index: int = 0) ->
 
 func _rescue_civilian(civilian: Node3D) -> void:
 	if not is_instance_valid(civilian) or bool(civilian.get_meta("dead", false)) or bool(civilian.get_meta("rescued", false)):
+		return
+	var civilian_controller := civilian.get_node_or_null("CivilianController") as CivilianController
+	if civilian_controller != null and not civilian_controller.request_rescue(_first_active_player()):
 		return
 	civilian.set_meta("rescued", true)
 	civilian.set_meta("rescued_age", 0.0)

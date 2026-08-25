@@ -1139,18 +1139,6 @@
       "broken": "res://assets/environments_v2/destructibles/c03_vent_key_container/c03_vent_key_container_broken.png",
       "pixel_size": 0.0042,
       "world_scale": 0.66
-    },
-    "c04_bonus_gate_seal": {
-      "intact": "res://assets/environments_v2/destructibles/c04_bonus_gate_seal/c04_bonus_gate_seal_intact.png",
-      "broken": "res://assets/environments_v2/destructibles/c04_bonus_gate_seal/c04_bonus_gate_seal_broken.png",
-      "pixel_size": 0.0052,
-      "world_scale": 1.05
-    },
-    "c04_emergency_supply_crate": {
-      "intact": "res://assets/environments_v2/destructibles/c04_emergency_supply_crate/c04_emergency_supply_crate_intact.png",
-      "broken": "res://assets/environments_v2/destructibles/c04_emergency_supply_crate/c04_emergency_supply_crate_broken.png",
-      "pixel_size": 0.0046,
-      "world_scale": 0.82
     }
   },
   "props": {

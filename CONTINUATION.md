@@ -1,8 +1,42 @@
 # Continuation
 
-## Current state — v0.3.0 published and verified
+## Current working tree — unpublished v0.4.0 release candidate
 
-The package version is `0.3.0`. The attack-readability, environment-state and content-coverage pass is published from immutable tag `v0.3.0` at exact commit `8add70a31a751928ea12c247ca584d8b030b2139`.
+The package version is `0.4.0`. The working tree is ahead of immutable public v0.3.0 and contains a bounded route/component/directional integrity wave plus fresh local Windows, Linux and Web exports. It is not yet a commit, push, tag, release or deployment.
+
+Implemented:
+
+- aligned all JSON/TRES route graphs, chapter start metadata and runtime timeline topology, including `garden_rescue`, `sophie_antechamber`, `chain_plate`, `roof_rescue` and `back_attack_rescue`;
+- added deterministic `RouteOutcomePolicy` resolution so `branch_success` for breakable nodes requires the exact destroyed breakable ID, while rescue-only branches preserve civilian success/failure;
+- integrated `PickupController`, `BreakableObject`, `CivilianController` and `EnemySpawnEvent` into the active metadata-driven runtime, with timer-only civilian loss explicitly rejected;
+- added three-degree directional-sector hysteresis with per-actor previous-direction state, so camera jitter around a 22.5-degree boundary does not flicker the visible atlas row;
+- removed the two obsolete Chapter 4 destructible profiles/four PNGs and the unreferenced AMS item PNG; the deleted files and import sidecars remain recoverable through Git history;
+- reduced the reproducible content audit to 746 checks, 6 warnings and 0 errors, with 4 active breakables/4 uses and 74/74 unique audited binaries.
+
+Verification already completed:
+
+- `npm.cmd test`: 278/278 checks passed;
+- Godot deterministic core: 286 assertions passed;
+- strengthened `npm.cmd run qa`: 292/292 checks passed;
+- gameplay, complete-campaign, score-ledger and initials/credits smokes: passed inside the aggregate QA command.
+- Windows x64 export: 182,039,024 bytes, SHA-256 `4c4ebc7eba42658a389312f312f3e465ff1501c9746ffc7345c193d1021e6d3d`; hidden eight-second startup passed;
+- Linux x64 export: 146,403,616 bytes, SHA-256 `1ad3d1c3c53104c07daae1c5b7a30e29a131aa5047b1ae9a0d70254600a29788`;
+- Web export: 112,777,790 bytes across nine files; PCK 72,933,396 bytes (`caa42ba7…`), WASM 39,513,091 (`35116f68…`), `qa:web` 282/282 and `verify:web` passed after the accessibility patch.
+- local Chromium through agent-browser 0.35: `crossOriginIsolated=true`, one visible accessible 1258×566 `main` canvas, PCK/WASM loaded, no error overlay or page error and only three expected Godot informational logs.
+
+Files changed in this wave:
+
+- route/chapter data under `data/routes/` and `data/chapters/`;
+- runtime policy/components under `src/rail/route_outcome_policy.gd` and `src/gameplay/`;
+- deterministic coverage in `tests/test_route_outcome_policy.gd`, `tests/test_runtime_components.gd`, `tests/test_route_graph_resources.gd`, `tests/test_environment_asset_library.gd` and `tests/test_runner.gd`;
+- environment manifests/provenance and reproducible scripts under `data/assets/` and `scripts/`, including the strengthened `scripts/qa.mjs`;
+- current audit, route, QA, changelog and continuation documentation.
+
+No exact Sega arcade fidelity is certified. The three provisional placements and the directional-animation limitations remain explicit.
+
+## Published baseline — v0.3.0 published and verified
+
+The published v0.3.0 release package version is `0.3.0`. The attack-readability, environment-state and content-coverage pass is published from immutable tag `v0.3.0` at exact commit `8add70a31a751928ea12c247ca584d8b030b2139`.
 
 Completed v0.3.0 implementation:
 
@@ -17,7 +51,7 @@ Completed v0.3.0 implementation:
 - four original OpenAI-generated transparent environment strips are integrated through the environment manifest and runtime motion controller: falling drips, flowing water, electrical arcs and monitor scan, each with eight 256-pixel frames in a 2048×256 RGBA image;
 - the Magician finale respawns Curien as a non-targetable story actor, shows Magician's visible fireball strike, applies Curien hit-recoil and death-fall frames, and keeps the grounded corpse for a minimum verified five-second hold before cleanup.
 
-Latest verified release-candidate results:
+Recorded v0.3.0 release-candidate results:
 
 - `npm.cmd test`: 272/272;
 - `npm.cmd run qa`: 282/282;
@@ -102,14 +136,19 @@ The release contains the reviewed Godot import metadata required by its texture 
 
 ## Next exact task
 
-1. Resolve the 16 documented content-audit warnings only when the route evidence or architecture work is available; do not invent arcade-exact placements.
-2. Perform clean physical Windows installation, physical Gun4IR/Sinden/two-light-gun validation and named-hardware frame-time/memory profiling.
-3. Compare against an authorized, revision-identifiable Sega reference build and licensed masters before making any exact-fidelity claim; keep v0.2.0, v0.2.1 and v0.3.0 tags immutable.
+1. After the final breakable-state correction, rerun its targeted environment test, the deterministic core suite and the complete QA orchestration; do not carry forward hashes from an older tree.
+2. Re-export Windows, Linux and Web from that same verified tree, reapply the Web accessibility patch, rerun `qa:web`/`verify:web`, the Windows startup smoke and local browser startup, then record the fresh sizes and SHA-256 values.
+3. Review and stage that exact tree including the tracked Web export, commit it, push `HEAD:main`, then require CI green on the exact commit.
+4. Only after CI passes, create and validate fresh v0.4.0 release archives from clean `HEAD`, then tag/release without moving v0.3.0 or replacing its archives.
+5. Resolve the three provisional enemy placements only from an authorized, revision-identifiable Sega reference build; do not invent arcade-exact placement evidence.
+6. Replace mirrored right/back-right profiles and compact semantic cells only with genuinely authored directional multi-frame art and recorded provenance; then perform physical Windows/light-gun and named-hardware profiling gates.
 
 ## Commands to resume
 
 ```powershell
 npm.cmd test
+node scripts/audit_content_families.mjs
+& '.tools\godot-4.7.1\Godot_v4.7.1-stable_win64_console.exe' --headless --path . --script res://tests/test_runner.gd
 npm.cmd run qa
 & '.tools\godot-4.7.1\Godot_v4.7.1-stable_win64_console.exe' --headless --path . --script res://scripts/parse_runtime.gd
 & '.tools\godot-4.7.1\Godot_v4.7.1-stable_win64_console.exe' --headless --path . --script res://tests/test_environment_asset_library.gd

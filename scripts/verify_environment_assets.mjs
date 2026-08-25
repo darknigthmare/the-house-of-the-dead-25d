@@ -32,7 +32,6 @@ const EXPECTED_NODES = [
 const EXPECTED_DESTRUCTIBLES = [
   'c01_foyer_door_lock', 'c02_chained_hatch_plate',
   'c03_elevator_route_switch', 'c03_vent_key_container',
-  'c04_bonus_gate_seal', 'c04_emergency_supply_crate',
 ];
 const EXPECTED_PROPS = [
   'mansion_chandelier', 'mansion_sconce', 'mansion_double_door',
@@ -443,7 +442,7 @@ for (const effectId of EXPECTED_ANIMATED_EFFECTS) {
 }
 
 check(Array.isArray(provenance.assets), 'provenance contains asset records');
-check(provenance.assets.length === 40, 'provenance records all 40 generated assets');
+check(provenance.assets.length === 38, 'provenance records all 38 active generated assets');
 check(Array.isArray(provenance.failures) && provenance.failures.length === 0, 'provenance reports zero generation failures');
 const provenanceIds = provenance.assets.map((entry) => entry.id).sort();
 const allIds = [...EXPECTED_MATERIALS, ...EXPECTED_DESTRUCTIBLES, ...EXPECTED_PROPS].sort();
@@ -458,7 +457,7 @@ for (const entry of provenance.assets) {
 }
 
 const generatedPngs = listFiles(outputRoot).filter((path) => path.toLowerCase().endsWith('.png'));
-check(generatedPngs.length === 90, `generated tree contains exactly 90 PNG files (got ${generatedPngs.length})`);
+check(generatedPngs.length === 86, `generated tree contains exactly 86 PNG files (got ${generatedPngs.length})`);
 
 if (failures.length > 0) {
   console.error(`ENVIRONMENT ASSET VERIFY FAILED: ${failures.length}/${assertions} assertions failed`);
@@ -467,4 +466,4 @@ if (failures.length > 0) {
 }
 
 const bytes = generatedPngs.reduce((sum, path) => sum + statSync(path).size, 0);
-console.log(`ENVIRONMENT ASSET VERIFY PASSED: ${assertions} assertions; 20 materials, 33 nodes, 6 destructibles, 14 props, 4 animated effects; ${(bytes / 1024 / 1024).toFixed(2)} MiB source PNG`);
+console.log(`ENVIRONMENT ASSET VERIFY PASSED: ${assertions} assertions; 20 materials, 33 nodes, 4 active destructibles, 14 props, 4 animated effects; ${(bytes / 1024 / 1024).toFixed(2)} MiB source PNG`);

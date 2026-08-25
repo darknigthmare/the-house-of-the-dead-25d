@@ -1,17 +1,33 @@
 # Build Guide
 
+## v0.4.0 release candidate — 2026-08-25
+
+The current package version is `0.4.0`. `npm.cmd test` passes 278/278, the deterministic Godot core passes 286 assertions and strengthened `npm.cmd run qa` passes 292/292. This candidate is not yet a commit, tag, GitHub release or Vercel deployment.
+
+Fresh Godot 4.7.1 outputs from this exact working tree:
+
+| Output | Local size | Candidate verification |
+|---|---:|---|
+| `build/windows/The_House_of_the_Dead_25D.exe` | **182,039,024 bytes** | export succeeded; hidden eight-second startup passed; SHA-256 `4c4ebc7eba42658a389312f312f3e465ff1501c9746ffc7345c193d1021e6d3d` |
+| `build/linux/The_House_of_the_Dead_25D.x86_64` | **146,403,616 bytes** | export succeeded; SHA-256 `1ad3d1c3c53104c07daae1c5b7a30e29a131aa5047b1ae9a0d70254600a29788` |
+| `build/web/` | **112,777,790 bytes across nine files** | accessibility patch applied; `qa:web` 282/282; `verify:web` passed |
+| Web PCK | **72,933,396 bytes** | SHA-256 `caa42ba7ee0f95cf129da2a8de36a1bceefcc4d8d28eabe4957e8b1d02843b46` |
+| Web WASM | **39,513,091 bytes** | SHA-256 `35116f68540ac41acf7d71ea457added91b5e960a9cca3e2acc72918eaf01277` |
+Local Vercel serving plus agent-browser 0.35 verified isolation, one accessible 1258×566 `main` canvas, loaded PCK/WASM resources, no page error and only the three expected Godot informational logs.
+
+
 ## v0.3.0 published release — 2026-08-25
 
 Immutable tag `v0.3.0` at exact commit `8add70a31a751928ea12c247ca584d8b030b2139` has been validated, exported, packaged, source-ZIP tested, published on GitHub and deployed to Vercel production.
 
-Run the two aggregate gates from the repository root:
+To reproduce immutable v0.3.0, first check out tag `v0.3.0` in a clean worktree, then run the two aggregate gates from that worktree root:
 
 ```powershell
 npm.cmd test
 npm.cmd run qa
 ```
 
-The recorded candidate results are 272/272 and 282/282 respectively. The detailed Godot surfaces are also reproducible with the existing scripts, notably:
+The recorded v0.3.0 candidate results are 272/272 and 282/282 respectively. From the checked-out v0.3.0 tag, the detailed Godot surfaces are reproducible with its scripts, notably:
 
 ```powershell
 & '.tools\godot-4.7.1\Godot_v4.7.1-stable_win64_console.exe' --headless --path . --script res://tests/test_environment_asset_library.gd
@@ -25,9 +41,9 @@ The recorded candidate results are 272/272 and 282/282 respectively. The detaile
 & '.tools\godot-4.7.1\Godot_v4.7.1-stable_win64_console.exe' --headless --path . --script res://scripts/smoke_initials.gd
 ```
 
-Expected candidate evidence: core 235, atlas 63, environment library 115, gameplay-support library 33, enemy profiles 210, audio 354/28, directional smoke 38/10/8 without leak, Curien smoke 29 without leak, environment verifier 1,708, animated effects 348/348, gameplay support 113/113, content audit 739/16 warnings/0 errors, and 128 imports/0 mismatches. Campaign smoke must traverse chapters 1–4, 15 scientists and the full boss sequence including both rematches; gameplay, score and initials smokes must pass.
+Recorded v0.3.0 evidence: core 235, atlas 63, environment library 115, gameplay-support library 33, enemy profiles 210, audio 354/28, directional smoke 38/10/8 without leak, Curien smoke 29 without leak, environment verifier 1,708, animated effects 348/348, gameplay support 113/113, content audit 739/16 warnings/0 errors, and 128 imports/0 mismatches. Campaign smoke traversed chapters 1–4, 15 scientists and the full boss sequence including both rematches; gameplay, score and initials smokes passed.
 
-Current Godot 4.7.1 outputs:
+Recorded v0.3.0 Godot 4.7.1 outputs:
 
 | Output | Local size | Candidate verification |
 |---|---:|---|

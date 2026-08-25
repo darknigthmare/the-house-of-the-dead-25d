@@ -13,6 +13,8 @@ const SettingsManagerType := preload("res://src/core/settings_manager.gd")
 const SaveManagerType := preload("res://src/core/save_manager.gd")
 const RouteGraphResourceTest := preload("res://tests/test_route_graph_resources.gd")
 const DirectionalSpritePipelineTest := preload("res://tests/test_directional_sprite_pipeline.gd")
+const RouteOutcomePolicyTest := preload("res://tests/test_route_outcome_policy.gd")
+const RuntimeComponentsTest := preload("res://tests/test_runtime_components.gd")
 const SpriteActorStateMachineTest := preload("res://tests/test_sprite_actor_state_machine.gd")
 
 var _failures: int = 0
@@ -30,6 +32,8 @@ func _initialize() -> void:
 	_test_raw_light_guns()
 	_test_settings_and_save_models()
 	_test_route_graph_resources()
+	_test_route_outcome_policy()
+	_test_runtime_components()
 	_test_directional_sprite_pipeline()
 	_test_sprite_actor_state_machine()
 	if _failures == 0:
@@ -173,6 +177,16 @@ func _test_raw_light_guns() -> void:
 
 func _test_route_graph_resources() -> void:
 	for check in RouteGraphResourceTest.collect_checks():
+		_expect_equal(check.actual, check.expected, str(check.label))
+
+
+func _test_route_outcome_policy() -> void:
+	for check in RouteOutcomePolicyTest.collect_checks():
+		_expect_equal(check.actual, check.expected, str(check.label))
+
+
+func _test_runtime_components() -> void:
+	for check in RuntimeComponentsTest.collect_checks():
 		_expect_equal(check.actual, check.expected, str(check.label))
 
 

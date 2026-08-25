@@ -32,15 +32,24 @@ if (-not (Test-Path -LiteralPath (Join-Path $windowsBuild "The_House_of_the_Dead
 }
 Compress-Archive -Path (Join-Path $windowsBuild "*") -DestinationPath $windowsArchive -CompressionLevel Optimal
 
-if (Test-Path -LiteralPath (Join-Path $linuxBuild "The_House_of_the_Dead_25D.x86_64")) {
-	Compress-Archive -Path (Join-Path $linuxBuild "*") -DestinationPath $linuxArchive -CompressionLevel Optimal
+$linuxExecutable = Join-Path $linuxBuild "The_House_of_the_Dead_25D.x86_64"
+if (-not (Test-Path -LiteralPath $linuxExecutable)) {
+	throw "Linux export is missing. Run the Godot Linux export first."
 }
+Compress-Archive -Path (Join-Path $linuxBuild "*") -DestinationPath $linuxArchive -CompressionLevel Optimal
 
-if (Test-Path -LiteralPath (Join-Path $webBuild "index.html")) {
-	Compress-Archive -Path (Join-Path $webBuild "*") -DestinationPath $webArchive -CompressionLevel Optimal
+$webEntryPoint = Join-Path $webBuild "index.html"
+if (-not (Test-Path -LiteralPath $webEntryPoint)) {
+	throw "Web export is missing. Run the Godot Web export first."
 }
+Compress-Archive -Path (Join-Path $webBuild "*") -DestinationPath $webArchive -CompressionLevel Optimal
 
-$archives = Get-ChildItem -LiteralPath $releaseRoot -File -Filter "*.zip" | Sort-Object Name
+$archivePaths = @($sourceArchive, $windowsArchive, $linuxArchive, $webArchive)
+$unexpectedArchives = @(Get-ChildItem -LiteralPath $releaseRoot -File -Filter "*.zip" | Where-Object { $_.FullName -notin $archivePaths })
+if ($unexpectedArchives.Count -gt 0) {
+	throw "Unexpected ZIP archive(s) in release directory: $($unexpectedArchives.Name -join ', ')"
+}
+$archives = @($archivePaths | ForEach-Object { Get-Item -LiteralPath $_ } | Sort-Object Name)
 $checksumLines = foreach ($archive in $archives) {
 	$hash = (Get-FileHash -Algorithm SHA256 -LiteralPath $archive.FullName).Hash.ToLowerInvariant()
 	"$hash  $($archive.Name)"

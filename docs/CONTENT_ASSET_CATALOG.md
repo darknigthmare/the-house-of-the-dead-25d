@@ -41,7 +41,7 @@ Twenty OpenAI-generated material sources are converted into compact tracked albe
 
 `data/assets/environment_manifest.json` assigns an explicit environment profile to all 33 campaign nodes instead of selecting only one of four generic backdrops.
 
-The environment-generation provenance contains exactly 40 records: 20 material families, 14 prop atlases and six destructible sources. Their selected ImageGen inputs remain local and ignored under `reports/runtime/environment-sources/`; normalized outputs and sanitized source/final hashes are tracked under `assets/environments_v2/` and `data/assets/environment_generation_provenance.json`.
+The active environment-generation provenance contains exactly 38 records: 20 material families, 14 prop atlases and four breakable sources. Their selected ImageGen inputs remain local and ignored under `reports/runtime/environment-sources/`; normalized outputs and sanitized source/final hashes are tracked under `assets/environments_v2/` and `data/assets/environment_generation_provenance.json`. The earlier final bonus-gate seal and emergency supply crate were removed from the active contract as obsolete outputs and remain recoverable through Git history.
 
 ## Props and animated decoration
 
@@ -66,16 +66,14 @@ Distinctive final prompt requests for the second prop wave were:
 
 Generated originals remain in the image tool's managed storage. Selected production copies and exact local selection records live under `reports/runtime/environment-sources/` and are ignored by Git. Normalized project assets and sanitized hashes are tracked under `assets/environments_v2/` and `data/assets/`.
 
-## Destructibles and pickups
+## Breakables and pickups
 
-Six campaign interactions have dedicated intact/broken visuals:
+Four active campaign route interactions have dedicated intact/broken visuals:
 
 - foyer door lock;
 - chained hatch plate;
 - elevator route switch;
 - vent key container;
-- final bonus gate seal;
-- emergency supply crate.
 
 The tracked content contract maps each interaction to its dedicated asset ID and preserves both intact and broken visual states; this catalog does not claim release-build verification.
 

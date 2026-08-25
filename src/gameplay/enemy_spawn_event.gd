@@ -13,9 +13,24 @@ extends Resource
 @export var encounter_tag: StringName
 @export var properties: Dictionary = {}
 
+var _source_data: Dictionary = {}
+
+
+func configure_from_dictionary(data: Dictionary) -> void:
+	_source_data = data.duplicate(true)
+	delay = maxf(0.0, float(data.get("delay", 0.0)))
+	count = maxi(1, int(data.get("count", 1)))
+	interval = maxf(0.0, float(data.get("interval", 0.0)))
+	actor_id = StringName(str(data.get("actor", data.get("actor_id", actor_id))))
+	encounter_tag = StringName(str(data.get("encounter_tag", "")))
+	properties = (data.get("properties", {}) as Dictionary).duplicate(true)
+	var position_data := data.get("position", [0.0, 0.0, -11.0]) as Array
+	if position_data.size() >= 3:
+		spawn_transform.origin = Vector3(float(position_data[0]), float(position_data[1]), float(position_data[2]))
+
 
 func get_spawn_time(instance_index: int = 0) -> float:
-	return delay + (float(clampi(instance_index, 0, maxi(0, count - 1))) * interval)
+	return delay + float(clampi(instance_index, 0, maxi(0, count - 1))) * interval
 
 
 func instantiate_actor(instance_index: int = 0) -> Node3D:
@@ -37,35 +52,21 @@ func instantiate_actor(instance_index: int = 0) -> Node3D:
 	return actor
 
 
-func instantiate_all(parent: Node3D) -> Array[Node3D]:
-	var actors: Array[Node3D] = []
-	if parent == null:
-		return actors
-	for index in count:
-		var actor := instantiate_actor(index)
-		if actor != null:
-			parent.add_child(actor)
-			actors.append(actor)
-	return actors
-
-
 func validate() -> PackedStringArray:
 	var issues := PackedStringArray()
 	if actor_id == &"":
 		issues.append("actor_id must not be empty")
-	if actor_scene == null:
-		issues.append("actor_scene is required")
 	if count < 1:
 		issues.append("count must be at least 1")
 	return issues
 
 
 func to_spawn_dictionary(instance_index: int = 0) -> Dictionary:
-	return {
-		"delay": get_spawn_time(instance_index),
-		"actor": actor_id,
-		"transform": spawn_transform,
-		"encounter_tag": encounter_tag,
-		"properties": properties.duplicate(true),
-		"event": self,
-	}
+	var result := _source_data.duplicate(true)
+	result["delay"] = get_spawn_time(instance_index)
+	result["actor"] = str(actor_id)
+	result["position"] = [spawn_transform.origin.x, spawn_transform.origin.y, spawn_transform.origin.z]
+	result["encounter_tag"] = str(encounter_tag)
+	result["properties"] = properties.duplicate(true)
+	result["event"] = self
+	return result

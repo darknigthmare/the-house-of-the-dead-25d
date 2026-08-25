@@ -12,14 +12,14 @@ Run the reproducible audit with:
 node scripts/audit_content_families.mjs
 ```
 
-Current result: **739 checks, 16 explicit warnings, 0 reference errors**. The audit is also part of the `npm test`, `npm run qa` and `npm run qa:web` gates.
+Current result: **746 checks, 6 explicit warnings, 0 reference errors**. The audit is also part of the `npm test`, `npm run qa` and `npm run qa:web` gates.
 
 ## Inventory actually present
 
 | Family | Files/data present | Active runtime coverage | Integrity result |
 |---|---:|---:|---|
 | Props | 14 authored PNG profiles | 62 placements across all 33 runtime nodes, including 9 event-driven state changes | All IDs and paths resolve; all 14 are placed; continuous and event-driven frame bindings are validated |
-| Breakables | 6 profiles, 12 distinct intact/broken PNGs | 4 campaign interactions after the conditional-gate and bonus-room corrections | All active IDs resolve; `c04_bonus_gate_seal` and `c04_emergency_supply_crate` are now unused |
+| Breakables | 4 active profiles, 8 distinct intact/broken PNGs | 4 campaign interactions after the conditional-gate and bonus-room corrections | Every active profile is used exactly once; the two superseded Chapter 4 proxy profiles and their PNGs were removed |
 | Enemy variants | 25 data profiles and 25 dedicated atlases, plus the separate `mutant_bat` atlas | All 25 profile IDs occur in timeline spawns; one runtime boss-support spawn site creates Hangedman's five `mutant_bat` actors | No enemy atlas is a binary duplicate; the scene placement of `sam_a1`, `kenfis_f1` and `name_g2` remains explicitly pending reference verification |
 | Projectiles | 7 dedicated 512×512 PNGs | All 7 manifest projectile families are now reachable from campaign enemies or bosses | All paths resolve and all files are unique; runtime reachability does not certify arcade-exact timing or placement |
 | Civilians/NPCs | 6 dedicated non-hero atlases: Sophie, Curien, DBR scientist and three scientist variants | 20 route placements use 5 civilian visuals (Sophie plus 4 scientist profiles); Curien is separately spawned as a story actor | Every non-hero atlas has an active runtime path and no file is missing |
@@ -27,7 +27,7 @@ Current result: **739 checks, 16 explicit warnings, 0 reference errors**. The au
 | Animated props | 8 two-frame prop sheets | 5 continuous bindings plus 9 event-driven state changes across `estate_gate`, `mansion_double_door` and `lab_specimen_tank` placements | Frame changes are handled by `EnvironmentPropStateController`; no active two-frame prop remains without a runtime binding |
 | Decorative effects | 4 dedicated eight-frame strips plus the remaining procedural scene effects | `drips`, `water_flow`, `electrical_arc` and `monitor_scan` use their own manifest-driven `Sprite3D` animations | All four strip paths resolve and are bound through the animated-effect runtime path |
 
-The binary-identity pass covered 78 relevant actor, prop, breakable-state, projectile, pickup and dedicated animated-effect files. It found **78/78 unique SHA-256 values** and no absent file.
+The binary-identity pass covered 74 relevant actor, prop, breakable-state, projectile, pickup and dedicated animated-effect files. It found **74/74 unique SHA-256 values** and no absent file.
 
 ## Corrections made during this audit
 
@@ -42,6 +42,12 @@ The separate `chapter_04/bonus_room` correction replaces its hostile/crate proxy
 
 The three pickup families now live in the validated `pickups` group of `data/assets/gameplay_support_manifest.json`. Runtime lookup, scoring and life rewards use that manifest instead of a hard-coded texture table.
 
+The runtime and secondary route graphs now use the same node IDs, start nodes and edges. Chapter 1 adds the active `sophie_antechamber` step, Chapter 2 adds `roof_rescue`, and the previous planning-only aliases are replaced by the active `garden_rescue`, `chain_plate` and `back_attack_rescue` IDs.
+
+Route selection now passes through the deterministic `RouteOutcomePolicy`. On nodes that contain a breakable, `branch_success` is derived only from destruction of that node's expected breakable ID; a civilian rescue cannot silently select the breakable-success route. Civilian-only branches keep their rescue success/failure outcome.
+
+`PickupController`, `BreakableObject`, `CivilianController` and `EnemySpawnEvent` are now instantiated by the active metadata-driven runtime and have deterministic tests. Pickup collection is one-shot, breakable durability and rewards are explicit, civilian deadlines request visible-threat acceleration without causing timer-only death, and spawn timing preserves authored delay/interval data.
+
 Nine prop state events now drive authored closed/open or intact/breached frames rather than leaving the second frame dormant; continuous bindings separately handle blinking and other ON/OFF props:
 
 - the garden `estate_gate` opens after successful node completion;
@@ -54,39 +60,36 @@ All 25 enemy profiles are now reachable, but three new Chapter 1 placements deli
 
 `mutant_bat` is also active outside the timeline: Hangedman's startup loop creates five bats, and boss vulnerability remains gated while any of those actors is alive.
 
-## Referenced but absent
+## Asset resolution and removed content
 
 No active manifest or timeline asset path is absent. Every active prop, breakable state, enemy/civilian/boss atlas, projectile, weak-point image and pickup texture resolves on disk.
 
-The remaining absences are unused/superseded content rather than unresolved active asset paths:
+The previously questioned items have been resolved as follows:
 
 - `dr_curien` is visibly spawned during `curien_confrontation`, then respawned as a non-targetable story actor at `magician_battle`: Magician displays an attack windup and dedicated fireball strike, Curien enters directional hit-recoil and death-fall frames, then remains grounded through a verified five-second minimum hold and until scene cleanup. `smoke_curien_finale.gd` proves this runtime contract; exact arcade staging/timing still requires the authorized reference.
-- `c04_bonus_gate_seal` and `c04_emergency_supply_crate` retain valid intact/broken art but are no longer used after the conditional-access and item-room corrections.
-- `assets/sprites/items/ams-eater-custom.png` has no manifest ID or runtime reference.
+- `c04_bonus_gate_seal` and `c04_emergency_supply_crate` were obsolete stand-ins for the conditional gate and reward room. Their two profiles and four PNGs were removed from the active tree.
+- `assets/sprites/items/ams-eater-custom.png` had no manifest ID or runtime reference and was removed.
+
+All five deleted PNGs, plus their Godot import sidecars, remain recoverable from Git history if a future non-authentic mode gives them a justified, manifest-backed role. They are not counted as active content.
 
 ## Duplication and proxy audit
 
-There are no byte-identical production assets in the audited families, every one of the 25 enemy identities points to its own atlas, all three pickup identities resolve through the gameplay-support manifest, and the four named animated effects use dedicated strips. The remaining structural warnings are:
+There are no byte-identical production assets in the audited families, every one of the 25 enemy identities points to its own atlas, all three pickup identities resolve through the gameplay-support manifest, and the four named animated effects use dedicated strips. The remaining structural limitations are:
 
-- The active timeline and secondary route graphs disagree on IDs. Chapter 1 has active-only `garden_rescue` and `sophie_antechamber` versus graph-only `bridge_scientist_rescue`; Chapter 2 has active-only `chain_plate` and `roof_rescue` versus graph-only `chained_hatch`; Chapter 3 has active-only `back_attack_rescue` versus graph-only `scientist_rescue`.
 - Enemy archetypes collapse to a small runtime behavior set. Most `attacks`, `weapon`, weak-zone and dismemberment detail stored in `enemy_profiles.json` is not forwarded by `EnemyProfileLibrary.to_runtime_stats()`.
 - Projectile aliases collapse `laser_dagger` to `thrown_dagger`, `vomit_burst` to `organic_spit`, `launched_iron_claw` to `iron_claw` and `short_flame_jet` to `magician_fireball`. The seven manifest families are reachable, but these aliases remain shared visual identities; Burner's flame jet does not currently use projectile behavior in the active timeline.
-- All 38 actor atlases mirror the right profile from the left profile; 25 of 38 also mirror back-right from back-left. The sheets expose eight semantic state cells per direction, not a multi-frame clip for every state. This meets addressable eight-direction presentation but not the requested full high-frame animation library.
-- The active runtime builds metadata-driven `Node3D` actors directly. `PickupController`, `BreakableObject`, `CivilianController` and `EnemySpawnEvent` exist and are tested in isolation or not referenced, but are not instantiated by the campaign runtime.
+- All 38 actor atlases mirror the right profile from the left profile; 25 of 38 also mirror back-right from back-left. The sheets expose eight semantic state cells per direction, not a multi-frame clip for every state. Runtime three-degree sector hysteresis prevents angular flicker but does not replace the missing authored directions or high-frame clips.
 
 ## Exact content/runtime backlog
 
-### Existing files that need wiring, not regeneration
+### Remaining reference-gated work
 
 - Verify the exact scene coordinates/timing of `sam_a1`, `kenfis_f1` and `name_g2` against the authorized arcade reference, then remove their `_placement_pending` status only when evidenced.
 - Validate the now-reachable axe, barrel, claw and organic-spit attack windows against the reference; runtime wiring alone is not fidelity proof.
-- Either place `c04_bonus_gate_seal` and `c04_emergency_supply_crate` outside the authentic conditional-access/reward layouts or mark/remove them as superseded data.
-- Decide whether the metadata-driven campaign path should instantiate `PickupController`, `BreakableObject`, `CivilianController` and `EnemySpawnEvent`, or formally retire those four unused controller classes after migrating any still-useful isolated behavior.
-- Either register `assets/sprites/items/ams-eater-custom.png` as a real collectible/equipment asset with a justified campaign use, or mark it as an unused source candidate.
 
-### Current 16-warning ledger
+### Current 6-warning ledger
 
-The reproducible audit deliberately remains yellow, not green. Its 16 warnings are: 3 runtime/route-graph drifts; 3 reference-pending enemy placements; 2 unused destructibles; 2 direction-mirroring warnings; 1 semantic-atlas animation warning; 1 unreferenced AMS item file; and 4 controller classes not instantiated by the active campaign runtime.
+The reproducible audit deliberately remains yellow, not green. Its six warnings are: 3 reference-pending enemy placements; 1 aggregate warning covering all 38 right-facing profiles mirrored from left; 1 aggregate warning covering the 25 of 38 back-right rows mirrored from back-left; and 1 warning that each direction exposes eight semantic state cells rather than true multi-frame clips for every state.
 
 ### Animation-production gap
 

@@ -6,7 +6,11 @@ Le contrat visuel V2 de l’arbre de travail fournit 38 atlas directionnels uniq
 
 Le projet propose une campagne jouable en quatre chapitres avec embranchements, scientifiques à sauver, objets destructibles, Chariot, Hangedman, Hermit, Magician, les rematchs du dernier chapitre, trois fins, crédits, score, vies, munitions, continues et coopération locale à deux joueurs. Entraînement, Boss Rush, sélection de chapitre et classement local sont également accessibles depuis le menu; une partie non-démo terminée demande trois initiales avant d'enregistrer son score.
 
-## Release publique v0.3.0 — lisibilité des attaques et contenu d’environnement
+## Candidat v0.4.0 non publié — intégrité des routes et des composants
+
+Le `package.json` de l’arbre de travail annonce `0.4.0`, mais cette version reste un candidat local : elle n’est pas encore commitée, poussée, taguée, publiée sur GitHub ni déployée sur Vercel. Cette vague aligne les graphes de routes sur la timeline jouable, exige l’identifiant exact de l’objet détruit pour les embranchements associés, active les contrôleurs dédiés des pickups, destructibles, scientifiques et apparitions ennemies, et stabilise les changements de direction des sprites par hystérésis. Les validations locales du candidat sont consignées dans `CONTINUATION.md`; la version publiquement téléchargeable reste la v0.3.0 ci-dessous.
+
+## Base publique actuelle — release v0.3.0, lisibilité des attaques et contenu d’environnement
 
 La release v0.3.0 corrige les dégâts qui pouvaient sembler invisibles. Une attaque de mêlée ordinaire ou de soutien de boss doit désormais être visible, terminer sa préparation et atteindre un vrai contact 3D. L’ancien chemin basé uniquement sur la profondeur a été supprimé. Les attaques à distance utilisent des projectiles visibles, destructibles et tirables, avec une distance minimale de trajet à l’écran avant tout impact. Chariot et Hangedman avancent physiquement lors de leurs frappes; Hermit et Magician lancent leurs projectiles dédiés.
 

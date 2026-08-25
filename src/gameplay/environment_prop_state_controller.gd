@@ -52,7 +52,6 @@ static func event_is_triggered(event: Dictionary, context: Dictionary) -> bool:
 			return (
 				not bool(context.get("node_completing", false))
 				and bool(context.get("breakable_destroyed", false))
-				and bool(context.get("branch_success", false))
 				and str(context.get("breakable_id", "")) == str(event.get("breakable_id", ""))
 			)
 		"boss_phase":

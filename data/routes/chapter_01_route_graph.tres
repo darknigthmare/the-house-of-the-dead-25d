@@ -29,16 +29,16 @@ compare_value = true
 
 [resource]
 script = ExtResource("1_graph")
-entry_segment_id = &"bridge_scientist_rescue"
+entry_segment_id = &"garden_rescue"
 connections = Array[Dictionary]([{
 "conditions": [SubResource("RouteCondition_scientist_saved")],
-"from": &"bridge_scientist_rescue",
+"from": &"garden_rescue",
 "label": "Scientist saved — mansion entrance",
 "priority": 100,
 "to": &"mansion_entrance"
 }, {
 "conditions": [SubResource("RouteCondition_scientist_lost")],
-"from": &"bridge_scientist_rescue",
+"from": &"garden_rescue",
 "label": "Scientist lost — under bridge",
 "priority": 90,
 "to": &"under_bridge"
@@ -69,13 +69,19 @@ connections = Array[Dictionary]([{
 }, {
 "conditions": [],
 "from": &"upper_stairs",
-"label": "Upper route to Sophie",
+"label": "Upper route to Sophie antechamber",
 "priority": 0,
-"to": &"sophie_corridor"
+"to": &"sophie_antechamber"
 }, {
 "conditions": [],
 "from": &"ground_hall",
-"label": "Ground route to Sophie",
+"label": "Ground route to Sophie antechamber",
+"priority": 0,
+"to": &"sophie_antechamber"
+}, {
+"conditions": [],
+"from": &"sophie_antechamber",
+"label": "Antechamber to Sophie corridor",
 "priority": 0,
 "to": &"sophie_corridor"
 }, {
