@@ -1,8 +1,8 @@
 # Performance Report
 
-## Local v0.3.0 release candidate — 2026-08-25 (unpublished)
+## Published v0.3.0 release — 2026-08-25
 
-The current local release candidate has been exported with Godot 4.7.1 and exercised through static and browser startup gates. It has not yet been committed, tagged, uploaded to GitHub or deployed to Vercel as v0.3.0.
+Immutable tag `v0.3.0` at exact commit `8add70a31a751928ea12c247ca584d8b030b2139` was exported with Godot 4.7.1 and exercised through static, executable-startup, source-distribution and browser gates before publication.
 
 | Platform | Local release-candidate measurement | Verified check |
 |---|---:|---|
@@ -15,6 +15,8 @@ The current local release candidate has been exported with Godot 4.7.1 and exerc
 The content/import gates completed with 128 texture imports and zero mismatches, 1,708 environment-verifier assertions, 348/348 dedicated animated-effect assertions and 113/113 gameplay-support assertions. The full local orchestration passed 282/282, while the audio contract remained green at 354 assertions across 28 cues. These are integrity and startup measurements, not frame-time measurements.
 
 A local Chromium run through agent-browser 0.34 reported `crossOriginIsolated=true`, an accessible 1258×622 main canvas, WebGL2 in the single-thread Web path, zero page errors and three Godot informational logs. Menu, Arcade/P1 gameplay and continue were visible. This proves successful local rendering and flow reachability; it does not establish throughput, latency, frame pacing or memory residency.
+
+Vercel production `dpl_KUcS7Xh1NEMU2GRJTki2Hc4kwPuy` is `Ready`. Downloaded root, PCK and WASM sizes/hashes match locally; Chromium confirms isolation, one visible 1258×622 canvas and zero page errors. This proves delivery and startup, not frame pacing.
 
 The target of stable 60 fps remains **unprofiled** for v0.3.0. No named-hardware capture currently establishes average frame time, 1% low, worst frame, CPU/GPU memory, atlas residency or boss/route-transition hitch behavior. The eight-second Windows smoke is a startup gate only.
 

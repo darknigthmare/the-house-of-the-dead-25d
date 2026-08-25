@@ -1,10 +1,10 @@
 # QA Report
 
-This report records the local, unpublished v0.3.0 release candidate, then preserves the v0.2.1 source-distribution hotfix, v0.2.0 gameplay-content evidence and historical v0.1.0 separately. An older export or deployment is not evidence for the current revision.
+This report records the published v0.3.0 release, then preserves the v0.2.1 source-distribution hotfix, v0.2.0 gameplay-content evidence and historical v0.1.0 separately. An older export or deployment is not evidence for the current revision.
 
-## Local release candidate — 2026-08-25 (v0.3.0, unpublished)
+## Published release — 2026-08-25 (v0.3.0)
 
-This evidence applies to the current local v0.3.0 release-candidate working tree. At the time of this record it has **not** been presented as a final commit, immutable tag, GitHub release or Vercel production deployment. The published v0.2.1 evidence below remains historical and must not be reused as proof of v0.3.0 publication.
+This evidence applies to immutable tag `v0.3.0` at exact commit `8add70a31a751928ea12c247ca584d8b030b2139`. GitHub Actions run `32865563840` passed before publication; the extracted public source ZIP separately passes 272/272 without optional private reports.
 
 | Surface | Observed result | Proven scope |
 |---|---|---|
@@ -25,6 +25,8 @@ This evidence applies to the current local v0.3.0 release-candidate working tree
 | Web static gates | `qa:web` **276/276**; `verify:web` **OK** | patched accessibility/isolation shell and required Web payload markers |
 | local browser, agent-browser 0.34 | isolation true; accessible **1258×622** canvas with `role=main` and an ARIA label; menu then Arcade/P1/continue visible; WebGL2 single-thread; **0 page errors** | live local Web startup and core visible flow |
 | browser logging | **3 Godot info logs only** | no browser page error was observed; informational engine logs are not suppressed |
+
+The [GitHub v0.3.0 release](https://github.com/darknigthmare/the-house-of-the-dead-25d/releases/tag/v0.3.0) contains five `uploaded` assets whose remote sizes and SHA-256 digests match locally. Vercel deployment `dpl_KUcS7Xh1NEMU2GRJTki2Hc4kwPuy` is `Ready`; public root/PCK/WASM downloads are byte-identical to the verified build, and Chromium reports isolation true, one visible accessible 1258×622 canvas, chapter-I/attract-menu rendering, three expected engine logs and zero page errors.
 
 These checks do not prove installation on a clean physical Windows system, physical light-gun behavior, sustained performance on named hardware, every failure route, or exact Sega arcade timing and assets. The 60 fps performance target remains unprofiled.
 

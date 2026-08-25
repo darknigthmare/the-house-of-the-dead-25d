@@ -6,15 +6,17 @@ The current worktree V2 visual contract provides 38 unique 2048×2048 RGBA direc
 
 The project includes a playable four-chapter campaign with branches, scientists, breakables, Chariot, Hangedman, Hermit, Magician, final-chapter rematches, three endings, credits, score, lives, ammunition, continues and two-player local co-op. Training, Boss Rush, Chapter Select and a local leaderboard are also available.
 
-## v0.3.0 work in progress — attack readability and environment content
+## Public v0.3.0 release — attack readability and environment content
 
-The v0.3.0 worktree fixes damage that could appear invisible. Ordinary and boss-support melee attacks must now be visible, complete their wind-up and reach real 3D contact. The remaining depth-only legacy damage path has been removed. Ranged attacks use visible, destructible and shootable projectiles with a minimum on-screen travel distance before impact. Chariot and Hangedman physically lunge during their strikes; Hermit and Magician launch their dedicated projectiles.
+The v0.3.0 release fixes damage that could appear invisible. Ordinary and boss-support melee attacks must now be visible, complete their wind-up and reach real 3D contact. The remaining depth-only legacy damage path has been removed. Ranged attacks use visible, destructible and shootable projectiles with a minimum on-screen travel distance before impact. Chariot and Hangedman physically lunge during their strikes; Hermit and Magician launch their dedicated projectiles.
 
 Prop proportions were recalibrated. The garden lamp has readable lit/unlit states, and white alpha remnants were cleaned from the lamp, estate gate, chandelier and wall sconce. The gate, doors and laboratory tanks now change state through runtime events; saving a scientist can no longer be mistaken for destroying an object.
 
 The final chapter's bonus room now contains twelve real 3D collectibles — four lives, three golden frogs and five medals — with no enemy or crate proxy. All 25 enemy profiles have a runtime path and all seven projectile families are reachable. Three variant placements (`sam_a1`, `kenfis_f1`, `name_g2`) remain deliberately marked provisional until they can be compared against an authorized arcade reference.
 
-Four original OpenAI decorative effects, each an eight-frame RGBA strip, are integrated: falling drips, flowing water, electrical arcs and monitor scan. The Curien/Magician finale also includes a visible attack, Curien's recoil and fall, and a persistent grounded body. Complete local QA now passes 282/282 after the attack-readability regressions. Fresh Windows, Linux and Web exports have been regenerated and verified locally; archives, tag, GitHub release and the v0.3.0 Vercel deployment are still pending. v0.2.1 therefore remains the current public release.
+Four original OpenAI decorative effects, each an eight-frame RGBA strip, are integrated: falling drips, flowing water, electrical arcs and monitor scan. The Curien/Magician finale also includes a visible attack, Curien's recoil and fall, and a persistent grounded body. Complete local QA passes 282/282 after the attack-readability regressions; the extracted public source ZIP independently passes 272/272 without optional private reports.
+
+Exact commit/tag [`8add70a`](https://github.com/darknigthmare/the-house-of-the-dead-25d/commit/8add70a31a751928ea12c247ca584d8b030b2139) is published through [GitHub release v0.3.0](https://github.com/darknigthmare/the-house-of-the-dead-25d/releases/tag/v0.3.0), whose five remote assets match local sizes and SHA-256 digests. Vercel production `dpl_KUcS7Xh1NEMU2GRJTki2Hc4kwPuy` is `Ready` at [the-house-of-the-dead-25d.vercel.app](https://the-house-of-the-dead-25d.vercel.app); root, PCK and WASM are byte-identical to the verified build and public Chromium reports no page error.
 
 ## Quick start
 

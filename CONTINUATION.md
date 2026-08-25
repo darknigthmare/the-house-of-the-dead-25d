@@ -1,10 +1,10 @@
 # Continuation
 
-## Current state — v0.3.0 worktree, not yet published
+## Current state — v0.3.0 published and verified
 
-The package version is `0.3.0`. The current worktree builds on the immutable public v0.2.1 baseline and contains an attack-readability, environment-state and content-coverage pass that has not yet completed its release gates.
+The package version is `0.3.0`. The attack-readability, environment-state and content-coverage pass is published from immutable tag `v0.3.0` at exact commit `8add70a31a751928ea12c247ca584d8b030b2139`.
 
-Completed implementation in this worktree:
+Completed v0.3.0 implementation:
 
 - ordinary and boss-support melee damage requires the attacker to be visible, to finish its wind-up and to reach real 3D contact;
 - the legacy boss-support depth-threshold damage path was removed, including regression coverage for a hidden support enemy already close to the camera;
@@ -31,7 +31,11 @@ Latest verified release-candidate results:
 - campaign: chapters 1–4, all six boss encounters, 15/15 scientists, ending and credits;
 - score ledger and initials: passed (`+120`, `-100`, `COD`).
 
-The local code/data QA and export gates are complete. Fresh exports measure Windows **187,023,472 bytes** (SHA-256 `A54A13E64810109AD8C894DD896DD2DC8A94F4F1262ED490A9756A15CF9F954D`), Linux **151,388,064 bytes** (`3FC7539397BA3A512ADF6482FEFBD0D1AC3121B17C00DF282E18AE8ADD6FEB64`) and Web **117,762,238 bytes** across nine files. The Web PCK is **77,917,844 bytes** (`955FFD21080A99FCC052800145A4AD28B8162009AECF66DCC7E251F040AEEC4A`) and WASM is **39,513,091 bytes** (`35116F68540AC41ACF7D71EA457ADDED91B5E960A9CCA3E2ACC72918EAF01277`). The Windows eight-second startup smoke, `qa:web` 276/276, `verify:web` and local browser startup all pass. Source-ZIP extraction verification, regenerated release archives, commit/push, immutable v0.3.0 tag, GitHub release and Vercel production deployment remain pending; none of those v0.3.0 publication steps is complete yet.
+The local code/data QA and export gates are complete. Fresh exports measure Windows **187,023,472 bytes** (SHA-256 `A54A13E64810109AD8C894DD896DD2DC8A94F4F1262ED490A9756A15CF9F954D`), Linux **151,388,064 bytes** (`3FC7539397BA3A512ADF6482FEFBD0D1AC3121B17C00DF282E18AE8ADD6FEB64`) and Web **117,762,238 bytes** across nine files. The Web PCK is **77,917,844 bytes** (`955FFD21080A99FCC052800145A4AD28B8162009AECF66DCC7E251F040AEEC4A`) and WASM is **39,513,091 bytes** (`35116F68540AC41ACF7D71EA457ADDED91B5E960A9CCA3E2ACC72918EAF01277`). The Windows eight-second startup smoke, `qa:web` 276/276, `verify:web` and browser startup all pass.
+
+GitHub Actions run `32865563840` passed on the exact release commit. [Release v0.3.0](https://github.com/darknigthmare/the-house-of-the-dead-25d/releases/tag/v0.3.0) exposes Source **228,874,505 bytes** (`997fee97…`), Windows **116,689,194** (`e35f1295…`), Linux **106,725,425** (`3b49c364…`), Web **87,860,665** (`4274d1fc…`) and `SHA256SUMS.txt` **421** (`59cb1bd7…`); all remote states are `uploaded` and all remote digests match locally. The extracted source archive passes 272/272 without private reports.
+
+Vercel deployment `dpl_KUcS7Xh1NEMU2GRJTki2Hc4kwPuy` is `Ready` at <https://the-house-of-the-dead-25d.vercel.app>. Root, PCK and WASM return 200 with COOP/COEP and correct WASM MIME, and their downloaded SHA-256 hashes match local files. Public Chromium reports `crossOriginIsolated=true`, one visible accessible 1258×622 canvas, chapter-I then attract/menu rendering, three Godot information logs and zero page errors.
 
 
 The art and audio boundary remains unchanged: these are original fan-made/project replacement assets, not extracted or certified Sega masters. Exact arcade timing, placement and revision fidelity still require the authorized reference build and licensed assets listed in `docs/MISSING_LICENSED_ASSETS.md`.
@@ -98,10 +102,9 @@ The release contains the reviewed Godot import metadata required by its texture 
 
 ## Next exact task
 
-1. Commit and push the exact green source, then wait for the clean GitHub Actions checkout to pass.
-2. Regenerate the release archives and `SHA256SUMS.txt` from that exact commit, extract the source ZIP into a clean temporary directory and prove its tracked-only verification.
-3. Create the immutable v0.3.0 tag and GitHub release, deploy the exact Web export to Vercel, then verify remote sizes/digests, root/PCK/WASM responses and public browser runtime.
-4. Keep physical clean-machine Windows installation, physical Gun4IR/Sinden validation, named-hardware profiling and authorized Sega reference comparison as separate unverified gates.
+1. Resolve the 16 documented content-audit warnings only when the route evidence or architecture work is available; do not invent arcade-exact placements.
+2. Perform clean physical Windows installation, physical Gun4IR/Sinden/two-light-gun validation and named-hardware frame-time/memory profiling.
+3. Compare against an authorized, revision-identifiable Sega reference build and licensed masters before making any exact-fidelity claim; keep v0.2.0, v0.2.1 and v0.3.0 tags immutable.
 
 ## Commands to resume
 
@@ -126,7 +129,7 @@ npm.cmd run verify:web
 git diff --check
 ```
 
-Keep the public v0.2.0 and v0.2.1 tags immutable. Existing published archives belong to those releases; no v0.3.0 archive or tag exists until the pending release workflow succeeds.
+Keep the public v0.2.0, v0.2.1 and v0.3.0 tags immutable. The v0.3.0 archives and checksums belong to commit `8add70a`; never regenerate or replace them from a later documentation-only commit.
 
 ## Precautions
 
@@ -136,4 +139,4 @@ Keep the public v0.2.0 and v0.2.1 tags immutable. Existing published archives be
 - Anchor v0.2.0 publication claims to commit `d79f86a`, its public GitHub release and Vercel deployment `dpl_548ttUkKWa3tHvBQzkDDQzmNgx6Z`, not to package metadata alone.
 - Anchor v0.2.1 source-distribution claims to commit `c13d525`, release v0.2.1 and Vercel deployment `dpl_3f4W7BXUfgMjeFjVh5wGd8N4xuzs`; never move either public tag.
 - Keep physical Windows installation, physical light-gun calibration, deep named-hardware profiling and authorized reference comparison as separate unverified gates.
-- Do not describe v0.3.0 as built, archived, committed, tagged, released or deployed until those exact gates have been executed and recorded.
+- Anchor v0.3.0 publication claims to commit/tag `8add70a`, GitHub Actions run `32865563840`, the public release assets and Vercel deployment `dpl_KUcS7Xh1NEMU2GRJTki2Hc4kwPuy`.

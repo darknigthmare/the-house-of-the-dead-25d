@@ -1,8 +1,8 @@
 # Build Guide
 
-## v0.3.0 local release candidate — 2026-08-25 (unpublished)
+## v0.3.0 published release — 2026-08-25
 
-The current v0.3.0 candidate has been validated and exported locally. It is not yet a committed/tagged GitHub release and is not yet a v0.3.0 Vercel production deployment.
+Immutable tag `v0.3.0` at exact commit `8add70a31a751928ea12c247ca584d8b030b2139` has been validated, exported, packaged, source-ZIP tested, published on GitHub and deployed to Vercel production.
 
 Run the two aggregate gates from the repository root:
 
@@ -37,9 +37,9 @@ Current Godot 4.7.1 outputs:
 | Web PCK | **77,917,844 bytes** | candidate payload |
 | Web WASM | **39,513,091 bytes** | candidate payload |
 
-Local agent-browser 0.34 verification must retain `crossOriginIsolated=true`, the accessible 1258×622 `role=main` canvas with an ARIA label, menu then Arcade/P1/continue visibility, WebGL2 single-thread operation, zero page errors and only the three expected Godot info logs. This browser gate is local; do not describe it as a v0.3.0 production deployment.
+Local and production agent-browser 0.34 verification retain `crossOriginIsolated=true`, one visible accessible 1258×622 `role=main` canvas with an ARIA label, chapter-I then attract/menu rendering, WebGL2 single-thread operation, zero page errors and only the three expected Godot information logs.
 
-The release process below still applies, but package, commit, tag, push, GitHub upload and Vercel deployment remain subsequent steps. The fresh export artifacts above are the only v0.3.0 build evidence; the older archives under `artifacts/release/` must be regenerated from the exact committed v0.3.0 tree before upload. Keep the exact Sega boundary: without `licensed_assets/` and `reference_build/`, a successful build is not certification of arcade-identical assets or timing. Named-hardware performance profiling also remains outstanding.
+The release process below produced Source 228,874,505 bytes, Windows 116,689,194, Linux 106,725,425, Web 87,860,665 and a 421-byte checksum manifest; all remote GitHub digests match locally. Vercel deployment `dpl_KUcS7Xh1NEMU2GRJTki2Hc4kwPuy` is `Ready` and serves byte-identical root/PCK/WASM files. Keep the exact Sega boundary: without `licensed_assets/` and `reference_build/`, a successful release is not certification of arcade-identical assets or timing. Named-hardware performance profiling also remains outstanding.
 
 ## Toolchain
 

@@ -1,8 +1,8 @@
 # Fidelity Report
 
-## v0.3.0 local release candidate — verified locally, unpublished
+## v0.3.0 published release — verified project contract
 
-The current working tree strengthens the internally verifiable 2.5D replacement contract without changing the exact-Sega certification boundary. It is a local release candidate only: no v0.3.0 commit, tag, GitHub release or Vercel deployment is claimed here.
+Immutable tag `v0.3.0` at exact commit `8add70a31a751928ea12c247ca584d8b030b2139` strengthens the internally verifiable 2.5D replacement contract without changing the exact-Sega certification boundary.
 
 The locally verified changes include visible and destructible hostile projectiles, contact-gated telegraphed melee, civilian rescue failures caused only by a visible assigned assailant rather than a timer, event-driven estate-gate/door/specimen-tank frames, manifest-driven medal/frog/life pickups, four dedicated animated environment strips (`drips`, `water_flow`, `electrical_arc`, `monitor_scan`) and the Curien/Magician finale story staging. These runtime improvements remain original project interpretations until compared against an authorized Sega reference build.
 
@@ -23,7 +23,9 @@ The locally verified changes include visible and destructible hostile projectile
 | Web payload | 9 files; PCK **77,917,844**; WASM **39,513,091**; `qa:web` **276/276**; `verify:web` **OK** |
 | local browser | agent-browser 0.34; isolation true; accessible 1258×622 main canvas with ARIA label; menu then Arcade/P1/continue visible; WebGL2 single-thread; 0 page errors and 3 Godot info logs |
 
-The 16 content-audit warnings are retained, not hidden: three runtime/route-graph drifts, three reference-pending enemy placements, two unused destructibles, two direction-mirroring warnings, one semantic-atlas animation warning, one unreferenced AMS item and four inactive legacy controller classes. Passing local QA therefore proves internal consistency and campaign reachability, not revision-exact arcade fidelity.
+GitHub Actions run `32865563840` passed, all five [v0.3.0 release assets](https://github.com/darknigthmare/the-house-of-the-dead-25d/releases/tag/v0.3.0) match local sizes/digests, and Vercel deployment `dpl_KUcS7Xh1NEMU2GRJTki2Hc4kwPuy` is `Ready` with byte-identical root/PCK/WASM delivery and zero public browser page errors.
+
+The 16 content-audit warnings are retained, not hidden: three runtime/route-graph drifts, three reference-pending enemy placements, two unused destructibles, two direction-mirroring warnings, one semantic-atlas animation warning, one unreferenced AMS item and four inactive legacy controller classes. Passing QA therefore proves internal consistency and campaign reachability, not revision-exact arcade fidelity.
 
 `licensed_assets/` and `reference_build/` remain unavailable. Exact camera rails, spawn coordinates, attack windows, scientist timing, routes, score values, endings, dialogue, audio, geometry, animation and operator-revision behavior cannot be certified as Sega-authentic from these local replacement assets. Public recordings remain observation references only and are not asset sources.
 
