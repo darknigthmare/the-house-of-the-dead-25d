@@ -63,29 +63,38 @@ func to_runtime_stats(enemy_id: String) -> Dictionary:
 	var profile := get_profile(enemy_id)
 	if profile.is_empty():
 		return {}
+	var archetype := str(profile.get("archetype", ""))
+	var projectile := _projectile_profile(profile)
+	# A projectile attack is only selected when the projectile can be seen and
+	# intercepted. Non-destructible effects stay on their physical melee pattern.
+	var has_readable_projectile := not projectile.is_empty() and bool(projectile.get("destructible", false))
 	var runtime := {
 		"health": float(profile.get("health", 3.0)),
 		"speed": float(profile.get("speed", 1.0)),
-		"scale": _runtime_scale(str(profile.get("archetype", ""))),
+		"scale": _runtime_scale(archetype),
 		"score": int(profile.get("score", 80)),
-		"behavior": _runtime_behavior(str(profile.get("archetype", "")), profile),
+		"behavior": _runtime_behavior(archetype, has_readable_projectile),
 		"tint": "#ffffff",
-		"attack_period": _attack_period(str(profile.get("archetype", ""))),
-		"hitbox_profile": _hitbox_profile(str(profile.get("archetype", ""))),
+		"attack_period": _attack_period(archetype),
+		"attack_telegraph": _attack_telegraph(archetype),
+		"melee_range": _melee_range(archetype),
+		"attack_approach_speed": maxf(float(profile.get("speed", 1.0)), 1.25),
+		"hitbox_profile": _hitbox_profile(archetype),
 	}
-	var projectile := _projectile_profile(profile)
-	if not projectile.is_empty():
+	if has_readable_projectile:
 		var projectile_kind := str(projectile.get("kind", ""))
 		runtime["projectile_asset"] = str(PROJECTILE_ALIASES.get(projectile_kind, projectile_kind))
-		runtime["projectile_destructible"] = bool(projectile.get("destructible", true))
+		runtime["projectile_destructible"] = true
 		runtime["projectile_speed"] = _projectile_speed(projectile_kind)
+		runtime["projectile_min_travel"] = 3.0
+		runtime["projectile_contact_range"] = 1.35
 	if str(runtime.behavior) == "throw_projectile":
 		runtime["max_attacks"] = 3
 	return runtime
 
 
-func _runtime_behavior(archetype: String, profile: Dictionary) -> String:
-	if not _projectile_profile(profile).is_empty():
+func _runtime_behavior(archetype: String, has_readable_projectile: bool) -> String:
+	if has_readable_projectile:
 		return "throw_projectile"
 	if archetype.contains("aquatic"):
 		return "aquatic_weave"
@@ -141,6 +150,28 @@ func _attack_period(archetype: String) -> float:
 	if archetype.contains("heavy") or archetype.contains("brute") or archetype.contains("chainsaw"):
 		return 2.25
 	return 1.75
+
+
+func _attack_telegraph(archetype: String) -> float:
+	if archetype.contains("heavy") or archetype.contains("brute") or archetype.contains("chainsaw"):
+		return 0.9
+	if archetype.contains("ceiling_drop") or archetype.contains("wall_crawling"):
+		return 0.75
+	if archetype.contains("flying") or archetype.contains("swarming"):
+		return 0.55
+	return 0.65
+
+
+func _melee_range(archetype: String) -> float:
+	match _hitbox_profile(archetype):
+		"heavy_humanoid":
+			return 2.8
+		"flying_small":
+			return 2.4
+		"low_creature", "crawler":
+			return 2.3
+		_:
+			return 2.5
 
 
 func _projectile_speed(kind: String) -> float:

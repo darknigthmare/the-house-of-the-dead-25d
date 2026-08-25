@@ -1,5 +1,7 @@
 extends "res://src/gameplay/gameplay_runtime_base.gd"
 
+const EnvironmentPropStateControllerScript := preload("res://src/gameplay/environment_prop_state_controller.gd")
+
 
 func _process(delta: float) -> void:
 	if not session_started:
@@ -18,6 +20,7 @@ func _process(delta: float) -> void:
 			_update_node(delta)
 		"boss":
 			_update_boss(delta)
+			_update_environment_prop_state_events()
 		"continue":
 			_update_continue(delta)
 	if bool(configuration.get("demo", false)):
@@ -180,9 +183,11 @@ func _enter_node(node_id: String) -> void:
 	node_elapsed = 0.0
 	spawn_cursor = 0
 	branch_success = false
+	destroyed_breakable_id = ""
 	active_civilian = null
 	_clear_actors()
 	_build_environment(str(current_node.get("style", current_chapter.get("style", "mansion"))))
+	_configure_environment_prop_state_events()
 	rail_origin = Vector3(0.0, 1.7, 8.0)
 	var rail := current_node.get("rail", {}) as Dictionary
 	rail_target = Vector3(float(rail.get("x", 0.0)), float(rail.get("y", 1.55)), float(rail.get("z", 4.5)))
@@ -197,8 +202,16 @@ func _enter_node(node_id: String) -> void:
 		_spawn_civilian(current_node.get("civilian", {}) as Dictionary)
 	if current_node.has("breakable"):
 		_spawn_breakable(current_node.get("breakable", {}) as Dictionary)
+	for pickup_data in current_node.get("pickups", []) as Array:
+		_spawn_pickup(pickup_data as Dictionary)
 	if str(current_node.get("type", "")) == "boss":
 		_start_boss(str(current_node.get("boss", current_chapter.get("boss", "chariot"))))
+
+
+# Runtime hook implemented by gameplay_runtime_combat.gd. Declaring it here
+# keeps the data-driven flow independently parseable while preserving dispatch.
+func _spawn_pickup(_data: Dictionary) -> void:
+	pass
 
 
 func _find_node(chapter: Dictionary, node_id: String) -> Dictionary:
@@ -207,6 +220,67 @@ func _find_node(chapter: Dictionary, node_id: String) -> Dictionary:
 		if str(candidate.get("id", "")) == node_id:
 			return candidate
 	return {}
+
+
+func _configure_environment_prop_state_events() -> void:
+	var prop_indices: Dictionary = {}
+	for placement_value in environment_scene_profile.get("props", []) as Array:
+		var placement := placement_value as Dictionary
+		var prop_id := str(placement.get("id", ""))
+		if prop_id.is_empty():
+			continue
+		var instance_index := int(prop_indices.get(prop_id, 0))
+		prop_indices[prop_id] = instance_index + 1
+		var sprite := _find_environment_prop_sprite(prop_id, instance_index)
+		if sprite == null:
+			continue
+		EnvironmentPropStateControllerScript.configure_sprite(sprite, prop_id, instance_index, placement)
+
+
+func _find_environment_prop_sprite(prop_id: String, instance_index: int) -> Sprite3D:
+	var found_index := 0
+	var name_prefix := "Prop_%s" % prop_id
+	for child in world_root.get_children():
+		var sprite := child as Sprite3D
+		if sprite == null or not str(sprite.name).begins_with(name_prefix):
+			continue
+		if found_index == instance_index:
+			return sprite
+		found_index += 1
+	return null
+
+
+func _update_environment_prop_state_events(node_completing: bool = false) -> void:
+	if world_root == null:
+		return
+	var context := _environment_prop_state_context(node_completing)
+	for child in world_root.get_children():
+		var sprite := child as Sprite3D
+		if sprite == null or not sprite.has_meta(EnvironmentPropStateControllerScript.META_EVENT):
+			continue
+		EnvironmentPropStateControllerScript.apply_pending_event(sprite, context)
+
+
+func _environment_prop_state_context(node_completing: bool) -> Dictionary:
+	var spawns := current_node.get("spawns", []) as Array
+	var encounter_clear := (
+		state == "node"
+		and spawn_cursor >= spawns.size()
+		and not _has_active_hostiles()
+	)
+	var breakable_id := ""
+	if current_node.has("breakable"):
+		var breakable := current_node.get("breakable", {}) as Dictionary
+		breakable_id = str(breakable.get("asset", ""))
+	return {
+		"node_elapsed": node_elapsed,
+		"encounter_clear": encounter_clear,
+		"node_completing": node_completing,
+		"branch_success": branch_success,
+		"breakable_destroyed": not destroyed_breakable_id.is_empty(),
+		"breakable_id": breakable_id,
+		"boss_phase": boss_phase,
+	}
 
 
 func _update_node(delta: float) -> void:
@@ -218,6 +292,7 @@ func _update_node(delta: float) -> void:
 			break
 		_spawn_enemy(spawn)
 		spawn_cursor += 1
+	_update_environment_prop_state_events()
 	var minimum_duration := float(current_node.get("minimum_duration", 3.0))
 	if spawn_cursor >= spawns.size() and not _has_active_hostiles() and node_elapsed >= minimum_duration:
 		_finish_node()
@@ -230,6 +305,7 @@ func _finish_node() -> void:
 		return
 	if active_civilian != null and is_instance_valid(active_civilian) and not bool(active_civilian.get_meta("dead", false)):
 		_rescue_civilian(active_civilian)
+	_update_environment_prop_state_events(true)
 	var next_id := str(current_node.get("next", "chapter_complete"))
 	if current_node.has("next_success"):
 		next_id = str(current_node.get("next_success")) if branch_success else str(current_node.get("next_failure"))

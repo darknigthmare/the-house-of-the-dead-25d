@@ -63,25 +63,49 @@ func _process(delta: float) -> void:
 	if not is_instance_valid(target):
 		return
 	match mode:
-		"frame_toggle", "flicker":
+		"frame_toggle":
 			if target is Sprite3D:
 				var sprite := target as Sprite3D
 				if sprite.hframes > 1:
-					sprite.frame = int(elapsed * (7.0 if mode == "flicker" else 3.5)) % sprite.hframes
-				if mode == "flicker":
-					sprite.modulate = base_color * (0.84 + sin(elapsed * 13.0) * 0.12)
+					sprite.frame = int(elapsed * 3.5) % sprite.hframes
+		"effect_strip":
+			if target is Sprite3D:
+				var sprite := target as Sprite3D
+				if sprite.hframes > 1:
+					var animation_fps := maxf(1.0, float(sprite.get_meta("animation_fps", 8.0)))
+					sprite.frame = int(elapsed * animation_fps) % sprite.hframes
+				if bool(sprite.get_meta("effect_pulse", false)):
+					_set_sprite_rgb_intensity(sprite, 0.93 + sin(elapsed * 11.0) * 0.07)
+		"flicker":
+			if target is Sprite3D:
+				var sprite := target as Sprite3D
+				if sprite.hframes > 1:
+					sprite.frame = int(elapsed * 5.0) % sprite.hframes
+				_set_sprite_rgb_intensity(sprite, 0.96 + sin(elapsed * 13.0) * 0.035 + sin(elapsed * 29.0) * 0.015)
+		"screen_glow":
+			if target is Sprite3D:
+				_set_sprite_rgb_intensity(target as Sprite3D, 0.98 + sin(elapsed * 3.1) * 0.025)
 		"pulse":
 			if target is Node3D:
 				(target as Node3D).scale = base_scale * (1.0 + sin(elapsed * 2.7) * 0.025)
-			if target is Sprite3D:
-				var sprite := target as Sprite3D
-				if sprite.hframes > 1:
-					sprite.frame = int(elapsed * 2.0) % sprite.hframes
 		"lightning", "alarm", "sconce":
 			if target is Light3D:
 				var light := target as Light3D
-				var wave := sin(elapsed * (18.0 if mode == "alarm" else 7.0))
-				light.light_energy = base_energy * (0.52 + maxf(0.0, wave) * 0.62)
+				if mode == "sconce":
+					light.light_energy = base_energy * (0.90 + sin(elapsed * 7.0) * 0.075 + sin(elapsed * 19.0) * 0.025)
+				elif mode == "alarm":
+					light.light_energy = base_energy * (0.62 + maxf(0.0, sin(elapsed * 18.0)) * 0.55)
+				else:
+					light.light_energy = base_energy * (0.52 + maxf(0.0, sin(elapsed * 7.0)) * 0.62)
+
+
+func _set_sprite_rgb_intensity(sprite: Sprite3D, intensity: float) -> void:
+	sprite.modulate = Color(
+		base_color.r * intensity,
+		base_color.g * intensity,
+		base_color.b * intensity,
+		base_color.a
+	)
 
 
 func _update_motes(delta: float) -> void:

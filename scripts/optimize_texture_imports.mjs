@@ -13,6 +13,9 @@ const families = [
     root: join(root, 'assets', 'environments_v2'),
     select: (path) => {
       const normalized = path.replaceAll(sep, '/');
+      if (normalized.includes('/props/') || normalized.includes('/destructibles/') || normalized.includes('/effects/')) {
+        return { mode: 0, quality: 1.0, mipmaps: true, normalMap: 0 };
+      }
       if (normalized.includes('/materials/') && normalized.endsWith('_orm.png.import')) {
         return { mode: 0, quality: 0.7, mipmaps: true, normalMap: 0 };
       }

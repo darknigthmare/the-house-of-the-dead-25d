@@ -10,6 +10,7 @@ var styles: Dictionary = {}
 var nodes: Dictionary = {}
 var destructibles: Dictionary = {}
 var props: Dictionary = {}
+var animated_effects: Dictionary = {}
 var _material_cache: Dictionary = {}
 
 
@@ -21,6 +22,7 @@ func load_manifest(path: String = DEFAULT_MANIFEST_PATH) -> bool:
 	nodes.clear()
 	destructibles.clear()
 	props.clear()
+	animated_effects.clear()
 	_material_cache.clear()
 	if not FileAccess.file_exists(path):
 		last_error = "Environment manifest is missing: %s" % path
@@ -37,7 +39,7 @@ func load_manifest(path: String = DEFAULT_MANIFEST_PATH) -> bool:
 	if int(candidate.get("schema_version", 0)) != 1:
 		last_error = "Unsupported environment manifest schema"
 		return false
-	for key in ["materials", "styles", "nodes", "destructibles", "props"]:
+	for key in ["materials", "styles", "nodes", "destructibles", "props", "animated_effects"]:
 		if typeof(candidate.get(key, {})) != TYPE_DICTIONARY:
 			last_error = "Environment manifest field '%s' must be an object" % key
 			return false
@@ -47,6 +49,7 @@ func load_manifest(path: String = DEFAULT_MANIFEST_PATH) -> bool:
 	nodes = (candidate.get("nodes", {}) as Dictionary).duplicate(true)
 	destructibles = (candidate.get("destructibles", {}) as Dictionary).duplicate(true)
 	props = (candidate.get("props", {}) as Dictionary).duplicate(true)
+	animated_effects = (candidate.get("animated_effects", {}) as Dictionary).duplicate(true)
 	return _validate_paths()
 
 
@@ -74,6 +77,12 @@ func get_prop(prop_id: String) -> Dictionary:
 	if not props.has(prop_id):
 		return {}
 	return (props[prop_id] as Dictionary).duplicate(true)
+
+
+func get_animated_effect(effect_id: String) -> Dictionary:
+	if not animated_effects.has(effect_id):
+		return {}
+	return (animated_effects[effect_id] as Dictionary).duplicate(true)
 
 
 func create_material(material_id: String) -> StandardMaterial3D:
@@ -131,5 +140,11 @@ func _validate_paths() -> bool:
 		var path := str(profile.get("path", ""))
 		if not path.is_empty() and not ResourceLoader.exists(path):
 			last_error = "Environment prop %s has missing path: %s" % [prop_id, path]
+			return false
+	for effect_id in animated_effects:
+		var profile := animated_effects[effect_id] as Dictionary
+		var path := str(profile.get("path", ""))
+		if path.is_empty() or not ResourceLoader.exists(path):
+			last_error = "Animated environment effect %s has missing path: %s" % [effect_id, path]
 			return false
 	return true

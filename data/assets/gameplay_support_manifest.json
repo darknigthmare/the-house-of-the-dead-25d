@@ -73,6 +73,38 @@
       ]
     }
   },
+  "pickups": {
+    "medal": {
+      "id": "medal",
+      "path": "res://assets/sprites/items/gold-coin.png",
+      "sha256": "6a13b0c4b4713310222dde436f631bce3f4c91bf23215cd21b8fb53f0ab94819",
+      "size": [
+        512,
+        512
+      ],
+      "score": 200
+    },
+    "frog": {
+      "id": "frog",
+      "path": "res://assets/sprites/items/golden-frog.png",
+      "sha256": "198e2238bc17d1d00d764c4cf42094f213d8f06f337070aca240275a573f2732",
+      "size": [
+        512,
+        512
+      ],
+      "score": 1000
+    },
+    "life": {
+      "id": "life",
+      "path": "res://assets/sprites/items/medical-kit.png",
+      "sha256": "450984112f546729cd01d94e0ab0a65c0c344cda6c044f2019840cd974932a3e",
+      "size": [
+        512,
+        512
+      ],
+      "life_delta": 1
+    }
+  },
   "ui": {
     "bullet_round": {
       "id": "bullet_round",

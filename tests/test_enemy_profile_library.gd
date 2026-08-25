@@ -18,6 +18,12 @@ func _initialize() -> void:
 		_expect_equal(int(runtime.get("score", 0)), 80, "%s preserves arcade target score" % enemy_id)
 		_expect_true(not str(runtime.get("behavior", "")).is_empty(), "%s resolves a runtime behavior" % enemy_id)
 		_expect_true(not str(runtime.get("hitbox_profile", "")).is_empty(), "%s resolves a hitbox profile" % enemy_id)
+		_expect_true(float(runtime.get("attack_telegraph", 0.0)) >= 0.5, "%s exposes a readable attack telegraph" % enemy_id)
+		_expect_true(float(runtime.get("melee_range", 0.0)) >= 2.0, "%s exposes a physical melee range" % enemy_id)
+		if not str(runtime.get("projectile_asset", "")).is_empty():
+			_expect_true(bool(runtime.get("projectile_destructible", false)), "%s runtime projectile is interceptable" % enemy_id)
+			_expect_true(float(runtime.get("projectile_min_travel", 0.0)) >= 3.0, "%s projectile must visibly traverse the scene" % enemy_id)
+			_expect_true(float(runtime.get("projectile_contact_range", 0.0)) > 0.0, "%s projectile uses physical contact" % enemy_id)
 	_expect_equal(str(library.to_runtime_stats("cyril_a3").get("projectile_asset", "")), "thrown_axe", "Cyril throws the dedicated axe")
 	_expect_equal(str(library.to_runtime_stats("bentley_c2").get("projectile_asset", "")), "thrown_barrel", "Bentley throws the dedicated barrel")
 	_expect_equal(str(library.to_runtime_stats("drake_e2").get("projectile_asset", "")), "thrown_dagger", "Drake throws the dedicated dagger")
@@ -25,6 +31,10 @@ func _initialize() -> void:
 	_expect_equal(str(library.to_runtime_stats("name_g2").get("projectile_asset", "")), "organic_spit", "Name uses the dedicated organic spit")
 	_expect_equal(str(library.to_runtime_stats("taran_g3").get("behavior", "")), "ceiling_drop", "Taran uses its ceiling-drop behavior")
 	_expect_equal(str(library.to_runtime_stats("harris_d3").get("behavior", "")), "heavy_weapon", "Harris remains a melee ball-and-chain brute")
+	_expect_equal(str(library.to_runtime_stats("ebitan_b_b4").get("behavior", "")), "ceiling_drop", "Ebitan b keeps a physical ceiling-drop attack")
+	_expect_equal(str(library.to_runtime_stats("ebitan_b_b4").get("projectile_asset", "")), "", "Ebitan b never emits an invisible non-destructible projectile")
+	_expect_equal(str(library.to_runtime_stats("burner_c3").get("behavior", "")), "heavy_weapon", "Burner keeps a physical blowtorch attack")
+	_expect_equal(str(library.to_runtime_stats("burner_c3").get("projectile_asset", "")), "", "Burner never emits an invisible non-destructible flame projectile")
 	_expect_true(library.to_runtime_stats("missing").is_empty(), "unknown enemies never get a fallback profile")
 	if _failures == 0:
 		print("ENEMY PROFILE LIBRARY TEST PASSED: %d assertions" % _assertions)

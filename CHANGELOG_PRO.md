@@ -1,5 +1,17 @@
 # Professional Changelog
 
+## 0.3.0 attack-readability and environment-content pass — worktree, 2026-08-25
+
+- Reworked hostile damage readability. Ordinary and boss-support melee attacks now require a visible attacker, a completed wind-up and real 3D contact before damage can be applied; the remaining legacy depth-threshold path that could damage the player without a readable strike was removed.
+- Made ranged threats physical and interceptable. Enemy projectiles are visible Sprite3D actors, must complete a minimum visible travel distance and reach contact before dealing damage, and can be shot down. Civilian rescue deadlines now accelerate a real assailant instead of killing by timer; assigned melee enemies approach in 3D, civilian-bound projectiles aim at the civilian, and an in-flight projectile dissipates rather than retargeting a player after a rescue. Chariot and Hangedman use visible lunges, while Hermit and Magician use dedicated destructible projectile attacks.
+- Corrected environment presentation: prop scales were recalibrated, the garden lamp received readable lit/unlit frames, white matte/halo remnants were removed from the lamp, estate gate, chandelier and wall sconce, and affected props/destructibles retain lossless alpha imports.
+- Added event-driven prop state changes for the estate gate, mansion doors and laboratory specimen tanks. Breakable-driven events now require the actual recorded breakable ID; saving a civilian can no longer open or break an unrelated prop.
+- Replaced the chapter-four bonus-room hostile/crate proxy with twelve visible, shootable-once world pickups: four lives, three golden frogs and five medals. Pickups use the validated gameplay-support manifest, bob in 3D and preserve the configured 4,000-point collectible total.
+- Activated all 25 enemy behavior profiles in runtime content and made all seven projectile visual families reachable. `sam_a1`, `kenfis_f1` and `name_g2` now have provisional runtime placements explicitly marked as awaiting authorized arcade scene-placement validation.
+- Added four original OpenAI-generated eight-frame transparent environment strips — falling drips, flowing water, electrical arcs and monitor scan — with manifest-driven animation and runtime placement. These are project-owned fan-made replacements, not extracted Sega assets.
+- Completed the Curien/Magician finale presentation: Curien is a non-targetable story actor, Magician's attack has a visible fireball strike, Curien uses hit-recoil and death-fall frames, and the grounded corpse persists for a verified minimum five-second hold before scene cleanup.
+- The complete local v0.3.0 QA matrix passes: `npm.cmd test` 272/272 and `npm.cmd run qa` 282/282, plus campaign, score-ledger and initials smokes. Fresh Windows/Linux/Web exports measure 187,023,472 / 151,388,064 / 117,762,238 bytes; the Windows startup smoke, Web `qa:web` 276/276, `verify:web` and local browser startup all pass. Archives, commit/tag, GitHub release and Vercel production deployment remain pending; v0.2.1 remains the current public release.
+
 ## 0.2.1 source-verification hotfix — 2026-08-25
 
 - Removed the public-source verifier's mandatory dependency on ignored private ImageGen reports. Tracked atlas manifests and provenance remain mandatory; extended source-sheet cross-checks still run whenever the private reports are locally available.

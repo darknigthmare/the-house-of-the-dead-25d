@@ -68,8 +68,16 @@ func _run() -> void:
 	game._clear_actors()
 	_check(game.story_actors.is_empty(), "story actors are cleared with gameplay actors")
 
-	game.queue_free()
+	# Stop and detach looping streams while the gameplay node is still alive so
+	# the audio thread can retire its three WAV playbacks before SceneTree exits.
+	game.process_mode = Node.PROCESS_MODE_DISABLED
+	game._release_audio_resources()
 	await process_frame
+	await create_timer(0.05).timeout
+	game.free()
+	await process_frame
+	await process_frame
+	await create_timer(0.05).timeout
 	if failures.is_empty():
 		print("DIRECTIONAL SPRITE SMOKE OK: 38 bindings, 10 representatives, 8 directions, death and cleanup states.")
 		quit(0)

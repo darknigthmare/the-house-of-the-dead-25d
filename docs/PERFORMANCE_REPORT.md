@@ -1,5 +1,25 @@
 # Performance Report
 
+## Local v0.3.0 release candidate — 2026-08-25 (unpublished)
+
+The current local release candidate has been exported with Godot 4.7.1 and exercised through static and browser startup gates. It has not yet been committed, tagged, uploaded to GitHub or deployed to Vercel as v0.3.0.
+
+| Platform | Local release-candidate measurement | Verified check |
+|---|---:|---|
+| Windows x64 | **187,023,472 bytes** | export succeeded; hidden launch remained active for eight seconds |
+| Linux x64 | **151,388,064 bytes** | export succeeded |
+| Web total | **117,762,238 bytes across nine files** | export succeeded; `qa:web` 276/276; `verify:web` OK |
+| Web PCK | **77,917,844 bytes** | local payload observed |
+| Web WASM | **39,513,091 bytes** | local payload observed |
+
+The content/import gates completed with 128 texture imports and zero mismatches, 1,708 environment-verifier assertions, 348/348 dedicated animated-effect assertions and 113/113 gameplay-support assertions. The full local orchestration passed 282/282, while the audio contract remained green at 354 assertions across 28 cues. These are integrity and startup measurements, not frame-time measurements.
+
+A local Chromium run through agent-browser 0.34 reported `crossOriginIsolated=true`, an accessible 1258×622 main canvas, WebGL2 in the single-thread Web path, zero page errors and three Godot informational logs. Menu, Arcade/P1 gameplay and continue were visible. This proves successful local rendering and flow reachability; it does not establish throughput, latency, frame pacing or memory residency.
+
+The target of stable 60 fps remains **unprofiled** for v0.3.0. No named-hardware capture currently establishes average frame time, 1% low, worst frame, CPU/GPU memory, atlas residency or boss/route-transition hitch behavior. The eight-second Windows smoke is a startup gate only.
+
+The performance evidence below is retained as versioned v0.2.1 history and must not be substituted for a v0.3.0 profiling run.
+
 ## Current v0.2.1 content budget
 
 The runtime uses one rail camera, atlas-based `Sprite3D` actors, camera-relative eight-direction resolution, procedural 3D layout geometry and deterministic `delta`-based gameplay clocks.

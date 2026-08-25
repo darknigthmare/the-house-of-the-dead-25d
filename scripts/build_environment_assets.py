@@ -17,7 +17,7 @@ from pathlib import Path
 from typing import Any
 
 import numpy as np
-from PIL import Image, ImageEnhance, ImageFilter, ImageOps
+from PIL import Image, ImageChops, ImageEnhance, ImageFilter, ImageOps
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -59,21 +59,25 @@ DESTRUCTIBLE_IDS = (
 )
 
 PROP_SPECS: dict[str, dict[str, Any]] = {
-    "mansion_chandelier": {"frames": 2, "pixel_size": 0.0064, "world_scale": 1.50},
-    "mansion_sconce": {"frames": 2, "pixel_size": 0.0055, "world_scale": 0.72},
-    "mansion_double_door": {"frames": 2, "pixel_size": 0.0070, "world_scale": 2.70},
-    "library_bookcase": {"frames": 1, "pixel_size": 0.0065, "world_scale": 2.00},
-    "mansion_portrait": {"frames": 1, "pixel_size": 0.0052, "world_scale": 0.90},
-    "lab_control_console": {"frames": 2, "pixel_size": 0.0065, "world_scale": 1.50},
-    "estate_gate": {"frames": 2, "pixel_size": 0.0065, "world_scale": 2.7},
-    "garden_lamp": {"frames": 2, "pixel_size": 0.0062, "world_scale": 1.25},
-    "dead_tree": {"frames": 1, "pixel_size": 0.0072, "world_scale": 2.3},
-    "stone_bridge_arch": {"frames": 1, "pixel_size": 0.0074, "world_scale": 2.8},
-    "roof_gargoyle": {"frames": 1, "pixel_size": 0.0064, "world_scale": 1.05},
-    "lab_specimen_tank": {"frames": 2, "pixel_size": 0.0064, "world_scale": 1.55},
-    "lab_pipe_cluster": {"frames": 1, "pixel_size": 0.0065, "world_scale": 1.65},
-    "lab_vent_fan": {"frames": 2, "pixel_size": 0.0062, "world_scale": 1.15},
+    "mansion_chandelier": {"frames": 2, "pixel_size": 0.0064, "world_scale": 0.34},
+    "mansion_sconce": {"frames": 2, "pixel_size": 0.0055, "world_scale": 0.18},
+    "mansion_double_door": {"frames": 2, "pixel_size": 0.0070, "world_scale": 0.47},
+    "library_bookcase": {"frames": 1, "pixel_size": 0.0065, "world_scale": 0.50},
+    "mansion_portrait": {"frames": 1, "pixel_size": 0.0052, "world_scale": 0.32},
+    "lab_control_console": {"frames": 2, "pixel_size": 0.0065, "world_scale": 0.32},
+    "estate_gate": {"frames": 2, "pixel_size": 0.0065, "world_scale": 0.51},
+    "garden_lamp": {"frames": 2, "pixel_size": 0.0062, "world_scale": 0.35},
+    "dead_tree": {"frames": 1, "pixel_size": 0.0072, "world_scale": 0.60},
+    "stone_bridge_arch": {"frames": 1, "pixel_size": 0.0074, "world_scale": 0.63},
+    "roof_gargoyle": {"frames": 1, "pixel_size": 0.0064, "world_scale": 0.30},
+    "lab_specimen_tank": {"frames": 2, "pixel_size": 0.0064, "world_scale": 0.50},
+    "lab_pipe_cluster": {"frames": 1, "pixel_size": 0.0065, "world_scale": 0.46},
+    "lab_vent_fan": {"frames": 2, "pixel_size": 0.0062, "world_scale": 0.30},
 }
+
+MATTE_REPAIR_PROPS = frozenset({"estate_gate", "mansion_chandelier", "mansion_sconce"})
+EDGE_DESPILL_PROPS = MATTE_REPAIR_PROPS | frozenset({"garden_lamp"})
+MATTE_COMPONENT_MIN_PIXELS = 500
 
 
 def sha256(path: Path) -> str:
@@ -260,6 +264,76 @@ def ensure_alpha(image: Image.Image) -> Image.Image:
     return Image.fromarray(pixels, mode="RGBA")
 
 
+def remove_large_neutral_matte(image: Image.Image, minimum_pixels: int = MATTE_COMPONENT_MIN_PIXELS) -> Image.Image:
+    """Remove only large connected pale-neutral remnants from transparent props.
+
+    The threshold intentionally preserves small candle/flame highlights while
+    clearing baked checkerboard or white-card regions enclosed by ironwork.
+    """
+    pixels = np.asarray(image.convert("RGBA")).copy()
+    rgb = pixels[:, :, :3]
+    alpha = pixels[:, :, 3]
+    high = rgb.max(axis=2).astype(np.int16)
+    low = rgb.min(axis=2).astype(np.int16)
+    candidate = (alpha > 0) & (low >= 220) & ((high - low) <= 32)
+    visited = np.zeros(candidate.shape, dtype=bool)
+    remove = np.zeros(candidate.shape, dtype=bool)
+    height, width = candidate.shape
+    for start_y, start_x in zip(*np.where(candidate)):
+        if visited[start_y, start_x]:
+            continue
+        frontier: deque[tuple[int, int]] = deque([(int(start_y), int(start_x))])
+        visited[start_y, start_x] = True
+        component: list[tuple[int, int]] = []
+        while frontier:
+            y, x = frontier.popleft()
+            component.append((y, x))
+            for next_y, next_x in ((y - 1, x), (y + 1, x), (y, x - 1), (y, x + 1)):
+                if (
+                    0 <= next_y < height
+                    and 0 <= next_x < width
+                    and candidate[next_y, next_x]
+                    and not visited[next_y, next_x]
+                ):
+                    visited[next_y, next_x] = True
+                    frontier.append((next_y, next_x))
+        if len(component) >= minimum_pixels:
+            component_y, component_x = zip(*component)
+            remove[component_y, component_x] = True
+    pixels[remove] = 0
+    return Image.fromarray(pixels, mode="RGBA")
+
+
+def despill_neutral_edge(image: Image.Image) -> Image.Image:
+    """Suppress pale neutral matte pixels only on the transparent boundary.
+
+    The adjacency constraint protects internal candle, glass and metal
+    highlights. Strong white fringe becomes transparent; weaker neutral spill
+    is attenuated instead of cutting into the prop silhouette.
+    """
+    pixels = np.asarray(image.convert("RGBA")).copy()
+    alpha = pixels[:, :, 3]
+    transparent = alpha == 0
+    adjacent_to_transparency = np.asarray(
+        Image.fromarray((transparent.astype(np.uint8) * 255), mode="L").filter(ImageFilter.MaxFilter(3))
+    ) > 0
+    rgb = pixels[:, :, :3].astype(np.float32) / 255.0
+    brightness = rgb.min(axis=2)
+    chroma = rgb.max(axis=2) - rgb.min(axis=2)
+    pale = np.clip((brightness - 0.62) / 0.38, 0.0, 1.0)
+    neutral = np.clip((0.16 - chroma) / 0.16, 0.0, 1.0)
+    strength = pale * neutral
+    edge = adjacent_to_transparency & (alpha > 0)
+    strong_matte = edge & (strength >= 0.72)
+    alpha_out = alpha.astype(np.float32)
+    alpha_out[edge & ~strong_matte] *= 1.0 - strength[edge & ~strong_matte] * 0.88
+    alpha_out[strong_matte] = 0.0
+    alpha_out[alpha_out < 8.0] = 0.0
+    pixels[:, :, 3] = np.clip(alpha_out, 0.0, 255.0).astype(np.uint8)
+    pixels[pixels[:, :, 3] == 0, :3] = 0
+    return Image.fromarray(pixels, mode="RGBA")
+
+
 def fit_transparent(image: Image.Image, size: int = 1024, margin: int = 28) -> Image.Image:
     rgba = ensure_alpha(image)
     bbox = rgba.getchannel("A").getbbox()
@@ -326,6 +400,12 @@ def build_prop(asset_id: str, spec: dict[str, Any]) -> dict[str, Any]:
             frames.append(fit_transparent(rgba.crop((midpoint, 0, rgba.width, rgba.height))))
         else:
             frames.append(fit_transparent(rgba))
+    if asset_id in MATTE_REPAIR_PROPS:
+        frames = [remove_large_neutral_matte(frame) for frame in frames]
+    if asset_id in EDGE_DESPILL_PROPS:
+        frames = [despill_neutral_edge(frame) for frame in frames]
+    if asset_id == "garden_lamp" and len(frames) == 2:
+        frames[1].putalpha(ImageChops.darker(frames[1].getchannel("A"), frames[0].getchannel("A")))
     atlas = Image.new("RGBA", (1024 * frame_count, 1024), (0, 0, 0, 0))
     for index, frame in enumerate(frames):
         atlas.alpha_composite(frame, (index * 1024, 0))
@@ -343,7 +423,12 @@ def build_prop(asset_id: str, spec: dict[str, Any]) -> dict[str, Any]:
         "frames": frame_count,
         "pixel_size": float(spec.get("pixel_size", 0.0065)),
         "world_scale": float(spec.get("world_scale", 1.0)),
-        "generator": "OpenAI Images built-in source plus deterministic alpha/crop",
+        "processing": (
+            "authored dual-state atlas with checkerboard alpha recovery, neutral edge despill and silhouette clamp"
+            if asset_id == "garden_lamp"
+            else ("large neutral matte cleanup plus neutral edge despill" if asset_id in MATTE_REPAIR_PROPS else "alpha/crop normalization")
+        ),
+        "generator": "OpenAI Images built-in source plus deterministic alpha/matte/despill/crop",
         "status": "original_fan_made",
     }
 

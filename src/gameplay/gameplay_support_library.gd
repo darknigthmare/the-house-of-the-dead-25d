@@ -5,6 +5,7 @@ const DEFAULT_MANIFEST_PATH := "res://data/assets/gameplay_support_manifest.json
 
 var last_error: String = ""
 var projectiles: Dictionary = {}
+var pickups: Dictionary = {}
 var ui: Dictionary = {}
 var weakpoints: Dictionary = {}
 
@@ -12,6 +13,7 @@ var weakpoints: Dictionary = {}
 func load_manifest(path: String = DEFAULT_MANIFEST_PATH) -> bool:
 	last_error = ""
 	projectiles.clear()
+	pickups.clear()
 	ui.clear()
 	weakpoints.clear()
 	if not FileAccess.file_exists(path):
@@ -29,14 +31,15 @@ func load_manifest(path: String = DEFAULT_MANIFEST_PATH) -> bool:
 	if int(candidate.get("schema_version", 0)) != 1:
 		last_error = "Unsupported gameplay support manifest schema"
 		return false
-	for key in ["projectiles", "ui", "weakpoints"]:
+	for key in ["projectiles", "pickups", "ui", "weakpoints"]:
 		if typeof(candidate.get(key, {})) != TYPE_DICTIONARY:
 			last_error = "Gameplay support field '%s' must be an object" % key
 			return false
 	var next_projectiles := (candidate.get("projectiles", {}) as Dictionary).duplicate(true)
+	var next_pickups := (candidate.get("pickups", {}) as Dictionary).duplicate(true)
 	var next_ui := (candidate.get("ui", {}) as Dictionary).duplicate(true)
 	var next_weakpoints := (candidate.get("weakpoints", {}) as Dictionary).duplicate(true)
-	for group: Dictionary in [next_projectiles, next_ui, next_weakpoints]:
+	for group: Dictionary in [next_projectiles, next_pickups, next_ui, next_weakpoints]:
 		for asset_id in group:
 			var profile := group[asset_id] as Dictionary
 			var asset_path := str(profile.get("path", ""))
@@ -44,6 +47,7 @@ func load_manifest(path: String = DEFAULT_MANIFEST_PATH) -> bool:
 				last_error = "Gameplay support asset %s has missing path: %s" % [asset_id, asset_path]
 				return false
 	projectiles = next_projectiles
+	pickups = next_pickups
 	ui = next_ui
 	weakpoints = next_weakpoints
 	return true
@@ -51,6 +55,10 @@ func load_manifest(path: String = DEFAULT_MANIFEST_PATH) -> bool:
 
 func get_projectile(asset_id: String) -> Dictionary:
 	return (projectiles.get(asset_id, {}) as Dictionary).duplicate(true)
+
+
+func get_pickup(asset_id: String) -> Dictionary:
+	return (pickups.get(asset_id, {}) as Dictionary).duplicate(true)
 
 
 func get_ui(asset_id: String) -> Dictionary:

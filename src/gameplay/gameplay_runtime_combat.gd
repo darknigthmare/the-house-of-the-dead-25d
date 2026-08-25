@@ -1,6 +1,13 @@
 extends "res://src/gameplay/gameplay_runtime_flow.gd"
 
 const EnvironmentMotionControllerScript := preload("res://src/gameplay/environment_motion_controller.gd")
+const DEFAULT_ATTACK_TELEGRAPH_SECONDS := 0.65
+const DEFAULT_MELEE_RANGE := 2.5
+const DEFAULT_PROJECTILE_MIN_VISIBLE_TRAVEL := 3.0
+const DEFAULT_PROJECTILE_CONTACT_RANGE := 1.35
+const BOSS_ATTACK_TELEGRAPH_SECONDS := 0.9
+const BOSS_MELEE_RANGE := 2.8
+const BOSS_MELEE_RECOVERY_SECONDS := 0.55
 
 
 func _spawn_enemy(spawn: Dictionary) -> Node3D:
@@ -14,12 +21,20 @@ func _spawn_enemy(spawn: Dictionary) -> Node3D:
 		behavior = str(spawn.behavior)
 	elif spawn.has("pattern"):
 		behavior = _normalize_enemy_behavior(str(spawn.pattern), behavior)
-	actor.set_meta("attack_at", node_elapsed + float(spawn.get("attack_delay", 4.2)))
+	var attack_delay := float(spawn.get("attack_delay", 4.2))
+	actor.set_meta("attack_at", node_elapsed + attack_delay)
+	actor.set_meta("attack_ready_age", attack_delay)
 	actor.set_meta("lane", float(spawn.get("lane", actor_position.x)))
 	actor.set_meta("ground_y", actor_position.y)
 	actor.set_meta("behavior", behavior)
 	actor.set_meta("pattern", behavior)
 	actor.set_meta("attack_period", float(stats.get("attack_period", 1.8)))
+	actor.set_meta("attack_telegraph_seconds", float(stats.get("attack_telegraph", DEFAULT_ATTACK_TELEGRAPH_SECONDS)))
+	actor.set_meta("melee_range", float(stats.get("melee_range", DEFAULT_MELEE_RANGE)))
+	actor.set_meta("attack_approach_speed", float(stats.get("attack_approach_speed", 1.25)))
+	actor.set_meta("attack_telegraph_started", false)
+	actor.set_meta("attack_telegraph_complete", false)
+	actor.set_meta("attack_commit_age", 1.0e20)
 	actor.set_meta("max_attacks", int(stats.get("max_attacks", 3 if behavior == "throw_projectile" else 2)))
 	actor.set_meta("weave_width", float(stats.get("weave_width", 1.0)))
 	actor.set_meta("charge_factor", float(stats.get("charge_factor", 1.9)))
@@ -29,6 +44,8 @@ func _spawn_enemy(spawn: Dictionary) -> Node3D:
 	actor.set_meta("projectile_asset", str(stats.get("projectile_asset", "")))
 	actor.set_meta("projectile_destructible", bool(stats.get("projectile_destructible", true)))
 	actor.set_meta("projectile_speed", float(stats.get("projectile_speed", 4.0)))
+	actor.set_meta("projectile_min_travel", float(stats.get("projectile_min_travel", DEFAULT_PROJECTILE_MIN_VISIBLE_TRAVEL)))
+	actor.set_meta("projectile_contact_range", float(stats.get("projectile_contact_range", DEFAULT_PROJECTILE_CONTACT_RANGE)))
 	actor.set_meta("armor_zones", (stats.get("armor_zones", []) as Array).duplicate())
 	actor.set_meta("armor_durability", float(stats.get("armor_durability", 0.0)))
 	actor.set_meta("target_civilian", bool(spawn.get("targets_civilian", false)))
@@ -73,6 +90,7 @@ func _spawn_civilian(data: Dictionary) -> void:
 				break
 	active_civilian = _create_actor(actor_id, Vector3(float(position_data[0]), float(position_data[1]), float(position_data[2])), {"health": 1.0, "speed": 0.0, "scale": 0.94, "score": 0}, "civilian")
 	active_civilian.set_meta("deadline", node_elapsed + float(data.get("deadline", 7.0)))
+	active_civilian.set_meta("deadline_expired", false)
 	active_civilian.set_meta("rescued", false)
 	active_civilian.set_meta("escape_sign", -1.0 if active_civilian.position.x < 0.0 else 1.0)
 	active_civilian.set_meta("rescued_age", 0.0)
@@ -80,6 +98,29 @@ func _spawn_civilian(data: Dictionary) -> void:
 	chapter_scientists_total += 1
 	_play_sfx("danger")
 	_set_subtitle(str(data.get("dialogue", "Help me!")), 2.8)
+
+
+func _expire_civilian_rescue_window(civilian: Node3D) -> void:
+	# A timer is only allowed to accelerate a real attacker. It must never kill
+	# a civilian by itself: the player must see either physical melee contact or
+	# a destructible projectile complete the failure state.
+	if not is_instance_valid(civilian) or bool(civilian.get_meta("deadline_expired", false)):
+		return
+	civilian.set_meta("deadline_expired", true)
+	civilian.set_meta("deadline", 1.0e20)
+	var threat_accelerated := false
+	for candidate in active_actors:
+		if not is_instance_valid(candidate) or bool(candidate.get_meta("dead", false)):
+			continue
+		if str(candidate.get_meta("role", "")) != "enemy" or not bool(candidate.get_meta("target_civilian", false)):
+			continue
+		var age := float(candidate.get_meta("age", 0.0))
+		candidate.set_meta("attack_ready_age", minf(float(candidate.get_meta("attack_ready_age", age)), age))
+		candidate.set_meta("attack_at", node_elapsed)
+		threat_accelerated = true
+	if threat_accelerated:
+		_play_sfx("danger")
+		_set_subtitle("The scientist is still under visible attack!", 1.6)
 
 
 func _spawn_breakable(data: Dictionary) -> void:
@@ -94,13 +135,40 @@ func _spawn_breakable(data: Dictionary) -> void:
 	var actor_stats := {
 		"health": float(data.get("health", 2.0)), "speed": 0.0,
 		"scale": float(profile.get("world_scale", 0.72)), "score": int(data.get("score", 200)),
-		"custom_texture": str(profile.get("intact", ITEM_TEXTURES.medal)),
+		"custom_texture": str(profile.get("intact", _pickup_texture_path("medal"))),
 		"pixel_size": float(profile.get("pixel_size", 0.0045))
 	}
 	var actor := _create_actor(asset_id if not asset_id.is_empty() else "medal", Vector3(float(position_data[0]), float(position_data[1]), float(position_data[2])), actor_stats, "breakable")
 	actor.set_meta("pickup", str(data.get("pickup", "medal")))
 	actor.set_meta("broken_texture", str(profile.get("broken", "")))
 	actor.set_meta("branch_target", true)
+
+
+func _pickup_texture_path(pickup_type: String) -> String:
+	return str(gameplay_support_library.get_pickup(pickup_type).get("path", ""))
+
+
+func _spawn_pickup(data: Dictionary) -> void:
+	var pickup_type := str(data.get("pickup", "medal"))
+	var pickup_profile := gameplay_support_library.get_pickup(pickup_type)
+	if pickup_profile.is_empty():
+		push_error("Unknown pickup profile: %s" % pickup_type)
+		return
+	var position_data := data.get("position", [0.0, 0.8, -9.0]) as Array
+	var pickup_scale := float(data.get("scale", 0.65))
+	var actor_stats := {
+		"health": 1.0, "speed": 0.0, "scale": pickup_scale, "score": 0,
+		"custom_texture": str(pickup_profile.get("path", "")),
+		"pixel_size": float(data.get("pixel_size", 0.0032)) * pickup_scale
+	}
+	var pickup_id := str(data.get("id", "%s_%d" % [pickup_type, active_actors.size()]))
+	var actor := _create_actor(pickup_id, Vector3(float(position_data[0]), float(position_data[1]), float(position_data[2])), actor_stats, "pickup")
+	actor.set_meta("pickup", pickup_type)
+	actor.set_meta("pickup_origin_y", actor.position.y)
+	actor.set_meta("pickup_motion", str(data.get("motion", "bob")))
+	actor.set_meta("pickup_phase", float(data.get("phase", active_actors.size())) * 0.71)
+
+
 
 
 func _create_actor(actor_id: String, actor_position: Vector3, stats: Dictionary, role: String) -> Node3D:
@@ -132,17 +200,17 @@ func _create_actor(actor_id: String, actor_position: Vector3, stats: Dictionary,
 	var actor_scale := float(stats.get("scale", 1.0))
 	var sprite := Sprite3D.new()
 	sprite.name = "Sprite3D"
-	if role == "breakable":
-		var item_path := str(stats.get("custom_texture", ITEM_TEXTURES.get(actor_id, "")))
+	if role in ["breakable", "pickup"]:
+		var item_path := str(stats.get("custom_texture", _pickup_texture_path(actor_id)))
 		if item_path.is_empty():
-			push_error("No item texture for breakable: %s" % actor_id)
+			push_error("No item texture for %s: %s" % [role, actor_id])
 		else:
 			sprite.texture = load(item_path) as Texture2D
 		sprite.pixel_size = float(stats.get("pixel_size", 0.0075))
 		sprite.position.y = 0.0
 		sprite.billboard = BaseMaterial3D.BILLBOARD_FIXED_Y
 		sprite.alpha_cut = SpriteBase3D.ALPHA_CUT_DISCARD
-		sprite.texture_filter = BaseMaterial3D.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
+		sprite.texture_filter = BaseMaterial3D.TEXTURE_FILTER_NEAREST if role == "pickup" else BaseMaterial3D.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
 	elif role == "projectile":
 		var projectile_profile := gameplay_support_library.get_projectile(actor_id)
 		sprite.texture = gameplay_support_library.load_texture(projectile_profile)
@@ -234,13 +302,16 @@ func _update_actors(delta: float) -> void:
 			if not civilian_forward.is_zero_approx():
 				actor.set_meta("visual_forward", civilian_forward.normalized())
 		actor.set_meta("last_visual_position", actor.position)
-		if role in ["enemy", "projectile"]:
-			var attack_remaining := float(actor.get_meta("attack_at", 999.0)) - node_elapsed
-			if attack_remaining > 0.0 and attack_remaining <= 0.34:
-				actor.set_meta("attack_animation_timer", maxf(float(actor.get_meta("attack_animation_timer", 0.0)), attack_remaining))
-			elif attack_remaining <= 0.0 and attack_remaining > -delta:
-				actor.set_meta("attack_animation_timer", maxf(float(actor.get_meta("attack_animation_timer", 0.0)), 0.16))
 		_animate_actor(actor)
+		if role == "pickup":
+			var pickup_origin_y := float(actor.get_meta("pickup_origin_y", actor.position.y))
+			var pickup_phase := float(actor.get_meta("pickup_phase", 0.0))
+			var pickup_motion := str(actor.get_meta("pickup_motion", "bob"))
+			actor.position.y = pickup_origin_y + (absf(sin(age * 3.6 + pickup_phase)) * 0.22 if pickup_motion == "hop" else sin(age * 2.5 + pickup_phase) * 0.09)
+			var pickup_sprite := actor.get_node_or_null("Sprite3D") as Sprite3D
+			if pickup_sprite != null:
+				pickup_sprite.modulate.a = 0.88 + sin(age * 4.0 + pickup_phase) * 0.12
+			continue
 		if role == "civilian":
 			if bool(actor.get_meta("rescued", false)):
 				var rescued_age := float(actor.get_meta("rescued_age", 0.0)) + delta
@@ -255,60 +326,81 @@ func _update_actors(delta: float) -> void:
 						active_civilian = null
 					actor.queue_free()
 			elif state == "node" and node_elapsed >= float(actor.get_meta("deadline", 999.0)):
-				_kill_civilian(actor, false)
+				_expire_civilian_rescue_window(actor)
 			continue
 		if role != "enemy" and role != "projectile":
 			continue
+		var movement_origin: Vector3 = actor.global_position
 		var behavior := str(actor.get_meta("behavior", actor.get_meta("pattern", "walk")))
 		var speed := float(actor.get_meta("speed", 0.8))
 		var lane := float(actor.get_meta("lane", actor.position.x))
 		var ground_y := float(actor.get_meta("ground_y", actor.position.y))
 		var forward_speed := speed
-		match behavior:
-			"charge":
-				var charge_window := node_elapsed >= float(actor.get_meta("attack_at", 999.0)) - 1.25
-				forward_speed *= float(actor.get_meta("charge_factor", 1.9)) if charge_window else 0.72
-				actor.position.x = lane + sin(age * 2.2) * 0.18
-			"throw_projectile":
-				forward_speed *= 0.52
-				actor.position.x = lane + sin(age * 1.7) * 0.26
-			"ceiling_drop":
-				var drop_duration := maxf(0.1, float(actor.get_meta("drop_duration", 1.1)))
-				var drop_progress := clampf(age / drop_duration, 0.0, 1.0)
-				var drop_eased := drop_progress * drop_progress * (3.0 - 2.0 * drop_progress)
-				actor.position.y = lerpf(ground_y + float(actor.get_meta("drop_height", 4.2)), ground_y, drop_eased)
-				forward_speed = 0.0 if drop_progress < 1.0 else speed * 1.15
-			"jump":
-				actor.position.y = ground_y + absf(sin(age * 3.7)) * float(actor.get_meta("jump_height", 1.15))
-				actor.position.x = lane + sin(age * 2.4) * 0.4
-			"flight_swarm":
-				var swarm_width := float(actor.get_meta("weave_width", 1.0))
-				actor.position.y = ground_y + sin(age * 5.1) * 0.52
-				actor.position.x = lane + sin(age * 3.6) * swarm_width
-				forward_speed *= 1.1
-			"aquatic_weave":
-				var aquatic_width := float(actor.get_meta("weave_width", 1.1))
-				actor.position.x = lane + sin(age * 2.9) * aquatic_width
-				actor.position.y = ground_y + 0.12 + sin(age * 5.8) * 0.16
-			"armored_advance":
-				actor.position.x = lane + sin(age * 1.25) * 0.16
-				forward_speed *= 0.78
-			"heavy_weapon":
-				actor.position.x = lane + sin(age * 0.9) * 0.12
-				forward_speed *= 0.58
-			"projectile_weave":
-				actor.position.x = lane + sin(age * 7.2) * 0.48
-				actor.position.y = ground_y + sin(age * 8.4) * 0.22
-			_:
-				actor.position.y = ground_y + sin(age * 4.0) * 0.035
-		actor.position.z += forward_speed * delta
-		if state in ["node", "boss"] and node_elapsed >= float(actor.get_meta("attack_at", 999.0)):
-			_actor_attack(actor)
+		var uses_civilian_target_motion: bool = role == "enemy" and _update_civilian_attacker_motion(actor, behavior, delta)
+		var uses_directional_projectile_motion: bool = role == "projectile" and actor.has_meta("travel_direction")
+		if not uses_civilian_target_motion and not uses_directional_projectile_motion:
+			match behavior:
+				"charge":
+					var charge_window := age >= float(actor.get_meta("attack_ready_age", 999.0)) - 1.25
+					forward_speed *= float(actor.get_meta("charge_factor", 1.9)) if charge_window else 0.72
+					actor.position.x = lane + sin(age * 2.2) * 0.18
+				"throw_projectile":
+					forward_speed *= 0.52
+					actor.position.x = lane + sin(age * 1.7) * 0.26
+				"ceiling_drop":
+					var drop_duration := maxf(0.1, float(actor.get_meta("drop_duration", 1.1)))
+					var drop_progress := clampf(age / drop_duration, 0.0, 1.0)
+					var drop_eased := drop_progress * drop_progress * (3.0 - 2.0 * drop_progress)
+					actor.position.y = lerpf(ground_y + float(actor.get_meta("drop_height", 4.2)), ground_y, drop_eased)
+					forward_speed = 0.0 if drop_progress < 1.0 else speed * 1.15
+				"jump":
+					actor.position.y = ground_y + absf(sin(age * 3.7)) * float(actor.get_meta("jump_height", 1.15))
+					actor.position.x = lane + sin(age * 2.4) * 0.4
+				"flight_swarm":
+					var swarm_width := float(actor.get_meta("weave_width", 1.0))
+					actor.position.y = ground_y + sin(age * 5.1) * 0.52
+					actor.position.x = lane + sin(age * 3.6) * swarm_width
+					forward_speed *= 1.1
+				"aquatic_weave":
+					var aquatic_width := float(actor.get_meta("weave_width", 1.1))
+					actor.position.x = lane + sin(age * 2.9) * aquatic_width
+					actor.position.y = ground_y + 0.12 + sin(age * 5.8) * 0.16
+				"armored_advance":
+					actor.position.x = lane + sin(age * 1.25) * 0.16
+					forward_speed *= 0.78
+				"heavy_weapon":
+					actor.position.x = lane + sin(age * 0.9) * 0.12
+					forward_speed *= 0.58
+				"projectile_weave":
+					actor.position.x = lane + sin(age * 7.2) * 0.48
+					actor.position.y = ground_y + sin(age * 8.4) * 0.22
+				_:
+					actor.position.y = ground_y + sin(age * 4.0) * 0.035
+		if role == "enemy" and not uses_civilian_target_motion:
+			if bool(actor.get_meta("attack_telegraph_started", false)):
+				forward_speed = 0.0
+			elif age >= float(actor.get_meta("attack_ready_age", 999.0)):
+				forward_speed = maxf(forward_speed, float(actor.get_meta("attack_approach_speed", 1.25)))
+		if uses_directional_projectile_motion:
+			var travel_direction: Vector3 = actor.get_meta("travel_direction", Vector3.ZERO) as Vector3
+			if not travel_direction.is_zero_approx():
+				actor.global_position += travel_direction.normalized() * forward_speed * delta
+		elif not uses_civilian_target_motion:
+			actor.position.z += forward_speed * delta
+		var moved_distance: float = movement_origin.distance_to(actor.global_position)
+		if role == "projectile":
+			actor.set_meta("travelled_distance", float(actor.get_meta("travelled_distance", 0.0)) + moved_distance)
+			if _actor_is_attack_visible(actor):
+				actor.set_meta("seen_by_camera", true)
+				actor.set_meta("visible_travel_distance", float(actor.get_meta("visible_travel_distance", 0.0)) + moved_distance)
+			_resolve_projectile_contact(actor)
+		elif state in ["node", "boss"]:
+			_update_enemy_attack(actor, age)
 
 
 func _animate_actor(actor: Node3D) -> void:
 	var sprite := actor.get_node_or_null("Sprite3D") as Sprite3D
-	if sprite == null or str(actor.get_meta("role", "enemy")) in ["breakable", "projectile"]:
+	if sprite == null or str(actor.get_meta("role", "enemy")) in ["breakable", "pickup", "projectile"]:
 		return
 	var local_frame := 0
 	var attack_timer := float(actor.get_meta("attack_animation_timer", 0.0))
@@ -326,44 +418,216 @@ func _animate_actor(actor: Node3D) -> void:
 	actor.set_meta("frame", sprite.frame)
 
 
-func _actor_attack(actor: Node3D) -> void:
-	var role := str(actor.get_meta("role", "enemy"))
-	if role == "projectile":
-		if bool(actor.get_meta("target_civilian", false)) and active_civilian != null and is_instance_valid(active_civilian) and not bool(active_civilian.get_meta("dead", false)):
-			_kill_civilian(active_civilian, false)
-		else:
-			_damage_player(_first_active_player(), 1, "enemy_projectile")
-		_kill_actor(actor, -1, false)
-		return
+func _has_live_civilian_target(actor: Node3D) -> bool:
+	return (
+		bool(actor.get_meta("target_civilian", false))
+		and active_civilian != null
+		and is_instance_valid(active_civilian)
+		and not bool(active_civilian.get_meta("dead", false))
+		and not bool(active_civilian.get_meta("rescued", false))
+	)
+
+
+func _civilian_attack_anchor(actor: Node3D) -> Vector3:
+	var civilian_scale := maxf(0.25, float(active_civilian.get_meta("visual_scale", 1.0)))
+	var attacker_scale := maxf(0.25, float(actor.get_meta("visual_scale", 1.0)))
+	return active_civilian.global_position + Vector3.UP * (0.9 * civilian_scale - 0.9 * attacker_scale)
+
+
+func _update_civilian_attacker_motion(actor: Node3D, behavior: String, delta: float) -> bool:
+	if not _has_live_civilian_target(actor):
+		return false
+	var offset := _civilian_attack_anchor(actor) - actor.global_position
+	if not offset.is_zero_approx():
+		var facing := offset
+		facing.y = 0.0
+		if not facing.is_zero_approx():
+			actor.set_meta("visual_forward", facing.normalized())
+	if behavior == "throw_projectile" or bool(actor.get_meta("attack_telegraph_started", false)):
+		return true
+	var stop_distance := maxf(0.55, float(actor.get_meta("melee_range", DEFAULT_MELEE_RANGE)) * 0.72)
+	var distance := offset.length()
+	if distance > stop_distance:
+		var step := minf(float(actor.get_meta("speed", 0.8)) * delta, distance - stop_distance)
+		actor.global_position += offset.normalized() * step
+	return true
+
+
+func _update_enemy_attack(actor: Node3D, age: float) -> bool:
+	if not is_instance_valid(actor) or bool(actor.get_meta("dead", false)) or str(actor.get_meta("role", "")) != "enemy":
+		return false
+	if age < float(actor.get_meta("attack_ready_age", 999.0)):
+		return false
 	var behavior := str(actor.get_meta("behavior", "walk"))
-	if behavior == "throw_projectile":
-		_spawn_enemy_projectile(actor)
-	else:
-		if bool(actor.get_meta("target_civilian", false)) and active_civilian != null and is_instance_valid(active_civilian) and not bool(active_civilian.get_meta("dead", false)):
-			_kill_civilian(active_civilian, false)
-		else:
-			_damage_player(_first_active_player(), 1, "enemy")
+	var requires_contact := behavior != "throw_projectile"
+	var visible := _actor_is_attack_visible(actor)
+	var has_contact := not requires_contact or _actor_has_melee_contact(actor)
+	if not bool(actor.get_meta("attack_telegraph_started", false)):
+		if not visible or not has_contact:
+			return false
+		var telegraph_seconds := maxf(0.2, float(actor.get_meta("attack_telegraph_seconds", DEFAULT_ATTACK_TELEGRAPH_SECONDS)))
+		actor.set_meta("attack_telegraph_started", true)
+		actor.set_meta("attack_telegraph_complete", false)
+		actor.set_meta("attack_commit_age", age + telegraph_seconds)
+		actor.set_meta("attack_animation_timer", telegraph_seconds)
+		_play_sfx("danger")
+		return false
+	if not visible or not has_contact:
+		_cancel_attack_telegraph(actor, age + 0.25)
+		return false
+	var remaining := float(actor.get_meta("attack_commit_age", age)) - age
+	if remaining > 0.0:
+		actor.set_meta("attack_animation_timer", maxf(float(actor.get_meta("attack_animation_timer", 0.0)), remaining))
+		return false
+	actor.set_meta("attack_telegraph_complete", true)
+	return _actor_attack(actor)
+
+
+func _cancel_attack_telegraph(actor: Node3D, next_ready_age: float) -> void:
+	actor.set_meta("attack_telegraph_started", false)
+	actor.set_meta("attack_telegraph_complete", false)
+	actor.set_meta("attack_commit_age", 1.0e20)
+	actor.set_meta("attack_ready_age", next_ready_age)
+
+
+func _finish_enemy_attack_cycle(actor: Node3D) -> void:
+	var age := float(actor.get_meta("age", 0.0))
+	var period := maxf(0.35, float(actor.get_meta("attack_period", 1.8)))
+	_cancel_attack_telegraph(actor, age + period)
+	actor.set_meta("attack_at", node_elapsed + period)
 	var attacks := int(actor.get_meta("attacks", 0)) + 1
 	actor.set_meta("attacks", attacks)
-	actor.set_meta("attack_at", node_elapsed + float(actor.get_meta("attack_period", 1.8)))
 	if attacks >= int(actor.get_meta("max_attacks", 2)):
 		_kill_actor(actor, -1, false)
 
 
+func _actor_has_melee_contact(actor: Node3D) -> bool:
+	if camera_3d == null or not is_instance_valid(camera_3d):
+		return false
+	var target_position := camera_3d.global_position
+	if bool(actor.get_meta("target_civilian", false)):
+		if not _has_live_civilian_target(actor):
+			return false
+		var civilian_scale := maxf(0.25, float(active_civilian.get_meta("visual_scale", 1.0)))
+		target_position = active_civilian.global_position + Vector3.UP * (0.9 * civilian_scale)
+	var attacker_scale := maxf(0.25, float(actor.get_meta("visual_scale", 1.0)))
+	var attacker_contact_point := actor.global_position + Vector3.UP * (0.9 * attacker_scale)
+	return attacker_contact_point.distance_to(target_position) <= maxf(0.5, float(actor.get_meta("melee_range", DEFAULT_MELEE_RANGE)))
+
+
+func _actor_is_attack_visible(actor: Node3D) -> bool:
+	if not is_instance_valid(actor) or camera_3d == null or not is_instance_valid(camera_3d):
+		return false
+	var sprite := actor.get_node_or_null("Sprite3D") as Sprite3D
+	if sprite == null or sprite.texture == null or not sprite.visible or sprite.modulate.a <= 0.05:
+		return false
+	var visual_scale := maxf(0.25, float(actor.get_meta("visual_scale", 1.0)))
+	var focus := actor.global_position + Vector3(0.0, 0.85 * visual_scale, 0.0)
+	if camera_3d.is_position_behind(focus):
+		return false
+	return active_play_rect.grow(18.0).has_point(camera_3d.unproject_position(focus))
+
+
+func _actor_attack(actor: Node3D) -> bool:
+	if not is_instance_valid(actor) or bool(actor.get_meta("dead", false)):
+		return false
+	var role := str(actor.get_meta("role", "enemy"))
+	if role == "projectile":
+		return _resolve_projectile_contact(actor)
+	if role != "enemy" or not bool(actor.get_meta("attack_telegraph_complete", false)) or not _actor_is_attack_visible(actor):
+		return false
+	var behavior := str(actor.get_meta("behavior", "walk"))
+	var performed := false
+	if behavior == "throw_projectile":
+		performed = _spawn_enemy_projectile(actor) != null
+	else:
+		if not _actor_has_melee_contact(actor):
+			return false
+		if bool(actor.get_meta("target_civilian", false)):
+			if not _has_live_civilian_target(actor):
+				return false
+			_kill_civilian(active_civilian, false)
+		else:
+			_damage_player(_first_active_player(), 1, "enemy_melee")
+		performed = true
+	if performed:
+		_finish_enemy_attack_cycle(actor)
+	else:
+		_cancel_attack_telegraph(actor, float(actor.get_meta("age", 0.0)) + 0.35)
+	return performed
+
+
 func _spawn_enemy_projectile(owner: Node3D) -> Node3D:
+	if not bool(owner.get_meta("projectile_destructible", false)) or not bool(owner.get_meta("attack_telegraph_complete", false)):
+		return null
 	var projectile_id := str(owner.get_meta("projectile_asset", ""))
 	if gameplay_support_library.get_projectile(projectile_id).is_empty():
 		return null
 	var projectile_stats := {"health": 1.0, "speed": float(owner.get_meta("projectile_speed", 4.0)), "scale": 0.72, "score": 0, "pixel_size": 0.0026}
+	var targets_civilian := _has_live_civilian_target(owner)
 	var projectile := _create_actor(projectile_id, owner.position + Vector3(0.0, 1.1, 0.45), projectile_stats, "projectile")
-	projectile.set_meta("destructible", bool(owner.get_meta("projectile_destructible", true)))
+	projectile.set_meta("destructible", true)
+	projectile.set_meta("launch_telegraphed", true)
 	projectile.set_meta("behavior", "projectile_weave")
 	projectile.set_meta("pattern", "projectile_weave")
 	projectile.set_meta("lane", owner.position.x)
 	projectile.set_meta("ground_y", projectile.position.y)
-	projectile.set_meta("attack_at", node_elapsed + 1.15)
-	projectile.set_meta("target_civilian", bool(owner.get_meta("target_civilian", false)))
+	projectile.set_meta("spawn_position", projectile.global_position)
+	projectile.set_meta("travelled_distance", 0.0)
+	projectile.set_meta("visible_travel_distance", 0.0)
+	projectile.set_meta("seen_by_camera", false)
+	var minimum_visible_travel := float(owner.get_meta("projectile_min_travel", DEFAULT_PROJECTILE_MIN_VISIBLE_TRAVEL))
+	var contact_range := float(owner.get_meta("projectile_contact_range", DEFAULT_PROJECTILE_CONTACT_RANGE))
+	projectile.set_meta("contact_range", contact_range)
+	projectile.set_meta("target_civilian", targets_civilian)
+	if targets_civilian:
+		var target_position := active_civilian.global_position + Vector3.UP
+		var target_offset := target_position - projectile.global_position
+		if not target_offset.is_zero_approx():
+			projectile.set_meta("behavior", "targeted_projectile")
+			projectile.set_meta("pattern", "targeted_projectile")
+			projectile.set_meta("travel_direction", target_offset.normalized())
+			projectile.set_meta("target_position", target_position)
+			minimum_visible_travel = minf(minimum_visible_travel, maxf(0.5, target_offset.length() - contact_range - 0.2))
+	projectile.set_meta("minimum_visible_travel", minimum_visible_travel)
 	return projectile
+
+
+func _resolve_projectile_contact(projectile: Node3D) -> bool:
+	if not is_instance_valid(projectile) or bool(projectile.get_meta("dead", false)) or str(projectile.get_meta("role", "")) != "projectile":
+		return false
+	var currently_visible := _actor_is_attack_visible(projectile)
+	if currently_visible:
+		projectile.set_meta("seen_by_camera", true)
+	var can_damage := bool(projectile.get_meta("destructible", false)) and bool(projectile.get_meta("launch_telegraphed", false))
+	can_damage = can_damage and bool(projectile.get_meta("seen_by_camera", false)) and currently_visible
+	can_damage = can_damage and float(projectile.get_meta("visible_travel_distance", 0.0)) >= maxf(0.5, float(projectile.get_meta("minimum_visible_travel", DEFAULT_PROJECTILE_MIN_VISIBLE_TRAVEL)))
+	var aimed_at_civilian := bool(projectile.get_meta("target_civilian", false))
+	var target_is_civilian := aimed_at_civilian and _has_live_civilian_target(projectile)
+	var target_available := not aimed_at_civilian or target_is_civilian
+	var target_position := camera_3d.global_position if camera_3d != null else Vector3.ZERO
+	if target_is_civilian:
+		target_position = active_civilian.global_position + Vector3.UP
+	elif aimed_at_civilian:
+		target_position = projectile.get_meta("target_position", projectile.global_position) as Vector3
+	can_damage = can_damage and target_available
+	var has_contact := projectile.global_position.distance_to(target_position) <= maxf(0.5, float(projectile.get_meta("contact_range", DEFAULT_PROJECTILE_CONTACT_RANGE)))
+	if aimed_at_civilian and not target_available and has_contact:
+		_kill_actor(projectile, -1, false)
+		return false
+	if can_damage and has_contact:
+		if target_is_civilian:
+			_kill_civilian(active_civilian, false)
+		else:
+			_damage_player(_first_active_player(), 1, "enemy_projectile")
+		_kill_actor(projectile, -1, false)
+		return true
+	if camera_3d != null and is_instance_valid(camera_3d):
+		var camera_forward := -camera_3d.global_transform.basis.z.normalized()
+		var camera_depth := (projectile.global_position - camera_3d.global_position).dot(camera_forward)
+		if camera_depth < -1.5 or float(projectile.get_meta("travelled_distance", 0.0)) > 50.0:
+			_kill_actor(projectile, -1, false)
+	return false
 
 
 func _attempt_shot(player_index: int, screen_position: Vector2) -> void:
@@ -441,6 +705,11 @@ func _damage_actor(actor: Node3D, zone: String, multiplier: float, player_index:
 	if role == "civilian":
 		_kill_civilian(actor, true, player_index)
 		return
+	if role == "pickup":
+		_play_sfx("rescue")
+		_spawn_impact(actor.global_position + Vector3.UP * 0.45, "pickup")
+		_kill_actor(actor, player_index, false)
+		return
 	if role == "projectile":
 		if not bool(actor.get_meta("destructible", true)):
 			_play_sfx("empty")
@@ -474,7 +743,7 @@ func _damage_actor(actor: Node3D, zone: String, multiplier: float, player_index:
 		_play_sfx("empty")
 		return
 	var damage := multiplier
-	if role == "breakable":
+	if role in ["breakable", "pickup"]:
 		damage = 1.0
 	var health := float(actor.get_meta("health", 1.0)) - damage
 	actor.set_meta("health", health)
@@ -510,6 +779,7 @@ func _kill_actor(actor: Node3D, player_index: int, award: bool) -> void:
 		var kill_shot_type := "headshot_kill" if hit_zone == "head" else "%s_kill" % hit_zone
 		_add_score(player_index, int(actor.get_meta("score", 80)), "TARGET DOWN", str(actor.get_meta("actor_id", "enemy")), kill_shot_type)
 	if role == "breakable":
+		destroyed_breakable_id = str(actor.get_meta("actor_id", ""))
 		branch_success = true
 		_apply_pickup(str(actor.get_meta("pickup", "medal")), player_index)
 		var broken_path := str(actor.get_meta("broken_texture", ""))
@@ -518,6 +788,8 @@ func _kill_actor(actor: Node3D, player_index: int, award: bool) -> void:
 			breakable_sprite.texture = load(broken_path) as Texture2D
 	if actor == current_boss:
 		_on_boss_defeated()
+	if role == "pickup" and player_index >= 0:
+		_apply_pickup(str(actor.get_meta("pickup", "medal")), player_index)
 	var sprite := actor.get_node_or_null("Sprite3D") as Sprite3D
 	if sprite != null:
 		if role != "breakable" and sprite.hframes * sprite.vframes >= 64:
@@ -689,12 +961,17 @@ func _start_boss(boss_id: String) -> void:
 	boss_weak_window = 2.0
 	if str(configuration.get("mode", "")) == "boss_rush":
 		_set_music_for_boss(boss_id)
-	_play_sfx("boss_telegraph")
 	var stats := _boss_stats(boss_id)
 	boss_max_health = float(stats.health)
 	current_boss = _create_actor(boss_id, Vector3(0.0, 0.0 if boss_id != "hangedman" else 1.4, -10.5), {"health": boss_max_health, "speed": 0.0, "scale": float(stats.scale), "score": int(stats.score)}, "boss")
 	current_boss.set_meta("boss_id", boss_id)
 	current_boss.set_meta("telegraph_played", false)
+	current_boss.set_meta("attack_telegraph_started", false)
+	current_boss.set_meta("attack_telegraph_complete", false)
+	current_boss.set_meta("melee_range", BOSS_MELEE_RANGE)
+	current_boss.set_meta("melee_recovery_remaining", 0.0)
+	current_boss.set_meta("attack_home_position", current_boss.position)
+	current_boss.set_meta("melee_contact_position", current_boss.position)
 	boss_panel.visible = true
 	boss_name_label.text = "%s — TYPE %s" % [str(stats.name), str(stats.type)]
 	boss_health_bar.max_value = boss_max_health
@@ -727,45 +1004,94 @@ func _update_boss(delta: float) -> void:
 	boss_attack_timer -= delta
 	boss_weak_window = maxf(0.0, boss_weak_window - delta)
 	var boss_id := str(current_boss.get_meta("boss_id", "chariot"))
+	var is_melee_boss := boss_id in ["chariot", "hangedman"]
 	var t := Time.get_ticks_msec() * 0.001
-	match boss_id:
-		"chariot":
-			current_boss.position.x = sin(t * 0.8) * (0.55 + boss_phase * 0.35)
-		"hangedman":
-			current_boss.position = Vector3(sin(t * 1.7) * 2.5, 1.5 + cos(t * 1.2) * 0.8, -9.0 + sin(t) * 1.0)
-		"hermit":
-			current_boss.position.z = -9.5 + sin(t * 1.2) * 1.2
-		"magician":
-			current_boss.position.x = sin(t * (2.5 + boss_phase)) * 3.0
-			current_boss.position.y = 0.3 + absf(cos(t * 1.8)) * 1.4
-	if boss_attack_timer > 0.0 and boss_attack_timer <= 0.34:
-		current_boss.set_meta("attack_animation_timer", maxf(float(current_boss.get_meta("attack_animation_timer", 0.0)), boss_attack_timer))
-		if not bool(current_boss.get_meta("telegraph_played", false)):
-			current_boss.set_meta("telegraph_played", true)
-			_play_sfx("boss_telegraph")
+	var home_position := _boss_home_position(boss_id, t)
+	current_boss.set_meta("attack_home_position", home_position)
+	var recovery_remaining := maxf(0.0, float(current_boss.get_meta("melee_recovery_remaining", 0.0)) - delta)
+	current_boss.set_meta("melee_recovery_remaining", recovery_remaining)
+	if recovery_remaining > 0.0 and is_melee_boss:
+		var recovery_progress := 1.0 - recovery_remaining / BOSS_MELEE_RECOVERY_SECONDS
+		var contact_position: Vector3 = current_boss.get_meta("melee_contact_position", home_position) as Vector3
+		current_boss.position = contact_position.lerp(home_position, smoothstep(0.0, 1.0, recovery_progress))
+	else:
+		current_boss.position = home_position
+		if boss_attack_timer <= BOSS_ATTACK_TELEGRAPH_SECONDS:
+			if not _actor_is_attack_visible(current_boss):
+				current_boss.set_meta("attack_telegraph_started", false)
+				current_boss.set_meta("attack_telegraph_complete", false)
+				current_boss.set_meta("telegraph_played", false)
+				boss_attack_timer = maxf(boss_attack_timer, 0.35)
+			else:
+				if not bool(current_boss.get_meta("attack_telegraph_started", false)):
+					current_boss.set_meta("attack_telegraph_started", true)
+					current_boss.set_meta("telegraph_played", true)
+					_play_sfx("boss_telegraph")
+				var telegraph_remaining := maxf(0.0, boss_attack_timer)
+				current_boss.set_meta("attack_animation_timer", maxf(float(current_boss.get_meta("attack_animation_timer", 0.0)), telegraph_remaining))
+				if is_melee_boss:
+					var lunge_progress := clampf(1.0 - telegraph_remaining / BOSS_ATTACK_TELEGRAPH_SECONDS, 0.0, 1.0)
+					var contact_position := _boss_melee_contact_position(home_position)
+					current_boss.set_meta("melee_contact_position", contact_position)
+					current_boss.position = home_position.lerp(contact_position, smoothstep(0.0, 1.0, lunge_progress))
 	if boss_attack_timer <= 0.0:
-		current_boss.set_meta("attack_animation_timer", maxf(float(current_boss.get_meta("attack_animation_timer", 0.0)), 0.16))
-		_boss_attack(boss_id)
+		var telegraph_ready := bool(current_boss.get_meta("attack_telegraph_started", false)) and _actor_is_attack_visible(current_boss)
+		current_boss.set_meta("attack_telegraph_complete", telegraph_ready)
+		var performed := _boss_attack(boss_id) if telegraph_ready else false
+		if performed and is_melee_boss:
+			current_boss.set_meta("melee_recovery_remaining", BOSS_MELEE_RECOVERY_SECONDS)
+		current_boss.set_meta("attack_telegraph_started", false)
+		current_boss.set_meta("attack_telegraph_complete", false)
 		current_boss.set_meta("telegraph_played", false)
-		boss_attack_timer = maxf(0.75, 2.8 - float(boss_phase) * 0.55)
+		boss_attack_timer = maxf(BOSS_ATTACK_TELEGRAPH_SECONDS + 0.35, 2.8 - float(boss_phase) * 0.55)
 		boss_weak_window = 1.2
 	boss_health_bar.value = float(current_boss.get_meta("health", 0.0))
 
 
-func _boss_attack(boss_id: String) -> void:
+func _boss_home_position(boss_id: String, elapsed: float) -> Vector3:
+	match boss_id:
+		"chariot":
+			return Vector3(sin(elapsed * 0.8) * (0.55 + boss_phase * 0.35), 0.0, -10.5)
+		"hangedman":
+			return Vector3(sin(elapsed * 1.7) * 2.5, 1.5 + cos(elapsed * 1.2) * 0.8, -9.0 + sin(elapsed))
+		"hermit":
+			return Vector3(0.0, 0.0, -9.5 + sin(elapsed * 1.2) * 1.2)
+		"magician":
+			return Vector3(sin(elapsed * (2.5 + boss_phase)) * 3.0, 0.3 + absf(cos(elapsed * 1.8)) * 1.4, -10.5)
+	return current_boss.position
+
+
+func _boss_melee_contact_position(home_position: Vector3) -> Vector3:
+	if camera_3d == null or not is_instance_valid(camera_3d):
+		return home_position
+	var camera_forward := -camera_3d.global_transform.basis.z.normalized()
+	var contact_position := camera_3d.global_position + camera_forward * (BOSS_MELEE_RANGE * 0.58)
+	contact_position.y = home_position.y
+	return contact_position
+
+
+func _boss_attack(boss_id: String) -> bool:
+	if current_boss == null or not is_instance_valid(current_boss):
+		return false
+	if not bool(current_boss.get_meta("attack_telegraph_complete", false)) or not _actor_is_attack_visible(current_boss):
+		return false
 	if boss_id in ["hermit", "magician"]:
 		current_boss.set_meta("projectile_asset", "hermit_web_ball" if boss_id == "hermit" else "magician_fireball")
 		current_boss.set_meta("projectile_destructible", true)
 		current_boss.set_meta("projectile_speed", 4.25 if boss_id == "hermit" else 5.0)
+		current_boss.set_meta("projectile_min_travel", 4.0 if boss_id == "hermit" else 3.5)
+		current_boss.set_meta("projectile_contact_range", DEFAULT_PROJECTILE_CONTACT_RANGE)
 		var projectile := _spawn_enemy_projectile(current_boss)
-		if projectile != null:
-			projectile.set_meta("lane", current_boss.position.x)
-			projectile.set_meta("attack_at", node_elapsed + (1.2 if boss_id == "hermit" else 0.92))
-			projectile.set_meta("target_civilian", false)
-			_play_sfx("boss_web_projectile" if boss_id == "hermit" else "boss_projectile")
-	else:
-		_damage_player(_first_active_player(), 1, "boss")
-	_play_sfx("danger")
+		if projectile == null:
+			return false
+		projectile.set_meta("lane", current_boss.position.x)
+		projectile.set_meta("target_civilian", false)
+		_play_sfx("boss_web_projectile" if boss_id == "hermit" else "boss_projectile")
+		return true
+	if not _actor_has_melee_contact(current_boss):
+		return false
+	_damage_player(_first_active_player(), 1, "boss_melee")
+	return true
 
 
 func _boss_zone_is_vulnerable(zone: String) -> bool:
@@ -1013,6 +1339,10 @@ func _spawn_environment_effects() -> void:
 	var mote_effects: Dictionary = {}
 	for effect_value in effects:
 		var effect_id := str(effect_value)
+		var animated_profile := environment_asset_library.get_animated_effect(effect_id)
+		if not animated_profile.is_empty():
+			_spawn_animated_environment_effect(effect_id, animated_profile)
+			continue
 		var resolved_mote := effect_id
 		if effect_id in ["drips", "water_flow"]:
 			resolved_mote = "mist"
@@ -1037,6 +1367,42 @@ func _spawn_environment_effects() -> void:
 		var mote_count := 32 if str(mote_id) == "rain" else (10 if str(mote_id) == "distant_bats" else 16)
 		motes.configure_motes(str(mote_id), mote_count, Vector3(6.0, 3.0, 13.0))
 		world_root.add_child(motes)
+
+
+func _spawn_animated_environment_effect(effect_id: String, profile: Dictionary) -> void:
+	var texture := load(str(profile.get("path", ""))) as Texture2D
+	if texture == null:
+		push_error("Animated environment effect texture missing: %s" % effect_id)
+		return
+	var sprite := Sprite3D.new()
+	sprite.name = "AnimatedEffect_%s" % effect_id
+	sprite.texture = texture
+	sprite.hframes = maxi(1, int(profile.get("hframes", 8)))
+	sprite.frame = 0
+	sprite.pixel_size = float(profile.get("pixel_size", 0.004))
+	sprite.scale = Vector3.ONE * float(profile.get("world_scale", 1.0))
+	sprite.billboard = BaseMaterial3D.BILLBOARD_FIXED_Y
+	sprite.alpha_cut = SpriteBase3D.ALPHA_CUT_DISABLED
+	sprite.texture_filter = BaseMaterial3D.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
+	sprite.shaded = false
+	sprite.modulate = Color.from_string(str(profile.get("tint", "#ffffff")), Color.WHITE)
+	var position_data := profile.get("position", [0.0, 2.0, -12.0]) as Array
+	if position_data.size() >= 3:
+		sprite.position = Vector3(float(position_data[0]), float(position_data[1]), float(position_data[2]))
+	sprite.set_meta("animation_fps", float(profile.get("fps", 8.0)))
+	sprite.set_meta("effect_pulse", bool(profile.get("pulse", false)))
+	world_root.add_child(sprite)
+	var controller := EnvironmentMotionControllerScript.new()
+	controller.configure_target(sprite, "effect_strip")
+	world_root.add_child(controller)
+	var light_energy := float(profile.get("light_energy", 0.0))
+	if light_energy > 0.0:
+		var light := OmniLight3D.new()
+		light.position = sprite.position + Vector3(0.0, 0.0, 0.25)
+		light.light_color = Color.from_string(str(profile.get("light_color", "#7ecfff")), Color("#7ecfff"))
+		light.light_energy = light_energy
+		light.omni_range = float(profile.get("light_range", 3.5))
+		world_root.add_child(light)
 
 func _add_backdrop(style: String) -> void:
 	var path := "res://assets/environments/mansion-exterior.png" if style in ["garden", "roof"] else "res://assets/environments/mansion-hall.png"

@@ -40,6 +40,12 @@ const EXPECTED_PROPS = [
   'estate_gate', 'garden_lamp', 'dead_tree', 'stone_bridge_arch',
   'roof_gargoyle', 'lab_specimen_tank', 'lab_pipe_cluster', 'lab_vent_fan',
 ];
+const EXPECTED_ANIMATED_EFFECTS = [
+  'drips', 'water_flow', 'electrical_arc', 'monitor_scan',
+];
+const MATTE_REPAIR_PROPS = new Set([
+  'estate_gate', 'garden_lamp', 'mansion_chandelier', 'mansion_sconce',
+]);
 
 let assertions = 0;
 const failures = [];
@@ -187,6 +193,90 @@ function alphaCoverage(image, startX = 0, endX = image.width) {
   return { visible: visible / total, partial: partial / total };
 }
 
+function neutralEdgeFringeRatio(image, startX, endX) {
+  check(image.channels === 4, 'neutral fringe detection requires RGBA data');
+  let edgeAlpha = 0;
+  let fringeAlpha = 0;
+  for (let y = 0; y < image.height; y += 1) {
+    for (let x = startX; x < endX; x += 1) {
+      const pixel = (y * image.width + x) * image.channels;
+      const alpha = image.pixels[pixel + 3];
+      if (alpha < 8) continue;
+      const neighborAlpha = (neighborX, neighborY) => {
+        if (neighborX < startX || neighborX >= endX || neighborY < 0 || neighborY >= image.height) return 0;
+        return image.pixels[(neighborY * image.width + neighborX) * image.channels + 3];
+      };
+      const isEdge = neighborAlpha(x - 1, y) === 0
+        || neighborAlpha(x + 1, y) === 0
+        || neighborAlpha(x, y - 1) === 0
+        || neighborAlpha(x, y + 1) === 0;
+      if (!isEdge) continue;
+      edgeAlpha += alpha;
+      const red = image.pixels[pixel];
+      const green = image.pixels[pixel + 1];
+      const blue = image.pixels[pixel + 2];
+      const low = Math.min(red, green, blue);
+      const chroma = Math.max(red, green, blue) - low;
+      const pale = Math.max(0, Math.min(1, (low - 158) / 97));
+      const neutral = Math.max(0, Math.min(1, (48 - chroma) / 48));
+      fringeAlpha += alpha * pale * neutral;
+    }
+  }
+  return fringeAlpha / Math.max(1, edgeAlpha);
+}
+
+function largestNeutralMatteComponent(image, startX, endX) {
+  check(image.channels === 4, 'neutral matte detection requires RGBA data');
+  const width = endX - startX;
+  const total = width * image.height;
+  const visited = new Uint8Array(total);
+  const queue = new Int32Array(total);
+  const isCandidate = (localIndex) => {
+    const localX = localIndex % width;
+    const y = Math.floor(localIndex / width);
+    const pixel = (y * image.width + startX + localX) * image.channels;
+    const alpha = image.pixels[pixel + 3];
+    if (alpha === 0) return false;
+    const red = image.pixels[pixel];
+    const green = image.pixels[pixel + 1];
+    const blue = image.pixels[pixel + 2];
+    return Math.min(red, green, blue) >= 220 && Math.max(red, green, blue) - Math.min(red, green, blue) <= 32;
+  };
+  let largest = 0;
+  for (let seed = 0; seed < total; seed += 1) {
+    if (visited[seed]) continue;
+    visited[seed] = 1;
+    if (!isCandidate(seed)) continue;
+    let head = 0;
+    let tail = 0;
+    let size = 0;
+    queue[tail] = seed;
+    tail += 1;
+    while (head < tail) {
+      const current = queue[head];
+      head += 1;
+      size += 1;
+      const x = current % width;
+      const y = Math.floor(current / width);
+      const neighbors = [
+        x > 0 ? current - 1 : -1,
+        x + 1 < width ? current + 1 : -1,
+        y > 0 ? current - width : -1,
+        y + 1 < image.height ? current + width : -1,
+      ];
+      for (const neighbor of neighbors) {
+        if (neighbor < 0 || visited[neighbor]) continue;
+        visited[neighbor] = 1;
+        if (!isCandidate(neighbor)) continue;
+        queue[tail] = neighbor;
+        tail += 1;
+      }
+    }
+    largest = Math.max(largest, size);
+  }
+  return largest;
+}
+
 function fileDigest(path) {
   const data = readFileSync(path);
   let hash = 2166136261;
@@ -218,6 +308,7 @@ checkExactKeys(manifest.materials, EXPECTED_MATERIALS, 'material contract');
 checkExactKeys(manifest.nodes, EXPECTED_NODES, 'campaign-node contract');
 checkExactKeys(manifest.destructibles, EXPECTED_DESTRUCTIBLES, 'destructible contract');
 checkExactKeys(manifest.props, EXPECTED_PROPS, 'prop contract');
+checkExactKeys(manifest.animated_effects, EXPECTED_ANIMATED_EFFECTS, 'animated-effect contract');
 checkExactKeys(manifest.styles, ['garden', 'mansion', 'sewer', 'roof', 'laboratory'], 'style contract');
 
 const referencedMaterials = new Set();
@@ -317,11 +408,37 @@ for (const propId of EXPECTED_PROPS) {
   const frames = Number(profile.hframes);
   check(Number.isInteger(frames) && frames >= 1, `${propId} declares valid hframes`);
   check(image.width === 1024 * frames && image.height === 1024, `${propId} atlas dimensions match hframes`);
+  const planeHeight = Number(profile.pixel_size) * Number(profile.world_scale) * 1024;
+  check(Number.isFinite(planeHeight) && planeHeight >= 0.8 && planeHeight <= 5.2, `${propId} world height is plausible (${planeHeight.toFixed(3)} m)`);
   check(image.colorType === 6, `${propId} atlas is RGBA`);
   for (let frame = 0; frame < frames; frame += 1) {
     const alpha = alphaCoverage(image, frame * 1024, (frame + 1) * 1024);
     check(alpha.visible > 0.005 && alpha.visible < 0.92, `${propId} frame ${frame} has useful transparent coverage`);
     check(alpha.partial > 0, `${propId} frame ${frame} retains antialiased alpha`);
+    if (MATTE_REPAIR_PROPS.has(propId)) {
+      const largestMatte = largestNeutralMatteComponent(image, frame * 1024, (frame + 1) * 1024);
+      check(largestMatte < 500, `${propId} frame ${frame} has no baked neutral-white matte (largest ${largestMatte}px)`);
+      const fringeRatio = neutralEdgeFringeRatio(image, frame * 1024, (frame + 1) * 1024);
+      const fringeLimit = propId === 'estate_gate' ? 0.32 : 0.18;
+      check(fringeRatio < fringeLimit, `${propId} frame ${frame} neutral fringe ratio stays below ${(fringeLimit * 100).toFixed(0)}% (${(fringeRatio * 100).toFixed(2)}%)`);
+    }
+  }
+}
+
+for (const effectId of EXPECTED_ANIMATED_EFFECTS) {
+  const profile = manifest.animated_effects[effectId];
+  const path = projectPath(profile.path);
+  check(existsSync(path), `${effectId} animated strip exists`);
+  const image = decodePng(path);
+  check(image.width === 2048 && image.height === 256, `${effectId} animated strip is 2048x256`);
+  check(image.colorType === 6, `${effectId} animated strip is RGBA`);
+  check(Number(profile.hframes) === 8, `${effectId} declares eight horizontal frames`);
+  check(Number(profile.fps) >= 6 && Number(profile.fps) <= 24, `${effectId} frame rate is plausible`);
+  check(Number(profile.pixel_size) > 0 && Number(profile.world_scale) > 0, `${effectId} has positive world scale`);
+  for (let frame = 0; frame < 8; frame += 1) {
+    const alpha = alphaCoverage(image, frame * 256, (frame + 1) * 256);
+    check(alpha.visible > 0.001 && alpha.visible < 0.85, `${effectId} frame ${frame} has useful transparency`);
+    check(alpha.partial > 0, `${effectId} frame ${frame} retains antialiased alpha`);
   }
 }
 
@@ -341,7 +458,7 @@ for (const entry of provenance.assets) {
 }
 
 const generatedPngs = listFiles(outputRoot).filter((path) => path.toLowerCase().endsWith('.png'));
-check(generatedPngs.length === 86, `generated tree contains exactly 86 PNG files (got ${generatedPngs.length})`);
+check(generatedPngs.length === 90, `generated tree contains exactly 90 PNG files (got ${generatedPngs.length})`);
 
 if (failures.length > 0) {
   console.error(`ENVIRONMENT ASSET VERIFY FAILED: ${failures.length}/${assertions} assertions failed`);
@@ -350,4 +467,4 @@ if (failures.length > 0) {
 }
 
 const bytes = generatedPngs.reduce((sum, path) => sum + statSync(path).size, 0);
-console.log(`ENVIRONMENT ASSET VERIFY PASSED: ${assertions} assertions; 20 materials, 33 nodes, 6 destructibles, 14 props; ${(bytes / 1024 / 1024).toFixed(2)} MiB source PNG`);
+console.log(`ENVIRONMENT ASSET VERIFY PASSED: ${assertions} assertions; 20 materials, 33 nodes, 6 destructibles, 14 props, 4 animated effects; ${(bytes / 1024 / 1024).toFixed(2)} MiB source PNG`);

@@ -1,5 +1,46 @@
 # Build Guide
 
+## v0.3.0 local release candidate — 2026-08-25 (unpublished)
+
+The current v0.3.0 candidate has been validated and exported locally. It is not yet a committed/tagged GitHub release and is not yet a v0.3.0 Vercel production deployment.
+
+Run the two aggregate gates from the repository root:
+
+```powershell
+npm.cmd test
+npm.cmd run qa
+```
+
+The recorded candidate results are 272/272 and 282/282 respectively. The detailed Godot surfaces are also reproducible with the existing scripts, notably:
+
+```powershell
+& '.tools\godot-4.7.1\Godot_v4.7.1-stable_win64_console.exe' --headless --path . --script res://tests/test_environment_asset_library.gd
+& '.tools\godot-4.7.1\Godot_v4.7.1-stable_win64_console.exe' --headless --path . --script res://tests/test_gameplay_support_library.gd
+& '.tools\godot-4.7.1\Godot_v4.7.1-stable_win64_console.exe' --headless --path . --script res://tests/test_enemy_profile_library.gd
+& '.tools\godot-4.7.1\Godot_v4.7.1-stable_win64_console.exe' --headless --path . --script res://scripts/smoke_directional_sprites.gd
+& '.tools\godot-4.7.1\Godot_v4.7.1-stable_win64_console.exe' --headless --path . --script res://scripts/smoke_curien_finale.gd
+& '.tools\godot-4.7.1\Godot_v4.7.1-stable_win64_console.exe' --headless --path . --script res://scripts/smoke_gameplay.gd
+& '.tools\godot-4.7.1\Godot_v4.7.1-stable_win64_console.exe' --headless --path . --script res://scripts/smoke_campaign.gd
+& '.tools\godot-4.7.1\Godot_v4.7.1-stable_win64_console.exe' --headless --path . --script res://scripts/smoke_score_qa.gd
+& '.tools\godot-4.7.1\Godot_v4.7.1-stable_win64_console.exe' --headless --path . --script res://scripts/smoke_initials.gd
+```
+
+Expected candidate evidence: core 235, atlas 63, environment library 115, gameplay-support library 33, enemy profiles 210, audio 354/28, directional smoke 38/10/8 without leak, Curien smoke 29 without leak, environment verifier 1,708, animated effects 348/348, gameplay support 113/113, content audit 739/16 warnings/0 errors, and 128 imports/0 mismatches. Campaign smoke must traverse chapters 1–4, 15 scientists and the full boss sequence including both rematches; gameplay, score and initials smokes must pass.
+
+Current Godot 4.7.1 outputs:
+
+| Output | Local size | Candidate verification |
+|---|---:|---|
+| `build/windows/The_House_of_the_Dead_25D.exe` | **187,023,472 bytes** | export succeeded; hidden eight-second startup passed |
+| `build/linux/The_House_of_the_Dead_25D.x86_64` | **151,388,064 bytes** | export succeeded |
+| `build/web/` | **117,762,238 bytes across nine files** | export succeeded; `qa:web` 276/276; `verify:web` OK |
+| Web PCK | **77,917,844 bytes** | candidate payload |
+| Web WASM | **39,513,091 bytes** | candidate payload |
+
+Local agent-browser 0.34 verification must retain `crossOriginIsolated=true`, the accessible 1258×622 `role=main` canvas with an ARIA label, menu then Arcade/P1/continue visibility, WebGL2 single-thread operation, zero page errors and only the three expected Godot info logs. This browser gate is local; do not describe it as a v0.3.0 production deployment.
+
+The release process below still applies, but package, commit, tag, push, GitHub upload and Vercel deployment remain subsequent steps. The fresh export artifacts above are the only v0.3.0 build evidence; the older archives under `artifacts/release/` must be regenerated from the exact committed v0.3.0 tree before upload. Keep the exact Sega boundary: without `licensed_assets/` and `reference_build/`, a successful build is not certification of arcade-identical assets or timing. Named-hardware performance profiling also remains outstanding.
+
 ## Toolchain
 
 - Godot 4.7.1 stable with matching official export templates.

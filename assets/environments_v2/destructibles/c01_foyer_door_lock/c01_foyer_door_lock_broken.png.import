@@ -15,9 +15,9 @@ dest_files=["res://.godot/imported/c01_foyer_door_lock_broken.png-6e38853dd89969
 
 [params]
 
-compress/mode=1
+compress/mode=0
 compress/high_quality=false
-compress/lossy_quality=0.8
+compress/lossy_quality=1
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1

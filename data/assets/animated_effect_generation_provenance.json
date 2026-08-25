@@ -1,0 +1,215 @@
+{
+  "schema_version": 1,
+  "generated_asset_policy": "original fan-made OpenAI Images replacements; non-Sega-exact; no ROM, video or licensed-asset extraction",
+  "output_contract": {
+    "layout": "8x1",
+    "frame_size": [
+      256,
+      256
+    ],
+    "dimensions": [
+      2048,
+      256
+    ],
+    "format": "PNG RGBA"
+  },
+  "assets": [
+    {
+      "id": "drips",
+      "kind": "animated_environment_effect",
+      "source": "reports/runtime/environment-sources/animated_effect_drips.png",
+      "generation_reference": "01a00811-e655-7262-8c79-852788f57b9b/exec-4fc2df33-f942-4336-b121-9a1068b26e72.png",
+      "source_sha256": "be479dce13c5ead45de9cde191de63ad6f72d6f20fee603c23cb29de228d82d0",
+      "output": "assets/environments_v2/effects/drips/drips_strip.png",
+      "output_sha256": "1b157c8736f51dbecdab7be4a7203f504ace64152e7d5ef8e3d905186b4fbbce",
+      "source_grid": [
+        4,
+        2
+      ],
+      "frame_order": "row_major",
+      "dimensions": [
+        2048,
+        256
+      ],
+      "frame_size": [
+        256,
+        256
+      ],
+      "hframes": 8,
+      "fps": 10.0,
+      "detected_key_rgb": [
+        4,
+        249,
+        4
+      ],
+      "frame_visible_pixels": [
+        2679,
+        4508,
+        5021,
+        2082,
+        3508,
+        6127,
+        4665,
+        454
+      ],
+      "generator": "OpenAI Images built-in source plus deterministic local chroma-key normalization",
+      "processing": [
+        "split_4x2_row_major",
+        "connected_green_key_removal",
+        "edge_despill",
+        "shared_bounds_scale_preservation",
+        "rgba_8x1_strip"
+      ],
+      "status": "original_fan_made_non_sega_exact",
+      "fidelity_status": "not_verified_against_authorized_sega_arcade_reference"
+    },
+    {
+      "id": "water_flow",
+      "kind": "animated_environment_effect",
+      "source": "reports/runtime/environment-sources/animated_effect_water_flow.png",
+      "generation_reference": "01a00811-e655-7262-8c79-852788f57b9b/exec-ba9ad960-9b27-43d4-8056-a79b64fcad44.png",
+      "source_sha256": "ff60dc56504ebed96216c4bd9c9b14c08360e9ce716bd695f0cf2f92ee30d384",
+      "output": "assets/environments_v2/effects/water_flow/water_flow_strip.png",
+      "output_sha256": "142be38f579736312e3a6c1506cb259c6691fa488ad2806761c7fdb7ec512940",
+      "source_grid": [
+        4,
+        2
+      ],
+      "frame_order": "row_major",
+      "dimensions": [
+        2048,
+        256
+      ],
+      "frame_size": [
+        256,
+        256
+      ],
+      "hframes": 8,
+      "fps": 12.0,
+      "detected_key_rgb": [
+        12,
+        240,
+        9
+      ],
+      "frame_visible_pixels": [
+        12975,
+        13523,
+        14398,
+        14569,
+        14653,
+        15417,
+        15070,
+        12846
+      ],
+      "generator": "OpenAI Images built-in source plus deterministic local chroma-key normalization",
+      "processing": [
+        "split_4x2_row_major",
+        "connected_green_key_removal",
+        "edge_despill",
+        "shared_bounds_scale_preservation",
+        "rgba_8x1_strip"
+      ],
+      "status": "original_fan_made_non_sega_exact",
+      "fidelity_status": "not_verified_against_authorized_sega_arcade_reference"
+    },
+    {
+      "id": "electrical_arc",
+      "kind": "animated_environment_effect",
+      "source": "reports/runtime/environment-sources/animated_effect_electrical_arc.png",
+      "generation_reference": "01a00811-e655-7262-8c79-852788f57b9b/exec-0b7ed69d-2226-4d21-aa7d-dafbefd11ba8.png",
+      "source_sha256": "5c62ed7d11b7ac14ddb0aac8a8ccd599d042dad195a7ad10c68b134e8d4a8544",
+      "output": "assets/environments_v2/effects/electrical_arc/electrical_arc_strip.png",
+      "output_sha256": "63581dae49fcc632e39c42d48f081c40e04f8fff800e6c4f208fa1b643e2439c",
+      "source_grid": [
+        4,
+        2
+      ],
+      "frame_order": "row_major",
+      "dimensions": [
+        2048,
+        256
+      ],
+      "frame_size": [
+        256,
+        256
+      ],
+      "hframes": 8,
+      "fps": 15.0,
+      "detected_key_rgb": [
+        2,
+        248,
+        2
+      ],
+      "frame_visible_pixels": [
+        9435,
+        9926,
+        9322,
+        9118,
+        9539,
+        9786,
+        9751,
+        8780
+      ],
+      "generator": "OpenAI Images built-in source plus deterministic local chroma-key normalization",
+      "processing": [
+        "split_4x2_row_major",
+        "connected_green_key_removal",
+        "edge_despill",
+        "shared_bounds_scale_preservation",
+        "rgba_8x1_strip"
+      ],
+      "status": "original_fan_made_non_sega_exact",
+      "fidelity_status": "not_verified_against_authorized_sega_arcade_reference"
+    },
+    {
+      "id": "monitor_scan",
+      "kind": "animated_environment_effect",
+      "source": "reports/runtime/environment-sources/animated_effect_monitor_scan.png",
+      "generation_reference": "01a00811-e655-7262-8c79-852788f57b9b/exec-d18efd19-b490-453d-94c5-9c21c1932c1e.png",
+      "source_sha256": "bc2364901ffd8c9bc490fe1384331a0b5f4f706bf8e0741b647a7747465cf00f",
+      "output": "assets/environments_v2/effects/monitor_scan/monitor_scan_strip.png",
+      "output_sha256": "0cd2a4a33685c5699ba844dd730ef1f6e7ffd6d55de86cd25e48997825e61cff",
+      "source_grid": [
+        4,
+        2
+      ],
+      "frame_order": "row_major",
+      "dimensions": [
+        2048,
+        256
+      ],
+      "frame_size": [
+        256,
+        256
+      ],
+      "hframes": 8,
+      "fps": 10.0,
+      "detected_key_rgb": [
+        2,
+        249,
+        2
+      ],
+      "frame_visible_pixels": [
+        29804,
+        30306,
+        28029,
+        26826,
+        29302,
+        29508,
+        32494,
+        30925
+      ],
+      "generator": "OpenAI Images built-in source plus deterministic local chroma-key normalization",
+      "processing": [
+        "split_4x2_row_major",
+        "connected_green_key_removal",
+        "edge_despill",
+        "monitor_common_plane_alignment",
+        "shared_bounds_scale_preservation",
+        "rgba_8x1_strip"
+      ],
+      "status": "original_fan_made_non_sega_exact",
+      "fidelity_status": "not_verified_against_authorized_sega_arcade_reference"
+    }
+  ]
+}

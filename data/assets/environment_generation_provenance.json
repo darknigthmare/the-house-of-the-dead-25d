@@ -728,8 +728,9 @@
       ],
       "frames": 2,
       "pixel_size": 0.0064,
-      "world_scale": 1.5,
-      "generator": "OpenAI Images built-in source plus deterministic alpha/crop",
+      "world_scale": 0.34,
+      "processing": "large neutral matte cleanup plus neutral edge despill",
+      "generator": "OpenAI Images built-in source plus deterministic alpha/matte/despill/crop",
       "status": "original_fan_made"
     },
     {
@@ -746,8 +747,9 @@
       ],
       "frames": 2,
       "pixel_size": 0.0055,
-      "world_scale": 0.72,
-      "generator": "OpenAI Images built-in source plus deterministic alpha/crop",
+      "world_scale": 0.18,
+      "processing": "large neutral matte cleanup plus neutral edge despill",
+      "generator": "OpenAI Images built-in source plus deterministic alpha/matte/despill/crop",
       "status": "original_fan_made"
     },
     {
@@ -764,8 +766,9 @@
       ],
       "frames": 2,
       "pixel_size": 0.007,
-      "world_scale": 2.7,
-      "generator": "OpenAI Images built-in source plus deterministic alpha/crop",
+      "world_scale": 0.47,
+      "processing": "alpha/crop normalization",
+      "generator": "OpenAI Images built-in source plus deterministic alpha/matte/despill/crop",
       "status": "original_fan_made"
     },
     {
@@ -782,8 +785,9 @@
       ],
       "frames": 1,
       "pixel_size": 0.0065,
-      "world_scale": 2.0,
-      "generator": "OpenAI Images built-in source plus deterministic alpha/crop",
+      "world_scale": 0.5,
+      "processing": "alpha/crop normalization",
+      "generator": "OpenAI Images built-in source plus deterministic alpha/matte/despill/crop",
       "status": "original_fan_made"
     },
     {
@@ -800,8 +804,9 @@
       ],
       "frames": 1,
       "pixel_size": 0.0052,
-      "world_scale": 0.9,
-      "generator": "OpenAI Images built-in source plus deterministic alpha/crop",
+      "world_scale": 0.32,
+      "processing": "alpha/crop normalization",
+      "generator": "OpenAI Images built-in source plus deterministic alpha/matte/despill/crop",
       "status": "original_fan_made"
     },
     {
@@ -818,8 +823,9 @@
       ],
       "frames": 2,
       "pixel_size": 0.0065,
-      "world_scale": 1.5,
-      "generator": "OpenAI Images built-in source plus deterministic alpha/crop",
+      "world_scale": 0.32,
+      "processing": "alpha/crop normalization",
+      "generator": "OpenAI Images built-in source plus deterministic alpha/matte/despill/crop",
       "status": "original_fan_made"
     },
     {
@@ -836,15 +842,16 @@
       ],
       "frames": 2,
       "pixel_size": 0.0065,
-      "world_scale": 2.7,
-      "generator": "OpenAI Images built-in source plus deterministic alpha/crop",
+      "world_scale": 0.51,
+      "processing": "large neutral matte cleanup plus neutral edge despill",
+      "generator": "OpenAI Images built-in source plus deterministic alpha/matte/despill/crop",
       "status": "original_fan_made"
     },
     {
       "id": "garden_lamp",
       "kind": "environment_prop",
       "source": "reports/runtime/environment-sources/props_b/garden_lamp.png",
-      "source_sha256": "c9f930de979a03ca13eb04928a4a7d8c563fef0b79578ae1c9b7a96612de13d0",
+      "source_sha256": "3d37f290232809e16b4abc9dd1c23da7259221bae26b85c8c9410e533e416019",
       "outputs": {
         "atlas": "assets/environments_v2/props/garden_lamp/garden_lamp.png"
       },
@@ -854,8 +861,9 @@
       ],
       "frames": 2,
       "pixel_size": 0.0062,
-      "world_scale": 1.25,
-      "generator": "OpenAI Images built-in source plus deterministic alpha/crop",
+      "world_scale": 0.35,
+      "processing": "authored dual-state atlas with checkerboard alpha recovery, neutral edge despill and silhouette clamp",
+      "generator": "OpenAI Images built-in source plus deterministic alpha/matte/despill/crop",
       "status": "original_fan_made"
     },
     {
@@ -872,8 +880,9 @@
       ],
       "frames": 1,
       "pixel_size": 0.0072,
-      "world_scale": 2.3,
-      "generator": "OpenAI Images built-in source plus deterministic alpha/crop",
+      "world_scale": 0.6,
+      "processing": "alpha/crop normalization",
+      "generator": "OpenAI Images built-in source plus deterministic alpha/matte/despill/crop",
       "status": "original_fan_made"
     },
     {
@@ -890,8 +899,9 @@
       ],
       "frames": 1,
       "pixel_size": 0.0074,
-      "world_scale": 2.8,
-      "generator": "OpenAI Images built-in source plus deterministic alpha/crop",
+      "world_scale": 0.63,
+      "processing": "alpha/crop normalization",
+      "generator": "OpenAI Images built-in source plus deterministic alpha/matte/despill/crop",
       "status": "original_fan_made"
     },
     {
@@ -908,8 +918,9 @@
       ],
       "frames": 1,
       "pixel_size": 0.0064,
-      "world_scale": 1.05,
-      "generator": "OpenAI Images built-in source plus deterministic alpha/crop",
+      "world_scale": 0.3,
+      "processing": "alpha/crop normalization",
+      "generator": "OpenAI Images built-in source plus deterministic alpha/matte/despill/crop",
       "status": "original_fan_made"
     },
     {
@@ -926,8 +937,9 @@
       ],
       "frames": 2,
       "pixel_size": 0.0064,
-      "world_scale": 1.55,
-      "generator": "OpenAI Images built-in source plus deterministic alpha/crop",
+      "world_scale": 0.5,
+      "processing": "alpha/crop normalization",
+      "generator": "OpenAI Images built-in source plus deterministic alpha/matte/despill/crop",
       "status": "original_fan_made"
     },
     {
@@ -944,8 +956,9 @@
       ],
       "frames": 1,
       "pixel_size": 0.0065,
-      "world_scale": 1.65,
-      "generator": "OpenAI Images built-in source plus deterministic alpha/crop",
+      "world_scale": 0.46,
+      "processing": "alpha/crop normalization",
+      "generator": "OpenAI Images built-in source plus deterministic alpha/matte/despill/crop",
       "status": "original_fan_made"
     },
     {
@@ -962,8 +975,9 @@
       ],
       "frames": 2,
       "pixel_size": 0.0062,
-      "world_scale": 1.15,
-      "generator": "OpenAI Images built-in source plus deterministic alpha/crop",
+      "world_scale": 0.3,
+      "processing": "alpha/crop normalization",
+      "generator": "OpenAI Images built-in source plus deterministic alpha/matte/despill/crop",
       "status": "original_fan_made"
     }
   ],

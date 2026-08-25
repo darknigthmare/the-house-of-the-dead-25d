@@ -346,7 +346,13 @@
             0,
             1.5,
             -18
-          ]
+          ],
+          "initial_frame": 0,
+          "state_event": {
+            "id": "garden_gate_route_open",
+            "trigger": "node_complete_success",
+            "target_frame": 1
+          }
         },
         {
           "id": "garden_lamp",
@@ -376,7 +382,8 @@
             0,
             1.5,
             -20
-          ]
+          ],
+          "initial_frame": 1
         },
         {
           "id": "garden_lamp",
@@ -412,7 +419,14 @@
             0,
             1.6,
             -17
-          ]
+          ],
+          "initial_frame": 0,
+          "state_event": {
+            "id": "foyer_lock_opens_door",
+            "trigger": "breakable_destroyed",
+            "breakable_id": "c01_foyer_door_lock",
+            "target_frame": 1
+          }
         },
         {
           "id": "mansion_chandelier",
@@ -601,7 +615,14 @@
             0,
             1.6,
             -18
-          ]
+          ],
+          "initial_frame": 0,
+          "state_event": {
+            "id": "chain_plate_opens_hatch",
+            "trigger": "breakable_destroyed",
+            "breakable_id": "c02_chained_hatch_plate",
+            "target_frame": 1
+          }
         },
         {
           "id": "mansion_chandelier",
@@ -627,7 +648,13 @@
             0,
             1.7,
             -18
-          ]
+          ],
+          "initial_frame": 0,
+          "state_event": {
+            "id": "great_doors_encounter_clear",
+            "trigger": "encounter_clear",
+            "target_frame": 1
+          }
         }
       ]
     },
@@ -761,7 +788,8 @@
             4.2,
             1.6,
             -12
-          ]
+          ],
+          "initial_frame": 0
         },
         {
           "id": "lab_control_console",
@@ -797,7 +825,8 @@
             -4.2,
             1.6,
             -11
-          ]
+          ],
+          "initial_frame": 0
         },
         {
           "id": "lab_specimen_tank",
@@ -805,7 +834,14 @@
             4.2,
             1.6,
             -14
-          ]
+          ],
+          "initial_frame": 0,
+          "state_event": {
+            "id": "specimen_bay_tank_breach",
+            "trigger": "elapsed",
+            "at": 3.3,
+            "target_frame": 1
+          }
         },
         {
           "id": "lab_control_console",
@@ -871,7 +907,8 @@
             4.2,
             1.6,
             -15
-          ]
+          ],
+          "initial_frame": 0
         },
         {
           "id": "lab_control_console",
@@ -957,7 +994,14 @@
             -4.3,
             1.6,
             -13
-          ]
+          ],
+          "initial_frame": 0,
+          "state_event": {
+            "id": "final_horde_left_tank_breach",
+            "trigger": "elapsed",
+            "at": 1.8,
+            "target_frame": 1
+          }
         },
         {
           "id": "lab_specimen_tank",
@@ -965,7 +1009,14 @@
             4.3,
             1.6,
             -13
-          ]
+          ],
+          "initial_frame": 0,
+          "state_event": {
+            "id": "final_horde_right_tank_breach",
+            "trigger": "elapsed",
+            "at": 3.4,
+            "target_frame": 1
+          }
         },
         {
           "id": "lab_control_console",
@@ -1023,7 +1074,14 @@
             -4.4,
             1.6,
             -15
-          ]
+          ],
+          "initial_frame": 0,
+          "state_event": {
+            "id": "magician_phase_two_left_tank_breach",
+            "trigger": "boss_phase",
+            "phase": 1,
+            "target_frame": 1
+          }
         },
         {
           "id": "lab_specimen_tank",
@@ -1031,7 +1089,14 @@
             4.4,
             1.6,
             -15
-          ]
+          ],
+          "initial_frame": 0,
+          "state_event": {
+            "id": "magician_phase_three_right_tank_breach",
+            "trigger": "boss_phase",
+            "phase": 2,
+            "target_frame": 1
+          }
         },
         {
           "id": "lab_control_console",
@@ -1093,91 +1158,136 @@
       "path": "res://assets/environments_v2/props/mansion_chandelier/mansion_chandelier.png",
       "hframes": 2,
       "pixel_size": 0.0064,
-      "world_scale": 1.5,
+      "world_scale": 0.34,
       "animate": "flicker"
     },
     "mansion_sconce": {
       "path": "res://assets/environments_v2/props/mansion_sconce/mansion_sconce.png",
       "hframes": 2,
       "pixel_size": 0.0055,
-      "world_scale": 0.72,
+      "world_scale": 0.18,
       "animate": "flicker"
     },
     "mansion_double_door": {
       "path": "res://assets/environments_v2/props/mansion_double_door/mansion_double_door.png",
       "hframes": 2,
       "pixel_size": 0.007,
-      "world_scale": 2.7
+      "world_scale": 0.47
     },
     "library_bookcase": {
       "path": "res://assets/environments_v2/props/library_bookcase/library_bookcase.png",
       "hframes": 1,
       "pixel_size": 0.0065,
-      "world_scale": 2
+      "world_scale": 0.5
     },
     "mansion_portrait": {
       "path": "res://assets/environments_v2/props/mansion_portrait/mansion_portrait.png",
       "hframes": 1,
       "pixel_size": 0.0052,
-      "world_scale": 0.9
+      "world_scale": 0.32
     },
     "lab_control_console": {
       "path": "res://assets/environments_v2/props/lab_control_console/lab_control_console.png",
       "hframes": 2,
       "pixel_size": 0.0065,
-      "world_scale": 1.5,
-      "animate": "pulse"
+      "world_scale": 0.32,
+      "animate": "screen_glow"
     },
     "estate_gate": {
       "path": "res://assets/environments_v2/props/estate_gate/estate_gate.png",
       "hframes": 2,
       "pixel_size": 0.0065,
-      "world_scale": 2.7
+      "world_scale": 0.51
     },
     "garden_lamp": {
       "path": "res://assets/environments_v2/props/garden_lamp/garden_lamp.png",
       "hframes": 2,
       "pixel_size": 0.0062,
-      "world_scale": 1.25,
+      "world_scale": 0.35,
       "animate": "flicker"
     },
     "dead_tree": {
       "path": "res://assets/environments_v2/props/dead_tree/dead_tree.png",
       "hframes": 1,
       "pixel_size": 0.0072,
-      "world_scale": 2.3
+      "world_scale": 0.6
     },
     "stone_bridge_arch": {
       "path": "res://assets/environments_v2/props/stone_bridge_arch/stone_bridge_arch.png",
       "hframes": 1,
       "pixel_size": 0.0074,
-      "world_scale": 2.8
+      "world_scale": 0.63
     },
     "roof_gargoyle": {
       "path": "res://assets/environments_v2/props/roof_gargoyle/roof_gargoyle.png",
       "hframes": 1,
       "pixel_size": 0.0064,
-      "world_scale": 1.05
+      "world_scale": 0.3
     },
     "lab_specimen_tank": {
       "path": "res://assets/environments_v2/props/lab_specimen_tank/lab_specimen_tank.png",
       "hframes": 2,
       "pixel_size": 0.0064,
-      "world_scale": 1.55,
-      "animate": "pulse"
+      "world_scale": 0.5
     },
     "lab_pipe_cluster": {
       "path": "res://assets/environments_v2/props/lab_pipe_cluster/lab_pipe_cluster.png",
       "hframes": 1,
       "pixel_size": 0.0065,
-      "world_scale": 1.65
+      "world_scale": 0.46
     },
     "lab_vent_fan": {
       "path": "res://assets/environments_v2/props/lab_vent_fan/lab_vent_fan.png",
       "hframes": 2,
       "pixel_size": 0.0062,
-      "world_scale": 1.15,
+      "world_scale": 0.3,
       "animate": "frame_toggle"
+    }
+  },
+  "animated_effects": {
+    "drips": {
+      "path": "res://assets/environments_v2/effects/drips/drips_strip.png",
+      "hframes": 8,
+      "pixel_size": 0.003,
+      "world_scale": 0.62,
+      "fps": 9,
+      "position": [-3.15, 2.85, -12.2],
+      "tint": "#b8d8e6"
+    },
+    "water_flow": {
+      "path": "res://assets/environments_v2/effects/water_flow/water_flow_strip.png",
+      "hframes": 8,
+      "pixel_size": 0.0065,
+      "world_scale": 1.12,
+      "fps": 10,
+      "position": [3.25, 1.85, -13.6],
+      "tint": "#8fbcb7"
+    },
+    "electrical_arc": {
+      "path": "res://assets/environments_v2/effects/electrical_arc/electrical_arc_strip.png",
+      "hframes": 8,
+      "pixel_size": 0.006,
+      "world_scale": 1.1,
+      "fps": 13,
+      "position": [-2.05, 2.55, -13.8],
+      "tint": "#d7ecff",
+      "pulse": true,
+      "light_color": "#7cbcff",
+      "light_energy": 1.25,
+      "light_range": 4.2
+    },
+    "monitor_scan": {
+      "path": "res://assets/environments_v2/effects/monitor_scan/monitor_scan_strip.png",
+      "hframes": 8,
+      "pixel_size": 0.004,
+      "world_scale": 1.25,
+      "fps": 8,
+      "position": [0, 1.45, -16.45],
+      "tint": "#80d8ac",
+      "pulse": true,
+      "light_color": "#55c997",
+      "light_energy": 0.55,
+      "light_range": 2.6
     }
   }
 }

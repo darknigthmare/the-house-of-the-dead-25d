@@ -1,5 +1,34 @@
 # Fidelity Report
 
+## v0.3.0 local release candidate — verified locally, unpublished
+
+The current working tree strengthens the internally verifiable 2.5D replacement contract without changing the exact-Sega certification boundary. It is a local release candidate only: no v0.3.0 commit, tag, GitHub release or Vercel deployment is claimed here.
+
+The locally verified changes include visible and destructible hostile projectiles, contact-gated telegraphed melee, civilian rescue failures caused only by a visible assigned assailant rather than a timer, event-driven estate-gate/door/specimen-tank frames, manifest-driven medal/frog/life pickups, four dedicated animated environment strips (`drips`, `water_flow`, `electrical_arc`, `monitor_scan`) and the Curien/Magician finale story staging. These runtime improvements remain original project interpretations until compared against an authorized Sega reference build.
+
+| Validator checkpoint | v0.3.0 local result |
+|---|---|
+| repository/data suite | `npm.cmd test` **272/272** |
+| complete local QA | `npm.cmd run qa` **282/282** |
+| deterministic libraries | core **235**; atlas **63**; environment **115**; gameplay support **33**; enemy profiles **210** |
+| audio replacement contract | **354 assertions / 28 distinct cues** |
+| directional runtime | **38 bindings / 10 representatives / all 8 directions**; cleanup without leak |
+| Curien finale runtime | **29 assertions**; cleanup without leak |
+| asset verification | environment **1,708**; animated effects **348/348**; gameplay support **113/113** |
+| content-family audit | **739 checks / 16 warnings / 0 errors** |
+| texture imports | **128 files / 0 mismatches** |
+| campaign | chapters **1–4**, **15/15 scientists**, complete boss sequence including both rematches, ending and credits |
+| focused runtime smokes | gameplay, score and initials passed |
+| Windows/Linux/Web exports | **187,023,472 / 151,388,064 / 117,762,238 bytes** |
+| Web payload | 9 files; PCK **77,917,844**; WASM **39,513,091**; `qa:web` **276/276**; `verify:web` **OK** |
+| local browser | agent-browser 0.34; isolation true; accessible 1258×622 main canvas with ARIA label; menu then Arcade/P1/continue visible; WebGL2 single-thread; 0 page errors and 3 Godot info logs |
+
+The 16 content-audit warnings are retained, not hidden: three runtime/route-graph drifts, three reference-pending enemy placements, two unused destructibles, two direction-mirroring warnings, one semantic-atlas animation warning, one unreferenced AMS item and four inactive legacy controller classes. Passing local QA therefore proves internal consistency and campaign reachability, not revision-exact arcade fidelity.
+
+`licensed_assets/` and `reference_build/` remain unavailable. Exact camera rails, spawn coordinates, attack windows, scientist timing, routes, score values, endings, dialogue, audio, geometry, animation and operator-revision behavior cannot be certified as Sega-authentic from these local replacement assets. Public recordings remain observation references only and are not asset sources.
+
+The v0.2.1 section below is preserved as immutable published history; its lower asset/check counts and export sizes must not be reported as v0.3.0 results.
+
 ## v0.2.1 status — verified distribution, 2026-08-25
 
 This report separates two different claims:

@@ -6,6 +6,16 @@ Le contrat visuel V2 de l’arbre de travail fournit 38 atlas directionnels uniq
 
 Le projet propose une campagne jouable en quatre chapitres avec embranchements, scientifiques à sauver, objets destructibles, Chariot, Hangedman, Hermit, Magician, les rematchs du dernier chapitre, trois fins, crédits, score, vies, munitions, continues et coopération locale à deux joueurs. Entraînement, Boss Rush, sélection de chapitre et classement local sont également accessibles depuis le menu; une partie non-démo terminée demande trois initiales avant d'enregistrer son score.
 
+## Travail v0.3.0 en cours — lisibilité des attaques et contenu d’environnement
+
+La branche de travail v0.3.0 corrige les dégâts qui pouvaient sembler invisibles. Une attaque de mêlée ordinaire ou de soutien de boss doit désormais être visible, terminer sa préparation et atteindre un vrai contact 3D. L’ancien chemin basé uniquement sur la profondeur a été supprimé. Les attaques à distance utilisent des projectiles visibles, destructibles et tirables, avec une distance minimale de trajet à l’écran avant tout impact. Chariot et Hangedman avancent physiquement lors de leurs frappes; Hermit et Magician lancent leurs projectiles dédiés.
+
+Les proportions des props ont été recalibrées. La lampe de jardin possède des états allumé/éteint lisibles, et les résidus blancs des transparences ont été nettoyés sur la lampe, la grille du domaine, le lustre et l’applique murale. La grille, les portes et les réservoirs de laboratoire changent maintenant d’état via des événements runtime; un sauvetage de scientifique ne peut plus être confondu avec la destruction d’un objet.
+
+La salle bonus du chapitre final contient désormais douze collectibles réels dans le monde 3D — quatre vies, trois grenouilles dorées et cinq médailles — sans ennemi ni caisse de substitution. Les 25 profils ennemis disposent d’un chemin runtime et les sept familles de projectiles sont atteignables. Trois placements de variantes (`sam_a1`, `kenfis_f1`, `name_g2`) restent volontairement marqués comme provisoires jusqu’à comparaison avec une référence arcade autorisée.
+
+Quatre effets décoratifs originaux OpenAI, chacun en bande RGBA de huit images, sont intégrés : gouttes, écoulement d’eau, arc électrique et balayage de moniteur. La finale Curien/Magician comprend aussi une attaque visible, le recul, la chute et le maintien au sol de Curien. La QA locale complète passe maintenant 282/282 après les régressions de lisibilité des attaques. Les exports Windows, Linux et Web ont été régénérés et vérifiés localement; les archives, le tag, la release GitHub et le déploiement Vercel v0.3.0 restent à produire. La v0.2.1 reste donc la release publique courante.
+
 ## Démarrage rapide
 
 1. Ouvrir `project.godot` avec Godot 4.7.1 stable.

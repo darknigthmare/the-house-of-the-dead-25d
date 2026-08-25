@@ -48,16 +48,8 @@ func _update_boss(delta: float) -> void:
 
 func _update_actors(delta: float) -> void:
 	super._update_actors(delta)
-	if state != "boss":
-		return
-	for actor in active_actors.duplicate():
-		if not is_instance_valid(actor) or bool(actor.get_meta("dead", false)):
-			continue
-		if actor == current_boss or str(actor.get_meta("role", "")) != "enemy":
-			continue
-		if actor.position.z >= 2.2:
-			_damage_player(_first_active_player(), 1, "boss_projectile")
-			_kill_actor(actor, -1, false)
+	# Boss-support enemies use the same visible telegraph plus physical contact
+	# contract as every other enemy. No position-only fallback may deal damage.
 
 
 func _build_audio() -> void:

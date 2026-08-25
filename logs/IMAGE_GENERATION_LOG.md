@@ -51,7 +51,22 @@ The same built-in tool supplied seven projectile cutouts, three HUD families and
 
 Selected sources, exact local selection manifests and visual contacts remain under ignored `reports/runtime/environment-sources/` paths. Public normalized files and source/final SHA-256 values are recorded under `assets/environments_v2/`, `assets/gameplay_v2/` and `data/assets/`. No `licensed_assets/` or `reference_build/` directory contributed content.
 
+The `garden_lamp` source was replaced on 2026-08-25 by the geometry-consistent ON/OFF selection identified by built-in generation reference `01a00811-e655-7262-8c79-852788f57b9b/exec-e5b102ac-9615-4234-888c-1175bc796dde.png`. Its painted checkerboard is recovered to alpha locally; neutral edge despill and a one-way ON-silhouette clamp remove the white fringe without changing internal metal or flame highlights. The final atlas and source fingerprint are recorded by `data/assets/environment_generation_provenance.json`.
+
 No image generation was used to fabricate Sega audio. Exact Sega voices, dialogue performances, music and sound effects remain missing; current audio substitutes are original procedural replacements only.
+
+## 2026-08-25 — dedicated animated environment effects
+
+The built-in OpenAI ImageGen tool produced four original fan-made 4×2 source sheets on a removable green key. Each request specified eight ordered animation moments, isolated effect artwork, stable scale/palette, no text, no logo, no UI, no character, no scenery and no copied Sega frame. The selected generations are:
+
+| Effect | Generation reference | Final runtime path |
+|---|---|---|
+| Damp ceiling drips and splash cycle | `01a00811-e655-7262-8c79-852788f57b9b/exec-4fc2df33-f942-4336-b121-9a1068b26e72.png` | `assets/environments_v2/effects/drips/drips_strip.png` |
+| Sewer/laboratory water-flow cycle | `01a00811-e655-7262-8c79-852788f57b9b/exec-ba9ad960-9b27-43d4-8056-a79b64fcad44.png` | `assets/environments_v2/effects/water_flow/water_flow_strip.png` |
+| Laboratory electrical-arc cycle | `01a00811-e655-7262-8c79-852788f57b9b/exec-0b7ed69d-2226-4d21-aa7d-dafbefd11ba8.png` | `assets/environments_v2/effects/electrical_arc/electrical_arc_strip.png` |
+| Green CRT monitor-scan cycle | `01a00811-e655-7262-8c79-852788f57b9b/exec-d18efd19-b490-453d-94c5-9c21c1932c1e.png` | `assets/environments_v2/effects/monitor_scan/monitor_scan_strip.png` |
+
+`scripts/build_animated_effects.py` splits each selected 4×2 source in row-major order, removes connected green-key regions, despills edge pixels, preserves a transparent four-pixel gutter and assembles an eight-frame 2048×256 RGBA strip. The monitor frames receive one shared display-plane alignment so the two source rows do not produce a vertical jump. Exact hashes, processing steps and private-source boundaries are tracked in `data/assets/animated_effect_generation_provenance.json`; `scripts/verify_animated_effects.mjs` validates the public outputs without requiring ignored private sources.
 
 ## 2026-08-16 — built-in OpenAI ImageGen
 

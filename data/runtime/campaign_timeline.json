@@ -32,7 +32,7 @@
             ],
             "deadline": 7,
             "dialogue": "Please, save me!",
-            "actor_id": "scientist_male_blue"
+            "actor_id": "dbr_scientist"
           },
           "spawns": [
             {
@@ -68,6 +68,18 @@
               ],
               "attack_delay": 5.2,
               "behavior": "flight_swarm"
+            },
+            {
+              "delay": 4.3,
+              "actor": "sam_a1",
+              "position": [
+                0.9,
+                0,
+                -14.2
+              ],
+              "attack_delay": 6.1,
+              "behavior": "walk",
+              "reference_status": "canonical_chapter_verified_scene_placement_pending"
             }
           ],
           "next_success": "mansion_entrance",
@@ -129,6 +141,30 @@
               ],
               "attack_delay": 4.9,
               "behavior": "aquatic_weave"
+            },
+            {
+              "delay": 4.1,
+              "actor": "kenfis_f1",
+              "position": [
+                -0.9,
+                0.25,
+                -13.8
+              ],
+              "attack_delay": 5.7,
+              "behavior": "charge",
+              "reference_status": "canonical_chapter_verified_scene_placement_pending"
+            },
+            {
+              "delay": 4.7,
+              "actor": "name_g2",
+              "position": [
+                2.75,
+                1.35,
+                -14.4
+              ],
+              "attack_delay": 6.2,
+              "behavior": "throw_projectile",
+              "reference_status": "canonical_chapter_verified_scene_placement_pending"
             }
           ],
           "next": "foyer_choice"
@@ -188,7 +224,7 @@
                 -14
               ],
               "attack_delay": 5.5,
-              "behavior": "charge"
+              "behavior": "throw_projectile"
             }
           ],
           "next": "foyer_choice"
@@ -297,7 +333,7 @@
               ],
               "attack_delay": 3.8,
               "targets_civilian": true,
-              "behavior": "jump"
+              "behavior": "throw_projectile"
             },
             {
               "delay": 2,
@@ -308,7 +344,7 @@
                 -13.5
               ],
               "attack_delay": 5.2,
-              "behavior": "throw_projectile"
+              "behavior": "heavy_weapon"
             }
           ],
           "next": "sophie_antechamber"
@@ -406,7 +442,7 @@
               ],
               "attack_delay": 3.9,
               "targets_civilian": true,
-              "behavior": "ceiling_drop"
+              "behavior": "throw_projectile"
             },
             {
               "delay": 1.8,
@@ -553,7 +589,7 @@
               ],
               "attack_delay": 4.2,
               "targets_civilian": true,
-              "behavior": "throw_projectile"
+              "behavior": "heavy_weapon"
             },
             {
               "delay": 1.9,
@@ -744,7 +780,7 @@
                 -13
               ],
               "attack_delay": 5.1,
-              "behavior": "throw_projectile"
+              "behavior": "heavy_weapon"
             },
             {
               "delay": 3.4,
@@ -1241,7 +1277,7 @@
               ],
               "attack_delay": 3.8,
               "targets_civilian": true,
-              "behavior": "throw_projectile"
+              "behavior": "heavy_weapon"
             },
             {
               "delay": 1.8,
@@ -1263,7 +1299,7 @@
                 -13.7
               ],
               "attack_delay": 5.3,
-              "behavior": "throw_projectile"
+              "behavior": "heavy_weapon"
             }
           ],
           "next_success": "security_door",
@@ -1511,16 +1547,6 @@
             "z": 4.5,
             "sweep": 0.2
           },
-          "breakable": {
-            "position": [
-              0,
-              1,
-              -10
-            ],
-            "health": 3,
-            "pickup": "frog",
-            "asset": "c04_bonus_gate_seal"
-          },
           "spawns": [],
           "next_success": "bonus_room",
           "next_failure": "final_waves"
@@ -1528,6 +1554,7 @@
         {
           "id": "bonus_room",
           "duration": 6.5,
+          "minimum_duration": 6,
           "style": "laboratory",
           "objective": "COLLECT THE HIDDEN SUPPLIES",
           "dialogue": "All scientists saved. The emergency cache is yours.",
@@ -1537,40 +1564,88 @@
             "z": 4,
             "sweep": 0.4
           },
-          "breakable": {
-            "position": [
-              -1.5,
-              0.8,
-              -9.5
-            ],
-            "health": 1,
-            "pickup": "life",
-            "asset": "c04_emergency_supply_crate"
-          },
-          "spawns": [
+          "pickups": [
             {
-              "delay": 1,
-              "actor": "taran_g3",
+              "id": "bonus_life_left_outer",
+              "pickup": "life",
               "position": [
-                1.7,
-                0,
-                -11
+                -3.15,
+                1.05,
+                -10.6
               ],
-              "attack_delay": 4,
-              "behavior": "armored_advance"
+              "scale": 0.82
             },
             {
-              "delay": 2,
-              "actor": "harris_d3",
-              "position": [
-                0,
-                0,
-                -12.8
-              ],
-              "attack_delay": 4.7,
-              "behavior": "throw_projectile"
+              "id": "bonus_life_left_inner",
+              "pickup": "life",
+              "position": [-1.95, 1.05, -10.2],
+              "scale": 0.82
+            },
+            {
+              "id": "bonus_life_right_inner",
+              "pickup": "life",
+              "position": [1.95, 1.05, -10.2],
+              "scale": 0.82
+            },
+            {
+              "id": "bonus_life_right_outer",
+              "pickup": "life",
+              "position": [3.15, 1.05, -10.6],
+              "scale": 0.82
+            },
+            {
+              "id": "bonus_frog_left",
+              "pickup": "frog",
+              "position": [-2.45, 0.55, -8.7],
+              "scale": 0.62,
+              "motion": "hop"
+            },
+            {
+              "id": "bonus_frog_center",
+              "pickup": "frog",
+              "position": [0, 0.52, -8.35],
+              "scale": 0.62,
+              "motion": "hop"
+            },
+            {
+              "id": "bonus_frog_right",
+              "pickup": "frog",
+              "position": [2.45, 0.55, -8.7],
+              "scale": 0.62,
+              "motion": "hop"
+            },
+            {
+              "id": "bonus_medal_left_outer",
+              "pickup": "medal",
+              "position": [-3, 1.95, -11.5],
+              "scale": 0.52
+            },
+            {
+              "id": "bonus_medal_left_inner",
+              "pickup": "medal",
+              "position": [-1.5, 1.8, -11],
+              "scale": 0.52
+            },
+            {
+              "id": "bonus_medal_center",
+              "pickup": "medal",
+              "position": [0, 1.72, -10.7],
+              "scale": 0.52
+            },
+            {
+              "id": "bonus_medal_right_inner",
+              "pickup": "medal",
+              "position": [1.5, 1.8, -11],
+              "scale": 0.52
+            },
+            {
+              "id": "bonus_medal_right_outer",
+              "pickup": "medal",
+              "position": [3, 1.95, -11.5],
+              "scale": 0.52
             }
           ],
+          "spawns": [],
           "next": "final_waves"
         },
         {

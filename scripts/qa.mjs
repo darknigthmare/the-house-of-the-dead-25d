@@ -20,7 +20,8 @@ const required = [
   'docs/REFERENCE_MATRIX.md', 'docs/ROUTE_GRAPH.md', 'docs/GAMEPLAY_RULES.md',
   'docs/FIDELITY_REPORT.md', 'docs/SPRITE_PRODUCTION_BIBLE.md',
   'docs/ASSET_LICENSE_MANIFEST.md', 'docs/MISSING_LICENSED_ASSETS.md',
-  'docs/CONTENT_ASSET_CATALOG.md'
+  'docs/CONTENT_ASSET_CATALOG.md',
+  'scripts/smoke_curien_finale.gd'
 ];
 for (const file of required) check(existsSync(join(root, file)), `required file: ${file}`);
 
@@ -106,6 +107,7 @@ if (!args.has('--data-only') && !args.has('--web-only')) {
       ['res://tests/test_enemy_profile_library.gd', 'enemy profile runtime contract test'],
       ['res://tests/test_procedural_audio.gd', 'procedural audio content test'],
       ['res://scripts/smoke_directional_sprites.gd', 'directional sprite runtime smoke'],
+      ['res://scripts/smoke_curien_finale.gd', 'Curien finale narrative smoke'],
     ];
     for (const [script, label] of directionalRuns) {
       const run = spawnSync(exe, ['--headless', '--path', root, '--script', script], { encoding: 'utf8', timeout: 120000 });

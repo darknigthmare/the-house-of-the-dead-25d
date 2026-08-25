@@ -20,12 +20,6 @@ const QA_SCORE_DEV_PATH := "res://logs/score/score_qa.jsonl"
 const QA_SCORE_EXPORT_PATH := "user://score_qa.jsonl"
 const MAGAZINE_SIZE := 6
 
-const ITEM_TEXTURES := {
-	"medal": "res://assets/sprites/items/gold-coin.png",
-	"frog": "res://assets/sprites/items/golden-frog.png",
-	"life": "res://assets/sprites/items/medical-kit.png"
-}
-
 const ACTOR_STATS := {
 	# Canonical arcade roster. Until a licensed atlas exists for every type, each
 	# entry explicitly reuses one of the project's fan-made sheets and applies a
@@ -147,6 +141,7 @@ var gameplay_support_library = GameplaySupportLibraryScript.new()
 var enemy_profile_library = EnemyProfileLibraryScript.new()
 var audio_cue_library = AudioCueLibraryScript.new()
 var environment_scene_profile: Dictionary = {}
+var destroyed_breakable_id: String = ""
 
 
 func configure(options: Dictionary) -> void:

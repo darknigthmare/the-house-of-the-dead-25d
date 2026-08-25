@@ -1,6 +1,32 @@
 # QA Report
 
-This report records the v0.2.1 source-distribution hotfix, the unchanged v0.2.0 gameplay-content evidence and historical v0.1.0 separately. An older export or deployment is not evidence for the current revision.
+This report records the local, unpublished v0.3.0 release candidate, then preserves the v0.2.1 source-distribution hotfix, v0.2.0 gameplay-content evidence and historical v0.1.0 separately. An older export or deployment is not evidence for the current revision.
+
+## Local release candidate — 2026-08-25 (v0.3.0, unpublished)
+
+This evidence applies to the current local v0.3.0 release-candidate working tree. At the time of this record it has **not** been presented as a final commit, immutable tag, GitHub release or Vercel production deployment. The published v0.2.1 evidence below remains historical and must not be reused as proof of v0.3.0 publication.
+
+| Surface | Observed result | Proven scope |
+|---|---|---|
+| repository/data suite | `npm.cmd test`: **272/272** | current static data, manifests, runtime contracts and content gates |
+| complete local orchestration | `npm.cmd run qa`: **282/282** | current release-candidate QA command completed |
+| deterministic/runtime libraries | core **235**; sprite-atlas atomicity **63**; environment library **115**; gameplay-support library **33**; enemy profiles **210** | typed deterministic contracts and manifest loaders |
+| procedural audio | **354 assertions / 28 distinct cues** | dimensions, duration, loop, signature and safe-amplitude contracts for original temporary audio |
+| directional runtime smoke | **38 bindings / 10 representatives / 8 directions**, with cleanup and no leaked instance | all directional views plus live state/death cleanup sampling |
+| Curien finale smoke | **29 assertions**, with cleanup and no leaked instance | Curien story spawn, Magician strike, recoil, fall and persistent corpse sequence |
+| asset verifiers | environment **1,708**; animated effects **348/348**; gameplay support **113/113** | current environment, four dedicated effect strips, projectiles, pickups, HUD and weak-point assets |
+| content-family audit | **739 checks / 16 warnings / 0 errors** | all active paths resolve; the 16 documented fidelity/architecture backlog warnings remain intentionally visible |
+| texture imports | **128 files / 0 mismatches** | current lossless/lossy import-profile contract |
+| complete campaign smoke | chapters **1–4**; **15/15 scientists**; Chariot, Hangedman, Hermit, Chariot rematch, Hangedman rematch and Magician; ending and credits | automated success-path campaign continuity |
+| focused gameplay smokes | gameplay, score QA and initials entry all passed | two-player/gameplay rules, score events and initials-to-credits flow |
+| Windows x64 export | **187,023,472 bytes**; SHA-256 `A54A13E6…`; hidden **8-second** startup passed | local Godot 4.7.1 export starts and remains active on the development machine |
+| Linux x64 export | **151,388,064 bytes**; SHA-256 `3FC75393…` | local Godot 4.7.1 export completed |
+| Web export | **9 files / 117,762,238 bytes**; PCK **77,917,844** (`955FFD21…`); WASM **39,513,091** (`35116F68…`) | local Godot 4.7.1 Web payload |
+| Web static gates | `qa:web` **276/276**; `verify:web` **OK** | patched accessibility/isolation shell and required Web payload markers |
+| local browser, agent-browser 0.34 | isolation true; accessible **1258×622** canvas with `role=main` and an ARIA label; menu then Arcade/P1/continue visible; WebGL2 single-thread; **0 page errors** | live local Web startup and core visible flow |
+| browser logging | **3 Godot info logs only** | no browser page error was observed; informational engine logs are not suppressed |
+
+These checks do not prove installation on a clean physical Windows system, physical light-gun behavior, sustained performance on named hardware, every failure route, or exact Sega arcade timing and assets. The 60 fps performance target remains unprofiled.
 
 ## Verified distribution hotfix — 2026-08-25 (v0.2.1)
 
@@ -13,6 +39,37 @@ This report records the v0.2.1 source-distribution hotfix, the unchanged v0.2.0 
 | public browser | zero console/page errors; isolation true; accessible 1258×622 canvas; menu and P1/continue visible | production runtime startup and core visible flow |
 
 The source hotfix changes QA portability only. Gameplay content and exported Windows/Linux/Web payloads are unchanged from v0.2.0; the detailed gameplay evidence follows.
+
+## Current working-tree combat readability validation — 2026-08-25
+
+This evidence applies to the current local working tree after the published v0.2.1 tag. It is not evidence that the already published v0.2.1 archives contain these later combat changes.
+
+| Check | Observed result | Proven scope |
+|---|---|---|
+| `tests/test_enemy_profile_library.gd` | 210 assertions passed | 25 profiles expose telegraph and 3D melee-range data; every runtime projectile is destructible and has minimum visible travel/contact data; Ebitan b and Burner do not emit non-destructible runtime projectiles |
+| `tests/test_runner.gd` | 235 assertions passed | existing deterministic core rules remain green |
+| Godot 4.7.1 headless parse/startup | passed with no script error | current gameplay inheritance chain parses and the main runtime initializes |
+| `scripts/smoke_gameplay.gd` | passed; `SMOKE PROJECTILE RULES`, `SMOKE BONUS PICKUPS` and `SMOKE ATTACK READABILITY` all reported `OK` | live two-player runtime plus the attack cases listed below |
+| `scripts/smoke_campaign.gd` | passed | chapters `[1, 2, 3, 4]`; bosses `[Chariot, Hangedman, Hermit, Chariot, Hangedman, Magician]`; 15/15 scientists; ending and credits reached |
+| targeted `git diff --check` | passed | no whitespace error in the combat, enemy-profile, regression-test or smoke changes |
+
+The attack-readability smoke directly exercised these failure and success cases:
+
+- a melee actor with a forged completed telegraph cannot damage from eight world units away;
+- matching X/Z does not count as contact while the attacker remains five world units above the player;
+- close contact cannot damage before the telegraph completes, then damages once after completion;
+- hiding the actor billboard invalidates a close melee strike;
+- a projectile owner marked non-destructible cannot launch a runtime projectile;
+- a visible projectile at contact cannot damage before completing its minimum visible travel;
+- a hidden projectile cannot damage even after satisfying its travel requirement;
+- a visible, destructible and telegraphed projectile damages once only after sufficient visible travel and physical contact;
+- an expired civilian deadline with no living assailant leaves the civilian alive instead of applying a timer-only death;
+- a civilian-assigned melee enemy must approach in 3D, remain visible, complete its telegraph and reach contact before killing;
+- a civilian-assigned projectile travels toward the civilian in full 3D and only kills after its visible-travel and contact gates pass;
+- a projectile already aimed at a rescued civilian dissipates at that target without damaging or silently retargeting a player;
+- Chariot cannot damage from its home position, but can damage after the completed visible lunge reaches melee range.
+
+The automated campaign smoke proves the scripted success path remains traversable. It does not prove every real-time enemy formation, every failure branch or exact timing against an authorized Sega arcade build.
 
 ## Verified release — 2026-08-24 (v0.2.0)
 

@@ -1,8 +1,44 @@
 # Continuation
 
-## Current state — published v0.2.1 source-QA hotfix
+## Current state — v0.3.0 worktree, not yet published
 
-The package version is `0.2.1`. The current local Godot 4.7.1 worktree contains the four-chapter data-driven campaign, local 2P, 4:3 framing, rail camera, Sprite3D actors, 3D hit zones/collisions, scientists, breakables, scoring, six-round ammunition, lives, continues, routes, four bosses, chapter-four rematches, three endings, credits, Training, Boss Rush and Chapter Select.
+The package version is `0.3.0`. The current worktree builds on the immutable public v0.2.1 baseline and contains an attack-readability, environment-state and content-coverage pass that has not yet completed its release gates.
+
+Completed implementation in this worktree:
+
+- ordinary and boss-support melee damage requires the attacker to be visible, to finish its wind-up and to reach real 3D contact;
+- the legacy boss-support depth-threshold damage path was removed, including regression coverage for a hidden support enemy already close to the camera;
+- enemy projectiles are visible, destructible Sprite3D actors that require a telegraphed launch, minimum visible travel and physical contact before damage; civilian deadlines only accelerate real assigned attackers, assigned melee actors approach the civilian in 3D, and already-launched civilian projectiles cannot retarget a player after rescue; Chariot/Hangedman use visible lunges and Hermit/Magician use interceptable projectiles;
+- prop proportions were recalibrated, the garden lamp has readable lit/unlit frames, and white matte/halo remnants were cleaned from the lamp, estate gate, chandelier and mansion sconce;
+- affected prop and destructible textures retain lossless alpha imports;
+- the estate gate, mansion doors and laboratory specimen tanks have manifest-driven state events; `breakable_destroyed` requires the actual destroyed breakable ID and can no longer be triggered by a civilian save;
+- the chapter-four bonus room contains twelve explicit world pickups — four lives, three golden frogs and five medals — with no hostile or breakable proxy; pickups bob in 3D, can be shot once and are loaded from the gameplay-support manifest;
+- all 25 enemy behavior profiles have a runtime path and all seven projectile families are reachable; the added `sam_a1`, `kenfis_f1` and `name_g2` scene placements remain explicitly provisional pending an authorized arcade comparison;
+- four original OpenAI-generated transparent environment strips are integrated through the environment manifest and runtime motion controller: falling drips, flowing water, electrical arcs and monitor scan, each with eight 256-pixel frames in a 2048×256 RGBA image;
+- the Magician finale respawns Curien as a non-targetable story actor, shows Magician's visible fireball strike, applies Curien hit-recoil and death-fall frames, and keeps the grounded corpse for a minimum verified five-second hold before cleanup.
+
+Latest verified release-candidate results:
+
+- `npm.cmd test`: 272/272;
+- `npm.cmd run qa`: 282/282;
+- targeted runtime parse: 9/9 scripts;
+- gameplay smoke: passed without leaks, including timer-only civilian death, 3D civilian melee approach, civilian projectile targeting/no-retarget, invisible-damage regressions and bonus pickups;
+- environment asset library: 115 assertions;
+- gameplay-support library: 33 assertions, plus 113/113 manifest checks;
+- environment verifier: 1,708 assertions;
+- animated-effect verifier: 348/348 assertions;
+- Curien-finale smoke: 29/29 assertions;
+- campaign: chapters 1–4, all six boss encounters, 15/15 scientists, ending and credits;
+- score ledger and initials: passed (`+120`, `-100`, `COD`).
+
+The local code/data QA and export gates are complete. Fresh exports measure Windows **187,023,472 bytes** (SHA-256 `A54A13E64810109AD8C894DD896DD2DC8A94F4F1262ED490A9756A15CF9F954D`), Linux **151,388,064 bytes** (`3FC7539397BA3A512ADF6482FEFBD0D1AC3121B17C00DF282E18AE8ADD6FEB64`) and Web **117,762,238 bytes** across nine files. The Web PCK is **77,917,844 bytes** (`955FFD21080A99FCC052800145A4AD28B8162009AECF66DCC7E251F040AEEC4A`) and WASM is **39,513,091 bytes** (`35116F68540AC41ACF7D71EA457ADDED91B5E960A9CCA3E2ACC72918EAF01277`). The Windows eight-second startup smoke, `qa:web` 276/276, `verify:web` and local browser startup all pass. Source-ZIP extraction verification, regenerated release archives, commit/push, immutable v0.3.0 tag, GitHub release and Vercel production deployment remain pending; none of those v0.3.0 publication steps is complete yet.
+
+
+The art and audio boundary remains unchanged: these are original fan-made/project replacement assets, not extracted or certified Sega masters. Exact arcade timing, placement and revision fidelity still require the authorized reference build and licensed assets listed in `docs/MISSING_LICENSED_ASSETS.md`.
+
+## Previous public baseline — published v0.2.1 source-QA hotfix
+
+The published v0.2.1 package contains the four-chapter data-driven campaign, local 2P, 4:3 framing, rail camera, Sprite3D actors, 3D hit zones/collisions, scientists, breakables, scoring, six-round ammunition, lives, continues, routes, four bosses, chapter-four rematches, three endings, credits, Training, Boss Rush and Chapter Select.
 
 The original replacement-content contract is integrated:
 
@@ -19,7 +55,7 @@ GitHub Actions runs `32781391274` and `32783351280` exposed two source-distribut
 
 This replacement contract is verified locally. It must not be described as exact Sega arcade certification: no authorized Sega reference build, revision/operator configuration or licensed visual/audio masters were available.
 
-## Last completed task — 2026-08-25
+## Previous completed release — 2026-08-25
 
 Completed the v0.2.0 original content wave, then corrected its public-source validation and cross-platform paths as the v0.2.1 hotfix while preserving the gameplay and binary payloads:
 
@@ -62,10 +98,10 @@ The release contains the reviewed Godot import metadata required by its texture 
 
 ## Next exact task
 
-1. Install the published Windows archive on a clean physical Windows 64-bit machine and record startup, one encounter, reload and local 2P join.
-2. Validate one and two physical Gun4IR/Sinden-class devices, including calibration, independent raw input and off-screen reload.
-3. Capture sustained frame-time, 1% low, memory and hitch metrics on named target hardware.
-4. When authorized Sega assets/reference build are supplied, measure revision-specific rails, routes, scores, endings, dialogue and audio timing.
+1. Commit and push the exact green source, then wait for the clean GitHub Actions checkout to pass.
+2. Regenerate the release archives and `SHA256SUMS.txt` from that exact commit, extract the source ZIP into a clean temporary directory and prove its tracked-only verification.
+3. Create the immutable v0.3.0 tag and GitHub release, deploy the exact Web export to Vercel, then verify remote sizes/digests, root/PCK/WASM responses and public browser runtime.
+4. Keep physical clean-machine Windows installation, physical Gun4IR/Sinden validation, named-hardware profiling and authorized Sega reference comparison as separate unverified gates.
 
 ## Commands to resume
 
@@ -73,16 +109,24 @@ The release contains the reviewed Godot import metadata required by its texture 
 npm.cmd test
 npm.cmd run qa
 & '.tools\godot-4.7.1\Godot_v4.7.1-stable_win64_console.exe' --headless --path . --script res://scripts/parse_runtime.gd
+& '.tools\godot-4.7.1\Godot_v4.7.1-stable_win64_console.exe' --headless --path . --script res://tests/test_environment_asset_library.gd
+& '.tools\godot-4.7.1\Godot_v4.7.1-stable_win64_console.exe' --headless --path . --script res://tests/test_gameplay_support_library.gd
+& '.tools\godot-4.7.1\Godot_v4.7.1-stable_win64_console.exe' --headless --path . --script res://tests/test_enemy_profile_library.gd
 & '.tools\godot-4.7.1\Godot_v4.7.1-stable_win64_console.exe' --headless --path . --script res://scripts/smoke_gameplay.gd
 & '.tools\godot-4.7.1\Godot_v4.7.1-stable_win64_console.exe' --headless --path . --script res://scripts/smoke_score_qa.gd
 & '.tools\godot-4.7.1\Godot_v4.7.1-stable_win64_console.exe' --headless --path . --script res://scripts/smoke_initials.gd
 & '.tools\godot-4.7.1\Godot_v4.7.1-stable_win64_console.exe' --headless --path . --script res://scripts/smoke_campaign.gd
+& '.tools\godot-4.7.1\Godot_v4.7.1-stable_win64_console.exe' --headless --path . --script res://scripts/smoke_curien_finale.gd
+& '.tools\godot-4.7.1\Godot_v4.7.1-stable_win64_console.exe' --headless --path . --export-release 'Windows Desktop'
+& '.tools\godot-4.7.1\Godot_v4.7.1-stable_win64_console.exe' --headless --path . --export-release 'Linux'
+& '.tools\godot-4.7.1\Godot_v4.7.1-stable_win64_console.exe' --headless --path . --export-release 'Web'
+npm run fix:web-accessibility
 npm.cmd run qa:web
 npm.cmd run verify:web
 git diff --check
 ```
 
-Keep both public tags immutable. The current local archives belong to v0.2.1; v0.2.0 remains recoverable from its GitHub release.
+Keep the public v0.2.0 and v0.2.1 tags immutable. Existing published archives belong to those releases; no v0.3.0 archive or tag exists until the pending release workflow succeeds.
 
 ## Precautions
 
@@ -92,3 +136,4 @@ Keep both public tags immutable. The current local archives belong to v0.2.1; v0
 - Anchor v0.2.0 publication claims to commit `d79f86a`, its public GitHub release and Vercel deployment `dpl_548ttUkKWa3tHvBQzkDDQzmNgx6Z`, not to package metadata alone.
 - Anchor v0.2.1 source-distribution claims to commit `c13d525`, release v0.2.1 and Vercel deployment `dpl_3f4W7BXUfgMjeFjVh5wGd8N4xuzs`; never move either public tag.
 - Keep physical Windows installation, physical light-gun calibration, deep named-hardware profiling and authorized reference comparison as separate unverified gates.
+- Do not describe v0.3.0 as built, archived, committed, tagged, released or deployed until those exact gates have been executed and recorded.
