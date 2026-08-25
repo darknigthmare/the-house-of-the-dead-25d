@@ -1,8 +1,8 @@
 # Continuation
 
-## Current working tree — unpublished v0.4.0 release candidate
+## Published v0.4.0 release — route and runtime-component integrity
 
-The package version is `0.4.0`. The working tree is ahead of immutable public v0.3.0 and contains a bounded route/component/directional integrity wave plus fresh local Windows, Linux and Web exports. It is not yet a commit, push, tag, release or deployment.
+Package version `0.4.0` is published from immutable tag `v0.4.0` at exact commit `b3b8b3b37a027189a83afaa21e6e959debbd99a5`. The bounded route/component/directional integrity wave, source archive and Windows/Linux/Web outputs were validated before publication.
 
 Implemented:
 
@@ -24,6 +24,13 @@ Verification already completed:
 - Web export: 112,777,790 bytes across nine files; PCK 72,933,396 bytes (`caa42ba7…`), WASM 39,513,091 (`35116f68…`), `qa:web` 282/282 and `verify:web` passed after the accessibility patch.
 - local Chromium through agent-browser 0.35: `crossOriginIsolated=true`, one visible accessible 1258×566 `main` canvas, PCK/WASM loaded, no error overlay or page error and only three expected Godot informational logs.
 
+Publication completed:
+
+- GitHub Actions run `32893740154` passed on the tagged commit in 37 seconds;
+- GitHub release v0.4.0 exposes Source 223,487,206 bytes (`c6a32581…`), Windows 111,706,553 (`03c9073d…`), Linux 101,742,516 (`f99bd5aa…`), Web 82,878,986 (`0d3e07cc…`) and the 421-byte checksum manifest (`91243d6a…`); every remote size/digest matches locally;
+- the extracted public Source ZIP passes 278/278 with optional private reports absent;
+- Vercel deployment `dpl_HeyKmQ5aZ5yypUXokC5ZJXsgrYLW` is `READY` at <https://the-house-of-the-dead-25d.vercel.app>; public root/PCK/WASM are byte-identical to the local build, and Chromium reports isolation, one accessible 1258×566 canvas, zero page errors and the visually inspected menu.
+
 Files changed in this wave:
 
 - route/chapter data under `data/routes/` and `data/chapters/`;
@@ -34,7 +41,7 @@ Files changed in this wave:
 
 No exact Sega arcade fidelity is certified. The three provisional placements and the directional-animation limitations remain explicit.
 
-## Published baseline — v0.3.0 published and verified
+## Previous published release — v0.3.0
 
 The published v0.3.0 release package version is `0.3.0`. The attack-readability, environment-state and content-coverage pass is published from immutable tag `v0.3.0` at exact commit `8add70a31a751928ea12c247ca584d8b030b2139`.
 
@@ -136,12 +143,10 @@ The release contains the reviewed Godot import metadata required by its texture 
 
 ## Next exact task
 
-1. After the final breakable-state correction, rerun its targeted environment test, the deterministic core suite and the complete QA orchestration; do not carry forward hashes from an older tree.
-2. Re-export Windows, Linux and Web from that same verified tree, reapply the Web accessibility patch, rerun `qa:web`/`verify:web`, the Windows startup smoke and local browser startup, then record the fresh sizes and SHA-256 values.
-3. Review and stage that exact tree including the tracked Web export, commit it, push `HEAD:main`, then require CI green on the exact commit.
-4. Only after CI passes, create and validate fresh v0.4.0 release archives from clean `HEAD`, then tag/release without moving v0.3.0 or replacing its archives.
-5. Resolve the three provisional enemy placements only from an authorized, revision-identifiable Sega reference build; do not invent arcade-exact placement evidence.
-6. Replace mirrored right/back-right profiles and compact semantic cells only with genuinely authored directional multi-frame art and recorded provenance; then perform physical Windows/light-gun and named-hardware profiling gates.
+1. Resolve the three provisional enemy placements only from an authorized, revision-identifiable Sega reference build; do not invent arcade-exact placement evidence.
+2. Replace mirrored right/back-right profiles and compact semantic cells only with genuinely authored directional multi-frame art and recorded provenance.
+3. Integrate licensed voices, music and remaining source assets only when they are supplied through the authorized asset root; keep project-owned replacements explicit until then.
+4. Perform physical Windows installation, independent light-gun calibration and named-hardware frame-time/memory profiling before claiming those gates.
 
 ## Commands to resume
 
@@ -168,7 +173,7 @@ npm.cmd run verify:web
 git diff --check
 ```
 
-Keep the public v0.2.0, v0.2.1 and v0.3.0 tags immutable. The v0.3.0 archives and checksums belong to commit `8add70a`; never regenerate or replace them from a later documentation-only commit.
+Keep the public v0.2.0, v0.2.1, v0.3.0 and v0.4.0 tags immutable. The v0.3.0 archives belong to commit `8add70a`; the v0.4.0 archives belong to commit `b3b8b3b`; never regenerate or replace either release from a later documentation-only commit.
 
 ## Precautions
 
@@ -179,3 +184,4 @@ Keep the public v0.2.0, v0.2.1 and v0.3.0 tags immutable. The v0.3.0 archives an
 - Anchor v0.2.1 source-distribution claims to commit `c13d525`, release v0.2.1 and Vercel deployment `dpl_3f4W7BXUfgMjeFjVh5wGd8N4xuzs`; never move either public tag.
 - Keep physical Windows installation, physical light-gun calibration, deep named-hardware profiling and authorized reference comparison as separate unverified gates.
 - Anchor v0.3.0 publication claims to commit/tag `8add70a`, GitHub Actions run `32865563840`, the public release assets and Vercel deployment `dpl_KUcS7Xh1NEMU2GRJTki2Hc4kwPuy`.
+- Anchor v0.4.0 publication claims to commit/tag `b3b8b3b`, GitHub Actions run `32893740154`, release v0.4.0 and Vercel deployment `dpl_HeyKmQ5aZ5yypUXokC5ZJXsgrYLW`; never move the public tag.

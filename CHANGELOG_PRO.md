@@ -1,6 +1,6 @@
 # Professional Changelog
 
-## 0.4.0 release candidate — route and runtime-component integrity — 2026-08-25
+## 0.4.0 route and runtime-component integrity release — 2026-08-25
 
 - Aligned all four secondary route graphs with the active campaign timeline: matching node IDs, start nodes and edges, including `sophie_antechamber` and `roof_rescue`.
 - Added deterministic `RouteOutcomePolicy` resolution so a civilian rescue cannot satisfy a breakable-driven branch; the foyer lock, chain plate and elevator switch require destruction of their exact authored asset.
@@ -10,7 +10,10 @@
 - Reduced the content audit to **746 checks / 6 warnings / 0 errors**, with **4 breakables / 4 uses** and **74/74 unique audited binaries**. The six retained warnings are three reference-pending placements and the three explicit directional-animation limitations.
 - Verified `npm.cmd test` at **278/278**, the **286-assertion** Godot deterministic core and the strengthened `npm.cmd run qa` at **292/292**, including gameplay, complete campaign, score and initials/credits smokes.
 - Hardened the release packager: Windows, Linux and Web exports are all mandatory, checksums cover the exact four expected ZIPs, and an unexpected archive now aborts packaging instead of contaminating the release set.
-- Fresh Godot 4.7.1 exports succeed: Windows **182,039,024 bytes**, Linux **146,403,616**, Web **112,777,790 across nine files**, including a **72,933,396-byte** PCK. Windows remained active for the eight-second startup smoke; `qa:web` passes **282/282** and `verify:web` passes. Local Chromium reports isolation true, one accessible 1258×566 main canvas, loaded PCK/WASM, no page errors and only the three expected Godot information logs. No release archive/package publication, commit, push, tag, GitHub release or deployment is claimed yet. Exact Sega-reference fidelity remains unverified without an authorized reference build and licensed masters.
+- Fresh Godot 4.7.1 exports succeed: Windows **182,039,024 bytes**, Linux **146,403,616**, Web **112,777,790 across nine files**, including a **72,933,396-byte** PCK. Windows remained active for the eight-second startup smoke; `qa:web` passes **282/282** and `verify:web` passes. Local Chromium reports isolation true, one accessible 1258×566 main canvas, loaded PCK/WASM, no page errors and only the three expected Godot information logs. Exact Sega-reference fidelity remains unverified without an authorized reference build and licensed masters.
+- Published immutable tag `v0.4.0` at exact commit [`b3b8b3b`](https://github.com/darknigthmare/the-house-of-the-dead-25d/commit/b3b8b3b37a027189a83afaa21e6e959debbd99a5) after [GitHub Actions run 32893740154](https://github.com/darknigthmare/the-house-of-the-dead-25d/actions/runs/32893740154) passed in 37 seconds.
+- [Release v0.4.0](https://github.com/darknigthmare/the-house-of-the-dead-25d/releases/tag/v0.4.0) contains Source **223,487,206 bytes** (`c6a32581…`), Windows **111,706,553** (`03c9073d…`), Linux **101,742,516** (`f99bd5aa…`), Web **82,878,986** (`0d3e07cc…`) and `SHA256SUMS.txt` **421** (`91243d6a…`); all five remote sizes and SHA-256 digests match locally, and the extracted source archive passes 278/278 without optional private reports.
+- Vercel production `dpl_HeyKmQ5aZ5yypUXokC5ZJXsgrYLW` is `READY` at <https://the-house-of-the-dead-25d.vercel.app>. Root, PCK and WASM return 200 with COOP/COEP and correct WASM MIME and match local SHA-256 exactly. Public Chromium reports isolation true, one accessible 1258×566 canvas, loaded PCK/WASM, no page errors, three expected Godot logs and a visually inspected menu.
 
 ## 0.3.0 attack-readability and environment-content release — 2026-08-25
 

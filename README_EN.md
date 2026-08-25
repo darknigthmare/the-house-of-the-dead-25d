@@ -6,11 +6,11 @@ The current worktree V2 visual contract provides 38 unique 2048×2048 RGBA direc
 
 The project includes a playable four-chapter campaign with branches, scientists, breakables, Chariot, Hangedman, Hermit, Magician, final-chapter rematches, three endings, credits, score, lives, ammunition, continues and two-player local co-op. Training, Boss Rush, Chapter Select and a local leaderboard are also available.
 
-## Unpublished v0.4.0 candidate — route and component integrity
+## Public v0.4.0 release — route and component integrity
 
-The working tree's `package.json` declares `0.4.0`, but this version remains a local candidate: it has not yet been committed, pushed, tagged, published on GitHub or deployed to Vercel. This wave aligns the route graphs with the playable timeline, requires the exact destroyed-object ID for breakable-driven branches, activates dedicated pickup, breakable, civilian and enemy-spawn components, and stabilizes directional-sprite changes with hysteresis. Local candidate verification is recorded in `CONTINUATION.md`; the publicly downloadable version remains v0.3.0 below.
+[GitHub release v0.4.0](https://github.com/darknigthmare/the-house-of-the-dead-25d/releases/tag/v0.4.0) is published from exact commit [`b3b8b3b`](https://github.com/darknigthmare/the-house-of-the-dead-25d/commit/b3b8b3b37a027189a83afaa21e6e959debbd99a5), validated by CI. This wave aligns the route graphs with the playable timeline, requires the exact destroyed-object ID for breakable-driven branches, activates dedicated pickup, breakable, civilian and enemy-spawn components, and stabilizes directional-sprite changes with hysteresis. The verified Vercel production is live at [the-house-of-the-dead-25d.vercel.app](https://the-house-of-the-dead-25d.vercel.app).
 
-## Current public baseline — v0.3.0 attack readability and environment content
+## Previous release — v0.3.0 attack readability and environment content
 
 The v0.3.0 release fixes damage that could appear invisible. Ordinary and boss-support melee attacks must now be visible, complete their wind-up and reach real 3D contact. The remaining depth-only legacy damage path has been removed. Ranged attacks use visible, destructible and shootable projectiles with a minimum on-screen travel distance before impact. Chariot and Hangedman physically lunge during their strikes; Hermit and Magician launch their dedicated projectiles.
 

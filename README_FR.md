@@ -6,11 +6,11 @@ Le contrat visuel V2 de l’arbre de travail fournit 38 atlas directionnels uniq
 
 Le projet propose une campagne jouable en quatre chapitres avec embranchements, scientifiques à sauver, objets destructibles, Chariot, Hangedman, Hermit, Magician, les rematchs du dernier chapitre, trois fins, crédits, score, vies, munitions, continues et coopération locale à deux joueurs. Entraînement, Boss Rush, sélection de chapitre et classement local sont également accessibles depuis le menu; une partie non-démo terminée demande trois initiales avant d'enregistrer son score.
 
-## Candidat v0.4.0 non publié — intégrité des routes et des composants
+## Release publique v0.4.0 — intégrité des routes et des composants
 
-Le `package.json` de l’arbre de travail annonce `0.4.0`, mais cette version reste un candidat local : elle n’est pas encore commitée, poussée, taguée, publiée sur GitHub ni déployée sur Vercel. Cette vague aligne les graphes de routes sur la timeline jouable, exige l’identifiant exact de l’objet détruit pour les embranchements associés, active les contrôleurs dédiés des pickups, destructibles, scientifiques et apparitions ennemies, et stabilise les changements de direction des sprites par hystérésis. Les validations locales du candidat sont consignées dans `CONTINUATION.md`; la version publiquement téléchargeable reste la v0.3.0 ci-dessous.
+La [release GitHub v0.4.0](https://github.com/darknigthmare/the-house-of-the-dead-25d/releases/tag/v0.4.0) est publiée depuis le commit exact [`b3b8b3b`](https://github.com/darknigthmare/the-house-of-the-dead-25d/commit/b3b8b3b37a027189a83afaa21e6e959debbd99a5), validé par la CI. Cette vague aligne les graphes de routes sur la timeline jouable, exige l’identifiant exact de l’objet détruit pour les embranchements associés, active les contrôleurs dédiés des pickups, destructibles, scientifiques et apparitions ennemies, et stabilise les changements de direction des sprites par hystérésis. La production Vercel vérifiée est disponible sur [the-house-of-the-dead-25d.vercel.app](https://the-house-of-the-dead-25d.vercel.app).
 
-## Base publique actuelle — release v0.3.0, lisibilité des attaques et contenu d’environnement
+## Release précédente — v0.3.0, lisibilité des attaques et contenu d’environnement
 
 La release v0.3.0 corrige les dégâts qui pouvaient sembler invisibles. Une attaque de mêlée ordinaire ou de soutien de boss doit désormais être visible, terminer sa préparation et atteindre un vrai contact 3D. L’ancien chemin basé uniquement sur la profondeur a été supprimé. Les attaques à distance utilisent des projectiles visibles, destructibles et tirables, avec une distance minimale de trajet à l’écran avant tout impact. Chariot et Hangedman avancent physiquement lors de leurs frappes; Hermit et Magician lancent leurs projectiles dédiés.
 

@@ -1,12 +1,12 @@
 # Build Guide
 
-## v0.4.0 release candidate — 2026-08-25
+## v0.4.0 published release — 2026-08-25
 
-The current package version is `0.4.0`. `npm.cmd test` passes 278/278, the deterministic Godot core passes 286 assertions and strengthened `npm.cmd run qa` passes 292/292. This candidate is not yet a commit, tag, GitHub release or Vercel deployment.
+Immutable tag `v0.4.0` points to exact commit `b3b8b3b37a027189a83afaa21e6e959debbd99a5`. `npm.cmd test` passes 278/278, the deterministic Godot core passes 286 assertions and strengthened `npm.cmd run qa` passes 292/292; GitHub Actions run `32893740154` is green.
 
-Fresh Godot 4.7.1 outputs from this exact working tree:
+Fresh Godot 4.7.1 outputs from the exact tagged tree:
 
-| Output | Local size | Candidate verification |
+| Output | Local size | Release verification |
 |---|---:|---|
 | `build/windows/The_House_of_the_Dead_25D.exe` | **182,039,024 bytes** | export succeeded; hidden eight-second startup passed; SHA-256 `4c4ebc7eba42658a389312f312f3e465ff1501c9746ffc7345c193d1021e6d3d` |
 | `build/linux/The_House_of_the_Dead_25D.x86_64` | **146,403,616 bytes** | export succeeded; SHA-256 `1ad3d1c3c53104c07daae1c5b7a30e29a131aa5047b1ae9a0d70254600a29788` |
@@ -14,6 +14,8 @@ Fresh Godot 4.7.1 outputs from this exact working tree:
 | Web PCK | **72,933,396 bytes** | SHA-256 `caa42ba7ee0f95cf129da2a8de36a1bceefcc4d8d28eabe4957e8b1d02843b46` |
 | Web WASM | **39,513,091 bytes** | SHA-256 `35116f68540ac41acf7d71ea457added91b5e960a9cca3e2acc72918eaf01277` |
 Local Vercel serving plus agent-browser 0.35 verified isolation, one accessible 1258×566 `main` canvas, loaded PCK/WASM resources, no page error and only the three expected Godot informational logs.
+
+[GitHub release v0.4.0](https://github.com/darknigthmare/the-house-of-the-dead-25d/releases/tag/v0.4.0) publishes Source **223,487,206 bytes**, Windows **111,706,553**, Linux **101,742,516**, Web **82,878,986** and a **421-byte** checksum manifest; all remote digests match. Vercel deployment `dpl_HeyKmQ5aZ5yypUXokC5ZJXsgrYLW` is `READY`, its public root/PCK/WASM match the local hashes and public Chromium has no page error.
 
 
 ## v0.3.0 published release — 2026-08-25

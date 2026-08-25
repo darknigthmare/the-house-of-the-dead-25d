@@ -1,10 +1,10 @@
 # QA Report
 
-This report first records the current unpublished working tree, then preserves the published v0.3.0 release, the v0.2.1 source-distribution hotfix, v0.2.0 gameplay-content evidence and historical v0.1.0 separately. An older export or deployment is not evidence for the current revision.
+This report first records the published v0.4.0 release, then preserves v0.3.0, the v0.2.1 source-distribution hotfix, v0.2.0 gameplay-content evidence and historical v0.1.0 separately. Evidence remains version-bound: an older export or deployment is not proof for a newer revision.
 
-## Current unpublished v0.4.0 release candidate — 2026-08-25
+## Published v0.4.0 release — 2026-08-25
 
-This evidence covers the route/component/content-cleanup wave and fresh local exports after v0.3.0. It does not describe a commit, push, tag, GitHub release or deployment.
+This evidence covers immutable tag `v0.4.0` at exact commit `b3b8b3b37a027189a83afaa21e6e959debbd99a5`, its local builds, published archives and production deployment.
 
 | Surface | Observed result | Proven scope |
 |---|---|---|
@@ -13,12 +13,14 @@ This evidence covers the route/component/content-cleanup wave and fresh local ex
 | content-family audit | **746 checks / 6 warnings / 0 errors** | 4 active breakables / 4 uses and 74/74 unique audited binaries; all route graph nodes/starts/edges align with the active timeline |
 | focused runtime smokes | gameplay, complete campaign, score QA and initials/credits each passed inside the aggregate gate | current playable success path and focused interactions after the component integration |
 | complete QA orchestration | strengthened `npm.cmd run qa`: **292/292 passed** | Godot libraries, directional and finale smokes, gameplay, full campaign, score, initials and every static content verifier |
-| Windows x64 export | **182,039,024 bytes**; SHA-256 `4c4ebc7e…`; hidden launch remained active for eight seconds | local Godot 4.7.1 candidate starts on the development machine |
+| Windows x64 export | **182,039,024 bytes**; SHA-256 `4c4ebc7e…`; hidden launch remained active for eight seconds | tagged Godot 4.7.1 release starts on the development machine |
 | Linux x64 export | **146,403,616 bytes**; SHA-256 `1ad3d1c3…` | local Godot 4.7.1 export completed |
 | Web export | **112,777,790 bytes / nine files**; PCK **72,933,396**; WASM **39,513,091**; `qa:web` **282/282**; `verify:web` passed | current tracked payload is below the 100,000,000-byte PCK gate and has the accessibility patch |
 
 `RouteOutcomePolicy` separates civilian rescue state from breakable-route success. `PickupController`, `BreakableObject`, `CivilianController` and `EnemySpawnEvent` are instantiated by the active runtime and covered by deterministic tests; a civilian deadline announces expiration but cannot cause an invisible timer-only death.
 Local Vercel serving plus agent-browser 0.35 reports `crossOriginIsolated=true`, one visible 1258×566 canvas with `role=main` and an accessible name, loaded PCK/WASM resources, no framework overlay, no browser error and only the three expected Godot information logs.
+
+GitHub Actions run `32893740154` passed in 37 seconds. Release v0.4.0 contains Source 223,487,206 bytes (`c6a32581…`), Windows 111,706,553 (`03c9073d…`), Linux 101,742,516 (`f99bd5aa…`), Web 82,878,986 (`0d3e07cc…`) and the 421-byte checksum manifest (`91243d6a…`); remote digests match and the extracted Source ZIP passes 278/278. Vercel deployment `dpl_HeyKmQ5aZ5yypUXokC5ZJXsgrYLW` is `READY`; public root/PCK/WASM match local SHA-256 and Chromium public reports zero errors plus a visually inspected menu.
 
 
 Directional resolution now keeps the previous sector through a three-degree angular margin. Tests cover forward and reverse traversal across the 22.5-degree boundary; this changes only atlas-row stability, not combat, collisions or authored frames.
