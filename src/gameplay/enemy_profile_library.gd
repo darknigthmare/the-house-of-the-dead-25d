@@ -88,8 +88,6 @@ func to_runtime_stats(enemy_id: String) -> Dictionary:
 		runtime["projectile_speed"] = _projectile_speed(projectile_kind)
 		runtime["projectile_min_travel"] = 3.0
 		runtime["projectile_contact_range"] = 1.35
-	if str(runtime.behavior) == "throw_projectile":
-		runtime["max_attacks"] = 3
 	return runtime
 
 

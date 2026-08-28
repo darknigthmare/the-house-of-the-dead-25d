@@ -22,7 +22,8 @@ const required = [
   'docs/ASSET_LICENSE_MANIFEST.md', 'docs/MISSING_LICENSED_ASSETS.md',
   'docs/CONTENT_ASSET_CATALOG.md',
   'scripts/smoke_curien_finale.gd', 'scripts/smoke_gameplay.gd',
-  'scripts/smoke_campaign.gd', 'scripts/smoke_score_qa.gd', 'scripts/smoke_initials.gd'
+  'scripts/smoke_campaign.gd', 'scripts/smoke_score_qa.gd', 'scripts/smoke_initials.gd',
+  'scripts/smoke_hud_text.gd', 'scripts/smoke_sequence_pacing.gd', 'scripts/smoke_route_decisions.gd', 'scripts/smoke_spawn_density.gd'
 ];
 for (const file of required) check(existsSync(join(root, file)), `required file: ${file}`);
 
@@ -113,6 +114,10 @@ if (!args.has('--data-only') && !args.has('--web-only')) {
       ['res://scripts/smoke_campaign.gd', 'full campaign smoke'],
       ['res://scripts/smoke_score_qa.gd', 'score audit smoke'],
       ['res://scripts/smoke_initials.gd', 'initials and credits smoke'],
+      ['res://scripts/smoke_hud_text.gd', 'HUD texture and glyph smoke'],
+      ['res://scripts/smoke_sequence_pacing.gd', 'sequence pacing and camera continuity smoke'],
+      ['res://scripts/smoke_route_decisions.gd', 'physical route-decision smoke'],
+      ['res://scripts/smoke_spawn_density.gd', 'ordinary encounter spawn-density smoke'],
     ];
     for (const [script, label] of runtimeRuns) {
       const run = spawnSync(exe, ['--headless', '--path', root, '--script', script], { encoding: 'utf8', timeout: 120000 });

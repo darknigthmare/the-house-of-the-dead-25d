@@ -519,6 +519,60 @@
         "sconce_flicker"
       ]
     },
+    "wall_passage_impact": {
+      "style": "mansion",
+      "layout": "narrow_corridor",
+      "props": [
+        {"id": "mansion_sconce", "position": [-4.5, 2, -10]},
+        {"id": "mansion_sconce", "position": [4.5, 2, -14]}
+      ],
+      "effects": ["dust", "collapse_dust", "sconce_flicker"]
+    },
+    "wall_passage_high": {
+      "style": "mansion",
+      "layout": "upper_staircase",
+      "props": [
+        {"id": "mansion_chandelier", "position": [0, 4, -12]},
+        {"id": "mansion_portrait", "position": [-4.5, 2.2, -14]},
+        {"id": "mansion_sconce", "position": [4.6, 2.1, -11]}
+      ]
+    },
+    "wall_passage_fall": {
+      "style": "sewer",
+      "layout": "low_tunnel",
+      "props": [
+        {"id": "lab_pipe_cluster", "position": [-4.5, 1.7, -13]}
+      ],
+      "effects": ["water_flow", "drips", "mist", "collapse_dust"]
+    },
+    "painting_corridor_impact": {
+      "style": "mansion",
+      "layout": "portrait_antechamber",
+      "props": [
+        {"id": "mansion_portrait", "position": [0, 2.3, -16]},
+        {"id": "mansion_sconce", "position": [-4.4, 2, -12]},
+        {"id": "mansion_sconce", "position": [4.4, 2, -12]}
+      ],
+      "effects": ["dust", "sconce_flicker"]
+    },
+    "painting_gallery_high": {
+      "style": "mansion",
+      "layout": "portrait_antechamber",
+      "props": [
+        {"id": "mansion_portrait", "position": [-4.5, 2.3, -12]},
+        {"id": "mansion_portrait", "position": [4.5, 2.3, -15]},
+        {"id": "mansion_chandelier", "position": [0, 4, -13]},
+        {"id": "mansion_sconce", "position": [-4.5, 2, -9]}
+      ]
+    },
+    "painting_floor_fall": {
+      "style": "sewer",
+      "layout": "low_tunnel",
+      "props": [
+        {"id": "lab_pipe_cluster", "position": [4.5, 1.7, -13]}
+      ],
+      "effects": ["water_flow", "drips", "mist", "collapse_dust"]
+    },
     "sophie_antechamber": {
       "style": "mansion",
       "layout": "portrait_antechamber",
@@ -636,7 +690,26 @@
     },
     "underground_passage": {
       "style": "sewer",
-      "layout": "low_tunnel"
+      "layout": "low_tunnel",
+      "props": [
+        {
+          "id": "lab_pipe_cluster",
+          "position": [-4.45, 1.7, -8.5]
+        },
+        {
+          "id": "lab_pipe_cluster",
+          "position": [4.45, 1.7, -15]
+        },
+        {
+          "id": "lab_vent_fan",
+          "position": [0, 2.75, -20]
+        }
+      ],
+      "effects": [
+        "water_flow",
+        "drips",
+        "mist"
+      ]
     },
     "great_doors": {
       "style": "mansion",
@@ -692,11 +765,56 @@
     },
     "raised_bridge": {
       "style": "mansion",
-      "layout": "raised_bridge"
+      "layout": "raised_bridge",
+      "props": [
+        {
+          "id": "mansion_chandelier",
+          "position": [0, 4, -12.5]
+        },
+        {
+          "id": "mansion_sconce",
+          "position": [-4.5, 2.05, -7.5]
+        },
+        {
+          "id": "mansion_sconce",
+          "position": [4.5, 2.05, -15.5]
+        },
+        {
+          "id": "mansion_portrait",
+          "position": [4.55, 2.25, -10.8]
+        },
+        {
+          "id": "mansion_portrait",
+          "position": [-4.55, 2.25, -18]
+        }
+      ],
+      "effects": [
+        "dust",
+        "sconce_flicker"
+      ]
     },
     "lower_stairs": {
       "style": "sewer",
-      "layout": "lower_stairs"
+      "layout": "lower_stairs",
+      "props": [
+        {
+          "id": "lab_pipe_cluster",
+          "position": [-4.5, 1.7, -7.8]
+        },
+        {
+          "id": "lab_pipe_cluster",
+          "position": [4.5, 1.7, -13.6]
+        },
+        {
+          "id": "lab_vent_fan",
+          "position": [0, 2.75, -17.6]
+        }
+      ],
+      "effects": [
+        "water_flow",
+        "drips",
+        "mist"
+      ]
     },
     "roof_approach": {
       "style": "roof",
@@ -711,6 +829,16 @@
           ]
         }
       ]
+    },
+    "corridor_cache": {
+      "style": "mansion",
+      "layout": "narrow_corridor",
+      "props": [
+        {"id": "mansion_sconce", "position": [-4.45, 2.05, -10.5]},
+        {"id": "mansion_sconce", "position": [4.45, 2.05, -14.5]},
+        {"id": "mansion_portrait", "position": [4.5, 2.25, -11.8]}
+      ],
+      "effects": ["dust", "sconce_flicker"]
     },
     "roof_rescue": {
       "style": "roof",
@@ -889,6 +1017,34 @@
         }
       ]
     },
+    "steel_door_choice": {
+      "style": "laboratory",
+      "layout": "elevator_lobby",
+      "props": [
+        {"id": "lab_control_console", "position": [-4.2, 1.1, -13]},
+        {"id": "lab_control_console", "position": [4.2, 1.1, -13]},
+        {"id": "lab_pipe_cluster", "position": [0, 1.7, -16]}
+      ],
+      "effects": ["steam", "monitor_scan", "alarm_beacon"]
+    },
+    "steel_door_upper_route": {
+      "style": "laboratory",
+      "layout": "high_bridge",
+      "props": [
+        {"id": "lab_pipe_cluster", "position": [4.5, 1.7, -14]},
+        {"id": "lab_control_console", "position": [-4.3, 1.1, -13]}
+      ],
+      "effects": ["steam", "monitor_scan"]
+    },
+    "steel_door_lower_route": {
+      "style": "sewer",
+      "layout": "vent_conduit",
+      "props": [
+        {"id": "lab_vent_fan", "position": [4.6, 2.6, -13]},
+        {"id": "lab_pipe_cluster", "position": [-4.5, 1.7, -14]}
+      ],
+      "effects": ["water_flow", "drips", "mist"]
+    },
     "curien_tunnel": {
       "style": "laboratory",
       "layout": "curien_tunnel",
@@ -925,9 +1081,24 @@
       "layout": "hermit_tunnel",
       "wall": "hermit_web_membrane",
       "ceiling": "hermit_web_membrane",
+      "props": [
+        {
+          "id": "lab_pipe_cluster",
+          "position": [-4.55, 1.7, -8.5]
+        },
+        {
+          "id": "lab_pipe_cluster",
+          "position": [4.55, 1.7, -15.2]
+        },
+        {
+          "id": "lab_vent_fan",
+          "position": [0, 2.75, -20.4]
+        }
+      ],
       "effects": [
         "web_drift",
-        "mist"
+        "mist",
+        "drips"
       ]
     },
     "chariot_rematch": {
@@ -982,7 +1153,33 @@
     },
     "bonus_room": {
       "style": "laboratory",
-      "layout": "supply_cache"
+      "layout": "supply_cache",
+      "props": [
+        {
+          "id": "lab_control_console",
+          "position": [-4.45, 1.1, -7.2]
+        },
+        {
+          "id": "lab_control_console",
+          "position": [4.45, 1.1, -7.2]
+        },
+        {
+          "id": "lab_pipe_cluster",
+          "position": [-4.6, 1.7, -14.8]
+        },
+        {
+          "id": "lab_pipe_cluster",
+          "position": [4.6, 1.7, -14.8]
+        },
+        {
+          "id": "lab_vent_fan",
+          "position": [0, 2.8, -20]
+        }
+      ],
+      "effects": [
+        "steam",
+        "monitor_scan"
+      ]
     },
     "final_waves": {
       "style": "laboratory",
@@ -1122,11 +1319,29 @@
       "pixel_size": 0.0045,
       "world_scale": 0.72
     },
+    "c01_water_barrel": {
+      "intact": "res://assets/environments_v2/destructibles/c01_water_barrel/c01_water_barrel_intact.png",
+      "broken": "res://assets/environments_v2/destructibles/c01_water_barrel/c01_water_barrel_broken.png",
+      "pixel_size": 0.0044,
+      "world_scale": 0.27
+    },
+    "c01_chariot_antechamber_barrels": {
+      "intact": "res://assets/environments_v2/destructibles/c01_chariot_antechamber_barrels/c01_chariot_antechamber_barrels_intact.png",
+      "broken": "res://assets/environments_v2/destructibles/c01_chariot_antechamber_barrels/c01_chariot_antechamber_barrels_broken.png",
+      "pixel_size": 0.0044,
+      "world_scale": 0.31
+    },
     "c02_chained_hatch_plate": {
       "intact": "res://assets/environments_v2/destructibles/c02_chained_hatch_plate/c02_chained_hatch_plate_intact.png",
       "broken": "res://assets/environments_v2/destructibles/c02_chained_hatch_plate/c02_chained_hatch_plate_broken.png",
       "pixel_size": 0.0049,
       "world_scale": 0.84
+    },
+    "c02_corridor_crates": {
+      "intact": "res://assets/environments_v2/destructibles/c02_corridor_crates/c02_corridor_crates_intact.png",
+      "broken": "res://assets/environments_v2/destructibles/c02_corridor_crates/c02_corridor_crates_broken.png",
+      "pixel_size": 0.0044,
+      "world_scale": 0.32
     },
     "c03_elevator_route_switch": {
       "intact": "res://assets/environments_v2/destructibles/c03_elevator_route_switch/c03_elevator_route_switch_intact.png",
@@ -1139,6 +1354,12 @@
       "broken": "res://assets/environments_v2/destructibles/c03_vent_key_container/c03_vent_key_container_broken.png",
       "pixel_size": 0.0042,
       "world_scale": 0.66
+    },
+    "c03_unlocked_room_crates": {
+      "intact": "res://assets/environments_v2/destructibles/c03_unlocked_room_crates/c03_unlocked_room_crates_intact.png",
+      "broken": "res://assets/environments_v2/destructibles/c03_unlocked_room_crates/c03_unlocked_room_crates_broken.png",
+      "pixel_size": 0.0044,
+      "world_scale": 0.32
     }
   },
   "props": {

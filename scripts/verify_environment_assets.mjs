@@ -20,18 +20,23 @@ const EXPECTED_MATERIALS = [
 ];
 const EXPECTED_NODES = [
   'garden_rescue', 'mansion_entrance', 'under_bridge', 'foyer_choice',
-  'upper_stairs', 'ground_hall', 'sophie_antechamber', 'sophie_corridor',
+  'upper_stairs', 'ground_hall', 'wall_passage_impact', 'wall_passage_high',
+  'wall_passage_fall', 'painting_corridor_impact', 'painting_gallery_high',
+  'painting_floor_fall', 'sophie_antechamber', 'sophie_corridor',
   'chariot_battle', 'chain_plate', 'underground_passage', 'great_doors',
   'library_rescue', 'raised_bridge', 'lower_stairs', 'roof_approach',
-  'roof_rescue', 'hangedman_battle', 'elevator_switch', 'left_elevator',
-  'right_elevator', 'back_attack_rescue', 'security_door', 'vent_key_route',
+  'corridor_cache', 'roof_rescue', 'hangedman_battle', 'elevator_switch',
+  'left_elevator', 'right_elevator', 'back_attack_rescue', 'security_door', 'vent_key_route',
+  'steel_door_choice', 'steel_door_upper_route', 'steel_door_lower_route',
   'curien_tunnel', 'hermit_battle', 'chariot_rematch', 'hangedman_rematch',
   'bonus_gate', 'bonus_room', 'final_waves', 'curien_confrontation',
   'magician_battle',
 ];
 const EXPECTED_DESTRUCTIBLES = [
-  'c01_foyer_door_lock', 'c02_chained_hatch_plate',
-  'c03_elevator_route_switch', 'c03_vent_key_container',
+  'c01_foyer_door_lock', 'c01_water_barrel',
+  'c01_chariot_antechamber_barrels', 'c02_chained_hatch_plate',
+  'c02_corridor_crates', 'c03_elevator_route_switch',
+  'c03_vent_key_container', 'c03_unlocked_room_crates',
 ];
 const EXPECTED_PROPS = [
   'mansion_chandelier', 'mansion_sconce', 'mansion_double_door',
@@ -46,6 +51,10 @@ const MATTE_REPAIR_PROPS = new Set([
   'estate_gate', 'garden_lamp', 'mansion_chandelier', 'mansion_sconce',
 ]);
 
+const MATTE_REPAIR_DESTRUCTIBLES = new Set([
+  'c01_water_barrel', 'c01_chariot_antechamber_barrels',
+  'c02_corridor_crates', 'c03_unlocked_room_crates',
+]);
 let assertions = 0;
 const failures = [];
 
@@ -315,6 +324,33 @@ const supportedEffects = new Set([
   'alarm_beacon', 'collapse_dust', 'distant_bats', 'drips', 'dust', 'electrical_arc', 'embers', 'lightning',
   'mist', 'monitor_scan', 'rain', 'sconce_flicker', 'steam', 'water_flow', 'web_drift', 'wind',
 ]);
+const DENSIFIED_NODE_CONTRACTS = {
+  underground_passage: {
+    minimumProps: 3,
+    props: ['lab_pipe_cluster', 'lab_vent_fan'],
+    effects: ['water_flow', 'drips', 'mist'],
+  },
+  raised_bridge: {
+    minimumProps: 5,
+    props: ['mansion_chandelier', 'mansion_sconce', 'mansion_portrait'],
+    effects: ['dust', 'sconce_flicker'],
+  },
+  lower_stairs: {
+    minimumProps: 3,
+    props: ['lab_pipe_cluster', 'lab_vent_fan'],
+    effects: ['water_flow', 'drips', 'mist'],
+  },
+  bonus_room: {
+    minimumProps: 5,
+    props: ['lab_control_console', 'lab_pipe_cluster', 'lab_vent_fan'],
+    effects: ['steam', 'monitor_scan'],
+  },
+  hermit_battle: {
+    minimumProps: 3,
+    props: ['lab_pipe_cluster', 'lab_vent_fan'],
+    effects: ['web_drift', 'mist', 'drips'],
+  },
+};
 
 for (const [styleId, style] of Object.entries(manifest.styles)) {
   for (const key of ['floor', 'wall', 'column', 'accent']) {
@@ -350,6 +386,22 @@ for (const [nodeId, node] of Object.entries(manifest.nodes)) {
 
 for (const materialId of EXPECTED_MATERIALS) {
   check(referencedMaterials.has(materialId), `${materialId} is referenced by a runtime style or node`);
+}
+
+for (const [nodeId, contract] of Object.entries(DENSIFIED_NODE_CONTRACTS)) {
+  const node = manifest.nodes[nodeId];
+  const placements = node.props ?? [];
+  const propIds = new Set(placements.map((placement) => placement.id));
+  const placementKeys = placements.map((placement) => JSON.stringify(placement.position));
+  const effects = new Set(node.effects ?? []);
+  check(placements.length >= contract.minimumProps, `${nodeId} keeps at least ${contract.minimumProps} individual prop placements`);
+  check(new Set(placementKeys).size === placementKeys.length, `${nodeId} prop placements use unique world positions`);
+  for (const propId of contract.props) {
+    check(propIds.has(propId), `${nodeId} retains required prop family ${propId}`);
+  }
+  for (const effectId of contract.effects) {
+    check(effects.has(effectId), `${nodeId} retains required environmental effect ${effectId}`);
+  }
 }
 
 for (const materialId of EXPECTED_MATERIALS) {
@@ -394,6 +446,12 @@ for (const destructibleId of EXPECTED_DESTRUCTIBLES) {
     const alpha = alphaCoverage(image);
     check(alpha.visible > 0.005 && alpha.visible < 0.92, `${destructibleId} ${state} has useful transparent coverage`);
     check(alpha.partial > 0, `${destructibleId} ${state} retains antialiased alpha`);
+    if (MATTE_REPAIR_DESTRUCTIBLES.has(destructibleId)) {
+      const largestMatte = largestNeutralMatteComponent(image, 0, image.width);
+      check(largestMatte < 500, `${destructibleId} ${state} has no baked neutral-white matte (largest ${largestMatte}px)`);
+      const fringeRatio = neutralEdgeFringeRatio(image, 0, image.width);
+      check(fringeRatio < 0.18, `${destructibleId} ${state} neutral fringe ratio stays below 18% (${(fringeRatio * 100).toFixed(2)}%)`);
+    }
   }
   check(fileDigest(images.intact.path) !== fileDigest(images.broken.path), `${destructibleId} intact and broken states differ`);
   check(meanPixelDelta(images.intact.image, images.broken.image) >= 2.0, `${destructibleId} states have a meaningful visual difference`);
@@ -442,7 +500,7 @@ for (const effectId of EXPECTED_ANIMATED_EFFECTS) {
 }
 
 check(Array.isArray(provenance.assets), 'provenance contains asset records');
-check(provenance.assets.length === 38, 'provenance records all 38 active generated assets');
+check(provenance.assets.length === 42, 'provenance records all 42 active generated assets');
 check(Array.isArray(provenance.failures) && provenance.failures.length === 0, 'provenance reports zero generation failures');
 const provenanceIds = provenance.assets.map((entry) => entry.id).sort();
 const allIds = [...EXPECTED_MATERIALS, ...EXPECTED_DESTRUCTIBLES, ...EXPECTED_PROPS].sort();
@@ -457,7 +515,7 @@ for (const entry of provenance.assets) {
 }
 
 const generatedPngs = listFiles(outputRoot).filter((path) => path.toLowerCase().endsWith('.png'));
-check(generatedPngs.length === 86, `generated tree contains exactly 86 PNG files (got ${generatedPngs.length})`);
+check(generatedPngs.length === 94, `generated tree contains exactly 94 PNG files (got ${generatedPngs.length})`);
 
 if (failures.length > 0) {
   console.error(`ENVIRONMENT ASSET VERIFY FAILED: ${failures.length}/${assertions} assertions failed`);
@@ -466,4 +524,4 @@ if (failures.length > 0) {
 }
 
 const bytes = generatedPngs.reduce((sum, path) => sum + statSync(path).size, 0);
-console.log(`ENVIRONMENT ASSET VERIFY PASSED: ${assertions} assertions; 20 materials, 33 nodes, 4 active destructibles, 14 props, 4 animated effects; ${(bytes / 1024 / 1024).toFixed(2)} MiB source PNG`);
+console.log(`ENVIRONMENT ASSET VERIFY PASSED: ${assertions} assertions; 20 materials, 43 nodes, 8 active destructibles, 14 props, 4 animated effects; ${(bytes / 1024 / 1024).toFixed(2)} MiB runtime PNG`);

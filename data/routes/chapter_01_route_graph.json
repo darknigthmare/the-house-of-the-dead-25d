@@ -9,87 +9,47 @@
       "kind": "rescue_branch",
       "label": "Garden scientist rescue",
       "next": [
-        {
-          "condition": "scientist_saved",
-          "node": "mansion_entrance"
-        },
-        {
-          "condition": "scientist_lost",
-          "node": "under_bridge"
-        }
+        {"condition": "scientist_saved", "node": "mansion_entrance"},
+        {"condition": "scientist_lost", "node": "under_bridge"}
       ]
     },
-    {
-      "id": "mansion_entrance",
-      "kind": "route",
-      "label": "Enter through the mansion entrance",
-      "next": [
-        "foyer_choice"
-      ]
-    },
-    {
-      "id": "under_bridge",
-      "kind": "route",
-      "label": "Pass beneath the bridge",
-      "next": [
-        "foyer_choice"
-      ]
-    },
+    {"id": "mansion_entrance", "kind": "route", "label": "Enter through the mansion entrance", "next": ["foyer_choice"]},
+    {"id": "under_bridge", "kind": "route", "label": "Pass beneath the bridge", "next": ["foyer_choice"]},
     {
       "id": "foyer_choice",
       "kind": "action_branch",
       "label": "Foyer route split",
       "next": [
-        {
-          "condition": "door_lock_destroyed",
-          "node": "upper_stairs"
-        },
-        {
-          "condition": "door_lock_intact",
-          "node": "ground_hall"
-        }
+        {"condition": "door_lock_destroyed", "node": "upper_stairs"},
+        {"condition": "door_lock_intact", "node": "ground_hall"}
       ]
     },
+    {"id": "upper_stairs", "kind": "route", "label": "Upper-floor route", "next": ["wall_passage_impact"]},
+    {"id": "ground_hall", "kind": "route", "label": "Ground-floor route", "next": ["painting_corridor_impact"]},
     {
-      "id": "upper_stairs",
-      "kind": "route",
-      "label": "Upper-floor route",
+      "id": "wall_passage_impact",
+      "kind": "impact_branch",
+      "label": "Wall-passage enemy impact split (provisional)",
       "next": [
-        "sophie_antechamber"
+        {"condition": "wall_impact_avoided", "node": "wall_passage_high"},
+        {"condition": "wall_impact_received", "node": "wall_passage_fall"}
       ]
     },
+    {"id": "wall_passage_high", "kind": "route", "label": "Wall passage remains on upper level (provisional)", "next": ["sophie_antechamber"]},
+    {"id": "wall_passage_fall", "kind": "route", "label": "Wall passage fall to lower level (provisional)", "next": ["sophie_antechamber"]},
     {
-      "id": "ground_hall",
-      "kind": "route",
-      "label": "Ground-floor route",
+      "id": "painting_corridor_impact",
+      "kind": "impact_branch",
+      "label": "Portrait-corridor enemy impact split (provisional)",
       "next": [
-        "sophie_antechamber"
+        {"condition": "painting_impact_avoided", "node": "painting_gallery_high"},
+        {"condition": "painting_impact_received", "node": "painting_floor_fall"}
       ]
     },
-    {
-      "id": "sophie_antechamber",
-      "kind": "story",
-      "label": "Approach Sophie's antechamber",
-      "next": [
-        "sophie_corridor"
-      ]
-    },
-    {
-      "id": "sophie_corridor",
-      "kind": "story",
-      "label": "Reach Sophie",
-      "next": [
-        "chariot_battle"
-      ]
-    },
-    {
-      "id": "chariot_battle",
-      "kind": "boss",
-      "boss_id": "chariot",
-      "label": "Chariot battle",
-      "next": [
-        "chapter_complete"
-      ]
-    }
+    {"id": "painting_gallery_high", "kind": "route", "label": "Portrait gallery upper route (provisional)", "next": ["sophie_antechamber"]},
+    {"id": "painting_floor_fall", "kind": "route", "label": "Portrait gallery lower route (provisional)", "next": ["sophie_antechamber"]},
+    {"id": "sophie_antechamber", "kind": "story", "label": "Approach Sophie's antechamber", "next": ["sophie_corridor"]},
+    {"id": "sophie_corridor", "kind": "story", "label": "Reach Sophie", "next": ["chariot_battle"]},
+    {"id": "chariot_battle", "kind": "boss", "boss_id": "chariot", "label": "Chariot battle", "next": ["chapter_complete"]}
   ]
 }

@@ -4,6 +4,7 @@ extends Node3D
 signal exit_requested
 
 const CrosshairControlScript := preload("res://src/ui/crosshair_control.gd")
+const UITextSanitizerScript := preload("res://src/ui/ui_text_sanitizer.gd")
 const ProceduralSfxScript := preload("res://src/audio/procedural_sfx.gd")
 const AudioCueLibraryScript := preload("res://src/audio/audio_cue_library.gd")
 const SpriteAtlasLibraryScript := preload("res://src/gameplay/sprite_atlas_library.gd")
@@ -142,6 +143,7 @@ var enemy_profile_library = EnemyProfileLibraryScript.new()
 var audio_cue_library = AudioCueLibraryScript.new()
 var environment_scene_profile: Dictionary = {}
 var destroyed_breakable_id: String = ""
+var route_condition_context: Dictionary = {}
 
 
 func configure(options: Dictionary) -> void:
@@ -768,6 +770,10 @@ func _hud_label(at: Vector2, dimensions: Vector2, font_size: int, color: Color) 
 	label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	hud_root.add_child(label)
 	return label
+
+
+func _safe_ui_text(text_value: String) -> String:
+	return UITextSanitizerScript.sanitize(text_value)
 
 
 func _update_play_rect() -> void:

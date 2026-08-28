@@ -14,8 +14,8 @@ func _initialize() -> void:
 	_expect_true(library.load_manifest(MANIFEST_PATH), "environment manifest loads with every generated path present (%s)" % library.last_error)
 	_expect_equal(library.materials.size(), 20, "library exposes twenty individual materials")
 	_expect_equal(library.styles.size(), 5, "library exposes five environment styles")
-	_expect_equal(library.nodes.size(), 33, "library exposes all campaign sequence profiles")
-	_expect_equal(library.destructibles.size(), 4, "library exposes four active two-state destructibles")
+	_expect_equal(library.nodes.size(), 43, "library exposes all campaign sequence profiles")
+	_expect_equal(library.destructibles.size(), 8, "library exposes eight active two-state destructibles")
 	_expect_equal(library.props.size(), 14, "library exposes fourteen environment props")
 	_expect_equal(library.animated_effects.size(), 4, "library exposes four authored animated environment effects")
 	for effect_id: String in ["drips", "water_flow", "electrical_arc", "monitor_scan"]:

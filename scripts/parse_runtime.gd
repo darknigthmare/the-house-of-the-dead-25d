@@ -8,6 +8,7 @@ func _initialize() -> void:
 		"res://src/audio/procedural_sfx.gd",
 		"res://src/gameplay/gameplay_runtime_base.gd",
 		"res://src/gameplay/gameplay_runtime_flow.gd",
+		"res://src/gameplay/enemy_pursuit_controller.gd",
 		"res://src/gameplay/gameplay_runtime_combat.gd",
 		"res://src/gameplay/gameplay_runtime_final.gd",
 		"res://src/gameplay/gameplay_runtime_presentation.gd",

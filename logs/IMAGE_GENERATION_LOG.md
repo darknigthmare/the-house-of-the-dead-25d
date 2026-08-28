@@ -45,13 +45,15 @@ The three original grouped reports account for 34 identities; the Sam A1 pilot a
 
 ## 2026-08-24 — environment and gameplay-support completion
 
-The built-in OpenAI ImageGen tool supplied original fan-made sources for 20 individual materials, 14 environment props and six two-state destructibles. Deterministic local processing writes 40 sanitized provenance records and converts those selections into material albedo/normal/ORM maps, transparent prop atlases and intact/broken destructible outputs covering all 33 environment nodes.
+The built-in OpenAI ImageGen tool supplied original fan-made sources for 20 individual materials, 14 environment props and eight active two-state destructibles. Deterministic local processing writes 42 sanitized provenance records and converts those selections into material albedo/normal/ORM maps, transparent prop atlases and 16 intact/broken destructible outputs available to the 42-node environment contract.
 
 The same built-in tool supplied seven projectile cutouts, three HUD families and four boss weak-point diagrams. These are original project replacements, not extracted Sega artwork.
 
 Selected sources, exact local selection manifests and visual contacts remain under ignored `reports/runtime/environment-sources/` paths. Public normalized files and source/final SHA-256 values are recorded under `assets/environments_v2/`, `assets/gameplay_v2/` and `data/assets/`. No `licensed_assets/` or `reference_build/` directory contributed content.
 
 The `garden_lamp` source was replaced on 2026-08-25 by the geometry-consistent ON/OFF selection identified by built-in generation reference `01a00811-e655-7262-8c79-852788f57b9b/exec-e5b102ac-9615-4234-888c-1175bc796dde.png`. Its painted checkerboard is recovered to alpha locally; neutral edge despill and a one-way ON-silhouette clamp remove the white fringe without changing internal metal or flame highlights. The final atlas and source fingerprint are recorded by `data/assets/environment_generation_provenance.json`.
+
+On 2026-08-25, four additional set-piece breakables were integrated from already selected per-state sources: `c01_water_barrel`, `c01_chariot_antechamber_barrels`, `c02_corridor_crates` and `c03_unlocked_room_crates`. The local source metadata did not include their exact built-in generation references, so none are claimed. `scripts/build_environment_assets.py` records each intact/broken source hash plus an ordered-pair fingerprint, recovers alpha from the flattened neutral matte, removes large white remnants, despills the silhouette edge and writes grounded 1024×1024 RGBA states. Visual review on a dark contact sheet confirmed eight distinct, readable states without visible white cards or clipped silhouettes.
 
 No image generation was used to fabricate Sega audio. Exact Sega voices, dialogue performances, music and sound effects remain missing; current audio substitutes are original procedural replacements only.
 

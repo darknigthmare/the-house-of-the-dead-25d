@@ -1,5 +1,24 @@
 # Professional Changelog
 
+## 0.5.0 release candidate — pursuit, collision and route-density integrity — 2026-08-28
+
+- Updated melee pursuit so enemies converge on both X and Z, stay in front of the camera during approach, and cycle through wind-up, attack, recovery and re-attack instead of stopping after one attempt.
+- Added oriented OBB collision volumes for walls, rails, columns, doors, shelves and relevant props. Actor movement is constrained by these volumes and visible hostile projectiles are blocked instead of passing through authored obstacles.
+- Added HUD text sanitization so internal IDs and markup cannot leak into player-facing labels.
+- Expanded the authored campaign to **43 nodes**, **53 edges** and **8/4/8/2 routes** for Chapters 1–4. It now declares **98 ordinary spawn entries**, with **68–71** selected per run, **20 civilian placements / 15 encountered per run**, **34 multi-wave encounters**, and **14 prop profiles / 105 placements / 9 state events**. Every multi-wave encounter starts its final wave at or after **82%** of its budget.
+- Measured fixed runtime outside dynamic boss fights at **106.5 / 97.4 / 93.1 / 40.4 seconds** for Chapters 1–4. These per-chapter fixed budgets must not be summed or presented as campaign wall-clock duration.
+- Added Hermite interpolation between camera poses and a generic detected-surface ground solver. The connector smooths pose-to-pose motion but does not preserve a continuous world: decor is still reconstructed between nodes, and ground, stair and landing treatment is not individually authored.
+- Integrated **four hidden-life pickups** and expanded the active destructible set to **eight**.
+- Kept route decisions **#2/#6** explicitly marked as inaccurate substitutes and **#3/#4/#9** as provisional mappings pending an authorized arcade-reference comparison.
+- Hardened local co-op threat ownership: each hostile action selects one living player, projectiles lock that recipient at launch and dissipate rather than damaging the survivor if the locked player becomes unavailable. Civilian-authored threats never silently retarget a player.
+- Enforced a complete **0.90-second continuously visible** boss telegraph. Cooldown overshoot cannot consume the warning, and losing visibility resets the full telegraph before any melee commit or projectile launch.
+- Made actor retirement explicit and idempotent: dead actors leave `active_actors` immediately, visible fades remain tracked in `retiring_actors`, sprite-less actors still reach `queue_free()`, and scene cleanup drains both collections.
+- Verified the current worktree with `npm test` at **295/295**, **975 deterministic Godot core assertions**, complete QA at **313/313**, Web QA at **299/299**, **1,977 environment assertions**, and the content audit at **889 checks / 6 known warnings / 0 errors**.
+- Exported the current candidate locally: Windows **191,497,768 bytes** (`b1411c67ae6c9636bd00ac6557c4fbe8f6206cff2a23ec843bce57d4015ea280`); Linux **155,862,360 bytes** (`1e39c76ec8c168f6cc922683f8020123621c7b0384285f3c4ef38e80f4bc511b`); Web **9 files / 122,236,534 bytes**, including PCK **82,392,140** (`b85a0d00b07178efe07bcd3b8fec872fe66e735d6c48a1ff9edbbd5d4e2ca7f3`), WASM **39,513,091** (`35116f68540ac41acf7d71ea457added91b5e960a9cca3e2acc72918eaf01277`) and HTML **5,590** (`e9cb46807cdf85ceeb0c40e0dfbbf87232b5a7c7ccb3c427fe881f2b76fc6c1f`). The Windows executable started and remained alive after nine seconds.
+- Verified the fresh local Web export through the real menu and real gameplay at 1280×720: `crossOriginIsolated=true`, one 1280×720 `role=main` canvas with the correct accessible label, every local resource returned HTTP 200, no page error or framework overlay appeared, and only normal Godot/WebGL informational logs were recorded.
+- Retained the visual-fidelity limits explicitly: the **38 atlases / 2,432 cells** expose only **eight semantic states per direction**, right-side profiles are often mirrored, and three enemy variants are not arcade-exact. Neither `licensed_assets/` nor `reference_build/` is present, so exact Sega fidelity is not certified.
+- Bumped the package version to `0.5.0`. This remains a local exported candidate only: no delivery archive, release commit/tag, GitHub Release, CI release run or Vercel deployment is claimed.
+
 ## 0.4.0 route and runtime-component integrity release — 2026-08-25
 
 - Aligned all four secondary route graphs with the active campaign timeline: matching node IDs, start nodes and edges, including `sophie_antechamber` and `roof_rescue`.

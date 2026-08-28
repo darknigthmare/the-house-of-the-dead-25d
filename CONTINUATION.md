@@ -1,5 +1,45 @@
 # Continuation
 
+## Current working tree — exported, unpublished v0.5.0 candidate
+
+Package version `0.5.0` identifies the current local pursuit/collision/route-density wave. Windows, Linux and Web exports have been produced from the candidate, but it is not yet a v0.5.0 delivery archive, tag, GitHub release or Vercel deployment; immutable v0.4.0 remains the latest published baseline below.
+
+Implemented in the candidate:
+
+- melee enemies converge in world X/Z, stay in front of the camera during approach and loop through wind-up, attack, recovery and re-attack while their target remains valid;
+- authored environment obstacles use oriented OBB volumes for walls, rails, columns, doors, shelves and props, constraining actor pursuit rather than serving as visual-only decoration;
+- visible hostile projectiles collide with those obstacles and are blocked before they can reach a protected target;
+- HUD text passes through a sanitizer so internal identifiers and markup do not leak into player-facing labels;
+- the four-chapter timeline now contains 43 nodes, 53 edges and 8/4/8/2 routes;
+- it declares 98 ordinary spawn entries, with 68–71 selected per run, 20 civilian placements / 15 encountered per run, 34 multi-wave encounters, and 14 prop profiles / 105 placements / 9 state events;
+- the final wave of every multi-wave encounter starts at or after 82% of its encounter budget;
+- fixed runtime outside dynamic boss fights is 106.5/97.4/93.1/40.4 seconds for Chapters 1–4; these are per-chapter fixed budgets and must never be summed or described as campaign wall-clock duration;
+- Hermite interpolation connects camera poses between nodes, while a generic solver keeps actors on detected ground surfaces; decor is nevertheless reconstructed between nodes, so this is not persistent world continuity or fully authored ground/stair/landing traversal;
+- four hidden-life pickups and eight active destructibles are integrated;
+- route decisions #2/#6 remain inaccurate substitutes, while #3/#4/#9 are explicitly provisional pending authorized reference comparison;
+- local co-op threats select one living player and retain that ownership while valid; a launched projectile locks its recipient and dissipates if that player is no longer available, while civilian-authored threats never fall back to a player;
+- every boss attack requires a complete 0.90-second continuously visible telegraph; visibility loss and cooldown overshoot restart the full warning instead of shortening it;
+- actor retirement is idempotent: logical removal from `active_actors` is immediate, visible fades remain registered in `retiring_actors`, sprite-less actors still queue for deletion, and global cleanup drains both collections.
+
+Current local verification:
+
+- `npm test`: 295/295 passed;
+- deterministic Godot core: 975 assertions passed;
+- complete QA orchestration: 313/313 passed;
+- Web QA: 299/299 passed;
+- environment verifier: 1,977 assertions passed;
+- content-family audit: 889 checks, 6 known warnings and 0 errors;
+- Windows x64 EXE: 191,497,768 bytes, SHA-256 `b1411c67ae6c9636bd00ac6557c4fbe8f6206cff2a23ec843bce57d4015ea280`; it started and remained alive after nine seconds;
+- Linux x64: 155,862,360 bytes, SHA-256 `1e39c76ec8c168f6cc922683f8020123621c7b0384285f3c4ef38e80f4bc511b`;
+- Web: 9 files / 122,236,534 bytes; `index.pck` 82,392,140 (`b85a0d00b07178efe07bcd3b8fec872fe66e735d6c48a1ff9edbbd5d4e2ca7f3`), `index.wasm` 39,513,091 (`35116f68540ac41acf7d71ea457added91b5e960a9cca3e2acc72918eaf01277`) and `index.html` 5,590 (`e9cb46807cdf85ceeb0c40e0dfbbf87232b5a7c7ccb3c427fe881f2b76fc6c1f`);
+- fresh local browser at 1280×720: the real menu and real gameplay loaded, `crossOriginIsolated=true`, with one 1280×720 `role=main` canvas carrying the correct accessible label, every local resource at HTTP 200, no page error or framework overlay, and only normal Godot/WebGL informational logs.
+
+The six retained warnings remain visible fidelity limitations; playable route decisions do not become arcade-authentic evidence merely because they work. The 38 atlases / 2,432 cells expose only eight semantic states per direction, right-side profiles are often mirrored, and three enemy variants remain non-arcade-exact. Neither `licensed_assets/` nor `reference_build/` is present, so exact Sega fidelity is not certified. These local export and browser checks are not publication evidence.
+
+Files in scope for this wave include the campaign route/timing data, enemy pursuit and combat runtime, OBB layout classifier, camera-rail sampler, HUD sanitizer, environment/destructible manifests, focused smokes/tests and the corresponding audits. Preserve all of those changes together when validating or staging the candidate.
+
+Remaining P0 gates include persistent decor and scene-state continuity across a chapter, authored walkable-surface/stair/landing treatment, and authorized reference comparison. The Hermite pose connector and generic ground solver do not close those gates.
+
 ## Published v0.4.0 release — route and runtime-component integrity
 
 Package version `0.4.0` is published from immutable tag `v0.4.0` at exact commit `b3b8b3b37a027189a83afaa21e6e959debbd99a5`. The bounded route/component/directional integrity wave, source archive and Windows/Linux/Web outputs were validated before publication.
@@ -143,10 +183,12 @@ The release contains the reviewed Godot import metadata required by its texture 
 
 ## Next exact task
 
-1. Resolve the three provisional enemy placements only from an authorized, revision-identifiable Sega reference build; do not invent arcade-exact placement evidence.
-2. Replace mirrored right/back-right profiles and compact semantic cells only with genuinely authored directional multi-frame art and recorded provenance.
-3. Integrate licensed voices, music and remaining source assets only when they are supplied through the authorized asset root; keep project-owned replacements explicit until then.
-4. Perform physical Windows installation, independent light-gun calibration and named-hardware frame-time/memory profiling before claiming those gates.
+1. Exercise every new branch and failure path across the 43-node timeline, including provisional decisions #3/#4/#9, hidden lives, destructibles, obstacle-blocked pursuit and obstacle-blocked projectiles; keep the provisional mappings labeled as such.
+2. Rerun the deterministic core, environment verifier, content audit, HUD/route/pacing smokes and the complete QA orchestration after any correction.
+3. Only from that same verified tree, produce fresh Windows/Linux/Web exports, reapply and verify the Web accessibility shell, run the Windows startup smoke and inspect the Web runtime locally. Do not reuse v0.4.0 sizes or hashes as v0.5.0 evidence.
+4. Resolve provisional route decisions and enemy placements only from an authorized, revision-identifiable Sega reference build; do not invent arcade-exact evidence.
+5. Replace mirrored right/back-right profiles and compact semantic cells only with genuinely authored directional multi-frame art and recorded provenance; integrate licensed voices/music/SFX only through the authorized asset root.
+6. Perform physical Windows installation, independent light-gun calibration and named-hardware frame-time/memory profiling before claiming those gates.
 
 ## Commands to resume
 

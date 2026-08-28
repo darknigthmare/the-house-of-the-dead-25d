@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="RouteGraph" load_steps=7 format=3]
+[gd_resource type="Resource" script_class="RouteGraph" load_steps=9 format=3]
 
 [ext_resource type="Script" path="res://src/rail/route_graph.gd" id="1_graph"]
 [ext_resource type="Script" path="res://src/rail/route_condition.gd" id="2_condition"]
@@ -24,6 +24,18 @@ compare_value = true
 [sub_resource type="Resource" id="RouteCondition_scientist_lost"]
 script = ExtResource("2_condition")
 context_key = &"scientist_lost"
+comparison = 5
+compare_value = true
+
+[sub_resource type="Resource" id="RouteCondition_upper_steel_door"]
+script = ExtResource("2_condition")
+context_key = &"upper_steel_door_selected"
+comparison = 5
+compare_value = true
+
+[sub_resource type="Resource" id="RouteCondition_lower_steel_door"]
+script = ExtResource("2_condition")
+context_key = &"lower_steel_door_selected"
 comparison = 5
 compare_value = true
 
@@ -57,25 +69,49 @@ connections = Array[Dictionary]([{
 }, {
 "conditions": [SubResource("RouteCondition_scientist_saved")],
 "from": &"back_attack_rescue",
-"label": "Scientist saved — security door",
+"label": "Scientist saved - security door",
 "priority": 100,
 "to": &"security_door"
 }, {
 "conditions": [SubResource("RouteCondition_scientist_lost")],
 "from": &"back_attack_rescue",
-"label": "Scientist lost — vent route",
+"label": "Scientist lost - vent route",
 "priority": 90,
 "to": &"vent_key_route"
 }, {
 "conditions": [],
 "from": &"security_door",
-"label": "Security door to tunnel",
+"label": "Security route to steel-door chamber",
+"priority": 0,
+"to": &"steel_door_choice"
+}, {
+"conditions": [],
+"from": &"vent_key_route",
+"label": "Vent route to steel-door chamber",
+"priority": 0,
+"to": &"steel_door_choice"
+}, {
+"conditions": [SubResource("RouteCondition_upper_steel_door")],
+"from": &"steel_door_choice",
+"label": "Upper steel door selected",
+"priority": 100,
+"to": &"steel_door_upper_route"
+}, {
+"conditions": [SubResource("RouteCondition_lower_steel_door")],
+"from": &"steel_door_choice",
+"label": "Lower steel door selected",
+"priority": 90,
+"to": &"steel_door_lower_route"
+}, {
+"conditions": [],
+"from": &"steel_door_upper_route",
+"label": "Upper steel route to tunnel",
 "priority": 0,
 "to": &"curien_tunnel"
 }, {
 "conditions": [],
-"from": &"vent_key_route",
-"label": "Vent route to tunnel",
+"from": &"steel_door_lower_route",
+"label": "Lower steel route to tunnel",
 "priority": 0,
 "to": &"curien_tunnel"
 }, {

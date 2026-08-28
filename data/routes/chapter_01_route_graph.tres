@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="RouteGraph" load_steps=7 format=3]
+[gd_resource type="Resource" script_class="RouteGraph" load_steps=11 format=3]
 
 [ext_resource type="Script" path="res://src/rail/route_graph.gd" id="1_graph"]
 [ext_resource type="Script" path="res://src/rail/route_condition.gd" id="2_condition"]
@@ -27,19 +27,43 @@ context_key = &"door_lock_intact"
 comparison = 5
 compare_value = true
 
+[sub_resource type="Resource" id="RouteCondition_wall_impact_avoided"]
+script = ExtResource("2_condition")
+context_key = &"wall_impact_avoided"
+comparison = 5
+compare_value = true
+
+[sub_resource type="Resource" id="RouteCondition_wall_impact_received"]
+script = ExtResource("2_condition")
+context_key = &"wall_impact_received"
+comparison = 5
+compare_value = true
+
+[sub_resource type="Resource" id="RouteCondition_painting_impact_avoided"]
+script = ExtResource("2_condition")
+context_key = &"painting_impact_avoided"
+comparison = 5
+compare_value = true
+
+[sub_resource type="Resource" id="RouteCondition_painting_impact_received"]
+script = ExtResource("2_condition")
+context_key = &"painting_impact_received"
+comparison = 5
+compare_value = true
+
 [resource]
 script = ExtResource("1_graph")
 entry_segment_id = &"garden_rescue"
 connections = Array[Dictionary]([{
 "conditions": [SubResource("RouteCondition_scientist_saved")],
 "from": &"garden_rescue",
-"label": "Scientist saved — mansion entrance",
+"label": "Scientist saved - mansion entrance",
 "priority": 100,
 "to": &"mansion_entrance"
 }, {
 "conditions": [SubResource("RouteCondition_scientist_lost")],
 "from": &"garden_rescue",
-"label": "Scientist lost — under bridge",
+"label": "Scientist lost - under bridge",
 "priority": 90,
 "to": &"under_bridge"
 }, {
@@ -57,25 +81,73 @@ connections = Array[Dictionary]([{
 }, {
 "conditions": [SubResource("RouteCondition_door_destroyed")],
 "from": &"foyer_choice",
-"label": "Destroyed lock — upper stairs",
+"label": "Destroyed lock - upper stairs",
 "priority": 100,
 "to": &"upper_stairs"
 }, {
 "conditions": [SubResource("RouteCondition_door_intact")],
 "from": &"foyer_choice",
-"label": "Intact lock — ground hall",
+"label": "Intact lock - ground hall",
 "priority": 90,
 "to": &"ground_hall"
 }, {
 "conditions": [],
 "from": &"upper_stairs",
-"label": "Upper route to Sophie antechamber",
+"label": "Upper stairs to wall passage",
+"priority": 0,
+"to": &"wall_passage_impact"
+}, {
+"conditions": [],
+"from": &"ground_hall",
+"label": "Ground hall to portrait corridor",
+"priority": 0,
+"to": &"painting_corridor_impact"
+}, {
+"conditions": [SubResource("RouteCondition_wall_impact_avoided")],
+"from": &"wall_passage_impact",
+"label": "Impact avoided - upper passage",
+"priority": 100,
+"to": &"wall_passage_high"
+}, {
+"conditions": [SubResource("RouteCondition_wall_impact_received")],
+"from": &"wall_passage_impact",
+"label": "Enemy impact received - lower fall",
+"priority": 90,
+"to": &"wall_passage_fall"
+}, {
+"conditions": [],
+"from": &"wall_passage_high",
+"label": "Upper passage to Sophie antechamber",
 "priority": 0,
 "to": &"sophie_antechamber"
 }, {
 "conditions": [],
-"from": &"ground_hall",
-"label": "Ground route to Sophie antechamber",
+"from": &"wall_passage_fall",
+"label": "Lower passage to Sophie antechamber",
+"priority": 0,
+"to": &"sophie_antechamber"
+}, {
+"conditions": [SubResource("RouteCondition_painting_impact_avoided")],
+"from": &"painting_corridor_impact",
+"label": "Projectile intercepted - gallery level",
+"priority": 100,
+"to": &"painting_gallery_high"
+}, {
+"conditions": [SubResource("RouteCondition_painting_impact_received")],
+"from": &"painting_corridor_impact",
+"label": "Enemy impact received - floor collapse",
+"priority": 90,
+"to": &"painting_floor_fall"
+}, {
+"conditions": [],
+"from": &"painting_gallery_high",
+"label": "Gallery level to Sophie antechamber",
+"priority": 0,
+"to": &"sophie_antechamber"
+}, {
+"conditions": [],
+"from": &"painting_floor_fall",
+"label": "Collapsed floor to Sophie antechamber",
 "priority": 0,
 "to": &"sophie_antechamber"
 }, {

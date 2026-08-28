@@ -1,6 +1,42 @@
 # QA Report
 
-This report first records the published v0.4.0 release, then preserves v0.3.0, the v0.2.1 source-distribution hotfix, v0.2.0 gameplay-content evidence and historical v0.1.0 separately. Evidence remains version-bound: an older export or deployment is not proof for a newer revision.
+This report first records the local v0.5.0 candidate, then preserves the published v0.4.0, v0.3.0, v0.2.1, v0.2.0 and historical v0.1.0 evidence separately. Evidence remains version-bound: an older export or deployment is not proof for a newer revision.
+
+## Local v0.5.0 candidate — 2026-08-28
+
+This section applies to the current locally exported candidate only. It does not claim that a v0.5.0 release archive, tag, GitHub Release or Vercel deployment has already been produced.
+
+| Surface | Current result | Proven scope |
+|---|---:|---|
+| targeted deterministic core | **975 assertions passed** | current pursuit, collision, timing, route and existing deterministic contracts |
+| repository/data suite | `npm.cmd test`: **295/295 passed** | current candidate data, manifest and static runtime contracts |
+| complete QA orchestration | **313/313 passed** | current aggregate local QA surface |
+| Web static QA | `qa:web`: **299/299 passed** | patched Web shell and current exported payload |
+| environment verifier | **1,977 assertions passed** | authored environment, OBB, prop and interaction contracts |
+| content-family audit | **889 checks / 6 warnings / 0 errors** | active identifiers, reachable paths and explicitly retained fidelity warnings |
+| co-op threat and projectile ownership | one living player target retained while valid; every player-targeted projectile locks its launch recipient and dissipates if that recipient becomes unavailable | no mid-flight reassignment to another player |
+| civilian target isolation | an assigned attacker cannot fall back to a player; no player projectile is launched after the civilian disappears, and an in-flight civilian projectile dissipates | no civilian-to-player retarget path |
+| boss telegraph | every commit requires **0.90 seconds of uninterrupted visible telegraph**; visibility loss resets the interval | hidden or cooldown-overshoot time cannot satisfy the damage gate |
+| actor lifecycle | logical death leaves `active` immediately; visible fades are tracked in `retiring`, sprite-less actors finalize immediately, and cleanup drains both sets | retired actors cannot remain gameplay-active or leak through scene cleanup |
+| Windows x64 export | **191,497,768 bytes**; SHA-256 `b1411c67…`; startup active and alive after nine seconds | local export integrity and startup continuity on the development machine |
+| Linux x64 export | **155,862,360 bytes**; SHA-256 `1e39c76e…` | local export completed |
+| Web export | **9 files / 122,236,534 bytes**; PCK **82,392,140**; WASM **39,513,091** | local Web payload; `qa:web` passed 299/299 and `verify:web` passed |
+| fresh local browser 1280×720 | menu then gameplay; `crossOriginIsolated=true`; one 1280×720 `role=main` canvas with the correct accessible label; every local resource HTTP 200; no page error or overlay; normal Godot/WebGL logs only | local rendered startup, isolation, accessibility and gameplay presentation |
+| campaign graph | **43 nodes / 53 edges**; complete paths **8/4/8/2** | all currently encoded complete route combinations enumerate |
+| fixed authored sequence timing | **106.5 / 97.4 / 93.1 / 40.4 seconds** | chapters 1–4, excluding dynamic boss phases; neither wall-clock duration nor a total campaign floor |
+| ordinary spawn data | **98 entries**; **68–71** selected per complete route | declared encounter density by route |
+| civilians | **20 placements**; **15** selected per complete route | deterministic scientist coverage |
+| environment interaction | **14 prop profiles / 105 placements / 9 authored events** | current declared prop and event coverage |
+| multi-wave encounters | **34**; final wave starts at **≥82%** of the encounter sequence | late-sequence pressure across current multi-wave declarations |
+| hidden campaign lives | **4**, each using break-container then shoot-visible-pickup | two-step secret interaction, separate from bonus-room lives |
+
+The six warnings are retained rather than suppressed: three reference-pending enemy placements, 38/38 right profiles mirrored from left, 25/38 back-right profiles mirrored from back-left, and the eight-semantic-state atlas contract without full multi-frame clips.
+
+Full candidate hashes are Windows `b1411c67ae6c9636bd00ac6557c4fbe8f6206cff2a23ec843bce57d4015ea280`, Linux `1e39c76ec8c168f6cc922683f8020123621c7b0384285f3c4ef38e80f4bc511b`, Web PCK `b85a0d00b07178efe07bcd3b8fec872fe66e735d6c48a1ff9edbbd5d4e2ca7f3`, Web WASM `35116f68540ac41acf7d71ea457added91b5e960a9cca3e2acc72918eaf01277`, and Web HTML `e9cb46807cdf85ceeb0c40e0dfbbf87232b5a7c7ccb3c427fe881f2b76fc6c1f` for the **5,590-byte** patched shell.
+
+These checks establish local export, startup and visible browser behavior only. No v0.5.0 release archive, tag, GitHub Release or Vercel production deployment is claimed.
+
+The remaining P0 fidelity work is not hidden by the green tests: decision conditions #2 and #6 remain substitutes; Hermite interpolation provides technical continuity, but the rail control points and surrounding set are reconstructed; the ground remains generic; global chapter continuity/persistent scene state is not complete; and walkable surfaces and stair/landing heights still need exact authoring. Without `licensed_assets/` and `reference_build/`, neither the assets nor overall arcade fidelity are certified. The campaign metrics prove internal structure, not exact Sega staging.
 
 ## Published v0.4.0 release — 2026-08-25
 

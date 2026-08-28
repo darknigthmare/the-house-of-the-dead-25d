@@ -51,9 +51,13 @@ MATERIAL_SPECS: dict[str, dict[str, float]] = {
 
 DESTRUCTIBLE_IDS = (
     "c01_foyer_door_lock",
+    "c01_water_barrel",
+    "c01_chariot_antechamber_barrels",
     "c02_chained_hatch_plate",
+    "c02_corridor_crates",
     "c03_elevator_route_switch",
     "c03_vent_key_container",
+    "c03_unlocked_room_crates",
 )
 
 PROP_SPECS: dict[str, dict[str, Any]] = {
@@ -350,33 +354,105 @@ def fit_transparent(image: Image.Image, size: int = 1024, margin: int = 28) -> I
     return canvas
 
 
+def paired_source_sha256(sources: dict[str, Path]) -> str:
+    """Fingerprint an ordered pair without pretending it is one source file."""
+    digest = hashlib.sha256()
+    for state in ("intact", "broken"):
+        payload = sources[state].read_bytes()
+        digest.update(state.encode("utf-8"))
+        digest.update(b"\0")
+        digest.update(len(payload).to_bytes(8, byteorder="big"))
+        digest.update(payload)
+    return digest.hexdigest()
+
+
+def destructible_sources(asset_id: str) -> tuple[str, dict[str, Path]]:
+    """Resolve a legacy side-by-side sheet or an explicit intact/broken pair."""
+    source_root = SOURCE_ROOT / "destructibles"
+    legacy = source_root / f"{asset_id}.png"
+    pair = {
+        "intact": source_root / f"{asset_id}_intact.png",
+        "broken": source_root / f"{asset_id}_broken.png",
+    }
+    existing_pair = {state: path.exists() for state, path in pair.items()}
+    if legacy.exists() and any(existing_pair.values()):
+        raise RuntimeError(f"Ambiguous destructible sources for {asset_id}: legacy sheet and state file")
+    if all(existing_pair.values()):
+        return "separate_state_files", pair
+    if any(existing_pair.values()):
+        missing = [state for state, exists in existing_pair.items() if not exists]
+        raise RuntimeError(f"Incomplete destructible pair for {asset_id}: missing {', '.join(missing)}")
+    if legacy.exists():
+        return "legacy_side_by_side", {"sheet": legacy}
+    raise RuntimeError(f"Missing destructible source for {asset_id}")
+
+
+def clean_paired_destructible(image: Image.Image) -> Image.Image:
+    """Normalize RGB white-matte state art into a clean grounded RGBA sprite."""
+    frame = fit_transparent(image)
+    frame = remove_large_neutral_matte(frame)
+    return despill_neutral_edge(frame)
+
+
 def build_destructible(asset_id: str) -> dict[str, Any]:
-    source = SOURCE_ROOT / "destructibles" / f"{asset_id}.png"
-    if not source.exists():
-        raise RuntimeError(f"Missing destructible source: {source}")
-    with Image.open(source) as raw:
-        midpoint = raw.width // 2
-        intact = fit_transparent(raw.crop((0, 0, midpoint, raw.height)))
-        broken = fit_transparent(raw.crop((midpoint, 0, raw.width, raw.height)))
+    source_layout, sources = destructible_sources(asset_id)
+    source_dimensions: dict[str, list[int]] = {}
+    if source_layout == "separate_state_files":
+        frames: dict[str, Image.Image] = {}
+        for state in ("intact", "broken"):
+            with Image.open(sources[state]) as raw:
+                source_dimensions[state] = [raw.width, raw.height]
+                frames[state] = clean_paired_destructible(raw)
+        intact = frames["intact"]
+        broken = frames["broken"]
+    else:
+        source = sources["sheet"]
+        with Image.open(source) as raw:
+            source_dimensions["sheet"] = [raw.width, raw.height]
+            midpoint = raw.width // 2
+            intact = fit_transparent(raw.crop((0, 0, midpoint, raw.height)))
+            broken = fit_transparent(raw.crop((midpoint, 0, raw.width, raw.height)))
     target = OUTPUT_ROOT / "destructibles" / asset_id
     target.mkdir(parents=True, exist_ok=True)
     intact_path = target / f"{asset_id}_intact.png"
     broken_path = target / f"{asset_id}_broken.png"
     intact.save(intact_path, optimize=True)
     broken.save(broken_path, optimize=True)
-    return {
+    record: dict[str, Any] = {
         "id": asset_id,
         "kind": "two_state_destructible",
-        "source": str(source.relative_to(ROOT)).replace("\\", "/"),
-        "source_sha256": sha256(source),
         "outputs": {
             "intact": str(intact_path.relative_to(ROOT)).replace("\\", "/"),
             "broken": str(broken_path.relative_to(ROOT)).replace("\\", "/"),
         },
         "dimensions": {"intact": [1024, 1024], "broken": [1024, 1024]},
-        "generator": "OpenAI Images built-in source plus deterministic split/crop",
+        "source_layout": source_layout,
+        "source_dimensions": source_dimensions,
+        "processing": (
+            "per-state checkerboard/white-matte alpha recovery, large neutral matte cleanup, neutral edge despill and grounded crop"
+            if source_layout == "separate_state_files"
+            else "deterministic side-by-side split, alpha recovery and grounded crop"
+        ),
+        "generator": (
+            "OpenAI Images built-in per-state sources plus deterministic alpha/matte/despill/crop"
+            if source_layout == "separate_state_files"
+            else "OpenAI Images built-in source plus deterministic split/crop"
+        ),
         "status": "original_fan_made",
     }
+    if source_layout == "separate_state_files":
+        record["source"] = str((SOURCE_ROOT / "destructibles" / f"{asset_id}_{{intact,broken}}.png").relative_to(ROOT)).replace("\\", "/")
+        record["source_sha256"] = paired_source_sha256(sources)
+        record["source_files"] = {
+            state: str(path.relative_to(ROOT)).replace("\\", "/")
+            for state, path in sources.items()
+        }
+        record["source_file_sha256"] = {state: sha256(path) for state, path in sources.items()}
+    else:
+        source = sources["sheet"]
+        record["source"] = str(source.relative_to(ROOT)).replace("\\", "/")
+        record["source_sha256"] = sha256(source)
+    return record
 
 
 def find_prop_source(asset_id: str) -> Path:

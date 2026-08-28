@@ -16,6 +16,13 @@ const DirectionalSpritePipelineTest := preload("res://tests/test_directional_spr
 const RouteOutcomePolicyTest := preload("res://tests/test_route_outcome_policy.gd")
 const RuntimeComponentsTest := preload("res://tests/test_runtime_components.gd")
 const SpriteActorStateMachineTest := preload("res://tests/test_sprite_actor_state_machine.gd")
+const UITextSanitizerType := preload("res://src/ui/ui_text_sanitizer.gd")
+const EnemyPursuitControllerTest := preload("res://tests/test_enemy_pursuit_controller.gd")
+const SequenceTimingPolicyTest := preload("res://tests/test_sequence_timing_policy.gd")
+const EnvironmentLayoutClassifierTest := preload("res://tests/test_environment_layout_classifier.gd")
+const WalkableSurfaceResolverTest := preload("res://tests/test_walkable_surface_resolver.gd")
+const CameraRailContinuityTest := preload("res://tests/test_camera_rail_continuity.gd")
+const EncounterSpawnTimingPolicyTest := preload("res://tests/test_encounter_spawn_timing_policy.gd")
 
 var _failures: int = 0
 var _assertions: int = 0
@@ -34,8 +41,15 @@ func _initialize() -> void:
 	_test_route_graph_resources()
 	_test_route_outcome_policy()
 	_test_runtime_components()
+	_test_enemy_pursuit_controller()
 	_test_directional_sprite_pipeline()
 	_test_sprite_actor_state_machine()
+	_test_sequence_timing_policy()
+	_test_environment_layout_classifier()
+	_test_encounter_spawn_timing_policy()
+	_test_walkable_surface_resolver()
+	_test_camera_rail_continuity()
+	_test_ui_text_sanitizer()
 	if _failures == 0:
 		print("CORE TESTS PASSED: %d assertions" % _assertions)
 		call_deferred("quit", 0)
@@ -190,6 +204,11 @@ func _test_runtime_components() -> void:
 		_expect_equal(check.actual, check.expected, str(check.label))
 
 
+func _test_enemy_pursuit_controller() -> void:
+	for check in EnemyPursuitControllerTest.collect_checks():
+		_expect_equal(check.actual, check.expected, str(check.label))
+
+
 func _test_directional_sprite_pipeline() -> void:
 	for check in DirectionalSpritePipelineTest.collect_checks():
 		_expect_equal(check.actual, check.expected, str(check.label))
@@ -198,6 +217,45 @@ func _test_directional_sprite_pipeline() -> void:
 func _test_sprite_actor_state_machine() -> void:
 	for check in SpriteActorStateMachineTest.collect_checks():
 		_expect_equal(check.actual, check.expected, str(check.label))
+
+
+func _test_sequence_timing_policy() -> void:
+	for check in SequenceTimingPolicyTest.collect_checks():
+		_expect_equal(check.actual, check.expected, str(check.label))
+
+
+func _test_environment_layout_classifier() -> void:
+	for check in EnvironmentLayoutClassifierTest.collect_checks():
+		_expect_equal(check.actual, check.expected, str(check.label))
+
+
+func _test_walkable_surface_resolver() -> void:
+	for check in WalkableSurfaceResolverTest.collect_checks():
+		_expect_equal(check.actual, check.expected, str(check.label))
+
+func _test_camera_rail_continuity() -> void:
+	for check in CameraRailContinuityTest.collect_checks():
+		_expect_equal(check.actual, check.expected, str(check.label))
+
+
+
+func _test_encounter_spawn_timing_policy() -> void:
+	for check in EncounterSpawnTimingPolicyTest.collect_checks():
+		_expect_equal(check.actual, check.expected, str(check.label))
+
+
+
+func _test_ui_text_sanitizer() -> void:
+	var french := "Précision, dégâts, Entrée et sélection"
+	_expect_equal(UITextSanitizerType.sanitize(french), french, "French accented letters remain unchanged")
+	var decorated := "ROUTE • CHAPTER — ← ◆ ● ○ ┌┐"
+	var sanitized := UITextSanitizerType.sanitize(decorated)
+	_expect_equal(sanitized, "ROUTE | CHAPTER - < * * o ++", "fragile UI ornaments use export-safe ASCII")
+	_expect_false(UITextSanitizerType.contains_unsupported_ornament(sanitized), "sanitized UI text contains no unsupported ornament")
+	_expect_equal(UITextSanitizerType.normalize_score_initials("abc"), "ABC", "leaderboard initials normalize to ASCII capitals")
+	_expect_equal(UITextSanitizerType.normalize_score_initials("A◆B"), "---", "leaderboard rejects unsupported initial glyphs")
+	_expect_equal(UITextSanitizerType.normalize_score_mode("boss rush"), "BOSS_RUSH", "leaderboard normalizes a known score mode")
+	_expect_equal(UITextSanitizerType.normalize_score_mode("arcade◆"), "ARCADE", "leaderboard rejects an unsafe score mode")
 
 
 func _test_settings_and_save_models() -> void:

@@ -2,6 +2,13 @@ extends "res://src/gameplay/gameplay_runtime_base.gd"
 
 const EnvironmentPropStateControllerScript := preload("res://src/gameplay/environment_prop_state_controller.gd")
 const RouteOutcomePolicyScript := preload("res://src/rail/route_outcome_policy.gd")
+const SequenceTimingPolicyScript := preload("res://src/rail/sequence_timing_policy.gd")
+const CameraRailContinuityScript := preload("res://src/rail/camera_rail_continuity.gd")
+const EncounterSpawnTimingPolicyScript := preload("res://src/rail/encounter_spawn_timing_policy.gd")
+
+
+var node_clear_elapsed: float = 0.0
+var camera_transition: Dictionary = {}
 
 
 func _process(delta: float) -> void:
@@ -10,8 +17,11 @@ func _process(delta: float) -> void:
 	_update_crosshairs(delta)
 	if paused_by_player:
 		return
-	if flash_rect.color.a > 0.0:
+	if state != "node_transition" and flash_rect.color.a > 0.0:
 		flash_rect.color.a = maxf(0.0, flash_rect.color.a - delta * 4.8)
+		if flash_rect.color.a <= 0.0 and bool(flash_rect.get_meta("sequence_transition", false)):
+			flash_rect.color = Color(1.0, 0.9, 0.68, 0.0)
+			flash_rect.remove_meta("sequence_transition")
 	if state_timer > 0.0:
 		state_timer -= delta
 		if state_timer <= 0.0:
@@ -19,6 +29,8 @@ func _process(delta: float) -> void:
 	match state:
 		"node":
 			_update_node(delta)
+		"node_transition":
+			_update_sequence_transition_camera()
 		"boss":
 			_update_boss(delta)
 			_update_environment_prop_state_events()
@@ -133,6 +145,8 @@ func _on_state_timer_finished() -> void:
 			center_overlay.visible = false
 			_enter_node(str(current_chapter.get("start", "")))
 		"node_transition":
+			_update_sequence_transition_camera()
+			_mask_environment_swap()
 			center_overlay.visible = false
 			_enter_node(current_node_id)
 		"chapter_result":
@@ -158,6 +172,7 @@ func _begin_chapter(index: int) -> void:
 		return
 	chapter_index = clampi(index, 0, chapters.size() - 1)
 	current_chapter = chapters[chapter_index] as Dictionary
+	camera_transition.clear()
 	_set_music_for_chapter(chapter_index)
 	chapter_scientists_saved = 0
 	chapter_scientists_total = 0
@@ -168,7 +183,7 @@ func _begin_chapter(index: int) -> void:
 	var roman: String = ["I", "II", "III", "IV"][chapter_index]
 	var title := str(current_chapter.get("title", "UNKNOWN"))
 	_show_overlay("CHAPTER %s — %s" % [roman, title], str(current_chapter.get("intro", "")), state_timer)
-	chapter_label.text = "CHAPTER %s — %s" % [roman, title]
+	chapter_label.text = _safe_ui_text("CHAPTER %s — %s" % [roman, title])
 	objective_label.text = ""
 	route_label.text = ""
 
@@ -182,31 +197,51 @@ func _enter_node(node_id: String) -> void:
 	current_node_id = node_id
 	routes_discovered["%d:%s" % [chapter_index + 1, node_id]] = true
 	node_elapsed = 0.0
+	node_clear_elapsed = 0.0
 	spawn_cursor = 0
 	branch_success = false
 	destroyed_breakable_id = ""
+	route_condition_context = RouteOutcomePolicyScript.initial_context(current_node)
 	active_civilian = null
 	_clear_actors()
 	_build_environment(str(current_node.get("style", current_chapter.get("style", "mansion"))))
 	_configure_environment_prop_state_events()
-	rail_origin = Vector3(0.0, 1.7, 8.0)
 	var rail := current_node.get("rail", {}) as Dictionary
+	rail_origin = _rail_entry_position(rail)
 	rail_target = Vector3(float(rail.get("x", 0.0)), float(rail.get("y", 1.55)), float(rail.get("z", 4.5)))
-	rail_duration = maxf(1.0, float(current_node.get("duration", 8.0)))
+	var sequence_policy := SequenceTimingPolicyScript.campaign_policy(campaign)
+	rail_duration = maxf(1.0, SequenceTimingPolicyScript.rail_duration(current_node, sequence_policy))
 	camera_3d.position = rail_origin
 	camera_3d.look_at(Vector3(float(rail.get("look_x", 0.0)), float(rail.get("look_y", 1.25)), -8.0), Vector3.UP)
+	camera_transition.clear()
 	state = "node"
-	objective_label.text = str(current_node.get("objective", "SURVIVE"))
-	route_label.text = "ROUTE • %s" % node_id.to_upper().replace("_", " ")
+	objective_label.text = _safe_ui_text(str(current_node.get("objective", "SURVIVE")))
+	route_label.text = _safe_ui_text("ROUTE: %s" % node_id.to_upper().replace("_", " "))
 	_set_subtitle(str(current_node.get("dialogue", "")), 3.8)
 	if current_node.has("civilian"):
 		_spawn_civilian(current_node.get("civilian", {}) as Dictionary)
 	if current_node.has("breakable"):
 		_spawn_breakable(current_node.get("breakable", {}) as Dictionary)
+	for breakable_data in current_node.get("breakables", []) as Array:
+		_spawn_breakable(breakable_data as Dictionary)
 	for pickup_data in current_node.get("pickups", []) as Array:
 		_spawn_pickup(pickup_data as Dictionary)
 	if str(current_node.get("type", "")) == "boss":
 		_start_boss(str(current_node.get("boss", current_chapter.get("boss", "chariot"))))
+
+
+func _rail_entry_position(rail: Dictionary) -> Vector3:
+	var origin_value: Variant = rail.get("origin", [])
+	if typeof(origin_value) == TYPE_ARRAY:
+		var origin_values := origin_value as Array
+		if origin_values.size() >= 3:
+			return Vector3(float(origin_values[0]), float(origin_values[1]), float(origin_values[2]))
+	# Every procedural set is local to its sequence, but its entry composition is
+	# derived from the authored rail instead of snapping to one universal origin.
+	var sweep := float(rail.get("sweep", 0.0))
+	var target_x := float(rail.get("x", 0.0))
+	var target_y := float(rail.get("y", 1.55))
+	return Vector3(-target_x * 0.32 - sweep * 0.18, 1.7 + (target_y - 1.55) * 0.2, 8.0 + absf(sweep) * 0.24)
 
 
 # Runtime hook implemented by gameplay_runtime_combat.gd. Declaring it here
@@ -283,17 +318,31 @@ func _environment_prop_state_context(node_completing: bool) -> Dictionary:
 func _update_node(delta: float) -> void:
 	node_elapsed += delta
 	var spawns := current_node.get("spawns", []) as Array
+	var sequence_policy := SequenceTimingPolicyScript.campaign_policy(campaign)
 	while spawn_cursor < spawns.size():
 		var spawn := spawns[spawn_cursor] as Dictionary
-		if node_elapsed < float(spawn.get("delay", 0.0)):
+		var scheduled_delay := EncounterSpawnTimingPolicyScript.scheduled_delay(current_node, spawn_cursor, rail_duration, sequence_policy)
+		if node_elapsed < scheduled_delay:
 			break
 		_spawn_enemy(spawn)
 		spawn_cursor += 1
 	_update_environment_prop_state_events()
-	var minimum_duration := float(current_node.get("minimum_duration", 3.0))
-	if spawn_cursor >= spawns.size() and not _has_active_hostiles() and node_elapsed >= minimum_duration:
-		_finish_node()
-	elif node_elapsed >= float(current_node.get("duration", 9.0)) + 10.0:
+	var encounter_clear := spawn_cursor >= spawns.size() and not _has_active_hostiles()
+	if encounter_clear:
+		node_clear_elapsed += delta
+	else:
+		node_clear_elapsed = 0.0
+	var minimum_duration := SequenceTimingPolicyScript.minimum_duration(current_node, sequence_policy)
+	var clear_hold := SequenceTimingPolicyScript.post_clear_hold(current_node, sequence_policy)
+	var rail_complete := (
+		not SequenceTimingPolicyScript.requires_rail_complete(current_node, sequence_policy)
+		or node_elapsed >= rail_duration
+	)
+	# Never remove a surviving encounter because an arbitrary timeout expired.
+	# A node closes only after every scheduled enemy is resolved, the authored
+	# camera move is complete and the post-clear composition has been readable.
+	var route_resolved := RouteOutcomePolicyScript.route_is_resolved(current_node, route_condition_context)
+	if encounter_clear and route_resolved and rail_complete and node_elapsed >= minimum_duration and node_clear_elapsed >= clear_hold:
 		_finish_node()
 
 
@@ -303,21 +352,67 @@ func _finish_node() -> void:
 	if active_civilian != null and is_instance_valid(active_civilian) and not bool(active_civilian.get_meta("dead", false)):
 		_rescue_civilian(active_civilian)
 	_update_environment_prop_state_events(true)
-	var route_success := RouteOutcomePolicyScript.branch_succeeded(current_node, branch_success, destroyed_breakable_id)
+	var route_success := RouteOutcomePolicyScript.branch_succeeded(current_node, branch_success, destroyed_breakable_id, route_condition_context)
 	var next_id := str(current_node.get("next", "chapter_complete"))
 	if current_node.has("next_success"):
 		next_id = str(current_node.get("next_success")) if route_success else str(current_node.get("next_failure"))
 	if next_id == "chapter_complete":
 		_complete_chapter()
 		return
+	var next_node := _find_node(current_chapter, next_id)
+	var sequence_policy := SequenceTimingPolicyScript.campaign_policy(campaign)
+	var transition := SequenceTimingPolicyScript.transition_descriptor(current_node, next_node, route_success, sequence_policy)
+	var transition_duration := float(transition.get("duration", 1.8))
+	var next_duration := SequenceTimingPolicyScript.rail_duration(next_node, sequence_policy)
+	camera_transition = CameraRailContinuityScript.transition_between(
+		CameraRailContinuityScript.pose_from_camera(camera_3d),
+		CameraRailContinuityScript.node_entry_pose(next_node, next_duration, sequence_policy),
+		transition_duration,
+		str(current_node.get("id", current_node_id)),
+		next_id
+	)
 	current_node_id = next_id
 	state = "node_transition"
-	state_timer = 1.5
-	_show_overlay("ROUTE UPDATED", "Conséquence : %s" % ("SUCCÈS" if route_success else "PROGRESSION"), state_timer)
+	state_timer = transition_duration
+	var transition_title := _safe_ui_text(str(transition.get("title", "ADVANCING")))
+	var transition_body := _safe_ui_text(str(transition.get("body", "")))
+	if current_node.has("next_success") or str(next_node.get("type", "")) == "boss":
+		_show_overlay(transition_title, transition_body, state_timer)
+	else:
+		center_overlay.visible = false
+		route_label.text = _safe_ui_text("%s - %s" % [transition_title, transition_body])
+		_set_subtitle(transition_body, state_timer)
+
+
+func _update_sequence_transition_camera() -> void:
+	if camera_transition.is_empty() or camera_3d == null or not is_instance_valid(camera_3d):
+		return
+	var duration := maxf(0.001, float(camera_transition.get("duration", 0.001)))
+	var elapsed := duration - maxf(0.0, state_timer)
+	var pose := CameraRailContinuityScript.sample_transition(camera_transition, elapsed)
+	camera_3d.global_position = pose.get("position", camera_3d.global_position) as Vector3
+	var look_target := pose.get("look_target", camera_3d.global_position + Vector3.FORWARD) as Vector3
+	var up := pose.get("up", Vector3.UP) as Vector3
+	if camera_3d.global_position.distance_squared_to(look_target) > 0.0001:
+		camera_3d.look_at(look_target, up)
+	if flash_rect != null:
+		var progress := float(pose.get("progress", 0.0))
+		var mask_alpha := CameraRailContinuityScript.transition_mask_alpha(progress)
+		flash_rect.color = Color(0.005, 0.008, 0.012, mask_alpha)
+		if mask_alpha > 0.0:
+			flash_rect.set_meta("sequence_transition", true)
+
+
+func _mask_environment_swap() -> void:
+	if flash_rect == null:
+		return
+	flash_rect.color = Color(0.005, 0.008, 0.012, 1.0)
+	flash_rect.set_meta("sequence_transition", true)
 
 
 func _complete_chapter() -> void:
 	_clear_actors()
+	camera_transition.clear()
 	boss_panel.visible = false
 	var bonus_lives := 2 if chapter_scientists_saved >= 6 else (1 if chapter_scientists_saved >= 3 else 0)
 	if bonus_lives > 0:

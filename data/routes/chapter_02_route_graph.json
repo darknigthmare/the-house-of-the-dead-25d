@@ -71,6 +71,15 @@
       "kind": "story",
       "label": "Rooftop approach",
       "next": [
+        "corridor_cache"
+      ]
+    },
+    {
+      "id": "corridor_cache",
+      "kind": "encounter",
+      "label": "West corridor hidden cache",
+      "reference_status": "period_guide_sequence_verified_exact_timing_pending",
+      "next": [
         "roof_rescue"
       ]
     },

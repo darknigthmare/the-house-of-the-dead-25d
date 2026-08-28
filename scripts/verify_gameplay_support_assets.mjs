@@ -70,7 +70,7 @@ check(civilianIds.every((id) => typeof id === "string" && id.length > 0), "every
 for (const id of ["dbr_scientist", "scientist_male_blue", "scientist_male_gray", "scientist_female_lab", "sophie"]) {
   check(civilianIds.includes(id), `civilian visual is used: ${id}`);
 }
-check(new Set(breakableIds).size === 4 && breakableIds.length === 4, "four route breakables are wired before the conditional final supplies");
+check(new Set(breakableIds).size === 8 && breakableIds.length === 8, "eight distinct route and hidden-cache breakables are wired before the conditional final supplies");
 check(!breakableIds.includes("c04_bonus_gate_seal"), "bonus gate no longer uses a shootable seal proxy");
 check(!breakableIds.includes("c04_emergency_supply_crate"), "bonus room no longer uses the emergency-crate proxy");
 check(Boolean(bonusRoom), "bonus room exists");

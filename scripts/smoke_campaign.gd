@@ -43,6 +43,7 @@ func _run() -> void:
 	var chapters_seen: Array[int] = []
 	var bosses_seen: Array[String] = []
 
+	var route_nodes_seen: Dictionary = {}
 	for expected_chapter_index in 4:
 		if int(game.get("chapter_index")) != expected_chapter_index:
 			_fail("chapter transition mismatch before chapter %d" % (expected_chapter_index + 1), game)
@@ -63,6 +64,7 @@ func _run() -> void:
 			game.set("current_node", node_data)
 			game.set("current_node_id", node_id)
 			(game.get("routes_discovered") as Dictionary)["%d:%s" % [expected_chapter_index + 1, node_id]] = true
+			route_nodes_seen[node_id] = true
 
 			if node_data.has("civilian"):
 				game.set("scientists_total", int(game.get("scientists_total")) + 1)
@@ -103,6 +105,11 @@ func _run() -> void:
 	if bosses_seen != EXPECTED_BOSS_SEQUENCE:
 		_fail("boss sequence mismatch: %s" % str(bosses_seen), game)
 		return
+	for required_route_node: String in ["wall_passage_impact", "wall_passage_high", "steel_door_choice", "steel_door_upper_route"]:
+		if not route_nodes_seen.has(required_route_node):
+			_fail("new high-route campaign node was not traversed: %s" % required_route_node, game)
+			return
+
 	if int(game.get("scientists_saved")) != 15 or int(game.get("scientists_total")) != 15:
 		_fail("expected 15/15 scientists, got %d/%d" % [int(game.get("scientists_saved")), int(game.get("scientists_total"))], game)
 		return
@@ -116,6 +123,7 @@ func _run() -> void:
 	print("SMOKE CAMPAIGN CHAPTERS: ", chapters_seen)
 	print("SMOKE CAMPAIGN BOSSES: ", bosses_seen)
 	print("SMOKE CAMPAIGN SCIENTISTS: 15/15")
+	print("SMOKE CAMPAIGN NEW ROUTES: wall impact high + steel door upper")
 	print("SMOKE CAMPAIGN ALL SCIENTISTS: true")
 	print("SMOKE CAMPAIGN FINAL STATE: ending")
 	game.call("_begin_credits")

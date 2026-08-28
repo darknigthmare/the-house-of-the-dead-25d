@@ -81,7 +81,13 @@ connections = Array[Dictionary]([{
 }, {
 "conditions": [],
 "from": &"roof_approach",
-"label": "Roof approach to rescue",
+"label": "Roof approach to west corridor",
+"priority": 0,
+"to": &"corridor_cache"
+}, {
+"conditions": [],
+"from": &"corridor_cache",
+"label": "West corridor to rooftop rescue",
 "priority": 0,
 "to": &"roof_rescue"
 }, {

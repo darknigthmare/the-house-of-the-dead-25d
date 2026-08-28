@@ -168,7 +168,7 @@ func _start_continue(player_index: int) -> void:
 
 func _update_continue(delta: float) -> void:
 	continue_timer -= delta
-	center_body.text = "PLAYER %d  •  %d CREDITS\nTirez ou Entrée  •  %02d" % [continuing_player + 1, int(players[continuing_player].credits), maxi(0, int(ceil(continue_timer)))]
+	center_body.text = _safe_ui_text("PLAYER %d  |  %d CREDITS\nTirez ou Entrée  |  %02d" % [continuing_player + 1, int(players[continuing_player].credits), maxi(0, int(ceil(continue_timer)))])
 	if continue_timer <= 0.0:
 		_decline_continue()
 
@@ -379,18 +379,15 @@ func _update_hud() -> void:
 
 func _player_status_text(index: int) -> String:
 	var player := players[index]
-	var life_icons := ""
-	for _life in int(player.lives):
-		life_icons += "◆"
-	var bullets := ""
-	for bullet in MAGAZINE_SIZE:
-		bullets += "●" if bullet < int(player.ammo) else "○"
-	return "P%d  %06d\n%s  %s" % [index + 1, int(player.score), life_icons, bullets]
+	# Lives and ammunition use dedicated TextureRect rows. Keeping Unicode
+	# diamonds/circles here duplicated the information and produced tofu glyphs
+	# on export targets whose fallback font lacked those symbols.
+	return "P%d  SCORE %06d" % [index + 1, int(player.score)]
 
 
 func _show_overlay(title: String, body: String, duration: float) -> void:
-	center_title.text = title
-	center_body.text = body
+	center_title.text = _safe_ui_text(title)
+	center_body.text = _safe_ui_text(body)
 	center_overlay.visible = true
 	if duration >= 0.0:
 		state_timer = duration
@@ -403,7 +400,7 @@ func _set_subtitle(text_value: String, duration: float) -> void:
 	if text_value.strip_edges().is_empty():
 		panel.visible = false
 		return
-	subtitle_label.text = text_value
+	subtitle_label.text = _safe_ui_text(text_value)
 	panel.visible = true
 	subtitle_expires_at = Time.get_ticks_msec() + int(duration * 1000.0)
 	_play_subtitle_punctuation(text_value)
@@ -411,7 +408,7 @@ func _set_subtitle(text_value: String, duration: float) -> void:
 
 func _feed(message: String, color: Color) -> void:
 	var label := Label.new()
-	label.text = message
+	label.text = _safe_ui_text(message)
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 	label.add_theme_font_size_override("font_size", 13)
 	label.add_theme_color_override("font_color", color)

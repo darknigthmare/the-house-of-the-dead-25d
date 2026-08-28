@@ -106,8 +106,10 @@ func _exercise_projectile_rules(game: Node) -> bool:
 	game.call("_damage_actor", vulnerable, "body", 1.0, 0)
 	var destroyed := bool(vulnerable.get_meta("dead", false)) and not active.has(vulnerable)
 	var none_active := not bool(game.call("_has_active_hostiles"))
-	vulnerable.free()
-	return destroyed and none_active
+	var retirement_queued := vulnerable.is_queued_for_deletion()
+	await process_frame
+	var released := not is_instance_valid(vulnerable)
+	return destroyed and none_active and retirement_queued and released
 
 
 func _exercise_bonus_pickups(game: Node) -> bool:
@@ -169,6 +171,36 @@ func _exercise_bonus_pickups(game: Node) -> bool:
 	game.call("_damage_actor", pickups[2], "body", 1.0, 0)
 	ok = ok and lives_after == lives_before + 1
 	ok = ok and int(players[0].lives) == lives_after and bool(pickups[2].get_meta("dead", false)) and not active.has(pickups[2])
+
+	# Arcade scenery rewards are two-step interactions: break the container,
+	# then shoot the revealed item. Breaking it must not grant the life silently.
+	game.set("node_clear_elapsed", 7.0)
+	game.call("_spawn_breakable", {
+		"id": "smoke_hidden_life_container",
+		"asset": "c01_water_barrel",
+		"pickup": "life",
+		"health": 2,
+		"spawn_pickup_on_break": true,
+		"position": [pickup_center.x, pickup_center.y - 0.4, pickup_center.z],
+	})
+	var hidden_container := active[active.size() - 1] as Node3D
+	var hidden_lives_before := int(players[0].lives)
+	game.call("_damage_actor", hidden_container, "body", 1.0, 0)
+	ok = ok and not bool(hidden_container.get_meta("dead", false))
+	game.call("_damage_actor", hidden_container, "body", 1.0, 0)
+	ok = ok and bool(hidden_container.get_meta("dead", false))
+	ok = ok and int(players[0].lives) == hidden_lives_before
+	ok = ok and is_zero_approx(float(game.get("node_clear_elapsed")))
+	var revealed_pickup: Node3D = null
+	for candidate_value in active:
+		var candidate := candidate_value as Node3D
+		if is_instance_valid(candidate) and str(candidate.get_meta("role", "")) == "pickup" and str(candidate.get_meta("pickup", "")) == "life":
+			revealed_pickup = candidate
+			break
+	ok = ok and revealed_pickup != null
+	if revealed_pickup != null:
+		game.call("_damage_actor", revealed_pickup, "body", 1.0, 0)
+		ok = ok and int(players[0].lives) == mini(5, hidden_lives_before + 1)
 	ok = ok and not bool(game.call("_has_active_hostiles"))
 	game.call("_clear_actors")
 	game.set_process(true)
@@ -189,6 +221,10 @@ func _exercise_attack_readability(game: Node) -> bool:
 		return false
 	players[0].active = true
 	players[0].lives = 12
+	players[0].cursor = Vector2(560.0, 410.0)
+	players[1].active = true
+	players[1].lives = 12
+	players[1].cursor = Vector2(720.0, 410.0)
 	var camera_forward := -camera.global_transform.basis.z.normalized()
 	var far_position := camera.global_position + camera_forward * 8.0
 	far_position.y = 0.0
@@ -231,6 +267,20 @@ func _exercise_attack_readability(game: Node) -> bool:
 	var commit_age := float(close_melee.get_meta("attack_commit_age", 1.0))
 	ok = ok and bool(game.call("_update_enemy_attack", close_melee, commit_age + 0.01))
 	ok = ok and int(players[0].lives) == lives_before - 1
+	ok = ok and str(close_melee.get_meta("attack_state", "")) == "recovery"
+	ok = ok and not bool(close_melee.get_meta("dead", false))
+	ok = ok and (game.get("active_actors") as Array).has(close_melee)
+	# A hunter must keep waiting and reattacking until it is shot or the
+	# encounter ends. The former runtime silently deleted it after two hits.
+	for _repeat_index in 3:
+		var ready_age := float(close_melee.get_meta("recovery_until", 0.0))
+		close_melee.set_meta("age", ready_age)
+		ok = ok and not bool(game.call("_update_enemy_attack", close_melee, ready_age))
+		var repeated_commit := float(close_melee.get_meta("attack_commit_age", ready_age + 1.0))
+		close_melee.set_meta("age", repeated_commit + 0.01)
+		ok = ok and bool(game.call("_update_enemy_attack", close_melee, repeated_commit + 0.01))
+	ok = ok and int(close_melee.get_meta("attacks", 0)) == 4
+	ok = ok and not bool(close_melee.get_meta("dead", false)) and (game.get("active_actors") as Array).has(close_melee)
 
 	# Hiding the billboard invalidates a melee strike even at contact range.
 	var hidden_melee := game.call("_spawn_enemy", {
@@ -245,6 +295,29 @@ func _exercise_attack_readability(game: Node) -> bool:
 	lives_before = int(players[0].lives)
 	ok = ok and not bool(game.call("_actor_attack", hidden_melee)) and int(players[0].lives) == lives_before
 
+	# A billboard can remain logically visible while a wall depth-occludes it.
+	# Melee contact must therefore require a clear environment line of sight.
+	var los_world := game.get("world_root") as Node3D
+	var los_wall := MeshInstance3D.new()
+	los_wall.position = camera.global_position + camera_forward * 0.78
+	los_wall.position.y = 1.15
+	los_wall.set_meta("enemy_blocker_half_extents", Vector2(1.3, 0.1))
+	los_wall.set_meta("enemy_blocker_height", 2.8)
+	los_world.add_child(los_wall)
+	var occluded_melee := game.call("_spawn_enemy", {
+		"actor": "sam_a1",
+		"position": [close_position.x, close_position.y, close_position.z],
+		"attack_delay": 0.0,
+	}) as Node3D
+	occluded_melee.set_meta("attack_telegraph_started", true)
+	occluded_melee.set_meta("attack_telegraph_complete", true)
+	lives_before = int(players[0].lives)
+	ok = ok and bool(game.call("_actor_is_attack_visible", occluded_melee))
+	ok = ok and not bool(game.call("_actor_has_melee_contact", occluded_melee))
+	ok = ok and not bool(game.call("_actor_attack", occluded_melee))
+	ok = ok and int(players[0].lives) == lives_before
+	los_wall.free()
+
 	# A runtime projectile must be destructible before it can even launch.
 	var projectile_owner := game.call("_spawn_enemy", {
 		"actor": "cyril_a3",
@@ -258,20 +331,77 @@ func _exercise_attack_readability(game: Node) -> bool:
 	projectile_owner.set_meta("projectile_destructible", true)
 	var projectile := game.call("_spawn_enemy_projectile", projectile_owner) as Node3D
 	ok = ok and projectile != null
+	var projectile_target_index := int(projectile.get_meta("target_player_index", -1)) if projectile != null else -1
 	if projectile != null:
 		var projectile_sprite := projectile.get_node_or_null("Sprite3D") as Sprite3D
 		var visual_scale := float(projectile.get_meta("visual_scale", 1.0))
 		projectile.global_position = camera.global_position + camera_forward * 0.65 - Vector3.UP * (0.85 * visual_scale)
-		lives_before = int(players[0].lives)
+		lives_before = int(players[projectile_target_index].lives)
 		projectile.set_meta("seen_by_camera", true)
 		projectile.set_meta("visible_travel_distance", 0.0)
-		ok = ok and not bool(game.call("_resolve_projectile_contact", projectile)) and int(players[0].lives) == lives_before
+		ok = ok and projectile_target_index >= 0 and not bool(game.call("_resolve_projectile_contact", projectile)) and int(players[projectile_target_index].lives) == lives_before
 		projectile.set_meta("visible_travel_distance", float(projectile.get_meta("minimum_visible_travel", 3.0)) + 0.1)
 		projectile_sprite.visible = false
-		ok = ok and not bool(game.call("_resolve_projectile_contact", projectile)) and int(players[0].lives) == lives_before
+		ok = ok and not bool(game.call("_resolve_projectile_contact", projectile)) and int(players[projectile_target_index].lives) == lives_before
 		projectile_sprite.visible = true
-		ok = ok and bool(game.call("_resolve_projectile_contact", projectile)) and int(players[0].lives) == lives_before - 1
+		ok = ok and bool(game.call("_resolve_projectile_contact", projectile)) and int(players[projectile_target_index].lives) == lives_before - 1
 
+	# Player-targeted projectiles steer toward the current rail-camera position,
+	# but zero visible travel remains harmless.
+	var tracking_owner := game.call("_spawn_enemy", {
+		"actor": "cyril_a3",
+		"position": [far_position.x, far_position.y, far_position.z],
+		"attack_delay": 999.0,
+	}) as Node3D
+	tracking_owner.set_meta("attack_telegraph_started", true)
+	tracking_owner.set_meta("attack_telegraph_complete", true)
+	var tracking_projectile := game.call("_spawn_enemy_projectile", tracking_owner) as Node3D
+	ok = ok and tracking_projectile != null
+	if tracking_projectile != null:
+		var initial_direction: Vector3 = tracking_projectile.get_meta("travel_direction", Vector3.ZERO) as Vector3
+		var original_camera_position := camera.global_position
+		var tracking_right := Vector3(-camera_forward.z, 0.0, camera_forward.x)
+		camera.global_position = original_camera_position + tracking_right * 2.2
+		var desired_direction := (camera.global_position - tracking_projectile.global_position).normalized()
+		var initial_alignment := initial_direction.dot(desired_direction)
+		game.call("_update_projectile_tracking", tracking_projectile, 0.25)
+		var steered_direction: Vector3 = tracking_projectile.get_meta("travel_direction", Vector3.ZERO) as Vector3
+		ok = ok and steered_direction.dot(desired_direction) > initial_alignment
+		ok = ok and (tracking_projectile.get_meta("target_position", Vector3.ZERO) as Vector3).distance_to(camera.global_position) <= 0.0001
+		lives_before = int(players[0].lives)
+		tracking_projectile.set_meta("visible_travel_distance", 0.0)
+		ok = ok and not bool(game.call("_resolve_projectile_contact", tracking_projectile))
+		ok = ok and int(players[0].lives) == lives_before
+		camera.global_position = original_camera_position
+
+
+	# A projectile locks one logical co-op recipient at launch. If that player is
+	# out before contact it dissipates instead of silently damaging the survivor.
+	var locked_owner := game.call("_spawn_enemy", {
+		"actor": "cyril_a3",
+		"position": [far_position.x, far_position.y, far_position.z],
+		"attack_delay": 999.0,
+	}) as Node3D
+	locked_owner.set_meta("attack_telegraph_started", true)
+	locked_owner.set_meta("attack_telegraph_complete", true)
+	var locked_projectile := game.call("_spawn_enemy_projectile", locked_owner) as Node3D
+	ok = ok and locked_projectile != null
+	if locked_projectile != null:
+		var locked_target := int(locked_projectile.get_meta("target_player_index", -1))
+		var surviving_player := 1 if locked_target == 0 else 0
+		var stored_target_lives := int(players[locked_target].lives)
+		var survivor_lives := int(players[surviving_player].lives)
+		players[locked_target].lives = 0
+		var locked_scale := float(locked_projectile.get_meta("visual_scale", 1.0))
+		locked_projectile.global_position = camera.global_position + camera_forward * 0.65 - Vector3.UP * (0.85 * locked_scale)
+		locked_projectile.set_meta("seen_by_camera", true)
+		locked_projectile.set_meta("visible_travel_distance", float(locked_projectile.get_meta("minimum_visible_travel", 3.0)) + 0.1)
+		var locked_sprite := locked_projectile.get_node_or_null("Sprite3D") as Sprite3D
+		locked_sprite.visible = true
+		ok = ok and not bool(game.call("_resolve_projectile_contact", locked_projectile))
+		ok = ok and int(players[surviving_player].lives) == survivor_lives
+		ok = ok and bool(locked_projectile.get_meta("dead", false))
+		players[locked_target].lives = stored_target_lives
 	# A rescue deadline cannot kill by itself. It may only accelerate a real,
 	# visible assailant, so an empty encounter leaves the civilian alive.
 	game.call("_clear_actors")
@@ -383,6 +513,8 @@ func _exercise_attack_readability(game: Node) -> bool:
 		ok = ok and bool(saved_civilian.get_meta("rescued", false))
 		ok = ok and not bool(saved_civilian.get_meta("dead", false))
 		ok = ok and bool(diverted_projectile.get_meta("dead", false))
+	diverted_thrower.set_meta("attack_telegraph_complete", true)
+	ok = ok and game.call("_spawn_enemy_projectile", diverted_thrower) == null
 
 	# Chariot is also forbidden from damaging at its home position; its visible
 	# lunge must reach the camera contact radius first.
@@ -391,12 +523,29 @@ func _exercise_attack_readability(game: Node) -> bool:
 	var boss := game.get("current_boss") as Node3D
 	boss.set_meta("attack_telegraph_started", true)
 	boss.set_meta("attack_telegraph_complete", true)
-	lives_before = int(players[0].lives)
-	ok = ok and not bool(game.call("_boss_attack", "chariot")) and int(players[0].lives) == lives_before
+	var boss_total_lives_before := int(players[0].lives) + int(players[1].lives)
+	ok = ok and not bool(game.call("_boss_attack", "chariot"))
+	ok = ok and int(players[0].lives) + int(players[1].lives) == boss_total_lives_before
 	boss.position = game.call("_boss_melee_contact_position", boss.position) as Vector3
-	ok = ok and bool(game.call("_boss_attack", "chariot")) and int(players[0].lives) == lives_before - 1
+	ok = ok and bool(game.call("_boss_attack", "chariot"))
+	ok = ok and int(players[0].lives) + int(players[1].lives) == boss_total_lives_before - 1
 
 	# Regression: the former final-runtime shortcut damaged any boss-support
+	var boss_sprite := boss.get_node_or_null("Sprite3D") as Sprite3D
+	var coop_lives_before := int(players[0].lives) + int(players[1].lives)
+	boss.set_meta("attack_telegraph_started", false)
+	boss.set_meta("attack_telegraph_complete", false)
+	game.set("boss_attack_timer", -2.0)
+	game.call("_update_boss", 2.0)
+	ok = ok and bool(boss.get_meta("attack_telegraph_started", false))
+	ok = ok and float(game.get("boss_attack_timer")) >= 0.899
+	ok = ok and int(players[0].lives) + int(players[1].lives) == coop_lives_before
+	game.call("_update_boss", 0.45)
+	boss_sprite.visible = false
+	game.call("_update_boss", 0.01)
+	ok = ok and not bool(boss.get_meta("attack_telegraph_started", false))
+	ok = ok and float(game.get("boss_attack_timer")) >= 0.899
+	boss_sprite.visible = true
 	# enemy crossing a fixed Z coordinate, even if it was hidden and had neither
 	# a completed telegraph nor contact. That position alone must stay harmless.
 	game.call("_clear_actors")
@@ -412,6 +561,80 @@ func _exercise_attack_readability(game: Node) -> bool:
 	game.call("_update_actors", 0.0)
 	ok = ok and int(players[0].lives) == lives_before
 	ok = ok and not bool(boss_support.get_meta("dead", false))
+
+	# The integrated runtime, not only the pure policy, must keep actors in
+	# front of the camera and outside solid decorative footprints.
+	game.call("_clear_actors")
+	var world := game.get("world_root") as Node3D
+	var flat_camera_forward := Vector3(camera_forward.x, 0.0, camera_forward.z).normalized()
+	var fake_prop := Sprite3D.new()
+	fake_prop.position = camera.global_position + flat_camera_forward * 4.0
+	fake_prop.position.y = 1.0
+	fake_prop.set_meta("environment_prop_id", "smoke_solid_prop")
+	fake_prop.set_meta("enemy_blocker_radius", 0.8)
+	fake_prop.set_meta("enemy_blocker_height", 2.0)
+	world.add_child(fake_prop)
+	var embedded_enemy := game.call("_spawn_enemy", {
+		"actor": "sam_a1",
+		"position": [fake_prop.global_position.x, 0.0, fake_prop.global_position.z],
+		"attack_delay": 999.0,
+	}) as Node3D
+	game.call("_update_actors", 0.0)
+	var embedded_radius := float(embedded_enemy.get_meta("collision_radius", 0.34))
+	var separated_distance := Vector2(embedded_enemy.global_position.x, embedded_enemy.global_position.z).distance_to(Vector2(fake_prop.global_position.x, fake_prop.global_position.z))
+	ok = ok and separated_distance >= 0.8 + embedded_radius - 0.0001
+	var behind_position := camera.global_position - flat_camera_forward * 2.0
+	behind_position.y = 0.0
+	var behind_enemy := game.call("_spawn_enemy", {
+		"actor": "sam_a1",
+		"position": [behind_position.x, behind_position.y, behind_position.z],
+		"attack_delay": 999.0,
+	}) as Node3D
+	game.call("_update_actors", 0.0)
+	var front_depth := (behind_enemy.global_position - camera.global_position).dot(flat_camera_forward)
+	ok = ok and front_depth >= float(behind_enemy.get_meta("minimum_front_depth", 1.15)) - 0.0001
+	ok = ok and not bool(behind_enemy.get_meta("dead", false))
+	game.call("_spawn_breakable", {
+		"id": "smoke_solid_crates",
+		"asset": "c02_corridor_crates",
+		"position": [2.8, 0.15, -8.0],
+		"health": 2.0,
+		"pickup": "medal",
+	})
+	var has_breakable_blocker := false
+	for blocker_value in game.call("_environment_floor_blockers") as Array:
+		var blocker := blocker_value as Dictionary
+		if str(blocker.get("source", "")) == "breakable":
+			has_breakable_blocker = true
+			var blocker_actor := blocker.get("actor") as Node3D
+			ok = ok and blocker_actor != null
+			ok = ok and float(blocker.get("radius", 0.0)) > 0.0
+			break
+	ok = ok and has_breakable_blocker
+	fake_prop.free()
+
+	# A melee hunter authored far to the side must converge in both X and Z,
+	# reach visible physical contact, wait through recovery, then strike again.
+	game.call("_clear_actors")
+	game.set("state", "node")
+	var stored_lives := int(players[0].lives)
+	players[0].lives = 20
+	var camera_right := Vector3(-flat_camera_forward.z, 0.0, flat_camera_forward.x)
+	var wide_spawn := camera.global_position + flat_camera_forward * 8.0 + camera_right * 5.2
+	wide_spawn.y = 0.0
+	var lateral_hunter := game.call("_spawn_enemy", {
+		"actor": "sam_a1",
+		"position": [wide_spawn.x, wide_spawn.y, wide_spawn.z],
+		"attack_delay": 0.0,
+	}) as Node3D
+	for _step in 900:
+		game.call("_update_actors", 1.0 / 60.0)
+	ok = ok and int(lateral_hunter.get_meta("attacks", 0)) >= 2
+	ok = ok and not bool(lateral_hunter.get_meta("dead", false))
+	ok = ok and bool(game.call("_actor_has_melee_contact", lateral_hunter))
+	var hunter_depth := (lateral_hunter.global_position - camera.global_position).dot(flat_camera_forward)
+	ok = ok and hunter_depth >= float(lateral_hunter.get_meta("minimum_front_depth", 1.15)) - 0.0001
+	players[0].lives = stored_lives
 
 	game.call("_clear_actors")
 	await process_frame

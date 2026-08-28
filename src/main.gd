@@ -2,6 +2,7 @@ extends Node
 
 const GAMEPLAY_SCENE := preload("res://scenes/gameplay/gameplay.tscn")
 const AudioCueLibraryType := preload("res://src/audio/audio_cue_library.gd")
+const UITextSanitizerType := preload("res://src/ui/ui_text_sanitizer.gd")
 const BACKDROP_PATH := "res://assets/environments/mansion-exterior.png"
 const AUDIO_CUE_MANIFEST_PATH := "res://data/audio/audio_cues.json"
 const UI_CUE_IDS: Array[String] = ["ui_navigate", "ui_confirm", "ui_back", "ui_credit", "ui_join"]
@@ -154,7 +155,7 @@ func _build_menu() -> void:
 	header.size = Vector2(820.0, 130.0)
 	menu_root.add_child(header)
 	var eyebrow := Label.new()
-	eyebrow.text = "SEGA MODEL 2 HOMAGE  •  ORIGINAL FAN-MADE 2.5D EDITION"
+	eyebrow.text = _safe_ui_text("SEGA MODEL 2 HOMAGE  •  ORIGINAL FAN-MADE 2.5D EDITION")
 	eyebrow.add_theme_color_override("font_color", Color("#d8b46a"))
 	eyebrow.add_theme_font_size_override("font_size", 16)
 	header.add_child(eyebrow)
@@ -165,7 +166,7 @@ func _build_menu() -> void:
 	title.add_theme_constant_override("line_spacing", -8)
 	header.add_child(title)
 	var edition := Label.new()
-	edition.text = "2.5D • ARCADE AUTHENTIQUE"
+	edition.text = _safe_ui_text("2.5D • ARCADE AUTHENTIQUE")
 	edition.add_theme_font_size_override("font_size", 19)
 	edition.add_theme_color_override("font_color", Color("#d13a32"))
 	header.add_child(edition)
@@ -225,13 +226,13 @@ func _clear_scrollable_content() -> VBoxContainer:
 
 func _heading(box: VBoxContainer, text_value: String, subtext: String = "") -> void:
 	var heading := Label.new()
-	heading.text = text_value
+	heading.text = _safe_ui_text(text_value)
 	heading.add_theme_font_size_override("font_size", 25)
 	heading.add_theme_color_override("font_color", Color("#ead9b4"))
 	box.add_child(heading)
 	if not subtext.is_empty():
 		var subtitle := Label.new()
-		subtitle.text = subtext
+		subtitle.text = _safe_ui_text(subtext)
 		subtitle.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		subtitle.add_theme_font_size_override("font_size", 14)
 		subtitle.add_theme_color_override("font_color", Color(0.68, 0.71, 0.72))
@@ -241,7 +242,7 @@ func _heading(box: VBoxContainer, text_value: String, subtext: String = "") -> v
 
 func _menu_button(box: VBoxContainer, label_text: String, callback: Callable, disabled: bool = false, cue_id: String = "ui_confirm") -> Button:
 	var button := Button.new()
-	button.text = label_text
+	button.text = _safe_ui_text(label_text)
 	button.custom_minimum_size = Vector2(0.0, 42.0)
 	button.alignment = HORIZONTAL_ALIGNMENT_LEFT
 	button.disabled = disabled
@@ -292,11 +293,10 @@ func _show_leaderboard() -> void:
 		var limit := mini(10, scores.size())
 		for index in limit:
 			var entry := scores[index] as Dictionary
-			var initials := str(entry.get("initials", "---")).strip_edges().to_upper()
-			if initials.length() != 3:
-				initials = "---"
+			var initials := UITextSanitizerType.normalize_score_initials(str(entry.get("initials", "---")))
+			var mode := UITextSanitizerType.normalize_score_mode(str(entry.get("mode", "arcade")))
 			var row := Label.new()
-			row.text = "%02d   %s   %07d   %s   %dP" % [index + 1, initials, maxi(0, int(entry.get("score", 0))), str(entry.get("mode", "arcade")).to_upper(), clampi(int(entry.get("players", 1)), 1, 2)]
+			row.text = _safe_ui_text("%02d   %s   %07d   %s   %dP" % [index + 1, initials, maxi(0, int(entry.get("score", 0))), mode, clampi(int(entry.get("players", 1)), 1, 2)])
 			row.add_theme_font_size_override("font_size", 16)
 			row.add_theme_color_override("font_color", Color("#f2ede2") if index > 2 else Color("#d8b46a"))
 			box.add_child(row)
@@ -373,7 +373,7 @@ func _show_settings() -> void:
 	calibration.tooltip_text = _ui_text("Visez les coins puis le centre ; le tir hors de cette zone recharge.", "Aim at the corners and center; firing outside this area reloads.")
 	box.add_child(calibration)
 	var calibration_text := Label.new()
-	calibration_text.text = "┌   ZONE DE VISÉE / OFF-SCREEN RELOAD   ┐\n\n      + centre      • coins      "
+	calibration_text.text = _safe_ui_text("[   ZONE DE VISÉE / OFF-SCREEN RELOAD   ]\n\n      + centre      | coins")
 	calibration_text.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	calibration_text.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	calibration_text.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
@@ -384,7 +384,7 @@ func _show_settings() -> void:
 
 func _add_setting_toggle(box: VBoxContainer, label_text: String, key: String) -> void:
 	var toggle := CheckButton.new()
-	toggle.text = label_text
+	toggle.text = _safe_ui_text(label_text)
 	toggle.button_pressed = bool(SettingsManager.get_value(key, false))
 	toggle.toggled.connect(func(value: bool) -> void:
 		SettingsManager.set_value(key, value)
@@ -397,7 +397,7 @@ func _add_setting_slider(box: VBoxContainer, label_text: String, key: String) ->
 	container.add_theme_constant_override("separation", 2)
 	var header := HBoxContainer.new()
 	var label := Label.new()
-	label.text = label_text
+	label.text = _safe_ui_text(label_text)
 	label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	header.add_child(label)
 	var value_label := Label.new()
@@ -423,7 +423,11 @@ func _save_settings_and_return() -> void:
 	_show_home()
 
 func _ui_text(french: String, english: String) -> String:
-	return english if str(SettingsManager.get_value("language", "fr")) == "en" else french
+	return _safe_ui_text(english if str(SettingsManager.get_value("language", "fr")) == "en" else french)
+
+
+func _safe_ui_text(text_value: String) -> String:
+	return UITextSanitizerType.sanitize(text_value)
 
 func _launch_game(mode: String, player_count: int = 1, demo: bool = false, chapter: int = 1) -> void:
 	if active_game != null:

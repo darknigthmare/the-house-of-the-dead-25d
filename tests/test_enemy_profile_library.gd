@@ -20,6 +20,7 @@ func _initialize() -> void:
 		_expect_true(not str(runtime.get("hitbox_profile", "")).is_empty(), "%s resolves a hitbox profile" % enemy_id)
 		_expect_true(float(runtime.get("attack_telegraph", 0.0)) >= 0.5, "%s exposes a readable attack telegraph" % enemy_id)
 		_expect_true(float(runtime.get("melee_range", 0.0)) >= 2.0, "%s exposes a physical melee range" % enemy_id)
+		_expect_true(not runtime.has("max_attacks"), "%s remains active until killed or the encounter ends" % enemy_id)
 		if not str(runtime.get("projectile_asset", "")).is_empty():
 			_expect_true(bool(runtime.get("projectile_destructible", false)), "%s runtime projectile is interceptable" % enemy_id)
 			_expect_true(float(runtime.get("projectile_min_travel", 0.0)) >= 3.0, "%s projectile must visibly traverse the scene" % enemy_id)

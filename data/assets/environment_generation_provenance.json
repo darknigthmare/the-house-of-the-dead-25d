@@ -585,8 +585,6 @@
     {
       "id": "c01_foyer_door_lock",
       "kind": "two_state_destructible",
-      "source": "reports/runtime/environment-sources/destructibles/c01_foyer_door_lock.png",
-      "source_sha256": "b369f9106d9f394a7bb2ef185e47a44ea29a992666ed4d66b62e6e0592a45131",
       "outputs": {
         "intact": "assets/environments_v2/destructibles/c01_foyer_door_lock/c01_foyer_door_lock_intact.png",
         "broken": "assets/environments_v2/destructibles/c01_foyer_door_lock/c01_foyer_door_lock_broken.png"
@@ -601,14 +599,106 @@
           1024
         ]
       },
+      "source_layout": "legacy_side_by_side",
+      "source_dimensions": {
+        "sheet": [
+          1536,
+          1024
+        ]
+      },
+      "processing": "deterministic side-by-side split, alpha recovery and grounded crop",
       "generator": "OpenAI Images built-in source plus deterministic split/crop",
-      "status": "original_fan_made"
+      "status": "original_fan_made",
+      "source": "reports/runtime/environment-sources/destructibles/c01_foyer_door_lock.png",
+      "source_sha256": "b369f9106d9f394a7bb2ef185e47a44ea29a992666ed4d66b62e6e0592a45131"
+    },
+    {
+      "id": "c01_water_barrel",
+      "kind": "two_state_destructible",
+      "outputs": {
+        "intact": "assets/environments_v2/destructibles/c01_water_barrel/c01_water_barrel_intact.png",
+        "broken": "assets/environments_v2/destructibles/c01_water_barrel/c01_water_barrel_broken.png"
+      },
+      "dimensions": {
+        "intact": [
+          1024,
+          1024
+        ],
+        "broken": [
+          1024,
+          1024
+        ]
+      },
+      "source_layout": "separate_state_files",
+      "source_dimensions": {
+        "intact": [
+          1254,
+          1254
+        ],
+        "broken": [
+          1254,
+          1254
+        ]
+      },
+      "processing": "per-state checkerboard/white-matte alpha recovery, large neutral matte cleanup, neutral edge despill and grounded crop",
+      "generator": "OpenAI Images built-in per-state sources plus deterministic alpha/matte/despill/crop",
+      "status": "original_fan_made",
+      "source": "reports/runtime/environment-sources/destructibles/c01_water_barrel_{intact,broken}.png",
+      "source_sha256": "0abe411d5ac3a5502a2ac724796ec938f2483198f726e4dbc0169e7bf2d420ca",
+      "source_files": {
+        "intact": "reports/runtime/environment-sources/destructibles/c01_water_barrel_intact.png",
+        "broken": "reports/runtime/environment-sources/destructibles/c01_water_barrel_broken.png"
+      },
+      "source_file_sha256": {
+        "intact": "8673f05bd2cb39a40ae56416d98be02e624b7051dca7903597c9a65a16eb41ad",
+        "broken": "84529e21ce57ad9eeb4d42cc08d599d3fab630d42b29e17826090ee5ac0e1eeb"
+      }
+    },
+    {
+      "id": "c01_chariot_antechamber_barrels",
+      "kind": "two_state_destructible",
+      "outputs": {
+        "intact": "assets/environments_v2/destructibles/c01_chariot_antechamber_barrels/c01_chariot_antechamber_barrels_intact.png",
+        "broken": "assets/environments_v2/destructibles/c01_chariot_antechamber_barrels/c01_chariot_antechamber_barrels_broken.png"
+      },
+      "dimensions": {
+        "intact": [
+          1024,
+          1024
+        ],
+        "broken": [
+          1024,
+          1024
+        ]
+      },
+      "source_layout": "separate_state_files",
+      "source_dimensions": {
+        "intact": [
+          1254,
+          1254
+        ],
+        "broken": [
+          1254,
+          1254
+        ]
+      },
+      "processing": "per-state checkerboard/white-matte alpha recovery, large neutral matte cleanup, neutral edge despill and grounded crop",
+      "generator": "OpenAI Images built-in per-state sources plus deterministic alpha/matte/despill/crop",
+      "status": "original_fan_made",
+      "source": "reports/runtime/environment-sources/destructibles/c01_chariot_antechamber_barrels_{intact,broken}.png",
+      "source_sha256": "6f18ef29e806aef545c53a4ed6a74cce8b0c2e927b119da754af53856acd40e1",
+      "source_files": {
+        "intact": "reports/runtime/environment-sources/destructibles/c01_chariot_antechamber_barrels_intact.png",
+        "broken": "reports/runtime/environment-sources/destructibles/c01_chariot_antechamber_barrels_broken.png"
+      },
+      "source_file_sha256": {
+        "intact": "aca02449e752f8534bbac386f0a33f43708461db4f4119922538cd7af7d43b9f",
+        "broken": "7ca100764a487bb16a9d1a6e8900982295bd3bed7f3536a2b5390c6cfda4bc9c"
+      }
     },
     {
       "id": "c02_chained_hatch_plate",
       "kind": "two_state_destructible",
-      "source": "reports/runtime/environment-sources/destructibles/c02_chained_hatch_plate.png",
-      "source_sha256": "d0487b43540b98e3c47dbf9711897a2f0c8a7856dedbc270d366ff648017be65",
       "outputs": {
         "intact": "assets/environments_v2/destructibles/c02_chained_hatch_plate/c02_chained_hatch_plate_intact.png",
         "broken": "assets/environments_v2/destructibles/c02_chained_hatch_plate/c02_chained_hatch_plate_broken.png"
@@ -623,14 +713,64 @@
           1024
         ]
       },
+      "source_layout": "legacy_side_by_side",
+      "source_dimensions": {
+        "sheet": [
+          1693,
+          929
+        ]
+      },
+      "processing": "deterministic side-by-side split, alpha recovery and grounded crop",
       "generator": "OpenAI Images built-in source plus deterministic split/crop",
-      "status": "original_fan_made"
+      "status": "original_fan_made",
+      "source": "reports/runtime/environment-sources/destructibles/c02_chained_hatch_plate.png",
+      "source_sha256": "d0487b43540b98e3c47dbf9711897a2f0c8a7856dedbc270d366ff648017be65"
+    },
+    {
+      "id": "c02_corridor_crates",
+      "kind": "two_state_destructible",
+      "outputs": {
+        "intact": "assets/environments_v2/destructibles/c02_corridor_crates/c02_corridor_crates_intact.png",
+        "broken": "assets/environments_v2/destructibles/c02_corridor_crates/c02_corridor_crates_broken.png"
+      },
+      "dimensions": {
+        "intact": [
+          1024,
+          1024
+        ],
+        "broken": [
+          1024,
+          1024
+        ]
+      },
+      "source_layout": "separate_state_files",
+      "source_dimensions": {
+        "intact": [
+          1254,
+          1254
+        ],
+        "broken": [
+          1402,
+          1122
+        ]
+      },
+      "processing": "per-state checkerboard/white-matte alpha recovery, large neutral matte cleanup, neutral edge despill and grounded crop",
+      "generator": "OpenAI Images built-in per-state sources plus deterministic alpha/matte/despill/crop",
+      "status": "original_fan_made",
+      "source": "reports/runtime/environment-sources/destructibles/c02_corridor_crates_{intact,broken}.png",
+      "source_sha256": "2e946df4171a5cc33862a3154a492ff95f03397a1ceb1b27e920b67d7e434e91",
+      "source_files": {
+        "intact": "reports/runtime/environment-sources/destructibles/c02_corridor_crates_intact.png",
+        "broken": "reports/runtime/environment-sources/destructibles/c02_corridor_crates_broken.png"
+      },
+      "source_file_sha256": {
+        "intact": "66678cc6af08ee9359ef3bd31727de953c4fba0e7b6c3f56e6dceaa12891bd0b",
+        "broken": "c9f4f4dacc6d6a8475a82baa10211ec2e3dcb98ca52710a429a2f618afa93e40"
+      }
     },
     {
       "id": "c03_elevator_route_switch",
       "kind": "two_state_destructible",
-      "source": "reports/runtime/environment-sources/destructibles/c03_elevator_route_switch.png",
-      "source_sha256": "ba8aa45549b2ca0f08e3c29e6f308e1048d1a80e8c41b31725d0c4f234e4d924",
       "outputs": {
         "intact": "assets/environments_v2/destructibles/c03_elevator_route_switch/c03_elevator_route_switch_intact.png",
         "broken": "assets/environments_v2/destructibles/c03_elevator_route_switch/c03_elevator_route_switch_broken.png"
@@ -645,14 +785,22 @@
           1024
         ]
       },
+      "source_layout": "legacy_side_by_side",
+      "source_dimensions": {
+        "sheet": [
+          1536,
+          1024
+        ]
+      },
+      "processing": "deterministic side-by-side split, alpha recovery and grounded crop",
       "generator": "OpenAI Images built-in source plus deterministic split/crop",
-      "status": "original_fan_made"
+      "status": "original_fan_made",
+      "source": "reports/runtime/environment-sources/destructibles/c03_elevator_route_switch.png",
+      "source_sha256": "ba8aa45549b2ca0f08e3c29e6f308e1048d1a80e8c41b31725d0c4f234e4d924"
     },
     {
       "id": "c03_vent_key_container",
       "kind": "two_state_destructible",
-      "source": "reports/runtime/environment-sources/destructibles/c03_vent_key_container.png",
-      "source_sha256": "6539d6712a4c79e003b96b1a1ab5874a09f79928d425cb85290103b580dfe525",
       "outputs": {
         "intact": "assets/environments_v2/destructibles/c03_vent_key_container/c03_vent_key_container_intact.png",
         "broken": "assets/environments_v2/destructibles/c03_vent_key_container/c03_vent_key_container_broken.png"
@@ -667,8 +815,60 @@
           1024
         ]
       },
+      "source_layout": "legacy_side_by_side",
+      "source_dimensions": {
+        "sheet": [
+          1402,
+          1122
+        ]
+      },
+      "processing": "deterministic side-by-side split, alpha recovery and grounded crop",
       "generator": "OpenAI Images built-in source plus deterministic split/crop",
-      "status": "original_fan_made"
+      "status": "original_fan_made",
+      "source": "reports/runtime/environment-sources/destructibles/c03_vent_key_container.png",
+      "source_sha256": "6539d6712a4c79e003b96b1a1ab5874a09f79928d425cb85290103b580dfe525"
+    },
+    {
+      "id": "c03_unlocked_room_crates",
+      "kind": "two_state_destructible",
+      "outputs": {
+        "intact": "assets/environments_v2/destructibles/c03_unlocked_room_crates/c03_unlocked_room_crates_intact.png",
+        "broken": "assets/environments_v2/destructibles/c03_unlocked_room_crates/c03_unlocked_room_crates_broken.png"
+      },
+      "dimensions": {
+        "intact": [
+          1024,
+          1024
+        ],
+        "broken": [
+          1024,
+          1024
+        ]
+      },
+      "source_layout": "separate_state_files",
+      "source_dimensions": {
+        "intact": [
+          1403,
+          1121
+        ],
+        "broken": [
+          1402,
+          1122
+        ]
+      },
+      "processing": "per-state checkerboard/white-matte alpha recovery, large neutral matte cleanup, neutral edge despill and grounded crop",
+      "generator": "OpenAI Images built-in per-state sources plus deterministic alpha/matte/despill/crop",
+      "status": "original_fan_made",
+      "source": "reports/runtime/environment-sources/destructibles/c03_unlocked_room_crates_{intact,broken}.png",
+      "source_sha256": "df649dc3b6562e57b395b522873674f0198651872d9504f0eb9c42929555bcfd",
+      "source_files": {
+        "intact": "reports/runtime/environment-sources/destructibles/c03_unlocked_room_crates_intact.png",
+        "broken": "reports/runtime/environment-sources/destructibles/c03_unlocked_room_crates_broken.png"
+      },
+      "source_file_sha256": {
+        "intact": "537305ab836925a4db8b1f646c16867fbadad7bf6d2dfceafccf63fd58c74e52",
+        "broken": "8d8081aea8c95ae7b78bb8147560b882f07289bba097367aef44d331846a974f"
+      }
     },
     {
       "id": "mansion_chandelier",

@@ -1,109 +1,102 @@
 # Fidelity Report
 
-## v0.3.0 published release — verified project contract
+## v0.5.0 local candidate — measured state, 2026-08-28
 
-Immutable tag `v0.3.0` at exact commit `8add70a31a751928ea12c247ca584d8b030b2139` strengthens the internally verifiable 2.5D replacement contract without changing the exact-Sega certification boundary.
+This report describes the current local `0.5.0` worktree. It does **not** claim a v0.5.0 release, tag, GitHub publication, delivery archive or Vercel deployment.
 
-The locally verified changes include visible and destructible hostile projectiles, contact-gated telegraphed melee, civilian rescue failures caused only by a visible assigned assailant rather than a timer, event-driven estate-gate/door/specimen-tank frames, manifest-driven medal/frog/life pickups, four dedicated animated environment strips (`drips`, `water_flow`, `electrical_arc`, `monitor_scan`) and the Curien/Magician finale story staging. These runtime improvements remain original project interpretations until compared against an authorized Sega reference build.
+The candidate is a playable, internally verified 2.5D fan-made reconstruction. Its evidence proves the tracked replacement-content and runtime contracts; it does not prove revision-exact Sega arcade fidelity.
 
-| Validator checkpoint | v0.3.0 local result |
-|---|---|
-| repository/data suite | `npm.cmd test` **272/272** |
-| complete local QA | `npm.cmd run qa` **282/282** |
-| deterministic libraries | core **235**; atlas **63**; environment **115**; gameplay support **33**; enemy profiles **210** |
-| audio replacement contract | **354 assertions / 28 distinct cues** |
-| directional runtime | **38 bindings / 10 representatives / all 8 directions**; cleanup without leak |
-| Curien finale runtime | **29 assertions**; cleanup without leak |
-| asset verification | environment **1,708**; animated effects **348/348**; gameplay support **113/113** |
-| content-family audit | **739 checks / 16 warnings / 0 errors** |
-| texture imports | **128 files / 0 mismatches** |
-| campaign | chapters **1–4**, **15/15 scientists**, complete boss sequence including both rematches, ending and credits |
-| focused runtime smokes | gameplay, score and initials passed |
-| Windows/Linux/Web exports | **187,023,472 / 151,388,064 / 117,762,238 bytes** |
-| Web payload | 9 files; PCK **77,917,844**; WASM **39,513,091**; `qa:web` **276/276**; `verify:web` **OK** |
-| local browser | agent-browser 0.34; isolation true; accessible 1258×622 main canvas with ARIA label; menu then Arcade/P1/continue visible; WebGL2 single-thread; 0 page errors and 3 Godot info logs |
+## Verification snapshot
 
-GitHub Actions run `32865563840` passed, all five [v0.3.0 release assets](https://github.com/darknigthmare/the-house-of-the-dead-25d/releases/tag/v0.3.0) match local sizes/digests, and Vercel deployment `dpl_KUcS7Xh1NEMU2GRJTki2Hc4kwPuy` is `Ready` with byte-identical root/PCK/WASM delivery and zero public browser page errors.
+| Checkpoint | Current local result | What it establishes |
+|---|---:|---|
+| deterministic Godot core | **975 assertions** | targeted gameplay, routing and runtime regressions pass |
+| repository suite | `npm test` **295/295** | tracked repository tests pass |
+| complete QA | **313/313** | aggregate local QA passes |
+| Web QA | **299/299** | current Web-oriented checks pass |
+| environment verifier | **1,977 assertions** | active environment contract is internally consistent |
+| content audit | **889 checks / 6 warnings / 0 errors** | no blocking content error; the six fidelity warnings below remain |
 
-The 16 content-audit warnings are retained, not hidden: three runtime/route-graph drifts, three reference-pending enemy placements, two unused destructibles, two direction-mirroring warnings, one semantic-atlas animation warning, one unreferenced AMS item and four inactive legacy controller classes. Passing QA therefore proves internal consistency and campaign reachability, not revision-exact arcade fidelity.
+These are local-candidate results only. They are neither publication evidence nor a comparison against an authorized arcade build.
 
-`licensed_assets/` and `reference_build/` remain unavailable. Exact camera rails, spawn coordinates, attack windows, scientist timing, routes, score values, endings, dialogue, audio, geometry, animation and operator-revision behavior cannot be certified as Sega-authentic from these local replacement assets. Public recordings remain observation references only and are not asset sources.
+## Campaign and pacing contract
 
-The v0.2.1 section below is preserved as immutable published history; its lower asset/check counts and export sizes must not be reported as v0.3.0 results.
+| Surface | Current v0.5.0 measure | Certification boundary |
+|---|---:|---|
+| route graph | **43 nodes / 53 edges** | structural topology, not exact arcade staging |
+| complete chapter paths | **8 / 4 / 8 / 2** | every encoded exit is deterministically reachable |
+| ordinary enemies | **98 spawn entries / 68–71 per complete route** | declared density, not exact coordinates, order or co-op formations |
+| civilians | **20 placements / 15 encountered per route** | structural rescue coverage, not exact identities or rescue windows |
+| encounters | **34 multi-wave encounters** | every final wave begins at or after **82%** of its encounter budget |
+| environment props | **14 profiles / 105 placements / 9 state events** | active decoration and state-change coverage |
+| fixed chapter runtime outside dynamic bosses | **106.5 / 97.4 / 93.1 / 40.4 seconds** | per-chapter fixed budgets only; dynamic boss fights are excluded |
 
-## v0.2.1 status — verified distribution, 2026-08-25
+The four fixed-runtime figures must not be summed or reported as a measured campaign wall-clock duration. Player performance, dynamic boss fights, transitions and other runtime variation prevent that interpretation.
 
-This report separates two different claims:
+Nineteen decorative placements were added across the five previously sparse scenes. This raises the active total to 105 prop placements without implying that their positions reproduce the arcade layouts.
 
-1. the **original replacement contract**, which can be verified from the tracked project assets, manifests, runtime and automated tests;
-2. **exact Sega arcade certification**, which cannot be completed without an authorized revision-identifiable arcade build and the licensed Sega source masters.
+## Runtime corrections now covered
 
-The first claim is verified below. The second remains explicitly blocked and is not implied by the project name, the Arcade Authentique mode or the breadth of the current campaign.
-v0.2.1 changes source-validation portability only: ignored private reports are optional, tracked manifests/provenance remain mandatory and asset paths validate on Windows/POSIX. The replacement assets, gameplay, exports and fidelity boundary are unchanged from v0.2.0.
+### Enemies, melee and collision
 
+- Ordinary enemies are clamped to the camera-front plane and converge laterally on both X and Z instead of stopping at depth-only range.
+- A melee strike requires line of sight as well as physical contact; a wall or intact blocker cannot be bypassed by the damage check.
+- Pursuit uses swept collision so a fast step cannot tunnel through scene volumes. Intact props remain blockers until their authored state changes.
+- The repeatable combat sequence is `approach -> wind-up -> strike -> recovery -> re-attack` while a valid target remains. An attack count no longer removes the enemy.
+- Hostile projectiles are visible, shootable and destructible. Camera-targeted projectiles steer progressively toward the moving camera instead of snapping instantly, while visibility and minimum-travel gates still apply before damage.
+- In co-op, each threat resolves to one living player and retains that target while it remains valid. A player-targeted projectile locks its recipient at launch and dissipates instead of redirecting if that player becomes unavailable.
+- A civilian-assigned attacker cannot fall back to a player. If the civilian disappears before launch, no player-targeted projectile is created; an already launched civilian-targeted projectile dissipates without retargeting.
+- Every boss attack must accumulate a full, uninterrupted **0.90 seconds while visible** before commit. Losing visibility resets the telegraph, and hidden or cooldown-overshoot time cannot consume the interval.
+- Logical actor death removes the actor from `active` immediately. A visible fade is tracked in `retiring` until final cleanup, a sprite-less actor finalizes immediately, and scene cleanup drains both lifecycle sets.
 
-## Original replacement contract — verified
+These contracts improve readable, physical combat. They do not certify exact arcade enemy resistance, attack windows, per-limb reactions or placement.
 
-- **Directional actors:** 38 unique 2048×2048 RGBA Sprite3D atlases. Every identity has eight views and eight gameplay states, for 64 addressable cells per actor and 2,432 cells total. The set includes 25 dedicated enemy identities, distinct heroes, narrative actors, bosses and three additional scientist variants.
-- **Fake-3D runtime:** camera-relative direction selection covers front, rear, both sides and four diagonals. Perspective, ground anchoring, depth, occlusion and 3D body hit zones remain independent from the sprite artwork.
-- **Environment replacement:** 20 original material families produce 60 albedo/normal/ORM maps. All 33 campaign nodes have an environment profile; the catalog also contains 14 props and six destructibles with intact/broken states.
-- **Gameplay-support replacement:** seven dedicated projectile cutouts, three HUD families (eight-frame life torch, bullet round and reload icon) and four boss weak-point diagrams are present and manifest-addressable.
-- **Runtime integration:** environment and gameplay-support manifests drive node-specific backdrops, PBR surfaces, layouts, props, light decorative motion, projectile visuals, breakable transitions and the support HUD. Civilian placements can use the three dedicated scientist variants without changing route or scoring rules. The environment, enemy-profile and gameplay-support loaders now resolve their resources through `ResourceLoader`, including in exported builds.
-- **Audio replacement:** 28 distinct project-authored procedural cues provide temporary weapon, UI, ambience, boss, short music-loop and non-verbal voice-like feedback. They are not Sega recordings or performances.
-- **Provenance:** the replacement artwork and procedural audio are original project assets. No ROM, emulator extraction, video-frame extraction, ripped commercial sprite, Sega master audio or official source geometry is included.
+### HUD and text
 
-This is a production-ready replacement contract, not a claim that the generated visuals or procedural sounds are identical to Sega's protected masters. The eight-state atlas cycle is compact and game-ready; it is not the complete licensed arcade animation library with every anticipation, attack variant, localized wound, dismemberment and death frame.
+- French accents and supported HUD glyphs render cleanly in the verified local surface.
+- Unsafe decorative glyphs are sanitized without stripping ordinary accented text.
+- Player initials and mode labels are sanitized before display or persistence, preventing unsupported control or decorative characters from leaking into the HUD and leaderboard.
 
-## Gameplay structure — locally verified
+This validates the current text contract, not the original Sega fonts, logos, artwork or layout.
 
-- Four data-driven chapters and all currently encoded routes parse and resolve: four paths in chapters 1–3 and two paths in chapter 4.
-- The deterministic campaign smoke reaches Chariot, Hangedman, Hermit, the Chariot and Hangedman rematches, Magician, the ending and credits with 15/15 scientists.
-- Two independent players, six-round magazines, empty-magazine behavior, off-screen reload, projectile rules and independent gamepad aim pass the gameplay smoke.
-- Score QA records `+120` and `-100`; initials accept `COD` and transition to credits.
-- Arcade, Training, Boss Rush and Chapter Select remain implemented. These local structural checks do not certify revision-exact Sega timings.
+### Camera continuity and walkable surfaces
 
-## Validator checkpoints — 2026-08-25
+- Hermite interpolation connects the outgoing and incoming camera poses between nodes.
+- The environment swap is delayed until late in the connector, reducing the visible cut.
+- The environment is still reconstructed at the node boundary: the connector does not provide a persistent world or prove arcade-exact spatial continuity.
+- A generic ground solver handles detected floor, stair and slope surfaces. It remains a generic reconstruction rather than scene-authored arcade geometry and navigation.
 
-| Checkpoint | Verified result |
-|---|---|
-| repository/data suite | `npm.cmd test`: 271/271 |
-| complete local QA | `npm.cmd run qa`: 280/280 |
-| deterministic core | 235 assertions |
-| sprite-manifest atomicity | 63 assertions |
-| directional runtime | 38 bindings, ten representatives, all eight directions, death and cleanup states |
-| environment library | 56 assertions |
-| environment asset verification | 1,517 assertions; 20 materials, 33 nodes, six destructibles, 14 props |
-| gameplay-support library | 25 assertions |
-| gameplay-support asset verification | 83/83 |
-| enemy runtime contract | 135 assertions; 25 profiles and 25 unique types |
-| procedural audio | 354 assertions; 28 distinct cues |
-| texture import profile | 124 files, zero mismatches |
-| targeted Godot parse | 9/9 runtime scripts |
-| gameplay smoke | 2P, four chapters, six shots to empty, reload to six, independent gamepad aim and projectile rules passed |
-| score / initials smoke | `+120`, `-100`, `COD`, credits passed |
-| complete campaign smoke | chapters 1–4, required bosses/rematches, 15/15 scientists, ending and credits passed |
-| export-safe resource loading | environment, enemy-profile and gameplay-support `ResourceLoader` correction verified in exports |
-| Windows export | 161,321,616 bytes; eight-second startup check passed |
-| Linux export | 125,686,208 bytes |
-| Web export | 92,060,382 bytes total; PCK 52,215,988 bytes; WASM 39,513,091 bytes |
-| Web static QA | `qa:web`: 275/275; `verify:web`: OK |
-| public browser | Vercel `dpl_3f4W7BXUfgMjeFjVh5wGd8N4xuzs` `Ready`; no console/page errors; `crossOriginIsolated=true`; accessible 1258×622 canvas; menu and P1/continue visible |
+## Route fidelity status
 
-These results are anchored to exact commit [`c13d525`](https://github.com/darknigthmare/the-house-of-the-dead-25d/commit/c13d525d63dc9ef4e92d30c0ab5851047fa76f66), [release v0.2.1](https://github.com/darknigthmare/the-house-of-the-dead-25d/releases/tag/v0.2.1), clean run `32784226344` and `Ready` production at <https://the-house-of-the-dead-25d.vercel.app>. All uploaded digests match locally; root/PCK/WASM return HTTP 200 with WASM MIME and COOP/COEP verified. This certifies distribution integrity, not exact Sega arcade timing/assets.
+All nine documented decisions have an active structural representation, but their triggers and staging do not all match the observed arcade behavior:
 
-## Exact Sega arcade certification — blocked
+- decisions **#2 and #6** remain substitute or inaccurate route conditions;
+- decisions **#3, #4 and #9** exist, but their impact/fall and independent-door staging remains provisional;
+- the other decisions are structural approximations until checked against a revision-identifiable authorized build.
 
-`licensed_assets/` and `reference_build/` were not available for this verification pass. No authorized build revision, operator configuration, licensed manual package, source models/animations, source textures, original dialogue, score or sound-effect masters could therefore be measured or compared.
+Accordingly, the `43 nodes / 53 edges / 8/4/8/2 paths` result proves graph completeness only. It must not be described as arcade-exact route reproduction.
 
-The following remain provisional technical reconstructions rather than certified Sega-arcade matches:
+## Visual and content limits
 
-- per-frame rail coordinates, camera orientation, pauses, FOV and acceleration;
-- revision-specific spawn positions, attack windows, resistance values and hit-zone behavior;
-- every scientist deadline, route trigger, hidden-object rule and score award;
-- operator settings, continue behavior and disputed ending thresholds;
-- original dialogue timing and performance, music transitions and sound mixing;
-- exact source geometry, texture, animation, logo, title and credits presentation.
+The active sprite contract contains **38 atlases** and **2,432 addressable cells**. Each direction exposes only **eight semantic states**, not full multi-frame animation clips for every motion, attack, localized hit, dismemberment and death variant.
 
-Public recordings may inform staging, relative composition and rhythm only; they are not a lawful source for extracted frames or audio and cannot establish revision-exact numerical certification. The 2022 remake is a secondary spatial reference, not numerical canon.
+The remaining directional derivations are explicit:
 
-Certification can resume only after an authorized reference build and licensed masters are supplied locally. The next fidelity pass must record the exact revision and operator settings, timestamp each sequence, compare rails/events/routes/boss phases and audio transitions, and retain per-checkpoint evidence without replacing the verified original-asset/runtime contract.
+- **38/38** right-profile rows are mirrored from the left;
+- **25/38** back-right rows are mirrored from back-left;
+- three enemy placement variants remain intentionally marked non-arcade-exact.
+
+Those three placement warnings plus right mirroring, back-right mirroring and the eight-state semantic-animation limitation account for the current **six known content-audit warnings**. They are fidelity warnings, not suppressed errors.
+
+## Sega certification boundary
+
+Neither `LICENSED_ASSETS_ROOT` nor `REFERENCE_BUILD_ROOT` is available to this verification pass. There is therefore no authorized, revision-identifiable Sega build or licensed source-master set against which to certify:
+
+- camera rails, coordinates, FOV, pauses, transitions and timings;
+- spawn order, co-op variants, damage windows, hit zones and resistance values;
+- civilian identities, rescue deadlines, hidden items, route triggers, scoring and endings;
+- source geometry, animation, dialogue, music, sound effects, fonts, logos and credits presentation.
+
+Public recordings can support qualitative observation only; they cannot establish numerical certification or supply licensed assets. The current verdict is therefore:
+
+> **v0.5.0 is an internally verified local fan-made candidate, not a published release and not a Sega-certified arcade-exact reproduction.**

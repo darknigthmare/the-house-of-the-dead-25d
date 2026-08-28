@@ -5,6 +5,10 @@ const PickupControllerScript := preload("res://src/gameplay/pickup_controller.gd
 const BreakableObjectScript := preload("res://src/gameplay/breakable_object.gd")
 const CivilianControllerScript := preload("res://src/gameplay/civilian_controller.gd")
 const EnemySpawnEventScript := preload("res://src/gameplay/enemy_spawn_event.gd")
+const EnemyPursuitControllerScript := preload("res://src/gameplay/enemy_pursuit_controller.gd")
+const WalkableSurfaceResolverScript := preload("res://src/gameplay/walkable_surface_resolver.gd")
+const EnvironmentLayoutClassifierScript := preload("res://src/gameplay/environment_layout_classifier.gd")
+const CameraRailPathSamplerScript := preload("res://src/rail/camera_rail_path_sampler.gd")
 const DEFAULT_ATTACK_TELEGRAPH_SECONDS := 0.65
 const DEFAULT_MELEE_RANGE := 2.5
 const DEFAULT_PROJECTILE_MIN_VISIBLE_TRAVEL := 3.0
@@ -12,6 +16,8 @@ const DEFAULT_PROJECTILE_CONTACT_RANGE := 1.35
 const BOSS_ATTACK_TELEGRAPH_SECONDS := 0.9
 const BOSS_MELEE_RANGE := 2.8
 const BOSS_MELEE_RECOVERY_SECONDS := 0.55
+var retiring_actors: Array[Node3D] = []
+
 
 
 func _spawn_enemy(spawn: Dictionary) -> Node3D:
@@ -32,7 +38,9 @@ func _spawn_enemy(spawn: Dictionary) -> Node3D:
 	var attack_delay := float(spawn.get("attack_delay", 4.2))
 	actor.set_meta("attack_at", node_elapsed + attack_delay)
 	actor.set_meta("attack_ready_age", attack_delay)
-	actor.set_meta("lane", float(spawn.get("lane", actor_position.x)))
+	var authored_lane := float(spawn.get("lane", actor_position.x))
+	actor.set_meta("lane", authored_lane)
+	actor.set_meta("attack_slot_offset", clampf(authored_lane * 0.12, -0.42, 0.42))
 	actor.set_meta("ground_y", actor_position.y)
 	actor.set_meta("behavior", behavior)
 	actor.set_meta("pattern", behavior)
@@ -43,7 +51,9 @@ func _spawn_enemy(spawn: Dictionary) -> Node3D:
 	actor.set_meta("attack_telegraph_started", false)
 	actor.set_meta("attack_telegraph_complete", false)
 	actor.set_meta("attack_commit_age", 1.0e20)
-	actor.set_meta("max_attacks", int(stats.get("max_attacks", 3 if behavior == "throw_projectile" else 2)))
+	actor.set_meta("attack_state", "approach")
+	actor.set_meta("recovery_until", 0.0)
+	actor.set_meta("collision_radius", EnemyPursuitControllerScript.actor_radius(float(stats.get("scale", 1.0))))
 	actor.set_meta("weave_width", float(stats.get("weave_width", 1.0)))
 	actor.set_meta("charge_factor", float(stats.get("charge_factor", 1.9)))
 	actor.set_meta("jump_height", float(stats.get("jump_height", 1.15)))
@@ -57,6 +67,22 @@ func _spawn_enemy(spawn: Dictionary) -> Node3D:
 	actor.set_meta("armor_zones", (stats.get("armor_zones", []) as Array).duplicate())
 	actor.set_meta("armor_durability", float(stats.get("armor_durability", 0.0)))
 	actor.set_meta("target_civilian", bool(spawn.get("targets_civilian", false)))
+	actor.set_meta("minimum_front_depth", EnemyPursuitControllerScript.attack_standoff_depth(
+		behavior,
+		float(actor.get_meta("melee_range", DEFAULT_MELEE_RANGE)),
+		float(actor.get_meta("projectile_min_travel", DEFAULT_PROJECTILE_MIN_VISIBLE_TRAVEL)),
+		float(actor.get_meta("projectile_contact_range", DEFAULT_PROJECTILE_CONTACT_RANGE))
+	))
+	if behavior != "flight_swarm":
+		var initial_ground := WalkableSurfaceResolverScript.resolve_ground_height(
+			actor.global_position,
+			actor_position.y,
+			_environment_walkable_surfaces(),
+			2.0,
+			2.0
+		)
+		actor.set_meta("ground_y", initial_ground)
+		actor.global_position.y = initial_ground
 	if behavior == "ceiling_drop":
 		actor.position.y += float(actor.get_meta("drop_height", 4.2))
 	return actor
@@ -97,6 +123,14 @@ func _spawn_civilian(data: Dictionary) -> void:
 				actor_id = candidate
 				break
 	active_civilian = _create_actor(actor_id, Vector3(float(position_data[0]), float(position_data[1]), float(position_data[2])), {"health": 1.0, "speed": 0.0, "scale": 0.94, "score": 0}, "civilian")
+	var civilian_ground := WalkableSurfaceResolverScript.resolve_ground_height(
+		active_civilian.global_position,
+		active_civilian.global_position.y,
+		_environment_walkable_surfaces(),
+		2.0,
+		2.0
+	)
+	active_civilian.global_position.y = civilian_ground
 	var civilian_controller: CivilianController = CivilianControllerScript.new()
 	civilian_controller.name = "CivilianController"
 	civilian_controller.configure(data)
@@ -144,13 +178,20 @@ func _spawn_breakable(data: Dictionary) -> void:
 	}
 	var asset_id := str(data.get("asset", fallback_assets.get(current_node_id, "")))
 	var profile := environment_asset_library.get_destructible(asset_id)
+	var visual_prop_id := str(data.get("visual_prop", ""))
+	var visual_profile := environment_asset_library.get_prop(visual_prop_id) if not visual_prop_id.is_empty() else {}
+	var instance_id := str(data.get("id", asset_id))
+	var texture_path := str(visual_profile.get("path", profile.get("intact", _pickup_texture_path("medal"))))
+	var world_scale := float(data.get("scale", visual_profile.get("world_scale", profile.get("world_scale", 0.72))))
 	var actor_stats := {
 		"health": float(data.get("health", 2.0)), "speed": 0.0,
-		"scale": float(profile.get("world_scale", 0.72)), "score": int(data.get("score", 200)),
-		"custom_texture": str(profile.get("intact", _pickup_texture_path("medal"))),
-		"pixel_size": float(profile.get("pixel_size", 0.0045))
+		"scale": world_scale, "score": int(data.get("score", 200)),
+		"custom_texture": texture_path,
+		"pixel_size": float(data.get("pixel_size", visual_profile.get("pixel_size", profile.get("pixel_size", 0.0045)))),
+		"hframes": int(data.get("hframes", visual_profile.get("hframes", 1))),
+		"frame": int(data.get("frame", 0)),
 	}
-	var actor := _create_actor(asset_id if not asset_id.is_empty() else "medal", Vector3(float(position_data[0]), float(position_data[1]), float(position_data[2])), actor_stats, "breakable")
+	var actor := _create_actor(instance_id if not instance_id.is_empty() else "medal", Vector3(float(position_data[0]), float(position_data[1]), float(position_data[2])), actor_stats, "breakable")
 	var breakable_controller: BreakableObject = BreakableObjectScript.new()
 	breakable_controller.name = "BreakableObject"
 	breakable_controller.configure({
@@ -160,8 +201,22 @@ func _spawn_breakable(data: Dictionary) -> void:
 	})
 	actor.add_child(breakable_controller)
 	actor.set_meta("pickup", str(data.get("pickup", "medal")))
+	actor.set_meta("breakable_asset_id", asset_id)
+	actor.set_meta("route_target_id", str(data.get("route_target", instance_id)))
+	actor.set_meta("spawn_pickup_on_break", bool(data.get("spawn_pickup_on_break", false)))
 	actor.set_meta("broken_texture", str(profile.get("broken", "")))
+	actor.set_meta("broken_frame", int(data.get("broken_frame", 1)))
 	actor.set_meta("branch_target", true)
+	if bool(data.get("blocks_enemy_motion", true)):
+		var visual_radius := EnemyPursuitControllerScript.prop_radius(visual_prop_id)
+		var blocker_radius := float(data.get(
+			"blocker_radius",
+			visual_radius if visual_radius > 0.0 else clampf(world_scale * 0.82, 0.28, 1.2)
+		))
+		var default_height := 3.4 if visual_prop_id == "mansion_double_door" else clampf(blocker_radius * 2.0, 0.55, 2.4)
+		actor.set_meta("enemy_blocker_radius", maxf(0.0, blocker_radius))
+		actor.set_meta("enemy_blocker_height", float(data.get("blocker_height", default_height)))
+		actor.set_meta("enemy_blocker_source", "breakable")
 
 
 func _pickup_texture_path(pickup_type: String) -> String:
@@ -235,6 +290,8 @@ func _create_actor(actor_id: String, actor_position: Vector3, stats: Dictionary,
 			push_error("No item texture for %s: %s" % [role, actor_id])
 		else:
 			sprite.texture = load(item_path) as Texture2D
+		sprite.hframes = maxi(1, int(stats.get("hframes", 1)))
+		sprite.frame = clampi(int(stats.get("frame", 0)), 0, sprite.hframes - 1)
 		sprite.pixel_size = float(stats.get("pixel_size", 0.0075))
 		sprite.position.y = 0.0
 		sprite.billboard = BaseMaterial3D.BILLBOARD_FIXED_Y
@@ -310,8 +367,13 @@ func _add_hit_zone(actor: Node3D, zone: String, local_position: Vector3, zone_si
 
 
 func _update_actors(delta: float) -> void:
+	var environment_blockers := _environment_floor_blockers()
+	var walkable_surfaces := _environment_walkable_surfaces()
 	for actor in active_actors.duplicate():
-		if not is_instance_valid(actor) or bool(actor.get_meta("dead", false)):
+		if not is_instance_valid(actor):
+			active_actors.erase(actor)
+			continue
+		if bool(actor.get_meta("dead", false)):
 			continue
 		var role := str(actor.get_meta("role", "enemy"))
 		var age := float(actor.get_meta("age", 0.0)) + delta
@@ -376,6 +438,9 @@ func _update_actors(delta: float) -> void:
 		var lane := float(actor.get_meta("lane", actor.position.x))
 		var ground_y := float(actor.get_meta("ground_y", actor.position.y))
 		var forward_speed := speed
+		var authored_lane_offset := 0.0
+		if role == "projectile":
+			_update_projectile_tracking(actor, delta)
 		var uses_civilian_target_motion: bool = role == "enemy" and _update_civilian_attacker_motion(actor, behavior, delta)
 		var uses_directional_projectile_motion: bool = role == "projectile" and actor.has_meta("travel_direction")
 		if not uses_civilian_target_motion and not uses_directional_projectile_motion:
@@ -383,10 +448,10 @@ func _update_actors(delta: float) -> void:
 				"charge":
 					var charge_window := age >= float(actor.get_meta("attack_ready_age", 999.0)) - 1.25
 					forward_speed *= float(actor.get_meta("charge_factor", 1.9)) if charge_window else 0.72
-					actor.position.x = lane + sin(age * 2.2) * 0.18
+					authored_lane_offset = sin(age * 2.2) * 0.18
 				"throw_projectile":
 					forward_speed *= 0.52
-					actor.position.x = lane + sin(age * 1.7) * 0.26
+					authored_lane_offset = sin(age * 1.7) * 0.26
 				"ceiling_drop":
 					var drop_duration := maxf(0.1, float(actor.get_meta("drop_duration", 1.1)))
 					var drop_progress := clampf(age / drop_duration, 0.0, 1.0)
@@ -395,29 +460,38 @@ func _update_actors(delta: float) -> void:
 					forward_speed = 0.0 if drop_progress < 1.0 else speed * 1.15
 				"jump":
 					actor.position.y = ground_y + absf(sin(age * 3.7)) * float(actor.get_meta("jump_height", 1.15))
-					actor.position.x = lane + sin(age * 2.4) * 0.4
+					authored_lane_offset = sin(age * 2.4) * 0.4
 				"flight_swarm":
 					var swarm_width := float(actor.get_meta("weave_width", 1.0))
 					actor.position.y = ground_y + sin(age * 5.1) * 0.52
-					actor.position.x = lane + sin(age * 3.6) * swarm_width
+					authored_lane_offset = sin(age * 3.6) * swarm_width
 					forward_speed *= 1.1
 				"aquatic_weave":
 					var aquatic_width := float(actor.get_meta("weave_width", 1.1))
-					actor.position.x = lane + sin(age * 2.9) * aquatic_width
+					authored_lane_offset = sin(age * 2.9) * aquatic_width
 					actor.position.y = ground_y + 0.12 + sin(age * 5.8) * 0.16
 				"armored_advance":
-					actor.position.x = lane + sin(age * 1.25) * 0.16
+					authored_lane_offset = sin(age * 1.25) * 0.16
 					forward_speed *= 0.78
 				"heavy_weapon":
-					actor.position.x = lane + sin(age * 0.9) * 0.12
+					authored_lane_offset = sin(age * 0.9) * 0.12
 					forward_speed *= 0.58
 				"projectile_weave":
-					actor.position.x = lane + sin(age * 7.2) * 0.48
+					authored_lane_offset = sin(age * 7.2) * 0.48
 					actor.position.y = ground_y + sin(age * 8.4) * 0.22
 				_:
 					actor.position.y = ground_y + sin(age * 4.0) * 0.035
 		if role == "enemy" and not uses_civilian_target_motion:
-			if bool(actor.get_meta("attack_telegraph_started", false)):
+			var recovering := int(actor.get_meta("attacks", 0)) > 0 and age < float(actor.get_meta("recovery_until", 0.0))
+			var minimum_depth := float(actor.get_meta("minimum_front_depth", EnemyPursuitControllerScript.MIN_MELEE_FRONT_DEPTH))
+			var reached_attack_position := false
+			if behavior == "throw_projectile":
+				if camera_3d != null and is_instance_valid(camera_3d):
+					var camera_forward := -camera_3d.global_transform.basis.z
+					reached_attack_position = EnemyPursuitControllerScript.camera_depth(actor.global_position, camera_3d.global_position, camera_forward) <= minimum_depth + 0.02
+			else:
+				reached_attack_position = _actor_has_melee_contact(actor)
+			if bool(actor.get_meta("attack_telegraph_started", false)) or recovering or reached_attack_position:
 				forward_speed = 0.0
 			elif age >= float(actor.get_meta("attack_ready_age", 999.0)):
 				forward_speed = maxf(forward_speed, float(actor.get_meta("attack_approach_speed", 1.25)))
@@ -426,13 +500,57 @@ func _update_actors(delta: float) -> void:
 			if not travel_direction.is_zero_approx():
 				actor.global_position += travel_direction.normalized() * forward_speed * delta
 		elif not uses_civilian_target_motion:
-			actor.position.z += forward_speed * delta
+			if role == "enemy" and camera_3d != null and is_instance_valid(camera_3d):
+				var camera_forward := EnemyPursuitControllerScript.flat_camera_forward(-camera_3d.global_transform.basis.z)
+				if behavior == "throw_projectile":
+					actor.position.x = move_toward(actor.position.x, lane + authored_lane_offset, maxf(0.1, speed) * delta)
+					actor.global_position -= camera_forward * forward_speed * delta
+				else:
+					var minimum_depth := float(actor.get_meta("minimum_front_depth", EnemyPursuitControllerScript.MIN_MELEE_FRONT_DEPTH))
+					var attack_target := EnemyPursuitControllerScript.attack_point(
+						camera_3d.global_position,
+						camera_forward,
+						minimum_depth,
+						actor.global_position.y,
+						float(actor.get_meta("attack_slot_offset", 0.0)) + authored_lane_offset
+					)
+					actor.global_position = EnemyPursuitControllerScript.step_toward_attack_point(
+						actor.global_position,
+						attack_target,
+						forward_speed,
+						delta
+					)
+			else:
+				if not is_zero_approx(authored_lane_offset):
+					actor.position.x = lane + authored_lane_offset
+				actor.position.z += forward_speed * delta
+		if role == "enemy":
+			var collision_radius := float(actor.get_meta("collision_radius", EnemyPursuitControllerScript.DEFAULT_ACTOR_RADIUS))
+			if camera_3d != null and is_instance_valid(camera_3d):
+				actor.global_position = EnemyPursuitControllerScript.resolve_camera_front_motion(
+					movement_origin,
+					actor.global_position,
+					camera_3d.global_position,
+					-camera_3d.global_transform.basis.z,
+					float(actor.get_meta("minimum_front_depth", EnemyPursuitControllerScript.MIN_MELEE_FRONT_DEPTH)),
+					collision_radius,
+					environment_blockers
+				)
+			else:
+				actor.global_position = EnemyPursuitControllerScript.resolve_floor_prop_motion(
+					movement_origin, actor.global_position, collision_radius, environment_blockers
+				)
+			_snap_enemy_to_walkable_surface(actor, walkable_surfaces)
 		var moved_distance: float = movement_origin.distance_to(actor.global_position)
 		if role == "projectile":
 			actor.set_meta("travelled_distance", float(actor.get_meta("travelled_distance", 0.0)) + moved_distance)
 			if _actor_is_attack_visible(actor):
 				actor.set_meta("seen_by_camera", true)
 				actor.set_meta("visible_travel_distance", float(actor.get_meta("visible_travel_distance", 0.0)) + moved_distance)
+			if EnemyPursuitControllerScript.segment_hits_floor_prop(movement_origin, actor.global_position, 0.12, environment_blockers):
+				_spawn_impact(actor.global_position, "projectile")
+				_kill_actor(actor, -1, false)
+				continue
 			_resolve_projectile_contact(actor)
 		elif state in ["node", "boss"]:
 			_update_enemy_attack(actor, age)
@@ -456,6 +574,108 @@ func _animate_actor(actor: Node3D) -> void:
 	var direction := _apply_directional_sprite_frame(actor, local_frame)
 	actor.set_meta("direction_index", direction)
 	actor.set_meta("frame", sprite.frame)
+
+
+func _constrain_enemy_to_encounter_front(actor: Node3D) -> void:
+	if camera_3d == null or not is_instance_valid(camera_3d):
+		return
+	var minimum_depth := float(actor.get_meta("minimum_front_depth", EnemyPursuitControllerScript.MIN_MELEE_FRONT_DEPTH))
+	actor.global_position = EnemyPursuitControllerScript.clamp_to_camera_front(
+		actor.global_position,
+		camera_3d.global_position,
+		-camera_3d.global_transform.basis.z,
+		minimum_depth
+	)
+
+
+func _environment_floor_blockers() -> Array[Dictionary]:
+	var blockers: Array[Dictionary] = []
+	if world_root == null or not is_instance_valid(world_root):
+		return blockers
+	for child in world_root.get_children():
+		var sprite := child as Sprite3D
+		if sprite != null:
+			var radius := float(sprite.get_meta("enemy_blocker_radius", 0.0))
+			if radius <= 0.0:
+				continue
+			var prop_id := str(sprite.get_meta("environment_prop_id", ""))
+			if prop_id in ["estate_gate", "mansion_double_door"] and sprite.frame > 0:
+				continue
+			var half_height := maxf(0.2, float(sprite.get_meta("enemy_blocker_height", 1.0)) * 0.5)
+			blockers.append({
+				"position": sprite.global_position,
+				"radius": radius,
+				"min_y": sprite.global_position.y - half_height,
+				"max_y": sprite.global_position.y + half_height,
+				"source": "prop",
+			})
+			continue
+		var mesh_instance := child as MeshInstance3D
+		if mesh_instance == null or not mesh_instance.has_meta("enemy_blocker_half_extents"):
+			continue
+		var half_extents: Vector2 = mesh_instance.get_meta("enemy_blocker_half_extents", Vector2.ZERO) as Vector2
+		if half_extents.x <= 0.0 or half_extents.y <= 0.0:
+			continue
+		var mesh_half_height := maxf(0.2, float(mesh_instance.get_meta("enemy_blocker_height", 1.0)) * 0.5)
+		var mesh_position := mesh_instance.global_position if mesh_instance.is_inside_tree() else mesh_instance.position
+		var mesh_rotation_y := mesh_instance.global_rotation.y if mesh_instance.is_inside_tree() else mesh_instance.rotation.y
+		blockers.append({
+			"position": mesh_position,
+			"half_extents": half_extents,
+			"rotation_y": mesh_rotation_y,
+			"min_y": mesh_position.y - mesh_half_height,
+			"max_y": mesh_position.y + mesh_half_height,
+			"source": "layout_mesh",
+		})
+	for actor in active_actors:
+		if not is_instance_valid(actor) or bool(actor.get_meta("dead", false)) or str(actor.get_meta("role", "")) != "breakable":
+			continue
+		var actor_radius := maxf(0.0, float(actor.get_meta("enemy_blocker_radius", 0.0)))
+		if actor_radius <= 0.0:
+			continue
+		var actor_height := maxf(0.2, float(actor.get_meta("enemy_blocker_height", 1.0)))
+		blockers.append({
+			"position": actor.global_position,
+			"radius": actor_radius,
+			"min_y": actor.global_position.y - actor_height * 0.5,
+			"max_y": actor.global_position.y + actor_height * 0.5,
+			"source": "breakable",
+			"actor": actor,
+		})
+	return blockers
+
+
+func _environment_walkable_surfaces() -> Array[Dictionary]:
+	var surfaces: Array[Dictionary] = []
+	if world_root == null or not is_instance_valid(world_root):
+		return surfaces
+	for child in world_root.get_children():
+		var mesh_instance := child as MeshInstance3D
+		if mesh_instance == null or not mesh_instance.has_meta("enemy_walkable_dimensions"):
+			continue
+		var dimensions: Vector3 = mesh_instance.get_meta("enemy_walkable_dimensions", Vector3.ZERO) as Vector3
+		if dimensions.x <= 0.0 or dimensions.y <= 0.0 or dimensions.z <= 0.0:
+			continue
+		var surface_transform := mesh_instance.global_transform if mesh_instance.is_inside_tree() else mesh_instance.transform
+		surfaces.append(WalkableSurfaceResolverScript.make_box_surface(
+			surface_transform,
+			dimensions,
+			str(mesh_instance.name)
+		))
+	return surfaces
+
+
+func _snap_enemy_to_walkable_surface(actor: Node3D, surfaces: Array[Dictionary]) -> void:
+	if not is_instance_valid(actor) or surfaces.is_empty():
+		return
+	var behavior := str(actor.get_meta("behavior", "walk"))
+	if behavior == "flight_swarm":
+		return
+	var previous_ground := float(actor.get_meta("ground_y", actor.global_position.y))
+	var vertical_offset := actor.global_position.y - previous_ground
+	var resolved_ground := WalkableSurfaceResolverScript.resolve_ground_height(actor.global_position, previous_ground, surfaces)
+	actor.set_meta("ground_y", resolved_ground)
+	actor.global_position.y = resolved_ground + vertical_offset
 
 
 func _has_live_civilian_target(actor: Node3D) -> bool:
@@ -497,6 +717,7 @@ func _update_enemy_attack(actor: Node3D, age: float) -> bool:
 	if not is_instance_valid(actor) or bool(actor.get_meta("dead", false)) or str(actor.get_meta("role", "")) != "enemy":
 		return false
 	if age < float(actor.get_meta("attack_ready_age", 999.0)):
+		actor.set_meta("attack_state", "recovery" if int(actor.get_meta("attacks", 0)) > 0 else "approach")
 		return false
 	var behavior := str(actor.get_meta("behavior", "walk"))
 	var requires_contact := behavior != "throw_projectile"
@@ -506,6 +727,7 @@ func _update_enemy_attack(actor: Node3D, age: float) -> bool:
 		if not visible or not has_contact:
 			return false
 		var telegraph_seconds := maxf(0.2, float(actor.get_meta("attack_telegraph_seconds", DEFAULT_ATTACK_TELEGRAPH_SECONDS)))
+		actor.set_meta("attack_state", "windup")
 		actor.set_meta("attack_telegraph_started", true)
 		actor.set_meta("attack_telegraph_complete", false)
 		actor.set_meta("attack_commit_age", age + telegraph_seconds)
@@ -520,6 +742,7 @@ func _update_enemy_attack(actor: Node3D, age: float) -> bool:
 		actor.set_meta("attack_animation_timer", maxf(float(actor.get_meta("attack_animation_timer", 0.0)), remaining))
 		return false
 	actor.set_meta("attack_telegraph_complete", true)
+	actor.set_meta("attack_state", "strike")
 	return _actor_attack(actor)
 
 
@@ -527,6 +750,7 @@ func _cancel_attack_telegraph(actor: Node3D, next_ready_age: float) -> void:
 	actor.set_meta("attack_telegraph_started", false)
 	actor.set_meta("attack_telegraph_complete", false)
 	actor.set_meta("attack_commit_age", 1.0e20)
+	actor.set_meta("attack_state", "approach")
 	actor.set_meta("attack_ready_age", next_ready_age)
 
 
@@ -534,11 +758,12 @@ func _finish_enemy_attack_cycle(actor: Node3D) -> void:
 	var age := float(actor.get_meta("age", 0.0))
 	var period := maxf(0.35, float(actor.get_meta("attack_period", 1.8)))
 	_cancel_attack_telegraph(actor, age + period)
+	actor.set_meta("attack_state", "recovery")
+	actor.set_meta("recovery_until", age + period)
+	actor.set_meta("attack_animation_timer", maxf(float(actor.get_meta("attack_animation_timer", 0.0)), 0.2))
 	actor.set_meta("attack_at", node_elapsed + period)
 	var attacks := int(actor.get_meta("attacks", 0)) + 1
 	actor.set_meta("attacks", attacks)
-	if attacks >= int(actor.get_meta("max_attacks", 2)):
-		_kill_actor(actor, -1, false)
 
 
 func _actor_has_melee_contact(actor: Node3D) -> bool:
@@ -552,7 +777,13 @@ func _actor_has_melee_contact(actor: Node3D) -> bool:
 		target_position = active_civilian.global_position + Vector3.UP * (0.9 * civilian_scale)
 	var attacker_scale := maxf(0.25, float(actor.get_meta("visual_scale", 1.0)))
 	var attacker_contact_point := actor.global_position + Vector3.UP * (0.9 * attacker_scale)
-	return attacker_contact_point.distance_to(target_position) <= maxf(0.5, float(actor.get_meta("melee_range", DEFAULT_MELEE_RANGE)))
+	if attacker_contact_point.distance_to(target_position) > maxf(0.5, float(actor.get_meta("melee_range", DEFAULT_MELEE_RANGE))):
+		return false
+	# Sprite visibility does not imply render visibility: walls and closed props
+	# can depth-occlude a billboard while its projected focus remains on-screen.
+	return not EnemyPursuitControllerScript.segment_hits_floor_prop(
+		attacker_contact_point, target_position, 0.04, _environment_floor_blockers()
+	)
 
 
 func _actor_is_attack_visible(actor: Node3D) -> bool:
@@ -587,8 +818,12 @@ func _actor_attack(actor: Node3D) -> bool:
 			if not _has_live_civilian_target(actor):
 				return false
 			_kill_civilian(active_civilian, false, 0, &"enemy_melee_contact")
+			actor.set_meta("target_civilian", false)
 		else:
-			_damage_player(_first_active_player(), 1, "enemy_melee")
+			var target_player_index := _target_player_for_threat(actor)
+			if target_player_index < 0:
+				return false
+			_damage_player(target_player_index, 1, "enemy_melee")
 		performed = true
 	if performed:
 		_finish_enemy_attack_cycle(actor)
@@ -604,7 +839,15 @@ func _spawn_enemy_projectile(owner: Node3D) -> Node3D:
 	if gameplay_support_library.get_projectile(projectile_id).is_empty():
 		return null
 	var projectile_stats := {"health": 1.0, "speed": float(owner.get_meta("projectile_speed", 4.0)), "scale": 0.72, "score": 0, "pixel_size": 0.0026}
+	var authored_civilian_target := bool(owner.get_meta("target_civilian", false))
 	var targets_civilian := _has_live_civilian_target(owner)
+	if authored_civilian_target and not targets_civilian:
+		return null
+	var target_player_index := -1
+	if not targets_civilian:
+		target_player_index = _target_player_for_threat(owner)
+		if target_player_index < 0:
+			return null
 	var projectile := _create_actor(projectile_id, owner.position + Vector3(0.0, 1.1, 0.45), projectile_stats, "projectile")
 	projectile.set_meta("destructible", true)
 	projectile.set_meta("launch_telegraphed", true)
@@ -620,17 +863,51 @@ func _spawn_enemy_projectile(owner: Node3D) -> Node3D:
 	var contact_range := float(owner.get_meta("projectile_contact_range", DEFAULT_PROJECTILE_CONTACT_RANGE))
 	projectile.set_meta("contact_range", contact_range)
 	projectile.set_meta("target_civilian", targets_civilian)
+	if not targets_civilian:
+		projectile.set_meta("target_player_index", target_player_index)
+	var target_position := camera_3d.global_position if camera_3d != null and is_instance_valid(camera_3d) else projectile.global_position + Vector3.BACK * 8.0
 	if targets_civilian:
-		var target_position := active_civilian.global_position + Vector3.UP
-		var target_offset := target_position - projectile.global_position
-		if not target_offset.is_zero_approx():
-			projectile.set_meta("behavior", "targeted_projectile")
-			projectile.set_meta("pattern", "targeted_projectile")
-			projectile.set_meta("travel_direction", target_offset.normalized())
-			projectile.set_meta("target_position", target_position)
+		target_position = active_civilian.global_position + Vector3.UP
+	var target_offset := target_position - projectile.global_position
+	if not target_offset.is_zero_approx():
+		projectile.set_meta("behavior", "targeted_projectile")
+		projectile.set_meta("pattern", "targeted_projectile")
+		projectile.set_meta("travel_direction", target_offset.normalized())
+		projectile.set_meta("target_position", target_position)
+		projectile.set_meta("tracks_camera_target", not targets_civilian)
+		projectile.set_meta("tracking_turn_rate", deg_to_rad(210.0))
+		if targets_civilian:
 			minimum_visible_travel = minf(minimum_visible_travel, maxf(0.5, target_offset.length() - contact_range - 0.2))
 	projectile.set_meta("minimum_visible_travel", minimum_visible_travel)
 	return projectile
+
+
+func _update_projectile_tracking(projectile: Node3D, delta: float) -> void:
+	if (
+		not is_instance_valid(projectile)
+		or not bool(projectile.get_meta("tracks_camera_target", false))
+		or camera_3d == null
+		or not is_instance_valid(camera_3d)
+	):
+		return
+	# Once a projectile has been presented to the player, it cannot steer while
+	# off-screen and curve back invisibly. The existing contact gate still
+	# requires current visibility and minimum visible travel.
+	if bool(projectile.get_meta("seen_by_camera", false)) and not _actor_is_attack_visible(projectile):
+		return
+	var target_position := camera_3d.global_position
+	var desired := target_position - projectile.global_position
+	if desired.is_zero_approx():
+		return
+	desired = desired.normalized()
+	var current: Vector3 = projectile.get_meta("travel_direction", desired) as Vector3
+	current = desired if current.is_zero_approx() else current.normalized()
+	var angle := current.angle_to(desired)
+	var maximum_turn := maxf(0.0, float(projectile.get_meta("tracking_turn_rate", deg_to_rad(210.0)))) * maxf(0.0, delta)
+	var weight := 1.0 if angle <= maximum_turn or angle <= 0.00001 else clampf(maximum_turn / angle, 0.0, 1.0)
+	var steered := current.slerp(desired, weight)
+	projectile.set_meta("travel_direction", desired if steered.is_zero_approx() else steered.normalized())
+	projectile.set_meta("target_position", target_position)
 
 
 func _resolve_projectile_contact(projectile: Node3D) -> bool:
@@ -644,7 +921,8 @@ func _resolve_projectile_contact(projectile: Node3D) -> bool:
 	can_damage = can_damage and float(projectile.get_meta("visible_travel_distance", 0.0)) >= maxf(0.5, float(projectile.get_meta("minimum_visible_travel", DEFAULT_PROJECTILE_MIN_VISIBLE_TRAVEL)))
 	var aimed_at_civilian := bool(projectile.get_meta("target_civilian", false))
 	var target_is_civilian := aimed_at_civilian and _has_live_civilian_target(projectile)
-	var target_available := not aimed_at_civilian or target_is_civilian
+	var target_player_index := int(projectile.get_meta("target_player_index", -1))
+	var target_available := target_is_civilian if aimed_at_civilian else _is_live_player(target_player_index)
 	var target_position := camera_3d.global_position if camera_3d != null else Vector3.ZERO
 	if target_is_civilian:
 		target_position = active_civilian.global_position + Vector3.UP
@@ -652,14 +930,14 @@ func _resolve_projectile_contact(projectile: Node3D) -> bool:
 		target_position = projectile.get_meta("target_position", projectile.global_position) as Vector3
 	can_damage = can_damage and target_available
 	var has_contact := projectile.global_position.distance_to(target_position) <= maxf(0.5, float(projectile.get_meta("contact_range", DEFAULT_PROJECTILE_CONTACT_RANGE)))
-	if aimed_at_civilian and not target_available and has_contact:
+	if not target_available and has_contact:
 		_kill_actor(projectile, -1, false)
 		return false
 	if can_damage and has_contact:
 		if target_is_civilian:
 			_kill_civilian(active_civilian, false, 0, &"enemy_projectile_contact")
 		else:
-			_damage_player(_first_active_player(), 1, "enemy_projectile")
+			_damage_player(target_player_index, 1, "enemy_projectile")
 		_kill_actor(projectile, -1, false)
 		return true
 	if camera_3d != null and is_instance_valid(camera_3d):
@@ -712,7 +990,10 @@ func _raycast_actor(screen_position: Vector2) -> Dictionary:
 	var collider := result.get("collider") as Area3D
 	if collider == null or not collider.has_meta("actor"):
 		return {}
-	return {"actor": collider.get_meta("actor"), "zone": collider.get_meta("zone", "torso"), "multiplier": collider.get_meta("multiplier", 1.0)}
+	var hit_actor := collider.get_meta("actor") as Node3D
+	if not is_instance_valid(hit_actor) or bool(hit_actor.get_meta("dead", false)):
+		return {}
+	return {"actor": hit_actor, "zone": collider.get_meta("zone", "torso"), "multiplier": collider.get_meta("multiplier", 1.0)}
 
 
 func _screen_pick_actor(screen_position: Vector2) -> Dictionary:
@@ -834,20 +1115,49 @@ func _kill_actor(actor: Node3D, player_index: int, award: bool) -> void:
 		var kill_shot_type := "headshot_kill" if hit_zone == "head" else "%s_kill" % hit_zone
 		_add_score(player_index, int(actor.get_meta("score", 80)), "TARGET DOWN", str(actor.get_meta("actor_id", "enemy")), kill_shot_type)
 	if role == "breakable":
-		destroyed_breakable_id = str(actor.get_meta("actor_id", ""))
+		destroyed_breakable_id = str(actor.get_meta("breakable_asset_id", actor.get_meta("actor_id", "")))
+		var route_target_id := str(actor.get_meta("route_target_id", ""))
+		var destroyed_targets := route_condition_context.get("destroyed_route_targets", []) as Array
+		if not route_target_id.is_empty() and not destroyed_targets.has(route_target_id):
+			destroyed_targets.append(route_target_id)
+			route_condition_context["destroyed_route_targets"] = destroyed_targets
+		if (
+			str(route_condition_context.get("selected_route_target_id", "")).is_empty()
+			and RouteOutcomePolicyScript.accepts_route_target(current_node, route_target_id)
+		):
+			route_condition_context["selected_route_target_id"] = route_target_id
+			_set_subtitle("Route selected. Moving through the chosen steel door.", 2.0)
 		var pickup_type := str(actor.get_meta("pickup", "medal"))
 		var breakable_controller := actor.get_node_or_null("BreakableObject") as BreakableObject
 		if breakable_controller != null:
 			pickup_type = str(breakable_controller.get_reward().get("pickup", pickup_type))
-		_apply_pickup(pickup_type, player_index)
+		if bool(actor.get_meta("spawn_pickup_on_break", false)) and not pickup_type.is_empty():
+			var reward_position := actor.position + Vector3(0.0, 0.48, 0.0)
+			_spawn_pickup({
+				"id": "%s_revealed_%d" % [str(actor.get_meta("actor_id", "secret")), Time.get_ticks_msec()],
+				"pickup": pickup_type,
+				"position": [reward_position.x, reward_position.y, reward_position.z],
+				"motion": "hop",
+			})
+			# A hidden item is collected by shooting it, like the arcade scenery
+			# rewards. Restart the clear hold so the reveal cannot be erased by an
+			# immediate rail transition.
+			node_clear_elapsed = 0.0
+		else:
+			_apply_pickup(pickup_type, player_index)
 		var broken_path := str(actor.get_meta("broken_texture", ""))
 		var breakable_sprite := actor.get_node_or_null("Sprite3D") as Sprite3D
 		if breakable_sprite != null and not broken_path.is_empty():
 			breakable_sprite.texture = load(broken_path) as Texture2D
+		elif breakable_sprite != null and breakable_sprite.hframes > 1:
+			breakable_sprite.frame = clampi(int(actor.get_meta("broken_frame", 1)), 0, breakable_sprite.hframes - 1)
 	if actor == current_boss:
 		_on_boss_defeated()
+	active_actors.erase(actor)
 	var sprite := actor.get_node_or_null("Sprite3D") as Sprite3D
 	if sprite != null:
+		if not retiring_actors.has(actor):
+			retiring_actors.append(actor)
 		if role != "breakable" and sprite.hframes * sprite.vframes >= 64:
 			actor.set_meta("animation_state", 7)
 			_apply_directional_sprite_frame(actor, 7)
@@ -856,8 +1166,16 @@ func _kill_actor(actor: Node3D, player_index: int, award: bool) -> void:
 			tween.tween_interval(0.42)
 		tween.tween_property(sprite, "modulate:a", 0.0, 0.5)
 		tween.parallel().tween_property(actor, "position:y", actor.position.y - 0.35, 0.5)
-		tween.tween_callback(actor.queue_free)
+		tween.tween_callback(Callable(self, "_finalize_actor_retirement").bind(actor))
+	else:
+		_finalize_actor_retirement(actor)
+
+
+func _finalize_actor_retirement(actor: Node3D) -> void:
 	active_actors.erase(actor)
+	retiring_actors.erase(actor)
+	if is_instance_valid(actor):
+		actor.queue_free()
 
 
 func _kill_civilian(civilian: Node3D, by_player: bool, player_index: int = 0, visible_reason: StringName = &"enemy_melee_contact") -> void:
@@ -930,8 +1248,13 @@ func _add_score(player_index: int, value: int, source: String, target: String = 
 
 
 func _damage_player(player_index: int, amount: int, source: String, score_penalty: bool = true) -> void:
-	if player_index < 0 or player_index >= players.size() or not bool(players[player_index].active):
+	if not _is_live_player(player_index):
 		return
+	if amount > 0 and state == "node" and RouteOutcomePolicyScript.accepts_visible_enemy_impact(current_node, source):
+		if not bool(route_condition_context.get("visible_enemy_impact_received", false)):
+			route_condition_context["visible_enemy_impact_received"] = true
+			route_condition_context["visible_enemy_impact_source"] = source
+			_set_subtitle("The enemy impact gives way beneath the agents!", 2.2)
 	players[player_index].lives = maxi(0, int(players[player_index].lives) - amount)
 	_play_sfx("hit")
 	if score_penalty:
@@ -944,12 +1267,75 @@ func _damage_player(player_index: int, amount: int, source: String, score_penalt
 	if int(players[player_index].lives) <= 0:
 		_start_continue(player_index)
 
+func _is_live_player(player_index: int) -> bool:
+	return (
+		player_index >= 0
+		and player_index < players.size()
+		and bool(players[player_index].get("active", false))
+		and int(players[player_index].get("lives", 0)) > 0
+	)
+
+
 
 func _first_active_player() -> int:
 	for index in players.size():
 		if bool(players[index].active) and int(players[index].lives) > 0:
 			return index
 	return 0
+
+
+static func select_threat_target_player(player_states: Array[Dictionary], threat_screen_position: Vector2, previous_target: int = -1) -> int:
+	if previous_target >= 0 and previous_target < player_states.size():
+		var previous := player_states[previous_target]
+		if bool(previous.get("active", false)) and int(previous.get("lives", 0)) > 0:
+			return previous_target
+	var selected := -1
+	var nearest_distance_squared := INF
+	for index in player_states.size():
+		var player := player_states[index]
+		if not bool(player.get("active", false)) or int(player.get("lives", 0)) <= 0:
+			continue
+		var cursor := player.get("cursor", threat_screen_position) as Vector2
+		var distance_squared := cursor.distance_squared_to(threat_screen_position)
+		if distance_squared < nearest_distance_squared:
+			nearest_distance_squared = distance_squared
+			selected = index
+	return selected
+
+
+static func boss_telegraph_step(timer: float, started: bool, visible: bool, delta: float) -> Dictionary:
+	var next_timer := timer - maxf(0.0, delta)
+	var next_started := started
+	var started_this_tick := false
+	if next_timer <= BOSS_ATTACK_TELEGRAPH_SECONDS:
+		if not visible:
+			next_started = false
+			next_timer = maxf(next_timer, BOSS_ATTACK_TELEGRAPH_SECONDS)
+		elif not next_started:
+			next_started = true
+			started_this_tick = true
+			# Cooldown overshoot must never consume the visible warning.
+			next_timer = BOSS_ATTACK_TELEGRAPH_SECONDS
+	return {
+		"timer": next_timer,
+		"started": next_started,
+		"started_this_tick": started_this_tick,
+		"ready": next_started and not started_this_tick and visible and next_timer <= 0.0,
+	}
+
+
+func _target_player_for_threat(threat: Node3D, refresh: bool = false) -> int:
+	if not is_instance_valid(threat):
+		return select_threat_target_player(players, active_play_rect.get_center(), -1)
+	var previous_target := -1 if refresh else int(threat.get_meta("target_player_index", -1))
+	var threat_screen_position := active_play_rect.get_center()
+	if camera_3d != null and is_instance_valid(camera_3d):
+		var focus := threat.global_position + Vector3(0.0, 0.85 * maxf(0.25, float(threat.get_meta("visual_scale", 1.0))), 0.0)
+		if not camera_3d.is_position_behind(focus):
+			threat_screen_position = camera_3d.unproject_position(focus)
+	var selected := select_threat_target_player(players, threat_screen_position, previous_target)
+	threat.set_meta("target_player_index", selected)
+	return selected
 
 
 func _has_active_hostiles() -> bool:
@@ -963,7 +1349,11 @@ func _clear_actors() -> void:
 	for actor in active_actors:
 		if is_instance_valid(actor):
 			actor.queue_free()
+	for actor in retiring_actors:
+		if is_instance_valid(actor):
+			actor.queue_free()
 	active_actors.clear()
+	retiring_actors.clear()
 	current_boss = null
 	active_civilian = null
 
@@ -1009,11 +1399,18 @@ func _spawn_limb(at: Vector3) -> void:
 func _update_camera_rail(_delta: float) -> void:
 	if state != "node":
 		return
-	var progress := clampf(node_elapsed / rail_duration, 0.0, 1.0)
-	var eased := progress * progress * (3.0 - 2.0 * progress)
-	camera_3d.position = rail_origin.lerp(rail_target, eased)
-	var look_x := sin(progress * PI) * float((current_node.get("rail", {}) as Dictionary).get("sweep", 0.7))
-	camera_3d.look_at(Vector3(look_x, 1.25, -9.0 + progress * 2.0), Vector3.UP)
+	var sample := CameraRailPathSamplerScript.sample(
+		current_node,
+		rail_origin,
+		rail_target,
+		node_elapsed,
+		rail_duration,
+		SequenceTimingPolicyScript.campaign_policy(campaign)
+	)
+	camera_3d.position = sample.get("position", rail_origin) as Vector3
+	var look_target := sample.get("look_target", Vector3(0.0, 1.25, -9.0)) as Vector3
+	if camera_3d.position.distance_squared_to(look_target) > 0.0001:
+		camera_3d.look_at(look_target, Vector3.UP)
 
 
 func _start_boss(boss_id: String) -> void:
@@ -1036,13 +1433,13 @@ func _start_boss(boss_id: String) -> void:
 	current_boss.set_meta("attack_home_position", current_boss.position)
 	current_boss.set_meta("melee_contact_position", current_boss.position)
 	boss_panel.visible = true
-	boss_name_label.text = "%s — TYPE %s" % [str(stats.name), str(stats.type)]
+	boss_name_label.text = _safe_ui_text("%s — TYPE %s" % [str(stats.name), str(stats.type)])
 	boss_health_bar.max_value = boss_max_health
 	boss_health_bar.value = boss_max_health
-	boss_weak_label.text = str(stats.weak_hint)
+	boss_weak_label.text = _safe_ui_text(str(stats.weak_hint))
 	var weakpoint_profile := gameplay_support_library.get_weakpoint(boss_id)
 	boss_weakpoint_texture.texture = gameplay_support_library.load_texture(weakpoint_profile)
-	objective_label.text = "DESTROY THE BOSS"
+	objective_label.text = _safe_ui_text("DESTROY THE BOSS")
 	_set_subtitle(str(stats.intro), 4.2)
 	if boss_id == "hangedman":
 		for index in 5:
@@ -1064,7 +1461,6 @@ func _boss_stats(boss_id: String) -> Dictionary:
 func _update_boss(delta: float) -> void:
 	if current_boss == null or not is_instance_valid(current_boss):
 		return
-	boss_attack_timer -= delta
 	boss_weak_window = maxf(0.0, boss_weak_window - delta)
 	var boss_id := str(current_boss.get_meta("boss_id", "chariot"))
 	var is_melee_boss := boss_id in ["chariot", "hangedman"]
@@ -1073,22 +1469,31 @@ func _update_boss(delta: float) -> void:
 	current_boss.set_meta("attack_home_position", home_position)
 	var recovery_remaining := maxf(0.0, float(current_boss.get_meta("melee_recovery_remaining", 0.0)) - delta)
 	current_boss.set_meta("melee_recovery_remaining", recovery_remaining)
+	var telegraph_state: Dictionary = {"ready": false}
 	if recovery_remaining > 0.0 and is_melee_boss:
 		var recovery_progress := 1.0 - recovery_remaining / BOSS_MELEE_RECOVERY_SECONDS
 		var contact_position: Vector3 = current_boss.get_meta("melee_contact_position", home_position) as Vector3
 		current_boss.position = contact_position.lerp(home_position, smoothstep(0.0, 1.0, recovery_progress))
 	else:
 		current_boss.position = home_position
+		var boss_visible := _actor_is_attack_visible(current_boss)
+		telegraph_state = boss_telegraph_step(
+			boss_attack_timer,
+			bool(current_boss.get_meta("attack_telegraph_started", false)),
+			boss_visible,
+			delta
+		)
+		boss_attack_timer = float(telegraph_state.timer)
+		current_boss.set_meta("attack_telegraph_started", bool(telegraph_state.started))
 		if boss_attack_timer <= BOSS_ATTACK_TELEGRAPH_SECONDS:
-			if not _actor_is_attack_visible(current_boss):
+			if not boss_visible:
 				current_boss.set_meta("attack_telegraph_started", false)
 				current_boss.set_meta("attack_telegraph_complete", false)
 				current_boss.set_meta("telegraph_played", false)
-				boss_attack_timer = maxf(boss_attack_timer, 0.35)
 			else:
-				if not bool(current_boss.get_meta("attack_telegraph_started", false)):
-					current_boss.set_meta("attack_telegraph_started", true)
+				if bool(telegraph_state.started_this_tick):
 					current_boss.set_meta("telegraph_played", true)
+					_target_player_for_threat(current_boss, true)
 					_play_sfx("boss_telegraph")
 				var telegraph_remaining := maxf(0.0, boss_attack_timer)
 				current_boss.set_meta("attack_animation_timer", maxf(float(current_boss.get_meta("attack_animation_timer", 0.0)), telegraph_remaining))
@@ -1097,7 +1502,7 @@ func _update_boss(delta: float) -> void:
 					var contact_position := _boss_melee_contact_position(home_position)
 					current_boss.set_meta("melee_contact_position", contact_position)
 					current_boss.position = home_position.lerp(contact_position, smoothstep(0.0, 1.0, lunge_progress))
-	if boss_attack_timer <= 0.0:
+	if bool(telegraph_state.get("ready", false)):
 		var telegraph_ready := bool(current_boss.get_meta("attack_telegraph_started", false)) and _actor_is_attack_visible(current_boss)
 		current_boss.set_meta("attack_telegraph_complete", telegraph_ready)
 		var performed := _boss_attack(boss_id) if telegraph_ready else false
@@ -1153,7 +1558,10 @@ func _boss_attack(boss_id: String) -> bool:
 		return true
 	if not _actor_has_melee_contact(current_boss):
 		return false
-	_damage_player(_first_active_player(), 1, "boss_melee")
+	var target_player_index := _target_player_for_threat(current_boss)
+	if target_player_index < 0:
+		return false
+	_damage_player(target_player_index, 1, "boss_melee")
 	return true
 
 
@@ -1274,6 +1682,7 @@ func _add_box(node_name: String, at: Vector3, dimensions: Vector3, color: Color)
 	mesh.size = dimensions
 	instance.mesh = mesh
 	instance.position = at
+	_configure_environment_mesh_blocker(instance, node_name, dimensions)
 	var material := StandardMaterial3D.new()
 	material.albedo_color = color
 	material.roughness = 0.82
@@ -1281,6 +1690,50 @@ func _add_box(node_name: String, at: Vector3, dimensions: Vector3, color: Color)
 	instance.material_override = material
 	world_root.add_child(instance)
 
+
+
+func _configure_environment_mesh_blocker(instance: MeshInstance3D, node_name: String, dimensions: Vector3) -> void:
+	var lower_name := node_name.to_lower()
+	var walkable_terms := PackedStringArray([
+		"floor", "path", "forecourt", "step", "landing", "runner", "walk",
+		"deck", "gallery", "vestibule", "slope", "ledge", "platform", "carpet",
+		"dais", "grating", "gantry",
+	])
+	var rejected_walkable_terms := PackedStringArray([
+		"wall", "rail", "balustrade", "parapet", "beam", "header", "lintel",
+		"shelf", "support", "brace", "crown", "lip",
+	])
+	var is_walkable := dimensions.x >= 0.5 and dimensions.z >= 0.5 and dimensions.y <= 1.2
+	if is_walkable:
+		is_walkable = false
+		for term: String in walkable_terms:
+			if term in lower_name:
+				is_walkable = true
+				break
+	if is_walkable:
+		for term: String in rejected_walkable_terms:
+			if term in lower_name:
+				is_walkable = false
+				break
+	if is_walkable:
+		instance.set_meta("enemy_walkable_dimensions", dimensions.abs())
+		instance.set_meta("enemy_walkable_source", "layout_mesh")
+	var solid_terms := PackedStringArray([
+		"wall", "column", "rail", "balustrade", "parapet", "buttress", "pier",
+		"post", "frame", "door", "gate", "shelf", "alcove", "wing", "beam",
+		"rubble", "support", "duct", "brace", "crown", "pipe", "veil", "ridge",
+		"arch", "header", "lintel", "pylon", "console", "tank", "lip",
+	])
+	var blocks_floor_motion := false
+	for term: String in solid_terms:
+		if term in lower_name:
+			blocks_floor_motion = true
+			break
+	if not blocks_floor_motion:
+		return
+	instance.set_meta("enemy_blocker_half_extents", Vector2(maxf(0.04, dimensions.x * 0.5), maxf(0.04, dimensions.z * 0.5)))
+	instance.set_meta("enemy_blocker_height", maxf(0.1, dimensions.y))
+	instance.set_meta("enemy_blocker_source", "layout_mesh")
 
 
 func _apply_environment_materials() -> void:
@@ -1304,57 +1757,302 @@ func _apply_environment_materials() -> void:
 
 func _build_environment_layout() -> void:
 	var layout := str(environment_scene_profile.get("layout", "mansion_hall"))
-	var accent := str(environment_scene_profile.get("accent", environment_scene_profile.get("floor", "")))
-	if not accent.is_empty():
-		_add_material_box("ProfileAccent", Vector3(0.0, 0.025, -10.0), Vector3(2.25, 0.06, 24.0), accent)
-	if "stair" in layout:
-		for step_index in 8:
-			_add_material_box("Stair_%02d" % step_index, Vector3(0.0, 0.12 + step_index * 0.18, -11.0 - step_index * 0.58), Vector3(5.4, 0.24, 0.72), accent)
-	if "bridge" in layout or "channel" in layout:
-		_add_material_box("BridgeLeft", Vector3(-3.55, 0.18, -11.0), Vector3(4.2, 0.36, 22.0), str(environment_scene_profile.get("floor", accent)))
-		_add_material_box("BridgeRight", Vector3(3.55, 0.18, -11.0), Vector3(4.2, 0.36, 22.0), str(environment_scene_profile.get("floor", accent)))
-		_add_material_box("BridgeRailL", Vector3(-1.4, 0.75, -11.0), Vector3(0.16, 1.25, 22.0), str(environment_scene_profile.get("column", accent)))
-		_add_material_box("BridgeRailR", Vector3(1.4, 0.75, -11.0), Vector3(0.16, 1.25, 22.0), str(environment_scene_profile.get("column", accent)))
-	if "library" in layout:
-		for shelf_index in 5:
-			var z := -4.0 - shelf_index * 4.6
-			_add_material_box("LibraryShelfL_%02d" % shelf_index, Vector3(-5.25, 2.0, z), Vector3(1.0, 4.0, 3.2), str(environment_scene_profile.get("wall", accent)))
-			_add_material_box("LibraryShelfR_%02d" % shelf_index, Vector3(5.25, 2.0, z), Vector3(1.0, 4.0, 3.2), str(environment_scene_profile.get("wall", accent)))
-	if "roof" in layout:
-		_add_material_box("RoofParapetL", Vector3(-5.45, 0.75, -10.0), Vector3(1.1, 1.5, 25.0), str(environment_scene_profile.get("wall", accent)))
-		_add_material_box("RoofParapetR", Vector3(5.45, 0.75, -10.0), Vector3(1.1, 1.5, 25.0), str(environment_scene_profile.get("wall", accent)))
-	if _layout_is_laboratory(layout):
-		for rib_index in 6:
-			var z := -3.0 - rib_index * 4.7
-			_add_material_box("LabRibL_%02d" % rib_index, Vector3(-5.55, 2.5, z), Vector3(0.34, 5.0, 0.42), str(environment_scene_profile.get("column", accent)))
-			_add_material_box("LabRibR_%02d" % rib_index, Vector3(5.55, 2.5, z), Vector3(0.34, 5.0, 0.42), str(environment_scene_profile.get("column", accent)))
-		var glass_material := str(environment_scene_profile.get("glass", environment_scene_profile.get("wall", accent)))
-		if not glass_material.is_empty():
-			_add_material_box("LabGlassPanelL", Vector3(-3.85, 2.25, -13.0), Vector3(0.18, 3.5, 5.6), glass_material)
-			_add_material_box("LabGlassPanelR", Vector3(3.85, 2.25, -13.0), Vector3(0.18, 3.5, 5.6), glass_material)
+	var family: StringName = EnvironmentLayoutClassifierScript.classify(layout)
+	world_root.set_meta("environment_layout", layout)
+	world_root.set_meta("environment_layout_family", family)
+	if family == EnvironmentLayoutClassifierScript.FAMILY_ESTATE:
+		_build_estate_layout(layout)
+	elif family == EnvironmentLayoutClassifierScript.FAMILY_MANSION:
+		_build_mansion_layout(layout)
+	elif family == EnvironmentLayoutClassifierScript.FAMILY_SEWER:
+		_build_sewer_layout(layout)
+	elif family == EnvironmentLayoutClassifierScript.FAMILY_LIBRARY:
+		_build_library_layout()
+	elif family == EnvironmentLayoutClassifierScript.FAMILY_ROOF:
+		_build_roof_layout(layout)
+	elif family == EnvironmentLayoutClassifierScript.FAMILY_CHARIOT_ARENA:
+		_build_chariot_arena_layout()
+	elif family == EnvironmentLayoutClassifierScript.FAMILY_HERMIT_TUNNEL:
+		_build_hermit_tunnel_layout()
+	elif family == EnvironmentLayoutClassifierScript.FAMILY_LABORATORY:
+		_build_laboratory_layout(layout)
+	else:
+		# A safe textured fallback for editor-only layouts; public campaign ids are
+		# required to be explicit by test_environment_layout_classifier.gd.
+		_build_mansion_layout("mansion_hall")
 	var uses_door_portal := layout in ["foyer_crossroad", "great_doors", "portrait_antechamber", "bonus_gate"] or "door" in layout or "gate" in layout or "entrance" in layout
 	if uses_door_portal:
-		_add_material_box("EndPortalL", Vector3(-2.3, 2.0, -21.5), Vector3(1.3, 4.0, 0.65), str(environment_scene_profile.get("column", accent)))
-		_add_material_box("EndPortalR", Vector3(2.3, 2.0, -21.5), Vector3(1.3, 4.0, 0.65), str(environment_scene_profile.get("column", accent)))
-		var door_material := str(environment_scene_profile.get("door", environment_scene_profile.get("wall", accent)))
-		if not door_material.is_empty():
-			_add_material_box("EndPortalDoor", Vector3(0.0, 2.0, -21.66), Vector3(3.3, 4.0, 0.26), door_material)
+		_add_material_box("EndPortalL", Vector3(-2.3, 2.0, -21.5), Vector3(1.3, 4.0, 0.65), _environment_material_id("column"))
+		_add_material_box("EndPortalR", Vector3(2.3, 2.0, -21.5), Vector3(1.3, 4.0, 0.65), _environment_material_id("column"))
+		_add_material_box("EndPortalLintel", Vector3(0.0, 4.25, -21.5), Vector3(5.9, 0.5, 0.7), _environment_material_id("column"))
+		_add_material_box("EndPortalDoor", Vector3(0.0, 2.0, -21.66), Vector3(3.3, 4.0, 0.26), _environment_material_id("door", "wall"))
 
 
 func _layout_is_laboratory(layout: String) -> bool:
-	for marker in ["lab", "elevator", "research", "specimen", "bioreactor", "horde", "rematch", "supply", "bonus", "arena"]:
-		if marker in layout:
-			return true
-	return false
+	return EnvironmentLayoutClassifierScript.is_laboratory(layout)
 
 
-func _add_material_box(node_name: String, at: Vector3, dimensions: Vector3, material_id: String) -> void:
+func _environment_material_id(key: String, fallback_key: String = "floor") -> String:
+	var material_id := str(environment_scene_profile.get(key, ""))
+	if material_id.is_empty():
+		material_id = str(environment_scene_profile.get(fallback_key, ""))
+	if material_id.is_empty():
+		material_id = str(environment_scene_profile.get("floor", "garden_flagstone"))
+	return material_id
+
+
+func _build_estate_layout(layout: String) -> void:
+	var path_material := _environment_material_id("accent")
+	var stone_material := _environment_material_id("wall")
+	_add_material_box("EstatePath", Vector3(0.0, 0.03, -10.0), Vector3(2.8, 0.08, 24.0), path_material)
+	if layout == "estate_arrival":
+		_add_material_box("EstateRetainingL", Vector3(-4.85, 0.55, -10.5), Vector3(0.7, 1.1, 22.0), stone_material)
+		_add_material_box("EstateRetainingR", Vector3(4.85, 0.55, -10.5), Vector3(0.7, 1.1, 22.0), stone_material)
+		for pier_index in 3:
+			var z := -4.5 - pier_index * 7.0
+			_add_material_box("EstatePierL_%02d" % pier_index, Vector3(-4.85, 1.35, z), Vector3(1.05, 2.7, 1.05), stone_material)
+			_add_material_box("EstatePierR_%02d" % pier_index, Vector3(4.85, 1.35, z), Vector3(1.05, 2.7, 1.05), stone_material)
+	else:
+		_add_material_box("FrontForecourt", Vector3(0.0, 0.08, -6.0), Vector3(9.4, 0.16, 7.0), path_material)
+		for step_index in 9:
+			_add_material_box("FrontStep_%02d" % step_index, Vector3(0.0, 0.11 + step_index * 0.13, -10.2 - step_index * 0.58), Vector3(8.6, 0.22, 0.72), stone_material)
+		_add_material_box("FrontLanding", Vector3(0.0, 1.25, -17.35), Vector3(10.4, 0.34, 5.2), stone_material)
+		_add_material_box("FrontBalustradeL", Vector3(-4.65, 1.35, -14.1), Vector3(0.46, 2.2, 8.0), stone_material)
+		_add_material_box("FrontBalustradeR", Vector3(4.65, 1.35, -14.1), Vector3(0.46, 2.2, 8.0), stone_material)
+
+
+func _build_mansion_layout(layout: String) -> void:
+	var floor_material := _environment_material_id("floor")
+	var wall_material := _environment_material_id("wall")
+	var trim_material := _environment_material_id("column")
+	var accent_material := _environment_material_id("accent")
+	_add_material_box("MansionRunner", Vector3(0.0, 0.025, -10.0), Vector3(2.25, 0.06, 24.0), accent_material)
+	if layout == "foyer_crossroad":
+		_add_material_box("FoyerLanding", Vector3(0.0, 0.09, -12.0), Vector3(10.8, 0.18, 8.5), floor_material)
+		_add_material_box("FoyerBalcony", Vector3(0.0, 4.0, -15.4), Vector3(10.4, 0.34, 2.4), trim_material)
+		_add_material_box("FoyerWingL", Vector3(-5.0, 2.1, -10.8), Vector3(1.0, 4.2, 5.6), wall_material)
+		_add_material_box("FoyerWingR", Vector3(5.0, 2.1, -10.8), Vector3(1.0, 4.2, 5.6), wall_material)
+	elif layout == "upper_staircase":
+		for step_index in 9:
+			var step_z := -8.8 - step_index * 0.62
+			var step_y := 0.12 + step_index * 0.17
+			_add_material_box("UpperStair_%02d" % step_index, Vector3(0.0, step_y, step_z), Vector3(5.8, 0.24, 0.76), floor_material)
+		_add_material_box("UpperGallery", Vector3(0.0, 1.7, -16.6), Vector3(10.2, 0.34, 4.8), floor_material)
+		_add_material_box("UpperRailL", Vector3(-3.25, 2.25, -13.6), Vector3(0.22, 1.3, 9.0), trim_material)
+		_add_material_box("UpperRailR", Vector3(3.25, 2.25, -13.6), Vector3(0.22, 1.3, 9.0), trim_material)
+	elif layout == "collapsed_hall":
+		_add_material_box("CollapsedBeamL", Vector3(-3.8, 1.2, -11.5), Vector3(0.65, 0.75, 5.8), trim_material, Vector3(0.0, 18.0, -16.0))
+		_add_material_box("CollapsedBeamR", Vector3(3.9, 0.8, -16.2), Vector3(0.8, 0.65, 4.2), trim_material, Vector3(0.0, -24.0, 13.0))
+		for rubble_index in 4:
+			_add_material_box("CollapsedRubble_%02d" % rubble_index, Vector3(-4.1 + rubble_index * 2.7, 0.24, -13.0 - float(rubble_index % 2) * 3.2), Vector3(1.2, 0.45, 1.0), wall_material, Vector3(0.0, rubble_index * 17.0, 0.0))
+	elif layout == "portrait_antechamber":
+		_add_material_box("PortraitBackWall", Vector3(0.0, 2.6, -18.2), Vector3(9.8, 5.2, 0.5), wall_material)
+		_add_material_box("PortraitAlcoveL", Vector3(-3.7, 2.3, -16.7), Vector3(1.1, 4.6, 3.0), trim_material)
+		_add_material_box("PortraitAlcoveR", Vector3(3.7, 2.3, -16.7), Vector3(1.1, 4.6, 3.0), trim_material)
+	elif layout == "narrow_corridor":
+		_add_material_box("NarrowInnerWallL", Vector3(-4.15, 2.45, -10.5), Vector3(0.48, 4.9, 23.0), wall_material)
+		_add_material_box("NarrowInnerWallR", Vector3(4.15, 2.45, -10.5), Vector3(0.48, 4.9, 23.0), wall_material)
+		for beam_index in 5:
+			_add_material_box("NarrowCeilingBeam_%02d" % beam_index, Vector3(0.0, 4.85, -3.0 - beam_index * 4.4), Vector3(8.6, 0.34, 0.5), trim_material)
+	elif layout == "raised_bridge":
+		_add_material_box("RaisedBridgeDeck", Vector3(0.0, 0.38, -11.5), Vector3(5.1, 0.62, 22.0), floor_material)
+		_add_material_box("RaisedBridgeRailL", Vector3(-2.55, 1.15, -11.5), Vector3(0.22, 1.55, 22.0), trim_material)
+		_add_material_box("RaisedBridgeRailR", Vector3(2.55, 1.15, -11.5), Vector3(0.22, 1.55, 22.0), trim_material)
+		for support_index in 4:
+			_add_material_box("RaisedBridgeSupport_%02d" % support_index, Vector3(0.0, 0.9, -4.0 - support_index * 6.0), Vector3(10.4, 0.45, 0.55), trim_material)
+	elif layout == "great_doors":
+		_add_material_box("GreatDoorVestibule", Vector3(0.0, 0.09, -17.0), Vector3(9.8, 0.18, 7.0), floor_material)
+		_add_material_box("GreatDoorArch", Vector3(0.0, 4.6, -20.5), Vector3(9.8, 0.7, 1.0), trim_material)
+
+
+func _build_sewer_layout(layout: String) -> void:
+	var floor_material := _environment_material_id("floor")
+	var wall_material := _environment_material_id("wall")
+	var iron_material := _environment_material_id("column")
+	_add_material_box("SewerWetChannel", Vector3(0.0, -0.01, -11.0), Vector3(2.3, 0.08, 25.0), floor_material)
+	if layout == "bridge_channel":
+		_add_material_box("ChannelWalkL", Vector3(-3.75, 0.2, -11.0), Vector3(4.0, 0.4, 23.0), wall_material)
+		_add_material_box("ChannelWalkR", Vector3(3.75, 0.2, -11.0), Vector3(4.0, 0.4, 23.0), wall_material)
+		_add_material_box("ChannelRailL", Vector3(-1.65, 0.9, -11.0), Vector3(0.18, 1.45, 23.0), iron_material)
+		_add_material_box("ChannelRailR", Vector3(1.65, 0.9, -11.0), Vector3(0.18, 1.45, 23.0), iron_material)
+	elif layout == "hatch_gallery":
+		_add_material_box("HatchGalleryDeck", Vector3(0.0, 0.24, -13.0), Vector3(8.4, 0.48, 14.0), wall_material)
+		_add_material_box("HatchFrameL", Vector3(-2.4, 2.0, -19.5), Vector3(0.55, 4.0, 0.75), iron_material)
+		_add_material_box("HatchFrameR", Vector3(2.4, 2.0, -19.5), Vector3(0.55, 4.0, 0.75), iron_material)
+		_add_material_box("HatchFrameTop", Vector3(0.0, 4.0, -19.5), Vector3(5.3, 0.55, 0.75), iron_material)
+	elif layout == "low_tunnel":
+		# This node has no prop placements: repeated masonry ribs and the lowered
+		# crown provide its complete silhouette and depth cadence.
+		_add_material_box("LowTunnelCrown", Vector3(0.0, 4.25, -11.0), Vector3(11.0, 0.7, 25.0), wall_material)
+		for rib_index in 7:
+			var z := -2.5 - rib_index * 3.4
+			_add_material_box("LowTunnelRibL_%02d" % rib_index, Vector3(-4.8, 2.0, z), Vector3(0.52, 4.0, 0.55), iron_material)
+			_add_material_box("LowTunnelRibR_%02d" % rib_index, Vector3(4.8, 2.0, z), Vector3(0.52, 4.0, 0.55), iron_material)
+			_add_material_box("LowTunnelRibTop_%02d" % rib_index, Vector3(0.0, 4.05, z), Vector3(10.1, 0.44, 0.55), iron_material)
+	elif layout == "lower_stairs":
+		# The stair flight is procedural because this transition intentionally has
+		# no decorative prop sprites.
+		for step_index in 10:
+			_add_material_box("LowerStep_%02d" % step_index, Vector3(0.0, 1.5 - step_index * 0.14, -6.8 - step_index * 0.68), Vector3(6.4, 0.25, 0.82), wall_material)
+		_add_material_box("LowerStairRailL", Vector3(-3.35, 1.65, -10.0), Vector3(0.24, 2.2, 11.0), iron_material)
+		_add_material_box("LowerStairRailR", Vector3(3.35, 1.65, -10.0), Vector3(0.24, 2.2, 11.0), iron_material)
+	elif layout == "service_lift":
+		_add_material_box("ServiceLiftBack", Vector3(0.0, 2.5, -19.5), Vector3(7.2, 5.0, 0.6), iron_material)
+		for x in [-3.4, 3.4]:
+			_add_material_box("ServiceLiftPost_%s" % str(x), Vector3(x, 2.5, -16.8), Vector3(0.45, 5.0, 5.8), iron_material)
+		_add_material_box("ServiceLiftHeader", Vector3(0.0, 4.8, -16.8), Vector3(7.2, 0.45, 5.8), iron_material)
+	elif layout == "vent_conduit":
+		_add_material_box("VentDuctL", Vector3(-4.65, 3.25, -11.0), Vector3(1.3, 1.3, 23.0), iron_material)
+		_add_material_box("VentDuctR", Vector3(4.65, 3.25, -11.0), Vector3(1.3, 1.3, 23.0), iron_material)
+		for brace_index in 6:
+			_add_material_box("VentBrace_%02d" % brace_index, Vector3(0.0, 4.5, -2.5 - brace_index * 4.0), Vector3(10.0, 0.4, 0.48), iron_material)
+
+
+func _build_library_layout() -> void:
+	var shelf_material := _environment_material_id("wall")
+	var floor_material := _environment_material_id("floor")
+	var trim_material := _environment_material_id("column")
+	var accent_material := _environment_material_id("accent")
+	_add_material_box("LibraryRunner", Vector3(0.0, 0.025, -10.0), Vector3(2.4, 0.06, 24.0), accent_material)
+	for shelf_index in 5:
+		var z := -3.4 - shelf_index * 4.6
+		_add_material_box("LibraryShelfL_%02d" % shelf_index, Vector3(-5.1, 2.15, z), Vector3(1.25, 4.3, 3.35), shelf_material)
+		_add_material_box("LibraryShelfR_%02d" % shelf_index, Vector3(5.1, 2.15, z), Vector3(1.25, 4.3, 3.35), shelf_material)
+	_add_material_box("LibraryUpperGallery", Vector3(0.0, 4.25, -15.0), Vector3(10.6, 0.28, 2.0), floor_material)
+	_add_material_box("LibraryGalleryRail", Vector3(0.0, 4.75, -13.95), Vector3(10.6, 0.85, 0.18), trim_material)
+	_add_material_box("LibraryReadingDais", Vector3(0.0, 0.18, -19.0), Vector3(6.5, 0.36, 3.0), floor_material)
+
+
+func _build_roof_layout(layout: String) -> void:
+	var floor_material := _environment_material_id("floor")
+	var stone_material := _environment_material_id("wall")
+	var trim_material := _environment_material_id("column")
+	_add_material_box("RoofParapetL", Vector3(-5.45, 0.75, -10.0), Vector3(1.1, 1.5, 25.0), stone_material)
+	_add_material_box("RoofParapetR", Vector3(5.45, 0.75, -10.0), Vector3(1.1, 1.5, 25.0), stone_material)
+	if layout == "roof_approach":
+		_add_material_box("RoofSlopeL", Vector3(-3.25, 0.32, -11.5), Vector3(4.7, 0.32, 23.0), floor_material, Vector3(0.0, 0.0, -7.0))
+		_add_material_box("RoofSlopeR", Vector3(3.25, 0.32, -11.5), Vector3(4.7, 0.32, 23.0), floor_material, Vector3(0.0, 0.0, 7.0))
+		_add_material_box("RoofRidge", Vector3(0.0, 0.8, -11.5), Vector3(0.5, 1.0, 23.0), trim_material)
+	elif layout == "roof_ledge":
+		_add_material_box("RoofRescueLedge", Vector3(0.0, 0.2, -15.5), Vector3(9.4, 0.4, 8.0), floor_material)
+		_add_material_box("RoofLedgeLip", Vector3(0.0, 0.8, -19.4), Vector3(9.4, 1.3, 0.6), stone_material)
+	elif layout == "hangedman_arena":
+		_add_material_box("HangedmanPlatform", Vector3(0.0, 0.18, -13.0), Vector3(10.7, 0.36, 16.0), floor_material)
+		for arena_x in [-4.65, 4.65]:
+			for arena_z in [-7.0, -19.0]:
+				_add_material_box("HangedmanPinnacle_%s_%s" % [str(arena_x), str(arena_z)], Vector3(arena_x, 2.0, arena_z), Vector3(0.9, 4.0, 0.9), trim_material)
+		_add_material_box("HangedmanFarParapet", Vector3(0.0, 0.8, -21.0), Vector3(11.0, 1.6, 0.8), stone_material)
+	elif layout == "rematch_roof":
+		_add_material_box("RematchRoofDeck", Vector3(0.0, 0.16, -13.0), Vector3(9.8, 0.32, 15.0), floor_material)
+		_add_material_box("BrokenParapetL", Vector3(-3.6, 0.8, -20.0), Vector3(3.4, 1.6, 0.8), stone_material, Vector3(0.0, -8.0, 0.0))
+		_add_material_box("BrokenParapetR", Vector3(3.8, 0.62, -20.3), Vector3(2.8, 1.2, 0.8), stone_material, Vector3(0.0, 13.0, 5.0))
+
+
+func _build_chariot_arena_layout() -> void:
+	var floor_material := _environment_material_id("floor")
+	var wall_material := _environment_material_id("wall")
+	var trim_material := _environment_material_id("column")
+	var accent_material := _environment_material_id("accent")
+	_add_material_box("ChariotArenaFloor", Vector3(0.0, 0.08, -13.0), Vector3(10.8, 0.16, 17.5), floor_material)
+	_add_material_box("ChariotCarpet", Vector3(0.0, 0.18, -13.0), Vector3(3.2, 0.06, 16.5), accent_material)
+	_add_material_box("ChariotDais", Vector3(0.0, 0.34, -19.2), Vector3(7.4, 0.68, 3.8), floor_material)
+	for pillar_index in 4:
+		var z := -6.0 - pillar_index * 4.3
+		_add_material_box("ChariotButtressL_%02d" % pillar_index, Vector3(-5.15, 2.55, z), Vector3(1.05, 5.1, 1.15), trim_material)
+		_add_material_box("ChariotButtressR_%02d" % pillar_index, Vector3(5.15, 2.55, z), Vector3(1.05, 5.1, 1.15), trim_material)
+	_add_material_box("ChariotBackWall", Vector3(0.0, 2.6, -21.0), Vector3(10.8, 5.2, 0.7), wall_material)
+	_add_material_box("ChariotArchTop", Vector3(0.0, 4.65, -20.5), Vector3(8.4, 0.7, 1.4), trim_material)
+
+
+func _build_hermit_tunnel_layout() -> void:
+	var web_material := _environment_material_id("wall")
+	var floor_material := _environment_material_id("floor")
+	var rib_material := _environment_material_id("column")
+	_add_material_box("HermitTunnelFloor", Vector3(0.0, 0.05, -12.0), Vector3(8.6, 0.1, 23.0), floor_material)
+	_add_material_box("HermitWebCrown", Vector3(0.0, 4.55, -12.0), Vector3(9.2, 0.48, 23.0), web_material)
+	for rib_index in 7:
+		var z := -2.8 - rib_index * 3.3
+		_add_material_box("HermitWebRibL_%02d" % rib_index, Vector3(-4.0, 2.45, z), Vector3(0.42, 5.0, 0.48), web_material, Vector3(0.0, 0.0, -18.0))
+		_add_material_box("HermitWebRibR_%02d" % rib_index, Vector3(4.0, 2.45, z), Vector3(0.42, 5.0, 0.48), web_material, Vector3(0.0, 0.0, 18.0))
+		_add_material_box("HermitTunnelBrace_%02d" % rib_index, Vector3(0.0, 4.2, z), Vector3(8.6, 0.3, 0.5), rib_material)
+	_add_material_box("HermitWebVeilL", Vector3(-3.4, 2.2, -15.0), Vector3(0.12, 3.3, 7.0), web_material, Vector3(0.0, -12.0, 0.0))
+	_add_material_box("HermitWebVeilR", Vector3(3.5, 2.0, -11.0), Vector3(0.12, 3.0, 6.0), web_material, Vector3(0.0, 16.0, 0.0))
+
+
+func _build_laboratory_layout(layout: String) -> void:
+	var floor_material := _environment_material_id("floor")
+	var wall_material := _environment_material_id("wall")
+	var pipe_material := _environment_material_id("column")
+	var machine_material := _environment_material_id("accent")
+	var glass_material := _environment_material_id("glass", "wall")
+	_add_material_box("LabCenterGrating", Vector3(0.0, 0.035, -11.0), Vector3(4.0, 0.08, 25.0), floor_material)
+	for rib_index in 6:
+		var z := -2.8 - rib_index * 4.2
+		_add_material_box("LabRibL_%02d" % rib_index, Vector3(-5.45, 2.5, z), Vector3(0.36, 5.0, 0.46), pipe_material)
+		_add_material_box("LabRibR_%02d" % rib_index, Vector3(5.45, 2.5, z), Vector3(0.36, 5.0, 0.46), pipe_material)
+		_add_material_box("LabRibTop_%02d" % rib_index, Vector3(0.0, 5.0, z), Vector3(11.2, 0.3, 0.46), pipe_material)
+	if layout == "elevator_lobby":
+		_add_material_box("ElevatorBack", Vector3(0.0, 2.5, -20.3), Vector3(7.6, 5.0, 0.65), wall_material)
+		_add_material_box("ElevatorDoorL", Vector3(-1.7, 2.15, -19.9), Vector3(3.25, 4.3, 0.25), machine_material)
+		_add_material_box("ElevatorDoorR", Vector3(1.7, 2.15, -19.9), Vector3(3.25, 4.3, 0.25), machine_material)
+		_add_material_box("ElevatorHeader", Vector3(0.0, 4.65, -19.7), Vector3(7.5, 0.65, 0.8), pipe_material)
+	elif layout in ["upper_research", "specimen_bay"]:
+		_add_material_box("ResearchGlassL", Vector3(-4.15, 2.3, -13.5), Vector3(0.16, 3.8, 9.5), glass_material)
+		_add_material_box("ResearchGlassR", Vector3(4.15, 2.3, -13.5), Vector3(0.16, 3.8, 9.5), glass_material)
+		_add_material_box("ResearchPlinthL", Vector3(-4.1, 0.38, -13.5), Vector3(2.3, 0.76, 9.5), machine_material)
+		_add_material_box("ResearchPlinthR", Vector3(4.1, 0.38, -13.5), Vector3(2.3, 0.76, 9.5), machine_material)
+	elif layout == "high_bridge":
+		_add_material_box("LabBridgeDeck", Vector3(0.0, 0.42, -12.0), Vector3(4.8, 0.68, 23.0), floor_material)
+		_add_material_box("LabBridgeRailL", Vector3(-2.45, 1.3, -12.0), Vector3(0.18, 1.65, 23.0), pipe_material)
+		_add_material_box("LabBridgeRailR", Vector3(2.45, 1.3, -12.0), Vector3(0.18, 1.65, 23.0), pipe_material)
+	elif layout == "curien_tunnel":
+		_add_material_box("CurienConduitL", Vector3(-4.8, 3.45, -12.0), Vector3(1.0, 1.1, 23.0), pipe_material)
+		_add_material_box("CurienConduitR", Vector3(4.8, 3.45, -12.0), Vector3(1.0, 1.1, 23.0), pipe_material)
+	elif layout == "rematch_arena":
+		_add_material_box("RematchArenaDeck", Vector3(0.0, 0.16, -13.0), Vector3(10.4, 0.32, 17.0), floor_material)
+		_add_material_box("RematchArenaDais", Vector3(0.0, 0.42, -19.0), Vector3(7.0, 0.84, 3.6), machine_material)
+		for x in [-4.7, 4.7]:
+			_add_material_box("RematchPylon_%s" % str(x), Vector3(x, 2.4, -17.5), Vector3(1.0, 4.8, 1.2), pipe_material)
+	elif layout == "bonus_gate":
+		_add_material_box("BonusVaultWall", Vector3(0.0, 2.5, -20.6), Vector3(10.0, 5.0, 0.65), wall_material)
+		_add_material_box("BonusVaultHeader", Vector3(0.0, 4.55, -20.0), Vector3(8.4, 0.65, 1.2), pipe_material)
+	elif layout == "supply_cache":
+		# The conditional bonus room has no prop sprites; these textured racks and
+		# storage bays make it a complete reward room instead of an empty corridor.
+		_add_material_box("SupplyBackWall", Vector3(0.0, 2.5, -20.5), Vector3(10.2, 5.0, 0.65), wall_material)
+		for rack_index in 4:
+			var x := -4.2 + rack_index * 2.8
+			_add_material_box("SupplyRack_%02d" % rack_index, Vector3(x, 1.5, -17.8), Vector3(1.8, 3.0, 1.2), machine_material)
+			_add_material_box("SupplyRackShelf_%02d" % rack_index, Vector3(x, 2.55, -17.1), Vector3(1.9, 0.16, 1.4), pipe_material)
+	elif layout == "final_horde":
+		_add_material_box("HordeTankBayL", Vector3(-4.25, 1.25, -14.0), Vector3(2.7, 2.5, 10.0), machine_material)
+		_add_material_box("HordeTankBayR", Vector3(4.25, 1.25, -14.0), Vector3(2.7, 2.5, 10.0), machine_material)
+		_add_material_box("HordeGlassL", Vector3(-3.35, 2.5, -14.0), Vector3(0.12, 3.5, 9.5), glass_material)
+		_add_material_box("HordeGlassR", Vector3(3.35, 2.5, -14.0), Vector3(0.12, 3.5, 9.5), glass_material)
+	elif layout == "bioreactor":
+		_add_material_box("BioreactorDeck", Vector3(0.0, 0.18, -14.0), Vector3(10.4, 0.36, 16.0), floor_material)
+		for x in [-4.4, 4.4]:
+			_add_material_box("BioreactorCore_%s" % str(x), Vector3(x, 2.35, -15.5), Vector3(1.7, 4.7, 4.5), machine_material)
+			_add_material_box("BioreactorGlass_%s" % str(x), Vector3(x * 0.78, 2.4, -15.5), Vector3(0.14, 3.8, 4.0), glass_material)
+		_add_material_box("BioreactorGantry", Vector3(0.0, 4.35, -15.5), Vector3(10.4, 0.42, 3.2), pipe_material)
+	elif layout == "magician_arena":
+		_add_material_box("MagicianArenaDeck", Vector3(0.0, 0.18, -13.5), Vector3(10.6, 0.36, 17.5), floor_material)
+		_add_material_box("MagicianAxisX", Vector3(0.0, 0.39, -14.0), Vector3(9.5, 0.08, 0.55), machine_material)
+		_add_material_box("MagicianAxisZ", Vector3(0.0, 0.39, -14.0), Vector3(0.55, 0.08, 14.0), machine_material)
+		for arena_x in [-4.6, 4.6]:
+			for arena_z in [-8.0, -19.0]:
+				_add_material_box("MagicianPylon_%s_%s" % [str(arena_x), str(arena_z)], Vector3(arena_x, 2.5, arena_z), Vector3(0.9, 5.0, 1.1), pipe_material)
+
+
+func _add_material_box(node_name: String, at: Vector3, dimensions: Vector3, material_id: String, rotation_degrees_value: Vector3 = Vector3.ZERO) -> void:
 	var instance := MeshInstance3D.new()
 	instance.name = node_name
 	var mesh := BoxMesh.new()
 	mesh.size = dimensions
 	instance.mesh = mesh
 	instance.position = at
+	instance.rotation_degrees = rotation_degrees_value
+	_configure_environment_mesh_blocker(instance, node_name, dimensions)
 	instance.material_override = environment_asset_library.create_material(material_id)
 	world_root.add_child(instance)
 
@@ -1376,9 +2074,15 @@ func _spawn_environment_props() -> void:
 		sprite.billboard = BaseMaterial3D.BILLBOARD_FIXED_Y
 		sprite.alpha_cut = SpriteBase3D.ALPHA_CUT_DISCARD
 		sprite.texture_filter = BaseMaterial3D.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
+		sprite.set_meta("environment_prop_id", prop_id)
 		var position_data := placement.get("position", [0.0, 0.0, -12.0]) as Array
 		if position_data.size() >= 3:
 			sprite.position = Vector3(float(position_data[0]), float(position_data[1]), float(position_data[2]))
+		var blocker_radius := EnemyPursuitControllerScript.prop_radius(prop_id)
+		if blocker_radius > 0.0 and sprite.texture != null:
+			var blocker_height := float(sprite.texture.get_height()) * sprite.pixel_size * sprite.scale.y
+			sprite.set_meta("enemy_blocker_radius", blocker_radius)
+			sprite.set_meta("enemy_blocker_height", blocker_height)
 		world_root.add_child(sprite)
 		var animation_mode := str(profile.get("animate", ""))
 		if not animation_mode.is_empty():
@@ -1468,7 +2172,9 @@ func _spawn_animated_environment_effect(effect_id: String, profile: Dictionary) 
 		world_root.add_child(light)
 
 func _add_backdrop(style: String) -> void:
-	var path := "res://assets/environments/mansion-exterior.png" if style in ["garden", "roof"] else "res://assets/environments/mansion-hall.png"
+	var path := str(environment_scene_profile.get("backdrop", ""))
+	if path.is_empty():
+		path = "res://assets/environments/mansion-exterior.png" if style in ["garden", "roof"] else "res://assets/environments/mansion-hall.png"
 	var quad := MeshInstance3D.new()
 	var mesh := QuadMesh.new()
 	mesh.size = Vector2(20.0, 11.25)
