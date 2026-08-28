@@ -1,10 +1,10 @@
 # Fidelity Report
 
-## v0.5.0 local candidate — measured state, 2026-08-28
+## Published v0.5.0 release — measured state, 2026-08-28
 
-This report describes the current local `0.5.0` worktree. It does **not** claim a v0.5.0 release, tag, GitHub publication, delivery archive or Vercel deployment.
+This report describes immutable tag `v0.5.0` at exact commit `6d84764745102b95e22b2462eeaa364103678c0b`, its public delivery archives and verified production deployment.
 
-The candidate is a playable, internally verified 2.5D fan-made reconstruction. Its evidence proves the tracked replacement-content and runtime contracts; it does not prove revision-exact Sega arcade fidelity.
+The release is a playable, internally verified 2.5D fan-made reconstruction. Its evidence proves the tracked replacement-content, runtime and publication contracts; it does not prove revision-exact Sega arcade fidelity.
 
 ## Verification snapshot
 
@@ -17,7 +17,7 @@ The candidate is a playable, internally verified 2.5D fan-made reconstruction. I
 | environment verifier | **1,977 assertions** | active environment contract is internally consistent |
 | content audit | **889 checks / 6 warnings / 0 errors** | no blocking content error; the six fidelity warnings below remain |
 
-These are local-candidate results only. They are neither publication evidence nor a comparison against an authorized arcade build.
+These results are part of the verified release evidence. They remain neither a comparison against an authorized arcade build nor Sega arcade-fidelity certification.
 
 ## Campaign and pacing contract
 
@@ -99,4 +99,4 @@ Neither `LICENSED_ASSETS_ROOT` nor `REFERENCE_BUILD_ROOT` is available to this v
 
 Public recordings can support qualitative observation only; they cannot establish numerical certification or supply licensed assets. The current verdict is therefore:
 
-> **v0.5.0 is an internally verified local fan-made candidate, not a published release and not a Sega-certified arcade-exact reproduction.**
+> **v0.5.0 is a published, internally verified fan-made release, not a Sega-certified arcade-exact reproduction.**

@@ -1,8 +1,8 @@
 # Performance Report
 
-## Local v0.5.0 candidate — structural budget, 2026-08-28
+## Published v0.5.0 release — structural budget, 2026-08-28
 
-The current candidate has fixed authored sequence timing of **106.5, 97.4, 93.1 and 40.4 seconds** for chapters 1–4, excluding dynamic boss phases. These figures are neither captured wall-clock playthrough times nor chapter/campaign duration floors, and no total campaign duration can be derived from them. They are not arcade timing certification.
+The published release has fixed authored sequence timing of **106.5, 97.4, 93.1 and 40.4 seconds** for chapters 1–4, excluding dynamic boss phases. These figures are neither captured wall-clock playthrough times nor chapter/campaign duration floors, and no total campaign duration can be derived from them. They are not arcade timing certification.
 
 | Runtime content surface | Current budget |
 |---|---:|
@@ -17,7 +17,7 @@ The current candidate has fixed authored sequence timing of **106.5, 97.4, 93.1 
 
 The targeted deterministic core passes **975 assertions**. The repository/data suite passes **295/295**, complete QA passes **313/313**, Web static QA passes **299/299**, the environment verifier passes **1,977 assertions**, and the content audit reports **889 checks / 6 warnings / 0 errors**. These are correctness results, not render-throughput measurements.
 
-| Candidate output | Size | Integrity/startup gate |
+| Release output | Size | Integrity/startup gate |
 |---|---:|---|
 | Windows x64 EXE | **191,497,768 bytes** | SHA-256 `b1411c67ae6c9636bd00ac6557c4fbe8f6206cff2a23ec843bce57d4015ea280`; active and alive after nine seconds during the startup smoke |
 | Linux x64 | **155,862,360 bytes** | SHA-256 `1e39c76ec8c168f6cc922683f8020123621c7b0384285f3c4ef38e80f4bc511b` |
@@ -36,7 +36,7 @@ The new OBB generation and collision path need a named-hardware cost capture: pe
 
 No new v0.5.0 named-hardware performance capture is recorded here. Stable 60 fps, 1% low, CPU/GPU frame time, peak process/GPU memory, atlas residency, route-transition hitches and physical light-gun latency remain unprofiled. Profiling must be repeated after exact rails, persistent chapter continuity and walkable-surface/stair-height authoring are complete.
 
-The v0.5.0 sizes above are local export evidence only. No v0.5.0 packaged release, tag, GitHub Release or Vercel production result is claimed. The published v0.4.0 measurements below remain historical delivery/startup evidence and must not be presented as current-candidate performance evidence.
+The v0.5.0 sizes above are tagged export evidence. Publication is verified by immutable commit/tag `6d84764745102b95e22b2462eeaa364103678c0b` / `v0.5.0`, passing GitHub Actions run `33136431022`, the four public release archives and Vercel production `dpl_BTEuXpYNMWmEYbWP2h2hNjAVGkGL`. These delivery facts do not replace named-hardware frame-time or memory profiling. The published v0.4.0 measurements below remain historical evidence and must not be relabeled as v0.5.0 performance measurements.
 
 ## Published v0.4.0 release — 2026-08-25
 

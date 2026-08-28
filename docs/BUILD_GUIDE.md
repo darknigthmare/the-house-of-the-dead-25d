@@ -1,10 +1,10 @@
 # Build Guide
 
-## v0.5.0 local exported candidate — 2026-08-28
+## v0.5.0 published release — 2026-08-28
 
-The current package version is `0.5.0`. This working tree has verified local Windows/Linux/Web exports, but no confirmed v0.5.0 delivery archive, release tag, GitHub Release or Vercel deployment. The v0.4.0 measurements below remain immutable historical release evidence and must not be relabeled as v0.5.0 results.
+Package version `0.5.0` is published from immutable tag `v0.5.0` at exact commit `6d84764745102b95e22b2462eeaa364103678c0b`. The tagged Windows/Linux/Web exports, delivery archives, GitHub Release and Vercel deployment are verified below; older version measurements remain separate immutable historical evidence.
 
-Current candidate scope:
+Release scope:
 
 - melee pursuit converges on X/Z, keeps attackers in front of the camera and repeats wind-up/attack/recovery while a target remains valid;
 - oriented OBB obstacles cover walls, rails, columns, doors, shelves and props;
@@ -19,18 +19,18 @@ Current candidate scope:
 - Hermite interpolation provides continuous camera motion across the authored rail points, while the set remains a reconstruction and the walkable ground remains generic;
 - four hidden lives, eight destructibles and provisional route decisions #3/#4/#9 are integrated.
 
-Verified local candidate gates:
+Verified release gates:
 
 | Gate | Result | Boundary |
 |---|---:|---|
 | deterministic Godot core | **975 assertions** | pursuit, collision, timing, route and existing core contracts |
-| repository/data suite | **295/295** | `npm.cmd test` against the current candidate tree |
+| repository/data suite | **295/295** | `npm.cmd test` against the exact tagged tree and extracted public source archive |
 | complete QA orchestration | **313/313** | current aggregate local QA command |
 | Web static QA | **299/299** | patched Web shell and current exported payload |
 | environment verifier | **1,977 assertions** | authored environment/OBB/destructible contracts |
 | content-family audit | **889 checks / 6 warnings / 0 errors** | current content reachability and declared fidelity limitations |
 
-Current local candidate outputs:
+Tagged release outputs:
 
 | Output | Size | Local verification |
 |---|---:|---|
@@ -43,7 +43,9 @@ Current local candidate outputs:
 
 Fresh local browser QA at 1280×720 loaded the menu and then gameplay. COOP/COEP produced `crossOriginIsolated=true`; the page exposed one 1280×720 canvas with `role=main` and the correct accessible label, every local resource returned HTTP 200, no page error or framework overlay appeared, and the console contained only normal Godot/WebGL informational logs.
 
-Before packaging or publication, rerun the focused route, sequence-pacing, HUD and gameplay smokes plus aggregate gates after any source change, then regenerate the three exports from that exact tree. Do not carry forward any v0.4.0 binary measurement.
+Publication evidence: [GitHub Release v0.5.0](https://github.com/darknigthmare/the-house-of-the-dead-25d/releases/tag/v0.5.0) contains the source (**233,538,836 bytes**; SHA-256 `341c4d0575dd64b43d2896021c9aa15b7db53718be982c64b647ea3aee801368`), Windows (**119,954,813**; `3d49b98c5f4a26a6ed283db389fad59442521131459457a32cc26c97a6af2f08`), Linux (**110,326,829**; `e9d6b043173c27b635c46fd282cdebba5808c159f44e13425fc0aac951d72c1f`) and Web (**92,152,402**; `4b4f44a01b00df7948e291b02acee4d6fa13df8d0bbb7a6eba9ea9376216fd31`) archives plus `SHA256SUMS.txt`. GitHub Actions run [`33136431022`](https://github.com/darknigthmare/the-house-of-the-dead-25d/actions/runs/33136431022) passed. Vercel production `dpl_BTEuXpYNMWmEYbWP2h2hNjAVGkGL` is live at <https://the-house-of-the-dead-25d.vercel.app>; public HTML/PCK/WASM hashes match the tagged export and fresh public browser QA reached gameplay without page errors.
+
+For any later release, rerun the focused route, sequence-pacing, HUD and gameplay smokes plus aggregate gates after every source change, then regenerate the three exports from that exact tree. Do not carry forward v0.5.0 binary measurements as evidence for a later revision.
 
 Decisions #3/#4/#9 and other reference-pending placements remain provisional until checked against an authorized, revision-identifiable arcade build. The Hermite rails are continuous in the current implementation, but their control points and surrounding set are reconstructed rather than arcade-reference verified; the ground surface is still generic. Persistent scene state and exact walkable-surface/stair/landing authoring remain P0. Without `licensed_assets/` and `reference_build/`, the local tests and exports do not certify exact Sega timing, geometry, assets, visual fidelity or route logic.
 

@@ -1,12 +1,12 @@
 # Audit des écarts gameplay et fidélité
 
-## État mesuré — candidat local v0.5.0, 28 août 2026
+## État mesuré — release publique v0.5.0, 28 août 2026
 
-Ce document décrit uniquement l’état réel du candidat local `0.5.0`. Il ne revendique **aucune publication v0.5.0** : aucun commit/tag de release, aucune archive de livraison, aucune GitHub Release et aucun déploiement Vercel ne sont établis ici.
+Ce document décrit l’état réel de la release publique `0.5.0`, issue du tag immuable `v0.5.0` au commit exact `6d84764745102b95e22b2462eeaa364103678c0b`. Les archives, la GitHub Release, la CI et le déploiement Vercel sont vérifiés ; cela ne constitue pas une certification de fidélité Sega.
 
 Le jeu possède une campagne 2.5D complète au sens structurel et un contrat runtime fortement testé. Il reste une reconstruction fan-made : la réussite des tests locaux ne vaut pas certification de fidélité Sega.
 
-## Preuves locales actuelles
+## Preuves de release actuelles
 
 | Contrôle | Résultat v0.5.0 |
 |---|---:|
@@ -17,7 +17,7 @@ Le jeu possède une campagne 2.5D complète au sens structurel et un contrat run
 | vérificateur d’environnement | **1 977 assertions** |
 | audit de contenu | **889 contrôles / 6 avertissements / 0 erreur** |
 
-Ces résultats attestent la cohérence interne du candidat local. Ils ne prouvent ni une publication ni une comparaison avec une borne autorisée.
+Ces résultats attestent la cohérence interne du tag publié. La publication est confirmée par la [release GitHub v0.5.0](https://github.com/darknigthmare/the-house-of-the-dead-25d/releases/tag/v0.5.0), la CI `33136431022`, les quatre archives aux sommes SHA-256 vérifiées et Vercel `dpl_BTEuXpYNMWmEYbWP2h2hNjAVGkGL`. Ils ne prouvent toutefois aucune comparaison avec une borne autorisée.
 
 ## Photographie du contenu actif
 
@@ -121,7 +121,7 @@ Les enregistrements publics peuvent aider à observer la composition et la topol
 
 ## Verdict et priorités
 
-Le candidat v0.5.0 est structurellement complet, jouable et fortement vérifié localement. Les corrections de combat, collision, projectile, HUD, raccord Hermite, sol générique, densité décorative et rythme multi-vagues sont effectives. Le niveau de preuve reste toutefois celui d’une adaptation fan-made interne.
+La release v0.5.0 est structurellement complète, jouable, publiée et fortement vérifiée. Les corrections de combat, collision, projectile, HUD, raccord Hermite, sol générique, densité décorative et rythme multi-vagues sont effectives. Le niveau de preuve de fidélité reste toutefois celui d’une adaptation fan-made interne.
 
 Priorités restantes :
 
@@ -131,4 +131,4 @@ Priorités restantes :
 4. vérifier les trois variantes de placement avec une référence autorisée ;
 5. fournir `LICENSED_ASSETS_ROOT` et `REFERENCE_BUILD_ROOT`, identifier la révision et les réglages, puis refaire les mesures avant toute revendication Sega exacte.
 
-> **Verdict : candidat local v0.5.0 vérifié en interne, non publié et non certifié fidèle à l’arcade Sega.**
+> **Verdict : release publique v0.5.0 vérifiée, mais non certifiée fidèle à l’arcade Sega.**

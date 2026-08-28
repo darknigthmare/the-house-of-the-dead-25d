@@ -1,15 +1,15 @@
 # QA Report
 
-This report first records the local v0.5.0 candidate, then preserves the published v0.4.0, v0.3.0, v0.2.1, v0.2.0 and historical v0.1.0 evidence separately. Evidence remains version-bound: an older export or deployment is not proof for a newer revision.
+This report first records the published v0.5.0 release, then preserves the published v0.4.0, v0.3.0, v0.2.1, v0.2.0 and historical v0.1.0 evidence separately. Evidence remains version-bound: an older export or deployment is not proof for a newer revision.
 
-## Local v0.5.0 candidate — 2026-08-28
+## Published v0.5.0 release — 2026-08-28
 
-This section applies to the current locally exported candidate only. It does not claim that a v0.5.0 release archive, tag, GitHub Release or Vercel deployment has already been produced.
+This section applies to immutable tag `v0.5.0` at exact commit `6d84764745102b95e22b2462eeaa364103678c0b`, its local exports, public delivery archives, GitHub Release and production Vercel deployment.
 
 | Surface | Current result | Proven scope |
 |---|---:|---|
 | targeted deterministic core | **975 assertions passed** | current pursuit, collision, timing, route and existing deterministic contracts |
-| repository/data suite | `npm.cmd test`: **295/295 passed** | current candidate data, manifest and static runtime contracts |
+| repository/data suite | `npm.cmd test`: **295/295 passed** | tagged data, manifest and static runtime contracts; repeated successfully from the extracted public source archive |
 | complete QA orchestration | **313/313 passed** | current aggregate local QA surface |
 | Web static QA | `qa:web`: **299/299 passed** | patched Web shell and current exported payload |
 | environment verifier | **1,977 assertions passed** | authored environment, OBB, prop and interaction contracts |
@@ -32,9 +32,9 @@ This section applies to the current locally exported candidate only. It does not
 
 The six warnings are retained rather than suppressed: three reference-pending enemy placements, 38/38 right profiles mirrored from left, 25/38 back-right profiles mirrored from back-left, and the eight-semantic-state atlas contract without full multi-frame clips.
 
-Full candidate hashes are Windows `b1411c67ae6c9636bd00ac6557c4fbe8f6206cff2a23ec843bce57d4015ea280`, Linux `1e39c76ec8c168f6cc922683f8020123621c7b0384285f3c4ef38e80f4bc511b`, Web PCK `b85a0d00b07178efe07bcd3b8fec872fe66e735d6c48a1ff9edbbd5d4e2ca7f3`, Web WASM `35116f68540ac41acf7d71ea457added91b5e960a9cca3e2acc72918eaf01277`, and Web HTML `e9cb46807cdf85ceeb0c40e0dfbbf87232b5a7c7ccb3c427fe881f2b76fc6c1f` for the **5,590-byte** patched shell.
+Full tagged-export hashes are Windows `b1411c67ae6c9636bd00ac6557c4fbe8f6206cff2a23ec843bce57d4015ea280`, Linux `1e39c76ec8c168f6cc922683f8020123621c7b0384285f3c4ef38e80f4bc511b`, Web PCK `b85a0d00b07178efe07bcd3b8fec872fe66e735d6c48a1ff9edbbd5d4e2ca7f3`, Web WASM `35116f68540ac41acf7d71ea457added91b5e960a9cca3e2acc72918eaf01277`, and Web HTML `e9cb46807cdf85ceeb0c40e0dfbbf87232b5a7c7ccb3c427fe881f2b76fc6c1f` for the **5,590-byte** patched shell.
 
-These checks establish local export, startup and visible browser behavior only. No v0.5.0 release archive, tag, GitHub Release or Vercel production deployment is claimed.
+Publication is established by [GitHub Release v0.5.0](https://github.com/darknigthmare/the-house-of-the-dead-25d/releases/tag/v0.5.0), passing release-check run [`33136431022`](https://github.com/darknigthmare/the-house-of-the-dead-25d/actions/runs/33136431022), four delivery archives with matching SHA-256 sums, and Vercel production `dpl_BTEuXpYNMWmEYbWP2h2hNjAVGkGL` at <https://the-house-of-the-dead-25d.vercel.app>. Public HTML/PCK/WASM returned HTTP 200 and matched the tagged export; fresh public browser QA reached real gameplay with isolation enabled and no page error.
 
 The remaining P0 fidelity work is not hidden by the green tests: decision conditions #2 and #6 remain substitutes; Hermite interpolation provides technical continuity, but the rail control points and surrounding set are reconstructed; the ground remains generic; global chapter continuity/persistent scene state is not complete; and walkable surfaces and stair/landing heights still need exact authoring. Without `licensed_assets/` and `reference_build/`, neither the assets nor overall arcade fidelity are certified. The campaign metrics prove internal structure, not exact Sega staging.
 

@@ -1,10 +1,10 @@
 # Continuation
 
-## Current working tree — exported, unpublished v0.5.0 candidate
+## Published v0.5.0 release — pursuit, collision and route-density integrity
 
-Package version `0.5.0` identifies the current local pursuit/collision/route-density wave. Windows, Linux and Web exports have been produced from the candidate, but it is not yet a v0.5.0 delivery archive, tag, GitHub release or Vercel deployment; immutable v0.4.0 remains the latest published baseline below.
+Package version `0.5.0` is published from immutable tag `v0.5.0` at exact commit `6d84764745102b95e22b2462eeaa364103678c0b`. GitHub Actions release-check run `33136431022` passed, all four delivery archives and `SHA256SUMS.txt` are public in the GitHub release, and Vercel production `dpl_BTEuXpYNMWmEYbWP2h2hNjAVGkGL` is live at <https://the-house-of-the-dead-25d.vercel.app>.
 
-Implemented in the candidate:
+Implemented in v0.5.0:
 
 - melee enemies converge in world X/Z, stay in front of the camera during approach and loop through wind-up, attack, recovery and re-attack while their target remains valid;
 - authored environment obstacles use oriented OBB volumes for walls, rails, columns, doors, shelves and props, constraining actor pursuit rather than serving as visual-only decoration;
@@ -21,7 +21,12 @@ Implemented in the candidate:
 - every boss attack requires a complete 0.90-second continuously visible telegraph; visibility loss and cooldown overshoot restart the full warning instead of shortening it;
 - actor retirement is idempotent: logical removal from `active_actors` is immediate, visible fades remain registered in `retiring_actors`, sprite-less actors still queue for deletion, and global cleanup drains both collections.
 
-Current local verification:
+Verified v0.5.0 release evidence:
+
+- immutable release tag `v0.5.0` points to exact commit `6d84764745102b95e22b2462eeaa364103678c0b`;
+- [GitHub Release v0.5.0](https://github.com/darknigthmare/the-house-of-the-dead-25d/releases/tag/v0.5.0) contains source **233,538,836 bytes**, Windows **119,954,813**, Linux **110,326,829**, Web **92,152,402** and `SHA256SUMS.txt`; the extracted source archive passes `npm test` 295/295;
+- GitHub Actions release-check run [`33136431022`](https://github.com/darknigthmare/the-house-of-the-dead-25d/actions/runs/33136431022) passed;
+- Vercel production `dpl_BTEuXpYNMWmEYbWP2h2hNjAVGkGL` is `READY`; public HTML, PCK and WASM return HTTP 200 and match the local release hashes;
 
 - `npm test`: 295/295 passed;
 - deterministic Godot core: 975 assertions passed;
@@ -34,9 +39,9 @@ Current local verification:
 - Web: 9 files / 122,236,534 bytes; `index.pck` 82,392,140 (`b85a0d00b07178efe07bcd3b8fec872fe66e735d6c48a1ff9edbbd5d4e2ca7f3`), `index.wasm` 39,513,091 (`35116f68540ac41acf7d71ea457added91b5e960a9cca3e2acc72918eaf01277`) and `index.html` 5,590 (`e9cb46807cdf85ceeb0c40e0dfbbf87232b5a7c7ccb3c427fe881f2b76fc6c1f`);
 - fresh local browser at 1280×720: the real menu and real gameplay loaded, `crossOriginIsolated=true`, with one 1280×720 `role=main` canvas carrying the correct accessible label, every local resource at HTTP 200, no page error or framework overlay, and only normal Godot/WebGL informational logs.
 
-The six retained warnings remain visible fidelity limitations; playable route decisions do not become arcade-authentic evidence merely because they work. The 38 atlases / 2,432 cells expose only eight semantic states per direction, right-side profiles are often mirrored, and three enemy variants remain non-arcade-exact. Neither `licensed_assets/` nor `reference_build/` is present, so exact Sega fidelity is not certified. These local export and browser checks are not publication evidence.
+The six retained warnings remain visible fidelity limitations; playable route decisions do not become arcade-authentic evidence merely because they work. The 38 atlases / 2,432 cells expose only eight semantic states per direction, right-side profiles are often mirrored, and three enemy variants remain non-arcade-exact. Neither `licensed_assets/` nor `reference_build/` is present, so exact Sega fidelity is not certified. The release evidence proves delivery and runtime integrity, not arcade-exact fidelity.
 
-Files in scope for this wave include the campaign route/timing data, enemy pursuit and combat runtime, OBB layout classifier, camera-rail sampler, HUD sanitizer, environment/destructible manifests, focused smokes/tests and the corresponding audits. Preserve all of those changes together when validating or staging the candidate.
+Files in scope for this tagged release include the campaign route/timing data, enemy pursuit and combat runtime, OBB layout classifier, camera-rail sampler, HUD sanitizer, environment/destructible manifests, focused smokes/tests and the corresponding audits. Preserve the immutable tag and its archives; later corrections belong to a new commit and release.
 
 Remaining P0 gates include persistent decor and scene-state continuity across a chapter, authored walkable-surface/stair/landing treatment, and authorized reference comparison. The Hermite pose connector and generic ground solver do not close those gates.
 
@@ -185,7 +190,7 @@ The release contains the reviewed Godot import metadata required by its texture 
 
 1. Exercise every new branch and failure path across the 43-node timeline, including provisional decisions #3/#4/#9, hidden lives, destructibles, obstacle-blocked pursuit and obstacle-blocked projectiles; keep the provisional mappings labeled as such.
 2. Rerun the deterministic core, environment verifier, content audit, HUD/route/pacing smokes and the complete QA orchestration after any correction.
-3. Only from that same verified tree, produce fresh Windows/Linux/Web exports, reapply and verify the Web accessibility shell, run the Windows startup smoke and inspect the Web runtime locally. Do not reuse v0.4.0 sizes or hashes as v0.5.0 evidence.
+3. Only from the next fully verified tree, produce fresh Windows/Linux/Web exports, reapply and verify the Web accessibility shell, run the Windows startup smoke and inspect the Web runtime locally. Do not reuse v0.5.0 sizes or hashes as evidence for a later release.
 4. Resolve provisional route decisions and enemy placements only from an authorized, revision-identifiable Sega reference build; do not invent arcade-exact evidence.
 5. Replace mirrored right/back-right profiles and compact semantic cells only with genuinely authored directional multi-frame art and recorded provenance; integrate licensed voices/music/SFX only through the authorized asset root.
 6. Perform physical Windows installation, independent light-gun calibration and named-hardware frame-time/memory profiling before claiming those gates.
@@ -215,7 +220,7 @@ npm.cmd run verify:web
 git diff --check
 ```
 
-Keep the public v0.2.0, v0.2.1, v0.3.0 and v0.4.0 tags immutable. The v0.3.0 archives belong to commit `8add70a`; the v0.4.0 archives belong to commit `b3b8b3b`; never regenerate or replace either release from a later documentation-only commit.
+Keep the public v0.2.0, v0.2.1, v0.3.0, v0.4.0 and v0.5.0 tags immutable. The v0.3.0 archives belong to commit `8add70a`; the v0.4.0 archives belong to `b3b8b3b`; the v0.5.0 archives belong to `6d84764`. Never regenerate or replace those releases from a later documentation-only commit.
 
 ## Precautions
 
@@ -227,3 +232,4 @@ Keep the public v0.2.0, v0.2.1, v0.3.0 and v0.4.0 tags immutable. The v0.3.0 arc
 - Keep physical Windows installation, physical light-gun calibration, deep named-hardware profiling and authorized reference comparison as separate unverified gates.
 - Anchor v0.3.0 publication claims to commit/tag `8add70a`, GitHub Actions run `32865563840`, the public release assets and Vercel deployment `dpl_KUcS7Xh1NEMU2GRJTki2Hc4kwPuy`.
 - Anchor v0.4.0 publication claims to commit/tag `b3b8b3b`, GitHub Actions run `32893740154`, release v0.4.0 and Vercel deployment `dpl_HeyKmQ5aZ5yypUXokC5ZJXsgrYLW`; never move the public tag.
+- Anchor v0.5.0 publication claims to commit/tag `6d84764`, GitHub Actions run `33136431022`, release v0.5.0 and Vercel deployment `dpl_BTEuXpYNMWmEYbWP2h2hNjAVGkGL`; never move the public tag.
