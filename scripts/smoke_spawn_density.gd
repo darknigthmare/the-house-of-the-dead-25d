@@ -12,7 +12,9 @@ func _initialize() -> void:
 		return
 	var policy := SequenceTimingPolicyType.campaign_policy(campaign)
 	var eligible_count := 0
-	var lowest_ratio := 1.0
+	var spawn_count := 0
+	var lowest_engagement_window := 1.0e20
+	var smallest_wave_gap := 1.0e20
 	for chapter_value: Variant in campaign.get("chapters", []) as Array:
 		var chapter := chapter_value as Dictionary
 		for node_value: Variant in chapter.get("nodes", []) as Array:
@@ -27,6 +29,7 @@ func _initialize() -> void:
 					return
 				continue
 			eligible_count += 1
+			spawn_count += spawns.size()
 			var rail_duration := SequenceTimingPolicyType.rail_duration(node, policy)
 			var schedule := SpawnTimingPolicyType.schedule(node, rail_duration, policy)
 			var authored_first := float((spawns[0] as Dictionary).get("delay", 0.0))
@@ -34,18 +37,27 @@ func _initialize() -> void:
 				_fail("%s moved its first contact" % str(node.get("id", "encounter")))
 				return
 			for spawn_index in range(1, schedule.size()):
-				if schedule[spawn_index] < schedule[spawn_index - 1]:
+				var wave_gap := schedule[spawn_index] - schedule[spawn_index - 1]
+				smallest_wave_gap = minf(smallest_wave_gap, wave_gap)
+				if wave_gap < 0.5 - 0.0001:
 					_fail("%s changed authored spawn order" % str(node.get("id", "encounter")))
 					return
-			var last_ratio := schedule[schedule.size() - 1] / maxf(0.001, rail_duration)
-			lowest_ratio = minf(lowest_ratio, last_ratio)
-			if last_ratio < 0.70:
-				_fail("%s ends spawning at only %.1f%% of its rail" % [str(node.get("id", "encounter")), last_ratio * 100.0])
+			var remaining_engagement := rail_duration - schedule[schedule.size() - 1]
+			lowest_engagement_window = minf(lowest_engagement_window, remaining_engagement)
+			var required_engagement := SpawnTimingPolicyType.engagement_window_seconds(node, policy)
+			if remaining_engagement < required_engagement - 0.0001:
+				_fail("%s leaves only %.2fs for visible engagement" % [str(node.get("id", "encounter")), remaining_engagement])
 				return
 	if eligible_count != 34:
 		_fail("expected 34 distributed ordinary encounters, got %d" % eligible_count)
 		return
-	print("SMOKE SPAWN DENSITY: 34 encounters distributed, first contacts preserved, lowest last-wave ratio %.1f%%" % (lowest_ratio * 100.0))
+	if spawn_count != 98:
+		_fail("expected 98 ordinary spawns, got %d" % spawn_count)
+		return
+	print("SMOKE ENGAGEMENT PACING: 34 encounters / 98 spawns, minimum window %.2fs, minimum wave gap %.3fs" % [
+		lowest_engagement_window,
+		smallest_wave_gap,
+	])
 	quit(0)
 
 

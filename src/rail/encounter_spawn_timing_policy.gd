@@ -12,6 +12,7 @@ const DEFAULT_ENABLED := true
 const DEFAULT_MODE := "stretch_preserve_first"
 const DEFAULT_TARGET_LAST_RATIO := 0.82
 const DEFAULT_MINIMUM_LAST_RATIO := 0.70
+const DEFAULT_MINIMUM_ENGAGEMENT_SECONDS := 0.0
 
 
 static func uses_distribution(node: Dictionary, policy: Dictionary = {}) -> bool:
@@ -50,6 +51,11 @@ static func minimum_last_ratio(node: Dictionary, policy: Dictionary = {}) -> flo
 	return clampf(float(config.get("minimum_last_ratio", DEFAULT_MINIMUM_LAST_RATIO)), 0.0, 0.95)
 
 
+static func engagement_window_seconds(node: Dictionary, policy: Dictionary = {}) -> float:
+	var config := distribution_config(node, policy)
+	return maxf(0.0, float(config.get("minimum_engagement_seconds", DEFAULT_MINIMUM_ENGAGEMENT_SECONDS)))
+
+
 static func schedule(node: Dictionary, effective_rail_duration: float, policy: Dictionary = {}) -> Array[float]:
 	var result: Array[float] = []
 	var spawns_value: Variant = node.get("spawns", [])
@@ -66,9 +72,11 @@ static func schedule(node: Dictionary, effective_rail_duration: float, policy: D
 	var authored_last := result[0]
 	for authored_delay: float in result:
 		authored_last = maxf(authored_last, authored_delay)
+	var engagement_window := engagement_window_seconds(node, policy)
+	var latest_distributed_spawn := maxf(first_delay, maxf(0.0, effective_rail_duration) - engagement_window)
 	var desired_last := maxf(
 		authored_last,
-		maxf(0.0, effective_rail_duration) * target_last_ratio(node, policy)
+		minf(maxf(0.0, effective_rail_duration) * target_last_ratio(node, policy), latest_distributed_spawn)
 	)
 	var authored_span := authored_last - first_delay
 	var output: Array[float] = []

@@ -75,6 +75,14 @@ func _run() -> void:
 		context = game.get("route_condition_context") as Dictionary
 		_expect(str(context.get("selected_route_target_id", "")) == "c03_steel_door_lower", "shooting the lower door records the lower target")
 		_expect(not RouteOutcomePolicyType.branch_succeeded(steel_choice, true, "", context), "lower door target selects the lower route")
+		_expect(str(game.get("destroyed_breakable_id")) == "c03_steel_door_lower_target", "steel door destruction records a stable non-empty logical id")
+		_expect(not (game.get("active_actors") as Array[Node3D]).has(lower), "broken steel door immediately stops participating in active collision and targeting")
+		_expect((game.get("retiring_actors") as Array[Node3D]).has(lower), "broken steel door remains owned by the current sequence")
+		await create_timer(2.05).timeout
+		_expect(is_instance_valid(lower), "broken steel door remains in the world after two seconds")
+		if is_instance_valid(lower):
+			lower_sprite = lower.get_node_or_null("Sprite3D") as Sprite3D
+			_expect(lower_sprite != null and lower_sprite.modulate.a > 0.99, "broken steel door stays visibly opaque until sequence cleanup")
 
 	game.call("_enter_node", "steel_door_choice")
 	targets = _route_targets(game.get("active_actors") as Array[Node3D])
@@ -87,6 +95,7 @@ func _run() -> void:
 		_expect(str(context.get("selected_route_target_id", "")) == "c03_steel_door_upper", "first destroyed door locks the route choice deterministically")
 		_expect(RouteOutcomePolicyType.branch_succeeded(steel_choice, false, "", context), "upper door target selects the upper route")
 
+	await process_frame
 	_finish(game)
 
 

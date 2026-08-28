@@ -21,6 +21,7 @@ static func _test_transition_endpoints(checks: Array[Dictionary]) -> void:
 	_add_check(checks, ContinuityType.poses_match(ContinuityType.sample_transition(transition, 1.8), to_pose), true, "transition ends at the exact next rail entry pose")
 	var middle := ContinuityType.sample_transition(transition, 0.9)
 	_add_check(checks, (middle.get("position", Vector3.ZERO) as Vector3).is_finite(), true, "Hermite connector produces a finite midpoint")
+	_add_check(checks, _transition_is_monotonic(transition, 1.8), true, "connector advances toward its endpoint without reversing or overshooting")
 
 
 static func _test_mask_window(checks: Array[Dictionary]) -> void:
@@ -56,8 +57,30 @@ static func _test_every_campaign_edge(checks: Array[Dictionary]) -> void:
 				var connector := ContinuityType.transition_between(from_pose, to_pose, 1.35, str(node_id_value), next_id)
 				_add_check(checks, ContinuityType.poses_match(ContinuityType.sample_transition(connector, 0.0), from_pose), true, "edge starts without a pose jump: %s -> %s" % [str(node_id_value), next_id])
 				_add_check(checks, ContinuityType.poses_match(ContinuityType.sample_transition(connector, 1.35), to_pose), true, "edge reaches the next entry exactly: %s -> %s" % [str(node_id_value), next_id])
+				_add_check(checks, _transition_is_monotonic(connector, 1.35), true, "edge never reverses or overshoots: %s -> %s" % [str(node_id_value), next_id])
 				edge_count += 1
 	_add_check(checks, edge_count >= 40, true, "continuity audit covers every encoded non-terminal campaign edge")
+
+
+static func _transition_is_monotonic(transition: Dictionary, duration: float) -> bool:
+	var start := ContinuityType.sample_transition(transition, 0.0).get("position", Vector3.ZERO) as Vector3
+	var finish := ContinuityType.sample_transition(transition, duration).get("position", start) as Vector3
+	var displacement := finish - start
+	var distance := displacement.length()
+	if distance <= 0.0001:
+		return true
+	var direction := displacement / distance
+	var previous_projection := -0.0001
+	for sample_index in 65:
+		var elapsed := duration * float(sample_index) / 64.0
+		var position := ContinuityType.sample_transition(transition, elapsed).get("position", start) as Vector3
+		var projection := (position - start).dot(direction)
+		if projection < -0.0001 or projection > distance + 0.0001:
+			return false
+		if projection + 0.0001 < previous_projection:
+			return false
+		previous_projection = projection
+	return true
 
 
 static func _load_campaign() -> Dictionary:

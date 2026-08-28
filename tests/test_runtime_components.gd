@@ -5,6 +5,7 @@ const BreakableType := preload("res://src/gameplay/breakable_object.gd")
 const CivilianType := preload("res://src/gameplay/civilian_controller.gd")
 const SpawnEventType := preload("res://src/gameplay/enemy_spawn_event.gd")
 const RuntimeFlowType := preload("res://src/gameplay/gameplay_runtime_flow.gd")
+const EnvironmentLifecycleType := preload("res://src/gameplay/environment_scene_lifecycle.gd")
 
 
 static func collect_checks() -> Array[Dictionary]:
@@ -14,6 +15,8 @@ static func collect_checks() -> Array[Dictionary]:
 	_test_civilian(checks)
 	_test_spawn_event(checks)
 	_test_runtime_breakable_context(checks)
+	_test_chapter_start_selection(checks)
+	_test_environment_lifecycle(checks)
 	return checks
 
 
@@ -37,6 +40,9 @@ static func _test_breakable(checks: Array[Dictionary]) -> void:
 	_add_check(checks, breakable.is_broken, true, "breakable enters broken state at zero durability")
 	_add_check(checks, breakable.take_damage(1.0, 0), false, "broken object cannot award or break twice")
 	_add_check(checks, str(breakable.get_reward().get("pickup", "")), "medal", "breakable returns its authored reward without a random roll")
+	_add_check(checks, breakable.persist_broken_visual_until_scene_clear, true, "broken scenery remains visible until its sequence ends by default")
+	breakable.configure({"id": "short_lived", "health": 1.0, "persist_broken_visual": false})
+	_add_check(checks, breakable.persist_broken_visual_until_scene_clear, false, "authored transient breakables may explicitly retire")
 	breakable.free()
 
 
@@ -96,6 +102,29 @@ static func _test_runtime_breakable_context(checks: Array[Dictionary]) -> void:
 	_add_check(checks, bool(context.get("breakable_destroyed", true)), false, "runtime clears the breakable event when nothing was destroyed")
 	_add_check(checks, str(context.get("breakable_id", "missing")), "", "runtime never invents a destroyed breakable id from node data")
 	runtime.free()
+
+
+static func _test_chapter_start_selection(checks: Array[Dictionary]) -> void:
+	var explicit_chapter := {
+		"start": "hatch_gallery",
+		"nodes": [{"id": "wrong_fallback"}, {"id": "hatch_gallery"}],
+	}
+	_add_check(checks, RuntimeFlowType.chapter_start_node_id(explicit_chapter), "hatch_gallery", "chapter intro resolves the authored start node before building its environment")
+	var fallback_chapter := {"nodes": [{"id": "estate_arrival"}]}
+	_add_check(checks, RuntimeFlowType.chapter_start_node_id(fallback_chapter), "estate_arrival", "chapter intro uses the first node only when no explicit start exists")
+
+
+static func _test_environment_lifecycle(checks: Array[Dictionary]) -> void:
+	var root := Node3D.new()
+	var old_environment := WorldEnvironment.new()
+	var stale_prop := Sprite3D.new()
+	root.add_child(old_environment)
+	root.add_child(stale_prop)
+	_add_check(checks, EnvironmentLifecycleType.clear_immediately(root), 2, "environment lifecycle reports every detached scene child")
+	_add_check(checks, root.get_child_count(), 0, "previous environment and props leave the tree before the replacement is built")
+	_add_check(checks, is_instance_valid(old_environment), false, "old WorldEnvironment cannot overlap the new environment for one frame")
+	_add_check(checks, is_instance_valid(stale_prop), false, "stale props cannot be returned during immediate state configuration")
+	root.free()
 
 
 static func _add_check(

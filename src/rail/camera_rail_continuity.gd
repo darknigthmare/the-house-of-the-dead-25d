@@ -114,13 +114,15 @@ static func sample_transition(transition: Dictionary, elapsed: float) -> Diction
 	var to_position := to_pose.get("position", from_position) as Vector3
 	var from_forward := from_pose.get("forward", DEFAULT_CAMERA_FORWARD) as Vector3
 	var to_forward := to_pose.get("forward", DEFAULT_CAMERA_FORWARD) as Vector3
-	var distance := from_position.distance_to(to_position)
+	var displacement := to_position - from_position
+	var distance := displacement.length()
+	var movement_direction := displacement / distance if distance > 0.0001 else Vector3.ZERO
 	var tangent_length := minf(3.0, distance * 0.35)
 	var position := _cubic_hermite(
 		from_position,
 		to_position,
-		from_forward * tangent_length,
-		to_forward * tangent_length,
+		movement_direction * tangent_length,
+		movement_direction * tangent_length,
 		eased
 	)
 	var forward := _slerp_direction(from_forward, to_forward, eased)

@@ -15,7 +15,14 @@
       "enabled": true,
       "mode": "stretch_preserve_first",
       "target_last_ratio": 0.82,
-      "minimum_last_ratio": 0.7
+      "minimum_last_ratio": 0.7,
+      "minimum_engagement_seconds": 7
+    },
+    "engagement_governor": {
+      "enabled": true,
+      "speed_gain": 1.08,
+      "speed_cap": 3,
+      "attack_commit_hold": 0.2
     },
     "rail_motion_keys": [
       {

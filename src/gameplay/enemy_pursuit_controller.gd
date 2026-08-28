@@ -9,6 +9,9 @@ extends RefCounted
 const MIN_MELEE_FRONT_DEPTH := 1.15
 const MIN_RANGED_STANDOFF_DEPTH := 5.2
 const DEFAULT_ACTOR_RADIUS := 0.34
+const DEFAULT_ENGAGEMENT_SPEED_GAIN := 1.08
+const DEFAULT_ENGAGEMENT_SPEED_CAP := 3.0
+const DEFAULT_ATTACK_COMMIT_HOLD_SECONDS := 0.2
 
 const FLOOR_PROP_RADII := {
 	"estate_gate": 2.15,
@@ -78,6 +81,36 @@ static func attack_point(
 	target += right * lateral_offset
 	target.y = ground_y
 	return target
+
+
+static func governed_approach_speed(
+	position: Vector3,
+	target: Vector3,
+	node_elapsed: float,
+	rail_duration: float,
+	telegraph_seconds: float,
+	authored_speed: float,
+	config: Dictionary = {}
+) -> float:
+	if not bool(config.get("enabled", false)):
+		return maxf(0.0, authored_speed)
+	var speed_gain := clampf(float(config.get(
+		"speed_gain",
+		DEFAULT_ENGAGEMENT_SPEED_GAIN
+	)), 1.0, 2.0)
+	var speed_cap := maxf(0.1, float(config.get(
+		"speed_cap",
+		DEFAULT_ENGAGEMENT_SPEED_CAP
+	)))
+	var commit_hold := maxf(0.0, float(config.get(
+		"attack_commit_hold",
+		DEFAULT_ATTACK_COMMIT_HOLD_SECONDS
+	)))
+	var deadline := maxf(0.0, rail_duration - maxf(0.0, telegraph_seconds) - commit_hold)
+	var remaining := maxf(0.05, deadline - maxf(0.0, node_elapsed))
+	var planar_distance := Vector2(target.x - position.x, target.z - position.z).length()
+	var required_speed := planar_distance / remaining
+	return minf(speed_cap, maxf(maxf(0.0, authored_speed), required_speed * speed_gain))
 
 
 static func step_toward_attack_point(

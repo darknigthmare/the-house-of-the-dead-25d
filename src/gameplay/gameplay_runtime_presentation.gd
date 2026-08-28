@@ -39,9 +39,6 @@ func _clear_actors() -> void:
 		curien_finale_tween.kill()
 	curien_finale_tween = null
 	curien_story_actor = null
-	for actor in story_actors:
-		if is_instance_valid(actor):
-			actor.queue_free()
 	story_actors.clear()
 	super._clear_actors()
 

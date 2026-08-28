@@ -143,7 +143,7 @@ func _on_state_timer_finished() -> void:
 	match state:
 		"chapter_intro":
 			center_overlay.visible = false
-			_enter_node(str(current_chapter.get("start", "")))
+			_enter_node(chapter_start_node_id(current_chapter))
 		"node_transition":
 			_update_sequence_transition_camera()
 			_mask_environment_swap()
@@ -172,12 +172,16 @@ func _begin_chapter(index: int) -> void:
 		return
 	chapter_index = clampi(index, 0, chapters.size() - 1)
 	current_chapter = chapters[chapter_index] as Dictionary
+	current_node_id = chapter_start_node_id(current_chapter)
+	current_node = _find_node(current_chapter, current_node_id)
 	camera_transition.clear()
 	_set_music_for_chapter(chapter_index)
 	chapter_scientists_saved = 0
 	chapter_scientists_total = 0
 	_clear_actors()
-	_build_environment(str(current_chapter.get("style", "mansion")))
+	var intro_style := str(current_node.get("style", current_chapter.get("style", "mansion")))
+	_build_environment(intro_style)
+	_apply_node_entry_camera_pose(current_node)
 	state = "chapter_intro"
 	state_timer = 3.2
 	var roman: String = ["I", "II", "III", "IV"][chapter_index]
@@ -188,11 +192,46 @@ func _begin_chapter(index: int) -> void:
 	route_label.text = ""
 
 
+static func chapter_start_node_id(chapter: Dictionary) -> String:
+	var explicit_start := str(chapter.get("start", ""))
+	if not explicit_start.is_empty():
+		return explicit_start
+	var nodes := chapter.get("nodes", []) as Array
+	if nodes.is_empty():
+		return ""
+	var first_node := nodes[0] as Dictionary
+	return str(first_node.get("id", ""))
+
+
+func _apply_node_entry_camera_pose(node_data: Dictionary) -> void:
+	if node_data.is_empty() or camera_3d == null or not is_instance_valid(camera_3d):
+		return
+	var rail := node_data.get("rail", {}) as Dictionary
+	rail_origin = _rail_entry_position(rail)
+	rail_target = Vector3(
+		float(rail.get("x", 0.0)),
+		float(rail.get("y", 1.55)),
+		float(rail.get("z", 4.5))
+	)
+	var sequence_policy := SequenceTimingPolicyScript.campaign_policy(campaign)
+	rail_duration = maxf(1.0, SequenceTimingPolicyScript.rail_duration(node_data, sequence_policy))
+	var entry_pose := CameraRailContinuityScript.node_entry_pose(node_data, rail_duration, sequence_policy)
+	camera_3d.position = entry_pose.get("position", rail_origin) as Vector3
+	var look_target := entry_pose.get("look_target", Vector3(0.0, 1.25, -9.0)) as Vector3
+	var up := entry_pose.get("up", Vector3.UP) as Vector3
+	if camera_3d.position.distance_squared_to(look_target) > 0.0001:
+		camera_3d.look_at(look_target, up)
+
+
 func _enter_node(node_id: String) -> void:
 	var node_data := _find_node(current_chapter, node_id)
 	if node_data.is_empty():
 		_complete_chapter()
 		return
+	var reuses_chapter_intro_environment := (
+		state == "chapter_intro"
+		and str(environment_scene_profile.get("node_id", "")) == node_id
+	)
 	current_node = node_data
 	current_node_id = node_id
 	routes_discovered["%d:%s" % [chapter_index + 1, node_id]] = true
@@ -204,15 +243,10 @@ func _enter_node(node_id: String) -> void:
 	route_condition_context = RouteOutcomePolicyScript.initial_context(current_node)
 	active_civilian = null
 	_clear_actors()
-	_build_environment(str(current_node.get("style", current_chapter.get("style", "mansion"))))
+	if not reuses_chapter_intro_environment:
+		_build_environment(str(current_node.get("style", current_chapter.get("style", "mansion"))))
 	_configure_environment_prop_state_events()
-	var rail := current_node.get("rail", {}) as Dictionary
-	rail_origin = _rail_entry_position(rail)
-	rail_target = Vector3(float(rail.get("x", 0.0)), float(rail.get("y", 1.55)), float(rail.get("z", 4.5)))
-	var sequence_policy := SequenceTimingPolicyScript.campaign_policy(campaign)
-	rail_duration = maxf(1.0, SequenceTimingPolicyScript.rail_duration(current_node, sequence_policy))
-	camera_3d.position = rail_origin
-	camera_3d.look_at(Vector3(float(rail.get("look_x", 0.0)), float(rail.get("look_y", 1.25)), -8.0), Vector3.UP)
+	_apply_node_entry_camera_pose(current_node)
 	camera_transition.clear()
 	state = "node"
 	objective_label.text = _safe_ui_text(str(current_node.get("objective", "SURVIVE")))
@@ -278,7 +312,7 @@ func _find_environment_prop_sprite(prop_id: String, instance_index: int) -> Spri
 	var name_prefix := "Prop_%s" % prop_id
 	for child in world_root.get_children():
 		var sprite := child as Sprite3D
-		if sprite == null or not str(sprite.name).begins_with(name_prefix):
+		if sprite == null or sprite.is_queued_for_deletion() or not str(sprite.name).begins_with(name_prefix):
 			continue
 		if found_index == instance_index:
 			return sprite

@@ -1,6 +1,8 @@
 extends SceneTree
 
 const GAMEPLAY_SCENE_PATH := "res://scenes/gameplay/gameplay.tscn"
+const ContinuityType := preload("res://src/rail/camera_rail_continuity.gd")
+const TimingType := preload("res://src/rail/sequence_timing_policy.gd")
 
 
 func _initialize() -> void:
@@ -23,6 +25,40 @@ func _run() -> void:
 
 	game.set("paused_by_player", true)
 	game.process_mode = Node.PROCESS_MODE_DISABLED
+	var chapters := game.get("chapters") as Array
+	var expected_starts := ["garden_rescue", "chain_plate", "elevator_switch", "chariot_rematch"]
+	var expected_layouts := ["estate_arrival", "hatch_gallery", "elevator_lobby", "rematch_arena"]
+	var policy := TimingType.campaign_policy(game.get("campaign") as Dictionary)
+	for chapter_index in expected_starts.size():
+		game.call("_begin_chapter", chapter_index)
+		var chapter := chapters[chapter_index] as Dictionary
+		var expected_start := str(expected_starts[chapter_index])
+		if str(game.get("current_node_id")) != expected_start:
+			_fail("chapter %d intro selected the wrong start node" % (chapter_index + 1), game)
+			return
+		var profile := game.get("environment_scene_profile") as Dictionary
+		if str(profile.get("node_id", "")) != expected_start:
+			_fail("chapter %d intro built a stale boss environment" % (chapter_index + 1), game)
+			return
+		if str(profile.get("layout", "")) != str(expected_layouts[chapter_index]):
+			_fail("chapter %d intro built the wrong authored layout" % (chapter_index + 1), game)
+			return
+		if _count_world_environments(game.get("world_root") as Node3D) != 1:
+			_fail("chapter %d intro did not own exactly one WorldEnvironment" % (chapter_index + 1), game)
+			return
+		var start_node := _find_node(chapter, expected_start)
+		var duration := TimingType.rail_duration(start_node, policy)
+		var expected_pose := ContinuityType.node_entry_pose(start_node, duration, policy)
+		var camera := game.get("camera_3d") as Camera3D
+		var expected_position := expected_pose.get("position", Vector3.ZERO) as Vector3
+		var expected_forward := expected_pose.get("forward", Vector3.FORWARD) as Vector3
+		if camera.position.distance_to(expected_position) > 0.0001:
+			_fail("chapter %d intro camera did not start on its authored rail pose" % (chapter_index + 1), game)
+			return
+		if (-camera.transform.basis.z).normalized().dot(expected_forward) < 0.9999:
+			_fail("chapter %d intro camera kept the previous boss orientation" % (chapter_index + 1), game)
+			return
+
 	game.call("_clear_actors")
 	var destination := {
 		"id": "pacing_destination",
@@ -99,10 +135,28 @@ func _run() -> void:
 		_fail("hard timeout removed an unresolved visible hostile", game)
 		return
 
-	print("SMOKE SEQUENCE PACING: rail gate 12.0s, contextual transition, curved destination rail, no hostile timeout")
+	print("SMOKE SEQUENCE PACING: four correct intro sets/poses, rail gate 12.0s, contextual transition, curved destination rail, no hostile timeout")
 	game.free()
 	await process_frame
 	quit(0)
+
+
+func _find_node(chapter: Dictionary, node_id: String) -> Dictionary:
+	for node_value: Variant in chapter.get("nodes", []) as Array:
+		var node := node_value as Dictionary
+		if str(node.get("id", "")) == node_id:
+			return node
+	return {}
+
+
+func _count_world_environments(world_root: Node3D) -> int:
+	var count := 0
+	if world_root == null or not is_instance_valid(world_root):
+		return count
+	for child in world_root.get_children():
+		if child is WorldEnvironment:
+			count += 1
+	return count
 
 
 func _fail(message: String, game: Node = null) -> void:

@@ -8,6 +8,7 @@ const EnemySpawnEventScript := preload("res://src/gameplay/enemy_spawn_event.gd"
 const EnemyPursuitControllerScript := preload("res://src/gameplay/enemy_pursuit_controller.gd")
 const WalkableSurfaceResolverScript := preload("res://src/gameplay/walkable_surface_resolver.gd")
 const EnvironmentLayoutClassifierScript := preload("res://src/gameplay/environment_layout_classifier.gd")
+const EnvironmentSceneLifecycleScript := preload("res://src/gameplay/environment_scene_lifecycle.gd")
 const CameraRailPathSamplerScript := preload("res://src/rail/camera_rail_path_sampler.gd")
 const DEFAULT_ATTACK_TELEGRAPH_SECONDS := 0.65
 const DEFAULT_MELEE_RANGE := 2.5
@@ -181,6 +182,11 @@ func _spawn_breakable(data: Dictionary) -> void:
 	var visual_prop_id := str(data.get("visual_prop", ""))
 	var visual_profile := environment_asset_library.get_prop(visual_prop_id) if not visual_prop_id.is_empty() else {}
 	var instance_id := str(data.get("id", asset_id))
+	if instance_id.is_empty():
+		instance_id = "breakable_%s_%d" % [current_node_id, active_actors.size()]
+	# Asset identity drives authored route/state events; instance identity keeps
+	# repeated crates, doors and secrets individually addressable.
+	var event_id := asset_id if not asset_id.is_empty() else instance_id
 	var texture_path := str(visual_profile.get("path", profile.get("intact", _pickup_texture_path("medal"))))
 	var world_scale := float(data.get("scale", visual_profile.get("world_scale", profile.get("world_scale", 0.72))))
 	var actor_stats := {
@@ -191,19 +197,23 @@ func _spawn_breakable(data: Dictionary) -> void:
 		"hframes": int(data.get("hframes", visual_profile.get("hframes", 1))),
 		"frame": int(data.get("frame", 0)),
 	}
-	var actor := _create_actor(instance_id if not instance_id.is_empty() else "medal", Vector3(float(position_data[0]), float(position_data[1]), float(position_data[2])), actor_stats, "breakable")
+	var actor := _create_actor(instance_id, Vector3(float(position_data[0]), float(position_data[1]), float(position_data[2])), actor_stats, "breakable")
 	var breakable_controller: BreakableObject = BreakableObjectScript.new()
 	breakable_controller.name = "BreakableObject"
 	breakable_controller.configure({
-		"id": asset_id,
+		"id": instance_id,
 		"health": float(data.get("health", 2.0)),
 		"reward": {"pickup": str(data.get("pickup", "medal"))},
+		"persist_broken_visual": bool(data.get("persist_broken_visual", true)),
 	})
 	actor.add_child(breakable_controller)
 	actor.set_meta("pickup", str(data.get("pickup", "medal")))
 	actor.set_meta("breakable_asset_id", asset_id)
+	actor.set_meta("breakable_instance_id", instance_id)
+	actor.set_meta("breakable_event_id", event_id)
 	actor.set_meta("route_target_id", str(data.get("route_target", instance_id)))
 	actor.set_meta("spawn_pickup_on_break", bool(data.get("spawn_pickup_on_break", false)))
+	actor.set_meta("persist_broken_visual", breakable_controller.persist_broken_visual_until_scene_clear)
 	actor.set_meta("broken_texture", str(profile.get("broken", "")))
 	actor.set_meta("broken_frame", int(data.get("broken_frame", 1)))
 	actor.set_meta("branch_target", true)
@@ -481,42 +491,57 @@ func _update_actors(delta: float) -> void:
 					actor.position.y = ground_y + sin(age * 8.4) * 0.22
 				_:
 					actor.position.y = ground_y + sin(age * 4.0) * 0.035
+		var pursuit_camera_forward: Vector3 = Vector3.FORWARD
+		var pursuit_attack_target: Vector3 = actor.global_position
 		if role == "enemy" and not uses_civilian_target_motion:
-			var recovering := int(actor.get_meta("attacks", 0)) > 0 and age < float(actor.get_meta("recovery_until", 0.0))
 			var minimum_depth := float(actor.get_meta("minimum_front_depth", EnemyPursuitControllerScript.MIN_MELEE_FRONT_DEPTH))
+			if camera_3d != null and is_instance_valid(camera_3d):
+				pursuit_camera_forward = EnemyPursuitControllerScript.flat_camera_forward(-camera_3d.global_transform.basis.z)
+				pursuit_attack_target = EnemyPursuitControllerScript.attack_point(
+					camera_3d.global_position,
+					pursuit_camera_forward,
+					minimum_depth,
+					actor.global_position.y,
+					float(actor.get_meta("attack_slot_offset", 0.0)) + authored_lane_offset
+				)
+			var recovering := int(actor.get_meta("attacks", 0)) > 0 and age < float(actor.get_meta("recovery_until", 0.0))
 			var reached_attack_position := false
 			if behavior == "throw_projectile":
 				if camera_3d != null and is_instance_valid(camera_3d):
-					var camera_forward := -camera_3d.global_transform.basis.z
-					reached_attack_position = EnemyPursuitControllerScript.camera_depth(actor.global_position, camera_3d.global_position, camera_forward) <= minimum_depth + 0.02
+					reached_attack_position = EnemyPursuitControllerScript.camera_depth(actor.global_position, camera_3d.global_position, pursuit_camera_forward) <= minimum_depth + 0.02
 			else:
 				reached_attack_position = _actor_has_melee_contact(actor)
 			if bool(actor.get_meta("attack_telegraph_started", false)) or recovering or reached_attack_position:
 				forward_speed = 0.0
-			elif age >= float(actor.get_meta("attack_ready_age", 999.0)):
-				forward_speed = maxf(forward_speed, float(actor.get_meta("attack_approach_speed", 1.25)))
+			else:
+				if age >= float(actor.get_meta("attack_ready_age", 999.0)):
+					forward_speed = maxf(forward_speed, float(actor.get_meta("attack_approach_speed", 1.25)))
+				if state == "node" and camera_3d != null and is_instance_valid(camera_3d):
+					var timing_policy := SequenceTimingPolicyScript.campaign_policy(campaign)
+					var governor_value: Variant = timing_policy.get("engagement_governor", {})
+					var governor_config := governor_value as Dictionary if typeof(governor_value) == TYPE_DICTIONARY else {}
+					forward_speed = EnemyPursuitControllerScript.governed_approach_speed(
+						actor.global_position,
+						pursuit_attack_target,
+						node_elapsed,
+						rail_duration,
+						float(actor.get_meta("attack_telegraph_seconds", DEFAULT_ATTACK_TELEGRAPH_SECONDS)),
+						forward_speed,
+						governor_config
+					)
 		if uses_directional_projectile_motion:
 			var travel_direction: Vector3 = actor.get_meta("travel_direction", Vector3.ZERO) as Vector3
 			if not travel_direction.is_zero_approx():
 				actor.global_position += travel_direction.normalized() * forward_speed * delta
 		elif not uses_civilian_target_motion:
 			if role == "enemy" and camera_3d != null and is_instance_valid(camera_3d):
-				var camera_forward := EnemyPursuitControllerScript.flat_camera_forward(-camera_3d.global_transform.basis.z)
 				if behavior == "throw_projectile":
-					actor.position.x = move_toward(actor.position.x, lane + authored_lane_offset, maxf(0.1, speed) * delta)
-					actor.global_position -= camera_forward * forward_speed * delta
+					actor.position.x = move_toward(actor.position.x, lane + authored_lane_offset, maxf(0.1, forward_speed) * delta)
+					actor.global_position -= pursuit_camera_forward * forward_speed * delta
 				else:
-					var minimum_depth := float(actor.get_meta("minimum_front_depth", EnemyPursuitControllerScript.MIN_MELEE_FRONT_DEPTH))
-					var attack_target := EnemyPursuitControllerScript.attack_point(
-						camera_3d.global_position,
-						camera_forward,
-						minimum_depth,
-						actor.global_position.y,
-						float(actor.get_meta("attack_slot_offset", 0.0)) + authored_lane_offset
-					)
 					actor.global_position = EnemyPursuitControllerScript.step_toward_attack_point(
 						actor.global_position,
-						attack_target,
+						pursuit_attack_target,
 						forward_speed,
 						delta
 					)
@@ -1115,7 +1140,7 @@ func _kill_actor(actor: Node3D, player_index: int, award: bool) -> void:
 		var kill_shot_type := "headshot_kill" if hit_zone == "head" else "%s_kill" % hit_zone
 		_add_score(player_index, int(actor.get_meta("score", 80)), "TARGET DOWN", str(actor.get_meta("actor_id", "enemy")), kill_shot_type)
 	if role == "breakable":
-		destroyed_breakable_id = str(actor.get_meta("breakable_asset_id", actor.get_meta("actor_id", "")))
+		destroyed_breakable_id = str(actor.get_meta("breakable_event_id", actor.get_meta("actor_id", "")))
 		var route_target_id := str(actor.get_meta("route_target_id", ""))
 		var destroyed_targets := route_condition_context.get("destroyed_route_targets", []) as Array
 		if not route_target_id.is_empty() and not destroyed_targets.has(route_target_id):
@@ -1161,6 +1186,10 @@ func _kill_actor(actor: Node3D, player_index: int, award: bool) -> void:
 		if role != "breakable" and sprite.hframes * sprite.vframes >= 64:
 			actor.set_meta("animation_state", 7)
 			_apply_directional_sprite_frame(actor, 7)
+		if role == "breakable" and bool(actor.get_meta("persist_broken_visual", true)):
+			# Broken doors and scenery remain visible, but stay outside the active
+			# actor/blocker lists, until the sequence itself is cleaned up.
+			return
 		var tween := actor.create_tween()
 		if role == "breakable":
 			tween.tween_interval(0.42)
@@ -1346,12 +1375,7 @@ func _has_active_hostiles() -> bool:
 
 
 func _clear_actors() -> void:
-	for actor in active_actors:
-		if is_instance_valid(actor):
-			actor.queue_free()
-	for actor in retiring_actors:
-		if is_instance_valid(actor):
-			actor.queue_free()
+	EnvironmentSceneLifecycleScript.clear_immediately(actor_root)
 	active_actors.clear()
 	retiring_actors.clear()
 	current_boss = null
@@ -1618,8 +1642,7 @@ func _on_boss_defeated() -> void:
 
 
 func _build_environment(style: String) -> void:
-	for child in world_root.get_children():
-		child.queue_free()
+	EnvironmentSceneLifecycleScript.clear_immediately(world_root)
 	environment_scene_profile = environment_asset_library.get_scene_profile(current_node_id, style)
 	style = str(environment_scene_profile.get("style", style))
 	_set_ambience_for_style(style)

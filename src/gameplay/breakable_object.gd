@@ -8,6 +8,7 @@ signal broken(source_player_index: int, reward_definition: Dictionary)
 @export var object_id: StringName = &"breakable"
 @export_range(0.01, 10000.0, 0.01) var max_durability: float = 1.0
 @export var reward_definition: Dictionary = {}
+@export var persist_broken_visual_until_scene_clear: bool = true
 
 var durability: float = 1.0
 var is_broken: bool = false
@@ -18,6 +19,7 @@ func configure(data: Dictionary) -> void:
 	max_durability = maxf(0.01, float(data.get("durability", data.get("health", max_durability))))
 	durability = max_durability
 	reward_definition = (data.get("reward", {}) as Dictionary).duplicate(true)
+	persist_broken_visual_until_scene_clear = bool(data.get("persist_broken_visual", true))
 	is_broken = false
 
 

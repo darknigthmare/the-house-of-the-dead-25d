@@ -14,6 +14,8 @@ static func collect_checks() -> Array[Dictionary]:
 	_test_swept_collision(checks)
 	_test_front_plane_collision(checks)
 	_test_repeating_attack_cycle(checks)
+	_test_engagement_governor(checks)
+	_test_atomic_actor_clear(checks)
 	_test_coop_threat_targeting(checks)
 	_test_boss_telegraph_contract(checks)
 	return checks
@@ -208,6 +210,59 @@ static func _test_repeating_attack_cycle(checks: Array[Dictionary]) -> void:
 		"repeated attack schedules a positive recovery window"
 	)
 	actor.free()
+	runtime.free()
+
+
+static func _test_engagement_governor(checks: Array[Dictionary]) -> void:
+	var config := {
+		"enabled": true,
+		"speed_gain": 1.08,
+		"speed_cap": 3.0,
+		"attack_commit_hold": 0.2,
+	}
+	var position := Vector3(0.0, 0.0, -12.0)
+	var target := Vector3.ZERO
+	var speed := PursuitType.governed_approach_speed(position, target, 0.0, 8.0, 0.65, 0.8, config)
+	_add_check(checks, speed > 0.8, true, "engagement governor accelerates a distant late-wave hunter")
+	_add_check(checks, speed <= 3.0, true, "engagement governor never exceeds its authored safety cap")
+	var late_speed := PursuitType.governed_approach_speed(position, target, 6.0, 8.0, 0.65, 0.8, config)
+	_add_check(checks, is_equal_approx(late_speed, 3.0), true, "late engagement converges at the deterministic capped speed")
+	_add_check(
+		checks,
+		PursuitType.governed_approach_speed(position, target, 6.0, 8.0, 0.65, 0.8, {"enabled": false}),
+		0.8,
+		"disabled governor preserves the authored behavior speed"
+	)
+	var sixty_hz := _simulate_governed_approach(1.0 / 60.0, config)
+	var one_twenty_hz := _simulate_governed_approach(1.0 / 120.0, config)
+	_add_check(checks, sixty_hz.distance_to(target) <= 0.06, true, "governed hunter reaches its attack slot before the commit deadline at 60 Hz")
+	_add_check(checks, one_twenty_hz.distance_to(target) <= 0.06, true, "governed hunter reaches its attack slot before the commit deadline at 120 Hz")
+	_add_check(checks, sixty_hz.distance_to(one_twenty_hz) <= 0.03, true, "engagement arrival remains frame-rate independent")
+
+
+static func _simulate_governed_approach(delta: float, config: Dictionary) -> Vector3:
+	var position := Vector3(0.0, 0.0, -12.0)
+	var target := Vector3.ZERO
+	var elapsed := 0.0
+	var deadline := 8.0 - 0.65 - 0.2
+	while elapsed < deadline:
+		var speed := PursuitType.governed_approach_speed(position, target, elapsed, 8.0, 0.65, 0.8, config)
+		position = PursuitType.step_toward_attack_point(position, target, speed, delta)
+		elapsed += delta
+	return position
+
+
+static func _test_atomic_actor_clear(checks: Array[Dictionary]) -> void:
+	var runtime = RuntimeCombatType.new()
+	runtime.actor_root = Node3D.new()
+	var stale_actor := Node3D.new()
+	runtime.actor_root.add_child(stale_actor)
+	runtime.active_actors.append(stale_actor)
+	runtime._clear_actors()
+	_add_check(checks, runtime.actor_root.get_child_count(), 0, "scene cleanup detaches every stale actor before a new sequence starts")
+	_add_check(checks, is_instance_valid(stale_actor), false, "stale hitboxes cannot survive the atomic actor cleanup")
+	runtime.actor_root.free()
+	runtime.actor_root = null
 	runtime.free()
 
 

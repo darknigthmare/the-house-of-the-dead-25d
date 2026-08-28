@@ -14,6 +14,7 @@ static func collect_checks() -> Array[Dictionary]:
 			"mode": "stretch_preserve_first",
 			"target_last_ratio": 0.82,
 			"minimum_last_ratio": 0.70,
+			"minimum_engagement_seconds": 7.0,
 		}
 	}
 	var encounter := {
@@ -26,7 +27,7 @@ static func collect_checks() -> Array[Dictionary]:
 	}
 	var delays := SpawnTimingPolicyType.schedule(encounter, 12.0, policy)
 	_add_check(checks, is_equal_approx(delays[0], 0.5), true, "spawn distribution preserves the first contact")
-	_add_check(checks, is_equal_approx(delays[delays.size() - 1], 9.84), true, "last ordinary wave reaches eighty-two percent of the rail")
+	_add_check(checks, is_equal_approx(delays[delays.size() - 1], 5.0), true, "last ordinary wave keeps a seven-second engagement window")
 	_add_check(checks, delays[0] <= delays[1] and delays[1] <= delays[2], true, "spawn distribution preserves authored order")
 	_add_check(checks, delays[1] > 2.0, true, "middle wave retains its relative order while filling the rail")
 
@@ -43,6 +44,7 @@ static func collect_checks() -> Array[Dictionary]:
 	var campaign := _load_campaign()
 	var campaign_policy := SequenceTimingPolicyType.campaign_policy(campaign)
 	var eligible_count := 0
+	var spawn_count := 0
 	for chapter_value: Variant in campaign.get("chapters", []) as Array:
 		var chapter := chapter_value as Dictionary
 		for node_value: Variant in chapter.get("nodes", []) as Array:
@@ -50,15 +52,17 @@ static func collect_checks() -> Array[Dictionary]:
 			if not SpawnTimingPolicyType.uses_distribution(node, campaign_policy):
 				continue
 			eligible_count += 1
+			spawn_count += (node.get("spawns", []) as Array).size()
 			var rail_duration := SequenceTimingPolicyType.rail_duration(node, campaign_policy)
 			var scheduled := SpawnTimingPolicyType.schedule(node, rail_duration, campaign_policy)
 			var spawns := node.get("spawns", []) as Array
 			var authored_first := float((spawns[0] as Dictionary).get("delay", 0.0))
-			var ratio := scheduled[scheduled.size() - 1] / maxf(0.001, rail_duration)
 			_add_check(checks, is_equal_approx(scheduled[0], authored_first), true, "%s keeps its first spawn contact" % str(node.get("id", "encounter")))
-			_add_check(checks, ratio >= SpawnTimingPolicyType.minimum_last_ratio(node, campaign_policy), true, "%s fills at least seventy percent of its rail" % str(node.get("id", "encounter")))
+			_add_check(checks, rail_duration - scheduled[scheduled.size() - 1] >= 7.0 - 0.0001, true, "%s leaves a complete seven-second engagement window" % str(node.get("id", "encounter")))
 			_add_check(checks, _is_ordered(scheduled), true, "%s preserves spawn order" % str(node.get("id", "encounter")))
+			_add_check(checks, _minimum_gap(scheduled) >= 0.5 - 0.0001, true, "%s keeps every wave visually separated" % str(node.get("id", "encounter")))
 	_add_check(checks, eligible_count, 34, "all thirty-four ordinary multi-wave encounters use distributed timing")
+	_add_check(checks, spawn_count, 98, "engagement contract covers all ninety-eight ordinary spawns")
 	return checks
 
 
@@ -77,6 +81,13 @@ static func _is_ordered(values: Array[float]) -> bool:
 		if values[index] < values[index - 1]:
 			return false
 	return true
+
+
+static func _minimum_gap(values: Array[float]) -> float:
+	var result := 1.0e20
+	for index in range(1, values.size()):
+		result = minf(result, values[index] - values[index - 1])
+	return result
 
 
 static func _add_check(checks: Array[Dictionary], actual: Variant, expected: Variant, label: String) -> void:
