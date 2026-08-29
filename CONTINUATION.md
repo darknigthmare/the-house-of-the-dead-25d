@@ -2,7 +2,7 @@
 
 ## Unreleased development after v0.5.0 — current worktree
 
-This section describes local work after immutable release `v0.5.0`. It is not evidence for the tagged archives, GitHub Release or existing production deployment documented below.
+This section describes verified post-v0.5.0 work and publication evidence. It does not modify or supersede the tagged archives, GitHub Release or historical v0.5.0 deployment documented below.
 
 Implemented in the current worktree:
 
@@ -28,7 +28,7 @@ Final local verification:
 - content audit: **889 checks / 6 known warnings / 0 errors**;
 - route verifier: Chapter 1 **106.5 s**, Chapter 2 **97.4 s**, Chapter 3 **93.1 s**, Chapter 4 **40.4 s**, excluding dynamic bosses.
 
-These results validate the current local source tree. A fresh accessibility-patched Web export was produced and passes `qa:web` **299/299** plus `verify:web`: **9 files / 122,287,366 bytes**, PCK **82,442,972** (`0cb16dc1…`), WASM **39,513,091** (`35116f68…`) and HTML **5,590** (`03c4a70a…`). Fresh Windows/Linux exports, release archives, clean-machine startup, visual browser inspection and deployment remain separate gates.
+These results validate the current local source tree. A fresh accessibility-patched Web export was produced and passes `qa:web` **299/299** plus `verify:web`: **9 files / 122,287,366 bytes**, PCK **82,442,972** (`0cb16dc1…`), WASM **39,513,091** (`35116f68…`) and HTML **5,590** (`03c4a70a…`). Gameplay commit `e884f77` is on GitHub `main`, Release checks run `33281429943` passed, and Vercel production `dpl_3uZ9rTZBRyvau7mgwBwePsmFU6kr` is Ready at <https://the-house-of-the-dead-25d.vercel.app>. Root/PCK/WASM return 200 with the exact local lengths, WASM MIME and COOP/COEP; `.git/config` and `project.godot` return 404. Fresh Windows/Linux exports, release archives, clean-machine startup and visual browser inspection remain separate gates.
 
 Disk-safety note: the ignored historical `artifacts/`, old `build/windows/`, old `build/linux/` and redundant Godot executable ZIP were moved intact to `T:\Codex_HOTD25D_Offload_2026-08-30`. They were not deleted and are not part of this Git diff. Restore them only when C: has enough headroom; do not confuse those v0.5.0-era desktop outputs with a fresh post-v0.5.0 build.
 
@@ -38,13 +38,13 @@ Open fidelity boundaries:
 - the connector provides physical and visual transition context, but environments are still reconstructed per node rather than retained as one persistent chapter world;
 - the active actor art remains Sprite V2: eight directions and eight semantic cells per direction, not multi-frame V3 clips; all right profiles and many back-right profiles are mirrored;
 - the content audit retains **six known warnings**, including the directional derivations and three provisional enemy placements;
-- no post-v0.5.0 Windows/Linux build, archive, GitHub release, visual browser inspection or Vercel deployment should be claimed until it is actually produced and checked; only the local Web export above is current evidence.
+- no post-v0.5.0 Windows/Linux build, archive, GitHub release or visual browser inspection should be claimed; the GitHub main commit, green CI and Vercel HTTP deployment above are current evidence, but no new immutable release tag was created.
 
 Preserve the immutable `v0.5.0` commit, tag, checksums and published evidence below. The next implementation priority is a real Sprite V3 pilot with authored multi-frame clips and an adapter that can fall back atomically to V2; do not relabel duplicated V2 cells as V3.
 
 ## Published v0.5.0 release — pursuit, collision and route-density integrity
 
-Package version `0.5.0` is published from immutable tag `v0.5.0` at exact commit `6d84764745102b95e22b2462eeaa364103678c0b`. GitHub Actions release-check run `33136431022` passed, all four delivery archives and `SHA256SUMS.txt` are public in the GitHub release, and Vercel production `dpl_BTEuXpYNMWmEYbWP2h2hNjAVGkGL` is live at <https://the-house-of-the-dead-25d.vercel.app>.
+Package version `0.5.0` is published from immutable tag `v0.5.0` at exact commit `6d84764745102b95e22b2462eeaa364103678c0b`. GitHub Actions release-check run `33136431022` passed, all four delivery archives and `SHA256SUMS.txt` are public in the GitHub release, and Vercel production `dpl_BTEuXpYNMWmEYbWP2h2hNjAVGkGL` was verified at <https://the-house-of-the-dead-25d.vercel.app> when v0.5.0 was published; that alias now serves the later deployment documented above.
 
 Implemented in v0.5.0:
 
@@ -68,7 +68,7 @@ Verified v0.5.0 release evidence:
 - immutable release tag `v0.5.0` points to exact commit `6d84764745102b95e22b2462eeaa364103678c0b`;
 - [GitHub Release v0.5.0](https://github.com/darknigthmare/the-house-of-the-dead-25d/releases/tag/v0.5.0) contains source **233,538,836 bytes**, Windows **119,954,813**, Linux **110,326,829**, Web **92,152,402** and `SHA256SUMS.txt`; the extracted source archive passes `npm test` 295/295;
 - GitHub Actions release-check run [`33136431022`](https://github.com/darknigthmare/the-house-of-the-dead-25d/actions/runs/33136431022) passed;
-- Vercel production `dpl_BTEuXpYNMWmEYbWP2h2hNjAVGkGL` is `READY`; public HTML, PCK and WASM return HTTP 200 and match the local release hashes;
+- Vercel production `dpl_BTEuXpYNMWmEYbWP2h2hNjAVGkGL` was `READY` at v0.5.0 publication; public HTML, PCK and WASM returned HTTP 200 and matched the local release hashes;
 
 - `npm test`: 295/295 passed;
 - deterministic Godot core: 975 assertions passed;
