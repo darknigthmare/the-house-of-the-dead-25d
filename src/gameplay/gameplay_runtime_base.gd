@@ -95,6 +95,7 @@ var continuing_player: int = -1
 var players: Array[Dictionary] = []
 var camera_3d: Camera3D
 var world_root: Node3D
+var connector_root: Node3D
 var actor_root: Node3D
 var fx_root: Node3D
 var active_actors: Array[Node3D] = []
@@ -102,6 +103,8 @@ var active_civilian: Node3D
 var rail_origin := Vector3(0.0, 1.7, 8.0)
 var rail_target := Vector3(0.0, 1.55, 4.5)
 var rail_duration: float = 8.0
+var environment_origin := Vector3.ZERO
+var pending_environment_origin := Vector3.ZERO
 
 var hud_layer: CanvasLayer
 var hud_root: Control
@@ -325,6 +328,9 @@ func _build_world_nodes() -> void:
 	world_root = Node3D.new()
 	world_root.name = "ProceduralEnvironment"
 	add_child(world_root)
+	connector_root = Node3D.new()
+	connector_root.name = "SequenceConnector"
+	add_child(connector_root)
 	actor_root = Node3D.new()
 	actor_root.name = "SpriteActors3D"
 	add_child(actor_root)
@@ -837,6 +843,12 @@ func _begin_credits() -> void:
 	pass
 
 func _clear_actors() -> void:
+	pass
+
+func _build_sequence_connector(_from_pose: Dictionary, _to_pose: Dictionary, _next_profile: Dictionary) -> void:
+	pass
+
+func _clear_sequence_connector() -> void:
 	pass
 
 func _build_environment(_style: String) -> void:

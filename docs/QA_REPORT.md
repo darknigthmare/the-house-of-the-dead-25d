@@ -2,6 +2,28 @@
 
 This report first records the published v0.5.0 release, then preserves the published v0.4.0, v0.3.0, v0.2.1, v0.2.0 and historical v0.1.0 evidence separately. Evidence remains version-bound: an older export or deployment is not proof for a newer revision.
 
+## Unreleased worktree — connected continuity and serialized finale
+
+This section is local post-v0.5.0 evidence only. It does not modify or supersede the immutable release results below.
+
+| Surface | Verified result | Proven scope and boundary |
+|---|---:|---|
+| deterministic Godot core | **1,281 assertions passed** | connected origins, exact rail tangents, planar 9 m joins, root alignment and non-zero-origin boss contact |
+| complete QA orchestration | **313/313 passed**, exit 0 | final aggregate local worktree gate |
+| Curien-finale smoke | **60 assertions passed** | serialized 7.13 s Curien sequence, data-driven firing/damage locks, pause-frozen tweens/input/boss/subtitle clocks, immediate residual-projectile retirement, Magician start and 0.50 s post-defeat hold |
+| sequence-pacing smoke | passed | two-phase physical connector, old/new materials, collisions, 9 m planar origin, transition lifecycle and non-zero-origin boss contact |
+| campaign/gameplay/HUD smokes | passed | chapters 1–4, boss order/rematches, 15/15 scientists, ending/credits, attack readability, projectiles, pickups, independent 2P input and sanitized glyphs |
+| route smoke | **25** | active route traversal and Chapter 2 order |
+| engagement coverage | **34 encounters / 98 spawns** | declared encounter density remains reachable under the current timing gate |
+| content audit | **889 checks / 6 warnings / 0 errors** | no blocking content error; known fidelity warnings remain visible |
+| fresh Web export | **9 files / 122,287,366 bytes** | accessibility shell patched; `qa:web` **299/299**, `verify:web` passed; PCK **82,442,972**, WASM **39,513,091**, HTML **5,590** |
+
+The QA launcher is stricter in this worktree: any Godot output containing `SCRIPT ERROR`, `Parse Error`, `Compilation failed` or `Failed to load script` is fatal even when the engine process returns zero. This prevents a false-green result caused by Godot's exit behavior.
+
+The Curien-to-Magician sequence is locked for **7.13 seconds**, but the duration is tagged `internal_sync_only_tbd_authorized_build`. Passing the smoke proves serialization and damage/input gating only; it does not verify an arcade timestamp. Likewise, the two-material collidable connector and the mask beginning at **0.79** prove internal transition behavior, not persistent-world or Sega-geometry fidelity.
+
+The table includes the fresh post-v0.5.0 Web export, but no fresh Windows/Linux export, clean-machine executable check, visual Web browser inspection or deployment. Automated browser capture was unavailable in the current environment, so static/export verification is not presented as visual runtime evidence.
+
 ## Published v0.5.0 release — 2026-08-28
 
 This section applies to immutable tag `v0.5.0` at exact commit `6d84764745102b95e22b2462eeaa364103678c0b`, its local exports, public delivery archives, GitHub Release and production Vercel deployment.

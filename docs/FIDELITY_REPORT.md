@@ -1,5 +1,30 @@
 # Fidelity Report
 
+## Unreleased worktree — continuity improvements after v0.5.0
+
+The current worktree improves internal spatial and narrative continuity without claiming a newly verified Sega reference match.
+
+### Spatial continuity
+
+- Every consecutive rail join computes a connected origin from the outgoing endpoint and incoming entry pose. The planar connector length is exactly **9 metres** and vertical origin drift is sanitized.
+- Environment and actor roots share that origin; non-zero-origin boss contact positions are transformed exactly once into actor-local space.
+- A temporary physical `connector_root` spans the swap. Its old-set and new-set halves use their respective materials and provide floor, side walls, threshold arch, backdrop and collision bodies. It is removed after the destination set is built.
+- The transition mask begins at **0.79**, before the known Steel Door wall crossing near 0.812.
+- This is still a sequence of node-specific reconstructed sets. The connector improves readable travel between them but does not provide persistent decor, arcade-authored architecture or uninterrupted chapter geometry.
+
+### Route and finale continuity
+
+- Chapter 2 now orders both bridge/stair branches through `corridor_cache`, then `roof_approach`, `roof_rescue` and Hangedman. This removes the previous roof-to-interior-to-roof discontinuity while preserving the encoded route count and fixed timing budget.
+- Curien's execution is serialized before the Magician encounter for **7.13 seconds**; player firing is disabled and boss damage is locked until the sequence completes.
+- Boss completion remains dynamic and is followed by a **0.50-second** death hold before route advancement.
+- The 7.13-second value is labeled `internal_sync_only_tbd_authorized_build`. It is an internally coherent staging duration, not an arcade-exact timestamp.
+
+### Evidence and unresolved fidelity gates
+
+Final local verification passes complete QA **313/313**, deterministic core **1,281 assertions**, Curien-finale smoke **60 assertions**, route smoke **25**, engagement coverage **34 encounters / 98 spawns**, and content audit **889 checks / 6 warnings / 0 errors**.
+
+No authorized `reference_build/` or timestamp evidence is present; reference timing remains `TBD-AUTH`. The active art remains Sprite V2 with eight semantic states per direction rather than true multi-frame clips, all right views and many back-right views are mirrored, and the content audit retains six known warnings. These limitations prevent any 100% or revision-exact fidelity claim.
+
 ## Published v0.5.0 release — measured state, 2026-08-28
 
 This report describes immutable tag `v0.5.0` at exact commit `6d84764745102b95e22b2462eeaa364103678c0b`, its public delivery archives and verified production deployment.

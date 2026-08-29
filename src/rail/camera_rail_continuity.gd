@@ -74,6 +74,79 @@ static func pose_from_sample(sample: Dictionary) -> Dictionary:
 	}
 
 
+static func offset_pose(pose: Dictionary, offset: Vector3) -> Dictionary:
+	var normalized := _normalized_pose(pose)
+	var position := normalized.get("position", Vector3.ZERO) as Vector3
+	var forward := normalized.get("forward", DEFAULT_CAMERA_FORWARD) as Vector3
+	var up := normalized.get("up", Vector3.UP) as Vector3
+	var look_distance := float(normalized.get("look_distance", 8.0))
+	position += offset
+	return {
+		"position": position,
+		"forward": forward,
+		"up": up,
+		"look_distance": look_distance,
+		"look_target": position + forward * look_distance,
+	}
+
+
+static func node_exit_motion_direction(
+	node: Dictionary,
+	_duration: float,
+	_policy: Dictionary = {},
+	fallback_direction: Vector3 = DEFAULT_CAMERA_FORWARD
+) -> Vector3:
+	if str(node.get("type", "")) == "boss":
+		return _planar_direction(fallback_direction)
+	var rail_value: Variant = node.get("rail", {})
+	var rail := rail_value as Dictionary if typeof(rail_value) == TYPE_DICTIONARY else {}
+	var origin := rail_entry_position(rail)
+	var target := rail_target_position(rail)
+	var points_value: Variant = rail.get("points", [])
+	if typeof(points_value) == TYPE_ARRAY and (points_value as Array).size() >= 2:
+		var endpoint := origin
+		var previous_distinct := origin
+		for point_value: Variant in points_value as Array:
+			if typeof(point_value) != TYPE_DICTIONARY:
+				continue
+			var point := point_value as Dictionary
+			var candidate := _vector3_from_value(point.get("position", []), target)
+			if not candidate.is_equal_approx(endpoint):
+				previous_distinct = endpoint
+				endpoint = candidate
+		var point_motion := endpoint - previous_distinct
+		if not point_motion.is_zero_approx():
+			return _planar_direction(point_motion)
+	var sweep := float(rail.get("sweep", 0.0))
+	var control_b := origin.lerp(target, 0.72) + Vector3(-sweep * 0.22, -0.04, 0.0)
+	var motion := target - control_b
+	if motion.is_zero_approx():
+		motion = target - origin
+	return _planar_direction(motion if not motion.is_zero_approx() else fallback_direction)
+
+
+static func connected_environment_origin(
+	from_pose: Dictionary,
+	next_local_entry_pose: Dictionary,
+	exit_motion_direction: Vector3,
+	connector_distance: float
+) -> Vector3:
+	var normalized_from := _normalized_pose(from_pose)
+	var normalized_next := _normalized_pose(next_local_entry_pose)
+	var from_position := normalized_from.get("position", Vector3.ZERO) as Vector3
+	var next_local_position := normalized_next.get("position", Vector3.ZERO) as Vector3
+	var fallback := normalized_from.get("forward", DEFAULT_CAMERA_FORWARD) as Vector3
+	var direction := _planar_direction(exit_motion_direction if not exit_motion_direction.is_zero_approx() else fallback)
+	var connected_entry_position := from_position + direction * maxf(0.0, connector_distance)
+	# Procedural chunks share one physical floor datum. Preserve their authored
+	# vertical coordinates and connect them only across the ground plane.
+	return Vector3(
+		connected_entry_position.x - next_local_position.x,
+		0.0,
+		connected_entry_position.z - next_local_position.z
+	)
+
+
 static func pose_from_camera(camera: Camera3D) -> Dictionary:
 	if camera == null or not is_instance_valid(camera):
 		return pose_from_sample({"position": Vector3.ZERO, "look_target": DEFAULT_CAMERA_FORWARD})
@@ -148,7 +221,7 @@ static func sample_transition(transition: Dictionary, elapsed: float) -> Diction
 static func transition_mask_alpha(progress: float) -> float:
 	# Keep the connected camera movement visible, then hide only the instant at
 	# which the scene-local procedural set is replaced.
-	return _smoothstep(inverse_lerp(0.72, 1.0, clampf(progress, 0.0, 1.0)))
+	return _smoothstep(inverse_lerp(0.79, 1.0, clampf(progress, 0.0, 1.0)))
 
 
 static func poses_match(a: Dictionary, b: Dictionary, position_tolerance: float = 0.001, direction_tolerance: float = 0.0001) -> bool:
@@ -178,6 +251,23 @@ static func _normalized_pose(pose: Dictionary) -> Dictionary:
 		"look_target": position + forward * look_distance,
 	}
 
+
+static func _planar_direction(direction: Vector3) -> Vector3:
+	var planar := Vector3(direction.x, 0.0, direction.z)
+	if planar.is_zero_approx():
+		planar = Vector3(DEFAULT_CAMERA_FORWARD.x, 0.0, DEFAULT_CAMERA_FORWARD.z)
+	if planar.is_zero_approx():
+		return Vector3.FORWARD
+
+	return planar.normalized()
+
+static func _vector3_from_value(value: Variant, fallback: Vector3) -> Vector3:
+	if typeof(value) != TYPE_ARRAY:
+		return fallback
+	var values := value as Array
+	if values.size() < 3:
+		return fallback
+	return Vector3(float(values[0]), float(values[1]), float(values[2]))
 
 static func _slerp_direction(from_direction: Vector3, to_direction: Vector3, weight: float) -> Vector3:
 	var from_normal := from_direction.normalized() if not from_direction.is_zero_approx() else DEFAULT_CAMERA_FORWARD.normalized()

@@ -8,6 +8,7 @@ const DEFAULT_POST_CLEAR_HOLD_SECONDS := 0.75
 const DEFAULT_TRANSITION_SECONDS := 1.8
 const DEFAULT_BRANCH_TRANSITION_SECONDS := 2.2
 const DEFAULT_SPAWN_SAFETY_SECONDS := 1.2
+const DEFAULT_CONNECTOR_DISTANCE := 9.0
 
 
 static func campaign_policy(campaign: Dictionary) -> Dictionary:
@@ -58,6 +59,13 @@ static func post_clear_hold(node: Dictionary, policy: Dictionary = {}) -> float:
 
 static func requires_rail_complete(node: Dictionary, policy: Dictionary = {}) -> bool:
 	return bool(node.get("require_rail_complete", policy.get("require_rail_complete", true)))
+
+
+static func connector_distance(node: Dictionary, policy: Dictionary = {}) -> float:
+	return clampf(float(node.get(
+		"connector_distance",
+		policy.get("connector_distance", DEFAULT_CONNECTOR_DISTANCE)
+	)), 2.0, 24.0)
 
 
 static func transition_descriptor(

@@ -1,5 +1,47 @@
 # Continuation
 
+## Unreleased development after v0.5.0 — current worktree
+
+This section describes local work after immutable release `v0.5.0`. It is not evidence for the tagged archives, GitHub Release or existing production deployment documented below.
+
+Implemented in the current worktree:
+
+- consecutive nodes retain connected world-space origins, with an exact **9-metre planar** displacement from the outgoing rail exit to the incoming rail entry;
+- `world_root` and `actor_root` move together, Y drift is removed from accumulated origins, and boss contact positions at non-zero origins are converted once from global to local space;
+- the rail exit tangent uses the exact final authored segment: Bézier target minus control B, or the last distinct point-rail segment;
+- a temporary `connector_root` bridges the scene swap with old/new material halves, floor, side walls, threshold arch, backdrop and static collision shapes; it survives outgoing cleanup and is cleared after the destination environment is built;
+- the transition mask begins at normalized progress **0.79**, ahead of the known Steel Door wall intersection near 0.812;
+- Chapter 2 now flows `raised_bridge` or `lower_stairs` -> `corridor_cache` -> `roof_approach` -> `roof_rescue` -> Hangedman, eliminating the roof/interior/roof discontinuity without changing route count or fixed timing budget;
+- the Curien execution is a serialized **7.13-second** pre-Magician sequence with firing disabled and boss damage locked; this duration is explicitly `internal_sync_only_tbd_authorized_build`, pending comparison with an authorized arcade build;
+- boss encounters remain performance-driven rather than ending on their timeline data duration, followed by a **0.50-second** post-defeat hold before the next route transition;
+- `scripts/qa.mjs` treats Godot script, parse, compilation and script-load diagnostics as fatal even when Godot returns exit code zero.
+
+Final local verification:
+
+- `npm.cmd run qa`: **313/313**, exit 0;
+- deterministic Godot core: **1,281 assertions**;
+- Curien-finale smoke: **60 assertions**, including data-driven cinematic locks, blocked gameplay input while paused, frozen boss movement/subtitle clocks, immediate residual-projectile retirement and the 0.50-second post-defeat hold;
+- sequence connector smoke: passed with two phases, old/new materials, collisions and exact 9 m planar origin;
+- complete campaign, HUD and gameplay smokes: passed;
+- route smoke: **25**;
+- engagement coverage: **34 encounters / 98 spawns**;
+- content audit: **889 checks / 6 known warnings / 0 errors**;
+- route verifier: Chapter 1 **106.5 s**, Chapter 2 **97.4 s**, Chapter 3 **93.1 s**, Chapter 4 **40.4 s**, excluding dynamic bosses.
+
+These results validate the current local source tree. A fresh accessibility-patched Web export was produced and passes `qa:web` **299/299** plus `verify:web`: **9 files / 122,287,366 bytes**, PCK **82,442,972** (`0cb16dc1…`), WASM **39,513,091** (`35116f68…`) and HTML **5,590** (`03c4a70a…`). Fresh Windows/Linux exports, release archives, clean-machine startup, visual browser inspection and deployment remain separate gates.
+
+Disk-safety note: the ignored historical `artifacts/`, old `build/windows/`, old `build/linux/` and redundant Godot executable ZIP were moved intact to `T:\Codex_HOTD25D_Offload_2026-08-30`. They were not deleted and are not part of this Git diff. Restore them only when C: has enough headroom; do not confuse those v0.5.0-era desktop outputs with a fresh post-v0.5.0 build.
+
+Open fidelity boundaries:
+
+- neither `reference_build/` nor authorized scene timestamps are available; the matrix remains `TBD-AUTH`, and the 7.13-second finale marker is internal synchronization only;
+- the connector provides physical and visual transition context, but environments are still reconstructed per node rather than retained as one persistent chapter world;
+- the active actor art remains Sprite V2: eight directions and eight semantic cells per direction, not multi-frame V3 clips; all right profiles and many back-right profiles are mirrored;
+- the content audit retains **six known warnings**, including the directional derivations and three provisional enemy placements;
+- no post-v0.5.0 Windows/Linux build, archive, GitHub release, visual browser inspection or Vercel deployment should be claimed until it is actually produced and checked; only the local Web export above is current evidence.
+
+Preserve the immutable `v0.5.0` commit, tag, checksums and published evidence below. The next implementation priority is a real Sprite V3 pilot with authored multi-frame clips and an adapter that can fall back atomically to V2; do not relabel duplicated V2 cells as V3.
+
 ## Published v0.5.0 release — pursuit, collision and route-density integrity
 
 Package version `0.5.0` is published from immutable tag `v0.5.0` at exact commit `6d84764745102b95e22b2462eeaa364103678c0b`. GitHub Actions release-check run `33136431022` passed, all four delivery archives and `SHA256SUMS.txt` are public in the GitHub release, and Vercel production `dpl_BTEuXpYNMWmEYbWP2h2hNjAVGkGL` is live at <https://the-house-of-the-dead-25d.vercel.app>.

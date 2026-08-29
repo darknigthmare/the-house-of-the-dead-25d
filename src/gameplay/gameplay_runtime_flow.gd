@@ -51,6 +51,18 @@ func _physics_process(delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if not session_started:
 		return
+	if paused_by_player:
+		var resumes_from_pause: bool = (
+			(event is InputEventKey and event.pressed and not event.echo and event.physical_keycode == KEY_ESCAPE)
+			or (
+				event is InputEventJoypadButton
+				and event.pressed
+				and event.button_index == JOY_BUTTON_START
+			)
+		)
+		if resumes_from_pause:
+			_toggle_pause()
+		return
 	if event is InputEventMouseMotion:
 		players[0].cursor = event.position
 	elif event is InputEventMouseButton and event.pressed:
@@ -109,8 +121,17 @@ func _update_crosshairs(delta: float) -> void:
 			players[index].cursor += cursor_velocities[index] * delta
 			players[index].cursor.x = clampf(float(players[index].cursor.x), active_play_rect.position.x + 8.0, active_play_rect.end.x - 8.0)
 			players[index].cursor.y = clampf(float(players[index].cursor.y), 8.0, active_play_rect.end.y - 8.0)
-		crosshairs[index].visible = bool(players[index].active) and state not in ["chapter_intro", "ending", "initials", "credits"]
+		var hides_for_state := state in ["chapter_intro", "boss_defeat_hold", "ending", "initials", "credits"]
+		crosshairs[index].visible = bool(players[index].active) and not hides_for_state and not _boss_cinematic_disables_fire()
 		crosshairs[index].set_screen_position(players[index].cursor)
+
+
+func _boss_cinematic_disables_fire() -> bool:
+	if state != "boss_cinematic":
+		return false
+	if current_boss == null or not is_instance_valid(current_boss):
+		return true
+	return bool(current_boss.get_meta("cinematic_disable_fire", true))
 
 
 func _join_player(index: int) -> void:
@@ -133,10 +154,21 @@ func _toggle_pause() -> void:
 		exit_requested.emit()
 		return
 	paused_by_player = not paused_by_player
+	_set_runtime_tweens_paused(paused_by_player)
 	if paused_by_player:
 		_show_overlay("PAUSE", "Échap : reprendre • la partie reste en mémoire", -1.0)
 	else:
 		center_overlay.visible = false
+
+
+func _set_runtime_tweens_paused(should_pause: bool) -> void:
+	for tween: Tween in get_tree().get_processed_tweens():
+		if not tween.is_valid():
+			continue
+		if should_pause:
+			tween.pause()
+		else:
+			tween.play()
 
 
 func _on_state_timer_finished() -> void:
@@ -155,6 +187,10 @@ func _on_state_timer_finished() -> void:
 		"boss_rush_intro":
 			center_overlay.visible = false
 			_start_next_boss_rush()
+		"boss_defeat_hold":
+			center_overlay.visible = false
+			state = "node"
+			_finish_node()
 		"training_intro":
 			center_overlay.visible = false
 			_begin_training()
@@ -178,7 +214,10 @@ func _begin_chapter(index: int) -> void:
 	_set_music_for_chapter(chapter_index)
 	chapter_scientists_saved = 0
 	chapter_scientists_total = 0
+	_clear_sequence_connector()
 	_clear_actors()
+	pending_environment_origin = Vector3.ZERO
+	_set_environment_origin(Vector3.ZERO)
 	var intro_style := str(current_node.get("style", current_chapter.get("style", "mansion")))
 	_build_environment(intro_style)
 	_apply_node_entry_camera_pose(current_node)
@@ -203,6 +242,16 @@ static func chapter_start_node_id(chapter: Dictionary) -> String:
 	return str(first_node.get("id", ""))
 
 
+func _set_environment_origin(origin: Vector3) -> void:
+	# Procedural scene roots share a stable global floor; vertical motion belongs
+	# to each authored rail and never to the accumulated chunk transform.
+	environment_origin = Vector3(origin.x, 0.0, origin.z)
+	if world_root != null and is_instance_valid(world_root):
+		world_root.position = environment_origin
+	if actor_root != null and is_instance_valid(actor_root):
+		actor_root.position = environment_origin
+
+
 func _apply_node_entry_camera_pose(node_data: Dictionary) -> void:
 	if node_data.is_empty() or camera_3d == null or not is_instance_valid(camera_3d):
 		return
@@ -216,7 +265,8 @@ func _apply_node_entry_camera_pose(node_data: Dictionary) -> void:
 	var sequence_policy := SequenceTimingPolicyScript.campaign_policy(campaign)
 	rail_duration = maxf(1.0, SequenceTimingPolicyScript.rail_duration(node_data, sequence_policy))
 	var entry_pose := CameraRailContinuityScript.node_entry_pose(node_data, rail_duration, sequence_policy)
-	camera_3d.position = entry_pose.get("position", rail_origin) as Vector3
+	entry_pose = CameraRailContinuityScript.offset_pose(entry_pose, environment_origin)
+	camera_3d.position = entry_pose.get("position", environment_origin + rail_origin) as Vector3
 	var look_target := entry_pose.get("look_target", Vector3(0.0, 1.25, -9.0)) as Vector3
 	var up := entry_pose.get("up", Vector3.UP) as Vector3
 	if camera_3d.position.distance_squared_to(look_target) > 0.0001:
@@ -228,6 +278,7 @@ func _enter_node(node_id: String) -> void:
 	if node_data.is_empty():
 		_complete_chapter()
 		return
+	var enters_connected_environment := state == "node_transition"
 	var reuses_chapter_intro_environment := (
 		state == "chapter_intro"
 		and str(environment_scene_profile.get("node_id", "")) == node_id
@@ -243,8 +294,12 @@ func _enter_node(node_id: String) -> void:
 	route_condition_context = RouteOutcomePolicyScript.initial_context(current_node)
 	active_civilian = null
 	_clear_actors()
+	if enters_connected_environment:
+		_set_environment_origin(pending_environment_origin)
 	if not reuses_chapter_intro_environment:
 		_build_environment(str(current_node.get("style", current_chapter.get("style", "mansion"))))
+	# The destination chunk is fully built behind the opaque endpoint mask.
+	_clear_sequence_connector()
 	_configure_environment_prop_state_events()
 	_apply_node_entry_camera_pose(current_node)
 	camera_transition.clear()
@@ -398,13 +453,31 @@ func _finish_node() -> void:
 	var transition := SequenceTimingPolicyScript.transition_descriptor(current_node, next_node, route_success, sequence_policy)
 	var transition_duration := float(transition.get("duration", 1.8))
 	var next_duration := SequenceTimingPolicyScript.rail_duration(next_node, sequence_policy)
+	var from_pose := CameraRailContinuityScript.pose_from_camera(camera_3d)
+	var next_local_entry_pose := CameraRailContinuityScript.node_entry_pose(next_node, next_duration, sequence_policy)
+	var exit_direction := CameraRailContinuityScript.node_exit_motion_direction(
+		current_node,
+		rail_duration,
+		sequence_policy,
+		from_pose.get("forward", Vector3.FORWARD) as Vector3
+	)
+	pending_environment_origin = CameraRailContinuityScript.connected_environment_origin(
+		from_pose,
+		next_local_entry_pose,
+		exit_direction,
+		SequenceTimingPolicyScript.connector_distance(current_node, sequence_policy)
+	)
+	var connected_to_pose := CameraRailContinuityScript.offset_pose(next_local_entry_pose, pending_environment_origin)
 	camera_transition = CameraRailContinuityScript.transition_between(
-		CameraRailContinuityScript.pose_from_camera(camera_3d),
-		CameraRailContinuityScript.node_entry_pose(next_node, next_duration, sequence_policy),
+		from_pose,
+		connected_to_pose,
 		transition_duration,
 		str(current_node.get("id", current_node_id)),
 		next_id
 	)
+	var next_style := str(next_node.get("style", current_chapter.get("style", "mansion")))
+	var next_profile := environment_asset_library.get_scene_profile(next_id, next_style)
+	_build_sequence_connector(from_pose, connected_to_pose, next_profile)
 	current_node_id = next_id
 	state = "node_transition"
 	state_timer = transition_duration
@@ -445,6 +518,7 @@ func _mask_environment_swap() -> void:
 
 
 func _complete_chapter() -> void:
+	_clear_sequence_connector()
 	_clear_actors()
 	camera_transition.clear()
 	boss_panel.visible = false

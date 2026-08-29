@@ -10,6 +10,17 @@ const check = (condition, message) => {
   checks.push(message);
   if (!condition) failures.push(message);
 };
+const godotFatalOutput = /(?:SCRIPT ERROR|Parse Error|Compilation failed|Failed to load script)/i;
+const godotOutput = (run) => `${run.stdout ?? ''}${run.stderr ?? ''}`;
+const godotSucceeded = (run) => (
+  run.status === 0
+  && !run.error
+  && !godotFatalOutput.test(godotOutput(run))
+);
+const reportGodotFailure = (run) => {
+  if (!godotSucceeded(run)) process.stderr.write(godotOutput(run));
+};
+
 const json = (path) => JSON.parse(readFileSync(join(root, path), 'utf8'));
 
 const required = [
@@ -94,13 +105,13 @@ if (!args.has('--data-only') && !args.has('--web-only')) {
   check(existsSync(exe), 'local Godot 4.7.1 console exists');
   if (existsSync(exe)) {
     const importRun = spawnSync(exe, ['--headless', '--path', root, '--import'], { encoding: 'utf8', timeout: 120000 });
-    check(importRun.status === 0, 'Godot headless import/editor parse');
-    if (importRun.status !== 0) process.stderr.write(`${importRun.stdout ?? ''}${importRun.stderr ?? ''}`);
+    check(godotSucceeded(importRun), 'Godot headless import/editor parse');
+    reportGodotFailure(importRun);
     if (existsSync(join(root, 'tests', 'test_runner.gd'))) {
       const testRun = spawnSync(exe, ['--headless', '--path', root, '--script', 'res://tests/test_runner.gd'], { encoding: 'utf8', timeout: 120000 });
-      check(testRun.status === 0, 'Godot deterministic test suite');
+      check(godotSucceeded(testRun), 'Godot deterministic test suite');
       process.stdout.write(testRun.stdout ?? '');
-      if (testRun.status !== 0) process.stderr.write(testRun.stderr ?? '');
+      reportGodotFailure(testRun);
     }
     const runtimeRuns = [
       ['res://tests/test_sprite_atlas_library_atomic.gd', 'transactional sprite manifest test'],
@@ -121,9 +132,9 @@ if (!args.has('--data-only') && !args.has('--web-only')) {
     ];
     for (const [script, label] of runtimeRuns) {
       const run = spawnSync(exe, ['--headless', '--path', root, '--script', script], { encoding: 'utf8', timeout: 120000 });
-      check(run.status === 0, label);
+      check(godotSucceeded(run), label);
       process.stdout.write(run.stdout ?? '');
-      if (run.status !== 0) process.stderr.write(run.stderr ?? '');
+      reportGodotFailure(run);
     }
   }
 }

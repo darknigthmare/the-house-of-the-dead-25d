@@ -6,6 +6,12 @@ const CURIEN_PROJECTILE_TRAVEL_SECONDS := 0.44
 const CURIEN_HIT_RECOIL_SECONDS := 0.36
 const CURIEN_DEATH_FALL_SECONDS := 0.68
 const CURIEN_MIN_CORPSE_HOLD_SECONDS := 5.0
+const CURIEN_PRE_GROUND_SECONDS := (
+	CURIEN_ATTACK_WINDUP_SECONDS
+	+ CURIEN_PROJECTILE_TRAVEL_SECONDS
+	+ CURIEN_HIT_RECOIL_SECONDS
+	+ CURIEN_DEATH_FALL_SECONDS
+)
 
 
 var story_actors: Array[Node3D] = []
@@ -18,8 +24,30 @@ func _enter_node(node_id: String) -> void:
 	if current_node_id == "curien_confrontation" and state == "node":
 		_spawn_story_actor("curien", Vector3(0.0, 0.0, -11.0), 1.08)
 	elif current_node_id == "magician_battle" and state == "boss":
+		if current_boss == null or not is_instance_valid(current_boss):
+			_start_boss("magician")
+		if current_boss == null or not is_instance_valid(current_boss):
+			push_error("Magician cinematic aborted because the boss actor is unavailable")
+			state = "node"
+			boss_panel.visible = false
+			call_deferred("_finish_node")
+			return
+		var sequence := current_node.get("pre_boss_sequence", {}) as Dictionary
+		var minimum_hold := maxf(
+			CURIEN_PRE_GROUND_SECONDS + CURIEN_MIN_CORPSE_HOLD_SECONDS,
+			float(sequence.get("minimum_hold_seconds", 0.0))
+		)
+		var disable_fire := bool(sequence.get("disable_fire", true))
+		var lock_boss_damage := bool(sequence.get("lock_boss_damage", true))
 		curien_story_actor = _spawn_story_actor("curien", Vector3(2.35, 0.0, -9.65), 1.08, false)
-		_play_curien_finale(curien_story_actor)
+		state = "boss_cinematic"
+		state_timer = 0.0
+		boss_panel.visible = false
+		objective_label.text = _safe_ui_text("CURIEN'S FINAL ORDER")
+		current_boss.set_meta("cinematic_disable_fire", disable_fire)
+		current_boss.set_meta("combat_locked", lock_boss_damage)
+		current_boss.set_meta("narrative_state", "curien_execution")
+		_play_curien_finale(curien_story_actor, minimum_hold)
 	elif current_node_id == "sophie_corridor" and state == "node":
 		var sprite := active_civilian.get_node_or_null("Sprite3D") as Sprite3D if active_civilian != null else null
 		if sprite != null:
@@ -83,15 +111,19 @@ func _spawn_story_actor(actor_id: String, at: Vector3, actor_scale: float, anima
 	return root
 
 
-func _play_curien_finale(curien: Node3D) -> void:
+func _play_curien_finale(curien: Node3D, minimum_hold_seconds: float) -> void:
 	if not is_instance_valid(curien):
 		return
 	var strike_effect := _spawn_magician_story_projectile(curien)
 	var recoil_position := curien.position + Vector3(0.34, 0.16, 0.16)
 	var death_position := curien.position + Vector3(0.44, -0.52, 0.26)
+	var corpse_hold_seconds := maxf(
+		CURIEN_MIN_CORPSE_HOLD_SECONDS,
+		minimum_hold_seconds - CURIEN_PRE_GROUND_SECONDS
+	)
 	curien.set_meta("narrative_state", "awaiting_magician_attack")
 	curien.set_meta("corpse_persistent", true)
-	curien.set_meta("corpse_hold_seconds", CURIEN_MIN_CORPSE_HOLD_SECONDS)
+	curien.set_meta("corpse_hold_seconds", corpse_hold_seconds)
 	curien.set_meta("corpse_hold_complete", false)
 	curien_finale_tween = curien.create_tween()
 	curien_finale_tween.tween_interval(CURIEN_ATTACK_WINDUP_SECONDS)
@@ -103,7 +135,7 @@ func _play_curien_finale(curien: Node3D) -> void:
 	curien_finale_tween.tween_property(curien, "position", death_position, CURIEN_DEATH_FALL_SECONDS).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 	curien_finale_tween.parallel().tween_property(curien, "rotation:z", deg_to_rad(78.0), CURIEN_DEATH_FALL_SECONDS).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 	curien_finale_tween.tween_callback(_ground_curien_corpse.bind(curien))
-	curien_finale_tween.tween_interval(CURIEN_MIN_CORPSE_HOLD_SECONDS)
+	curien_finale_tween.tween_interval(corpse_hold_seconds)
 	curien_finale_tween.tween_callback(_confirm_curien_corpse_hold.bind(curien))
 
 
@@ -192,6 +224,29 @@ func _ground_curien_corpse(curien: Node3D) -> void:
 func _confirm_curien_corpse_hold(curien: Node3D) -> void:
 	if is_instance_valid(curien) and str(curien.get_meta("narrative_state", "")) == "dead_grounded":
 		curien.set_meta("corpse_hold_complete", true)
+	_complete_curien_boss_cinematic()
+
+
+func _complete_curien_boss_cinematic() -> void:
+	if state != "boss_cinematic" or current_node_id != "magician_battle":
+		return
+	if current_boss == null or not is_instance_valid(current_boss):
+		_start_boss("magician")
+	if current_boss == null or not is_instance_valid(current_boss):
+		push_error("Magician combat could not recover after the pre-boss cinematic")
+		state = "node"
+		boss_panel.visible = false
+		call_deferred("_finish_node")
+		return
+	current_boss.set_meta("combat_locked", false)
+	current_boss.set_meta("cinematic_disable_fire", false)
+	current_boss.set_meta("narrative_state", "combat_ready")
+	current_boss.remove_meta("narrative_attack")
+	boss_attack_timer = 2.8
+	boss_weak_window = 2.0
+	boss_panel.visible = true
+	objective_label.text = _safe_ui_text(str(current_node.get("objective", "DESTROY MAGICIAN")))
+	state = "boss"
 
 
 func _retire_story_effect(effect: Node3D) -> void:

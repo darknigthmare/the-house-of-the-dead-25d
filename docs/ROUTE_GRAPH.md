@@ -1,5 +1,20 @@
 # Route Graph
 
+## Unreleased worktree topology and spatial joins
+
+Chapter 2 has been reordered without changing its number of complete routes or its fixed non-boss timing budget. Both the high and low branches now enter `corridor_cache` before returning to the roof sequence:
+
+```text
+chain plate ─destroyed> underground ─┐
+            └ignored─> great doors ──┴─> library rescue
+saved/high switch ─> raised bridge ─┐
+failed/low route ──> lower stairs ──┴─> corridor cache ─> roof approach ─> roof rescue ─> Hangedman
+```
+
+Consecutive nodes also carry connected world-space origins. Each outgoing rail endpoint joins the next entry through an exact **9-metre planar** connector, with the environment and actors translated together. A temporary collidable `connector_root` presents old/new material halves during the transition, and the mask begins at **0.79** before the outgoing set is replaced. These are runtime continuity invariants, not additional graph branches and not proof of a persistent or arcade-exact world.
+
+The Curien-to-Magician edge is now temporally serialized: a **7.13-second** pre-boss sequence disables firing and locks boss damage, then the dynamic Magician encounter begins; boss defeat holds for **0.50 seconds** before the ending edge advances. The 7.13-second duration is `internal_sync_only_tbd_authorized_build`, pending an authorized timing comparison.
+
 The public runtime uses `data/runtime/campaign_timeline.json`; the compact audit graphs in `data/routes/` are independently validated against it for matching start nodes, node IDs, edges, unique nodes and resolvable targets. Chapters 1–3 now use the active IDs `garden_rescue`, `sophie_antechamber`, `chain_plate`, `roof_rescue` and `back_attack_rescue`; no planning-only alias remains in those graphs.
 
 The audit graphs retain descriptive condition names such as `scientist_saved`, `hatch_opened` and `all_scientists_saved`. The playable timeline resolves `next_success`/`next_failure` through `RouteOutcomePolicy`: rescue-only nodes use their civilian outcome, while a node containing a breakable succeeds only when that exact breakable ID was destroyed. The two representations now share topology, although their condition schemas remain intentionally different.
@@ -15,7 +30,7 @@ CHAPTER 2 — REVENGE
 chain plate ─destroyed> underground ─┐
             └ignored─> great doors ──┴─> library rescue
 saved/high switch ─> raised bridge ─┐
-failed/low route ──> lower stairs ──┴─> roof approach ─> roof rescue ─> Hangedman
+failed/low route ──> lower stairs ──┴─> corridor cache ─> roof approach ─> roof rescue ─> Hangedman
 
 CHAPTER 3 — TRUTH
 elevator switch ─> left / right ─> rear-attack rescue

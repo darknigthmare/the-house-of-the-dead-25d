@@ -17,6 +17,14 @@ const DEFAULT_PROJECTILE_CONTACT_RANGE := 1.35
 const BOSS_ATTACK_TELEGRAPH_SECONDS := 0.9
 const BOSS_MELEE_RANGE := 2.8
 const BOSS_MELEE_RECOVERY_SECONDS := 0.55
+const CONNECTOR_CAMERA_HEIGHT := 1.7
+const CONNECTOR_HALF_WIDTH := 4.0
+const CONNECTOR_FLOOR_THICKNESS := 0.24
+const CONNECTOR_WALL_THICKNESS := 0.24
+const CONNECTOR_INDOOR_HEIGHT := 3.8
+const CONNECTOR_OPEN_RAIL_HEIGHT := 0.65
+const CONNECTOR_END_MARGIN := 0.8
+const CONNECTOR_BACKDROP_DISTANCE := 12.0
 var retiring_actors: Array[Node3D] = []
 
 
@@ -938,6 +946,8 @@ func _update_projectile_tracking(projectile: Node3D, delta: float) -> void:
 func _resolve_projectile_contact(projectile: Node3D) -> bool:
 	if not is_instance_valid(projectile) or bool(projectile.get_meta("dead", false)) or str(projectile.get_meta("role", "")) != "projectile":
 		return false
+	if state not in ["node", "boss"]:
+		return false
 	var currently_visible := _actor_is_attack_visible(projectile)
 	if currently_visible:
 		projectile.set_meta("seen_by_camera", true)
@@ -976,7 +986,11 @@ func _resolve_projectile_contact(projectile: Node3D) -> bool:
 func _attempt_shot(player_index: int, screen_position: Vector2) -> void:
 	if player_index < 0 or player_index >= players.size() or not bool(players[player_index].active):
 		return
-	if state not in ["node", "boss", "continue"]:
+	var cinematic_fire_enabled := (
+		state == "boss_cinematic"
+		and not _boss_cinematic_disables_fire()
+	)
+	if state not in ["node", "boss", "continue"] and not cinematic_fire_enabled:
 		return
 	if state == "continue":
 		_accept_continue()
@@ -1101,6 +1115,8 @@ func _damage_actor(actor: Node3D, zone: String, multiplier: float, player_index:
 				if armored_sprite != null:
 					armored_sprite.modulate = armored_sprite.modulate.darkened(0.16)
 			return
+	if role == "boss" and bool(actor.get_meta("combat_locked", false)):
+		return
 	if role == "boss" and not _boss_zone_is_vulnerable(zone):
 		_feed("ARMORED", Color(0.8, 0.78, 0.68))
 		_play_sfx("empty")
@@ -1431,8 +1447,10 @@ func _update_camera_rail(_delta: float) -> void:
 		rail_duration,
 		SequenceTimingPolicyScript.campaign_policy(campaign)
 	)
-	camera_3d.position = sample.get("position", rail_origin) as Vector3
-	var look_target := sample.get("look_target", Vector3(0.0, 1.25, -9.0)) as Vector3
+	var local_position := sample.get("position", rail_origin) as Vector3
+	var local_look_target := sample.get("look_target", Vector3(0.0, 1.25, -9.0)) as Vector3
+	camera_3d.position = environment_origin + local_position
+	var look_target := environment_origin + local_look_target
 	if camera_3d.position.distance_squared_to(look_target) > 0.0001:
 		camera_3d.look_at(look_target, Vector3.UP)
 
@@ -1447,7 +1465,14 @@ func _start_boss(boss_id: String) -> void:
 		_set_music_for_boss(boss_id)
 	var stats := _boss_stats(boss_id)
 	boss_max_health = float(stats.health)
-	current_boss = _create_actor(boss_id, Vector3(0.0, 0.0 if boss_id != "hangedman" else 1.4, -10.5), {"health": boss_max_health, "speed": 0.0, "scale": float(stats.scale), "score": int(stats.score)}, "boss")
+	var spawned_boss := _create_actor(boss_id, Vector3(0.0, 0.0 if boss_id != "hangedman" else 1.4, -10.5), {"health": boss_max_health, "speed": 0.0, "scale": float(stats.scale), "score": int(stats.score)}, "boss")
+	if spawned_boss == null or not is_instance_valid(spawned_boss):
+		current_boss = null
+		state = "node"
+		boss_panel.visible = false
+		push_error("Unable to create boss actor: %s" % boss_id)
+		return
+	current_boss = spawned_boss
 	current_boss.set_meta("boss_id", boss_id)
 	current_boss.set_meta("telegraph_played", false)
 	current_boss.set_meta("attack_telegraph_started", false)
@@ -1488,7 +1513,9 @@ func _update_boss(delta: float) -> void:
 	boss_weak_window = maxf(0.0, boss_weak_window - delta)
 	var boss_id := str(current_boss.get_meta("boss_id", "chariot"))
 	var is_melee_boss := boss_id in ["chariot", "hangedman"]
-	var t := Time.get_ticks_msec() * 0.001
+	# node_elapsed advances only while boss gameplay is active, so pausing cannot
+	# phase-jump the boss along a wall-clock-driven orbit on the first resumed frame.
+	var t := node_elapsed
 	var home_position := _boss_home_position(boss_id, t)
 	current_boss.set_meta("attack_home_position", home_position)
 	var recovery_remaining := maxf(0.0, float(current_boss.get_meta("melee_recovery_remaining", 0.0)) - delta)
@@ -1557,7 +1584,11 @@ func _boss_melee_contact_position(home_position: Vector3) -> Vector3:
 	if camera_3d == null or not is_instance_valid(camera_3d):
 		return home_position
 	var camera_forward := -camera_3d.global_transform.basis.z.normalized()
-	var contact_position := camera_3d.global_position + camera_forward * (BOSS_MELEE_RANGE * 0.58)
+	var global_contact := camera_3d.global_position + camera_forward * (BOSS_MELEE_RANGE * 0.58)
+	var contact_position := global_contact - environment_origin
+	if actor_root != null and is_instance_valid(actor_root):
+		contact_position = actor_root.to_local(global_contact)
+	# Boss home positions are authored in ActorRoot-local coordinates.
 	contact_position.y = home_position.y
 	return contact_position
 
@@ -1629,6 +1660,7 @@ func _on_boss_defeated() -> void:
 	var boss_id := str(current_boss.get_meta("boss_id", "magician"))
 	var value := 2500 if boss_id == "magician" else 1500
 	_add_score(_first_active_player(), value, "%s DEFEATED" % boss_id.to_upper(), boss_id, "boss_defeat")
+	_retire_active_projectiles()
 	boss_panel.visible = false
 	current_boss = null
 	if str(configuration.get("mode", "")) == "boss_rush":
@@ -1636,9 +1668,226 @@ func _on_boss_defeated() -> void:
 		state_timer = 2.0
 		_show_overlay("TARGET DESTROYED", "%d experiments remaining" % boss_queue.size(), state_timer)
 	else:
-		state = "node"
 		branch_success = true
-		call_deferred("_finish_node")
+		var post_defeat_hold := maxf(0.0, float(current_node.get("post_defeat_hold_seconds", 0.5)))
+		if post_defeat_hold > 0.0:
+			state = "boss_defeat_hold"
+			state_timer = post_defeat_hold
+			objective_label.text = _safe_ui_text("TARGET DESTROYED")
+		else:
+			state = "node"
+			call_deferred("_finish_node")
+
+
+func _retire_active_projectiles() -> void:
+	for actor: Node3D in active_actors.duplicate():
+		if not is_instance_valid(actor):
+			continue
+		if str(actor.get_meta("role", "")) == "projectile":
+			_retire_projectile_immediately(actor)
+
+
+func _retire_projectile_immediately(projectile: Node3D) -> void:
+	if not is_instance_valid(projectile):
+		return
+	projectile.set_meta("dead", true)
+	projectile.visible = false
+	for child in projectile.get_children():
+		var hit_zone := child as Area3D
+		if hit_zone == null:
+			continue
+		hit_zone.set_deferred("monitoring", false)
+		hit_zone.set_deferred("monitorable", false)
+		hit_zone.set_deferred("collision_layer", 0)
+		hit_zone.set_deferred("collision_mask", 0)
+	active_actors.erase(projectile)
+	retiring_actors.erase(projectile)
+	projectile.queue_free()
+
+
+func _clear_sequence_connector() -> void:
+	if connector_root == null or not is_instance_valid(connector_root):
+		return
+	EnvironmentSceneLifecycleScript.clear_immediately(connector_root)
+	for meta_key: StringName in connector_root.get_meta_list():
+		connector_root.remove_meta(meta_key)
+
+
+func _build_sequence_connector(from_pose: Dictionary, to_pose: Dictionary, next_profile: Dictionary) -> void:
+	_clear_sequence_connector()
+	if connector_root == null or not is_instance_valid(connector_root):
+		return
+	var from_camera := from_pose.get("position", Vector3.ZERO) as Vector3
+	var to_camera := to_pose.get("position", from_camera) as Vector3
+	var travel := to_camera - from_camera
+	if travel.length_squared() <= 0.01:
+		return
+	var travel_direction := travel.normalized()
+	var extended_start := from_camera - travel_direction * CONNECTOR_END_MARGIN
+	var extended_end := to_camera + travel_direction * CONNECTOR_END_MARGIN
+	var threshold := from_camera.lerp(to_camera, 0.5)
+	_add_sequence_connector_segment(extended_start, threshold, environment_scene_profile, "from")
+	_add_sequence_connector_segment(threshold, extended_end, next_profile, "to")
+	var old_layout := str(environment_scene_profile.get("layout", ""))
+	var next_layout := str(next_profile.get("layout", ""))
+	if old_layout != next_layout or bool(environment_scene_profile.get("open_ceiling", false)) != bool(next_profile.get("open_ceiling", false)):
+		_add_sequence_connector_threshold(threshold, travel_direction, next_profile)
+	_add_sequence_connector_backdrop(to_camera, travel_direction, next_profile)
+	connector_root.set_meta("sequence_connector_active", true)
+	connector_root.set_meta("sequence_connector_segment_count", 2)
+	connector_root.set_meta("sequence_connector_from_layout", old_layout)
+	connector_root.set_meta("sequence_connector_to_layout", next_layout)
+	connector_root.set_meta("sequence_connector_from", from_camera)
+	connector_root.set_meta("sequence_connector_to", to_camera)
+
+
+func _add_sequence_connector_segment(start_camera: Vector3, end_camera: Vector3, profile: Dictionary, phase: String) -> void:
+	var start_ground := start_camera - Vector3.UP * CONNECTOR_CAMERA_HEIGHT
+	var end_ground := end_camera - Vector3.UP * CONNECTOR_CAMERA_HEIGHT
+	var segment := end_ground - start_ground
+	if segment.length_squared() <= 0.001:
+		return
+	var basis := _sequence_connector_basis(segment.normalized())
+	var right := basis.x.normalized()
+	var up := basis.y.normalized()
+	var midpoint := start_ground.lerp(end_ground, 0.5)
+	var length := segment.length()
+	var floor_material := _sequence_connector_material(profile, "floor", Color("#24272a"))
+	var wall_material := _sequence_connector_material(profile, "wall", Color("#33363a"))
+	_add_sequence_connector_box(
+		"ConnectorFloor_%s" % phase,
+		midpoint - up * (CONNECTOR_FLOOR_THICKNESS * 0.5 + 0.015),
+		basis,
+		Vector3(CONNECTOR_HALF_WIDTH * 2.0, CONNECTOR_FLOOR_THICKNESS, length),
+		floor_material,
+		"floor",
+		phase
+	)
+	var open_ceiling := bool(profile.get("open_ceiling", false))
+	var wall_height := CONNECTOR_OPEN_RAIL_HEIGHT if open_ceiling else CONNECTOR_INDOOR_HEIGHT
+	for side in [-1.0, 1.0]:
+		_add_sequence_connector_box(
+			"ConnectorWall_%s_%s" % [phase, "L" if side < 0.0 else "R"],
+			midpoint + right * side * (CONNECTOR_HALF_WIDTH + CONNECTOR_WALL_THICKNESS * 0.5) + up * (wall_height * 0.5),
+			basis,
+			Vector3(CONNECTOR_WALL_THICKNESS, wall_height, length),
+			wall_material,
+			"wall",
+			phase
+		)
+	if not open_ceiling:
+		var ceiling_material := _sequence_connector_material(profile, "ceiling", Color("#292c30"))
+		_add_sequence_connector_box(
+			"ConnectorCeiling_%s" % phase,
+			midpoint + up * CONNECTOR_INDOOR_HEIGHT,
+			basis,
+			Vector3(CONNECTOR_HALF_WIDTH * 2.0, CONNECTOR_WALL_THICKNESS, length),
+			ceiling_material,
+			"ceiling",
+			phase
+		)
+
+
+func _add_sequence_connector_threshold(at_camera: Vector3, travel_direction: Vector3, profile: Dictionary) -> void:
+	var ground := at_camera - Vector3.UP * CONNECTOR_CAMERA_HEIGHT
+	var basis := _sequence_connector_basis(travel_direction)
+	var right := basis.x.normalized()
+	var up := basis.y.normalized()
+	var material := _sequence_connector_material(profile, "wall", Color("#34383d"))
+	var height := CONNECTOR_INDOOR_HEIGHT
+	for side in [-1.0, 1.0]:
+		_add_sequence_connector_box(
+			"ConnectorThresholdPost_%s" % ("L" if side < 0.0 else "R"),
+			ground + right * side * (CONNECTOR_HALF_WIDTH - 0.18) + up * (height * 0.5),
+			basis,
+			Vector3(0.36, height, 0.36),
+			material,
+			"threshold",
+			"to"
+		)
+	_add_sequence_connector_box(
+		"ConnectorThresholdHeader",
+		ground + up * (height - 0.18),
+		basis,
+		Vector3(CONNECTOR_HALF_WIDTH * 2.0, 0.36, 0.36),
+		material,
+		"threshold",
+		"to"
+	)
+
+
+func _add_sequence_connector_backdrop(to_camera: Vector3, travel_direction: Vector3, profile: Dictionary) -> void:
+	var path := str(profile.get("backdrop", ""))
+	if path.is_empty() or not ResourceLoader.exists(path):
+		return
+	var texture := ResourceLoader.load(path, "Texture2D") as Texture2D
+	if texture == null:
+		return
+	var quad := MeshInstance3D.new()
+	quad.name = "ConnectorNextBackdrop"
+	var mesh := QuadMesh.new()
+	mesh.size = Vector2(18.0, 10.0)
+	quad.mesh = mesh
+	var material := StandardMaterial3D.new()
+	material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+	material.cull_mode = BaseMaterial3D.CULL_DISABLED
+	material.albedo_texture = texture
+	material.albedo_color = Color(0.62, 0.66, 0.70)
+	quad.material_override = material
+	connector_root.add_child(quad)
+	var basis := _sequence_connector_basis(travel_direction)
+	quad.global_transform = Transform3D(basis, to_camera + travel_direction.normalized() * CONNECTOR_BACKDROP_DISTANCE + basis.y.normalized() * 2.5)
+	quad.set_meta("sequence_connector_role", "backdrop")
+	quad.set_meta("sequence_connector_phase", "to")
+
+
+func _add_sequence_connector_box(node_name: String, center: Vector3, basis: Basis, dimensions: Vector3, material: Material, role: String, phase: String) -> void:
+	var instance := MeshInstance3D.new()
+	instance.name = node_name
+	var mesh := BoxMesh.new()
+	mesh.size = dimensions
+	instance.mesh = mesh
+	instance.material_override = material
+	connector_root.add_child(instance)
+	instance.global_transform = Transform3D(basis, center)
+	instance.set_meta("sequence_connector_role", role)
+	instance.set_meta("sequence_connector_phase", phase)
+	instance.set_meta("sequence_connector_dimensions", dimensions)
+	var body := StaticBody3D.new()
+	body.name = "%sBody" % node_name
+	connector_root.add_child(body)
+	body.global_transform = Transform3D(basis, center)
+	var collision := CollisionShape3D.new()
+	var shape := BoxShape3D.new()
+	shape.size = dimensions
+	collision.shape = shape
+	body.add_child(collision)
+	body.set_meta("sequence_connector_role", role)
+	body.set_meta("sequence_connector_phase", phase)
+
+
+func _sequence_connector_material(profile: Dictionary, key: String, fallback_color: Color) -> Material:
+	var material_id := str(profile.get(key, profile.get("wall", "")))
+	if not material_id.is_empty():
+		var authored := environment_asset_library.create_material(material_id)
+		if authored != null:
+			return authored
+	var fallback := StandardMaterial3D.new()
+	fallback.albedo_color = fallback_color
+	fallback.roughness = 0.86
+	return fallback
+
+
+func _sequence_connector_basis(travel_direction: Vector3) -> Basis:
+	var forward := travel_direction.normalized() if not travel_direction.is_zero_approx() else Vector3.FORWARD
+	var back := -forward
+	var right := Vector3.UP.cross(back)
+	if right.is_zero_approx():
+		right = Vector3.RIGHT
+	right = right.normalized()
+	var up := back.cross(right).normalized()
+	return Basis(right, up, back).orthonormalized()
 
 
 func _build_environment(style: String) -> void:

@@ -16,6 +16,12 @@ const INITIALS_TIMEOUT := 18.0
 
 func _process(delta: float) -> void:
 	super._process(delta)
+	if paused_by_player:
+		# Subtitle deadlines use monotonic milliseconds. Push the deadline forward
+		# by each paused frame so presentation time freezes with gameplay time.
+		if subtitle_expires_at > 0:
+			subtitle_expires_at += maxi(1, int(round(delta * 1000.0)))
+		return
 	if state == "initials":
 		_update_initials_overlay()
 	if subtitle_expires_at > 0 and Time.get_ticks_msec() >= subtitle_expires_at:

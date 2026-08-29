@@ -1,5 +1,20 @@
 # Professional Changelog
 
+## Unreleased — connected spatial continuity and finale sequencing
+
+- Connected consecutive rail segments through world-space origins whose planar exit-to-entry displacement is exactly **9 metres**. Environment and actor roots now share the same translated origin, including non-zero-origin boss contact calculations; vertical origin drift is sanitized instead of accumulating between nodes.
+- Added a temporary physical `connector_root` across a scene change. Its old-set and new-set halves use their respective materials and contain floor, walls, a threshold arch and collision bodies; it survives outgoing cleanup only for the transition and is removed after the destination set is built.
+- Moved the transition mask start to **0.79** so the known Steel Door wall intersection is covered before the environment swap. This hides a reconstructed-node boundary; it does not turn the chapter into one persistent set.
+- Corrected Chapter 2 continuity so both `raised_bridge` and `lower_stairs` feed `corridor_cache`, followed by `roof_approach`, `roof_rescue` and Hangedman. Route counts and authored timing budgets are unchanged.
+- Serialized the Curien-to-Magician presentation as a **7.13-second** fire-disabled and boss-damage-locked pre-boss sequence. This value is an `internal_sync_only_tbd_authorized_build` synchronization marker, not a verified arcade timestamp.
+- Kept boss duration dynamic, then added a **0.50-second** post-defeat hold before route advancement so a boss death cannot cut directly to the next node.
+- Paused every active runtime tween with the game tree, so Curien's execution and actor retirement cannot continue invisibly behind the pause overlay.
+- Retired hostile projectiles as soon as a boss is defeated and rejected contacts outside active node/boss combat, preventing residual shots from taking a life or opening a continue during the post-defeat hold.
+- Hardened the QA launcher: Godot output containing `SCRIPT ERROR`, `Parse Error`, `Compilation failed` or `Failed to load script` now fails the command even if the engine process exits with code zero.
+- Verified the final worktree with complete QA **313/313**, deterministic core **1,281 assertions**, Curien-finale smoke **60 assertions**, sequence connector, complete campaign, HUD and gameplay smokes, route smoke **25**, engagement coverage **34 encounters / 98 spawns**, and content audit **889 checks / 6 warnings / 0 errors**.
+- Rebuilt and accessibility-patched the post-v0.5.0 Web export: **9 files / 122,287,366 bytes**, including PCK **82,442,972** (`0cb16dc1…`), WASM **39,513,091** (`35116f68…`) and HTML **5,590** (`03c4a70a…`). `qa:web` passes **299/299** and `verify:web` passes.
+- Retained the honest fidelity boundary: no authorized reference build or confirmed timestamps are present (`TBD-AUTH`), environments are still reconstructed per node, the actor library remains Sprite V2 with eight semantic states per direction and mirrored right-side views, and the six content warnings remain known limitations.
+
 ## 0.5.0 — pursuit, collision and route-density integrity — published 2026-08-28
 
 - Updated melee pursuit so enemies converge on both X and Z, stay in front of the camera during approach, and cycle through wind-up, attack, recovery and re-attack instead of stopping after one attempt.

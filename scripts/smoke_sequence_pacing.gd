@@ -104,14 +104,69 @@ func _run() -> void:
 	if bool(game.get("center_overlay").visible):
 		_fail("ordinary connected node still used a generic center overlay", game)
 		return
+	var connector := game.get("connector_root") as Node3D
+	if connector == null or not bool(connector.get_meta("sequence_connector_active", false)):
+		_fail("node transition did not create a live physical connector", game)
+		return
+	if int(connector.get_meta("sequence_connector_segment_count", 0)) != 2:
+		_fail("sequence connector did not preserve old/new material halves", game)
+		return
+	var connector_meshes := 0
+	var connector_bodies := 0
+	var connector_phases: Dictionary = {}
+	for connector_child in connector.get_children():
+		if connector_child is MeshInstance3D:
+			connector_meshes += 1
+			if (connector_child as MeshInstance3D).material_override == null:
+				_fail("sequence connector contains an unmaterialed white mesh", game)
+				return
+			connector_phases[str(connector_child.get_meta("sequence_connector_phase", ""))] = true
+		elif connector_child is StaticBody3D:
+			connector_bodies += 1
+			var collision := connector_child.get_child(0) as CollisionShape3D if connector_child.get_child_count() > 0 else null
+			if collision == null or collision.shape == null:
+				_fail("sequence connector body has no physical collision shape", game)
+				return
+	if connector_meshes < 6 or connector_bodies < 6 or not connector_phases.has("from") or not connector_phases.has("to"):
+		_fail("sequence connector is missing geometry, collision or one contextual half", game)
+		return
 
 	game.call("_on_state_timer_finished")
 	if str(game.get("current_node_id")) != "pacing_destination" or str(game.get("state")) != "node":
 		_fail("transition did not enter the connected destination", game)
 		return
+	if connector.get_child_count() != 0 or bool(connector.get_meta("sequence_connector_active", false)):
+		_fail("sequence connector survived after the destination chunk was built", game)
+		return
 	var entry_position := game.get("camera_3d").position as Vector3
 	if entry_position.is_equal_approx(Vector3(0.0, 1.7, 8.0)):
 		_fail("destination camera reused the old universal rail origin", game)
+		return
+	var connected_origin := game.get("environment_origin") as Vector3
+	if connected_origin.is_zero_approx():
+		_fail("destination environment did not receive a connected world origin", game)
+		return
+	if not (game.get("world_root") as Node3D).position.is_equal_approx(connected_origin):
+		_fail("environment chunk root did not move to its connected origin", game)
+		return
+	if not (game.get("actor_root") as Node3D).position.is_equal_approx(connected_origin):
+		_fail("actor chunk root diverged from its environment origin", game)
+		return
+	if entry_position.distance_to(connected_origin) < 1.0:
+		_fail("camera entry pose was not translated inside the connected chunk", game)
+		return
+	if not is_zero_approx(connected_origin.y):
+		_fail("connected environment drifted away from the shared floor datum", game)
+		return
+	var boss_home := Vector3(0.0, 0.0, -10.5)
+	var boss_contact := game.call("_boss_melee_contact_position", boss_home) as Vector3
+	var boss_contact_global := (game.get("actor_root") as Node3D).to_global(boss_contact)
+	var camera := game.get("camera_3d") as Camera3D
+	var camera_forward := -camera.global_transform.basis.z.normalized()
+	var expected_boss_contact := camera.global_position + camera_forward * (2.8 * 0.58)
+	expected_boss_contact.y = (game.get("actor_root") as Node3D).global_position.y + boss_home.y
+	if boss_contact_global.distance_to(expected_boss_contact) > 0.001:
+		_fail("melee boss contact mixed global and connected-chunk local coordinates", game)
 		return
 	game.set("node_elapsed", float(game.get("rail_duration")) * 0.5)
 	game.call("_update_camera_rail", 0.0)
@@ -134,8 +189,29 @@ func _run() -> void:
 	if str(game.get("state")) != "node":
 		_fail("hard timeout removed an unresolved visible hostile", game)
 		return
+	game.call("_set_environment_origin", Vector3(37.0, 4.0, -51.0))
+	var sanitized_origin := game.get("environment_origin") as Vector3
+	if not sanitized_origin.is_equal_approx(Vector3(37.0, 0.0, -51.0)):
+		_fail("environment origin did not sanitize vertical drift", game)
+		return
+	if not (game.get("world_root") as Node3D).position.is_equal_approx(sanitized_origin) or not (game.get("actor_root") as Node3D).position.is_equal_approx(sanitized_origin):
+		_fail("connected world and actor roots lost their shared transform contract", game)
+		return
+	if not (game.get("fx_root") as Node3D).position.is_zero_approx():
+		_fail("global-space combat FX root was incorrectly translated with scene chunks", game)
+		return
+	camera.global_position = Vector3(37.0, 1.7, -43.0)
+	camera.global_rotation = Vector3.ZERO
+	boss_contact = game.call("_boss_melee_contact_position", boss_home) as Vector3
+	boss_contact_global = (game.get("actor_root") as Node3D).to_global(boss_contact)
+	camera_forward = -camera.global_transform.basis.z.normalized()
+	expected_boss_contact = camera.global_position + camera_forward * (2.8 * 0.58)
+	expected_boss_contact.y = (game.get("actor_root") as Node3D).to_global(boss_home).y
+	if boss_contact_global.distance_to(expected_boss_contact) > 0.001:
+		_fail("melee boss contact doubled a nonzero scene-chunk origin", game)
+		return
 
-	print("SMOKE SEQUENCE PACING: four correct intro sets/poses, rail gate 12.0s, contextual transition, curved destination rail, no hostile timeout")
+	print("SMOKE SEQUENCE PACING: four intro sets/poses, physical two-material connector, exact planar origins, nonzero-origin boss contact, rail gate 12.0s, no hostile timeout")
 	game.free()
 	await process_frame
 	quit(0)

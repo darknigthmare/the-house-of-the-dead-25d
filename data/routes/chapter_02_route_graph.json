@@ -55,7 +55,7 @@
       "kind": "route",
       "label": "High library route",
       "next": [
-        "roof_approach"
+        "corridor_cache"
       ]
     },
     {
@@ -63,7 +63,7 @@
       "kind": "route",
       "label": "Low library route",
       "next": [
-        "roof_approach"
+        "corridor_cache"
       ]
     },
     {
@@ -71,7 +71,7 @@
       "kind": "story",
       "label": "Rooftop approach",
       "next": [
-        "corridor_cache"
+        "roof_rescue"
       ]
     },
     {
@@ -80,7 +80,7 @@
       "label": "West corridor hidden cache",
       "reference_status": "period_guide_sequence_verified_exact_timing_pending",
       "next": [
-        "roof_rescue"
+        "roof_approach"
       ]
     },
     {

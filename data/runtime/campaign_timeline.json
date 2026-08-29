@@ -11,6 +11,7 @@
     "transition_seconds": 1.35,
     "branch_transition_seconds": 2,
     "require_rail_complete": true,
+    "connector_distance": 9,
     "spawn_distribution": {
       "enabled": true,
       "mode": "stretch_preserve_first",
@@ -749,6 +750,9 @@
           "type": "boss",
           "boss": "chariot",
           "duration": 60,
+          "timing_mode": "dynamic_until_defeated",
+          "reference_duration_status": "tbd_authorized_build",
+          "post_defeat_hold_seconds": 0.5,
           "style": "mansion",
           "objective": "DESTROY CHARIOT",
           "dialogue": "Chariot, Type 27. Aim for the opening in its armor.",
@@ -1081,7 +1085,7 @@
               "behavior": "armored_advance"
             }
           ],
-          "next": "roof_approach"
+          "next": "corridor_cache"
         },
         {
           "id": "lower_stairs",
@@ -1141,7 +1145,7 @@
               "behavior": "ceiling_drop"
             }
           ],
-          "next": "roof_approach"
+          "next": "corridor_cache"
         },
         {
           "id": "roof_approach",
@@ -1201,7 +1205,7 @@
               "behavior": "flight_swarm"
             }
           ],
-          "next": "corridor_cache"
+          "next": "roof_rescue"
         },
         {
           "id": "corridor_cache",
@@ -1240,7 +1244,7 @@
             {"delay": 3.7, "actor": "rubin_e1", "position": [-2, 0, -14.2], "attack_delay": 5.6, "behavior": "jump"},
             {"delay": 4.1, "actor": "rubin_e1", "position": [2, 0, -14.5], "attack_delay": 5.9, "behavior": "jump"}
           ],
-          "next": "roof_rescue"
+          "next": "roof_approach"
         },
         {
           "id": "roof_rescue",
@@ -1307,6 +1311,9 @@
           "type": "boss",
           "boss": "hangedman",
           "duration": 60,
+          "timing_mode": "dynamic_until_defeated",
+          "reference_duration_status": "tbd_authorized_build",
+          "post_defeat_hold_seconds": 0.5,
           "style": "roof",
           "objective": "DESTROY HANGEDMAN",
           "dialogue": "First eliminate the bats, then fire during its charge.",
@@ -1856,6 +1863,9 @@
           "type": "boss",
           "boss": "hermit",
           "duration": 60,
+          "timing_mode": "dynamic_until_defeated",
+          "reference_duration_status": "tbd_authorized_build",
+          "post_defeat_hold_seconds": 0.5,
           "style": "sewer",
           "objective": "DESTROY HERMIT",
           "dialogue": "Its head is vulnerable only when exposed. Shoot the web projectiles.",
@@ -1884,6 +1894,9 @@
           "type": "boss",
           "boss": "chariot",
           "duration": 55,
+          "timing_mode": "dynamic_until_defeated",
+          "reference_duration_status": "tbd_authorized_build",
+          "post_defeat_hold_seconds": 0.5,
           "style": "laboratory",
           "objective": "DESTROY CHARIOT — REMATCH",
           "dialogue": "Chariot has been rebuilt. Break through the weakened armor.",
@@ -1901,6 +1914,9 @@
           "type": "boss",
           "boss": "hangedman",
           "duration": 50,
+          "timing_mode": "dynamic_until_defeated",
+          "reference_duration_status": "tbd_authorized_build",
+          "post_defeat_hold_seconds": 0.5,
           "style": "roof",
           "objective": "DESTROY HANGEDMAN — REMATCH",
           "dialogue": "Hangedman attacks again with a smaller formation.",
@@ -2140,6 +2156,16 @@
           "type": "boss",
           "boss": "magician",
           "duration": 75,
+          "timing_mode": "dynamic_until_defeated",
+          "reference_duration_status": "tbd_authorized_build",
+          "post_defeat_hold_seconds": 0.5,
+          "pre_boss_sequence": {
+            "id": "curien_execution",
+            "minimum_hold_seconds": 7.13,
+            "disable_fire": true,
+            "lock_boss_damage": true,
+            "reference_status": "internal_sync_only_tbd_authorized_build"
+          },
           "style": "laboratory",
           "objective": "DESTROY MAGICIAN",
           "dialogue": "Magician rejects Curien and strikes him down. Fire at the exposed red tissue and destroy every fireball.",
