@@ -31,6 +31,11 @@ func _run() -> void:
 		_check(sprite != null and sprite.texture != null, "%s loads its dedicated texture" % actor_id)
 		_check(sprite != null and sprite.hframes == 8 and sprite.vframes == 8, "%s uses an 8x8 Sprite3D" % actor_id)
 		_check(sprite != null and not sprite.region_enabled, "%s has no legacy region rectangle" % actor_id)
+		if actor_id == "sam_a1" and game.sprite_clip_library_v3.is_runtime_ready("sam_a1"):
+			_check(sprite.has_meta("directional_clip_player_v3"), "Sam activates its complete atomic V3 clip player")
+			_check(str(sprite.get_meta("v3_fallback_reason", "not_empty")) == "", "active Sam V3 exposes no fallback reason")
+		elif actor_id != "sam_a1":
+			_check(not sprite.has_meta("directional_clip_player_v3"), "%s remains on its verified V2 actor profile" % actor_id)
 		var hit_zone := actor.get_node_or_null("HitZone_head") as Area3D
 		var hit_transform := hit_zone.transform if hit_zone != null else Transform3D.IDENTITY
 		actor.set_meta("visual_forward", Vector3.FORWARD)
@@ -43,7 +48,57 @@ func _run() -> void:
 		game.active_actors.erase(actor)
 		actor.queue_free()
 
+	# Exercise the active V3 state machine, not only static row selection.
 	game.camera_3d.global_position = Vector3(0.0, 1.6, 0.0)
+	var animated_sam: Node3D = game._create_actor(
+		"sam_a1", Vector3(0.0, 0.0, -8.0),
+		{"health": 3.0, "speed": 0.0, "scale": 1.0, "score": 80}, "enemy"
+	)
+	var v3_sprite := animated_sam.get_node_or_null("Sprite3D") as Sprite3D
+	_check(v3_sprite != null and v3_sprite.has_meta("directional_clip_player_v3"), "Sam runtime binds the V3 player")
+	var v3_player = v3_sprite.get_meta("directional_clip_player_v3")
+	var base_pixel_size: float = v3_sprite.pixel_size
+	_check(str(v3_player.current_clip_id) == "idle", "Sam starts on the authored idle clip")
+	animated_sam.set_meta("visual_motion", 1.0)
+	game._animate_actor(animated_sam, 0.0)
+	_check(str(v3_player.current_clip_id) == "locomotion", "movement selects the authored locomotion clip")
+	_check(is_equal_approx(v3_sprite.pixel_size, base_pixel_size * 1.0282), "locomotion applies non-cumulative actor-level proportion calibration")
+	animated_sam.set_meta("visual_motion", 0.0)
+	animated_sam.set_meta("attack_telegraph_started", true)
+	animated_sam.set_meta("attack_telegraph_complete", false)
+	animated_sam.set_meta("attack_commit_age", 0.05)
+	animated_sam.set_meta("attack_animation_timer", 0.05)
+	var lives_before_recoil: int = int(game.players[0].lives)
+	game._damage_actor(animated_sam, "torso", 1.0, 0)
+	_check(not bool(animated_sam.get_meta("attack_telegraph_started", true)), "a successful hit interrupts the pending enemy windup")
+	_check(float(animated_sam.get_meta("attack_ready_age", 0.0)) >= 0.36, "interrupted attack requires a fresh readable telegraph")
+	game._animate_actor(animated_sam, 0.0)
+	_check(str(v3_player.current_clip_id) == "hit_recoil", "damage selects the authored hit-recoil clip")
+	for hit_tick in 13:
+		game._update_actors(1.0 / 60.0)
+	_check(float(animated_sam.get_meta("hit_timer", 0.0)) > 0.0, "60 Hz runtime still owns the hit state on its final visible tick")
+	_check(v3_player.current_frame == 7, "the real timer/update order reaches all eight recoil frames at 60 Hz")
+	_check(int(animated_sam.get_meta("attacks", 0)) == 0, "interrupted windup cannot commit during visible recoil")
+	_check(int(game.players[0].lives) == lives_before_recoil, "visible recoil cannot hide player damage")
+	animated_sam.set_meta("hit_timer", 0.0)
+	animated_sam.set_meta("attack_animation_timer", 0.65)
+	game._animate_actor(animated_sam, 0.0)
+	_check(str(v3_player.current_clip_id) == "attack", "telegraph selects the authored attack clip")
+	_check(is_equal_approx(v3_sprite.pixel_size, base_pixel_size * 1.1231), "attack preserves Sam's apparent actor height")
+	game._animate_actor(animated_sam, 0.7)
+	_check(v3_player.current_frame == 7 and v3_player.finished, "attack holds its final recovery frame instead of snapping to windup")
+	game._kill_actor(animated_sam, 0, false)
+	_check(str(v3_player.current_clip_id) == "death_fall", "death selects the authored fall clip")
+	_check(is_equal_approx(v3_sprite.pixel_size, base_pixel_size * 1.0896), "death entry preserves Sam's apparent actor height")
+	await create_timer(0.82).timeout
+	_check(is_instance_valid(animated_sam), "Sam is retained until all eight death frames finish")
+	if is_instance_valid(animated_sam):
+		_check(v3_player.current_frame == 7, "death reaches the authored corpse frame")
+		_check(is_equal_approx(v3_sprite.modulate.a, 1.0), "death remains opaque through the complete fall")
+	await create_timer(0.72).timeout
+	await process_frame
+	_check(not is_instance_valid(animated_sam), "Sam retires only after fall, hold and fade")
+
 	var civilian: Node3D = game._create_actor("dbr_scientist", Vector3(0.0, 0.0, -8.0), {"health": 1.0, "speed": 0.0, "scale": 1.0, "score": 0}, "civilian")
 	game.active_civilian = civilian
 	game._kill_civilian(civilian, false)
@@ -79,7 +134,7 @@ func _run() -> void:
 	await process_frame
 	await create_timer(0.05).timeout
 	if failures.is_empty():
-		print("DIRECTIONAL SPRITE SMOKE OK: 38 bindings, 10 representatives, 8 directions, death and cleanup states.")
+		print("DIRECTIONAL SPRITE SMOKE OK: 38 bindings, 10 representatives, 8 directions, V3 lifecycle, death and cleanup states.")
 		quit(0)
 		return
 	for failure in failures:

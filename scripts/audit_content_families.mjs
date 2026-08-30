@@ -11,6 +11,7 @@ const projectPath = (path) => relative(root, path).replaceAll("\\", "/");
 const environment = readJson("data/assets/environment_manifest.json");
 const gameplay = readJson("data/assets/gameplay_support_manifest.json");
 const sprites = readJson("data/assets/sprite_manifest.json");
+const spritesV3 = readJson("data/assets/sprite_manifest_v3.json");
 const enemiesPayload = readJson("data/enemies/enemy_profiles.json");
 const campaign = readJson("data/runtime/campaign_timeline.json");
 const bossesPayload = readJson("data/bosses/boss_profiles.json");
@@ -56,6 +57,12 @@ function walkFiles(directory) {
 
 const spriteAssets = new Map(sprites.assets.map((asset) => [asset.id, asset]));
 const spriteAliases = new Map(Object.entries(sprites.aliases ?? {}));
+const requiredV3Clips = spritesV3.required_clips ?? [];
+const completeV3Profiles = new Map(
+  (spritesV3.profiles ?? [])
+    .filter((profile) => requiredV3Clips.every((clipId) => Boolean(profile.clips?.[clipId])))
+    .map((profile) => [profile.id, profile]),
+);
 const enemyProfiles = new Map(enemiesPayload.profiles.map((profile) => [profile.id, profile]));
 const bossProfiles = new Map(bossesPayload.bosses.map((profile) => [profile.id, profile]));
 const resolveActor = (id) => spriteAliases.get(id) ?? id;
@@ -294,6 +301,13 @@ for (const [id, profile] of spriteAssets) {
   const path = validateResource(profile.path, `actor ${id}`);
   if (path) hashedAssets.push({ family: "actor", id, path });
 }
+for (const [id, profile] of completeV3Profiles) {
+  check(spriteAssets.has(id), `V3 actor profile ${id} has no V2 fallback identity`);
+  for (const clipId of requiredV3Clips) {
+    const path = validateResource(profile.clips[clipId].path, `actor V3 ${id}/${clipId}`);
+    if (path) hashedAssets.push({ family: `actor_v3_${clipId}`, id, path });
+  }
+}
 
 function warnUnmanifestedPngs(directory, declaredPaths, label) {
   const declared = new Set(declaredPaths.map((path) => normalize(path)));
@@ -322,13 +336,14 @@ warnUnmanifestedPngs(
   "animated effect",
 );
 
-const mirroredRightProfiles = sprites.assets.filter((asset) => asset.right_profile_source === "mirrored_left_profile").length;
-const mirroredBackRightProfiles = sprites.assets.filter((asset) => asset.back_right_source === "mirrored_from_back_left").length;
-warn(mirroredRightProfiles === 0, `${mirroredRightProfiles}/${sprites.assets.length} actor right profiles are mirrored from the left profile`);
-warn(mirroredBackRightProfiles === 0, `${mirroredBackRightProfiles}/${sprites.assets.length} actor back-right rows are mirrored from back-left`);
+const v2OnlyProfiles = sprites.assets.filter((asset) => !completeV3Profiles.has(asset.id));
+const mirroredRightProfiles = v2OnlyProfiles.filter((asset) => asset.right_profile_source === "mirrored_left_profile").length;
+const mirroredBackRightProfiles = v2OnlyProfiles.filter((asset) => asset.back_right_source === "mirrored_from_back_left").length;
+warn(mirroredRightProfiles === 0, `${mirroredRightProfiles}/${sprites.assets.length} active actor profiles still mirror right from left; ${completeV3Profiles.size} complete V3 profile uses authored right views`);
+warn(mirroredBackRightProfiles === 0, `${mirroredBackRightProfiles}/${sprites.assets.length} active actor profiles still mirror back-right from back-left; ${completeV3Profiles.size} complete V3 profile uses authored diagonals`);
 warn(
-  Number(sprites.atlas_layout?.frames_per_direction ?? 0) > Number(sprites.atlas_layout?.frame_states?.length ?? 0),
-  `atlas contract exposes ${sprites.atlas_layout?.frame_states?.length ?? 0} semantic state cells per direction, not multi-frame clips per state`,
+  v2OnlyProfiles.length === 0,
+  `${v2OnlyProfiles.length}/${sprites.assets.length} active actor profiles still expose ${sprites.atlas_layout?.frame_states?.length ?? 0} V2 semantic cells per direction; ${completeV3Profiles.size} profile has five multi-frame V3 clips`,
 );
 
 for (const [id, profile] of Object.entries(gameplay.pickups ?? {})) {
@@ -412,7 +427,7 @@ for (const controller of ["PickupType.new()", "BreakableType.new()", "CivilianTy
 }
 
 console.log(`CONTENT FAMILY AUDIT: ${checks} checks, ${warnings.length} warnings, ${errors.length} errors`);
-console.log(`inventory props=${Object.keys(environment.props).length}/${[...propPlacementCounts.values()].reduce((a, b) => a + b, 0)} placements/${propStateEvents.length} state events; breakables=${Object.keys(environment.destructibles).length}/${breakableUses.length} uses; pickups=${Object.keys(gameplay.pickups ?? {}).length}/${pickupUses.length} placements; enemies=${enemyProfiles.size}/${enemySpawnCounts.size} timeline active + ${runtimeEnemyActorIds.length} runtime boss-support spawn sites; civilians=${[...civilianCounts.values()].reduce((a, b) => a + b, 0)} placements/${civilianCounts.size} visuals; projectiles=${Object.keys(gameplay.projectiles).length}/${effectiveProjectileUses.size} effective; animated_effects=${Object.keys(environment.animated_effects ?? {}).length}; unique_binary_assets=${digestOwners.size}/${hashedAssets.length}`);
+console.log(`inventory props=${Object.keys(environment.props).length}/${[...propPlacementCounts.values()].reduce((a, b) => a + b, 0)} placements/${propStateEvents.length} state events; breakables=${Object.keys(environment.destructibles).length}/${breakableUses.length} uses; pickups=${Object.keys(gameplay.pickups ?? {}).length}/${pickupUses.length} placements; enemies=${enemyProfiles.size}/${enemySpawnCounts.size} timeline active + ${runtimeEnemyActorIds.length} runtime boss-support spawn sites; civilians=${[...civilianCounts.values()].reduce((a, b) => a + b, 0)} placements/${civilianCounts.size} visuals; projectiles=${Object.keys(gameplay.projectiles).length}/${effectiveProjectileUses.size} effective; animated_effects=${Object.keys(environment.animated_effects ?? {}).length}; sprite_v3=${completeV3Profiles.size}/${sprites.assets.length}; unique_binary_assets=${digestOwners.size}/${hashedAssets.length}`);
 if (warnings.length > 0) {
   console.log("WARNINGS");
   for (const warning of warnings) console.log(`- ${warning}`);

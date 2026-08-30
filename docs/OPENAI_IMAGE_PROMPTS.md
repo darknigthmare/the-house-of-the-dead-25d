@@ -33,6 +33,52 @@ ImageGen did not always retain all seven requested direction rows. Accepted sour
 
 The v2 request deliberately targets one eight-state action cycle per identity. It is not a prompt for a full licensed multi-clip animation library. Future authorized production should request separate directional sheets for idle, walk, run, every attack, each localized hit, dismemberment layers, boss phases and death variants.
 
+## 2026-08-30 Sam A1 directional animation pilot — v3
+
+### Raw-prompt preservation boundary
+
+The exact raw tool strings used for the first `locomotion` and `idle` requests are not present in the repository. Detailed prompts for the later `attack`, `hit_recoil` and split `death_fall` requests remain available in the task evidence but have not yet been persisted as repository files. This document therefore does not reconstruct or label any paraphrase as a verbatim transcript.
+
+The block below is the complete reusable **normalized production prompt**, not a transcription of a raw generation request. It records the contract that future Sam A1 v3 generations must follow.
+
+```text
+Create one original fan-made 2.5D rail-shooter animation source sheet in hand-painted late-1990s gothic arcade-horror style. Do not copy pixels, geometry, screenshots, frames, logos or UI from Sega material.
+
+ACTOR IDENTITY LOCK — SAM A1
+- One male humanoid horror enemy only.
+- Dirty torn off-white short-sleeve maintenance shirt, dark blue work trousers and black work boots.
+- Fixed pale gray-green flesh, stained off-white shirt and dark blue/navy cloth palette.
+- Same face, build, height, proportions, wounds, shirt tears, trouser tears and color placement in every cell.
+- No armor, firearm, new accessory or costume change.
+
+SHEET CONTRACT
+- Exactly 8 rows by 8 columns: 64 isolated complete figures.
+- One animation clip only: [CLIP_ID].
+- Rows from top to bottom: front; front-left three-quarter; left profile; back-left three-quarter; back; back-right three-quarter; right profile; front-right three-quarter.
+- Columns from left to right: chronological frames 1 through 8 of [CLIP_ID].
+- Author every direction independently. Do not mirror, flip, copy or duplicate the left row to create the right row. Do not mirror either diagonal.
+- Preserve the same action timing and phase across all eight direction rows.
+- Keep the full body, hands, head and feet inside every cell with generous separation from every cell boundary.
+- Keep grounded feet on one stable baseline; no floor plane, contact shadow or cast shadow.
+- Keep one consistent character scale across all 64 cells.
+- No overlap between cells, no cropped body part, no detached duplicate limb and no missing row or column.
+
+CLIP TIMING — replace [CLIP_ID] with exactly one definition
+- idle: eight genuinely distinct subtle breathing and weight-shift frames forming a seamless loop; no walking displacement.
+- locomotion: eight genuinely distinct frames forming one complete readable walk cycle from contact through passing to opposite contact; seamless loop.
+- attack: eight frames covering anticipation, arm/body windup, forward strike, contact pose and recovery; the target/player is never drawn.
+- hit_recoil: eight frames covering impact response, local torso/head recoil, maximum stagger and controlled recovery; no projectile and no attacker drawn.
+- death_fall: eight non-looping frames covering fatal impact, loss of balance, collapse and final grounded corpse pose; keep the complete body visible throughout.
+
+BACKGROUND AND OUTPUT
+- Request true transparent background with clean alpha and no scenery.
+- Do not paint a checkerboard, frame grid, labels, text, numbers, logo, UI, watermark, floor or backdrop.
+- If the image service nevertheless flattens transparency into a pale neutral checkerboard, preserve the RGB source unchanged for deterministic local alpha recovery; never treat that raw RGB file as a final asset.
+- Output one square sheet only, with no caption or additional panel.
+```
+
+The current production pipeline keeps one **final** sheet per clip, normalizes any flattened RGB checkerboard locally, and accepts a profile only when all five sheets pass. A final sheet may be composed from two audited four-direction sources when ImageGen cannot retain all eight rows in one source; Sam A1 `idle` and `death_fall` use that documented split-source path. All five final sheets now pass, so Sam A1 is the active 1/38 v3 pilot while the other 37 profiles retain v2. V3 mirroring is forbidden even when a direction appears visually similar.
+
 ## Legacy actor-atlas contract
 
 The earlier 2026-08-16 generation used a strict 4×4 grid with sixteen isolated full-body frames, stable identity and scale, transparent-target post-processing, and no text/logo/UI/watermark/scenery/floor shadow/overlap. Those sheets remain under `assets/sprites/` as legacy provenance/migration material; the v2 runtime contract does not reuse them as shared actor proxies.

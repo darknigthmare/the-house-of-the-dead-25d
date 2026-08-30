@@ -1,6 +1,6 @@
 # Professional Changelog
 
-## Unreleased — connected spatial continuity and finale sequencing
+## Unreleased — connected spatial continuity, finale sequencing and Sprite V3 pilot
 
 - Connected consecutive rail segments through world-space origins whose planar exit-to-entry displacement is exactly **9 metres**. Environment and actor roots now share the same translated origin, including non-zero-origin boss contact calculations; vertical origin drift is sanitized instead of accumulating between nodes.
 - Added a temporary physical `connector_root` across a scene change. Its old-set and new-set halves use their respective materials and contain floor, walls, a threshold arch and collision bodies; it survives outgoing cleanup only for the transition and is removed after the destination set is built.
@@ -11,11 +11,15 @@
 - Paused every active runtime tween with the game tree, so Curien's execution and actor retirement cannot continue invisibly behind the pause overlay.
 - Retired hostile projectiles as soon as a boss is defeated and rejected contacts outside active node/boss combat, preventing residual shots from taking a life or opening a continue during the post-defeat hold.
 - Hardened the QA launcher: Godot output containing `SCRIPT ERROR`, `Parse Error`, `Compilation failed` or `Failed to load script` now fails the command even if the engine process exits with code zero.
-- Verified the final worktree with complete QA **313/313**, deterministic core **1,281 assertions**, Curien-finale smoke **60 assertions**, sequence connector, complete campaign, HUD and gameplay smokes, route smoke **25**, engagement coverage **34 encounters / 98 spawns**, and content audit **889 checks / 6 warnings / 0 errors**.
-- Rebuilt and accessibility-patched the post-v0.5.0 Web export: **9 files / 122,287,366 bytes**, including PCK **82,442,972** (`0cb16dc1…`), WASM **39,513,091** (`35116f68…`) and HTML **5,590** (`03c4a70a…`). `qa:web` passes **299/299** and `verify:web` passes.
-- Published exact gameplay commit `e884f77` to GitHub `main`; [Release checks run 33281429943](https://github.com/darknigthmare/the-house-of-the-dead-25d/actions/runs/33281429943) passed.
-- Promoted verified Vercel deployment `dpl_3uZ9rTZBRyvau7mgwBwePsmFU6kr` to [production](https://the-house-of-the-dead-25d.vercel.app). Root/PCK/WASM return 200 with exact lengths **5,590 / 82,442,972 / 39,513,091**, WASM MIME and COOP/COEP; `.git/config` and `project.godot` return 404. Visual browser automation remained unavailable, so this is HTTP/export evidence rather than a visual runtime claim.
-- Retained the honest fidelity boundary: no authorized reference build or confirmed timestamps are present (`TBD-AUTH`), environments are still reconstructed per node, the actor library remains Sprite V2 with eight semantic states per direction and mirrored right-side views, and the six content warnings remain known limitations.
+- Added the schema-3 Sprite V3 sidecar and per-instance directional clip player. A profile activates only when all five required clips validate; otherwise the whole actor remains on V2.
+- Produced five original fan-made OpenAI Sam A1 animation atlases: idle, locomotion, attack, recoil and death, each with eight independently authored directions × eight chronological frames. Every final sheet has 64 unique non-empty cells, no exact opposite-row mirror, no detected neutral fringe and a stable gutter/anchor contract.
+- Added non-cumulative `display_scale` from immutable `base_pixel_size` to equalize clip proportions without changing hitboxes. A hit now cancels a pending strike, recoil reaches its final frame, attack recovery holds instead of looping to wind-up, and death reads all eight frames before hold/fade.
+- Made V3 PNG production atomic through validated temporary output and rename/retry. Added a dependency-free Node verifier for hashes, traversal, duplicate bindings, scale, RGBA/cells/mirrors/fringe/proportions plus a manifest-security self-test.
+- Added Godot regression suites for the atomic loader (**67 assertions**), directional player (**97**) and production manifest (**30**), and added a pinned official Godot 4.7.1 runtime job to GitHub Actions. Remote CI status is recorded only after push.
+- Verified the full V3 worktree with complete QA **328/328**, deterministic core **1,281 assertions**, Curien-finale smoke **60 assertions**, sequence connector, complete campaign, HUD and gameplay smokes, route smoke **25** and engagement coverage **34 encounters / 98 spawns**. The repository suite passes with data QA **307/307**, five clips **5/5** and content audit **905 checks / 6 warnings / 0 errors**.
+- Rebuilt and accessibility-patched the V3 Web export: **9 files / 128,928,010 bytes**, including PCK **89,083,616** (`9246e5bf…`), WASM **39,513,091** (`35116f68…`) and HTML **5,590** (`d2ef963d…`). `qa:web` passes **311/311**, `verify:web` passes, and the V3 production-manifest/directional/gameplay smokes pass directly from the exported PCK.
+- The previously published continuity commit `e884f77`, [CI run 33281429943](https://github.com/darknigthmare/the-house-of-the-dead-25d/actions/runs/33281429943) and Vercel deployment `dpl_3uZ9rTZBRyvau7mgwBwePsmFU6kr` remain the public baseline until this V3 candidate is committed, pushed and deployed.
+- Retained the honest fidelity boundary: no authorized reference build or confirmed timestamps are present (`TBD-AUTH`), environments are still reconstructed per node, only Sam A1 is V3 (**1/38**), the other 37 actors remain compact V2 with derived right/back-right views, and the six content warnings remain known limitations.
 
 ## 0.5.0 — pursuit, collision and route-density integrity — published 2026-08-28
 

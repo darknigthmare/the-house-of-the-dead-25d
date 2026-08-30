@@ -1,5 +1,33 @@
 # Image Generation Log
 
+## 2026-08-30 — Sam A1 directional animation pilot v3
+
+The built-in OpenAI ImageGen tool generated original fan-made Sam A1 source sheets for a five-clip v3 pilot. No API key was used or stored. This wave replaces neither the verified v2 atlas nor licensed Sega content: it establishes a per-clip animation contract with `idle`, `locomotion`, `attack`, `hit_recoil` and `death_fall`.
+
+Every completed v3 clip must contain eight chronological frames in each of these eight independently authored directions: `front`, `front_left`, `left`, `back_left`, `back`, `back_right`, `right`, `front_right`. Mirroring is forbidden. Single-sheet raw outputs are 1254×1254 RGB and the split death sources are 1774×887 RGB. All have a baked neutral checkerboard and require deterministic local background recovery before they can become 2048×2048 RGBA runtime sheets.
+
+### Candidate ledger
+
+| Clip/status | Selected or rejected source | SHA-256 | Evidence status |
+|---|---|---|---|
+| `locomotion` — certified normalized | `reports/runtime/directional-sources-v3/sam_a1/sam_a1__v3__locomotion__8dirx8f.openai.png` | `28cc24cf4ffb02ea72f3a7faa0776a028f9e51f1c53d547f44ba250ed176e8a5` | Accepted source. Final atlas has 64/64 non-empty cells, eight distinct frames per direction, zero mirrored-right matches, RGBA alpha, 12-pixel gutters and stable foot anchor. |
+| `idle` — rejected | `reports/runtime/directional-sources-v3/sam_a1/sam_a1__v3__idle__8dirx8f.openai.png` | `2a94529659ffafc028365bd7a7157bd51d93e41173a01bd1dd547738155761e2` | Rejected: deterministic segmentation found 56/64 substantial silhouettes and visual audit confirms seven direction rows. |
+| `idle` directions 1–4 — accepted source half | `reports/runtime/directional-sources-v3/sam_a1/sam_a1__v3__idle__front_half__4dirx8f.openai.png` | `b10f1ad495a2cadc639f8b8962ccce6ba1ecb9603ddadcfe3fda2ae87c2ca906` | Accepted for `front`, `front_left`, `left`, `back_left`; eight frames per direction. |
+| `idle` directions 5–8 — accepted source half | `reports/runtime/directional-sources-v3/sam_a1/sam_a1__v3__idle__back_half__4dirx8f.openai.png` | `8d0772ae9d1f2ebceb66626c1be71f913ba263a22edea669aada8230d4de09e1` | Accepted for `back`, `back_right`, `right`, `front_right`; composed final SHA-256 `0f5954ad96f253749abf4654a76aed390242e78eb43c3917192e4026a0a165f1`. |
+| `attack` — certified normalized | `reports/runtime/directional-sources-v3/sam_a1/sam_a1__v3__attack__8dirx8f.openai-v2.png` | `a134c3689b14c06d075723c9bfb6c51c2f4a34bd23fe379c03dbd9cea181b1b2` | Final SHA-256 `c317ee6ff60fc43dc74881197f2c74e554aed6f14b25c5e756e7b62a110f2348`. Supersedes the cropped first attempt. |
+| `hit_recoil` — certified normalized | `reports/runtime/directional-sources-v3/sam_a1/sam_a1__v3__hit_recoil__8dirx8f.openai-v2.png` | `42673c2dec4fd1c3ac4af9eed901b15a1484e2933369f9c78a21968dab1b3030` | Final SHA-256 `8b175bf3f8a4e42289e676dbb9859f6ce2588d702f85453ced4bf72e3f1bb164`. Supersedes the incomplete first attempt. |
+| `death_fall` — rejected full-sheet attempt | `reports/runtime/directional-sources-v3/sam_a1/sam_a1__v3__death_fall__8dirx8f.openai-v2.png` | `46ce50bf19a4da3867e0c06f6c31f9043a99321bd5bc963a98b2565fa5914725` | Rejected: visual audit found seven direction rows, not eight. Retained for provenance only. |
+| `death_fall` directions 1–4 — accepted source half | `reports/runtime/directional-sources-v3/sam_a1/sam_a1__v3__death_fall__front_half__4dirx8f.openai.png` | `64a4d9acb4e32c6fa67bce0ae27db574186b8be3cb6f57e43a1ef34575b34dce` | Accepted source for `front`, `front_left`, `left`, `back_left`; eight frames per direction. |
+| `death_fall` directions 5–8 — accepted source half | `reports/runtime/directional-sources-v3/sam_a1/sam_a1__v3__death_fall__back_half__4dirx8f.openai.png` | `96b58464c2a9061085813fba37365bb492e82bc3ad17527e1d0c29c3fd939dc6` | Accepted source for `back`, `back_right`, `right`, `front_right`; composed final SHA-256 `4e2b0420574630334778cffb749b983d49c627b4ad14790d42fa2f18a807439c`. |
+
+The five certified normalized outputs are `idle` (2,316,276 bytes, SHA-256 `0f5954ad96f253749abf4654a76aed390242e78eb43c3917192e4026a0a165f1`), `locomotion` (2,518,639 bytes, `56cdaab26e434afc8568dc0eefcd63220e7b7f04d7deffd5da1de4de3fec21a4`), `attack` (2,585,028 bytes, `c317ee6ff60fc43dc74881197f2c74e554aed6f14b25c5e756e7b62a110f2348`), `hit_recoil` (2,417,677 bytes, `8b175bf3f8a4e42289e676dbb9859f6ce2588d702f85453ced4bf72e3f1bb164`) and `death_fall` (1,893,296 bytes, `4e2b0420574630334778cffb749b983d49c627b4ad14790d42fa2f18a807439c`). If the normalizer changes and any file is rebuilt, its hash and sidecar provenance must be updated together before certification.
+
+`scripts/build_sprite_contract_v3.mjs` flood-removes the edge-connected checkerboard, decontaminates neutral edge fringe, extracts ordered whole figures, applies one clip-wide scale, anchors grounded feet and writes 64 RGBA cells with transparent gutters. Final PNGs are written through a validated temporary file and atomic rename with retry. Runtime then applies a non-cumulative presentation scale from immutable `base_pixel_size`: `idle` 1.0, `locomotion` 1.0282, `attack` 1.1231, `hit_recoil` 1.0282 and `death_fall` 1.0896. This deterministic pass cannot create a missing row, direction or animation phase and does not change gameplay hitboxes.
+
+The exact initial raw prompts for `locomotion` and `idle` were not persisted in the repository. Detailed raw prompts for the later replacement/split requests exist in the task evidence but are also not yet repository artifacts. `docs/OPENAI_IMAGE_PROMPTS.md` therefore records a complete normalized production template and explicitly does not present it as a verbatim transcript.
+
+Runtime selection remains atomic. All five normalized clips now pass their hashes and structural validation, so Sam A1 activates the complete v3 profile. Any future missing/invalid required clip falls the actor back in full to `assets/sprites_v2/enemies/sam_a1/sam_a1__v2__action_cycle__8dirx8f.png`; no individual v3 clip is ever mixed into an incomplete profile. Current v3 runtime coverage is 1/38 actors.
+
 ## 2026-08-21 — directional sprite production v2
 
 The built-in OpenAI ImageGen tool produced original fan-made source sheets for 38 distinct organic identities. No ROM, model rip, screenshot, frame grab or artwork extracted from public video was used. No API key or absolute machine path is stored in the repository.

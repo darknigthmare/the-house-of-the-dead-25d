@@ -2,7 +2,7 @@
 
 An original fan-made recreation of the 1997 arcade rail shooter, built with Godot 4.7.1. Organic actors use animated sprites inside a real 3D world: perspective, occlusion, camera rails, body hit zones and collisions remain three-dimensional.
 
-The current worktree V2 visual contract provides 38 unique 2048×2048 RGBA directional atlases. Each atlas contains eight views — front, front-left, left, back-left, back, back-right, right and front-right — and eight states — idle, three movement poses, wind-up, strike, hit and fall/death. This yields 64 cells per actor and 2,432 addressable cells. The set now includes dedicated `scientist_male_blue`, `scientist_male_gray` and `scientist_female_lab` atlases.
+The V2 baseline provides 38 unique 2048×2048 RGBA directional atlases, with eight views and eight semantic states per actor. Sam A1 now has an atomic, genuinely animated V3 profile: five separate sheets (`idle`, locomotion, attack, recoil and death), each with eight independently authored directions and eight chronological frames, with no left/right mirroring. The other 37 profiles remain V2, so real V3 coverage is **1/38**, not a claimed full-cast conversion.
 
 The project includes a playable four-chapter campaign with branches, scientists, breakables, Chariot, Hangedman, Hermit, Magician, final-chapter rematches, three endings, credits, score, lives, ammunition, continues and two-player local co-op. Training, Boss Rush, Chapter Select and a local leaderboard are also available.
 
@@ -12,7 +12,7 @@ The worktree now connects consecutive rails through shared spatial origins and a
 
 The Curien sequence now genuinely precedes Magician: firing and boss damage stay locked for **7.13 seconds**, then the dynamic fight starts; boss defeat holds the final image for **0.50 seconds** before advancing the route. The 7.13-second value is an `internal_sync_only_tbd_authorized_build` marker, not a certified arcade timestamp. The QA launcher also fails on Godot script, parse, compilation or load diagnostics even if the process returns zero.
 
-Final local QA passes **313/313**, with deterministic core **1,281 assertions**, Curien finale **60 assertions** (including data-driven cinematic locks, blocked gameplay input while paused, frozen boss/subtitle clocks and immediate residual-projectile retirement), green sequence connector, complete campaign, HUD and gameplay smokes, and content audit **889 checks / 6 warnings / 0 errors**. The fresh accessibility-patched Web export passes **299/299** plus `verify:web` and measures **122,287,366 bytes** across nine files. Gameplay commit `e884f77` is on GitHub `main`, its CI is green, and verified Vercel deployment `dpl_3uZ9rTZBRyvau7mgwBwePsmFU6kr` is [live](https://the-house-of-the-dead-25d.vercel.app). Boundaries remain explicit: no authorized reference build/timestamps (`TBD-AUTH`), node sets are still reconstructed despite the connector, Sprite V2 still exposes only eight semantic states per direction with mirrored right-side views, and visual browser automation was unavailable. No new release tag was created; the v0.5.0 evidence below remains historical and immutable.
+Complete V3 QA passes **328/328**, with deterministic core **1,281 assertions** and Curien finale **60 assertions**. It includes atomic-loader (**67 assertions**), directional-player (**97**) and production-manifest (**30**) tests, plus directional and gameplay smokes executed directly from the exported PCK. `npm test` passes with data QA **307/307**, and the content audit reaches **905 checks / 6 warnings / 0 errors**. The accessibility-patched V3 Web build passes `qa:web` **311/311** and `verify:web`; it measures **128,928,010 bytes** across nine files, including an **89,083,616-byte** PCK (`9246e5bf…`). The previously cited public deployment remains the continuity build until this wave is published. Boundaries remain explicit: no authorized reference build/timestamps (`TBD-AUTH`), node sets are reconstructed, 37 profiles remain V2, no visual browser QA has been completed for this wave, and no release tag was created.
 
 ## Public v0.5.0 release — pursuit, collisions and route pacing
 
@@ -56,7 +56,7 @@ Exact commit/tag [`8add70a`](https://github.com/darknigthmare/the-house-of-the-d
 
 ## Architecture and builds
 
-The campaign is driven by `data/runtime/campaign_timeline.json`, route graphs by `data/routes/` and V2 atlases by `data/assets/sprite_manifest.json`. Specialized systems live under `src/core`, `src/rail`, `src/gameplay` and `src/tools`. Missing commercial assets are recorded in `docs/MISSING_LICENSED_ASSETS.md`.
+The campaign is driven by `data/runtime/campaign_timeline.json`, route graphs by `data/routes/`, the V2 fallback by `data/assets/sprite_manifest.json`, and atomic V3 profiles by `data/assets/sprite_manifest_v3.json`. Specialized systems live under `src/core`, `src/rail`, `src/gameplay` and `src/tools`. Missing commercial assets are recorded in `docs/MISSING_LICENSED_ASSETS.md`.
 
 ```powershell
 npm.cmd test

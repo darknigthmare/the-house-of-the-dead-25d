@@ -411,7 +411,7 @@ func _update_actors(delta: float) -> void:
 			if not civilian_forward.is_zero_approx():
 				actor.set_meta("visual_forward", civilian_forward.normalized())
 		actor.set_meta("last_visual_position", actor.position)
-		_animate_actor(actor)
+		_animate_actor(actor, delta)
 		if role == "pickup":
 			var pickup_origin_y := float(actor.get_meta("pickup_origin_y", actor.position.y))
 			var pickup_controller := actor.get_node_or_null("PickupController") as PickupController
@@ -589,9 +589,12 @@ func _update_actors(delta: float) -> void:
 			_update_enemy_attack(actor, age)
 
 
-func _animate_actor(actor: Node3D) -> void:
+func _animate_actor(actor: Node3D, delta: float = 0.0) -> void:
 	var sprite := actor.get_node_or_null("Sprite3D") as Sprite3D
 	if sprite == null or str(actor.get_meta("role", "enemy")) in ["breakable", "pickup", "projectile"]:
+		return
+	if sprite.has_meta("directional_clip_player_v3"):
+		_animate_actor_v3(actor, sprite, delta)
 		return
 	var local_frame := 0
 	var attack_timer := float(actor.get_meta("attack_animation_timer", 0.0))
@@ -605,6 +608,42 @@ func _animate_actor(actor: Node3D) -> void:
 		local_frame = 1 + (int(float(actor.get_meta("animation_time", 0.0)) * 7.0) % 3)
 	actor.set_meta("animation_state", local_frame)
 	var direction := _apply_directional_sprite_frame(actor, local_frame)
+	actor.set_meta("direction_index", direction)
+	actor.set_meta("frame", sprite.frame)
+
+
+func _animate_actor_v3(actor: Node3D, sprite: Sprite3D, delta: float) -> void:
+	var clip_player = sprite.get_meta("directional_clip_player_v3")
+	var desired_clip := "idle"
+	var semantic_state := 0
+	var attack_timer := float(actor.get_meta("attack_animation_timer", 0.0))
+	if bool(actor.get_meta("dead", false)):
+		desired_clip = "death_fall"
+		semantic_state = 7
+	elif float(actor.get_meta("hit_timer", 0.0)) > 0.0:
+		desired_clip = "hit_recoil"
+		semantic_state = 6
+	elif attack_timer > 0.0:
+		desired_clip = "attack"
+		semantic_state = 4 if attack_timer > 0.17 else 5
+	elif float(actor.get_meta("visual_motion", 0.0)) > 0.0005 or (
+		str(actor.get_meta("role", "")) == "enemy" and float(actor.get_meta("speed", 0.0)) > 0.0
+	):
+		desired_clip = "locomotion"
+		semantic_state = 1 + (clip_player.current_frame % 3)
+	if str(clip_player.current_clip_id) != desired_clip:
+		if not _play_actor_v3_clip(actor, desired_clip):
+			return
+	clip_player.set_paused(paused_by_player)
+	if not clip_player.advance(maxf(0.0, delta)):
+		push_warning("Sprite V3 advance failed: %s" % str(clip_player.last_error))
+		return
+	var actor_forward := actor.get_meta("visual_forward", Vector3.BACK) as Vector3
+	var camera_position := actor.global_position - actor_forward
+	if camera_3d != null and is_instance_valid(camera_3d):
+		camera_position = camera_3d.global_position
+	var direction: int = clip_player.update_view(actor_forward, camera_position, actor.global_position)
+	actor.set_meta("animation_state", semantic_state)
 	actor.set_meta("direction_index", direction)
 	actor.set_meta("frame", sprite.frame)
 
@@ -783,6 +822,7 @@ func _cancel_attack_telegraph(actor: Node3D, next_ready_age: float) -> void:
 	actor.set_meta("attack_telegraph_started", false)
 	actor.set_meta("attack_telegraph_complete", false)
 	actor.set_meta("attack_commit_age", 1.0e20)
+	actor.set_meta("attack_animation_timer", 0.0)
 	actor.set_meta("attack_state", "approach")
 	actor.set_meta("attack_ready_age", next_ready_age)
 
@@ -1126,6 +1166,11 @@ func _damage_actor(actor: Node3D, zone: String, multiplier: float, player_index:
 	actor.set_meta("health", health)
 	actor.set_meta("hit_timer", 0.22)
 	actor.set_meta("last_hit_zone", zone)
+	if role == "enemy" and health > 0.0 and bool(actor.get_meta("attack_telegraph_started", false)):
+		# A visible recoil cannot coexist with an invisible committed strike.
+		# Successful enemy hits interrupt the windup and schedule a fresh,
+		# fully visible telegraph after the brief reaction window.
+		_cancel_attack_telegraph(actor, float(actor.get_meta("age", 0.0)) + 0.36)
 	_play_sfx("hit")
 	_spawn_impact(actor.global_position + Vector3(0.0, 1.15 if zone != "head" else 1.68, 0.05), zone)
 	if zone == "head" and role == "enemy":
@@ -1196,12 +1241,28 @@ func _kill_actor(actor: Node3D, player_index: int, award: bool) -> void:
 		_on_boss_defeated()
 	active_actors.erase(actor)
 	var sprite := actor.get_node_or_null("Sprite3D") as Sprite3D
+	var retirement_delay := 0.0
 	if sprite != null:
 		if not retiring_actors.has(actor):
 			retiring_actors.append(actor)
 		if role != "breakable" and sprite.hframes * sprite.vframes >= 64:
 			actor.set_meta("animation_state", 7)
-			_apply_directional_sprite_frame(actor, 7)
+			if sprite.has_meta("directional_clip_player_v3") and _play_actor_v3_clip(actor, "death_fall"):
+				var clip_player = sprite.get_meta("directional_clip_player_v3")
+				clip_player.seek(0)
+				var death_tween := actor.create_tween()
+				var death_duration: float = float(maxi(1, clip_player.frame_count - 1)) / maxf(1.0, clip_player.fps)
+				# Keep the actor fully opaque until every authored fall frame has
+				# been shown. A parallel fade used to free Sam before frame eight.
+				retirement_delay = death_duration + 0.18
+				death_tween.tween_method(
+					Callable(self, "_set_retiring_v3_death_frame").bind(actor),
+					0.0,
+					float(clip_player.frame_count - 1),
+					death_duration
+				)
+			else:
+				_apply_directional_sprite_frame(actor, 7)
 		if role == "breakable" and bool(actor.get_meta("persist_broken_visual", true)):
 			# Broken doors and scenery remain visible, but stay outside the active
 			# actor/blocker lists, until the sequence itself is cleaned up.
@@ -1209,11 +1270,30 @@ func _kill_actor(actor: Node3D, player_index: int, award: bool) -> void:
 		var tween := actor.create_tween()
 		if role == "breakable":
 			tween.tween_interval(0.42)
+		elif retirement_delay > 0.0:
+			tween.tween_interval(retirement_delay)
 		tween.tween_property(sprite, "modulate:a", 0.0, 0.5)
 		tween.parallel().tween_property(actor, "position:y", actor.position.y - 0.35, 0.5)
 		tween.tween_callback(Callable(self, "_finalize_actor_retirement").bind(actor))
 	else:
 		_finalize_actor_retirement(actor)
+
+
+func _set_retiring_v3_death_frame(frame_value: float, actor: Node3D) -> void:
+	if not is_instance_valid(actor):
+		return
+	var sprite := actor.get_node_or_null("Sprite3D") as Sprite3D
+	if sprite == null or not sprite.has_meta("directional_clip_player_v3"):
+		return
+	var clip_player = sprite.get_meta("directional_clip_player_v3")
+	clip_player.seek(clampi(roundi(frame_value), 0, clip_player.frame_count - 1))
+	var actor_forward := actor.get_meta("visual_forward", Vector3.BACK) as Vector3
+	var camera_position := actor.global_position - actor_forward
+	if camera_3d != null and is_instance_valid(camera_3d):
+		camera_position = camera_3d.global_position
+	var direction: int = clip_player.update_view(actor_forward, camera_position, actor.global_position)
+	actor.set_meta("direction_index", direction)
+	actor.set_meta("frame", sprite.frame)
 
 
 func _finalize_actor_retirement(actor: Node3D) -> void:

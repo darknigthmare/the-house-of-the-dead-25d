@@ -6,9 +6,9 @@ All organic actors render as `Sprite3D` nodes inside the 3D world. Collision and
 
 The repository contains original fan-made OpenAI artwork only. No Sega model, frame grab, scan, ROM texture, or video extraction is included.
 
-## Active directional-atlas convention — v2
+## Directional-atlas baseline — v2
 
-The active asset contract contains **38 dedicated, identity-specific atlases** under `assets/sprites_v2/`. It covers Thomas Rogan, Agent G, Sophie Richards, the DBR scientist, three additional scientist variants, Dr. Curien, the four bosses, the mutant bat and 25 canonical enemy profiles. No two v2 identities share a proxy atlas.
+The repository contains **38 dedicated, identity-specific v2 atlases** under `assets/sprites_v2/`. They cover Thomas Rogan, Agent G, Sophie Richards, the DBR scientist, three additional scientist variants, Dr. Curien, the four bosses, the mutant bat and 25 canonical enemy profiles. No two v2 identities share a proxy atlas. V2 remains the active fallback for 37/38 profiles; Sam A1 now atomically selects the complete v3 sidecar described below.
 
 - Each final PNG is 2048×2048 RGBA.
 - The atlas is eight columns by eight rows: 64 cells of 256×256 pixels.
@@ -43,6 +43,29 @@ The current atlas audit contract covers all 38 atlases and 2,432 cells, includin
 
 Each v2 atlas is intentionally one compact eight-state **action cycle**. It is not presented as a complete licensed animation library with separate multi-frame clips for every idle, walk, run, attack, localized hit, dismemberment, boss phase and death variation. Those richer per-clip sources remain an integration target when authorized assets become available.
 
+## Directional animation-clip convention — v3 Sam A1 pilot
+
+The v3 pilot is a separate, stricter sidecar contract. It does not relabel duplicated v2 cells as longer animation and it does not silently mix incomplete v3 clips with v2 states. One actor profile becomes runtime-eligible only after all five required clips pass validation:
+
+1. `idle`;
+2. `locomotion`;
+3. `attack`;
+4. `hit_recoil`;
+5. `death_fall`.
+
+Each clip has its own sheet rather than sharing one semantic action-cycle atlas. A completed sheet is 2048×2048 RGBA, arranged as eight direction rows by eight chronological animation frames. The canonical row order is `front`, `front_left`, `left`, `back_left`, `back`, `back_right`, `right`, `front_right`. All eight directions must be independently authored: v3 forbids left/right or diagonal mirroring, and the verifier explicitly rejects a right row copied from a mirrored left row.
+
+The selected OpenAI single-sheet sources are 1254×1254 RGB images with a baked neutral checkerboard. The accepted idle replacement uses two 1254×1254 RGB sheets containing four directions each; the accepted split-death replacement uses two 1774×887 RGB sheets containing four directions each. None has native alpha and none is shipped directly. `scripts/build_sprite_contract_v3.mjs` removes only edge-connected background, decontaminates neutral fringe, extracts the ordered figures, applies one clip-wide raster scale, grounds every frame and writes real RGBA cells with a 12-pixel transparent gutter. It writes to a validated temporary PNG and performs an atomic rename with retry, so a transient Windows write failure cannot leave a partial final atlas. The generated silhouette supplies the artwork; this normalization does not invent an animation frame or direction.
+
+Sam A1 is the first pilot because its fixed identity is simple to audit: pale gray-green flesh, torn stained off-white maintenance shirt, dark blue work trousers, black boots, no armor and no firearm. As of 2026-08-30:
+
+- all five required clips — `idle`, `locomotion`, `attack`, `hit_recoil` and `death_fall` — are certified final atlases: each has 64/64 unique non-empty cells, eight distinct frames in each direction, zero exact mirrors across all three left/right direction pairs, true RGBA, zero detected neutral fringe, enforced gutters and a stable ground anchor;
+- the first single-sheet `idle` attempt remains rejected because deterministic segmentation found 56/64 substantial silhouettes and visual review confirmed only seven direction rows; two accepted four-direction idle sources now compose the certified final `idle` atlas;
+- the attempted single-sheet `death_fall` replacement also remains rejected because it contains only seven direction rows; the accepted `front_half` and `back_half` sources each contain four ordered directions by eight frames and compose the certified final `death_fall` atlas;
+- non-cumulative runtime `display_scale` values are applied from immutable `base_pixel_size`: `idle` 1.0, `locomotion` 1.0282, `attack` 1.1231, `hit_recoil` 1.0282 and `death_fall` 1.0896. The five opening poses therefore present the same 219-pixel apparent standing height without resampling or changing any hitbox.
+
+Activation is atomic at actor-profile level. All five required Sam A1 sheets now exist with validated hashes, so the gameplay runtime activates the complete v3 profile; any invalid/missing clip makes the whole actor fall back to its verified v2 profile. The adapter is presentation-only and does not alter hitboxes, health, score, attack ranges or route timing. Attack and recoil hold their last frame through their gameplay recovery window, an interrupted wind-up cannot damage while recoil is shown, and death displays every authored frame before its hold/fade. The remaining 37 actor profiles continue to use v2, so current production coverage is honestly **1/38 V3**.
+
 ## Legacy 4×4 convention
 
 The older `assets/sprites/` sheets use four columns by four rows and sixteen equal cells: idle/anticipation, locomotion, action and hit/death groupings. They are retained for provenance and migration compatibility but are not the dedicated v2 visual contract. `legacy_path` in `data/assets/sprite_manifest.json` is an audit pointer, not permission for active v2 identities to share a proxy.
@@ -67,5 +90,8 @@ Humanoid campaign actors use separate head, torso, left-arm, right-arm and leg h
 8. Mirrored/derived rows and state columns match the per-asset provenance record.
 9. No visible pixel enters the 12-pixel gutter or touches its inner cut-risk boundary.
 10. Keyed green is absent from semi-transparent edge pixels under the repository verifier's despill rule.
+11. A v3 profile exposes all five required clips atomically; each clip has eight independently authored direction rows and eight chronological frames with no exact mirrored opposite row.
+12. A v3 `display_scale` stays within 0.75–1.35 and is always recalculated from immutable `base_pixel_size`, never multiplied cumulatively across clip swaps.
+13. The exported PCK loads the tracked v3 manifest, scripts and textures and completes the production-manifest, directional lifecycle and gameplay smokes.
 
-Repository QA automates PNG signature, RGBA/alpha declaration, exact dimensions, 8×8 layout, 38 unique bindings, 64 non-empty cells per atlas, the 12-pixel gutter, likely boundary clipping, green-edge despill, Moody action-scale stability and provenance consistency. Origin stability, artistic continuity and multi-angle collision alignment remain visual acceptance gates.
+Repository QA automates PNG signature, RGBA/alpha declaration, exact dimensions, 8×8 layout, 38 unique v2 bindings, 64 non-empty cells per atlas, the 12-pixel gutter, likely boundary clipping, green-edge despill, Moody action-scale stability and provenance consistency. V3 adds hash/path/profile uniqueness, 64 unique cells per clip, eight distinct frames per direction, mirror/fringe/proportion rejection, atomic loader fallback, direction hysteresis and full clip-lifecycle tests. Origin stability, artistic continuity and multi-angle collision alignment remain visual acceptance gates.

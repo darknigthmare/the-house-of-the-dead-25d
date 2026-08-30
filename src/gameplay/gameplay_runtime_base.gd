@@ -8,12 +8,15 @@ const UITextSanitizerScript := preload("res://src/ui/ui_text_sanitizer.gd")
 const ProceduralSfxScript := preload("res://src/audio/procedural_sfx.gd")
 const AudioCueLibraryScript := preload("res://src/audio/audio_cue_library.gd")
 const SpriteAtlasLibraryScript := preload("res://src/gameplay/sprite_atlas_library.gd")
+const SpriteClipLibraryV3Script := preload("res://src/gameplay/sprite_clip_library_v3.gd")
+const DirectionalClipPlayerV3Script := preload("res://src/gameplay/directional_clip_player_v3.gd")
 const DirectionalSpriteResolverScript := preload("res://src/gameplay/directional_sprite_resolver.gd")
 const EnvironmentAssetLibraryScript := preload("res://src/gameplay/environment_asset_library.gd")
 const GameplaySupportLibraryScript := preload("res://src/gameplay/gameplay_support_library.gd")
 const EnemyProfileLibraryScript := preload("res://src/gameplay/enemy_profile_library.gd")
 const CAMPAIGN_PATH := "res://data/runtime/campaign_timeline.json"
 const SPRITE_MANIFEST_PATH := "res://data/assets/sprite_manifest.json"
+const SPRITE_MANIFEST_V3_PATH := "res://data/assets/sprite_manifest_v3.json"
 const ENVIRONMENT_MANIFEST_PATH := "res://data/assets/environment_manifest.json"
 const GAMEPLAY_SUPPORT_MANIFEST_PATH := "res://data/assets/gameplay_support_manifest.json"
 const AUDIO_CUE_MANIFEST_PATH := "res://data/audio/audio_cues.json"
@@ -139,6 +142,7 @@ var last_subtitle_audio_text: String = ""
 var last_subtitle_audio_msec: int = 0
 var qa_score_log_error_reported: bool = false
 var sprite_atlas_library = SpriteAtlasLibraryScript.new()
+var sprite_clip_library_v3 = SpriteClipLibraryV3Script.new()
 var directional_sprite_resolver = DirectionalSpriteResolverScript.new()
 var environment_asset_library = EnvironmentAssetLibraryScript.new()
 var gameplay_support_library = GameplaySupportLibraryScript.new()
@@ -237,6 +241,12 @@ func _load_sprite_manifest() -> bool:
 	if not sprite_atlas_library.load_manifest(SPRITE_MANIFEST_PATH):
 		push_error(sprite_atlas_library.last_error)
 		return false
+	# V3 is a non-destructive sidecar. It is validated on every session, but an
+	# invalid or incomplete V3 profile can never prevent the verified V2 actor
+	# from loading. Runtime activation remains actor-atomic: all required clips
+	# must pass before a future presentation player may select that profile.
+	if not sprite_clip_library_v3.load_manifest(SPRITE_MANIFEST_V3_PATH):
+		push_warning("Sprite V3 sidecar rejected; retaining V2 actors: %s" % sprite_clip_library_v3.last_error)
 	directional_sprite_resolver.direction_count = 8
 	directional_sprite_resolver.frames_per_direction = 8
 	directional_sprite_resolver.direction_hysteresis_degrees = 3.0
@@ -279,6 +289,53 @@ func _configure_actor_sprite(sprite: Sprite3D, actor_id: String, actor_scale: fl
 	sprite.billboard = BaseMaterial3D.BILLBOARD_ENABLED if str(profile.get("billboard", "fixed_y")) == "full" else BaseMaterial3D.BILLBOARD_FIXED_Y
 	sprite.alpha_cut = SpriteBase3D.ALPHA_CUT_DISCARD
 	sprite.texture_filter = BaseMaterial3D.TEXTURE_FILTER_NEAREST
+	var has_v3_profile := sprite_clip_library_v3.has_actor(actor_id)
+	sprite.set_meta("v3_profile_present", has_v3_profile)
+	sprite.set_meta("v3_profile_ready", has_v3_profile and sprite_clip_library_v3.is_runtime_ready(actor_id))
+	sprite.set_meta(
+		"v3_fallback_reason",
+		sprite_clip_library_v3.fallback_reason(actor_id) if has_v3_profile else "v3_profile_not_authored"
+	)
+	if has_v3_profile and sprite_clip_library_v3.is_runtime_ready(actor_id):
+		var idle_definition := _sprite_v3_clip_definition(actor_id, "idle")
+		var clip_player = DirectionalClipPlayerV3Script.new()
+		if not idle_definition.is_empty() and clip_player.configure(sprite, idle_definition):
+			sprite.set_meta("directional_clip_player_v3", clip_player)
+			sprite.set_meta("v3_actor_id", actor_id)
+			sprite.set_meta("v3_fallback_reason", "")
+		else:
+			sprite.set_meta("v3_profile_ready", false)
+			sprite.set_meta(
+				"v3_fallback_reason",
+				"runtime_configuration_failed:%s" % str(clip_player.last_error)
+			)
+	return true
+
+
+func _sprite_v3_clip_definition(actor_id: String, clip_id: String) -> Dictionary:
+	var clip := sprite_clip_library_v3.get_clip(actor_id, clip_id)
+	if clip.is_empty():
+		return {}
+	var texture_path := str(clip.get("path", ""))
+	var texture := load(texture_path) as Texture2D
+	if texture == null:
+		push_warning("Sprite V3 clip texture failed to load: %s/%s (%s)" % [actor_id, clip_id, texture_path])
+		return {}
+	clip["id"] = StringName(clip_id)
+	clip["texture"] = texture
+	return clip
+
+
+func _play_actor_v3_clip(actor: Node3D, clip_id: String, restart: bool = true) -> bool:
+	var sprite := actor.get_node_or_null("Sprite3D") as Sprite3D
+	if sprite == null or not sprite.has_meta("directional_clip_player_v3"):
+		return false
+	var clip_player = sprite.get_meta("directional_clip_player_v3")
+	var actor_id := str(sprite.get_meta("v3_actor_id", actor.get_meta("actor_id", "")))
+	var definition := _sprite_v3_clip_definition(actor_id, clip_id)
+	if definition.is_empty() or not clip_player.play_clip(definition, restart):
+		push_warning("Sprite V3 clip switch failed: %s/%s (%s)" % [actor_id, clip_id, str(clip_player.last_error)])
+		return false
 	return true
 
 
@@ -290,6 +347,32 @@ func _apply_directional_sprite_frame(actor: Node3D, local_frame: int) -> int:
 	var camera_position := actor.global_position - actor_forward
 	if camera_3d != null:
 		camera_position = camera_3d.global_position
+	if sprite.has_meta("directional_clip_player_v3"):
+		var clip_player = sprite.get_meta("directional_clip_player_v3")
+		var semantic_frame := clampi(local_frame, 0, 7)
+		var clip_id := "idle"
+		var clip_frame := 0
+		match semantic_frame:
+			1, 2, 3:
+				clip_id = "locomotion"
+				clip_frame = [0, 3, 6][semantic_frame - 1]
+			4, 5:
+				clip_id = "attack"
+				clip_frame = 2 if semantic_frame == 4 else 5
+			6:
+				clip_id = "hit_recoil"
+				clip_frame = 3
+			7:
+				clip_id = "death_fall"
+				clip_frame = 7
+		if str(clip_player.current_clip_id) != clip_id and not _play_actor_v3_clip(actor, clip_id):
+			return -1
+		if not clip_player.seek(clampi(clip_frame, 0, clip_player.frame_count - 1)):
+			return -1
+		var v3_direction: int = clip_player.update_view(actor_forward, camera_position, actor.global_position)
+		if v3_direction >= 0:
+			actor.set_meta("direction_index", v3_direction)
+		return v3_direction
 	var previous_direction := int(actor.get_meta("direction_index", -1))
 	var resolved_direction := directional_sprite_resolver.apply_to_sprite(
 		sprite,

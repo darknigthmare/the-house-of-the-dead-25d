@@ -19,3 +19,37 @@ jobs:
       - run: npm test
       - run: npm run qa:web
       - run: npm run verify:web
+
+  godot-v3-runtime:
+    runs-on: ubuntu-latest
+    env:
+      GODOT_VERSION: 4.7.1
+      GODOT_SHA256: c7ff14fd28472c8d4f193043de30278dcf7e5241a1dcf7566b02e27addaa33ba
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install verified official Godot editor
+        shell: bash
+        run: |
+          mkdir -p .ci/godot
+          curl --fail --location --retry 3 \
+            "https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}-stable/Godot_v${GODOT_VERSION}-stable_linux.x86_64.zip" \
+            --output .ci/godot/godot.zip
+          echo "${GODOT_SHA256}  .ci/godot/godot.zip" | sha256sum --check --strict
+          unzip -q .ci/godot/godot.zip -d .ci/godot
+          chmod +x ".ci/godot/Godot_v${GODOT_VERSION}-stable_linux.x86_64"
+      - name: Import project and parse scripts
+        shell: bash
+        run: ".ci/godot/Godot_v${GODOT_VERSION}-stable_linux.x86_64 --headless --path . --import"
+      - name: Verify V3 manifest, player and gameplay integration
+        shell: bash
+        run: |
+          GODOT=".ci/godot/Godot_v${GODOT_VERSION}-stable_linux.x86_64"
+          for script in \
+            res://tests/test_sprite_clip_library_v3_atomic.gd \
+            res://tests/test_directional_clip_player_v3.gd \
+            res://tests/test_sprite_manifest_v3_production.gd \
+            res://scripts/smoke_directional_sprites.gd \
+            res://scripts/smoke_gameplay.gd
+          do
+            "$GODOT" --headless --path . --script "$script"
+          done

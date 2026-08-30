@@ -1,0 +1,125 @@
+{
+  "schema_version": 3,
+  "direction_order": [
+    "front",
+    "front_left",
+    "left",
+    "back_left",
+    "back",
+    "back_right",
+    "right",
+    "front_right"
+  ],
+  "required_clips": [
+    "idle",
+    "locomotion",
+    "attack",
+    "hit_recoil",
+    "death_fall"
+  ],
+  "profiles": [
+    {
+      "id": "sam_a1",
+      "fallback_v2_id": "sam_a1",
+      "required_clips": [
+        "idle",
+        "locomotion",
+        "attack",
+        "hit_recoil",
+        "death_fall"
+      ],
+      "clips": {
+        "idle": {
+          "path": "res://assets/sprites_v3/enemies/sam_a1/sam_a1__v3__idle__8dirx8f.png",
+          "frame_count": 8,
+          "fps": 6.0,
+          "loop": true,
+          "hold_last": false,
+          "display_scale": 1.0,
+          "sha256": "0f5954ad96f253749abf4654a76aed390242e78eb43c3917192e4026a0a165f1",
+          "provenance": {
+            "generator": "openai_builtin_imagegen",
+            "source_path": "reports/runtime/directional-sources-v3/sam_a1/sam_a1__v3__idle__front_half__4dirx8f.openai.png + reports/runtime/directional-sources-v3/sam_a1/sam_a1__v3__idle__back_half__4dirx8f.openai.png",
+            "source_sha256": "b10f1ad495a2cadc639f8b8962ccce6ba1ecb9603ddadcfe3fda2ae87c2ca906+8d0772ae9d1f2ebceb66626c1be71f913ba263a22edea669aada8230d4de09e1",
+            "normalizer": "scripts/build_sprite_contract_v3.mjs",
+            "direction_order": ["front", "front_left", "left", "back_left", "back", "back_right", "right", "front_right"]
+          }
+        },
+        "locomotion": {
+          "path": "res://assets/sprites_v3/enemies/sam_a1/sam_a1__v3__locomotion__8dirx8f.png",
+          "frame_count": 8,
+          "fps": 10.0,
+          "loop": true,
+          "hold_last": false,
+          "display_scale": 1.0282,
+          "sha256": "56cdaab26e434afc8568dc0eefcd63220e7b7f04d7deffd5da1de4de3fec21a4",
+          "provenance": {
+            "generator": "openai_builtin_imagegen",
+            "source_path": "reports/runtime/directional-sources-v3/sam_a1/sam_a1__v3__locomotion__8dirx8f.openai.png",
+            "source_sha256": "28cc24cf4ffb02ea72f3a7faa0776a028f9e51f1c53d547f44ba250ed176e8a5",
+            "normalizer": "scripts/build_sprite_contract_v3.mjs",
+            "direction_order": [
+              "front",
+              "front_left",
+              "left",
+              "back_left",
+              "back",
+              "back_right",
+              "right",
+              "front_right"
+            ]
+          }
+        },
+        "attack": {
+          "path": "res://assets/sprites_v3/enemies/sam_a1/sam_a1__v3__attack__8dirx8f.png",
+          "frame_count": 8,
+          "fps": 12.0,
+          "loop": false,
+          "hold_last": true,
+          "display_scale": 1.1231,
+          "sha256": "c317ee6ff60fc43dc74881197f2c74e554aed6f14b25c5e756e7b62a110f2348",
+          "provenance": {
+            "generator": "openai_builtin_imagegen",
+            "source_path": "reports/runtime/directional-sources-v3/sam_a1/sam_a1__v3__attack__8dirx8f.openai-v2.png",
+            "source_sha256": "a134c3689b14c06d075723c9bfb6c51c2f4a34bd23fe379c03dbd9cea181b1b2",
+            "normalizer": "scripts/build_sprite_contract_v3.mjs",
+            "direction_order": ["front", "front_left", "left", "back_left", "back", "back_right", "right", "front_right"]
+          }
+        },
+        "hit_recoil": {
+          "path": "res://assets/sprites_v3/enemies/sam_a1/sam_a1__v3__hit_recoil__8dirx8f.png",
+          "frame_count": 8,
+          "fps": 40.0,
+          "loop": false,
+          "hold_last": true,
+          "display_scale": 1.0282,
+          "sha256": "8b175bf3f8a4e42289e676dbb9859f6ce2588d702f85453ced4bf72e3f1bb164",
+          "provenance": {
+            "generator": "openai_builtin_imagegen",
+            "source_path": "reports/runtime/directional-sources-v3/sam_a1/sam_a1__v3__hit_recoil__8dirx8f.openai-v2.png",
+            "source_sha256": "42673c2dec4fd1c3ac4af9eed901b15a1484e2933369f9c78a21968dab1b3030",
+            "normalizer": "scripts/build_sprite_contract_v3.mjs",
+            "direction_order": ["front", "front_left", "left", "back_left", "back", "back_right", "right", "front_right"]
+          }
+        },
+        "death_fall": {
+          "path": "res://assets/sprites_v3/enemies/sam_a1/sam_a1__v3__death_fall__8dirx8f.png",
+          "frame_count": 8,
+          "fps": 9.0,
+          "loop": false,
+          "hold_last": true,
+          "display_scale": 1.0896,
+          "sha256": "4e2b0420574630334778cffb749b983d49c627b4ad14790d42fa2f18a807439c",
+          "provenance": {
+            "generator": "openai_builtin_imagegen",
+            "source_path": "reports/runtime/directional-sources-v3/sam_a1/sam_a1__v3__death_fall__front_half__4dirx8f.openai.png + reports/runtime/directional-sources-v3/sam_a1/sam_a1__v3__death_fall__back_half__4dirx8f.openai.png",
+            "source_sha256": "64a4d9acb4e32c6fa67bce0ae27db574186b8be3cb6f57e43a1ef34575b34dce+96b58464c2a9061085813fba37365bb492e82bc3ad17527e1d0c29c3fd939dc6",
+            "normalizer": "scripts/build_sprite_contract_v3.mjs",
+            "direction_order": ["front", "front_left", "left", "back_left", "back", "back_right", "right", "front_right"]
+          }
+        }
+      }
+    }
+  ],
+  "aliases": {}
+}

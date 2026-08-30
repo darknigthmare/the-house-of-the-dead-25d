@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "contract_version": 3,
+  "generated_at": "2026-08-30",
+  "generator": "OpenAI built-in ImageGen",
+  "actor_id": "sam_a1",
+  "policy": {
+    "activation": "atomic_actor_profile_only",
+    "required_clips": ["idle", "locomotion", "attack", "hit_recoil", "death_fall"],
+    "fallback": "retain_verified_v2_profile_until_every_required_v3_clip_passes",
+    "mirroring": "forbidden_for_v3_authored_directions",
+    "raw_background": "baked_checkerboard_rgb_requires_deterministic_normalization",
+    "source_sheet_distribution": "reports/runtime sources are QA-only and excluded from public exports"
+  },
+  "direction_order": [
+    "front",
+    "front_left",
+    "left",
+    "back_left",
+    "back",
+    "back_right",
+    "right",
+    "front_right"
+  ],
+  "candidates": [
+    {
+      "clip": "locomotion",
+      "source": "reports/runtime/directional-sources-v3/sam_a1/sam_a1__v3__locomotion__8dirx8f.openai.png",
+      "source_sha256": "28cc24cf4ffb02ea72f3a7faa0776a028f9e51f1c53d547f44ba250ed176e8a5",
+      "source_bytes": 1643785,
+      "source_format": "1254x1254 RGB",
+      "status": "accepted_normalized",
+      "output": "assets/sprites_v3/enemies/sam_a1/sam_a1__v3__locomotion__8dirx8f.png",
+      "output_sha256": "56cdaab26e434afc8568dc0eefcd63220e7b7f04d7deffd5da1de4de3fec21a4",
+      "output_bytes": 2518639,
+      "validation": "64/64 unique non-empty cells; 8/8 distinct frames in every direction; 0 exact mirrors across all three directional pairs; true RGBA; 0 neutral-fringe pixels; 12 px gutters; foot anchor y=241"
+    },
+    {
+      "clip": "idle",
+      "source": "reports/runtime/directional-sources-v3/sam_a1/sam_a1__v3__idle__8dirx8f.openai.png",
+      "source_sha256": "2a94529659ffafc028365bd7a7157bd51d93e41173a01bd1dd547738155761e2",
+      "source_bytes": 1709394,
+      "source_format": "1254x1254 RGB",
+      "status": "rejected_missing_direction_row",
+      "reason": "deterministic segmentation found 56/64 substantial silhouettes; visual audit confirms seven rows instead of eight"
+    },
+    {
+      "clip": "idle",
+      "sources": [
+        {
+          "path": "reports/runtime/directional-sources-v3/sam_a1/sam_a1__v3__idle__front_half__4dirx8f.openai.png",
+          "sha256": "b10f1ad495a2cadc639f8b8962ccce6ba1ecb9603ddadcfe3fda2ae87c2ca906",
+          "bytes": 1647603,
+          "directions": ["front", "front_left", "left", "back_left"]
+        },
+        {
+          "path": "reports/runtime/directional-sources-v3/sam_a1/sam_a1__v3__idle__back_half__4dirx8f.openai.png",
+          "sha256": "8d0772ae9d1f2ebceb66626c1be71f913ba263a22edea669aada8230d4de09e1",
+          "bytes": 1586161,
+          "directions": ["back", "back_right", "right", "front_right"]
+        }
+      ],
+      "source_format": "two 1254x1254 RGB sheets, each 4 directions x 8 frames",
+      "status": "accepted_composed_normalized",
+      "output": "assets/sprites_v3/enemies/sam_a1/sam_a1__v3__idle__8dirx8f.png",
+      "output_sha256": "0f5954ad96f253749abf4654a76aed390242e78eb43c3917192e4026a0a165f1",
+      "output_bytes": 2316276,
+      "validation": "64/64 unique non-empty cells; 8 distinct frames per direction; 0 exact directional mirrors; true RGBA; 0 neutral-fringe pixels; gutters and anchor pass"
+    },
+    {
+      "clip": "attack",
+      "source": "reports/runtime/directional-sources-v3/sam_a1/sam_a1__v3__attack__8dirx8f.openai-v2.png",
+      "source_sha256": "a134c3689b14c06d075723c9bfb6c51c2f4a34bd23fe379c03dbd9cea181b1b2",
+      "source_bytes": 1795426,
+      "source_format": "1254x1254 RGB",
+      "status": "accepted_normalized",
+      "supersedes": "sam_a1__v3__attack__8dirx8f.openai.png",
+      "output": "assets/sprites_v3/enemies/sam_a1/sam_a1__v3__attack__8dirx8f.png",
+      "output_sha256": "c317ee6ff60fc43dc74881197f2c74e554aed6f14b25c5e756e7b62a110f2348",
+      "output_bytes": 2585028,
+      "validation": "64/64 unique non-empty cells; 8 distinct frames per direction; 0 exact directional mirrors; true RGBA; 0 neutral-fringe pixels; gutters and anchor pass"
+    },
+    {
+      "clip": "hit_recoil",
+      "source": "reports/runtime/directional-sources-v3/sam_a1/sam_a1__v3__hit_recoil__8dirx8f.openai-v2.png",
+      "source_sha256": "42673c2dec4fd1c3ac4af9eed901b15a1484e2933369f9c78a21968dab1b3030",
+      "source_bytes": 1621804,
+      "source_format": "1254x1254 RGB",
+      "status": "accepted_normalized",
+      "supersedes": "sam_a1__v3__hit_recoil__8dirx8f.openai.png",
+      "output": "assets/sprites_v3/enemies/sam_a1/sam_a1__v3__hit_recoil__8dirx8f.png",
+      "output_sha256": "8b175bf3f8a4e42289e676dbb9859f6ce2588d702f85453ced4bf72e3f1bb164",
+      "output_bytes": 2417677,
+      "validation": "64/64 unique non-empty cells; 8 distinct frames per direction; 0 exact directional mirrors; true RGBA; 0 neutral-fringe pixels; gutters and anchor pass"
+    },
+    {
+      "clip": "death_fall",
+      "source": "reports/runtime/directional-sources-v3/sam_a1/sam_a1__v3__death_fall__8dirx8f.openai-v2.png",
+      "source_sha256": "46ce50bf19a4da3867e0c06f6c31f9043a99321bd5bc963a98b2565fa5914725",
+      "source_bytes": 1561450,
+      "source_format": "1254x1254 RGB",
+      "status": "rejected_missing_direction_row",
+      "reason": "visual audit found seven rows instead of the required eight; retained only for provenance"
+    },
+    {
+      "clip": "death_fall",
+      "sources": [
+        {
+          "path": "reports/runtime/directional-sources-v3/sam_a1/sam_a1__v3__death_fall__front_half__4dirx8f.openai.png",
+          "sha256": "64a4d9acb4e32c6fa67bce0ae27db574186b8be3cb6f57e43a1ef34575b34dce",
+          "bytes": 1345286,
+          "directions": ["front", "front_left", "left", "back_left"]
+        },
+        {
+          "path": "reports/runtime/directional-sources-v3/sam_a1/sam_a1__v3__death_fall__back_half__4dirx8f.openai.png",
+          "sha256": "96b58464c2a9061085813fba37365bb492e82bc3ad17527e1d0c29c3fd939dc6",
+          "bytes": 1291529,
+          "directions": ["back", "back_right", "right", "front_right"]
+        }
+      ],
+      "source_format": "two 1774x887 RGB sheets, each 4 directions x 8 frames",
+      "status": "accepted_composed_normalized",
+      "output": "assets/sprites_v3/enemies/sam_a1/sam_a1__v3__death_fall__8dirx8f.png",
+      "output_sha256": "4e2b0420574630334778cffb749b983d49c627b4ad14790d42fa2f18a807439c",
+      "output_bytes": 1893296,
+      "validation": "64/64 unique non-empty cells; 8 distinct frames per direction; 0 exact directional mirrors; true RGBA; 0 neutral-fringe pixels; gutters and anchor pass"
+    }
+  ]
+}

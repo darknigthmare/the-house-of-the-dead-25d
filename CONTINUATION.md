@@ -15,20 +15,30 @@ Implemented in the current worktree:
 - the Curien execution is a serialized **7.13-second** pre-Magician sequence with firing disabled and boss damage locked; this duration is explicitly `internal_sync_only_tbd_authorized_build`, pending comparison with an authorized arcade build;
 - boss encounters remain performance-driven rather than ending on their timeline data duration, followed by a **0.50-second** post-defeat hold before the next route transition;
 - `scripts/qa.mjs` treats Godot script, parse, compilation and script-load diagnostics as fatal even when Godot returns exit code zero.
+- Sprite V3 is integrated as a schema-3 sidecar with actor-level atomic activation: `SpriteClipLibraryV3` validates all five clips before exposure, while any invalid/missing clip preserves the complete V2 fallback;
+- `DirectionalClipPlayerV3` advances eight chronological frames across eight independently authored directions without changing gameplay state, hitboxes or timing; direction hysteresis and clip state are per instance;
+- Sam A1 now owns five certified 2048×2048 RGBA V3 sheets (`idle`, `locomotion`, `attack`, `hit_recoil`, `death_fall`), each with 64 unique non-empty cells, no exact opposite-row mirror, no neutral fringe and stable gutters/anchor;
+- per-clip `display_scale` is always applied from immutable `base_pixel_size` (1.0 / 1.0282 / 1.1231 / 1.0282 / 1.0896), equalizing the five opening poses to 219 pixels without cumulative scale drift;
+- the V3 builder uses validated temporary PNG output plus atomic rename/retry; the pure-Node verifier rejects bad hashes, traversal, duplicate paths/profiles, unsafe scale, mirrored rows, fringe and proportion drift;
+- attack/recoil/death presentation is synchronized with gameplay: a hit cancels a pending strike, recoil reaches its authored final frame, non-looping attacks hold recovery, and death plays every frame before hold/fade.
 
 Final local verification:
 
-- `npm.cmd run qa`: **313/313**, exit 0;
+- `npm.cmd run qa`: **328/328**, exit 0;
+- `npm.cmd test`: passed with data QA **307/307**, five V3 atlas clips **5/5** and every existing content verifier green;
+- V3 loader: **67 assertions**; directional player: **97 assertions**; production manifest: **30 assertions**;
+- directional V3 lifecycle/proportion/60 Hz recoil/attack-interruption smoke: passed; gameplay smoke: passed;
+- the same V3 production-manifest, directional and gameplay smokes pass when launched directly from `build/web/index.pck`, proving exported-resource inclusion;
 - deterministic Godot core: **1,281 assertions**;
 - Curien-finale smoke: **60 assertions**, including data-driven cinematic locks, blocked gameplay input while paused, frozen boss movement/subtitle clocks, immediate residual-projectile retirement and the 0.50-second post-defeat hold;
 - sequence connector smoke: passed with two phases, old/new materials, collisions and exact 9 m planar origin;
 - complete campaign, HUD and gameplay smokes: passed;
 - route smoke: **25**;
 - engagement coverage: **34 encounters / 98 spawns**;
-- content audit: **889 checks / 6 known warnings / 0 errors**;
+- content audit: **905 checks / 6 known warnings / 0 errors**;
 - route verifier: Chapter 1 **106.5 s**, Chapter 2 **97.4 s**, Chapter 3 **93.1 s**, Chapter 4 **40.4 s**, excluding dynamic bosses.
 
-These results validate the current local source tree. A fresh accessibility-patched Web export was produced and passes `qa:web` **299/299** plus `verify:web`: **9 files / 122,287,366 bytes**, PCK **82,442,972** (`0cb16dc1…`), WASM **39,513,091** (`35116f68…`) and HTML **5,590** (`03c4a70a…`). Gameplay commit `e884f77` is on GitHub `main`, Release checks run `33281429943` passed, and Vercel production `dpl_3uZ9rTZBRyvau7mgwBwePsmFU6kr` is Ready at <https://the-house-of-the-dead-25d.vercel.app>. Root/PCK/WASM return 200 with the exact local lengths, WASM MIME and COOP/COEP; `.git/config` and `project.godot` return 404. Fresh Windows/Linux exports, release archives, clean-machine startup and visual browser inspection remain separate gates.
+These results validate the current local source tree. A fresh accessibility-patched V3 Web export was produced and passes `qa:web` **311/311** plus `verify:web`: **9 files / 128,928,010 bytes**, PCK **89,083,616** (`9246e5bf8dce34952e000ccfaf0a9b1d6d25d6274270df003f4e86f726525271`), WASM **39,513,091** (`35116f68540ac41acf7d71ea457added91b5e960a9cca3e2acc72918eaf01277`) and HTML **5,590** (`d2ef963d381662617673ea2620f2779f9cc581c12a068b78a3fcde782fd897cf`). The previously published continuity commit `e884f77`, CI run `33281429943` and Vercel production `dpl_3uZ9rTZBRyvau7mgwBwePsmFU6kr` predate the V3 payload and remain the public state until this candidate is committed and deployed. Fresh Windows/Linux exports, release archives, clean-machine startup and visual browser inspection remain separate gates.
 
 Disk-safety note: the ignored historical `artifacts/`, old `build/windows/`, old `build/linux/` and redundant Godot executable ZIP were moved intact to `T:\Codex_HOTD25D_Offload_2026-08-30`. They were not deleted and are not part of this Git diff. Restore them only when C: has enough headroom; do not confuse those v0.5.0-era desktop outputs with a fresh post-v0.5.0 build.
 
@@ -36,11 +46,11 @@ Open fidelity boundaries:
 
 - neither `reference_build/` nor authorized scene timestamps are available; the matrix remains `TBD-AUTH`, and the 7.13-second finale marker is internal synchronization only;
 - the connector provides physical and visual transition context, but environments are still reconstructed per node rather than retained as one persistent chapter world;
-- the active actor art remains Sprite V2: eight directions and eight semantic cells per direction, not multi-frame V3 clips; all right profiles and many back-right profiles are mirrored;
+- Sam A1 is the only active V3 actor (**1/38**); the other 37 profiles retain eight-direction/eight-semantic-cell V2 sheets, with all 37 right profiles and 25 back-right profiles still derived by mirroring;
 - the content audit retains **six known warnings**, including the directional derivations and three provisional enemy placements;
 - no post-v0.5.0 Windows/Linux build, archive, GitHub release or visual browser inspection should be claimed; the GitHub main commit, green CI and Vercel HTTP deployment above are current evidence, but no new immutable release tag was created.
 
-Preserve the immutable `v0.5.0` commit, tag, checksums and published evidence below. The next implementation priority is a real Sprite V3 pilot with authored multi-frame clips and an adapter that can fall back atomically to V2; do not relabel duplicated V2 cells as V3.
+Preserve the immutable `v0.5.0` commit, tag, checksums and published evidence below. The Sam A1 V3 pilot is complete; the next art priority is to migrate additional actors through the same five-clip, eight-direction, atomic-fallback contract without relabeling duplicated V2 cells as V3.
 
 ## Published v0.5.0 release — pursuit, collision and route-density integrity
 
@@ -234,7 +244,7 @@ The release contains the reviewed Godot import metadata required by its texture 
 2. Rerun the deterministic core, environment verifier, content audit, HUD/route/pacing smokes and the complete QA orchestration after any correction.
 3. Only from the next fully verified tree, produce fresh Windows/Linux/Web exports, reapply and verify the Web accessibility shell, run the Windows startup smoke and inspect the Web runtime locally. Do not reuse v0.5.0 sizes or hashes as evidence for a later release.
 4. Resolve provisional route decisions and enemy placements only from an authorized, revision-identifiable Sega reference build; do not invent arcade-exact evidence.
-5. Replace mirrored right/back-right profiles and compact semantic cells only with genuinely authored directional multi-frame art and recorded provenance; integrate licensed voices/music/SFX only through the authorized asset root.
+5. Expand V3 beyond Sam A1 one actor at a time, requiring all five genuinely authored eight-direction clips, recorded provenance and the atomic fallback tests before activation; integrate licensed voices/music/SFX only through the authorized asset root.
 6. Perform physical Windows installation, independent light-gun calibration and named-hardware frame-time/memory profiling before claiming those gates.
 
 ## Commands to resume
@@ -242,7 +252,12 @@ The release contains the reviewed Godot import metadata required by its texture 
 ```powershell
 npm.cmd test
 node scripts/audit_content_families.mjs
+node scripts/verify_sprite_atlas_v3.mjs --all
+node scripts/verify_sprite_atlas_v3.mjs --self-test-manifest
 & '.tools\godot-4.7.1\Godot_v4.7.1-stable_win64_console.exe' --headless --path . --script res://tests/test_runner.gd
+& '.tools\godot-4.7.1\Godot_v4.7.1-stable_win64_console.exe' --headless --path . --script res://tests/test_sprite_clip_library_v3_atomic.gd
+& '.tools\godot-4.7.1\Godot_v4.7.1-stable_win64_console.exe' --headless --path . --script res://tests/test_directional_clip_player_v3.gd
+& '.tools\godot-4.7.1\Godot_v4.7.1-stable_win64_console.exe' --headless --path . --script res://tests/test_sprite_manifest_v3_production.gd
 npm.cmd run qa
 & '.tools\godot-4.7.1\Godot_v4.7.1-stable_win64_console.exe' --headless --path . --script res://scripts/parse_runtime.gd
 & '.tools\godot-4.7.1\Godot_v4.7.1-stable_win64_console.exe' --headless --path . --script res://tests/test_environment_asset_library.gd

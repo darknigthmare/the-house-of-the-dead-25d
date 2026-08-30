@@ -1,8 +1,8 @@
 # Fidelity Report
 
-## Unreleased worktree — continuity improvements after v0.5.0
+## Unreleased worktree — continuity improvements and Sprite V3 pilot after v0.5.0
 
-The current worktree improves internal spatial and narrative continuity without claiming a newly verified Sega reference match.
+The current worktree improves internal spatial/narrative continuity and activates one complete five-clip Sprite V3 actor without claiming a newly verified Sega reference match.
 
 ### Spatial continuity
 
@@ -21,9 +21,9 @@ The current worktree improves internal spatial and narrative continuity without 
 
 ### Evidence and unresolved fidelity gates
 
-Final local verification passes complete QA **313/313**, deterministic core **1,281 assertions**, Curien-finale smoke **60 assertions**, route smoke **25**, engagement coverage **34 encounters / 98 spawns**, and content audit **889 checks / 6 warnings / 0 errors**.
+Final local verification passes complete QA **328/328**, deterministic core **1,281 assertions**, Curien-finale smoke **60 assertions**, route smoke **25** and engagement coverage **34 encounters / 98 spawns**. The V3 wave includes loader **67**, player **97** and production-manifest **30** assertions, five atlas clips **5/5**, exported-PCK lifecycle/gameplay smokes and content audit **905 checks / 6 warnings / 0 errors**.
 
-No authorized `reference_build/` or timestamp evidence is present; reference timing remains `TBD-AUTH`. The active art remains Sprite V2 with eight semantic states per direction rather than true multi-frame clips, all right views and many back-right views are mirrored, and the content audit retains six known warnings. These limitations prevent any 100% or revision-exact fidelity claim.
+No authorized `reference_build/` or timestamp evidence is present; reference timing remains `TBD-AUTH`. Sam A1 now uses five true eight-frame/eight-direction V3 clips without mirrored opposite rows, but this covers only 1/38 actor profiles. The other 37 profiles remain Sprite V2 with eight semantic cells per direction, all of their right views and many back-right views are mirrored, and the content audit retains six known warnings. These limitations prevent any 100% or revision-exact fidelity claim.
 
 ## Published v0.5.0 release — measured state, 2026-08-28
 
@@ -103,7 +103,7 @@ Accordingly, the `43 nodes / 53 edges / 8/4/8/2 paths` result proves graph compl
 
 ## Visual and content limits
 
-The active sprite contract contains **38 atlases** and **2,432 addressable cells**. Each direction exposes only **eight semantic states**, not full multi-frame animation clips for every motion, attack, localized hit, dismemberment and death variant.
+The active sprite contract combines the 38-profile V2 fallback set with one complete Sam A1 V3 sidecar. Sam A1 exposes five independently authored 8-direction × 8-frame clips (`idle`, `locomotion`, `attack`, `hit_recoil`, `death_fall`); the other **37/38 profiles** still expose only **eight semantic V2 states** per direction, not full multi-frame clips for every motion, attack, localized hit, dismemberment and death variant.
 
 The remaining directional derivations are explicit:
 

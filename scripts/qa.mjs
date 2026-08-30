@@ -25,7 +25,8 @@ const json = (path) => JSON.parse(readFileSync(join(root, path), 'utf8'));
 
 const required = [
   'project.godot', 'scenes/main.tscn', 'scenes/gameplay/gameplay.tscn',
-  'data/assets/sprite_manifest.json', 'data/assets/actor_visual_profiles.json',
+  'data/assets/sprite_manifest.json', 'data/assets/sprite_manifest_v3.json',
+  'data/assets/sprite_generation_provenance_v3.json', 'data/assets/actor_visual_profiles.json',
   'data/assets/environment_manifest.json', 'data/assets/gameplay_support_manifest.json',
   'data/audio/audio_cues.json',
   'docs/REFERENCE_MATRIX.md', 'docs/ROUTE_GRAPH.md', 'docs/GAMEPLAY_RULES.md',
@@ -34,6 +35,9 @@ const required = [
   'docs/CONTENT_ASSET_CATALOG.md',
   'scripts/smoke_curien_finale.gd', 'scripts/smoke_gameplay.gd',
   'scripts/smoke_campaign.gd', 'scripts/smoke_score_qa.gd', 'scripts/smoke_initials.gd',
+  'scripts/build_sprite_contract_v3.mjs', 'scripts/verify_sprite_atlas_v3.mjs',
+  'tests/test_sprite_clip_library_v3_atomic.gd', 'tests/test_directional_clip_player_v3.gd',
+  'tests/test_sprite_manifest_v3_production.gd',
   'scripts/smoke_hud_text.gd', 'scripts/smoke_sequence_pacing.gd', 'scripts/smoke_route_decisions.gd', 'scripts/smoke_spawn_density.gd'
 ];
 for (const file of required) check(existsSync(join(root, file)), `required file: ${file}`);
@@ -57,6 +61,13 @@ for (const asset of manifest.assets) {
   check(width % 8 === 0 && height % 8 === 0, `atlas divides into 8x8: ${asset.id}`);
   check(colorType === 6, `PNG is RGBA: ${asset.id}`);
 }
+
+const manifestV3 = json('data/assets/sprite_manifest_v3.json');
+check(manifestV3.schema_version === 3, 'sprite V3 sidecar schema is 3');
+check(manifestV3.direction_order?.join(',') === 'front,front_left,left,back_left,back,back_right,right,front_right', 'sprite V3 sidecar has canonical authored direction order');
+check(manifestV3.required_clips?.join(',') === 'idle,locomotion,attack,hit_recoil,death_fall', 'sprite V3 sidecar requires five semantic clips');
+check(manifestV3.profiles?.some((profile) => profile.id === 'sam_a1' && profile.fallback_v2_id === 'sam_a1'), 'Sam V3 pilot declares deterministic V2 fallback');
+check(Object.keys(manifestV3.profiles?.find((profile) => profile.id === 'sam_a1')?.clips ?? {}).length === 5, 'Sam V3 pilot publishes all five certified per-state clips');
 
 const chapters = [];
 for (let index = 1; index <= 4; index += 1) {
@@ -115,6 +126,9 @@ if (!args.has('--data-only') && !args.has('--web-only')) {
     }
     const runtimeRuns = [
       ['res://tests/test_sprite_atlas_library_atomic.gd', 'transactional sprite manifest test'],
+      ['res://tests/test_sprite_clip_library_v3_atomic.gd', 'transactional Sprite V3 clip-manifest test'],
+      ['res://tests/test_directional_clip_player_v3.gd', 'per-instance Sprite V3 directional clip-player test'],
+      ['res://tests/test_sprite_manifest_v3_production.gd', 'production Sprite V3 atomic-fallback contract test'],
       ['res://tests/test_environment_asset_library.gd', 'environment asset library test'],
       ['res://tests/test_gameplay_support_library.gd', 'gameplay support library test'],
       ['res://tests/test_enemy_profile_library.gd', 'enemy profile runtime contract test'],
