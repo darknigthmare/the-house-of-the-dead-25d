@@ -4,7 +4,7 @@ This report first records the published v0.5.0 release, then preserves the publi
 
 ## Unreleased worktree — connected continuity, serialized finale and Sprite V3 pilot
 
-This section records post-v0.5.0 evidence. The continuity/finale changes were already published; the Sprite V3 rows describe the newer local release candidate until its own commit, CI and deployment are recorded. It does not modify or supersede the immutable tagged-release results below.
+This section records post-v0.5.0 evidence now published on `main` and Vercel without creating a new immutable release tag. It does not modify or supersede the tagged-release results below.
 
 | Surface | Verified result | Proven scope and boundary |
 |---|---:|---|
@@ -21,13 +21,13 @@ This section records post-v0.5.0 evidence. The continuity/finale changes were al
 | engagement coverage | **34 encounters / 98 spawns** | declared encounter density remains reachable under the current timing gate |
 | content audit | **905 checks / 6 warnings / 0 errors** | V3 coverage is exactly 1/38; 37 right views, 25 back-right views and all 37 remaining compact V2 profiles stay visible as warnings alongside three provisional placements |
 | fresh V3 Web export | **9 files / 128,928,010 bytes** | accessibility shell patched; `qa:web` **311/311**, `verify:web` passed; PCK **89,083,616** (`9246e5bf…`), WASM **39,513,091** (`35116f68…`), HTML **5,590** (`d2ef963d…`) |
-| publication boundary | continuity commit **e884f77**, CI **33281429943 passed**, production **dpl_3uZ9rTZBRyvau7mgwBwePsmFU6kr Ready** | this existing production predates the V3 payload; no V3 GitHub/Vercel publication is claimed in this local-candidate row |
+| GitHub/Vercel V3 publication | content commit **780cda2**, [CI 33287894719](https://github.com/darknigthmare/the-house-of-the-dead-25d/actions/runs/33287894719) passed both jobs, production **dpl_DjHWcdSNUbY6xL9isCzVjounPzS3 Ready** | public HTML/PCK/WASM are byte-identical to the local build, isolation/MIME headers pass and nine sensitive paths return 404; no V3 visual-browser claim |
 
 The QA launcher is stricter in this worktree: any Godot output containing `SCRIPT ERROR`, `Parse Error`, `Compilation failed` or `Failed to load script` is fatal even when the engine process returns zero. This prevents a false-green result caused by Godot's exit behavior.
 
 The Curien-to-Magician sequence is locked for **7.13 seconds**, but the duration is tagged `internal_sync_only_tbd_authorized_build`. Passing the smoke proves serialization and damage/input gating only; it does not verify an arcade timestamp. Likewise, the two-material collidable connector and the mask beginning at **0.79** prove internal transition behavior, not persistent-world or Sega-geometry fidelity.
 
-The V3 Web candidate includes the five final atlases and loads them successfully when Godot runs the exported PCK directly. No fresh Windows/Linux export, clean-machine executable check or visual Web browser inspection was performed for this wave. Automated browser capture was unavailable in the current environment, so static/export/PCK evidence is not presented as visual runtime evidence.
+The published V3 Web payload includes the five final atlases and loads them successfully when Godot runs the exported PCK directly. Public SHA-256 values exactly match local HTML, PCK and WASM. No fresh Windows/Linux export, clean-machine executable check or visual Web browser inspection was performed for this wave. The browser-control connection failed in the current environment, so static/export/PCK/HTTP evidence is not presented as visual runtime evidence.
 
 ## Published v0.5.0 release — 2026-08-28
 
