@@ -225,6 +225,7 @@ func _spawn_breakable(data: Dictionary) -> void:
 	actor.set_meta("broken_texture", str(profile.get("broken", "")))
 	actor.set_meta("broken_frame", int(data.get("broken_frame", 1)))
 	actor.set_meta("branch_target", true)
+	_restore_breakable_state(actor)
 	if bool(data.get("blocks_enemy_motion", true)):
 		var visual_radius := EnemyPursuitControllerScript.prop_radius(visual_prop_id)
 		var blocker_radius := float(data.get(
