@@ -239,7 +239,7 @@ func _spawn_breakable(data: Dictionary) -> void:
 			restored_sprite.frame = clampi(int(actor.get_meta("broken_frame", 1)), 0, restored_sprite.hframes - 1)
 		if not bool(actor.get_meta("persist_broken_visual", true)):
 			actor.queue_free()
-	if bool(data.get("blocks_enemy_motion", true)):
+	if bool(data.get("blocks_enemy_motion", true)) and not bool(actor.get_meta("dead", false)):
 		var visual_radius := EnemyPursuitControllerScript.prop_radius(visual_prop_id)
 		var blocker_radius := float(data.get(
 			"blocker_radius",
