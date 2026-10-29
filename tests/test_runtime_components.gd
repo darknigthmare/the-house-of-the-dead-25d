@@ -73,6 +73,10 @@ static func _test_breakable_snapshot(checks: Array[Dictionary]) -> void:
 
 	_add_check(checks, rebuilt.restore_state({"durability": 999.0, "is_broken": false}), true, "invalid high durability is safely restored")
 	_add_check(checks, is_equal_approx(rebuilt.durability, 3.0), true, "restored durability is clamped to maximum")
+	_add_check(checks, rebuilt.restore_state({"durability": INF}), false, "infinite durability snapshot is rejected")
+	_add_check(checks, is_equal_approx(rebuilt.durability, 3.0), true, "invalid infinity does not change durability")
+	_add_check(checks, rebuilt.restore_state({"durability": NAN}), false, "NaN durability snapshot is rejected")
+	_add_check(checks, is_equal_approx(rebuilt.durability, 3.0), true, "invalid NaN does not change durability")
 	original.free()
 	rebuilt.free()
 
