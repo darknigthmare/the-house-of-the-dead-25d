@@ -26,3 +26,8 @@ Ce document transforme les constats de CONTINUATION.md en scénarios reproductib
 
 ## Preuves attendues avant clôture
 Pour chaque correction : commit, chemins modifiés, scénario reproductible, commandes réellement exécutées, résultats, capture ou vidéo lorsque l'affichage change, limites restantes.
+
+## Automatisation ajoutée à la PR
+Le workflow `.github/workflows/qa.yml` exécute désormais `res://tests/test_runner.gd` après l'import Godot 4.7.1 sur checkout propre. Ce runner appelle `tests/test_camera_rail_continuity.gd`. Les huit assertions supplémentaires couvrent les bornes temporelles, la transition immobile et la direction verticale. Le pipeline doit être vert **sur le commit final**, pas seulement sur un commit documentaire antérieur.
+
+Les contrôles d'intégrité ne remplacent pas la revue visuelle de la transition, ni la persistance effective du décor et des états de chapitre.
