@@ -57,3 +57,24 @@ static func event_is_triggered(event: Dictionary, context: Dictionary) -> bool:
 		"boss_phase":
 			return int(context.get("boss_phase", 0)) >= int(event.get("phase", 0))
 	return false
+
+
+# A snapshot is data-only: never retain references to scene nodes after cleanup.
+static func capture_state(sprite: Sprite3D) -> Dictionary:
+	if sprite == null or not is_instance_valid(sprite):
+		return {}
+	return {
+		"frame": sprite.frame,
+		"applied": bool(sprite.get_meta(META_APPLIED, true)),
+		"triggered_id": str(sprite.get_meta(META_TRIGGERED_ID, "")),
+	}
+
+
+static func restore_state(sprite: Sprite3D, snapshot: Dictionary) -> bool:
+	if sprite == null or not is_instance_valid(sprite) or snapshot.is_empty():
+		return false
+	var frame_count := maxi(1, sprite.hframes * sprite.vframes)
+	sprite.frame = clampi(int(snapshot.get("frame", sprite.frame)), 0, frame_count - 1)
+	sprite.set_meta(META_APPLIED, bool(snapshot.get("applied", true)))
+	sprite.set_meta(META_TRIGGERED_ID, str(snapshot.get("triggered_id", "")))
+	return true
