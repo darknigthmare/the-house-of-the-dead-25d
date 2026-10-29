@@ -207,7 +207,7 @@ func _begin_chapter(index: int) -> void:
 		state_timer = 5.0
 		return
 	# New chapter is a persistence boundary: previous prop snapshots must not leak.
-	_environment_prop_snapshots.clear()
+	_clear_environment_prop_snapshots()
 	chapter_index = clampi(index, 0, chapters.size() - 1)
 	current_chapter = chapters[chapter_index] as Dictionary
 	current_node_id = chapter_start_node_id(current_chapter)
@@ -355,6 +355,10 @@ func _find_node(chapter: Dictionary, node_id: String) -> Dictionary:
 # Snapshots are keyed by chapter and node to avoid leaking one room's
 # visual state into another room that happens to reuse the same prop ID.
 var _environment_prop_snapshots: Dictionary = {}
+
+
+func _clear_environment_prop_snapshots() -> void:
+	_environment_prop_snapshots.clear()
 
 
 func _snapshot_environment_props() -> void:
