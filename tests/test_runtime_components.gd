@@ -6,6 +6,7 @@ const CivilianType := preload("res://src/gameplay/civilian_controller.gd")
 const SpawnEventType := preload("res://src/gameplay/enemy_spawn_event.gd")
 const RuntimeFlowType := preload("res://src/gameplay/gameplay_runtime_flow.gd")
 const EnvironmentLifecycleType := preload("res://src/gameplay/environment_scene_lifecycle.gd")
+const EnvironmentPropStateType := preload("res://src/gameplay/environment_prop_state_controller.gd")
 
 
 static func collect_checks() -> Array[Dictionary]:
@@ -17,6 +18,7 @@ static func collect_checks() -> Array[Dictionary]:
 	_test_runtime_breakable_context(checks)
 	_test_chapter_start_selection(checks)
 	_test_environment_lifecycle(checks)
+	_test_environment_prop_snapshot(checks)
 	return checks
 
 
@@ -131,6 +133,36 @@ static func _test_environment_lifecycle(checks: Array[Dictionary]) -> void:
 	root.free()
 	empty_root.free()
 	_add_check(checks, EnvironmentLifecycleType.clear_immediately(root), 0, "freed environment root is safely ignored")
+
+
+
+static func _test_environment_prop_snapshot(checks: Array[Dictionary]) -> void:
+	var original := Sprite3D.new()
+	original.hframes = 4
+	original.vframes = 2
+	EnvironmentPropStateType.configure_sprite(original, "door", 0, {
+		"initial_frame": 1,
+		"state_event": {"id": "door_open", "trigger": "node_enter", "target_frame": 5},
+	})
+	_add_check(checks, EnvironmentPropStateType.apply_pending_event(original, {}), true, "door event applies before snapshot")
+	var snapshot := EnvironmentPropStateType.capture_state(original)
+	_add_check(checks, int(snapshot.get("frame", -1)), 5, "snapshot records the visible door frame")
+	_add_check(checks, bool(snapshot.get("applied", false)), true, "snapshot records consumed event")
+	original.free()
+	var rebuilt := Sprite3D.new()
+	rebuilt.hframes = 4
+	rebuilt.vframes = 2
+	EnvironmentPropStateType.configure_sprite(rebuilt, "door", 0, {
+		"initial_frame": 1,
+		"state_event": {"id": "door_open", "trigger": "node_enter", "target_frame": 5},
+	})
+	_add_check(checks, EnvironmentPropStateType.restore_state(rebuilt, snapshot), true, "new sprite accepts previous state")
+	_add_check(checks, rebuilt.frame, 5, "rebuilt door retains its open frame")
+	_add_check(checks, EnvironmentPropStateType.apply_pending_event(rebuilt, {}), false, "restored event cannot trigger twice")
+	_add_check(checks, str(rebuilt.get_meta(EnvironmentPropStateType.META_TRIGGERED_ID, "")), "door_open", "restored trigger identity survives reconstruction")
+	_add_check(checks, EnvironmentPropStateType.restore_state(rebuilt, {"frame": 100}), true, "out-of-range snapshot is accepted safely")
+	_add_check(checks, rebuilt.frame, 7, "out-of-range snapshot frame is clamped")
+	rebuilt.free()
 
 
 static func _add_check(
