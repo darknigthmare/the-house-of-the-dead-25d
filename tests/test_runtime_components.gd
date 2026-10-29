@@ -65,6 +65,12 @@ static func _test_breakable_snapshot(checks: Array[Dictionary]) -> void:
 	_add_check(checks, rebuilt.restore_state(broken_snapshot), true, "broken state restores")
 	_add_check(checks, rebuilt.is_broken and is_zero_approx(rebuilt.durability), true, "broken object remains destroyed")
 	_add_check(checks, rebuilt.take_damage(1.0), false, "restored broken object cannot award a second break")
+	_add_check(checks, rebuilt.get_reward().get("pickup", ""), "medal", "restoring breakable state preserves authored reward definition")
+	_add_check(checks, rebuilt.restore_state({}), false, "empty snapshot cannot overwrite a configured breakable")
+	_add_check(checks, rebuilt.is_broken, true, "empty snapshot does not resurrect destroyed object")
+	_add_check(checks, rebuilt.restore_state({"durability": -25.0, "is_broken": false}), true, "negative durability snapshot is accepted safely")
+	_add_check(checks, rebuilt.is_broken and is_zero_approx(rebuilt.durability), true, "negative durability cannot resurrect an object")
+
 	_add_check(checks, rebuilt.restore_state({"durability": 999.0, "is_broken": false}), true, "invalid high durability is safely restored")
 	_add_check(checks, is_equal_approx(rebuilt.durability, 3.0), true, "restored durability is clamped to maximum")
 	original.free()
