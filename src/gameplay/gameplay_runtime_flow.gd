@@ -287,6 +287,7 @@ func _enter_node(node_id: String) -> void:
 	)
 	if not current_node_id.is_empty() and state == "node_transition":
 		_snapshot_environment_props()
+		_snapshot_breakables()
 	current_node = node_data
 	current_node_id = node_id
 	routes_discovered["%d:%s" % [chapter_index + 1, node_id]] = true
@@ -355,10 +356,37 @@ func _find_node(chapter: Dictionary, node_id: String) -> Dictionary:
 # Snapshots are keyed by chapter and node to avoid leaking one room's
 # visual state into another room that happens to reuse the same prop ID.
 var _environment_prop_snapshots: Dictionary = {}
+var _breakable_snapshots: Dictionary = {}
 
 
 func _clear_environment_prop_snapshots() -> void:
 	_environment_prop_snapshots.clear()
+	_breakable_snapshots.clear()
+
+
+
+func _snapshot_breakables() -> void:
+	var states: Dictionary = {}
+	for actor in active_actors:
+		if not is_instance_valid(actor) or str(actor.get_meta("role", "")) != "breakable":
+			continue
+		var controller := actor.get_node_or_null("BreakableObject") as BreakableObject
+		if controller == null:
+			continue
+		var instance_id := str(actor.get_meta("breakable_instance_id", ""))
+		if not instance_id.is_empty():
+			states[instance_id] = controller.capture_state()
+	_breakable_snapshots["%d:%s" % [chapter_index, current_node_id]] = states
+
+
+func _restore_breakable_state(actor: Node3D) -> void:
+	var states := _breakable_snapshots.get("%d:%s" % [chapter_index, current_node_id], {}) as Dictionary
+	var instance_id := str(actor.get_meta("breakable_instance_id", ""))
+	if not states.has(instance_id):
+		return
+	var controller := actor.get_node_or_null("BreakableObject") as BreakableObject
+	if controller != null:
+		controller.restore_state(states[instance_id] as Dictionary)
 
 
 func _snapshot_environment_props() -> void:
