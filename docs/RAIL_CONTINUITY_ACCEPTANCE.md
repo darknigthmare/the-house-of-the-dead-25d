@@ -31,3 +31,10 @@ Pour chaque correction : commit, chemins modifiés, scénario reproductible, com
 Le workflow `.github/workflows/qa.yml` exécute désormais `res://tests/test_runner.gd` après l'import Godot 4.7.1 sur checkout propre. Ce runner appelle `tests/test_camera_rail_continuity.gd`. Les huit assertions supplémentaires couvrent les bornes temporelles, la transition immobile et la direction verticale. Le pipeline doit être vert **sur le commit final**, pas seulement sur un commit documentaire antérieur.
 
 Les contrôles d'intégrité ne remplacent pas la revue visuelle de la transition, ni la persistance effective du décor et des états de chapitre.
+
+## Régression des objets destructibles restaurés
+- Objet partiellement endommagé : restaurer sa durabilité sans émettre de signal de récompense.
+- Objet déjà détruit : conserver la représentation brisée si elle est configurée, ne pas le remettre dans active_actors et ne pas recréer son bloqueur de poursuite.
+- Objet transitoire détruit : le retirer de la scène, sans restaurer une collision active.
+- Contrôler séparément les collisions physiques éventuelles de l'environnement et la génération de récompenses lors d'un parcours rejoué.
+- La conservation du monde entre nœuds demeure partielle ; les snapshots n'équivalent pas à une scène persistante.
