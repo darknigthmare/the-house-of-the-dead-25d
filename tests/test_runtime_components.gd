@@ -13,6 +13,7 @@ static func collect_checks() -> Array[Dictionary]:
 	var checks: Array[Dictionary] = []
 	_test_pickup(checks)
 	_test_breakable(checks)
+	_test_breakable_snapshot(checks)
 	_test_civilian(checks)
 	_test_spawn_event(checks)
 	_test_runtime_breakable_context(checks)
@@ -46,6 +47,28 @@ static func _test_breakable(checks: Array[Dictionary]) -> void:
 	breakable.configure({"id": "short_lived", "health": 1.0, "persist_broken_visual": false})
 	_add_check(checks, breakable.persist_broken_visual_until_scene_clear, false, "authored transient breakables may explicitly retire")
 	breakable.free()
+
+
+
+static func _test_breakable_snapshot(checks: Array[Dictionary]) -> void:
+	var original: BreakableObject = BreakableType.new()
+	original.configure({"id": "door", "health": 3.0, "reward": {"pickup": "medal"}})
+	original.take_damage(1.0)
+	var partial := original.capture_state()
+	_add_check(checks, is_equal_approx(float(partial.get("durability", -1.0)), 2.0), true, "partial breakable damage is captured")
+	var rebuilt: BreakableObject = BreakableType.new()
+	rebuilt.configure({"id": "door", "health": 3.0, "reward": {"pickup": "medal"}})
+	_add_check(checks, rebuilt.restore_state(partial), true, "breakable restores partial damage")
+	_add_check(checks, is_equal_approx(rebuilt.durability, 2.0), true, "partial damage survives reconstruction")
+	original.take_damage(2.0)
+	var broken_snapshot := original.capture_state()
+	_add_check(checks, rebuilt.restore_state(broken_snapshot), true, "broken state restores")
+	_add_check(checks, rebuilt.is_broken and is_zero_approx(rebuilt.durability), true, "broken object remains destroyed")
+	_add_check(checks, rebuilt.take_damage(1.0), false, "restored broken object cannot award a second break")
+	_add_check(checks, rebuilt.restore_state({"durability": 999.0, "is_broken": false}), true, "invalid high durability is safely restored")
+	_add_check(checks, is_equal_approx(rebuilt.durability, 3.0), true, "restored durability is clamped to maximum")
+	original.free()
+	rebuilt.free()
 
 
 static func _test_civilian(checks: Array[Dictionary]) -> void:
