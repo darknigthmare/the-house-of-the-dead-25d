@@ -58,7 +58,10 @@ func capture_state() -> Dictionary:
 func restore_state(snapshot: Dictionary) -> bool:
 	if snapshot.is_empty():
 		return false
-	durability = clampf(float(snapshot.get("durability", max_durability)), 0.0, max_durability)
+	var raw_durability := float(snapshot.get("durability", max_durability))
+	if not is_finite(raw_durability):
+		return false
+	durability = clampf(raw_durability, 0.0, max_durability)
 	is_broken = bool(snapshot.get("is_broken", durability <= 0.0)) or durability <= 0.0
 	if is_broken:
 		durability = 0.0
