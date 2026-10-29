@@ -31,3 +31,17 @@ Pour chaque nœud de `data/runtime/campaign_timeline.json` :
 `npm test`, `npm run qa`, `npm run qa:web`, `npm run verify:web` et test Godot headless doivent réussir sur le commit livré. Une capture de comparaison en jeu à résolution native et les preuves de référence sont obligatoires pour toute affirmation de fidélité 1:1. Les licences, captures commerciales et ROM ne doivent pas être ajoutées au dépôt public.
 
 Ce document est un plan de production et de contrôle, pas une nouvelle carte jouable ni un ensemble de ressources graphiques générées.
+
+## Inventaire vérifié des graphes de routes
+Les quatre fichiers `data/routes/chapter_0X_route_graph.json` déclarent respectivement 14, 10, 11 et 7 nœuds. Ces comptes décrivent les graphes de référence et ne doivent pas être confondus avec les 43 nœuds de la timeline runtime.
+
+### Chapitre 2 — ordre technique actuel
+`chain_plate` → `underground_passage` ou `great_doors` → `library_rescue` → `raised_bridge` ou `lower_stairs` → `corridor_cache` → `roof_approach` → `roof_rescue` → `hangedman_battle`.
+
+### Chapitre 3 — inventaire
+`elevator_switch`, `left_elevator`, `right_elevator`, `back_attack_rescue`, `security_door`, `vent_key_route`, `steel_door_choice`, `steel_door_upper_route`, `steel_door_lower_route`, `curien_tunnel`, `hermit_battle`.
+
+### Chapitre 4 — inventaire
+`chariot_rematch`, `hangedman_rematch`, `bonus_gate`, `bonus_room`, `final_waves`, `curien_confrontation`, `magician_battle`.
+
+**Point de contrôle :** confronter chaque graphe JSON à la timeline runtime avant de modifier la géométrie ou les déclencheurs. Les graphes déclaratifs ne prouvent pas à eux seuls la durée, les animations, les positions ou l'authenticité 1:1.
