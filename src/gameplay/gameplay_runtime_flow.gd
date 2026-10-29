@@ -206,6 +206,8 @@ func _begin_chapter(index: int) -> void:
 		state = "credits"
 		state_timer = 5.0
 		return
+	# New chapter is a persistence boundary: previous prop snapshots must not leak.
+	_environment_prop_snapshots.clear()
 	chapter_index = clampi(index, 0, chapters.size() - 1)
 	current_chapter = chapters[chapter_index] as Dictionary
 	current_node_id = chapter_start_node_id(current_chapter)
