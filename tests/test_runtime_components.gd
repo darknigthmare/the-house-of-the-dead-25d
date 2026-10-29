@@ -124,7 +124,13 @@ static func _test_environment_lifecycle(checks: Array[Dictionary]) -> void:
 	_add_check(checks, root.get_child_count(), 0, "previous environment and props leave the tree before the replacement is built")
 	_add_check(checks, is_instance_valid(old_environment), false, "old WorldEnvironment cannot overlap the new environment for one frame")
 	_add_check(checks, is_instance_valid(stale_prop), false, "stale props cannot be returned during immediate state configuration")
+	var empty_root := Node3D.new()
+	_add_check(checks, EnvironmentLifecycleType.clear_immediately(empty_root), 0, "empty environment cleanup is idempotent")
+	_add_check(checks, EnvironmentLifecycleType.clear_immediately(root), 0, "repeated cleanup cannot remove already-freed children")
+	_add_check(checks, EnvironmentLifecycleType.clear_immediately(null), 0, "null environment root is safely ignored")
 	root.free()
+	empty_root.free()
+	_add_check(checks, EnvironmentLifecycleType.clear_immediately(root), 0, "freed environment root is safely ignored")
 
 
 static func _add_check(
