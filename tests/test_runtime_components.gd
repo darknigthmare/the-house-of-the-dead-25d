@@ -6,17 +6,20 @@ const CivilianType := preload("res://src/gameplay/civilian_controller.gd")
 const SpawnEventType := preload("res://src/gameplay/enemy_spawn_event.gd")
 const RuntimeFlowType := preload("res://src/gameplay/gameplay_runtime_flow.gd")
 const EnvironmentLifecycleType := preload("res://src/gameplay/environment_scene_lifecycle.gd")
+const EnvironmentPropStateType := preload("res://src/gameplay/environment_prop_state_controller.gd")
 
 
 static func collect_checks() -> Array[Dictionary]:
 	var checks: Array[Dictionary] = []
 	_test_pickup(checks)
 	_test_breakable(checks)
+	_test_breakable_snapshot(checks)
 	_test_civilian(checks)
 	_test_spawn_event(checks)
 	_test_runtime_breakable_context(checks)
 	_test_chapter_start_selection(checks)
 	_test_environment_lifecycle(checks)
+	_test_environment_prop_snapshot(checks)
 	return checks
 
 
@@ -44,6 +47,38 @@ static func _test_breakable(checks: Array[Dictionary]) -> void:
 	breakable.configure({"id": "short_lived", "health": 1.0, "persist_broken_visual": false})
 	_add_check(checks, breakable.persist_broken_visual_until_scene_clear, false, "authored transient breakables may explicitly retire")
 	breakable.free()
+
+
+
+static func _test_breakable_snapshot(checks: Array[Dictionary]) -> void:
+	var original: BreakableObject = BreakableType.new()
+	original.configure({"id": "door", "health": 3.0, "reward": {"pickup": "medal"}})
+	original.take_damage(1.0)
+	var partial := original.capture_state()
+	_add_check(checks, is_equal_approx(float(partial.get("durability", -1.0)), 2.0), true, "partial breakable damage is captured")
+	var rebuilt: BreakableObject = BreakableType.new()
+	rebuilt.configure({"id": "door", "health": 3.0, "reward": {"pickup": "medal"}})
+	_add_check(checks, rebuilt.restore_state(partial), true, "breakable restores partial damage")
+	_add_check(checks, is_equal_approx(rebuilt.durability, 2.0), true, "partial damage survives reconstruction")
+	original.take_damage(2.0)
+	var broken_snapshot := original.capture_state()
+	_add_check(checks, rebuilt.restore_state(broken_snapshot), true, "broken state restores")
+	_add_check(checks, rebuilt.is_broken and is_zero_approx(rebuilt.durability), true, "broken object remains destroyed")
+	_add_check(checks, rebuilt.take_damage(1.0), false, "restored broken object cannot award a second break")
+	_add_check(checks, rebuilt.get_reward().get("pickup", ""), "medal", "restoring breakable state preserves authored reward definition")
+	_add_check(checks, rebuilt.restore_state({}), false, "empty snapshot cannot overwrite a configured breakable")
+	_add_check(checks, rebuilt.is_broken, true, "empty snapshot does not resurrect destroyed object")
+	_add_check(checks, rebuilt.restore_state({"durability": -25.0, "is_broken": false}), true, "negative durability snapshot is accepted safely")
+	_add_check(checks, rebuilt.is_broken and is_zero_approx(rebuilt.durability), true, "negative durability cannot resurrect an object")
+
+	_add_check(checks, rebuilt.restore_state({"durability": 999.0, "is_broken": false}), true, "invalid high durability is safely restored")
+	_add_check(checks, is_equal_approx(rebuilt.durability, 3.0), true, "restored durability is clamped to maximum")
+	_add_check(checks, rebuilt.restore_state({"durability": INF}), false, "infinite durability snapshot is rejected")
+	_add_check(checks, is_equal_approx(rebuilt.durability, 3.0), true, "invalid infinity does not change durability")
+	_add_check(checks, rebuilt.restore_state({"durability": NAN}), false, "NaN durability snapshot is rejected")
+	_add_check(checks, is_equal_approx(rebuilt.durability, 3.0), true, "invalid NaN does not change durability")
+	original.free()
+	rebuilt.free()
 
 
 static func _test_civilian(checks: Array[Dictionary]) -> void:
@@ -124,7 +159,43 @@ static func _test_environment_lifecycle(checks: Array[Dictionary]) -> void:
 	_add_check(checks, root.get_child_count(), 0, "previous environment and props leave the tree before the replacement is built")
 	_add_check(checks, is_instance_valid(old_environment), false, "old WorldEnvironment cannot overlap the new environment for one frame")
 	_add_check(checks, is_instance_valid(stale_prop), false, "stale props cannot be returned during immediate state configuration")
+	var empty_root := Node3D.new()
+	_add_check(checks, EnvironmentLifecycleType.clear_immediately(empty_root), 0, "empty environment cleanup is idempotent")
+	_add_check(checks, EnvironmentLifecycleType.clear_immediately(root), 0, "repeated cleanup cannot remove already-freed children")
+	_add_check(checks, EnvironmentLifecycleType.clear_immediately(null), 0, "null environment root is safely ignored")
 	root.free()
+	empty_root.free()
+	_add_check(checks, EnvironmentLifecycleType.clear_immediately(root), 0, "freed environment root is safely ignored")
+
+
+
+static func _test_environment_prop_snapshot(checks: Array[Dictionary]) -> void:
+	var original := Sprite3D.new()
+	original.hframes = 4
+	original.vframes = 2
+	EnvironmentPropStateType.configure_sprite(original, "door", 0, {
+		"initial_frame": 1,
+		"state_event": {"id": "door_open", "trigger": "node_enter", "target_frame": 5},
+	})
+	_add_check(checks, EnvironmentPropStateType.apply_pending_event(original, {}), true, "door event applies before snapshot")
+	var snapshot := EnvironmentPropStateType.capture_state(original)
+	_add_check(checks, int(snapshot.get("frame", -1)), 5, "snapshot records the visible door frame")
+	_add_check(checks, bool(snapshot.get("applied", false)), true, "snapshot records consumed event")
+	original.free()
+	var rebuilt := Sprite3D.new()
+	rebuilt.hframes = 4
+	rebuilt.vframes = 2
+	EnvironmentPropStateType.configure_sprite(rebuilt, "door", 0, {
+		"initial_frame": 1,
+		"state_event": {"id": "door_open", "trigger": "node_enter", "target_frame": 5},
+	})
+	_add_check(checks, EnvironmentPropStateType.restore_state(rebuilt, snapshot), true, "new sprite accepts previous state")
+	_add_check(checks, rebuilt.frame, 5, "rebuilt door retains its open frame")
+	_add_check(checks, EnvironmentPropStateType.apply_pending_event(rebuilt, {}), false, "restored event cannot trigger twice")
+	_add_check(checks, str(rebuilt.get_meta(EnvironmentPropStateType.META_TRIGGERED_ID, "")), "door_open", "restored trigger identity survives reconstruction")
+	_add_check(checks, EnvironmentPropStateType.restore_state(rebuilt, {"frame": 100}), true, "out-of-range snapshot is accepted safely")
+	_add_check(checks, rebuilt.frame, 7, "out-of-range snapshot frame is clamped")
+	rebuilt.free()
 
 
 static func _add_check(

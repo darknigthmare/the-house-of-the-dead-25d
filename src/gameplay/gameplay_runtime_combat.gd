@@ -225,7 +225,21 @@ func _spawn_breakable(data: Dictionary) -> void:
 	actor.set_meta("broken_texture", str(profile.get("broken", "")))
 	actor.set_meta("broken_frame", int(data.get("broken_frame", 1)))
 	actor.set_meta("branch_target", true)
-	if bool(data.get("blocks_enemy_motion", true)):
+	_restore_breakable_state(actor)
+	var restored_breakable := actor.get_node_or_null("BreakableObject") as BreakableObject
+	if restored_breakable != null and restored_breakable.is_broken:
+		# A restored destroyed prop must not become a target or obstacle again.
+		actor.set_meta("dead", true)
+		active_actors.erase(actor)
+		var restored_sprite := actor.get_node_or_null("Sprite3D") as Sprite3D
+		var broken_path := str(actor.get_meta("broken_texture", ""))
+		if restored_sprite != null and not broken_path.is_empty():
+			restored_sprite.texture = load(broken_path) as Texture2D
+		elif restored_sprite != null and restored_sprite.hframes > 1:
+			restored_sprite.frame = clampi(int(actor.get_meta("broken_frame", 1)), 0, restored_sprite.hframes - 1)
+		if not bool(actor.get_meta("persist_broken_visual", true)):
+			actor.queue_free()
+	if bool(data.get("blocks_enemy_motion", true)) and not bool(actor.get_meta("dead", false)):
 		var visual_radius := EnemyPursuitControllerScript.prop_radius(visual_prop_id)
 		var blocker_radius := float(data.get(
 			"blocker_radius",

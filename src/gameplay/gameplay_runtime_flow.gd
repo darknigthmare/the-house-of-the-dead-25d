@@ -206,6 +206,8 @@ func _begin_chapter(index: int) -> void:
 		state = "credits"
 		state_timer = 5.0
 		return
+	# New chapter is a persistence boundary: previous prop snapshots must not leak.
+	_clear_environment_prop_snapshots()
 	chapter_index = clampi(index, 0, chapters.size() - 1)
 	current_chapter = chapters[chapter_index] as Dictionary
 	current_node_id = chapter_start_node_id(current_chapter)
@@ -283,6 +285,9 @@ func _enter_node(node_id: String) -> void:
 		state == "chapter_intro"
 		and str(environment_scene_profile.get("node_id", "")) == node_id
 	)
+	if not current_node_id.is_empty() and state == "node_transition":
+		_snapshot_environment_props()
+		_snapshot_breakables()
 	current_node = node_data
 	current_node_id = node_id
 	routes_discovered["%d:%s" % [chapter_index + 1, node_id]] = true
@@ -301,6 +306,7 @@ func _enter_node(node_id: String) -> void:
 	# The destination chunk is fully built behind the opaque endpoint mask.
 	_clear_sequence_connector()
 	_configure_environment_prop_state_events()
+	_restore_environment_props()
 	_apply_node_entry_camera_pose(current_node)
 	camera_transition.clear()
 	state = "node"
@@ -345,6 +351,73 @@ func _find_node(chapter: Dictionary, node_id: String) -> Dictionary:
 		if str(candidate.get("id", "")) == node_id:
 			return candidate
 	return {}
+
+
+# Snapshots are keyed by chapter and node to avoid leaking one room's
+# visual state into another room that happens to reuse the same prop ID.
+var _environment_prop_snapshots: Dictionary = {}
+var _breakable_snapshots: Dictionary = {}
+
+
+func _clear_environment_prop_snapshots() -> void:
+	_environment_prop_snapshots.clear()
+	_breakable_snapshots.clear()
+
+
+
+func _snapshot_breakables() -> void:
+	var states: Dictionary = {}
+	for actor in active_actors:
+		if not is_instance_valid(actor) or str(actor.get_meta("role", "")) != "breakable":
+			continue
+		var controller := actor.get_node_or_null("BreakableObject") as BreakableObject
+		if controller == null:
+			continue
+		var instance_id := str(actor.get_meta("breakable_instance_id", ""))
+		if not instance_id.is_empty():
+			states[instance_id] = controller.capture_state()
+	_breakable_snapshots["%d:%s" % [chapter_index, current_node_id]] = states
+
+
+func _restore_breakable_state(actor: Node3D) -> void:
+	var states := _breakable_snapshots.get("%d:%s" % [chapter_index, current_node_id], {}) as Dictionary
+	var instance_id := str(actor.get_meta("breakable_instance_id", ""))
+	if not states.has(instance_id):
+		return
+	var controller := actor.get_node_or_null("BreakableObject") as BreakableObject
+	if controller != null:
+		controller.restore_state(states[instance_id] as Dictionary)
+
+
+func _snapshot_environment_props() -> void:
+	if world_root == null or current_node_id.is_empty():
+		return
+	var node_key := "%d:%s" % [chapter_index, current_node_id]
+	var states: Dictionary = {}
+	for child in world_root.get_children():
+		var sprite := child as Sprite3D
+		if sprite == null or not sprite.has_meta(EnvironmentPropStateControllerScript.META_PROP_ID):
+			continue
+		var prop_id := str(sprite.get_meta(EnvironmentPropStateControllerScript.META_PROP_ID, ""))
+		var instance_index := int(sprite.get_meta(EnvironmentPropStateControllerScript.META_INSTANCE, -1))
+		if prop_id.is_empty() or instance_index < 0:
+			continue
+		states["%s:%d" % [prop_id, instance_index]] = EnvironmentPropStateControllerScript.capture_state(sprite)
+	_environment_prop_snapshots[node_key] = states
+
+
+func _restore_environment_props() -> void:
+	var node_key := "%d:%s" % [chapter_index, current_node_id]
+	var states := _environment_prop_snapshots.get(node_key, {}) as Dictionary
+	for child in world_root.get_children():
+		var sprite := child as Sprite3D
+		if sprite == null or not sprite.has_meta(EnvironmentPropStateControllerScript.META_PROP_ID):
+			continue
+		var prop_id := str(sprite.get_meta(EnvironmentPropStateControllerScript.META_PROP_ID, ""))
+		var instance_index := int(sprite.get_meta(EnvironmentPropStateControllerScript.META_INSTANCE, -1))
+		var key := "%s:%d" % [prop_id, instance_index]
+		if states.has(key):
+			EnvironmentPropStateControllerScript.restore_state(sprite, states[key] as Dictionary)
 
 
 func _configure_environment_prop_state_events() -> void:

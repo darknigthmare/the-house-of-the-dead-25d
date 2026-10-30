@@ -44,3 +44,25 @@ func repair(amount: float) -> float:
 
 func get_reward() -> Dictionary:
 	return reward_definition.duplicate(true)
+
+
+# Data-only state can be retained when a chapter scene is reconstructed.
+# Restoring does not emit damaged/broken signals or grant rewards again.
+func capture_state() -> Dictionary:
+	return {
+		"durability": durability,
+		"is_broken": is_broken,
+	}
+
+
+func restore_state(snapshot: Dictionary) -> bool:
+	if snapshot.is_empty():
+		return false
+	var raw_durability := float(snapshot.get("durability", max_durability))
+	if not is_finite(raw_durability):
+		return false
+	durability = clampf(raw_durability, 0.0, max_durability)
+	is_broken = bool(snapshot.get("is_broken", durability <= 0.0)) or durability <= 0.0
+	if is_broken:
+		durability = 0.0
+	return true

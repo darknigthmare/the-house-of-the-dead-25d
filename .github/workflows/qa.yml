@@ -40,6 +40,12 @@ jobs:
       - name: Import project and parse scripts
         shell: bash
         run: ".ci/godot/Godot_v${GODOT_VERSION}-stable_linux.x86_64 --headless --path . --import"
+      - name: Verify deterministic Godot core including rail continuity
+        shell: bash
+        timeout-minutes: 5
+        run: |
+          GODOT=".ci/godot/Godot_v${GODOT_VERSION}-stable_linux.x86_64"
+          "$GODOT" --headless --path . --script res://tests/test_runner.gd
       - name: Verify V3 manifest, player and gameplay integration
         shell: bash
         run: |
