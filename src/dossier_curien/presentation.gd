@@ -187,7 +187,8 @@ func hud(c) -> void:
 	heading(c,Vector2(440,698),"J LÉGER   ·   K LOURD   ·   L SPÉCIAL   ·   U PROJECTION   ·   ÉCHAP PAUSE",16,BONE,800,HORIZONTAL_ALIGNMENT_RIGHT)
 	if c.mode == 4:
 		var f = c.fighters[0]
-		var label: String = "Neutre" if f.action == "" else "%s   ·   image %d" % [f.action, f.tick]
+		var names := {"light":"Léger","heavy":"Lourd","special":Fighter.SPECIAL_NAMES[f.id],"throw":"Projection","reload":"Recharge"}
+		var label: String = "Neutre" if f.action == "" else "%s   ·   image %d" % [names[f.action], f.tick]
 		heading(c, Vector2(48,147), "ENTRAÎNEMENT     " + label,19,BONE)
 
 func banner(c, title: String, detail: String) -> void:

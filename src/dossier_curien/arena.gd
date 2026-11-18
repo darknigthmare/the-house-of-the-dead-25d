@@ -59,6 +59,7 @@ func _ready() -> void:
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	visuals.load_textures()
+	audio_player.bus = &"SFX"
 	audio_available = audio_library.load_manifest("res://data/audio/audio_cues.json")
 	add_child(audio_player)
 	panel = PanelContainer.new()
@@ -364,6 +365,8 @@ func _physics_process(_delta: float) -> void:
 		me.step(axis, down, command, foe.x)
 		if mode == 4 and side == 1: me.x = old_x
 		if command == "reload" and me.action == "reload" and me.tick == 1: sound("reload")
+		if me.action == "special" and me.tick == int(me.move_data().start):
+			sound("shot" if me.id < 2 else "boss_projectile" if me.id == 3 else "boss_telegraph")
 	action_queue = ["",""]
 	resolve_strikes(fighters, true)
 	clamp_positions(fighters)

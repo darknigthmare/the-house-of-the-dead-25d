@@ -6,7 +6,7 @@
 
 Le mode de combat 2D de The House of the Dead 2.5D
 
-![L’appel de Sophie. Illustration originale de l’introduction de Rogan.](../../assets/dossier_curien/rogan_intro.png)
+![Rogan contre Chariot, dans la cour du manoir. Capture du mode jouable dans Godot 4.7.1.](figures/duel_moteur.jpg)
 
 ### Le combat commence avant le premier tir
 
@@ -79,11 +79,11 @@ Sur le terrain de 1 280 unités, chaque spécial a trois images actives. La diff
 
 Le compteur commence à l’engagement. Le Fauchage peut toucher aux images 22, 23 ou 24 et cesse à l’image 53. À portée courte, le Tir réflexe de G sort plus vite. À longue distance, Rogan porte plus loin. Un agent qui s’accroupit peut passer sous la trajectoire d’un tir AMS.
 
-![Chariot Type 27. Garde, préparation, contact et réaction à un impact. La quatrième image appartient à la défense du sujet.](figures/chariot_poses.jpg)
+![Chariot Type 27. Garde, préparation, contact, récupération et réaction à un impact. La cinquième clé appartient à la défense du sujet.](figures/chariot_poses.jpg)
 
-### Pourquoi quatre clés séparées
+### Lire le retour de la bardiche
 
-La garde laisse lire la brèche. La préparation ramène la bardiche derrière l’épaule. Au contact, la lame occupe une grande partie de l’espace devant le sujet. La réaction à un impact déplace le torse sans déplacer artificiellement les pieds. La toile de contact est plus large pour conserver toute la lame.
+La garde laisse lire la brèche. La préparation ramène la bardiche derrière l’épaule. Au contact, la lame occupe une grande partie de l’espace devant le sujet. Elle revient ensuite en position basse avant la garde. La réaction à un impact déplace le torse sans déplacer artificiellement les pieds. La toile de contact est plus large pour conserver toute la lame.
 
 > Valeurs du prototype dans src/dossier_curien/combatant.gd. Les fiches individuelles développent des mouvements supplémentaires et des versions cinématiques pour la suite.
 
@@ -144,6 +144,8 @@ L’AMS compare les enregistrements. Les duels G–Rogan sont des simulations d�
 | G | Rogan · Cour | Magician · Laboratoire | Chariot · Antichambre |
 | Chariot | G · Cour | Rogan · Antichambre | Magician · Laboratoire |
 | Magician | Chariot · Antichambre | G · Laboratoire | Rogan · Cour |
+
+![Les quatre portraits de sélection, dans l’ordre des routes. Chaque cadrage est une illustration dédiée.](figures/portraits.jpg)
 
 ### Monter une séquence
 
@@ -335,23 +337,23 @@ Un arrêt sur image peut ressembler au personnage et donner un mauvais combat. L
 
 | Famille | Clés à dessiner par côté | Test de lecture |
 | --- | --- | --- |
-| Garde et locomotion | Garde 6 ; marche avant 8 ; recul 8 ; accroupi 3 ; saut et réception 6. | Raccorder la dernière clé à la première. Regarder les semelles sur la même dalle pendant trois boucles. |
-| Offensive commune | Léger 5 ; lourd 8 ; projection 9 ; réception de projection 6. | Sur un coup manqué, la pose d’extension diffère visiblement de la récupération. |
-| Spéciaux et super | 3 spéciaux × 8 ; un super × 12. Distinguer anticipation, émission, tenue et retour. | Chaque effet a une clé d’émission et un repère de contact testables sans son. |
-| Défense et issue | Garde haute 3 ; garde basse 3 ; impact 4 ; chute 6 ; relevé 5 ; victoire 6. | La seule couleur du flash ne doit jamais être le seul indice de contact. |
-| Identité | Entrée 8 ; provocation 6 ; fatalité 12 ou séquence illustrée équivalente. | La provocation revient en garde. Les fins donnent la priorité au geste signature. |
+| Garde et locomotion | Garde 6, marche avant 8, recul 8, accroupi 3, saut et réception 6. | Raccorder la dernière clé à la première. Regarder les semelles sur la même dalle pendant trois boucles. |
+| Offensive commune | Léger 5, lourd 8, projection 9, réception de projection 6. | Sur un coup manqué, la pose d’extension diffère visiblement de la récupération. |
+| Spéciaux et super | 3 spéciaux × 8, un super × 12. Distinguer anticipation, émission, tenue et retour. | Chaque effet a une clé d’émission et un repère de contact testables sans son. |
+| Défense et issue | Garde haute 3, garde basse 3, impact 4, chute 6, relevé 5, victoire 6. | La seule couleur du flash ne doit jamais être le seul indice de contact. |
+| Identité | Entrée 8, provocation 6, fatalité 12 ou séquence illustrée équivalente. | La provocation revient en garde. Les fins donnent la priorité au geste signature. |
 
 ### Priorité de dessin
 
-Terminer une seule action complète de Chariot des deux côtés, du départ à la récupération, avant de multiplier les mouvements isolés. Pour les agents, la priorité suivante est le couple tir/recharge. Pour Magician, c’est la transition plaques fermées → invocation → récupération.
+Le coup de Chariot possède maintenant ses clés de préparation, de contact et de récupération. Dessiner les intervalles et le vrai contrechamp gauche avant de multiplier les mouvements isolés. Pour les agents, la priorité suivante est le couple tir/recharge. Pour Magician, c’est la transition plaques fermées → invocation → récupération.
 
-Conserver deux compteurs distincts dans la production : clés réellement dessinées et animations jouables. Quatre clés d’un coup lourd forment un bloc exploitable. Une boucle complète demande aussi ses transitions, son timing, son orientation inverse et un passage en moteur.
+Conserver deux compteurs distincts dans la production : clés réellement dessinées et animations jouables. Les clés de départ, de contact et de retour forment un premier bloc exploitable. Une boucle complète demande aussi ses transitions, son timing, son orientation inverse et un passage en moteur.
 
 > Le moteur peut avancer à 60 Hz en tenant une clé dessinée pendant plusieurs images de simulation. Les nombres de clés ci-dessus sont des budgets d’animation proposés.
 
 ## Scènes illustrées et signaux sonores
 
-Rogan reçoit un portrait et un triptyque qui accompagne sa route. La pluie de l’appel initial, le verre de la rencontre et le silence de la cassette donnent à chaque scène son propre rythme.
+Chaque combattant dispose d’un portrait de sélection indépendant. Rogan reçoit aussi un triptyque qui accompagne toute sa route, de l’appel de Sophie au retour de l’agent devant la cassette.
 
 ![Rogan. Images originales de l’introduction, de la rencontre de rivalité et de la fin, dans l’ordre de lecture.](figures/strips.jpg)
 
