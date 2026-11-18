@@ -7,6 +7,8 @@ const BACKDROP_PATH := "res://assets/environments/mansion-exterior.png"
 const AUDIO_CUE_MANIFEST_PATH := "res://data/audio/audio_cues.json"
 const UI_CUE_IDS: Array[String] = ["ui_navigate", "ui_confirm", "ui_back", "ui_credit", "ui_join"]
 
+const DossierCurien := preload("res://src/dossier_curien/arena.gd")
+
 var menu_layer: CanvasLayer
 var menu_root: Control
 var content_panel: PanelContainer
@@ -264,6 +266,7 @@ func _show_home() -> void:
 	_menu_button(box, _ui_text("JOUER — ARCADE AUTHENTIQUE", "PLAY — AUTHENTIC ARCADE"), _launch_game.bind("arcade", 1, false), false, "ui_credit")
 	_menu_button(box, _ui_text("COOP LOCALE — 2 JOUEURS", "LOCAL CO-OP — 2 PLAYERS"), _launch_game.bind("arcade", 2, false), false, "ui_join")
 	_menu_button(box, _ui_text("ENTRAÎNEMENT", "TRAINING"), _launch_game.bind("training", 1, false))
+	_menu_button(box, _ui_text("DOSSIER CURIEN — COMBAT 2D", "CURIEN DOSSIER — 2D COMBAT"), _launch_dossier_curien)
 	_menu_button(box, "BOSS RUSH", _launch_game.bind("boss_rush", 1, false))
 	_menu_button(box, _ui_text("SÉLECTION DE CHAPITRE", "CHAPTER SELECT"), _show_chapters)
 	_menu_button(box, _ui_text("CLASSEMENT LOCAL", "LOCAL LEADERBOARD"), _show_leaderboard)
@@ -428,6 +431,15 @@ func _ui_text(french: String, english: String) -> String:
 
 func _safe_ui_text(text_value: String) -> String:
 	return UITextSanitizerType.sanitize(text_value)
+
+func _launch_dossier_curien() -> void:
+	if active_game != null:
+		return
+	menu_layer.hide()
+	active_game = DossierCurien.new()
+	add_child(active_game)
+	active_game.exit_requested.connect(_on_game_exit)
+
 
 func _launch_game(mode: String, player_count: int = 1, demo: bool = false, chapter: int = 1) -> void:
 	if active_game != null:
