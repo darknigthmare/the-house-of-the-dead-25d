@@ -1,32 +1,50 @@
 {
   "fichier": "HOTD_Anthologie.pck",
-  "octets": 14609332,
-  "sha256": "939fd72bd2bec1ac54ea4a4e0ef632fe5fe373544060b06a960dd2a4c664806a",
+  "octets": 25925508,
+  "sha256": "c219dcc57ecfb9c1b2276b747a7880932742686aa6685be477834efba60e1dfc",
   "fragments": [
     {
       "fichier": "Anthologie.part01",
       "octets": 3600000,
-      "sha256": "1402eb85cd30b705b70d9ea51b94670a31799cb9bd9e3cd328edd1746188ae07"
+      "sha256": "4335b313f863923dcf34050657c13e9ac04e5306befc1f8aaa08e82244d2f140"
     },
     {
       "fichier": "Anthologie.part02",
       "octets": 3600000,
-      "sha256": "283d90ba4da7605ca2cc9779a3e509888ef0066635decaa09f917d706340a69d"
+      "sha256": "5d221935ce33473f463ce05b3937979e83dfb23e104ddeb5e24dde8e9e4c198a"
     },
     {
       "fichier": "Anthologie.part03",
       "octets": 3600000,
-      "sha256": "ed90a6e5da68351c52ddbfe6077b804e5ecd60caa802dc902463bc7d2cf939e9"
+      "sha256": "3c855cfab217e723a1c6f8833ba13f5e050d88a317de72c72193684a2a10f209"
     },
     {
       "fichier": "Anthologie.part04",
       "octets": 3600000,
-      "sha256": "d63ef9cb813b2ea9c73a5d6b9eb3a1908e42fb0345dcbdda64748bde064a0360"
+      "sha256": "34b1cde5cfca4445a3440dba757036a2192b693e763e7c6e94a5704b6687f4a9"
     },
     {
       "fichier": "Anthologie.part05",
-      "octets": 209332,
-      "sha256": "139c6b21dc79f44898e9c44e552eb203a0e9322da686c8d17f540e3923d21464"
+      "octets": 3600000,
+      "sha256": "c807226e809fc35828e1dd9010316832cd56ada7f67b4ca1b871c44ae45e45da"
+    },
+    {
+      "fichier": "Anthologie.part06",
+      "octets": 3600000,
+      "sha256": "8aeb99e48959e1e1dba585acda962aef6c443737da565de481708499d4ef98c9"
+    },
+    {
+      "fichier": "Anthologie.part07",
+      "octets": 3600000,
+      "sha256": "3720c30b3eaa14675e9846f9bdf1fa1b168f79d09832d10a1c358a23ab8fcf8d"
+    },
+    {
+      "fichier": "Anthologie.part08",
+      "octets": 725508,
+      "sha256": "f7f0814bcc4ff837f0eccbab7f86a8dec4fd94043aa8b392c104822f63c33e9b"
     }
+  ],
+  "versions_precedentes": [
+    "939fd72bd2bec1ac54ea4a4e0ef632fe5fe373544060b06a960dd2a4c664806a"
   ]
 }

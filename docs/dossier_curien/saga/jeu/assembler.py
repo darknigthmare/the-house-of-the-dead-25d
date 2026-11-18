@@ -13,10 +13,12 @@ def main():
     manifest = json.loads((ROOT / "fragments.json").read_text(encoding="utf-8"))
     destination = ROOT / manifest["fichier"]
     if destination.is_file():
-        if sha256(destination.read_bytes()).hexdigest() == manifest["sha256"]:
+        existing_hash = sha256(destination.read_bytes()).hexdigest()
+        if existing_hash == manifest["sha256"]:
             print(f"Paquet déjà vérifié : {destination}")
             return
-        raise ValueError(f"Un autre fichier existe à l’emplacement {destination}.")
+        if existing_hash not in manifest.get("versions_precedentes", []):
+            raise ValueError(f"Un autre fichier existe à l’emplacement {destination}.")
     fd, temporary = tempfile.mkstemp(prefix=".assemblage-", dir=ROOT)
     try:
         digest = sha256()

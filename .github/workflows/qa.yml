@@ -59,3 +59,16 @@ jobs:
           do
             "$GODOT" --headless --path . --script "$script"
           done
+      - name: Verify combat anthology, stories, archive challenges and Boss Rush records
+        shell: bash
+        run: |
+          GODOT=".ci/godot/Godot_v${GODOT_VERSION}-stable_linux.x86_64"
+          for script in \
+            res://tests/test_dossier_curien.gd \
+            res://scripts/smoke_dossier_curien.gd \
+            res://tests/test_saga_archives.gd \
+            res://scripts/smoke_dossier_saga.gd \
+            res://tests/test_saga_rush.gd
+          do
+            "$GODOT" --headless --path . --script "$script"
+          done

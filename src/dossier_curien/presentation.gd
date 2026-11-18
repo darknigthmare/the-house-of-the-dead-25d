@@ -10,7 +10,12 @@ const PROPS := [["dead_tree","garden_lamp"], ["mansion_double_door","mansion_sco
 # Offsets are measured from the grounded foot pivot on the registered contact art.
 const CONTACT_PIVOTS := {
 	"double":Vector2(148,234), "spread":Vector2(127,205), "burst":Vector2(167,210),
-	"advance":Vector2(211,205), "stagger":Vector2(118,242), "rise":Vector2(90,258)
+	"advance":Vector2(211,205), "stagger":Vector2(118,242), "rise":Vector2(90,258),
+	"choke":Vector2(242,204), "retreat":Vector2(126,232)
+}
+const CORE_PIXELS := {
+	17: {"_guard":Vector2(559,297), "_windup":Vector2(544,387), "_contact":Vector2(564,426), "_recoil":Vector2(339,300)},
+	18: {"_guard":Vector2(539,444), "_windup":Vector2(510,477), "_contact":Vector2(587,476), "_recoil":Vector2(457,429)}
 }
 const BONE := Color("f4ead4")
 const GOLD := Color("e2b36b")
@@ -19,6 +24,7 @@ const STEEL := Color("89b5b5")
 var textures := {}
 var recent_textures: Array[String] = []
 var origin_transform := Transform2D.IDENTITY
+var scan_position := Vector2.ZERO
 var prop_profiles: Dictionary
 
 static func floor_y(stage: int) -> float:
@@ -73,7 +79,9 @@ func draw(c) -> void:
 		backdrop = cached("res://assets/environments/%s.png" % BG[c.stage]) if classic else saga_texture(Saga.ART[c.stage] + "_back")
 	if backdrop: c.draw_texture_rect(backdrop,Rect2(-38 - drift*17,-14,1356,754),false)
 	if court:
-		layer(c, "court_mid", drift * 32)
+		layer(c, classic_art("court_mid"), drift * 32)
+	elif c.stage >= 11:
+		layer(c,saga_texture(Saga.ART[c.stage] + "_mid"), drift * 32)
 	elif not classic:
 		Stage.mid(c, c.stage, drift)
 	else:
@@ -88,6 +96,8 @@ func draw(c) -> void:
 				shadow.append(Vector2(f.x, floor_y(c.stage) + 1) + Vector2.from_angle(TAU*n/24) * Vector2(64,9))
 			c.draw_colored_polygon(shadow, color)
 			draw_fighter(c, f, i)
+	if c.phase == "fight" and c.has_boss_scan() and c.scan_enabled:
+		draw_scan(c)
 	if c.phase == "fight" and c.flash > 0:
 		var distance: float = (7.0-c.flash)*4.0
 		var impact := Vector2(c.impact_position.x,floor_y(c.stage)-c.impact_position.y)
@@ -97,7 +107,9 @@ func draw(c) -> void:
 			var direction := Vector2.from_angle(n*TAU/(5 if c.impact_guard else 8))
 			c.draw_line(impact+direction*(5+distance*0.5),impact+direction*(12+distance),ink,2,true)
 	if court:
-		layer(c, "court_front", drift * 58)
+		layer(c, classic_art("court_front"), drift * 58)
+	elif c.stage >= 11:
+		layer(c,saga_texture(Saga.ART[c.stage] + "_front"), drift * 58)
 	elif not classic:
 		Stage.front(c, c.stage, drift)
 	else:
@@ -115,8 +127,7 @@ func draw(c) -> void:
 	if c.panel != null and c.panel.visible:
 		c.draw_rect(Rect2(0,0,1280,720),Color(0.015,0.022,0.035,0.19))
 
-func layer(c, id: String, offset: float) -> void:
-	var tex := classic_art(id)
+func layer(c, tex: Texture2D, offset: float) -> void:
 	if tex: c.draw_texture_rect(tex,Rect2(-38-offset,-14,1356,754),false)
 
 func prop_at(c, id: String, x: float, bottom: float, h: float) -> void:
@@ -134,15 +145,18 @@ func illustration(c) -> void:
 		var id: String = Fighter.PROFILES[c.preview].id
 		tex = classic_art(id + "_select") if c.preview < 4 else saga_texture(id + "_select")
 		if tex == null: tex = guard_art(c.preview)
-	elif c.case_id != "" and c.case_id != "curien" and c.chosen == Saga.CASES[c.case_id].lead:
+	elif c.case_id != "" and c.case_id != "curien":
 		var shot := "ending" if c.phase == "result" else ["intro","rival","final"][c.route] as String
-		tex = saga_texture(c.case_id + "_" + shot)
+		if c.chosen == Saga.CASES[c.case_id].lead:
+			tex = saga_texture(c.case_id + "_" + shot)
+		elif c.chosen >= 17:
+			tex = saga_texture(str(Fighter.PROFILES[c.chosen].id) + "_" + shot)
 	elif c.chosen == 0:
 		if c.phase == "result": tex = classic_art("rogan_ending")
 		elif c.route == 0: tex = classic_art("rogan_intro")
 		elif c.route == 1: tex = classic_art("rogan_rival")
 	if tex == null and c.case_id != "" and c.case_id != "curien" and c.phase != "select":
-		var subject: int = c.enemy if c.route == 1 and c.phase != "result" else c.chosen
+		var subject: int = c.enemy if c.route >= 1 and c.phase != "result" else c.chosen
 		var silhouette: Texture2D = guard_art(subject)
 		if silhouette:
 			var dims := silhouette.get_size()
@@ -159,22 +173,36 @@ func illustration(c) -> void:
 		c.draw_texture_rect(tex,Rect2(0,0,1280,720),false)
 		c.draw_rect(Rect2(0,0,1280,720), Color(0,0,0,0.12))
 
+func pose_suffix(f) -> String:
+	if f.stun > 0: return "_recoil"
+	if f.action not in ["light","heavy","special","throw"]: return ""
+	var data: Dictionary = f.move_data()
+	var age: int = f.tick - int(data.start)
+	if f.id == 17:
+		if f.action != "special": return ""
+		if not f.alternate_special and age < 2*f.pulse_gap(): return "_windup"
+	# Gary's elbow has separate art. The painted firearm attacks belong to specials.
+	if f.action != "special" and f.profile.ammo > 0:
+		return "_melee" if f.id == 19 and f.action == "light" and age >= 0 and age <= 2 else ""
+	if age < 0: return "_windup"
+	if f.action == "special":
+		if f.profile.kind == "rotor" and age < 48: return "_contact"
+		if age < f.special_hits()*f.pulse_gap() and age%f.pulse_gap() <= 2: return "_contact"
+	return "_contact" if age <= 2 or f.id == 0 else "_recovery"
+
 func draw_fighter(c, f, side: int) -> void:
 	var art: Texture2D = guard_art(f.id)
+	var displayed_pose := "_guard"
 	var idle: bool = f.action == "" and not f.moving and f.stun == 0 and f.altitude == 0
+	var unarmed_fallback: bool = f.profile.ammo > 0 and f.action in ["light","heavy","throw"] and f.stun == 0
 	if f.id in [0,2] or f.id >= 4:
-		var pose: Texture2D
-		if f.stun > 0:
-			pose = saga_texture(f.profile.id + "_recoil") if f.id >= 4 else classic_art(f.profile.id + "_recoil")
-		elif f.action in ["light","heavy","special","throw"]:
-			var key := "_windup" if f.tick < int(f.move_data().start) else "_contact"
-			var age: int = f.tick-int(f.move_data().start)
-			var later_shot: bool = f.action == "special" and age < f.shots_per_special*5 and age%5 <= 2
-			if f.id != 0 and age > 2 and not later_shot: key = "_recovery"
-			pose = saga_texture(f.profile.id + key) if f.id >= 4 else classic_art(f.profile.id + key)
-		if pose:
-			art = pose
-			idle = true
+		var key := pose_suffix(f)
+		if key != "":
+			var pose := saga_texture(f.profile.id + key) if f.id >= 4 else classic_art(f.profile.id + key)
+			if pose:
+				art = pose
+				idle = true
+				displayed_pose = key
 	var height: float = f.profile.height
 	var bottom := floor_y(c.stage) - float(f.altitude)
 	if f.crouching: height *= 0.71
@@ -184,13 +212,13 @@ func draw_fighter(c, f, side: int) -> void:
 		height *= 1.0 - collapse * 0.78
 	var tint := Color.WHITE
 	if f.stun > 0 and f.stun % 5 < 2: tint = Color(1.0,0.65,0.55)
-	if art and (idle or f.id >= 4):
+	if art and (idle or f.id >= 4 or unarmed_fallback):
 		var breathing := sin(float(c.elapsed + side * 24)*0.062)*1.5
 		var h := (height + breathing) * 1024 / 905
 		var w := h * art.get_width() / art.get_height()
 		var tilt := 0.0
 		var shift := Vector2.ZERO
-		if f.id >= 4 and not idle:
+		if (f.id >= 4 or unarmed_fallback) and not idle:
 			if f.stun > 0:
 				tilt = -0.14 * minf(1.0, f.stun/7.0)
 			elif f.action == "reload":
@@ -210,8 +238,15 @@ func draw_fighter(c, f, side: int) -> void:
 			elif f.altitude > 0: tilt = -0.06
 		var pivot := Transform2D(tilt * f.facing, Vector2(f.x + shift.x*f.facing, bottom+shift.y))
 		pivot.x *= f.facing
+		if side == 1 and CORE_PIXELS.has(f.id):
+			var marks: Dictionary = CORE_PIXELS[f.id]
+			var core: Vector2 = marks.get(displayed_pose, marks["_guard"])
+			scan_position = pivot * Vector2(w*(core.x-512)/1024.0, h*(core.y-960)/1024.0)
 		c.draw_set_transform_matrix(origin_transform * pivot)
-		c.draw_texture_rect(art,Rect2(-w*0.5,-h*960/1024,w,h),false,tint)
+		if f.id == 17 and f.alternate_special and displayed_pose == "_contact":
+			draw_mercury_blade(c,art,w,h,float(f.move_data().reach),tint)
+		else:
+			c.draw_texture_rect(art,Rect2(-w*0.5,-h*960/1024,w,h),false,tint)
 		c.draw_set_transform_matrix(origin_transform)
 	elif f.id < ATLAS_IDS.size():
 		var frame := 0
@@ -230,7 +265,7 @@ func draw_fighter(c, f, side: int) -> void:
 		c.draw_texture_rect_region(tex,dst,Rect2(Vector2(frame,row)*cell,cell),tint)
 	if f.action == "special" and f.tick >= f.move_data().start:
 		var age: int = f.tick-int(f.move_data().start)
-		if age < maxi(5, f.shots_per_special*5):
+		if age < (48 if f.profile.kind == "rotor" else maxi(5, f.special_hits()*f.pulse_gap())):
 			var anchor: Vector2 = CONTACT_PIVOTS.get(f.profile.kind, Vector2(47,height*0.58))
 			draw_special(c, f, Vector2(f.x+f.facing*anchor.x,bottom-anchor.y), age)
 	elif f.id >= 4 and f.action in ["light","heavy","throw"]:
@@ -238,23 +273,55 @@ func draw_fighter(c, f, side: int) -> void:
 		if age >= 0 and age < 4:
 			var fist := Vector2(f.x+f.facing*35,bottom-height*0.54)
 			var tip := fist+Vector2(f.facing*float(f.move_data().reach)*0.68,-8 if f.action=="light" else 13)
+			if f.id == 19 and f.action == "light":
+				tip = Vector2(f.x+f.facing*108,bottom-214)
+				fist = tip-Vector2(f.facing*22,5)
 			c.draw_line(fist,tip,Color(f.profile.color,0.76),2 if f.action=="light" else 5,true)
 			c.draw_arc(tip,9+age*3,-2.15,1.8,12,Color(f.profile.color,0.80),2,true)
 
+func draw_mercury_blade(c, art: Texture2D, w: float, h: float, reach: float, tint: Color) -> void:
+	# The liquid blade contracts without changing the body anchored to the floor.
+	var join_fraction := 1450.0/2272.0
+	var tip_fraction := 2243.0/2272.0
+	var source := art.get_size()
+	var split := source.x * join_fraction
+	var y := -h*960/1024
+	var joint := w*(join_fraction-0.5)
+	var blade_width := (reach-joint)*(1.0-join_fraction)/(tip_fraction-join_fraction)
+	c.draw_texture_rect_region(art,Rect2(-w*0.5,y,w*join_fraction,h),Rect2(0,0,split,source.y),tint)
+	c.draw_texture_rect_region(art,Rect2(joint,y,blade_width,h),Rect2(split,0,source.x-split,source.y),tint)
+
 func draw_special(c, f, origin: Vector2, age: int) -> void:
-	var reach := float(f.profile.move.reach)*0.86
+	var reach := float(f.move_data().reach)*0.86
 	var end := origin + Vector2(f.facing*reach,0)
 	var accent := Color(f.profile.color)
 	match str(f.profile.kind):
-		"shot","double","burst","advance","stagger":
+		"shot","double","burst","advance","stagger","retreat":
 			if age%5 > 2: return
 			end.x = f.x+f.facing*float(f.profile.move.reach)
 			if f.profile.kind == "stagger": end.y -= 34
 			c.draw_line(origin,end,accent,3 if f.profile.kind=="stagger" else 2,true)
 			c.draw_circle(origin,8 if age%5 == 0 else 4,GOLD)
-		"spread":
-			end.x = f.x+f.facing*float(f.profile.move.reach)
-			for n in range(-2,3): c.draw_line(origin,end+Vector2(0,n*15),Color(accent,0.76),2,true)
+		"spread","choke":
+			if age > 2: return
+			end.x = f.x+f.facing*float(f.move_data().reach)
+			for n in range(-2,3): c.draw_line(origin,end+Vector2(0,n*(5 if f.alternate_special else 15)),Color(accent,0.76),2,true)
+		"satellite":
+			if f.alternate_special:
+				if age > 2: return
+				var blade_tip := Vector2(f.x+f.facing*float(f.move_data().reach),floor_y(c.stage)-f.altitude-float(f.profile.height)*582/905)
+				c.draw_arc(blade_tip,3+age*2,-1.6,1.6,8,accent,2,true)
+			else:
+				var spot := Vector2(f.x+f.facing*f.satellite_radius(),origin.y)
+				c.draw_arc(spot,15,0,TAU,22,Color(accent,0.65),2,true)
+				c.draw_circle(spot,11,accent)
+				c.draw_circle(spot-Vector2(3,3),4,BONE)
+		"rotor":
+			var spot := Vector2(f.x+f.facing*f.wheel_radius(),origin.y)
+			c.draw_arc(spot,34,0,TAU,32,Color(accent,0.70),4,true)
+			for n in 8:
+				var ray := Vector2.from_angle(age*0.21+n*TAU/8)
+				c.draw_line(spot+ray*29,spot+ray*42,accent,3,true)
 		"orb":
 			var travel := age/5.0
 			c.draw_circle(origin.lerp(end, travel),17,accent)
@@ -283,6 +350,19 @@ func draw_special(c, f, origin: Vector2, age: int) -> void:
 		_:
 			c.draw_arc(origin,115,-1.75 if f.facing>0 else 1.4,1.75 if f.facing>0 else 4.9,24,accent,4,true)
 
+func draw_scan(c) -> void:
+	var state: String = c.scan_state()
+	if state not in ["repérage","ouvert"]: return
+	var point := scan_position
+	var exposed := state == "ouvert"
+	var radius: float = 20.0 if exposed else 39.0 - float((c.elapsed % 240)-90)*0.38
+	var ink := Color("87e9d5") if exposed else GOLD
+	for quadrant in 4:
+		var angle := quadrant*PI/2
+		c.draw_arc(point,radius,angle+0.08,angle+1.18,10,ink,3,true)
+	if exposed: c.draw_circle(point,3,BONE)
+	heading(c,Vector2(420,170),"NOYAU OUVERT  ·  LOURD / SPÉCIAL" if exposed else "ANALYSE AMS  ·  REPÉRAGE",18,ink,440,HORIZONTAL_ALIGNMENT_CENTER)
+
 func hud(c) -> void:
 	c.draw_rect(Rect2(0,0,1280,111),Color("0e141cdd"))
 	for i in 2:
@@ -303,6 +383,8 @@ func hud(c) -> void:
 	c.draw_rect(Rect2(0,664,1280,56),Color("10151cdd"))
 	heading(c,Vector2(42,698),c.STAGES[c.stage].to_upper(),17,GOLD)
 	heading(c,Vector2(440,698),"J LÉGER   ·   K LOURD   ·   L SPÉCIAL   ·   U PROJECTION   ·   ÉCHAP PAUSE",16,BONE,800,HORIZONTAL_ALIGNMENT_RIGHT)
+	if c.mode == c.Rush.MODE:
+		heading(c,Vector2(312,143),c.rush.hud(c),18,BONE,656,HORIZONTAL_ALIGNMENT_CENTER)
 	if c.mode == 4:
 		var f = c.fighters[0]
 		var names := {"light":"Léger","heavy":"Lourd","special":str(f.profile.special),"throw":"Projection","reload":"Recharge"}
@@ -407,4 +489,27 @@ func cinematic(c) -> void:
 				var contact := center+Vector2((n-1)*28,-n*17)
 				c.draw_arc(contact,16+n*12+progress*18,-2.65,2.30,23,color,5,true)
 				c.draw_line(contact-Vector2(f.facing*35,0),contact,color,3,true)
+		17: # Satellites converge around the rival and fragment into silver droplets.
+			for n in 8:
+				var mote := center + Vector2.from_angle(n*TAU/8+progress*TAU) * lerpf(140,12,progress)
+				c.draw_circle(mote,5+7*fade,color)
+				if beat == 2: c.draw_line(center,mote,color,2,true)
+		18: # Two concentric conductors discharge as the wheel locks.
+			for n in 2:
+				var rim := reach+n*22
+				c.draw_arc(center,rim,0,TAU,56,color,4,true)
+				for tooth in 10:
+					var r := Vector2.from_angle(tooth*TAU/10+progress*3)
+					c.draw_line(center+r*rim,center+r*(rim+14),color,3,true)
+		19: # Crossing cover lines give way to the signal for evacuation.
+			for n in [-1,1]:
+				var end := center+Vector2(0,n*reach*0.42)
+				c.draw_line(origin+Vector2(0,n*8),end,color,3,true)
+				c.draw_arc(end,reach*0.29,0,TAU,32,color,2,true)
+		20: # The containment doors close around a final cone of light.
+			for n in [-1,1]:
+				var edge := center+Vector2(n*(100-94*progress),0)
+				c.draw_line(edge-Vector2(0,64),edge+Vector2(0,64),color,5,true)
+			if beat < 2:
+				for n in [-1,0,1]: c.draw_line(origin,center+Vector2(0,n*reach*0.45),color,2,true)
 	banner(c,str(f.profile.finish).to_upper(),str(f.profile.title))

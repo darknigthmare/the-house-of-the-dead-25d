@@ -4,22 +4,23 @@ extends RefCounted
 # exhibitions in the brief so the original rail-shooter stories stay intact.
 const STAGES := ["Cour du manoir", "Antichambre", "Laboratoire de Curien", "Quai de la cité inondée",
 	"Poste de sécurité EFI", "Métro souterrain", "Complexe déserté", "Réception de Scarecrow Mansion",
-	"Fête foraine de Bayou City", "Plateau de Loving Deads", "Rue en quarantaine"]
-const ART := ["", "", "", "venice", "efi", "subway", "special", "scarlet", "carnival", "ex", "revenge"]
+	"Fête foraine de Bayou City", "Plateau de Loving Deads", "Rue en quarantaine",
+	"Toit de la tour Goldman", "Chambre d’incubation EFI", "Passage de la tour de l’horloge", "Ponton du bayou"]
+const ART := ["", "", "", "venice", "efi", "subway", "special", "scarlet", "carnival", "ex", "revenge", "goldman", "reactor", "clocktower", "bayou"]
 const CASES := {
 	"curien": {"name":"The House of the Dead","place":"Manoir Curien","lead":0,"stage":0,"guests":[1,2,3],
 		"rule":"Duels du manoir. Deux manches gagnantes de 60 secondes."},
-	"hotd2": {"name":"The House of the Dead 2","place":"La cité inondée","lead":4,"stage":3,"guests":[1,11,3],
+	"hotd2": {"name":"The House of the Dead 2","place":"La cité inondée","lead":4,"stage":3,"guests":[19,11,17],"route_stages":[3,3,11],
 		"rule":"Secours sur le quai. Un enchaînement de trois touches rend trois secondes, une fois par joueur et par manche.",
 		"intro":"James reçoit une transmission hachée au bord du canal. L’AMS rejoue le passage à quai pour établir à quel moment les derniers civils ont pu rejoindre la rive.",
 		"rival":"Hierophant surgit à l’aplomb de l’eau. La pointe du trident reste hors de portée jusqu’au moment où son porteur avance sur les dalles.",
-		"final":"L’enregistrement du quai s’arrête. L’AMS superpose la signature de Magician à celle de l’ancien relevé pour faire un dernier essai.",
+		"final":"Au sommet de la tour Goldman, les sphères d’Emperor se desserrent autour de son thorax. James pose la radio au bord du toit. Pour cet exercice, le scanner peut signaler l’instant où le noyau reste à découvert.",
 		"ending":"La radio retrouve un canal libre. James inscrit le lieu du dernier appel sur sa carte et transmet les coordonnées des rescapés."},
-	"hotd3": {"name":"The House of the Dead III","place":"Centre de recherche EFI","lead":5,"stage":4,"guests":[1,12,0],
+	"hotd3": {"name":"The House of the Dead III","place":"Centre de recherche EFI","lead":5,"stage":4,"guests":[20,12,18],"route_stages":[4,4,12],
 		"rule":"Relève. Une projection réussie restitue six points de vie à son auteur, une seule fois par manche.",
 		"intro":"Lisa et G poussent les portes du centre EFI sur les traces de Thomas. Une tôle froissée conserve la marque ronde d’une massue.",
 		"rival":"Death remplit l’encadrement de la porte de sécurité. Lisa profite du temps que prend la massue pour remonter après son passage.",
-		"final":"Le relevé du poste de sécurité s’achève. Un essai père-fille mesure la distance qu’il reste à couvrir pour quitter le complexe.",
+		"final":"Lisa rejoint Daniel à la chambre d’incubation. La roue électrifiée décrit un tour au-dessus du réacteur. L’écho de la voix du docteur Curien passe dans les haut-parleurs avant que le sujet n’attaque.",
 		"ending":"G rejoint Lisa près de la sortie. Elle remet la photo de son père dans sa poche pendant que le portail s’ouvre sur la lumière grise."},
 	"hotd4": {"name":"The House of the Dead 4","place":"Sous-sols de la ville","lead":6,"stage":5,"guests":[4,13,3],
 		"rule":"Fenêtre de ravitaillement. La première série de trois touches recharge le magasin du combattant qui l’a réussie.",
@@ -39,11 +40,11 @@ const CASES := {
 		"rival":"Dans la reconstitution, le reflet de James se place entre Ryan et le grand escalier. Ryan doit couvrir l’évacuation sans céder son côté de la salle.",
 		"final":"La réception se vide. L’AMS projette un sujet blindé dans l’embrasure pour éprouver une dernière fois le chemin de sortie.",
 		"ending":"Un dernier verre roule sous les tables. Ryan retrouve Kate au pied des marches et lui transmet son relevé des portes ouvertes."},
-	"overkill": {"name":"The House of the Dead OVERKILL","place":"Bayou City","lead":8,"stage":8,"guests":[1,14,9],
+	"overkill": {"name":"The House of the Dead OVERKILL","place":"Bayou City","lead":8,"stage":8,"guests":[1,14,9],"route_stages":[8,8,14],
 		"rule":"Prise continue. Un premier enchaînement de trois touches rend huit points de vie à son auteur.",
 		"intro":"À Bayou City, Washington retrouve G sous les ampoules d’un manège arrêté. La bobine du projecteur claque contre le métal de sa boîte.",
 		"rival":"La pellicule saute. Dans cette bobine reconstituée, Jasper Guns déforme les enseignes de la foire sans les toucher. Washington reconnaît sa silhouette avant son visage.",
-		"final":"Les enseignes du carnaval se rallument pour le dernier numéro. La simulation fait entrer un invité de Loving Deads.",
+		"final":"Une coupe franche fait passer la bobine du carnaval à un ponton de Fetid Waters. Les pilotis grincent. La reconstitution fait entrer un invité de Loving Deads au bout des planches.",
 		"ending":"Isaac arrache le ticket de la dernière séance. G l’attend près du grillage pendant que la musique du manège ralentit."},
 	"ex": {"name":"Loving Deads • The House of the Dead EX","place":"Plateau des épreuves","lead":9,"stage":9,"guests":[10,15,2],
 		"rule":"Coup de cœur. Une première projection réussie rend dix points de vie à son auteur.",
@@ -70,9 +71,25 @@ const HUD_RULES := {
 	"revenge":"Combat de rue · 3 touches enchaînées   +5 s"
 }
 const ALTERNATE_STORIES := {
+	17: ["Une sphère d’argent roule sous l’horloge. Gary relève la tête. Les autres sphères se rassemblent derrière lui et le modèle Alpha prend forme dans le relevé de l’AMS.",
+		"Sur le quai, les sphères entourent les trois pointes du trident. Le reflet de Hierophant se plisse. Emperor étire son bras jusqu’à donner au métal leur longueur.",
+		"Au sommet de la tour, James retrouve la sphère qui manque à la couronne. Le modèle reconstitué d’Emperor la rappelle à lui et engage le dernier duel.",
+		"La silhouette se défait. Chaque sphère reflète le ciel sous un angle différent. Une seule reste suspendue devant le capteur lorsque la bande s’arrête."],
+	18: ["Le moniteur EFI affiche une roue immobile et une silhouette devant le poste de garde. Daniel reconnaît l’anneau. Le simulateur remet le mécanisme en mouvement.",
+		"La massue de Death frappe la dalle. La roue passe dans le creux laissé entre deux coups et revient fermer le passage.",
+		"Dans la chambre d’incubation, Lisa lève son arme vers l’emblème. La roue couvre le ronflement du réacteur une révolution de plus.",
+		"La roue achève son tour sans un bruit. Un cercle de condensation persiste sur la vitre de la chambre après l’arrêt des capteurs."],
+	19: ["Sous la tour de l’horloge, Gary repère une sortie pour les civils. James lui barre le passage pour un exercice de couverture. Gary vérifie l’espace laissé derrière son talon.",
+		"Hierophant affleure à la surface du canal. Gary attend que le trident découvre le parapet pour prendre du recul et dégager son angle de tir.",
+		"Sur le toit, les sphères d’Emperor se détachent une par une. Derrière Gary, il ne reste qu’un pas avant la rambarde.",
+		"Gary récupère la radio de James et lève les yeux vers la ville. Sous la tour de l’horloge, une lampe vient de se rallumer."],
+	20: ["Daniel entend Lisa frapper de l’autre côté du volet de sécurité. Le relevé de l’AMS leur donne un couloir vide pour répéter la relève avant l’ouverture du sas.",
+		"Le sol vibre sous les pas de Death. Daniel compte ses cartouches et laisse la masse passer dans l’embrasure avant de relever le canon.",
+		"Dans la chambre d’incubation, Daniel entend la voix de son père. Le disque électrifié s’écarte du corps de Wheel of Fate et revient couper sa retraite.",
+		"Daniel garde la main sur la paroi froide du réacteur jusqu’à l’arrêt de la dernière vibration. Dans le couloir, Lisa lui tient la porte ouverte."],
 	14: ["La bobine commence sans bande sonore. Autour de Jasper, trois boulons se soulèvent au-dessus des dalles humides du champ de foire.",
 		"Washington entre dans le cadre. Jasper incline la tête. Sur les bords de la pellicule, les marques de perforation se tordent.",
-		"Le dernier raccord transporte Jasper sur la piste de Loving Deads. Un invité relance la prise pendant que les enseignes vacillent.",
+		"Le dernier raccord transporte Jasper au bord du bayou. Le projecteur éclaire un invité de Loving Deads sur les planches du ponton.",
 		"Une enseigne retombe au bord de la piste. La bobine continue de tourner, avec un bruit régulier, dans le projecteur abandonné."],
 	15: ["Zobiko fait signe au régisseur. Une ampoule dessine le bord de la scène. Derrière le rideau, Zobio attend son tour.",
 		"Zobio prend position pour leur numéro en duo. Zobiko choisit l’endroit où retomber avant même le coup de cloche.",
@@ -84,11 +101,11 @@ const ALTERNATE_STORIES := {
 		"Le bruit de la massue s’est arrêté. Rikiya traverse la rue et dépose les gants de Stick sur le capot de la voiture de liaison."],
 	11: ["Le premier reflet est celui d’un trident. Entre les piliers du quai, le sujet attend que la silhouette déposée par l’AMS entre dans l’eau.",
 		"James prend position sur la berge. Chaque fois que le sujet retire le trident, le moniteur perd le point exact où la pointe a touché le quai.",
-		"Le canal devient noir. Au bout de la passerelle, la lueur d’un second sujet se dessine dans la buée.",
+		"L’AMS transporte le relevé sur le toit Goldman. L’eau s’égoutte encore du trident quand les sphères d’Emperor forment une pointe d’argent.",
 		"Lorsque le trident passe sous la surface, l’AMS coupe le son. Il reste trois sillons sur le quai et une image inexploitable du canal."],
 	12: ["Le poste de garde donne encore accès aux anciennes caméras. L’une d’elles ne montre que la tête d’une massue, cadrée trop près.",
 		"Une ombre s’avance dans le couloir. Death s’arrête devant Lisa et laisse glisser la massue le long de la porte.",
-		"Le voyant du poste EFI repasse au vert. Une seconde silhouette portant le nom de Rogan se présente devant la grille.",
+		"Le relevé traverse une cloison et s’ouvre sur la chambre d’incubation. La massue de Death se reflète dans l’anneau de Wheel of Fate.",
 		"La massue heurte le carrelage après la fin de l’enregistrement. Le microphone du poste de sécurité transmet encore un choc, puis se tait."],
 	13: ["Sur le plan de la station, deux couloirs communiquent avec les quais. L’enregistrement de Justice commence exactement entre les deux.",
 		"Kate traverse le passage central. Le sujet écarte ses quatre bras. Les caméras du quai perdent simultanément le visage de l’agente.",
@@ -99,6 +116,12 @@ const ALTERNATE_STORIES := {
 		"Le brassard de Kate disparaît derrière la porte. G retrouve Magician dans la chambre où s’arrête la piste.",
 		"La chambre est vide. G rejoint Kate à l’air libre et inscrit l’heure exacte de l’évacuation sur le dossier."]
 }
+
+static func stages_for(case_id: String, chosen: int) -> Array:
+	var dossier: Dictionary = CASES[case_id]
+	var route_stages: Array = dossier.get("route_stages", [dossier.stage, dossier.stage, dossier.stage]).duplicate()
+	if case_id == "hotd2" and chosen in [17,19]: route_stages[0] = 13
+	return route_stages
 
 static func opponents(case_id: String, chosen: int) -> Array:
 	var dossier: Dictionary = CASES[case_id]

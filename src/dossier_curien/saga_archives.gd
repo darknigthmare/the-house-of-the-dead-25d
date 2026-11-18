@@ -27,6 +27,9 @@ const CATALOG := [
 	{"id": "t2004", "title": "The Typing of the Dead 2004", "case_id": "hotd2", "rule": "word", "description": "Série de saisie consacrée aux lieux de passage de l’enquête.", "words": ["PASSAGE", "TUNNEL", "RUELLE", "COULOIR"]},
 	{"id": "rakuten", "title": "The Typing of the Dead featuring Rakuten", "case_id": "hotd2", "rule": "word", "description": "Saisir le lexique du bureau. Une transmission correcte déclenche une ouverture.", "words": ["BUREAU", "POSTE", "DOSSIER", "PROJET"]},
 	{"id": "lariat", "title": "Zombie Da: Typing Lariat for Mac", "case_id": "hotd2", "rule": "word", "description": "Épreuve de frappe réservée aux mots du corps-à-corps, dans la simulation du canal.", "words": ["PRISE", "GARDE", "APPUI", "POING"]},
+	{"id": "typing_us", "title": "The Typing of the Dead US Edition", "case_id": "hotd2", "rule": "word", "description": "Appels de secours en anglais. Transmettre le mot affiché au poste du quai pour interrompre le rival.", "words": ["BRIDGE", "DOCK", "FERRY", "RESCUE"]},
+	{"id": "typing_budget", "title": "The Typing of the Dead · réédition PC 2005", "case_id": "hotd2", "rule": "word", "description": "Réédition à prix révisé. Dans cet exercice AMS, une saisie courte rend une seconde, dans la limite du temps initial.", "words": ["BUS", "BAC", "CLE", "RUE"]},
+	{"id": "lariat_win", "title": "Zombie Da: Typing Lariat · Windows", "case_id": "hotd2", "rule": "word", "description": "Valider un ordre de lutte pour prolonger l’étourdissement du rival, puis s’approcher pour la projection.", "words": ["SAISIR", "PIVOTER", "CEINTURER", "PROJETER"]},
 ]
 const TRANSLATIONS := [["PORTE", "DOOR"], ["CLEF", "KEY"], ["EAU", "WATER"], ["PONT", "BRIDGE"]]
 const BUMPERS := [Vector2(31,23),Vector2(64,33),Vector2(97,19)]
@@ -264,6 +267,10 @@ func complete_word(arena) -> void:
 	if active.id == "typing2":
 		var player = arena.fighters[0]
 		player.ammo = mini(int(player.profile.ammo), int(player.ammo) + 1)
+	if active.id == "typing_budget":
+		arena.clock_ticks = mini(3600, arena.clock_ticks+60)
+	elif active.id == "lariat_win":
+		arena.fighters[1].stun = maxi(32, arena.fighters[1].stun)
 	cycle += 1
 	reset_terminal()
 

@@ -1,7 +1,38 @@
 {
   "titre": "Dossier Curien — Anthologie de combat",
-  "nombre_de_png": 59,
+  "nombre_de_png": 145,
+  "nouveaux_png_volume_iii": 86,
   "fichiers": [
+    {
+      "fichier": "bayou_back.png",
+      "usage": "back",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "c7407da32beb65d1ad2b237b18765f4f48639c67234958847b97a2c1fc3debfa",
+      "volume": 3
+    },
+    {
+      "fichier": "bayou_front.png",
+      "usage": "front",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "af9871d95f9fd5cde44c4666e45c301e396b188c3f314b10d099cd769a9c7c55",
+      "volume": 3
+    },
+    {
+      "fichier": "bayou_mid.png",
+      "usage": "mid",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "3ee583e5b5433ecb9d335cf5d22fbee72fb730f2dac43c0527e07f26fe6a2578",
+      "volume": 3
+    },
     {
       "fichier": "carnival_back.png",
       "usage": "back",
@@ -9,7 +40,134 @@
         1600,
         900
       ],
-      "sha256": "7ee88eb625e02ef5333f2ce7d14aa1d4df73b1fa0780a59130a58a0f4d28bf97"
+      "sha256": "7ee88eb625e02ef5333f2ce7d14aa1d4df73b1fa0780a59130a58a0f4d28bf97",
+      "volume": 2
+    },
+    {
+      "fichier": "clocktower_back.png",
+      "usage": "back",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "b9da253b0f9c161b384edb4801138f6676f22ebadb7ce96d16e82973dea26423",
+      "volume": 3
+    },
+    {
+      "fichier": "clocktower_front.png",
+      "usage": "front",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "fe45420a4b1269e81bba4218591f86aa755d6f6bb9aba5e3359df468117485c4",
+      "volume": 3
+    },
+    {
+      "fichier": "clocktower_mid.png",
+      "usage": "mid",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "f81e5346aec32963d286ab6135358b4fe87bfa1b370078620bec1108ea292a20",
+      "volume": 3
+    },
+    {
+      "fichier": "daniel_contact.png",
+      "usage": "contact",
+      "dimensions": [
+        1648,
+        1024
+      ],
+      "sha256": "1159bbf3bcdaef86df9c4d72abb59038f897db43f476a78c240875a67f3b5566",
+      "pivot": [
+        824,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "daniel_ending.png",
+      "usage": "ending",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "454f237a1363d333ce533c6a407fa8c0a6e1c43b38562fdb1bfd8804d92316f9",
+      "volume": 3
+    },
+    {
+      "fichier": "daniel_guard.png",
+      "usage": "guard",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "327faeceb73e8aead844ccf5472fdeb4d30da2eae5a7c0bf6fa87b587e092f6a",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "daniel_intro.png",
+      "usage": "intro",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "6fb815a4f40c1c4da04a7e5c6509639639c419cb273c93f7b2dd0914141fce7c",
+      "volume": 3
+    },
+    {
+      "fichier": "daniel_recoil.png",
+      "usage": "recoil",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "ccf118ccc8b5b3758cb5472fea7aee57aeeb20a8fecb3048abe91f708e539939",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "daniel_rival.png",
+      "usage": "rival",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "1822dacaa7d03ed30c9044e8601911da333a5056270e3577cef0edfb1f81600d",
+      "volume": 3
+    },
+    {
+      "fichier": "daniel_select.png",
+      "usage": "select",
+      "dimensions": [
+        832,
+        832
+      ],
+      "sha256": "e7f6a53935d8f4d51df09fa4afd3fe96d0289acbf372183bc142039ff7d944f5",
+      "volume": 3
+    },
+    {
+      "fichier": "daniel_windup.png",
+      "usage": "windup",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "5e53ff9543d0459a77948aabbaccd8d7d73c879645c76cae3c02877127c2b021",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
     },
     {
       "fichier": "death_contact.png",
@@ -22,7 +180,8 @@
       "pivot": [
         672,
         960
-      ]
+      ],
+      "volume": 2
     },
     {
       "fichier": "death_guard.png",
@@ -35,7 +194,46 @@
       "pivot": [
         512,
         960
-      ]
+      ],
+      "volume": 2
+    },
+    {
+      "fichier": "death_recoil.png",
+      "usage": "recoil",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "21baae44ce678e1c5f1a9ed65c3042f50b6c76964d2c235a186197837cd974aa",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "death_select.png",
+      "usage": "select",
+      "dimensions": [
+        832,
+        832
+      ],
+      "sha256": "db90a112b62ba894bb7e948b3c070672164f853bf35340e5776029d535e32c90",
+      "volume": 3
+    },
+    {
+      "fichier": "death_windup.png",
+      "usage": "windup",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "b1e654eacebcfc862ea95d20ea4f9e268c0e57ca3d5202559d041fee58515f95",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
     },
     {
       "fichier": "efi_back.png",
@@ -44,7 +242,104 @@
         1600,
         900
       ],
-      "sha256": "eeb358ad0eae32f716b0addccba5db21ae03ba7a9306962cea15d72507f96b5e"
+      "sha256": "eeb358ad0eae32f716b0addccba5db21ae03ba7a9306962cea15d72507f96b5e",
+      "volume": 2
+    },
+    {
+      "fichier": "emperor_contact.png",
+      "usage": "contact",
+      "dimensions": [
+        2272,
+        1024
+      ],
+      "sha256": "dd9d870769809eac8e765be54033d03f074a446222e82481582a5dd76bbe63d2",
+      "pivot": [
+        1136,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "emperor_ending.png",
+      "usage": "ending",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "b20d9b5a495ef03f93ea9126192b33a4dfa69ba58b4ea2e62d54c28673aef917",
+      "volume": 3
+    },
+    {
+      "fichier": "emperor_guard.png",
+      "usage": "guard",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "e7a177714b68851536df749966c02229fe16c2d76f600e03cfc6098c76351885",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "emperor_intro.png",
+      "usage": "intro",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "65c80f7d88f523f3f6a6acdece59f9fbc9bde399e70fc7ea88e3ac93c99a0e27",
+      "volume": 3
+    },
+    {
+      "fichier": "emperor_recoil.png",
+      "usage": "recoil",
+      "dimensions": [
+        1120,
+        1024
+      ],
+      "sha256": "07eb1e9bddebcdd1bc4a1bfa9471bd86b085fff5aaa435064cb87be0790d8b18",
+      "pivot": [
+        560,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "emperor_rival.png",
+      "usage": "rival",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "8d8c7e4df0d4a3997c3606dee32aa08c0b114a30e70eecbb27ebfca373a0f630",
+      "volume": 3
+    },
+    {
+      "fichier": "emperor_select.png",
+      "usage": "select",
+      "dimensions": [
+        832,
+        832
+      ],
+      "sha256": "20b7e2d00d5ea8c86c3483251361b2857dc9be0e735f2bb8684194193b859b81",
+      "volume": 3
+    },
+    {
+      "fichier": "emperor_windup.png",
+      "usage": "windup",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "8ab5fb18975e7815076adfd76499505a2bd354cb0a360639ffb200c496c41776",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
     },
     {
       "fichier": "ex_back.png",
@@ -53,7 +348,8 @@
         1600,
         900
       ],
-      "sha256": "e07d0744aa78914539e62d35574436e427de7194226c9156441588d4cc800fe6"
+      "sha256": "e07d0744aa78914539e62d35574436e427de7194226c9156441588d4cc800fe6",
+      "volume": 2
     },
     {
       "fichier": "ex_duo.png",
@@ -66,7 +362,8 @@
       "pivot": [
         512,
         960
-      ]
+      ],
+      "volume": 2
     },
     {
       "fichier": "ex_ending.png",
@@ -75,7 +372,8 @@
         1600,
         900
       ],
-      "sha256": "7937cbce5ebedb6f2ebbe850584c4d1625b8b0c67030ee9ef73ac0a0a2d1aa4a"
+      "sha256": "7937cbce5ebedb6f2ebbe850584c4d1625b8b0c67030ee9ef73ac0a0a2d1aa4a",
+      "volume": 2
     },
     {
       "fichier": "ex_intro.png",
@@ -84,7 +382,8 @@
         1600,
         900
       ],
-      "sha256": "27fd4ca65213bc415e86ea0d4bbba94895db8088bef81214f14018fff6bb4d9b"
+      "sha256": "27fd4ca65213bc415e86ea0d4bbba94895db8088bef81214f14018fff6bb4d9b",
+      "volume": 2
     },
     {
       "fichier": "ex_rival.png",
@@ -93,7 +392,148 @@
         1600,
         900
       ],
-      "sha256": "0174dd4183a380bab41a330738ffa014b7077e1417a2e40714fd6e4b88e23c5b"
+      "sha256": "0174dd4183a380bab41a330738ffa014b7077e1417a2e40714fd6e4b88e23c5b",
+      "volume": 2
+    },
+    {
+      "fichier": "gary_contact.png",
+      "usage": "contact",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "69e9ee98336c5c9fb01bfd65254a6f02ce83c0bdec2259442295ffdfd79d1045",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "gary_ending.png",
+      "usage": "ending",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "187ce80fcc5d68910527fc3c68f41c53c1d06d89d9a3e7d421fe8cc9a5b6219a",
+      "volume": 3
+    },
+    {
+      "fichier": "gary_guard.png",
+      "usage": "guard",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "a711392dcee59836a07fec7f342263a3752521c88a6df30b013b0d20b97e9afe",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "gary_intro.png",
+      "usage": "intro",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "12cc84188538db07349a2efc369e28de4b9c931a3fa8940d05c4b05725cb6b86",
+      "volume": 3
+    },
+    {
+      "fichier": "gary_melee.png",
+      "usage": "melee",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "c6fa10c27d293ef53ece06bd5b51286c9e45c924eda442ba1d5cca4fcbc9971c",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "gary_recoil.png",
+      "usage": "recoil",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "468d838d846945b653348d68a242fe96bb1b1bce65184ddf6a1cbbc13aeb3f46",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "gary_rival.png",
+      "usage": "rival",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "9033d56089b8847518b58d580f4d8184a8548c264560645f1007c4792ac7a21b",
+      "volume": 3
+    },
+    {
+      "fichier": "gary_select.png",
+      "usage": "select",
+      "dimensions": [
+        832,
+        832
+      ],
+      "sha256": "0ef3816f8882c7f43630c34c3ebdc085c3004b9cffe81d188df9bc173dfa64b9",
+      "volume": 3
+    },
+    {
+      "fichier": "gary_windup.png",
+      "usage": "windup",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "04f97e70e4abcc000597f37ff7c259863263db4712d23a54f598890108002a85",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "goldman_back.png",
+      "usage": "back",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "066b3cf793519ac62780084e483922f3c1f3cf9f697f6e143aa038b882338a5f",
+      "volume": 3
+    },
+    {
+      "fichier": "goldman_front.png",
+      "usage": "front",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "912163dc6aa5bc7d6a87e828d8564c1dc415a6c6e7929d01947a48d127b4978a",
+      "volume": 3
+    },
+    {
+      "fichier": "goldman_mid.png",
+      "usage": "mid",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "f3e4fca1919ff737c3b3f987adbc02ea650b2f25c05f749561474ba973cea8ed",
+      "volume": 3
     },
     {
       "fichier": "hierophant_contact.png",
@@ -106,7 +546,8 @@
       "pivot": [
         1352,
         960
-      ]
+      ],
+      "volume": 2
     },
     {
       "fichier": "hierophant_guard.png",
@@ -119,7 +560,46 @@
       "pivot": [
         592,
         960
-      ]
+      ],
+      "volume": 2
+    },
+    {
+      "fichier": "hierophant_recoil.png",
+      "usage": "recoil",
+      "dimensions": [
+        1568,
+        1024
+      ],
+      "sha256": "52bcf2b4640e55003a80cbf201d3c5a20be11b2b7e466df1c594c477305b376a",
+      "pivot": [
+        784,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "hierophant_select.png",
+      "usage": "select",
+      "dimensions": [
+        832,
+        832
+      ],
+      "sha256": "d4180a04c129b26dfd2cfe41a920d37a101d2996910ebdc3676131ce1468b710",
+      "volume": 3
+    },
+    {
+      "fichier": "hierophant_windup.png",
+      "usage": "windup",
+      "dimensions": [
+        2304,
+        1024
+      ],
+      "sha256": "c193bffb62edfa5d5109c3dd457ca8a09e7b263210e5d572bcc4187577897eff",
+      "pivot": [
+        1152,
+        960
+      ],
+      "volume": 3
     },
     {
       "fichier": "hotd2_ending.png",
@@ -128,7 +608,18 @@
         1600,
         900
       ],
-      "sha256": "b858f425c6f948c4625b67851a8690e730bc51089ffdc059d3cc54622f1c5638"
+      "sha256": "b858f425c6f948c4625b67851a8690e730bc51089ffdc059d3cc54622f1c5638",
+      "volume": 2
+    },
+    {
+      "fichier": "hotd2_final.png",
+      "usage": "final",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "64c531b83aefaf2cb4130fb9e22c61725b7d219f7257ae8f2daaf0e9741fb24f",
+      "volume": 3
     },
     {
       "fichier": "hotd2_intro.png",
@@ -137,7 +628,8 @@
         1600,
         900
       ],
-      "sha256": "411224b3eb97a733247d8840c3fcdd1dd9e16b88d15b08e3aa5f8616d81219c4"
+      "sha256": "411224b3eb97a733247d8840c3fcdd1dd9e16b88d15b08e3aa5f8616d81219c4",
+      "volume": 2
     },
     {
       "fichier": "hotd2_rival.png",
@@ -146,7 +638,8 @@
         1600,
         900
       ],
-      "sha256": "9fcec7f73b5c342e0fcf096bb8224ef24c1f8930eecff02b5a71fbcb331710be"
+      "sha256": "9fcec7f73b5c342e0fcf096bb8224ef24c1f8930eecff02b5a71fbcb331710be",
+      "volume": 2
     },
     {
       "fichier": "hotd3_ending.png",
@@ -155,7 +648,18 @@
         1600,
         900
       ],
-      "sha256": "563d58c90080fc65c693bc49e905e560e7a32342df56e99803bd9e22cbc8ca1d"
+      "sha256": "563d58c90080fc65c693bc49e905e560e7a32342df56e99803bd9e22cbc8ca1d",
+      "volume": 2
+    },
+    {
+      "fichier": "hotd3_final.png",
+      "usage": "final",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "480b919d3dc31a9b2be6edf109271b765dc7131e7364e6ba6b8462352fb0a0e7",
+      "volume": 3
     },
     {
       "fichier": "hotd3_intro.png",
@@ -164,7 +668,8 @@
         1600,
         900
       ],
-      "sha256": "e58d5cd50efaed012da9acedd5df37bc59796fcd162101fb79128ba1eb62ba4c"
+      "sha256": "e58d5cd50efaed012da9acedd5df37bc59796fcd162101fb79128ba1eb62ba4c",
+      "volume": 2
     },
     {
       "fichier": "hotd3_rival.png",
@@ -173,7 +678,8 @@
         1600,
         900
       ],
-      "sha256": "f8f89814ec85fc0087a48591e3435e0c16a94245d710f2d574f7fc0192c5113a"
+      "sha256": "f8f89814ec85fc0087a48591e3435e0c16a94245d710f2d574f7fc0192c5113a",
+      "volume": 2
     },
     {
       "fichier": "hotd4_ending.png",
@@ -182,7 +688,8 @@
         1600,
         900
       ],
-      "sha256": "182cfdef5e97500bff1c36bf36337e038d4292a6c848e621560d1db07332f8a7"
+      "sha256": "182cfdef5e97500bff1c36bf36337e038d4292a6c848e621560d1db07332f8a7",
+      "volume": 2
     },
     {
       "fichier": "hotd4_intro.png",
@@ -191,7 +698,8 @@
         1600,
         900
       ],
-      "sha256": "cff312996cbf117a3d7ac2e7c0a5264da22f1a0ce847089d195f196e9591de37"
+      "sha256": "cff312996cbf117a3d7ac2e7c0a5264da22f1a0ce847089d195f196e9591de37",
+      "volume": 2
     },
     {
       "fichier": "hotd4_rival.png",
@@ -200,7 +708,8 @@
         1600,
         900
       ],
-      "sha256": "10ce14a003035d7553f77d59f1dc78eafecf20bad8f8aca9894d962e87919eba"
+      "sha256": "10ce14a003035d7553f77d59f1dc78eafecf20bad8f8aca9894d962e87919eba",
+      "volume": 2
     },
     {
       "fichier": "isaac_contact.png",
@@ -213,7 +722,8 @@
       "pivot": [
         512,
         960
-      ]
+      ],
+      "volume": 2
     },
     {
       "fichier": "isaac_guard.png",
@@ -226,7 +736,46 @@
       "pivot": [
         512,
         960
-      ]
+      ],
+      "volume": 2
+    },
+    {
+      "fichier": "isaac_recoil.png",
+      "usage": "recoil",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "3f5340a57ca4b1a5c7f537c00d3ae45d83dc7955bb132da264571bb09d01b8f0",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "isaac_select.png",
+      "usage": "select",
+      "dimensions": [
+        832,
+        832
+      ],
+      "sha256": "3a330dda844e4ad96b7b833bc9b9592f64bdb29adb50c2fb31e4729a4fbc390d",
+      "volume": 3
+    },
+    {
+      "fichier": "isaac_windup.png",
+      "usage": "windup",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "8534e36f483cc4963541bf736a28148005d65bb9c22a4345c51e2fc1d770ad01",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
     },
     {
       "fichier": "james_contact.png",
@@ -239,7 +788,8 @@
       "pivot": [
         528,
         960
-      ]
+      ],
+      "volume": 2
     },
     {
       "fichier": "james_guard.png",
@@ -252,7 +802,46 @@
       "pivot": [
         512,
         960
-      ]
+      ],
+      "volume": 2
+    },
+    {
+      "fichier": "james_recoil.png",
+      "usage": "recoil",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "baf328a8afe7609ea7e569439c121d0bf7ccc033e7b94316caba49e6fd18982b",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "james_select.png",
+      "usage": "select",
+      "dimensions": [
+        832,
+        832
+      ],
+      "sha256": "915f0cdebbb7dcc52fa2da8c9e3c93281d583c07fbf57d71264a088df10f355d",
+      "volume": 3
+    },
+    {
+      "fichier": "james_windup.png",
+      "usage": "windup",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "99a687a4d5f6b88c087d658f7171a667427580696b4d7cea070a75dcb92ad448",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
     },
     {
       "fichier": "jasper_contact.png",
@@ -265,7 +854,8 @@
       "pivot": [
         744,
         960
-      ]
+      ],
+      "volume": 2
     },
     {
       "fichier": "jasper_guard.png",
@@ -278,7 +868,46 @@
       "pivot": [
         512,
         960
-      ]
+      ],
+      "volume": 2
+    },
+    {
+      "fichier": "jasper_recoil.png",
+      "usage": "recoil",
+      "dimensions": [
+        1120,
+        1024
+      ],
+      "sha256": "7163241aca1fb5236f7376b2b097f02f8e52e3aad39a85841b4ddf3b1df619d9",
+      "pivot": [
+        560,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "jasper_select.png",
+      "usage": "select",
+      "dimensions": [
+        832,
+        832
+      ],
+      "sha256": "d5a43b11ab19709f8e6e2bafc546c1dd0cd2b99254312123797d545af42e7421",
+      "volume": 3
+    },
+    {
+      "fichier": "jasper_windup.png",
+      "usage": "windup",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "27aa70643b7528e6c50c19a1032da608333924b513631f42118869f040955b89",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
     },
     {
       "fichier": "justice_contact.png",
@@ -291,7 +920,8 @@
       "pivot": [
         624,
         960
-      ]
+      ],
+      "volume": 2
     },
     {
       "fichier": "justice_guard.png",
@@ -304,7 +934,46 @@
       "pivot": [
         624,
         960
-      ]
+      ],
+      "volume": 2
+    },
+    {
+      "fichier": "justice_recoil.png",
+      "usage": "recoil",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "e29048a155c3964dd7d070bc5e061dc0850436a6fd1766d4111356e51a582dc6",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "justice_select.png",
+      "usage": "select",
+      "dimensions": [
+        832,
+        832
+      ],
+      "sha256": "aadcfdc4492c093da138e1785b4abd968ac7bc06d7fb6b64b7dc6dd2bc594d38",
+      "volume": 3
+    },
+    {
+      "fichier": "justice_windup.png",
+      "usage": "windup",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "9aebf08ab132404864c678de3c4ccb55937e926e8136bdd107a721976c235c12",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
     },
     {
       "fichier": "kate_contact.png",
@@ -317,7 +986,8 @@
       "pivot": [
         640,
         960
-      ]
+      ],
+      "volume": 2
     },
     {
       "fichier": "kate_guard.png",
@@ -330,7 +1000,46 @@
       "pivot": [
         512,
         960
-      ]
+      ],
+      "volume": 2
+    },
+    {
+      "fichier": "kate_recoil.png",
+      "usage": "recoil",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "64ef417aab091b441af75f80f2111b7e67d67171ef12d2f3c1017fbb0e49d9b3",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "kate_select.png",
+      "usage": "select",
+      "dimensions": [
+        832,
+        832
+      ],
+      "sha256": "b2052504c453fa952ced33c21d42d44e0d38567580a4face22deecf7e29eed1a",
+      "volume": 3
+    },
+    {
+      "fichier": "kate_windup.png",
+      "usage": "windup",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "91246bc097d839ee195f31bfeecd8a2da5838b362165d5f3d327b56c8763a0fb",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
     },
     {
       "fichier": "lisa_contact.png",
@@ -343,7 +1052,8 @@
       "pivot": [
         512,
         960
-      ]
+      ],
+      "volume": 2
     },
     {
       "fichier": "lisa_guard.png",
@@ -356,7 +1066,46 @@
       "pivot": [
         512,
         960
-      ]
+      ],
+      "volume": 2
+    },
+    {
+      "fichier": "lisa_recoil.png",
+      "usage": "recoil",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "e5692637d492354eb3377c235f0cf4f7f091c8d27f9079596fccc7f0015870d0",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "lisa_select.png",
+      "usage": "select",
+      "dimensions": [
+        832,
+        832
+      ],
+      "sha256": "4a7b97b1f77eb446942fca73c5386a0c1d5671ca8259b01b253b9c2b214971b6",
+      "volume": 3
+    },
+    {
+      "fichier": "lisa_windup.png",
+      "usage": "windup",
+      "dimensions": [
+        1152,
+        1024
+      ],
+      "sha256": "e1fb0e8b54a0e684ba3ca4ce1f97c4f5159e759f597e90a2d267ade9fb0bd835",
+      "pivot": [
+        576,
+        960
+      ],
+      "volume": 3
     },
     {
       "fichier": "overkill_ending.png",
@@ -365,7 +1114,8 @@
         1600,
         900
       ],
-      "sha256": "7d1efcdf01a36e0a9e9f76f163362ac67433b1aac74342b72ba591da9be91ab7"
+      "sha256": "7d1efcdf01a36e0a9e9f76f163362ac67433b1aac74342b72ba591da9be91ab7",
+      "volume": 2
     },
     {
       "fichier": "overkill_intro.png",
@@ -374,7 +1124,8 @@
         1600,
         900
       ],
-      "sha256": "edda351cf3fc0e67a0d48c68e2bc5a0ab323ad5fa23f2ab120652058f15a026e"
+      "sha256": "edda351cf3fc0e67a0d48c68e2bc5a0ab323ad5fa23f2ab120652058f15a026e",
+      "volume": 2
     },
     {
       "fichier": "overkill_rival.png",
@@ -383,7 +1134,38 @@
         1600,
         900
       ],
-      "sha256": "14d5d171dbe988a6a19ec803fc5bcd6df390c6509cc4c79b9b80a65c1fb2fda0"
+      "sha256": "14d5d171dbe988a6a19ec803fc5bcd6df390c6509cc4c79b9b80a65c1fb2fda0",
+      "volume": 2
+    },
+    {
+      "fichier": "reactor_back.png",
+      "usage": "back",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "0e73230e2e02ebcd1b324f1b6a4959caccc4a119cc5bd68d97456233492055c9",
+      "volume": 3
+    },
+    {
+      "fichier": "reactor_front.png",
+      "usage": "front",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "cb240ec708a6ee3d32203b6b117766ee24bc80ac9fd5e8697426652ce98b5401",
+      "volume": 3
+    },
+    {
+      "fichier": "reactor_mid.png",
+      "usage": "mid",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "a9895dbd745e675058befeed4c2daa6e23fe450fee4c98af843ce9e39a70f14d",
+      "volume": 3
     },
     {
       "fichier": "revenge_back.png",
@@ -392,7 +1174,8 @@
         1600,
         900
       ],
-      "sha256": "80b2479f7675becceb04023d2832470b06640ac8d466b0b5aa9f80b6a2c07a5c"
+      "sha256": "80b2479f7675becceb04023d2832470b06640ac8d466b0b5aa9f80b6a2c07a5c",
+      "volume": 2
     },
     {
       "fichier": "revenge_ending.png",
@@ -401,7 +1184,8 @@
         1600,
         900
       ],
-      "sha256": "bda5d95b8685d09e56cb367368ee004c262985ba1753fc04ab013a525904ee21"
+      "sha256": "bda5d95b8685d09e56cb367368ee004c262985ba1753fc04ab013a525904ee21",
+      "volume": 2
     },
     {
       "fichier": "revenge_intro.png",
@@ -410,7 +1194,8 @@
         1600,
         900
       ],
-      "sha256": "c90df06b66770977a2ed711fd2d561481010133a1970fd77de20586e3b3f3cf0"
+      "sha256": "c90df06b66770977a2ed711fd2d561481010133a1970fd77de20586e3b3f3cf0",
+      "volume": 2
     },
     {
       "fichier": "revenge_rival.png",
@@ -419,7 +1204,8 @@
         1600,
         900
       ],
-      "sha256": "6eb81acc0509e85f5e3a29684abf97da601218272378c5bf6c515f288a504390"
+      "sha256": "6eb81acc0509e85f5e3a29684abf97da601218272378c5bf6c515f288a504390",
+      "volume": 2
     },
     {
       "fichier": "rikiya_contact.png",
@@ -432,7 +1218,8 @@
       "pivot": [
         680,
         960
-      ]
+      ],
+      "volume": 2
     },
     {
       "fichier": "rikiya_guard.png",
@@ -445,7 +1232,46 @@
       "pivot": [
         512,
         960
-      ]
+      ],
+      "volume": 2
+    },
+    {
+      "fichier": "rikiya_recoil.png",
+      "usage": "recoil",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "e66dc4a9529c99fa744e14304323799334dc25eeeed683cbb330258469016f5d",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "rikiya_select.png",
+      "usage": "select",
+      "dimensions": [
+        832,
+        832
+      ],
+      "sha256": "820a2f07df84d65127c0e98caf1e5891bb0461c259707acc72890b0a9eeef32d",
+      "volume": 3
+    },
+    {
+      "fichier": "rikiya_windup.png",
+      "usage": "windup",
+      "dimensions": [
+        1104,
+        1024
+      ],
+      "sha256": "2566ad8571a18a930d44131802225fa71fe62c9f7b4e7e4394aeed5f3e8772b1",
+      "pivot": [
+        552,
+        960
+      ],
+      "volume": 3
     },
     {
       "fichier": "ryan_contact.png",
@@ -458,7 +1284,8 @@
       "pivot": [
         752,
         960
-      ]
+      ],
+      "volume": 2
     },
     {
       "fichier": "ryan_guard.png",
@@ -471,7 +1298,46 @@
       "pivot": [
         512,
         960
-      ]
+      ],
+      "volume": 2
+    },
+    {
+      "fichier": "ryan_recoil.png",
+      "usage": "recoil",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "7f33682df1589f52395aa11e265c0d3e2f42ab9d4ddb4a177498587e3b9eb762",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "ryan_select.png",
+      "usage": "select",
+      "dimensions": [
+        832,
+        832
+      ],
+      "sha256": "48edab81d7284c89f9e6bf6886d4e65432006b65f7254fd620d4343e060b9194",
+      "volume": 3
+    },
+    {
+      "fichier": "ryan_windup.png",
+      "usage": "windup",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "8323605f3cb97242895553004ca2151af481e48f168cabfe57166e88f2a06a00",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
     },
     {
       "fichier": "scarlet_back.png",
@@ -480,7 +1346,8 @@
         1600,
         900
       ],
-      "sha256": "f8958618c62001bbd4ec0c53ab12dd49779a981a157e113100a9571c9c107f8e"
+      "sha256": "f8958618c62001bbd4ec0c53ab12dd49779a981a157e113100a9571c9c107f8e",
+      "volume": 2
     },
     {
       "fichier": "scarlet_ending.png",
@@ -489,7 +1356,8 @@
         1600,
         900
       ],
-      "sha256": "1ad002b9ff459a54df3894aeb57b7d0af363ea618b113d252e2c84e196e1cbce"
+      "sha256": "1ad002b9ff459a54df3894aeb57b7d0af363ea618b113d252e2c84e196e1cbce",
+      "volume": 2
     },
     {
       "fichier": "scarlet_intro.png",
@@ -498,7 +1366,8 @@
         1600,
         900
       ],
-      "sha256": "9e71860e7487fd14382389e77080df0eb9d1273b0b497498decc50212bbf0427"
+      "sha256": "9e71860e7487fd14382389e77080df0eb9d1273b0b497498decc50212bbf0427",
+      "volume": 2
     },
     {
       "fichier": "scarlet_rival.png",
@@ -507,7 +1376,8 @@
         1600,
         900
       ],
-      "sha256": "ca06c273d0923aee57ca89b397a6d261666c0702e304fd342e3711af205023ab"
+      "sha256": "ca06c273d0923aee57ca89b397a6d261666c0702e304fd342e3711af205023ab",
+      "volume": 2
     },
     {
       "fichier": "special_back.png",
@@ -516,7 +1386,8 @@
         1600,
         900
       ],
-      "sha256": "b7d2629601a11e8681761dfec3a7f19aea95c89a16f0a400b4b5d81ae926facd"
+      "sha256": "b7d2629601a11e8681761dfec3a7f19aea95c89a16f0a400b4b5d81ae926facd",
+      "volume": 2
     },
     {
       "fichier": "special_ending.png",
@@ -525,7 +1396,8 @@
         1600,
         900
       ],
-      "sha256": "447534673bd2bbbec0f8f94961a8fa6e6561271164c45e1deb715e02ef9de369"
+      "sha256": "447534673bd2bbbec0f8f94961a8fa6e6561271164c45e1deb715e02ef9de369",
+      "volume": 2
     },
     {
       "fichier": "special_intro.png",
@@ -534,7 +1406,8 @@
         1600,
         900
       ],
-      "sha256": "60135f601476e01f3d0e9582dc9be87753bd6060ed59fae35c2a6d6159fe0779"
+      "sha256": "60135f601476e01f3d0e9582dc9be87753bd6060ed59fae35c2a6d6159fe0779",
+      "volume": 2
     },
     {
       "fichier": "special_rival.png",
@@ -543,7 +1416,8 @@
         1600,
         900
       ],
-      "sha256": "1b2c378c268d9b977b7e293597afb6a6d78044022003a0f5c0ff5ed193bb4b46"
+      "sha256": "1b2c378c268d9b977b7e293597afb6a6d78044022003a0f5c0ff5ed193bb4b46",
+      "volume": 2
     },
     {
       "fichier": "stick_contact.png",
@@ -556,7 +1430,8 @@
       "pivot": [
         512,
         960
-      ]
+      ],
+      "volume": 2
     },
     {
       "fichier": "stick_guard.png",
@@ -569,7 +1444,46 @@
       "pivot": [
         512,
         960
-      ]
+      ],
+      "volume": 2
+    },
+    {
+      "fichier": "stick_recoil.png",
+      "usage": "recoil",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "aae987666a41ec603a4529fae38ae53d5d538e0b9a03bb32bd289b9c6f11dee5",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "stick_select.png",
+      "usage": "select",
+      "dimensions": [
+        832,
+        832
+      ],
+      "sha256": "3464d030fecb700ea0d70f908ef5ec67cb34c5722c4901337a0b3bed85f0e041",
+      "volume": 3
+    },
+    {
+      "fichier": "stick_windup.png",
+      "usage": "windup",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "8088c8642b84332b410de5a8c1dce6020bba5aa581051486395bd84a1b740ede",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
     },
     {
       "fichier": "subway_back.png",
@@ -578,7 +1492,8 @@
         1600,
         900
       ],
-      "sha256": "f470ec3505b5fe7a19a7855f4585a493efb5a5f29ab9a403494e2c5cdfd28e6c"
+      "sha256": "f470ec3505b5fe7a19a7855f4585a493efb5a5f29ab9a403494e2c5cdfd28e6c",
+      "volume": 2
     },
     {
       "fichier": "venice_back.png",
@@ -587,7 +1502,104 @@
         1600,
         900
       ],
-      "sha256": "c71eb8e62992df02070b0bc1cb7d2486bd37e89cfefd44553ef84462e9df7e39"
+      "sha256": "c71eb8e62992df02070b0bc1cb7d2486bd37e89cfefd44553ef84462e9df7e39",
+      "volume": 2
+    },
+    {
+      "fichier": "wheel_contact.png",
+      "usage": "contact",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "a3513f7be48b8752e286e59ffcf5a80b9ad45e45d89ffb137a4b404f7f4d6b98",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "wheel_ending.png",
+      "usage": "ending",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "469898a232e843b90a7a3eacb13d1876c6f3e0cc6f5902b247801e5e74fc1421",
+      "volume": 3
+    },
+    {
+      "fichier": "wheel_guard.png",
+      "usage": "guard",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "5b58335351feb18a24f31652c6a9891d7f14bb55e970a4465a48a34e036e24ef",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "wheel_intro.png",
+      "usage": "intro",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "bad98c2e9587a30af3651dff7867d38fada42264733ee04189270c71957262f6",
+      "volume": 3
+    },
+    {
+      "fichier": "wheel_recoil.png",
+      "usage": "recoil",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "0ae448ffce3ba56f9d78d76ae8cf2b780a10ac9e4be555c3042af0a3d3115735",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "wheel_rival.png",
+      "usage": "rival",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "21c75ca86b3527e55db073f642e161d34fdeeda9fe46d3ab7ae23390322eaa2f",
+      "volume": 3
+    },
+    {
+      "fichier": "wheel_select.png",
+      "usage": "select",
+      "dimensions": [
+        832,
+        832
+      ],
+      "sha256": "3db46547869fcea4432d8dc6c91e9457def1821d4636d88c9f72aa3de8c6874f",
+      "volume": 3
+    },
+    {
+      "fichier": "wheel_windup.png",
+      "usage": "windup",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "55539c47052b17bc2562495cbed21f6505023d8eee86ac69b97bc51c94bc88a3",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
     },
     {
       "fichier": "zobiko_contact.png",
@@ -600,7 +1612,8 @@
       "pivot": [
         720,
         960
-      ]
+      ],
+      "volume": 2
     },
     {
       "fichier": "zobiko_guard.png",
@@ -613,7 +1626,46 @@
       "pivot": [
         512,
         960
-      ]
+      ],
+      "volume": 2
+    },
+    {
+      "fichier": "zobiko_recoil.png",
+      "usage": "recoil",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "c8c49c1b53e95377e5fcf75a6098febe6017834be53f74141794f6441fc9c956",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "zobiko_select.png",
+      "usage": "select",
+      "dimensions": [
+        832,
+        832
+      ],
+      "sha256": "b63863509dc97f33027ff344f3a084e0dbeb957b1f80d2ba5e6a6a8ee8663af9",
+      "volume": 3
+    },
+    {
+      "fichier": "zobiko_windup.png",
+      "usage": "windup",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "6b2d251fec7170c2200ed46abe98bcf6fd82de2b22902cc0d6daea34035bbd37",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
     },
     {
       "fichier": "zobio_contact.png",
@@ -626,7 +1678,8 @@
       "pivot": [
         600,
         960
-      ]
+      ],
+      "volume": 2
     },
     {
       "fichier": "zobio_guard.png",
@@ -639,7 +1692,46 @@
       "pivot": [
         512,
         960
-      ]
+      ],
+      "volume": 2
+    },
+    {
+      "fichier": "zobio_recoil.png",
+      "usage": "recoil",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "9c567b7ecd29eb17b27453e208cf0a32d8123daf2a94da6f5cdb3314df61dfc4",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "zobio_select.png",
+      "usage": "select",
+      "dimensions": [
+        832,
+        832
+      ],
+      "sha256": "13f20706248b6a2ae0ea046255711215b3b6751642fea3d05c9944845eaae577",
+      "volume": 3
+    },
+    {
+      "fichier": "zobio_windup.png",
+      "usage": "windup",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "0a6ef9e7189665dc9cffd5d521a516159113a501853396b839b4a4b4052f35b3",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
     }
   ]
 }

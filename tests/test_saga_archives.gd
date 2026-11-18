@@ -45,9 +45,12 @@ func _initialize() -> void:
 			"word","translation":
 				key_input(rules,board,id,KEY_TAB)
 				require(rules.terminal, id+" opens")
+				board.clock_ticks = 2620
 				for letter in rules.target_word(): key_input(rules,board,id,letter.unicode_at(0))
 				key_input(rules,board,id,KEY_ENTER)
 				require(not rules.terminal, id+" closes")
+				if id == "typing_budget": require(board.clock_ticks == 2680, "PC 2005 restores one second")
+				if id == "lariat_win": require(board.fighters[1].stun == 32, "Windows Lariat throw opening")
 			"flick":
 				key_input(rules,board,id,KEY_TAB)
 				for direction in [KEY_LEFT,KEY_UP,KEY_RIGHT]: key_input(rules,board,id,direction)

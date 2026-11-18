@@ -8,7 +8,9 @@ if not errorlevel 1 (
 )
 powershell.exe -NoProfile -Command ^
  "$dir=Join-Path (Get-Location) 'site';" ^
- "$server=New-Object System.Net.Sockets.TcpListener([Net.IPAddress]::Loopback,0); $server.Start(); $url='http://127.0.0.1:'+$server.LocalEndpoint.Port+'/';" ^
+ "$server=New-Object System.Net.Sockets.TcpListener([Net.IPAddress]::Loopback,28716);" ^
+ "try { $server.Start() } catch { if ($_.Exception.GetBaseException().SocketErrorCode -ne [Net.Sockets.SocketError]::AddressAlreadyInUse) { throw }; $server=New-Object System.Net.Sockets.TcpListener([Net.IPAddress]::Loopback,0); $server.Start(); Write-Host 'Port habituel occupe. Cette adresse aura ses propres records.' };" ^
+ "$url='http://127.0.0.1:'+$server.LocalEndpoint.Port+'/';" ^
  "Write-Host 'Dossier Curien'; Write-Host $url; Write-Host 'Gardez cette fenetre ouverte pour jouer. Ctrl+C pour fermer.'; Start-Process $url;" ^
  "$mime=@{'.html'='text/html; charset=utf-8';'.js'='application/javascript';'.wasm'='application/wasm';'.png'='image/png';'.pck'='application/octet-stream'};" ^
  "try { while($true){ $client=$server.AcceptTcpClient(); try { $client.ReceiveTimeout=4000; $stream=$client.GetStream(); $reader=New-Object IO.StreamReader($stream); $line=$reader.ReadLine();" ^
