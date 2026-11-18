@@ -4,7 +4,10 @@ signal exit_requested
 
 const Fighter := preload("res://src/dossier_curien/combatant.gd")
 const Painter := preload("res://src/dossier_curien/presentation.gd")
-const STAGES := ["Cour du manoir", "Antichambre", "Laboratoire de Curien"]
+const Saga := preload("res://src/dossier_curien/saga.gd")
+const Archives := preload("res://src/dossier_curien/saga_archives.gd")
+const STAGES := Saga.STAGES
+const PAGE_SIZE := 5
 const MODES := ["Histoire", "Duel contre IA", "Duel local", "Tournoi", "Entraînement"]
 const INTROS := [
 	"Une sonnerie couvre le moteur de la berline. Rogan arrête l’enregistrement sur le premier mot de Sophie. G ouvre le portail. « Garde la ligne ouverte. » La reconstitution AMS commence.",
@@ -25,6 +28,12 @@ const ENDINGS := [
 	"La silhouette de Rogan disparaît du plateau. L’étiquette FIN se reflète dans la vitre, mais trois sphères tournent encore sur le moniteur de contrôle. Un technicien débranche le lecteur. Le dernier cercle rouge s’efface lentement du verre."
 ]
 
+var case_id := ""
+var edition_id := ""
+var archives := Archives.new()
+var rule_awarded := [false, false]
+var story_opponents: Array = []
+var story_stages: Array = []
 var mode := 0
 var preview := 0
 var chosen := 0
@@ -41,6 +50,8 @@ var clock_ticks := 3600
 var elapsed := 0
 var finish_ticks := 0
 var flash := 0
+var impact_position := Vector2.ZERO
+var impact_guard := false
 var action_queue := ["", ""]
 var ai_key := ""
 var ai_dir := 0
@@ -53,6 +64,7 @@ var audio_library = preload("res://src/audio/audio_cue_library.gd").new()
 var audio_player := AudioStreamPlayer.new()
 var audio_available := false
 var resume_phase := ""
+var moves_return := Callable()
 var stick_up := [false, false]
 
 func _ready() -> void:
@@ -123,12 +135,17 @@ func button(label: String, call: Callable) -> Button:
 	return b
 
 func menu() -> void:
+	case_id = ""
+	edition_id = ""
+	stage = 0
 	phase = "menu"
 	fighters.clear()
-	sheet("DOSSIER CURIEN", "Simulation de combat AMS  /  Domaine Curien")
+	sheet("DOSSIER CURIEN", "Anthologie de combat  /  Archives de l’AMS")
 	for m in MODES.size():
 		button(MODES[m], pick_fighter.bind(m))
-	button("Commandes", controls)
+	button("Chroniques de la saga", case_menu)
+	button("Archives et variantes", edition_menu)
+	button("Commandes et liste des coups", controls)
 	button("Retour à l’arcade", func(): exit_requested.emit())
 
 func controls() -> void:
@@ -138,18 +155,117 @@ func controls() -> void:
 	paragraph("J2 · Q/D ou A/D, Z ou W pour sauter, S pour se baisser. F léger, G lourd, H spécial, T projection, E recharge, Y finition.")
 	paragraph("Manette · Croix ou stick pour se déplacer. A léger, X lourd, B spécial, Y projection, LB recharge, RB finition, Start pause. Une manette pilote J1, deux permettent le duel local.")
 	paragraph("Un léger confirmé s’enchaîne en lourd puis en spécial. La projection ouvre la garde. Un tir AMS passe au-dessus d’une cible accroupie.")
+	button("Liste des coups par combattant", move_select)
 	button("Retour", menu)
 
-func pick_fighter(m: int) -> void:
+func move_select(page := 0) -> void:
+	moves_return = controls
+	phase = "moves"
+	sheet("Liste des coups", "Données du simulateur à 60 images par seconde.")
+	for i in range(page*PAGE_SIZE, mini((page+1)*PAGE_SIZE, Fighter.PROFILES.size())):
+		button(Fighter.PROFILES[i].title, move_sheet.bind(i, move_select.bind(page)))
+	page_buttons(page, Fighter.PROFILES.size(), move_select)
+	button("Retour", controls)
+
+func move_sheet(id: int, back: Callable) -> void:
+	moves_return = back
+	phase = "moves"
+	var f := Fighter.new(id, 0, 1)
+	sheet(str(f.profile.title), Fighter.NOTES[id])
+	for item in [["light","J  ·  Léger"],["heavy","K  ·  Lourd"],["special","L  ·  " + str(f.profile.special)],["throw","U  ·  Projection"]]:
+		var data := f.move_data(item[0])
+		var damage := str(data.damage) if item[0] != "special" or f.shots_per_special == 1 else "%d × %d" % [int(data.damage), f.shots_per_special]
+		paragraph("%s    /    %s dégâts    ·    actif i%d    ·    portée %d" % [item[1], damage, data.start, data.reach])
+	if int(f.profile.ammo) > 0: paragraph("R  ·  Recharge en %d images. Capacité %d." % [f.profile.reload, f.profile.ammo])
+	paragraph("I  ·  Finition « %s » après le second K.-O.   /   Manette RB." % f.profile.finish)
+	button("Retour", back)
+
+func case_menu(page := 0) -> void:
+	phase = "cases"
+	sheet("Chroniques de la saga", "Choisissez le jeu et son terrain de combat.")
+	var keys := Saga.CASES.keys()
+	for index in range(page * PAGE_SIZE, mini((page + 1) * PAGE_SIZE, keys.size())):
+		var key: String = keys[index]
+		button(Saga.CASES[key].name, case_details.bind(key))
+	page_buttons(page, keys.size(), case_menu)
+	button("Retour", menu)
+
+func case_details(key: String) -> void:
+	case_id = key
+	edition_id = ""
+	mode = 0
+	stage = int(Saga.CASES[key].stage)
+	phase = "dossier"
+	var dossier: Dictionary = Saga.CASES[key]
+	sheet(dossier.name, dossier.place + "   /   " + dossier.rule)
+	for m in MODES.size():
+		button(MODES[m], pick_fighter.bind(m))
+	button("Autres dossiers", case_menu)
+	button("Menu principal", menu)
+
+func edition_menu(page := 0) -> void:
+	phase = "archives"
+	var entries: Array = archives.entries()
+	sheet("Archives et variantes", "Épreuves de combat inspirées des autres éditions et dérivés.")
+	for index in range(page * PAGE_SIZE, mini((page + 1) * PAGE_SIZE, entries.size())):
+		var entry: Dictionary = entries[index]
+		button(entry.title, edition_details.bind(entry, page))
+	page_buttons(page, entries.size(), edition_menu)
+	button("Retour", menu)
+
+func edition_details(entry: Dictionary, page: int) -> void:
+	case_id = entry.case_id
+	edition_id = entry.id
+	mode = 0
+	route = 0
+	stage = int(Saga.CASES[case_id].stage)
+	phase = "edition"
+	sheet(entry.title, entry.description)
+	paragraph("Dossier associé  /  " + str(Saga.CASES[case_id].name))
+	button("Lancer l’épreuve", start_exhibition)
+	button("Choisir une autre édition", edition_menu.bind(page))
+	button("Menu principal", menu)
+
+func start_exhibition() -> void:
+	mode = 1
+	var dossier: Dictionary = Saga.CASES[case_id]
+	chosen = dossier.lead
+	enemy = dossier.guests[1]
+	stage = dossier.stage
+	start_match()
+
+func page_buttons(page: int, count: int, target: Callable) -> void:
+	if page > 0: button("‹  Page précédente", target.bind(page - 1))
+	if (page + 1) * PAGE_SIZE < count: button("Page suivante  ›", target.bind(page + 1))
+
+func roster_order() -> Array:
+	var order := range(Fighter.PROFILES.size())
+	if case_id != "":
+		var first: int = Saga.CASES[case_id].lead
+		order.erase(first)
+		order.push_front(first)
+	return order
+
+func pick_fighter(m: int, page := 0) -> void:
 	mode = m
 	phase = "select"
 	fighters.clear()
-	sheet(MODES[mode], "Choisissez votre combattant.")
-	for i in Fighter.NAMES.size():
-		var b := button(Fighter.NAMES[i] + "   ·   " + Fighter.SPECIAL_NAMES[i], choose.bind(i))
+	var order := roster_order()
+	if mode == 0 and case_id != "":
+		if case_id == "curien": order = [0,1,2,3]
+		else:
+			order = [6,1] if case_id == "special" else [int(Saga.CASES[case_id].lead)]
+			for i in Fighter.PROFILES.size():
+				if Fighter.PROFILES[i].home == case_id and i not in order: order.append(i)
+	preview = order[page * PAGE_SIZE]
+	sheet(MODES[mode], "Choisissez votre combattant." if case_id == "" else str(Saga.CASES[case_id].name))
+	for index in range(page * PAGE_SIZE, mini((page + 1) * PAGE_SIZE, order.size())):
+		var i: int = order[index]
+		var b := button(Fighter.PROFILES[i].title + "   ·   " + Fighter.PROFILES[i].special, choose.bind(i))
 		b.focus_entered.connect(preview_fighter.bind(i))
 		b.mouse_entered.connect(preview_fighter.bind(i))
-	button("Retour", menu)
+	page_buttons(page, order.size(), func(p): pick_fighter(m, p))
+	button("Retour", menu if case_id == "" else case_details.bind(case_id))
 
 func preview_fighter(i: int) -> void:
 	preview = i
@@ -159,51 +275,80 @@ func choose(i: int) -> void:
 	chosen = i
 	route = 0
 	if mode == 0:
+		if case_id == "": case_id = Fighter.PROFILES[i].home
+		if case_id == "curien":
+			story_opponents = Fighter.STORY[chosen]
+			story_stages = Fighter.STORY_STAGES[chosen]
+		else:
+			story_opponents = Saga.opponents(case_id, chosen)
+			story_stages = [Saga.CASES[case_id].stage, Saga.CASES[case_id].stage, Saga.CASES[case_id].stage]
 		prepare_story()
 	elif mode == 3:
-		tournament.assign([0, 1, 2, 3])
+		tournament.assign(range(Fighter.PROFILES.size()))
 		tournament.erase(i)
 		tournament.shuffle()
+		tournament.resize(3)
 		enemy = tournament[0]
-		stage = 0
+		stage = 0 if case_id == "" else int(Saga.CASES[case_id].stage)
 		bracket()
 	else:
-		phase = "opponent"
-		sheet("Adversaire", "Choix du joueur 2" if mode == 2 else MODES[mode])
-		for other in Fighter.NAMES.size():
-			button(Fighter.NAMES[other], pick_stage.bind(other))
-		button("Retour", pick_fighter.bind(mode))
+		opponent_menu()
 
-func pick_stage(i: int) -> void:
+func opponent_menu(page := 0) -> void:
+	phase = "opponent"
+	var order := roster_order()
+	sheet("Adversaire", "Choix du joueur 2" if mode == 2 else MODES[mode])
+	for index in range(page * PAGE_SIZE, mini((page + 1) * PAGE_SIZE, order.size())):
+		var other: int = order[index]
+		button(Fighter.PROFILES[other].title, pick_stage.bind(other))
+	page_buttons(page, order.size(), opponent_menu)
+	button("Retour", pick_fighter.bind(mode))
+
+func pick_stage(i: int, page := 0) -> void:
 	enemy = i
 	phase = "stage"
 	sheet("Arène")
-	for s in STAGES.size():
+	var order := range(STAGES.size())
+	if case_id != "":
+		var first: int = Saga.CASES[case_id].stage
+		order.erase(first)
+		order.push_front(first)
+	for index in range(page * PAGE_SIZE, mini((page + 1) * PAGE_SIZE, order.size())):
+		var s: int = order[index]
 		button(STAGES[s], begin_at.bind(s))
-	button("Retour", choose.bind(chosen))
+	page_buttons(page, order.size(), func(p): pick_stage(i, p))
+	button("Retour", opponent_menu)
 
 func begin_at(s: int) -> void:
 	stage = s
 	start_match()
 
 func prepare_story() -> void:
-	enemy = Fighter.STORY[chosen][route]
-	stage = Fighter.STORY_STAGES[chosen][route]
+	enemy = story_opponents[route]
+	stage = story_stages[route]
 	phase = "brief"
 	var chapter: String = ["Introduction", "Rival", "Duel final"][route]
-	var body: String = [INTROS[chosen], RIVALS[chosen], "Dernier relevé du dossier. Le signal revient une fois, puis disparaît."][route]
-	sheet(chapter + "  /  " + Fighter.NAMES[chosen], body)
-	paragraph("%s  ·  Face à %s" % [STAGES[stage], Fighter.NAMES[enemy]])
+	var body: String
+	if case_id == "curien":
+		body = [INTROS[chosen], RIVALS[chosen], "Dernier relevé du dossier. Le signal revient une fois, puis disparaît."][route]
+	else:
+		var dossier: Dictionary = Saga.CASES[case_id]
+		body = str(dossier[["intro", "rival", "final"][route]])
+		if chosen != dossier.lead:
+			body = Saga.ALTERNATE_STORIES[chosen][route]
+	sheet(chapter + "  /  " + Fighter.PROFILES[chosen].title, body)
+	paragraph("%s  ·  Face à %s" % [STAGES[stage], Fighter.PROFILES[enemy].title])
+	if case_id != "curien" and route == 0: paragraph(Saga.CASES[case_id].rule)
 	button("Entrer dans l’arène", start_match)
 	button("Retour au dossier", menu)
 
 func bracket() -> void:
 	phase = "bracket"
 	sheet("Tournoi AMS", "Élimination directe  /  4 participants")
-	paragraph("Demi-finale A     %s   ×   %s" % [Fighter.NAMES[chosen], Fighter.NAMES[tournament[0]]])
-	paragraph("Demi-finale B     %s   ×   %s" % [Fighter.NAMES[tournament[1]], Fighter.NAMES[tournament[2]]])
+	paragraph("Demi-finale A     %s   ×   %s" % [Fighter.PROFILES[chosen].title, Fighter.PROFILES[tournament[0]].title])
+	paragraph("Demi-finale B     %s   ×   %s" % [Fighter.PROFILES[tournament[1]].title, Fighter.PROFILES[tournament[2]].title])
 	if route == 1:
-		paragraph("Finale     %s   ×   %s" % [Fighter.NAMES[chosen], Fighter.NAMES[tournament_finalist]])
+		paragraph("Finale     %s   ×   %s" % [Fighter.PROFILES[chosen].title, Fighter.PROFILES[tournament_finalist].title])
 	button("Disputer la finale" if route == 1 else "Disputer ma demi-finale", start_match)
 	button("Retour au dossier", menu)
 
@@ -221,7 +366,7 @@ func simulate_semifinal(a: int, b: int) -> int:
 				var distance := absf(me.x - foe.x)
 				var options := ["light","heavy","throw","special"]
 				var cmd: String = options.pick_random() if n % 18 == 0 else ""
-				if me.ammo == 0 and me.id < 2: cmd = "reload"
+				if int(me.profile.ammo) > 0 and me.ammo < me.shots_per_special: cmd = "reload"
 				var direction := int(signf(foe.x - me.x))
 				if distance < 120: direction = -direction if n % 55 < 12 else 0
 				feed.append([direction, cmd])
@@ -251,8 +396,10 @@ func start_round() -> void:
 	elapsed = 0
 	flash = 0
 	winner = -1
-	clock_ticks = 3600
+	clock_ticks = 2100 if case_id == "special" else 3600
+	rule_awarded = [false, false]
 	phase = "fight"
+	if edition_id != "": archives.start_round(self, edition_id)
 	queue_redraw()
 
 func pause_menu() -> void:
@@ -260,10 +407,15 @@ func pause_menu() -> void:
 	phase = "pause"
 	sheet("Pause", MODES[mode] + "  /  " + STAGES[stage])
 	button("Reprendre", resume)
+	button("Liste des coups  ·  J1", move_sheet.bind(chosen, return_to_pause))
 	if mode == 4:
 		button("Mannequin  ·  " + ("garde" if dummy_guard else "immobile"), toggle_dummy)
 		button("Réinitialiser", start_round)
 	button("Quitter le duel", menu)
+
+func return_to_pause() -> void:
+	phase = resume_phase
+	pause_menu()
 
 func toggle_dummy() -> void:
 	dummy_guard = not dummy_guard
@@ -276,6 +428,13 @@ func resume() -> void:
 	action_queue = ["",""]
 
 func _input(event: InputEvent) -> void:
+	if edition_id != "" and phase == "fight":
+		var primary_pad := Input.get_connected_joypads().find(event.device) == 0
+		var archive_event: bool = event is InputEventKey or (event is InputEventJoypadButton and primary_pad and event.button_index != JOY_BUTTON_START)
+		if archive_event and archives.handle_key(self, edition_id, event):
+			action_queue[0] = ""
+			get_viewport().set_input_as_handled()
+			return
 	var key := 0
 	var pad := -1
 	var side := 0
@@ -293,6 +452,7 @@ func _input(event: InputEvent) -> void:
 		if phase == "pause": resume()
 		elif phase in ["fight", "finish"]: pause_menu()
 		elif phase == "menu": exit_requested.emit()
+		elif phase == "moves" and moves_return.is_valid(): moves_return.call()
 		elif phase == "cinematic": return
 		else: menu()
 		get_viewport().set_input_as_handled()
@@ -361,18 +521,24 @@ func _physics_process(_delta: float) -> void:
 			axis = ai_dir
 			down = ai_crouch
 			command = ai_key
+		if side == 0 and edition_id != "" and archives.terminal:
+			axis = 0
+			down = false
+			command = ""
 		var old_x: float = me.x
 		me.step(axis, down, command, foe.x)
 		if mode == 4 and side == 1: me.x = old_x
 		if command == "reload" and me.action == "reload" and me.tick == 1: sound("reload")
 		if me.action == "special" and me.tick == int(me.move_data().start):
-			sound("shot" if me.id < 2 else "boss_projectile" if me.id == 3 else "boss_telegraph")
+			sound("shot" if int(me.profile.ammo) > 0 else "boss_projectile" if me.id == 3 else "boss_telegraph")
 	action_queue = ["",""]
 	resolve_strikes(fighters, true)
+	if case_id != "" and mode != 4: Saga.apply_rule(self, case_id)
+	if edition_id != "": archives.tick(self, edition_id)
 	clamp_positions(fighters)
 	if mode == 4:
 		if fighters[1].health == 0: fighters[1].health = 100
-	elif fighters[0].health == 0 or fighters[1].health == 0 or clock_ticks == 0:
+	elif fighters[0].health == 0 or fighters[1].health == 0 or clock_ticks <= 0:
 		round_over()
 	queue_redraw()
 
@@ -392,6 +558,9 @@ func resolve_strikes(pair: Array, live: bool) -> void:
 		var hit: bool = pair[side].hit(pair[1-side])
 		if live:
 			flash = 6
+			impact_guard = not hit
+			var target = pair[1-side]
+			impact_position = Vector2(target.x-18*pair[side].facing, target.altitude+float(target.profile.height)*0.54)
 			sound("hit" if hit else "ui_back")
 	for side in 2:
 		if strikes[side] and pair[1-side].stun > 0:
@@ -405,14 +574,14 @@ func cpu_input(me, foe) -> void:
 	var distance := absf(me.x - foe.x)
 	ai_dir = direction if distance > 118 else 0
 	ai_crouch = false
-	if me.id < 2 and me.ammo == 0 and distance > 190:
+	if int(me.profile.ammo) > 0 and me.ammo < me.shots_per_special and distance > 190:
 		ai_key = "reload"
 	elif foe.action != "" and randf() < 0.30:
 		ai_dir = -direction
 		ai_crouch = foe.action == "special"
 	elif distance < 150:
 		ai_key = ["heavy", "light", "light", "throw", "special"].pick_random()
-	elif distance < float(Fighter.SPECIALS[me.id].reach) and randf() < 0.36:
+	elif distance < float(me.profile.move.reach) and randf() < 0.36:
 		ai_key = "special"
 
 func round_over() -> void:
@@ -431,19 +600,22 @@ func round_over() -> void:
 		else: end_match()
 	else:
 		phase = "round"
-		sheet("Manche remportée", "%s   /   %d – %d" % [Fighter.NAMES[fighters[winner].id],wins[0],wins[1]])
+		sheet("Manche remportée", "%s   /   %d – %d" % [Fighter.PROFILES[fighters[winner].id].title,wins[0],wins[1]])
 		button("Manche suivante", start_round)
 
 func trigger_finisher() -> void:
 	phase = "cinematic"
 	finish_ticks = 72
-	sound("shot" if fighters[winner].id < 2 else "hit")
+	sound("shot" if int(fighters[winner].profile.ammo) > 0 else "hit")
 
 func end_match() -> void:
 	phase = "result"
-	var winner_name: String = Fighter.NAMES[fighters[winner].id]
+	var winner_name: String = Fighter.PROFILES[fighters[winner].id].title
 	if mode == 0 and winner == 0 and route == 2:
-		sheet("Épilogue  /  " + winner_name, ENDINGS[chosen])
+		var ending: String = ENDINGS[chosen] if case_id == "curien" else str(Saga.CASES[case_id].ending)
+		if case_id != "curien" and chosen != Saga.CASES[case_id].lead:
+			ending = Saga.ALTERNATE_STORIES[chosen][3]
+		sheet("Épilogue  /  " + winner_name, ending)
 	elif mode == 3 and winner == 0 and route == 1:
 		sheet("Champion du tournoi", winner_name + " remporte la finale.")
 	else:
@@ -464,7 +636,7 @@ func next_tournament() -> void:
 	tournament_finalist = simulate_semifinal(tournament[1], tournament[2])
 	enemy = tournament_finalist
 	route = 1
-	stage = 2
+	stage = 2 if case_id == "" else int(Saga.CASES[case_id].stage)
 	bracket()
 
 func _draw() -> void:

@@ -1,0 +1,32 @@
+{
+  "fichier": "HOTD_Anthologie.pck",
+  "octets": 14609332,
+  "sha256": "939fd72bd2bec1ac54ea4a4e0ef632fe5fe373544060b06a960dd2a4c664806a",
+  "fragments": [
+    {
+      "fichier": "Anthologie.part01",
+      "octets": 3600000,
+      "sha256": "1402eb85cd30b705b70d9ea51b94670a31799cb9bd9e3cd328edd1746188ae07"
+    },
+    {
+      "fichier": "Anthologie.part02",
+      "octets": 3600000,
+      "sha256": "283d90ba4da7605ca2cc9779a3e509888ef0066635decaa09f917d706340a69d"
+    },
+    {
+      "fichier": "Anthologie.part03",
+      "octets": 3600000,
+      "sha256": "ed90a6e5da68351c52ddbfe6077b804e5ecd60caa802dc902463bc7d2cf939e9"
+    },
+    {
+      "fichier": "Anthologie.part04",
+      "octets": 3600000,
+      "sha256": "d63ef9cb813b2ea9c73a5d6b9eb3a1908e42fb0345dcbdda64748bde064a0360"
+    },
+    {
+      "fichier": "Anthologie.part05",
+      "octets": 209332,
+      "sha256": "139c6b21dc79f44898e9c44e552eb203a0e9322da686c8d17f540e3923d21464"
+    }
+  ]
+}

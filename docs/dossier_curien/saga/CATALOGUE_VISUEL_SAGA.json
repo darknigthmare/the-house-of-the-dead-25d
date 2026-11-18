@@ -1,0 +1,645 @@
+{
+  "titre": "Dossier Curien — Anthologie de combat",
+  "nombre_de_png": 59,
+  "fichiers": [
+    {
+      "fichier": "carnival_back.png",
+      "usage": "back",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "7ee88eb625e02ef5333f2ce7d14aa1d4df73b1fa0780a59130a58a0f4d28bf97"
+    },
+    {
+      "fichier": "death_contact.png",
+      "usage": "contact",
+      "dimensions": [
+        1344,
+        1024
+      ],
+      "sha256": "b8204878bbd43538a6fb2444b4c5fd0d3f52b7b563ad6e79bde7dcfd6d32fe13",
+      "pivot": [
+        672,
+        960
+      ]
+    },
+    {
+      "fichier": "death_guard.png",
+      "usage": "guard",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "59a981db9464ef336215e9e37527bf4ecc7e9b7646e6f63aa9235e74bfbf811b",
+      "pivot": [
+        512,
+        960
+      ]
+    },
+    {
+      "fichier": "efi_back.png",
+      "usage": "back",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "eeb358ad0eae32f716b0addccba5db21ae03ba7a9306962cea15d72507f96b5e"
+    },
+    {
+      "fichier": "ex_back.png",
+      "usage": "back",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "e07d0744aa78914539e62d35574436e427de7194226c9156441588d4cc800fe6"
+    },
+    {
+      "fichier": "ex_duo.png",
+      "usage": "duo",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "3c395e175aa169ae61ee3b29be959d75f7d0b842402fc9cdd5b9eb52a5ef61f4",
+      "pivot": [
+        512,
+        960
+      ]
+    },
+    {
+      "fichier": "ex_ending.png",
+      "usage": "ending",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "7937cbce5ebedb6f2ebbe850584c4d1625b8b0c67030ee9ef73ac0a0a2d1aa4a"
+    },
+    {
+      "fichier": "ex_intro.png",
+      "usage": "intro",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "27fd4ca65213bc415e86ea0d4bbba94895db8088bef81214f14018fff6bb4d9b"
+    },
+    {
+      "fichier": "ex_rival.png",
+      "usage": "rival",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "0174dd4183a380bab41a330738ffa014b7077e1417a2e40714fd6e4b88e23c5b"
+    },
+    {
+      "fichier": "hierophant_contact.png",
+      "usage": "contact",
+      "dimensions": [
+        2704,
+        1024
+      ],
+      "sha256": "8b29ec6c46405f5482a09b72f9aa7f7f9f66e13673585b207972c78f66dc4802",
+      "pivot": [
+        1352,
+        960
+      ]
+    },
+    {
+      "fichier": "hierophant_guard.png",
+      "usage": "guard",
+      "dimensions": [
+        1184,
+        1024
+      ],
+      "sha256": "03b45f4bfb292b79fa5b3ee34d9148235ce13e7ce9abf3996dd9ededf46d5d5e",
+      "pivot": [
+        592,
+        960
+      ]
+    },
+    {
+      "fichier": "hotd2_ending.png",
+      "usage": "ending",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "b858f425c6f948c4625b67851a8690e730bc51089ffdc059d3cc54622f1c5638"
+    },
+    {
+      "fichier": "hotd2_intro.png",
+      "usage": "intro",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "411224b3eb97a733247d8840c3fcdd1dd9e16b88d15b08e3aa5f8616d81219c4"
+    },
+    {
+      "fichier": "hotd2_rival.png",
+      "usage": "rival",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "9fcec7f73b5c342e0fcf096bb8224ef24c1f8930eecff02b5a71fbcb331710be"
+    },
+    {
+      "fichier": "hotd3_ending.png",
+      "usage": "ending",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "563d58c90080fc65c693bc49e905e560e7a32342df56e99803bd9e22cbc8ca1d"
+    },
+    {
+      "fichier": "hotd3_intro.png",
+      "usage": "intro",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "e58d5cd50efaed012da9acedd5df37bc59796fcd162101fb79128ba1eb62ba4c"
+    },
+    {
+      "fichier": "hotd3_rival.png",
+      "usage": "rival",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "f8f89814ec85fc0087a48591e3435e0c16a94245d710f2d574f7fc0192c5113a"
+    },
+    {
+      "fichier": "hotd4_ending.png",
+      "usage": "ending",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "182cfdef5e97500bff1c36bf36337e038d4292a6c848e621560d1db07332f8a7"
+    },
+    {
+      "fichier": "hotd4_intro.png",
+      "usage": "intro",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "cff312996cbf117a3d7ac2e7c0a5264da22f1a0ce847089d195f196e9591de37"
+    },
+    {
+      "fichier": "hotd4_rival.png",
+      "usage": "rival",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "10ce14a003035d7553f77d59f1dc78eafecf20bad8f8aca9894d962e87919eba"
+    },
+    {
+      "fichier": "isaac_contact.png",
+      "usage": "contact",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "27df310f6ed0aea3b515361540c138422f358233863187749b6a3b8ec0b7a4e1",
+      "pivot": [
+        512,
+        960
+      ]
+    },
+    {
+      "fichier": "isaac_guard.png",
+      "usage": "guard",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+      "pivot": [
+        512,
+        960
+      ]
+    },
+    {
+      "fichier": "james_contact.png",
+      "usage": "contact",
+      "dimensions": [
+        1056,
+        1024
+      ],
+      "sha256": "dbbe1d72fe7f9d758790c899f7118fa1bec08d400549ad462b208f0a51e77eae",
+      "pivot": [
+        528,
+        960
+      ]
+    },
+    {
+      "fichier": "james_guard.png",
+      "usage": "guard",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "610078facb3648f328a5440a027ed7e01db9378551d519984872090dda7b19e3",
+      "pivot": [
+        512,
+        960
+      ]
+    },
+    {
+      "fichier": "jasper_contact.png",
+      "usage": "contact",
+      "dimensions": [
+        1488,
+        1024
+      ],
+      "sha256": "dc4180572a3e0c5704bb7afe8f6dfb317aa91f99b87251c13244df0a635c8c02",
+      "pivot": [
+        744,
+        960
+      ]
+    },
+    {
+      "fichier": "jasper_guard.png",
+      "usage": "guard",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "15e37fdf184afa9221aabcfbafa5910ca25caad4a95609b56cab00bbf059d92b",
+      "pivot": [
+        512,
+        960
+      ]
+    },
+    {
+      "fichier": "justice_contact.png",
+      "usage": "contact",
+      "dimensions": [
+        1248,
+        1024
+      ],
+      "sha256": "2ef32a45bb1a20ee19a95f47f1c045c7451e577afbf12d0bfb1f9b571d1ec1a4",
+      "pivot": [
+        624,
+        960
+      ]
+    },
+    {
+      "fichier": "justice_guard.png",
+      "usage": "guard",
+      "dimensions": [
+        1248,
+        1024
+      ],
+      "sha256": "70e5bfceb1e5510e0337976b2ee8f1c00b85a0e636d31d7e2bebef886dddd133",
+      "pivot": [
+        624,
+        960
+      ]
+    },
+    {
+      "fichier": "kate_contact.png",
+      "usage": "contact",
+      "dimensions": [
+        1280,
+        1024
+      ],
+      "sha256": "353971c04687ef29924d7ef910df3b9f7d85995cd609bb2af96c7aaf941377c9",
+      "pivot": [
+        640,
+        960
+      ]
+    },
+    {
+      "fichier": "kate_guard.png",
+      "usage": "guard",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "ae8fd1363a5f9956af74b01406932fa745dee0c51e907fec367010d6dd57650d",
+      "pivot": [
+        512,
+        960
+      ]
+    },
+    {
+      "fichier": "lisa_contact.png",
+      "usage": "contact",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "eb21c6a20e79917f9fdb016159ed3095f7bcefc0ff33272625f90bf6be48745a",
+      "pivot": [
+        512,
+        960
+      ]
+    },
+    {
+      "fichier": "lisa_guard.png",
+      "usage": "guard",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "9eae65e1f0b631527c575a522a78a890779ca4f5f1e587743075c9a329793ba2",
+      "pivot": [
+        512,
+        960
+      ]
+    },
+    {
+      "fichier": "overkill_ending.png",
+      "usage": "ending",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "7d1efcdf01a36e0a9e9f76f163362ac67433b1aac74342b72ba591da9be91ab7"
+    },
+    {
+      "fichier": "overkill_intro.png",
+      "usage": "intro",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "edda351cf3fc0e67a0d48c68e2bc5a0ab323ad5fa23f2ab120652058f15a026e"
+    },
+    {
+      "fichier": "overkill_rival.png",
+      "usage": "rival",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "14d5d171dbe988a6a19ec803fc5bcd6df390c6509cc4c79b9b80a65c1fb2fda0"
+    },
+    {
+      "fichier": "revenge_back.png",
+      "usage": "back",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "80b2479f7675becceb04023d2832470b06640ac8d466b0b5aa9f80b6a2c07a5c"
+    },
+    {
+      "fichier": "revenge_ending.png",
+      "usage": "ending",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "bda5d95b8685d09e56cb367368ee004c262985ba1753fc04ab013a525904ee21"
+    },
+    {
+      "fichier": "revenge_intro.png",
+      "usage": "intro",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "c90df06b66770977a2ed711fd2d561481010133a1970fd77de20586e3b3f3cf0"
+    },
+    {
+      "fichier": "revenge_rival.png",
+      "usage": "rival",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "6eb81acc0509e85f5e3a29684abf97da601218272378c5bf6c515f288a504390"
+    },
+    {
+      "fichier": "rikiya_contact.png",
+      "usage": "contact",
+      "dimensions": [
+        1360,
+        1024
+      ],
+      "sha256": "cbff1a29e08939ab1cd87fcc1d7ae43f32d9f07712b0451d39b284e151d1968f",
+      "pivot": [
+        680,
+        960
+      ]
+    },
+    {
+      "fichier": "rikiya_guard.png",
+      "usage": "guard",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "e2802cdbddd07a77ab78dd98fcf7d0409a4c5832b3598cdfea9b73e485d5d646",
+      "pivot": [
+        512,
+        960
+      ]
+    },
+    {
+      "fichier": "ryan_contact.png",
+      "usage": "contact",
+      "dimensions": [
+        1504,
+        1024
+      ],
+      "sha256": "7eb2e170e480e55efa18e6315b678001fecb34bda60848c8b47f55bed2e99b53",
+      "pivot": [
+        752,
+        960
+      ]
+    },
+    {
+      "fichier": "ryan_guard.png",
+      "usage": "guard",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "e588ef044202d59b6801df1b6345cac3675a890f4355c76bc31140d533ee4f37",
+      "pivot": [
+        512,
+        960
+      ]
+    },
+    {
+      "fichier": "scarlet_back.png",
+      "usage": "back",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "f8958618c62001bbd4ec0c53ab12dd49779a981a157e113100a9571c9c107f8e"
+    },
+    {
+      "fichier": "scarlet_ending.png",
+      "usage": "ending",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "1ad002b9ff459a54df3894aeb57b7d0af363ea618b113d252e2c84e196e1cbce"
+    },
+    {
+      "fichier": "scarlet_intro.png",
+      "usage": "intro",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "9e71860e7487fd14382389e77080df0eb9d1273b0b497498decc50212bbf0427"
+    },
+    {
+      "fichier": "scarlet_rival.png",
+      "usage": "rival",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "ca06c273d0923aee57ca89b397a6d261666c0702e304fd342e3711af205023ab"
+    },
+    {
+      "fichier": "special_back.png",
+      "usage": "back",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "b7d2629601a11e8681761dfec3a7f19aea95c89a16f0a400b4b5d81ae926facd"
+    },
+    {
+      "fichier": "special_ending.png",
+      "usage": "ending",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "447534673bd2bbbec0f8f94961a8fa6e6561271164c45e1deb715e02ef9de369"
+    },
+    {
+      "fichier": "special_intro.png",
+      "usage": "intro",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "60135f601476e01f3d0e9582dc9be87753bd6060ed59fae35c2a6d6159fe0779"
+    },
+    {
+      "fichier": "special_rival.png",
+      "usage": "rival",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "1b2c378c268d9b977b7e293597afb6a6d78044022003a0f5c0ff5ed193bb4b46"
+    },
+    {
+      "fichier": "stick_contact.png",
+      "usage": "contact",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "4cf415b21ebc6820c3ba1826933970e2e27a2782eba711482f9f09498b5f1a71",
+      "pivot": [
+        512,
+        960
+      ]
+    },
+    {
+      "fichier": "stick_guard.png",
+      "usage": "guard",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "f79b0348f5840e607fe3179018d7707c0e84a4a7f22a1ed111408ee9f95912e2",
+      "pivot": [
+        512,
+        960
+      ]
+    },
+    {
+      "fichier": "subway_back.png",
+      "usage": "back",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "f470ec3505b5fe7a19a7855f4585a493efb5a5f29ab9a403494e2c5cdfd28e6c"
+    },
+    {
+      "fichier": "venice_back.png",
+      "usage": "back",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "c71eb8e62992df02070b0bc1cb7d2486bd37e89cfefd44553ef84462e9df7e39"
+    },
+    {
+      "fichier": "zobiko_contact.png",
+      "usage": "contact",
+      "dimensions": [
+        1440,
+        1024
+      ],
+      "sha256": "ead8362101f456ef4c664a46ba9b04c4c19ade6947dd1e98c2c28ae5255ef24a",
+      "pivot": [
+        720,
+        960
+      ]
+    },
+    {
+      "fichier": "zobiko_guard.png",
+      "usage": "guard",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "a692a06bd4e7fb567067d1f255773571098ad6d49fac556298a302e45da3c083",
+      "pivot": [
+        512,
+        960
+      ]
+    },
+    {
+      "fichier": "zobio_contact.png",
+      "usage": "contact",
+      "dimensions": [
+        1200,
+        1024
+      ],
+      "sha256": "359adc7015e4f99a1d433b88056854108df80890358a4d3fb5b5801ac88781d1",
+      "pivot": [
+        600,
+        960
+      ]
+    },
+    {
+      "fichier": "zobio_guard.png",
+      "usage": "guard",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "b8e07ca1eb54f845169295e327ba62e5c21227e8ba421093b8b95bba075fe4e7",
+      "pivot": [
+        512,
+        960
+      ]
+    }
+  ]
+}
