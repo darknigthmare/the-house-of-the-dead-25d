@@ -30,6 +30,8 @@ const ENDINGS := [
 ]
 
 var rush := Rush.new()
+var costumes := preload("res://src/dossier_curien/saga_costumes.gd").new()
+var lab := preload("res://src/dossier_curien/saga_lab.gd").new()
 var case_id := ""
 var edition_id := ""
 var archives := Archives.new()
@@ -273,6 +275,7 @@ func pick_fighter(m: int, page := 0) -> void:
 		b.focus_entered.connect(preview_fighter.bind(i))
 		b.mouse_entered.connect(preview_fighter.bind(i))
 	page_buttons(page, order.size(), func(p): pick_fighter(m, p))
+	button("Tenues de Kate et Ryan",costumes.show.bind(self,pick_fighter.bind(m,page)))
 	button("Retour", rush.courses_menu.bind(self) if mode == Rush.MODE else (menu if case_id == "" else case_details.bind(case_id)))
 
 func preview_fighter(i: int) -> void:
@@ -352,12 +355,12 @@ func prepare_story() -> void:
 	if case_id != "curien" and route == 0: paragraph(Saga.CASES[case_id].rule)
 	button("Entrer dans l’arène", start_match)
 	if has_boss_scan():
-		paragraph("Analyse AMS · guettez le cercle ouvert sur le thorax. Confirmez un lourd ou un spécial pour interrompre le boss et infliger six dégâts supplémentaires.")
+		paragraph("Analyse AMS · guettez le cercle ouvert sur le point faible. Confirmez un lourd ou un spécial pour interrompre le boss et infliger six dégâts supplémentaires.")
 		scan_switch()
 	button("Retour au dossier", menu)
 
 func has_boss_scan() -> bool:
-	return mode == 0 and route == 2 and ((case_id == "hotd2" and enemy == 17) or (case_id == "hotd3" and enemy == 18))
+	return mode == 0 and route == 2 and enemy == {"hotd2":17, "hotd3":18, "hotd4":21, "scarlet":22}.get(case_id, -1)
 
 func scan_switch() -> void:
 	var toggle := CheckButton.new()
@@ -416,6 +419,7 @@ func simulate_semifinal(a: int, b: int) -> int:
 	return a if scores[0] == 2 else b
 
 func start_match() -> void:
+	if mode == 4: lab.reset_session()
 	wins = [0, 0]
 	start_round()
 
@@ -434,6 +438,7 @@ func start_round() -> void:
 	scan_last_window = -1
 	phase = "fight"
 	if mode == Rush.MODE: rush.on_round_start(self)
+	if mode == 4: lab.place(self)
 	if edition_id != "": archives.start_round(self, edition_id)
 	queue_redraw()
 
@@ -446,6 +451,7 @@ func pause_menu() -> void:
 	if has_boss_scan(): scan_switch()
 	if mode == 4:
 		button("Mannequin  ·  " + ("garde" if dummy_guard else "immobile"), toggle_dummy)
+		button("Atelier technique", lab.open.bind(self))
 		button("Réinitialiser", start_round)
 	button("Quitter le duel", menu)
 
@@ -485,12 +491,18 @@ func _input(event: InputEvent) -> void:
 		if side < 0 or side > 1 or (side == 1 and mode != 2): return
 	else: return
 	if key == KEY_ESCAPE or pad == JOY_BUTTON_START:
-		if phase == "pause": resume()
+		if phase == "costumes" and costumes.back.is_valid(): costumes.back.call()
+		elif phase == "lab": return_to_pause()
+		elif phase == "pause": resume()
 		elif phase in ["fight", "finish"]: pause_menu()
 		elif phase == "menu": exit_requested.emit()
 		elif phase == "moves" and moves_return.is_valid(): moves_return.call()
 		elif phase == "cinematic": return
 		else: menu()
+		get_viewport().set_input_as_handled()
+		return
+	if mode == 4 and phase == "fight" and lab.speed == 2 and (key in [KEY_PERIOD,KEY_N] or pad == JOY_BUTTON_RIGHT_STICK):
+		lab.pending_steps += 1
 		get_viewport().set_input_as_handled()
 		return
 	if not phase in ["fight", "finish"]: return
@@ -523,6 +535,7 @@ func _physics_process(_delta: float) -> void:
 		queue_redraw()
 		return
 	if phase != "fight": return
+	if mode == 4 and not lab.allow_tick(): return
 	elapsed += 1
 	flash = maxi(0, flash - 1)
 	if mode != 4: clock_ticks -= 1
@@ -562,7 +575,10 @@ func _physics_process(_delta: float) -> void:
 			down = false
 			command = ""
 		var old_x: float = me.x
+		var previous_action: String = me.action
+		var had_hit: bool = me.confirmed
 		me.step(axis, down, command, foe.x)
+		if mode == 4 and side == 0: lab.observe_action(me,previous_action,had_hit)
 		if mode == 4 and side == 1: me.x = old_x
 		if command == "reload" and me.action == "reload" and me.tick == 1: sound("reload")
 		if me.action == "special" and me.tick == int(me.move_data().start):
@@ -591,7 +607,11 @@ func resolve_strikes(pair: Array, live: bool) -> void:
 	var strikes := [pair[0].can_strike(pair[1]), pair[1].can_strike(pair[0])]
 	for side in 2:
 		if not strikes[side]: continue
+		var previous_health: int = pair[1-side].health
+		var was_guarding: bool = pair[1-side].guarding
 		var hit: bool = pair[side].hit(pair[1-side])
+		if live and mode == 4 and side == 0:
+			lab.impact(self,pair[side],hit,was_guarding,previous_health-pair[1-side].health)
 		if live:
 			flash = 6
 			impact_guard = not hit
@@ -623,6 +643,10 @@ func cpu_input(me, foe) -> void:
 		ai_key = ["heavy", "light", "light", "throw", "special"].pick_random()
 	elif distance < float(me.profile.move.reach) and randf() < 0.36:
 		ai_key = "special"
+
+	if ai_key == "special":
+		if me.profile.kind == "frost": ai_crouch = distance <= int(me.profile.alt_move.reach) and (foe.crouching or randf() < 0.45)
+		if me.profile.kind == "canopy": ai_crouch = distance >= 150 and distance <= int(me.profile.alt_move.reach) and (foe.altitude > 0 or randf() < 0.4)
 
 func round_over() -> void:
 	if mode == Rush.MODE:

@@ -70,12 +70,14 @@ func cases_and_routes() -> void:
 		arena.next_story()
 		verify(arena.box.get_child(1).text == Saga.ALTERNATE_STORIES[id][1], "Alternate rival for %d" % id)
 		if id >= 17:
-			for card in ["intro","rival","ending"]:
+			var personal_cards := ["intro","rival","ending"]
+			if id in [21,22]: personal_cards.append("final")
+			for card in personal_cards:
 				verify(arena.visuals.saga_texture(Fighter.PROFILES[id].id+"_"+card) is Texture2D, "Registered alternate story illustration %d/%s" % [id,card])
 			arena.start_match()
 			victory()
 			click("Ouvrir le relevé")
-			verify(arena.stage == (11 if home == "hotd2" else 12), "Original final arena for %d" % id)
+			verify(arena.stage == {"hotd2":11, "hotd3":12, "hotd4":15, "scarlet":16}[home], "Original final arena for %d" % id)
 			arena.start_match()
 			victory()
 			verify(arena.box.get_child(1).text == Saga.ALTERNATE_STORIES[id][3], "Personal epilogue for %d" % id)
@@ -107,7 +109,7 @@ func roster_and_stages() -> void:
 		if i >= 11:
 			for layer in ["_mid","_front"]:
 				verify(arena.visuals.saga_texture(Saga.ART[i]+layer) is Texture2D, "Registered plane "+Saga.ART[i]+layer)
-	for home in ["hotd2","hotd3"]:
+	for home in ["hotd2","hotd3","hotd4","scarlet"]:
 		verify(arena.visuals.saga_texture(home+"_final") is Texture2D, "Final portrait for "+home)
 	arena.menu()
 	click("Duel local")
@@ -219,14 +221,74 @@ func new_styles() -> void:
 		f.tick = f.move_data().start
 		verify(arena.visuals.pose_suffix(f) == "_contact", "Firearm contact for %d special" % i)
 
+func pandora_and_ark() -> void:
+	var world := Fighter.new(21,400,1)
+	var rival := Fighter.new(6,470,-1)
+	world.begin("special")
+	world.tick = world.move_data().start
+	rival.crouching = true
+	verify(not world.can_strike(rival), "Crouch beneath both high ice volleys")
+	rival.crouching = false
+	verify(world.can_strike(rival) and world.hit(rival) and rival.frost_ticks == 36, "A landed shard frosts the target")
+	rival.stun = 0
+	var before := rival.x
+	rival.step(-1,false,"",world.x)
+	verify(is_equal_approx(before-rival.x,rival.profile.speed*0.5), "Frost slows actual walk displacement")
+	for n in 35: rival.step(0,false,"",world.x)
+	verify(rival.frost_ticks==0,"Frost expires after 36 simulated ticks")
+	before = rival.x
+	rival.step(-1,false,"",world.x)
+	verify(is_equal_approx(before-rival.x,float(rival.profile.speed)), "Frost expiry restores full walk speed")
+	world.action = ""
+	world.begin("special",true)
+	world.tick = world.move_data().start
+	rival.crouching = true
+	verify(world.special_hits()==1 and world.can_strike(rival), "Grounded hatchet punishes crouch")
+	rival.guarding = true
+	verify(not world.hit(rival) and rival.frost_ticks==0, "Blocking hatchet keeps the defender unfrozen")
+	var moon := Fighter.new(22,400,1)
+	moon.begin("special")
+	moon.tick = moon.move_data().start
+	rival.x=750
+	verify(not moon.can_strike(rival), "The arm cannot hit ahead of the growing tip")
+	moon.tick+=10
+	rival.x=moon.x+moon.surge_radius()
+	verify(moon.can_strike(rival), "The advancing wooden tip lands at the rendered position")
+	rival.altitude=80
+	verify(not moon.can_strike(rival),"Jump over the tip of the arm")
+	moon.action=""
+	moon.begin("special",true)
+	moon.tick=moon.move_data().start
+	rival.x=moon.x+125
+	verify(not moon.can_strike(rival),"The eye of the cyclone leaves a close safe zone")
+	rival.x=moon.x+350
+	rival.guarding=false
+	before=rival.x
+	verify(moon.can_strike(rival) and moon.hit(rival) and rival.x==before-78, "Cyclone draws an unguarded opponent inwards")
+	for id in [19,20]:
+		var walker := Fighter.new(id,400,1)
+		for suffix in ["_walk1","_walk2"]:
+			verify(arena.visuals.saga_texture(walker.profile.id+suffix) is Texture2D, "Registered stride "+walker.profile.id+suffix)
+		var phases: Array[String] = []
+		for tick in 24:
+			walker.step(1,false,"",1000)
+			if tick % 6 == 0: phases.append(arena.visuals.pose_suffix(walker))
+		verify(phases==["_walk1","_guard","_walk2","_guard"], "Heel, passing, toe and passing in a complete stride")
+		walker.step(0,false,"",1000)
+		verify(walker.walk_ticks==0 and arena.visuals.pose_suffix(walker)=="", "Release direction returns to neutral")
+		walker.step(1,false,"jump",1000)
+		verify(walker.altitude>0 and arena.visuals.pose_suffix(walker)=="", "An airborne walker never uses grounded steps")
+	var course: Dictionary=arena.Rush.COURSES.back()
+	verify(course.id=="pandore_arche" and course.bouts==[[13,5],[21,15],[22,16]], "New course uses provenances of Justice, The World and Moon")
+
 func boss_scans() -> void:
-	for id in ["hotd2","hotd3"]:
+	for id in ["hotd2","hotd3","hotd4","scarlet"]:
 		var dossier: Dictionary = Saga.CASES[id]
 		arena.case_details(id)
 		arena.choose(dossier.lead)
 		arena.next_story()
 		arena.next_story()
-		verify(arena.has_boss_scan() and arena.enemy == (17 if id == "hotd2" else 18), "Canonical final opponent for "+id)
+		verify(arena.has_boss_scan() and arena.enemy == {"hotd2":17,"hotd3":18,"hotd4":21,"scarlet":22}[id], "Canonical final opponent for "+id)
 		var switches: Array = arena.box.find_children("*","CheckButton",false,false)
 		verify(switches.size() == 1, "Player can toggle the chest scan at the brief")
 		switches[0].button_pressed = false
@@ -289,6 +351,7 @@ func case_rules() -> void:
 
 func archives_and_keys() -> void:
 	var editions: Array = arena.archives.entries()
+	verify(editions.size() == 29, "29 playable archives")
 	var count := 0
 	for edition in editions:
 		arena.menu()
@@ -310,6 +373,55 @@ func archives_and_keys() -> void:
 			verify(arena.archives.score == 1 and arena.fighters[1].health < 100, "Typed command applied to the actual opponent")
 		count += 1
 
+func advance_signals(to_tick: int) -> void:
+	while arena.archives.age < to_tick:
+		arena.archives.tick(arena, "reawakened")
+
+func reawakened() -> void:
+	var board = arena.archives
+	arena.edition_details(board.entries().back(),5)
+	arena.start_exhibition()
+	verify(arena.edition_id == "reawakened" and board.active.rule == "openings", "Dedicated Reawakened circuit")
+	advance_signals(47)
+	key(KEY_TAB)
+	verify(board.progress == 0 and not board.opening_live(), "Closed shutters ignore early input")
+	advance_signals(48)
+	arena.pause_menu()
+	arena._physics_process(1/60.0)
+	verify(board.age == 48 and board.progress == 0, "Pause freezes the opening clock")
+	arena.resume()
+	key(KEY_TAB)
+	key(KEY_TAB)
+	verify(board.progress == 1 and board.score == 0, "Tab operates the left shutter once")
+	advance_signals(215)
+	var view := InputEventJoypadButton.new()
+	view.button_index = JOY_BUTTON_BACK
+	view.pressed = true
+	verify(board.handle_key(arena,"reawakened",view) and board.progress == 2, "View confirms the front door on its last open tick")
+	advance_signals(287)
+	var player = arena.fighters[0]
+	var foe = arena.fighters[1]
+	foe.x = player.x+80
+	foe.stun = 10
+	player.begin("light")
+	player.tick = player.move_data().start-1
+	arena._physics_process(1/60.0)
+	verify(board.score == 1 and board.progress == 3 and foe.health == 100-int(player.move_data().damage)-12 and foe.stun >= 14, "A confirmed hit on the right shutter completes the circuit")
+	key(KEY_TAB)
+	verify(board.score == 1 and board.hud_line(arena,"reawakened").contains("Séries 1"), "The HUD counts full circuits and repeats cannot pay twice")
+	advance_signals(360)
+	verify(board.progress == 0 and board.score == 1, "A fresh cycle keeps the round total")
+	advance_signals(455)
+	key(KEY_TAB)
+	advance_signals(576)
+	key(KEY_TAB)
+	verify(board.progress == 0 and board.score == 1, "Missing the front door resets the chain at the close edge")
+	advance_signals(648)
+	key(KEY_TAB)
+	verify(board.progress == 0, "The right shutter cannot restart a broken circuit")
+	arena.start_round()
+	verify(board.age == 0 and board.score == 0 and board.progress == 0, "A new round resets the Reawakened circuit")
+
 func key(code: int, unicode := 0) -> void:
 	var event := InputEventKey.new()
 	event.keycode = code
@@ -326,10 +438,14 @@ func run() -> void:
 	roster_and_stages()
 	styles()
 	new_styles()
+	pandora_and_ark()
 	boss_scans()
 	case_rules()
 	archives_and_keys()
+	reawakened()
+	arena.audio_player.stop()
 	arena.queue_free()
-	await process_frame
+	# Let the headless audio mixer retire the last WAV playback before shutdown.
+	await create_timer(0.1).timeout
 	print("DOSSIER SAGA: %d checks, %d failures" % [checks,failures])
 	quit(1 if failures else 0)

@@ -30,7 +30,12 @@ const CATALOG := [
 	{"id": "typing_us", "title": "The Typing of the Dead US Edition", "case_id": "hotd2", "rule": "word", "description": "Appels de secours en anglais. Transmettre le mot affiché au poste du quai pour interrompre le rival.", "words": ["BRIDGE", "DOCK", "FERRY", "RESCUE"]},
 	{"id": "typing_budget", "title": "The Typing of the Dead · réédition PC 2005", "case_id": "hotd2", "rule": "word", "description": "Réédition à prix révisé. Dans cet exercice AMS, une saisie courte rend une seconde, dans la limite du temps initial.", "words": ["BUS", "BAC", "CLE", "RUE"]},
 	{"id": "lariat_win", "title": "Zombie Da: Typing Lariat · Windows", "case_id": "hotd2", "rule": "word", "description": "Valider un ordre de lutte pour prolonger l’étourdissement du rival, puis s’approcher pour la projection.", "words": ["SAISIR", "PIVOTER", "CEINTURER", "PROJETER"]},
+	{"id": "reawakened", "title": "House of the Dead: Reawakened", "case_id": "curien", "rule": "openings", "description": "Les trois ouvertures. La borne VR propose trois missions en solo ou en coopération. Dans ce duel AMS, surveillez le volet gauche, la porte puis le volet droit. Appuyez sur Tab ou View, ou touchez le rival pendant chaque ouverture verte. Une série complète enlève 12 PV. Une ouverture manquée annule la série."},
 ]
+const OPENINGS := ["Volet gauche", "Porte de face", "Volet droit"]
+const SIGNAL_TICKS := 120
+const SIGNAL_START := 48
+const SIGNAL_END := 96
 const TRANSLATIONS := [["PORTE", "DOOR"], ["CLEF", "KEY"], ["EAU", "WATER"], ["PONT", "BRIDGE"]]
 const BUMPERS := [Vector2(31,23),Vector2(64,33),Vector2(97,19)]
 const ARROWS := ["←", "↑", "→", "↓"]
@@ -111,6 +116,11 @@ func tick(arena, _edition_id: String) -> void:
 	var foe = arena.fighters[1]
 	var landed: bool = int(foe.health) < last_hp and bool(f.confirmed)
 	match active.rule:
+		"openings":
+			if age % (SIGNAL_TICKS * OPENINGS.size()) == 0: progress = 0
+			if age % SIGNAL_TICKS == SIGNAL_END and progress == opening_index():
+				progress = 0
+			if landed: confirm_opening(arena)
 		"pinball":
 			ball += velocity
 			if ball.x <= 4 or ball.x >= 124:
@@ -177,6 +187,19 @@ func tick(arena, _edition_id: String) -> void:
 				reward(arena, "Relais confirmé", 4)
 	last_hp = int(foe.health)
 
+func opening_index() -> int:
+	return floori(age / float(SIGNAL_TICKS)) % OPENINGS.size()
+
+func opening_live() -> bool:
+	var clock := age % SIGNAL_TICKS
+	return clock >= SIGNAL_START and clock < SIGNAL_END
+
+func confirm_opening(arena) -> void:
+	if not opening_live() or progress != opening_index(): return
+	progress += 1
+	if progress == OPENINGS.size(): reward(arena, "Trois ouvertures sécurisées", 12)
+	else: arena.sound("ui_confirm")
+
 func flipper(arena) -> void:
 	if ball.y < 44 or velocity.y <= 0:
 		tell("Attendre la descente de la bille")
@@ -194,6 +217,7 @@ func meter() -> float:
 
 func action_button(arena) -> void:
 	match active.rule:
+		"openings": confirm_opening(arena)
 		"pinball": flipper(arena)
 		"darts","locks":
 			if age < next_award: return
@@ -224,7 +248,7 @@ func handle_key(arena, _edition_id: String, event: InputEvent) -> bool:
 		pad = event.button_index
 	else: return false
 	if key == KEY_TAB or pad == JOY_BUTTON_BACK:
-		if not active.rule in ["pinball","darts","locks","word","translation","flick"]: return false
+		if not active.rule in ["pinball","darts","locks","word","translation","flick","openings"]: return false
 		action_button(arena)
 		pad_input = pad >= 0
 		return true
@@ -276,6 +300,12 @@ func complete_word(arena) -> void:
 
 func hud_line(arena, _edition_id: String) -> String:
 	if active.is_empty(): return ""
+	if active.rule == "openings":
+		var slot := opening_index()
+		var state := "OUVERT" if opening_live() else "fermé"
+		if progress > slot: state = "validé"
+		elif progress < slot: state = "reprendre au volet gauche"
+		return "Les trois ouvertures  ·  %s  ·  %s  ·  %d/3  ·  Séries %d  ·  Tab / View ou touche confirmée" % [OPENINGS[slot],state,progress,score]
 	if feedback_until > age and not terminal: return feedback
 	var button := "Tab / View"
 	match active.rule:
@@ -301,7 +331,9 @@ func hud_line(arena, _edition_id: String) -> String:
 
 func paint(arena, ground: float = 601.0) -> void:
 	if active.is_empty(): return
-	if active.rule == "sector":
+	if active.rule == "openings":
+		paint_openings(arena)
+	elif active.rule == "sector":
 		var pos := Vector2(340 if progress % 2 == 0 else 930, ground-4)
 		arena.draw_rect(Rect2(pos-Vector2(52,2),Vector2(104,5)),Color("#f4d478"))
 		arena.draw_circle(pos-Vector2(0,14),6,Color("#ffde92"))
@@ -334,3 +366,34 @@ func paint(arena, ground: float = 601.0) -> void:
 					arena.draw_circle(o+Vector2(55+i*11,62),3,Color("#ffcc67") if i<progress else Color("#596469"))
 			var here := o+Vector2(12+meter()*1.08,16)
 			arena.draw_line(here,here+Vector2(0,40),Color("#ffd38d"),3)
+
+func paint_openings(arena) -> void:
+	var slot := opening_index()
+	var clock := age % SIGNAL_TICKS
+	arena.draw_rect(Rect2(510,146,260,84),Color("10191ff4"))
+	for i in OPENINGS.size():
+		var door := i == 1
+		var center := Vector2(560+i*80,187)
+		var size := Vector2(58,64) if door else Vector2(47,45)
+		var box := Rect2(center-size/2,size)
+		var recorded := i < progress
+		var live := i == slot and opening_live() and progress == i
+		var border := Color("f1cd80") if recorded else (Color("84ecbd") if live else Color("8a9899"))
+		var light := Color("9ce1bf") if live else Color("364852")
+		arena.draw_rect(box,light)
+		var fraction := 0.0
+		if i == slot:
+			fraction = clampf(minf((clock-SIGNAL_START+8)/8.0,(SIGNAL_END+8-clock)/8.0),0,1)
+		var panel_w := maxf(2,box.size.x*(1-fraction)/2)
+		for side in 2:
+			var x: float = box.position.x if side == 0 else box.end.x-panel_w
+			var leaf := Rect2(x,box.position.y,panel_w,box.size.y)
+			arena.draw_rect(leaf,Color("554d45"))
+			arena.draw_rect(leaf,Color("b5a389"),false,1)
+			for n in range(1,4):
+				var y: float = box.position.y+box.size.y*n/4
+				arena.draw_line(Vector2(x,y),Vector2(x+panel_w,y),Color("827665"),1)
+		arena.draw_rect(box,border,false,2.5)
+		if recorded:
+			var mark := center+Vector2(0,3)
+			arena.draw_polyline(PackedVector2Array([mark+Vector2(-8,0),mark+Vector2(-2,6),mark+Vector2(9,-7)]),border,3,true)

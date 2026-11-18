@@ -48,7 +48,13 @@ const PROFILES := [
 	 "special": "Tir de repli", "finish": "Dernière couverture", "kind": "retreat", "color": "e4c797", "move": {"start": 15, "end": 38, "reach": 610, "damage": 11, "stun": 12}},
 	{"id": "daniel", "title": "Daniel Curien", "home": "hotd3", "speed": 5.05, "height": 275, "ammo": 6, "reload": 20,
 	 "special": "Gerbe de rupture", "finish": "Fin de l’expérience", "kind": "choke", "color": "f1dcb1", "move": {"start": 12, "end": 39, "reach": 290, "damage": 18, "stun": 17},
-	 "alt_name": "Gerbe concentrée", "alt_move": {"start": 20, "end": 47, "reach": 470, "damage": 14, "stun": 14}}
+	 "alt_name": "Gerbe concentrée", "alt_move": {"start": 20, "end": 47, "reach": 470, "damage": 14, "stun": 14}},
+	{"id": "world", "title": "The World", "home": "hotd4", "speed": 4.5, "height": 332, "ammo": 0, "reload": 0,
+	 "special": "Éclats de banquise", "finish": "Dernier hiver", "kind": "frost", "color": "a6e5ff", "move": {"start": 18, "end": 58, "reach": 590, "damage": 7, "stun": 12},
+	 "alt_name": "Hache de givre", "alt_move": {"start": 14, "end": 42, "reach": 216, "damage": 18, "stun": 18}},
+	{"id": "moon", "title": "Moon", "home": "scarlet", "speed": 3.5, "height": 374, "ammo": 0, "reload": 0,
+	 "special": "Bras de l’Arche", "finish": "Éclipse de l’Arche", "kind": "canopy", "color": "c5cda0", "move": {"start": 22, "end": 62, "reach": 522, "damage": 19, "stun": 18},
+	 "alt_name": "Appel du cyclone", "alt_move": {"start": 25, "end": 55, "reach": 405, "damage": 11, "stun": 19}}
 ]
 # Distinct close-range timing and geometry for the crossover combatants.
 const QUICK_LIGHT := {"start": 4, "end": 15, "reach": 111, "damage": 6, "stun": 9}
@@ -75,7 +81,9 @@ const NOTES := [
 	"Deux sphères sortent à dix images d’intervalle. Maintenir bas au départ du spécial forme une lame courte qui atteint les cibles accroupies.",
 	"La roue parcourt 466 unités en 23 images et revient sur le même axe. Chaque trajet peut toucher une fois. Un saut haut évite son passage.",
 	"Gary recule pendant les dix premières images avant de tirer. Accroupissez-vous pour éviter le tir et surveillez la distance jusqu’au bord.",
-	"Le tir debout disperse les plombs et couvre les sauts bas. Bas + spécial resserre la gerbe pour gagner en portée. Chaque recharge insère une cartouche."
+	"Le tir debout disperse les plombs et couvre les sauts bas. Bas + spécial resserre la gerbe pour gagner en portée. Chaque recharge insère une cartouche.",
+	"Deux volées hautes à douze tics d’intervalle. Sur touche, le givre ralentit la marche pendant 36 tics. Bas + spécial frappe à la hache et atteint une cible accroupie.",
+	"Le bras court près du sol. Sautez au-dessus de son extrémité. Bas + spécial aspire les cibles entre 150 et 405 unités. Le corps à corps échappe au cyclone."
 ]
 const STORY := [[1, 2, 3], [0, 3, 2], [1, 0, 3], [2, 1, 0]]
 const STORY_STAGES := [[0, 1, 2], [0, 2, 1], [0, 1, 2], [1, 2, 0]]
@@ -98,6 +106,8 @@ var confirmed := false
 var guarding := false
 var crouching := false
 var moving := false
+var walk_ticks := 0
+var frost_ticks := 0
 var combo := 0
 var combo_window := 0
 var buffered := ""
@@ -107,7 +117,7 @@ func _init(identity: int, position_x: float, direction: int) -> void:
 	id = identity
 	profile = PROFILES[id]
 	ammo = profile.ammo
-	if profile.kind in ["double","satellite","rotor"]: shots_per_special = 2
+	if profile.kind in ["double","satellite","rotor","frost"]: shots_per_special = 2
 	elif profile.kind in ["burst", "advance"]: shots_per_special = 3
 	x = position_x
 	facing = direction
@@ -120,7 +130,7 @@ func move_data(command := "") -> Dictionary:
 			return LIGHT
 		"heavy":
 			if profile.kind in ["rise", "stagger", "palm"]: return BOXER_HEAVY
-			if profile.kind in ["crush", "clasp", "rotor"]: return GIANT_HEAVY
+			if profile.kind in ["crush", "clasp", "rotor", "canopy"]: return GIANT_HEAVY
 			return HEAVY
 		"throw":
 			return GRAPPLER_THROW if profile.kind in ["hug", "clasp"] else THROW
@@ -131,6 +141,7 @@ func special_hits() -> int:
 	return 1 if alternate_special else shots_per_special
 
 func pulse_gap() -> int:
+	if profile.kind == "frost": return 12
 	return 10 if profile.kind == "satellite" else 5
 
 func satellite_radius() -> float:
@@ -142,6 +153,13 @@ func wheel_radius() -> float:
 	var age := clampi(tick - int(profile.move.start), 0, 47)
 	var progress := age / 23.0 if age < 24 else (47-age) / 23.0
 	return float(profile.move.reach) * progress
+
+# The leading edge determines both the contact position and the rendered effect.
+func surge_radius() -> float:
+	var age := maxi(0, tick - int(profile.move.start))
+	if profile.kind == "frost":
+		return lerpf(70.0, float(profile.move.reach), float(age % pulse_gap()) / 11.0)
+	return lerpf(68.0, float(profile.move.reach), clampf(age / 17.0, 0.0, 1.0))
 
 func begin(command: String, low := false) -> bool:
 	if command == "" or stun > 0:
@@ -193,7 +211,12 @@ func step(axis: int, down: bool, command: String, other_x: float) -> void:
 	guarding = axis == -facing and altitude == 0.0 and action == "" and stun == 0
 	moving = axis != 0 and not crouching and action == "" and stun == 0
 	if moving:
-		x += axis * float(profile.speed) * (0.58 if guarding else 1.0)
+		x += axis * float(profile.speed) * (0.58 if guarding else 1.0) * (0.5 if frost_ticks > 0 else 1.0)
+	if moving and altitude == 0:
+		walk_ticks += 1
+	else:
+		walk_ticks = 0
+	frost_ticks = maxi(0, frost_ticks - 1)
 	if action == "": return
 	tick += 1
 	if action == "reload":
@@ -219,7 +242,9 @@ func can_strike(target) -> bool:
 	if active_tick < 0: return false
 	if action == "special" and profile.kind == "rotor":
 		if active_tick >= 48: return false
-	elif action == "special" and profile.kind == "satellite" and not alternate_special:
+	elif action == "special" and profile.kind == "canopy" and not alternate_special:
+		if active_tick >= 18: return false
+	elif action == "special" and profile.kind in ["satellite","frost"] and not alternate_special:
 		if active_tick >= special_hits() * pulse_gap(): return false
 	elif action == "special" and special_hits() > 1:
 		if active_tick >= special_hits() * pulse_gap() or active_tick % pulse_gap() > 2: return false
@@ -227,6 +252,12 @@ func can_strike(target) -> bool:
 	var separation: float = (target.x - x) * facing
 	if separation < -16 or separation > float(move.reach): return false
 	if action == "special":
+		if profile.kind == "frost":
+			if alternate_special: return absf(altitude - target.altitude) < 114
+			return not target.crouching and absf(separation-surge_radius()) <= 35 and absf(altitude-target.altitude) < 95
+		if profile.kind == "canopy":
+			if alternate_special: return separation >= 150 and absf(altitude-target.altitude) < 176
+			return absf(separation-surge_radius()) <= 46 and absf(altitude-target.altitude) < 72
 		if profile.kind == "rotor": return absf(separation - wheel_radius()) <= 44 and absf(altitude-target.altitude) < 96
 		if profile.kind == "satellite" and not alternate_special:
 			return not target.crouching and absf(separation - satellite_radius()) <= 40 and absf(altitude-target.altitude) < 89
@@ -252,7 +283,9 @@ func hit(target) -> bool:
 	target.stun = int(move.stun)
 	var push := 42 if grab else 17
 	if action == "special":
-		if special_hits() > 1: push = 4
+		if profile.kind == "frost" and not alternate_special: target.frost_ticks = 36
+		if profile.kind == "canopy" and alternate_special: push = -78
+		elif special_hits() > 1: push = 4
 		elif profile.kind in ["stagger", "crush", "palm"]: push = 65
 		elif profile.kind == "psychic": push = -64
 	target.x += facing * push

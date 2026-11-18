@@ -18,6 +18,12 @@ Le [registre des sources](SOURCES_SAGA.json) donne la référence de chaque œuv
 
 Les numéros des épisodes décrivent l’ordre éditorial. Le quatrième jeu se déroule en 2003, avant le futur de *III*. Une sélection qui présente les lieux dans l’ordre des jeux peut conserver cette lecture en indiquant l’époque sur la fiche de chaque dossier. [Présentation de *III*](https://blog.playstation.com/?p=69102) · [Présentation de *4*](https://blog.playstation.com/?p=71862)
 
+## L’attraction Reawakened
+
+Le 28 octobre 2026, SEGA Amusements a présenté *House of the Dead: Reawakened* et annoncé sa première mondiale pour le salon IAAPA d’Orlando, du 17 au 20 novembre. La fiche du fabricant décrit trois missions en solo ou en coopération, un casque VR et une façade de borne où deux fenêtres latérales et la porte de face s’ouvrent sur l’action. Ces éléments de la borne ont fourni le motif des trois signaux dans l’épreuve de duel. Les noms des missions et l’identité de leurs boss restent à documenter. [Fiche de l’attraction](https://segaarcade.com/games/house-of-the-dead-reawakened) · [Annonce de SEGA Amusements](https://segaarcade.com/news/dare-to-experience-house-of-the-dead-reawakened)
+
+Dans **Archives et variantes**, *Reawakened* donne accès à **Les trois ouvertures**, sur le terrain du manoir Curien. Le volet gauche, la porte puis le volet droit s’allument successivement pendant le combat. La règle de synchronisation et sa récompense sont une création du mode 2D. Le combattant et le décor du manoir permettent de l’essayer immédiatement.
+
 ## Les dérivés qui changent la manière de jouer
 
 | Jeu | Mécanique attestée | Emprunt possible pour un duel |

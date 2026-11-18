@@ -31,7 +31,21 @@ python3 Jouer.py
 
 Sous Windows, après `py -3 preparer_web.py`, double-cliquez sur `Jouer-Windows.cmd`. Le ZIP de jeu livré avec la bible est déjà préparé et contient directement ces lanceurs.
 
-## Un premier duel
+## De Pandore à l’Arche • Volume IV
+
+Dans **Chroniques de la saga → The House of the Dead 4 → Histoire**, choisissez **Kate Green** pour retrouver James et affronter The World au parvis de Goldman. Choisissez **The World** pour jouer les trois actes du côté de la créature. Dans **Scarlet Dawn**, Ryan rejoint Kate face à Moon, dans les ruines du domaine Scarecrow. Moon a également son propre parcours en trois combats, avec une introduction, un rival, un dernier duel et un épilogue illustrés.
+
+**The World** fait passer deux salves de glace à hauteur de buste avec L. La première touche ralentit la marche, le second passage oblige à tenir sa défense. Bas + L déclenche sa hache à courte portée. **Moon** propage sa frappe au ras du sol avec L. Sautez lorsque son bras redescend. Bas + L déclenche une attraction à moyenne distance, avec une zone libre près du corps. Dans les finales de Kate et Ryan, le scanner AMS suit le noyau de The World ou l’œil de Moon pendant leurs changements de pose. Après une victoire décisive par K.-O., appuyez sur I pour lancer leur finition si vous jouez le boss.
+
+**Boss Rush AMS → De Pandore à l’Arche** enchaîne Justice, The World et Moon. Une halte entre les adversaires permet de conserver son avantage au chronomètre, de se soigner ou de recharger.
+
+À la sélection du combattant, **Tenues de Kate et Ryan** permet d’essayer les vêtements portés au manoir de Scarlet Dawn. **Entraînement → Pause → Atelier technique** donne accès à trois exercices pour chacun des 23 combattants. Activez le journal des impacts pour lire le tic et les dégâts de chaque touche. En mode image par image, une pression sur N, la touche point ou le stick droit avance d’un tic. L’atelier mémorise les exercices réussis par combattant.
+
+![Kate contre The World, Ryan contre Moon, avec leurs points faibles](saga/Duels_World_Moon.jpg)
+
+[Voir les deux confrontations en mouvement](saga/Duels_World_Moon.mp4)
+
+## Un premier duel dans les épisodes II et III
 
 Ouvrez **Chroniques de la saga → The House of the Dead III → Histoire → Lisa Rogan**. Passez l’introduction pour entrer au poste de sécurité. Le deuxième duel oppose Lisa à Death. En finale, Daniel retrouve Lisa dans la chambre d’incubation face à Wheel of Fate. Dans le dossier de II, James retrouve Emperor sur le toit de Goldman. Le briefing du dernier acte et la pause proposent le scanner de point faible pour ces deux combats.
 
@@ -39,7 +53,11 @@ Les flèches déplacent J1. J donne un coup léger, K un lourd, L le spécial, U
 
 Pour essayer la frappe en pleine manche, ouvrez **Archives et variantes → The Typing of the Dead → Lancer l’épreuve**. Tab ouvre le terminal. Recopiez le mot et validez par Entrée. La touche View et la croix directionnelle en donnent une adaptation pour manette.
 
-Les 28 épreuves incluent désormais **The Typing of the Dead US Edition**, la réédition PC de 2005 et **Typing Lariat** sur Windows. US Edition demande des appels en anglais. La réédition de 2005 accorde une seconde par mot. Lariat prolonge l’ouverture pour tenter une projection.
+Parmi les 29 épreuves figurent **The Typing of the Dead US Edition**, la réédition PC de 2005 et **Typing Lariat** sur Windows. US Edition demande des appels en anglais. La réédition de 2005 accorde une seconde par mot. Lariat prolonge l’ouverture pour tenter une projection.
+
+**Archives et variantes → House of the Dead: Reawakened → Lancer l’épreuve** ouvre *Les trois ouvertures*. Le volet gauche, la porte de face puis le volet droit s’ouvrent à tour de rôle. Pendant que le signal est actif, appuyez sur Tab ou View, ou touchez votre adversaire. Réussir les trois dans l’ordre donne 12 PV de dégâts supplémentaires et interrompt l’adversaire. Une ouverture manquée oblige à recommencer la série.
+
+[Voir les trois ouvertures validées en jeu](saga/Reawakened_en_jeu.webp)
 
 ## Boss Rush AMS
 
@@ -53,7 +71,9 @@ Au menu principal, ouvrez **Boss Rush AMS → Les gardiens d’EFI**, puis chois
 
 ## Documents
 
-- [Bible intégrale, volumes I à III, 69 pages](saga/HOTD_Anthologie_Bible_integrale.pdf)
+- [Bible intégrale, volumes I à IV, 83 pages](saga/HOTD_Anthologie_Bible_integrale.pdf)
+- [Volume IV — De Pandore à l’Arche](saga/HOTD_Bible_IV_De_Pandore_a_l_Arche.pdf) et [texte de production](saga/VOLUME_IV.md)
+- [Boss et points faibles](saga/REFERENCES_COMBATTANTS_IV.md), [arènes et parallaxe](saga/SOURCES_ARENES_IV.md) et [tenues et cycles de marche](saga/TENUES_ET_MARCHE_IV.md)
 - [Volume III — Les gardiens](saga/HOTD_Bible_III_Les_gardiens.pdf) et [texte de production](saga/VOLUME_III.md)
 - [Volume II — Anthologie de combat](saga/HOTD_Anthologie_Bible_Saga.pdf)
 - [Volume I — Le dossier du manoir](HOTD_Dossier_Curien_Bible.pdf)

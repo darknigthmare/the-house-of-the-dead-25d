@@ -11,11 +11,17 @@ const PROPS := [["dead_tree","garden_lamp"], ["mansion_double_door","mansion_sco
 const CONTACT_PIVOTS := {
 	"double":Vector2(148,234), "spread":Vector2(127,205), "burst":Vector2(167,210),
 	"advance":Vector2(211,205), "stagger":Vector2(118,242), "rise":Vector2(90,258),
-	"choke":Vector2(242,204), "retreat":Vector2(126,232)
+	"choke":Vector2(242,204), "retreat":Vector2(126,232),
+	"frost":Vector2(195,28), "canopy":Vector2(193,41)
 }
+# Contact art is 1024 px high, with feet at y=960 and 905 px per standing body.
+const GALA_MUZZLES := {"kate_soiree":Vector2(320,734), "ryan_soiree":Vector2(392,738)}
+# Horizontal coordinates use a normalized 1024-unit texture width. Vertical coordinates follow the 1024-pixel source height.
 const CORE_PIXELS := {
 	17: {"_guard":Vector2(559,297), "_windup":Vector2(544,387), "_contact":Vector2(564,426), "_recoil":Vector2(339,300)},
-	18: {"_guard":Vector2(539,444), "_windup":Vector2(510,477), "_contact":Vector2(587,476), "_recoil":Vector2(457,429)}
+	18: {"_guard":Vector2(539,444), "_windup":Vector2(510,477), "_contact":Vector2(587,476), "_recoil":Vector2(457,429)},
+	21: {"_guard":Vector2(576,473), "_windup":Vector2(472,443), "_contact":Vector2(545,550), "_recoil":Vector2(657,408)},
+	22: {"_guard":Vector2(737,302), "_windup":Vector2(748,379), "_contact":Vector2(838,453), "_recoil":Vector2(481,215)}
 }
 const BONE := Color("f4ead4")
 const GOLD := Color("e2b36b")
@@ -142,7 +148,7 @@ func prop_at(c, id: String, x: float, bottom: float, h: float) -> void:
 func illustration(c) -> void:
 	var tex: Texture2D
 	if c.phase == "select":
-		var id: String = Fighter.PROFILES[c.preview].id
+		var id: String = c.costumes.art_id(c,c.preview)
 		tex = classic_art(id + "_select") if c.preview < 4 else saga_texture(id + "_select")
 		if tex == null: tex = guard_art(c.preview)
 	elif c.case_id != "" and c.case_id != "curien":
@@ -157,7 +163,7 @@ func illustration(c) -> void:
 		elif c.route == 1: tex = classic_art("rogan_rival")
 	if tex == null and c.case_id != "" and c.case_id != "curien" and c.phase != "select":
 		var subject: int = c.enemy if c.route >= 1 and c.phase != "result" else c.chosen
-		var silhouette: Texture2D = guard_art(subject)
+		var silhouette: Texture2D = saga_texture(c.costumes.art_id(c,subject)+"_guard") if subject >= 4 else guard_art(subject)
 		if silhouette:
 			var dims := silhouette.get_size()
 			dims *= minf(490.0/dims.x, 520.0/dims.y)
@@ -175,6 +181,10 @@ func illustration(c) -> void:
 
 func pose_suffix(f) -> String:
 	if f.stun > 0: return "_recoil"
+	if f.id in [19,20] and f.action == "" and f.moving and f.altitude == 0:
+		var stride := floori((f.walk_ticks-1) / 6.0) % 4
+		if f.guarding: stride = 3-stride
+		return ["_walk1","_guard","_walk2","_guard"][stride]
 	if f.action not in ["light","heavy","special","throw"]: return ""
 	var data: Dictionary = f.move_data()
 	var age: int = f.tick - int(data.start)
@@ -186,19 +196,22 @@ func pose_suffix(f) -> String:
 		return "_melee" if f.id == 19 and f.action == "light" and age >= 0 and age <= 2 else ""
 	if age < 0: return "_windup"
 	if f.action == "special":
+		if f.profile.kind in ["canopy","frost"] and not f.alternate_special:
+			return "_contact" if age < (18 if f.profile.kind == "canopy" else 24) else "_recovery"
 		if f.profile.kind == "rotor" and age < 48: return "_contact"
 		if age < f.special_hits()*f.pulse_gap() and age%f.pulse_gap() <= 2: return "_contact"
 	return "_contact" if age <= 2 or f.id == 0 else "_recovery"
 
 func draw_fighter(c, f, side: int) -> void:
-	var art: Texture2D = guard_art(f.id)
+	var sheet_id: String = c.costumes.art_id(c,f.id)
+	var art: Texture2D = saga_texture(sheet_id+"_guard") if f.id >= 4 else guard_art(f.id)
 	var displayed_pose := "_guard"
 	var idle: bool = f.action == "" and not f.moving and f.stun == 0 and f.altitude == 0
 	var unarmed_fallback: bool = f.profile.ammo > 0 and f.action in ["light","heavy","throw"] and f.stun == 0
 	if f.id in [0,2] or f.id >= 4:
 		var key := pose_suffix(f)
 		if key != "":
-			var pose := saga_texture(f.profile.id + key) if f.id >= 4 else classic_art(f.profile.id + key)
+			var pose := saga_texture(sheet_id + key) if f.id >= 4 else classic_art(f.profile.id + key)
 			if pose:
 				art = pose
 				idle = true
@@ -211,6 +224,7 @@ func draw_fighter(c, f, side: int) -> void:
 		collapse = 1.0 - float(c.finish_ticks) / 72
 		height *= 1.0 - collapse * 0.78
 	var tint := Color.WHITE
+	if f.frost_ticks > 0: tint = Color("abd9ee")
 	if f.stun > 0 and f.stun % 5 < 2: tint = Color(1.0,0.65,0.55)
 	if art and (idle or f.id >= 4 or unarmed_fallback):
 		var breathing := sin(float(c.elapsed + side * 24)*0.062)*1.5
@@ -265,8 +279,13 @@ func draw_fighter(c, f, side: int) -> void:
 		c.draw_texture_rect_region(tex,dst,Rect2(Vector2(frame,row)*cell,cell),tint)
 	if f.action == "special" and f.tick >= f.move_data().start:
 		var age: int = f.tick-int(f.move_data().start)
-		if age < (48 if f.profile.kind == "rotor" else maxi(5, f.special_hits()*f.pulse_gap())):
+		var visible_ticks := maxi(5, f.special_hits()*f.pulse_gap())
+		if f.profile.kind == "rotor": visible_ticks = 48
+		if f.profile.kind == "canopy" and not f.alternate_special: visible_ticks = 18
+		if age < visible_ticks:
 			var anchor: Vector2 = CONTACT_PIVOTS.get(f.profile.kind, Vector2(47,height*0.58))
+			if GALA_MUZZLES.has(sheet_id):
+				anchor = GALA_MUZZLES[sheet_id] * (height / 905.0)
 			draw_special(c, f, Vector2(f.x+f.facing*anchor.x,bottom-anchor.y), age)
 	elif f.id >= 4 and f.action in ["light","heavy","throw"]:
 		var age: int = f.tick - int(f.move_data().start)
@@ -322,6 +341,42 @@ func draw_special(c, f, origin: Vector2, age: int) -> void:
 			for n in 8:
 				var ray := Vector2.from_angle(age*0.21+n*TAU/8)
 				c.draw_line(spot+ray*29,spot+ray*42,accent,3,true)
+		"frost":
+			if f.alternate_special:
+				if age > 2: return
+				var tip := Vector2(f.x + f.facing * float(f.move_data().reach), origin.y-71)
+				c.draw_line(origin,tip,accent.darkened(0.2),5,true)
+				var axe := PackedVector2Array([tip+Vector2(-f.facing*25,-30),tip+Vector2(f.facing*7,-5),tip+Vector2(0,22),tip+Vector2(-f.facing*13,7)])
+				c.draw_colored_polygon(axe,accent)
+			else:
+				var front := Vector2(f.x+f.facing*f.surge_radius(),floor_y(c.stage)-f.altitude-190)
+				if age%f.pulse_gap() < 3:
+					var launch := Vector2(f.x+f.facing*70,front.y)
+					var arc := PackedVector2Array([origin,origin+Vector2(-f.facing*26,-50),launch])
+					c.draw_polyline(arc,Color(accent,0.62),3,true)
+				for n in range(-1,2):
+					var head := front+Vector2(-abs(n)*f.facing*10,n*11)
+					var shard := PackedVector2Array([head+Vector2(f.facing*11,0),head+Vector2(-f.facing*19,4),head+Vector2(-f.facing*29,-3)])
+					c.draw_colored_polygon(shard,accent)
+		"canopy":
+			if f.alternate_special:
+				if age > 2: return
+				var edge := Vector2(f.x+f.facing*float(f.move_data().reach),origin.y-46)
+				var inside := Vector2(f.x+f.facing*150,origin.y-46)
+				for n in 3:
+					var motes := PackedVector2Array()
+					for i in 16:
+						var t := i/15.0
+						var at := inside.lerp(edge,t)
+						at.y += sin(t*TAU+n*TAU/3+age*0.6)*36*t
+						motes.append(at)
+					c.draw_polyline(motes,accent,2,true)
+			else:
+				var tip := Vector2(f.x+f.facing*f.surge_radius(),floor_y(c.stage)-f.altitude-42)
+				var joint := origin.lerp(tip,0.58)+Vector2(0,18)
+				c.draw_polyline(PackedVector2Array([origin,joint,tip]),Color("665945"),13,true)
+				c.draw_polyline(PackedVector2Array([origin,joint,tip]),accent,3,true)
+				for n in [-1,0,1]: c.draw_line(tip,tip+Vector2(f.facing*15,-8+n*9),accent,3,true)
 		"orb":
 			var travel := age/5.0
 			c.draw_circle(origin.lerp(end, travel),17,accent)
@@ -361,7 +416,8 @@ func draw_scan(c) -> void:
 		var angle := quadrant*PI/2
 		c.draw_arc(point,radius,angle+0.08,angle+1.18,10,ink,3,true)
 	if exposed: c.draw_circle(point,3,BONE)
-	heading(c,Vector2(420,170),"NOYAU OUVERT  ·  LOURD / SPÉCIAL" if exposed else "ANALYSE AMS  ·  REPÉRAGE",18,ink,440,HORIZONTAL_ALIGNMENT_CENTER)
+	var label := "ŒIL EXPOSÉ" if c.enemy == 22 else ("CŒUR EXPOSÉ" if c.enemy == 21 else "NOYAU OUVERT")
+	heading(c,Vector2(420,170),label + "  ·  LOURD / SPÉCIAL" if exposed else "ANALYSE AMS  ·  REPÉRAGE",18,ink,440,HORIZONTAL_ALIGNMENT_CENTER)
 
 func hud(c) -> void:
 	c.draw_rect(Rect2(0,0,1280,111),Color("0e141cdd"))
@@ -390,6 +446,7 @@ func hud(c) -> void:
 		var names := {"light":"Léger","heavy":"Lourd","special":str(f.profile.special),"throw":"Projection","reload":"Recharge"}
 		var label: String = "Neutre" if f.action == "" else "%s   ·   image %d" % [names[f.action], f.tick]
 		heading(c, Vector2(48,147), "ENTRAÎNEMENT     " + label,19,BONE)
+		c.lab.paint(c,self)
 	elif c.edition_id != "" or c.case_id != "":
 		var info: String = c.archives.hud_line(c, c.edition_id) if c.edition_id != "" else str(Saga.HUD_RULES.get(c.case_id, Saga.CASES[c.case_id].place))
 		if c.edition_id == "" and c.case_id != "curien":
@@ -512,4 +569,18 @@ func cinematic(c) -> void:
 				c.draw_line(edge-Vector2(0,64),edge+Vector2(0,64),color,5,true)
 			if beat < 2:
 				for n in [-1,0,1]: c.draw_line(origin,center+Vector2(0,n*reach*0.45),color,2,true)
+		21: # Facets close, hold and burst outwards.
+			for i in 9:
+				var axis := Vector2.from_angle(i*TAU/9)
+				var dist := 98*(1-progress*1.25) if beat < 2 else 12+(progress-0.66)*330
+				var gem := center+axis*dist
+				c.draw_colored_polygon(PackedVector2Array([gem-axis*20,gem+axis.orthogonal()*7,gem+axis*18,gem-axis.orthogonal()*7]),color)
+		22: # Branches close around the storm eye; one bolt splits its halo.
+			for i in 6:
+				var root := center+Vector2((i-2.5)*36,85)
+				var bud := center+Vector2.from_angle(i*TAU/6+progress)*reach*0.36
+				var fork := root.lerp(bud,0.52)+Vector2((-1 if i%2 else 1)*18,0)
+				c.draw_polyline(PackedVector2Array([root,fork,bud]),color,5,true)
+			if beat == 2:
+				c.draw_polyline(PackedVector2Array([center+Vector2(32,-175),center+Vector2(-9,-60),center+Vector2(11,-65),center]),BONE,5,true)
 	banner(c,str(f.profile.finish).to_upper(),str(f.profile.title))

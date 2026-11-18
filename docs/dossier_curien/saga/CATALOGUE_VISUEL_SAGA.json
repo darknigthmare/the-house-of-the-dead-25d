@@ -1,6 +1,6 @@
 {
   "titre": "Dossier Curien — Anthologie de combat",
-  "nombre_de_png": 145,
+  "nombre_de_png": 185,
   "nouveaux_png_volume_iii": 86,
   "fichiers": [
     {
@@ -154,6 +154,34 @@
       ],
       "sha256": "e7f6a53935d8f4d51df09fa4afd3fe96d0289acbf372183bc142039ff7d944f5",
       "volume": 3
+    },
+    {
+      "fichier": "daniel_walk1.png",
+      "usage": "walk1",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "f3b13692f670456cd112b25402fa75eb74f75063c5a3d9a0c3707ed446a70dfb",
+      "volume": 4,
+      "pivot": [
+        512,
+        960
+      ]
+    },
+    {
+      "fichier": "daniel_walk2.png",
+      "usage": "walk2",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "2212bfce392e8bd97b84d767cdbf3d146d6ba1fd25998e26d007b32990a7796b",
+      "volume": 4,
+      "pivot": [
+        512,
+        960
+      ]
     },
     {
       "fichier": "daniel_windup.png",
@@ -492,6 +520,34 @@
       "volume": 3
     },
     {
+      "fichier": "gary_walk1.png",
+      "usage": "walk1",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "f9929b2a7a2ca5df4ef861772ca7e3bfb1b9ddb896793d1845af4a1023f47576",
+      "volume": 4,
+      "pivot": [
+        512,
+        960
+      ]
+    },
+    {
+      "fichier": "gary_walk2.png",
+      "usage": "walk2",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "b4ed8969429f20bf29aa9c10f77732c608e92870c3da9eace15c7bd7cc4905cd",
+      "volume": 4,
+      "pivot": [
+        512,
+        960
+      ]
+    },
+    {
       "fichier": "gary_windup.png",
       "usage": "windup",
       "dimensions": [
@@ -690,6 +746,16 @@
       ],
       "sha256": "182cfdef5e97500bff1c36bf36337e038d4292a6c848e621560d1db07332f8a7",
       "volume": 2
+    },
+    {
+      "fichier": "hotd4_final.png",
+      "usage": "final",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "3b16e76a06f790b95c7810cc744d423af781d28713b7a641242dc37326973f9a",
+      "volume": 4
     },
     {
       "fichier": "hotd4_intro.png",
@@ -1028,6 +1094,72 @@
       "volume": 3
     },
     {
+      "fichier": "kate_soiree_contact.png",
+      "usage": "contact",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "a1ed59c8d37f4afae1fc9a97825fe3adb18ac3fa2e6172064a839e431c4ffa16",
+      "volume": 4,
+      "pivot": [
+        512,
+        960
+      ]
+    },
+    {
+      "fichier": "kate_soiree_guard.png",
+      "usage": "guard",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "179f6d14ce38296e6efe04150d33d5d1d9ffa2eddb6c6d7a6fe31a4d5df01b03",
+      "volume": 4,
+      "pivot": [
+        512,
+        960
+      ]
+    },
+    {
+      "fichier": "kate_soiree_recoil.png",
+      "usage": "recoil",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "72a5e2b8cc27ee5419293b66c326a7ce36eb5a2c241817f814167be9440a985f",
+      "volume": 4,
+      "pivot": [
+        512,
+        960
+      ]
+    },
+    {
+      "fichier": "kate_soiree_select.png",
+      "usage": "select",
+      "dimensions": [
+        832,
+        832
+      ],
+      "sha256": "1007e46b09e1f33a08180468d8a8bbf6be3f3201a7debe954061e1aa3710c3e1",
+      "volume": 4
+    },
+    {
+      "fichier": "kate_soiree_windup.png",
+      "usage": "windup",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "4f6e19b559150ce3d73f2f069146e9f2c6748edd869323e2936ff42aeb28a961",
+      "volume": 4,
+      "pivot": [
+        512,
+        960
+      ]
+    },
+    {
       "fichier": "kate_windup.png",
       "usage": "windup",
       "dimensions": [
@@ -1106,6 +1238,142 @@
         960
       ],
       "volume": 3
+    },
+    {
+      "fichier": "moon_contact.png",
+      "usage": "contact",
+      "dimensions": [
+        1456,
+        1024
+      ],
+      "sha256": "bf39fd86d4d4b32a0c6f7821abe0d2ec3679aec675a382bb55ef3db40fd872f5",
+      "volume": 4,
+      "pivot": [
+        728,
+        960
+      ]
+    },
+    {
+      "fichier": "moon_ending.png",
+      "usage": "ending",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "689f2a59f7cf3c4df186d778069aef5eadde5d8e4644c574d88562a7c656de43",
+      "volume": 4
+    },
+    {
+      "fichier": "moon_final.png",
+      "usage": "final",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "43a4db7c9d79debab875f2b5dc28ddafc1f2d0b526ceb26ed774669436d653f3",
+      "volume": 4
+    },
+    {
+      "fichier": "moon_guard.png",
+      "usage": "guard",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "37216e8e9c3537d61d12ac498d7217c57b159ba2edead6721b868221b36378ed",
+      "volume": 4,
+      "pivot": [
+        512,
+        960
+      ]
+    },
+    {
+      "fichier": "moon_intro.png",
+      "usage": "intro",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "5bfb83978aee04b66d8e8ebf62cb9f2b87a47ebb906fb0f25b30ee6b536fa54c",
+      "volume": 4
+    },
+    {
+      "fichier": "moon_recoil.png",
+      "usage": "recoil",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "d73a07065cbda62819eac702fadf88c636a84723ece9903dc3b210a9d9c58a24",
+      "volume": 4,
+      "pivot": [
+        512,
+        960
+      ]
+    },
+    {
+      "fichier": "moon_rival.png",
+      "usage": "rival",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "2e2474868f94ebc48a7bbd1a6cd540cb758ce68fe58a12813dfcc1464e83970f",
+      "volume": 4
+    },
+    {
+      "fichier": "moon_select.png",
+      "usage": "select",
+      "dimensions": [
+        832,
+        832
+      ],
+      "sha256": "9f999ed90a10dde9d9bdabc2ccc5a41ee2c59cbf48e0152a0185dedd8f2ba56f",
+      "volume": 4
+    },
+    {
+      "fichier": "moon_windup.png",
+      "usage": "windup",
+      "dimensions": [
+        1248,
+        1024
+      ],
+      "sha256": "ff21d6a7a716a2482d493377e479e52b2d0ca89bed38b1e134f36624da4f9d73",
+      "volume": 4,
+      "pivot": [
+        624,
+        960
+      ]
+    },
+    {
+      "fichier": "moonstage_back.png",
+      "usage": "back",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "6d2d63d62f2efe78172642f2b60910daaf138b17ec15fa94aefb46eba7ed7a3c",
+      "volume": 4
+    },
+    {
+      "fichier": "moonstage_front.png",
+      "usage": "front",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "808a30a43b5b52dda2d0994df0f79c57283d241a344ebeb1d5703969069d2ad0",
+      "volume": 4
+    },
+    {
+      "fichier": "moonstage_mid.png",
+      "usage": "mid",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "080937c27ae6f91b1b3ade9c5c9502b79df9b561c97744f83e6e171affced56b",
+      "volume": 4
     },
     {
       "fichier": "overkill_ending.png",
@@ -1326,6 +1594,72 @@
       "volume": 3
     },
     {
+      "fichier": "ryan_soiree_contact.png",
+      "usage": "contact",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "8005358823ffc299901713c41c7942290b9b12d9395a32252496cab2a71b84f6",
+      "volume": 4,
+      "pivot": [
+        512,
+        960
+      ]
+    },
+    {
+      "fichier": "ryan_soiree_guard.png",
+      "usage": "guard",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "5b2e85891e58230307db321882e61d1b72b5dcfd2ef4e8accbe8c7e66fceb73f",
+      "volume": 4,
+      "pivot": [
+        512,
+        960
+      ]
+    },
+    {
+      "fichier": "ryan_soiree_recoil.png",
+      "usage": "recoil",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "90f55729b2271fb6747b227a2852b12337cffbbd13491efcd6ba32f0c4d49c5e",
+      "volume": 4,
+      "pivot": [
+        512,
+        960
+      ]
+    },
+    {
+      "fichier": "ryan_soiree_select.png",
+      "usage": "select",
+      "dimensions": [
+        832,
+        832
+      ],
+      "sha256": "b73c0dfcfb182f2c14bbbf2a2906a05972f087c5478acfe71bc46766883d3544",
+      "volume": 4
+    },
+    {
+      "fichier": "ryan_soiree_windup.png",
+      "usage": "windup",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "14ecddce9df977271bfdb589223578c07121fb5b06e5b635806c8b8cb5e27978",
+      "volume": 4,
+      "pivot": [
+        512,
+        960
+      ]
+    },
+    {
       "fichier": "ryan_windup.png",
       "usage": "windup",
       "dimensions": [
@@ -1358,6 +1692,16 @@
       ],
       "sha256": "1ad002b9ff459a54df3894aeb57b7d0af363ea618b113d252e2c84e196e1cbce",
       "volume": 2
+    },
+    {
+      "fichier": "scarlet_final.png",
+      "usage": "final",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "17721dbea2e0986ab8d208ebe91438b7bee0edcc0e32af385bbdbcfc62f396fb",
+      "volume": 4
     },
     {
       "fichier": "scarlet_intro.png",
@@ -1602,6 +1946,142 @@
       "volume": 3
     },
     {
+      "fichier": "world_contact.png",
+      "usage": "contact",
+      "dimensions": [
+        1696,
+        1024
+      ],
+      "sha256": "80b30f86dad7b5d9d262ab0991c3f447070e961d0a519bbf677d0ced2700d607",
+      "volume": 4,
+      "pivot": [
+        848,
+        960
+      ]
+    },
+    {
+      "fichier": "world_ending.png",
+      "usage": "ending",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "31a0e5455bc02e8752087b8249f64113c7669b041e58a1bf465f19b82ebb9333",
+      "volume": 4
+    },
+    {
+      "fichier": "world_final.png",
+      "usage": "final",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "002024f511a831346f1d814420d6a2bc7a38e443d37d5f75a919e5f424157fb5",
+      "volume": 4
+    },
+    {
+      "fichier": "world_guard.png",
+      "usage": "guard",
+      "dimensions": [
+        1712,
+        1024
+      ],
+      "sha256": "0aa10e22026c87d9f4790de3f7c7a713df3b53fe4594783217d9651e85fa2b7e",
+      "volume": 4,
+      "pivot": [
+        856,
+        960
+      ]
+    },
+    {
+      "fichier": "world_intro.png",
+      "usage": "intro",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "5e1b1426b2ae1c1ef68dcc06bba4d99dbb138fa05434e5ef6ca105b01213a7c4",
+      "volume": 4
+    },
+    {
+      "fichier": "world_recoil.png",
+      "usage": "recoil",
+      "dimensions": [
+        2000,
+        1024
+      ],
+      "sha256": "19a9cc5ac4bbc5b0b5e99d657c97f76f7d1244d6056b8b544ba147a1d4cf35df",
+      "volume": 4,
+      "pivot": [
+        1000,
+        960
+      ]
+    },
+    {
+      "fichier": "world_rival.png",
+      "usage": "rival",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "aea243bbcf5990b3b18b99dc66a44ea3f947ab09e79fe06a6c2aef410dde449c",
+      "volume": 4
+    },
+    {
+      "fichier": "world_select.png",
+      "usage": "select",
+      "dimensions": [
+        832,
+        832
+      ],
+      "sha256": "63d1f59d1147d7238904788e63d6c117dbcc451a90e9fb168c66845f0eccecb3",
+      "volume": 4
+    },
+    {
+      "fichier": "world_windup.png",
+      "usage": "windup",
+      "dimensions": [
+        1600,
+        1024
+      ],
+      "sha256": "5ea9a7c0f409076c20226a40dca5a1458449300801aab6a36eab676811fbe50b",
+      "volume": 4,
+      "pivot": [
+        800,
+        960
+      ]
+    },
+    {
+      "fichier": "worldstage_back.png",
+      "usage": "back",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "08c61ec108bb3ec1df0344745ea147e608bcd390ccea27bc37f68300c847d3ce",
+      "volume": 4
+    },
+    {
+      "fichier": "worldstage_front.png",
+      "usage": "front",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "c2cece3bbc87b3d7679f3af991429d2644fcb7afb94e7262fc0b45a74256f48b",
+      "volume": 4
+    },
+    {
+      "fichier": "worldstage_mid.png",
+      "usage": "mid",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "e2de870d1126232f932491141d61945c14f7e0c890dab27ebf86aa7b9c5e062a",
+      "volume": 4
+    },
+    {
       "fichier": "zobiko_contact.png",
       "usage": "contact",
       "dimensions": [
@@ -1733,5 +2213,6 @@
       ],
       "volume": 3
     }
-  ]
+  ],
+  "nouveaux_png_volume_iv": 40
 }

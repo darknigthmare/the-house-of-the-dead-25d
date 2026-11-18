@@ -7,7 +7,8 @@ const COURSES := [
 	{"id":"manoir","title":"Les gardiens du manoir","bouts":[[2,1],[3,2]]},
 	{"id":"goldman","title":"Les créations de Goldman","bouts":[[11,3],[3,13],[17,11]]},
 	{"id":"efi","title":"Les gardiens d’EFI","bouts":[[12,4],[18,12]]},
-	{"id":"anthologie","title":"L’anthologie des gardiens","bouts":[[2,0],[11,3],[13,5],[14,14],[3,6],[12,4],[17,11],[18,12]]}
+	{"id":"anthologie","title":"L’anthologie des gardiens","bouts":[[2,0],[11,3],[13,5],[14,14],[3,6],[12,4],[17,11],[18,12]]},
+	{"id":"pandore_arche","title":"De Pandore à l’Arche","bouts":[[13,5],[21,15],[22,16]]}
 ]
 var course: Dictionary
 var leg := 0

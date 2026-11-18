@@ -1,50 +1,56 @@
 {
   "fichier": "HOTD_Anthologie.pck",
-  "octets": 25925508,
-  "sha256": "c219dcc57ecfb9c1b2276b747a7880932742686aa6685be477834efba60e1dfc",
+  "octets": 31692960,
+  "sha256": "39427ac915a341181ca988a29d509b8e33cf20cfc8b248871717be700743f892",
   "fragments": [
     {
       "fichier": "Anthologie.part01",
       "octets": 3600000,
-      "sha256": "4335b313f863923dcf34050657c13e9ac04e5306befc1f8aaa08e82244d2f140"
+      "sha256": "a08c2908c5ca9bb98acd0af8b6efb12e8914c3f74203cf52a2c81aab695868b8"
     },
     {
       "fichier": "Anthologie.part02",
       "octets": 3600000,
-      "sha256": "5d221935ce33473f463ce05b3937979e83dfb23e104ddeb5e24dde8e9e4c198a"
+      "sha256": "32c3a7a39882edca67c053c60a330fe5828b6f81bce9b0a364f68eed719e1f21"
     },
     {
       "fichier": "Anthologie.part03",
       "octets": 3600000,
-      "sha256": "3c855cfab217e723a1c6f8833ba13f5e050d88a317de72c72193684a2a10f209"
+      "sha256": "a521007cd808c003104510b29d2a7509c4d90fa7e0ebff0d79d0ba6d5dcf74a1"
     },
     {
       "fichier": "Anthologie.part04",
       "octets": 3600000,
-      "sha256": "34b1cde5cfca4445a3440dba757036a2192b693e763e7c6e94a5704b6687f4a9"
+      "sha256": "40f425912e9d8ccb45c3f68b8b17abdd8e546bdd2ac9ee2d996543f8f59473c6"
     },
     {
       "fichier": "Anthologie.part05",
       "octets": 3600000,
-      "sha256": "c807226e809fc35828e1dd9010316832cd56ada7f67b4ca1b871c44ae45e45da"
+      "sha256": "4f6f4c7b672d6a98aa31fb327f76e1e50cb7e61bba01d035014cebe6488445cb"
     },
     {
       "fichier": "Anthologie.part06",
       "octets": 3600000,
-      "sha256": "8aeb99e48959e1e1dba585acda962aef6c443737da565de481708499d4ef98c9"
+      "sha256": "5f43e17cdd6bd2090e40e88406b176aeab1245e926d458ea84f701e96d136a33"
     },
     {
       "fichier": "Anthologie.part07",
       "octets": 3600000,
-      "sha256": "3720c30b3eaa14675e9846f9bdf1fa1b168f79d09832d10a1c358a23ab8fcf8d"
+      "sha256": "4ed4749023d162412a7e43de70b5b0fa5b4ed6405e2ee6ca5982d9eeb855120f"
     },
     {
       "fichier": "Anthologie.part08",
-      "octets": 725508,
-      "sha256": "f7f0814bcc4ff837f0eccbab7f86a8dec4fd94043aa8b392c104822f63c33e9b"
+      "octets": 3600000,
+      "sha256": "cdd0bb427cbafdd4e8c8422a5744512c5c1f83aa734d6ccff362323856c836dd"
+    },
+    {
+      "fichier": "Anthologie.part09",
+      "octets": 2892960,
+      "sha256": "e7ace4b34c6a8d1021e6ae8e50535c0d25360037769e682e7fee3e28700da63e"
     }
   ],
   "versions_precedentes": [
+    "c219dcc57ecfb9c1b2276b747a7880932742686aa6685be477834efba60e1dfc",
     "939fd72bd2bec1ac54ea4a4e0ef632fe5fe373544060b06a960dd2a4c664806a"
   ]
 }
