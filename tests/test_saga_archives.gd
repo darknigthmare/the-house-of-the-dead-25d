@@ -79,6 +79,11 @@ func _initialize() -> void:
 					board.fighters[0].x = p
 					for t in 47: rules.tick(board,id)
 			"rescue": strike(rules,board,id,"heavy")
+			"openings":
+				for signal_tick in [48, 168, 288]:
+					while rules.age < signal_tick: rules.tick(board,id)
+					key_input(rules,board,id,KEY_TAB)
+				require(board.fighters[1].health == 88, id+" three openings deal 12 damage")
 			_: require(false,id+" unknown rule")
 		require(rules.score == 1,id+" scores once")
 		require(board.fighters[1].health < 100,id+" affects the match")
