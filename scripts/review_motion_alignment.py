@@ -9,7 +9,7 @@ OUT=ROOT/"docs/dossier_curien/saga/production/motion_2026-11-19/qa_projection"
 OUT.mkdir(parents=True,exist_ok=True)
 manifest=json.loads((ROOT/"data/assets/dossier_curien_motion.json").read_text())
 assets={entry["id"]:entry for entry in manifest["assets"]}
-heights={"linda":261,"rogan":280,"zobio":300,"zobiko":252,"stick":282,"rikiya":284}
+heights={"linda":261,"rogan":278,"zobio":300,"zobiko":252,"stick":282,"rikiya":284}
 font=ImageFont.truetype("DejaVuSans.ttf",17)
 titlefont=ImageFont.truetype("DejaVuSans.ttf",20)
 
