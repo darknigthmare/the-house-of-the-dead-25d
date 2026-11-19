@@ -1,0 +1,1784 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-19",
+  "baseline_named_pose_gaps": 299,
+  "remaining_named_pose_gaps": 277,
+  "resolved_named_pose_gaps": 22,
+  "by_pose": {
+    "block": 25,
+    "crouch": 24,
+    "crouch_guard": 25,
+    "finish": 25,
+    "jump_fall": 25,
+    "jump_rise": 24,
+    "recovery": 17,
+    "reload": 11,
+    "taunt": 25,
+    "throw": 25,
+    "victory": 25,
+    "walk1": 13,
+    "walk2": 13
+  },
+  "resolved": [
+    {
+      "fighter_id": "rogan",
+      "pose": "jump_rise",
+      "legacy_path": "assets/dossier_curien/rogan_jump_rise.png",
+      "runtime_path": "assets/dossier_curien/motion_2026-11-19/rogan_jump_rise.png"
+    },
+    {
+      "fighter_id": "rogan",
+      "pose": "crouch",
+      "legacy_path": "assets/dossier_curien/rogan_crouch.png",
+      "runtime_path": "assets/dossier_curien/motion_2026-11-19/rogan_crouch.png"
+    },
+    {
+      "fighter_id": "zobio",
+      "pose": "recovery",
+      "legacy_path": "assets/dossier_curien/saga/zobio_recovery.png",
+      "runtime_path": "assets/dossier_curien/motion_2026-11-19/zobio_recovery.png"
+    },
+    {
+      "fighter_id": "zobio",
+      "pose": "walk1",
+      "legacy_path": "assets/dossier_curien/saga/zobio_walk1.png",
+      "runtime_path": "assets/dossier_curien/motion_2026-11-19/zobio_walk1.png"
+    },
+    {
+      "fighter_id": "zobio",
+      "pose": "walk2",
+      "legacy_path": "assets/dossier_curien/saga/zobio_walk2.png",
+      "runtime_path": "assets/dossier_curien/motion_2026-11-19/zobio_walk2.png"
+    },
+    {
+      "fighter_id": "stick",
+      "pose": "recovery",
+      "legacy_path": "assets/dossier_curien/saga/stick_recovery.png",
+      "runtime_path": "assets/dossier_curien/motion_2026-11-19/stick_recovery.png"
+    },
+    {
+      "fighter_id": "stick",
+      "pose": "walk1",
+      "legacy_path": "assets/dossier_curien/saga/stick_walk1.png",
+      "runtime_path": "assets/dossier_curien/motion_2026-11-19/stick_walk1.png"
+    },
+    {
+      "fighter_id": "stick",
+      "pose": "walk2",
+      "legacy_path": "assets/dossier_curien/saga/stick_walk2.png",
+      "runtime_path": "assets/dossier_curien/motion_2026-11-19/stick_walk2.png"
+    },
+    {
+      "fighter_id": "zobiko",
+      "pose": "recovery",
+      "legacy_path": "assets/dossier_curien/saga/zobiko_recovery.png",
+      "runtime_path": "assets/dossier_curien/motion_2026-11-19/zobiko_recovery.png"
+    },
+    {
+      "fighter_id": "zobiko",
+      "pose": "walk1",
+      "legacy_path": "assets/dossier_curien/saga/zobiko_walk1.png",
+      "runtime_path": "assets/dossier_curien/motion_2026-11-19/zobiko_walk1.png"
+    },
+    {
+      "fighter_id": "zobiko",
+      "pose": "walk2",
+      "legacy_path": "assets/dossier_curien/saga/zobiko_walk2.png",
+      "runtime_path": "assets/dossier_curien/motion_2026-11-19/zobiko_walk2.png"
+    },
+    {
+      "fighter_id": "rikiya",
+      "pose": "recovery",
+      "legacy_path": "assets/dossier_curien/saga/rikiya_recovery.png",
+      "runtime_path": "assets/dossier_curien/motion_2026-11-19/rikiya_recovery.png"
+    },
+    {
+      "fighter_id": "rikiya",
+      "pose": "walk1",
+      "legacy_path": "assets/dossier_curien/saga/rikiya_walk1.png",
+      "runtime_path": "assets/dossier_curien/motion_2026-11-19/rikiya_walk1.png"
+    },
+    {
+      "fighter_id": "rikiya",
+      "pose": "walk2",
+      "legacy_path": "assets/dossier_curien/saga/rikiya_walk2.png",
+      "runtime_path": "assets/dossier_curien/motion_2026-11-19/rikiya_walk2.png"
+    },
+    {
+      "fighter_id": "linda",
+      "pose": "jump_rise",
+      "runtime_path": "assets/dossier_curien/motion_2026-11-19/linda_jump_rise.png"
+    },
+    {
+      "fighter_id": "linda",
+      "pose": "jump_fall",
+      "runtime_path": "assets/dossier_curien/motion_2026-11-19/linda_jump_fall.png"
+    },
+    {
+      "fighter_id": "linda",
+      "pose": "block",
+      "runtime_path": "assets/dossier_curien/motion_2026-11-19/linda_block.png"
+    },
+    {
+      "fighter_id": "linda",
+      "pose": "throw",
+      "runtime_path": "assets/dossier_curien/motion_2026-11-19/linda_throw.png"
+    },
+    {
+      "fighter_id": "linda",
+      "pose": "victory",
+      "runtime_path": "assets/dossier_curien/motion_2026-11-19/linda_victory.png"
+    },
+    {
+      "fighter_id": "linda",
+      "pose": "taunt",
+      "runtime_path": "assets/dossier_curien/motion_2026-11-19/linda_taunt.png"
+    },
+    {
+      "fighter_id": "linda",
+      "pose": "finish",
+      "runtime_path": "assets/dossier_curien/motion_2026-11-19/linda_finish.png"
+    },
+    {
+      "fighter_id": "linda",
+      "pose": "reload",
+      "runtime_path": "assets/dossier_curien/motion_2026-11-19/linda_reload.png"
+    }
+  ],
+  "characters": [
+    {
+      "id": "rogan",
+      "name": "Thomas Rogan",
+      "variant": "base",
+      "game": "curien",
+      "present_poses": [
+        "contact",
+        "crouch",
+        "guard",
+        "jump_rise",
+        "recoil",
+        "recovery",
+        "windup"
+      ],
+      "missing_poses": [
+        {
+          "pose": "walk1",
+          "path": "assets/dossier_curien/rogan_walk1.png"
+        },
+        {
+          "pose": "walk2",
+          "path": "assets/dossier_curien/rogan_walk2.png"
+        },
+        {
+          "pose": "jump_fall",
+          "path": "assets/dossier_curien/rogan_jump_fall.png"
+        },
+        {
+          "pose": "crouch_guard",
+          "path": "assets/dossier_curien/rogan_crouch_guard.png"
+        },
+        {
+          "pose": "block",
+          "path": "assets/dossier_curien/rogan_block.png"
+        },
+        {
+          "pose": "throw",
+          "path": "assets/dossier_curien/rogan_throw.png"
+        },
+        {
+          "pose": "victory",
+          "path": "assets/dossier_curien/rogan_victory.png"
+        },
+        {
+          "pose": "taunt",
+          "path": "assets/dossier_curien/rogan_taunt.png"
+        },
+        {
+          "pose": "finish",
+          "path": "assets/dossier_curien/rogan_finish.png"
+        },
+        {
+          "pose": "reload",
+          "path": "assets/dossier_curien/rogan_reload.png"
+        }
+      ],
+      "portrait_present": true,
+      "two_walk_contacts": false,
+      "motion_pose_paths": {
+        "crouch": "assets/dossier_curien/motion_2026-11-19/rogan_crouch.png",
+        "jump_rise": "assets/dossier_curien/motion_2026-11-19/rogan_jump_rise.png"
+      }
+    },
+    {
+      "id": "g",
+      "name": "Agent G",
+      "variant": "base",
+      "game": "curien",
+      "present_poses": [
+        "contact",
+        "guard",
+        "recoil",
+        "recovery",
+        "windup"
+      ],
+      "missing_poses": [
+        {
+          "pose": "walk1",
+          "path": "assets/dossier_curien/g_walk1.png"
+        },
+        {
+          "pose": "walk2",
+          "path": "assets/dossier_curien/g_walk2.png"
+        },
+        {
+          "pose": "jump_rise",
+          "path": "assets/dossier_curien/g_jump_rise.png"
+        },
+        {
+          "pose": "jump_fall",
+          "path": "assets/dossier_curien/g_jump_fall.png"
+        },
+        {
+          "pose": "crouch",
+          "path": "assets/dossier_curien/g_crouch.png"
+        },
+        {
+          "pose": "crouch_guard",
+          "path": "assets/dossier_curien/g_crouch_guard.png"
+        },
+        {
+          "pose": "block",
+          "path": "assets/dossier_curien/g_block.png"
+        },
+        {
+          "pose": "throw",
+          "path": "assets/dossier_curien/g_throw.png"
+        },
+        {
+          "pose": "victory",
+          "path": "assets/dossier_curien/g_victory.png"
+        },
+        {
+          "pose": "taunt",
+          "path": "assets/dossier_curien/g_taunt.png"
+        },
+        {
+          "pose": "finish",
+          "path": "assets/dossier_curien/g_finish.png"
+        },
+        {
+          "pose": "reload",
+          "path": "assets/dossier_curien/g_reload.png"
+        }
+      ],
+      "portrait_present": true,
+      "two_walk_contacts": false,
+      "motion_pose_paths": {}
+    },
+    {
+      "id": "chariot",
+      "name": "Chariot",
+      "variant": "base",
+      "game": "curien",
+      "present_poses": [
+        "contact",
+        "guard",
+        "recoil",
+        "recovery",
+        "windup"
+      ],
+      "missing_poses": [
+        {
+          "pose": "walk1",
+          "path": "assets/dossier_curien/chariot_walk1.png"
+        },
+        {
+          "pose": "walk2",
+          "path": "assets/dossier_curien/chariot_walk2.png"
+        },
+        {
+          "pose": "jump_rise",
+          "path": "assets/dossier_curien/chariot_jump_rise.png"
+        },
+        {
+          "pose": "jump_fall",
+          "path": "assets/dossier_curien/chariot_jump_fall.png"
+        },
+        {
+          "pose": "crouch",
+          "path": "assets/dossier_curien/chariot_crouch.png"
+        },
+        {
+          "pose": "crouch_guard",
+          "path": "assets/dossier_curien/chariot_crouch_guard.png"
+        },
+        {
+          "pose": "block",
+          "path": "assets/dossier_curien/chariot_block.png"
+        },
+        {
+          "pose": "throw",
+          "path": "assets/dossier_curien/chariot_throw.png"
+        },
+        {
+          "pose": "victory",
+          "path": "assets/dossier_curien/chariot_victory.png"
+        },
+        {
+          "pose": "taunt",
+          "path": "assets/dossier_curien/chariot_taunt.png"
+        },
+        {
+          "pose": "finish",
+          "path": "assets/dossier_curien/chariot_finish.png"
+        }
+      ],
+      "portrait_present": true,
+      "two_walk_contacts": false,
+      "motion_pose_paths": {}
+    },
+    {
+      "id": "magician",
+      "name": "Magician",
+      "variant": "base",
+      "game": "curien",
+      "present_poses": [
+        "contact",
+        "guard",
+        "recoil",
+        "recovery",
+        "windup"
+      ],
+      "missing_poses": [
+        {
+          "pose": "walk1",
+          "path": "assets/dossier_curien/magician_walk1.png"
+        },
+        {
+          "pose": "walk2",
+          "path": "assets/dossier_curien/magician_walk2.png"
+        },
+        {
+          "pose": "jump_rise",
+          "path": "assets/dossier_curien/magician_jump_rise.png"
+        },
+        {
+          "pose": "jump_fall",
+          "path": "assets/dossier_curien/magician_jump_fall.png"
+        },
+        {
+          "pose": "crouch",
+          "path": "assets/dossier_curien/magician_crouch.png"
+        },
+        {
+          "pose": "crouch_guard",
+          "path": "assets/dossier_curien/magician_crouch_guard.png"
+        },
+        {
+          "pose": "block",
+          "path": "assets/dossier_curien/magician_block.png"
+        },
+        {
+          "pose": "throw",
+          "path": "assets/dossier_curien/magician_throw.png"
+        },
+        {
+          "pose": "victory",
+          "path": "assets/dossier_curien/magician_victory.png"
+        },
+        {
+          "pose": "taunt",
+          "path": "assets/dossier_curien/magician_taunt.png"
+        },
+        {
+          "pose": "finish",
+          "path": "assets/dossier_curien/magician_finish.png"
+        }
+      ],
+      "portrait_present": true,
+      "two_walk_contacts": false,
+      "motion_pose_paths": {}
+    },
+    {
+      "id": "james",
+      "name": "James Taylor",
+      "variant": "base",
+      "game": "hotd2",
+      "present_poses": [
+        "contact",
+        "guard",
+        "recoil",
+        "walk1",
+        "walk2",
+        "windup"
+      ],
+      "missing_poses": [
+        {
+          "pose": "recovery",
+          "path": "assets/dossier_curien/saga/james_recovery.png"
+        },
+        {
+          "pose": "jump_rise",
+          "path": "assets/dossier_curien/saga/james_jump_rise.png"
+        },
+        {
+          "pose": "jump_fall",
+          "path": "assets/dossier_curien/saga/james_jump_fall.png"
+        },
+        {
+          "pose": "crouch",
+          "path": "assets/dossier_curien/saga/james_crouch.png"
+        },
+        {
+          "pose": "crouch_guard",
+          "path": "assets/dossier_curien/saga/james_crouch_guard.png"
+        },
+        {
+          "pose": "block",
+          "path": "assets/dossier_curien/saga/james_block.png"
+        },
+        {
+          "pose": "throw",
+          "path": "assets/dossier_curien/saga/james_throw.png"
+        },
+        {
+          "pose": "victory",
+          "path": "assets/dossier_curien/saga/james_victory.png"
+        },
+        {
+          "pose": "taunt",
+          "path": "assets/dossier_curien/saga/james_taunt.png"
+        },
+        {
+          "pose": "finish",
+          "path": "assets/dossier_curien/saga/james_finish.png"
+        },
+        {
+          "pose": "reload",
+          "path": "assets/dossier_curien/saga/james_reload.png"
+        }
+      ],
+      "portrait_present": true,
+      "two_walk_contacts": true,
+      "motion_pose_paths": {}
+    },
+    {
+      "id": "lisa",
+      "name": "Lisa Rogan",
+      "variant": "base",
+      "game": "hotd3",
+      "present_poses": [
+        "contact",
+        "guard",
+        "recoil",
+        "walk1",
+        "walk2",
+        "windup"
+      ],
+      "missing_poses": [
+        {
+          "pose": "recovery",
+          "path": "assets/dossier_curien/saga/lisa_recovery.png"
+        },
+        {
+          "pose": "jump_rise",
+          "path": "assets/dossier_curien/saga/lisa_jump_rise.png"
+        },
+        {
+          "pose": "jump_fall",
+          "path": "assets/dossier_curien/saga/lisa_jump_fall.png"
+        },
+        {
+          "pose": "crouch",
+          "path": "assets/dossier_curien/saga/lisa_crouch.png"
+        },
+        {
+          "pose": "crouch_guard",
+          "path": "assets/dossier_curien/saga/lisa_crouch_guard.png"
+        },
+        {
+          "pose": "block",
+          "path": "assets/dossier_curien/saga/lisa_block.png"
+        },
+        {
+          "pose": "throw",
+          "path": "assets/dossier_curien/saga/lisa_throw.png"
+        },
+        {
+          "pose": "victory",
+          "path": "assets/dossier_curien/saga/lisa_victory.png"
+        },
+        {
+          "pose": "taunt",
+          "path": "assets/dossier_curien/saga/lisa_taunt.png"
+        },
+        {
+          "pose": "finish",
+          "path": "assets/dossier_curien/saga/lisa_finish.png"
+        },
+        {
+          "pose": "reload",
+          "path": "assets/dossier_curien/saga/lisa_reload.png"
+        }
+      ],
+      "portrait_present": true,
+      "two_walk_contacts": true,
+      "motion_pose_paths": {}
+    },
+    {
+      "id": "kate",
+      "name": "Kate Green",
+      "variant": "base",
+      "game": "hotd4",
+      "present_poses": [
+        "contact",
+        "guard",
+        "recoil",
+        "walk1",
+        "walk2",
+        "windup"
+      ],
+      "missing_poses": [
+        {
+          "pose": "recovery",
+          "path": "assets/dossier_curien/saga/kate_recovery.png"
+        },
+        {
+          "pose": "jump_rise",
+          "path": "assets/dossier_curien/saga/kate_jump_rise.png"
+        },
+        {
+          "pose": "jump_fall",
+          "path": "assets/dossier_curien/saga/kate_jump_fall.png"
+        },
+        {
+          "pose": "crouch",
+          "path": "assets/dossier_curien/saga/kate_crouch.png"
+        },
+        {
+          "pose": "crouch_guard",
+          "path": "assets/dossier_curien/saga/kate_crouch_guard.png"
+        },
+        {
+          "pose": "block",
+          "path": "assets/dossier_curien/saga/kate_block.png"
+        },
+        {
+          "pose": "throw",
+          "path": "assets/dossier_curien/saga/kate_throw.png"
+        },
+        {
+          "pose": "victory",
+          "path": "assets/dossier_curien/saga/kate_victory.png"
+        },
+        {
+          "pose": "taunt",
+          "path": "assets/dossier_curien/saga/kate_taunt.png"
+        },
+        {
+          "pose": "finish",
+          "path": "assets/dossier_curien/saga/kate_finish.png"
+        },
+        {
+          "pose": "reload",
+          "path": "assets/dossier_curien/saga/kate_reload.png"
+        }
+      ],
+      "portrait_present": true,
+      "two_walk_contacts": true,
+      "motion_pose_paths": {}
+    },
+    {
+      "id": "ryan",
+      "name": "Ryan Taylor",
+      "variant": "base",
+      "game": "scarlet",
+      "present_poses": [
+        "contact",
+        "guard",
+        "recoil",
+        "walk1",
+        "walk2",
+        "windup"
+      ],
+      "missing_poses": [
+        {
+          "pose": "recovery",
+          "path": "assets/dossier_curien/saga/ryan_recovery.png"
+        },
+        {
+          "pose": "jump_rise",
+          "path": "assets/dossier_curien/saga/ryan_jump_rise.png"
+        },
+        {
+          "pose": "jump_fall",
+          "path": "assets/dossier_curien/saga/ryan_jump_fall.png"
+        },
+        {
+          "pose": "crouch",
+          "path": "assets/dossier_curien/saga/ryan_crouch.png"
+        },
+        {
+          "pose": "crouch_guard",
+          "path": "assets/dossier_curien/saga/ryan_crouch_guard.png"
+        },
+        {
+          "pose": "block",
+          "path": "assets/dossier_curien/saga/ryan_block.png"
+        },
+        {
+          "pose": "throw",
+          "path": "assets/dossier_curien/saga/ryan_throw.png"
+        },
+        {
+          "pose": "victory",
+          "path": "assets/dossier_curien/saga/ryan_victory.png"
+        },
+        {
+          "pose": "taunt",
+          "path": "assets/dossier_curien/saga/ryan_taunt.png"
+        },
+        {
+          "pose": "finish",
+          "path": "assets/dossier_curien/saga/ryan_finish.png"
+        },
+        {
+          "pose": "reload",
+          "path": "assets/dossier_curien/saga/ryan_reload.png"
+        }
+      ],
+      "portrait_present": true,
+      "two_walk_contacts": true,
+      "motion_pose_paths": {}
+    },
+    {
+      "id": "isaac",
+      "name": "Isaac Washington",
+      "variant": "base",
+      "game": "overkill",
+      "present_poses": [
+        "contact",
+        "guard",
+        "recoil",
+        "windup"
+      ],
+      "missing_poses": [
+        {
+          "pose": "recovery",
+          "path": "assets/dossier_curien/saga/isaac_recovery.png"
+        },
+        {
+          "pose": "walk1",
+          "path": "assets/dossier_curien/saga/isaac_walk1.png"
+        },
+        {
+          "pose": "walk2",
+          "path": "assets/dossier_curien/saga/isaac_walk2.png"
+        },
+        {
+          "pose": "jump_rise",
+          "path": "assets/dossier_curien/saga/isaac_jump_rise.png"
+        },
+        {
+          "pose": "jump_fall",
+          "path": "assets/dossier_curien/saga/isaac_jump_fall.png"
+        },
+        {
+          "pose": "crouch",
+          "path": "assets/dossier_curien/saga/isaac_crouch.png"
+        },
+        {
+          "pose": "crouch_guard",
+          "path": "assets/dossier_curien/saga/isaac_crouch_guard.png"
+        },
+        {
+          "pose": "block",
+          "path": "assets/dossier_curien/saga/isaac_block.png"
+        },
+        {
+          "pose": "throw",
+          "path": "assets/dossier_curien/saga/isaac_throw.png"
+        },
+        {
+          "pose": "victory",
+          "path": "assets/dossier_curien/saga/isaac_victory.png"
+        },
+        {
+          "pose": "taunt",
+          "path": "assets/dossier_curien/saga/isaac_taunt.png"
+        },
+        {
+          "pose": "finish",
+          "path": "assets/dossier_curien/saga/isaac_finish.png"
+        },
+        {
+          "pose": "reload",
+          "path": "assets/dossier_curien/saga/isaac_reload.png"
+        }
+      ],
+      "portrait_present": true,
+      "two_walk_contacts": false,
+      "motion_pose_paths": {}
+    },
+    {
+      "id": "zobio",
+      "name": "Zobio",
+      "variant": "base",
+      "game": "ex",
+      "present_poses": [
+        "contact",
+        "guard",
+        "recoil",
+        "recovery",
+        "walk1",
+        "walk2",
+        "windup"
+      ],
+      "missing_poses": [
+        {
+          "pose": "jump_rise",
+          "path": "assets/dossier_curien/saga/zobio_jump_rise.png"
+        },
+        {
+          "pose": "jump_fall",
+          "path": "assets/dossier_curien/saga/zobio_jump_fall.png"
+        },
+        {
+          "pose": "crouch",
+          "path": "assets/dossier_curien/saga/zobio_crouch.png"
+        },
+        {
+          "pose": "crouch_guard",
+          "path": "assets/dossier_curien/saga/zobio_crouch_guard.png"
+        },
+        {
+          "pose": "block",
+          "path": "assets/dossier_curien/saga/zobio_block.png"
+        },
+        {
+          "pose": "throw",
+          "path": "assets/dossier_curien/saga/zobio_throw.png"
+        },
+        {
+          "pose": "victory",
+          "path": "assets/dossier_curien/saga/zobio_victory.png"
+        },
+        {
+          "pose": "taunt",
+          "path": "assets/dossier_curien/saga/zobio_taunt.png"
+        },
+        {
+          "pose": "finish",
+          "path": "assets/dossier_curien/saga/zobio_finish.png"
+        }
+      ],
+      "portrait_present": true,
+      "two_walk_contacts": false,
+      "motion_pose_paths": {
+        "contact": "assets/dossier_curien/motion_2026-11-19/zobio_contact.png",
+        "guard": "assets/dossier_curien/motion_2026-11-19/zobio_guard.png",
+        "recoil": "assets/dossier_curien/motion_2026-11-19/zobio_recoil.png",
+        "recovery": "assets/dossier_curien/motion_2026-11-19/zobio_recovery.png",
+        "walk1": "assets/dossier_curien/motion_2026-11-19/zobio_walk1.png",
+        "walk2": "assets/dossier_curien/motion_2026-11-19/zobio_walk2.png",
+        "windup": "assets/dossier_curien/motion_2026-11-19/zobio_windup.png"
+      }
+    },
+    {
+      "id": "stick",
+      "name": "Stick Breitling",
+      "variant": "base",
+      "game": "revenge",
+      "present_poses": [
+        "contact",
+        "guard",
+        "recoil",
+        "recovery",
+        "walk1",
+        "walk2",
+        "windup"
+      ],
+      "missing_poses": [
+        {
+          "pose": "jump_rise",
+          "path": "assets/dossier_curien/saga/stick_jump_rise.png"
+        },
+        {
+          "pose": "jump_fall",
+          "path": "assets/dossier_curien/saga/stick_jump_fall.png"
+        },
+        {
+          "pose": "crouch",
+          "path": "assets/dossier_curien/saga/stick_crouch.png"
+        },
+        {
+          "pose": "crouch_guard",
+          "path": "assets/dossier_curien/saga/stick_crouch_guard.png"
+        },
+        {
+          "pose": "block",
+          "path": "assets/dossier_curien/saga/stick_block.png"
+        },
+        {
+          "pose": "throw",
+          "path": "assets/dossier_curien/saga/stick_throw.png"
+        },
+        {
+          "pose": "victory",
+          "path": "assets/dossier_curien/saga/stick_victory.png"
+        },
+        {
+          "pose": "taunt",
+          "path": "assets/dossier_curien/saga/stick_taunt.png"
+        },
+        {
+          "pose": "finish",
+          "path": "assets/dossier_curien/saga/stick_finish.png"
+        }
+      ],
+      "portrait_present": true,
+      "two_walk_contacts": false,
+      "motion_pose_paths": {
+        "recovery": "assets/dossier_curien/motion_2026-11-19/stick_recovery.png",
+        "walk1": "assets/dossier_curien/motion_2026-11-19/stick_walk1.png",
+        "walk2": "assets/dossier_curien/motion_2026-11-19/stick_walk2.png"
+      }
+    },
+    {
+      "id": "hierophant",
+      "name": "Hierophant",
+      "variant": "base",
+      "game": "hotd2",
+      "present_poses": [
+        "contact",
+        "guard",
+        "recoil",
+        "windup"
+      ],
+      "missing_poses": [
+        {
+          "pose": "recovery",
+          "path": "assets/dossier_curien/saga/hierophant_recovery.png"
+        },
+        {
+          "pose": "walk1",
+          "path": "assets/dossier_curien/saga/hierophant_walk1.png"
+        },
+        {
+          "pose": "walk2",
+          "path": "assets/dossier_curien/saga/hierophant_walk2.png"
+        },
+        {
+          "pose": "jump_rise",
+          "path": "assets/dossier_curien/saga/hierophant_jump_rise.png"
+        },
+        {
+          "pose": "jump_fall",
+          "path": "assets/dossier_curien/saga/hierophant_jump_fall.png"
+        },
+        {
+          "pose": "crouch",
+          "path": "assets/dossier_curien/saga/hierophant_crouch.png"
+        },
+        {
+          "pose": "crouch_guard",
+          "path": "assets/dossier_curien/saga/hierophant_crouch_guard.png"
+        },
+        {
+          "pose": "block",
+          "path": "assets/dossier_curien/saga/hierophant_block.png"
+        },
+        {
+          "pose": "throw",
+          "path": "assets/dossier_curien/saga/hierophant_throw.png"
+        },
+        {
+          "pose": "victory",
+          "path": "assets/dossier_curien/saga/hierophant_victory.png"
+        },
+        {
+          "pose": "taunt",
+          "path": "assets/dossier_curien/saga/hierophant_taunt.png"
+        },
+        {
+          "pose": "finish",
+          "path": "assets/dossier_curien/saga/hierophant_finish.png"
+        }
+      ],
+      "portrait_present": true,
+      "two_walk_contacts": false,
+      "motion_pose_paths": {}
+    },
+    {
+      "id": "death",
+      "name": "Death",
+      "variant": "base",
+      "game": "hotd3",
+      "present_poses": [
+        "contact",
+        "guard",
+        "recoil",
+        "windup"
+      ],
+      "missing_poses": [
+        {
+          "pose": "recovery",
+          "path": "assets/dossier_curien/saga/death_recovery.png"
+        },
+        {
+          "pose": "walk1",
+          "path": "assets/dossier_curien/saga/death_walk1.png"
+        },
+        {
+          "pose": "walk2",
+          "path": "assets/dossier_curien/saga/death_walk2.png"
+        },
+        {
+          "pose": "jump_rise",
+          "path": "assets/dossier_curien/saga/death_jump_rise.png"
+        },
+        {
+          "pose": "jump_fall",
+          "path": "assets/dossier_curien/saga/death_jump_fall.png"
+        },
+        {
+          "pose": "crouch",
+          "path": "assets/dossier_curien/saga/death_crouch.png"
+        },
+        {
+          "pose": "crouch_guard",
+          "path": "assets/dossier_curien/saga/death_crouch_guard.png"
+        },
+        {
+          "pose": "block",
+          "path": "assets/dossier_curien/saga/death_block.png"
+        },
+        {
+          "pose": "throw",
+          "path": "assets/dossier_curien/saga/death_throw.png"
+        },
+        {
+          "pose": "victory",
+          "path": "assets/dossier_curien/saga/death_victory.png"
+        },
+        {
+          "pose": "taunt",
+          "path": "assets/dossier_curien/saga/death_taunt.png"
+        },
+        {
+          "pose": "finish",
+          "path": "assets/dossier_curien/saga/death_finish.png"
+        }
+      ],
+      "portrait_present": true,
+      "two_walk_contacts": false,
+      "motion_pose_paths": {}
+    },
+    {
+      "id": "justice",
+      "name": "Justice",
+      "variant": "base",
+      "game": "hotd4",
+      "present_poses": [
+        "contact",
+        "guard",
+        "recoil",
+        "windup"
+      ],
+      "missing_poses": [
+        {
+          "pose": "recovery",
+          "path": "assets/dossier_curien/saga/justice_recovery.png"
+        },
+        {
+          "pose": "walk1",
+          "path": "assets/dossier_curien/saga/justice_walk1.png"
+        },
+        {
+          "pose": "walk2",
+          "path": "assets/dossier_curien/saga/justice_walk2.png"
+        },
+        {
+          "pose": "jump_rise",
+          "path": "assets/dossier_curien/saga/justice_jump_rise.png"
+        },
+        {
+          "pose": "jump_fall",
+          "path": "assets/dossier_curien/saga/justice_jump_fall.png"
+        },
+        {
+          "pose": "crouch",
+          "path": "assets/dossier_curien/saga/justice_crouch.png"
+        },
+        {
+          "pose": "crouch_guard",
+          "path": "assets/dossier_curien/saga/justice_crouch_guard.png"
+        },
+        {
+          "pose": "block",
+          "path": "assets/dossier_curien/saga/justice_block.png"
+        },
+        {
+          "pose": "throw",
+          "path": "assets/dossier_curien/saga/justice_throw.png"
+        },
+        {
+          "pose": "victory",
+          "path": "assets/dossier_curien/saga/justice_victory.png"
+        },
+        {
+          "pose": "taunt",
+          "path": "assets/dossier_curien/saga/justice_taunt.png"
+        },
+        {
+          "pose": "finish",
+          "path": "assets/dossier_curien/saga/justice_finish.png"
+        }
+      ],
+      "portrait_present": true,
+      "two_walk_contacts": false,
+      "motion_pose_paths": {}
+    },
+    {
+      "id": "jasper",
+      "name": "Jasper Guns",
+      "variant": "base",
+      "game": "overkill",
+      "present_poses": [
+        "contact",
+        "guard",
+        "recoil",
+        "windup"
+      ],
+      "missing_poses": [
+        {
+          "pose": "recovery",
+          "path": "assets/dossier_curien/saga/jasper_recovery.png"
+        },
+        {
+          "pose": "walk1",
+          "path": "assets/dossier_curien/saga/jasper_walk1.png"
+        },
+        {
+          "pose": "walk2",
+          "path": "assets/dossier_curien/saga/jasper_walk2.png"
+        },
+        {
+          "pose": "jump_rise",
+          "path": "assets/dossier_curien/saga/jasper_jump_rise.png"
+        },
+        {
+          "pose": "jump_fall",
+          "path": "assets/dossier_curien/saga/jasper_jump_fall.png"
+        },
+        {
+          "pose": "crouch",
+          "path": "assets/dossier_curien/saga/jasper_crouch.png"
+        },
+        {
+          "pose": "crouch_guard",
+          "path": "assets/dossier_curien/saga/jasper_crouch_guard.png"
+        },
+        {
+          "pose": "block",
+          "path": "assets/dossier_curien/saga/jasper_block.png"
+        },
+        {
+          "pose": "throw",
+          "path": "assets/dossier_curien/saga/jasper_throw.png"
+        },
+        {
+          "pose": "victory",
+          "path": "assets/dossier_curien/saga/jasper_victory.png"
+        },
+        {
+          "pose": "taunt",
+          "path": "assets/dossier_curien/saga/jasper_taunt.png"
+        },
+        {
+          "pose": "finish",
+          "path": "assets/dossier_curien/saga/jasper_finish.png"
+        }
+      ],
+      "portrait_present": true,
+      "two_walk_contacts": false,
+      "motion_pose_paths": {}
+    },
+    {
+      "id": "zobiko",
+      "name": "Zobiko",
+      "variant": "base",
+      "game": "ex",
+      "present_poses": [
+        "contact",
+        "guard",
+        "recoil",
+        "recovery",
+        "walk1",
+        "walk2",
+        "windup"
+      ],
+      "missing_poses": [
+        {
+          "pose": "jump_rise",
+          "path": "assets/dossier_curien/saga/zobiko_jump_rise.png"
+        },
+        {
+          "pose": "jump_fall",
+          "path": "assets/dossier_curien/saga/zobiko_jump_fall.png"
+        },
+        {
+          "pose": "crouch",
+          "path": "assets/dossier_curien/saga/zobiko_crouch.png"
+        },
+        {
+          "pose": "crouch_guard",
+          "path": "assets/dossier_curien/saga/zobiko_crouch_guard.png"
+        },
+        {
+          "pose": "block",
+          "path": "assets/dossier_curien/saga/zobiko_block.png"
+        },
+        {
+          "pose": "throw",
+          "path": "assets/dossier_curien/saga/zobiko_throw.png"
+        },
+        {
+          "pose": "victory",
+          "path": "assets/dossier_curien/saga/zobiko_victory.png"
+        },
+        {
+          "pose": "taunt",
+          "path": "assets/dossier_curien/saga/zobiko_taunt.png"
+        },
+        {
+          "pose": "finish",
+          "path": "assets/dossier_curien/saga/zobiko_finish.png"
+        }
+      ],
+      "portrait_present": true,
+      "two_walk_contacts": false,
+      "motion_pose_paths": {
+        "contact": "assets/dossier_curien/motion_2026-11-19/zobiko_contact.png",
+        "guard": "assets/dossier_curien/motion_2026-11-19/zobiko_guard.png",
+        "recoil": "assets/dossier_curien/motion_2026-11-19/zobiko_recoil.png",
+        "recovery": "assets/dossier_curien/motion_2026-11-19/zobiko_recovery.png",
+        "walk1": "assets/dossier_curien/motion_2026-11-19/zobiko_walk1.png",
+        "walk2": "assets/dossier_curien/motion_2026-11-19/zobiko_walk2.png",
+        "windup": "assets/dossier_curien/motion_2026-11-19/zobiko_windup.png"
+      }
+    },
+    {
+      "id": "rikiya",
+      "name": "Rikiya Busujima",
+      "variant": "base",
+      "game": "revenge",
+      "present_poses": [
+        "contact",
+        "guard",
+        "recoil",
+        "recovery",
+        "walk1",
+        "walk2",
+        "windup"
+      ],
+      "missing_poses": [
+        {
+          "pose": "jump_rise",
+          "path": "assets/dossier_curien/saga/rikiya_jump_rise.png"
+        },
+        {
+          "pose": "jump_fall",
+          "path": "assets/dossier_curien/saga/rikiya_jump_fall.png"
+        },
+        {
+          "pose": "crouch",
+          "path": "assets/dossier_curien/saga/rikiya_crouch.png"
+        },
+        {
+          "pose": "crouch_guard",
+          "path": "assets/dossier_curien/saga/rikiya_crouch_guard.png"
+        },
+        {
+          "pose": "block",
+          "path": "assets/dossier_curien/saga/rikiya_block.png"
+        },
+        {
+          "pose": "throw",
+          "path": "assets/dossier_curien/saga/rikiya_throw.png"
+        },
+        {
+          "pose": "victory",
+          "path": "assets/dossier_curien/saga/rikiya_victory.png"
+        },
+        {
+          "pose": "taunt",
+          "path": "assets/dossier_curien/saga/rikiya_taunt.png"
+        },
+        {
+          "pose": "finish",
+          "path": "assets/dossier_curien/saga/rikiya_finish.png"
+        }
+      ],
+      "portrait_present": true,
+      "two_walk_contacts": false,
+      "motion_pose_paths": {
+        "recovery": "assets/dossier_curien/motion_2026-11-19/rikiya_recovery.png",
+        "walk1": "assets/dossier_curien/motion_2026-11-19/rikiya_walk1.png",
+        "walk2": "assets/dossier_curien/motion_2026-11-19/rikiya_walk2.png"
+      }
+    },
+    {
+      "id": "emperor",
+      "name": "Emperor",
+      "variant": "base",
+      "game": "hotd2",
+      "present_poses": [
+        "contact",
+        "guard",
+        "recoil",
+        "windup"
+      ],
+      "missing_poses": [
+        {
+          "pose": "recovery",
+          "path": "assets/dossier_curien/saga/emperor_recovery.png"
+        },
+        {
+          "pose": "walk1",
+          "path": "assets/dossier_curien/saga/emperor_walk1.png"
+        },
+        {
+          "pose": "walk2",
+          "path": "assets/dossier_curien/saga/emperor_walk2.png"
+        },
+        {
+          "pose": "jump_rise",
+          "path": "assets/dossier_curien/saga/emperor_jump_rise.png"
+        },
+        {
+          "pose": "jump_fall",
+          "path": "assets/dossier_curien/saga/emperor_jump_fall.png"
+        },
+        {
+          "pose": "crouch",
+          "path": "assets/dossier_curien/saga/emperor_crouch.png"
+        },
+        {
+          "pose": "crouch_guard",
+          "path": "assets/dossier_curien/saga/emperor_crouch_guard.png"
+        },
+        {
+          "pose": "block",
+          "path": "assets/dossier_curien/saga/emperor_block.png"
+        },
+        {
+          "pose": "throw",
+          "path": "assets/dossier_curien/saga/emperor_throw.png"
+        },
+        {
+          "pose": "victory",
+          "path": "assets/dossier_curien/saga/emperor_victory.png"
+        },
+        {
+          "pose": "taunt",
+          "path": "assets/dossier_curien/saga/emperor_taunt.png"
+        },
+        {
+          "pose": "finish",
+          "path": "assets/dossier_curien/saga/emperor_finish.png"
+        }
+      ],
+      "portrait_present": true,
+      "two_walk_contacts": false,
+      "motion_pose_paths": {}
+    },
+    {
+      "id": "wheel",
+      "name": "Wheel of Fate",
+      "variant": "base",
+      "game": "hotd3",
+      "present_poses": [
+        "contact",
+        "guard",
+        "recoil",
+        "windup"
+      ],
+      "missing_poses": [
+        {
+          "pose": "recovery",
+          "path": "assets/dossier_curien/saga/wheel_recovery.png"
+        },
+        {
+          "pose": "walk1",
+          "path": "assets/dossier_curien/saga/wheel_walk1.png"
+        },
+        {
+          "pose": "walk2",
+          "path": "assets/dossier_curien/saga/wheel_walk2.png"
+        },
+        {
+          "pose": "jump_rise",
+          "path": "assets/dossier_curien/saga/wheel_jump_rise.png"
+        },
+        {
+          "pose": "jump_fall",
+          "path": "assets/dossier_curien/saga/wheel_jump_fall.png"
+        },
+        {
+          "pose": "crouch",
+          "path": "assets/dossier_curien/saga/wheel_crouch.png"
+        },
+        {
+          "pose": "crouch_guard",
+          "path": "assets/dossier_curien/saga/wheel_crouch_guard.png"
+        },
+        {
+          "pose": "block",
+          "path": "assets/dossier_curien/saga/wheel_block.png"
+        },
+        {
+          "pose": "throw",
+          "path": "assets/dossier_curien/saga/wheel_throw.png"
+        },
+        {
+          "pose": "victory",
+          "path": "assets/dossier_curien/saga/wheel_victory.png"
+        },
+        {
+          "pose": "taunt",
+          "path": "assets/dossier_curien/saga/wheel_taunt.png"
+        },
+        {
+          "pose": "finish",
+          "path": "assets/dossier_curien/saga/wheel_finish.png"
+        }
+      ],
+      "portrait_present": true,
+      "two_walk_contacts": false,
+      "motion_pose_paths": {}
+    },
+    {
+      "id": "gary",
+      "name": "Gary Stewart",
+      "variant": "base",
+      "game": "hotd2",
+      "present_poses": [
+        "contact",
+        "guard",
+        "recoil",
+        "walk1",
+        "walk2",
+        "windup"
+      ],
+      "missing_poses": [
+        {
+          "pose": "recovery",
+          "path": "assets/dossier_curien/saga/gary_recovery.png"
+        },
+        {
+          "pose": "jump_rise",
+          "path": "assets/dossier_curien/saga/gary_jump_rise.png"
+        },
+        {
+          "pose": "jump_fall",
+          "path": "assets/dossier_curien/saga/gary_jump_fall.png"
+        },
+        {
+          "pose": "crouch",
+          "path": "assets/dossier_curien/saga/gary_crouch.png"
+        },
+        {
+          "pose": "crouch_guard",
+          "path": "assets/dossier_curien/saga/gary_crouch_guard.png"
+        },
+        {
+          "pose": "block",
+          "path": "assets/dossier_curien/saga/gary_block.png"
+        },
+        {
+          "pose": "throw",
+          "path": "assets/dossier_curien/saga/gary_throw.png"
+        },
+        {
+          "pose": "victory",
+          "path": "assets/dossier_curien/saga/gary_victory.png"
+        },
+        {
+          "pose": "taunt",
+          "path": "assets/dossier_curien/saga/gary_taunt.png"
+        },
+        {
+          "pose": "finish",
+          "path": "assets/dossier_curien/saga/gary_finish.png"
+        },
+        {
+          "pose": "reload",
+          "path": "assets/dossier_curien/saga/gary_reload.png"
+        }
+      ],
+      "portrait_present": true,
+      "two_walk_contacts": true,
+      "motion_pose_paths": {}
+    },
+    {
+      "id": "daniel",
+      "name": "Daniel Curien",
+      "variant": "base",
+      "game": "hotd3",
+      "present_poses": [
+        "contact",
+        "guard",
+        "recoil",
+        "walk1",
+        "walk2",
+        "windup"
+      ],
+      "missing_poses": [
+        {
+          "pose": "recovery",
+          "path": "assets/dossier_curien/saga/daniel_recovery.png"
+        },
+        {
+          "pose": "jump_rise",
+          "path": "assets/dossier_curien/saga/daniel_jump_rise.png"
+        },
+        {
+          "pose": "jump_fall",
+          "path": "assets/dossier_curien/saga/daniel_jump_fall.png"
+        },
+        {
+          "pose": "crouch",
+          "path": "assets/dossier_curien/saga/daniel_crouch.png"
+        },
+        {
+          "pose": "crouch_guard",
+          "path": "assets/dossier_curien/saga/daniel_crouch_guard.png"
+        },
+        {
+          "pose": "block",
+          "path": "assets/dossier_curien/saga/daniel_block.png"
+        },
+        {
+          "pose": "throw",
+          "path": "assets/dossier_curien/saga/daniel_throw.png"
+        },
+        {
+          "pose": "victory",
+          "path": "assets/dossier_curien/saga/daniel_victory.png"
+        },
+        {
+          "pose": "taunt",
+          "path": "assets/dossier_curien/saga/daniel_taunt.png"
+        },
+        {
+          "pose": "finish",
+          "path": "assets/dossier_curien/saga/daniel_finish.png"
+        },
+        {
+          "pose": "reload",
+          "path": "assets/dossier_curien/saga/daniel_reload.png"
+        }
+      ],
+      "portrait_present": true,
+      "two_walk_contacts": true,
+      "motion_pose_paths": {}
+    },
+    {
+      "id": "world",
+      "name": "The World",
+      "variant": "base",
+      "game": "hotd4",
+      "present_poses": [
+        "contact",
+        "guard",
+        "recoil",
+        "windup"
+      ],
+      "missing_poses": [
+        {
+          "pose": "recovery",
+          "path": "assets/dossier_curien/saga/world_recovery.png"
+        },
+        {
+          "pose": "walk1",
+          "path": "assets/dossier_curien/saga/world_walk1.png"
+        },
+        {
+          "pose": "walk2",
+          "path": "assets/dossier_curien/saga/world_walk2.png"
+        },
+        {
+          "pose": "jump_rise",
+          "path": "assets/dossier_curien/saga/world_jump_rise.png"
+        },
+        {
+          "pose": "jump_fall",
+          "path": "assets/dossier_curien/saga/world_jump_fall.png"
+        },
+        {
+          "pose": "crouch",
+          "path": "assets/dossier_curien/saga/world_crouch.png"
+        },
+        {
+          "pose": "crouch_guard",
+          "path": "assets/dossier_curien/saga/world_crouch_guard.png"
+        },
+        {
+          "pose": "block",
+          "path": "assets/dossier_curien/saga/world_block.png"
+        },
+        {
+          "pose": "throw",
+          "path": "assets/dossier_curien/saga/world_throw.png"
+        },
+        {
+          "pose": "victory",
+          "path": "assets/dossier_curien/saga/world_victory.png"
+        },
+        {
+          "pose": "taunt",
+          "path": "assets/dossier_curien/saga/world_taunt.png"
+        },
+        {
+          "pose": "finish",
+          "path": "assets/dossier_curien/saga/world_finish.png"
+        }
+      ],
+      "portrait_present": true,
+      "two_walk_contacts": false,
+      "motion_pose_paths": {}
+    },
+    {
+      "id": "moon",
+      "name": "Moon",
+      "variant": "base",
+      "game": "scarlet",
+      "present_poses": [
+        "contact",
+        "guard",
+        "recoil",
+        "windup"
+      ],
+      "missing_poses": [
+        {
+          "pose": "recovery",
+          "path": "assets/dossier_curien/saga/moon_recovery.png"
+        },
+        {
+          "pose": "walk1",
+          "path": "assets/dossier_curien/saga/moon_walk1.png"
+        },
+        {
+          "pose": "walk2",
+          "path": "assets/dossier_curien/saga/moon_walk2.png"
+        },
+        {
+          "pose": "jump_rise",
+          "path": "assets/dossier_curien/saga/moon_jump_rise.png"
+        },
+        {
+          "pose": "jump_fall",
+          "path": "assets/dossier_curien/saga/moon_jump_fall.png"
+        },
+        {
+          "pose": "crouch",
+          "path": "assets/dossier_curien/saga/moon_crouch.png"
+        },
+        {
+          "pose": "crouch_guard",
+          "path": "assets/dossier_curien/saga/moon_crouch_guard.png"
+        },
+        {
+          "pose": "block",
+          "path": "assets/dossier_curien/saga/moon_block.png"
+        },
+        {
+          "pose": "throw",
+          "path": "assets/dossier_curien/saga/moon_throw.png"
+        },
+        {
+          "pose": "victory",
+          "path": "assets/dossier_curien/saga/moon_victory.png"
+        },
+        {
+          "pose": "taunt",
+          "path": "assets/dossier_curien/saga/moon_taunt.png"
+        },
+        {
+          "pose": "finish",
+          "path": "assets/dossier_curien/saga/moon_finish.png"
+        }
+      ],
+      "portrait_present": true,
+      "two_walk_contacts": false,
+      "motion_pose_paths": {}
+    },
+    {
+      "id": "kate_soiree",
+      "name": "Kate Green",
+      "variant": "Scarlet Dawn — réception",
+      "game": "hotd4",
+      "present_poses": [
+        "contact",
+        "guard",
+        "recoil",
+        "walk1",
+        "walk2",
+        "windup"
+      ],
+      "missing_poses": [
+        {
+          "pose": "recovery",
+          "path": "assets/dossier_curien/saga/kate_soiree_recovery.png"
+        },
+        {
+          "pose": "jump_rise",
+          "path": "assets/dossier_curien/saga/kate_soiree_jump_rise.png"
+        },
+        {
+          "pose": "jump_fall",
+          "path": "assets/dossier_curien/saga/kate_soiree_jump_fall.png"
+        },
+        {
+          "pose": "crouch",
+          "path": "assets/dossier_curien/saga/kate_soiree_crouch.png"
+        },
+        {
+          "pose": "crouch_guard",
+          "path": "assets/dossier_curien/saga/kate_soiree_crouch_guard.png"
+        },
+        {
+          "pose": "block",
+          "path": "assets/dossier_curien/saga/kate_soiree_block.png"
+        },
+        {
+          "pose": "throw",
+          "path": "assets/dossier_curien/saga/kate_soiree_throw.png"
+        },
+        {
+          "pose": "victory",
+          "path": "assets/dossier_curien/saga/kate_soiree_victory.png"
+        },
+        {
+          "pose": "taunt",
+          "path": "assets/dossier_curien/saga/kate_soiree_taunt.png"
+        },
+        {
+          "pose": "finish",
+          "path": "assets/dossier_curien/saga/kate_soiree_finish.png"
+        },
+        {
+          "pose": "reload",
+          "path": "assets/dossier_curien/saga/kate_soiree_reload.png"
+        }
+      ],
+      "portrait_present": true,
+      "two_walk_contacts": true,
+      "motion_pose_paths": {}
+    },
+    {
+      "id": "ryan_soiree",
+      "name": "Ryan Taylor",
+      "variant": "Scarlet Dawn — réception",
+      "game": "scarlet",
+      "present_poses": [
+        "contact",
+        "guard",
+        "recoil",
+        "walk1",
+        "walk2",
+        "windup"
+      ],
+      "missing_poses": [
+        {
+          "pose": "recovery",
+          "path": "assets/dossier_curien/saga/ryan_soiree_recovery.png"
+        },
+        {
+          "pose": "jump_rise",
+          "path": "assets/dossier_curien/saga/ryan_soiree_jump_rise.png"
+        },
+        {
+          "pose": "jump_fall",
+          "path": "assets/dossier_curien/saga/ryan_soiree_jump_fall.png"
+        },
+        {
+          "pose": "crouch",
+          "path": "assets/dossier_curien/saga/ryan_soiree_crouch.png"
+        },
+        {
+          "pose": "crouch_guard",
+          "path": "assets/dossier_curien/saga/ryan_soiree_crouch_guard.png"
+        },
+        {
+          "pose": "block",
+          "path": "assets/dossier_curien/saga/ryan_soiree_block.png"
+        },
+        {
+          "pose": "throw",
+          "path": "assets/dossier_curien/saga/ryan_soiree_throw.png"
+        },
+        {
+          "pose": "victory",
+          "path": "assets/dossier_curien/saga/ryan_soiree_victory.png"
+        },
+        {
+          "pose": "taunt",
+          "path": "assets/dossier_curien/saga/ryan_soiree_taunt.png"
+        },
+        {
+          "pose": "finish",
+          "path": "assets/dossier_curien/saga/ryan_soiree_finish.png"
+        },
+        {
+          "pose": "reload",
+          "path": "assets/dossier_curien/saga/ryan_soiree_reload.png"
+        }
+      ],
+      "portrait_present": true,
+      "two_walk_contacts": true,
+      "motion_pose_paths": {}
+    },
+    {
+      "id": "linda",
+      "name": "Linda Rotta",
+      "game": "zombie_revenge",
+      "present_poses": [
+        "block",
+        "contact",
+        "crouch",
+        "crouch_guard",
+        "finish",
+        "guard",
+        "jump_fall",
+        "jump_rise",
+        "recoil",
+        "recovery",
+        "reload",
+        "slide_contact",
+        "taunt",
+        "throw",
+        "victory",
+        "walk1",
+        "walk2",
+        "windup"
+      ],
+      "motion_pose_paths": {
+        "block": "assets/dossier_curien/motion_2026-11-19/linda_block.png",
+        "finish": "assets/dossier_curien/motion_2026-11-19/linda_finish.png",
+        "jump_fall": "assets/dossier_curien/motion_2026-11-19/linda_jump_fall.png",
+        "jump_rise": "assets/dossier_curien/motion_2026-11-19/linda_jump_rise.png",
+        "reload": "assets/dossier_curien/motion_2026-11-19/linda_reload.png",
+        "taunt": "assets/dossier_curien/motion_2026-11-19/linda_taunt.png",
+        "throw": "assets/dossier_curien/motion_2026-11-19/linda_throw.png",
+        "victory": "assets/dossier_curien/motion_2026-11-19/linda_victory.png"
+      },
+      "missing_poses": []
+    }
+  ],
+  "historical_masters_unrecovered": 204,
+  "existing_arenas": 18,
+  "missing_existing_arena_layers": 0,
+  "scope_note": "Minimum named poses only. Intermediate frames, additional moves, bestiary animation, new stages and unverified costumes are separate work."
+}

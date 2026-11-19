@@ -1,0 +1,4 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+DOSSIER CURIEN PACK: passed; 956 checks; 0 failures; 49/49 textures; 40 gallery entries.
+{"counts":{"alternate_stories":14,"chronicles":9,"declared_source_bytes":65651752,"expected_gallery_entries":40,"fighters":24,"hidden_pose_entries":9,"loaded_gallery_entries":40,"loaded_motion_textures":30,"loaded_textures":49,"manifest_assets":49,"manor_routes":4,"motion_manifest_assets":30,"stages":18,"story_routes":26},"failures":[],"label":"motion-final-compat46","report":"/workspace/scratch/da9d6e4777c1/hotd-recovery/docs/dossier_curien/saga/production/motion_2026-11-19/COMPAT_PACK_QA.json","status":"passed"}

@@ -1,0 +1,33 @@
+{
+  "date": "2026-11-19",
+  "status": "reviewed_with_limits",
+  "manifest_sha256": "d1eb9878ecb1d55a63a71ec544d3e4e888954f08a1e77f123976427551618270",
+  "active_pngs": 30,
+  "total_dossier_pngs": 332,
+  "minimum_pose_gaps_resolved": 22,
+  "minimum_pose_gaps_remaining": 277,
+  "tracked_fighter_and_costume_identities": 26,
+  "reviewed_projections": [
+    "qa_projection/linda.jpg",
+    "qa_projection/rogan.jpg",
+    "qa_projection/zobio.jpg",
+    "qa_projection/zobiko.jpg",
+    "qa_projection/zombie_revenge.jpg"
+  ],
+  "projection_method": "Native unchanged PNGs projected at runtime scale and pivots on a diagnostic ground line. These are not game screenshots.",
+  "review_findings": [
+    "Compared standing-equivalent anatomical sizes and ground pivots across the five projections.",
+    "Corrected linda_block muzzle from [679,635] to [679,444]; final pack includes this value.",
+    "Reviewed opposite walking support drawings and costume continuity; in-engine temporal transitions remain unreviewed."
+  ],
+  "documentation_links_checked": 90,
+  "broken_documentation_links": 0,
+  "native_visual_capture_observed": false,
+  "interactive_playthrough_observed": false,
+  "limits": [
+    "No certification of canonical 1:1 fidelity.",
+    "No claim of complete frame-by-frame animation.",
+    "Bestiary illustrations do not imply completed playable movesets.",
+    "Historical Godot 4.7 and web delivery remain distinct from this Godot 4.6.3 pack."
+  ]
+}

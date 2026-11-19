@@ -1,0 +1,536 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-19",
+  "scope": "Six poses minimales manquantes de Linda Rotta",
+  "count": 6,
+  "assets": [
+    {
+      "fighter_id": "linda",
+      "art_id": "linda",
+      "pose": "jump_fall",
+      "path": "assets/dossier_curien/motion_2026-11-19/linda_jump_fall.png",
+      "sha256": "88b65896a9a6379b743836855b8027cf33fe44145ceecbc27bf28753e06d1633",
+      "bytes": 1673285,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        39,
+        1018,
+        1536
+      ],
+      "visible_bbox": [
+        191,
+        130,
+        866,
+        1394
+      ],
+      "visible_alpha_threshold": 127,
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pivot_px": [
+        500,
+        1394
+      ],
+      "emitter_px": [
+        598,
+        541
+      ],
+      "anchors_px": {
+        "left_palm": [
+          813,
+          434
+        ]
+      },
+      "standing_height_px": 1387,
+      "calibration_notes": "Pivot et émetteur repérés visuellement en pixels natifs. Échelle anatomique proposée commune au maître debout (1387 px), y compris les poses fléchies ; réglage final à vérifier dans le moteur.",
+      "source_generation_path": "/workspace/scratch/da9d6e4777c1/generated_images/exec-2539b58e-6705-4e7e-a00b-df6b548ffa24.png",
+      "prompt": "Use case: identity-preserve. Asset: ONE individual full-body 2D fighting-game sprite of the adult Linda Rotta from Zombie Revenge, a sibling pose for image 1. Image 1 is the approved painted sprite STYLE, face, anatomical scale and character reference. Image 2 is the original character COSTUME reference. Keep the same golden-blonde short asymmetric bob and long forward strand, serious face, yellow cropped tank top, double black belts with stacked silver buckles, frayed blue denim shorts, white bandage around anatomical LEFT upper arm, purple full-finger gloves, brown double-strap holster on anatomical RIGHT thigh, bare legs, yellow sneakers with blue-purple marks and white soles. Keep the pistol in anatomical RIGHT hand, never swap hands or costume sides. Same detailed hand-painted crisp 2D arcade shading and body proportions. Right-facing lateral three-quarter view. Portrait 1024x1536 composition, full hair, arms, hands, pistol and both soles entirely inside image with safe margins. Genuine transparent RGBA background, no floor, glow, shadow outside body, scenery, text, graphic UI, labels, sheets, other character, duplicated limb, projectile or muzzle flash. Change ONLY the pose to the DESCENDING half of a jump, just before landing: torso leaning slightly forward, head looking toward screen right, both legs bent under the body and the leading left foot reaching slightly downward while the trailing right knee is tucked, both feet airborne. Her right hand draws the pistol close across her lower chest with its muzzle safely pointed right, her left forearm lifted open for balance. Clearly a falling/landing-preparation pose, not the upward knee-thrust pose. Keep head size and torso length approximately the same pixel size as image 1; do not enlarge the crouched silhouette to fill the canvas.",
+      "references": [
+        {
+          "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_rotta_base.png",
+          "role": "style_identity_scale_reference"
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_characters/linda_full.jpg",
+          "role": "original_costume_reference"
+        }
+      ],
+      "sources": [
+        "https://static.wikia.nocookie.net/houseofthedead/images/3/3f/Linda_Full.jpg/revision/latest?cb=20200217050952",
+        "https://www.digitpress.com/library/manuals/dreamcast/zombie_revenge.pdf"
+      ],
+      "tool": "image_gen__imagegen",
+      "transparency_requested": true,
+      "bytes_preserved": true,
+      "status": "generated_pose_visual_reviewed",
+      "canonical_1_to_1_certified": false,
+      "animation_complete": false,
+      "visual_review": {
+        "single_full_body_subject": true,
+        "faces_right": true,
+        "right_hand_pistol": true,
+        "left_upper_arm_bandage": true,
+        "right_thigh_holster": true,
+        "costume_consistent": true,
+        "no_opaque_edge_clipping": true
+      },
+      "limitations": [
+        "Pose individuelle adaptée au mode de combat. Les transitions et images intermédiaires restent à produire et à contrôler.",
+        "Référence d'identité et de costume inspectée ; fidélité 1:1 non certifiée."
+      ]
+    },
+    {
+      "fighter_id": "linda",
+      "art_id": "linda",
+      "pose": "throw",
+      "path": "assets/dossier_curien/motion_2026-11-19/linda_throw.png",
+      "sha256": "5d1f298050cef8f7ae810cb5128069e232106be5ff10dc4ea3c61a1478b0e55b",
+      "bytes": 1682090,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        17,
+        1023,
+        1536
+      ],
+      "visible_bbox": [
+        21,
+        268,
+        1015,
+        1326
+      ],
+      "visible_alpha_threshold": 127,
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pivot_px": [
+        470,
+        1326
+      ],
+      "emitter_px": [
+        352,
+        824
+      ],
+      "anchors_px": {
+        "left_palm": [
+          950,
+          461
+        ]
+      },
+      "standing_height_px": 1387,
+      "calibration_notes": "Pivot et émetteur repérés visuellement en pixels natifs. Échelle anatomique proposée commune au maître debout (1387 px), y compris les poses fléchies ; réglage final à vérifier dans le moteur.",
+      "source_generation_path": "/workspace/scratch/da9d6e4777c1/generated_images/exec-2bd701fc-1905-45ca-8947-8c67fcb6a158.png",
+      "prompt": "Use case: identity-preserve. Asset: ONE individual full-body 2D fighting-game sprite of the adult Linda Rotta from Zombie Revenge, a sibling pose for image 1. Image 1 is the approved painted sprite STYLE, face, anatomical scale and character reference. Image 2 is the original character COSTUME reference. Keep the same golden-blonde short asymmetric bob and long forward strand, serious face, yellow cropped tank top, double black belts with stacked silver buckles, frayed blue denim shorts, white bandage around anatomical LEFT upper arm, purple full-finger gloves, brown double-strap holster on anatomical RIGHT thigh, bare legs, yellow sneakers with blue-purple marks and white soles. Keep the pistol in anatomical RIGHT hand, never swap hands or costume sides. Same detailed hand-painted crisp 2D arcade shading and body proportions. Right-facing lateral three-quarter view. Portrait 1024x1536 composition, full hair, arms, hands, pistol and both soles entirely inside image with safe margins. Genuine transparent RGBA background, no floor, glow, shadow outside body, scenery, text, graphic UI, labels, sheets, other character, duplicated limb, projectile or muzzle flash. Change ONLY the pose to a wrestling GRAB / THROW STARTUP against an unseen opponent to screen right: low grounded lunge, left knee bent forward, rear right leg braced with its foot firmly planted behind, hips lowered, left empty hand reaching forward and open at shoulder height to grasp the unseen opponent's lapel, left arm long but not locked. Right hand retains the same pistol close to her right hip, muzzle diagonally down-right and away from her left hand. Her torso leans forward and her face looks right intently. The opponent is NOT drawn; only Linda. Make the gesture a clear committed grab, not a pointing/taunting or shooting pose. Both complete shoes visible on a common floor baseline, no floor painted.",
+      "references": [
+        {
+          "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_rotta_base.png",
+          "role": "style_identity_scale_reference"
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_characters/linda_full.jpg",
+          "role": "original_costume_reference"
+        }
+      ],
+      "sources": [
+        "https://static.wikia.nocookie.net/houseofthedead/images/3/3f/Linda_Full.jpg/revision/latest?cb=20200217050952",
+        "https://www.digitpress.com/library/manuals/dreamcast/zombie_revenge.pdf"
+      ],
+      "tool": "image_gen__imagegen",
+      "transparency_requested": true,
+      "bytes_preserved": true,
+      "status": "generated_pose_visual_reviewed",
+      "canonical_1_to_1_certified": false,
+      "animation_complete": false,
+      "visual_review": {
+        "single_full_body_subject": true,
+        "faces_right": true,
+        "right_hand_pistol": true,
+        "left_upper_arm_bandage": true,
+        "right_thigh_holster": true,
+        "costume_consistent": true,
+        "no_opaque_edge_clipping": true
+      },
+      "limitations": [
+        "Pose individuelle adaptée au mode de combat. Les transitions et images intermédiaires restent à produire et à contrôler.",
+        "Référence d'identité et de costume inspectée ; fidélité 1:1 non certifiée.",
+        "La main tendue reste dans le cadre, à 9 px du bord droit ; éviter un nouveau recadrage."
+      ]
+    },
+    {
+      "fighter_id": "linda",
+      "art_id": "linda",
+      "pose": "victory",
+      "path": "assets/dossier_curien/motion_2026-11-19/linda_victory.png",
+      "sha256": "cd6eb4bac89b1f34943707409734c660b7a9f7321eb039b75581ffee9609c0fe",
+      "bytes": 1770080,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        16,
+        1008,
+        1496
+      ],
+      "visible_bbox": [
+        186,
+        19,
+        892,
+        1490
+      ],
+      "visible_alpha_threshold": 127,
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pivot_px": [
+        594,
+        1490
+      ],
+      "emitter_px": [
+        231,
+        911
+      ],
+      "anchors_px": {
+        "left_fist": [
+          645,
+          259
+        ]
+      },
+      "standing_height_px": 1387,
+      "calibration_notes": "Pivot et émetteur repérés visuellement en pixels natifs. Échelle anatomique proposée commune au maître debout (1387 px), y compris les poses fléchies ; réglage final à vérifier dans le moteur.",
+      "source_generation_path": "/workspace/scratch/da9d6e4777c1/generated_images/exec-c7ece19b-a352-48d4-8f9d-56e4f3b13fc9.png",
+      "prompt": "Use case: identity-preserve. Asset: ONE individual full-body 2D fighting-game sprite of the adult Linda Rotta from Zombie Revenge, a sibling pose for image 1. Image 1 is the approved painted sprite STYLE, face, anatomical scale and character reference. Image 2 is the original character COSTUME reference. Keep the same golden-blonde short asymmetric bob and long forward strand, serious face, yellow cropped tank top, double black belts with stacked silver buckles, frayed blue denim shorts, white bandage around anatomical LEFT upper arm, purple full-finger gloves, brown double-strap holster on anatomical RIGHT thigh, bare legs, yellow sneakers with blue-purple marks and white soles. Keep the pistol in anatomical RIGHT hand, never swap hands or costume sides. Same detailed hand-painted crisp 2D arcade shading and body proportions. Right-facing lateral three-quarter view. Portrait 1024x1536 composition, full hair, arms, hands, pistol and both soles entirely inside image with safe margins. Genuine transparent RGBA background, no floor, glow, shadow outside body, scenery, text, graphic UI, labels, sheets, other character, duplicated limb, projectile or muzzle flash. Change ONLY the pose to a reserved VICTORY stance after a fight: standing tall with relaxed legs, weight on her rear right leg, left foot resting lightly forward; her empty left purple-gloved fist is raised decisively near her left shoulder, elbow bent, while her right hand lowers the pistol beside her right hip with the muzzle toward the ground at screen right. Chin raised a little, slight confident satisfied smile, face still looking right. Keep the full outfit and mature original proportions; not a glamour pose. Both complete shoes visible on a common floor baseline, no floor painted.",
+      "references": [
+        {
+          "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_rotta_base.png",
+          "role": "style_identity_scale_reference"
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_characters/linda_full.jpg",
+          "role": "original_costume_reference"
+        }
+      ],
+      "sources": [
+        "https://static.wikia.nocookie.net/houseofthedead/images/3/3f/Linda_Full.jpg/revision/latest?cb=20200217050952",
+        "https://www.digitpress.com/library/manuals/dreamcast/zombie_revenge.pdf"
+      ],
+      "tool": "image_gen__imagegen",
+      "transparency_requested": true,
+      "bytes_preserved": true,
+      "status": "generated_pose_visual_reviewed",
+      "canonical_1_to_1_certified": false,
+      "animation_complete": false,
+      "visual_review": {
+        "single_full_body_subject": true,
+        "faces_right": true,
+        "right_hand_pistol": true,
+        "left_upper_arm_bandage": true,
+        "right_thigh_holster": true,
+        "costume_consistent": true,
+        "no_opaque_edge_clipping": true
+      },
+      "limitations": [
+        "Pose individuelle adaptée au mode de combat. Les transitions et images intermédiaires restent à produire et à contrôler.",
+        "Référence d'identité et de costume inspectée ; fidélité 1:1 non certifiée.",
+        "Les cheveux restent dans le cadre, à 19 px du bord supérieur ; éviter un nouveau recadrage."
+      ]
+    },
+    {
+      "fighter_id": "linda",
+      "art_id": "linda",
+      "pose": "taunt",
+      "path": "assets/dossier_curien/motion_2026-11-19/linda_taunt.png",
+      "sha256": "f556009716dc9bab0468c3407f09031cf5db8bd74672d984f78baf0b257303fa",
+      "bytes": 1708889,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        30,
+        1010,
+        1536
+      ],
+      "visible_bbox": [
+        200,
+        65,
+        853,
+        1460
+      ],
+      "visible_alpha_threshold": 127,
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pivot_px": [
+        510,
+        1460
+      ],
+      "emitter_px": [
+        257,
+        877
+      ],
+      "anchors_px": {
+        "left_palm": [
+          778,
+          337
+        ]
+      },
+      "standing_height_px": 1387,
+      "calibration_notes": "Pivot et émetteur repérés visuellement en pixels natifs. Échelle anatomique proposée commune au maître debout (1387 px), y compris les poses fléchies ; réglage final à vérifier dans le moteur.",
+      "source_generation_path": "/workspace/scratch/da9d6e4777c1/generated_images/exec-b2ddd53b-eeb1-42f4-9ded-3caaa8c5fd95.png",
+      "prompt": "Use case: identity-preserve. Asset: ONE individual full-body 2D fighting-game sprite of the adult Linda Rotta from Zombie Revenge, a sibling pose for image 1. Image 1 is the approved painted sprite STYLE, face, anatomical scale and character reference. Image 2 is the original character COSTUME reference. Keep the same golden-blonde short asymmetric bob and long forward strand, serious face, yellow cropped tank top, double black belts with stacked silver buckles, frayed blue denim shorts, white bandage around anatomical LEFT upper arm, purple full-finger gloves, brown double-strap holster on anatomical RIGHT thigh, bare legs, yellow sneakers with blue-purple marks and white soles. Keep the pistol in anatomical RIGHT hand, never swap hands or costume sides. Same detailed hand-painted crisp 2D arcade shading and body proportions. Right-facing lateral three-quarter view. Portrait 1024x1536 composition, full hair, arms, hands, pistol and both soles entirely inside image with at least 60px empty margins on ALL sides. Genuine transparent RGBA background, no floor, glow, shadow outside body, scenery, text, graphic UI, labels, sheets, other character, duplicated limb, projectile or muzzle flash. Change ONLY the pose to a confident COME-HERE TAUNT: feet firmly planted in a relaxed balanced guard, torso upright, face turned toward screen right with one slightly raised eyebrow and a restrained challenging half-smile. LEFT forearm raised in front of the chest and left palm turned upward toward screen right, fingers making a small beckoning come-here gesture; right hand keeps the same pistol lowered near her right thigh pointing diagonally down-right. This must read as a distinct small beckoning gesture, not a clenched-fist victory or an attack. Match head and body pixel scale to image 1 and keep both shoes complete.",
+      "references": [
+        {
+          "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_rotta_base.png",
+          "role": "style_identity_scale_reference"
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_characters/linda_full.jpg",
+          "role": "original_costume_reference"
+        }
+      ],
+      "sources": [
+        "https://static.wikia.nocookie.net/houseofthedead/images/3/3f/Linda_Full.jpg/revision/latest?cb=20200217050952",
+        "https://www.digitpress.com/library/manuals/dreamcast/zombie_revenge.pdf"
+      ],
+      "tool": "image_gen__imagegen",
+      "transparency_requested": true,
+      "bytes_preserved": true,
+      "status": "generated_pose_visual_reviewed",
+      "canonical_1_to_1_certified": false,
+      "animation_complete": false,
+      "visual_review": {
+        "single_full_body_subject": true,
+        "faces_right": true,
+        "right_hand_pistol": true,
+        "left_upper_arm_bandage": true,
+        "right_thigh_holster": true,
+        "costume_consistent": true,
+        "no_opaque_edge_clipping": true
+      },
+      "limitations": [
+        "Pose individuelle adaptée au mode de combat. Les transitions et images intermédiaires restent à produire et à contrôler.",
+        "Référence d'identité et de costume inspectée ; fidélité 1:1 non certifiée."
+      ]
+    },
+    {
+      "fighter_id": "linda",
+      "art_id": "linda",
+      "pose": "finish",
+      "path": "assets/dossier_curien/motion_2026-11-19/linda_finish.png",
+      "sha256": "7e87969565daefc2ee3a01269639223839b2ba06b9257d86bbfcb5fe5da23ee2",
+      "bytes": 1532990,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        996,
+        1512
+      ],
+      "visible_bbox": [
+        91,
+        526,
+        885,
+        1434
+      ],
+      "visible_alpha_threshold": 127,
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pivot_px": [
+        475,
+        1434
+      ],
+      "emitter_px": [
+        881,
+        684
+      ],
+      "anchors_px": {
+        "left_palm": [
+          680,
+          790
+        ]
+      },
+      "standing_height_px": 1387,
+      "calibration_notes": "Pivot et émetteur repérés visuellement en pixels natifs. Échelle anatomique proposée commune au maître debout (1387 px), y compris les poses fléchies ; réglage final à vérifier dans le moteur.",
+      "source_generation_path": "/workspace/scratch/da9d6e4777c1/generated_images/exec-a733938a-3ca9-4153-af3f-8149a6b4194e.png",
+      "prompt": "Use case: identity-preserve. Asset: ONE individual full-body 2D fighting-game sprite of the adult Linda Rotta from Zombie Revenge, a sibling pose for image 1. Image 1 is the approved painted sprite STYLE, face, anatomical scale and character reference. Image 2 is the original character COSTUME reference. Keep the same golden-blonde short asymmetric bob and long forward strand, serious face, yellow cropped tank top, double black belts with stacked silver buckles, frayed blue denim shorts, white bandage around anatomical LEFT upper arm, purple full-finger gloves, brown double-strap holster on anatomical RIGHT thigh, bare legs, yellow sneakers with blue-purple marks and white soles. Keep the pistol in anatomical RIGHT hand, never swap hands or costume sides. Same detailed hand-painted crisp 2D arcade shading and body proportions. Right-facing lateral three-quarter view. Portrait 1024x1536 composition, full hair, arms, hands, pistol and both soles entirely inside image with at least 60px empty margins on ALL sides. Genuine transparent RGBA background, no floor, glow, shadow outside body, scenery, text, graphic UI, labels, sheets, other character, duplicated limb, projectile or muzzle flash. Change ONLY the pose to the final aiming key pose of her finishing technique 'Dernière issue': a LOW, strongly braced kneeling marksman stance facing screen right. Rear RIGHT knee near the invisible ground behind her, front LEFT foot planted flat forward and left knee bent at a right angle. Torso upright above the lowered hips. RIGHT gloved hand holds the pistol and extends it straight screen right at eye height, LEFT gloved hand supports the underside of the right wrist in a two-hand shooting grip. Determined narrowed eyes look along the sights. Arms and muzzle fully inside frame. One pistol only, no target, victim, violence, blood, flashes or effects. Keep head size, torso length and limb thickness the same pixel scale as image 1; the lowered pose must occupy a shorter vertical silhouette with extra empty space overhead, never enlarge her to fill the portrait canvas. Both complete yellow shoes visible.",
+      "references": [
+        {
+          "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_rotta_base.png",
+          "role": "style_identity_scale_reference"
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_characters/linda_full.jpg",
+          "role": "original_costume_reference"
+        }
+      ],
+      "sources": [
+        "https://static.wikia.nocookie.net/houseofthedead/images/3/3f/Linda_Full.jpg/revision/latest?cb=20200217050952",
+        "https://www.digitpress.com/library/manuals/dreamcast/zombie_revenge.pdf"
+      ],
+      "tool": "image_gen__imagegen",
+      "transparency_requested": true,
+      "bytes_preserved": true,
+      "status": "generated_pose_visual_reviewed",
+      "canonical_1_to_1_certified": false,
+      "animation_complete": false,
+      "visual_review": {
+        "single_full_body_subject": true,
+        "faces_right": true,
+        "right_hand_pistol": true,
+        "left_upper_arm_bandage": true,
+        "right_thigh_holster": true,
+        "costume_consistent": true,
+        "no_opaque_edge_clipping": true
+      },
+      "limitations": [
+        "Pose individuelle adaptée au mode de combat. Les transitions et images intermédiaires restent à produire et à contrôler.",
+        "Référence d'identité et de costume inspectée ; fidélité 1:1 non certifiée."
+      ]
+    },
+    {
+      "fighter_id": "linda",
+      "art_id": "linda",
+      "pose": "reload",
+      "path": "assets/dossier_curien/motion_2026-11-19/linda_reload.png",
+      "sha256": "ab7faf26f60d3f19c39ac1a2fd23210a37cecf83a3f839e5aa661f1969e23fdb",
+      "bytes": 1768257,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        25,
+        1021,
+        1536
+      ],
+      "visible_bbox": [
+        126,
+        58,
+        898,
+        1484
+      ],
+      "visible_alpha_threshold": 127,
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pivot_px": [
+        509,
+        1484
+      ],
+      "emitter_px": [
+        752,
+        202
+      ],
+      "anchors_px": {
+        "magazine_top": [
+          675,
+          395
+        ],
+        "left_palm": [
+          713,
+          492
+        ]
+      },
+      "standing_height_px": 1387,
+      "calibration_notes": "Pivot et émetteur repérés visuellement en pixels natifs. Échelle anatomique proposée commune au maître debout (1387 px), y compris les poses fléchies ; réglage final à vérifier dans le moteur.",
+      "source_generation_path": "/workspace/scratch/da9d6e4777c1/generated_images/exec-e06f8ac5-bd1d-4f76-9754-95f164198f3d.png",
+      "prompt": "Use case: identity-preserve. Asset: ONE individual full-body 2D fighting-game sprite of the adult Linda Rotta from Zombie Revenge, a sibling pose for image 1. Image 1 is the approved painted sprite STYLE, face, anatomical scale and character reference. Image 2 is the original character COSTUME reference. Keep the same golden-blonde short asymmetric bob and long forward strand, serious face, yellow cropped tank top, double black belts with stacked silver buckles, frayed blue denim shorts, white bandage around anatomical LEFT upper arm, purple full-finger gloves, brown double-strap holster on anatomical RIGHT thigh, bare legs, yellow sneakers with blue-purple marks and white soles. Keep the pistol in anatomical RIGHT hand, never swap hands or costume sides. Same detailed hand-painted crisp 2D arcade shading and body proportions. Right-facing lateral three-quarter view. Portrait 1024x1536 composition, full hair, arms, hands, pistol and both soles entirely inside image with safe margins. Genuine transparent RGBA background, no floor, glow, shadow outside body, scenery, text, graphic UI, labels, sheets, other character, duplicated limb, projectile or muzzle flash. Change ONLY the pose to a mechanically readable PISTOL RELOAD: feet planted on a common baseline, knees softly bent in alert stance, gaze toward the weapon, right hand retains pistol at chest height pointing diagonally up toward screen right, with trigger finger straight beside frame. Left gloved hand holds one straight pistol magazine directly beneath the grip, just about to insert it into the magazine well. Show a small visible gap between magazine and bottom of grip so the action reads unmistakably. One pistol, one magazine, two hands, five fingers per hand. No ejected shell or spare flying magazine. The same thigh holster remains empty, on her right thigh.",
+      "references": [
+        {
+          "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_rotta_base.png",
+          "role": "style_identity_scale_reference"
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_characters/linda_full.jpg",
+          "role": "original_costume_reference"
+        }
+      ],
+      "sources": [
+        "https://static.wikia.nocookie.net/houseofthedead/images/3/3f/Linda_Full.jpg/revision/latest?cb=20200217050952",
+        "https://www.digitpress.com/library/manuals/dreamcast/zombie_revenge.pdf"
+      ],
+      "tool": "image_gen__imagegen",
+      "transparency_requested": true,
+      "bytes_preserved": true,
+      "status": "generated_pose_visual_reviewed",
+      "canonical_1_to_1_certified": false,
+      "animation_complete": false,
+      "visual_review": {
+        "single_full_body_subject": true,
+        "faces_right": true,
+        "right_hand_pistol": true,
+        "left_upper_arm_bandage": true,
+        "right_thigh_holster": true,
+        "costume_consistent": true,
+        "no_opaque_edge_clipping": true
+      },
+      "limitations": [
+        "Pose individuelle adaptée au mode de combat. Les transitions et images intermédiaires restent à produire et à contrôler.",
+        "Référence d'identité et de costume inspectée ; fidélité 1:1 non certifiée."
+      ]
+    }
+  ]
+}

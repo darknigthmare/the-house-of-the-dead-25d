@@ -2,6 +2,14 @@
 
 Bible de la saga · volume II · novembre 2026
 
+## Actualisation du 19 novembre 2026 — poses de combat
+
+Le [rapport de production du dernier lot](production/motion_2026-11-19/RAPPORT.md) complète ce volume : **30 poses individuelles** sont intégrées à Linda, Rogan, Zobio, Zobiko, Stick et Rikiya. Elles regroupent 24 nouvelles générations, quatre poses retrouvées et deux gardes EX corrigées réutilisées. Le mode compte désormais **24 combattants, 26 parcours Histoire, 18 arènes, 29 archives et 40 fiches de bestiaire**.
+
+Le [manifeste motion](../../../data/assets/dossier_curien_motion.json) conserve les références, empreintes, dimensions natives, pivots et repères de canon. L’[inventaire actualisé des manquants](production/motion_2026-11-19/MANQUANTS.json) recense **277 poses minimales encore absentes**, après résolution de 22 lacunes. Les interpolations dessinées, les mouvements du bestiaire et les variantes non vérifiées dépassent ce minimum ; la fidélité 1:1 n’est pas certifiée.
+
+Les [instructions de jeu courantes](../JOUER.md) et le [paquet séparé pour Godot 4.6.3](jeu_motion_compat46/README.md) accompagnent cette révision. Les contrôles du nouveau paquet sont headless ; les planches de proportions sont des projections hors moteur. Les captures et vidéos historiques de cette bible restent rattachées à leurs livraisons d’origine.
+
 ## Entrer dans l’anthologie
 
 Le menu de Dossier Curien ouvre deux portes vers la série.

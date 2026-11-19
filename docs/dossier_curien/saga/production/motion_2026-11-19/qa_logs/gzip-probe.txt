@@ -1,0 +1,19 @@
+GZIP DISTRIBUTION PROBE
+
+Source: /tmp/HOTD_Motion_Compat46.pck
+Source bytes: 289338520
+Source SHA256: c01351e540d24f739cb4d8ec4d02a96561d79b7379405e027f470e2b4671ef67
+Compression: gzip -n -9 -c
+Archive: /tmp/HOTD_Motion_Compat46.pck.deterministic-53qtklyl.gz
+Archive bytes: 287866353
+Archive SHA256: 52235e2cc7de030d64497683c8065778596c9aa94864584b22d009f02706cf68
+Savings: 1472167 bytes (0.509%)
+gzip -t: exit 0
+Decompressed bytes: 289338520
+Decompressed SHA256 equals source SHA256: true
+Source content and filesystem metadata unchanged: true
+Compression time: 9.508 seconds
+Integrity check time: 1.439 seconds
+Compression plus verification: 12.383 seconds
+
+The archive still exceeds the available workspace capacity. No fragmentation or copy to workspace was performed by this probe.

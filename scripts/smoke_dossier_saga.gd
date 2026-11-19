@@ -216,6 +216,8 @@ func new_styles() -> void:
 			f.action = cmd
 			f.tick = f.move_data().start
 			var expected := "_melee" if i == 19 and cmd == "light" else ""
+			# Linda's authored throw is a non-firing pose, like Gary's elbow.
+			if i == 23 and cmd == "throw": expected = "_throw"
 			verify(arena.visuals.pose_suffix(f) == expected, "Firearm contact excluded from %d/%s" % [i,cmd])
 		f.action = "special"
 		f.tick = f.move_data().start

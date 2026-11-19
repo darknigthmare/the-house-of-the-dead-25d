@@ -1,0 +1,475 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> the-house-of-the-dead-25d@0.5.0 test
+> node scripts/qa.mjs --data-only && node scripts/verify_sprite_atlas_v2.mjs && node scripts/verify_sprite_atlas_v3.mjs --all && node scripts/verify_sprite_atlas_v3.mjs --self-test-manifest && node scripts/verify_route_graph_integrity.mjs && node scripts/verify_campaign_routes.mjs && node scripts/verify_enemy_roster.mjs && node scripts/verify_environment_assets.mjs && node scripts/verify_animated_effects.mjs && node scripts/verify_gameplay_support_assets.mjs && node scripts/audit_content_families.mjs && node scripts/optimize_texture_imports.mjs --check && node scripts/verify_dossier_curien_assets.mjs && node scripts/verify_dossier_curien_art.mjs && npm run qa:curien-expansion && npm run qa:curien-motion
+
+QA checks: 307/307 passed
+SPRITE V2 NOTE: private scientist source reports are absent; validating tracked manifest and provenance contracts.
+SPRITE V2 OK: 38 dedicated atlases, 2432 directional/state cells.
+SPRITE V3 OK: Sam idle 64 unique cells, 8 distinct frames per direction, 0 mirrored directional pairs.
+SPRITE V3 OK: Sam locomotion 64 unique cells, 8 distinct frames per direction, 0 mirrored directional pairs.
+SPRITE V3 OK: Sam attack 64 unique cells, 8 distinct frames per direction, 0 mirrored directional pairs.
+SPRITE V3 OK: Sam hit_recoil 64 unique cells, 8 distinct frames per direction, 0 mirrored directional pairs.
+SPRITE V3 OK: Sam death_fall 64 unique cells, 8 distinct frames per direction, 0 mirrored directional pairs.
+{
+  "ok": true,
+  "manifest": "data/assets/sprite_manifest_v3.json",
+  "profile": "sam_a1",
+  "published_clip_count": 5,
+  "verified": [
+    {
+      "actor_id": "sam_a1",
+      "contract_version": 3,
+      "clip": "idle",
+      "display_scale": 1,
+      "display_scaled_frame0_height": 219,
+      "path": "assets/sprites_v3/enemies/sam_a1/sam_a1__v3__idle__8dirx8f.png",
+      "sha256": "0f5954ad96f253749abf4654a76aed390242e78eb43c3917192e4026a0a165f1",
+      "declared_sha256": "0f5954ad96f253749abf4654a76aed390242e78eb43c3917192e4026a0a165f1",
+      "bytes": 2316276,
+      "dimensions": [
+        2048,
+        2048
+      ],
+      "channels": 4,
+      "has_alpha": true,
+      "cell_count": 64,
+      "unique_atlas_cells": 64,
+      "distinct_frames_per_direction": [
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "mirror_matches": {
+        "front_diagonal": 0,
+        "profile": 0,
+        "back_diagonal": 0
+      },
+      "visible_pixels_min": 7336,
+      "visible_pixels_max": 13626,
+      "visible_pixels_average": 10815,
+      "silhouette_bbox_px": {
+        "width_min": 54,
+        "width_max": 96,
+        "width_average": 76,
+        "height_min": 208,
+        "height_max": 228,
+        "height_average": 218,
+        "height_average_by_direction": [
+          217,
+          225,
+          222,
+          220,
+          219,
+          217,
+          215,
+          209
+        ],
+        "height_average_by_frame": [
+          219,
+          220,
+          219,
+          220,
+          217,
+          217,
+          216,
+          217
+        ]
+      },
+      "alpha_pixels": {
+        "transparent": 3502157,
+        "partial": 58965,
+        "opaque": 633182
+      },
+      "neutral_fringe": {
+        "minimum_channel": 165,
+        "maximum_channel_spread": 50,
+        "maximum_allowed_per_cell": 24,
+        "detected_total": 0,
+        "detected_max_per_cell": 0
+      },
+      "transparent_gutter": 12,
+      "foot_anchor_y": 241
+    },
+    {
+      "actor_id": "sam_a1",
+      "contract_version": 3,
+      "clip": "locomotion",
+      "display_scale": 1.0282,
+      "display_scaled_frame0_height": 219,
+      "path": "assets/sprites_v3/enemies/sam_a1/sam_a1__v3__locomotion__8dirx8f.png",
+      "sha256": "56cdaab26e434afc8568dc0eefcd63220e7b7f04d7deffd5da1de4de3fec21a4",
+      "declared_sha256": "56cdaab26e434afc8568dc0eefcd63220e7b7f04d7deffd5da1de4de3fec21a4",
+      "bytes": 2518639,
+      "dimensions": [
+        2048,
+        2048
+      ],
+      "channels": 4,
+      "has_alpha": true,
+      "cell_count": 64,
+      "unique_atlas_cells": 64,
+      "distinct_frames_per_direction": [
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "mirror_matches": {
+        "front_diagonal": 0,
+        "profile": 0,
+        "back_diagonal": 0
+      },
+      "visible_pixels_min": 10183,
+      "visible_pixels_max": 13934,
+      "visible_pixels_average": 11848,
+      "silhouette_bbox_px": {
+        "width_min": 81,
+        "width_max": 114,
+        "width_average": 100,
+        "height_min": 178,
+        "height_max": 228,
+        "height_average": 212,
+        "height_average_by_direction": [
+          228,
+          218,
+          215,
+          208,
+          193,
+          213,
+          209,
+          212
+        ],
+        "height_average_by_frame": [
+          213,
+          212,
+          216,
+          212,
+          212,
+          210,
+          210,
+          210
+        ]
+      },
+      "alpha_pixels": {
+        "transparent": 3436030,
+        "partial": 120006,
+        "opaque": 638268
+      },
+      "neutral_fringe": {
+        "minimum_channel": 165,
+        "maximum_channel_spread": 50,
+        "maximum_allowed_per_cell": 24,
+        "detected_total": 0,
+        "detected_max_per_cell": 0
+      },
+      "transparent_gutter": 12,
+      "foot_anchor_y": 241
+    },
+    {
+      "actor_id": "sam_a1",
+      "contract_version": 3,
+      "clip": "attack",
+      "display_scale": 1.1231,
+      "display_scaled_frame0_height": 219,
+      "path": "assets/sprites_v3/enemies/sam_a1/sam_a1__v3__attack__8dirx8f.png",
+      "sha256": "c317ee6ff60fc43dc74881197f2c74e554aed6f14b25c5e756e7b62a110f2348",
+      "declared_sha256": "c317ee6ff60fc43dc74881197f2c74e554aed6f14b25c5e756e7b62a110f2348",
+      "bytes": 2585028,
+      "dimensions": [
+        2048,
+        2048
+      ],
+      "channels": 4,
+      "has_alpha": true,
+      "cell_count": 64,
+      "unique_atlas_cells": 64,
+      "distinct_frames_per_direction": [
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "mirror_matches": {
+        "front_diagonal": 0,
+        "profile": 0,
+        "back_diagonal": 0
+      },
+      "visible_pixels_min": 9206,
+      "visible_pixels_max": 14348,
+      "visible_pixels_average": 12060,
+      "silhouette_bbox_px": {
+        "width_min": 86,
+        "width_max": 228,
+        "width_average": 126,
+        "height_min": 169,
+        "height_max": 217,
+        "height_average": 196,
+        "height_average_by_direction": [
+          200,
+          201,
+          199,
+          203,
+          197,
+          201,
+          189,
+          179
+        ],
+        "height_average_by_frame": [
+          195,
+          199,
+          192,
+          201,
+          189,
+          195,
+          196,
+          200
+        ]
+      },
+      "alpha_pixels": {
+        "transparent": 3422475,
+        "partial": 106056,
+        "opaque": 665773
+      },
+      "neutral_fringe": {
+        "minimum_channel": 165,
+        "maximum_channel_spread": 50,
+        "maximum_allowed_per_cell": 24,
+        "detected_total": 0,
+        "detected_max_per_cell": 0
+      },
+      "transparent_gutter": 12,
+      "foot_anchor_y": 241
+    },
+    {
+      "actor_id": "sam_a1",
+      "contract_version": 3,
+      "clip": "hit_recoil",
+      "display_scale": 1.0282,
+      "display_scaled_frame0_height": 219,
+      "path": "assets/sprites_v3/enemies/sam_a1/sam_a1__v3__hit_recoil__8dirx8f.png",
+      "sha256": "8b175bf3f8a4e42289e676dbb9859f6ce2588d702f85453ced4bf72e3f1bb164",
+      "declared_sha256": "8b175bf3f8a4e42289e676dbb9859f6ce2588d702f85453ced4bf72e3f1bb164",
+      "bytes": 2417677,
+      "dimensions": [
+        2048,
+        2048
+      ],
+      "channels": 4,
+      "has_alpha": true,
+      "cell_count": 64,
+      "unique_atlas_cells": 64,
+      "distinct_frames_per_direction": [
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "mirror_matches": {
+        "front_diagonal": 0,
+        "profile": 0,
+        "back_diagonal": 0
+      },
+      "visible_pixels_min": 9727,
+      "visible_pixels_max": 13948,
+      "visible_pixels_average": 11483,
+      "silhouette_bbox_px": {
+        "width_min": 82,
+        "width_max": 130,
+        "width_average": 98,
+        "height_min": 196,
+        "height_max": 228,
+        "height_average": 210,
+        "height_average_by_direction": [
+          226,
+          209,
+          209,
+          208,
+          210,
+          211,
+          206,
+          205
+        ],
+        "height_average_by_frame": [
+          213,
+          212,
+          212,
+          208,
+          210,
+          210,
+          209,
+          210
+        ]
+      },
+      "alpha_pixels": {
+        "transparent": 3459414,
+        "partial": 103892,
+        "opaque": 630998
+      },
+      "neutral_fringe": {
+        "minimum_channel": 165,
+        "maximum_channel_spread": 50,
+        "maximum_allowed_per_cell": 24,
+        "detected_total": 0,
+        "detected_max_per_cell": 0
+      },
+      "transparent_gutter": 12,
+      "foot_anchor_y": 241
+    },
+    {
+      "actor_id": "sam_a1",
+      "contract_version": 3,
+      "clip": "death_fall",
+      "display_scale": 1.0896,
+      "display_scaled_frame0_height": 219,
+      "path": "assets/sprites_v3/enemies/sam_a1/sam_a1__v3__death_fall__8dirx8f.png",
+      "sha256": "4e2b0420574630334778cffb749b983d49c627b4ad14790d42fa2f18a807439c",
+      "declared_sha256": "4e2b0420574630334778cffb749b983d49c627b4ad14790d42fa2f18a807439c",
+      "bytes": 1893296,
+      "dimensions": [
+        2048,
+        2048
+      ],
+      "channels": 4,
+      "has_alpha": true,
+      "cell_count": 64,
+      "unique_atlas_cells": 64,
+      "distinct_frames_per_direction": [
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "mirror_matches": {
+        "front_diagonal": 0,
+        "profile": 0,
+        "back_diagonal": 0
+      },
+      "visible_pixels_min": 6174,
+      "visible_pixels_max": 11402,
+      "visible_pixels_average": 8535,
+      "silhouette_bbox_px": {
+        "width_min": 51,
+        "width_max": 228,
+        "width_average": 152,
+        "height_min": 40,
+        "height_max": 207,
+        "height_average": 120,
+        "height_average_by_direction": [
+          122,
+          120,
+          118,
+          117,
+          126,
+          118,
+          118,
+          123
+        ],
+        "height_average_by_frame": [
+          201,
+          193,
+          179,
+          148,
+          98,
+          53,
+          46,
+          45
+        ]
+      },
+      "alpha_pixels": {
+        "transparent": 3648068,
+        "partial": 56010,
+        "opaque": 490226
+      },
+      "neutral_fringe": {
+        "minimum_channel": 165,
+        "maximum_channel_spread": 50,
+        "maximum_allowed_per_cell": 24,
+        "detected_total": 0,
+        "detected_max_per_cell": 0
+      },
+      "transparent_gutter": 12,
+      "foot_anchor_y": 241
+    }
+  ],
+  "failed": []
+}
+{
+  "ok": true,
+  "manifest": "data/assets/sprite_manifest_v3.json",
+  "profile": "sam_a1",
+  "published_clip_count": 5,
+  "checks": {
+    "altered_sha256_rejected": true,
+    "unsafe_display_scale_rejected": true,
+    "path_traversal_rejected": true,
+    "duplicate_atlas_path_rejected": true,
+    "duplicate_profile_rejected": true
+  }
+}
+chapter_01: 15 nodes, 15 reachable
+chapter_02: 10 nodes, 10 reachable
+chapter_03: 11 nodes, 11 reachable
+chapter_04: 7 nodes, 7 reachable
+Route graph integrity passed.
+chapter_01: paths=8 scientists min=6 max=6 fixed_runtime_min_excluding_boss=106.5s bosses_dynamic=chariot_battle
+chapter_02: paths=4 scientists min=6 max=6 fixed_runtime_min_excluding_boss=97.4s bosses_dynamic=hangedman_battle
+chapter_03: paths=8 scientists min=3 max=3 fixed_runtime_min_excluding_boss=93.1s bosses_dynamic=hermit_battle
+chapter_04: paths=2 scientists min=0 max=0 fixed_runtime_min_excluding_boss=40.4s bosses_dynamic=chariot_rematch,hangedman_rematch,magician_battle
+Campaign route verification passed.
+ENEMY ROSTER OK: 25 profiles, 25 unique types, 25 dedicated directional atlases.
+ENVIRONMENT ASSET VERIFY PASSED: 1977 assertions; 20 materials, 43 nodes, 8 active destructibles, 14 props, 4 animated effects; 81.13 MiB runtime PNG
+ANIMATED EFFECTS OK: 340/340 checks; optional private sources 0/4 present
+GAMEPLAY SUPPORT OK: 113/113 checks
+CONTENT FAMILY AUDIT: 905 checks, 6 warnings, 0 errors
+inventory props=14/105 placements/9 state events; breakables=8/8 uses; pickups=3/12 placements; enemies=25/25 timeline active + 1 runtime boss-support spawn sites; civilians=20 placements/5 visuals; projectiles=7/7 effective; animated_effects=4; sprite_v3=1/38; unique_binary_assets=87/87
+WARNINGS
+- chapter_01/garden_rescue: sam_a1 placement is not arcade-exact (canonical_chapter_verified_scene_placement_pending)
+- chapter_01/mansion_entrance: kenfis_f1 placement is not arcade-exact (canonical_chapter_verified_scene_placement_pending)
+- chapter_01/mansion_entrance: name_g2 placement is not arcade-exact (canonical_chapter_verified_scene_placement_pending)
+- 37/38 active actor profiles still mirror right from left; 1 complete V3 profile uses authored right views
+- 25/38 active actor profiles still mirror back-right from back-left; 1 complete V3 profile uses authored diagonals
+- 37/38 active actor profiles still expose 8 V2 semantic cells per direction; 1 profile has five multi-frame V3 clips
+TEXTURE IMPORT PROFILE VERIFIED: 132 files, 0 mismatches.
+DOSSIER CURIEN ART: 253 catalogue PNGs verified; 50 additions, native dimensions, SHA-256 and alpha bounds verified.
+DOSSIER CURIEN ART VERIFIED: 1456 checks, 223 Saga PNGs, 8 calibrated poses.
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> the-house-of-the-dead-25d@0.5.0 qa:curien-expansion
+> node scripts/verify_dossier_curien_expansion.mjs && node scripts/verify_dossier_curien_expansion.mjs --self-test
+
+DOSSIER CURIEN EXPANSION VERIFIED: 49 PNGs, 40 gallery entries, 65651752 bytes; hashes, RGBA bounds, provenance and paths verified.
+DOSSIER CURIEN EXPANSION SELF-TEST: 10 cases passed.
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> the-house-of-the-dead-25d@0.5.0 qa:curien-motion
+> node scripts/verify_dossier_curien_motion.mjs && node scripts/verify_dossier_curien_motion.mjs --self-test
+
+SAGA MOTION MANIFEST: {"assets":30,"bytes":35895640}
+SAGA MOTION MANIFEST SELF-TEST: 11 cases passed.
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.3
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.3
+npm notice To update run: npm install -g npm@12.2.3
+npm notice

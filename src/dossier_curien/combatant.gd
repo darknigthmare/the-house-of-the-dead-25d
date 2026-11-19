@@ -111,6 +111,8 @@ var guarding := false
 var crouching := false
 var moving := false
 var walk_ticks := 0
+var taunt_ticks := 0
+var block_ticks := 0
 var frost_ticks := 0
 var combo := 0
 var combo_window := 0
@@ -166,10 +168,15 @@ func surge_radius() -> float:
 	return lerpf(68.0, float(profile.move.reach), clampf(age / 17.0, 0.0, 1.0))
 
 func begin(command: String, low := false) -> bool:
-	if command == "" or stun > 0:
+	if command not in ["jump", "light", "heavy", "special", "throw", "reload", "taunt"] or stun > 0:
 		return false
+	if command == "taunt":
+		if action != "" or altitude > 0 or vy > 0 or moving or guarding or crouching or block_ticks > 0 or taunt_ticks > 0: return false
+		taunt_ticks = 60
+		return true
 	if command == "jump":
 		if action == "" and altitude <= 0.0:
+			taunt_ticks = 0
 			vy = 13.2
 			return true
 		return false
@@ -185,6 +192,7 @@ func begin(command: String, low := false) -> bool:
 	alternate_special = command == "special" and low and altitude <= 0 and profile.has("alt_move")
 	if command == "special" and profile.kind == "hop" and altitude <= 0: vy = 6.8
 	action = command
+	taunt_ticks = 0
 	tick = 0
 	connected = false
 	confirmed = false
@@ -192,6 +200,11 @@ func begin(command: String, low := false) -> bool:
 	return true
 
 func step(axis: int, down: bool, command: String, other_x: float) -> void:
+	block_ticks = maxi(0,block_ticks-1)
+	if axis != 0 or down or altitude > 0 or stun > 0 or action != "" or (command != "" and command != "taunt"):
+		taunt_ticks = 0
+	else:
+		taunt_ticks = maxi(0,taunt_ticks-1)
 	if action == "":
 		facing = 1 if other_x >= x else -1
 	if stun > 0:
@@ -199,7 +212,8 @@ func step(axis: int, down: bool, command: String, other_x: float) -> void:
 	combo_window = maxi(0, combo_window - 1)
 	if combo_window == 0:
 		combo = 0
-	if command != "":
+	# Resolve this tick's movement before accepting a cosmetic gesture.
+	if command != "" and command != "taunt":
 		buffered = command
 		buffer_ticks = 5
 	if buffer_ticks > 0:
@@ -222,6 +236,7 @@ func step(axis: int, down: bool, command: String, other_x: float) -> void:
 		walk_ticks += 1
 	else:
 		walk_ticks = 0
+	if command == "taunt": begin(command)
 	frost_ticks = maxi(0, frost_ticks - 1)
 	if action == "": return
 	tick += 1
@@ -286,7 +301,9 @@ func hit(target) -> bool:
 	var grab: bool = action == "throw" or (action == "special" and profile.kind in ["hug", "clasp"])
 	var blocked: bool = target.guarding and not grab
 	connected = true
+	target.taunt_ticks = 0
 	if blocked:
+		target.block_ticks = 8
 		if action == "special" and profile.kind == "palm": target.health = maxi(1, target.health - 3)
 		target.x += facing * 6
 		return false

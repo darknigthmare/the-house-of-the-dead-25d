@@ -1,0 +1,202 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-19",
+  "assets": [
+    {
+      "id": "zobio_windup",
+      "path": "assets/dossier_curien/motion_2026-11-19/zobio_windup.png",
+      "source_generation_path": "/workspace/scratch/da9d6e4777c1/generated_images/exec-610f7735-344c-4ee3-a92e-e0344d7d9e7a.png",
+      "source_file": "exec-610f7735-344c-4ee3-a92e-e0344d7d9e7a.png",
+      "prompt": "Use case: identity-preserve. Asset: ONE individual transparent full-body 2D fighting-game sprite for ZOBIO from Loving Deads: House of the Dead EX. Edit the supplied corrected guard sprite as the identity and rendering reference. Preserve exactly its huge hunched shoulders, chunky limbs, flat rectangular face and blocky jaw, head wraps, right eyepatch and visible red left eye with purple tear, sparse dark hair, sickly yellow-green skin, torn blue-grey short-sleeved open jacket, small asymmetrical exposed rib patch and staples, ragged brown knee trousers, rectangular GOLD belt buckle and completely BARE feet. Keep hand-painted arcade rendering, facing RIGHT, same proportions, material shading and anatomical scale as reference. Entire character and all toes/fingers enclosed with generous safe margins, square canvas. No shoes, no new gear, no effects, no aura, no floor or shadow, no text, no labels, no collage, no additional character. Genuine transparent RGBA. Change ONLY action pose. Pose: anticipation before a heavy rightward forward punch. Pull the near heavy fist back beside the lower ribs, elbow bent strongly behind torso, turn shoulders slightly back, opposite fist raised defensively near face; load weight onto the rear bent leg, front bare foot remains planted. This is a readable compact coiled wind-up, visibly different from guard, NOT the punch contact. Both fists and all legs visible.",
+      "tool": "image_gen__imagegen",
+      "references": [
+        "assets/dossier_curien/expansion/hotd_ex/zobio_ex_guard_v2.png"
+      ],
+      "sources": [
+        "https://www.sega.jp/history/arcade/product/8762/",
+        "https://flyers.arcade-museum.com/videogames/show/5803"
+      ],
+      "status": "generated_visually_reviewed_pending_runtime",
+      "canonical_1_to_1_certified": false
+    },
+    {
+      "id": "zobio_contact",
+      "path": "assets/dossier_curien/motion_2026-11-19/zobio_contact.png",
+      "source_generation_path": "/workspace/scratch/da9d6e4777c1/generated_images/exec-1cd8447b-f985-4373-bcf5-f5863af07f62.png",
+      "source_file": "exec-1cd8447b-f985-4373-bcf5-f5863af07f62.png",
+      "prompt": "Use case: identity-preserve. Asset: ONE individual transparent full-body 2D fighting-game sprite for ZOBIO from Loving Deads: House of the Dead EX. Edit the supplied corrected guard sprite as the identity and rendering reference. Preserve exactly its huge hunched shoulders, chunky limbs, flat rectangular face and blocky jaw, head wraps, right eyepatch and visible red left eye with purple tear, sparse dark hair, sickly yellow-green skin, torn blue-grey short-sleeved open jacket, small asymmetrical exposed rib patch and staples, ragged brown knee trousers, rectangular GOLD belt buckle and completely BARE feet. Keep hand-painted arcade rendering, facing RIGHT, same proportions, material shading and anatomical scale as reference. Entire character and all toes/fingers enclosed with generous safe margins, square canvas. No shoes, no new gear, no effects, no aura, no floor or shadow, no text, no labels, no collage, no additional character. Genuine transparent RGBA. Change ONLY action pose. Pose: heavy forward punch at maximum contact toward screen RIGHT. Near arm extends strongly horizontally from shoulder with one enormous closed fist, shoulder and torso rotate into the strike, opposite fist retracts near chest. Front knee bends over planted bare front foot; rear bare foot pushes off, heel slightly raised. Keep body width and reference limb lengths, do not enlarge the fist through perspective. Clear full side silhouette. One fighter alone; do not add an opponent or impact effect.",
+      "tool": "image_gen__imagegen",
+      "references": [
+        "assets/dossier_curien/expansion/hotd_ex/zobio_ex_guard_v2.png"
+      ],
+      "sources": [
+        "https://www.sega.jp/history/arcade/product/8762/",
+        "https://flyers.arcade-museum.com/videogames/show/5803"
+      ],
+      "status": "generated_visually_reviewed_pending_runtime",
+      "canonical_1_to_1_certified": false
+    },
+    {
+      "id": "zobio_recoil",
+      "path": "assets/dossier_curien/motion_2026-11-19/zobio_recoil.png",
+      "source_generation_path": "/workspace/scratch/da9d6e4777c1/generated_images/exec-121f8ca8-c2c9-4b8f-ab2f-3074a498b0c6.png",
+      "source_file": "exec-121f8ca8-c2c9-4b8f-ab2f-3074a498b0c6.png",
+      "prompt": "Use case: identity-preserve. Edit the supplied corrected ZOBIO from House of the Dead EX into ONE new individual 2D fighting sprite. EXACT same art style, yellow-green skin, massive hunched broad shoulders, square drooping face, head wraps/eyepatch/red eye/purple tear, asymmetrical small rib exposure/staples, ripped blue-grey open short-sleeve jacket, ripped brown knee-length trousers and rectangular GOLD buckle. Both feet completely BARE. Facing RIGHT, same head and body proportions. Full body and all extremities within SQUARE canvas with generous margin. Genuine transparent RGBA background. No new objects, no opponent, no wound/blood/effects, no shadow or floor, no text or labels, ONE character. Pose: controlled reaction to being hit at chest height from screen RIGHT, no visible injury. Torso leans back toward screen LEFT, head pulls back, knees flex, near left-on-image forearm opens away from abdomen and far forearm raises protectively beside face. Both bare feet remain contacting same floor line, front heel partly lifted, staggering but not falling. Jacket hem follows motion. Must read clearly as flinch, distinct from attack and guard. Five fingers on visible open hand, preserve bulky anatomy.",
+      "tool": "image_gen__imagegen",
+      "references": [
+        "assets/dossier_curien/expansion/hotd_ex/zobio_ex_guard_v2.png"
+      ],
+      "sources": [
+        "https://www.sega.jp/history/arcade/product/8762/",
+        "https://flyers.arcade-museum.com/videogames/show/5803"
+      ],
+      "status": "generated_visually_reviewed_pending_runtime",
+      "canonical_1_to_1_certified": false
+    },
+    {
+      "id": "zobio_recovery",
+      "path": "assets/dossier_curien/motion_2026-11-19/zobio_recovery.png",
+      "source_generation_path": "/workspace/scratch/da9d6e4777c1/generated_images/exec-10e80e3d-db1c-4195-8135-5271c4ab413c.png",
+      "source_file": "exec-10e80e3d-db1c-4195-8135-5271c4ab413c.png",
+      "prompt": "Use case: identity-preserve. Edit the supplied corrected ZOBIO from House of the Dead EX into ONE new individual 2D fighting sprite. EXACT same art style, yellow-green skin, massive hunched broad shoulders, square drooping face, head wraps/eyepatch/red eye/purple tear, asymmetrical small rib exposure/staples, ripped blue-grey open short-sleeve jacket, ripped brown knee-length trousers and rectangular GOLD buckle. Both feet completely BARE. Facing RIGHT, same head and body proportions. Full body and all extremities within SQUARE canvas with generous margin. Genuine transparent RGBA background. No new objects, no opponent, no wound/blood/effects, no shadow or floor, no text or labels, ONE character. Pose: recovery immediately after a forward heavy punch, returning toward guard. His near (viewer side, previously left-on-image) arm is halfway bent across front of torso with fist in front at sternum height, elbow no longer fully extended; opposite fist guards his chin. Torso untwists toward original guard, front knee still slightly bent, rear bare heel settles down. Keep head and shoulder scale identical, no exaggerated perspective. It must read as retracting the punch with a compact intermediary silhouette, visibly different from original symmetrical guard.",
+      "tool": "image_gen__imagegen",
+      "references": [
+        "assets/dossier_curien/expansion/hotd_ex/zobio_ex_guard_v2.png"
+      ],
+      "sources": [
+        "https://www.sega.jp/history/arcade/product/8762/",
+        "https://flyers.arcade-museum.com/videogames/show/5803"
+      ],
+      "status": "generated_visually_reviewed_pending_runtime",
+      "canonical_1_to_1_certified": false
+    },
+    {
+      "id": "zobio_walk1",
+      "path": "assets/dossier_curien/motion_2026-11-19/zobio_walk1.png",
+      "source_generation_path": "/workspace/scratch/da9d6e4777c1/generated_images/exec-1b305ced-dc4e-4c70-9dbf-313c06f1e51d.png",
+      "source_file": "exec-1b305ced-dc4e-4c70-9dbf-313c06f1e51d.png",
+      "prompt": "Use case: identity-preserve. Edit supplied corrected ZOBIO game sprite for exactly ONE individual frame of his forward walking animation toward screen RIGHT. Retain his massive hunched yellow-green body, flat square face, head bandages/eye patch/red eye/purple tear, bare huge green hands and feet, blue-grey ripped short-sleeved jacket, asymmetrical small rib patch, staples and brown ragged knee trousers with GOLD rectangular buckle. Maintain original head/torso size and proportions and detailed painted rendering. Arms remain in guard, loosely bent. Same square canvas, character fully visible with safe margins. Ground contact line at approximately 92 percent canvas height. No additional character, text, effects, ground or shadow. Native truly transparent RGBA. This is a WALK, not an attack or run. Frame A: near RIGHT leg (viewer-side leg, starting on left side of source) has swung forward toward screen RIGHT, heel touching the ground in front of hip and toes raised a little; opposite LEFT leg stays behind toward LEFT with heel lifted and toes on ground. Show that near leg visibly crossing in front of the far leg. BOTH knees mildly flexed. Pelvis advances slightly, opposite shoulders compensate subtly. A clear broad step contact, without crossing ankles or changing camera angle.",
+      "tool": "image_gen__imagegen",
+      "references": [
+        "assets/dossier_curien/expansion/hotd_ex/zobio_ex_guard_v2.png"
+      ],
+      "sources": [
+        "https://www.sega.jp/history/arcade/product/8762/",
+        "https://flyers.arcade-museum.com/videogames/show/5803"
+      ],
+      "status": "generated_visually_reviewed_pending_runtime",
+      "canonical_1_to_1_certified": false
+    },
+    {
+      "id": "zobiko_windup",
+      "path": "assets/dossier_curien/motion_2026-11-19/zobiko_windup.png",
+      "source_generation_path": "/workspace/scratch/da9d6e4777c1/generated_images/exec-3446c156-5acf-475b-9bb5-5ac3599cdc53.png",
+      "source_file": "exec-3446c156-5acf-475b-9bb5-5ac3599cdc53.png",
+      "prompt": "Use case: identity-preserve. Asset: ONE individual transparent full-body 2D fighting-game sprite for ZOBIKO from Loving Deads: House of the Dead EX. Edit supplied corrected guard as exact costume/identity and rendering reference. Keep the SAME adult fantasy zombie, slender petite build, turquoise-mint skin, large visible blue eye, long golden BLONDE hair below waist with angular zigzag tips, broad fringe covering right eye, dark headband with pale rib-bone fan, eyeball earrings and small stitched cheek mark. Charcoal strapless top with pale edge, grey puffed bloomer SHORTS with large dark polka dots, brown belt and SKULL buckle. White wraps on LEFT forearm, LEFT shin/foot, and winding loosely around RIGHT leg; bare bandaged feet, NO shoes. Same head size and limb anatomy as reference, same crisp hand-painted arcade sprite aesthetic. Facing RIGHT, entire body and flowing hair inside a square RGBA transparent canvas with comfortable margins. No props, weapon, victim, extra character, particles, hearts, words, floor, shadow, glow or collage. Change ONLY action pose. Pose: compact anticipation for a forward palm strike. Pull the near palm back beside shoulder, elbow flexed behind the ribcage, opposite bandaged forearm guarding the chin; shoulders rotate slightly away from screen RIGHT, knees bent, weight on rear leg. Preserve original long blonde hair flowing downward with tiny opposite sway. Clear fully clothed defensive stance; not a dance pose.",
+      "tool": "image_gen__imagegen",
+      "references": [
+        "assets/dossier_curien/expansion/hotd_ex/zobiko_ex_guard_v2.png"
+      ],
+      "sources": [
+        "https://www.sega.jp/history/arcade/product/8762/",
+        "https://flyers.arcade-museum.com/videogames/show/5803"
+      ],
+      "status": "generated_visually_reviewed_pending_runtime",
+      "canonical_1_to_1_certified": false
+    },
+    {
+      "id": "zobiko_contact",
+      "path": "assets/dossier_curien/motion_2026-11-19/zobiko_contact.png",
+      "source_generation_path": "/workspace/scratch/da9d6e4777c1/generated_images/exec-163f6a2e-e7b0-4702-b06f-231779923d06.png",
+      "source_file": "exec-163f6a2e-e7b0-4702-b06f-231779923d06.png",
+      "prompt": "Use case: identity-preserve. Asset: ONE individual transparent full-body 2D fighting-game sprite for ZOBIKO from Loving Deads: House of the Dead EX. Edit supplied corrected guard as exact costume/identity and rendering reference. Keep the SAME adult fantasy zombie, slender petite build, turquoise-mint skin, large visible blue eye, long golden BLONDE hair below waist with angular zigzag tips, broad fringe covering right eye, dark headband with pale rib-bone fan, eyeball earrings and small stitched cheek mark. Charcoal strapless top with pale edge, grey puffed bloomer SHORTS with large dark polka dots, brown belt and SKULL buckle. White wraps on LEFT forearm, LEFT shin/foot, and winding loosely around RIGHT leg; bare bandaged feet, NO shoes. Same head size and limb anatomy as reference, same crisp hand-painted arcade sprite aesthetic. Facing RIGHT, entire body and flowing hair inside a square RGBA transparent canvas with comfortable margins. No props, weapon, victim, extra character, particles, hearts, words, floor, shadow, glow or collage. Change ONLY action pose. Pose: forward open-palm strike at full extension toward screen RIGHT. Extend the unbandaged near arm from shoulder with a clearly readable open palm held vertically, fingers together, thumb to side. Opposite bandaged arm bends in guard near chest. Shift weight over front bent knee with rear heel lifted; hair trails modestly toward LEFT. Anatomically correct wrists, two arms and two legs, same proportions as original, no perspective enlargement of hand. Single fighter alone.",
+      "tool": "image_gen__imagegen",
+      "references": [
+        "assets/dossier_curien/expansion/hotd_ex/zobiko_ex_guard_v2.png"
+      ],
+      "sources": [
+        "https://www.sega.jp/history/arcade/product/8762/",
+        "https://flyers.arcade-museum.com/videogames/show/5803"
+      ],
+      "status": "generated_visually_reviewed_pending_runtime",
+      "canonical_1_to_1_certified": false
+    },
+    {
+      "id": "zobiko_recoil",
+      "path": "assets/dossier_curien/motion_2026-11-19/zobiko_recoil.png",
+      "source_generation_path": "/workspace/scratch/da9d6e4777c1/generated_images/exec-487f4442-e754-431b-b84a-2ff7d23b2b3c.png",
+      "source_file": "exec-487f4442-e754-431b-b84a-2ff7d23b2b3c.png",
+      "prompt": "Use case: identity-preserve. Edit corrected ZOBIKO reference into ONE new individual full-body transparent 2D fighting sprite. Preserve the identical slender adult fantasy zombie, mint blue-green skin, large blue eye, blonde long zigzag-tipped hair and side fringe, eyeball earrings, dark headband and pale rib-bone ornaments, stitched cheek, dark strapless top with pale edging, grey puffed polka-dot SHORTS and skull belt. Preserve LEFT forearm bandages and leg/feet wraps as original; NO boots, NO skirt, no weapon. Exact same head proportions and detailed hand-painted rendering. Facing screen RIGHT, entire body and every hair tip within SQUARE canvas with margins; native transparent RGBA, no background/floor/shadow/effects/hearts/text or additional subject. Change action only. Pose: mild impact reaction to a chest hit arriving from screen RIGHT, with NO injury. Upper torso leans back toward LEFT, head and hair lag backwards, eyes briefly surprised but same face, both forearms partially open in protective reaction. Knees bend and feet remain planted at same baseline. Clearly distinct from guard and attack, no extreme contortion, no violent damage. Keep bandages on the same anatomical limb.",
+      "tool": "image_gen__imagegen",
+      "references": [
+        "assets/dossier_curien/expansion/hotd_ex/zobiko_ex_guard_v2.png"
+      ],
+      "sources": [
+        "https://www.sega.jp/history/arcade/product/8762/",
+        "https://flyers.arcade-museum.com/videogames/show/5803"
+      ],
+      "status": "generated_visually_reviewed_pending_runtime",
+      "canonical_1_to_1_certified": false
+    },
+    {
+      "id": "zobiko_recovery",
+      "path": "assets/dossier_curien/motion_2026-11-19/zobiko_recovery.png",
+      "source_generation_path": "/workspace/scratch/da9d6e4777c1/generated_images/exec-22b87050-0698-4ae9-a73b-1ef272fd0d41.png",
+      "source_file": "exec-22b87050-0698-4ae9-a73b-1ef272fd0d41.png",
+      "prompt": "Use case: identity-preserve. Edit corrected ZOBIKO reference into ONE new individual full-body transparent 2D fighting sprite. Preserve the identical slender adult fantasy zombie, mint blue-green skin, large blue eye, blonde long zigzag-tipped hair and side fringe, eyeball earrings, dark headband and pale rib-bone ornaments, stitched cheek, dark strapless top with pale edging, grey puffed polka-dot SHORTS and skull belt. Preserve LEFT forearm bandages and leg/feet wraps as original; NO boots, NO skirt, no weapon. Exact same head proportions and detailed hand-painted rendering. Facing screen RIGHT, entire body and every hair tip within SQUARE canvas with margins; native transparent RGBA, no background/floor/shadow/effects/hearts/text or additional subject. Change action only. Pose: retracting an open-palm forward strike, halfway back toward neutral guard. Unbandaged arm bends with elbow below shoulder and hand still extended at upper-chest height toward RIGHT, palm vertical; bandaged opposite arm stays folded in protective guard. Torso untwists, knees settle softly, rear heel lowers. Hair settles behind back. This is a recovery intermediary with compact silhouette, not the fully extended strike and not identical to original guard. Keep wraps on original limb.",
+      "tool": "image_gen__imagegen",
+      "references": [
+        "assets/dossier_curien/expansion/hotd_ex/zobiko_ex_guard_v2.png"
+      ],
+      "sources": [
+        "https://www.sega.jp/history/arcade/product/8762/",
+        "https://flyers.arcade-museum.com/videogames/show/5803"
+      ],
+      "status": "generated_visually_reviewed_pending_runtime",
+      "canonical_1_to_1_certified": false
+    },
+    {
+      "id": "zobiko_walk1",
+      "path": "assets/dossier_curien/motion_2026-11-19/zobiko_walk1.png",
+      "source_generation_path": "/workspace/scratch/da9d6e4777c1/generated_images/exec-4a9daada-535f-40aa-81db-9e80f8509f06.png",
+      "source_file": "exec-4a9daada-535f-40aa-81db-9e80f8509f06.png",
+      "prompt": "Use case: identity-preserve. Edit supplied corrected ZOBIKO from House of the Dead EX into ONE frame of a forward WALK toward RIGHT. Preserve exact adult fantasy zombie identity, mint skin, same head and slender anatomy, bright blonde long zigzag hair, large blue visible eye and fringe, skull belt buckle, grey polka-dot bloomer SHORTS, charcoal strapless top, eyeball earrings and pale bone headband. Same detailed hand-painted sprite style, full body visible on same SQUARE transparent RGBA canvas, generous margins; no floor, shadow, text, hearts, effects, accessories or extra character. BOTH forearms remain in original modest guard. Crucial identity landmark: her near RIGHT leg has widely spaced white winding strips exposing mint shin; her far LEFT shin and foot are densely wrapped in solid white. NEVER move the wraps from one leg to the other. Feet bandaged, no shoes. Keep head/torso same pixel size as reference. Contact A: near RIGHT leg with SPARSE winding wraps swings in FRONT of the other thigh and steps forward toward lower RIGHT, heel down and toes slightly lifted. Far LEFT leg with dense white shin wraps extends BACK toward lower LEFT, heel lifted and toes on floor. At the hips the sparse-wrap right thigh is visibly IN FRONT. Keep knees softly flexed and pelvis stable. Entire long hair behind with minimal sway. Clearly a step, not standing guard.",
+      "tool": "image_gen__imagegen",
+      "references": [
+        "assets/dossier_curien/expansion/hotd_ex/zobiko_ex_guard_v2.png"
+      ],
+      "sources": [
+        "https://www.sega.jp/history/arcade/product/8762/",
+        "https://flyers.arcade-museum.com/videogames/show/5803"
+      ],
+      "status": "generated_visually_reviewed_pending_runtime",
+      "canonical_1_to_1_certified": false
+    }
+  ],
+  "rejected_attempts": [
+    {
+      "id": "zobio_walk2",
+      "path": "docs/dossier_curien/saga/production/motion_2026-11-19/rejected/zobio_walk2.png",
+      "source_generation_path": "/workspace/scratch/da9d6e4777c1/generated_images/exec-1bfc3840-1a15-42cf-9f5e-c6d2e74ec83f.png",
+      "prompt": "Use case: identity-preserve. Edit supplied corrected ZOBIO game sprite for exactly ONE individual frame of his forward walking animation toward screen RIGHT. Retain his massive hunched yellow-green body, flat square face, head bandages/eye patch/red eye/purple tear, bare huge green hands and feet, blue-grey ripped short-sleeved jacket, asymmetrical small rib patch, staples and brown ragged knee trousers with GOLD rectangular buckle. Maintain original head/torso size and proportions and detailed painted rendering. Arms remain in guard, loosely bent. Same square canvas, character fully visible with safe margins. Ground contact line at approximately 92 percent canvas height. No additional character, text, effects, ground or shadow. Native truly transparent RGBA. This is a WALK, not an attack or run. Frame B: opposite contact from frame A. Far LEFT leg now steps forward toward screen RIGHT with heel on floor and toes slightly raised; near RIGHT leg is behind toward screen LEFT, heel raised, toes pushing off. Keep near right leg behind, clearly separated from far left front leg. Same ground baseline and head position. BOTH knees mildly flexed. Pelvis advances slightly, shoulders compensate in the opposite direction. Preserve limb anatomy and costume, do not duplicate the starting guard stance.",
+      "reason": "Same front thigh support repeated; leg markings changed without true thigh occlusion reversal.",
+      "active": false
+    },
+    {
+      "id": "zobio_walk2_corrected",
+      "path": "docs/dossier_curien/saga/production/motion_2026-11-19/rejected/zobio_walk2_corrected.png",
+      "source_generation_path": "/workspace/scratch/da9d6e4777c1/generated_images/exec-1ed90b71-b5f4-4432-8b12-ef76785e6cff.png",
+      "prompt": "Use case: precise-object-edit. IMAGE 1 is a ZOBIO forward walk contact frame; IMAGE 2 is identity reference. Produce the OPPOSITE leg-support frame, modifying ONLY legs below the belt and very subtle jacket motion, retaining SAME upper body, facing RIGHT, rendering, scale, transparent square canvas and bare feet. IMPORTANT: SWAP which leg is in front. In image 1 the leg with the large vertical purple shin stitch is the NEAR leg, currently extending to lower RIGHT. Now swing THAT near leg BACK toward lower LEFT, its knee appearing left of pelvis, its heel RAISED and only its toes touching ground at lower left. Its shin stitch remains on THAT rear/left leg. Move the OTHER leg (currently small at lower LEFT) FORWARD toward lower RIGHT, farther behind the near thigh at the hip, knee at right of pelvis, HEEL touching ground at lower right and toes lifted. Far front shin has its ORIGINAL diagonal small stitches, never transfer near leg vertical stitches to it. The silhouette may still stretch left to right, but the OCCLUSION of thighs must unambiguously reverse. Do not recreate the same near leg forward. Preserve five toes, full feet, torn trousers; no boots, props, extra figure, text or shadow. Native transparent RGBA.",
+      "reason": "Same front thigh support repeated; leg markings changed without true thigh occlusion reversal.",
+      "active": false
+    },
+    {
+      "id": "zobiko_walk2",
+      "path": "docs/dossier_curien/saga/production/motion_2026-11-19/rejected/zobiko_walk2.png",
+      "source_generation_path": "/workspace/scratch/da9d6e4777c1/generated_images/exec-b2bde07e-c6ae-4195-af39-5ffcfce05e71.png",
+      "prompt": "Use case: identity-preserve. Edit supplied corrected ZOBIKO from House of the Dead EX into ONE frame of a forward WALK toward RIGHT. Preserve exact adult fantasy zombie identity, mint skin, same head and slender anatomy, bright blonde long zigzag hair, large blue visible eye and fringe, skull belt buckle, grey polka-dot bloomer SHORTS, charcoal strapless top, eyeball earrings and pale bone headband. Same detailed hand-painted sprite style, full body visible on same SQUARE transparent RGBA canvas, generous margins; no floor, shadow, text, hearts, effects, accessories or extra character. BOTH forearms remain in original modest guard. Crucial identity landmark: her near RIGHT leg has widely spaced white winding strips exposing mint shin; her far LEFT shin and foot are densely wrapped in solid white. NEVER move the wraps from one leg to the other. Feet bandaged, no shoes. Keep head/torso same pixel size as reference. Contact B: FAR LEFT leg with DENSE SOLID WHITE shin wraps advances to lower RIGHT, heel touching the ground, toes slightly lifted. NEAR RIGHT leg with SPARSE winding strips is now BEHIND toward lower LEFT, heel lifted and only toes grounded. Its thigh lies nearest the viewer crossing BACK left in front of the forward far thigh. Dense-wrap foot must be FRONT RIGHT, sparse-wrap foot must be REAR LEFT. Both knees soft, pelvis/head height same as guard. Keep long blonde hair behind with slight sway. This is opposite support to near leg forward; do not merely redraw same near leg forward.",
+      "reason": "Same front thigh support repeated; leg markings changed without true thigh occlusion reversal.",
+      "active": false
+    }
+  ]
+}

@@ -182,6 +182,7 @@ func controls() -> void:
 	paragraph("J2 · Q/D ou A/D, Z ou W pour sauter, S pour se baisser. F léger, G lourd, H spécial, T projection, E recharge, Y finition.")
 	paragraph("Manette · Croix ou stick pour se déplacer. A léger, X lourd, B spécial, Y projection, LB recharge, RB finition, Start pause. Une manette pilote J1, deux permettent le duel local.")
 	paragraph("Un léger confirmé s’enchaîne en lourd puis en spécial. La projection ouvre la garde. Un tir AMS passe au-dessus d’une cible accroupie.")
+	paragraph("Provocation · O pour J1, C pour J2 ou clic du stick gauche. Depuis le neutre au sol ; déplacement, action ou impact l’annulent immédiatement.")
 	button("Liste des coups par combattant", move_select)
 	button("Retour", menu)
 
@@ -208,6 +209,7 @@ func move_sheet(id: int, back: Callable) -> void:
 		paragraph("↓ + L  ·  %s    /    %d dégâts    ·    actif i%d    ·    portée %d" % [f.profile.alt_name,alt.damage,alt.start,alt.reach])
 	if int(f.profile.ammo) > 0: paragraph("R  ·  Recharge en %d images. Capacité %d." % [f.profile.reload, f.profile.ammo])
 	paragraph("I  ·  Finition « %s » après le K.-O. décisif.   /   Manette RB." % f.profile.finish)
+	paragraph("O / clic du stick gauche  ·  Provocation depuis le neutre au sol. Geste cosmétique, sans effet sur les dégâts.")
 	button("Retour", back)
 
 func case_menu(page := 0) -> void:
@@ -530,12 +532,12 @@ func _input(event: InputEvent) -> void:
 	if not phase in ["fight", "finish"]: return
 	var command: String
 	if pad >= 0:
-		command = {JOY_BUTTON_A:"light", JOY_BUTTON_X:"heavy", JOY_BUTTON_B:"special", JOY_BUTTON_Y:"throw", JOY_BUTTON_LEFT_SHOULDER:"reload", JOY_BUTTON_RIGHT_SHOULDER:"finish", JOY_BUTTON_DPAD_UP:"jump"}.get(pad, "")
+		command = {JOY_BUTTON_A:"light", JOY_BUTTON_X:"heavy", JOY_BUTTON_B:"special", JOY_BUTTON_Y:"throw", JOY_BUTTON_LEFT_SHOULDER:"reload", JOY_BUTTON_RIGHT_SHOULDER:"finish", JOY_BUTTON_DPAD_UP:"jump",JOY_BUTTON_LEFT_STICK:"taunt"}.get(pad, "")
 	else:
-		command = {KEY_UP:"jump", KEY_J:"light", KEY_K:"heavy", KEY_L:"special", KEY_U:"throw", KEY_R:"reload", KEY_I:"finish"}.get(key, "")
+		command = {KEY_UP:"jump", KEY_J:"light", KEY_K:"heavy", KEY_L:"special", KEY_U:"throw", KEY_R:"reload", KEY_I:"finish",KEY_O:"taunt"}.get(key, "")
 		if command == "" and mode == 2:
 			side = 1
-			command = {KEY_Z:"jump", KEY_W:"jump", KEY_F:"light", KEY_G:"heavy", KEY_H:"special", KEY_T:"throw", KEY_E:"reload", KEY_Y:"finish"}.get(key, "")
+			command = {KEY_Z:"jump", KEY_W:"jump", KEY_F:"light", KEY_G:"heavy", KEY_H:"special", KEY_T:"throw", KEY_E:"reload", KEY_Y:"finish",KEY_C:"taunt"}.get(key, "")
 	if side == 0 and key in [KEY_J, KEY_K] and Input.is_key_pressed(KEY_J) and Input.is_key_pressed(KEY_K): command = "throw"
 	if side == 1 and key in [KEY_F, KEY_G] and Input.is_key_pressed(KEY_F) and Input.is_key_pressed(KEY_G): command = "throw"
 	if command == "": return

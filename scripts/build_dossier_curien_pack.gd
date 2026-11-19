@@ -5,14 +5,14 @@ extends SceneTree
 ## godot --headless --main-pack BASE.pck --script /absolute/path/to/this.gd -- \
 ##   --source-root /absolute/path/to/checkout --output /absolute/path/to/NEW.pck
 ##
-## Run the editor import for the checkout before this script. Existing baseline
-## resources are copied byte for byte; this script does not export the whole game,
-## process images, or copy arbitrary cache files.
+## Run the editor import before building. Scripts, manifests and Dossier Curien
+## texture imports are refreshed; other baseline resources are preserved.
 ##
 ## Godot 4.7 API: https://docs.godotengine.org/en/4.7/classes/class_pckpacker.html
 
 const ADDITIONS_PATH := "res://data/assets/dossier_curien_additions.json"
 const EXPANSION_PATH := "res://data/assets/dossier_curien_expansion.json"
+const MOTION_PATH := "res://data/assets/dossier_curien_motion.json"
 const ASSET_PREFIX := "res://assets/dossier_curien/"
 const IMPORT_PREFIX := "res://.godot/imported/"
 const REQUIRED_BASE_FILES := [
@@ -83,6 +83,7 @@ func _build() -> bool:
 			return false
 
 	var additions_source := source_root.path_join(ADDITIONS_PATH.trim_prefix("res://"))
+	var refreshed_manifest_count := 0
 	var additions_bytes := _read_bytes(additions_source)
 	if _failed:
 		return false
@@ -91,6 +92,7 @@ func _build() -> bool:
 	if parse_error != OK or not parser.data is Dictionary:
 		return _fail("Additions manifest must be a valid JSON object: " + additions_source)
 	buffers[ADDITIONS_PATH] = additions_bytes
+	if baseline_set.has(ADDITIONS_PATH): refreshed_manifest_count += 1
 	var expansion_source := source_root.path_join(EXPANSION_PATH.trim_prefix("res://"))
 	if FileAccess.file_exists(expansion_source):
 		var expansion_bytes := _read_bytes(expansion_source)
@@ -98,6 +100,18 @@ func _build() -> bool:
 		if _failed or expansion_parser.parse(expansion_bytes.get_string_from_utf8()) != OK or not expansion_parser.data is Dictionary:
 			return _fail("Expansion manifest must be a valid JSON object: " + expansion_source)
 		buffers[EXPANSION_PATH] = expansion_bytes
+		if baseline_set.has(EXPANSION_PATH): refreshed_manifest_count += 1
+	var motion_source := source_root.path_join(MOTION_PATH.trim_prefix("res://"))
+	if not FileAccess.file_exists(motion_source): return _fail("Motion manifest is required: " + motion_source)
+	var motion_bytes := _read_bytes(motion_source)
+	var motion_parser := JSON.new()
+	if _failed or motion_parser.parse(motion_bytes.get_string_from_utf8()) != OK or not motion_parser.data is Dictionary or not motion_parser.data.get("assets") is Array:
+		return _fail("Motion manifest must contain an assets array: " + motion_source)
+	if motion_parser.data.get("provisional", false) == true: return _fail("Finalize the provisional motion catalogue before packaging.")
+	for entry in motion_parser.data.assets:
+		if not entry is Dictionary or entry.get("provenance_pending", false) == true: return _fail("Every motion pose requires finalized provenance.")
+	buffers[MOTION_PATH] = motion_bytes
+	if baseline_set.has(MOTION_PATH): refreshed_manifest_count += 1
 
 	var source_assets := source_root.path_join(ASSET_PREFIX.trim_prefix("res://"))
 	if not DirAccess.dir_exists_absolute(source_assets):
@@ -107,22 +121,21 @@ func _build() -> bool:
 		return false
 	var new_import_count := 0
 	var new_texture_count := 0
+	var refreshed_import_count := 0
+	var refreshed_texture_count := 0
 	# A new PNG without import metadata must not be silently omitted.
 	for absolute_path: String in asset_paths:
 		if not absolute_path.to_lower().ends_with(".png"):
 			continue
-		var relative_path := absolute_path.trim_prefix(source_root + "/")
-		var import_pack_path := "res://" + relative_path + ".import"
-		if not baseline_set.has(import_pack_path) and not FileAccess.file_exists(absolute_path + ".import"):
-			return _fail("New PNG has not been imported by Godot: " + absolute_path)
+		if not FileAccess.file_exists(absolute_path + ".import"):
+			return _fail("PNG has not been imported by Godot: " + absolute_path)
 
 	for absolute_path: String in asset_paths:
 		if not absolute_path.to_lower().ends_with(".png.import"):
 			continue
 		var relative_path := absolute_path.trim_prefix(source_root + "/")
 		var pack_path := "res://" + relative_path
-		if baseline_set.has(pack_path):
-			continue
+		var replacing_import := baseline_set.has(pack_path)
 		var expected_source := pack_path.trim_suffix(".import")
 		if not FileAccess.file_exists(absolute_path.trim_suffix(".import")):
 			return _fail("Import metadata has no source PNG: " + absolute_path)
@@ -139,13 +152,15 @@ func _build() -> bool:
 		buffers[pack_path] = _read_bytes(absolute_path)
 		if _failed:
 			return false
-		new_import_count += 1
-		if not buffers.has(texture_path):
-			var texture_source := source_root.path_join(texture_path.trim_prefix("res://"))
-			buffers[texture_path] = _read_bytes(texture_source)
-			if _failed:
-				return false
-			new_texture_count += 1
+		if replacing_import: refreshed_import_count += 1
+		else: new_import_count += 1
+		# Corrected PNGs must replace cached baseline art as well as new paths.
+		var replacing_texture := baseline_set.has(texture_path)
+		var texture_source := source_root.path_join(texture_path.trim_prefix("res://"))
+		buffers[texture_path] = _read_bytes(texture_source)
+		if _failed: return false
+		if replacing_texture: refreshed_texture_count += 1
+		else: new_texture_count += 1
 
 	# Every resource is already readable before creating or replacing any output.
 	var target_paths: Array = buffers.keys()
@@ -177,11 +192,14 @@ func _build() -> bool:
 		"output": output_path,
 		"sha256": FileAccess.get_sha256(output_path),
 		"baseline_files": baseline_paths.size(),
-		"preserved_files": preserved_files,
+		"preserved_files": preserved_files - refreshed_import_count - refreshed_texture_count - refreshed_manifest_count,
 		"replaced_source_files": replaced_sources,
 		"added_png_imports": new_import_count,
 		"added_ctex_files": new_texture_count,
+		"refreshed_png_imports": refreshed_import_count,
+		"refreshed_ctex_files": refreshed_texture_count,
 		"additions_manifest": ADDITIONS_PATH,
+		"motion_manifest": MOTION_PATH,
 		"packed_files": target_paths.size(),
 		"ordering": "sorted resource paths",
 	}, "\t"))

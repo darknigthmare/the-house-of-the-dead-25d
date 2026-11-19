@@ -2,6 +2,36 @@
 
 Depuis le jeu complet, choisissez **Dossier Curien** dans le menu d’arcade. Dans la version autonome, le menu du mode combat apparaît au démarrage.
 
+## Dernier lot du 19 novembre 2026 — 30 poses intégrées
+
+Ce lot complète six combattants avec **30 PNG individuels** : 24 nouvelles générations, quatre poses retrouvées et deux gardes EX corrigées réutilisées. Le jeu conserve **24 combattants, 26 parcours Histoire, 18 arènes, 29 épreuves d’archives et 40 fiches de bestiaire**. Le répertoire graphique Dossier Curien contient désormais 332 PNG.
+
+| Combattant | Poses intégrées dans ce lot |
+| --- | --- |
+| Linda Rotta | Montée et descente du saut, blocage, projection, rechargement, provocation, victoire et finition : 8 poses. |
+| Thomas Rogan | Accroupissement et montée du saut : 2 poses retrouvées. |
+| Zobio | Garde corrigée, anticipation, contact, réaction au coup reçu, récupération et deux appuis : 7 poses. |
+| Zobiko | Les mêmes sept phases, avec sa tenue EX corrigée. |
+| Stick Breitling | Deux appuis de marche et récupération : 3 poses. |
+| Rikiya Busujima | Deux appuis de marche et récupération : 3 poses. |
+
+Pour les essayer, choisissez **Entraînement**, sélectionnez l’un de ces combattants, puis déplacez-vous, sautez, gardez ou attaquez. Pour Linda, **O** lance une provocation visuelle au neutre ; J2 utilise **C**, et la manette le **clic du stick gauche**. Elle dure au plus une seconde et s’interrompt dès qu’une action, un déplacement ou un impact l’exige. Elle ne donne pas de bonus de combat.
+
+### Lancer le paquet de ce lot
+
+Utilisez [jeu_motion_compat46](saga/jeu_motion_compat46/README.md), **Python 3.8 ou plus récent** et **Godot 4.6.3**. Depuis ce dossier :
+
+```sh
+python3 assembler.py
+godot --main-pack HOTD_Motion_Compat46.pck
+```
+
+Le script vérifie chaque fragment puis l’empreinte du paquet reconstitué. Sous Windows, remplacez `python3` par `py -3` et `godot` par le chemin de votre exécutable Godot 4.6.3. Les instructions complètes et le manifeste des fragments sont dans le dossier du paquet.
+
+Ce paquet a été démarré et contrôlé avec **Godot 4.6.3 en mode headless**. Les 30 textures ont été chargées depuis le paquet lui-même. Les planches de proportions et de pivots sont des projections **hors moteur** ; aucune nouvelle capture native ni validation interactive complète n’est revendiquée pour cette vague. Les captures de l’expansion présentées plus bas documentent la livraison précédente.
+
+Le [rapport du lot](saga/production/motion_2026-11-19/RAPPORT.md), le [manifeste des poses](../../data/assets/dossier_curien_motion.json) et l’[inventaire actualisé](saga/production/motion_2026-11-19/MANQUANTS.json) donnent les fichiers, références, contrôles et limites. **22 manquants minimaux ont été résolus, de 299 à 277.** Des poses intermédiaires restent nécessaires pour obtenir des animations complètes.
+
 ## Mise à jour du 19 novembre 2026 — Linda, Zombie Revenge et EX
 
 L’anthologie propose **24 combattants, 26 parcours Histoire, 18 arènes et 29 épreuves d’archives**. Linda Rotta rejoint Stick Breitling et Rikiya Busujima dans le dossier **Zombie Revenge**. Le nouveau **Bestiaire & personnages** regroupe **40 fiches illustrées** de Zombie Revenge et de Loving Deads EX. Le lot comprend **49 PNG individuels** : les 40 illustrations de la galerie et neuf poses supplémentaires de Linda.
@@ -14,13 +44,13 @@ Pour un duel libre, choisissez **Duel contre IA**, **Duel local**, **Tournoi**, 
 
 Linda utilise un pistolet de **8 cartouches**. **L** déclenche le *Tir de liaison* : un tir haut qui passe au-dessus d’une cible accroupie. **↓ + L**, au sol, déclenche la *Glissade armée* : elle avance de 40 unités en position basse, puis tire à plus courte portée. Cette variante atteint une cible accroupie ; un saut permet de sortir de sa bande de tir. La glissade n’accorde pas d’invincibilité et reste exposée aux projections. Chaque tir consomme une cartouche. **R** recharge tout le magasin en 36 tics, soit 0,6 seconde à 60 Hz.
 
-Sa garde, son anticipation, son tir, sa récupération, sa réaction à un impact et ses deux appuis de marche disposent de fichiers distincts. Trois poses basses complètent ce jeu : **accroupissement**, **garde accroupie** et **tir en glissade**. Elles replient réellement les jambes en conservant l’échelle de la tête, du torse et des mains. La sortie du canon de chaque pose de tir possède son propre repère. La marche alterne encore les deux appuis avec la garde. Les sauts, la projection, le rechargement et la finition utilisent des adaptations des poses disponibles ; le lot ne constitue pas un cycle complet dessiné image par image. Les textes du parcours utilisent les visuels disponibles, sans nouvelles illustrations spécifiques d’introduction ou d’épilogue.
+Sa garde, son anticipation, son tir, sa récupération, sa réaction à un impact et ses deux appuis de marche disposent de fichiers distincts. Trois poses basses complètent ce jeu : **accroupissement**, **garde accroupie** et **tir en glissade**. Elles replient réellement les jambes en conservant l’échelle de la tête, du torse et des mains. La sortie du canon de chaque pose de tir possède son propre repère. Le dernier lot ajoute des dessins dédiés pour les deux phases du saut, le blocage, la projection, le rechargement, la provocation, la victoire et la finition. La marche alterne encore les deux appuis avec la garde : des images intermédiaires restent à produire. Les textes du parcours utilisent les visuels disponibles, sans nouvelles illustrations spécifiques d’introduction ou d’épilogue.
 
 ### Consulter le bestiaire
 
 Au menu **Dossier Curien**, ouvrez **Bestiaire & personnages**. Les filtres **Tous**, **Zombie Revenge** et **Loving Deads EX** permettent de parcourir les collections par pages de cinq fiches. Ouvrez un nom pour agrandir son illustration, connaître son rôle et lire l’état de sa référence. Les boutons **Fiche précédente**, **Fiche suivante** et **Retour à la liste** conservent la navigation ; **Échap** revient à la page de la fiche.
 
-Les images de boss, créatures, personnages secondaires et variantes sont des ressources de production consultables. Le bouton **Jouer Linda** est relié au combattant intégré. Les variantes EX illustrées de Zobio et Zobiko ne remplacent pas automatiquement leurs sprites de duel existants. Les fiches signalent les références encore à confirmer ; la présence d’une illustration ne certifie pas une fidélité visuelle 1:1 ni un moveset terminé.
+Les images de boss, créatures, personnages secondaires et variantes sont des ressources de production consultables. Le bouton **Jouer Linda** est relié au combattant intégré. Le dernier lot utilise désormais les gardes EX corrigées de Zobio et Zobiko ainsi que leurs six poses associées dans les duels. Les autres variantes du bestiaire restent des illustrations de galerie. Les fiches signalent les références encore à confirmer ; la présence d’une illustration ne certifie pas une fidélité visuelle 1:1 ni un moveset terminé.
 
 Le [manifeste de l’extension](../../data/assets/dossier_curien_expansion.json) conserve les références, les prompts, les dimensions natives et les empreintes des fichiers. Les poses d’animation de Linda sont enregistrées séparément et n’ajoutent pas de doublons à la galerie.
 
@@ -38,6 +68,7 @@ Le [manifeste de l’extension](../../data/assets/dossier_curien_expansion.json)
 | Variante basse, si disponible | ↓ + L | S + H | Bas + B |
 | Projection | U | T | Y |
 | Recharger | R | E | LB |
+| Provocation visuelle, pose dédiée si disponible | O | C | Clic du stick gauche |
 | Finition, après le K.-O. décisif | I | Y | RB |
 | Pause / retour | Échap | Échap | Start |
 
@@ -68,9 +99,9 @@ Ouvrez `project.godot` dans **Godot 4.7.1**, laissez les ressources s’importer
 godot --path .
 ```
 
-## Assembler le paquet actualisé depuis ce dépôt
+## Paquet précédent — expansion Linda et EX, Godot 4.7
 
-Utilisez le dossier [saga/jeu](saga/jeu) de cette révision avec son [fragments.json](saga/jeu/fragments.json) et ses **27 fragments**. Le manifeste est la référence pour les fichiers, leurs tailles et leurs empreintes ; conservez les fragments et le manifeste du même lot. Le paquet de **95 935 632 octets** conserve les ajouts antérieurs de marches et de parallaxe et intègre les 49 PNG de l’expansion. Sa reconstruction a été vérifiée.
+Cette distribution précédente se trouve dans [saga/jeu](saga/jeu), avec son [fragments.json](saga/jeu/fragments.json) et ses **27 fragments**. Elle précède le nouveau lot de 30 poses. Le manifeste est la référence pour les fichiers, leurs tailles et leurs empreintes ; conservez les fragments et le manifeste du même lot. Le paquet de **95 935 632 octets** conserve les ajouts antérieurs de marches et de parallaxe et intègre les 49 PNG de l’expansion. Sa reconstruction a été vérifiée.
 
 Dans ce dossier, utilisez Python 3.8 ou plus récent pour assembler le paquet. Le script vérifie chaque fragment et l’empreinte SHA-256 du jeu complet. Si la version précédente de l’anthologie est déjà assemblée, sa mise à jour est automatique après vérification de son empreinte. Lancez ensuite le paquet avec Godot 4.7.1.
 
@@ -88,7 +119,9 @@ py -3 assembler.py
 
 Un paquet `HOTD_Anthologie.pck` déjà téléchargé en un seul fichier se lance directement avec la deuxième commande.
 
-## Dans le navigateur
+## Version web de l’expansion précédente
+
+Les fichiers web ci-dessous correspondent à l’expansion Linda/EX et ne contiennent pas le dernier lot de 30 poses. Celui-ci est disponible dans les sources et dans le paquet compatible Godot 4.6.3 présenté en tête de page.
 
 Depuis une copie complète du dépôt, ouvrez le dossier [saga/jeu](saga/jeu) et lancez les commandes suivantes. Le lanceur ouvre une adresse locale dans votre navigateur. Gardez la fenêtre du lanceur ouverte pendant la partie.
 
@@ -101,9 +134,9 @@ Sous Windows, après `py -3 preparer_web.py`, double-cliquez sur `Jouer-Windows.
 
 Le ZIP **HOTD_Anthologie_Linda_EX_2026-11-19_web.zip** contient déjà le dossier `site/` préparé. Après extraction complète, lancez directement **Jouer-Windows.cmd** sous Windows ou **python3 Jouer.py** sous Linux/macOS. Cette archive ne demande ni Godot ni assemblage. Le navigateur doit disposer de WebGL2. Le lanceur Windows peut utiliser PowerShell si Python n’est pas installé ; ce chemin de lancement Windows n’a pas été exécuté dans l’environnement Linux de contrôle.
 
-### État de la vérification visuelle
+### Vérification visuelle de l’expansion précédente
 
-Le [contrôle visuel de l’expansion](saga/production/expansion_2026-11-19/CAPTURE_PROTOCOL.md) documente le bestiaire, le choix de Linda, son tir debout, ses deux appuis de marche, ses poses basses et son tir en glissade. Le paquet final a été lancé dans Godot 4.7.1 : le tir de glissade part du canon, consomme une cartouche et inflige les 12 PV prévus. La reprise de l’atelier fonctionne sans devoir avancer d’une image supplémentaire.
+Le [contrôle visuel de l’expansion](saga/production/expansion_2026-11-19/CAPTURE_PROTOCOL.md) documente le bestiaire, le choix de Linda, son tir debout, ses deux appuis de marche, ses poses basses et son tir en glissade. Ce paquet d’expansion, antérieur au lot de 30 poses, a été lancé dans Godot 4.7.1 : le tir de glissade part du canon, consomme une cartouche et inflige les 12 PV prévus. La reprise de l’atelier fonctionne sans devoir avancer d’une image supplémentaire.
 
 L’essai web a atteint la page de lancement, puis le Chromium partagé a signalé **WebGL2 indisponible**, y compris après un rechargement. Le jeu n’a donc pas démarré dans ce navigateur. Les fichiers sont fournis et leur identité avec le paquet natif a été vérifiée, mais **la jouabilité web de cette révision reste à confirmer sur un navigateur disposant de WebGL2**. La preuve et les limites figurent dans [VISUAL_QA.json](saga/production/expansion_2026-11-19/VISUAL_QA.json).
 
@@ -151,6 +184,10 @@ Au menu principal, ouvrez **Boss Rush AMS → Les gardiens d’EFI**, puis chois
 
 ## Documents
 
+- [Dernier lot — 30 poses intégrées, bilan et limites](saga/production/motion_2026-11-19/RAPPORT.md)
+- [Manifeste motion — dimensions, références, empreintes et pivots](../../data/assets/dossier_curien_motion.json)
+- [Inventaire courant — 277 poses minimales encore manquantes](saga/production/motion_2026-11-19/MANQUANTS.json)
+- [Paquet courant compatible Godot 4.6.3](saga/jeu_motion_compat46/README.md)
 - [Extension Zombie Revenge et EX — ressources, références et état des poses](../../data/assets/dossier_curien_expansion.json)
 - [Premier lot du 19 novembre — 22 PNG](saga/production/REPRISE_2026-11-19.md)
 - [Complément marches et parallaxe — 28 PNG, livraison regroupée de 50 images](saga/production/REPRISE_2026-11-19_PARALLAXE.md)

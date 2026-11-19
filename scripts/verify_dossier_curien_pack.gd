@@ -7,11 +7,12 @@ extends SceneTree
 ## Optional report: -- --report /absolute/report.json --label final-build
 
 const MANIFEST_PATH := "res://data/assets/dossier_curien_expansion.json"
+const MOTION_MANIFEST_PATH := "res://data/assets/dossier_curien_motion.json"
 const ART_ROOT := "res://assets/dossier_curien/expansion/"
 const SCRIPT_ROOT := "res://src/dossier_curien/"
 const REQUIRED_SCRIPTS := [
 	"arena.gd", "combatant.gd", "presentation.gd", "saga.gd", "saga_bestiary.gd",
-	"saga_archives.gd", "saga_costumes.gd", "saga_lab.gd", "saga_rush.gd", "saga_stage.gd"
+	"saga_archives.gd", "saga_costumes.gd", "saga_lab.gd", "saga_rush.gd", "saga_stage.gd", "saga_motion.gd"
 ]
 const HIDDEN_CATEGORIES := ["fighter_pose", "animation_pose"]
 
@@ -23,6 +24,9 @@ var counters: Dictionary = {}
 var linda_results: Dictionary = {}
 var report_path := ""
 var build_label := "mounted-pack"
+var expected_engine_minor := 7
+var compatibility_engine := false
+var motion_results: Array[Dictionary] = []
 
 
 func _initialize() -> void:
@@ -239,17 +243,57 @@ func _linda(scripts: Dictionary, by_id: Dictionary, linda_id: int) -> void:
 	linda_results = {"fighter_id": linda_id, "poses": pose_results, "standing_contact_emitter_px": contact_emitter}
 
 
+func _motion(scripts: Dictionary) -> void:
+	var data := _read_object(MOTION_MANIFEST_PATH)
+	if not _check(data.get("assets") is Array and not data.assets.is_empty(), "Mounted motion manifest contains authored poses"): return
+	_check(data.get("provisional", false) != true, "Packed motion manifest is finalized")
+	if not scripts.has("saga_motion.gd") or not scripts.has("presentation.gd"): return
+	var motion: RefCounted = scripts["saga_motion.gd"].new()
+	if not _check(motion.load_manifest(), "Packed motion library accepts native textures and dimensions"): return
+	_check(motion.entries.size() == data.assets.size(), "Packed loader omits no authored pose")
+	var painter: RefCounted = scripts["presentation.gd"].new()
+	painter.load_textures()
+	for asset: Dictionary in data.assets:
+		_check(asset.get("provenance_pending", false) != true, "Packed provenance complete: " + str(asset.get("path", "")))
+		var key := str(asset.get("art_id", asset.get("fighter_id", ""))) + "_" + str(asset.get("pose", ""))
+		var path := _resource_path(str(asset.get("path", "")))
+		var entry: Dictionary = motion.get_entry(key)
+		if not _check(not entry.is_empty() and str(entry.get("path", "")) == path, "Packed pose resolves declared path: " + key): continue
+		var texture: Variant = painter.saga_texture(key)
+		if not _check(texture is Texture2D, "Packed renderer loads authored art: " + key): continue
+		_check(texture.resource_path == path, "Authored art overrides the old fallback: " + key)
+		var dimensions: Array = asset.dimensions
+		_check(texture.get_size().is_equal_approx(Vector2(dimensions[0], dimensions[1])), "Native texture dimensions preserved: " + key)
+		var metrics: Dictionary = painter.pose_profiles.get(key, {})
+		if not _check(not metrics.is_empty(), "Packed native calibration registered: " + key): continue
+		var pivot := Vector2(asset.pivot_px[0] / float(dimensions[0]), asset.pivot_px[1] / float(dimensions[1]))
+		_check(Vector2(metrics.pivot[0], metrics.pivot[1]).is_equal_approx(pivot), "Native pivot follows metadata: " + key)
+		_check(is_equal_approx(float(metrics.body_fraction), float(asset.standing_height_px) / float(dimensions[1])), "Standing anatomical scale preserved: " + key)
+		if asset.has("emitter_px"):
+			_check(painter.pose_emitters.has(key) and painter.pose_emitters[key].is_equal_approx(Vector2(asset.emitter_px[0], asset.emitter_px[1])), "Native emitter replaces previous drawing: " + key)
+		else:
+			_check(not painter.pose_emitters.has(key), "No unrelated old emitter retained: " + key)
+		motion_results.append({"key":key, "path":path, "dimensions":dimensions, "pivot_px":asset.pivot_px, "standing_height_px":asset.standing_height_px})
+	counters["motion_manifest_assets"] = data.assets.size()
+	counters["loaded_motion_textures"] = motion_results.size()
+	_check(motion_results.size() == data.assets.size(), "Every authored texture is usable from the mounted PCK")
+
+
 func _options() -> bool:
 	var args := OS.get_cmdline_user_args()
 	var index := 0
 	while index < args.size():
-		if index + 1 >= args.size() or args[index] not in ["--report", "--label"]:
-			return _check(false, "Expected optional --report ABSOLUTE_PATH and --label BUILD_LABEL")
+		if index + 1 >= args.size() or args[index] not in ["--report", "--label", "--compatibility-engine"]:
+			return _check(false, "Expected --report ABSOLUTE_PATH, --label BUILD_LABEL or --compatibility-engine 4.6")
 		var value := str(args[index + 1])
 		if args[index] == "--report":
 			if not _check(value.is_absolute_path() and not value.contains("://"), "Report destination is an absolute filesystem path"):
 				return false
 			report_path = value
+		elif args[index] == "--compatibility-engine":
+			if not _check(value == "4.6", "Only separately labelled Godot 4.6 compatibility builds are supported"): return false
+			expected_engine_minor = 6
+			compatibility_engine = true
 		else:
 			build_label = value
 		index += 2
@@ -261,7 +305,9 @@ func _run() -> void:
 		_finish()
 		return
 	var version := Engine.get_version_info()
-	_check(int(version.major) == 4 and int(version.minor) == 7, "Verification uses the Godot 4.7 engine contract")
+	_check(int(version.major) == 4 and int(version.minor) == expected_engine_minor, "Explicit Godot 4.%d engine contract" % expected_engine_minor)
+	if compatibility_engine:
+		_check(str(ProjectSettings.get_setting("dossier_curien/build_kind", "")) == "compatibility_from_sources", "Compatibility PCK is explicitly marked and does not claim the 4.7 release")
 	if not _check(str(ProjectSettings.get_setting("application/run/main_scene", "")) == "res://demo.tscn", "Mounted standalone main scene is res://demo.tscn"):
 		_finish()
 		return
@@ -279,6 +325,7 @@ func _run() -> void:
 	var linda_id := _game_contract(scripts)
 	_gallery(scripts, collection.expected_gallery, linda_id)
 	_linda(scripts, collection.by_id, linda_id)
+	_motion(scripts)
 	_finish()
 
 
@@ -286,9 +333,10 @@ func _finish() -> void:
 	var summary := {
 		"label": build_label, "status": "passed" if failures.is_empty() else "failed",
 		"engine": Engine.get_version_info().get("string", "unknown"),
+		"engine_contract": "4.%d" % expected_engine_minor, "compatibility_build": compatibility_engine,
 		"scope": "mounted_pck_resources_only", "main_scene_instantiated": false,
 		"checks": checks, "failures": failures, "counts": counters,
-		"scripts": script_results, "textures": texture_results, "linda": linda_results,
+		"scripts": script_results, "textures": texture_results, "linda": linda_results, "motion": motion_results,
 		"notes": ["Textures are loaded through ResourceLoader and import remapping; source PNG bytes are not required inside the PCK.", "This verifies packaging and resource calibration, not animation smoothness or canonical visual fidelity."]
 	}
 	if not report_path.is_empty():

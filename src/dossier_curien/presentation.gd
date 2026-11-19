@@ -1,6 +1,7 @@
 extends RefCounted
 
 const Fighter := preload("res://src/dossier_curien/combatant.gd")
+const Motion := preload("res://src/dossier_curien/saga_motion.gd")
 const ART := "res://assets/dossier_curien/"
 const EXPANSION_ART := {"linda_guard":"res://assets/dossier_curien/expansion/zombie_revenge_characters/linda_rotta_base.png"}
 const Saga := preload("res://src/dossier_curien/saga.gd")
@@ -39,13 +40,19 @@ var contact_emitters := {}
 var pose_emitters := {}
 var pose_profiles: Dictionary = {}
 var saga_props: Array = []
+var motion := Motion.new()
+var pose_anchors := {}
+var rendered_pose_emitters := {}
 
 static func floor_y(stage: int) -> float:
 	# The Venetian playable strip runs in front of the canal balustrade.
 	return 651.0 if stage == 3 else 601.0
 
 func load_textures() -> void:
+	contact_emitters.clear()
+	visible_rects.clear()
 	pose_emitters.clear()
+	pose_anchors.clear()
 	var manifest: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/assets/environment_manifest.json"))
 	prop_profiles = manifest.props
 	var additions: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/assets/dossier_curien_additions.json"))
@@ -82,6 +89,17 @@ func load_textures() -> void:
 				var emitter = entry.get("emitter_px", [])
 				if finite_numbers(emitter,2) and emitter[0] >= 0 and emitter[1] >= 0 and emitter[0] <= dims[0] and emitter[1] <= dims[1]:
 					pose_emitters[pose_key] = Vector2(float(emitter[0]), float(emitter[1]))
+	motion.load_manifest()
+	for key in motion.entries:
+		var entry: Dictionary = motion.entries[key]
+		var dimensions: Array = entry.dimensions
+		pose_profiles[key] = {"pivot":[entry.pivot_px[0]/float(dimensions[0]),entry.pivot_px[1]/float(dimensions[1])],
+			"source_size":dimensions,"body_fraction":float(entry.standing_height_px)/float(dimensions[1])}
+		# Replacement art must not inherit a previous drawing's muzzle.
+		pose_emitters.erase(key)
+		if entry.has("emitter_px"): pose_emitters[key] = Vector2(entry.emitter_px[0],entry.emitter_px[1])
+		pose_anchors[key] = entry.anchors_px
+	walk_cycles.clear()
 
 static func finite_numbers(value: Variant, count: int) -> bool:
 	if not value is Array or value.size() != count: return false
@@ -120,9 +138,17 @@ func cached(path: String) -> Texture2D:
 	return texture
 
 func classic_art(key: String) -> Texture2D:
+	var authored: Dictionary = motion.get_entry(key)
+	if not authored.is_empty():
+		var texture := cached(authored.path)
+		if texture: return texture
 	return cached(ART + key + ".png")
 
 func saga_texture(key: String) -> Texture2D:
+	var authored: Dictionary = motion.get_entry(key)
+	if not authored.is_empty():
+		var texture := cached(authored.path)
+		if texture: return texture
 	var ordinary := cached(ART + "saga/" + key + ".png")
 	if ordinary: return ordinary
 	if EXPANSION_ART.has(key): return cached(EXPANSION_ART[key])
@@ -134,11 +160,17 @@ func guard_art(fighter_id: int) -> Texture2D:
 	return classic_art(key) if fighter_id < 4 else saga_texture(key)
 
 func has_walk_cycle(fighter_id: int, sheet_id: String) -> bool:
-	var prefix := ART + ("saga/" if fighter_id >= 4 else "") + sheet_id
-	if sheet_id == "linda": prefix = ART + "expansion/zombie_revenge_characters/linda"
-	if not walk_cycles.has(prefix):
-		walk_cycles[prefix] = ResourceLoader.exists(prefix + "_walk1.png") and ResourceLoader.exists(prefix + "_walk2.png")
-	return walk_cycles[prefix]
+	var key := str(fighter_id)+":"+sheet_id
+	if not walk_cycles.has(key):
+		walk_cycles[key] = has_pose(fighter_id,sheet_id,"walk1") and has_pose(fighter_id,sheet_id,"walk2")
+	return walk_cycles[key]
+
+func has_pose(fighter_id: int, sheet_id: String, pose: String) -> bool:
+	if motion.has_pose(sheet_id,pose): return true
+	var key := sheet_id+"_"+pose.trim_prefix("_")
+	if EXPANSION_ART.has(key): return ResourceLoader.exists(EXPANSION_ART[key])
+	if sheet_id == "linda": return ResourceLoader.exists(ART+"expansion/zombie_revenge_characters/"+key+".png")
+	return ResourceLoader.exists(ART+("saga/" if fighter_id >= 4 else "")+key+".png")
 
 func stage_plane(stage: int, plane: String) -> Texture2D:
 	if stage < BG.size() or stage >= Saga.ART.size(): return null
@@ -153,6 +185,7 @@ func heading(c, pos: Vector2, line: String, px: int, color: Color, width := -1.0
 	c.draw_string(ThemeDB.fallback_font,pos,line,align,width,px,color)
 
 func draw(c) -> void:
+	rendered_pose_emitters.clear()
 	var drift := 0.0
 	if c.fighters.size() == 2:
 		drift = ((c.fighters[0].x + c.fighters[1].x) * 0.5 - 640.0) / 565.0
@@ -291,12 +324,29 @@ func illustration(c) -> void:
 		c.draw_texture_rect(tex,Rect2(0,0,1280,720),false)
 		c.draw_rect(Rect2(0,0,1280,720), Color(0,0,0,0.12))
 
-func pose_suffix(f, sheet_id: String = "") -> String:
-	if f.stun > 0: return "_recoil"
+func pose_suffix(f, sheet_id: String = "", arena = null, side := -1) -> String:
 	if sheet_id == "": sheet_id = f.profile.id
+	if arena != null and side == arena.winner:
+		var phase: String = arena.resume_phase if arena.phase == "pause" else arena.phase
+		if phase == "cinematic" and has_pose(f.id,sheet_id,"finish"): return "_finish"
+		if phase in ["finish","round","result"] and has_pose(f.id,sheet_id,"victory"): return "_victory"
+	if f.stun > 0: return "_recoil"
+	if f.action == "reload" and has_pose(f.id,sheet_id,"reload"): return "_reload"
+	if f.action == "throw" and has_pose(f.id,sheet_id,"throw"): return "_throw"
 	if f.id == 23 and f.crouching and f.altitude == 0:
-		if f.action == "": return "_crouch_guard" if f.guarding else "_crouch"
 		if f.action == "special" and f.alternate_special: return "_slide_contact"
+	if f.action == "":
+		if f.altitude > 0 or f.vy > 0:
+			var jump := "jump_rise" if f.vy > 0 else "jump_fall"
+			if has_pose(f.id,sheet_id,jump): return "_"+jump
+		elif f.crouching:
+			var low := "crouch_guard" if f.guarding else "crouch"
+			if has_pose(f.id,sheet_id,low): return "_"+low
+			if f.guarding and has_pose(f.id,sheet_id,"crouch"): return "_crouch"
+		elif (f.block_ticks > 0 or (f.guarding and not f.moving)) and has_pose(f.id,sheet_id,"block"):
+			return "_block"
+		elif f.taunt_ticks > 0 and has_pose(f.id,sheet_id,"taunt"):
+			return "_taunt"
 	if f.action == "" and f.moving and f.altitude == 0 and has_walk_cycle(f.id, sheet_id):
 		var stride := floori((f.walk_ticks-1) / 6.0) % 4
 		if f.guarding: stride = 3-stride
@@ -318,23 +368,37 @@ func pose_suffix(f, sheet_id: String = "") -> String:
 		if age < f.special_hits()*f.pulse_gap() and age%f.pulse_gap() <= 2: return "_contact"
 	return "_contact" if age <= 2 else "_recovery"
 
+func pose_height(f, sheet_id: String, displayed_pose: String) -> float:
+	var low_pose := displayed_pose in ["_crouch", "_crouch_guard", "_slide_contact"]
+	var painted_low: bool = low_pose and (f.id == 23 or not motion.get_entry(sheet_id + displayed_pose).is_empty())
+	return float(f.profile.height) * (0.71 if f.crouching and not painted_low else 1.0)
+
+static func action_effects_active(c) -> bool:
+	return c.phase == "fight" or (c.phase == "pause" and c.resume_phase == "fight")
+
+func finisher_origin(c, fighter) -> Vector2:
+	var emitter: Dictionary = rendered_pose_emitters.get(c.winner, {})
+	if emitter.get("pose", "") == "_finish": return emitter.position
+	return Vector2(fighter.x, floor_y(c.stage) - float(fighter.profile.height) * 0.6)
+
 func draw_fighter(c, f, side: int) -> void:
+	rendered_pose_emitters.erase(side)
 	var sheet_id: String = c.costumes.art_id(c,f.id)
 	var art: Texture2D = saga_texture(sheet_id+"_guard") if f.id >= 4 else guard_art(f.id)
 	var displayed_pose := "_guard"
 	var idle: bool = f.action == "" and not f.moving and f.stun == 0 and f.altitude == 0
 	var unarmed_fallback: bool = f.profile.ammo > 0 and f.action in ["light","heavy","throw"] and f.stun == 0
-	var key := pose_suffix(f, sheet_id)
+	var key := pose_suffix(f, sheet_id,c,side)
 	if key != "":
 		var pose := saga_texture(sheet_id + key) if f.id >= 4 else classic_art(sheet_id + key)
 		if pose:
 			art = pose
 			idle = true
 			displayed_pose = key
-	var height: float = f.profile.height
+	var height := pose_height(f, sheet_id, displayed_pose)
 	var bottom := floor_y(c.stage) - float(f.altitude)
+	var authored_pose: Dictionary = motion.get_entry(sheet_id+displayed_pose)
 	var painted_low: bool = f.id == 23 and displayed_pose in ["_crouch","_crouch_guard","_slide_contact"]
-	if f.crouching and not painted_low: height *= 0.71
 	var collapse: float = 0.0
 	if c.phase == "cinematic" and side != c.winner:
 		collapse = 1.0 - float(c.finish_ticks) / 72
@@ -354,7 +418,8 @@ func draw_fighter(c, f, side: int) -> void:
 		var pivot_values: Array = metrics.get("pivot", [0.5, 960.0/1024.0])
 		var source_pivot := Vector2(float(pivot_values[0]), float(pivot_values[1]))
 		var h := (height + breathing) / float(metrics.get("body_fraction",905.0/1024.0))
-		if painted_low: h = linda_low_canvas_size(art.get_size(),height+breathing).y
+		if not authored_pose.is_empty(): h = Motion.canvas_size(authored_pose,height+breathing).y
+		elif painted_low: h = linda_low_canvas_size(art.get_size(),height+breathing).y
 		# Kate's two outfits keep the earlier alpha-16 body calibration.
 		if f.id == 6 and displayed_pose in ["_walk1", "_walk2"]:
 			var bounds := visible_bounds(art)
@@ -384,9 +449,10 @@ func draw_fighter(c, f, side: int) -> void:
 			elif f.altitude > 0: tilt = -0.06
 		var pivot := Transform2D(tilt * f.facing, Vector2(f.x + shift.x*f.facing, bottom+shift.y))
 		pivot.x *= f.facing
-		if displayed_pose in ["_contact","_slide_contact"] and pose_emitters.has(sheet_id + displayed_pose):
+		if displayed_pose in ["_contact","_slide_contact","_finish"] and pose_emitters.has(sheet_id + displayed_pose):
 			painted_emitter = painted_point(pose_emitters[sheet_id + displayed_pose], art.get_size(), Vector2(w,h), source_pivot, pivot)
 			has_painted_emitter = true
+			rendered_pose_emitters[side] = {"pose": displayed_pose, "position": painted_emitter}
 		if side == 1 and CORE_PIXELS.has(f.id):
 			var marks: Dictionary = CORE_PIXELS[f.id]
 			var core: Vector2 = marks.get(displayed_pose, marks["_guard"])
@@ -412,6 +478,8 @@ func draw_fighter(c, f, side: int) -> void:
 		var side_len := height * 256 / 228
 		var dst := Rect2(f.x-side_len*0.5,bottom-side_len*242/256,side_len,side_len)
 		c.draw_texture_rect_region(tex,dst,Rect2(Vector2(frame,row)*cell,cell),tint)
+	# A frozen winning attack must not trail into a victory or finisher pose.
+	if not action_effects_active(c): return
 	if f.action == "special" and f.tick >= f.move_data().start:
 		var age: int = f.tick-int(f.move_data().start)
 		var visible_ticks := maxi(5, f.special_hits()*f.pulse_gap())
@@ -612,7 +680,7 @@ func cinematic(c) -> void:
 	var color := Color(f.profile.color)
 	color.a = fade
 	var beat := clampi(int(progress*3.0), 0, 2)
-	var origin := Vector2(f.x,floor_y(c.stage)-float(f.profile.height)*0.6)
+	var origin := finisher_origin(c, f)
 	var reach := 38.0+progress*102.0
 	match int(f.id):
 		0:
@@ -725,4 +793,12 @@ func cinematic(c) -> void:
 				c.draw_polyline(PackedVector2Array([root,fork,bud]),color,5,true)
 			if beat == 2:
 				c.draw_polyline(PackedVector2Array([center+Vector2(32,-175),center+Vector2(-9,-60),center+Vector2(11,-65),center]),BONE,5,true)
+		23: # Three timed shots originate at the painted barrel of Linda's finisher.
+			var pulse := fmod(progress * 72.0, 24.0)
+			var impact := center + Vector2(0, -32 + beat * 26)
+			if pulse < 6.0:
+				var flash_color := Color(color, (1.0 - pulse / 6.0) * fade)
+				c.draw_circle(origin, 8.0 - pulse * 0.75, flash_color)
+				c.draw_line(origin, impact, flash_color, 3, true)
+			c.draw_arc(impact, 10.0 + pulse * 1.4, 0, TAU, 24, color, 2, true)
 	banner(c,str(f.profile.finish).to_upper(),str(f.profile.title))
