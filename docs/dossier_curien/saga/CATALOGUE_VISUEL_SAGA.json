@@ -1,6 +1,6 @@
 {
   "titre": "Dossier Curien — Anthologie de combat",
-  "nombre_de_png": 185,
+  "nombre_de_png": 195,
   "nouveaux_png_volume_iii": 86,
   "fichiers": [
     {
@@ -42,6 +42,51 @@
       ],
       "sha256": "7ee88eb625e02ef5333f2ce7d14aa1d4df73b1fa0780a59130a58a0f4d28bf97",
       "volume": 2
+    },
+    {
+      "fichier": "citydespair_back.png",
+      "usage": "back",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "57cf6e5198596a93f40e6b3b50a0a58b9d597d709ca5c188aad332927237f75e",
+      "lot": "reprise-2026-11-19",
+      "validation": "adaptation referencee; fidelite 1:1 a valider"
+    },
+    {
+      "fichier": "citydespair_front.png",
+      "usage": "front",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "fb9259b485bd0a20006fa0f2237cea0338493c9c50453b30c2e0587b79f08a19",
+      "lot": "reprise-2026-11-19",
+      "bounds_px": [
+        0,
+        796,
+        1672,
+        145
+      ],
+      "validation": "adaptation referencee; fidelite 1:1 a valider"
+    },
+    {
+      "fichier": "citydespair_mid.png",
+      "usage": "mid",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "eff8c70dcd9a69054743d76e564c601e44616391f8c160de9cee759e53c8737f",
+      "lot": "reprise-2026-11-19",
+      "bounds_px": [
+        53,
+        311,
+        1619,
+        452
+      ],
+      "validation": "adaptation referencee; fidelite 1:1 a valider"
     },
     {
       "fichier": "clocktower_back.png",
@@ -1146,6 +1191,48 @@
       "volume": 4
     },
     {
+      "fichier": "kate_soiree_walk1.png",
+      "usage": "walk1",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "8f8f2148496c0d216a929202f23ff9270ce8e409035f9fbe510faa2c493cb8b5",
+      "lot": "reprise-2026-11-19",
+      "pivot": [
+        627,
+        1175
+      ],
+      "bounds_px": [
+        253,
+        67,
+        695,
+        1108
+      ],
+      "validation": "adaptation referencee; fidelite 1:1 a valider"
+    },
+    {
+      "fichier": "kate_soiree_walk2.png",
+      "usage": "walk2",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "41c9cf07fa04929bbda6d236cd4825836763ddedeb1c666516de8b08060c2c1b",
+      "lot": "reprise-2026-11-19",
+      "pivot": [
+        627,
+        1166
+      ],
+      "bounds_px": [
+        155,
+        69,
+        859,
+        1097
+      ],
+      "validation": "adaptation referencee; fidelite 1:1 a valider"
+    },
+    {
       "fichier": "kate_soiree_windup.png",
       "usage": "windup",
       "dimensions": [
@@ -1158,6 +1245,48 @@
         512,
         960
       ]
+    },
+    {
+      "fichier": "kate_walk1.png",
+      "usage": "walk1",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "99dbe1c693da0ad1ec3651f7c7d13e68be7e08f937b0789f767deceb65dd52fd",
+      "lot": "reprise-2026-11-19",
+      "pivot": [
+        627,
+        1174
+      ],
+      "bounds_px": [
+        305,
+        68,
+        707,
+        1106
+      ],
+      "validation": "adaptation referencee; fidelite 1:1 a valider"
+    },
+    {
+      "fichier": "kate_walk2.png",
+      "usage": "walk2",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "7c0dc4bc86c460c608a3d51e13023389278e1ed4fc2190ea2f81711bddba5149",
+      "lot": "reprise-2026-11-19",
+      "pivot": [
+        627,
+        1180
+      ],
+      "bounds_px": [
+        171,
+        69,
+        848,
+        1111
+      ],
+      "validation": "adaptation referencee; fidelite 1:1 a valider"
     },
     {
       "fichier": "kate_windup.png",
@@ -1404,6 +1533,69 @@
       ],
       "sha256": "14d5d171dbe988a6a19ec803fc5bcd6df390c6509cc4c79b9b80a65c1fb2fda0",
       "volume": 2
+    },
+    {
+      "fichier": "props/venice_bollard.png",
+      "usage": "prop",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "99af64ef2d4bfd0299ec389b7f4d3f1d600e6cd391ab5e62f58ae2623a879697",
+      "lot": "reprise-2026-11-19",
+      "pivot": [
+        599.5,
+        1116
+      ],
+      "bounds_px": [
+        307,
+        199,
+        585,
+        917
+      ],
+      "validation": "adaptation referencee; fidelite 1:1 a valider"
+    },
+    {
+      "fichier": "props/venice_lamp.png",
+      "usage": "prop",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "1b9034e5e7b2d86459d0c982364d6fc0e686ece282a82690fe091b03218d8314",
+      "lot": "reprise-2026-11-19",
+      "pivot": [
+        627,
+        1238
+      ],
+      "bounds_px": [
+        530,
+        20,
+        194,
+        1218
+      ],
+      "validation": "adaptation referencee; fidelite 1:1 a valider"
+    },
+    {
+      "fichier": "props/venice_railing.png",
+      "usage": "prop",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "4a2eff0e11fef970d3340066800bd0d2c6713ed180f6256f1b32048e3c4d0f16",
+      "lot": "reprise-2026-11-19",
+      "pivot": [
+        626,
+        963
+      ],
+      "bounds_px": [
+        57,
+        464,
+        1138,
+        499
+      ],
+      "validation": "adaptation referencee; fidelite 1:1 a valider"
     },
     {
       "fichier": "reactor_back.png",
@@ -2214,5 +2406,6 @@
       "volume": 3
     }
   ],
-  "nouveaux_png_volume_iv": 40
+  "nouveaux_png_volume_iv": 40,
+  "nouveaux_png_reprise_2026_11_19": 10
 }

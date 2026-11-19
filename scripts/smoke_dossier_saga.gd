@@ -86,9 +86,9 @@ func roster_and_stages() -> void:
 	for i in Fighter.PROFILES.size():
 		var profile: Dictionary = Fighter.PROFILES[i]
 		verify(arena.visuals.guard_art(i) is Texture2D, "Registered combat art for " + str(profile.id))
-		if i >= 4:
-			for suffix in ["_select","_windup","_contact","_recoil"]:
-				verify(arena.visuals.saga_texture(profile.id+suffix) is Texture2D, "Registered " + str(profile.id)+suffix)
+		for suffix in ["_select","_windup","_contact","_recoil"]:
+			var tex: Texture2D = arena.visuals.classic_art(profile.id+suffix) if i < 4 else arena.visuals.saga_texture(profile.id+suffix)
+			verify(tex is Texture2D, "Registered " + str(profile.id)+suffix)
 		var attacker := Fighter.new(i, 500, 1)
 		var target := Fighter.new(0, 580, -1)
 		var landed := 0
@@ -265,7 +265,7 @@ func pandora_and_ark() -> void:
 	rival.guarding=false
 	before=rival.x
 	verify(moon.can_strike(rival) and moon.hit(rival) and rival.x==before-78, "Cyclone draws an unguarded opponent inwards")
-	for id in [19,20]:
+	for id in [6,19,20]:
 		var walker := Fighter.new(id,400,1)
 		for suffix in ["_walk1","_walk2"]:
 			verify(arena.visuals.saga_texture(walker.profile.id+suffix) is Texture2D, "Registered stride "+walker.profile.id+suffix)
@@ -280,6 +280,51 @@ func pandora_and_ark() -> void:
 		verify(walker.altitude>0 and arena.visuals.pose_suffix(walker)=="", "An airborne walker never uses grounded steps")
 	var course: Dictionary=arena.Rush.COURSES.back()
 	verify(course.id=="pandore_arche" and course.bouts==[[13,5],[21,15],[22,16]], "New course uses provenances of Justice, The World and Moon")
+
+func production_assets() -> void:
+	for id in [0, 1, 3]:
+		var fighter := Fighter.new(id, 400, 1)
+		var key: String = fighter.profile.id
+		verify(arena.visuals.classic_art(key + "_recovery") is Texture2D, "Classic recovery loaded: " + key)
+		fighter.begin("special")
+		verify(arena.visuals.pose_suffix(fighter) == "_windup", "Classic special starts with its authored anticipation")
+		fighter.tick = fighter.move_data().start
+		verify(arena.visuals.pose_suffix(fighter) == "_contact", "Classic special shows its contact art")
+		fighter.tick += 3
+		verify(arena.visuals.pose_suffix(fighter) == "_recovery", "Classic special releases contact after its active frames")
+		fighter.stun = 8
+		verify(arena.visuals.pose_suffix(fighter) == "_recoil", "Classic hit reaction interrupts every attack phase")
+		verify(arena.visuals.contact_emitters.has(key), "Classic effect has a measured source anchor: " + key)
+	for costume in ["kate", "kate_soiree"]:
+		for suffix in ["_walk1", "_walk2"]:
+			var tex: Texture2D = arena.visuals.saga_texture(costume + suffix)
+			verify(tex is Texture2D, "Native stride loaded: " + costume + suffix)
+			if tex == null: continue
+			var bounds: Rect2 = arena.visuals.visible_bounds(tex)
+			verify(bounds.has_area() and bounds.position.x > 0 and bounds.position.y > 0 and bounds.end.x < tex.get_width() and bounds.end.y < tex.get_height(), "Registered body excludes transparent margins: " + costume + suffix)
+	var kate := Fighter.new(6, 400, 1)
+	for preference in [1, 2]:
+		arena.costumes.preference[6] = preference
+		verify(arena.costumes.art_id(arena, 6) == ("kate" if preference == 1 else "kate_soiree"), "Manual outfit selects its own stride set")
+	arena.costumes.preference[6] = 0
+	for tick in 24: kate.step(-1, false, "", 1000)
+	verify(kate.guarding and kate.x < 400 and arena.visuals.pose_suffix(kate) == "_walk1", "Retreat uses reverse grounded stride while guarding")
+	kate.stun = 10
+	verify(arena.visuals.pose_suffix(kate) == "_recoil", "A hit interrupts the stride immediately")
+	for prop in ["venice_lamp", "venice_railing", "venice_bollard"]:
+		var tex: Texture2D = arena.visuals.saga_texture("props/" + prop)
+		verify(tex is Texture2D, "Individual quay prop loaded: " + prop)
+		if tex != null:
+			var bounds: Rect2 = arena.visuals.visible_bounds(tex)
+			verify(bounds.has_area() and bounds.size.x < tex.get_width() and bounds.size.y < tex.get_height(), "Measured prop bounds: " + prop)
+	arena.menu()
+	click("Duel local")
+	pages(6 / arena.PAGE_SIZE)
+	click("Kate Green", true)
+	click("James Taylor", true)
+	pages(17 / arena.PAGE_SIZE)
+	click("Rue dévastée de Despair", true)
+	verify(arena.phase == "fight" and arena.stage == 17 and arena.fighters[0].id == 6 and arena.fighters[1].id == 4, "New street is reachable through the actual duel selection")
 
 func boss_scans() -> void:
 	for id in ["hotd2","hotd3","hotd4","scarlet"]:
@@ -439,6 +484,7 @@ func run() -> void:
 	styles()
 	new_styles()
 	pandora_and_ark()
+	production_assets()
 	boss_scans()
 	case_rules()
 	archives_and_keys()

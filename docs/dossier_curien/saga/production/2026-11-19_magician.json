@@ -1,0 +1,296 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-19",
+  "project": "House of the Dead 2D — Dossier Curien",
+  "batch": "Magician : quatre poses individuelles",
+  "base_commit": "a3fbcf13455a945ccc929ce43907a9755d82e6c7",
+  "asset_count": 4,
+  "generation_calls": 4,
+  "references": [
+    {
+      "id": "magician_guard_existing",
+      "path": "assets/dossier_curien/magician_guard.png",
+      "ref": "a3fbcf13455a945ccc929ce43907a9755d82e6c7",
+      "git_blob_sha": "3aaae66095a04c8b3f6d08e78bc07efaa34a0738",
+      "sha256": "9137ceea3bbba769cc849a35ded669dac901f85383930e9893c383aa1d8c93a3",
+      "dimensions_px": [
+        1024,
+        1024
+      ],
+      "catalogue_pivot_px": [
+        512,
+        960
+      ],
+      "bbox_alpha_gte_16_px": [
+        318,
+        56,
+        706,
+        959
+      ],
+      "review": "Récupéré via GitHub en base64 et affiché avant génération ; référence visuelle principale.",
+      "url": "https://github.com/darknigthmare/the-house-of-the-dead-25d/blob/a3fbcf13455a945ccc929ce43907a9755d82e6c7/assets/dossier_curien/magician_guard.png"
+    },
+    {
+      "id": "dossier_curien_catalogue",
+      "path": "docs/dossier_curien/CATALOGUE_VISUEL.json",
+      "ref": "a3fbcf13455a945ccc929ce43907a9755d82e6c7",
+      "review": "Fiche Magician lue ; statut existant 'candidate Model 2, contrôle des deux côtés à poursuivre' conservé.",
+      "historical_reference_urls": {
+        "projet": "https://github.com/darknigthmare/the-house-of-the-dead-25d/tree/e8bf0524",
+        "arcade": "https://www.sega.jp/history/arcade/product/9038/",
+        "duo": "https://hackernoon.imgix.net/images/gd0SQf7WPsYcZnyCjkdJj8hy9mA3-aof388r.png",
+        "chariot": "https://hackernoon.imgix.net/images/gd0SQf7WPsYcZnyCjkdJj8hy9mA3-5um384i.png",
+        "magician": "https://hackernoon.imgix.net/images/gd0SQf7WPsYcZnyCjkdJj8hy9mA3-ls9383g.png",
+        "magician_alt": "https://hackernoon.imgix.net/images/gd0SQf7WPsYcZnyCjkdJj8hy9mA3-eo838xw.png"
+      },
+      "source_note": "Les liens historiques proviennent du catalogue. Les captures historiques n'ont pas été relues visuellement pendant cette passe."
+    }
+  ],
+  "notes": [
+    "Un combattant entier par fichier ; les quatre images sont de nouvelles poses, pas une planche découpée ni une déformation par code de la garde.",
+    "Aucune boule, flamme ou particule n'est intégrée aux sprites ; le moteur conserve les VFX séparés.",
+    "Le canevas natif produit est 1254×1254 malgré le repère conceptuel 1024×1024 indiqué dans les prompts. Conserver les dimensions réelles et les bounds mesurées pour le rendu.",
+    "L'axe de l'image et le bas des bounds alpha>=16 fournissent une proposition de pivot source, à valider en animation. Un seuil alpha>=16 évite que des speckles quasi transparents faussent le placement.",
+    "Les données PNG ont été décodées en JavaScript pour calculer dimensions, alpha et SHA256 ; les images n'ont pas été modifiées par code.",
+    "Contrôle visuel des quatre images effectué. L'environnement local étant indisponible, aucune exécution Godot, capture animée ou validation de hitbox n'a été réalisée dans cette passe."
+  ],
+  "assets": [
+    {
+      "id": "magician_windup",
+      "path": "assets/dossier_curien/magician_windup.png",
+      "fighter_id": "magician",
+      "pose": "windup",
+      "label_fr": "Canalisation, deux mains ramenées au thorax",
+      "facing": "right",
+      "git_blob_sha": "47d6aa284aaab62eb2e810f205d6d2ac22234aa9",
+      "sha256": "fab103ef580054beac3c4ac446c07ef4a9533f90d52bee47af9dd2a8b8dbd41f",
+      "size_bytes": 669096,
+      "dimensions_px": [
+        1254,
+        1254
+      ],
+      "color_mode": "RGBA",
+      "bit_depth": 8,
+      "interlace": 0,
+      "bbox_alpha_gte_16_px": [
+        294,
+        112,
+        909,
+        1184
+      ],
+      "bbox_alpha_gt_0_px": [
+        0,
+        15,
+        1232,
+        1254
+      ],
+      "alpha_zero_pixels": 1305408,
+      "alpha_255_pixels": 588,
+      "transparent_fraction": 0.830139725128393,
+      "proposed_source_pivot_px": [
+        627,
+        1184
+      ],
+      "pivot_note": "Proposition de centrage sur l'axe du canevas et le bas de la boîte alpha>=16. À vérifier en lecture animée dans le moteur ; aucune normalisation raster appliquée.",
+      "reference_ids": [
+        "magician_guard_existing",
+        "dossier_curien_catalogue"
+      ],
+      "tool": "image_gen__imagegen",
+      "transparent_background": true,
+      "num_last_images_to_include": 1,
+      "prompt": "Edit the supplied neutral combat sprite into ONE new anticipation/windup animation key pose of THE MAGICIAN from the original The House of the Dead Model 2 era, for the same fan-made 2D fighting game. Use the supplied full-body guard as the strict identity and drawing-style reference. Preserve the exact slender elongated body proportions; smooth lavender segmented chitin-like plates; black tendons between the plates; exposed dark red muscle patches; the two thick black curled horns; the red vertical forehead marking; long pointed ears; angular pale face; pointed shoulder plates; the same long segmented fingers and sharp clawed feet. Do NOT redesign into the remake version, bulky demon, armored knight, or comic superhero. One full figure facing screen RIGHT, in a readable side-oriented fighting stance. NEW POSE: both knees bend slightly; the chest twists a little away from the opponent; both clawed hands draw back and gather in front of the left side of the chest, fingers spread and curved as if preparing an invisible spell; elbows bent, shoulders clearly changing shape from neutral. Both feet remain planted, with the body weight on the rear leg and a clear next action toward the right. No orb or any visual effect. Head continues looking toward screen right. Entire horns, elbows, fingers and toes must be fully inside frame. Exact same restrained realistic painted sprite finish and dark outlining as the original reference. Square transparent PNG, one character only, no scenery, no floor or shadow, no text or border, no extra limb, no duplicate or ghost pose. In conceptual 1024x1024 coordinates keep the ground baseline near y=960 and center the feet around x=512; preserve ample transparent margins. True alpha transparency throughout. Crucially NO fireball, flame, sparks, magic halo, motion lines or glow baked into this character sprite; those are separate engine effects.",
+      "visual_review": {
+        "single_figure": true,
+        "full_body": true,
+        "facing_right": true,
+        "distinct_pose": true,
+        "no_baked_projectile": true,
+        "no_baked_fire": true,
+        "no_ground_shadow": true,
+        "identity_check": "Palette, cornes, oreilles, segmentation, musculature rouge, mains et pieds comparés visuellement à la garde existante.",
+        "status": "candidate_coherente_avec_la_garde_du_projet"
+      },
+      "fidelity_status": "Candidat au style Model 2 du projet ; fidélité 1:1 aux pixels ou au modèle commercial non certifiée."
+    },
+    {
+      "id": "magician_contact",
+      "path": "assets/dossier_curien/magician_contact.png",
+      "fighter_id": "magician",
+      "pose": "contact",
+      "label_fr": "Extension de la main active vers la droite",
+      "facing": "right",
+      "git_blob_sha": "0922a2509bc798fb04f05245e62de1295ef124f6",
+      "sha256": "6baaeb926611be7e0ee2153f441471e7ebda7f7e3b537880ec2d8a357767a6d4",
+      "size_bytes": 745478,
+      "dimensions_px": [
+        1254,
+        1254
+      ],
+      "color_mode": "RGBA",
+      "bit_depth": 8,
+      "interlace": 0,
+      "bbox_alpha_gte_16_px": [
+        120,
+        145,
+        1196,
+        1177
+      ],
+      "bbox_alpha_gt_0_px": [
+        25,
+        7,
+        1220,
+        1239
+      ],
+      "alpha_zero_pixels": 1290693,
+      "alpha_255_pixels": 954,
+      "transparent_fraction": 0.820782109689186,
+      "proposed_source_pivot_px": [
+        627,
+        1177
+      ],
+      "pivot_note": "Proposition de centrage sur l'axe du canevas et le bas de la boîte alpha>=16. À vérifier en lecture animée dans le moteur ; aucune normalisation raster appliquée.",
+      "active_hand_px": [
+        1100,
+        365
+      ],
+      "active_hand_measurement": "Centre de la paume observé visuellement dans le PNG source ; approximation ±12 px, pas une mesure automatique de collision.",
+      "reference_ids": [
+        "magician_guard_existing",
+        "dossier_curien_catalogue"
+      ],
+      "tool": "image_gen__imagegen",
+      "transparent_background": true,
+      "num_last_images_to_include": 2,
+      "prompt": "Create ONE new CONTACT / RELEASE animation key pose of THE MAGICIAN for the same fan-made House of the Dead 2D combat game, using the supplied original guard and anticipation pose as strict visual references. The original neutral guard is the identity master; the anticipation pose establishes the immediately preceding motion. Preserve the slender elongated Model 2-era identity exactly: lavender segmented plates, black sinewy connective bands, dark red exposed muscle patches, two thick black curled horns, red forehead stripe, pointed ears and shoulders, pale angular face, matching clawed fingers and clawed feet. Keep the same restrained realistic painted sprite style, edge treatment, proportions and palette. This is the next pose in the same animation, NOT a character redesign. Face screen RIGHT. NEW POSE: the hips and shoulders rotate toward the right, the right-facing leading arm fully extends forward approximately horizontally at chest height, with one clearly readable open clawed hand and palm aimed at the invisible opponent to the right; the other arm bends back beside the ribs. The torso leans slightly forward; the leading knee bends and the rear leg braces in a stable lunge. Both feet remain planted and complete. Make the active front hand the rightmost major feature of the silhouette, clearly separated from torso and horns. The image shows ONLY the physical spell-release pose, with absolutely no projectile, fireball, flame, magical glow, sparks, trails or baked-in effects. One complete character on transparent alpha, generous margin including the outstretched fingertips; no cropping of horns, fingers or toes. Square composition with conceptual 1024x1024 ground baseline near y=960 and a centered body pivot at x=512; allow the extended arm to use space to the right. No background, ground, cast shadow, typography, border, duplicate, ghost pose or extra limb.",
+      "visual_review": {
+        "single_figure": true,
+        "full_body": true,
+        "facing_right": true,
+        "distinct_pose": true,
+        "no_baked_projectile": true,
+        "no_baked_fire": true,
+        "no_ground_shadow": true,
+        "identity_check": "Palette, cornes, oreilles, segmentation, musculature rouge, mains et pieds comparés visuellement à la garde existante.",
+        "status": "candidate_coherente_avec_la_garde_du_projet"
+      },
+      "fidelity_status": "Candidat au style Model 2 du projet ; fidélité 1:1 aux pixels ou au modèle commercial non certifiée."
+    },
+    {
+      "id": "magician_recovery",
+      "path": "assets/dossier_curien/magician_recovery.png",
+      "fighter_id": "magician",
+      "pose": "recovery",
+      "label_fr": "Retrait du bras et redressement après l'extension",
+      "facing": "right",
+      "git_blob_sha": "21ed1c2643056878698f48e8ad6636e18d9d43c1",
+      "sha256": "2026c3e0db7bf30df76d04d4ba6a155100ad8327986f9a8774e55a75cc77d181",
+      "size_bytes": 699226,
+      "dimensions_px": [
+        1254,
+        1254
+      ],
+      "color_mode": "RGBA",
+      "bit_depth": 8,
+      "interlace": 0,
+      "bbox_alpha_gte_16_px": [
+        276,
+        134,
+        917,
+        1177
+      ],
+      "bbox_alpha_gt_0_px": [
+        17,
+        25,
+        1234,
+        1254
+      ],
+      "alpha_zero_pixels": 1305103,
+      "alpha_255_pixels": 1064,
+      "transparent_fraction": 0.8299457684373323,
+      "proposed_source_pivot_px": [
+        627,
+        1177
+      ],
+      "pivot_note": "Proposition de centrage sur l'axe du canevas et le bas de la boîte alpha>=16. À vérifier en lecture animée dans le moteur ; aucune normalisation raster appliquée.",
+      "reference_ids": [
+        "magician_guard_existing",
+        "dossier_curien_catalogue"
+      ],
+      "tool": "image_gen__imagegen",
+      "transparent_background": true,
+      "num_last_images_to_include": 3,
+      "prompt": "Produce ONE new RECOVERY animation key pose of THE MAGICIAN, immediately after the supplied fully extended spell-release pose, for the same fan-made House of the Dead 2D fighter. There are three supplied references: the original neutral guard is the identity master, followed by the anticipation and contact poses. Strictly retain that original Model 2-era slender elongated body, proportions and costume anatomy: pale lavender segmented exoskeletal plates, black tendon bands, dark red muscle patches, two thick black curved horns, red forehead stripe, long pointed ears, pale angular face, pointed shoulders, same claws and pointed feet. Keep the identical realistic painted sprite style and palette, not the modern remake and not a redesign. One whole figure looking and facing screen RIGHT. NEW DISTINCT PHASE: recover from the previous lunge; the body rises only halfway back toward neutral; the leading right-facing hand is lowering and drawing backward toward the chest, wrist relaxed and fingers curved inward; that elbow is visibly bent, unlike the straight contact arm. The trailing hand has lowered near the rear hip. The front knee begins to straighten while the rear foot draws a little closer, creating a believable transitional recovery that clearly differs from both the neutral guard and the windup. Head stays focused on the unseen opponent at screen right. Full figure, all horns, claws and toes inside a square canvas with ample transparent margin, conceptual ground at y=960 on 1024x1024 and body center near x=512. Exactly one pose of one character. Transparent alpha background, no environment, no ground or cast shadow, no text, no border, no duplicate silhouettes or afterimages. NO fireballs, flames, glow, particles, spell effects or motion streaks: physical body only.",
+      "visual_review": {
+        "single_figure": true,
+        "full_body": true,
+        "facing_right": true,
+        "distinct_pose": true,
+        "no_baked_projectile": true,
+        "no_baked_fire": true,
+        "no_ground_shadow": true,
+        "identity_check": "Palette, cornes, oreilles, segmentation, musculature rouge, mains et pieds comparés visuellement à la garde existante.",
+        "status": "candidate_coherente_avec_la_garde_du_projet"
+      },
+      "fidelity_status": "Candidat au style Model 2 du projet ; fidélité 1:1 aux pixels ou au modèle commercial non certifiée."
+    },
+    {
+      "id": "magician_recoil",
+      "path": "assets/dossier_curien/magician_recoil.png",
+      "fighter_id": "magician",
+      "pose": "recoil",
+      "label_fr": "Réaction à un impact depuis la droite",
+      "facing": "right",
+      "git_blob_sha": "04aca6ed83d47cd4b67116e55b6c022f77eff43c",
+      "sha256": "7b249b75a480c230e5b439e048db66b98df3ea5431b8195b6e1d54d90b0edf4c",
+      "size_bytes": 700138,
+      "dimensions_px": [
+        1254,
+        1254
+      ],
+      "color_mode": "RGBA",
+      "bit_depth": 8,
+      "interlace": 0,
+      "bbox_alpha_gte_16_px": [
+        109,
+        133,
+        952,
+        1173
+      ],
+      "bbox_alpha_gt_0_px": [
+        0,
+        9,
+        1226,
+        1229
+      ],
+      "alpha_zero_pixels": 1307509,
+      "alpha_255_pixels": 1130,
+      "transparent_fraction": 0.8314758005641913,
+      "proposed_source_pivot_px": [
+        627,
+        1173
+      ],
+      "pivot_note": "Proposition de centrage sur l'axe du canevas et le bas de la boîte alpha>=16. À vérifier en lecture animée dans le moteur ; aucune normalisation raster appliquée.",
+      "reference_ids": [
+        "magician_guard_existing",
+        "dossier_curien_catalogue"
+      ],
+      "tool": "image_gen__imagegen",
+      "transparent_background": true,
+      "num_last_images_to_include": 4,
+      "prompt": "Create ONE new HIT-REACTION / RECOIL key pose of THE MAGICIAN for the same House of the Dead 2D combat game. The supplied original neutral guard and three new action poses define the exact identity; keep the original Model 2-era design and same realistic painted sprite style. Preserve the slender elongated body and limb proportions, lavender segmented plates, black sinewy bands, exposed dark red muscle patches, two black curled horns, red forehead stripe, pointed ears, pale angular face, pointed shoulders, matching long segmented clawed hands and clawed feet. Do not use the modern remake design, bulk up the body or add any armor. One whole figure facing screen RIGHT, reacting to a hit arriving from the right. NEW DISTINCT POSE: the torso bends backward toward screen left; the chest and chin lift slightly; the shoulders pull back unevenly; the leading hand has recoiled open near the upper chest with a bent wrist, while the rear arm swings out low behind the body to regain balance. Both knees flex; weight shifts to the rear foot while the front foot stays lightly planted. The pose should visibly read as a short stun from an impact, not an attack or a celebratory gesture. Keep the eyes and facial orientation toward the right, and the complete horns, fingers and toes clear of all frame edges. Square transparent PNG, one isolated figure only, generous margins, conceptual 1024x1024 ground baseline near y=960 and foot center near x=512. No blood, wound, impact spark, projectile, fireball, flames, glow, particles, afterimages, motion strokes, additional character, scenery, ground, cast shadow, text, logo or border. This file contains the physical reaction only; visual effects remain separate in the game engine.",
+      "visual_review": {
+        "single_figure": true,
+        "full_body": true,
+        "facing_right": true,
+        "distinct_pose": true,
+        "no_baked_projectile": true,
+        "no_baked_fire": true,
+        "no_ground_shadow": true,
+        "identity_check": "Palette, cornes, oreilles, segmentation, musculature rouge, mains et pieds comparés visuellement à la garde existante.",
+        "status": "candidate_coherente_avec_la_garde_du_projet"
+      },
+      "fidelity_status": "Candidat au style Model 2 du projet ; fidélité 1:1 aux pixels ou au modèle commercial non certifiée."
+    }
+  ]
+}

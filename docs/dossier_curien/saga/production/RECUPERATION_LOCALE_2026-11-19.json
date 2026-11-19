@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-19",
+  "repository": "darknigthmare/the-house-of-the-dead-25d",
+  "remote_head_checked": "a3fbcf13455a945ccc929ce43907a9755d82e6c7",
+  "local_head_checked": "6dd8c17345a3714a88a5eeab960149e3d73583e6",
+  "local_repository": "/workspace/scratch/e965ec0b3fbc/hotd",
+  "tracked_worktree_modified_files": 0,
+  "untracked_worktree_files": 0,
+  "masters": {
+    "directory": "/workspace/scratch/e965ec0b3fbc/generated_images",
+    "png_count": 219,
+    "total_bytes": 402464073,
+    "matched_named_production_copies": 208,
+    "without_named_copy": 11
+  },
+  "remote_original_sources": [
+    {
+      "path": "docs/dossier_curien/sources_art/vol-01/court_back.png",
+      "git_blob_sha": "971682e51f472ceb29d41cf0abc633155df61e83",
+      "bytes": 3042857
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/vol-01/g_guard.png",
+      "git_blob_sha": "0cbd8e8c77427ad624fd0e32d4f9446afa779738",
+      "bytes": 540046
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/vol-01/magician_guard.png",
+      "git_blob_sha": "ba00991220ea7c378a522b1c21c849107c28257e",
+      "bytes": 1680240
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/vol-01/rogan_ending.png",
+      "git_blob_sha": "aa404dd923a40efb9687f51c84674e0907292682",
+      "bytes": 2680031
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/vol-01/rogan_guard.png",
+      "git_blob_sha": "df4ea721d8e2458c3bbcb78246d4f848afb65338",
+      "bytes": 545053
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/vol-01/rogan_intro.png",
+      "git_blob_sha": "ab961870f8af8edde957da5cef391846dcf580a5",
+      "bytes": 2881289
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/vol-01/rogan_rival.png",
+      "git_blob_sha": "e259b43a2c982a2e220cf962e0e3a60ff8a15d34",
+      "bytes": 2643888
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/vol-01/rogan_select.png",
+      "git_blob_sha": "ddecdf3fd0cf930d926b35a3d9436657eb74ddb7",
+      "bytes": 2617861
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/vol-02/carnival_back.png",
+      "git_blob_sha": "62230f72c57e5fc2e8b9f4ae5a32eca4ac62eb50",
+      "bytes": 2935331
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/vol-02/death_contact.png",
+      "git_blob_sha": "d03cc188e093f238e726ebcc4205cc6206021b46",
+      "bytes": 1331266
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/vol-02/death_guard.png",
+      "git_blob_sha": "e9820d2194252dbe5ba581b428a57654685b05e5",
+      "bytes": 1665349
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/vol-02/efi_back.png",
+      "git_blob_sha": "e9544d6f8dbfee0681f6691c7bcaa18642d051d2",
+      "bytes": 2968530
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/vol-02/ex_back.png",
+      "git_blob_sha": "de674332fca3da014854c4d14478178adef60679",
+      "bytes": 2763211
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/vol-02/ex_duo.png",
+      "git_blob_sha": "0b55b79c42c3c6bcfbef521cf323e591a637f3b5",
+      "bytes": 1692455
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/vol-02/ex_ending.png",
+      "git_blob_sha": "2f51fe13edcfb24c8f764e0ecb19ee5c8a7b520f",
+      "bytes": 2832178
+    }
+  ],
+  "production_directories": [
+    "work/raw",
+    "work_saga/art",
+    "work_saga/artwork_tmp",
+    "work_v3/raw",
+    "work4/raw",
+    "work4/fighters/master",
+    "work4/stages",
+    "work_wave3/stages",
+    "work5"
+  ],
+  "comparison": {
+    "complete_against_latest_remote": false,
+    "reason": "Local disk reported no free space; the execution environment became unavailable during the reconciliation. No source image was deleted.",
+    "important": "A master SHA differing from a normalized runtime sprite does not establish a new gameplay asset. The 219 masters cannot be counted as 219 unpublished sprites.",
+    "unpublished_count": null
+  },
+  "unmapped_masters": [
+    {
+      "filename": "exec-39d368dc-18f4-4057-8eee-bee714c1e85b.png",
+      "observed_subject": "Chariot guard"
+    },
+    {
+      "filename": "exec-d13ccbc9-09ca-4b3c-be75-71e705e7fd55.png",
+      "observed_subject": "Chariot high windup"
+    },
+    {
+      "filename": "exec-edf36a68-83c1-4117-88a8-0dbb06220e5e.png",
+      "observed_subject": "Chariot low horizontal weapon"
+    },
+    {
+      "filename": "exec-3e3f26c4-8d5c-49f0-9fb1-5cab72de70b0.png",
+      "observed_subject": "Chariot extended weapon"
+    },
+    {
+      "filename": "exec-be3801eb-a2b3-4d1b-92ac-41046349442c.png",
+      "observed_subject": "Chariot selection portrait"
+    },
+    {
+      "filename": "exec-63a7bff6-4587-4366-bb43-c989414e38f4.png",
+      "observed_subject": "Chariot recoil"
+    },
+    {
+      "filename": "exec-6430ce10-efc2-4365-a959-3b97ba9fcaa0.png",
+      "observed_subject": "Magician selection portrait"
+    },
+    {
+      "filename": "exec-10a2c47d-34d6-4f32-bedc-094509aef635.png",
+      "observed_subject": null
+    },
+    {
+      "filename": "exec-cf89431f-fe34-4474-aed7-5a077e260aa0.png",
+      "observed_subject": null
+    },
+    {
+      "filename": "exec-0db7946b-e885-453e-9415-5d68cfb4989b.png",
+      "observed_subject": null
+    },
+    {
+      "filename": "exec-227b6234-b123-441e-8017-544804693669.png",
+      "observed_subject": null
+    }
+  ]
+}

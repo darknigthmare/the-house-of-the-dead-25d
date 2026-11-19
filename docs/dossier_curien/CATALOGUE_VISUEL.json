@@ -192,6 +192,38 @@
       "art": "composition détourée des lampes garden_lamp du dépôt"
     },
     {
+      "file": "g_contact.png",
+      "size_px": [
+        1254,
+        1254
+      ],
+      "color_mode": "RGBA",
+      "sha256": "024133b59ca76a6fbc4af04610a727e25f3c13519af85c5682beb663a4b7b170",
+      "reference_ids": [
+        "projet",
+        "arcade",
+        "duo"
+      ],
+      "family": "combat",
+      "pose": "contact",
+      "facing": "right",
+      "pivot_px": [
+        627,
+        1175.625
+      ],
+      "bounds_alpha_gte_16_px": [
+        278,
+        75,
+        831,
+        1100
+      ],
+      "bounds_format": "[x,y,width,height]",
+      "art": "Pose individuelle générée en conservant la garde existante comme référence d’identité.",
+      "validation": "Candidat cohérent avec la garde du projet ; fidélité 1:1 et lecture animée dans le moteur encore à confirmer.",
+      "lot": "2026-11-19",
+      "production_record": "docs/dossier_curien/saga/production/2026-11-19_agent_g.json"
+    },
+    {
       "file": "g_guard.png",
       "size_px": [
         1024,
@@ -215,6 +247,70 @@
       "validation": "candidate Model 2, contrôle des deux côtés à poursuivre"
     },
     {
+      "file": "g_recoil.png",
+      "size_px": [
+        1254,
+        1254
+      ],
+      "color_mode": "RGBA",
+      "sha256": "7fd3d7a2b57f9d6dfd4343c7dc34a91d6d57e20b32c57a66b93c432cb1ea299b",
+      "reference_ids": [
+        "projet",
+        "arcade",
+        "duo"
+      ],
+      "family": "combat",
+      "pose": "recoil",
+      "facing": "right",
+      "pivot_px": [
+        627,
+        1175.625
+      ],
+      "bounds_alpha_gte_16_px": [
+        295,
+        84,
+        590,
+        1088
+      ],
+      "bounds_format": "[x,y,width,height]",
+      "art": "Pose individuelle générée en conservant la garde existante comme référence d’identité.",
+      "validation": "Candidat cohérent avec la garde du projet ; fidélité 1:1 et lecture animée dans le moteur encore à confirmer.",
+      "lot": "2026-11-19",
+      "production_record": "docs/dossier_curien/saga/production/2026-11-19_agent_g.json"
+    },
+    {
+      "file": "g_recovery.png",
+      "size_px": [
+        1254,
+        1254
+      ],
+      "color_mode": "RGBA",
+      "sha256": "bf0aeaba105749ed37eb6dd4f5ea23ce087d5722b0d7d8022026f1d2771382c1",
+      "reference_ids": [
+        "projet",
+        "arcade",
+        "duo"
+      ],
+      "family": "combat",
+      "pose": "recovery",
+      "facing": "right",
+      "pivot_px": [
+        627,
+        1175.625
+      ],
+      "bounds_alpha_gte_16_px": [
+        281,
+        70,
+        645,
+        1105
+      ],
+      "bounds_format": "[x,y,width,height]",
+      "art": "Pose individuelle générée en conservant la garde existante comme référence d’identité.",
+      "validation": "Candidat cohérent avec la garde du projet ; fidélité 1:1 et lecture animée dans le moteur encore à confirmer.",
+      "lot": "2026-11-19",
+      "production_record": "docs/dossier_curien/saga/production/2026-11-19_agent_g.json"
+    },
+    {
       "file": "g_select.png",
       "size_px": [
         832,
@@ -229,6 +325,71 @@
       ],
       "family": "selection",
       "art": "portrait original dédié"
+    },
+    {
+      "file": "g_windup.png",
+      "size_px": [
+        1254,
+        1254
+      ],
+      "color_mode": "RGBA",
+      "sha256": "a5239c05f5ad4c15ef7bd749b944bf85a3a66ef89d83f3c3169b49b467153dc6",
+      "reference_ids": [
+        "projet",
+        "arcade",
+        "duo"
+      ],
+      "family": "combat",
+      "pose": "windup",
+      "facing": "right",
+      "pivot_px": [
+        627,
+        1175.625
+      ],
+      "bounds_alpha_gte_16_px": [
+        278,
+        84,
+        647,
+        1091
+      ],
+      "bounds_format": "[x,y,width,height]",
+      "art": "Pose individuelle générée en conservant la garde existante comme référence d’identité.",
+      "validation": "Candidat cohérent avec la garde du projet ; fidélité 1:1 et lecture animée dans le moteur encore à confirmer.",
+      "lot": "2026-11-19",
+      "production_record": "docs/dossier_curien/saga/production/2026-11-19_agent_g.json"
+    },
+    {
+      "file": "magician_contact.png",
+      "size_px": [
+        1254,
+        1254
+      ],
+      "color_mode": "RGBA",
+      "sha256": "6baaeb926611be7e0ee2153f441471e7ebda7f7e3b537880ec2d8a357767a6d4",
+      "reference_ids": [
+        "projet",
+        "arcade",
+        "magician",
+        "magician_alt"
+      ],
+      "family": "combat",
+      "pose": "contact",
+      "facing": "right",
+      "pivot_px": [
+        627,
+        1175.625
+      ],
+      "bounds_alpha_gte_16_px": [
+        120,
+        145,
+        1076,
+        1032
+      ],
+      "bounds_format": "[x,y,width,height]",
+      "art": "Pose individuelle générée en conservant la garde existante comme référence d’identité.",
+      "validation": "Candidat cohérent avec la garde du projet ; fidélité 1:1 et lecture animée dans le moteur encore à confirmer.",
+      "lot": "2026-11-19",
+      "production_record": "docs/dossier_curien/saga/production/2026-11-19_magician.json"
     },
     {
       "file": "magician_guard.png",
@@ -255,6 +416,72 @@
       "validation": "candidate Model 2, contrôle des deux côtés à poursuivre"
     },
     {
+      "file": "magician_recoil.png",
+      "size_px": [
+        1254,
+        1254
+      ],
+      "color_mode": "RGBA",
+      "sha256": "7b249b75a480c230e5b439e048db66b98df3ea5431b8195b6e1d54d90b0edf4c",
+      "reference_ids": [
+        "projet",
+        "arcade",
+        "magician",
+        "magician_alt"
+      ],
+      "family": "combat",
+      "pose": "recoil",
+      "facing": "right",
+      "pivot_px": [
+        627,
+        1175.625
+      ],
+      "bounds_alpha_gte_16_px": [
+        109,
+        133,
+        843,
+        1040
+      ],
+      "bounds_format": "[x,y,width,height]",
+      "art": "Pose individuelle générée en conservant la garde existante comme référence d’identité.",
+      "validation": "Candidat cohérent avec la garde du projet ; fidélité 1:1 et lecture animée dans le moteur encore à confirmer.",
+      "lot": "2026-11-19",
+      "production_record": "docs/dossier_curien/saga/production/2026-11-19_magician.json"
+    },
+    {
+      "file": "magician_recovery.png",
+      "size_px": [
+        1254,
+        1254
+      ],
+      "color_mode": "RGBA",
+      "sha256": "2026c3e0db7bf30df76d04d4ba6a155100ad8327986f9a8774e55a75cc77d181",
+      "reference_ids": [
+        "projet",
+        "arcade",
+        "magician",
+        "magician_alt"
+      ],
+      "family": "combat",
+      "pose": "recovery",
+      "facing": "right",
+      "pivot_px": [
+        627,
+        1175.625
+      ],
+      "bounds_alpha_gte_16_px": [
+        276,
+        134,
+        641,
+        1043
+      ],
+      "bounds_format": "[x,y,width,height]",
+      "art": "Pose individuelle générée en conservant la garde existante comme référence d’identité.",
+      "validation": "Candidat cohérent avec la garde du projet ; fidélité 1:1 et lecture animée dans le moteur encore à confirmer.",
+      "lot": "2026-11-19",
+      "production_record": "docs/dossier_curien/saga/production/2026-11-19_magician.json"
+    },
+    {
       "file": "magician_select.png",
       "size_px": [
         832,
@@ -270,6 +497,71 @@
       ],
       "family": "selection",
       "art": "portrait original dédié"
+    },
+    {
+      "file": "magician_windup.png",
+      "size_px": [
+        1254,
+        1254
+      ],
+      "color_mode": "RGBA",
+      "sha256": "fab103ef580054beac3c4ac446c07ef4a9533f90d52bee47af9dd2a8b8dbd41f",
+      "reference_ids": [
+        "projet",
+        "arcade",
+        "magician",
+        "magician_alt"
+      ],
+      "family": "combat",
+      "pose": "windup",
+      "facing": "right",
+      "pivot_px": [
+        627,
+        1175.625
+      ],
+      "bounds_alpha_gte_16_px": [
+        294,
+        112,
+        615,
+        1072
+      ],
+      "bounds_format": "[x,y,width,height]",
+      "art": "Pose individuelle générée en conservant la garde existante comme référence d’identité.",
+      "validation": "Candidat cohérent avec la garde du projet ; fidélité 1:1 et lecture animée dans le moteur encore à confirmer.",
+      "lot": "2026-11-19",
+      "production_record": "docs/dossier_curien/saga/production/2026-11-19_magician.json"
+    },
+    {
+      "file": "rogan_contact.png",
+      "size_px": [
+        1254,
+        1254
+      ],
+      "color_mode": "RGBA",
+      "sha256": "90be155e83df651ec88efc6f0f6107118e26b2320056c4e217d2b1f56623cafc",
+      "reference_ids": [
+        "projet",
+        "arcade",
+        "duo"
+      ],
+      "family": "combat",
+      "pose": "contact",
+      "facing": "right",
+      "pivot_px": [
+        627,
+        1175.625
+      ],
+      "bounds_alpha_gte_16_px": [
+        266,
+        78,
+        907,
+        1096
+      ],
+      "bounds_format": "[x,y,width,height]",
+      "art": "Pose individuelle générée en conservant la garde existante comme référence d’identité.",
+      "validation": "Candidat cohérent avec la garde du projet ; fidélité 1:1 et lecture animée dans le moteur encore à confirmer.",
+      "lot": "2026-11-19",
+      "production_record": "docs/dossier_curien/saga/production/2026-11-19_rogan.json"
     },
     {
       "file": "rogan_ending.png",
@@ -331,6 +623,70 @@
       "art": "illustration narrative originale"
     },
     {
+      "file": "rogan_recoil.png",
+      "size_px": [
+        1254,
+        1254
+      ],
+      "color_mode": "RGBA",
+      "sha256": "3eb7f96dfea94995a3160db54b77d5f30f0857e43bb17d28db300893126df0de",
+      "reference_ids": [
+        "projet",
+        "arcade",
+        "duo"
+      ],
+      "family": "combat",
+      "pose": "recoil",
+      "facing": "right",
+      "pivot_px": [
+        627,
+        1175.625
+      ],
+      "bounds_alpha_gte_16_px": [
+        260,
+        71,
+        708,
+        1101
+      ],
+      "bounds_format": "[x,y,width,height]",
+      "art": "Pose individuelle générée en conservant la garde existante comme référence d’identité.",
+      "validation": "Candidat cohérent avec la garde du projet ; fidélité 1:1 et lecture animée dans le moteur encore à confirmer.",
+      "lot": "2026-11-19",
+      "production_record": "docs/dossier_curien/saga/production/2026-11-19_rogan.json"
+    },
+    {
+      "file": "rogan_recovery.png",
+      "size_px": [
+        1254,
+        1254
+      ],
+      "color_mode": "RGBA",
+      "sha256": "6942f046e734d17000c5de3d08fd4bde0c665ddbe5750b31081d3320776bfbb7",
+      "reference_ids": [
+        "projet",
+        "arcade",
+        "duo"
+      ],
+      "family": "combat",
+      "pose": "recovery",
+      "facing": "right",
+      "pivot_px": [
+        627,
+        1175.625
+      ],
+      "bounds_alpha_gte_16_px": [
+        265,
+        77,
+        737,
+        1097
+      ],
+      "bounds_format": "[x,y,width,height]",
+      "art": "Pose individuelle générée en conservant la garde existante comme référence d’identité.",
+      "validation": "Candidat cohérent avec la garde du projet ; fidélité 1:1 et lecture animée dans le moteur encore à confirmer.",
+      "lot": "2026-11-19",
+      "production_record": "docs/dossier_curien/saga/production/2026-11-19_rogan.json"
+    },
+    {
       "file": "rogan_rival.png",
       "size_px": [
         1600,
@@ -364,6 +720,41 @@
       ],
       "family": "selection",
       "art": "portrait original dédié"
+    },
+    {
+      "file": "rogan_windup.png",
+      "size_px": [
+        1254,
+        1254
+      ],
+      "color_mode": "RGBA",
+      "sha256": "b9fccf0dd617c4a136dc7418709a9d80870cc868219c94f14b97451ca1c482a9",
+      "reference_ids": [
+        "projet",
+        "arcade",
+        "duo"
+      ],
+      "family": "combat",
+      "pose": "windup",
+      "facing": "right",
+      "pivot_px": [
+        627,
+        1175.625
+      ],
+      "bounds_alpha_gte_16_px": [
+        269,
+        81,
+        716,
+        1090
+      ],
+      "bounds_format": "[x,y,width,height]",
+      "art": "Pose individuelle générée en conservant la garde existante comme référence d’identité.",
+      "validation": "Candidat cohérent avec la garde du projet ; fidélité 1:1 et lecture animée dans le moteur encore à confirmer.",
+      "lot": "2026-11-19",
+      "production_record": "docs/dossier_curien/saga/production/2026-11-19_rogan.json"
     }
-  ]
+  ],
+  "reprise": "2026-11-19",
+  "nouveaux_png_reprise_2026_11_19": 12,
+  "production_record": "saga/production/REPRISE_2026-11-19.md"
 }

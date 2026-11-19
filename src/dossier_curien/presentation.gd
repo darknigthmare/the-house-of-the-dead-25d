@@ -32,6 +32,8 @@ var recent_textures: Array[String] = []
 var origin_transform := Transform2D.IDENTITY
 var scan_position := Vector2.ZERO
 var prop_profiles: Dictionary
+var visible_rects := {}
+var contact_emitters := {}
 
 static func floor_y(stage: int) -> float:
 	# The Venetian playable strip runs in front of the canal balustrade.
@@ -40,6 +42,15 @@ static func floor_y(stage: int) -> float:
 func load_textures() -> void:
 	var manifest: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/assets/environment_manifest.json"))
 	prop_profiles = manifest.props
+	var additions: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/assets/dossier_curien_additions.json"))
+	for entry in additions.assets:
+		if not entry.has("bounds_px"): continue
+		var box: Array = entry.bounds_px
+		visible_rects["res://" + str(entry.path)] = Rect2(box[0], box[1], box[2], box[3])
+		if entry.has("emitter_px"):
+			var point: Array = entry.emitter_px
+			var dims: Array = entry.dimensions
+			contact_emitters[str(entry.fighter_id)] = Vector2((point[0] - dims[0]*0.5)*1024.0/dims[1], 960.0 - point[1]*1024.0/dims[1])
 
 func cached(path: String) -> Texture2D:
 	if textures.has(path):
@@ -90,6 +101,9 @@ func draw(c) -> void:
 		layer(c,saga_texture(Saga.ART[c.stage] + "_mid"), drift * 32)
 	elif not classic:
 		Stage.mid(c, c.stage, drift)
+		if c.stage == 3:
+			saga_prop_at(c, "venice_lamp", 100 - drift*32, 575, 300)
+			saga_prop_at(c, "venice_railing", 1150 - drift*32, 577, 88)
 	else:
 		prop_at(c, PROPS[c.stage][0], 180 - drift*33, 580, 270)
 	c.draw_rect(Rect2(0, 0, 1280, 720), Color(0.025, 0.035, 0.05, 0.19))
@@ -116,6 +130,9 @@ func draw(c) -> void:
 		layer(c, classic_art("court_front"), drift * 58)
 	elif c.stage >= 11:
 		layer(c,saga_texture(Saga.ART[c.stage] + "_front"), drift * 58)
+	elif c.stage == 3:
+		saga_prop_at(c, "venice_bollard", -4 - drift*58, 686, 64)
+		saga_prop_at(c, "venice_bollard", 1284 - drift*58, 686, 64)
 	elif not classic:
 		Stage.front(c, c.stage, drift)
 	else:
@@ -144,6 +161,20 @@ func prop_at(c, id: String, x: float, bottom: float, h: float) -> void:
 	var w := h * cell.x / cell.y
 	var index: int = int(c.elapsed / 12.0) % frames if prop_profiles[id].has("animate") else 0
 	c.draw_texture_rect_region(tex,Rect2(x-w/2,bottom-h,w,h),Rect2(cell.x * index,0,cell.x,cell.y))
+
+# Native masters retain their source pixels. Registered alpha bounds use a
+# 16/255 threshold so nearly invisible generator speckles do not move the feet.
+# Measurements are loaded once; drawing never reads back GPU texture data.
+func visible_bounds(tex: Texture2D) -> Rect2:
+	return visible_rects.get(tex.resource_path, Rect2(Vector2.ZERO, tex.get_size()))
+
+func saga_prop_at(c, key: String, x: float, bottom: float, height: float) -> void:
+	var tex := saga_texture("props/" + key)
+	if tex == null: return
+	var source := visible_bounds(tex)
+	if not source.has_area(): return
+	var width := height * source.size.x / source.size.y
+	c.draw_texture_rect_region(tex, Rect2(x-width*0.5, bottom-height, width, height), source)
 
 func illustration(c) -> void:
 	var tex: Texture2D
@@ -181,7 +212,7 @@ func illustration(c) -> void:
 
 func pose_suffix(f) -> String:
 	if f.stun > 0: return "_recoil"
-	if f.id in [19,20] and f.action == "" and f.moving and f.altitude == 0:
+	if f.id in [6,19,20] and f.action == "" and f.moving and f.altitude == 0:
 		var stride := floori((f.walk_ticks-1) / 6.0) % 4
 		if f.guarding: stride = 3-stride
 		return ["_walk1","_guard","_walk2","_guard"][stride]
@@ -200,7 +231,7 @@ func pose_suffix(f) -> String:
 			return "_contact" if age < (18 if f.profile.kind == "canopy" else 24) else "_recovery"
 		if f.profile.kind == "rotor" and age < 48: return "_contact"
 		if age < f.special_hits()*f.pulse_gap() and age%f.pulse_gap() <= 2: return "_contact"
-	return "_contact" if age <= 2 or f.id == 0 else "_recovery"
+	return "_contact" if age <= 2 else "_recovery"
 
 func draw_fighter(c, f, side: int) -> void:
 	var sheet_id: String = c.costumes.art_id(c,f.id)
@@ -208,14 +239,13 @@ func draw_fighter(c, f, side: int) -> void:
 	var displayed_pose := "_guard"
 	var idle: bool = f.action == "" and not f.moving and f.stun == 0 and f.altitude == 0
 	var unarmed_fallback: bool = f.profile.ammo > 0 and f.action in ["light","heavy","throw"] and f.stun == 0
-	if f.id in [0,2] or f.id >= 4:
-		var key := pose_suffix(f)
-		if key != "":
-			var pose := saga_texture(sheet_id + key) if f.id >= 4 else classic_art(f.profile.id + key)
-			if pose:
-				art = pose
-				idle = true
-				displayed_pose = key
+	var key := pose_suffix(f)
+	if key != "":
+		var pose := saga_texture(sheet_id + key) if f.id >= 4 else classic_art(f.profile.id + key)
+		if pose:
+			art = pose
+			idle = true
+			displayed_pose = key
 	var height: float = f.profile.height
 	var bottom := floor_y(c.stage) - float(f.altitude)
 	if f.crouching: height *= 0.71
@@ -226,9 +256,16 @@ func draw_fighter(c, f, side: int) -> void:
 	var tint := Color.WHITE
 	if f.frost_ticks > 0: tint = Color("abd9ee")
 	if f.stun > 0 and f.stun % 5 < 2: tint = Color(1.0,0.65,0.55)
+	var effect_scale := height / 905.0
 	if art and (idle or f.id >= 4 or unarmed_fallback):
 		var breathing := sin(float(c.elapsed + side * 24)*0.062)*1.5
+		effect_scale = (height + breathing) / 905.0
 		var h := (height + breathing) * 1024 / 905
+		var foot_fraction := 960.0 / 1024.0
+		if f.id == 6 and displayed_pose in ["_walk1", "_walk2"]:
+			var bounds := visible_bounds(art)
+			h = (height + breathing) * art.get_height() / bounds.size.y
+			foot_fraction = bounds.end.y / art.get_height()
 		var w := h * art.get_width() / art.get_height()
 		var tilt := 0.0
 		var shift := Vector2.ZERO
@@ -260,7 +297,7 @@ func draw_fighter(c, f, side: int) -> void:
 		if f.id == 17 and f.alternate_special and displayed_pose == "_contact":
 			draw_mercury_blade(c,art,w,h,float(f.move_data().reach),tint)
 		else:
-			c.draw_texture_rect(art,Rect2(-w*0.5,-h*960/1024,w,h),false,tint)
+			c.draw_texture_rect(art,Rect2(-w*0.5,-h*foot_fraction,w,h),false,tint)
 		c.draw_set_transform_matrix(origin_transform)
 	elif f.id < ATLAS_IDS.size():
 		var frame := 0
@@ -284,8 +321,10 @@ func draw_fighter(c, f, side: int) -> void:
 		if f.profile.kind == "canopy" and not f.alternate_special: visible_ticks = 18
 		if age < visible_ticks:
 			var anchor: Vector2 = CONTACT_PIVOTS.get(f.profile.kind, Vector2(47,height*0.58))
-			if GALA_MUZZLES.has(sheet_id):
-				anchor = GALA_MUZZLES[sheet_id] * (height / 905.0)
+			if contact_emitters.has(sheet_id):
+				anchor = contact_emitters[sheet_id] * effect_scale
+			elif GALA_MUZZLES.has(sheet_id):
+				anchor = GALA_MUZZLES[sheet_id] * effect_scale
 			draw_special(c, f, Vector2(f.x+f.facing*anchor.x,bottom-anchor.y), age)
 	elif f.id >= 4 and f.action in ["light","heavy","throw"]:
 		var age: int = f.tick - int(f.move_data().start)

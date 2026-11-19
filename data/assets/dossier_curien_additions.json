@@ -1,0 +1,553 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-19",
+  "base_commit": "a3fbcf13455a945ccc929ce43907a9755d82e6c7",
+  "alpha_threshold": 16,
+  "bounds_format": "[x, y, width, height] in original PNG pixels; threshold alpha >=16",
+  "fidelity": "Reference-guided adaptations; 1:1 canonical fidelity remains unapproved.",
+  "assets": [
+    {
+      "path": "assets/dossier_curien/g_contact.png",
+      "git_blob_sha": "1d50b7bd4cfae8ecf1bd6aecc13d4d62c5d81990",
+      "sha256": "024133b59ca76a6fbc4af04610a727e25f3c13519af85c5682beb663a4b7b170",
+      "bytes": 534446,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "role": "fighter_pose",
+      "fighter_id": "g",
+      "pose": "contact",
+      "transparent": true,
+      "bounds_px": [
+        278,
+        75,
+        831,
+        1100
+      ],
+      "pivot_px": [
+        627,
+        1175.625
+      ],
+      "registration": "Canvas midpoint x; normalized source baseline y=960/1024; standing body scale 905/1024. Native source pixels retained.",
+      "production_record": "docs/dossier_curien/saga/production/2026-11-19_agent_g.json",
+      "emitter_px": [
+        1107,
+        207
+      ]
+    },
+    {
+      "path": "assets/dossier_curien/g_recoil.png",
+      "git_blob_sha": "437ae568f95888c7f66fc5a1e52b1f8cc412fb8b",
+      "sha256": "7fd3d7a2b57f9d6dfd4343c7dc34a91d6d57e20b32c57a66b93c432cb1ea299b",
+      "bytes": 585946,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "role": "fighter_pose",
+      "fighter_id": "g",
+      "pose": "recoil",
+      "transparent": true,
+      "bounds_px": [
+        295,
+        84,
+        590,
+        1088
+      ],
+      "pivot_px": [
+        627,
+        1175.625
+      ],
+      "registration": "Canvas midpoint x; normalized source baseline y=960/1024; standing body scale 905/1024. Native source pixels retained.",
+      "production_record": "docs/dossier_curien/saga/production/2026-11-19_agent_g.json"
+    },
+    {
+      "path": "assets/dossier_curien/g_recovery.png",
+      "git_blob_sha": "4a51506f693955ae7f8872ab37d2f41995c4e57f",
+      "sha256": "bf0aeaba105749ed37eb6dd4f5ea23ce087d5722b0d7d8022026f1d2771382c1",
+      "bytes": 505987,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "role": "fighter_pose",
+      "fighter_id": "g",
+      "pose": "recovery",
+      "transparent": true,
+      "bounds_px": [
+        281,
+        70,
+        645,
+        1105
+      ],
+      "pivot_px": [
+        627,
+        1175.625
+      ],
+      "registration": "Canvas midpoint x; normalized source baseline y=960/1024; standing body scale 905/1024. Native source pixels retained.",
+      "production_record": "docs/dossier_curien/saga/production/2026-11-19_agent_g.json"
+    },
+    {
+      "path": "assets/dossier_curien/g_windup.png",
+      "git_blob_sha": "74d8db1241a86d6132b480f7e4ee377f7b5e691d",
+      "sha256": "a5239c05f5ad4c15ef7bd749b944bf85a3a66ef89d83f3c3169b49b467153dc6",
+      "bytes": 506216,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "role": "fighter_pose",
+      "fighter_id": "g",
+      "pose": "windup",
+      "transparent": true,
+      "bounds_px": [
+        278,
+        84,
+        647,
+        1091
+      ],
+      "pivot_px": [
+        627,
+        1175.625
+      ],
+      "registration": "Canvas midpoint x; normalized source baseline y=960/1024; standing body scale 905/1024. Native source pixels retained.",
+      "production_record": "docs/dossier_curien/saga/production/2026-11-19_agent_g.json"
+    },
+    {
+      "path": "assets/dossier_curien/magician_contact.png",
+      "git_blob_sha": "0922a2509bc798fb04f05245e62de1295ef124f6",
+      "sha256": "6baaeb926611be7e0ee2153f441471e7ebda7f7e3b537880ec2d8a357767a6d4",
+      "bytes": 745478,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "role": "fighter_pose",
+      "fighter_id": "magician",
+      "pose": "contact",
+      "transparent": true,
+      "bounds_px": [
+        120,
+        145,
+        1076,
+        1032
+      ],
+      "pivot_px": [
+        627,
+        1175.625
+      ],
+      "registration": "Canvas midpoint x; normalized source baseline y=960/1024; standing body scale 905/1024. Native source pixels retained.",
+      "production_record": "docs/dossier_curien/saga/production/2026-11-19_magician.json",
+      "emitter_px": [
+        1100,
+        365
+      ]
+    },
+    {
+      "path": "assets/dossier_curien/magician_recoil.png",
+      "git_blob_sha": "04aca6ed83d47cd4b67116e55b6c022f77eff43c",
+      "sha256": "7b249b75a480c230e5b439e048db66b98df3ea5431b8195b6e1d54d90b0edf4c",
+      "bytes": 700138,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "role": "fighter_pose",
+      "fighter_id": "magician",
+      "pose": "recoil",
+      "transparent": true,
+      "bounds_px": [
+        109,
+        133,
+        843,
+        1040
+      ],
+      "pivot_px": [
+        627,
+        1175.625
+      ],
+      "registration": "Canvas midpoint x; normalized source baseline y=960/1024; standing body scale 905/1024. Native source pixels retained.",
+      "production_record": "docs/dossier_curien/saga/production/2026-11-19_magician.json"
+    },
+    {
+      "path": "assets/dossier_curien/magician_recovery.png",
+      "git_blob_sha": "21ed1c2643056878698f48e8ad6636e18d9d43c1",
+      "sha256": "2026c3e0db7bf30df76d04d4ba6a155100ad8327986f9a8774e55a75cc77d181",
+      "bytes": 699226,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "role": "fighter_pose",
+      "fighter_id": "magician",
+      "pose": "recovery",
+      "transparent": true,
+      "bounds_px": [
+        276,
+        134,
+        641,
+        1043
+      ],
+      "pivot_px": [
+        627,
+        1175.625
+      ],
+      "registration": "Canvas midpoint x; normalized source baseline y=960/1024; standing body scale 905/1024. Native source pixels retained.",
+      "production_record": "docs/dossier_curien/saga/production/2026-11-19_magician.json"
+    },
+    {
+      "path": "assets/dossier_curien/magician_windup.png",
+      "git_blob_sha": "47d6aa284aaab62eb2e810f205d6d2ac22234aa9",
+      "sha256": "fab103ef580054beac3c4ac446c07ef4a9533f90d52bee47af9dd2a8b8dbd41f",
+      "bytes": 669096,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "role": "fighter_pose",
+      "fighter_id": "magician",
+      "pose": "windup",
+      "transparent": true,
+      "bounds_px": [
+        294,
+        112,
+        615,
+        1072
+      ],
+      "pivot_px": [
+        627,
+        1175.625
+      ],
+      "registration": "Canvas midpoint x; normalized source baseline y=960/1024; standing body scale 905/1024. Native source pixels retained.",
+      "production_record": "docs/dossier_curien/saga/production/2026-11-19_magician.json"
+    },
+    {
+      "path": "assets/dossier_curien/rogan_contact.png",
+      "git_blob_sha": "b1dbcefb0ec1edb260fc0f6014ab9326b3bc06c1",
+      "sha256": "90be155e83df651ec88efc6f0f6107118e26b2320056c4e217d2b1f56623cafc",
+      "bytes": 774576,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "role": "fighter_pose",
+      "fighter_id": "rogan",
+      "pose": "contact",
+      "transparent": true,
+      "bounds_px": [
+        266,
+        78,
+        907,
+        1096
+      ],
+      "pivot_px": [
+        627,
+        1175.625
+      ],
+      "registration": "Canvas midpoint x; normalized source baseline y=960/1024; standing body scale 905/1024. Native source pixels retained.",
+      "production_record": "docs/dossier_curien/saga/production/2026-11-19_rogan.json",
+      "emitter_px": [
+        1173,
+        230
+      ]
+    },
+    {
+      "path": "assets/dossier_curien/rogan_recoil.png",
+      "git_blob_sha": "e3cba766c29638483362c8e916178615fa03219c",
+      "sha256": "3eb7f96dfea94995a3160db54b77d5f30f0857e43bb17d28db300893126df0de",
+      "bytes": 820987,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "role": "fighter_pose",
+      "fighter_id": "rogan",
+      "pose": "recoil",
+      "transparent": true,
+      "bounds_px": [
+        260,
+        71,
+        708,
+        1101
+      ],
+      "pivot_px": [
+        627,
+        1175.625
+      ],
+      "registration": "Canvas midpoint x; normalized source baseline y=960/1024; standing body scale 905/1024. Native source pixels retained.",
+      "production_record": "docs/dossier_curien/saga/production/2026-11-19_rogan.json"
+    },
+    {
+      "path": "assets/dossier_curien/rogan_recovery.png",
+      "git_blob_sha": "a92a4d942f5c8c9f09056e0cc61646468bfea7ab",
+      "sha256": "6942f046e734d17000c5de3d08fd4bde0c665ddbe5750b31081d3320776bfbb7",
+      "bytes": 745628,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "role": "fighter_pose",
+      "fighter_id": "rogan",
+      "pose": "recovery",
+      "transparent": true,
+      "bounds_px": [
+        265,
+        77,
+        737,
+        1097
+      ],
+      "pivot_px": [
+        627,
+        1175.625
+      ],
+      "registration": "Canvas midpoint x; normalized source baseline y=960/1024; standing body scale 905/1024. Native source pixels retained.",
+      "production_record": "docs/dossier_curien/saga/production/2026-11-19_rogan.json"
+    },
+    {
+      "path": "assets/dossier_curien/rogan_windup.png",
+      "git_blob_sha": "325311bbcc65e452c8ca040a6c87b3491325f2b7",
+      "sha256": "b9fccf0dd617c4a136dc7418709a9d80870cc868219c94f14b97451ca1c482a9",
+      "bytes": 683450,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "role": "fighter_pose",
+      "fighter_id": "rogan",
+      "pose": "windup",
+      "transparent": true,
+      "bounds_px": [
+        269,
+        81,
+        716,
+        1090
+      ],
+      "pivot_px": [
+        627,
+        1175.625
+      ],
+      "registration": "Canvas midpoint x; normalized source baseline y=960/1024; standing body scale 905/1024. Native source pixels retained.",
+      "production_record": "docs/dossier_curien/saga/production/2026-11-19_rogan.json"
+    },
+    {
+      "path": "assets/dossier_curien/saga/citydespair_back.png",
+      "git_blob_sha": "3ab696612dff62154235c8291e58499efdda9aab",
+      "sha256": "57cf6e5198596a93f40e6b3b50a0a58b9d597d709ca5c188aad332927237f75e",
+      "bytes": 2860346,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "role": "stage_back",
+      "transparent": false,
+      "production_record": "docs/dossier_curien/saga/production/2026-11-19_citydespair.json"
+    },
+    {
+      "path": "assets/dossier_curien/saga/citydespair_front.png",
+      "git_blob_sha": "75e3c18b74b373845770bca30861f739f873f5ba",
+      "sha256": "fb9259b485bd0a20006fa0f2237cea0338493c9c50453b30c2e0587b79f08a19",
+      "bytes": 153320,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "role": "stage_front",
+      "transparent": true,
+      "bounds_px": [
+        0,
+        796,
+        1672,
+        145
+      ],
+      "production_record": "docs/dossier_curien/saga/production/2026-11-19_citydespair.json"
+    },
+    {
+      "path": "assets/dossier_curien/saga/citydespair_mid.png",
+      "git_blob_sha": "0164119c9f886eeef41f98e7169191c08153f72f",
+      "sha256": "eff8c70dcd9a69054743d76e564c601e44616391f8c160de9cee759e53c8737f",
+      "bytes": 157964,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "role": "stage_mid",
+      "transparent": true,
+      "bounds_px": [
+        53,
+        311,
+        1619,
+        452
+      ],
+      "production_record": "docs/dossier_curien/saga/production/2026-11-19_citydespair.json"
+    },
+    {
+      "path": "assets/dossier_curien/saga/kate_soiree_walk1.png",
+      "git_blob_sha": "1a7f54e354898878f631a2b5b0f6a61b4dc844b9",
+      "sha256": "8f8f2148496c0d216a929202f23ff9270ce8e409035f9fbe510faa2c493cb8b5",
+      "bytes": 661614,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "role": "fighter_pose",
+      "transparent": true,
+      "bounds_px": [
+        253,
+        67,
+        695,
+        1108
+      ],
+      "pivot_px": [
+        627,
+        1175
+      ],
+      "registration": "body alpha bounds at 16/255; centered canvas x; soles y",
+      "production_record": "docs/dossier_curien/saga/production/2026-11-19_kate_walk.json"
+    },
+    {
+      "path": "assets/dossier_curien/saga/kate_soiree_walk2.png",
+      "git_blob_sha": "57f7071fff09d2ab87c2cd42aae2be486c1ca273",
+      "sha256": "41c9cf07fa04929bbda6d236cd4825836763ddedeb1c666516de8b08060c2c1b",
+      "bytes": 709783,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "role": "fighter_pose",
+      "transparent": true,
+      "bounds_px": [
+        155,
+        69,
+        859,
+        1097
+      ],
+      "pivot_px": [
+        627,
+        1166
+      ],
+      "registration": "body alpha bounds at 16/255; centered canvas x; soles y",
+      "production_record": "docs/dossier_curien/saga/production/2026-11-19_kate_walk.json"
+    },
+    {
+      "path": "assets/dossier_curien/saga/kate_walk1.png",
+      "git_blob_sha": "cf539a9237d188e9fca915d236c987a8d08743e3",
+      "sha256": "99dbe1c693da0ad1ec3651f7c7d13e68be7e08f937b0789f767deceb65dd52fd",
+      "bytes": 669426,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "role": "fighter_pose",
+      "transparent": true,
+      "bounds_px": [
+        305,
+        68,
+        707,
+        1106
+      ],
+      "pivot_px": [
+        627,
+        1174
+      ],
+      "registration": "body alpha bounds at 16/255; centered canvas x; soles y",
+      "production_record": "docs/dossier_curien/saga/production/2026-11-19_kate_walk.json"
+    },
+    {
+      "path": "assets/dossier_curien/saga/kate_walk2.png",
+      "git_blob_sha": "a52a45d1e86de6457d27d93d49183e02c7fa368e",
+      "sha256": "7c0dc4bc86c460c608a3d51e13023389278e1ed4fc2190ea2f81711bddba5149",
+      "bytes": 655996,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "role": "fighter_pose",
+      "transparent": true,
+      "bounds_px": [
+        171,
+        69,
+        848,
+        1111
+      ],
+      "pivot_px": [
+        627,
+        1180
+      ],
+      "registration": "body alpha bounds at 16/255; centered canvas x; soles y",
+      "production_record": "docs/dossier_curien/saga/production/2026-11-19_kate_walk.json"
+    },
+    {
+      "path": "assets/dossier_curien/saga/props/venice_bollard.png",
+      "git_blob_sha": "4ce9c68111a81a9e89e67b972f420320e39fb558",
+      "sha256": "99af64ef2d4bfd0299ec389b7f4d3f1d600e6cd391ab5e62f58ae2623a879697",
+      "bytes": 1201798,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "role": "prop",
+      "transparent": true,
+      "bounds_px": [
+        307,
+        199,
+        585,
+        917
+      ],
+      "pivot_px": [
+        599.5,
+        1116
+      ],
+      "registration": "source region cropped to measured alpha bounds; bottom-center",
+      "production_record": "docs/dossier_curien/saga/production/2026-11-19_props_venice.json"
+    },
+    {
+      "path": "assets/dossier_curien/saga/props/venice_lamp.png",
+      "git_blob_sha": "3f8b135a1305ea06f50eb46740bd8bd142afa5ca",
+      "sha256": "1b9034e5e7b2d86459d0c982364d6fc0e686ece282a82690fe091b03218d8314",
+      "bytes": 263671,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "role": "prop",
+      "transparent": true,
+      "bounds_px": [
+        530,
+        20,
+        194,
+        1218
+      ],
+      "pivot_px": [
+        627,
+        1238
+      ],
+      "registration": "source region cropped to measured alpha bounds; bottom-center",
+      "production_record": "docs/dossier_curien/saga/production/2026-11-19_props_venice.json"
+    },
+    {
+      "path": "assets/dossier_curien/saga/props/venice_railing.png",
+      "git_blob_sha": "d350574663a4918e50550b74982e3efe4c9e0fa7",
+      "sha256": "4a2eff0e11fef970d3340066800bd0d2c6713ed180f6256f1b32048e3c4d0f16",
+      "bytes": 1148715,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "role": "prop",
+      "transparent": true,
+      "bounds_px": [
+        57,
+        464,
+        1138,
+        499
+      ],
+      "pivot_px": [
+        626,
+        963
+      ],
+      "registration": "source region cropped to measured alpha bounds; bottom-center",
+      "production_record": "docs/dossier_curien/saga/production/2026-11-19_props_venice.json"
+    }
+  ]
+}

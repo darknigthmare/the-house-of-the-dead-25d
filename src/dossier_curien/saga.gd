@@ -5,8 +5,8 @@ extends RefCounted
 const STAGES := ["Cour du manoir", "Antichambre", "Laboratoire de Curien", "Quai de la cité inondée",
 	"Poste de sécurité EFI", "Métro souterrain", "Complexe déserté", "Réception de Scarecrow Mansion",
 	"Fête foraine de Bayou City", "Plateau de Loving Deads", "Rue en quarantaine",
-	"Toit de la tour Goldman", "Chambre d’incubation EFI", "Passage de la tour de l’horloge", "Ponton du bayou", "Parvis du siège Goldman", "Ruines du domaine Scarecrow"]
-const ART := ["", "", "", "venice", "efi", "subway", "special", "scarlet", "carnival", "ex", "revenge", "goldman", "reactor", "clocktower", "bayou", "worldstage", "moonstage"]
+	"Toit de la tour Goldman", "Chambre d’incubation EFI", "Passage de la tour de l’horloge", "Ponton du bayou", "Parvis du siège Goldman", "Ruines du domaine Scarecrow", "Rue dévastée de Despair"]
+const ART := ["", "", "", "venice", "efi", "subway", "special", "scarlet", "carnival", "ex", "revenge", "goldman", "reactor", "clocktower", "bayou", "worldstage", "moonstage", "citydespair"]
 const CASES := {
 	"curien": {"name":"The House of the Dead","place":"Manoir Curien","lead":0,"stage":0,"guests":[1,2,3],
 		"rule":"Duels du manoir. Deux manches gagnantes de 60 secondes."},

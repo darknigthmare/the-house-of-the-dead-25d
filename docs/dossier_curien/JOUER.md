@@ -2,7 +2,23 @@
 
 Depuis le jeu complet, choisissez **Dossier Curien** dans le menu d’arcade. Dans la version autonome, le menu du mode combat apparaît au démarrage.
 
-## Depuis ce dépôt
+## Nouveaux visuels du 19 novembre 2026 — depuis les sources
+
+La branche de la PR ajoute quatre poses de marche pour Kate et sa tenue de soirée, douze poses de combat pour Rogan, G et Magician, trois accessoires indépendants à Venise et une dix-huitième arène, **Rue dévastée de Despair**, avec trois plans peints.
+
+Pour jouer ces ajouts, ouvrez `project.godot` dans **Godot 4.7.1**, laissez les ressources s’importer, puis lancez le projet. Depuis la racine du dépôt, la commande équivalente est :
+
+```sh
+godot --path .
+```
+
+Choisissez **Dossier Curien → Duel local**, puis les deux combattants. La quatrième page des arènes contient **Rue dévastée de Despair**. Les tenues de Kate se règlent depuis **Tenues de Kate et Ryan** à la sélection ; les deux appuis de marche suivent la tenue choisie.
+
+Les paquets PCK, les fragments, le navigateur préparé et la bible PDF présents ci-dessous restent ceux du **volume IV**. Ils n’ont pas été réexportés pour ce lot ; les nouveaux visuels sont disponibles dans les sources de la PR.
+
+[Lire le bilan de production, la traçabilité des images et les éléments restant à produire](saga/production/REPRISE_2026-11-19.md).
+
+## Paquet du volume IV depuis ce dépôt
 
 Téléchargez la branche de la PR ou récupérez le dossier [saga/jeu](saga/jeu) avec tous ses fragments. Dans ce dossier, utilisez Python 3.8 ou plus récent pour assembler le paquet. Le script vérifie chaque fragment et l’empreinte SHA-256 du jeu complet. Si la version précédente de l’anthologie est déjà assemblée, sa mise à jour est automatique après vérification de son empreinte. Lancez ensuite le paquet avec Godot 4.7.1.
 
