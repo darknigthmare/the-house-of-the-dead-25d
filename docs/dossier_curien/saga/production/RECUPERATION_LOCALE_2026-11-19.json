@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "date": "2026-11-19",
   "repository": "darknigthmare/the-house-of-the-dead-25d",
   "remote_head_checked": "a3fbcf13455a945ccc929ce43907a9755d82e6c7",
@@ -92,7 +92,7 @@
     }
   ],
   "production_directories": [
-    "work/raw",
+    "work",
     "work_saga/art",
     "work_saga/artwork_tmp",
     "work_v3/raw",
@@ -103,10 +103,16 @@
     "work5"
   ],
   "comparison": {
-    "complete_against_latest_remote": false,
-    "reason": "Local disk reported no free space; the execution environment became unavailable during the reconciliation. No source image was deleted.",
-    "important": "A master SHA differing from a normalized runtime sprite does not establish a new gameplay asset. The 219 masters cannot be counted as 219 unpublished sprites.",
-    "unpublished_count": null
+    "complete_against_latest_remote": true,
+    "compared_complete_tree_commit": "593f1be9fa0b712abf31f432bee1e9b16bafc9b5",
+    "original_master_count": 219,
+    "original_master_bytes": 402464073,
+    "already_remote_count": 15,
+    "already_remote_bytes": 32819585,
+    "unpublished_count": 204,
+    "unpublished_bytes": 369644488,
+    "method": "Git blob SHA-1 compared with every blob in the complete repository tree; SHA-256 and PNG dimensions recorded locally.",
+    "important": "These are source masters and variants. They are not 204 new gameplay assets."
   },
   "unmapped_masters": [
     {
@@ -153,5 +159,44 @@
       "filename": "exec-227b6234-b123-441e-8017-544804693669.png",
       "observed_subject": null
     }
+  ],
+  "named_production_audit": {
+    "examined_pngs": 227,
+    "matched_source_master_copies": 210,
+    "normalized_derivatives_already_in_repository": 17,
+    "additional_missing_pngs": 0,
+    "excluded": [
+      "reference captures",
+      "QA screenshots",
+      "demo exports",
+      "copies of projects"
+    ]
+  },
+  "transfer": {
+    "status": "blocked_before_push",
+    "files_prepared_and_staged": 204,
+    "master_files_verified_after_local_preparation": 219,
+    "remote_publication_confirmed": false,
+    "new_originals_in_remote_branch": 0,
+    "proposed_directories": {
+      "vol-01": 11,
+      "vol-02": 53,
+      "vol-03": 100,
+      "vol-04": 40
+    },
+    "blocker": "The execution environment became unavailable again after local staging. The subsequently attached filesystem did not contain the former project, source images, local Git index or recovery receipts. No push of those 204 originals was completed.",
+    "paths_to_resume_if_environment_returns": [
+      "/workspace/scratch/e965ec0b3fbc/hotd",
+      "/workspace/scratch/e965ec0b3fbc/generated_images",
+      "/workspace/scratch/a5174e46266a/local-recovery-audit.json",
+      "/workspace/scratch/a5174e46266a/local-recovery-plan.json"
+    ],
+    "source_deletion_by_assistant": false
+  },
+  "history": [
+    "Initial audit interrupted when disk space was exhausted.",
+    "Execution environment returned. Regenerable caches and byte-identical copies in disposable QA/demo projects were cleaned, preserving original images, source code and delivery archives.",
+    "All 219 masters reconciled; 204 missing originals linked into sources_art and staged locally. All 219 destinations verified by SHA-256 and Git blob hash.",
+    "Environment disconnected again before commit/push; original folders absent in subsequently attached filesystem. Remote recovery remains unconfirmed."
   ]
 }

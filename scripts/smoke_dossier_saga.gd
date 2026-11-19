@@ -320,7 +320,7 @@ func production_assets() -> void:
 	arena.menu()
 	click("Duel local")
 	pages(6 / arena.PAGE_SIZE)
-	click("Kate Green", true)
+	click("Kate Green")
 	click("James Taylor", true)
 	pages(17 / arena.PAGE_SIZE)
 	click("Rue dévastée de Despair", true)

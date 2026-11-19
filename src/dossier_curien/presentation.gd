@@ -102,8 +102,8 @@ func draw(c) -> void:
 	elif not classic:
 		Stage.mid(c, c.stage, drift)
 		if c.stage == 3:
-			saga_prop_at(c, "venice_lamp", 100 - drift*32, 575, 300)
-			saga_prop_at(c, "venice_railing", 1150 - drift*32, 577, 88)
+			saga_prop_at(c, "venice_lamp", 100 - drift*32, 644, 300)
+			saga_prop_at(c, "venice_railing", 1150 - drift*32, 644, 88)
 	else:
 		prop_at(c, PROPS[c.stage][0], 180 - drift*33, 580, 270)
 	c.draw_rect(Rect2(0, 0, 1280, 720), Color(0.025, 0.035, 0.05, 0.19))
