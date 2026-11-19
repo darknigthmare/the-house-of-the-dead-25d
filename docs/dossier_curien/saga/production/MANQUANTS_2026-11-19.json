@@ -9,13 +9,13 @@
     "playable_characters": 23,
     "costume_variants": 2,
     "arena_count": 18,
-    "saga_png": 195,
+    "saga_png": 223,
     "classic_png": 30,
-    "identities_with_two_walk_contacts": 3,
-    "outfits_with_two_walk_contacts": 1,
-    "missing_named_pose_pngs": 299,
-    "missing_painted_layer_pngs": 16,
-    "new_png_2026_11_19": 22
+    "identities_with_two_walk_contacts": 6,
+    "outfits_with_two_walk_contacts": 2,
+    "missing_named_pose_pngs": 291,
+    "missing_painted_layer_pngs": 0,
+    "new_png_2026_11_19": 50
   },
   "characters": [
     {
@@ -279,20 +279,14 @@
         "guard",
         "windup",
         "contact",
-        "recoil"
+        "recoil",
+        "walk1",
+        "walk2"
       ],
       "missing_poses": [
         {
           "pose": "recovery",
           "path": "assets/dossier_curien/saga/james_recovery.png"
-        },
-        {
-          "pose": "walk1",
-          "path": "assets/dossier_curien/saga/james_walk1.png"
-        },
-        {
-          "pose": "walk2",
-          "path": "assets/dossier_curien/saga/james_walk2.png"
         },
         {
           "pose": "jump_rise",
@@ -336,7 +330,7 @@
         }
       ],
       "portrait_present": true,
-      "two_walk_contacts": false
+      "two_walk_contacts": true
     },
     {
       "id": "lisa",
@@ -347,20 +341,14 @@
         "guard",
         "windup",
         "contact",
-        "recoil"
+        "recoil",
+        "walk1",
+        "walk2"
       ],
       "missing_poses": [
         {
           "pose": "recovery",
           "path": "assets/dossier_curien/saga/lisa_recovery.png"
-        },
-        {
-          "pose": "walk1",
-          "path": "assets/dossier_curien/saga/lisa_walk1.png"
-        },
-        {
-          "pose": "walk2",
-          "path": "assets/dossier_curien/saga/lisa_walk2.png"
         },
         {
           "pose": "jump_rise",
@@ -404,7 +392,7 @@
         }
       ],
       "portrait_present": true,
-      "two_walk_contacts": false
+      "two_walk_contacts": true
     },
     {
       "id": "kate",
@@ -477,20 +465,14 @@
         "guard",
         "windup",
         "contact",
-        "recoil"
+        "recoil",
+        "walk1",
+        "walk2"
       ],
       "missing_poses": [
         {
           "pose": "recovery",
           "path": "assets/dossier_curien/saga/ryan_recovery.png"
-        },
-        {
-          "pose": "walk1",
-          "path": "assets/dossier_curien/saga/ryan_walk1.png"
-        },
-        {
-          "pose": "walk2",
-          "path": "assets/dossier_curien/saga/ryan_walk2.png"
         },
         {
           "pose": "jump_rise",
@@ -534,7 +516,7 @@
         }
       ],
       "portrait_present": true,
-      "two_walk_contacts": false
+      "two_walk_contacts": true
     },
     {
       "id": "isaac",
@@ -1567,20 +1549,14 @@
         "guard",
         "windup",
         "contact",
-        "recoil"
+        "recoil",
+        "walk1",
+        "walk2"
       ],
       "missing_poses": [
         {
           "pose": "recovery",
           "path": "assets/dossier_curien/saga/ryan_soiree_recovery.png"
-        },
-        {
-          "pose": "walk1",
-          "path": "assets/dossier_curien/saga/ryan_soiree_walk1.png"
-        },
-        {
-          "pose": "walk2",
-          "path": "assets/dossier_curien/saga/ryan_soiree_walk2.png"
         },
         {
           "pose": "jump_rise",
@@ -1624,7 +1600,7 @@
         }
       ],
       "portrait_present": true,
-      "two_walk_contacts": false
+      "two_walk_contacts": true
     }
   ],
   "stages": [
@@ -1675,12 +1651,12 @@
         {
           "layer": "mid",
           "path": "assets/dossier_curien/saga/venice_mid.png",
-          "present": false
+          "present": true
         },
         {
           "layer": "front",
           "path": "assets/dossier_curien/saga/venice_front.png",
-          "present": false
+          "present": true
         }
       ]
     },
@@ -1697,12 +1673,12 @@
         {
           "layer": "mid",
           "path": "assets/dossier_curien/saga/efi_mid.png",
-          "present": false
+          "present": true
         },
         {
           "layer": "front",
           "path": "assets/dossier_curien/saga/efi_front.png",
-          "present": false
+          "present": true
         }
       ]
     },
@@ -1719,12 +1695,12 @@
         {
           "layer": "mid",
           "path": "assets/dossier_curien/saga/subway_mid.png",
-          "present": false
+          "present": true
         },
         {
           "layer": "front",
           "path": "assets/dossier_curien/saga/subway_front.png",
-          "present": false
+          "present": true
         }
       ]
     },
@@ -1741,12 +1717,12 @@
         {
           "layer": "mid",
           "path": "assets/dossier_curien/saga/special_mid.png",
-          "present": false
+          "present": true
         },
         {
           "layer": "front",
           "path": "assets/dossier_curien/saga/special_front.png",
-          "present": false
+          "present": true
         }
       ]
     },
@@ -1763,12 +1739,12 @@
         {
           "layer": "mid",
           "path": "assets/dossier_curien/saga/scarlet_mid.png",
-          "present": false
+          "present": true
         },
         {
           "layer": "front",
           "path": "assets/dossier_curien/saga/scarlet_front.png",
-          "present": false
+          "present": true
         }
       ]
     },
@@ -1785,12 +1761,12 @@
         {
           "layer": "mid",
           "path": "assets/dossier_curien/saga/carnival_mid.png",
-          "present": false
+          "present": true
         },
         {
           "layer": "front",
           "path": "assets/dossier_curien/saga/carnival_front.png",
-          "present": false
+          "present": true
         }
       ]
     },
@@ -1807,12 +1783,12 @@
         {
           "layer": "mid",
           "path": "assets/dossier_curien/saga/ex_mid.png",
-          "present": false
+          "present": true
         },
         {
           "layer": "front",
           "path": "assets/dossier_curien/saga/ex_front.png",
-          "present": false
+          "present": true
         }
       ]
     },
@@ -1829,12 +1805,12 @@
         {
           "layer": "mid",
           "path": "assets/dossier_curien/saga/revenge_mid.png",
-          "present": false
+          "present": true
         },
         {
           "layer": "front",
           "path": "assets/dossier_curien/saga/revenge_front.png",
-          "present": false
+          "present": true
         }
       ]
     },
@@ -1997,13 +1973,21 @@
     "new_individual_props": [
       "assets/dossier_curien/saga/props/venice_bollard.png",
       "assets/dossier_curien/saga/props/venice_lamp.png",
-      "assets/dossier_curien/saga/props/venice_railing.png"
+      "assets/dossier_curien/saga/props/venice_railing.png",
+      "assets/dossier_curien/saga/props/efi_alarm_beacon.png",
+      "assets/dossier_curien/saga/props/subway_ticket_machine.png"
     ],
-    "character_parts": "No new detachable anatomy/costume rig delivered in this wave. Full sprites, modular stage props and stage layers are separate file categories."
+    "character_parts": {
+      "delivered": [
+        "assets/dossier_curien/saga/parts/lisa_shotgun.png",
+        "assets/dossier_curien/saga/parts/lisa_goggles.png"
+      ],
+      "status": "Two independent native sources delivered; anchors are estimates and no detachable anatomy/costume rig is integrated."
+    }
   },
   "priorities": [
     "Expand the two-contact walk cycles and draw missing jump, crouch, block, reload and recovery states.",
-    "Give the older Saga arenas dedicated painted middle and foreground layers where appropriate.",
+    "All 15 Saga arenas now have painted back/middle/foreground layers; review stage composition and parallax in the live browser.",
     "Recover and classify the remaining local masters when their execution environment is accessible.",
     "Audit every identity/costume and silhouette against original game references; do not mark 1:1 approved without review."
   ],
@@ -2039,13 +2023,42 @@
     ],
     "walk_contacts": [
       "kate",
-      "kate_soiree"
+      "kate_soiree",
+      "james",
+      "lisa",
+      "ryan",
+      "ryan_soiree"
     ],
     "arena": "citydespair",
     "independent_props": [
       "venice_lamp",
       "venice_railing",
-      "venice_bollard"
+      "venice_bollard",
+      "efi_alarm_beacon",
+      "subway_ticket_machine"
+    ],
+    "completed_arena_layers": [
+      "efi_mid",
+      "efi_front",
+      "subway_mid",
+      "subway_front",
+      "venice_mid",
+      "venice_front",
+      "scarlet_mid",
+      "scarlet_front",
+      "special_mid",
+      "special_front",
+      "carnival_mid",
+      "carnival_front",
+      "ex_mid",
+      "ex_front",
+      "revenge_mid",
+      "revenge_front"
+    ],
+    "independent_parts": [
+      "lisa_shotgun",
+      "lisa_goggles"
     ]
-  }
+  },
+  "reconciled_remote_commit": "1586e4c9aee3fe4b20214303e1d098cff24cde5d"
 }

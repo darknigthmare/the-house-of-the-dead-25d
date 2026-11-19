@@ -1,0 +1,39 @@
+{
+  "recovery_date": "2026-11-19",
+  "original_record_sha256": "c67ab1907059ede4472d5c951471dd71b85298ceb5bd0552dcd4541c94185634",
+  "original_record_basename": "uds04c_idle.json",
+  "normalization": "Absolute machine-specific image paths replaced by repository paths when recovered, otherwise historical_source/<path>. Original prompt wording and source attributions retained.",
+  "original_record": {
+    "id": "uds04c",
+    "name": "UDS-04C",
+    "file": "assets/dossier_curien/expansion/zombie_revenge_bosses/uds04c_idle.png",
+    "source_image": "assets/dossier_curien/expansion/zombie_revenge_bosses/uds04c_idle.png",
+    "prompt": "Use case: stylized-concept. Asset type: one individual game-ready base-pose sprite for a high-detail 2D side-on fighting game, PNG with actual transparent alpha background. Input image is an in-game visual reference ONLY, not the background or camera to copy. Faithfully translate the specific canonical character into clean detailed hand-painted 2D game art with precise contour, believable proportions and crisp readable shading. Subject: UDS-04C from Sega Zombie Revenge, the enormous PURPLE mutant torso in the exact screenshot. Preserve its huge sinewy ribbed shoulders and chest in purplish mauve skin, skinny tapered waist, long massive arms, huge clawed hands, metal wrist bands, smooth narrow bald head, very large round yellow-orange eyes, pointy projecting ears, gaping broad mouth with long pointed white teeth. It is canonically ONLY AN UPPER BODY: ends at the abdomen with a smooth non-graphic silhouette, has NO LEGS, NO HIPS, NO TAIL. Show this entire torso from crown to abdomen plus both complete arms and hands, three-quarter side orientation facing right, looming idle posture. Do not invent a lower body; do not turn into an ogre or traditional demon. No blood, exposed viscera or severed-body gore. Composition: exactly ONE character, all canonical body parts visible, no clipping, centered with 10% transparent margin, eye-level orthographic three-quarter side view facing RIGHT. White-neutral studio light keeps the canonical palette; no scene lighting tint. Transparent everywhere except the character; NO ground plane, pedestal, cast shadow, checkerboard drawn into the image, scenery, UI, bars, text, labels, frame, watermark, other characters or weapon panels. This is a single idle sprite, NOT a sheet or turnaround. Preserve the referenced identity and costume; no redesign.",
+    "reference": "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_bosses/uds04c.png",
+    "sources": [
+      "https://sesesega.hatenablog.jp/entry/zombierevenge"
+    ],
+    "limitations": "2D adaptation based on an original in-game screenshot; exact 1:1 fidelity not certified.",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA",
+    "alpha_extrema": [
+      0,
+      254
+    ],
+    "alpha_bbox": [
+      35,
+      0,
+      1504,
+      1024
+    ],
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-19",
+  "base_commit": "a3fbcf13455a945ccc929ce43907a9755d82e6c7",
+  "generator": "built-in image_gen",
+  "asset_count": 4,
+  "assets": [
+    {
+      "id": "efi_alarm_beacon",
+      "path": "assets/dossier_curien/saga/props/efi_alarm_beacon.png",
+      "kind": "environment_prop",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "size_bytes": 869875,
+      "sha256": "a2e2b2ec7003321ed6917531f7395774217ee3f9d2008de34444981c0995a0d3",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox_alpha_128": [
+        390,
+        124,
+        865,
+        1084
+      ],
+      "fully_transparent_percent": 76.273,
+      "reference": {
+        "path": "assets/dossier_curien/saga/efi_back.png",
+        "sha256": "eeb358ad0eae32f716b0addccba5db21ae03ba7a9306962cea15d72507f96b5e"
+      },
+      "generation_id": "exec-4e349d5d-8bc3-4ba0-8f73-d979c41c1253",
+      "prompt": "Use case: background-extraction. Asset type: isolated modular prop for the existing House of the Dead 2D Dossier Curien arena. Edit the provided reference: isolate ONLY the small amber industrial wall beacon visible just to the right of centre in the source industrial building, including its rusted rectangular metal wall bracket and protective cage. Reconstruct clean complete edges, and preserve the precise silhouette, warm amber lens, corroded steel, painterly material style and illumination of that specific lamp. One single standalone lamp, entire object visible, centred, straight-on side elevation matching the source wall, transparent background. Source scene is only a reference; remove the entire wall and all other objects. Square 1024 by 1024 canvas with generous empty transparent margins, no cast shadow outside the prop, no text, no labels, no floor, no grid, no atlas, no duplicate lamps. Soft warm light contained to the lens and cage so true alpha edges remain clean. This is a game prop not a poster.",
+      "review": "Objet unique détouré ; identité visuelle du sprite ou décor existant ; aucune certification de fidélité canonique 1:1."
+    },
+    {
+      "id": "subway_ticket_machine",
+      "path": "assets/dossier_curien/saga/props/subway_ticket_machine.png",
+      "kind": "environment_prop",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "size_bytes": 1310584,
+      "sha256": "e47da7ec2314fbc7f333339463f5d12acca625b1f3d740c68a6327b554b84c8a",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox_alpha_128": [
+        383,
+        35,
+        907,
+        1223
+      ],
+      "fully_transparent_percent": 63.106,
+      "reference": {
+        "path": "assets/dossier_curien/saga/subway_back.png",
+        "sha256": "f470ec3505b5fe7a19a7855f4585a493efb5a5f29ab9a403494e2c5cdfd28e6c"
+      },
+      "generation_id": "exec-caeb362b-b591-411c-9e95-a12f5e4405d0",
+      "prompt": "Use case: background-extraction. Asset type: isolated modular environment prop for the existing House of the Dead 2D Dossier Curien. Edit the provided reference by extracting ONLY the single broken ticket-vending machine at the far left edge of the subway image. Rebuild its obscured silhouette as one complete freestanding prop: narrow tall dirty cream metal cabinet, blank cracked dark recessed monitor, small rectangular controls, lower slot and battered base, blue-grey rust/grime and the subdued red emergency light from the left. Precisely retain the existing painterly realistic material language and front three-quarter angle in the reference. One object, centred, full height without cropping, square 1024x1024 canvas with empty margins. Genuine transparent background, no station, no tiles, no blood puddle, no platform or cast ground shadow, no words or invented readable labels, no UI, no sprite sheet. One vending machine per image.",
+      "review": "Objet unique détouré ; identité visuelle du sprite ou décor existant ; aucune certification de fidélité canonique 1:1."
+    },
+    {
+      "id": "lisa_shotgun",
+      "path": "assets/dossier_curien/saga/parts/lisa_shotgun.png",
+      "kind": "weapon_part",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "size_bytes": 315637,
+      "sha256": "3f912b7a3486ed7ffd9a4024731130cf5762ef9bffffffecb3274832d263ace7",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox_alpha_128": [
+        65,
+        546,
+        1189,
+        768
+      ],
+      "fully_transparent_percent": 90.974,
+      "reference": {
+        "path": "assets/dossier_curien/saga/lisa_guard.png",
+        "sha256": "9eae65e1f0b631527c575a522a78a890779ca4f5f1e587743075c9a329793ba2"
+      },
+      "generation_id": "exec-34550edb-6f48-4060-b2d9-6b5d10bd35e4",
+      "prompt": "Use case: precise-object-edit. Asset type: separate modular weapon sprite for House of the Dead 2D Dossier Curien. Extract and complete ONLY Lisa Rogan's dark pump-action shotgun in the supplied guard sprite. Remove Lisa, her hands and all other elements; reconstruct the portions hidden by her gloves, including stock/grip and ribbed sliding fore-end, consistent with the exact existing illustrated shotgun. Preserve short dark metal barrel, tubular magazine below barrel, squared receiver, ribbed black pump and black stock, same silhouette and proportions. Match the crisp hand-painted 2D fighting-game sprite style, cool dark-violet steel shading and outline weight. One weapon only, full object horizontal side profile muzzle pointing RIGHT, centred on square 1024x1024 genuine transparent canvas, 90px transparent margins, no clipping. No hands, person, muzzle flash, ammo, diagram, labels, text, background, checkerboard, shadow plate or multiple views.",
+      "review": "Objet unique détouré ; identité visuelle du sprite ou décor existant ; aucune certification de fidélité canonique 1:1."
+    },
+    {
+      "id": "lisa_goggles",
+      "path": "assets/dossier_curien/saga/parts/lisa_goggles.png",
+      "kind": "costume_part",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "size_bytes": 656545,
+      "sha256": "f749ad5f05adb0a3356f55d72599ab5e76dd58fa09ae5fe6f0d8abf009c74153",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox_alpha_128": [
+        150,
+        391,
+        1110,
+        847
+      ],
+      "fully_transparent_percent": 80.227,
+      "reference": {
+        "path": "assets/dossier_curien/saga/lisa_guard.png",
+        "sha256": "9eae65e1f0b631527c575a522a78a890779ca4f5f1e587743075c9a329793ba2"
+      },
+      "generation_id": "exec-f60996f4-8bba-469e-8329-ec33289b2e11",
+      "prompt": "Use case: background-extraction. Asset type: separate costume accessory for House of the Dead 2D Dossier Curien. From the provided Lisa Rogan guard sprite, isolate only the pair of dark protective goggles resting on top of her hair. Render the complete single pair as its own wearable costume part, with the curved deep blue-black lenses, thick dark frame and adjustable strap, preserving this exact illustrated 2D fighting-game accessory and its warm highlight palette. Remove the character and all hair; complete the hidden strap simply and coherently. One intact pair of goggles, one view, centred at a slight three-quarter angle matching the reference. Square transparent canvas, full accessory visible with generous empty margin. Crisp hand-painted game sprite, true RGBA transparency; no other objects, person, face, head, labels, text, backdrop, ground shadow, checkerboard or grid. The deliverable is a costume part for later rigging, not a scene.",
+      "review": "Objet unique détouré ; identité visuelle du sprite ou décor existant ; aucune certification de fidélité canonique 1:1."
+    }
+  ],
+  "integration": {
+    "environment_props": "Placés derrière les combattants dans EFI et métro.",
+    "parts": "Sources séparées avec ancrages, destinées à un futur assemblage ; pas encore superposées sur les combattants."
+  },
+  "native_outputs_preserved": true
+}

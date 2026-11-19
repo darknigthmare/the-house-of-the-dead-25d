@@ -32,6 +32,7 @@ const ENDINGS := [
 var rush := Rush.new()
 var costumes := preload("res://src/dossier_curien/saga_costumes.gd").new()
 var lab := preload("res://src/dossier_curien/saga_lab.gd").new()
+var bestiary := preload("res://src/dossier_curien/saga_bestiary.gd").new()
 var case_id := ""
 var edition_id := ""
 var archives := Archives.new()
@@ -72,6 +73,7 @@ var audio_available := false
 var resume_phase := ""
 var moves_return := Callable()
 var stick_up := [false, false]
+var sheet_revision := 0
 
 func _ready() -> void:
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
@@ -102,6 +104,7 @@ func sound(cue: String) -> void:
 		audio_player.play()
 
 func sheet(title: String, subtitle := "") -> void:
+	sheet_revision += 1
 	panel.show()
 	for n in box.get_children():
 		box.remove_child(n)
@@ -112,7 +115,7 @@ func sheet(title: String, subtitle := "") -> void:
 	panel.custom_minimum_size = Vector2(580, 0)
 	panel.size = Vector2(580, 0)
 	panel.position = (size - panel.size) / 2
-	if phase in ["select","brief"] or (phase == "result" and mode == 0 and route == 2 and winner == 0):
+	if phase in ["select","brief","bestiary_detail"] or (phase == "result" and mode == 0 and route == 2 and winner == 0):
 		panel.position.x = size.x * 0.055
 		panel.grow_horizontal = Control.GROW_DIRECTION_END
 	var h := Label.new()
@@ -121,6 +124,22 @@ func sheet(title: String, subtitle := "") -> void:
 	h.add_theme_color_override("font_color", Color("e1c08a"))
 	box.add_child(h)
 	if subtitle != "": paragraph(subtitle)
+	_refit_sheet.call_deferred(sheet_revision)
+	queue_redraw()
+
+func _refit_sheet(revision: int) -> void:
+	if revision != sheet_revision or not is_instance_valid(panel) or not panel.visible: return
+	# A rebuilt list can have the same minimum as its predecessor. Godot then
+	# has no minimum-size change to expand the panel reset by sheet(). Read and
+	# apply the completed content's minimum explicitly, after all rows exist.
+	box.update_minimum_size()
+	panel.update_minimum_size()
+	var minimum := panel.get_combined_minimum_size()
+	panel.size = Vector2(maxf(580.0,minimum.x),minimum.y)
+	panel.position = (size-panel.size)*0.5
+	if phase in ["select","brief","bestiary_detail"] or (phase == "result" and mode == 0 and route == 2 and winner == 0):
+		panel.position.x = size.x*0.055
+	panel.queue_sort()
 	queue_redraw()
 
 func paragraph(line: String) -> void:
@@ -151,6 +170,7 @@ func menu() -> void:
 		button(MODES[m], pick_fighter.bind(m))
 	button("Chroniques de la saga", case_menu)
 	button("Archives et variantes", edition_menu)
+	button("Bestiaire & personnages", bestiary.show.bind(self))
 	button(MODES[Rush.MODE], rush.courses_menu.bind(self))
 	button("Commandes et liste des coups", controls)
 	button("Retour à l’arcade", func(): exit_requested.emit())
@@ -468,6 +488,7 @@ func resume() -> void:
 	phase = resume_phase
 	panel.hide()
 	action_queue = ["",""]
+	queue_redraw()
 
 func _input(event: InputEvent) -> void:
 	if edition_id != "" and phase == "fight":
@@ -491,7 +512,8 @@ func _input(event: InputEvent) -> void:
 		if side < 0 or side > 1 or (side == 1 and mode != 2): return
 	else: return
 	if key == KEY_ESCAPE or pad == JOY_BUTTON_START:
-		if phase == "costumes" and costumes.back.is_valid(): costumes.back.call()
+		if phase == "bestiary_detail": bestiary.show(self, bestiary.page)
+		elif phase == "costumes" and costumes.back.is_valid(): costumes.back.call()
 		elif phase == "lab": return_to_pause()
 		elif phase == "pause": resume()
 		elif phase in ["fight", "finish"]: pause_menu()

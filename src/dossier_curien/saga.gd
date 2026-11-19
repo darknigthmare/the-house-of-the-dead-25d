@@ -71,6 +71,10 @@ const HUD_RULES := {
 	"revenge":"Combat de rue · 3 touches enchaînées   +5 s"
 }
 const ALTERNATE_STORIES := {
+	23: ["Linda vérifie son chargeur derrière le barrage. Dans cette reconstitution de l’AMS, Stick lui sert de partenaire pour répéter une progression entre les véhicules abandonnés. Une radio grésille au fond de la rue.",
+		"Rikiya attend à l’autre extrémité du passage. Leur exercice oppose la courte glissade de Linda à la portée de sa paume. Elle doit choisir son angle avant de s’engager.",
+		"Le simulateur introduit un sujet des archives EFI : Death bloque la sortie du secteur. Linda attend le choc de la massue pour rejoindre la dernière couverture.",
+		"La lumière d’une voiture balaie le trottoir. Linda range son pistolet et signale à Stick et Rikiya que le passage est libre. L’AMS arrête le relevé au moment où les trois agents quittent le barrage."],
 	21: ["Le relevé AMS dépose le sujet β sur le quai du métro. Une ligne de glace court jusqu’aux pieds de James. Dans le verre d’une rame, le cœur de The World bat encore.",
 		"Entre deux rames, Justice se libère du givre. Ses quatre mains cherchent le même appui sur les portes gelées. The World relève son bras.",
 		"La cour de Goldman a remplacé les rails. Kate se tient au bord de la dalle fendue. Dans le cœur de la créature, elle distingue la lueur de sa propre lampe.",
@@ -132,6 +136,7 @@ static func stages_for(case_id: String, chosen: int) -> Array:
 	return route_stages
 
 static func opponents(case_id: String, chosen: int) -> Array:
+	if case_id == "revenge" and chosen == 23: return [10,16,12]
 	var dossier: Dictionary = CASES[case_id]
 	var rivals: Array = dossier.guests.duplicate()
 	if chosen in rivals:

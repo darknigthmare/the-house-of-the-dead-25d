@@ -1,0 +1,5 @@
+PACK_SHA256 690ebbb7f1c82cc9954ac474ff5b87e9e8a6b29f6fb714ae698ab4c71c7733a3
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+DOSSIER CURIEN PACK: passed; 673 checks; 0 failures; 49/49 textures; 40 gallery entries.
+{"counts":{"alternate_stories":14,"chronicles":9,"declared_source_bytes":65651752,"expected_gallery_entries":40,"fighters":24,"hidden_pose_entries":9,"loaded_gallery_entries":40,"loaded_textures":49,"manifest_assets":49,"manor_routes":4,"stages":18,"story_routes":26},"failures":[],"label":"final-49-png","report":"/workspace/scratch/48fce8c2d471/hotd/docs/dossier_curien/saga/production/expansion_2026-11-19/PACK_QA.json","status":"passed"}

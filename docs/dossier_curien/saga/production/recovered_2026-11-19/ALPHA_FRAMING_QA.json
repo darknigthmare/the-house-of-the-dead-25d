@@ -1,0 +1,1206 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-19",
+  "scope": "Alpha and framing audit of the 23 recovered artworks only. This does not certify canonical character identity or completed animation.",
+  "method": "Read RGBA pixels without changing the source. Measure bounding boxes at alpha >= 1, >= 16 and >= 128. For visual inspection composite correctly over a neutral opaque background so hidden RGB at alpha zero is not displayed.",
+  "bbox_format": "[left, top, right-exclusive, bottom-exclusive]",
+  "artifacts_modified": false,
+  "assets": [
+    {
+      "id": "justice_ex",
+      "path": "assets/dossier_curien/expansion/hotd_ex/justice_ex_guard.png",
+      "sha256": "b0d9687c36b083553779964857594c8925b98de46ff85265eeb63bc0bac134af",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_bounds_by_minimum": {
+        "1": [
+          0,
+          9,
+          1253,
+          1254
+        ],
+        "16": [
+          11,
+          18,
+          1245,
+          1240
+        ],
+        "128": [
+          12,
+          19,
+          1244,
+          1239
+        ]
+      },
+      "edge_pixels_by_minimum": {
+        "1": {
+          "top": 0,
+          "bottom": 49,
+          "left": 30,
+          "right": 0
+        },
+        "16": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        },
+        "128": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        }
+      },
+      "transparent_pixels": 655077,
+      "semi_transparent_pixels": 917067,
+      "interpretation": "No visible silhouette touches the canvas edge at alpha >= 16 or alpha >= 128."
+    },
+    {
+      "id": "temperance_ex",
+      "path": "assets/dossier_curien/expansion/hotd_ex/temperance_ex_guard.png",
+      "sha256": "e93006b689434caf4795de6e1b1333f8be7b5924144dcf4346659b3037ff19d2",
+      "dimensions": [
+        1199,
+        1312
+      ],
+      "alpha_bounds_by_minimum": {
+        "1": [
+          0,
+          20,
+          1181,
+          1312
+        ],
+        "16": [
+          94,
+          73,
+          1150,
+          1256
+        ],
+        "128": [
+          95,
+          74,
+          1149,
+          1255
+        ]
+      },
+      "edge_pixels_by_minimum": {
+        "1": {
+          "top": 0,
+          "bottom": 64,
+          "left": 12,
+          "right": 0
+        },
+        "16": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        },
+        "128": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        }
+      },
+      "transparent_pixels": 900030,
+      "semi_transparent_pixels": 672729,
+      "interpretation": "No visible silhouette touches the canvas edge at alpha >= 16 or alpha >= 128."
+    },
+    {
+      "id": "empress_ex",
+      "path": "assets/dossier_curien/expansion/hotd_ex/empress_ex_guard.png",
+      "sha256": "7adbfb4f2261073a191677d5ec341818fee582c04a2553b6706be4c4957b8a4c",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_bounds_by_minimum": {
+        "1": [
+          0,
+          0,
+          1242,
+          1254
+        ],
+        "16": [
+          14,
+          8,
+          1240,
+          1246
+        ],
+        "128": [
+          15,
+          9,
+          1239,
+          1244
+        ]
+      },
+      "edge_pixels_by_minimum": {
+        "1": {
+          "top": 50,
+          "bottom": 113,
+          "left": 22,
+          "right": 0
+        },
+        "16": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        },
+        "128": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        }
+      },
+      "transparent_pixels": 1026810,
+      "semi_transparent_pixels": 545474,
+      "interpretation": "No visible silhouette touches the canvas edge at alpha >= 16 or alpha >= 128."
+    },
+    {
+      "id": "lovers_ex",
+      "path": "assets/dossier_curien/expansion/hotd_ex/lovers_ex_guard.png",
+      "sha256": "9414a443eae8d292bb146dfc087fd3d7f5f73998137dfd4f01f2c5943d9994e1",
+      "dimensions": [
+        1737,
+        905
+      ],
+      "alpha_bounds_by_minimum": {
+        "1": [
+          0,
+          8,
+          1721,
+          905
+        ],
+        "16": [
+          81,
+          70,
+          1663,
+          863
+        ],
+        "128": [
+          81,
+          71,
+          1662,
+          863
+        ]
+      },
+      "edge_pixels_by_minimum": {
+        "1": {
+          "top": 0,
+          "bottom": 197,
+          "left": 54,
+          "right": 0
+        },
+        "16": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        },
+        "128": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        }
+      },
+      "transparent_pixels": 940721,
+      "semi_transparent_pixels": 630984,
+      "interpretation": "No visible silhouette touches the canvas edge at alpha >= 16 or alpha >= 128."
+    },
+    {
+      "id": "star_ex",
+      "path": "assets/dossier_curien/expansion/hotd_ex/star_ex_guard.png",
+      "sha256": "6fc12655dd6201ddcd85c98189062278e03cbdf9e8793ebbe571d8c86cf9735a",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_bounds_by_minimum": {
+        "1": [
+          0,
+          0,
+          1226,
+          1254
+        ],
+        "16": [
+          186,
+          6,
+          1023,
+          1247
+        ],
+        "128": [
+          187,
+          7,
+          1021,
+          1246
+        ]
+      },
+      "edge_pixels_by_minimum": {
+        "1": {
+          "top": 57,
+          "bottom": 30,
+          "left": 2,
+          "right": 0
+        },
+        "16": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        },
+        "128": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        }
+      },
+      "transparent_pixels": 1066221,
+      "semi_transparent_pixels": 505948,
+      "interpretation": "No visible silhouette touches the canvas edge at alpha >= 16 or alpha >= 128."
+    },
+    {
+      "id": "zobiko_ex_guard_v2",
+      "path": "assets/dossier_curien/expansion/hotd_ex/zobiko_ex_guard_v2.png",
+      "sha256": "ce743f5274f71fc23a0604cec0078048aaad7ff566b8fb34a7ce4f3ce523056e",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_bounds_by_minimum": {
+        "1": [
+          0,
+          10,
+          1216,
+          1237
+        ],
+        "16": [
+          254,
+          49,
+          870,
+          1181
+        ],
+        "128": [
+          254,
+          50,
+          869,
+          1180
+        ]
+      },
+      "edge_pixels_by_minimum": {
+        "1": {
+          "top": 0,
+          "bottom": 0,
+          "left": 4,
+          "right": 0
+        },
+        "16": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        },
+        "128": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        }
+      },
+      "transparent_pixels": 1239468,
+      "semi_transparent_pixels": 331987,
+      "interpretation": "No visible silhouette touches the canvas edge at alpha >= 16 or alpha >= 128."
+    },
+    {
+      "id": "zobio_ex_guard_v2",
+      "path": "assets/dossier_curien/expansion/hotd_ex/zobio_ex_guard_v2.png",
+      "sha256": "95f63787267fd799e100da9fc4570d2a112de22c7411d01313e651e92d4db48f",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_bounds_by_minimum": {
+        "1": [
+          33,
+          51,
+          1176,
+          1254
+        ],
+        "16": [
+          241,
+          84,
+          1007,
+          1177
+        ],
+        "128": [
+          241,
+          85,
+          1007,
+          1177
+        ]
+      },
+      "edge_pixels_by_minimum": {
+        "1": {
+          "top": 0,
+          "bottom": 2,
+          "left": 0,
+          "right": 0
+        },
+        "16": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        },
+        "128": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        }
+      },
+      "transparent_pixels": 1061573,
+      "semi_transparent_pixels": 510369,
+      "interpretation": "No visible silhouette touches the canvas edge at alpha >= 16 or alpha >= 128."
+    },
+    {
+      "id": "uds03",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/uds03_idle.png",
+      "sha256": "4594d657d3e8c68884a49da0f0ce9e0bc74df3ee613d3b47402b8222fc919aa0",
+      "dimensions": [
+        1199,
+        1312
+      ],
+      "alpha_bounds_by_minimum": {
+        "1": [
+          0,
+          17,
+          1198,
+          1312
+        ],
+        "16": [
+          201,
+          47,
+          1025,
+          1268
+        ],
+        "128": [
+          202,
+          47,
+          1025,
+          1267
+        ]
+      },
+      "edge_pixels_by_minimum": {
+        "1": {
+          "top": 0,
+          "bottom": 14,
+          "left": 35,
+          "right": 0
+        },
+        "16": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        },
+        "128": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        }
+      },
+      "transparent_pixels": 1126257,
+      "semi_transparent_pixels": 446386,
+      "interpretation": "No visible silhouette touches the canvas edge at alpha >= 16 or alpha >= 128."
+    },
+    {
+      "id": "neclien",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/neclien_idle.png",
+      "sha256": "9b43466cd2cb6f5c5985d7fd68367be02e281c59d12d2f491876dade08063959",
+      "dimensions": [
+        1214,
+        1296
+      ],
+      "alpha_bounds_by_minimum": {
+        "1": [
+          33,
+          17,
+          1206,
+          1296
+        ],
+        "16": [
+          111,
+          20,
+          1119,
+          1248
+        ],
+        "128": [
+          112,
+          28,
+          1118,
+          1248
+        ]
+      },
+      "edge_pixels_by_minimum": {
+        "1": {
+          "top": 0,
+          "bottom": 39,
+          "left": 0,
+          "right": 0
+        },
+        "16": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        },
+        "128": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        }
+      },
+      "transparent_pixels": 1180047,
+      "semi_transparent_pixels": 392338,
+      "interpretation": "No visible silhouette touches the canvas edge at alpha >= 16 or alpha >= 128."
+    },
+    {
+      "id": "uds04c",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/uds04c_idle.png",
+      "sha256": "7397b7f7fc24b44f7982073495c0e50d89e36ace75b1dad01d0df84fe2379b2d",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "alpha_bounds_by_minimum": {
+        "1": [
+          35,
+          0,
+          1504,
+          1024
+        ],
+        "16": [
+          39,
+          8,
+          1495,
+          1015
+        ],
+        "128": [
+          39,
+          9,
+          1495,
+          1014
+        ]
+      },
+      "edge_pixels_by_minimum": {
+        "1": {
+          "top": 15,
+          "bottom": 15,
+          "left": 0,
+          "right": 0
+        },
+        "16": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        },
+        "128": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        }
+      },
+      "transparent_pixels": 981626,
+      "semi_transparent_pixels": 591238,
+      "interpretation": "Recheck against alpha-composited preview: visible silhouette stays inside the canvas. RGB haze in alpha-zero pixels is invisible during correct compositing and is not evidence of an opaque background."
+    },
+    {
+      "id": "uds05",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/uds05_idle.png",
+      "sha256": "10f7720f91ce3f917caa4c77af62a3ebe31029391fcd889caca709bf4e6599f2",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "alpha_bounds_by_minimum": {
+        "1": [
+          0,
+          10,
+          1010,
+          1510
+        ],
+        "16": [
+          76,
+          27,
+          956,
+          1508
+        ],
+        "128": [
+          76,
+          28,
+          955,
+          1508
+        ]
+      },
+      "edge_pixels_by_minimum": {
+        "1": {
+          "top": 0,
+          "bottom": 0,
+          "left": 46,
+          "right": 0
+        },
+        "16": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        },
+        "128": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        }
+      },
+      "transparent_pixels": 1141646,
+      "semi_transparent_pixels": 431218,
+      "interpretation": "No visible silhouette touches the canvas edge at alpha >= 16 or alpha >= 128."
+    },
+    {
+      "id": "uds06b",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/uds06b_idle.png",
+      "sha256": "25b810b086e5530373290426a0466bc5eff7f10dd19110633c195440f99801ef",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "alpha_bounds_by_minimum": {
+        "1": [
+          0,
+          11,
+          1434,
+          1086
+        ],
+        "16": [
+          115,
+          16,
+          1323,
+          1071
+        ],
+        "128": [
+          116,
+          16,
+          1323,
+          1070
+        ]
+      },
+      "edge_pixels_by_minimum": {
+        "1": {
+          "top": 0,
+          "bottom": 88,
+          "left": 148,
+          "right": 0
+        },
+        "16": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        },
+        "128": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        }
+      },
+      "transparent_pixels": 877710,
+      "semi_transparent_pixels": 694487,
+      "interpretation": "No visible silhouette touches the canvas edge at alpha >= 16 or alpha >= 128."
+    },
+    {
+      "id": "zed",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/zed_idle.png",
+      "sha256": "529fc7382d7af9080d259d9de7a0bd9c243b1150dfacee718e725c7f918bdcbe",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "alpha_bounds_by_minimum": {
+        "1": [
+          57,
+          11,
+          984,
+          1526
+        ],
+        "16": [
+          179,
+          14,
+          830,
+          1524
+        ],
+        "128": [
+          179,
+          14,
+          829,
+          1523
+        ]
+      },
+      "edge_pixels_by_minimum": {
+        "1": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        },
+        "16": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        },
+        "128": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        }
+      },
+      "transparent_pixels": 1022061,
+      "semi_transparent_pixels": 550803,
+      "interpretation": "No visible silhouette touches the canvas edge at alpha >= 16 or alpha >= 128."
+    },
+    {
+      "id": "linda_rotta",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_rotta_base.png",
+      "sha256": "6ac665c71d18eb9e721ca46ecd886860a4a00fd687bdb211e910e45b8cd76ce7",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "alpha_bounds_by_minimum": {
+        "1": [
+          0,
+          21,
+          1010,
+          1536
+        ],
+        "16": [
+          129,
+          69,
+          853,
+          1458
+        ],
+        "128": [
+          130,
+          70,
+          852,
+          1457
+        ]
+      },
+      "edge_pixels_by_minimum": {
+        "1": {
+          "top": 0,
+          "bottom": 3,
+          "left": 11,
+          "right": 0
+        },
+        "16": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        },
+        "128": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        }
+      },
+      "transparent_pixels": 1196843,
+      "semi_transparent_pixels": 376021,
+      "interpretation": "No visible silhouette touches the canvas edge at alpha >= 16 or alpha >= 128."
+    },
+    {
+      "id": "marco_cloud_portrait",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_characters/marco_cloud_portrait.png",
+      "sha256": "828a2a41d36be300bcbb71d0d80f2909a299ed0559052fced2741688b6c700cb",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_bounds_by_minimum": {
+        "1": [
+          0,
+          14,
+          1240,
+          1240
+        ],
+        "16": [
+          133,
+          17,
+          1157,
+          1238
+        ],
+        "128": [
+          134,
+          17,
+          1156,
+          1238
+        ]
+      },
+      "edge_pixels_by_minimum": {
+        "1": {
+          "top": 0,
+          "bottom": 0,
+          "left": 25,
+          "right": 0
+        },
+        "16": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        },
+        "128": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        }
+      },
+      "transparent_pixels": 567886,
+      "semi_transparent_pixels": 1004091,
+      "interpretation": "Intentional bust/portrait framing. Edge contact is not a clipped full-body fighter."
+    },
+    {
+      "id": "yoko_portrait",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_characters/yoko_portrait.png",
+      "sha256": "83870ceb1dd30123963927118fbdc88e0d3271c03d1f7caca0d9db05d28d41a4",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "alpha_bounds_by_minimum": {
+        "1": [
+          0,
+          20,
+          1023,
+          1536
+        ],
+        "16": [
+          30,
+          25,
+          950,
+          1536
+        ],
+        "128": [
+          31,
+          25,
+          949,
+          1536
+        ]
+      },
+      "edge_pixels_by_minimum": {
+        "1": {
+          "top": 0,
+          "bottom": 575,
+          "left": 95,
+          "right": 0
+        },
+        "16": {
+          "top": 0,
+          "bottom": 533,
+          "left": 0,
+          "right": 0
+        },
+        "128": {
+          "top": 0,
+          "bottom": 531,
+          "left": 0,
+          "right": 0
+        }
+      },
+      "transparent_pixels": 708998,
+      "semi_transparent_pixels": 863866,
+      "interpretation": "Intentional bust/portrait framing. Edge contact is not a clipped full-body fighter."
+    },
+    {
+      "id": "bat_zombie",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/bat_zombie_base.png",
+      "sha256": "e2fba879fbf79f20e27074daeaf600831d4e5e991ee4bd2b25b2b2821ceeb4a1",
+      "dimensions": [
+        1717,
+        916
+      ],
+      "alpha_bounds_by_minimum": {
+        "1": [
+          0,
+          0,
+          1693,
+          916
+        ],
+        "16": [
+          40,
+          100,
+          1680,
+          836
+        ],
+        "128": [
+          40,
+          101,
+          1678,
+          834
+        ]
+      },
+      "edge_pixels_by_minimum": {
+        "1": {
+          "top": 5,
+          "bottom": 42,
+          "left": 10,
+          "right": 0
+        },
+        "16": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        },
+        "128": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        }
+      },
+      "transparent_pixels": 1098839,
+      "semi_transparent_pixels": 473893,
+      "interpretation": "No visible silhouette touches the canvas edge at alpha >= 16 or alpha >= 128."
+    },
+    {
+      "id": "buddy",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/buddy_base.png",
+      "sha256": "c595a62814adc4c149ec943d7581aea4c3b187735ff45fd6cb86a0130fa7f55b",
+      "dimensions": [
+        1061,
+        1483
+      ],
+      "alpha_bounds_by_minimum": {
+        "1": [
+          25,
+          20,
+          1045,
+          1483
+        ],
+        "16": [
+          86,
+          67,
+          975,
+          1418
+        ],
+        "128": [
+          87,
+          68,
+          974,
+          1418
+        ]
+      },
+      "edge_pixels_by_minimum": {
+        "1": {
+          "top": 0,
+          "bottom": 17,
+          "left": 0,
+          "right": 0
+        },
+        "16": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        },
+        "128": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        }
+      },
+      "transparent_pixels": 1077694,
+      "semi_transparent_pixels": 495488,
+      "interpretation": "No visible silhouette touches the canvas edge at alpha >= 16 or alpha >= 128."
+    },
+    {
+      "id": "factory_worker_1",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/factory_worker_1_base.png",
+      "sha256": "1edaf32fce1552c6c56ed3db796f5e6188219349bc012e5c452ff2bdbf9fa2c1",
+      "dimensions": [
+        1067,
+        1475
+      ],
+      "alpha_bounds_by_minimum": {
+        "1": [
+          0,
+          0,
+          1051,
+          1475
+        ],
+        "16": [
+          116,
+          23,
+          949,
+          1447
+        ],
+        "128": [
+          116,
+          24,
+          949,
+          1446
+        ]
+      },
+      "edge_pixels_by_minimum": {
+        "1": {
+          "top": 30,
+          "bottom": 52,
+          "left": 47,
+          "right": 0
+        },
+        "16": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        },
+        "128": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        }
+      },
+      "transparent_pixels": 1060628,
+      "semi_transparent_pixels": 512853,
+      "interpretation": "No visible silhouette touches the canvas edge at alpha >= 16 or alpha >= 128."
+    },
+    {
+      "id": "hedgeros",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/hedgeros_base.png",
+      "sha256": "13c44c94e8dab1a91754db41b78e72151c56e6b0b5aed15f107131cc9345080f",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "alpha_bounds_by_minimum": {
+        "1": [
+          21,
+          41,
+          1512,
+          1024
+        ],
+        "16": [
+          27,
+          125,
+          1506,
+          937
+        ],
+        "128": [
+          27,
+          126,
+          1505,
+          936
+        ]
+      },
+      "edge_pixels_by_minimum": {
+        "1": {
+          "top": 0,
+          "bottom": 30,
+          "left": 0,
+          "right": 0
+        },
+        "16": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        },
+        "128": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        }
+      },
+      "transparent_pixels": 1128543,
+      "semi_transparent_pixels": 444321,
+      "interpretation": "No visible silhouette touches the canvas edge at alpha >= 16 or alpha >= 128."
+    },
+    {
+      "id": "hedlin",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/hedlin_base.png",
+      "sha256": "a082d812e1375f1914489f45263f95a05d5007d210a900133955821fdfcb63bd",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "alpha_bounds_by_minimum": {
+        "1": [
+          43,
+          22,
+          968,
+          1536
+        ],
+        "16": [
+          247,
+          30,
+          759,
+          1473
+        ],
+        "128": [
+          248,
+          31,
+          758,
+          1473
+        ]
+      },
+      "edge_pixels_by_minimum": {
+        "1": {
+          "top": 0,
+          "bottom": 1,
+          "left": 0,
+          "right": 0
+        },
+        "16": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        },
+        "128": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        }
+      },
+      "transparent_pixels": 1239623,
+      "semi_transparent_pixels": 333241,
+      "interpretation": "No visible silhouette touches the canvas edge at alpha >= 16 or alpha >= 128."
+    },
+    {
+      "id": "latch",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/latch_base.png",
+      "sha256": "69870f826e15b63c1a1e985aee67a4c84483033ffaad0d03f0f627775d102efe",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "alpha_bounds_by_minimum": {
+        "1": [
+          0,
+          9,
+          1006,
+          1536
+        ],
+        "16": [
+          128,
+          40,
+          761,
+          1495
+        ],
+        "128": [
+          128,
+          41,
+          760,
+          1494
+        ]
+      },
+      "edge_pixels_by_minimum": {
+        "1": {
+          "top": 0,
+          "bottom": 3,
+          "left": 3,
+          "right": 0
+        },
+        "16": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        },
+        "128": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        }
+      },
+      "transparent_pixels": 1110855,
+      "semi_transparent_pixels": 462009,
+      "interpretation": "No visible silhouette touches the canvas edge at alpha >= 16 or alpha >= 128."
+    },
+    {
+      "id": "mccoy",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/mccoy_base.png",
+      "sha256": "703f6046ebd003345109fa7df86996c8d8a8dbe986ab9c55423cb32373f7faef",
+      "dimensions": [
+        1103,
+        1426
+      ],
+      "alpha_bounds_by_minimum": {
+        "1": [
+          0,
+          19,
+          1071,
+          1426
+        ],
+        "16": [
+          174,
+          29,
+          918,
+          1402
+        ],
+        "128": [
+          175,
+          30,
+          917,
+          1402
+        ]
+      },
+      "edge_pixels_by_minimum": {
+        "1": {
+          "top": 0,
+          "bottom": 4,
+          "left": 11,
+          "right": 0
+        },
+        "16": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        },
+        "128": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        }
+      },
+      "transparent_pixels": 1140143,
+      "semi_transparent_pixels": 432016,
+      "interpretation": "No visible silhouette touches the canvas edge at alpha >= 16 or alpha >= 128."
+    }
+  ]
+}

@@ -70,14 +70,14 @@ func cases_and_routes() -> void:
 		arena.next_story()
 		verify(arena.box.get_child(1).text == Saga.ALTERNATE_STORIES[id][1], "Alternate rival for %d" % id)
 		if id >= 17:
-			var personal_cards := ["intro","rival","ending"]
+			var personal_cards := [] if id == 23 else ["intro","rival","ending"]
 			if id in [21,22]: personal_cards.append("final")
 			for card in personal_cards:
 				verify(arena.visuals.saga_texture(Fighter.PROFILES[id].id+"_"+card) is Texture2D, "Registered alternate story illustration %d/%s" % [id,card])
 			arena.start_match()
 			victory()
 			click("Ouvrir le relevé")
-			verify(arena.stage == {"hotd2":11, "hotd3":12, "hotd4":15, "scarlet":16}[home], "Original final arena for %d" % id)
+			verify(arena.stage == Saga.stages_for(home,id)[2], "Registered final arena for %d" % id)
 			arena.start_match()
 			victory()
 			verify(arena.box.get_child(1).text == Saga.ALTERNATE_STORIES[id][3], "Personal epilogue for %d" % id)
@@ -88,6 +88,7 @@ func roster_and_stages() -> void:
 		verify(arena.visuals.guard_art(i) is Texture2D, "Registered combat art for " + str(profile.id))
 		for suffix in ["_select","_windup","_contact","_recoil"]:
 			var tex: Texture2D = arena.visuals.classic_art(profile.id+suffix) if i < 4 else arena.visuals.saga_texture(profile.id+suffix)
+			if i == 23 and suffix == "_select": tex = arena.visuals.guard_art(i)
 			verify(tex is Texture2D, "Registered " + str(profile.id)+suffix)
 		var attacker := Fighter.new(i, 500, 1)
 		var target := Fighter.new(0, 580, -1)
@@ -106,9 +107,8 @@ func roster_and_stages() -> void:
 		verify(arena.box.get_child(0).text == profile.title and arena.box.get_child(1).text == Fighter.NOTES[i], "Move list " + str(profile.id))
 	for i in range(3,Saga.STAGES.size()):
 		verify(arena.visuals.saga_texture(Saga.ART[i] + "_back") is Texture2D, "Registered backdrop " + Saga.ART[i])
-		if i >= 11:
-			for layer in ["_mid","_front"]:
-				verify(arena.visuals.saga_texture(Saga.ART[i]+layer) is Texture2D, "Registered plane "+Saga.ART[i]+layer)
+		for layer in ["_mid","_front"]:
+			verify(arena.visuals.saga_texture(Saga.ART[i]+layer) is Texture2D, "Registered plane "+Saga.ART[i]+layer)
 	for home in ["hotd2","hotd3","hotd4","scarlet"]:
 		verify(arena.visuals.saga_texture(home+"_final") is Texture2D, "Final portrait for "+home)
 	arena.menu()
@@ -265,19 +265,44 @@ func pandora_and_ark() -> void:
 	rival.guarding=false
 	before=rival.x
 	verify(moon.can_strike(rival) and moon.hit(rival) and rival.x==before-78, "Cyclone draws an unguarded opponent inwards")
-	for id in [6,19,20]:
+	for variant in [[4,"james"],[5,"lisa"],[6,"kate"],[6,"kate_soiree"],[7,"ryan"],[7,"ryan_soiree"],[19,"gary"],[20,"daniel"]]:
+		var id: int = variant[0]
+		var sheet_id: String = variant[1]
 		var walker := Fighter.new(id,400,1)
 		for suffix in ["_walk1","_walk2"]:
-			verify(arena.visuals.saga_texture(walker.profile.id+suffix) is Texture2D, "Registered stride "+walker.profile.id+suffix)
+			verify(arena.visuals.saga_texture(sheet_id+suffix) is Texture2D, "Registered stride "+sheet_id+suffix)
 		var phases: Array[String] = []
 		for tick in 24:
 			walker.step(1,false,"",1000)
-			if tick % 6 == 0: phases.append(arena.visuals.pose_suffix(walker))
-		verify(phases==["_walk1","_guard","_walk2","_guard"], "Heel, passing, toe and passing in a complete stride")
+			if tick % 6 == 0: phases.append(arena.visuals.pose_suffix(walker,sheet_id))
+		verify(phases==["_walk1","_guard","_walk2","_guard"], "Forward stride for "+sheet_id)
 		walker.step(0,false,"",1000)
-		verify(walker.walk_ticks==0 and arena.visuals.pose_suffix(walker)=="", "Release direction returns to neutral")
+		verify(walker.walk_ticks==0 and arena.visuals.pose_suffix(walker,sheet_id)=="", "Release direction returns to neutral")
+		phases.clear()
+		for tick in 24:
+			walker.step(-1,false,"",1000)
+			if tick % 6 == 0: phases.append(arena.visuals.pose_suffix(walker,sheet_id))
+		verify(phases==["_guard","_walk2","_guard","_walk1"], "Backward stride keeps the selected costume for "+sheet_id)
+		walker.stun = 8
+		verify(arena.visuals.pose_suffix(walker,sheet_id)=="_recoil", "Impact interrupts the walking pose")
+		walker.stun = 0
+		walker.step(0,false,"",1000)
 		walker.step(1,false,"jump",1000)
-		verify(walker.altitude>0 and arena.visuals.pose_suffix(walker)=="", "An airborne walker never uses grounded steps")
+		verify(walker.altitude>0 and arena.visuals.pose_suffix(walker,sheet_id)=="", "An airborne walker never uses grounded steps")
+	verify(not arena.visuals.has_walk_cycle(7,"ryan_missing"), "A missing costume never borrows another costume's stride")
+	var no_stride := Fighter.new(7,400,1)
+	no_stride.step(1,false,"",1000)
+	verify(arena.visuals.pose_suffix(no_stride,"unpainted_test_costume")=="", "A costume without a full painted cycle keeps the existing movement")
+	verify(arena.visuals.stage_plane(2,"mid")==null, "Classic stages retain their own scenery path")
+	for pose in ["james_walk1","james_walk2","lisa_walk1","lisa_walk2","ryan_walk1","ryan_walk2","ryan_soiree_walk1","ryan_soiree_walk2",
+		"linda_guard","linda_windup","linda_contact","linda_recovery","linda_recoil","linda_walk1","linda_walk2"]:
+		verify(arena.visuals.pose_profiles.has(pose), "Registered native painted pivot: " + pose)
+	var loaded_props: Array = []
+	for prop in arena.visuals.saga_props:
+		loaded_props.append(str(prop.id))
+	verify(loaded_props.has("efi_alarm_beacon") and loaded_props.has("subway_ticket_machine"), "Both independent stage props are registered with the renderer")
+	for prop in ["props/efi_alarm_beacon","props/subway_ticket_machine"]:
+		verify(arena.visuals.saga_texture(prop) is Texture2D, "Registered independent stage prop "+prop)
 	var course: Dictionary=arena.Rush.COURSES.back()
 	verify(course.id=="pandore_arche" and course.bouts==[[13,5],[21,15],[22,16]], "New course uses provenances of Justice, The World and Moon")
 

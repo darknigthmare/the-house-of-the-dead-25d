@@ -1,0 +1,175 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-19",
+  "base_commit": "a3fbcf13455a945ccc929ce43907a9755d82e6c7",
+  "generator": "built-in image_gen",
+  "mode": "reference-based transparent raster generation",
+  "scope": "Four missing Venice and Scarlet parallax layers; renderer and shared catalogue left to integration task",
+  "asset_count": 4,
+  "assets": [
+    {
+      "id": "venice_mid",
+      "path": "assets/dossier_curien/saga/venice_mid.png",
+      "kind": "parallax_mid",
+      "sha256": "5f6061a26526dcc7bffd489a84dff8bb16c9c242039b98f8f509b71382d9095c",
+      "size_bytes": 274347,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "transparent_background_requested": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "fully_transparent_percent": 94.665,
+      "runtime_floor_y": 651,
+      "combat_band_normalized": [
+        0.125,
+        0.2,
+        0.875,
+        0.88
+      ],
+      "combat_band_alpha_max": 1,
+      "full_center_alpha_max": 1,
+      "reference": {
+        "path": "assets/dossier_curien/saga/venice_back.png",
+        "sha256": "c71eb8e62992df02070b0bc1cb7d2486bd37e89cfefd44553ef84462e9df7e39",
+        "role": "Existing project backplate: style, palette, camera, environment continuity"
+      },
+      "generation_id": "exec-9c486c27-a438-410b-9537-afe6de92a1d4",
+      "prompt": "Use case: stylized-concept. Asset type: ONE sparse transparent mid-depth parallax overlay for an existing 2D fighting game Venice canal stage, 1600 x 900 landscape. Input image is strict camera, paint style, material and lighting reference ONLY. Do not reproduce the opaque scene. Add only small edge framing details that complement the current buildings and canal: at the extreme LEFT edge a cropped narrow old wrought-iron lantern bracket attached to an unseen wall, with one small unlit weathered lantern near x=70 y=280, thin trailing dry ivy and a very narrow chipped ochre stone edge; at the extreme RIGHT edge a slim weathered mooring timber and one slack rope loop. Keep all visible geometry STRICTLY in x=0..140 or x=1460..1600. The right timber ends around source y=790, matching the quay level. Match the source's overcast golden late-day atmosphere, aged ochre plaster, muted olive-black iron and subtle moss. Same straight-on side-view, realistic painted game environment. Entire x=160..1440 is fully transparent top to bottom; no objects, fog or gradients there. No additional buildings, bridges, boats, full columns, floor plane, water plane, characters, text, UI, signs or background. Preserve genuine alpha transparency and clean isolated edges. Output one overlay, not a collage or object sheet.",
+      "visual_review": {
+        "status": "reviewed",
+        "observations": "Sparse lateral accents and low corner debris preserve the central duel area. No opaque panorama, large duplicated scene structure, character, text or UI."
+      }
+    },
+    {
+      "id": "venice_front",
+      "path": "assets/dossier_curien/saga/venice_front.png",
+      "kind": "parallax_front",
+      "sha256": "4389ff15e5c2a786b2d783b54d2a232d703dc115776ec9cbeb10314c9dba7280",
+      "size_bytes": 109561,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "transparent_background_requested": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "fully_transparent_percent": 98.674,
+      "runtime_floor_y": 651,
+      "combat_band_normalized": [
+        0.125,
+        0.2,
+        0.875,
+        0.88
+      ],
+      "combat_band_alpha_max": 1,
+      "full_center_alpha_max": 1,
+      "reference": {
+        "path": "assets/dossier_curien/saga/venice_back.png",
+        "sha256": "c71eb8e62992df02070b0bc1cb7d2486bd37e89cfefd44553ef84462e9df7e39",
+        "role": "Existing project backplate: style, palette, camera, environment continuity"
+      },
+      "generation_id": "exec-97be96fb-32e2-4ef7-be26-cf45c6ecf006",
+      "prompt": "Use case: stylized-concept. Asset type: ONE sparse transparent close-foreground parallax overlay for the referenced 2D fighting game Venice canal stage, 1600 x 900 landscape. Use reference only for precise painterly realism, warm subdued daylight, cobble/rope/wood materials and straight-on perspective. Draw a small loose coil of thick weathered mooring rope and the cropped tip of a dark damp broken wooden plank in the extreme BOTTOM LEFT corner, plus a small cracked terracotta shard and another short loose rope end in the extreme BOTTOM RIGHT corner. Objects confined STRICTLY to x=0..140 or x=1460..1600 and source y=825..900. Do not add posts, railings, standing structures or big new objects already present in the source. Dark olive-brown foreground shadows with restrained warm top edge highlights. Entire central x=160..1440 must be alpha zero; every pixel above y=825 must also be transparent. No solid floor plane, shadows across the middle, canal, buildings, people, text, signage, UI, haze, black or white background or painted checkerboard. Output one clean compositable foreground overlay with genuine alpha transparency.",
+      "visual_review": {
+        "status": "reviewed",
+        "observations": "Sparse lateral accents and low corner debris preserve the central duel area. No opaque panorama, large duplicated scene structure, character, text or UI."
+      }
+    },
+    {
+      "id": "scarlet_mid",
+      "path": "assets/dossier_curien/saga/scarlet_mid.png",
+      "kind": "parallax_mid",
+      "sha256": "d7ab450e842598c48aa52097d1ef9093d021ca707793cc4b3dce74ef6c14910b",
+      "size_bytes": 399966,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "transparent_background_requested": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "fully_transparent_percent": 89.187,
+      "runtime_floor_y": 601,
+      "combat_band_normalized": [
+        0.125,
+        0.2,
+        0.875,
+        0.79
+      ],
+      "combat_band_alpha_max": 1,
+      "full_center_alpha_max": 1,
+      "reference": {
+        "path": "assets/dossier_curien/saga/scarlet_back.png",
+        "sha256": "f8958618c62001bbd4ec0c53ab12dd49779a981a157e113100a9571c9c107f8e",
+        "role": "Existing project backplate: style, palette, camera, environment continuity"
+      },
+      "generation_id": "exec-b1edfb38-8278-4041-8f42-0674efecc200",
+      "prompt": "Use case: stylized-concept. Asset type: ONE sparse transparent mid-depth parallax overlay for the referenced Scarecrow manor ballroom in a 2D fighting game, 1600 x 900 landscape. The provided full ballroom is a strict material, palette, lighting and camera reference ONLY. Create independently compositable narrow near-side burgundy velvet curtain folds at the extreme LEFT and RIGHT edges, mainly cropped offscreen, each tied back with one slender worn gold cord and a small tasseled end. The drapes curve outward so the ballroom and fighters remain visible. All geometry strictly within x=0..130 or x=1470..1600; curtain bottoms reach around y=730 and leave floor open. Match rich dark red velvet, slightly distressed antique gold thread, warm chandelier rim lighting and subtle cool blue reflected window light from the source. Realistically painted game environment finish, straight-on side-view. Do NOT duplicate the source's big marble columns or chandeliers. Entire center x=160..1440 must be genuinely transparent from top to bottom, no roof band. No full ballroom, windows, floor, people, monsters, text, UI, opaque shadow plane, fog, solid background or checkerboard. Output just one transparent edge-curtain parallax layer.",
+      "visual_review": {
+        "status": "reviewed",
+        "observations": "Sparse lateral accents and low corner debris preserve the central duel area. No opaque panorama, large duplicated scene structure, character, text or UI."
+      }
+    },
+    {
+      "id": "scarlet_front",
+      "path": "assets/dossier_curien/saga/scarlet_front.png",
+      "kind": "parallax_front",
+      "sha256": "b72427341ddae7b093195f3c4b115fdffe43b1674dd49708d706dd077aa9f5ba",
+      "size_bytes": 157433,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "transparent_background_requested": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "fully_transparent_percent": 97.805,
+      "runtime_floor_y": 601,
+      "combat_band_normalized": [
+        0.125,
+        0.2,
+        0.875,
+        0.79
+      ],
+      "combat_band_alpha_max": 1,
+      "full_center_alpha_max": 255,
+      "reference": {
+        "path": "assets/dossier_curien/saga/scarlet_back.png",
+        "sha256": "f8958618c62001bbd4ec0c53ab12dd49779a981a157e113100a9571c9c107f8e",
+        "role": "Existing project backplate: style, palette, camera, environment continuity"
+      },
+      "generation_id": "exec-3473e0ae-2ae5-4afe-86c7-f9173eff3446",
+      "prompt": "Use case: stylized-concept. Asset type: ONE sparse transparent close-foreground parallax overlay for the referenced Scarecrow manor ballroom 2D fighting stage, 1600 x 900 landscape. Use the input as exact material, palette, side-view and lighting reference, without reproducing its background. At the extreme BOTTOM LEFT corner, a small broken carved gilt chair-foot segment, a little torn burgundy velvet strip and several tiny clear crystal fragments; at the extreme BOTTOM RIGHT, a small fallen brass candle holder base and scattered crystal droplets. All objects remain STRICTLY within x=0..145 or x=1455..1600 and y=790..900. Low profile foreground accents only; no complete chair, table or giant furniture. Match the source's dark warm antique gold, deep red fabric, restrained amber glints and small cool blue highlights. Polished realistically painted game asset detail. Entire central x=160..1440 alpha zero top to bottom; all upper area y=0..790 transparent. No floor plate, people, creatures, gore, background, scene panorama, text, labels, UI, glow fog, black/white fill or drawn checkerboard. Output one clean independent foreground parallax overlay with genuine alpha transparency.",
+      "visual_review": {
+        "status": "reviewed",
+        "observations": "Sparse lateral accents and low corner debris preserve the central duel area. No opaque panorama, large duplicated scene structure, character, text or UI."
+      }
+    }
+  ],
+  "validation": {
+    "image_generation_only": true,
+    "images_edited_after_generation": false,
+    "original_files_copied_without_resampling": true,
+    "alpha_note": "True alpha with near-zero central combat band. Transparent areas can retain isolated alpha1 pixels. Corner debris is outside the central fighting band.",
+    "resolution_note": "Native 1672 x 941 output preserved byte for byte; stage renderer scales the full canvas."
+  },
+  "fidelity_limits": [
+    "These sparse overlays continue existing project illustrations; they are original game scenery, not extracted official assets.",
+    "No pixel-for-pixel comparison against official episode camera captures; canonical 1:1 fidelity is not certified.",
+    "Final engine composition, footing and camera-drift review remain part of the integration task."
+  ]
+}

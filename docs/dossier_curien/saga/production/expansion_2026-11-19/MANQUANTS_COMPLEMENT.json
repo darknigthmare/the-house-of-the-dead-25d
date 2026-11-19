@@ -1,0 +1,2257 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-19",
+  "repository": "darknigthmare/the-house-of-the-dead-25d",
+  "baseline_local_commit": "d7d4ca3a49ea5dd4834a65b3270416d9b7fb85d3",
+  "scope": "Complément de production Zombie Revenge / EX et Linda, rattaché aux 23 combattants et deux tenues déjà inventoriés. Catalogue ciblé du projet, sans prétention d’exhaustivité de la franchise.",
+  "snapshot_note": "Relevé final : 49 PNG, 40 fiches et neuf poses masquées. Suites automatiques, contrôle du PCK et revue native réussis. Essai web bloqué par WebGL2 indisponible avant le moteur. Lot local, publication GitHub non effectuée.",
+  "baseline": {
+    "classic_png": 30,
+    "saga_png": 223,
+    "dossier_existing_png": 253,
+    "legacy_inventory": "docs/dossier_curien/saga/production/MANQUANTS_2026-11-19.json",
+    "legacy_named_pose_gaps_still_missing": 291,
+    "costume_variants_registered": 2,
+    "arenas_registered": 18
+  },
+  "observed_in_repository": {
+    "expansion_png": 49,
+    "manifest_entries": 49,
+    "manifest_gallery_entries": 40,
+    "combatant_profiles_in_code": 24,
+    "chronicles_in_code": 9,
+    "alternate_stories_in_code": 14,
+    "story_routes_in_code": 26,
+    "validation_status": "npm test et quatre suites Godot réussis. PCK : 673 contrôles, 49 textures et 40 fiches chargées. Revue native réussie sur les scénarios du protocole. Essai navigateur bloqué par WebGL2 indisponible.",
+    "expansion_bytes": 65651752,
+    "gallery_hidden_pose_png": 9,
+    "dossier_total_png": 302
+  },
+  "wave_target": {
+    "expansion_png": 49,
+    "recovered_png": 23,
+    "new_png": 26,
+    "new_enemy_base_png": 10,
+    "new_boss_base_png": 7,
+    "new_linda_pose_png": 9,
+    "gallery_subjects": 40,
+    "gallery_hidden_pose_png": 9,
+    "dossier_total_png_after_integration": 302,
+    "zombie_revenge_enemy_base_subjects": 17,
+    "zombie_revenge_boss_artworks": 13,
+    "full_animation_cycles_claimed": 0,
+    "consolidation_status": "complete_locally",
+    "linda_total_drawings": 10,
+    "linda_painted_low_poses": 3
+  },
+  "produced_new_assets": [
+    {
+      "id": "biff",
+      "name": "Biff",
+      "game": "zombie_revenge",
+      "category": "enemy_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/biff_base.png",
+      "produced": true,
+      "bytes": 909621,
+      "sha256": "ba0e4b620d7adc1c41f0d81105e819ad43bcb889caf8c8645eee4d6c0837ea4a",
+      "repository_file_present": true,
+      "registered_at_snapshot": true,
+      "gallery_expected": true,
+      "quality_status": "generated_reference_reviewed",
+      "provenance": "docs/dossier_curien/saga/production/expansion_2026-11-19/NEW_ASSETS_PROVENANCE.json",
+      "gallery_actual": true
+    },
+    {
+      "id": "ebitan",
+      "name": "Ebitan",
+      "game": "zombie_revenge",
+      "category": "enemy_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/ebitan_base.png",
+      "produced": true,
+      "bytes": 619487,
+      "sha256": "f8ca05c39573f0fb06e921c937630d410d9996f829cad82ef0df06fac1c1d6c8",
+      "repository_file_present": true,
+      "registered_at_snapshot": true,
+      "gallery_expected": true,
+      "quality_status": "generated_reference_reviewed",
+      "provenance": "docs/dossier_curien/saga/production/expansion_2026-11-19/NEW_ASSETS_PROVENANCE.json",
+      "gallery_actual": true
+    },
+    {
+      "id": "factory_worker_2",
+      "name": "Factory Worker 2",
+      "game": "zombie_revenge",
+      "category": "enemy_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/factory_worker_2_base.png",
+      "produced": true,
+      "bytes": 1005612,
+      "sha256": "6327bc22d8e5e3fbdfbe989a07ea0754226c7bef197aba8b523b4664eac018b3",
+      "repository_file_present": true,
+      "registered_at_snapshot": true,
+      "gallery_expected": true,
+      "quality_status": "generated_reference_reviewed",
+      "provenance": "docs/dossier_curien/saga/production/expansion_2026-11-19/NEW_ASSETS_PROVENANCE.json",
+      "gallery_actual": true
+    },
+    {
+      "id": "frog",
+      "name": "Frog",
+      "game": "zombie_revenge",
+      "category": "enemy_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/frog_base.png",
+      "produced": true,
+      "bytes": 1698481,
+      "sha256": "28a29bd1ddf7b49459e23548e687b9ad1bd5d901b8918080bb95eb8762274fc7",
+      "repository_file_present": true,
+      "registered_at_snapshot": true,
+      "gallery_expected": true,
+      "quality_status": "generated_reference_reviewed",
+      "provenance": "docs/dossier_curien/saga/production/expansion_2026-11-19/NEW_ASSETS_PROVENANCE.json",
+      "gallery_actual": true
+    },
+    {
+      "id": "hedrian",
+      "name": "Hedrian",
+      "game": "zombie_revenge",
+      "category": "enemy_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/hedrian_base.png",
+      "produced": true,
+      "bytes": 866897,
+      "sha256": "25b3b5abfa7faa58eda3736f2e0580923f4d6d13959a0c6152285e9fb620c06e",
+      "repository_file_present": true,
+      "registered_at_snapshot": true,
+      "gallery_expected": true,
+      "quality_status": "generated_reference_reviewed",
+      "provenance": "docs/dossier_curien/saga/production/expansion_2026-11-19/NEW_ASSETS_PROVENANCE.json",
+      "gallery_actual": true
+    },
+    {
+      "id": "hermonkey",
+      "name": "Hermonkey",
+      "game": "zombie_revenge",
+      "category": "enemy_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/hermonkey_base.png",
+      "produced": true,
+      "bytes": 1152036,
+      "sha256": "0274ca2862ca950c205e11ab6cdee8ef90969eb22d2e7dcbfb84bf62da00ebfe",
+      "repository_file_present": true,
+      "registered_at_snapshot": true,
+      "gallery_expected": true,
+      "quality_status": "generated_reference_reviewed",
+      "provenance": "docs/dossier_curien/saga/production/expansion_2026-11-19/NEW_ASSETS_PROVENANCE.json",
+      "gallery_actual": true
+    },
+    {
+      "id": "mansion_zombie_1",
+      "name": "Mansion Zombie 1",
+      "game": "zombie_revenge",
+      "category": "enemy_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/mansion_zombie_1_base.png",
+      "produced": true,
+      "bytes": 832783,
+      "sha256": "c4df726a8453bf205515932ad2536bdc9f14a8192cb3f35babadf8351da3af4a",
+      "repository_file_present": true,
+      "registered_at_snapshot": true,
+      "gallery_expected": true,
+      "quality_status": "generated_reference_reviewed",
+      "provenance": "docs/dossier_curien/saga/production/expansion_2026-11-19/NEW_ASSETS_PROVENANCE.json",
+      "gallery_actual": true
+    },
+    {
+      "id": "mansion_zombie_2",
+      "name": "Mansion Zombie 2",
+      "game": "zombie_revenge",
+      "category": "enemy_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/mansion_zombie_2_base.png",
+      "produced": true,
+      "bytes": 872617,
+      "sha256": "33ef745ae82f5f8651ea1fd543b18cee080dbf32720bd947a7297883d6fa8a11",
+      "repository_file_present": true,
+      "registered_at_snapshot": true,
+      "gallery_expected": true,
+      "quality_status": "generated_reference_reviewed",
+      "provenance": "docs/dossier_curien/saga/production/expansion_2026-11-19/NEW_ASSETS_PROVENANCE.json",
+      "gallery_actual": true
+    },
+    {
+      "id": "mecha_zombie",
+      "name": "Mecha Zombie",
+      "game": "zombie_revenge",
+      "category": "enemy_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/mecha_zombie_base.png",
+      "produced": true,
+      "bytes": 676542,
+      "sha256": "935d03a01c8491c08fbff1e89de0736e9c970483d902381f9509d27cc1fcd83a",
+      "repository_file_present": true,
+      "registered_at_snapshot": true,
+      "gallery_expected": true,
+      "quality_status": "generated_reference_reviewed",
+      "provenance": "docs/dossier_curien/saga/production/expansion_2026-11-19/NEW_ASSETS_PROVENANCE.json",
+      "gallery_actual": true
+    },
+    {
+      "id": "mummy",
+      "name": "Mummy",
+      "game": "zombie_revenge",
+      "category": "enemy_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/mummy_base.png",
+      "produced": true,
+      "bytes": 1545469,
+      "sha256": "8976b77a6819dd2eb0966ba0eaaa13faa3d5f9683048bdecc9403e6984114b37",
+      "repository_file_present": true,
+      "registered_at_snapshot": true,
+      "gallery_expected": true,
+      "quality_status": "generated_reference_reviewed",
+      "provenance": "docs/dossier_curien/saga/production/expansion_2026-11-19/NEW_ASSETS_PROVENANCE.json",
+      "gallery_actual": true
+    },
+    {
+      "id": "linda_contact",
+      "name": "Linda Rotta — contact",
+      "game": "zombie_revenge",
+      "category": "animation_pose",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_contact.png",
+      "produced": true,
+      "bytes": 1749143,
+      "sha256": "7c1607e0f39632ae985ffe86be383047cfe48823056cb90714c01310f008e16f",
+      "repository_file_present": true,
+      "registered_at_snapshot": true,
+      "gallery_expected": false,
+      "quality_status": "generated_reference_reviewed",
+      "provenance": "docs/dossier_curien/saga/production/expansion_2026-11-19/NEW_ASSETS_PROVENANCE.json",
+      "gallery_actual": false
+    },
+    {
+      "id": "linda_recoil",
+      "name": "Linda Rotta — recoil",
+      "game": "zombie_revenge",
+      "category": "animation_pose",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_recoil.png",
+      "produced": true,
+      "bytes": 1891358,
+      "sha256": "7c8feffb04515c050e0a5287e22bedac26782774ffd22904d474a0a2d5733c16",
+      "repository_file_present": true,
+      "registered_at_snapshot": true,
+      "gallery_expected": false,
+      "quality_status": "generated_reference_reviewed",
+      "provenance": "docs/dossier_curien/saga/production/expansion_2026-11-19/NEW_ASSETS_PROVENANCE.json",
+      "gallery_actual": false
+    },
+    {
+      "id": "linda_recovery",
+      "name": "Linda Rotta — recovery",
+      "game": "zombie_revenge",
+      "category": "animation_pose",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_recovery.png",
+      "produced": true,
+      "bytes": 1711910,
+      "sha256": "3b3daf90cab4ae83e54aefc79088b72256c681b41c78acafd84e2abfed791419",
+      "repository_file_present": true,
+      "registered_at_snapshot": true,
+      "gallery_expected": false,
+      "quality_status": "generated_reference_reviewed",
+      "provenance": "docs/dossier_curien/saga/production/expansion_2026-11-19/NEW_ASSETS_PROVENANCE.json",
+      "gallery_actual": false
+    },
+    {
+      "id": "linda_walk1",
+      "name": "Linda Rotta — walk1",
+      "game": "zombie_revenge",
+      "category": "animation_pose",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_walk1.png",
+      "produced": true,
+      "bytes": 1700467,
+      "sha256": "cacd58181d950852367baa3896e25f2d261403cba4d6636db1347e8adfcd0c54",
+      "repository_file_present": true,
+      "registered_at_snapshot": true,
+      "gallery_expected": false,
+      "quality_status": "generated_reference_reviewed",
+      "provenance": "docs/dossier_curien/saga/production/expansion_2026-11-19/NEW_ASSETS_PROVENANCE.json",
+      "gallery_actual": false,
+      "revision_note": "Premier essai rejeté car il répétait l’appui de walk2. Version corrigée enregistrée : jambe gauche en avant et jambe droite portant l’étui en arrière.",
+      "rejected_source": "docs/dossier_curien/sources_art/recovered-2026-11-19/linda_walk1_repeated_support.png"
+    },
+    {
+      "id": "linda_walk2",
+      "name": "Linda Rotta — walk2",
+      "game": "zombie_revenge",
+      "category": "animation_pose",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_walk2.png",
+      "produced": true,
+      "bytes": 1733897,
+      "sha256": "531f7c3f2a97b53f09ff60d8651973448a25d77ae814125b0a6571ccc5c08c9e",
+      "repository_file_present": true,
+      "registered_at_snapshot": true,
+      "gallery_expected": false,
+      "quality_status": "generated_reference_reviewed",
+      "provenance": "docs/dossier_curien/saga/production/expansion_2026-11-19/NEW_ASSETS_PROVENANCE.json",
+      "gallery_actual": false
+    },
+    {
+      "id": "linda_windup",
+      "name": "Linda Rotta — windup",
+      "game": "zombie_revenge",
+      "category": "animation_pose",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_windup.png",
+      "produced": true,
+      "bytes": 1778255,
+      "sha256": "51bfb0936c3e0f139b0ff6f475a72ee4d92f80508f81871c9e944a50ee42910c",
+      "repository_file_present": true,
+      "registered_at_snapshot": true,
+      "gallery_expected": false,
+      "quality_status": "generated_reference_reviewed",
+      "provenance": "docs/dossier_curien/saga/production/expansion_2026-11-19/NEW_ASSETS_PROVENANCE.json",
+      "gallery_actual": false
+    },
+    {
+      "id": "uds02",
+      "name": "UDS-02",
+      "game": "zombie_revenge",
+      "category": "boss_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/uds02_idle.png",
+      "quality_status": "generated_reference_reviewed",
+      "limitations": "Adaptation 2D depuis les références indiquées et inspectées. Un sprite maître statique, non un cycle d’animation ; fidélité exacte 1:1 non certifiée.",
+      "produced": true,
+      "bytes": 959283,
+      "sha256": "fc8a0873718aeba09c5461ab4cfff705738c734c8af905d02091e92e9f7120a8",
+      "repository_file_present": true,
+      "registered_at_snapshot": true,
+      "gallery_expected": true,
+      "provenance": "docs/dossier_curien/saga/production/expansion_2026-11-19/NEW_ASSETS_PROVENANCE.json",
+      "gallery_actual": true
+    },
+    {
+      "id": "black_magician",
+      "name": "Black Magician Type 01",
+      "game": "zombie_revenge",
+      "category": "boss_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/black_magician_idle.png",
+      "quality_status": "generated_reference_reviewed",
+      "limitations": "Adaptation 2D depuis les références indiquées et inspectées. Un sprite maître statique, non un cycle d’animation ; fidélité exacte 1:1 non certifiée.",
+      "produced": true,
+      "bytes": 994755,
+      "sha256": "92c759971dd098e89c6df48b4d49685e775b9a04dc8bdc4da4f76920e46282e7",
+      "repository_file_present": true,
+      "registered_at_snapshot": true,
+      "gallery_expected": true,
+      "provenance": "docs/dossier_curien/saga/production/expansion_2026-11-19/NEW_ASSETS_PROVENANCE.json",
+      "gallery_actual": true
+    },
+    {
+      "id": "uds_tpii_00",
+      "name": "UDS-TP II 00",
+      "game": "zombie_revenge",
+      "category": "boss_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/uds_tpii_00_idle.png",
+      "quality_status": "generated_reference_reviewed",
+      "limitations": "Adaptation 2D depuis les références indiquées et inspectées. Un sprite maître statique, non un cycle d’animation ; fidélité exacte 1:1 non certifiée.",
+      "produced": true,
+      "bytes": 852042,
+      "sha256": "23bb17809622ae41b73764f570248b087c45b3d582d6eb93f006ff2ef04638a3",
+      "repository_file_present": true,
+      "registered_at_snapshot": true,
+      "gallery_expected": true,
+      "provenance": "docs/dossier_curien/saga/production/expansion_2026-11-19/NEW_ASSETS_PROVENANCE.json",
+      "gallery_actual": true
+    },
+    {
+      "id": "uds_tpii_01",
+      "name": "UDS-TP II 01",
+      "game": "zombie_revenge",
+      "category": "boss_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/uds_tpii_01_idle.png",
+      "quality_status": "generated_reference_reviewed",
+      "limitations": "Adaptation 2D depuis les références indiquées et inspectées. Un sprite maître statique, non un cycle d’animation ; fidélité exacte 1:1 non certifiée.",
+      "produced": true,
+      "bytes": 789265,
+      "sha256": "65de81922c3f5c521e19062851bb7122287c9922b9bba0ed01d919fab17d4c8b",
+      "repository_file_present": true,
+      "registered_at_snapshot": true,
+      "gallery_expected": true,
+      "provenance": "docs/dossier_curien/saga/production/expansion_2026-11-19/NEW_ASSETS_PROVENANCE.json",
+      "gallery_actual": true
+    },
+    {
+      "id": "nikelle",
+      "name": "UDS-07 Nikelle",
+      "game": "zombie_revenge",
+      "category": "boss_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/nikelle_idle.png",
+      "quality_status": "generated_needs_visual_reference_qa",
+      "limitations": "Adaptation depuis une capture de jeu basse résolution et un storyboard original. Le dessin complet et les détails fins restent à confronter à un rendu SEGA haute résolution ; fidélité exacte 1:1 non certifiée. Sprite maître statique sans animation.",
+      "produced": true,
+      "bytes": 1306769,
+      "sha256": "23eed1f22b76f93078f7c1a99924a3d27796845b84527b29a1dfefc6dbd45c98",
+      "repository_file_present": true,
+      "registered_at_snapshot": true,
+      "gallery_expected": true,
+      "provenance": "docs/dossier_curien/saga/production/expansion_2026-11-19/NEW_ASSETS_PROVENANCE.json",
+      "gallery_actual": true
+    },
+    {
+      "id": "warm_hedlin",
+      "name": "Warm Hedlin (Worm Hedlin)",
+      "game": "zombie_revenge",
+      "category": "boss_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/warm_hedlin_idle.png",
+      "quality_status": "generated_needs_visual_reference_qa",
+      "limitations": "Adaptation depuis captures originales basse résolution : tête et corps distingués par références du combat de Biological Weapon. Détails fins et exactitude 1:1 à valider sur rendu officiel plus défini. Un organisme/sprite statique ; pas de cycle animé.",
+      "produced": true,
+      "bytes": 1127545,
+      "sha256": "92b62d5ce429a38e24119673ec9889cb9386f2b18d36eff4ed16de356861f4bf",
+      "repository_file_present": true,
+      "registered_at_snapshot": true,
+      "gallery_expected": true,
+      "provenance": "docs/dossier_curien/saga/production/expansion_2026-11-19/NEW_ASSETS_PROVENANCE.json",
+      "gallery_actual": true
+    },
+    {
+      "id": "shell_hedlin",
+      "name": "Shell Hedlin",
+      "game": "zombie_revenge",
+      "category": "boss_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/shell_hedlin_idle.png",
+      "quality_status": "generated_needs_visual_reference_qa",
+      "limitations": "Adaptation depuis captures originales basse résolution : tête et corps distingués par références du combat de Biological Weapon. Détails fins et exactitude 1:1 à valider sur rendu officiel plus défini. Un organisme/sprite statique ; pas de cycle animé.",
+      "produced": true,
+      "bytes": 949895,
+      "sha256": "6e0a14b78c09adf64a17130fa158c5b2cf49256402c6adcc9a4624797d8227b3",
+      "repository_file_present": true,
+      "registered_at_snapshot": true,
+      "gallery_expected": true,
+      "provenance": "docs/dossier_curien/saga/production/expansion_2026-11-19/NEW_ASSETS_PROVENANCE.json",
+      "gallery_actual": true
+    },
+    {
+      "id": "linda_crouch",
+      "name": "Linda Rotta — accroupissement",
+      "game": "zombie_revenge",
+      "category": "animation_pose",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_crouch.png",
+      "produced": true,
+      "sha256": "f32c2c7ba79aab5e346a42ad5700cc148350f1585f69a7cbdf5e6146347b42fd",
+      "bytes": 1639978,
+      "quality_status": "generated_reference_reviewed",
+      "provenance": "docs/dossier_curien/saga/production/expansion_2026-11-19/NEW_ASSETS_PROVENANCE.json",
+      "repository_file_present": true,
+      "registered_at_snapshot": true,
+      "gallery_expected": false,
+      "gallery_actual": false,
+      "low_pose_note": "Pose basse dessinée avec articulation réelle. Sa taille en jeu utilise l’échelle anatomique du maître debout, sans compression verticale du personnage."
+    },
+    {
+      "id": "linda_crouch_guard",
+      "name": "Linda Rotta — garde basse",
+      "game": "zombie_revenge",
+      "category": "animation_pose",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_crouch_guard.png",
+      "produced": true,
+      "sha256": "befbf47a8d6014517d827ce9eced9b1a6a02d911aca25223829f6c0c57689d6a",
+      "bytes": 1618807,
+      "quality_status": "generated_reference_reviewed",
+      "provenance": "docs/dossier_curien/saga/production/expansion_2026-11-19/NEW_ASSETS_PROVENANCE.json",
+      "repository_file_present": true,
+      "registered_at_snapshot": true,
+      "gallery_expected": false,
+      "gallery_actual": false,
+      "low_pose_note": "Pose basse dessinée avec articulation réelle. Sa taille en jeu utilise l’échelle anatomique du maître debout, sans compression verticale du personnage."
+    },
+    {
+      "id": "linda_slide_contact",
+      "name": "Linda Rotta — contact de glissade",
+      "game": "zombie_revenge",
+      "category": "animation_pose",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_slide_contact.png",
+      "produced": true,
+      "sha256": "5fc8b52ea2891daaafc48b5791c050810f257d087df9d8ac4a05476f45dceff2",
+      "bytes": 1448958,
+      "quality_status": "generated_reference_reviewed",
+      "provenance": "docs/dossier_curien/saga/production/expansion_2026-11-19/NEW_ASSETS_PROVENANCE.json",
+      "repository_file_present": true,
+      "registered_at_snapshot": true,
+      "gallery_expected": false,
+      "gallery_actual": false,
+      "low_pose_note": "Pose basse dessinée avec articulation réelle. Sa taille en jeu utilise l’échelle anatomique du maître debout, sans compression verticale du personnage.",
+      "emitter_px": [
+        775,
+        712
+      ]
+    }
+  ],
+  "base_pose_coverage": {
+    "zombie_revenge_enemies": [
+      "bat_zombie",
+      "biff",
+      "buddy",
+      "ebitan",
+      "factory_worker_1",
+      "factory_worker_2",
+      "frog",
+      "hedgeros",
+      "hedlin",
+      "hedrian",
+      "hermonkey",
+      "latch",
+      "mansion_zombie_1",
+      "mansion_zombie_2",
+      "mccoy",
+      "mecha_zombie",
+      "mummy"
+    ],
+    "zombie_revenge_bosses_and_forms": [
+      "black_magician",
+      "neclien",
+      "nikelle",
+      "shell_hedlin",
+      "uds02",
+      "uds03",
+      "uds04c",
+      "uds05",
+      "uds06b",
+      "uds_tpii_00",
+      "uds_tpii_01",
+      "warm_hedlin",
+      "zed"
+    ],
+    "note": "Une fiche correspond à un dessin maître statique. Les formes/organismes sont dénombrés comme illustrations ; ce compte n’est pas un nombre de combattants jouables ni de rencontres originales exhaustivement reproduites."
+  },
+  "named_pose_gaps": {
+    "scope": "Minimum ancien par pose nommée pour les personnages jouables et deux tenues, prolongé pour Linda. Les nouvelles créatures de bestiaire et images intermédiaires supplémentaires ne sont pas incluses dans ce minimum.",
+    "legacy_count": 291,
+    "linda_count": 8,
+    "combined_minimum_count": 299,
+    "by_pose": {
+      "walk1": 17,
+      "walk2": 17,
+      "jump_rise": 26,
+      "jump_fall": 26,
+      "crouch": 25,
+      "crouch_guard": 25,
+      "block": 26,
+      "throw": 26,
+      "victory": 26,
+      "taunt": 26,
+      "finish": 26,
+      "reload": 12,
+      "recovery": 21
+    },
+    "legacy_characters": [
+      {
+        "id": "rogan",
+        "name": "Thomas Rogan",
+        "variant": "base",
+        "game": "curien",
+        "missing_named_pose_pngs": [
+          {
+            "pose": "walk1",
+            "path": "assets/dossier_curien/rogan_walk1.png"
+          },
+          {
+            "pose": "walk2",
+            "path": "assets/dossier_curien/rogan_walk2.png"
+          },
+          {
+            "pose": "jump_rise",
+            "path": "assets/dossier_curien/rogan_jump_rise.png"
+          },
+          {
+            "pose": "jump_fall",
+            "path": "assets/dossier_curien/rogan_jump_fall.png"
+          },
+          {
+            "pose": "crouch",
+            "path": "assets/dossier_curien/rogan_crouch.png"
+          },
+          {
+            "pose": "crouch_guard",
+            "path": "assets/dossier_curien/rogan_crouch_guard.png"
+          },
+          {
+            "pose": "block",
+            "path": "assets/dossier_curien/rogan_block.png"
+          },
+          {
+            "pose": "throw",
+            "path": "assets/dossier_curien/rogan_throw.png"
+          },
+          {
+            "pose": "victory",
+            "path": "assets/dossier_curien/rogan_victory.png"
+          },
+          {
+            "pose": "taunt",
+            "path": "assets/dossier_curien/rogan_taunt.png"
+          },
+          {
+            "pose": "finish",
+            "path": "assets/dossier_curien/rogan_finish.png"
+          },
+          {
+            "pose": "reload",
+            "path": "assets/dossier_curien/rogan_reload.png"
+          }
+        ],
+        "count": 12
+      },
+      {
+        "id": "g",
+        "name": "Agent G",
+        "variant": "base",
+        "game": "curien",
+        "missing_named_pose_pngs": [
+          {
+            "pose": "walk1",
+            "path": "assets/dossier_curien/g_walk1.png"
+          },
+          {
+            "pose": "walk2",
+            "path": "assets/dossier_curien/g_walk2.png"
+          },
+          {
+            "pose": "jump_rise",
+            "path": "assets/dossier_curien/g_jump_rise.png"
+          },
+          {
+            "pose": "jump_fall",
+            "path": "assets/dossier_curien/g_jump_fall.png"
+          },
+          {
+            "pose": "crouch",
+            "path": "assets/dossier_curien/g_crouch.png"
+          },
+          {
+            "pose": "crouch_guard",
+            "path": "assets/dossier_curien/g_crouch_guard.png"
+          },
+          {
+            "pose": "block",
+            "path": "assets/dossier_curien/g_block.png"
+          },
+          {
+            "pose": "throw",
+            "path": "assets/dossier_curien/g_throw.png"
+          },
+          {
+            "pose": "victory",
+            "path": "assets/dossier_curien/g_victory.png"
+          },
+          {
+            "pose": "taunt",
+            "path": "assets/dossier_curien/g_taunt.png"
+          },
+          {
+            "pose": "finish",
+            "path": "assets/dossier_curien/g_finish.png"
+          },
+          {
+            "pose": "reload",
+            "path": "assets/dossier_curien/g_reload.png"
+          }
+        ],
+        "count": 12
+      },
+      {
+        "id": "chariot",
+        "name": "Chariot",
+        "variant": "base",
+        "game": "curien",
+        "missing_named_pose_pngs": [
+          {
+            "pose": "walk1",
+            "path": "assets/dossier_curien/chariot_walk1.png"
+          },
+          {
+            "pose": "walk2",
+            "path": "assets/dossier_curien/chariot_walk2.png"
+          },
+          {
+            "pose": "jump_rise",
+            "path": "assets/dossier_curien/chariot_jump_rise.png"
+          },
+          {
+            "pose": "jump_fall",
+            "path": "assets/dossier_curien/chariot_jump_fall.png"
+          },
+          {
+            "pose": "crouch",
+            "path": "assets/dossier_curien/chariot_crouch.png"
+          },
+          {
+            "pose": "crouch_guard",
+            "path": "assets/dossier_curien/chariot_crouch_guard.png"
+          },
+          {
+            "pose": "block",
+            "path": "assets/dossier_curien/chariot_block.png"
+          },
+          {
+            "pose": "throw",
+            "path": "assets/dossier_curien/chariot_throw.png"
+          },
+          {
+            "pose": "victory",
+            "path": "assets/dossier_curien/chariot_victory.png"
+          },
+          {
+            "pose": "taunt",
+            "path": "assets/dossier_curien/chariot_taunt.png"
+          },
+          {
+            "pose": "finish",
+            "path": "assets/dossier_curien/chariot_finish.png"
+          }
+        ],
+        "count": 11
+      },
+      {
+        "id": "magician",
+        "name": "Magician",
+        "variant": "base",
+        "game": "curien",
+        "missing_named_pose_pngs": [
+          {
+            "pose": "walk1",
+            "path": "assets/dossier_curien/magician_walk1.png"
+          },
+          {
+            "pose": "walk2",
+            "path": "assets/dossier_curien/magician_walk2.png"
+          },
+          {
+            "pose": "jump_rise",
+            "path": "assets/dossier_curien/magician_jump_rise.png"
+          },
+          {
+            "pose": "jump_fall",
+            "path": "assets/dossier_curien/magician_jump_fall.png"
+          },
+          {
+            "pose": "crouch",
+            "path": "assets/dossier_curien/magician_crouch.png"
+          },
+          {
+            "pose": "crouch_guard",
+            "path": "assets/dossier_curien/magician_crouch_guard.png"
+          },
+          {
+            "pose": "block",
+            "path": "assets/dossier_curien/magician_block.png"
+          },
+          {
+            "pose": "throw",
+            "path": "assets/dossier_curien/magician_throw.png"
+          },
+          {
+            "pose": "victory",
+            "path": "assets/dossier_curien/magician_victory.png"
+          },
+          {
+            "pose": "taunt",
+            "path": "assets/dossier_curien/magician_taunt.png"
+          },
+          {
+            "pose": "finish",
+            "path": "assets/dossier_curien/magician_finish.png"
+          }
+        ],
+        "count": 11
+      },
+      {
+        "id": "james",
+        "name": "James Taylor",
+        "variant": "base",
+        "game": "hotd2",
+        "missing_named_pose_pngs": [
+          {
+            "pose": "recovery",
+            "path": "assets/dossier_curien/saga/james_recovery.png"
+          },
+          {
+            "pose": "jump_rise",
+            "path": "assets/dossier_curien/saga/james_jump_rise.png"
+          },
+          {
+            "pose": "jump_fall",
+            "path": "assets/dossier_curien/saga/james_jump_fall.png"
+          },
+          {
+            "pose": "crouch",
+            "path": "assets/dossier_curien/saga/james_crouch.png"
+          },
+          {
+            "pose": "crouch_guard",
+            "path": "assets/dossier_curien/saga/james_crouch_guard.png"
+          },
+          {
+            "pose": "block",
+            "path": "assets/dossier_curien/saga/james_block.png"
+          },
+          {
+            "pose": "throw",
+            "path": "assets/dossier_curien/saga/james_throw.png"
+          },
+          {
+            "pose": "victory",
+            "path": "assets/dossier_curien/saga/james_victory.png"
+          },
+          {
+            "pose": "taunt",
+            "path": "assets/dossier_curien/saga/james_taunt.png"
+          },
+          {
+            "pose": "finish",
+            "path": "assets/dossier_curien/saga/james_finish.png"
+          },
+          {
+            "pose": "reload",
+            "path": "assets/dossier_curien/saga/james_reload.png"
+          }
+        ],
+        "count": 11
+      },
+      {
+        "id": "lisa",
+        "name": "Lisa Rogan",
+        "variant": "base",
+        "game": "hotd3",
+        "missing_named_pose_pngs": [
+          {
+            "pose": "recovery",
+            "path": "assets/dossier_curien/saga/lisa_recovery.png"
+          },
+          {
+            "pose": "jump_rise",
+            "path": "assets/dossier_curien/saga/lisa_jump_rise.png"
+          },
+          {
+            "pose": "jump_fall",
+            "path": "assets/dossier_curien/saga/lisa_jump_fall.png"
+          },
+          {
+            "pose": "crouch",
+            "path": "assets/dossier_curien/saga/lisa_crouch.png"
+          },
+          {
+            "pose": "crouch_guard",
+            "path": "assets/dossier_curien/saga/lisa_crouch_guard.png"
+          },
+          {
+            "pose": "block",
+            "path": "assets/dossier_curien/saga/lisa_block.png"
+          },
+          {
+            "pose": "throw",
+            "path": "assets/dossier_curien/saga/lisa_throw.png"
+          },
+          {
+            "pose": "victory",
+            "path": "assets/dossier_curien/saga/lisa_victory.png"
+          },
+          {
+            "pose": "taunt",
+            "path": "assets/dossier_curien/saga/lisa_taunt.png"
+          },
+          {
+            "pose": "finish",
+            "path": "assets/dossier_curien/saga/lisa_finish.png"
+          },
+          {
+            "pose": "reload",
+            "path": "assets/dossier_curien/saga/lisa_reload.png"
+          }
+        ],
+        "count": 11
+      },
+      {
+        "id": "kate",
+        "name": "Kate Green",
+        "variant": "base",
+        "game": "hotd4",
+        "missing_named_pose_pngs": [
+          {
+            "pose": "recovery",
+            "path": "assets/dossier_curien/saga/kate_recovery.png"
+          },
+          {
+            "pose": "jump_rise",
+            "path": "assets/dossier_curien/saga/kate_jump_rise.png"
+          },
+          {
+            "pose": "jump_fall",
+            "path": "assets/dossier_curien/saga/kate_jump_fall.png"
+          },
+          {
+            "pose": "crouch",
+            "path": "assets/dossier_curien/saga/kate_crouch.png"
+          },
+          {
+            "pose": "crouch_guard",
+            "path": "assets/dossier_curien/saga/kate_crouch_guard.png"
+          },
+          {
+            "pose": "block",
+            "path": "assets/dossier_curien/saga/kate_block.png"
+          },
+          {
+            "pose": "throw",
+            "path": "assets/dossier_curien/saga/kate_throw.png"
+          },
+          {
+            "pose": "victory",
+            "path": "assets/dossier_curien/saga/kate_victory.png"
+          },
+          {
+            "pose": "taunt",
+            "path": "assets/dossier_curien/saga/kate_taunt.png"
+          },
+          {
+            "pose": "finish",
+            "path": "assets/dossier_curien/saga/kate_finish.png"
+          },
+          {
+            "pose": "reload",
+            "path": "assets/dossier_curien/saga/kate_reload.png"
+          }
+        ],
+        "count": 11
+      },
+      {
+        "id": "ryan",
+        "name": "Ryan Taylor",
+        "variant": "base",
+        "game": "scarlet",
+        "missing_named_pose_pngs": [
+          {
+            "pose": "recovery",
+            "path": "assets/dossier_curien/saga/ryan_recovery.png"
+          },
+          {
+            "pose": "jump_rise",
+            "path": "assets/dossier_curien/saga/ryan_jump_rise.png"
+          },
+          {
+            "pose": "jump_fall",
+            "path": "assets/dossier_curien/saga/ryan_jump_fall.png"
+          },
+          {
+            "pose": "crouch",
+            "path": "assets/dossier_curien/saga/ryan_crouch.png"
+          },
+          {
+            "pose": "crouch_guard",
+            "path": "assets/dossier_curien/saga/ryan_crouch_guard.png"
+          },
+          {
+            "pose": "block",
+            "path": "assets/dossier_curien/saga/ryan_block.png"
+          },
+          {
+            "pose": "throw",
+            "path": "assets/dossier_curien/saga/ryan_throw.png"
+          },
+          {
+            "pose": "victory",
+            "path": "assets/dossier_curien/saga/ryan_victory.png"
+          },
+          {
+            "pose": "taunt",
+            "path": "assets/dossier_curien/saga/ryan_taunt.png"
+          },
+          {
+            "pose": "finish",
+            "path": "assets/dossier_curien/saga/ryan_finish.png"
+          },
+          {
+            "pose": "reload",
+            "path": "assets/dossier_curien/saga/ryan_reload.png"
+          }
+        ],
+        "count": 11
+      },
+      {
+        "id": "isaac",
+        "name": "Isaac Washington",
+        "variant": "base",
+        "game": "overkill",
+        "missing_named_pose_pngs": [
+          {
+            "pose": "recovery",
+            "path": "assets/dossier_curien/saga/isaac_recovery.png"
+          },
+          {
+            "pose": "walk1",
+            "path": "assets/dossier_curien/saga/isaac_walk1.png"
+          },
+          {
+            "pose": "walk2",
+            "path": "assets/dossier_curien/saga/isaac_walk2.png"
+          },
+          {
+            "pose": "jump_rise",
+            "path": "assets/dossier_curien/saga/isaac_jump_rise.png"
+          },
+          {
+            "pose": "jump_fall",
+            "path": "assets/dossier_curien/saga/isaac_jump_fall.png"
+          },
+          {
+            "pose": "crouch",
+            "path": "assets/dossier_curien/saga/isaac_crouch.png"
+          },
+          {
+            "pose": "crouch_guard",
+            "path": "assets/dossier_curien/saga/isaac_crouch_guard.png"
+          },
+          {
+            "pose": "block",
+            "path": "assets/dossier_curien/saga/isaac_block.png"
+          },
+          {
+            "pose": "throw",
+            "path": "assets/dossier_curien/saga/isaac_throw.png"
+          },
+          {
+            "pose": "victory",
+            "path": "assets/dossier_curien/saga/isaac_victory.png"
+          },
+          {
+            "pose": "taunt",
+            "path": "assets/dossier_curien/saga/isaac_taunt.png"
+          },
+          {
+            "pose": "finish",
+            "path": "assets/dossier_curien/saga/isaac_finish.png"
+          },
+          {
+            "pose": "reload",
+            "path": "assets/dossier_curien/saga/isaac_reload.png"
+          }
+        ],
+        "count": 13
+      },
+      {
+        "id": "zobio",
+        "name": "Zobio",
+        "variant": "base",
+        "game": "ex",
+        "missing_named_pose_pngs": [
+          {
+            "pose": "recovery",
+            "path": "assets/dossier_curien/saga/zobio_recovery.png"
+          },
+          {
+            "pose": "walk1",
+            "path": "assets/dossier_curien/saga/zobio_walk1.png"
+          },
+          {
+            "pose": "walk2",
+            "path": "assets/dossier_curien/saga/zobio_walk2.png"
+          },
+          {
+            "pose": "jump_rise",
+            "path": "assets/dossier_curien/saga/zobio_jump_rise.png"
+          },
+          {
+            "pose": "jump_fall",
+            "path": "assets/dossier_curien/saga/zobio_jump_fall.png"
+          },
+          {
+            "pose": "crouch",
+            "path": "assets/dossier_curien/saga/zobio_crouch.png"
+          },
+          {
+            "pose": "crouch_guard",
+            "path": "assets/dossier_curien/saga/zobio_crouch_guard.png"
+          },
+          {
+            "pose": "block",
+            "path": "assets/dossier_curien/saga/zobio_block.png"
+          },
+          {
+            "pose": "throw",
+            "path": "assets/dossier_curien/saga/zobio_throw.png"
+          },
+          {
+            "pose": "victory",
+            "path": "assets/dossier_curien/saga/zobio_victory.png"
+          },
+          {
+            "pose": "taunt",
+            "path": "assets/dossier_curien/saga/zobio_taunt.png"
+          },
+          {
+            "pose": "finish",
+            "path": "assets/dossier_curien/saga/zobio_finish.png"
+          }
+        ],
+        "count": 12
+      },
+      {
+        "id": "stick",
+        "name": "Stick Breitling",
+        "variant": "base",
+        "game": "revenge",
+        "missing_named_pose_pngs": [
+          {
+            "pose": "recovery",
+            "path": "assets/dossier_curien/saga/stick_recovery.png"
+          },
+          {
+            "pose": "walk1",
+            "path": "assets/dossier_curien/saga/stick_walk1.png"
+          },
+          {
+            "pose": "walk2",
+            "path": "assets/dossier_curien/saga/stick_walk2.png"
+          },
+          {
+            "pose": "jump_rise",
+            "path": "assets/dossier_curien/saga/stick_jump_rise.png"
+          },
+          {
+            "pose": "jump_fall",
+            "path": "assets/dossier_curien/saga/stick_jump_fall.png"
+          },
+          {
+            "pose": "crouch",
+            "path": "assets/dossier_curien/saga/stick_crouch.png"
+          },
+          {
+            "pose": "crouch_guard",
+            "path": "assets/dossier_curien/saga/stick_crouch_guard.png"
+          },
+          {
+            "pose": "block",
+            "path": "assets/dossier_curien/saga/stick_block.png"
+          },
+          {
+            "pose": "throw",
+            "path": "assets/dossier_curien/saga/stick_throw.png"
+          },
+          {
+            "pose": "victory",
+            "path": "assets/dossier_curien/saga/stick_victory.png"
+          },
+          {
+            "pose": "taunt",
+            "path": "assets/dossier_curien/saga/stick_taunt.png"
+          },
+          {
+            "pose": "finish",
+            "path": "assets/dossier_curien/saga/stick_finish.png"
+          }
+        ],
+        "count": 12
+      },
+      {
+        "id": "hierophant",
+        "name": "Hierophant",
+        "variant": "base",
+        "game": "hotd2",
+        "missing_named_pose_pngs": [
+          {
+            "pose": "recovery",
+            "path": "assets/dossier_curien/saga/hierophant_recovery.png"
+          },
+          {
+            "pose": "walk1",
+            "path": "assets/dossier_curien/saga/hierophant_walk1.png"
+          },
+          {
+            "pose": "walk2",
+            "path": "assets/dossier_curien/saga/hierophant_walk2.png"
+          },
+          {
+            "pose": "jump_rise",
+            "path": "assets/dossier_curien/saga/hierophant_jump_rise.png"
+          },
+          {
+            "pose": "jump_fall",
+            "path": "assets/dossier_curien/saga/hierophant_jump_fall.png"
+          },
+          {
+            "pose": "crouch",
+            "path": "assets/dossier_curien/saga/hierophant_crouch.png"
+          },
+          {
+            "pose": "crouch_guard",
+            "path": "assets/dossier_curien/saga/hierophant_crouch_guard.png"
+          },
+          {
+            "pose": "block",
+            "path": "assets/dossier_curien/saga/hierophant_block.png"
+          },
+          {
+            "pose": "throw",
+            "path": "assets/dossier_curien/saga/hierophant_throw.png"
+          },
+          {
+            "pose": "victory",
+            "path": "assets/dossier_curien/saga/hierophant_victory.png"
+          },
+          {
+            "pose": "taunt",
+            "path": "assets/dossier_curien/saga/hierophant_taunt.png"
+          },
+          {
+            "pose": "finish",
+            "path": "assets/dossier_curien/saga/hierophant_finish.png"
+          }
+        ],
+        "count": 12
+      },
+      {
+        "id": "death",
+        "name": "Death",
+        "variant": "base",
+        "game": "hotd3",
+        "missing_named_pose_pngs": [
+          {
+            "pose": "recovery",
+            "path": "assets/dossier_curien/saga/death_recovery.png"
+          },
+          {
+            "pose": "walk1",
+            "path": "assets/dossier_curien/saga/death_walk1.png"
+          },
+          {
+            "pose": "walk2",
+            "path": "assets/dossier_curien/saga/death_walk2.png"
+          },
+          {
+            "pose": "jump_rise",
+            "path": "assets/dossier_curien/saga/death_jump_rise.png"
+          },
+          {
+            "pose": "jump_fall",
+            "path": "assets/dossier_curien/saga/death_jump_fall.png"
+          },
+          {
+            "pose": "crouch",
+            "path": "assets/dossier_curien/saga/death_crouch.png"
+          },
+          {
+            "pose": "crouch_guard",
+            "path": "assets/dossier_curien/saga/death_crouch_guard.png"
+          },
+          {
+            "pose": "block",
+            "path": "assets/dossier_curien/saga/death_block.png"
+          },
+          {
+            "pose": "throw",
+            "path": "assets/dossier_curien/saga/death_throw.png"
+          },
+          {
+            "pose": "victory",
+            "path": "assets/dossier_curien/saga/death_victory.png"
+          },
+          {
+            "pose": "taunt",
+            "path": "assets/dossier_curien/saga/death_taunt.png"
+          },
+          {
+            "pose": "finish",
+            "path": "assets/dossier_curien/saga/death_finish.png"
+          }
+        ],
+        "count": 12
+      },
+      {
+        "id": "justice",
+        "name": "Justice",
+        "variant": "base",
+        "game": "hotd4",
+        "missing_named_pose_pngs": [
+          {
+            "pose": "recovery",
+            "path": "assets/dossier_curien/saga/justice_recovery.png"
+          },
+          {
+            "pose": "walk1",
+            "path": "assets/dossier_curien/saga/justice_walk1.png"
+          },
+          {
+            "pose": "walk2",
+            "path": "assets/dossier_curien/saga/justice_walk2.png"
+          },
+          {
+            "pose": "jump_rise",
+            "path": "assets/dossier_curien/saga/justice_jump_rise.png"
+          },
+          {
+            "pose": "jump_fall",
+            "path": "assets/dossier_curien/saga/justice_jump_fall.png"
+          },
+          {
+            "pose": "crouch",
+            "path": "assets/dossier_curien/saga/justice_crouch.png"
+          },
+          {
+            "pose": "crouch_guard",
+            "path": "assets/dossier_curien/saga/justice_crouch_guard.png"
+          },
+          {
+            "pose": "block",
+            "path": "assets/dossier_curien/saga/justice_block.png"
+          },
+          {
+            "pose": "throw",
+            "path": "assets/dossier_curien/saga/justice_throw.png"
+          },
+          {
+            "pose": "victory",
+            "path": "assets/dossier_curien/saga/justice_victory.png"
+          },
+          {
+            "pose": "taunt",
+            "path": "assets/dossier_curien/saga/justice_taunt.png"
+          },
+          {
+            "pose": "finish",
+            "path": "assets/dossier_curien/saga/justice_finish.png"
+          }
+        ],
+        "count": 12
+      },
+      {
+        "id": "jasper",
+        "name": "Jasper Guns",
+        "variant": "base",
+        "game": "overkill",
+        "missing_named_pose_pngs": [
+          {
+            "pose": "recovery",
+            "path": "assets/dossier_curien/saga/jasper_recovery.png"
+          },
+          {
+            "pose": "walk1",
+            "path": "assets/dossier_curien/saga/jasper_walk1.png"
+          },
+          {
+            "pose": "walk2",
+            "path": "assets/dossier_curien/saga/jasper_walk2.png"
+          },
+          {
+            "pose": "jump_rise",
+            "path": "assets/dossier_curien/saga/jasper_jump_rise.png"
+          },
+          {
+            "pose": "jump_fall",
+            "path": "assets/dossier_curien/saga/jasper_jump_fall.png"
+          },
+          {
+            "pose": "crouch",
+            "path": "assets/dossier_curien/saga/jasper_crouch.png"
+          },
+          {
+            "pose": "crouch_guard",
+            "path": "assets/dossier_curien/saga/jasper_crouch_guard.png"
+          },
+          {
+            "pose": "block",
+            "path": "assets/dossier_curien/saga/jasper_block.png"
+          },
+          {
+            "pose": "throw",
+            "path": "assets/dossier_curien/saga/jasper_throw.png"
+          },
+          {
+            "pose": "victory",
+            "path": "assets/dossier_curien/saga/jasper_victory.png"
+          },
+          {
+            "pose": "taunt",
+            "path": "assets/dossier_curien/saga/jasper_taunt.png"
+          },
+          {
+            "pose": "finish",
+            "path": "assets/dossier_curien/saga/jasper_finish.png"
+          }
+        ],
+        "count": 12
+      },
+      {
+        "id": "zobiko",
+        "name": "Zobiko",
+        "variant": "base",
+        "game": "ex",
+        "missing_named_pose_pngs": [
+          {
+            "pose": "recovery",
+            "path": "assets/dossier_curien/saga/zobiko_recovery.png"
+          },
+          {
+            "pose": "walk1",
+            "path": "assets/dossier_curien/saga/zobiko_walk1.png"
+          },
+          {
+            "pose": "walk2",
+            "path": "assets/dossier_curien/saga/zobiko_walk2.png"
+          },
+          {
+            "pose": "jump_rise",
+            "path": "assets/dossier_curien/saga/zobiko_jump_rise.png"
+          },
+          {
+            "pose": "jump_fall",
+            "path": "assets/dossier_curien/saga/zobiko_jump_fall.png"
+          },
+          {
+            "pose": "crouch",
+            "path": "assets/dossier_curien/saga/zobiko_crouch.png"
+          },
+          {
+            "pose": "crouch_guard",
+            "path": "assets/dossier_curien/saga/zobiko_crouch_guard.png"
+          },
+          {
+            "pose": "block",
+            "path": "assets/dossier_curien/saga/zobiko_block.png"
+          },
+          {
+            "pose": "throw",
+            "path": "assets/dossier_curien/saga/zobiko_throw.png"
+          },
+          {
+            "pose": "victory",
+            "path": "assets/dossier_curien/saga/zobiko_victory.png"
+          },
+          {
+            "pose": "taunt",
+            "path": "assets/dossier_curien/saga/zobiko_taunt.png"
+          },
+          {
+            "pose": "finish",
+            "path": "assets/dossier_curien/saga/zobiko_finish.png"
+          }
+        ],
+        "count": 12
+      },
+      {
+        "id": "rikiya",
+        "name": "Rikiya Busujima",
+        "variant": "base",
+        "game": "revenge",
+        "missing_named_pose_pngs": [
+          {
+            "pose": "recovery",
+            "path": "assets/dossier_curien/saga/rikiya_recovery.png"
+          },
+          {
+            "pose": "walk1",
+            "path": "assets/dossier_curien/saga/rikiya_walk1.png"
+          },
+          {
+            "pose": "walk2",
+            "path": "assets/dossier_curien/saga/rikiya_walk2.png"
+          },
+          {
+            "pose": "jump_rise",
+            "path": "assets/dossier_curien/saga/rikiya_jump_rise.png"
+          },
+          {
+            "pose": "jump_fall",
+            "path": "assets/dossier_curien/saga/rikiya_jump_fall.png"
+          },
+          {
+            "pose": "crouch",
+            "path": "assets/dossier_curien/saga/rikiya_crouch.png"
+          },
+          {
+            "pose": "crouch_guard",
+            "path": "assets/dossier_curien/saga/rikiya_crouch_guard.png"
+          },
+          {
+            "pose": "block",
+            "path": "assets/dossier_curien/saga/rikiya_block.png"
+          },
+          {
+            "pose": "throw",
+            "path": "assets/dossier_curien/saga/rikiya_throw.png"
+          },
+          {
+            "pose": "victory",
+            "path": "assets/dossier_curien/saga/rikiya_victory.png"
+          },
+          {
+            "pose": "taunt",
+            "path": "assets/dossier_curien/saga/rikiya_taunt.png"
+          },
+          {
+            "pose": "finish",
+            "path": "assets/dossier_curien/saga/rikiya_finish.png"
+          }
+        ],
+        "count": 12
+      },
+      {
+        "id": "emperor",
+        "name": "Emperor",
+        "variant": "base",
+        "game": "hotd2",
+        "missing_named_pose_pngs": [
+          {
+            "pose": "recovery",
+            "path": "assets/dossier_curien/saga/emperor_recovery.png"
+          },
+          {
+            "pose": "walk1",
+            "path": "assets/dossier_curien/saga/emperor_walk1.png"
+          },
+          {
+            "pose": "walk2",
+            "path": "assets/dossier_curien/saga/emperor_walk2.png"
+          },
+          {
+            "pose": "jump_rise",
+            "path": "assets/dossier_curien/saga/emperor_jump_rise.png"
+          },
+          {
+            "pose": "jump_fall",
+            "path": "assets/dossier_curien/saga/emperor_jump_fall.png"
+          },
+          {
+            "pose": "crouch",
+            "path": "assets/dossier_curien/saga/emperor_crouch.png"
+          },
+          {
+            "pose": "crouch_guard",
+            "path": "assets/dossier_curien/saga/emperor_crouch_guard.png"
+          },
+          {
+            "pose": "block",
+            "path": "assets/dossier_curien/saga/emperor_block.png"
+          },
+          {
+            "pose": "throw",
+            "path": "assets/dossier_curien/saga/emperor_throw.png"
+          },
+          {
+            "pose": "victory",
+            "path": "assets/dossier_curien/saga/emperor_victory.png"
+          },
+          {
+            "pose": "taunt",
+            "path": "assets/dossier_curien/saga/emperor_taunt.png"
+          },
+          {
+            "pose": "finish",
+            "path": "assets/dossier_curien/saga/emperor_finish.png"
+          }
+        ],
+        "count": 12
+      },
+      {
+        "id": "wheel",
+        "name": "Wheel of Fate",
+        "variant": "base",
+        "game": "hotd3",
+        "missing_named_pose_pngs": [
+          {
+            "pose": "recovery",
+            "path": "assets/dossier_curien/saga/wheel_recovery.png"
+          },
+          {
+            "pose": "walk1",
+            "path": "assets/dossier_curien/saga/wheel_walk1.png"
+          },
+          {
+            "pose": "walk2",
+            "path": "assets/dossier_curien/saga/wheel_walk2.png"
+          },
+          {
+            "pose": "jump_rise",
+            "path": "assets/dossier_curien/saga/wheel_jump_rise.png"
+          },
+          {
+            "pose": "jump_fall",
+            "path": "assets/dossier_curien/saga/wheel_jump_fall.png"
+          },
+          {
+            "pose": "crouch",
+            "path": "assets/dossier_curien/saga/wheel_crouch.png"
+          },
+          {
+            "pose": "crouch_guard",
+            "path": "assets/dossier_curien/saga/wheel_crouch_guard.png"
+          },
+          {
+            "pose": "block",
+            "path": "assets/dossier_curien/saga/wheel_block.png"
+          },
+          {
+            "pose": "throw",
+            "path": "assets/dossier_curien/saga/wheel_throw.png"
+          },
+          {
+            "pose": "victory",
+            "path": "assets/dossier_curien/saga/wheel_victory.png"
+          },
+          {
+            "pose": "taunt",
+            "path": "assets/dossier_curien/saga/wheel_taunt.png"
+          },
+          {
+            "pose": "finish",
+            "path": "assets/dossier_curien/saga/wheel_finish.png"
+          }
+        ],
+        "count": 12
+      },
+      {
+        "id": "gary",
+        "name": "Gary Stewart",
+        "variant": "base",
+        "game": "hotd2",
+        "missing_named_pose_pngs": [
+          {
+            "pose": "recovery",
+            "path": "assets/dossier_curien/saga/gary_recovery.png"
+          },
+          {
+            "pose": "jump_rise",
+            "path": "assets/dossier_curien/saga/gary_jump_rise.png"
+          },
+          {
+            "pose": "jump_fall",
+            "path": "assets/dossier_curien/saga/gary_jump_fall.png"
+          },
+          {
+            "pose": "crouch",
+            "path": "assets/dossier_curien/saga/gary_crouch.png"
+          },
+          {
+            "pose": "crouch_guard",
+            "path": "assets/dossier_curien/saga/gary_crouch_guard.png"
+          },
+          {
+            "pose": "block",
+            "path": "assets/dossier_curien/saga/gary_block.png"
+          },
+          {
+            "pose": "throw",
+            "path": "assets/dossier_curien/saga/gary_throw.png"
+          },
+          {
+            "pose": "victory",
+            "path": "assets/dossier_curien/saga/gary_victory.png"
+          },
+          {
+            "pose": "taunt",
+            "path": "assets/dossier_curien/saga/gary_taunt.png"
+          },
+          {
+            "pose": "finish",
+            "path": "assets/dossier_curien/saga/gary_finish.png"
+          },
+          {
+            "pose": "reload",
+            "path": "assets/dossier_curien/saga/gary_reload.png"
+          }
+        ],
+        "count": 11
+      },
+      {
+        "id": "daniel",
+        "name": "Daniel Curien",
+        "variant": "base",
+        "game": "hotd3",
+        "missing_named_pose_pngs": [
+          {
+            "pose": "recovery",
+            "path": "assets/dossier_curien/saga/daniel_recovery.png"
+          },
+          {
+            "pose": "jump_rise",
+            "path": "assets/dossier_curien/saga/daniel_jump_rise.png"
+          },
+          {
+            "pose": "jump_fall",
+            "path": "assets/dossier_curien/saga/daniel_jump_fall.png"
+          },
+          {
+            "pose": "crouch",
+            "path": "assets/dossier_curien/saga/daniel_crouch.png"
+          },
+          {
+            "pose": "crouch_guard",
+            "path": "assets/dossier_curien/saga/daniel_crouch_guard.png"
+          },
+          {
+            "pose": "block",
+            "path": "assets/dossier_curien/saga/daniel_block.png"
+          },
+          {
+            "pose": "throw",
+            "path": "assets/dossier_curien/saga/daniel_throw.png"
+          },
+          {
+            "pose": "victory",
+            "path": "assets/dossier_curien/saga/daniel_victory.png"
+          },
+          {
+            "pose": "taunt",
+            "path": "assets/dossier_curien/saga/daniel_taunt.png"
+          },
+          {
+            "pose": "finish",
+            "path": "assets/dossier_curien/saga/daniel_finish.png"
+          },
+          {
+            "pose": "reload",
+            "path": "assets/dossier_curien/saga/daniel_reload.png"
+          }
+        ],
+        "count": 11
+      },
+      {
+        "id": "world",
+        "name": "The World",
+        "variant": "base",
+        "game": "hotd4",
+        "missing_named_pose_pngs": [
+          {
+            "pose": "recovery",
+            "path": "assets/dossier_curien/saga/world_recovery.png"
+          },
+          {
+            "pose": "walk1",
+            "path": "assets/dossier_curien/saga/world_walk1.png"
+          },
+          {
+            "pose": "walk2",
+            "path": "assets/dossier_curien/saga/world_walk2.png"
+          },
+          {
+            "pose": "jump_rise",
+            "path": "assets/dossier_curien/saga/world_jump_rise.png"
+          },
+          {
+            "pose": "jump_fall",
+            "path": "assets/dossier_curien/saga/world_jump_fall.png"
+          },
+          {
+            "pose": "crouch",
+            "path": "assets/dossier_curien/saga/world_crouch.png"
+          },
+          {
+            "pose": "crouch_guard",
+            "path": "assets/dossier_curien/saga/world_crouch_guard.png"
+          },
+          {
+            "pose": "block",
+            "path": "assets/dossier_curien/saga/world_block.png"
+          },
+          {
+            "pose": "throw",
+            "path": "assets/dossier_curien/saga/world_throw.png"
+          },
+          {
+            "pose": "victory",
+            "path": "assets/dossier_curien/saga/world_victory.png"
+          },
+          {
+            "pose": "taunt",
+            "path": "assets/dossier_curien/saga/world_taunt.png"
+          },
+          {
+            "pose": "finish",
+            "path": "assets/dossier_curien/saga/world_finish.png"
+          }
+        ],
+        "count": 12
+      },
+      {
+        "id": "moon",
+        "name": "Moon",
+        "variant": "base",
+        "game": "scarlet",
+        "missing_named_pose_pngs": [
+          {
+            "pose": "recovery",
+            "path": "assets/dossier_curien/saga/moon_recovery.png"
+          },
+          {
+            "pose": "walk1",
+            "path": "assets/dossier_curien/saga/moon_walk1.png"
+          },
+          {
+            "pose": "walk2",
+            "path": "assets/dossier_curien/saga/moon_walk2.png"
+          },
+          {
+            "pose": "jump_rise",
+            "path": "assets/dossier_curien/saga/moon_jump_rise.png"
+          },
+          {
+            "pose": "jump_fall",
+            "path": "assets/dossier_curien/saga/moon_jump_fall.png"
+          },
+          {
+            "pose": "crouch",
+            "path": "assets/dossier_curien/saga/moon_crouch.png"
+          },
+          {
+            "pose": "crouch_guard",
+            "path": "assets/dossier_curien/saga/moon_crouch_guard.png"
+          },
+          {
+            "pose": "block",
+            "path": "assets/dossier_curien/saga/moon_block.png"
+          },
+          {
+            "pose": "throw",
+            "path": "assets/dossier_curien/saga/moon_throw.png"
+          },
+          {
+            "pose": "victory",
+            "path": "assets/dossier_curien/saga/moon_victory.png"
+          },
+          {
+            "pose": "taunt",
+            "path": "assets/dossier_curien/saga/moon_taunt.png"
+          },
+          {
+            "pose": "finish",
+            "path": "assets/dossier_curien/saga/moon_finish.png"
+          }
+        ],
+        "count": 12
+      },
+      {
+        "id": "kate_soiree",
+        "name": "Kate Green",
+        "variant": "Scarlet Dawn — réception",
+        "game": "hotd4",
+        "missing_named_pose_pngs": [
+          {
+            "pose": "recovery",
+            "path": "assets/dossier_curien/saga/kate_soiree_recovery.png"
+          },
+          {
+            "pose": "jump_rise",
+            "path": "assets/dossier_curien/saga/kate_soiree_jump_rise.png"
+          },
+          {
+            "pose": "jump_fall",
+            "path": "assets/dossier_curien/saga/kate_soiree_jump_fall.png"
+          },
+          {
+            "pose": "crouch",
+            "path": "assets/dossier_curien/saga/kate_soiree_crouch.png"
+          },
+          {
+            "pose": "crouch_guard",
+            "path": "assets/dossier_curien/saga/kate_soiree_crouch_guard.png"
+          },
+          {
+            "pose": "block",
+            "path": "assets/dossier_curien/saga/kate_soiree_block.png"
+          },
+          {
+            "pose": "throw",
+            "path": "assets/dossier_curien/saga/kate_soiree_throw.png"
+          },
+          {
+            "pose": "victory",
+            "path": "assets/dossier_curien/saga/kate_soiree_victory.png"
+          },
+          {
+            "pose": "taunt",
+            "path": "assets/dossier_curien/saga/kate_soiree_taunt.png"
+          },
+          {
+            "pose": "finish",
+            "path": "assets/dossier_curien/saga/kate_soiree_finish.png"
+          },
+          {
+            "pose": "reload",
+            "path": "assets/dossier_curien/saga/kate_soiree_reload.png"
+          }
+        ],
+        "count": 11
+      },
+      {
+        "id": "ryan_soiree",
+        "name": "Ryan Taylor",
+        "variant": "Scarlet Dawn — réception",
+        "game": "scarlet",
+        "missing_named_pose_pngs": [
+          {
+            "pose": "recovery",
+            "path": "assets/dossier_curien/saga/ryan_soiree_recovery.png"
+          },
+          {
+            "pose": "jump_rise",
+            "path": "assets/dossier_curien/saga/ryan_soiree_jump_rise.png"
+          },
+          {
+            "pose": "jump_fall",
+            "path": "assets/dossier_curien/saga/ryan_soiree_jump_fall.png"
+          },
+          {
+            "pose": "crouch",
+            "path": "assets/dossier_curien/saga/ryan_soiree_crouch.png"
+          },
+          {
+            "pose": "crouch_guard",
+            "path": "assets/dossier_curien/saga/ryan_soiree_crouch_guard.png"
+          },
+          {
+            "pose": "block",
+            "path": "assets/dossier_curien/saga/ryan_soiree_block.png"
+          },
+          {
+            "pose": "throw",
+            "path": "assets/dossier_curien/saga/ryan_soiree_throw.png"
+          },
+          {
+            "pose": "victory",
+            "path": "assets/dossier_curien/saga/ryan_soiree_victory.png"
+          },
+          {
+            "pose": "taunt",
+            "path": "assets/dossier_curien/saga/ryan_soiree_taunt.png"
+          },
+          {
+            "pose": "finish",
+            "path": "assets/dossier_curien/saga/ryan_soiree_finish.png"
+          },
+          {
+            "pose": "reload",
+            "path": "assets/dossier_curien/saga/ryan_soiree_reload.png"
+          }
+        ],
+        "count": 11
+      }
+    ],
+    "linda": {
+      "id": "linda",
+      "name": "Linda Rotta",
+      "variant": "base",
+      "game": "zombie_revenge",
+      "present_or_produced_poses": [
+        "guard",
+        "windup",
+        "contact",
+        "recovery",
+        "recoil",
+        "walk1",
+        "walk2",
+        "crouch",
+        "crouch_guard",
+        "slide_contact"
+      ],
+      "missing_named_pose_pngs": [
+        {
+          "pose": "jump_rise",
+          "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_jump_rise.png"
+        },
+        {
+          "pose": "jump_fall",
+          "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_jump_fall.png"
+        },
+        {
+          "pose": "block",
+          "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_block.png"
+        },
+        {
+          "pose": "throw",
+          "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_throw.png"
+        },
+        {
+          "pose": "victory",
+          "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_victory.png"
+        },
+        {
+          "pose": "taunt",
+          "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_taunt.png"
+        },
+        {
+          "pose": "finish",
+          "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_finish.png"
+        },
+        {
+          "pose": "reload",
+          "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_reload.png"
+        }
+      ],
+      "count": 8,
+      "note": "Dix dessins disponibles : garde et neuf poses supplémentaires, dont trois vraies poses basses. Accroupissement et garde accroupie réduisent le minimum manquant de deux fichiers ; slide_contact est une action supplémentaire hors du minimum antérieur. Les transitions et images intermédiaires restent à produire."
+    }
+  },
+  "character_followups": [
+    {
+      "id": "gil",
+      "name": "Gil",
+      "status": "reference_apparence_absente",
+      "remaining": "Présence nominale référencée ; aucune apparence assez vérifiée pour produire un sprite individuel fidèle. Réunir la référence avant génération.",
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/The_House_of_the_Dead_(episode)",
+        "https://thehouseofthedead.fandom.com/wiki/ZED"
+      ]
+    },
+    {
+      "id": "world_ex",
+      "name": "The World — variante EX",
+      "status": "representation_ex_absente",
+      "remaining": "Documenter la représentation spécifique EX et produire une illustration. Le World de HOTD4 déjà jouable ne valide pas la variante EX.",
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/The_World"
+      ]
+    }
+  ],
+  "costumes": {
+    "registered_variants": [
+      "kate_soiree",
+      "ryan_soiree"
+    ],
+    "new_alternate_costumes_in_this_wave": 0,
+    "original_design_corrections": [
+      "zobio_ex_guard_v2",
+      "zobiko_ex_guard_v2"
+    ],
+    "open_items": [
+      "Compléter les poses des deux tenues de réception.",
+      "Établir l’inventaire documenté des couleurs/variantes 2P et 3P de Zombie Revenge avant d’en annoncer le nombre et la couverture.",
+      "Vérifier chaque variante contre le jeu et rattacher ses animations, palettes, portraits et éléments séparés."
+    ],
+    "leads": [
+      "https://sesesega.hatenablog.jp/entry/zombierevenge"
+    ],
+    "scope_note": "La correction d’un costume original ne constitue pas une nouvelle tenue alternative."
+  },
+  "stages_and_parts": {
+    "registered_arenas": 18,
+    "missing_painted_layers_in_existing_scope": 0,
+    "new_arenas_this_wave": 0,
+    "new_detachable_parts_this_wave": 0,
+    "remaining": [
+      "Étendre les niveaux et épreuves de Zombie Revenge et EX au-delà des arènes de duel déjà enregistrées.",
+      "Pour toute nouvelle arène : référence, fond, plans intermédiaire et avant-plan, sol jouable, limites et validation de la caméra.",
+      "Continuer les accessoires et pièces détachées après définition de leurs usages ; les 2 pièces Lisa et 5 accessoires répertoriés précédemment ne forment pas une couverture globale."
+    ],
+    "note": "Zéro calque manquant porte uniquement sur le périmètre des arènes enregistrées ; il ne signifie pas tous les niveaux de la franchise terminés."
+  },
+  "animation_and_runtime_remaining": [
+    "Dessiner les images intermédiaires et transitions de marche, garde, saut, attaques, impacts, chutes, projections, victoire et finishers.",
+    "Créer les contrôles, attaques, comportements, collisions, sons et effets nécessaires avant de convertir les fiches de boss/ennemis en rencontres jouables.",
+    "Valider pivots, pieds, échelle, cohérence anatomique et orientation image par image.",
+    "Distinguer toutes les illustrations de bestiaire des combattants disposant effectivement de leur profil de jeu."
+  ],
+  "historical_masters": {
+    "unavailable_count": 204,
+    "recovered_in_this_wave": 0,
+    "status": "absents_de_l_environnement_disponible",
+    "evidence": "docs/dossier_curien/saga/production/recovered_2026-11-19/RECOVERY_INVENTORY.json"
+  },
+  "publication": {
+    "status": "blocked_by_automatic_review",
+    "remote_update_confirmed": false,
+    "note": "Automatic approval review rejected exporting local code and generated assets to the GitHub destination because explicit end-user authorization was judged insufficient. No alternative publication path was attempted.",
+    "repository": "darknigthmare/the-house-of-the-dead-25d",
+    "branch": "feat/dossier-curien-combat",
+    "pull_request": 2,
+    "last_observed_remote_commit": "1586e4c9aee3fe4b20214303e1d098cff24cde5d"
+  },
+  "finalization": {
+    "status": "local_delivery_ready_native_passed_web_environment_blocked",
+    "manifest_final_count": 49,
+    "gallery_final_count": 40,
+    "tests": [
+      {
+        "name": "npm test",
+        "status": "passed",
+        "exit_code": 0,
+        "log_basename": "qa-final-npm.log",
+        "expansion_png_verified": 49,
+        "expansion_self_tests_passed": 10,
+        "log_path": "qa_logs/qa-final-npm.txt"
+      },
+      {
+        "name": "Dossier Curien smoke",
+        "status": "passed",
+        "exit_code": 0,
+        "log_basename": "qa-final-curien.log",
+        "failures": 0,
+        "warnings": [
+          "Three ObjectDB instances reported at process exit; functional suite still reports zero failures."
+        ],
+        "log_path": "qa_logs/qa-final-curien.txt"
+      },
+      {
+        "name": "Dossier Saga",
+        "status": "passed",
+        "exit_code": 0,
+        "log_basename": "qa-final-saga.log",
+        "checks": 807,
+        "failures": 0,
+        "log_path": "qa_logs/qa-final-saga.txt"
+      },
+      {
+        "name": "Saga Expansion",
+        "status": "passed",
+        "exit_code": 0,
+        "log_basename": "qa-final-expansion.log",
+        "checks": 124,
+        "failures": 0,
+        "log_path": "qa_logs/qa-final-expansion.txt"
+      },
+      {
+        "name": "Atelier technique",
+        "status": "passed",
+        "exit_code": 0,
+        "log_basename": "qa-final-lab.log",
+        "exercises": 72,
+        "exercises_passed": 72,
+        "checks": 229,
+        "failures": 0,
+        "log_path": "qa_logs/qa-final-lab.txt"
+      }
+    ],
+    "remote_commit": null,
+    "manifest_total_bytes": 65651752,
+    "expansion_verification": {
+      "command": "npm run qa:curien-expansion",
+      "status": "passed",
+      "png_verified": 49,
+      "gallery_entries": 40,
+      "self_tests_passed": 10,
+      "checks": [
+        "SHA-256",
+        "taille",
+        "dimensions",
+        "limites alpha",
+        "références",
+        "chemins sûrs",
+        "unicité fichier/entrée",
+        "métadonnées de galerie"
+      ],
+      "evidence": "Résultat dans qa-final-npm.log, cohérent avec le manifeste final."
+    },
+    "native_visual_review": {
+      "status": "passed",
+      "report": "CAPTURE_PROTOCOL.md",
+      "evidence": "VISUAL_QA.json",
+      "captures": 8,
+      "final_pack_low_poses_tested": 3,
+      "standing_damage": 10,
+      "slide_damage": 12,
+      "slide_ammo_before": 8,
+      "slide_ammo_after": 7,
+      "audio_listening_tested": false
+    },
+    "web_review": {
+      "status": "blocked_by_environment_before_game_start",
+      "error": "WebGL2 unavailable",
+      "reload_attempts": 1,
+      "evidence": "qa_web/webgl2-unavailable.jpg",
+      "gameplay_validated": false,
+      "windows_launcher_executed": false
+    },
+    "pack": {
+      "filename": "HOTD_Anthologie_final.pck",
+      "sha256": "690ebbb7f1c82cc9954ac474ff5b87e9e8a6b29f6fb714ae698ab4c71c7733a3",
+      "bytes": 95935632,
+      "status": "passed",
+      "engine": "4.7.1",
+      "checks": 673,
+      "failures": 0,
+      "loaded_textures": 49,
+      "loaded_gallery_entries": 40,
+      "report": "docs/dossier_curien/saga/production/expansion_2026-11-19/PACK_QA.json",
+      "log_basename": "qa-final-pack.log",
+      "main_scene": "res://demo.tscn",
+      "ui_instantiated": false,
+      "raw_png_bytes_required": false,
+      "fragments": 27,
+      "fragment_assembly_verified": true,
+      "web_pck_hash_matches": true
+    },
+    "local_commit_receipt": "The full delivery commit SHA is recorded in the delivery receipt generated after committing these files."
+  },
+  "quality_reviews": [
+    {
+      "ids": [
+        "justice_ex",
+        "star_ex",
+        "empress_ex"
+      ],
+      "status": "reference_visuelle_a_confirmer",
+      "remaining": "Comparer les variantes EX à des captures du jeu. Les premières reconstructions étaient fondées sur des descriptions."
+    },
+    {
+      "ids": [
+        "hedlin"
+      ],
+      "status": "details_anatomiques_a_recouper",
+      "remaining": "Confirmer les membres et proportions sur une référence plus lisible ; ne pas confondre cet ennemi avec Warm Hedlin et Shell Hedlin."
+    },
+    {
+      "ids": [
+        "nikelle",
+        "warm_hedlin",
+        "shell_hedlin"
+      ],
+      "status": "reference_visuelle_a_confirmer",
+      "remaining": "Les maîtres sont produits depuis des captures et storyboards basse résolution. Contrôler les détails fins sur une référence plus définie."
+    },
+    {
+      "ids": [
+        "uds06b"
+      ],
+      "status": "provenance_du_prompt_incomplete",
+      "remaining": "Le maître a été identifié contre la capture conservée ; son prompt original reste introuvable."
+    },
+    {
+      "ids": [
+        "zobio_ex_guard_v2",
+        "zobiko_ex_guard_v2"
+      ],
+      "status": "coherence_avec_les_poses_jouables_a_etendre",
+      "remaining": "Reporter les corrections du costume original sur les autres poses de combat ; la présence des nouvelles gardes dans le bestiaire ne remplace pas automatiquement toutes les anciennes poses."
+    },
+    {
+      "ids": [
+        "uds04c",
+        "neclien"
+      ],
+      "status": "controle_alpha_reussi",
+      "remaining": "Aucun défaut de détourage visible ni rognage anatomique confirmé après composition RGBA. Conserver la distinction entre RGB caché et alpha visible."
+    }
+  ],
+  "initial_observation_before_consolidation": {
+    "expansion_png": 23,
+    "manifest_entries": 23,
+    "manifest_gallery_entries": 23,
+    "combatant_profiles_in_code": 24,
+    "chronicles_in_code": 9,
+    "alternate_stories_in_code": 14,
+    "story_routes_in_code": 26,
+    "validation_status": "Les compteurs de code sont vérifiés par lecture ; validation finale du lot à compléter."
+  },
+  "story_route_count_explanation": {
+    "chronicles_total": 9,
+    "manor_chronicle": 1,
+    "manor_routes": 4,
+    "other_chronicles": 8,
+    "lead_routes_in_other_chronicles": 8,
+    "alternate_routes": 14,
+    "formula": "4 + (9 - 1) + 14 = 26",
+    "note": "La Chronique du manoir est comprise dans les neuf ; ses quatre parcours remplacent son parcours principal dans ce calcul."
+  },
+  "pre_low_pose_consolidation": {
+    "expansion_png": 46,
+    "manifest_entries": 46,
+    "manifest_gallery_entries": 40,
+    "combatant_profiles_in_code": 24,
+    "chronicles_in_code": 9,
+    "alternate_stories_in_code": 14,
+    "story_routes_in_code": 26,
+    "validation_status": "Manifeste consolidé ; npm run qa:curien-expansion réussi sur 46 PNG, suivi de dix auto-tests réussis. Tests globaux et paquet encore à renseigner.",
+    "expansion_bytes": 60944009,
+    "gallery_hidden_pose_png": 6,
+    "dossier_total_png": 299
+  }
+}

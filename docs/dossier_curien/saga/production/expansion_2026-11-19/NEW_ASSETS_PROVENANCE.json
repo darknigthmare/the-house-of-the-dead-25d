@@ -1,0 +1,696 @@
+{
+  "date": "2026-11-19",
+  "generated_assets": 26,
+  "one_subject_per_image": true,
+  "assets": [
+    {
+      "id": "biff",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/biff_base.png",
+      "sha256": "ba0e4b620d7adc1c41f0d81105e819ad43bcb889caf8c8645eee4d6c0837ea4a",
+      "bytes": 909621,
+      "tool": "image_gen__imagegen",
+      "transparent_background": true,
+      "generation_file": "exec-5b2ba8a0-59fb-47c6-93a0-29e92df6a7fe.png",
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_enemies/biff_reference.png"
+      ],
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge_Perfect_Guide",
+        "https://thehouseofthedead.fandom.com/wiki/List_of_zombies_in_Zombie_Revenge",
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge"
+      ],
+      "source_notes": [
+        "Zombie Revenge Perfect Guide, pages 30–33; original game model references"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: ONE isolated static enemy sprite for House of the Dead 2D. Redraw the supplied original Zombie Revenge Perfect Guide creature reference as a faithful detailed hand-painted 2D arcade fighting sprite. The input is the canonical identity reference. Preserve the exact anatomy, clothing, proportions, equipment and colors visible in the reference. Adapt only the medium and pose to one lateral three-quarter view facing RIGHT, readable neutral threatening stance. One character per image, complete from head to feet or all creature extremities. Keep generous 9% transparent margin on ALL four sides; nothing touches canvas edges. Genuine transparent RGBA background. Controlled crisp outlines and material shading, original arcade proportions, no redesign, not photorealism and not a 3D render. No scene, floor, cast shadow, smoke, letters, label, border, collage, second pose, particles or watermark. All weapons and limbs entirely visible. Male zombie with pale green-gray skin and slick short brown hair. Torn sleeveless turquoise-blue vest open over dirty pale torso; preserve the vest's deep V and frayed hem. Thin tall body, dark indigo-violet trousers with broad worn pale patches at thighs and knees, dark burgundy shoes. Exposed discolored arms, open hands. No weapon.",
+      "limitations": [
+        "Adaptation 2D depuis le modèle du guide original, inspection du cadrage et de la silhouette effectuée ; fidélité exacte 1:1 non certifiée.",
+        "Dessin statique individuel. Cycle de marche, attaques, réactions et comportement de combat encore à produire."
+      ],
+      "status": "generated_reference_reviewed"
+    },
+    {
+      "id": "ebitan",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/ebitan_base.png",
+      "sha256": "f8ca05c39573f0fb06e921c937630d410d9996f829cad82ef0df06fac1c1d6c8",
+      "bytes": 619487,
+      "tool": "image_gen__imagegen",
+      "transparent_background": true,
+      "generation_file": "exec-5b7c1083-2084-4fc8-94a3-28779e3533c1.png",
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_enemies/ebitan_reference.png"
+      ],
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge_Perfect_Guide",
+        "https://thehouseofthedead.fandom.com/wiki/List_of_zombies_in_Zombie_Revenge",
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge"
+      ],
+      "source_notes": [
+        "Zombie Revenge Perfect Guide, pages 30–33; original game model references"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: ONE isolated static enemy sprite for House of the Dead 2D. Redraw the supplied original Zombie Revenge Perfect Guide creature reference as a faithful detailed hand-painted 2D arcade fighting sprite. The input is the canonical identity reference. Preserve the exact anatomy, clothing, proportions, equipment and colors visible in the reference. Adapt only the medium and pose to one lateral three-quarter view facing RIGHT, readable neutral threatening stance. One character per image, complete from head to feet or all creature extremities. Keep generous 9% transparent margin on ALL four sides; nothing touches canvas edges. Genuine transparent RGBA background. Controlled crisp outlines and material shading, original arcade proportions, no redesign, not photorealism and not a 3D render. No scene, floor, cast shadow, smoke, letters, label, border, collage, second pose, particles or watermark. All weapons and limbs entirely visible. Very thin humanoid swamp zombie entirely covered in mottled dark olive mossy-green slime, smooth bald green head with shadowed facial features. Bare torso and very ragged dark green trousers ending unevenly below knees; bare green feet, raised crooked forearms. Preserve the lean silhouette, not a muscular monster, no horns or equipment.",
+      "limitations": [
+        "Adaptation 2D depuis le modèle du guide original, inspection du cadrage et de la silhouette effectuée ; fidélité exacte 1:1 non certifiée.",
+        "Dessin statique individuel. Cycle de marche, attaques, réactions et comportement de combat encore à produire."
+      ],
+      "status": "generated_reference_reviewed"
+    },
+    {
+      "id": "factory_worker_2",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/factory_worker_2_base.png",
+      "sha256": "6327bc22d8e5e3fbdfbe989a07ea0754226c7bef197aba8b523b4664eac018b3",
+      "bytes": 1005612,
+      "tool": "image_gen__imagegen",
+      "transparent_background": true,
+      "generation_file": "exec-6289d979-5684-4680-b494-77f51208a3e2.png",
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_enemies/factory_worker_2_reference.png"
+      ],
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge_Perfect_Guide",
+        "https://thehouseofthedead.fandom.com/wiki/List_of_zombies_in_Zombie_Revenge",
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge"
+      ],
+      "source_notes": [
+        "Zombie Revenge Perfect Guide, pages 30–33; original game model references"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: ONE isolated static enemy sprite for House of the Dead 2D. Redraw the supplied original Zombie Revenge Perfect Guide creature reference as a faithful detailed hand-painted 2D arcade fighting sprite. The input is the canonical identity reference. Preserve the exact anatomy, clothing, proportions, equipment and colors visible in the reference. Adapt only the medium and pose to one lateral three-quarter view facing RIGHT, readable neutral threatening stance. One character per image, complete from head to feet or all creature extremities. Keep generous 9% transparent margin on ALL four sides; nothing touches canvas edges. Genuine transparent RGBA background. Controlled crisp outlines and material shading, original arcade proportions, no redesign, not photorealism and not a 3D render. No scene, floor, cast shadow, smoke, letters, label, border, collage, second pose, particles or watermark. All weapons and limbs entirely visible. Heavyset broad-shouldered male factory-worker zombie, very short close-cropped dark hair, grayish tan skin. Dirty off-white sleeveless undershirt with faded stains and a diagonal torn patch, broad dark belt, baggy dark green work trousers torn at lower right shin, gray-white sneakers. Both arms lowered loosely; no tool or weapon. Preserve the wide torso and stocky body of the supplied model.",
+      "limitations": [
+        "Adaptation 2D depuis le modèle du guide original, inspection du cadrage et de la silhouette effectuée ; fidélité exacte 1:1 non certifiée.",
+        "Dessin statique individuel. Cycle de marche, attaques, réactions et comportement de combat encore à produire."
+      ],
+      "status": "generated_reference_reviewed"
+    },
+    {
+      "id": "frog",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/frog_base.png",
+      "sha256": "28a29bd1ddf7b49459e23548e687b9ad1bd5d901b8918080bb95eb8762274fc7",
+      "bytes": 1698481,
+      "tool": "image_gen__imagegen",
+      "transparent_background": true,
+      "generation_file": "exec-85fa755f-c136-430f-8455-131240ddd27f.png",
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_enemies/frog_reference.png"
+      ],
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge_Perfect_Guide",
+        "https://thehouseofthedead.fandom.com/wiki/List_of_zombies_in_Zombie_Revenge",
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge"
+      ],
+      "source_notes": [
+        "Zombie Revenge Perfect Guide, pages 30–33; original game model references"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: ONE isolated static enemy sprite for House of the Dead 2D. Redraw the supplied original Zombie Revenge Perfect Guide creature reference as a faithful detailed hand-painted 2D arcade fighting sprite. The input is the canonical identity reference. Preserve the exact anatomy, clothing, proportions, equipment and colors visible in the reference. Adapt only the medium and pose to one lateral three-quarter view facing RIGHT, readable neutral threatening stance. One character per image, complete from head to feet or all creature extremities. Keep generous 9% transparent margin on ALL four sides; nothing touches canvas edges. Genuine transparent RGBA background. Controlled crisp outlines and material shading, original arcade proportions, no redesign, not photorealism and not a 3D render. No scene, floor, cast shadow, smoke, letters, label, border, collage, second pose, particles or watermark. All weapons and limbs entirely visible. One squat mutant frog only, preserving original wide pale yellow-green belly, irregular mottled olive-gray back, broad blunt amphibian head, four sprawled legs and long dark webbed claw-like toes. Three-quarter lateral view facing RIGHT, low crouch, all four limbs completely visible. No humanoid features, no clothing, no fantasy armor, no tongue attack, no floor.",
+      "limitations": [
+        "Adaptation 2D depuis le modèle du guide original, inspection du cadrage et de la silhouette effectuée ; fidélité exacte 1:1 non certifiée.",
+        "Dessin statique individuel. Cycle de marche, attaques, réactions et comportement de combat encore à produire."
+      ],
+      "status": "generated_reference_reviewed"
+    },
+    {
+      "id": "hedrian",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/hedrian_base.png",
+      "sha256": "25b3b5abfa7faa58eda3736f2e0580923f4d6d13959a0c6152285e9fb620c06e",
+      "bytes": 866897,
+      "tool": "image_gen__imagegen",
+      "transparent_background": true,
+      "generation_file": "exec-9135f6cc-b787-4bdf-99a2-f56fb883dabc.png",
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_enemies/hedrian_reference.png"
+      ],
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge_Perfect_Guide",
+        "https://thehouseofthedead.fandom.com/wiki/List_of_zombies_in_Zombie_Revenge",
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge"
+      ],
+      "source_notes": [
+        "Zombie Revenge Perfect Guide, pages 30–33; original game model references"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: ONE isolated static enemy sprite for House of the Dead 2D. Redraw the supplied original Zombie Revenge Perfect Guide creature reference as a faithful detailed hand-painted 2D arcade fighting sprite. The input is the canonical identity reference. Preserve the exact anatomy, clothing, proportions, equipment and colors visible in the reference. Adapt only the medium and pose to one lateral three-quarter view facing RIGHT, readable neutral threatening stance. One character per image, complete from head to feet or all creature extremities. Keep generous 9% transparent margin on ALL four sides; nothing touches canvas edges. Genuine transparent RGBA background. Controlled crisp outlines and material shading, original arcade proportions, no redesign, not photorealism and not a 3D render. No scene, floor, cast shadow, smoke, letters, label, border, collage, second pose, particles or watermark. All weapons and limbs entirely visible. One floating insect-like biological creature, exact reference design. Dark turquoise-blue compact lower body, FOUR clearly visible slender curved blue appendages reaching downward (two longer central lower legs and two hooked side legs). At top, a broad open triangular manta-like fleshy hood with magenta-pink striped inside, dark edges, and an upright long narrow central neck/tongue-like stalk crowned with red oval tip. Preserve the unusual umbrella silhouette and its colors. Do not give it a human head, bird wings, eyes on stalks or extra limbs. Entire creature airborne, no shadow.",
+      "limitations": [
+        "Adaptation 2D depuis le modèle du guide original, inspection du cadrage et de la silhouette effectuée ; fidélité exacte 1:1 non certifiée.",
+        "Dessin statique individuel. Cycle de marche, attaques, réactions et comportement de combat encore à produire."
+      ],
+      "status": "generated_reference_reviewed"
+    },
+    {
+      "id": "hermonkey",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/hermonkey_base.png",
+      "sha256": "0274ca2862ca950c205e11ab6cdee8ef90969eb22d2e7dcbfb84bf62da00ebfe",
+      "bytes": 1152036,
+      "tool": "image_gen__imagegen",
+      "transparent_background": true,
+      "generation_file": "exec-0d0befdb-0df2-4915-b47d-2f1c9c596be2.png",
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_enemies/hermonkey_reference.png"
+      ],
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge_Perfect_Guide",
+        "https://thehouseofthedead.fandom.com/wiki/List_of_zombies_in_Zombie_Revenge",
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge"
+      ],
+      "source_notes": [
+        "Zombie Revenge Perfect Guide, pages 30–33; original game model references"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: ONE isolated static enemy sprite for House of the Dead 2D. Redraw the supplied original Zombie Revenge Perfect Guide creature reference as a faithful detailed hand-painted 2D arcade fighting sprite. The input is the canonical identity reference. Preserve the exact anatomy, clothing, proportions, equipment and colors visible in the reference. Adapt only the medium and pose to one lateral three-quarter view facing RIGHT, readable neutral threatening stance. One character per image, complete from head to feet or all creature extremities. Keep generous 9% transparent margin on ALL four sides; nothing touches canvas edges. Genuine transparent RGBA background. Controlled crisp outlines and material shading, original arcade proportions, no redesign, not photorealism and not a 3D render. No scene, floor, cast shadow, smoke, letters, label, border, collage, second pose, particles or watermark. All weapons and limbs entirely visible. Hunched compact male zombie in a dark teal-green cropped jacket, dirty pale shirt, loose matching teal trousers, dark lace-up boots with tan soles. Distinctive large deformed bulbous bald tan head and very long clawed hands. Carry the reference's oversized poleaxe: short wooden/metal dark shaft, large broad curved silver axe blade, dark metal fixture at the opposite upper end. Keep poleaxe completely inside image. Hunched shoulders and disproportionately long left hand clearly readable; no monkey fur, no tail, no generic fantasy armor.",
+      "limitations": [
+        "Adaptation 2D depuis le modèle du guide original, inspection du cadrage et de la silhouette effectuée ; fidélité exacte 1:1 non certifiée.",
+        "Dessin statique individuel. Cycle de marche, attaques, réactions et comportement de combat encore à produire."
+      ],
+      "status": "generated_reference_reviewed"
+    },
+    {
+      "id": "mansion_zombie_1",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/mansion_zombie_1_base.png",
+      "sha256": "c4df726a8453bf205515932ad2536bdc9f14a8192cb3f35babadf8351da3af4a",
+      "bytes": 832783,
+      "tool": "image_gen__imagegen",
+      "transparent_background": true,
+      "generation_file": "exec-faf260d8-2608-4796-9053-7190fca55af4.png",
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_enemies/mansion_zombie_1_reference.png"
+      ],
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge_Perfect_Guide",
+        "https://thehouseofthedead.fandom.com/wiki/List_of_zombies_in_Zombie_Revenge",
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge"
+      ],
+      "source_notes": [
+        "Zombie Revenge Perfect Guide, pages 30–33; original game model references"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: ONE isolated static enemy sprite for House of the Dead 2D. Redraw the supplied original Zombie Revenge Perfect Guide creature reference as a faithful detailed hand-painted 2D arcade fighting sprite. The input is the canonical identity reference. Preserve the exact anatomy, clothing, proportions, equipment and colors visible in the reference. Adapt only the medium and pose to one lateral three-quarter view facing RIGHT, readable neutral threatening stance. One character per image, complete from head to feet or all creature extremities. Keep generous 9% transparent margin on ALL four sides; nothing touches canvas edges. Genuine transparent RGBA background. Controlled crisp outlines and material shading, original arcade proportions, no redesign, not photorealism and not a 3D render. No scene, floor, cast shadow, smoke, letters, label, border, collage, second pose, particles or watermark. All weapons and limbs entirely visible. Tall gaunt bald pale gray male zombie, shirtless sickly lean torso with subtle dark decayed patches, faded dark blue full-length jeans, reddish-brown worn lace-up shoes. Long lowered arms, open gray hands, head tilted slightly down. Both trouser legs are full length: preserve this distinction from Mansion Zombie 2. No weapon, no new accessories.",
+      "limitations": [
+        "Adaptation 2D depuis le modèle du guide original, inspection du cadrage et de la silhouette effectuée ; fidélité exacte 1:1 non certifiée.",
+        "Dessin statique individuel. Cycle de marche, attaques, réactions et comportement de combat encore à produire."
+      ],
+      "status": "generated_reference_reviewed"
+    },
+    {
+      "id": "mansion_zombie_2",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/mansion_zombie_2_base.png",
+      "sha256": "33ef745ae82f5f8651ea1fd543b18cee080dbf32720bd947a7297883d6fa8a11",
+      "bytes": 872617,
+      "tool": "image_gen__imagegen",
+      "transparent_background": true,
+      "generation_file": "exec-f9bb2534-f77b-4fcf-abc6-8d33d68e2cb8.png",
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_enemies/mansion_zombie_2_reference.png"
+      ],
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge_Perfect_Guide",
+        "https://thehouseofthedead.fandom.com/wiki/List_of_zombies_in_Zombie_Revenge",
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge"
+      ],
+      "source_notes": [
+        "Zombie Revenge Perfect Guide, pages 30–33; original game model references"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: ONE isolated static enemy sprite for House of the Dead 2D. Redraw the supplied original Zombie Revenge Perfect Guide creature reference as a faithful detailed hand-painted 2D arcade fighting sprite. The input is the canonical identity reference. Preserve the exact anatomy, clothing, proportions, equipment and colors visible in the reference. Adapt only the medium and pose to one lateral three-quarter view facing RIGHT, readable neutral threatening stance. One character per image, complete from head to feet or all creature extremities. Keep generous 9% transparent margin on ALL four sides; nothing touches canvas edges. Genuine transparent RGBA background. Controlled crisp outlines and material shading, original arcade proportions, no redesign, not photorealism and not a 3D render. No scene, floor, cast shadow, smoke, letters, label, border, collage, second pose, particles or watermark. All weapons and limbs entirely visible. Tall lean bald male zombie, pale gray torso with green and muted red decay discoloration, shirtless, very dark blue jeans. Crucial asymmetric costume: character's RIGHT trouser leg full length with dark red-brown shoe; character's LEFT trouser leg torn off at mid-thigh, exposing the whole pale gray shin down to its dark shoe. Arms loose and long, open hands, head slightly forward. Keep the distinctly exposed single leg, not shorts on both legs, no weapon.",
+      "limitations": [
+        "Adaptation 2D depuis le modèle du guide original, inspection du cadrage et de la silhouette effectuée ; fidélité exacte 1:1 non certifiée.",
+        "Dessin statique individuel. Cycle de marche, attaques, réactions et comportement de combat encore à produire."
+      ],
+      "status": "generated_reference_reviewed"
+    },
+    {
+      "id": "mecha_zombie",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/mecha_zombie_base.png",
+      "sha256": "935d03a01c8491c08fbff1e89de0736e9c970483d902381f9509d27cc1fcd83a",
+      "bytes": 676542,
+      "tool": "image_gen__imagegen",
+      "transparent_background": true,
+      "generation_file": "exec-d394c031-282d-48eb-811c-30c3fb47c35a.png",
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_enemies/mecha_zombie_reference.png"
+      ],
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge_Perfect_Guide",
+        "https://thehouseofthedead.fandom.com/wiki/List_of_zombies_in_Zombie_Revenge",
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge"
+      ],
+      "source_notes": [
+        "Zombie Revenge Perfect Guide, pages 30–33; original game model references"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: ONE isolated static enemy sprite for House of the Dead 2D. Redraw the supplied original Zombie Revenge Perfect Guide creature reference as a faithful detailed hand-painted 2D arcade fighting sprite. The input is the canonical identity reference. Preserve the exact anatomy, clothing, proportions, equipment and colors visible in the reference. Adapt only the medium and pose to one lateral three-quarter view facing RIGHT, readable neutral threatening stance. One character per image, complete from head to feet or all creature extremities. Keep generous 9% transparent margin on ALL four sides; nothing touches canvas edges. Genuine transparent RGBA background. Controlled crisp outlines and material shading, original arcade proportions, no redesign, not photorealism and not a 3D render. No scene, floor, cast shadow, smoke, letters, label, border, collage, second pose, particles or watermark. All weapons and limbs entirely visible. Male cyborg zombie with pale bare muscular chest and abdomen, dark smooth mechanical helmet obscuring forehead and eyes. One organic arm crosses chest supporting the opposite biomechanical gun arm. Gun arm is integrated dark metal machinery extending into a thin rifle-like barrel, held forward toward screen RIGHT. Black mechanical armored waist and thighs, long bright silver shin plates, dark feet. Preserve the exact bare torso vs dark/silver mechanical limb balance; no full suit of armor, no separate held assault rifle, no extra limbs.",
+      "limitations": [
+        "Adaptation 2D depuis le modèle du guide original, inspection du cadrage et de la silhouette effectuée ; fidélité exacte 1:1 non certifiée.",
+        "Dessin statique individuel. Cycle de marche, attaques, réactions et comportement de combat encore à produire."
+      ],
+      "status": "generated_reference_reviewed"
+    },
+    {
+      "id": "mummy",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/mummy_base.png",
+      "sha256": "8976b77a6819dd2eb0966ba0eaaa13faa3d5f9683048bdecc9403e6984114b37",
+      "bytes": 1545469,
+      "tool": "image_gen__imagegen",
+      "transparent_background": true,
+      "generation_file": "exec-c59cd674-542c-4739-bdee-1b8be4aed62d.png",
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_enemies/mummy_reference.png"
+      ],
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge_Perfect_Guide",
+        "https://thehouseofthedead.fandom.com/wiki/List_of_zombies_in_Zombie_Revenge",
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge"
+      ],
+      "source_notes": [
+        "Zombie Revenge Perfect Guide, pages 30–33; original game model references"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: ONE isolated static enemy sprite for House of the Dead 2D. Redraw the supplied original Zombie Revenge Perfect Guide creature reference as a faithful detailed hand-painted 2D arcade fighting sprite. The input is the canonical identity reference. Preserve the exact anatomy, clothing, proportions, equipment and colors visible in the reference. Adapt only the medium and pose to one lateral three-quarter view facing RIGHT, readable neutral threatening stance. One character per image, complete from head to feet or all creature extremities. Keep generous 9% transparent margin on ALL four sides; nothing touches canvas edges. Genuine transparent RGBA background. Controlled crisp outlines and material shading, original arcade proportions, no redesign, not photorealism and not a 3D render. No scene, floor, cast shadow, smoke, letters, label, border, collage, second pose, particles or watermark. All weapons and limbs entirely visible. One tall very thin bald adult female mummy zombie from the reference, gray tan desiccated skin, gaunt mature face and long thin limbs, wearing the original opaque dark charcoal sleeveless cropped top and matching opaque dark short bottoms. Arms crooked and lowered, bare feet. Preserve the modest covered costume, shrunken gaunt anatomy and neutral threatening pose; no decorative wrapping bands added, no glamour, no sexualized pose.",
+      "limitations": [
+        "Adaptation 2D depuis le modèle du guide original, inspection du cadrage et de la silhouette effectuée ; fidélité exacte 1:1 non certifiée.",
+        "Dessin statique individuel. Cycle de marche, attaques, réactions et comportement de combat encore à produire."
+      ],
+      "status": "generated_reference_reviewed"
+    },
+    {
+      "id": "uds02",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/uds02_idle.png",
+      "sha256": "fc8a0873718aeba09c5461ab4cfff705738c734c8af905d02091e92e9f7120a8",
+      "bytes": 959283,
+      "tool": "image_gen__imagegen",
+      "transparent_background": true,
+      "generation_file": "exec-aa9becd2-aa19-42d3-8755-5eb60df1142c.png",
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_bosses/guide_32_33.png",
+        "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_bosses/uds02.png"
+      ],
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge_Perfect_Guide",
+        "https://www.digitpress.com/library/manuals/dreamcast/zombie_revenge.pdf",
+        "https://sesesega.hatenablog.jp/entry/zombierevenge"
+      ],
+      "source_notes": [],
+      "prompt": "Use case: stylized-concept. Asset type: ONE isolated full-body character master sprite for House of the Dead 2D / Dossier Curien. Render as a finely hand-painted 2D arcade fighting-game sprite, with a crisp clean silhouette and controlled shaded details readable at game scale. Preserve the original SEGA character identity, proportions, anatomy, materials and palette shown in the reference; this is a faithful fan adaptation, not a redesign. One complete character only, three-quarter lateral view facing RIGHT in a neutral ready stance. Genuine transparent RGBA background. Fit the ENTIRE silhouette inside the central 76 percent of the canvas, leaving at least 12 percent empty transparent padding on ALL four sides, including around every finger, claw, foot, wingtip or horn. No cropped body parts. No scenery, floor, ground shadow, platform, diagram, labels, logos, text except any inherent canonical body markings, UI, collage, sprite sheet, duplicate character, extra props or magic particles. Subject: UDS-02 from Zombie Revenge (1999). Image 1 is an original Japanese guide page: use ONLY the large orange hunched creature artwork at LOWER CENTER-RIGHT of that page, below the smaller enemy cards and left of the black winged creature. Image 2 is an original gameplay capture confirming the same creature. Do not draw any other subject from the guide. UDS-02 is a fleshy orange/rust-brown and moss-olive multi-limbed biological monster, NOT an armored human. Preserve the huge rounded humped upper back, the small sinister humanlike face recessed forward under its curved fleshy brow, and the unusually crouched spiderlike arrangement of limbs exactly from the guide art: thick folded hind limbs plus the long low orange forelimbs bracing the body, long very thin pointed fingers stretching forward and clawed grasping feet. Subtle fleshy tendrils rise from the back. Its mass is squat and spread, with warm burnt-orange upper flesh and dark olive/brown lower limbs. Retain all visible limb roots and joints; do not normalize into a biped, frog, gorilla or generic spider. Keep the natural hunched low posture; all pointed fingers and toes entirely visible. No trousers, clothing, horns added to face, weapon, gore spray or additional baby creatures. Square canvas; complete single creature centered with generous transparent margins.",
+      "limitations": [
+        "Adaptation 2D depuis les références indiquées et inspectées. Un sprite maître statique, non un cycle d’animation ; fidélité exacte 1:1 non certifiée.",
+        "Illustration de bestiaire ; aucun nouveau boss jouable ni IA de boss ne sont annoncés pour ce visuel."
+      ],
+      "status": "generated_reference_reviewed"
+    },
+    {
+      "id": "black_magician",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/black_magician_idle.png",
+      "sha256": "92c759971dd098e89c6df48b4d49685e775b9a04dc8bdc4da4f76920e46282e7",
+      "bytes": 994755,
+      "tool": "image_gen__imagegen",
+      "transparent_background": true,
+      "generation_file": "exec-26fb1073-214e-41d8-b10a-92f83591d1d0.png",
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_bosses/guide_32_33.png",
+        "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_bosses/black_magician.png"
+      ],
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge_Perfect_Guide",
+        "https://sesesega.hatenablog.jp/entry/zombierevenge",
+        "https://thehouseofthedead.fandom.com/wiki/Black_Magician_Type_01"
+      ],
+      "source_notes": [],
+      "prompt": "Use case: stylized-concept. Asset type: ONE isolated full-body character master sprite for House of the Dead 2D / Dossier Curien. Render as a finely hand-painted 2D arcade fighting-game sprite, with a crisp clean silhouette and controlled shaded details readable at game scale. Preserve the original SEGA character identity, proportions, anatomy, materials and palette shown in the reference; this is a faithful fan adaptation, not a redesign. One complete character only, three-quarter lateral view facing RIGHT in a neutral ready stance. Genuine transparent RGBA background. Fit the ENTIRE silhouette inside the central 76 percent of the canvas, leaving at least 12 percent empty transparent padding on ALL four sides, including around every finger, claw, foot, wingtip or horn. No cropped body parts. No scenery, floor, ground shadow, platform, diagram, labels, logos, text except any inherent canonical body markings, UI, collage, sprite sheet, duplicate character, extra props or magic particles. Subject: Black Magician Type 01 from Zombie Revenge (1999), the distinctive dark final boss. Image 1 is an original Japanese guide page: use ONLY the LARGE BLACK WINGED HUMANOID ARTWORK at the BOTTOM RIGHT. Image 2 is the original close-up gameplay view confirming face and chest. Do not recreate any other guide creature. Preserve his extremely tall slender biomechanical humanlike silhouette, dark black-purple glossy hard body plates with violet edge highlights, pale purplish gaunt human face, golden yellow eyes, and huge long black pointed crest projecting high above his forehead with curved side spikes. Wide layered black feather-like or blade-like shoulder wings spread horizontally from his upper torso; match their irregular long pointed overlapping shapes shown in the guide, never make smooth dragon membranes. Humanlike armored arms end in long splayed claw fingers, legs are unusually long with angular shin shapes and pointed digit-like foot extensions, all held above the ground in slight levitation. Preserve the pink-red organic exposed breast/chest portions visible between dark armor plates and the small face under the tall crest; NOT the red-orange bare-muscle Magician of other House of the Dead games. Full entire wingspan, head crest, both clawed hands and both long feet must fit wholly within the canvas with 12 percent breathing room. Calm hovering battle-ready stance facing right, wings gently spread, no energy blasts, no flame/electric variants. No detached ZED, no second character.",
+      "limitations": [
+        "Adaptation 2D depuis les références indiquées et inspectées. Un sprite maître statique, non un cycle d’animation ; fidélité exacte 1:1 non certifiée.",
+        "Illustration de bestiaire ; aucun nouveau boss jouable ni IA de boss ne sont annoncés pour ce visuel."
+      ],
+      "status": "generated_reference_reviewed"
+    },
+    {
+      "id": "uds_tpii_00",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/uds_tpii_00_idle.png",
+      "sha256": "23bb17809622ae41b73764f570248b087c45b3d582d6eb93f006ff2ef04638a3",
+      "bytes": 852042,
+      "tool": "image_gen__imagegen",
+      "transparent_background": true,
+      "generation_file": "exec-1847a103-3427-4323-9dcf-a75511d889eb.png",
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_bosses/uds_tp_ref.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_bosses/uds_tp_encounter.png"
+      ],
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/UDS-TP_II",
+        "https://www.youtube.com/watch?v=ji1Qvgc7OBc&t=567s"
+      ],
+      "source_notes": [],
+      "prompt": "Use case: stylized-concept. Asset type: ONE isolated full-body character master sprite for House of the Dead 2D / Dossier Curien. Render as a finely hand-painted 2D arcade fighting-game sprite, with a crisp clean silhouette and controlled shaded details readable at game scale. Preserve the original SEGA character identity, proportions, anatomy, materials and palette shown in the reference; this is a faithful fan adaptation, not a redesign. One complete character only, three-quarter lateral view facing RIGHT in a neutral ready stance. Genuine transparent RGBA background. Fit the ENTIRE silhouette inside the central 76 percent of the canvas, leaving at least 12 percent empty transparent padding on ALL four sides, including around every finger, claw, foot, wingtip or horn. No cropped body parts. No scenery, floor, ground shadow, platform, diagram, labels, logos, text except any inherent canonical body markings, UI, collage, sprite sheet, duplicate character, extra props or magic particles. Subject: ONLY the large cyborg organism UDS-TP II 00 from Zombie Revenge. Image 1 is the original full-body design render, where a little creature sits on the large cyborg's shoulder; Image 2 is original gameplay confirmation. Draw the LARGE CYBORG ALONE, completely remove the small shoulder creature because it will be a separate sprite. Preserve the tall powerfully muscular dark chrome/steel body, glossy black-violet flesh/armor sheen, silver-grey humanoid face with orange-red painted lines crossing brows and cheeks and a white question-mark on the forehead, small dark cap-like ridged scalp and side earpieces. Both pectorals bear the original white eye symbols (one open eye and one closed eye), with the central abdominal panel closed in this neutral pose. Ribbed tubes loop from shoulders and around waist. Thick thighs feature paired round silver bolt heads, large rounded rectangular mechanical knee guards, smooth metallic shins and armored bare-foot-shaped mechanical feet with individual toe ridges. Mechanical wrists with wide metal cuffs and exposed silver hands. Reproduce the original dark groin armor/codpiece. Empty hands ready at chest-to-waist height, knees slightly flexed, right-facing three-quarter guard. No rifle, sword, external missile pod, extra armor invented, stage or electrical effect. Absolutely no second organism or small companion anywhere. Square canvas, head and both full feet visible with generous transparent margins.",
+      "limitations": [
+        "Adaptation 2D depuis les références indiquées et inspectées. Un sprite maître statique, non un cycle d’animation ; fidélité exacte 1:1 non certifiée.",
+        "Illustration de bestiaire ; aucun nouveau boss jouable ni IA de boss ne sont annoncés pour ce visuel."
+      ],
+      "status": "generated_reference_reviewed"
+    },
+    {
+      "id": "uds_tpii_01",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/uds_tpii_01_idle.png",
+      "sha256": "65de81922c3f5c521e19062851bb7122287c9922b9bba0ed01d919fab17d4c8b",
+      "bytes": 789265,
+      "tool": "image_gen__imagegen",
+      "transparent_background": true,
+      "generation_file": "exec-e73f9e34-2af6-4dab-a13e-993121d3532e.png",
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_bosses/uds_tp_ref.jpg"
+      ],
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/UDS-TP_II",
+        "https://www.youtube.com/watch?v=ji1Qvgc7OBc&t=567s"
+      ],
+      "source_notes": [],
+      "prompt": "Use case: stylized-concept. Asset type: ONE isolated full-body character master sprite for House of the Dead 2D / Dossier Curien. Render as a finely hand-painted 2D arcade fighting-game sprite, with a crisp clean silhouette and controlled shaded details readable at game scale. Preserve the original SEGA character identity, proportions, anatomy, materials and palette shown in the reference; this is a faithful fan adaptation, not a redesign. One complete character only, three-quarter lateral view facing RIGHT in a neutral ready stance. Genuine transparent RGBA background. Fit the ENTIRE silhouette inside the central 76 percent of the canvas, leaving at least 12 percent empty transparent padding on ALL four sides, including around every finger, claw, foot, wingtip or horn. No cropped body parts. No scenery, floor, ground shadow, platform, diagram, labels, logos, text except any inherent canonical body markings, UI, collage, sprite sheet, duplicate character, extra props or magic particles. Subject: ONLY UDS-TP II 01, the SMALL CREATURE perched on the LARGE CYBORG'S shoulder in the reference, from Zombie Revenge (1999). The reference image shows two organisms; isolate and faithfully redraw ONLY the small one, never include the large cyborg or shoulder. Preserve its oversized vertically elongated blue-grey bulbous mechanical head, narrow glowing red eyes, very wide grin of small sharply triangular ivory teeth, the white question-mark and little white omega-like mark on its forehead, the looped ribbed tube crown and small pointed studs around the top of its head. Its body is tiny and very thin relative to the huge head, sinewy pink-purple torso, long wiry pink arms and legs, tiny elongated clawed fingers and toes. No clothing, no human sexual anatomy, no armored suit; an unmistakably artificial little nonhuman monster. Preserve the absurd original head/body ratio, not a baby, not a bat, not a miniature muscular adult. Three-quarter lateral pose facing RIGHT with knees bent, arms reaching slightly outward and all fingers and feet distinct, as if hovering just before pouncing. Entire little creature including crown tubes and all pointed digits wholly visible, on a square true-alpha canvas with 12 percent empty margin all around. No human, cyborg, shoulder, second creature, flying base or shadow. Treat the shoulder pose in the reference only as anatomy reference; create the same creature isolated.",
+      "limitations": [
+        "Adaptation 2D depuis les références indiquées et inspectées. Un sprite maître statique, non un cycle d’animation ; fidélité exacte 1:1 non certifiée.",
+        "Illustration de bestiaire ; aucun nouveau boss jouable ni IA de boss ne sont annoncés pour ce visuel."
+      ],
+      "status": "generated_reference_reviewed"
+    },
+    {
+      "id": "nikelle",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/nikelle_idle.png",
+      "sha256": "23eed1f22b76f93078f7c1a99924a3d27796845b84527b29a1dfefc6dbd45c98",
+      "bytes": 1306769,
+      "tool": "image_gen__imagegen",
+      "transparent_background": true,
+      "generation_file": "exec-ff9a8212-cff9-4e5d-901f-d8b40da2fd4b.png",
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_bosses/nikelle.png",
+        "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_bosses/storyboard_04.jpg"
+      ],
+      "sources": [
+        "https://sesesega.hatenablog.jp/entry/zombierevenge",
+        "https://cdn-ak.f.st-hatena.com/images/fotolife/B/BUNNY/20230116/20230116154802.png",
+        "https://www.youtube.com/watch?v=ji1Qvgc7OBc&t=353s"
+      ],
+      "source_notes": [],
+      "prompt": "Use case: stylized-concept. Asset type: ONE isolated full-body transparent 2D fighting-game sprite of UDS-07 NIKELLE from SEGA Zombie Revenge (1999). The first reference is an actual game screenshot: the subject is ONLY the pale winged monster hovering above the train at the upper-left/center, directly behind the cyan targeting ring, NOT the human gunman on the right. The second reference is a storyboard of the same original boss at its top row and left image of the middle row; other screenshots on that storyboard belong to a DIFFERENT giant head boss, which must NOT be used. Faithfully adapt the winged monster's visible design into detailed hand-painted 2D arcade sprite art with crisp outlines and controlled shading. Preserve Nikelle's lean harpy-like mutated humanoid structure, elongated upturned flesh-red/tan head and toothy mouth, small narrow skeletal-looking grey-brown torso, very long bony arms forming large pale beige leathery triangular bat wings, long delicate hooked wing claws and skinny legs ending in grasping talons. Follow the original screenshot's proportions, silhouette and colors closely; do not invent a human female face, hair, clothing, jewelry, armor or extra horns. Not a tiny normal bat, not a dragon, not a bird with feathers, not a witch, not the disembodied giant head seen elsewhere in the second reference. One complete creature in hovering neutral battle-ready pose, three-quarter lateral view facing RIGHT, wings open enough for clear silhouette but slightly curved down as in the reference. Entire wingspan, full head, every wing finger and both clawed feet must be visible with at least 12 percent clear transparent padding on all four sides of a square canvas. One creature per image only, no duplicate body, no storyboard layout. Genuine transparent RGBA background, no train, sky, floor, platform, ground shadow, targeting ring, HUD, words, labels, gore splashes or magic effects.",
+      "limitations": [
+        "Adaptation depuis une capture de jeu basse résolution et un storyboard original. Le dessin complet et les détails fins restent à confronter à un rendu SEGA haute résolution ; fidélité exacte 1:1 non certifiée. Sprite maître statique sans animation.",
+        "Illustration de bestiaire ; aucun nouveau boss jouable ni IA de boss ne sont annoncés pour ce visuel."
+      ],
+      "status": "generated_needs_visual_reference_qa"
+    },
+    {
+      "id": "warm_hedlin",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/warm_hedlin_idle.png",
+      "sha256": "92b62d5ce429a38e24119673ec9889cb9386f2b18d36eff4ed16de356861f4bf",
+      "bytes": 1127545,
+      "tool": "image_gen__imagegen",
+      "transparent_background": true,
+      "generation_file": "exec-4d156a16-fd57-4060-99b4-aa64b9cd39e7.png",
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_bosses/hedlins.png",
+        "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_bosses/storyboard_00.jpg"
+      ],
+      "sources": [
+        "https://sesesega.hatenablog.jp/entry/zombierevenge",
+        "https://www.youtube.com/watch?v=ji1Qvgc7OBc&t=56s",
+        "https://thehouseofthedead.fandom.com/wiki/Biological_Weapon"
+      ],
+      "source_notes": [],
+      "prompt": "Use case: stylized-concept. Asset type: ONE isolated full-body transparent character master sprite for House of the Dead 2D / Dossier Curien. Faithfully adapt the original Zombie Revenge (1999) creature shown in the supplied original gameplay references into a clean finely hand-painted 2D arcade fighting-game sprite. Preserve the visible character's distinctive anatomy, proportions, palette and materials; do not redesign it as another fantasy creature. One complete organism only, three-quarter lateral view facing RIGHT in a neutral ready stance. All head growths, limbs and claws visible. Entire silhouette confined inside central 76 percent of a square canvas with at least 12 percent completely transparent breathing room on all sides. True RGBA transparency. No cropped tips, sewer, water, ground, shadow, platform, UI, words, text, background, collage, storyboard, multiple views, extra characters, weapons, poison effects or blood splashes. Subject: ONLY WARM HEDLIN, also transliterated Worm Hedlin, the pink worm-headed humanoid plant hybrid from the sewer miniboss pair. Image 1 provides its CLOSE-UP gameplay design. Image 2 shows the two bosses in its bottom row; match ONLY the pink long-tubular-headed one, do not include its separate brown shell-headed partner. This is NOT the ordinary bald zombie called Hedlin. Preserve the gross oversized pink-mauve worm head with a circular black breathing/spitting hole surrounded by a thick pale peach ring, thick curling fleshy tube-like lobes extending around and above the head, dark violet ribbed/textured side patches and the bright green collar-like membrane immediately underneath. The lower body is a narrow dark brown sinewy fibrous root-like humanoid torso with two thin bent legs and long arms ending in broad ivory-yellow pointed plant claws; elongated ivory/tan thorn fingers spread to either side as seen in the close-up. Retain the asymmetrical swirling worm-head silhouette, not a normal human head, flower blossom with neat symmetric petals, toothed carnivorous mouth, snail, giant worm-only body or human wearing a hat. Adapt to an isolated standing ready pose with arms slightly away from torso, both root-like legs and their sharp feet visible. No shell head, no second body.",
+      "limitations": [
+        "Adaptation depuis captures originales basse résolution : tête et corps distingués par références du combat de Biological Weapon. Détails fins et exactitude 1:1 à valider sur rendu officiel plus défini. Un organisme/sprite statique ; pas de cycle animé.",
+        "Illustration de bestiaire ; aucun nouveau boss jouable ni IA de boss ne sont annoncés pour ce visuel."
+      ],
+      "status": "generated_needs_visual_reference_qa"
+    },
+    {
+      "id": "shell_hedlin",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/shell_hedlin_idle.png",
+      "sha256": "6e0a14b78c09adf64a17130fa158c5b2cf49256402c6adcc9a4624797d8227b3",
+      "bytes": 949895,
+      "tool": "image_gen__imagegen",
+      "transparent_background": true,
+      "generation_file": "exec-8f7bef0e-b010-476f-bd21-0b65d636b1f0.png",
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_bosses/storyboard_00.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_bosses/hedlins.png"
+      ],
+      "sources": [
+        "https://sesesega.hatenablog.jp/entry/zombierevenge",
+        "https://www.youtube.com/watch?v=ji1Qvgc7OBc&t=56s",
+        "https://thehouseofthedead.fandom.com/wiki/Biological_Weapon"
+      ],
+      "source_notes": [],
+      "prompt": "Use case: stylized-concept. Asset type: ONE isolated full-body transparent character master sprite for House of the Dead 2D / Dossier Curien. Faithfully adapt the original Zombie Revenge (1999) creature shown in the supplied original gameplay references into a clean finely hand-painted 2D arcade fighting-game sprite. Preserve the visible character's distinctive anatomy, proportions, palette and materials; do not redesign it as another fantasy creature. One complete organism only, three-quarter lateral view facing RIGHT in a neutral ready stance. All head growths, limbs and claws visible. Entire silhouette confined inside central 76 percent of a square canvas with at least 12 percent completely transparent breathing room on all sides. True RGBA transparency. No cropped tips, sewer, water, ground, shadow, platform, UI, words, text, background, collage, storyboard, multiple views, extra characters, weapons, poison effects or blood splashes. Subject: ONLY SHELL HEDLIN, the brown shell-headed humanoid plant hybrid from the sewer miniboss pair in Zombie Revenge. The primary reference is Image 1: in the BOTTOM-RIGHT panel, identify the creature to the LEFT of the human, with the angular brown elongated cone/shell head, not the big pink curling-headed creature on the right. Follow only that brown shell-headed original model. Image 2 is ONLY a close detail reference for the shared dark brown fibrous lower torso and ivory/tan pointed plant claws of the paired species; do NOT copy the pink worm head from image 2. Shell Hedlin has a large hard angular brown tapered seashell-like head jutting forward, ridged organic shell plates forming its silhouette, a dark reddish opening under the pointed face, no normal human face or visible human eyes. Its lean dark brown wood-fiber/flesh torso is humanoid, supported by two thin bent legs, with extremely long ivory-yellow pointed leaf/thorn-like fingers at the ends of its arms and elongated rootlike feet. Reproduce the visible original shell shape and the sober brown/tan palette from the bottom-right gameplay panel. No pink worm tubes, no added flower, no snail body or spiral shell on the back, no armor suit, clothes or invented equipment. Isolated full-body standing three-quarter RIGHT-facing threatening neutral pose, arms slightly splayed, all shell tip, claws, knees and feet entirely visible. One creature only, never the boss pair together.",
+      "limitations": [
+        "Adaptation depuis captures originales basse résolution : tête et corps distingués par références du combat de Biological Weapon. Détails fins et exactitude 1:1 à valider sur rendu officiel plus défini. Un organisme/sprite statique ; pas de cycle animé.",
+        "Illustration de bestiaire ; aucun nouveau boss jouable ni IA de boss ne sont annoncés pour ce visuel."
+      ],
+      "status": "generated_needs_visual_reference_qa"
+    },
+    {
+      "id": "linda_windup",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_windup.png",
+      "sha256": "51bfb0936c3e0f139b0ff6f475a72ee4d92f80508f81871c9e944a50ee42910c",
+      "bytes": 1778255,
+      "tool": "image_gen__imagegen",
+      "transparent_background": true,
+      "generation_file": "exec-ae5dce14-74aa-412e-8156-0180a4e67b4d.png",
+      "references": [
+        "assets/dossier_curien/expansion/zombie_revenge_characters/linda_rotta_base.png",
+        "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_characters/linda_full.jpg"
+      ],
+      "sources": [
+        "https://www.digitpress.com/library/manuals/dreamcast/zombie_revenge.pdf",
+        "https://static.wikia.nocookie.net/houseofthedead/images/3/3f/Linda_Full.jpg/revision/latest?cb=20200217050952"
+      ],
+      "source_notes": [],
+      "prompt": "Use case: identity-preserve. Asset type: ONE full-body animation pose of Linda Rotta for the House of the Dead 2D fighting game. Image 1 is the established painted base sprite: preserve exactly its character identity, face, detailed 2D painted style and anatomical proportions. Image 2 is the official Zombie Revenge character design reference. Change ONLY the pose as specified. Linda is a 22-year-old adult agent with blonde short asymmetric bob, yellow cropped tank top, two black belts with stacked silver buckles, frayed blue denim shorts, purple-blue full-finger gloves, white bandage on anatomical LEFT upper arm, brown double-strap holster on anatomical RIGHT thigh, yellow sneakers with blue/purple details and white soles. Silver-and-black handgun ALWAYS in anatomical RIGHT hand, the same arm side as thigh holster; bandaged anatomical LEFT arm is the support/free hand. Preserve this handedness and all costume asymmetry. Detailed crisp 2D fighting-game rendering, three-quarter lateral camera facing RIGHT. One complete character only, head, hands, entire gun and both soles visible inside portrait canvas with 9 percent margin on every side, consistent body size. Truly transparent alpha background, empty pixels outside character. No background aura, colored haze, cast shadow, floor, particles, gun flash, text, labels, duplicates, extra gun or scenery. Anticipation of precise pistol shot: feet planted, knees slightly bent, torso ready, RIGHT handgun rising just below chin toward screen right, muzzle aimed approximately horizontal right; LEFT gloved palm moving under the right gun hand to brace it. Arms still bent, clearly preparation rather than already firing.",
+      "limitations": [
+        "Pose créée pour l’adaptation de combat 2D ; elle ne constitue pas une image extraite de l’animation originale.",
+        "Cycle volontairement partiel : garde, préparation, contact, récupération, recul et deux appuis de marche. Intervalles et états supplémentaires restent à dessiner."
+      ],
+      "status": "generated_reference_reviewed"
+    },
+    {
+      "id": "linda_contact",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_contact.png",
+      "sha256": "7c1607e0f39632ae985ffe86be383047cfe48823056cb90714c01310f008e16f",
+      "bytes": 1749143,
+      "tool": "image_gen__imagegen",
+      "transparent_background": true,
+      "generation_file": "exec-43cf6eda-894e-42a2-b6ef-adddb7597a2d.png",
+      "references": [
+        "assets/dossier_curien/expansion/zombie_revenge_characters/linda_rotta_base.png",
+        "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_characters/linda_full.jpg"
+      ],
+      "sources": [
+        "https://www.digitpress.com/library/manuals/dreamcast/zombie_revenge.pdf",
+        "https://static.wikia.nocookie.net/houseofthedead/images/3/3f/Linda_Full.jpg/revision/latest?cb=20200217050952"
+      ],
+      "source_notes": [],
+      "prompt": "Use case: identity-preserve. Asset type: ONE full-body animation pose of Linda Rotta for the House of the Dead 2D fighting game. Image 1 is the established painted base sprite: preserve exactly its character identity, face, detailed 2D painted style and anatomical proportions. Image 2 is the official Zombie Revenge character design reference. Change ONLY the pose as specified. Linda is a 22-year-old adult agent with blonde short asymmetric bob, yellow cropped tank top, two black belts with stacked silver buckles, frayed blue denim shorts, purple-blue full-finger gloves, white bandage on anatomical LEFT upper arm, brown double-strap holster on anatomical RIGHT thigh, yellow sneakers with blue/purple details and white soles. Silver-and-black handgun ALWAYS in anatomical RIGHT hand, the same arm side as thigh holster; bandaged anatomical LEFT arm is the support/free hand. Preserve this handedness and all costume asymmetry. Detailed crisp 2D fighting-game rendering, three-quarter lateral camera facing RIGHT. One complete character only, head, hands, entire gun and both soles visible inside portrait canvas with 9 percent margin on every side, consistent body size. Truly transparent alpha background, empty pixels outside character. No background aura, colored haze, cast shadow, floor, particles, gun flash, text, labels, duplicates, extra gun or scenery. Peak pistol firing pose, no muzzle flash because effect is rendered separately: both arms extended toward screen RIGHT at chest level with slight natural elbow flex; anatomical RIGHT hand grips pistol and LEFT hand braces the grip. Body in stable planted shooting stance; gun points exactly right, face looks down the sight. Keep both feet visible.",
+      "limitations": [
+        "Pose créée pour l’adaptation de combat 2D ; elle ne constitue pas une image extraite de l’animation originale.",
+        "Cycle volontairement partiel : garde, préparation, contact, récupération, recul et deux appuis de marche. Intervalles et états supplémentaires restent à dessiner."
+      ],
+      "status": "generated_reference_reviewed"
+    },
+    {
+      "id": "linda_recovery",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_recovery.png",
+      "sha256": "3b3daf90cab4ae83e54aefc79088b72256c681b41c78acafd84e2abfed791419",
+      "bytes": 1711910,
+      "tool": "image_gen__imagegen",
+      "transparent_background": true,
+      "generation_file": "exec-7ff00832-1b7e-47c7-8c85-eefa6bc9fbad.png",
+      "references": [
+        "assets/dossier_curien/expansion/zombie_revenge_characters/linda_rotta_base.png",
+        "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_characters/linda_full.jpg"
+      ],
+      "sources": [
+        "https://www.digitpress.com/library/manuals/dreamcast/zombie_revenge.pdf",
+        "https://static.wikia.nocookie.net/houseofthedead/images/3/3f/Linda_Full.jpg/revision/latest?cb=20200217050952"
+      ],
+      "source_notes": [],
+      "prompt": "Use case: identity-preserve. Asset type: ONE full-body animation pose of Linda Rotta for the House of the Dead 2D fighting game. Image 1 is the established painted base sprite: preserve exactly its character identity, face, detailed 2D painted style and anatomical proportions. Image 2 is the official Zombie Revenge character design reference. Change ONLY the pose as specified. Linda is a 22-year-old adult agent with blonde short asymmetric bob, yellow cropped tank top, two black belts with stacked silver buckles, frayed blue denim shorts, purple-blue full-finger gloves, white bandage on anatomical LEFT upper arm, brown double-strap holster on anatomical RIGHT thigh, yellow sneakers with blue/purple details and white soles. Silver-and-black handgun ALWAYS in anatomical RIGHT hand, the same arm side as thigh holster; bandaged anatomical LEFT arm is the support/free hand. Preserve this handedness and all costume asymmetry. Detailed crisp 2D fighting-game rendering, three-quarter lateral camera facing RIGHT. One complete character only, head, hands, entire gun and both soles visible inside portrait canvas with 9 percent margin on every side, consistent body size. Truly transparent alpha background, empty pixels outside character. No background aura, colored haze, cast shadow, floor, particles, gun flash, text, labels, duplicates, extra gun or scenery. Recovery after precise pistol shot: elbows bending, pistol retracting in RIGHT hand from the extended shot back near the torso at lower chest level, still safely pointed right. LEFT support hand disengaging slightly. Knees still soft, weight relaxing into guard, no recoil blur.",
+      "limitations": [
+        "Pose créée pour l’adaptation de combat 2D ; elle ne constitue pas une image extraite de l’animation originale.",
+        "Cycle volontairement partiel : garde, préparation, contact, récupération, recul et deux appuis de marche. Intervalles et états supplémentaires restent à dessiner."
+      ],
+      "status": "generated_reference_reviewed"
+    },
+    {
+      "id": "linda_recoil",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_recoil.png",
+      "sha256": "7c8feffb04515c050e0a5287e22bedac26782774ffd22904d474a0a2d5733c16",
+      "bytes": 1891358,
+      "tool": "image_gen__imagegen",
+      "transparent_background": true,
+      "generation_file": "exec-c5feba41-57a8-4122-a08e-5a450f6d0801.png",
+      "references": [
+        "assets/dossier_curien/expansion/zombie_revenge_characters/linda_rotta_base.png",
+        "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_characters/linda_full.jpg"
+      ],
+      "sources": [
+        "https://www.digitpress.com/library/manuals/dreamcast/zombie_revenge.pdf",
+        "https://static.wikia.nocookie.net/houseofthedead/images/3/3f/Linda_Full.jpg/revision/latest?cb=20200217050952"
+      ],
+      "source_notes": [],
+      "prompt": "Use case: identity-preserve. Asset type: ONE full-body animation pose of Linda Rotta for the House of the Dead 2D fighting game. Image 1 is the established painted base sprite: preserve exactly its character identity, face, detailed 2D painted style and anatomical proportions. Image 2 is the official Zombie Revenge character design reference. Change ONLY the pose as specified. Linda is a 22-year-old adult agent with blonde short asymmetric bob, yellow cropped tank top, two black belts with stacked silver buckles, frayed blue denim shorts, purple-blue full-finger gloves, white bandage on anatomical LEFT upper arm, brown double-strap holster on anatomical RIGHT thigh, yellow sneakers with blue/purple details and white soles. Silver-and-black handgun ALWAYS in anatomical RIGHT hand, the same arm side as thigh holster; bandaged anatomical LEFT arm is the support/free hand. Preserve this handedness and all costume asymmetry. Detailed crisp 2D fighting-game rendering, three-quarter lateral camera facing RIGHT. One complete character only, head, hands, entire gun and both soles visible inside portrait canvas with 9 percent margin on every side, consistent body size. Truly transparent alpha background, empty pixels outside character. No background aura, colored haze, cast shadow, floor, particles, gun flash, text, labels, duplicates, extra gun or scenery. Non-graphic hit reaction: torso recoils slightly backward, shoulders thrown back, head tilts back a little, eyes tense, LEFT arm defensively open ahead, RIGHT hand keeps hold of pistol low to the right. One knee bent absorbing impact, other foot firmly planted. No wounds, no blood, no weapon drop, no extra effect.",
+      "limitations": [
+        "Pose créée pour l’adaptation de combat 2D ; elle ne constitue pas une image extraite de l’animation originale.",
+        "Cycle volontairement partiel : garde, préparation, contact, récupération, recul et deux appuis de marche. Intervalles et états supplémentaires restent à dessiner."
+      ],
+      "status": "generated_reference_reviewed"
+    },
+    {
+      "id": "linda_walk1",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_walk1.png",
+      "sha256": "cacd58181d950852367baa3896e25f2d261403cba4d6636db1347e8adfcd0c54",
+      "bytes": 1700467,
+      "tool": "image_gen__imagegen",
+      "transparent_background": true,
+      "generation_file": "exec-efc54dd1-6fe8-44d6-aae9-08278416885d.png",
+      "references": [
+        "docs/dossier_curien/sources_art/recovered-2026-11-19/linda_walk1_repeated_support.png",
+        "assets/dossier_curien/expansion/zombie_revenge_characters/linda_rotta_base.png"
+      ],
+      "sources": [
+        "https://www.digitpress.com/library/manuals/dreamcast/zombie_revenge.pdf",
+        "https://static.wikia.nocookie.net/houseofthedead/images/3/3f/Linda_Full.jpg/revision/latest?cb=20200217050952"
+      ],
+      "source_notes": [
+        "Premier essai rejeté car il répétait l’appui de walk2 ; correction acceptée avec la jambe portant l’étui en arrière et la jambe gauche en avant."
+      ],
+      "prompt": "Use case: identity-preserve. Correct this ONE Linda Rotta full-body walking sprite. The FIRST image is the walking pose to edit. The SECOND image is her established base identity and costume. Preserve exactly her head, blonde bob, expression, upper torso, yellow crop top, double black belt, denim shorts, purple gloves, white bandage on anatomical LEFT upper arm, right-hand handgun, fine painted 2D style, right-facing orientation, full-body size and transparent background. Change ONLY the leg stride: this must be the OPPOSITE foot contact. The anatomical RIGHT leg with the BROWN THIGH HOLSTER must extend BACKWARDS toward the LEFT SIDE OF THE IMAGE. Its knee and yellow shoe must be on the LEFT side behind her pelvis, heel lifted. The holster itself and both brown thigh straps must be visibly located on this BACKWARD LEFT-SCREEN THIGH. The anatomical LEFT leg with NO holster must extend FORWARDS toward the RIGHT SIDE OF THE IMAGE, its yellow shoe planted ahead at the RIGHT edge of her stride. The forward right-screen thigh is bare with absolutely NO holster or straps. Do not simply move holster to the other leg; rotate both thighs naturally to the opposite stride. NO right-leg-forward pose. Do not mirror the whole character or upper body. Arms and gun remain as first image. Two legs only, clean separated opposite walking contact, anatomically coherent. One complete adult character, entire head and both shoes visible with 7 percent clear margin. True transparent RGBA outside her silhouette; no haze, ground, shadow, text, border, extra figures or props.",
+      "limitations": [
+        "Pose créée pour l’adaptation de combat 2D ; elle ne constitue pas une image extraite de l’animation originale.",
+        "Cycle volontairement partiel : garde, préparation, contact, récupération, recul et deux appuis de marche. Intervalles et états supplémentaires restent à dessiner."
+      ],
+      "status": "generated_reference_reviewed",
+      "revision_reason": "First attempt repeated right-leg-forward support. Corrected to left-leg-forward / holster-bearing right leg back.",
+      "initial_prompt": "Use case: identity-preserve. Asset type: ONE full-body animation pose of Linda Rotta for the House of the Dead 2D fighting game. Image 1 is the established painted base sprite: preserve exactly its character identity, face, detailed 2D painted style and anatomical proportions. Image 2 is the official Zombie Revenge character design reference. Change ONLY the pose as specified. Linda is a 22-year-old adult agent with blonde short asymmetric bob, yellow cropped tank top, two black belts with stacked silver buckles, frayed blue denim shorts, purple-blue full-finger gloves, white bandage on anatomical LEFT upper arm, brown double-strap holster on anatomical RIGHT thigh, yellow sneakers with blue/purple details and white soles. Silver-and-black handgun ALWAYS in anatomical RIGHT hand, the same arm side as thigh holster; bandaged anatomical LEFT arm is the support/free hand. Preserve this handedness and all costume asymmetry. Detailed crisp 2D fighting-game rendering, three-quarter lateral camera facing RIGHT. One complete character only, head, hands, entire gun and both soles visible inside portrait canvas with 9 percent margin on every side, consistent body size. Truly transparent alpha background, empty pixels outside character. No background aura, colored haze, cast shadow, floor, particles, gun flash, text, labels, duplicates, extra gun or scenery. Walking forward toward screen RIGHT, contact frame A: anatomical LEFT foot (bandaged arm side) steps forward to screen right, its sole on common ground baseline; anatomical RIGHT foot trails to screen left with heel lifted. Clear separated stride, not crossed legs. Pistol in RIGHT hand held low across torso, LEFT hand defensive. Neutral alert expression."
+    },
+    {
+      "id": "linda_walk2",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_walk2.png",
+      "sha256": "531f7c3f2a97b53f09ff60d8651973448a25d77ae814125b0a6571ccc5c08c9e",
+      "bytes": 1733897,
+      "tool": "image_gen__imagegen",
+      "transparent_background": true,
+      "generation_file": "exec-3b3dd179-1946-48c4-b035-051e45a33f7c.png",
+      "references": [
+        "assets/dossier_curien/expansion/zombie_revenge_characters/linda_rotta_base.png",
+        "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_characters/linda_full.jpg"
+      ],
+      "sources": [
+        "https://www.digitpress.com/library/manuals/dreamcast/zombie_revenge.pdf",
+        "https://static.wikia.nocookie.net/houseofthedead/images/3/3f/Linda_Full.jpg/revision/latest?cb=20200217050952"
+      ],
+      "source_notes": [],
+      "prompt": "Use case: identity-preserve. Asset type: ONE full-body animation pose of Linda Rotta for the House of the Dead 2D fighting game. Image 1 is the established painted base sprite: preserve exactly its character identity, face, detailed 2D painted style and anatomical proportions. Image 2 is the official Zombie Revenge character design reference. Change ONLY the pose as specified. Linda is a 22-year-old adult agent with blonde short asymmetric bob, yellow cropped tank top, two black belts with stacked silver buckles, frayed blue denim shorts, purple-blue full-finger gloves, white bandage on anatomical LEFT upper arm, brown double-strap holster on anatomical RIGHT thigh, yellow sneakers with blue/purple details and white soles. Silver-and-black handgun ALWAYS in anatomical RIGHT hand, the same arm side as thigh holster; bandaged anatomical LEFT arm is the support/free hand. Preserve this handedness and all costume asymmetry. Detailed crisp 2D fighting-game rendering, three-quarter lateral camera facing RIGHT. One complete character only, head, hands, entire gun and both soles visible inside portrait canvas with 9 percent margin on every side, consistent body size. Truly transparent alpha background, empty pixels outside character. No background aura, colored haze, cast shadow, floor, particles, gun flash, text, labels, duplicates, extra gun or scenery. Walking forward toward screen RIGHT, OPPOSITE contact frame B: anatomical RIGHT foot (holster side) steps clearly forward to screen right, sole on common ground baseline; anatomical LEFT foot now trails to screen left with heel lifted. This is the opposite leg support from walk frame A; do not repeat left foot forward. Pistol in RIGHT hand held low across torso, LEFT hand defensive. Preserve bandage and holster sides without mirroring.",
+      "limitations": [
+        "Pose créée pour l’adaptation de combat 2D ; elle ne constitue pas une image extraite de l’animation originale.",
+        "Cycle volontairement partiel : garde, préparation, contact, récupération, recul et deux appuis de marche. Intervalles et états supplémentaires restent à dessiner."
+      ],
+      "status": "generated_reference_reviewed"
+    },
+    {
+      "id": "linda_crouch",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_crouch.png",
+      "sha256": "f32c2c7ba79aab5e346a42ad5700cc148350f1585f69a7cbdf5e6146347b42fd",
+      "bytes": 1639978,
+      "tool": "image_gen__imagegen",
+      "transparent_background": true,
+      "generation_file": "exec-b68b79e4-59f9-4284-b4c1-5cbde972f6e2.png",
+      "references": [
+        "assets/dossier_curien/expansion/zombie_revenge_characters/linda_rotta_base.png",
+        "assets/dossier_curien/expansion/zombie_revenge_characters/linda_contact.png",
+        "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_characters/linda_full.jpg"
+      ],
+      "sources": [
+        "https://www.digitpress.com/library/manuals/dreamcast/zombie_revenge.pdf",
+        "https://static.wikia.nocookie.net/houseofthedead/images/3/3f/Linda_Full.jpg/revision/latest?cb=20200217050952"
+      ],
+      "source_notes": [
+        "Accroupissement compact : deux genoux profondément pliés, bassin bas ; pistolet droit près du buste, bandage gauche et étui droit préservés."
+      ],
+      "prompt": "Use case: identity-preserve.\nAsset type: ONE full-body native 2D fighting-game sprite of Linda Rotta, for House of the Dead 2D.\nInput images: Image 1 is the active painted base sprite: preserve its identity, adult anatomy, body proportions, detailed painted rendering, lighting and costume. Image 2 is the active contact pose: preserve the same face, arm lengths, handgun design and handedness. Image 3 is the official Zombie Revenge costume reference.\nSubject: the same 22-year-old adult Linda, short golden-blonde asymmetric bob and long front fringe, yellow cropped tank top, two black belts with stacked silver buckles, frayed blue denim shorts, blue-purple full-finger gloves, white wrap on her anatomical LEFT upper arm, brown double-strap holster on her anatomical RIGHT thigh, yellow sneakers with blue-purple details and white soles. ONE silver-and-black handgun in her anatomical RIGHT hand. The anatomical LEFT bandaged arm is always the free/support arm. Do not mirror her identity or swap these sides.\nStyle: match the same crisp, detailed 2D painted sprite, no redesign, no chibi, no mini figure.\nNative layout: 1024x1536 portrait canvas, matching the standing source canvas. Keep the head, torso, hands and individual limb lengths at approximately the SAME native pixel size as Image 1. Head approximately 200 pixels wide and 230 pixels high, normal adult proportions. Lower the silhouette by genuinely folding her legs, NOT by shrinking or vertically squeezing a standing figure. Feet baseline around y=1450. Leave transparent upper canvas space; the body is actually lower in the frame. Include the whole head, both hands, complete handgun and both complete shoes, with clear empty pixels around every extremity.\nCamera: same three-quarter lateral view, facing RIGHT.\nBackground: truly transparent RGBA outside her silhouette. No backdrop, colored aura, haze, ground, cast shadow, motion streaks, particles, muzzle flash, text, labels, duplicates or extra weapons.\nPose: a genuine compact LOW NEUTRAL COMBAT CROUCH. Both knees deeply flexed and spread naturally, pelvis sunk near the heels, hips below the knees, body weight balanced over the feet. Her right near-side thigh bears the brown holster; its knee folds out toward the left side of the image. Her left knee bends forward toward the right side of the image, left foot flat and clearly visible. Both lower legs are folded, no straight standing leg and no elongated half-standing lunge. Torso remains upright with a modest forward lean; crown about y=500, hips around y=1150, feet around y=1450. Her right hand holds the pistol close to her chest/ribs, barrel points to the RIGHT, no firing. Left bandaged arm is relaxed but ready, bent near the chest with free hand. Alert neutral face. This must read as a compact squat with normal full-size torso and head, distinct from the upright base.",
+      "limitations": [
+        "Pose clé statique ; transitions et animation continue non complètes. Les proportions et côtés du costume ont été contrôlés visuellement. L’échelle et les pivots doivent être validés dans le rendu du jeu ; les coordonnées de canon sont un relevé visuel manuel.",
+        "Adaptation de pose pour le simulateur AMS ; fidélité exacte 1:1 non certifiée."
+      ],
+      "status": "generated_reference_reviewed",
+      "pose_emitter": null
+    },
+    {
+      "id": "linda_crouch_guard",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_crouch_guard.png",
+      "sha256": "befbf47a8d6014517d827ce9eced9b1a6a02d911aca25223829f6c0c57689d6a",
+      "bytes": 1618807,
+      "tool": "image_gen__imagegen",
+      "transparent_background": true,
+      "generation_file": "exec-ae80e3ff-a224-4b5b-8f2a-d6e26d7ed33a.png",
+      "references": [
+        "assets/dossier_curien/expansion/zombie_revenge_characters/linda_rotta_base.png",
+        "assets/dossier_curien/expansion/zombie_revenge_characters/linda_contact.png",
+        "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_characters/linda_full.jpg"
+      ],
+      "sources": [
+        "https://www.digitpress.com/library/manuals/dreamcast/zombie_revenge.pdf",
+        "https://static.wikia.nocookie.net/houseofthedead/images/3/3f/Linda_Full.jpg/revision/latest?cb=20200217050952"
+      ],
+      "source_notes": [
+        "Vraie garde accroupie : bras gauche bandagé levé devant/au-dessus du front ; pistolet droit conservé près des côtes. Deux jambes profondément fléchies."
+      ],
+      "prompt": "Use case: identity-preserve.\nAsset type: ONE full-body native 2D fighting-game sprite of Linda Rotta, for House of the Dead 2D.\nInput images: Image 1 is the active painted base sprite: preserve its identity, adult anatomy, body proportions, detailed painted rendering, lighting and costume. Image 2 is the active contact pose: preserve the same face, arm lengths, handgun design and handedness. Image 3 is the official Zombie Revenge costume reference.\nSubject: the same 22-year-old adult Linda, short golden-blonde asymmetric bob and long front fringe, yellow cropped tank top, two black belts with stacked silver buckles, frayed blue denim shorts, blue-purple full-finger gloves, white wrap on her anatomical LEFT upper arm, brown double-strap holster on her anatomical RIGHT thigh, yellow sneakers with blue-purple details and white soles. ONE silver-and-black handgun in her anatomical RIGHT hand. The anatomical LEFT bandaged arm is always the free/support arm. Do not mirror her identity or swap these sides.\nStyle: match the same crisp, detailed 2D painted sprite, no redesign, no chibi, no mini figure.\nNative layout: 1024x1536 portrait canvas, matching the standing source canvas. Keep the head, torso, hands and individual limb lengths at approximately the SAME native pixel size as Image 1. Head approximately 200 pixels wide and 230 pixels high, normal adult proportions. Lower the silhouette by genuinely folding her legs, NOT by shrinking or vertically squeezing a standing figure. Feet baseline around y=1450. Leave transparent upper canvas space; the body is actually lower in the frame. Include the whole head, both hands, complete handgun and both complete shoes, with clear empty pixels around every extremity.\nCamera: same three-quarter lateral view, facing RIGHT.\nBackground: truly transparent RGBA outside her silhouette. No backdrop, colored aura, haze, ground, cast shadow, motion streaks, particles, muzzle flash, text, labels, duplicates or extra weapons.\nPose: a genuine LOW GUARD in a compact defensive squat. Both knees deeply bent, pelvis low near heels, staggered feet visibly supporting her weight, no straight standing leg, no half-standing lunge. Her right near-side thigh retains its brown holster. Torso slightly hunches forward for defense while retaining the same full-size adult chest, shoulders and head. Crown around y=500, hips around y=1150, feet around y=1450. The anatomical LEFT forearm with the white bandage visible above its elbow is raised protectively beside and above her face, glove guarding her forehead; her eyes remain visible looking RIGHT. Anatomical RIGHT arm stays close to her ribs, right hand firmly holding the pistol safely pointing RIGHT at low chest level. Clear readable separation between the raised protective left arm and the lowered armed right arm. This is an unmistakable guard while deeply crouching, with real bent legs and full-size body parts.",
+      "limitations": [
+        "Pose clé statique ; transitions et animation continue non complètes. Les proportions et côtés du costume ont été contrôlés visuellement. L’échelle et les pivots doivent être validés dans le rendu du jeu ; les coordonnées de canon sont un relevé visuel manuel.",
+        "Adaptation de pose pour le simulateur AMS ; fidélité exacte 1:1 non certifiée."
+      ],
+      "status": "generated_reference_reviewed",
+      "pose_emitter": null
+    },
+    {
+      "id": "linda_slide_contact",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_slide_contact.png",
+      "sha256": "5fc8b52ea2891daaafc48b5791c050810f257d087df9d8ac4a05476f45dceff2",
+      "bytes": 1448958,
+      "tool": "image_gen__imagegen",
+      "transparent_background": true,
+      "generation_file": "exec-c96295be-88e4-4819-b164-890231571415.png",
+      "references": [
+        "assets/dossier_curien/expansion/zombie_revenge_characters/linda_rotta_base.png",
+        "assets/dossier_curien/expansion/zombie_revenge_characters/linda_contact.png",
+        "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_characters/linda_full.jpg"
+      ],
+      "sources": [
+        "https://www.digitpress.com/library/manuals/dreamcast/zombie_revenge.pdf",
+        "https://static.wikia.nocookie.net/houseofthedead/images/3/3f/Linda_Full.jpg/revision/latest?cb=20200217050952"
+      ],
+      "source_notes": [
+        "Glissade basse anatomiquement lisible : jambe droite avec étui repliée, jambe gauche étendue vers la droite ; bras droit armé allongé, gauche en soutien. La jambe étendue est l’inverse du détail du prompt initial, sans inversion des côtés canoniques du costume. Ce choix reste conforme à la demande d’une jambe étendue et d’une jambe pliée."
+      ],
+      "prompt": "Use case: identity-preserve.\nAsset type: ONE full-body native 2D fighting-game sprite of Linda Rotta, for House of the Dead 2D.\nInput images: Image 1 is the active painted base sprite: preserve its identity, adult anatomy, body proportions, detailed painted rendering, lighting and costume. Image 2 is the active contact pose: preserve the same face, arm lengths, handgun design and handedness. Image 3 is the official Zombie Revenge costume reference.\nSubject: the same 22-year-old adult Linda, short golden-blonde asymmetric bob and long front fringe, yellow cropped tank top, two black belts with stacked silver buckles, frayed blue denim shorts, blue-purple full-finger gloves, white wrap on her anatomical LEFT upper arm, brown double-strap holster on her anatomical RIGHT thigh, yellow sneakers with blue-purple details and white soles. ONE silver-and-black handgun in her anatomical RIGHT hand. The anatomical LEFT bandaged arm is always the free/support arm. Do not mirror her identity or swap these sides.\nStyle: match the same crisp, detailed 2D painted sprite, no redesign, no chibi, no mini figure.\nNative layout: 1024x1536 portrait canvas, matching the standing source canvas. Keep the head, torso, hands and individual limb lengths at approximately the SAME native pixel size as Image 1. Head approximately 200 pixels wide and 230 pixels high, normal adult proportions. Lower the silhouette by genuinely folding her legs, NOT by shrinking or vertically squeezing a standing figure. Feet baseline around y=1450. Leave transparent upper canvas space; the body is actually lower in the frame. Include the whole head, both hands, complete handgun and both complete shoes, with clear empty pixels around every extremity.\nCamera: same three-quarter lateral view, facing RIGHT.\nBackground: truly transparent RGBA outside her silhouette. No backdrop, colored aura, haze, ground, cast shadow, motion streaks, particles, muzzle flash, text, labels, duplicates or extra weapons.\nPose: a low lateral COMBAT SLIDE moving to the RIGHT, not a running step, not a standing lunge. Her pelvis is very low, near the ground plane without drawing a floor. Her anatomical RIGHT leg, carrying the brown thigh holster, extends diagonally forward toward the RIGHT at low height, right heel leading and full yellow shoe visible. Her anatomical LEFT leg folds deeply under and behind the pelvis, knee low with the other full yellow shoe clearly visible near the left side. Only two anatomically coherent legs; knee/ankle joints remain readable, no twisted or merged limbs. Torso remains upright with a slight backward counterbalancing lean, crown around y=600, hips around y=1200, lowest shoe around y=1450. Both arms extend firmly toward the RIGHT at chest level: the RIGHT hand grips the one handgun, LEFT bandaged arm supports the right hand from below as in Image 2. Gun barrel aims horizontally RIGHT with no flash. Preserve full-size adult head, chest and arm lengths at the scale of Image 1; lower height comes entirely from the sliding folded-leg posture. Fit the entire slide inside the canvas with at least 45 clear pixels at both lateral extremes; keep the gun muzzle clearly isolated and readable.",
+      "limitations": [
+        "Pose clé statique ; transitions et animation continue non complètes. Les proportions et côtés du costume ont été contrôlés visuellement. L’échelle et les pivots doivent être validés dans le rendu du jeu ; les coordonnées de canon sont un relevé visuel manuel.",
+        "Adaptation de pose pour le simulateur AMS ; fidélité exacte 1:1 non certifiée."
+      ],
+      "status": "generated_reference_reviewed",
+      "pose_emitter": {
+        "name": "muzzle",
+        "point_native_px": [
+          775,
+          712
+        ],
+        "uncertainty_px": 3,
+        "coordinate_space": "source PNG; origin top-left",
+        "direction_native": [
+          1,
+          0
+        ],
+        "description": "Centre du trou supérieur du canon (pas le trou inférieur du guide), après inspection agrandie.",
+        "point_bounds_normalized": [
+          0.774916,
+          0.186329
+        ],
+        "point_canvas_normalized": [
+          0.756836,
+          0.463542
+        ],
+        "point_relative_bounds_px": [
+          692,
+          169
+        ]
+      }
+    }
+  ]
+}

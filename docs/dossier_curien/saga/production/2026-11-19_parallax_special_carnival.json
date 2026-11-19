@@ -1,0 +1,175 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-19",
+  "base_commit": "a3fbcf13455a945ccc929ce43907a9755d82e6c7",
+  "generator": "built-in image_gen",
+  "mode": "reference-based transparent raster generation",
+  "scope": "Four missing Special and Carnival parallax layers; renderer and shared catalogue left to integration task",
+  "asset_count": 4,
+  "assets": [
+    {
+      "id": "special_mid",
+      "path": "assets/dossier_curien/saga/special_mid.png",
+      "kind": "parallax_mid",
+      "sha256": "d408ef48727cf01533d1bf38b3ce91a96ac9fbfe471a9b9e590a81b32828c67a",
+      "size_bytes": 418446,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "transparent_background_requested": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "fully_transparent_percent": 88.815,
+      "runtime_floor_y": 601,
+      "combat_band_normalized": [
+        0.125,
+        0.2,
+        0.875,
+        0.79
+      ],
+      "combat_band_alpha_max": 1,
+      "full_center_alpha_max": 1,
+      "reference": {
+        "path": "assets/dossier_curien/saga/special_back.png",
+        "sha256": "b7d2629601a11e8681761dfec3a7f19aea95c89a16f0a400b4b5d81ae926facd",
+        "role": "Existing project backplate: style, palette, camera, environment continuity"
+      },
+      "generation_id": "exec-b78eee70-f6fd-468a-990e-dc4766247e50",
+      "prompt": "Use case: stylized-concept. Asset type: ONE transparent middle-depth parallax overlay for the provided industrial bio-laboratory 2D fighting stage, 1600 x 900 landscape. Input image is ONLY a strict reference for camera, realistic painted materials, lighting and palette. Do not reproduce the full laboratory. Add slender peripheral utility details: a corroded steel service conduit and a small bolted connection box along the extreme LEFT edge, with a tiny red caged status lamp; a pair of narrow amber-brown fluid hoses and their metal clamps hugging the extreme RIGHT edge. All visible geometry must stay within x=0..135 or x=1465..1600; most fittings partly crop offscreen. Lower ends terminate near source y=735. Match dark desaturated concrete/steel surroundings, green tank bounce on inward-facing edges and restrained red warning-light reflection. Straight-on side-view, realistic game environment paint quality. No new tank, statue, platform, full column, wall or central structure. Entire x=160..1440 must be fully transparent top to bottom. No floor plane, opaque shadows, mist, people, creatures, text, labels, UI or painted checkerboard. Output only this one sparse compositable RGBA overlay with genuine alpha.",
+      "visual_review": {
+        "status": "reviewed",
+        "observations": "Sparse lateral utility details and low corner debris. Central fighting band is clear. Existing tank, statues, tents, booths and ferris wheel are not duplicated. No character, text, UI or opaque background."
+      }
+    },
+    {
+      "id": "special_front",
+      "path": "assets/dossier_curien/saga/special_front.png",
+      "kind": "parallax_front",
+      "sha256": "1644a55000427161df7fc628dba0f95e1382a62bd89f1d235607cc0724e43cb7",
+      "size_bytes": 217062,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "transparent_background_requested": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "fully_transparent_percent": 95.695,
+      "runtime_floor_y": 601,
+      "combat_band_normalized": [
+        0.125,
+        0.2,
+        0.875,
+        0.79
+      ],
+      "combat_band_alpha_max": 1,
+      "full_center_alpha_max": 255,
+      "reference": {
+        "path": "assets/dossier_curien/saga/special_back.png",
+        "sha256": "b7d2629601a11e8681761dfec3a7f19aea95c89a16f0a400b4b5d81ae926facd",
+        "role": "Existing project backplate: style, palette, camera, environment continuity"
+      },
+      "generation_id": "exec-afcade21-3110-4f0e-baee-12e091eaf852",
+      "prompt": "Use case: stylized-concept. Asset type: ONE transparent foreground parallax overlay for the referenced industrial bio-laboratory fighting stage, 1600 x 900 landscape. Use the reference for exact material and lighting continuity only; retain a completely transparent backdrop. Create small dark close-foreground maintenance debris at the extreme bottom corners: LEFT a partly cropped broken steel vent grille, short coiled black cable and two corroded fasteners; RIGHT a fractured hose coupling and a few small dark metal scraps. All geometry confined strictly to x=0..150 or x=1450..1600 and source y=785..900. Subdued green rim light from the tank, tiny red reflections from the warning lamps, dark worn steel with brown rust. Realistically painted high-detail side-view game asset finish. Entire central x=175..1425 transparent, all upper y=0..785 transparent. No floor or opaque shadow plate, no tank, statue, room, fog, character, gore, text, numbers, labels, UI, solid background or checkerboard. Output one sparse independent foreground layer with true alpha transparency.",
+      "visual_review": {
+        "status": "reviewed",
+        "observations": "Sparse lateral utility details and low corner debris. Central fighting band is clear. Existing tank, statues, tents, booths and ferris wheel are not duplicated. No character, text, UI or opaque background."
+      }
+    },
+    {
+      "id": "carnival_mid",
+      "path": "assets/dossier_curien/saga/carnival_mid.png",
+      "kind": "parallax_mid",
+      "sha256": "9fbf81119986e4d7ebd8d08836545e9409e637f8793d3ec85b47c734684b36de",
+      "size_bytes": 252496,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "transparent_background_requested": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "fully_transparent_percent": 94.739,
+      "runtime_floor_y": 601,
+      "combat_band_normalized": [
+        0.125,
+        0.2,
+        0.875,
+        0.79
+      ],
+      "combat_band_alpha_max": 1,
+      "full_center_alpha_max": 248,
+      "reference": {
+        "path": "assets/dossier_curien/saga/carnival_back.png",
+        "sha256": "7ee88eb625e02ef5333f2ce7d14aa1d4df73b1fa0780a59130a58a0f4d28bf97",
+        "role": "Existing project backplate: style, palette, camera, environment continuity"
+      },
+      "generation_id": "exec-6f0634ad-f4fc-4b16-917d-965acc09096e",
+      "prompt": "Use case: stylized-concept. Asset type: ONE transparent middle-depth parallax overlay for the referenced abandoned swamp carnival 2D fighting stage, 1600 x 900 landscape. Use input only as an exact painted style, palette, lighting and perspective reference, not as a scene to reproduce. Add peripheral accents: an extremely narrow cropped edge of frayed faded red-and-cream tent fabric at the far RIGHT side, tied to a slender dark wooden support just inside the edge; LEFT a thin weathered support with a short slack string carrying three small warm amber carnival bulbs near the upper-left corner and one tiny ragged faded pennant. Keep every object inside x=0..140 or x=1460..1600. No cable spanning the middle. Upright supports terminate near source y=740. Match the muted sepia moonlight, old amber incandescent light, damp weathered wood and aged striped canvas of the reference. Straight-on side-view, realistic painted game environment. Entire x=170..1430 fully transparent top to bottom. No additional big tent, booth, ferris wheel, tree, fence or floor. No people, creatures, text, signage, UI, panorama, opaque haze, black/white background or drawn checkerboard. Output one transparent sparse edge overlay.",
+      "visual_review": {
+        "status": "reviewed",
+        "observations": "Sparse lateral utility details and low corner debris. Central fighting band is clear. Existing tank, statues, tents, booths and ferris wheel are not duplicated. No character, text, UI or opaque background."
+      }
+    },
+    {
+      "id": "carnival_front",
+      "path": "assets/dossier_curien/saga/carnival_front.png",
+      "kind": "parallax_front",
+      "sha256": "76be70be69b4a00ffaab7ad63684fc95f0ad2d1349b3347e78167606d4d1118b",
+      "size_bytes": 184224,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "transparent_background_requested": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "fully_transparent_percent": 96.716,
+      "runtime_floor_y": 601,
+      "combat_band_normalized": [
+        0.125,
+        0.2,
+        0.875,
+        0.79
+      ],
+      "combat_band_alpha_max": 1,
+      "full_center_alpha_max": 251,
+      "reference": {
+        "path": "assets/dossier_curien/saga/carnival_back.png",
+        "sha256": "7ee88eb625e02ef5333f2ce7d14aa1d4df73b1fa0780a59130a58a0f4d28bf97",
+        "role": "Existing project backplate: style, palette, camera, environment continuity"
+      },
+      "generation_id": "exec-95a29d9b-3456-42c7-99ae-ec4ab00916b9",
+      "prompt": "Use case: stylized-concept. Asset type: ONE sparse transparent foreground parallax overlay for the referenced abandoned swamp carnival fighting stage, 1600 x 900 landscape. Reference image supplies exact rusty amber palette, realistic painted style, side-view camera and low warm lighting only. At extreme BOTTOM LEFT place a small cluster of dark swamp reeds, a broken narrow board tip and a tiny wet rope knot; at extreme BOTTOM RIGHT place a few matching reeds, one short splintered piece of old painted carnival wood and a small loose strip of faded red canvas. All objects strictly inside x=0..145 or x=1455..1600, below source y=770; reed tips may reach y=720 but only within x=0..100 or x=1500..1600. Low profile accents, no large wheel or props. Dark brown-olive shadows and subtle amber bulb highlights, damp textures. Entire central x=170..1430 transparent. No floor boardwalk strip, trees, tent, booth, ferris wheel, full fence, solid ground plane, mist, character, creature, text, UI or background. Output a single compositable foreground overlay with true transparent alpha, never a contact sheet or collage.",
+      "visual_review": {
+        "status": "reviewed",
+        "observations": "Sparse lateral utility details and low corner debris. Central fighting band is clear. Existing tank, statues, tents, booths and ferris wheel are not duplicated. No character, text, UI or opaque background."
+      }
+    }
+  ],
+  "validation": {
+    "image_generation_only": true,
+    "images_edited_after_generation": false,
+    "original_files_copied_without_resampling": true,
+    "alpha_note": "True alpha with near-zero central combat band. Transparent regions can retain isolated alpha1 pixels. Low corner debris and upper edge accents stay outside the central fighting band.",
+    "resolution_note": "Native 1672 x 941 output preserved byte for byte; stage renderer scales the full canvas."
+  },
+  "fidelity_limits": [
+    "These sparse overlays continue existing project illustrations; they are original game scenery, not extracted official assets.",
+    "No pixel-for-pixel comparison against official episode camera captures; canonical 1:1 fidelity is not certified.",
+    "Final engine composition, footing and camera-drift review remain part of the integration task."
+  ]
+}

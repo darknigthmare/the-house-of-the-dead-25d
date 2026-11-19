@@ -54,7 +54,10 @@ const PROFILES := [
 	 "alt_name": "Hache de givre", "alt_move": {"start": 14, "end": 42, "reach": 216, "damage": 18, "stun": 18}},
 	{"id": "moon", "title": "Moon", "home": "scarlet", "speed": 3.5, "height": 374, "ammo": 0, "reload": 0,
 	 "special": "Bras de l’Arche", "finish": "Éclipse de l’Arche", "kind": "canopy", "color": "c5cda0", "move": {"start": 22, "end": 62, "reach": 522, "damage": 19, "stun": 18},
-	 "alt_name": "Appel du cyclone", "alt_move": {"start": 25, "end": 55, "reach": 405, "damage": 11, "stun": 19}}
+	 "alt_name": "Appel du cyclone", "alt_move": {"start": 25, "end": 55, "reach": 405, "damage": 11, "stun": 19}},
+	{"id": "linda", "title": "Linda Rotta", "home": "revenge", "speed": 6.35, "height": 261, "ammo": 8, "reload": 36,
+	 "special": "Tir de liaison", "finish": "Dernière issue", "kind": "slide_shot", "color": "efd46a", "move": {"start": 11, "end": 35, "reach": 520, "damage": 10, "stun": 12},
+	 "alt_name": "Glissade armée", "alt_move": {"start": 19, "end": 45, "reach": 345, "damage": 12, "stun": 14}}
 ]
 # Distinct close-range timing and geometry for the crossover combatants.
 const QUICK_LIGHT := {"start": 4, "end": 15, "reach": 111, "damage": 6, "stun": 9}
@@ -83,7 +86,8 @@ const NOTES := [
 	"Gary recule pendant les dix premières images avant de tirer. Accroupissez-vous pour éviter le tir et surveillez la distance jusqu’au bord.",
 	"Le tir debout disperse les plombs et couvre les sauts bas. Bas + spécial resserre la gerbe pour gagner en portée. Chaque recharge insère une cartouche.",
 	"Deux volées hautes à douze tics d’intervalle. Sur touche, le givre ralentit la marche pendant 36 tics. Bas + spécial frappe à la hache et atteint une cible accroupie.",
-	"Le bras court près du sol. Sautez au-dessus de son extrémité. Bas + spécial aspire les cibles entre 150 et 405 unités. Le corps à corps échappe au cyclone."
+	"Le bras court près du sol. Sautez au-dessus de son extrémité. Bas + spécial aspire les cibles entre 150 et 405 unités. Le corps à corps échappe au cyclone.",
+	"Le tir debout passe au-dessus d’une cible accroupie. Bas + spécial avance de 40 unités en position basse puis tire à courte portée. La glissade ne rend pas invincible ; sautez ou projetez Linda avant le tir. Chaque tir dépense une cartouche."
 ]
 const STORY := [[1, 2, 3], [0, 3, 2], [1, 0, 3], [2, 1, 0]]
 const STORY_STAGES := [[0, 1, 2], [0, 2, 1], [0, 1, 2], [1, 2, 0]]
@@ -125,7 +129,7 @@ func _init(identity: int, position_x: float, direction: int) -> void:
 func move_data(command := "") -> Dictionary:
 	match action if command == "" else command:
 		"light":
-			if profile.kind in ["rise", "double", "burst", "hop", "palm", "retreat"]: return QUICK_LIGHT
+			if profile.kind in ["rise", "double", "burst", "hop", "palm", "retreat", "slide_shot"]: return QUICK_LIGHT
 			if profile.kind == "thrust": return POLE_LIGHT
 			return LIGHT
 		"heavy":
@@ -208,6 +212,8 @@ func step(axis: int, down: bool, command: String, other_x: float) -> void:
 		vy -= 0.72
 		if altitude == 0.0: vy = 0.0
 	crouching = down and altitude == 0.0 and action == "" and stun == 0
+	if profile.kind == "slide_shot" and alternate_special and action == "special" and altitude == 0 and stun == 0:
+		crouching = tick < int(profile.alt_move.start) + 3
 	guarding = axis == -facing and altitude == 0.0 and action == "" and stun == 0
 	moving = axis != 0 and not crouching and action == "" and stun == 0
 	if moving:
@@ -233,6 +239,8 @@ func step(axis: int, down: bool, command: String, other_x: float) -> void:
 				connected = false
 			if profile.kind == "advance" and tick <= int(move.start): x += facing * 2.0
 			if profile.kind == "retreat" and tick <= 10: x -= facing * 4.0
+			if profile.kind == "slide_shot" and alternate_special and tick <= 8 and stun == 0:
+				x += facing * 5.0
 		if tick >= int(move.end): action = ""
 
 func can_strike(target) -> bool:
@@ -252,6 +260,10 @@ func can_strike(target) -> bool:
 	var separation: float = (target.x - x) * facing
 	if separation < -16 or separation > float(move.reach): return false
 	if action == "special":
+		if profile.kind == "slide_shot":
+			if stun > 0: return false
+			if alternate_special: return absf(altitude - target.altitude) < 70
+			return not target.crouching and absf(altitude - target.altitude) < 89
 		if profile.kind == "frost":
 			if alternate_special: return absf(altitude - target.altitude) < 114
 			return not target.crouching and absf(separation-surge_radius()) <= 35 and absf(altitude-target.altitude) < 95

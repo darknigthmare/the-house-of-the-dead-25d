@@ -1,0 +1,267 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-19",
+  "timezone": "Europe/Paris",
+  "batch": "parallax_ex_revenge",
+  "repository": "darknigthmare/the-house-of-the-dead-25d",
+  "audited_head": "a3fbcf13455a945ccc929ce43907a9755d82e6c7",
+  "generation_method": "Built-in image_gen.imagegen, one transparent parallax layer per call, four independent calls in parallel; no CLI/API fallback.",
+  "references": [
+    {
+      "path": "assets/dossier_curien/saga/ex_back.png",
+      "role": "Existing project Loving Deads EX backplate; inspected for painted materials, velvet/brass/teal palette and stage perspective.",
+      "sha256": "e07d0744aa78914539e62d35574436e427de7194226c9156441588d4cc800fe6"
+    },
+    {
+      "path": "assets/dossier_curien/saga/revenge_back.png",
+      "role": "Existing project Zombie Revenge backplate; inspected for weathered lamp design, amber lighting, iron, asphalt and curb materials.",
+      "sha256": "80b2479f7675becceb04023d2832470b06640ac8d466b0b5aa9f80b6a2c07a5c"
+    }
+  ],
+  "files": [
+    {
+      "file": "assets/dossier_curien/saga/ex_mid.png",
+      "stage": "ex",
+      "layer": "mid",
+      "selected_generation_basename": "exec-700522b6-f307-443e-9a38-eab5cb12c653.png",
+      "prompt": "Use case: stylized-concept. Asset type: separate extremely sparse 16:9 transparent PNG parallax overlay for an existing side-on 2D fighting arena. Landscape native canvas about 1672x941. Input image is ONLY the existing background's visual style, perspective, lighting and material reference; do not reproduce the background. Create ONLY the requested edge props on a true transparent alpha canvas. The entire center rectangle from x=12.5% through87.5%, y=20% through79% MUST be completely empty and transparent, alpha0: no object, glow, mist, shadow, gradient, antialias scatter, dust or texture in that rectangle. Keep all geometry inside the specified outer margins with an additional safety gap; roughly90% or more of image is transparent. Leave upper central and lower central areas transparent too unless a corner detail is explicitly specified. No opaque background, no floor plane, no wall, no sky, no character, no text, no symbols resembling UI, no border, no watermark, no multiple panels. All props cleanly cut out with antialiased edges and no ground shadows. Match the painted videogame art of the reference.\nRequested midground elements ONLY: two small theatrical spotlights belonging to the playful gothic Loving Deads EX set, one at the extreme LEFT and one at extreme RIGHT, each fully confined to the outermost7% of canvas width (left x0–7%, right x93–100%) and y38–76%. Slim oxidized teal metal stands, restrained brass joints and small burgundy/pink lamp housings, softly pink lamp glass facing inward but NO emitted beam or spill outside the housing. Tiny carved-heart-shaped bracket as physical ornament consistent with the reference gates, not iconography. Keep the inner93% between the narrow edge props totally empty transparent. No connecting truss or floor.",
+      "reference": "assets/dossier_curien/saga/ex_back.png",
+      "visual_check": {
+        "background_not_reproduced": true,
+        "edge_only_composition": true,
+        "no_character": true,
+        "no_text": true,
+        "no_ui": true,
+        "no_floor_plane": true,
+        "center_visually_clear": true
+      },
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "sha256": "d58f67fc1497f1dc9fa493e9f622f81ab272621daffa8ace128cc6a5b4e67f5a",
+      "size_bytes": 162227,
+      "alpha": {
+        "extrema": [
+          0,
+          255
+        ],
+        "bbox_above_1": [
+          12,
+          392,
+          1660,
+          737
+        ],
+        "fully_transparent_pixels": 1531663,
+        "alpha_1_pixels": 3324,
+        "coverage_above_1": 0.02438424459370821,
+        "coverage_above_127": 0.020197641722894812
+      },
+      "center_validation": {
+        "pixel_box": [
+          209,
+          188,
+          1463,
+          743
+        ],
+        "extrema": [
+          0,
+          1
+        ],
+        "pixel_count": 695970,
+        "pixels_alpha_above_1": 0,
+        "passes": true
+      }
+    },
+    {
+      "file": "assets/dossier_curien/saga/ex_front.png",
+      "stage": "ex",
+      "layer": "front",
+      "selected_generation_basename": "exec-f76afcc1-6078-4829-912a-d73c7479b7b0.png",
+      "prompt": "Use case: stylized-concept. Asset type: separate extremely sparse 16:9 transparent PNG parallax overlay for an existing side-on 2D fighting arena. Landscape native canvas about 1672x941. Input image is ONLY the existing background's visual style, perspective, lighting and material reference; do not reproduce the background. Create ONLY the requested edge props on a true transparent alpha canvas. The entire center rectangle from x=12.5% through87.5%, y=20% through79% MUST be completely empty and transparent, alpha0: no object, glow, mist, shadow, gradient, antialias scatter, dust or texture in that rectangle. Keep all geometry inside the specified outer margins with an additional safety gap; roughly90% or more of image is transparent. Leave upper central and lower central areas transparent too unless a corner detail is explicitly specified. No opaque background, no floor plane, no wall, no sky, no character, no text, no symbols resembling UI, no border, no watermark, no multiple panels. All props cleanly cut out with antialiased edges and no ground shadows. Match the painted videogame art of the reference.\nRequested foreground elements ONLY: two very short burgundy-purple velvet ribbons with subtle pink edging and small aged-brass tassels at the LOWER LEFT and LOWER RIGHT corners of the Loving Deads EX set. They are cropped by the screen corners as loose ends of side curtains. Left fragment fits x0–10%, y86–100%; right fragment x90–100%,y88–100%. A slight curl hangs inward within its own corner only; no ribbon, string or fabric connection between the corners. Match the reference's magenta velvet and brass details, darker foreground lighting. Leave every other pixel transparent, especially all of the central90%.",
+      "reference": "assets/dossier_curien/saga/ex_back.png",
+      "visual_check": {
+        "background_not_reproduced": true,
+        "edge_only_composition": true,
+        "no_character": true,
+        "no_text": true,
+        "no_ui": true,
+        "no_floor_plane": true,
+        "center_visually_clear": true
+      },
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "sha256": "b5720d2bd3b4368dd378ae552d478ee77a3287e45a27714ce993c25e151943a5",
+      "size_bytes": 125142,
+      "alpha": {
+        "extrema": [
+          0,
+          255
+        ],
+        "bbox_above_1": [
+          0,
+          747,
+          1672,
+          941
+        ],
+        "fully_transparent_pixels": 1541066,
+        "alpha_1_pixels": 1093,
+        "coverage_above_1": 0.01982582410039203,
+        "coverage_above_127": 0.018316943697278168
+      },
+      "center_validation": {
+        "pixel_box": [
+          209,
+          188,
+          1463,
+          743
+        ],
+        "extrema": [
+          0,
+          1
+        ],
+        "pixel_count": 695970,
+        "pixels_alpha_above_1": 0,
+        "passes": true
+      }
+    },
+    {
+      "file": "assets/dossier_curien/saga/revenge_mid.png",
+      "stage": "revenge",
+      "layer": "mid",
+      "selected_generation_basename": "exec-78e6fa5e-994e-45b8-81f3-408d396e1df3.png",
+      "prompt": "Use case: stylized-concept. Asset type: separate extremely sparse 16:9 transparent PNG parallax overlay for an existing side-on 2D fighting arena. Landscape native canvas about 1672x941. Input image is ONLY the existing background's visual style, perspective, lighting and material reference; do not reproduce the background. Create ONLY the requested edge props on a true transparent alpha canvas. The entire center rectangle from x=12.5% through87.5%, y=20% through79% MUST be completely empty and transparent, alpha0: no object, glow, mist, shadow, gradient, antialias scatter, dust or texture in that rectangle. Keep all geometry inside the specified outer margins with an additional safety gap; roughly90% or more of image is transparent. Leave upper central and lower central areas transparent too unless a corner detail is explicitly specified. No opaque background, no floor plane, no wall, no sky, no character, no text, no symbols resembling UI, no border, no watermark, no multiple panels. All props cleanly cut out with antialiased edges and no ground shadows. Match the painted videogame art of the reference.\nRequested midground elements ONLY: two isolated narrow old street/shop lamp brackets cropped by the opposite extreme side edges of the abandoned Zombie Revenge street. LEFT bracket occupies x0–7%,y27–52%; RIGHT bracket x93–100%,y30–54%. Each is rusty black iron with a slim bent gooseneck and shallow industrial dome lamp, the warm yellow glass contained inside its shade. Use precisely the weathered streetlamp language and dim amber/teal lighting of the supplied street background. No light cone, no atmospheric halo beyond each shade, no building fragment, no sidewalk, no barriers across the fight space. Empty center and all other pixels fully transparent.",
+      "reference": "assets/dossier_curien/saga/revenge_back.png",
+      "visual_check": {
+        "background_not_reproduced": true,
+        "edge_only_composition": true,
+        "no_character": true,
+        "no_text": true,
+        "no_ui": true,
+        "no_floor_plane": true,
+        "center_visually_clear": true
+      },
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "sha256": "f25003f90afff8b387168e895df264b42a98d423103b7945369ed83def35181d",
+      "size_bytes": 155384,
+      "alpha": {
+        "extrema": [
+          0,
+          255
+        ],
+        "bbox_above_1": [
+          0,
+          229,
+          1672,
+          477
+        ],
+        "fully_transparent_pixels": 1532209,
+        "alpha_1_pixels": 3319,
+        "coverage_above_1": 0.024040392741103072,
+        "coverage_above_127": 0.021212036467363946
+      },
+      "center_validation": {
+        "pixel_box": [
+          209,
+          188,
+          1463,
+          743
+        ],
+        "extrema": [
+          0,
+          1
+        ],
+        "pixel_count": 695970,
+        "pixels_alpha_above_1": 0,
+        "passes": true
+      }
+    },
+    {
+      "file": "assets/dossier_curien/saga/revenge_front.png",
+      "stage": "revenge",
+      "layer": "front",
+      "selected_generation_basename": "exec-a22bfb61-a2a6-4c72-974a-a408791db119.png",
+      "prompt": "Use case: stylized-concept. Asset type: separate extremely sparse 16:9 transparent PNG parallax overlay for an existing side-on 2D fighting arena. Landscape native canvas about 1672x941. Input image is ONLY the existing background's visual style, perspective, lighting and material reference; do not reproduce the background. Create ONLY the requested edge props on a true transparent alpha canvas. The entire center rectangle from x=12.5% through87.5%, y=20% through79% MUST be completely empty and transparent, alpha0: no object, glow, mist, shadow, gradient, antialias scatter, dust or texture in that rectangle. Keep all geometry inside the specified outer margins with an additional safety gap; roughly90% or more of image is transparent. Leave upper central and lower central areas transparent too unless a corner detail is explicitly specified. No opaque background, no floor plane, no wall, no sky, no character, no text, no symbols resembling UI, no border, no watermark, no multiple panels. All props cleanly cut out with antialiased edges and no ground shadows. Match the painted videogame art of the reference.\nRequested foreground elements ONLY: a small broken curb-and-asphalt fragment in the extreme LOWER LEFT corner, x0–10%,y87–100%, and a small bent rusty iron drainage-grate fragment with two chipped curb stones in the extreme LOWER RIGHT corner, x90–100%,y87–100%. Match the cracked brown asphalt, dirty gray curb stone, aged iron and subdued amber side lighting of the existing Zombie Revenge street. Low flat silhouettes in frontal arena perspective, darker than the background, cropped naturally by screen corners. No long road strip or large rubble heap, no foreground obstruction in the middle. No ground plane or ground shadow. Everything except those two corner clusters is completely transparent.",
+      "reference": "assets/dossier_curien/saga/revenge_back.png",
+      "visual_check": {
+        "background_not_reproduced": true,
+        "edge_only_composition": true,
+        "no_character": true,
+        "no_text": true,
+        "no_ui": true,
+        "no_floor_plane": true,
+        "center_visually_clear": true
+      },
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "sha256": "96f215baee8f645cc104264c1bd13d4d6732b2201e5c67638de180c9514b774e",
+      "size_bytes": 164111,
+      "alpha": {
+        "extrema": [
+          0,
+          255
+        ],
+        "bbox_above_1": [
+          0,
+          803,
+          1672,
+          941
+        ],
+        "fully_transparent_pixels": 1528454,
+        "alpha_1_pixels": 2153,
+        "coverage_above_1": 0.0271681098698829,
+        "coverage_above_127": 0.0245742847118763
+      },
+      "center_validation": {
+        "pixel_box": [
+          209,
+          188,
+          1463,
+          743
+        ],
+        "extrema": [
+          0,
+          1
+        ],
+        "pixel_count": 695970,
+        "pixels_alpha_above_1": 0,
+        "passes": true
+      }
+    }
+  ],
+  "center_contract": {
+    "normalized_box": [
+      0.125,
+      0.2,
+      0.875,
+      0.79
+    ],
+    "maximum_alpha": 1,
+    "rounding": "All four coordinates int(width_or_height * fraction), PIL crop end exclusive."
+  },
+  "postprocessing": "Byte-for-byte copies only. PIL used to inspect dimensions and alpha; no resizing, cropping, cleanup or pixel modifications.",
+  "limits": [
+    "These layers match the existing project's interpreted backgrounds and are not extracted original Sega art or certified 1:1 source reproductions.",
+    "The center permits alpha values 0 or 1 under the requested contract; no pixel in the tested rectangle may exceed 1.",
+    "Native landscape dimensions are retained; runtime scales layers into the established arena rectangle.",
+    "Relative depth, final compositing and motion must be checked in the game's renderer; integration belongs to the parent task.",
+    "No runtime code, shared catalogue, import metadata, commit or remote push is changed by this batch."
+  ],
+  "validation": {
+    "all_rgba": true,
+    "all_center_contracts_pass": true,
+    "all_hashes_distinct": true,
+    "total_png_bytes": 606864
+  }
+}

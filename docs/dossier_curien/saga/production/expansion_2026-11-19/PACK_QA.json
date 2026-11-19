@@ -1,0 +1,820 @@
+{
+  "checks": 673,
+  "counts": {
+    "alternate_stories": 14,
+    "chronicles": 9,
+    "declared_source_bytes": 65651752,
+    "expected_gallery_entries": 40,
+    "fighters": 24,
+    "hidden_pose_entries": 9,
+    "loaded_gallery_entries": 40,
+    "loaded_textures": 49,
+    "manifest_assets": 49,
+    "manor_routes": 4,
+    "stages": 18,
+    "story_routes": 26
+  },
+  "engine": "4.7.1-stable (official)",
+  "failures": [],
+  "label": "final-49-png",
+  "linda": {
+    "fighter_id": 23,
+    "poses": [
+      {
+        "body_fraction": 0.902994791666667,
+        "emitter_px": [],
+        "expected_pivot": [
+          0.4794921875,
+          0.948567688465118
+        ],
+        "pose": "linda_guard"
+      },
+      {
+        "body_fraction": 0.903645833333333,
+        "emitter_px": [],
+        "expected_pivot": [
+          0.50146484375,
+          0.950520813465118
+        ],
+        "pose": "linda_windup"
+      },
+      {
+        "body_fraction": 0.8984375,
+        "emitter_px": [
+          910.0,
+          249.0
+        ],
+        "expected_pivot": [
+          0.4931640625,
+          0.952473938465118
+        ],
+        "pose": "linda_contact"
+      },
+      {
+        "body_fraction": 0.908203125,
+        "emitter_px": [],
+        "expected_pivot": [
+          0.48974609375,
+          0.952473938465118
+        ],
+        "pose": "linda_recovery"
+      },
+      {
+        "body_fraction": 0.916015625,
+        "emitter_px": [],
+        "expected_pivot": [
+          0.5,
+          0.968098938465118
+        ],
+        "pose": "linda_recoil"
+      },
+      {
+        "body_fraction": 0.884114583333333,
+        "emitter_px": [],
+        "expected_pivot": [
+          0.47705078125,
+          0.927083313465118
+        ],
+        "pose": "linda_walk1"
+      },
+      {
+        "body_fraction": 0.90234375,
+        "emitter_px": [],
+        "expected_pivot": [
+          0.4912109375,
+          0.947916686534882
+        ],
+        "pose": "linda_walk2"
+      },
+      {
+        "body_fraction": 0.664713541666667,
+        "emitter_px": [],
+        "expected_pivot": [
+          0.45947265625,
+          0.942057311534882
+        ],
+        "pose": "linda_crouch"
+      },
+      {
+        "body_fraction": 0.633463541666667,
+        "emitter_px": [],
+        "expected_pivot": [
+          0.47021484375,
+          0.94921875
+        ],
+        "pose": "linda_crouch_guard"
+      },
+      {
+        "body_fraction": 0.58984375,
+        "emitter_px": [
+          775.0,
+          712.0
+        ],
+        "expected_pivot": [
+          0.517578125,
+          0.944010436534882
+        ],
+        "pose": "linda_slide_contact"
+      }
+    ],
+    "standing_contact_emitter_px": [
+      910.0,
+      249.0
+    ]
+  },
+  "main_scene_instantiated": false,
+  "notes": [
+    "Textures are loaded through ResourceLoader and import remapping; source PNG bytes are not required inside the PCK.",
+    "This verifies packaging and resource calibration, not animation smoothness or canonical visual fidelity."
+  ],
+  "scope": "mounted_pck_resources_only",
+  "scripts": [
+    {
+      "path": "res://src/dossier_curien/arena.gd",
+      "sha256": "820392c60949321881f601e0d3b620484307d479c572148b4762321deec106c5"
+    },
+    {
+      "path": "res://src/dossier_curien/combatant.gd",
+      "sha256": "e7795e921477920181cb421a71a21c501faa3a28b516a03f51b0fb6c4e4989f7"
+    },
+    {
+      "path": "res://src/dossier_curien/presentation.gd",
+      "sha256": "ecab43217eb000a91975d8748063317629bc8c3b51d8379bf28572cde2804dbc"
+    },
+    {
+      "path": "res://src/dossier_curien/saga.gd",
+      "sha256": "e43110e53c50ac15b6fce2f2ad5fc85552614157f29913c877110b9fa540f111"
+    },
+    {
+      "path": "res://src/dossier_curien/saga_bestiary.gd",
+      "sha256": "76ef2f959508e9d0ff66ba2eb7226c4d734250e1dd05cd38b66015b03cd9b098"
+    },
+    {
+      "path": "res://src/dossier_curien/saga_archives.gd",
+      "sha256": "c6118acf934f9b1aa3aaf2c5a3b1a7d12df3838d8dedbf75e4ebbefe033e4b95"
+    },
+    {
+      "path": "res://src/dossier_curien/saga_costumes.gd",
+      "sha256": "ff8be1645e4677569013f3df533cc657a36e20e7bb56722045f477e06cafff2d"
+    },
+    {
+      "path": "res://src/dossier_curien/saga_lab.gd",
+      "sha256": "ff56af2ca3091be0e8546b1cad0a094161b8ca54e045f68c04dcbaf973d6e6c8"
+    },
+    {
+      "path": "res://src/dossier_curien/saga_rush.gd",
+      "sha256": "1afc19c3158ae4b749f58aaf1b53dac7cd523bdbc78ea271ebcb5c0748e0ad8d"
+    },
+    {
+      "path": "res://src/dossier_curien/saga_stage.gd",
+      "sha256": "ad291b62019b7e1c65a35904919e9d4e7c3b6d0a6c2babe7cd31333999362ab0"
+    }
+  ],
+  "status": "passed",
+  "textures": [
+    {
+      "expected_dimensions": [
+        1254.0,
+        1254.0
+      ],
+      "id": "justice_ex",
+      "loaded_dimensions": [
+        1254.0,
+        1254.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/hotd_ex/justice_ex_guard.png"
+    },
+    {
+      "expected_dimensions": [
+        1199.0,
+        1312.0
+      ],
+      "id": "temperance_ex",
+      "loaded_dimensions": [
+        1199.0,
+        1312.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/hotd_ex/temperance_ex_guard.png"
+    },
+    {
+      "expected_dimensions": [
+        1254.0,
+        1254.0
+      ],
+      "id": "empress_ex",
+      "loaded_dimensions": [
+        1254.0,
+        1254.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/hotd_ex/empress_ex_guard.png"
+    },
+    {
+      "expected_dimensions": [
+        1737.0,
+        905.0
+      ],
+      "id": "lovers_ex",
+      "loaded_dimensions": [
+        1737.0,
+        905.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/hotd_ex/lovers_ex_guard.png"
+    },
+    {
+      "expected_dimensions": [
+        1254.0,
+        1254.0
+      ],
+      "id": "star_ex",
+      "loaded_dimensions": [
+        1254.0,
+        1254.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/hotd_ex/star_ex_guard.png"
+    },
+    {
+      "expected_dimensions": [
+        1254.0,
+        1254.0
+      ],
+      "id": "zobiko_ex_guard_v2",
+      "loaded_dimensions": [
+        1254.0,
+        1254.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/hotd_ex/zobiko_ex_guard_v2.png"
+    },
+    {
+      "expected_dimensions": [
+        1254.0,
+        1254.0
+      ],
+      "id": "zobio_ex_guard_v2",
+      "loaded_dimensions": [
+        1254.0,
+        1254.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/hotd_ex/zobio_ex_guard_v2.png"
+    },
+    {
+      "expected_dimensions": [
+        1199.0,
+        1312.0
+      ],
+      "id": "uds03",
+      "loaded_dimensions": [
+        1199.0,
+        1312.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/zombie_revenge_bosses/uds03_idle.png"
+    },
+    {
+      "expected_dimensions": [
+        1214.0,
+        1296.0
+      ],
+      "id": "neclien",
+      "loaded_dimensions": [
+        1214.0,
+        1296.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/zombie_revenge_bosses/neclien_idle.png"
+    },
+    {
+      "expected_dimensions": [
+        1536.0,
+        1024.0
+      ],
+      "id": "uds04c",
+      "loaded_dimensions": [
+        1536.0,
+        1024.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/zombie_revenge_bosses/uds04c_idle.png"
+    },
+    {
+      "expected_dimensions": [
+        1024.0,
+        1536.0
+      ],
+      "id": "uds05",
+      "loaded_dimensions": [
+        1024.0,
+        1536.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/zombie_revenge_bosses/uds05_idle.png"
+    },
+    {
+      "expected_dimensions": [
+        1448.0,
+        1086.0
+      ],
+      "id": "uds06b",
+      "loaded_dimensions": [
+        1448.0,
+        1086.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/zombie_revenge_bosses/uds06b_idle.png"
+    },
+    {
+      "expected_dimensions": [
+        1024.0,
+        1536.0
+      ],
+      "id": "zed",
+      "loaded_dimensions": [
+        1024.0,
+        1536.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/zombie_revenge_bosses/zed_idle.png"
+    },
+    {
+      "expected_dimensions": [
+        1024.0,
+        1536.0
+      ],
+      "id": "linda_rotta",
+      "loaded_dimensions": [
+        1024.0,
+        1536.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/zombie_revenge_characters/linda_rotta_base.png"
+    },
+    {
+      "expected_dimensions": [
+        1254.0,
+        1254.0
+      ],
+      "id": "marco_cloud_portrait",
+      "loaded_dimensions": [
+        1254.0,
+        1254.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/zombie_revenge_characters/marco_cloud_portrait.png"
+    },
+    {
+      "expected_dimensions": [
+        1024.0,
+        1536.0
+      ],
+      "id": "yoko_portrait",
+      "loaded_dimensions": [
+        1024.0,
+        1536.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/zombie_revenge_characters/yoko_portrait.png"
+    },
+    {
+      "expected_dimensions": [
+        1717.0,
+        916.0
+      ],
+      "id": "bat_zombie",
+      "loaded_dimensions": [
+        1717.0,
+        916.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/zombie_revenge_enemies/bat_zombie_base.png"
+    },
+    {
+      "expected_dimensions": [
+        1061.0,
+        1483.0
+      ],
+      "id": "buddy",
+      "loaded_dimensions": [
+        1061.0,
+        1483.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/zombie_revenge_enemies/buddy_base.png"
+    },
+    {
+      "expected_dimensions": [
+        1067.0,
+        1475.0
+      ],
+      "id": "factory_worker_1",
+      "loaded_dimensions": [
+        1067.0,
+        1475.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/zombie_revenge_enemies/factory_worker_1_base.png"
+    },
+    {
+      "expected_dimensions": [
+        1536.0,
+        1024.0
+      ],
+      "id": "hedgeros",
+      "loaded_dimensions": [
+        1536.0,
+        1024.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/zombie_revenge_enemies/hedgeros_base.png"
+    },
+    {
+      "expected_dimensions": [
+        1024.0,
+        1536.0
+      ],
+      "id": "hedlin",
+      "loaded_dimensions": [
+        1024.0,
+        1536.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/zombie_revenge_enemies/hedlin_base.png"
+    },
+    {
+      "expected_dimensions": [
+        1024.0,
+        1536.0
+      ],
+      "id": "latch",
+      "loaded_dimensions": [
+        1024.0,
+        1536.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/zombie_revenge_enemies/latch_base.png"
+    },
+    {
+      "expected_dimensions": [
+        1103.0,
+        1426.0
+      ],
+      "id": "mccoy",
+      "loaded_dimensions": [
+        1103.0,
+        1426.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/zombie_revenge_enemies/mccoy_base.png"
+    },
+    {
+      "expected_dimensions": [
+        1097.0,
+        1434.0
+      ],
+      "id": "biff",
+      "loaded_dimensions": [
+        1097.0,
+        1434.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/zombie_revenge_enemies/biff_base.png"
+    },
+    {
+      "expected_dimensions": [
+        1065.0,
+        1477.0
+      ],
+      "id": "ebitan",
+      "loaded_dimensions": [
+        1065.0,
+        1477.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/zombie_revenge_enemies/ebitan_base.png"
+    },
+    {
+      "expected_dimensions": [
+        1067.0,
+        1474.0
+      ],
+      "id": "factory_worker_2",
+      "loaded_dimensions": [
+        1067.0,
+        1474.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/zombie_revenge_enemies/factory_worker_2_base.png"
+    },
+    {
+      "expected_dimensions": [
+        1536.0,
+        1024.0
+      ],
+      "id": "frog",
+      "loaded_dimensions": [
+        1536.0,
+        1024.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/zombie_revenge_enemies/frog_base.png"
+    },
+    {
+      "expected_dimensions": [
+        1312.0,
+        1199.0
+      ],
+      "id": "hedrian",
+      "loaded_dimensions": [
+        1312.0,
+        1199.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/zombie_revenge_enemies/hedrian_base.png"
+    },
+    {
+      "expected_dimensions": [
+        1199.0,
+        1312.0
+      ],
+      "id": "hermonkey",
+      "loaded_dimensions": [
+        1199.0,
+        1312.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/zombie_revenge_enemies/hermonkey_base.png"
+    },
+    {
+      "expected_dimensions": [
+        1067.0,
+        1474.0
+      ],
+      "id": "mansion_zombie_1",
+      "loaded_dimensions": [
+        1067.0,
+        1474.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/zombie_revenge_enemies/mansion_zombie_1_base.png"
+    },
+    {
+      "expected_dimensions": [
+        1040.0,
+        1512.0
+      ],
+      "id": "mansion_zombie_2",
+      "loaded_dimensions": [
+        1040.0,
+        1512.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/zombie_revenge_enemies/mansion_zombie_2_base.png"
+    },
+    {
+      "expected_dimensions": [
+        1069.0,
+        1472.0
+      ],
+      "id": "mecha_zombie",
+      "loaded_dimensions": [
+        1069.0,
+        1472.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/zombie_revenge_enemies/mecha_zombie_base.png"
+    },
+    {
+      "expected_dimensions": [
+        1024.0,
+        1536.0
+      ],
+      "id": "mummy",
+      "loaded_dimensions": [
+        1024.0,
+        1536.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/zombie_revenge_enemies/mummy_base.png"
+    },
+    {
+      "expected_dimensions": [
+        1254.0,
+        1254.0
+      ],
+      "id": "uds02",
+      "loaded_dimensions": [
+        1254.0,
+        1254.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/zombie_revenge_bosses/uds02_idle.png"
+    },
+    {
+      "expected_dimensions": [
+        1199.0,
+        1312.0
+      ],
+      "id": "black_magician",
+      "loaded_dimensions": [
+        1199.0,
+        1312.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/zombie_revenge_bosses/black_magician_idle.png"
+    },
+    {
+      "expected_dimensions": [
+        1254.0,
+        1254.0
+      ],
+      "id": "uds_tpii_00",
+      "loaded_dimensions": [
+        1254.0,
+        1254.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/zombie_revenge_bosses/uds_tpii_00_idle.png"
+    },
+    {
+      "expected_dimensions": [
+        1254.0,
+        1254.0
+      ],
+      "id": "uds_tpii_01",
+      "loaded_dimensions": [
+        1254.0,
+        1254.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/zombie_revenge_bosses/uds_tpii_01_idle.png"
+    },
+    {
+      "expected_dimensions": [
+        1254.0,
+        1254.0
+      ],
+      "id": "nikelle",
+      "loaded_dimensions": [
+        1254.0,
+        1254.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/zombie_revenge_bosses/nikelle_idle.png"
+    },
+    {
+      "expected_dimensions": [
+        1254.0,
+        1254.0
+      ],
+      "id": "warm_hedlin",
+      "loaded_dimensions": [
+        1254.0,
+        1254.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/zombie_revenge_bosses/warm_hedlin_idle.png"
+    },
+    {
+      "expected_dimensions": [
+        1254.0,
+        1254.0
+      ],
+      "id": "shell_hedlin",
+      "loaded_dimensions": [
+        1254.0,
+        1254.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/zombie_revenge_bosses/shell_hedlin_idle.png"
+    },
+    {
+      "expected_dimensions": [
+        1024.0,
+        1536.0
+      ],
+      "id": "linda_windup",
+      "loaded_dimensions": [
+        1024.0,
+        1536.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/zombie_revenge_characters/linda_windup.png"
+    },
+    {
+      "expected_dimensions": [
+        1024.0,
+        1536.0
+      ],
+      "id": "linda_contact",
+      "loaded_dimensions": [
+        1024.0,
+        1536.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/zombie_revenge_characters/linda_contact.png"
+    },
+    {
+      "expected_dimensions": [
+        1024.0,
+        1536.0
+      ],
+      "id": "linda_recovery",
+      "loaded_dimensions": [
+        1024.0,
+        1536.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/zombie_revenge_characters/linda_recovery.png"
+    },
+    {
+      "expected_dimensions": [
+        1024.0,
+        1536.0
+      ],
+      "id": "linda_recoil",
+      "loaded_dimensions": [
+        1024.0,
+        1536.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/zombie_revenge_characters/linda_recoil.png"
+    },
+    {
+      "expected_dimensions": [
+        1024.0,
+        1536.0
+      ],
+      "id": "linda_walk1",
+      "loaded_dimensions": [
+        1024.0,
+        1536.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/zombie_revenge_characters/linda_walk1.png"
+    },
+    {
+      "expected_dimensions": [
+        1024.0,
+        1536.0
+      ],
+      "id": "linda_walk2",
+      "loaded_dimensions": [
+        1024.0,
+        1536.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/zombie_revenge_characters/linda_walk2.png"
+    },
+    {
+      "expected_dimensions": [
+        1024.0,
+        1536.0
+      ],
+      "id": "linda_crouch",
+      "loaded_dimensions": [
+        1024.0,
+        1536.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/zombie_revenge_characters/linda_crouch.png"
+    },
+    {
+      "expected_dimensions": [
+        1024.0,
+        1536.0
+      ],
+      "id": "linda_crouch_guard",
+      "loaded_dimensions": [
+        1024.0,
+        1536.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/zombie_revenge_characters/linda_crouch_guard.png"
+    },
+    {
+      "expected_dimensions": [
+        1024.0,
+        1536.0
+      ],
+      "id": "linda_slide_contact",
+      "loaded_dimensions": [
+        1024.0,
+        1536.0
+      ],
+      "matches": true,
+      "path": "res://assets/dossier_curien/expansion/zombie_revenge_characters/linda_slide_contact.png"
+    }
+  ],
+  "pack": {
+    "filename": "HOTD_Anthologie_final.pck",
+    "sha256": "690ebbb7f1c82cc9954ac474ff5b87e9e8a6b29f6fb714ae698ab4c71c7733a3",
+    "bytes": 95935632,
+    "sha256_verified_before_execution": true
+  },
+  "execution_log_basename": "qa-final-pack.log"
+}

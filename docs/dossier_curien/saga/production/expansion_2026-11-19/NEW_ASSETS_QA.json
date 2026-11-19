@@ -1,0 +1,1203 @@
+{
+  "date": "2026-11-19",
+  "asset_count": 26,
+  "qa": "Native bytes preserved. Pixel metrics only; no raster editing or automatic cropping.",
+  "assets": [
+    {
+      "id": "biff",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/biff_base.png",
+      "sha256": "ba0e4b620d7adc1c41f0d81105e819ad43bcb889caf8c8645eee4d6c0837ea4a",
+      "bytes": 909621,
+      "dimensions": [
+        1097,
+        1434
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        9,
+        1079,
+        1434
+      ],
+      "visible_bbox": [
+        192,
+        73,
+        912,
+        1376
+      ],
+      "visible_alpha_threshold": 127,
+      "bounds_at_alpha_16": [
+        191,
+        72,
+        913,
+        1377
+      ],
+      "border_alpha_max": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "visible_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "ebitan",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/ebitan_base.png",
+      "sha256": "f8ca05c39573f0fb06e921c937630d410d9996f829cad82ef0df06fac1c1d6c8",
+      "bytes": 619487,
+      "dimensions": [
+        1065,
+        1477
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        31,
+        21,
+        1039,
+        1477
+      ],
+      "visible_bbox": [
+        264,
+        118,
+        831,
+        1371
+      ],
+      "visible_alpha_threshold": 127,
+      "bounds_at_alpha_16": [
+        264,
+        118,
+        832,
+        1372
+      ],
+      "border_alpha_max": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "visible_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "factory_worker_2",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/factory_worker_2_base.png",
+      "sha256": "6327bc22d8e5e3fbdfbe989a07ea0754226c7bef197aba8b523b4664eac018b3",
+      "bytes": 1005612,
+      "dimensions": [
+        1067,
+        1474
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        24,
+        17,
+        1045,
+        1456
+      ],
+      "visible_bbox": [
+        277,
+        74,
+        810,
+        1413
+      ],
+      "visible_alpha_threshold": 127,
+      "bounds_at_alpha_16": [
+        276,
+        73,
+        811,
+        1414
+      ],
+      "border_alpha_max": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visible_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "frog",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/frog_base.png",
+      "sha256": "28a29bd1ddf7b49459e23548e687b9ad1bd5d901b8918080bb95eb8762274fc7",
+      "bytes": 1698481,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        9,
+        1514,
+        1024
+      ],
+      "visible_bbox": [
+        122,
+        161,
+        1417,
+        910
+      ],
+      "visible_alpha_threshold": 127,
+      "bounds_at_alpha_16": [
+        122,
+        161,
+        1418,
+        911
+      ],
+      "border_alpha_max": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "visible_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "hedrian",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/hedrian_base.png",
+      "sha256": "25b3b5abfa7faa58eda3736f2e0580923f4d6d13959a0c6152285e9fb620c06e",
+      "bytes": 866897,
+      "dimensions": [
+        1312,
+        1199
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        23,
+        1296,
+        1199
+      ],
+      "visible_bbox": [
+        124,
+        82,
+        1176,
+        1119
+      ],
+      "visible_alpha_threshold": 127,
+      "bounds_at_alpha_16": [
+        124,
+        82,
+        1177,
+        1120
+      ],
+      "border_alpha_max": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "visible_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "hermonkey",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/hermonkey_base.png",
+      "sha256": "0274ca2862ca950c205e11ab6cdee8ef90969eb22d2e7dcbfb84bf62da00ebfe",
+      "bytes": 1152036,
+      "dimensions": [
+        1199,
+        1312
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        17,
+        1179,
+        1312
+      ],
+      "visible_bbox": [
+        85,
+        116,
+        1043,
+        1218
+      ],
+      "visible_alpha_threshold": 127,
+      "bounds_at_alpha_16": [
+        84,
+        115,
+        1044,
+        1219
+      ],
+      "border_alpha_max": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "visible_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "mansion_zombie_1",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/mansion_zombie_1_base.png",
+      "sha256": "c4df726a8453bf205515932ad2536bdc9f14a8192cb3f35babadf8351da3af4a",
+      "bytes": 832783,
+      "dimensions": [
+        1067,
+        1474
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        19,
+        1053,
+        1474
+      ],
+      "visible_bbox": [
+        251,
+        85,
+        796,
+        1402
+      ],
+      "visible_alpha_threshold": 127,
+      "bounds_at_alpha_16": [
+        250,
+        84,
+        797,
+        1403
+      ],
+      "border_alpha_max": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "visible_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "mansion_zombie_2",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/mansion_zombie_2_base.png",
+      "sha256": "33ef745ae82f5f8651ea1fd543b18cee080dbf32720bd947a7297883d6fa8a11",
+      "bytes": 872617,
+      "dimensions": [
+        1040,
+        1512
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        23,
+        1037,
+        1512
+      ],
+      "visible_bbox": [
+        160,
+        96,
+        842,
+        1432
+      ],
+      "visible_alpha_threshold": 127,
+      "bounds_at_alpha_16": [
+        158,
+        95,
+        842,
+        1433
+      ],
+      "border_alpha_max": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "visible_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "mecha_zombie",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/mecha_zombie_base.png",
+      "sha256": "935d03a01c8491c08fbff1e89de0736e9c970483d902381f9509d27cc1fcd83a",
+      "bytes": 676542,
+      "dimensions": [
+        1069,
+        1472
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        19,
+        1057,
+        1472
+      ],
+      "visible_bbox": [
+        100,
+        97,
+        976,
+        1354
+      ],
+      "visible_alpha_threshold": 127,
+      "bounds_at_alpha_16": [
+        99,
+        96,
+        977,
+        1355
+      ],
+      "border_alpha_max": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "visible_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "mummy",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/mummy_base.png",
+      "sha256": "8976b77a6819dd2eb0966ba0eaaa13faa3d5f9683048bdecc9403e6984114b37",
+      "bytes": 1545469,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        41,
+        31,
+        1018,
+        1512
+      ],
+      "visible_bbox": [
+        222,
+        69,
+        759,
+        1450
+      ],
+      "visible_alpha_threshold": 127,
+      "bounds_at_alpha_16": [
+        222,
+        68,
+        760,
+        1450
+      ],
+      "border_alpha_max": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visible_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "uds02",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/uds02_idle.png",
+      "sha256": "fc8a0873718aeba09c5461ab4cfff705738c734c8af905d02091e92e9f7120a8",
+      "bytes": 959283,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        17,
+        1244,
+        1254
+      ],
+      "visible_bbox": [
+        78,
+        168,
+        1123,
+        1102
+      ],
+      "visible_alpha_threshold": 127,
+      "bounds_at_alpha_16": [
+        77,
+        167,
+        1126,
+        1105
+      ],
+      "border_alpha_max": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "visible_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "black_magician",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/black_magician_idle.png",
+      "sha256": "92c759971dd098e89c6df48b4d49685e775b9a04dc8bdc4da4f76920e46282e7",
+      "bytes": 994755,
+      "dimensions": [
+        1199,
+        1312
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        19,
+        28,
+        1183,
+        1312
+      ],
+      "visible_bbox": [
+        38,
+        42,
+        1164,
+        1268
+      ],
+      "visible_alpha_threshold": 127,
+      "bounds_at_alpha_16": [
+        38,
+        41,
+        1165,
+        1269
+      ],
+      "border_alpha_max": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "visible_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "uds_tpii_00",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/uds_tpii_00_idle.png",
+      "sha256": "23bb17809622ae41b73764f570248b087c45b3d582d6eb93f006ff2ef04638a3",
+      "bytes": 852042,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        21,
+        1240,
+        1254
+      ],
+      "visible_bbox": [
+        309,
+        74,
+        1029,
+        1182
+      ],
+      "visible_alpha_threshold": 127,
+      "bounds_at_alpha_16": [
+        308,
+        73,
+        1030,
+        1183
+      ],
+      "border_alpha_max": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "visible_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "uds_tpii_01",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/uds_tpii_01_idle.png",
+      "sha256": "65de81922c3f5c521e19062851bb7122287c9922b9bba0ed01d919fab17d4c8b",
+      "bytes": 789265,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        1234,
+        1254
+      ],
+      "visible_bbox": [
+        227,
+        104,
+        1012,
+        1149
+      ],
+      "visible_alpha_threshold": 127,
+      "bounds_at_alpha_16": [
+        226,
+        103,
+        1013,
+        1151
+      ],
+      "border_alpha_max": [
+        1,
+        0,
+        1,
+        1
+      ],
+      "visible_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "nikelle",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/nikelle_idle.png",
+      "sha256": "23eed1f22b76f93078f7c1a99924a3d27796845b84527b29a1dfefc6dbd45c98",
+      "bytes": 1306769,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        9,
+        1242,
+        1254
+      ],
+      "visible_bbox": [
+        26,
+        30,
+        1218,
+        1159
+      ],
+      "visible_alpha_threshold": 127,
+      "bounds_at_alpha_16": [
+        25,
+        30,
+        1219,
+        1163
+      ],
+      "border_alpha_max": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "visible_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "warm_hedlin",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/warm_hedlin_idle.png",
+      "sha256": "92b62d5ce429a38e24119673ec9889cb9386f2b18d36eff4ed16de356861f4bf",
+      "bytes": 1127545,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        1238,
+        1254
+      ],
+      "visible_bbox": [
+        167,
+        55,
+        1061,
+        1194
+      ],
+      "visible_alpha_threshold": 127,
+      "bounds_at_alpha_16": [
+        165,
+        54,
+        1062,
+        1195
+      ],
+      "border_alpha_max": [
+        1,
+        0,
+        1,
+        1
+      ],
+      "visible_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "shell_hedlin",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/shell_hedlin_idle.png",
+      "sha256": "6e0a14b78c09adf64a17130fa158c5b2cf49256402c6adcc9a4624797d8227b3",
+      "bytes": 949895,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        15,
+        1232,
+        1254
+      ],
+      "visible_bbox": [
+        160,
+        99,
+        1033,
+        1164
+      ],
+      "visible_alpha_threshold": 127,
+      "bounds_at_alpha_16": [
+        158,
+        98,
+        1034,
+        1166
+      ],
+      "border_alpha_max": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "visible_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "linda_windup",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_windup.png",
+      "sha256": "51bfb0936c3e0f139b0ff6f475a72ee4d92f80508f81871c9e944a50ee42910c",
+      "bytes": 1778255,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        29,
+        1010,
+        1524
+      ],
+      "visible_bbox": [
+        86,
+        72,
+        941,
+        1460
+      ],
+      "visible_alpha_threshold": 127,
+      "bounds_at_alpha_16": [
+        86,
+        71,
+        942,
+        1460
+      ],
+      "border_alpha_max": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "visible_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "linda_contact",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_contact.png",
+      "sha256": "7c1607e0f39632ae985ffe86be383047cfe48823056cb90714c01310f008e16f",
+      "bytes": 1749143,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        19,
+        1002,
+        1536
+      ],
+      "visible_bbox": [
+        98,
+        83,
+        912,
+        1463
+      ],
+      "visible_alpha_threshold": 127,
+      "bounds_at_alpha_16": [
+        98,
+        82,
+        913,
+        1464
+      ],
+      "border_alpha_max": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "visible_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "linda_recovery",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_recovery.png",
+      "sha256": "3b3daf90cab4ae83e54aefc79088b72256c681b41c78acafd84e2abfed791419",
+      "bytes": 1711910,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        29,
+        1004,
+        1536
+      ],
+      "visible_bbox": [
+        125,
+        68,
+        878,
+        1463
+      ],
+      "visible_alpha_threshold": 127,
+      "bounds_at_alpha_16": [
+        124,
+        67,
+        879,
+        1464
+      ],
+      "border_alpha_max": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "visible_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "linda_recoil",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_recoil.png",
+      "sha256": "7c8feffb04515c050e0a5287e22bedac26782774ffd22904d474a0a2d5733c16",
+      "bytes": 1891358,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        25,
+        22,
+        1021,
+        1526
+      ],
+      "visible_bbox": [
+        94,
+        80,
+        930,
+        1487
+      ],
+      "visible_alpha_threshold": 127,
+      "bounds_at_alpha_16": [
+        93,
+        80,
+        930,
+        1488
+      ],
+      "border_alpha_max": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visible_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "linda_walk1",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_walk1.png",
+      "sha256": "cacd58181d950852367baa3896e25f2d261403cba4d6636db1347e8adfcd0c54",
+      "bytes": 1700467,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        21,
+        31,
+        1002,
+        1512
+      ],
+      "visible_bbox": [
+        32,
+        66,
+        945,
+        1424
+      ],
+      "visible_alpha_threshold": 127,
+      "bounds_at_alpha_16": [
+        31,
+        65,
+        946,
+        1425
+      ],
+      "border_alpha_max": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visible_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "linda_walk2",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_walk2.png",
+      "sha256": "531f7c3f2a97b53f09ff60d8651973448a25d77ae814125b0a6571ccc5c08c9e",
+      "bytes": 1733897,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        21,
+        994,
+        1536
+      ],
+      "visible_bbox": [
+        77,
+        70,
+        929,
+        1456
+      ],
+      "visible_alpha_threshold": 127,
+      "bounds_at_alpha_16": [
+        76,
+        70,
+        929,
+        1457
+      ],
+      "border_alpha_max": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "visible_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "linda_crouch",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_crouch.png",
+      "sha256": "f32c2c7ba79aab5e346a42ad5700cc148350f1585f69a7cbdf5e6146347b42fd",
+      "bytes": 1639978,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        32,
+        1022,
+        1506
+      ],
+      "visible_bbox": [
+        120,
+        426,
+        821,
+        1447
+      ],
+      "visible_alpha_threshold": 127,
+      "bounds_at_alpha_16": [
+        120,
+        426,
+        821,
+        1448
+      ],
+      "border_alpha_max": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "visible_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "linda_crouch_guard",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_crouch_guard.png",
+      "sha256": "befbf47a8d6014517d827ce9eced9b1a6a02d911aca25223829f6c0c57689d6a",
+      "bytes": 1618807,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        37,
+        1010,
+        1516
+      ],
+      "visible_bbox": [
+        114,
+        485,
+        849,
+        1458
+      ],
+      "visible_alpha_threshold": 127,
+      "bounds_at_alpha_16": [
+        114,
+        484,
+        849,
+        1459
+      ],
+      "border_alpha_max": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "visible_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "linda_slide_contact",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_slide_contact.png",
+      "sha256": "5fc8b52ea2891daaafc48b5791c050810f257d087df9d8ac4a05476f45dceff2",
+      "bytes": 1448958,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        65,
+        49,
+        998,
+        1496
+      ],
+      "visible_bbox": [
+        84,
+        544,
+        976,
+        1450
+      ],
+      "visible_alpha_threshold": 127,
+      "bounds_at_alpha_16": [
+        83,
+        543,
+        976,
+        1450
+      ],
+      "border_alpha_max": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visible_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

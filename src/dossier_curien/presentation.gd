@@ -2,6 +2,7 @@ extends RefCounted
 
 const Fighter := preload("res://src/dossier_curien/combatant.gd")
 const ART := "res://assets/dossier_curien/"
+const EXPANSION_ART := {"linda_guard":"res://assets/dossier_curien/expansion/zombie_revenge_characters/linda_rotta_base.png"}
 const Saga := preload("res://src/dossier_curien/saga.gd")
 const Stage := preload("res://src/dossier_curien/saga_stage.gd")
 const ATLAS_IDS := ["thomas_rogan", "agent_g", "chariot", "magician"]
@@ -28,22 +29,27 @@ const GOLD := Color("e2b36b")
 const DARK := Color("0e161b")
 const STEEL := Color("89b5b5")
 var textures := {}
+var walk_cycles := {}
 var recent_textures: Array[String] = []
 var origin_transform := Transform2D.IDENTITY
 var scan_position := Vector2.ZERO
 var prop_profiles: Dictionary
 var visible_rects := {}
 var contact_emitters := {}
+var pose_emitters := {}
+var pose_profiles: Dictionary = {}
+var saga_props: Array = []
 
 static func floor_y(stage: int) -> float:
 	# The Venetian playable strip runs in front of the canal balustrade.
 	return 651.0 if stage == 3 else 601.0
 
 func load_textures() -> void:
+	pose_emitters.clear()
 	var manifest: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/assets/environment_manifest.json"))
 	prop_profiles = manifest.props
 	var additions: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/assets/dossier_curien_additions.json"))
-	for entry in additions.assets:
+	for entry in additions.get("assets", []):
 		if not entry.has("bounds_px"): continue
 		var box: Array = entry.bounds_px
 		visible_rects["res://" + str(entry.path)] = Rect2(box[0], box[1], box[2], box[3])
@@ -51,6 +57,52 @@ func load_textures() -> void:
 			var point: Array = entry.emitter_px
 			var dims: Array = entry.dimensions
 			contact_emitters[str(entry.fighter_id)] = Vector2((point[0] - dims[0]*0.5)*1024.0/dims[1], 960.0 - point[1]*1024.0/dims[1])
+	pose_profiles = additions.get("poses", {})
+	saga_props = additions.get("stage_props", [])
+	var expansion_path := "res://data/assets/dossier_curien_expansion.json"
+	if FileAccess.file_exists(expansion_path):
+		var expansion = JSON.parse_string(FileAccess.get_file_as_string(expansion_path))
+		if expansion is Dictionary and expansion.get("assets", []) is Array:
+			for entry in expansion.get("assets", []):
+				if not entry is Dictionary: continue
+				var asset_path := str(entry.get("path", "")).trim_prefix("res://")
+				if not asset_path.begins_with("assets/dossier_curien/expansion/zombie_revenge_characters/"): continue
+				var stem: String = asset_path.get_file().get_basename()
+				if stem != "linda_rotta_base" and not stem.begins_with("linda_"): continue
+				var pose_key := "linda_guard" if stem == "linda_rotta_base" else stem
+				var bounds = entry.get("visible_bbox", entry.get("alpha_bbox", []))
+				var dims = entry.get("dimensions", [])
+				if not finite_numbers(bounds,4) or not finite_numbers(dims,2): continue
+				if dims[0] <= 0 or dims[1] <= 0 or bounds[0] < 0 or bounds[1] < 0 or bounds[2] > dims[0] or bounds[3] > dims[1]: continue
+				if bounds[2] <= bounds[0] or bounds[3] <= bounds[1]: continue
+				pose_profiles[pose_key] = {
+					"pivot":[(bounds[0]+bounds[2])*0.5/dims[0],bounds[3]/float(dims[1])],
+					"source_size":dims,
+					"body_fraction":maxf(0.01,(bounds[3]-bounds[1])/float(dims[1]))}
+				var emitter = entry.get("emitter_px", [])
+				if finite_numbers(emitter,2) and emitter[0] >= 0 and emitter[1] >= 0 and emitter[0] <= dims[0] and emitter[1] <= dims[1]:
+					pose_emitters[pose_key] = Vector2(float(emitter[0]), float(emitter[1]))
+
+static func finite_numbers(value: Variant, count: int) -> bool:
+	if not value is Array or value.size() != count: return false
+	for number in value:
+		if typeof(number) not in [TYPE_INT,TYPE_FLOAT] or not is_finite(float(number)): return false
+	return true
+
+# Use the same native pixels, rectangle and transform as the painted body.
+# The returned point is in arena coordinates; origin_transform is applied once
+# by the canvas when draw_special renders the flash and its trace.
+static func painted_point(point_px: Vector2, source_size: Vector2, drawn_size: Vector2, source_pivot: Vector2, transform: Transform2D) -> Vector2:
+	return transform * ((point_px / source_size - source_pivot) * drawn_size)
+
+func linda_low_canvas_size(source_size: Vector2, standing_height: float) -> Vector2:
+	# These low poses are painted at the standing master's anatomical pixel scale.
+	# Keep that scale: their shorter silhouette comes from bent joints, not from
+	# shrinking the head, hands and torso to 71 percent of their standing size.
+	var reference: Dictionary = pose_profiles.get("linda_guard", {})
+	var dimensions: Array = reference.get("source_size", [1024,1536])
+	var visible_height: float = float(reference.get("body_fraction",905.0/1024.0)) * float(dimensions[1])
+	return source_size * standing_height / maxf(1.0,visible_height)
 
 func cached(path: String) -> Texture2D:
 	if textures.has(path):
@@ -60,9 +112,9 @@ func cached(path: String) -> Texture2D:
 		return textures[path]
 	var texture: Texture2D = load(path) if ResourceLoader.exists(path) else null
 	if texture:
-		# A match needs at most three stage layers and two active poses per fighter.
+		# Keep stage layers, props and the two fighters' short pose cycles in memory.
 		# Release older textures so touring all the dossiers fits browser memory.
-		if recent_textures.size() >= 10: textures.erase(recent_textures.pop_front())
+		if recent_textures.size() >= 16: textures.erase(recent_textures.pop_front())
 		recent_textures.append(path)
 	textures[path] = texture
 	return texture
@@ -71,11 +123,26 @@ func classic_art(key: String) -> Texture2D:
 	return cached(ART + key + ".png")
 
 func saga_texture(key: String) -> Texture2D:
-	return cached(ART + "saga/" + key + ".png")
+	var ordinary := cached(ART + "saga/" + key + ".png")
+	if ordinary: return ordinary
+	if EXPANSION_ART.has(key): return cached(EXPANSION_ART[key])
+	if key.begins_with("linda_"): return cached(ART + "expansion/zombie_revenge_characters/" + key + ".png")
+	return null
 
 func guard_art(fighter_id: int) -> Texture2D:
 	var key: String = Fighter.PROFILES[fighter_id].id + "_guard"
 	return classic_art(key) if fighter_id < 4 else saga_texture(key)
+
+func has_walk_cycle(fighter_id: int, sheet_id: String) -> bool:
+	var prefix := ART + ("saga/" if fighter_id >= 4 else "") + sheet_id
+	if sheet_id == "linda": prefix = ART + "expansion/zombie_revenge_characters/linda"
+	if not walk_cycles.has(prefix):
+		walk_cycles[prefix] = ResourceLoader.exists(prefix + "_walk1.png") and ResourceLoader.exists(prefix + "_walk2.png")
+	return walk_cycles[prefix]
+
+func stage_plane(stage: int, plane: String) -> Texture2D:
+	if stage < BG.size() or stage >= Saga.ART.size(): return null
+	return saga_texture(Saga.ART[stage] + "_" + plane)
 
 func atlas(fighter_id: int) -> Texture2D:
 	var id: String = ATLAS_IDS[fighter_id]
@@ -97,15 +164,16 @@ func draw(c) -> void:
 	if backdrop: c.draw_texture_rect(backdrop,Rect2(-38 - drift*17,-14,1356,754),false)
 	if court:
 		layer(c, classic_art("court_mid"), drift * 32)
-	elif c.stage >= 11:
-		layer(c,saga_texture(Saga.ART[c.stage] + "_mid"), drift * 32)
 	elif not classic:
-		Stage.mid(c, c.stage, drift)
+		var middle := stage_plane(c.stage, "mid")
+		if middle: layer(c, middle, drift * 32)
+		elif c.stage < 11: Stage.mid(c, c.stage, drift)
 		if c.stage == 3:
 			saga_prop_at(c, "venice_lamp", 100 - drift*32, 644, 300)
 			saga_prop_at(c, "venice_railing", 1150 - drift*32, 644, 88)
 	else:
 		prop_at(c, PROPS[c.stage][0], 180 - drift*33, 580, 270)
+	stage_props(c, drift)
 	c.draw_rect(Rect2(0, 0, 1280, 720), Color(0.025, 0.035, 0.05, 0.19))
 	if c.fighters.size() == 2:
 		for i in 2:
@@ -128,13 +196,13 @@ func draw(c) -> void:
 			c.draw_line(impact+direction*(5+distance*0.5),impact+direction*(12+distance),ink,2,true)
 	if court:
 		layer(c, classic_art("court_front"), drift * 58)
-	elif c.stage >= 11:
-		layer(c,saga_texture(Saga.ART[c.stage] + "_front"), drift * 58)
-	elif c.stage == 3:
-		saga_prop_at(c, "venice_bollard", -4 - drift*58, 686, 64)
-		saga_prop_at(c, "venice_bollard", 1284 - drift*58, 686, 64)
 	elif not classic:
-		Stage.front(c, c.stage, drift)
+		var foreground := stage_plane(c.stage, "front")
+		if foreground: layer(c, foreground, drift * 58)
+		elif c.stage < 11 and c.stage != 3: Stage.front(c, c.stage, drift)
+		if c.stage == 3:
+			saga_prop_at(c, "venice_bollard", -4 - drift*58, 686, 64)
+			saga_prop_at(c, "venice_bollard", 1284 - drift*58, 686, 64)
 	else:
 		prop_at(c, PROPS[c.stage][1], 1225 - drift*66, 638, 216)
 	if c.phase in ["fight","finish","cinematic","round","result","pause"] and c.fighters.size() == 2:
@@ -147,11 +215,24 @@ func draw(c) -> void:
 		illustration(c)
 	if c.phase == "result" and c.mode == 0 and c.winner == 0 and c.route == 2:
 		illustration(c)
+	if c.phase == "bestiary_detail": c.bestiary.draw(c)
 	if c.panel != null and c.panel.visible:
 		c.draw_rect(Rect2(0,0,1280,720),Color(0.015,0.022,0.035,0.19))
 
 func layer(c, tex: Texture2D, offset: float) -> void:
 	if tex: c.draw_texture_rect(tex,Rect2(-38-offset,-14,1356,754),false)
+
+func stage_props(c, drift: float) -> void:
+	# Sources remain separate PNGs. These decorations stay behind the fighters.
+	for prop in saga_props:
+		if int(prop.stage) != c.stage: continue
+		var texture := cached(prop.path)
+		if texture == null: continue
+		var h := float(prop.canvas_height)
+		var size := Vector2(h * texture.get_width() / texture.get_height(), h)
+		var position := Vector2(prop.position[0] - drift * prop.parallax, prop.position[1])
+		var pivot := Vector2(prop.pivot[0], prop.pivot[1])
+		c.draw_texture_rect(texture, Rect2(position - size * pivot, size), false)
 
 func prop_at(c, id: String, x: float, bottom: float, h: float) -> void:
 	var tex := cached("res://assets/environments_v2/props/%s/%s.png" % [id,id])
@@ -210,9 +291,13 @@ func illustration(c) -> void:
 		c.draw_texture_rect(tex,Rect2(0,0,1280,720),false)
 		c.draw_rect(Rect2(0,0,1280,720), Color(0,0,0,0.12))
 
-func pose_suffix(f) -> String:
+func pose_suffix(f, sheet_id: String = "") -> String:
 	if f.stun > 0: return "_recoil"
-	if f.id in [6,19,20] and f.action == "" and f.moving and f.altitude == 0:
+	if sheet_id == "": sheet_id = f.profile.id
+	if f.id == 23 and f.crouching and f.altitude == 0:
+		if f.action == "": return "_crouch_guard" if f.guarding else "_crouch"
+		if f.action == "special" and f.alternate_special: return "_slide_contact"
+	if f.action == "" and f.moving and f.altitude == 0 and has_walk_cycle(f.id, sheet_id):
 		var stride := floori((f.walk_ticks-1) / 6.0) % 4
 		if f.guarding: stride = 3-stride
 		return ["_walk1","_guard","_walk2","_guard"][stride]
@@ -239,16 +324,17 @@ func draw_fighter(c, f, side: int) -> void:
 	var displayed_pose := "_guard"
 	var idle: bool = f.action == "" and not f.moving and f.stun == 0 and f.altitude == 0
 	var unarmed_fallback: bool = f.profile.ammo > 0 and f.action in ["light","heavy","throw"] and f.stun == 0
-	var key := pose_suffix(f)
+	var key := pose_suffix(f, sheet_id)
 	if key != "":
-		var pose := saga_texture(sheet_id + key) if f.id >= 4 else classic_art(f.profile.id + key)
+		var pose := saga_texture(sheet_id + key) if f.id >= 4 else classic_art(sheet_id + key)
 		if pose:
 			art = pose
 			idle = true
 			displayed_pose = key
 	var height: float = f.profile.height
 	var bottom := floor_y(c.stage) - float(f.altitude)
-	if f.crouching: height *= 0.71
+	var painted_low: bool = f.id == 23 and displayed_pose in ["_crouch","_crouch_guard","_slide_contact"]
+	if f.crouching and not painted_low: height *= 0.71
 	var collapse: float = 0.0
 	if c.phase == "cinematic" and side != c.winner:
 		collapse = 1.0 - float(c.finish_ticks) / 72
@@ -257,15 +343,24 @@ func draw_fighter(c, f, side: int) -> void:
 	if f.frost_ticks > 0: tint = Color("abd9ee")
 	if f.stun > 0 and f.stun % 5 < 2: tint = Color(1.0,0.65,0.55)
 	var effect_scale := height / 905.0
+	var has_painted_emitter := false
+	var painted_emitter := Vector2.ZERO
 	if art and (idle or f.id >= 4 or unarmed_fallback):
 		var breathing := sin(float(c.elapsed + side * 24)*0.062)*1.5
 		effect_scale = (height + breathing) / 905.0
-		var h := (height + breathing) * 1024 / 905
-		var foot_fraction := 960.0 / 1024.0
+		# Native outputs keep their source dimensions; per-pose pivots pin the
+		# visible supporting foot to the ground without resampling the artwork.
+		var metrics: Dictionary = pose_profiles.get(sheet_id + displayed_pose, {})
+		var pivot_values: Array = metrics.get("pivot", [0.5, 960.0/1024.0])
+		var source_pivot := Vector2(float(pivot_values[0]), float(pivot_values[1]))
+		var h := (height + breathing) / float(metrics.get("body_fraction",905.0/1024.0))
+		if painted_low: h = linda_low_canvas_size(art.get_size(),height+breathing).y
+		# Kate's two outfits keep the earlier alpha-16 body calibration.
 		if f.id == 6 and displayed_pose in ["_walk1", "_walk2"]:
 			var bounds := visible_bounds(art)
-			h = (height + breathing) * art.get_height() / bounds.size.y
-			foot_fraction = bounds.end.y / art.get_height()
+			if bounds.has_area():
+				h = (height + breathing) * art.get_height() / bounds.size.y
+				source_pivot.y = bounds.end.y / art.get_height()
 		var w := h * art.get_width() / art.get_height()
 		var tilt := 0.0
 		var shift := Vector2.ZERO
@@ -289,6 +384,9 @@ func draw_fighter(c, f, side: int) -> void:
 			elif f.altitude > 0: tilt = -0.06
 		var pivot := Transform2D(tilt * f.facing, Vector2(f.x + shift.x*f.facing, bottom+shift.y))
 		pivot.x *= f.facing
+		if displayed_pose in ["_contact","_slide_contact"] and pose_emitters.has(sheet_id + displayed_pose):
+			painted_emitter = painted_point(pose_emitters[sheet_id + displayed_pose], art.get_size(), Vector2(w,h), source_pivot, pivot)
+			has_painted_emitter = true
 		if side == 1 and CORE_PIXELS.has(f.id):
 			var marks: Dictionary = CORE_PIXELS[f.id]
 			var core: Vector2 = marks.get(displayed_pose, marks["_guard"])
@@ -297,7 +395,7 @@ func draw_fighter(c, f, side: int) -> void:
 		if f.id == 17 and f.alternate_special and displayed_pose == "_contact":
 			draw_mercury_blade(c,art,w,h,float(f.move_data().reach),tint)
 		else:
-			c.draw_texture_rect(art,Rect2(-w*0.5,-h*foot_fraction,w,h),false,tint)
+			c.draw_texture_rect(art,Rect2(-w*source_pivot.x,-h*source_pivot.y,w,h),false,tint)
 		c.draw_set_transform_matrix(origin_transform)
 	elif f.id < ATLAS_IDS.size():
 		var frame := 0
@@ -325,7 +423,8 @@ func draw_fighter(c, f, side: int) -> void:
 				anchor = contact_emitters[sheet_id] * effect_scale
 			elif GALA_MUZZLES.has(sheet_id):
 				anchor = GALA_MUZZLES[sheet_id] * effect_scale
-			draw_special(c, f, Vector2(f.x+f.facing*anchor.x,bottom-anchor.y), age)
+			var emission := painted_emitter if has_painted_emitter else Vector2(f.x+f.facing*anchor.x,bottom-anchor.y)
+			draw_special(c, f, emission, age)
 	elif f.id >= 4 and f.action in ["light","heavy","throw"]:
 		var age: int = f.tick - int(f.move_data().start)
 		if age >= 0 and age < 4:
@@ -354,9 +453,9 @@ func draw_special(c, f, origin: Vector2, age: int) -> void:
 	var end := origin + Vector2(f.facing*reach,0)
 	var accent := Color(f.profile.color)
 	match str(f.profile.kind):
-		"shot","double","burst","advance","stagger","retreat":
+		"shot","double","burst","advance","stagger","retreat","slide_shot":
 			if age%5 > 2: return
-			end.x = f.x+f.facing*float(f.profile.move.reach)
+			end.x = f.x+f.facing*float(f.move_data().reach)
 			if f.profile.kind == "stagger": end.y -= 34
 			c.draw_line(origin,end,accent,3 if f.profile.kind=="stagger" else 2,true)
 			c.draw_circle(origin,8 if age%5 == 0 else 4,GOLD)
@@ -458,6 +557,9 @@ func draw_scan(c) -> void:
 	var label := "ŒIL EXPOSÉ" if c.enemy == 22 else ("CŒUR EXPOSÉ" if c.enemy == 21 else "NOYAU OUVERT")
 	heading(c,Vector2(420,170),label + "  ·  LOURD / SPÉCIAL" if exposed else "ANALYSE AMS  ·  REPÉRAGE",18,ink,440,HORIZONTAL_ALIGNMENT_CENTER)
 
+static func special_name(f) -> String:
+	return str(f.profile.alt_name) if f.action == "special" and f.alternate_special and f.profile.has("alt_name") else str(f.profile.special)
+
 func hud(c) -> void:
 	c.draw_rect(Rect2(0,0,1280,111),Color("0e141cdd"))
 	for i in 2:
@@ -469,7 +571,8 @@ func hud(c) -> void:
 		c.draw_rect(Rect2(x,50,469,16),Color("3c4648"))
 		var w: float = 465.0 * f.health / 100
 		c.draw_rect(Rect2(x+2 if i == 0 else x+467-w,52,w,12),GOLD if i==0 else STEEL)
-		var status: String = ("%s   %d / %d" % [str(f.profile.special).to_upper(),f.ammo,f.profile.ammo]) if int(f.profile.ammo) > 0 else str(f.profile.special).to_upper()
+		var move_name := special_name(f).to_upper()
+		var status: String = ("%s   %d / %d" % [move_name,f.ammo,f.profile.ammo]) if int(f.profile.ammo) > 0 else move_name
 		if f.combo > 1: status += "     %d COUPS" % f.combo
 		if f.guarding: status += "     GARDE"
 		heading(c,Vector2(x,91),status,17,BONE,469,align)
@@ -482,7 +585,7 @@ func hud(c) -> void:
 		heading(c,Vector2(312,143),c.rush.hud(c),18,BONE,656,HORIZONTAL_ALIGNMENT_CENTER)
 	if c.mode == 4:
 		var f = c.fighters[0]
-		var names := {"light":"Léger","heavy":"Lourd","special":str(f.profile.special),"throw":"Projection","reload":"Recharge"}
+		var names := {"light":"Léger","heavy":"Lourd","special":special_name(f),"throw":"Projection","reload":"Recharge"}
 		var label: String = "Neutre" if f.action == "" else "%s   ·   image %d" % [names[f.action], f.tick]
 		heading(c, Vector2(48,147), "ENTRAÎNEMENT     " + label,19,BONE)
 		c.lab.paint(c,self)

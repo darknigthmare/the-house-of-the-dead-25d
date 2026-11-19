@@ -1,0 +1,59 @@
+{
+  "recovery_date": "2026-11-19",
+  "original_record_sha256": "a9f945081c4abcccd6b8d7b6f3ff27e9ee95c8516d91f76e16a57b9458b29574",
+  "original_record_basename": "manifest.json",
+  "normalization": "Absolute machine-specific image paths replaced by repository paths when recovered, otherwise historical_source/<path>. Original prompt wording and source attributions retained.",
+  "original_record": {
+    "assets": [
+      {
+        "id": "linda_rotta",
+        "name": "Linda Rotta",
+        "kind": "character_base",
+        "source_path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_rotta_base.png",
+        "output_path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_rotta_base.png",
+        "sources": [
+          "https://static.wikia.nocookie.net/houseofthedead/images/3/3f/Linda_Full.jpg/revision/latest?cb=20200217050952",
+          "https://www.digitpress.com/library/manuals/dreamcast/zombie_revenge.pdf"
+        ],
+        "prompt": "Use case: style-transfer. Edit the supplied original SEGA Linda Rotta full-body render from Zombie Revenge (1999) into ONE production-ready 2D fighting-game base sprite of the SAME adult character, with genuine transparent background. Reference image is the authoritative identity and costume source. Preserve her exact golden-blonde asymmetric short bob with side fringe and longer front strand, serious face, yellow cropped sleeveless tank top, two black belt straps and stacked silver buckles, frayed blue denim shorts, white wrap around LEFT upper arm, full-finger purple-blue gloves, brown double-strap holster on RIGHT thigh, bare legs, yellow sneakers with blue-purple side details and white soles, and silver-and-dark pistol. Do not replace shorts with trousers or sneakers with boots. Full body from hair to both soles completely inside frame with 8% safety margin. Adapt only the stance and medium: three-quarter lateral combat view facing RIGHT, feet planted at the same ground line, knees slightly flexed, pistol held low and safely toward screen right, free hand ready near the chest, composed alert neutral stance. Detailed hand-painted arcade fighting sprite, crisp controllable silhouette and restrained fine outlines, readable material shading, realistic original body proportions. No scenery, floor, shadow, text, name label, panel, extra character, duplicated pose, particles or glow. Preserve the original distinctive costume and identity rather than redesigning them. Portrait framing around 1024x1536.",
+        "limits": "Pose de base adaptée en 2D depuis le rendu officiel. Main armée corrigée. Fidélité exacte et animation non certifiées.",
+        "iterations": [
+          {
+            "prompt": "Use case: style-transfer. Edit the supplied original SEGA Linda Rotta full-body render from Zombie Revenge (1999) into ONE production-ready 2D fighting-game base sprite of the SAME adult character, with genuine transparent background. Reference image is the authoritative identity and costume source. Preserve her exact golden-blonde asymmetric short bob with side fringe and longer front strand, serious face, yellow cropped sleeveless tank top, two black belt straps and stacked silver buckles, frayed blue denim shorts, white wrap around LEFT upper arm, full-finger purple-blue gloves, brown double-strap holster on RIGHT thigh, bare legs, yellow sneakers with blue-purple side details and white soles, and silver-and-dark pistol. Do not replace shorts with trousers or sneakers with boots. Full body from hair to both soles completely inside frame with 8% safety margin. Adapt only the stance and medium: three-quarter lateral combat view facing RIGHT, feet planted at the same ground line, knees slightly flexed, pistol held low and safely toward screen right, free hand ready near the chest, composed alert neutral stance. Detailed hand-painted arcade fighting sprite, crisp controllable silhouette and restrained fine outlines, readable material shading, realistic original body proportions. No scenery, floor, shadow, text, name label, panel, extra character, duplicated pose, particles or glow. Preserve the original distinctive costume and identity rather than redesigning them. Portrait framing around 1024x1536.",
+            "reason": "Premier rendu : pistolet dans la mauvaise main."
+          },
+          {
+            "prompt": "Use case: precise-object-edit. Target image 1 is the existing Linda Rotta game sprite. Reference image 2 is the official SEGA full-body character render. Correct ONLY the gun handedness and arm pose of image 1 to agree with image 2: the silver-and-black handgun must be held in Linda's anatomical RIGHT hand (the side with the brown thigh holster, on viewer's left); her RIGHT forearm can cross forward in front of the abdomen to point the gun safely toward screen right in a low ready stance. Her anatomical LEFT hand (the side with the white upper-arm bandage, on viewer's right) must be empty and raised defensively near her chest. Keep her head, face, short blonde bob, yellow cropped tank, two black belts and silver buckles, denim shorts, gloves, LEFT upper-arm white wrap, RIGHT thigh brown holster, legs, yellow/blue sneakers, original body size, stance, fine painted style and full-body framing absolutely unchanged. Preserve actual transparent alpha; no background, colored halo, ground shadow, scenery, text, new accessory or duplicate pose. One single complete character only. All visible parts within the existing canvas and generous margins. This is a minimal arm/pistol correction, not a redesign.",
+            "reason": "Correction de la main armée : droite, comme le rendu officiel."
+          }
+        ]
+      },
+      {
+        "id": "yoko_portrait",
+        "name": "Yoko",
+        "kind": "dialogue_portrait",
+        "source_path": "assets/dossier_curien/expansion/zombie_revenge_characters/yoko_portrait.png",
+        "output_path": "assets/dossier_curien/expansion/zombie_revenge_characters/yoko_portrait.png",
+        "sources": [
+          "https://static.wikia.nocookie.net/houseofthedead/images/f/fd/Yoko.jpg/revision/latest",
+          "https://static.wikia.nocookie.net/houseofthedead/images/7/7e/Yokowarning.jpg/revision/latest",
+          "https://www.digitpress.com/library/manuals/dreamcast/zombie_revenge.pdf"
+        ],
+        "prompt": "Use case: style-transfer. Adapt only YOKO, the adult rescued civilian from SEGA Zombie Revenge (1999), from the attached game screenshots and manual into one clean high-detail hand-painted 2D dialogue character portrait with transparent background. Image 1: authoritative in-game skin, hair, outfit, jewelry colors. Image 2: authoritative face and hair details. Image 3: manual reference; select ONLY the woman at upper right, do not draw ZED or any page text. Preserve her exact shoulder-length straight dark chestnut hair swept back at crown, slim adult facial features, original silver necklace with oval piece and long pendant, deep charcoal-black tailored short dress with wide lapels, shoulder cutouts, long sleeves with ragged cuffs, thin silver chain belt with oval buckle and silver wrist jewelry. Neutral confident civilian expression, one hand on hip and the other offering a small plain 3.5-inch floppy disk. NOT a soldier, no gun, no fantasy gear. Intentional dialogue portrait from crown through upper thighs only, looking slightly RIGHT in gentle three-quarter view; head and arms fully inside with 10 percent margin. Match the body proportions and mature appearance of original screenshots. Crisp controlled painted contours, detailed fabric without redesign. No background, warehouse, boxes, floor, ground shadow, frame, text, subtitles, labels, watermarks, additional characters or multiple poses. True transparent alpha around the single character. Portrait canvas approximately 1024x1536. End the portrait cleanly at upper thighs, do not fabricate lower legs or shoes not visible in the source.",
+        "limits": "Portrait limité aux parties visibles dans les références; ce fichier n'est pas un sprite de combat en pied. Adaptation 2D, fidélité exacte non certifiée."
+      },
+      {
+        "id": "marco_cloud_portrait",
+        "name": "Marco Cloud",
+        "kind": "dialogue_portrait",
+        "source_path": "assets/dossier_curien/expansion/zombie_revenge_characters/marco_cloud_portrait.png",
+        "output_path": "assets/dossier_curien/expansion/zombie_revenge_characters/marco_cloud_portrait.png",
+        "sources": [
+          "https://static.wikia.nocookie.net/houseofthedead/images/8/8d/Marco_Cloud.jpg/revision/latest"
+        ],
+        "prompt": "Use case: style-transfer. Edit this exact portrait reference into a faithful crisp 2D game dialogue head-and-shoulders portrait of MARCO CLOUD from SEGA Zombie Revenge (1999). One person only on a genuine transparent background, no border. Preserve this character's identity very closely: dark brown skin, youthful adult masculine face with original broad jaw, serious eyes, neutral closed mouth, long slender black dreadlock strands around both sides of face and behind neck, flat-brim olive green baseball cap. Exact white lettering on front of cap: \"A.M.S.\". Preserve the original cap's proportions, green hue, facial geometry, hair length and gentle three-quarter turn. Close framing from top of cap through base of neck and small top shoulder edges, with 10 percent transparent margin around hat and hair. The source only establishes the head and shoulders: do not invent a full uniform, torso, tactical equipment, weapons, headset, insignia or lower body. Make a finely hand-painted high-detail 2D videogame portrait with restrained contours and clear color shading, matching late-1990s SEGA character identity without photorealistic skin, without changing ethnicity or hairstyle. Remove scan noise and old low-resolution grain. No background, glow, ground shadow, text outside the original A.M.S. cap lettering, name tag, label, collage or extra person. Square 1024x1024.",
+        "limits": "Portrait limité aux parties visibles dans les références; ce fichier n'est pas un sprite de combat en pied. Adaptation 2D, fidélité exacte non certifiée."
+      }
+    ]
+  }
+}

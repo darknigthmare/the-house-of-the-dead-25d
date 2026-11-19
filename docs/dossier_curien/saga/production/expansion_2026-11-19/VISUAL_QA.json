@@ -1,0 +1,128 @@
+{
+  "date": "2026-11-19",
+  "engine": "Godot 4.7.1 stable",
+  "native": {
+    "status": "passed",
+    "scope": "Actual source UI selection, followed by native tests of the final mounted PCK.",
+    "pack_sha256": "690ebbb7f1c82cc9954ac474ff5b87e9e8a6b29f6fb714ae698ab4c71c7733a3",
+    "renderer": "Compatibility / OpenGL 4.5 / Mesa llvmpipe",
+    "audio": "Dummy driver; not audited by listening",
+    "observations": [
+      "Bestiary filters, pagination and return navigation observed; EX panel layout corrected.",
+      "Linda detail, direct play button, opponent and stage selection reach an actual duel.",
+      "Standing shot consumes one cartridge and deals 10 HP from the painted barrel.",
+      "Walk contacts alternate anatomical legs and keep feet grounded.",
+      "Final PCK crouch and crouch guard use articulated drawings at standing anatomical scale.",
+      "Final PCK slide at attack frame 19 consumes ammo from 8 to 7, deals 12 HP, and emits from the painted barrel.",
+      "Training workshop resume redraws the combat immediately while frame stepping remains paused."
+    ],
+    "captures": [
+      {
+        "path": "qa_native/01_bestiary_ex.png",
+        "sha256": "783e9dec91c489bb88f3763bcafa542654340e2ca8ca908868034d4c541e989f",
+        "bytes": 1384236
+      },
+      {
+        "path": "qa_native/02_linda_bestiary.png",
+        "sha256": "16149259d5d2f2e62bf3b554eb85a5052f5a12e4bb51678f406a58a6324b7961",
+        "bytes": 1092260
+      },
+      {
+        "path": "qa_native/03_linda_standing_shot.png",
+        "sha256": "f8e4f44cc0567f19dee6fcc29cae671f8bb0af27c2e5a94790b3ca41d2198bf7",
+        "bytes": 1612913
+      },
+      {
+        "path": "qa_native/04_linda_walk_left_contact.png",
+        "sha256": "01fba5c83d3fe7cffb0652f07aa6f4e046f5296421ff0afdc7289252579c7f83",
+        "bytes": 1615415
+      },
+      {
+        "path": "qa_native/05_linda_walk_right_contact.png",
+        "sha256": "4a1836897d2aeca6aebb4335c5180891e6187a5b737a7fe282b4a71434b652ae",
+        "bytes": 1615995
+      },
+      {
+        "path": "qa_native/06_linda_crouch.png",
+        "sha256": "9395f38350ef8b3670c1b1759811ebd59dca467c46af56c99f85d79feeab6d35",
+        "bytes": 1354304
+      },
+      {
+        "path": "qa_native/07_linda_crouch_guard.png",
+        "sha256": "81b8128d2a7948c89dcdac038d4c7bfd6f8631bde26233a41081504a6894a6c0",
+        "bytes": 1354622
+      },
+      {
+        "path": "qa_native/08_linda_slide_shot.png",
+        "sha256": "6c77fc8e170a5976d648a64c94a167419e58ede9b6062ba56cebe188a6f656f7",
+        "bytes": 1348001
+      }
+    ]
+  },
+  "web": {
+    "status": "blocked_by_environment_before_game_start",
+    "url": "http://127.0.0.1:28716/",
+    "http_status": 200,
+    "reload_attempts": 1,
+    "error": "The following features required to run Godot projects on the Web are missing: WebGL2 - Check web browser configuration and hardware support",
+    "gameplay_validated": false,
+    "windows_launcher_executed": false,
+    "screenshot": "qa_web/webgl2-unavailable.jpg",
+    "note": "HTML, JavaScript and icons served correctly. The browser did not start the Godot runtime; no claim of a successful web gameplay test. Browser graphics settings were not changed."
+  },
+  "packaging": {
+    "pack_bytes": 95935632,
+    "pack_sha256": "690ebbb7f1c82cc9954ac474ff5b87e9e8a6b29f6fb714ae698ab4c71c7733a3",
+    "fragments": 27,
+    "fragment_assembly": "passed",
+    "site_included_in_web_archive": true,
+    "threads_enabled": false
+  },
+  "logs": [
+    {
+      "path": "qa_logs/qa-final-curien.txt",
+      "sha256": "a29c643f0b373cb236fe4e21b5f2e90b8b50eca4ab4a15836ef50a282b6c47b1",
+      "bytes": 239
+    },
+    {
+      "path": "qa_logs/qa-final-expansion.txt",
+      "sha256": "a98c2850e9b8a14a2be882367f464f62e6f2a3c313685dfd26b67b4910fe5bab",
+      "bytes": 112
+    },
+    {
+      "path": "qa_logs/qa-final-lab.txt",
+      "sha256": "80382ffa9d93d2ea7923ba789e1c4bd4723f9dcff2b015b8612690dc66c1e023",
+      "bytes": 137
+    },
+    {
+      "path": "qa_logs/qa-final-npm.txt",
+      "sha256": "8d286b0d7bf227c8a2f71c2a51c9ee272b48a4fa1fe55e5b37002be17c53b2a0",
+      "bytes": 14346
+    },
+    {
+      "path": "qa_logs/qa-final-pack-build.txt",
+      "sha256": "e9e89b343a0af971d789acf96d5bb015f412740b01748afdc4f9933ab323b624",
+      "bytes": 508
+    },
+    {
+      "path": "qa_logs/qa-final-pack.txt",
+      "sha256": "95e8e83fc0079255e471fdfa4139e8097b76b5e5470523856b2058df93adaebb",
+      "bytes": 681
+    },
+    {
+      "path": "qa_logs/qa-final-saga.txt",
+      "sha256": "f3bc6e2770cb4fb67d440008d2e6fe810f256d6ceed3e50e5559e180e40403d5",
+      "bytes": 110
+    },
+    {
+      "path": "qa_logs/qa-native-final.txt",
+      "sha256": "07a92c53a817ee5796f571d4d14951ef8d4abd716309f65ca5b21f0e9ada9d9c",
+      "bytes": 779
+    },
+    {
+      "path": "qa_logs/qa-web-server.txt",
+      "sha256": "068bfd4131c08f4e389145ae16ff2df371986706e3530b868bb10b11cba8ca05",
+      "bytes": 707
+    }
+  ]
+}

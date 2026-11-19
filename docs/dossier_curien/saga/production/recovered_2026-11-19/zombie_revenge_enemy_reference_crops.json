@@ -1,0 +1,114 @@
+{
+  "recovery_date": "2026-11-19",
+  "original_record_sha256": "544ff17eb5e835788a3353400f66d7770abca3ffb153350739fd335abcb0fbb1",
+  "original_record_basename": "reference_crops.json",
+  "normalization": "Absolute machine-specific image paths replaced by repository paths when recovered, otherwise historical_source/<path>. Original prompt wording and source attributions retained.",
+  "original_record": {
+    "guide_30_31.png": {
+      "latch": [
+        1223,
+        835,
+        1447,
+        1136
+      ],
+      "mccoy": [
+        1753,
+        836,
+        1983,
+        1136
+      ],
+      "buddy": [
+        1223,
+        1227,
+        1447,
+        1540
+      ],
+      "bat_zombie": [
+        1753,
+        1233,
+        1983,
+        1540
+      ]
+    },
+    "guide_32_33.png": {
+      "hedgeros": [
+        125,
+        45,
+        345,
+        347
+      ],
+      "hedrian": [
+        664,
+        45,
+        884,
+        347
+      ],
+      "hedlin": [
+        125,
+        444,
+        345,
+        747
+      ],
+      "factory_worker_1": [
+        665,
+        445,
+        884,
+        748
+      ],
+      "factory_worker_2": [
+        125,
+        843,
+        345,
+        1147
+      ],
+      "hermonkey": [
+        665,
+        845,
+        885,
+        1149
+      ],
+      "biff": [
+        124,
+        1237,
+        345,
+        1542
+      ],
+      "ebitan": [
+        665,
+        1238,
+        885,
+        1543
+      ],
+      "mansion_zombie_1": [
+        1223,
+        55,
+        1443,
+        359
+      ],
+      "frog": [
+        1752,
+        63,
+        1975,
+        365
+      ],
+      "mummy": [
+        1223,
+        451,
+        1443,
+        758
+      ],
+      "mecha_zombie": [
+        1752,
+        454,
+        1975,
+        761
+      ],
+      "mansion_zombie_2": [
+        1223,
+        847,
+        1443,
+        1154
+      ]
+    }
+  }
+}

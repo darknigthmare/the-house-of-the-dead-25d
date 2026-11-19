@@ -25,7 +25,7 @@ for (const entry of catalog) {
   checked.set(entry.path, { entry, data });
 }
 
-function alphaMetrics(data) {
+function alphaMetrics(data, asset) {
   const width = data.readUInt32BE(16), height = data.readUInt32BE(20);
   ensure(data[24] === 8 && data[25] === 6 && data[28] === 0, 'Expected non-interlaced 8-bit RGBA PNG');
   const idat = [];
@@ -45,7 +45,12 @@ function alphaMetrics(data) {
   const raw = inflateSync(Buffer.concat(idat), { maxOutputLength: expected });
   ensure(raw.length === expected, 'Unexpected inflated PNG size');
   let previous = Buffer.alloc(stride), current = Buffer.alloc(stride), offset = 0;
-  let transparent = 0, visible = 0, centreVisible = 0;
+  let transparent = 0, visible = 0, centreVisible = 0, combatBandAlphaMax = 0;
+  const band = asset.combat_band_normalized;
+  if (band) {
+    ensure(band.length === 4 && band.every((v) => Number.isFinite(v) && v >= 0 && v <= 1)
+      && band[0] < band[2] && band[1] < band[3], 'Invalid combat band: ' + asset.path);
+  }
   let minX = width, minY = height, maxX = -1, maxY = -1;
   const paeth = (a, b, c) => {
     const p = a + b - c, pa = Math.abs(p - a), pb = Math.abs(p - b), pc = Math.abs(p - c);
@@ -63,6 +68,10 @@ function alphaMetrics(data) {
     }
     for (let x = 0; x < width; x++) {
       const alpha = current[x * 4 + 3];
+      if (band && x >= Math.floor(width * band[0]) && x < Math.ceil(width * band[2])
+        && y >= Math.floor(height * band[1]) && y < Math.ceil(height * band[3])) {
+        combatBandAlphaMax = Math.max(combatBandAlphaMax, alpha);
+      }
       if (alpha === 0) transparent++;
       if (alpha >= additions.alpha_threshold) {
         visible++;
@@ -74,7 +83,7 @@ function alphaMetrics(data) {
     [previous, current] = [current, previous];
   }
   ensure(visible > 0 && transparent > width * height * 0.01, 'Alpha image must contain both visible art and genuine transparency');
-  return { bounds: [minX, minY, maxX - minX + 1, maxY - minY + 1], transparent, centreVisible };
+  return { bounds: [minX, minY, maxX - minX + 1, maxY - minY + 1], transparent, centreVisible, combatBandAlphaMax };
 }
 
 ensure(additions.alpha_threshold === 16, 'Unexpected alpha registration threshold');
@@ -86,10 +95,15 @@ for (const asset of additions.assets) {
   ensure(data.length === asset.bytes && entry.sha256 === asset.sha256, 'Addition receipt mismatch: ' + asset.path);
   ensure(JSON.stringify(entry.dimensions) === JSON.stringify(asset.dimensions), 'Addition dimensions mismatch: ' + asset.path);
   if (!asset.transparent) continue;
-  const metrics = alphaMetrics(data);
+  const metrics = alphaMetrics(data, asset);
   ensure(JSON.stringify(metrics.bounds) === JSON.stringify(asset.bounds_px), 'Alpha registration mismatch: ' + asset.path + ' actual ' + JSON.stringify(metrics.bounds));
   if (asset.role === 'stage_mid' || asset.role === 'stage_front') {
-    ensure(metrics.centreVisible === 0, 'Parallax layer obstructs central fighting corridor: ' + asset.path);
+    if (asset.combat_band_normalized) {
+      ensure(asset.combat_band_alpha_max === 1, 'Unexpected combat band alpha limit: ' + asset.path);
+      ensure(metrics.combatBandAlphaMax <= 1, 'Parallax layer obstructs fighting band: ' + asset.path);
+    } else {
+      ensure(metrics.centreVisible === 0, 'Parallax layer obstructs central fighting corridor: ' + asset.path);
+    }
   }
   if (asset.role === 'fighter_pose' || asset.role === 'prop') {
     const [x, y, w, h] = metrics.bounds;

@@ -1,0 +1,14 @@
+{
+  "recovery_date": "2026-11-19",
+  "method": "Visual identity comparison with the saved source screenshot; no original prompt recovered.",
+  "original_record": {
+    "id": "uds06b",
+    "name": "UDS-06B",
+    "file": "assets/dossier_curien/expansion/zombie_revenge_bosses/uds06b_idle.png",
+    "reference": "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_bosses/uds06b.png",
+    "sources": [
+      "https://sesesega.hatenablog.jp/entry/zombierevenge"
+    ],
+    "limitations": "Recovered unlabelled generated master and identified by visual comparison to the saved UDS-06B screenshot. Original generation prompt and tool result record were not recovered. Identity match is an audit inference; exact 1:1 fidelity is not certified."
+  }
+}
