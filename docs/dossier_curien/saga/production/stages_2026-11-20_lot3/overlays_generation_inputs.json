@@ -1,0 +1,279 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "batch": "2026-11-20_lot3",
+  "specs": [
+    {
+      "id": "fool_enclosure_mid",
+      "stage": "fool_enclosure",
+      "layer": "mid",
+      "reference": "assets/dossier_curien/saga/fool_enclosure_back.png",
+      "prompt": "Use case: stylized-concept. Create ONE separate genuinely transparent RGBA MIDGROUND OVERLAY for the supplied Fool enclosure fighting-stage background. Use that background ONLY to match metal, rust, light, perspective and canvas alignment. Same native landscape16:9 canvas, about1672x941. Draw a narrow near rusted steel cage upright partly cut off at the extreme LEFT edge, limited to x0–8%, and a matching upright at the extreme RIGHT edge, limited to x92–100%. A small section of narrow overhead iron brace may occupy y0–8% only. Fine painted industrial metal, brown rust spots and dark bolts; no new props or designs. Leave the ENTIRE rest of the canvas transparent. In particular the rectangle x12.5–87.5%, y20–79% and the bottom playing area x12.5–87.5%, y75–100% must contain no visible pixels. Do NOT repeat the cage mesh, floor, staircase, background walls, lights or the original image. No opaque background, ambient wash, shadows across the empty area, haze, glow, particles, lettering, borders, HUD, watermarks, characters or checkerboard baked into pixels. This is a sparse parallax layer with edge-only architectural fragments, not a picture of a room.",
+      "path": "assets/dossier_curien/saga/fool_enclosure_mid.png",
+      "sha256": "1bec75ca2b0c213a72d4bb5b6834863e13100190de7d58c8ad97437292e0a862",
+      "size_bytes": 278835,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "center_contract": {
+        "normalized_box": [
+          0.125,
+          0.2,
+          0.875,
+          0.79
+        ],
+        "pixel_box": [
+          209,
+          188,
+          1463,
+          743
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "fight_strip_contract": {
+        "normalized_box": [
+          0.125,
+          0.75,
+          0.875,
+          1
+        ],
+        "pixel_box": [
+          209,
+          705,
+          1463,
+          941
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "generated_file": "exec-94a438aa-ef59-4c48-b1da-afdf9fbb6756.png",
+      "pixel_postprocessing": "none",
+      "visual_review": "accepted; foreground material confined to margins/corners, no opaque center or HUD"
+    },
+    {
+      "id": "fool_enclosure_front",
+      "stage": "fool_enclosure",
+      "layer": "front",
+      "reference": "assets/dossier_curien/saga/fool_enclosure_back.png",
+      "prompt": "Use case: stylized-concept. Create ONE genuinely transparent RGBA FOREGROUND OVERLAY for the supplied Fool enclosure background. Same native wide16:9 ratio, about1672x941, and fine painted dark steel with subdued brown rust. Draw ONLY two very small low near-ground fragments: a bent rusty wire-mesh offcut with its short iron footing at the extreme BOTTOM LEFT within x0–9%, y92–100%, and a low dark steel anchor bracket with two bolts and a little rust debris at the extreme BOTTOM RIGHT within x93–100%, y92–100%. Their bases naturally cut off at the bottom canvas edge. Keep each fragment below the fighters' feet and away from the center. Every other pixel is genuinely transparent. The entire center x12.5–87.5% is completely empty, from top to bottom. No connection between the corners. Do NOT redraw the floor, enclosure, stairs, walls or source background. No full-width shadow or ledge, mist, colored haze, particles, scene, text, logo, HUD, character, border or checkerboard. This is one separate sparse production parallax layer.",
+      "path": "assets/dossier_curien/saga/fool_enclosure_front.png",
+      "sha256": "884785172ff77e66840fb206f34c02c53c38b17a84bdb4a815b5f282d98b430b",
+      "size_bytes": 101799,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        196,
+        1672,
+        941
+      ],
+      "center_contract": {
+        "normalized_box": [
+          0.125,
+          0.2,
+          0.875,
+          0.79
+        ],
+        "pixel_box": [
+          209,
+          188,
+          1463,
+          743
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "fight_strip_contract": {
+        "normalized_box": [
+          0.125,
+          0.75,
+          0.875,
+          1
+        ],
+        "pixel_box": [
+          209,
+          705,
+          1463,
+          941
+        ],
+        "alpha_extrema": [
+          0,
+          0
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "generated_file": "exec-adf9efc0-b6fd-4060-a82a-f5068f5a3de6.png",
+      "pixel_postprocessing": "none",
+      "visual_review": "accepted; foreground material confined to margins/corners, no opaque center or HUD"
+    },
+    {
+      "id": "sun_bio_mid",
+      "stage": "sun_bio",
+      "layer": "mid",
+      "reference": "assets/dossier_curien/saga/sun_bio_back.png",
+      "prompt": "Use case: stylized-concept. Create ONE separate genuinely transparent RGBA MIDGROUND OVERLAY for the supplied Sun BIO chamber background. Match its fine painted green-black moss-stained industrial concrete and restrained damp lighting. Use the supplied image ONLY for alignment and material reference, without copying its room. Same native landscape16:9 canvas, about1672x941. Draw only a narrow nearby concrete support edge with a few thin dead creepers at the extreme LEFT border within x0–8%, and a matching fragmented support edge at the extreme RIGHT border within x92–100%. A short thin brown cable may sag only within the top-left x0–10%, y0–9%; no cable crosses the center. All other pixels must be truly transparent. The full rectangle x12.5–87.5%, y20–79% and the lower fighting strip x12.5–87.5%, y75–100% remain completely empty. No Sun monster, face, flowers, attacking roots, eyes, characters, large foliage, new lamps, floor, basin, ledges, architecture behind the edge fragments, fog, color wash, shadows across empty space, glowing effects, words, UI, logo, frame or baked checkerboard. A sparse edge-only parallax overlay, not an opaque scene.",
+      "path": "assets/dossier_curien/saga/sun_bio_mid.png",
+      "sha256": "09ee27cc891a4ab69735e39b8207666a884565701f5fff1f8cfb045d0056b607",
+      "size_bytes": 395054,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "center_contract": {
+        "normalized_box": [
+          0.125,
+          0.2,
+          0.875,
+          0.79
+        ],
+        "pixel_box": [
+          209,
+          188,
+          1463,
+          743
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "fight_strip_contract": {
+        "normalized_box": [
+          0.125,
+          0.75,
+          0.875,
+          1
+        ],
+        "pixel_box": [
+          209,
+          705,
+          1463,
+          941
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "generated_file": "exec-a5a3fadf-cfa3-4007-a8e4-3273fd1da5a6.png",
+      "pixel_postprocessing": "none",
+      "visual_review": "accepted; foreground material confined to margins/corners, no opaque center or HUD"
+    },
+    {
+      "id": "sun_bio_front",
+      "stage": "sun_bio",
+      "layer": "front",
+      "reference": "assets/dossier_curien/saga/sun_bio_back.png",
+      "prompt": "Use case: stylized-concept. Create ONE genuinely transparent RGBA FOREGROUND OVERLAY for the supplied Sun BIO chamber background. Preserve its subdued green-black mossy concrete, damp dark surfaces and fine hand-painted arcade style. Same native wide16:9 canvas, about1672x941. Only two tiny low clusters at the very bottom corners: at BOTTOM LEFT within x0–9%, y92–100%, a shallow chipped concrete rim fragment coated in dark moss with a few thin inert dead roots; at BOTTOM RIGHT within x93–100%, y92–100%, another low green-stained concrete chip and a short brown cable resting beside it. Cut the bases naturally at the bottom edge. No living creature or flowers. The ENTIRE central x12.5–87.5% remains genuinely transparent from top to bottom; every other region outside the two specified corner clusters is transparent too. Do not repeat the reference floor, pillars, basin, lights, room or any background pixels. No long horizontal piece joining the corners, cast-shadow wash, haze, glow, particles, writing, HUD, logo, decorative frame or checkerboard baked into pixels. One sparse native RGBA production foreground layer.",
+      "path": "assets/dossier_curien/saga/sun_bio_front.png",
+      "sha256": "492cfbe82a74c47ef86ad328fc269eb2e56285dbdcbd06d40d55581d859a469d",
+      "size_bytes": 109846,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        129,
+        1672,
+        941
+      ],
+      "center_contract": {
+        "normalized_box": [
+          0.125,
+          0.2,
+          0.875,
+          0.79
+        ],
+        "pixel_box": [
+          209,
+          188,
+          1463,
+          743
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "fight_strip_contract": {
+        "normalized_box": [
+          0.125,
+          0.75,
+          0.875,
+          1
+        ],
+        "pixel_box": [
+          209,
+          705,
+          1463,
+          941
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "generated_file": "exec-69c02d1b-ba2a-49f8-8cfe-752ff8727937.png",
+      "pixel_postprocessing": "none",
+      "visual_review": "accepted; foreground material confined to margins/corners, no opaque center or HUD"
+    }
+  ]
+}

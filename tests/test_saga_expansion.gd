@@ -7,7 +7,8 @@ const Bestiary := preload("res://src/dossier_curien/saga_bestiary.gd")
 const Painter := preload("res://src/dossier_curien/presentation.gd")
 const EXPECTED_GALLERY := {
 	Bestiary.GALLERY_MANIFEST: ["amy_crystal", "candi_stryper", "g_hotd3", "g_overkill", "hangedman", "harry_harris", "hermit", "rogan_hotd3", "varla_guns"],
-	Bestiary.LOT2_MANIFEST: ["clement_darling", "fool", "gary_typing", "goldman_human", "james_typing", "kuarl", "papa_caesar", "strength", "sun", "thornheart", "tower", "zeal"]
+	Bestiary.LOT2_MANIFEST: ["clement_darling", "fool", "gary_typing", "goldman_human", "james_typing", "kuarl", "papa_caesar", "strength", "sun", "thornheart", "tower", "zeal"],
+	Bestiary.LOT3_MANIFEST: ["brutus", "crawler", "dr_curien", "g_hotd4special", "high_priestess", "james_hotd4", "screamer", "sophie_richards"]
 }
 var a
 var checks := 0
@@ -234,7 +235,7 @@ func gallery_extension() -> void:
 		check(declared == EXPECTED_GALLERY[path], "Every delivered subject is declared exactly once: " + path)
 		extension_entries.append_array(parsed.assets)
 	a.bestiary.select_filter(a,0)
-	check(a.bestiary.assets.size() == 61, "Native gallery preserves the previous forty-nine cards and adds twelve static subjects")
+	check(a.bestiary.assets.size() == 69, "Native gallery preserves the previous sixty-one cards and adds eight static subjects")
 	var loaded := {}
 	var loaded_indices := {}
 	for index in a.bestiary.assets.size():
@@ -284,11 +285,11 @@ func gallery_extension() -> void:
 		await verify_sheet_layout("Gallery game " + str(game))
 
 func additional_stages() -> void:
-	check(Fighter.PROFILES.size() == 24 and Saga.STAGES.size() == 22 and Saga.ART.size() == 22, "Further arenas preserve the playable roster and align twenty-two art registrations")
+	check(Fighter.PROFILES.size() == 24 and Saga.STAGES.size() == 24 and Saga.ART.size() == 24, "Further arenas preserve the playable roster and align twenty-four art registrations")
 	a.case_id = ""
 	a.mode = 1
 	a.chosen = 0
-	var expected_art := {18:"zr_train", 19:"creeping_flesh", 20:"tower_canal", 21:"strength_colosseum"}
+	var expected_art := {18:"zr_train", 19:"creeping_flesh", 20:"tower_canal", 21:"strength_colosseum", 22:"fool_enclosure", 23:"sun_bio"}
 	for stage_index in expected_art:
 		check(Saga.ART[stage_index] == expected_art[stage_index], "Additional arena preserves its stable art index: " + str(stage_index))
 		a.pick_stage(1, stage_index/a.PAGE_SIZE)

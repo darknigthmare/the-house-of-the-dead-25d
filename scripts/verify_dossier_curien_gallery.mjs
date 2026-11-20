@@ -11,9 +11,11 @@ const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const BASE_MANIFEST = 'data/assets/dossier_curien_expansion.json';
 const ART_ROOT = 'assets/dossier_curien/gallery_2026-11-20';
 const LOT2_ART_ROOT = 'assets/dossier_curien/gallery_2026-11-20_lot2';
+const LOT3_ART_ROOT = 'assets/dossier_curien/gallery_2026-11-20_lot3';
 const COLLECTIONS = [
   { path: 'data/assets/dossier_curien_gallery_2026-11-20.json', artRoot: ART_ROOT },
   { path: 'data/assets/dossier_curien_gallery_2026-11-20_lot2.json', artRoot: LOT2_ART_ROOT },
+  { path: 'data/assets/dossier_curien_gallery_2026-11-20_lot3.json', artRoot: LOT3_ART_ROOT },
 ];
 const CATEGORIES = new Set(['character_base', 'npc_base', 'costume_variant', 'boss_base', 'enemy_base', 'dialogue_portrait']);
 const GAMES = new Set(['hotd', 'hotd2', 'hotd3', 'hotd4', 'hotd4_special', 'overkill', 'scarlet_dawn', 'zombie_revenge', 'hotd_ex', 'typing', 'typing2', 'english', 'pinball']);
@@ -113,14 +115,27 @@ function selfTest() {
     Object.assign(later.assets[0], { id: 'later_gallery_costume', category: 'costume_variant', game: 'typing', path: LOT2_ART_ROOT + '/later_gallery_costume.png' });
     mkdirSync(join(fixture, LOT2_ART_ROOT), { recursive: true });
     writeFileSync(join(fixture, later.assets[0].path), sample);
-    const batches = [{ manifest: valid, artRoot: ART_ROOT }, { manifest: later, artRoot: LOT2_ART_ROOT }];
-    assert.equal(validateCollections(batches, fixture, existingIds).reduce((sum, result) => sum + result.gallery, 0), 2); cases++;
+    const newest = structuredClone(valid);
+    Object.assign(newest.assets[0], { id: 'newest_gallery_costume', category: 'costume_variant', game: 'hotd4_special', path: LOT3_ART_ROOT + '/newest_gallery_costume.png' });
+    mkdirSync(join(fixture, LOT3_ART_ROOT), { recursive: true });
+    writeFileSync(join(fixture, newest.assets[0].path), sample);
+    const batches = [{ manifest: valid, artRoot: ART_ROOT }, { manifest: later, artRoot: LOT2_ART_ROOT }, { manifest: newest, artRoot: LOT3_ART_ROOT }];
+    assert.equal(validateCollections(batches, fixture, existingIds).reduce((sum, result) => sum + result.gallery, 0), 3); cases++;
     const collision = structuredClone(batches);
     collision[1].manifest.assets[0].id = valid.assets[0].id;
     assert.throws(() => validateCollections(collision, fixture, existingIds), /already belongs/, 'Duplicate across successive gallery batches'); cases++;
     const wrongRoot = structuredClone(batches);
     wrongRoot[1].manifest.assets[0].path = valid.assets[0].path;
     assert.throws(() => validateCollections(wrongRoot, fixture, existingIds), /path must stay inside/, 'Later batch cannot borrow a previous art root'); cases++;
+    const newestCollision = structuredClone(batches);
+    newestCollision[2].manifest.assets[0].id = later.assets[0].id;
+    assert.throws(() => validateCollections(newestCollision, fixture, existingIds), /already belongs/, 'Third batch cannot replace an identity from the second batch'); cases++;
+    const newestWrongRoot = structuredClone(batches);
+    newestWrongRoot[2].manifest.assets[0].path = later.assets[0].path;
+    assert.throws(() => validateCollections(newestWrongRoot, fixture, existingIds), /path must stay inside/, 'Third batch cannot borrow the second batch art root'); cases++;
+    const newestPlayable = structuredClone(batches);
+    newestPlayable[2].manifest.assets[0].playable = true;
+    assert.throws(() => validateCollections(newestPlayable, fixture, existingIds), /cannot add a playable/, 'Later costume remains a static gallery card'); cases++;
     const proof = Buffer.from(JSON.stringify({ assets: valid.assets }));
     writeFileSync(join(fixture, asset.provenance), proof);
     const withReceipt = structuredClone(valid);

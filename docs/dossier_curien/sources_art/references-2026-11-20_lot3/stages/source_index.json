@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "references": [
+    {
+      "name": "fool_official_01.jpg",
+      "url": "https://www.sonicteam.com/HOD2and3RETURN/jp/images/Fool_01.jpg",
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/stages/fool_official_01.jpg",
+      "bytes": 36544,
+      "sha256": "c25d07eaec35854cca1a0385c4b977f6c4dbeb28b6eea42089434fcbd75db19a",
+      "dimensions": [
+        260,
+        195
+      ],
+      "mode": "RGB",
+      "role": "subject_environment_reference",
+      "visually_inspected": true,
+      "key": "fool_official_01",
+      "stage": "fool_enclosure",
+      "used_as_imagegen_reference": true,
+      "retrieved": "2026-11-20",
+      "page_url": "https://www.sonicteam.com/HOD2and3RETURN/jp/2008/02/type0028_fool_1.html",
+      "source_type": "Official SEGA/Sonic Team 2&3 Return Wii guide, 2008"
+    },
+    {
+      "name": "fool_capture_02.jpg",
+      "url": "https://www.k-triggerhappy.com/hod3/boss2-2.jpg",
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/stages/fool_capture_02.jpg",
+      "bytes": 37434,
+      "sha256": "28f5f26ea5f6d7073b60cdf970f4a560ac474c091175097ed0e24dd68fe80166",
+      "dimensions": [
+        800,
+        530
+      ],
+      "mode": "RGB",
+      "role": "subject_environment_reference",
+      "visually_inspected": true,
+      "key": "fool_capture_02",
+      "stage": "fool_enclosure",
+      "used_as_imagegen_reference": true,
+      "retrieved": "2026-11-20",
+      "page_url": "https://www.k-triggerhappy.com/hod3/chapter2A.html",
+      "source_type": "Actual HOTD3 gameplay capture hosted by a community guide; capture port not independently established"
+    },
+    {
+      "name": "sun_official_01.jpg",
+      "url": "https://www.sonicteam.com/HOD2and3RETURN/jp/images/Sun_01.jpg",
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/stages/sun_official_01.jpg",
+      "bytes": 23749,
+      "sha256": "ebc643a53070b4baa9aa78336c2d0fe9a34219cf4377dda7d756410b601bdb56",
+      "dimensions": [
+        260,
+        195
+      ],
+      "mode": "RGB",
+      "role": "subject_environment_reference",
+      "visually_inspected": true,
+      "key": "sun_official_01",
+      "stage": "sun_bio",
+      "used_as_imagegen_reference": true,
+      "retrieved": "2026-11-20",
+      "page_url": "https://www.sonicteam.com/HOD2and3RETURN/jp/2008/02/type8830_sun.html",
+      "source_type": "Official SEGA/Sonic Team 2&3 Return Wii guide, 2008"
+    },
+    {
+      "url": "https://www.k-triggerhappy.com/hod3/boss3-1.jpg",
+      "src": "boss3-1.jpg",
+      "alt": "サン（触手攻撃）",
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/stages/sun_capture_boss3-1.jpg",
+      "bytes": 42637,
+      "sha256": "c7f384870c2560ec8b2f24a3f0676c8826a454508e4bbe717b92b6e7fb37d738",
+      "dimensions": [
+        800,
+        530
+      ],
+      "mode": "RGB",
+      "role": "subject_environment_reference",
+      "visually_inspected": true,
+      "key": "sun_capture_boss3-1",
+      "stage": "sun_bio",
+      "used_as_imagegen_reference": true,
+      "retrieved": "2026-11-20",
+      "page_url": "https://www.k-triggerhappy.com/hod3/chapter3A.html",
+      "source_type": "Actual HOTD3 gameplay capture hosted by a community guide; capture port not independently established"
+    },
+    {
+      "url": "https://www.k-triggerhappy.com/hod3/boss3-2.jpg",
+      "src": "boss3-2.jpg",
+      "alt": "サン（根）",
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/stages/sun_capture_boss3-2.jpg",
+      "bytes": 42570,
+      "sha256": "4cbd1b020c3b6a4bae7a6e97a79f6f275dd7fbc1f4a9897660177c64abd4d563",
+      "dimensions": [
+        800,
+        529
+      ],
+      "mode": "RGB",
+      "role": "subject_environment_reference",
+      "visually_inspected": true,
+      "key": "sun_capture_boss3-2",
+      "stage": "sun_bio",
+      "used_as_imagegen_reference": true,
+      "retrieved": "2026-11-20",
+      "page_url": "https://www.k-triggerhappy.com/hod3/chapter3A.html",
+      "source_type": "Actual HOTD3 gameplay capture hosted by a community guide; capture port not independently established"
+    }
+  ]
+}

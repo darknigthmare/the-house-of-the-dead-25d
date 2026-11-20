@@ -1,0 +1,605 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "timezone": "Europe/Paris",
+  "batch": "2026-11-20_lot3",
+  "repository": "darknigthmare/the-house-of-the-dead-25d",
+  "audit": {
+    "baseline_commit": "af0e4933c07b9016a6be552ce874b61007dd7836",
+    "arenas_before": 22,
+    "arenas_after_source_integration": 24
+  },
+  "generation_method": "image_gen built-in; six separate calls; native output bytes copied unchanged",
+  "stages": [
+    {
+      "id": "fool_enclosure",
+      "suggested_name": "Enclos du D.B.R. — Fool",
+      "game": "The House of the Dead III",
+      "source_platform": "Official Wii 2&3 Return guide, cross-checked with actual HOTD3 captures of unconfirmed port",
+      "status": "adaptation_2d",
+      "runtime_stage_index": 22,
+      "reference_keys": [
+        "fool_official_01",
+        "fool_capture_02"
+      ],
+      "retained_motifs": [
+        "Tall cylindrical wire-mesh enclosure with rusted steel posts",
+        "Stacked maintenance catwalks and a recessed staircase"
+      ],
+      "adaptation_decisions": [
+        "First-person viewpoint changed to lateral fighting view",
+        "Continuous maintenance floor widened into a clear fighting strip",
+        "Boss enclosure only; remaining D.B.R. and EFI Genome Ward routes remain open"
+      ]
+    },
+    {
+      "id": "sun_bio",
+      "suggested_name": "Chambre BIO — Sun",
+      "game": "The House of the Dead III",
+      "source_platform": "Official Wii 2&3 Return guide, cross-checked with actual HOTD3 captures of unconfirmed port",
+      "status": "adaptation_2d",
+      "runtime_stage_index": 23,
+      "reference_keys": [
+        "sun_official_01",
+        "sun_capture_boss3-1",
+        "sun_capture_boss3-2"
+      ],
+      "retained_motifs": [
+        "Dark cylindrical industrial chamber and curved ledges",
+        "Horizontal wall bands, overhead cables, green staining and pale wall lamps",
+        "Low recessed circular planting area"
+      ],
+      "adaptation_decisions": [
+        "Boss and attack roots removed from the combat path",
+        "Room opened laterally and continuous floor reserved for fighters",
+        "No sunlit greenhouse invented; L2/L3 BIO routes not claimed complete"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "fool_official_01.jpg",
+      "url": "https://www.sonicteam.com/HOD2and3RETURN/jp/images/Fool_01.jpg",
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/stages/fool_official_01.jpg",
+      "bytes": 36544,
+      "sha256": "c25d07eaec35854cca1a0385c4b977f6c4dbeb28b6eea42089434fcbd75db19a",
+      "dimensions": [
+        260,
+        195
+      ],
+      "mode": "RGB",
+      "role": "subject_environment_reference",
+      "visually_inspected": true,
+      "key": "fool_official_01",
+      "stage": "fool_enclosure",
+      "used_as_imagegen_reference": true,
+      "retrieved": "2026-11-20",
+      "page_url": "https://www.sonicteam.com/HOD2and3RETURN/jp/2008/02/type0028_fool_1.html",
+      "source_type": "Official SEGA/Sonic Team 2&3 Return Wii guide, 2008"
+    },
+    {
+      "name": "fool_capture_02.jpg",
+      "url": "https://www.k-triggerhappy.com/hod3/boss2-2.jpg",
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/stages/fool_capture_02.jpg",
+      "bytes": 37434,
+      "sha256": "28f5f26ea5f6d7073b60cdf970f4a560ac474c091175097ed0e24dd68fe80166",
+      "dimensions": [
+        800,
+        530
+      ],
+      "mode": "RGB",
+      "role": "subject_environment_reference",
+      "visually_inspected": true,
+      "key": "fool_capture_02",
+      "stage": "fool_enclosure",
+      "used_as_imagegen_reference": true,
+      "retrieved": "2026-11-20",
+      "page_url": "https://www.k-triggerhappy.com/hod3/chapter2A.html",
+      "source_type": "Actual HOTD3 gameplay capture hosted by a community guide; capture port not independently established"
+    },
+    {
+      "name": "sun_official_01.jpg",
+      "url": "https://www.sonicteam.com/HOD2and3RETURN/jp/images/Sun_01.jpg",
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/stages/sun_official_01.jpg",
+      "bytes": 23749,
+      "sha256": "ebc643a53070b4baa9aa78336c2d0fe9a34219cf4377dda7d756410b601bdb56",
+      "dimensions": [
+        260,
+        195
+      ],
+      "mode": "RGB",
+      "role": "subject_environment_reference",
+      "visually_inspected": true,
+      "key": "sun_official_01",
+      "stage": "sun_bio",
+      "used_as_imagegen_reference": true,
+      "retrieved": "2026-11-20",
+      "page_url": "https://www.sonicteam.com/HOD2and3RETURN/jp/2008/02/type8830_sun.html",
+      "source_type": "Official SEGA/Sonic Team 2&3 Return Wii guide, 2008"
+    },
+    {
+      "url": "https://www.k-triggerhappy.com/hod3/boss3-1.jpg",
+      "src": "boss3-1.jpg",
+      "alt": "サン（触手攻撃）",
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/stages/sun_capture_boss3-1.jpg",
+      "bytes": 42637,
+      "sha256": "c7f384870c2560ec8b2f24a3f0676c8826a454508e4bbe717b92b6e7fb37d738",
+      "dimensions": [
+        800,
+        530
+      ],
+      "mode": "RGB",
+      "role": "subject_environment_reference",
+      "visually_inspected": true,
+      "key": "sun_capture_boss3-1",
+      "stage": "sun_bio",
+      "used_as_imagegen_reference": true,
+      "retrieved": "2026-11-20",
+      "page_url": "https://www.k-triggerhappy.com/hod3/chapter3A.html",
+      "source_type": "Actual HOTD3 gameplay capture hosted by a community guide; capture port not independently established"
+    },
+    {
+      "url": "https://www.k-triggerhappy.com/hod3/boss3-2.jpg",
+      "src": "boss3-2.jpg",
+      "alt": "サン（根）",
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/stages/sun_capture_boss3-2.jpg",
+      "bytes": 42570,
+      "sha256": "4cbd1b020c3b6a4bae7a6e97a79f6f275dd7fbc1f4a9897660177c64abd4d563",
+      "dimensions": [
+        800,
+        529
+      ],
+      "mode": "RGB",
+      "role": "subject_environment_reference",
+      "visually_inspected": true,
+      "key": "sun_capture_boss3-2",
+      "stage": "sun_bio",
+      "used_as_imagegen_reference": true,
+      "retrieved": "2026-11-20",
+      "page_url": "https://www.k-triggerhappy.com/hod3/chapter3A.html",
+      "source_type": "Actual HOTD3 gameplay capture hosted by a community guide; capture port not independently established"
+    }
+  ],
+  "context_sources": [
+    {
+      "url": "https://www.k-triggerhappy.com/hod3/chapter2B.html",
+      "type": "Community gameplay guide",
+      "scope": "EFI Genome Ward branch; distinct route remains open"
+    },
+    {
+      "url": "https://www.k-triggerhappy.com/hod3/chapter3B.html",
+      "type": "Community gameplay guide",
+      "scope": "L3 BIO Lab branch; distinct route remains open"
+    },
+    {
+      "url": "https://gamefaqs.gamespot.com/xbox/459966-the-house-of-the-dead-iii/faqs/52102",
+      "type": "Secondary Xbox walkthrough",
+      "scope": "Route chart corroborates the two variants in each selectable family"
+    }
+  ],
+  "style_references": [
+    {
+      "path": "assets/dossier_curien/saga/strength_colosseum_back.png",
+      "sha256": "c21815bf401850032d5cf7c5769859b3f1d589ed98eeca4f5616e17cc6802bc7",
+      "size_bytes": 3290066,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "role": "Painting quality and lateral combat layout only; not evidence of HOTD3 architecture"
+    }
+  ],
+  "calibration": {
+    "renderer": "src/dossier_curien/presentation.gd",
+    "back_and_overlay_rect": [
+      -38,
+      -14,
+      1356,
+      754
+    ],
+    "suggested_floor_y": 601,
+    "foot_line_normalized_y": 0.8156498673740054,
+    "drift_multipliers": {
+      "back": 17,
+      "mid": 32,
+      "front": 58
+    },
+    "center_contract": {
+      "normalized_box": [
+        0.125,
+        0.2,
+        0.875,
+        0.79
+      ],
+      "maximum_alpha": 1,
+      "pixel_box": [
+        209,
+        188,
+        1463,
+        743
+      ],
+      "rounding": "int(width_or_height * fraction), end exclusive"
+    },
+    "native_dimensions": [
+      1672,
+      941
+    ],
+    "source_pixels": "Preserved byte-for-byte; renderer uses existing scaling."
+  },
+  "review": {
+    "all_six_images_visually_inspected": true,
+    "backgrounds_have_unobstructed_lateral_floor": true,
+    "no_character_or_hud_generated": true,
+    "style_compared_with_existing_strength_stage": true,
+    "overlays_limited_to_margins": true,
+    "native_engine_capture_performed": false,
+    "runtime_motion_validation": "Headless integration is documented separately; no manual game session or native viewport capture claimed."
+  },
+  "limitations": [
+    "Generated lateral 2D adaptations, not extracted Sega backgrounds or certified 1:1 reproductions.",
+    "Continuous lateral floors and separated parallax fragments are production adaptations for this fighting engine.",
+    "Only the Fool enclosure and the Sun boss room are delivered; D.B.R./EFI and L2/L3 BIO routes remain partially covered.",
+    "Official reference screenshots are small Wii guide images; exact capture port of community images is unconfirmed.",
+    "Alpha values of 1/255 remain in some nominally empty overlay pixels; all measured center/fight-strip maxima are at most 1.",
+    "Native runtime rendering has not been visually captured in this production report."
+  ],
+  "rejected_outputs": [],
+  "pixel_postprocessing": "none",
+  "files": [
+    {
+      "path": "assets/dossier_curien/saga/fool_enclosure_back.png",
+      "sha256": "2e6c796de87f132942a4b51e1c29a61ae1f26b5c668f6efb6be22990e17ed728",
+      "size_bytes": 3320895,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "id": "fool_enclosure_back",
+      "stage": "fool_enclosure",
+      "layer": "back",
+      "prompt": "Use case: stylized-concept / environment adaptation from visual references. Transform the supplied The House of the Dead III gameplay screenshots into ONE polished painted 2D fighting-stage BACKGROUND. Image 1 is the official SEGA 2&3 Return screenshot of Fool's enclosure: keep the tall cylindrical industrial cage, dense rust-brown diamond wire mesh, heavy vertical steel uprights, stacked horizontal ring girders and the elevated service stair/catwalk visible behind the mesh. Image 2 is an in-game close view from the D.B.R. guide: match its dark grey metal and the exact cage mesh construction, without its boss or HUD. Image 3 is ONLY the established Dossier Curien painting style and side-on stage layout; do not borrow its stone arches, outdoor sky or any colosseum motifs.\nCreate a wide landscape 16:9 opaque scene, native about1672x941. View the industrial enclosure from a side-on combat camera at ground level, showing its shallow curved mesh wall across the background, two upper catwalk tiers and a short recessed service stair toward the right. The chamber is enclosed and shadowed, with subdued grey-brown metal, weathered rust and restrained dusty industrial light. No zoo, vegetation, outdoor ruins or fantasy prison. The bottom roughly27% is a continuous flat dark metal-and-concrete maintenance fighting strip. The horizontal foot-contact position is at81.56% of image height: leave it clear across x12.5–87.5%, with no rail, pile, stair or obstacle crossing the fighters' feet. The floor is a deliberate lateral-game adaptation, consistent with the facility materials. Keep the central middle of the scene readable, with fine mesh detail quieter than the edges. Paint a complete finished background from edge to edge, tangible detailed surfaces and crisp forms consistent with image3, with depth behind the combat strip. Remove Fool and every other creature, all weapons, human bodies, HUD, health bars, crosshairs, ammo, lettering, captions, logos, score, watermarks and frames. No characters, no silhouettes, no glowing eyes. This file is the opaque BACK plane only; side framing overlays will be generated separately.",
+      "prompt_sha256_utf8": "50036f24b233be1107c8d602c0344fb1848822c1ce05ba48f03e1300ad4c36a8",
+      "reference_paths": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot3/stages/fool_official_01.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot3/stages/fool_capture_02.jpg",
+        "assets/dossier_curien/saga/strength_colosseum_back.png"
+      ],
+      "selected_generation_basename": "exec-06483872-42af-44c5-b851-bf9666a3ead1.png",
+      "accepted": true,
+      "opaque": true,
+      "visually_inspected": true,
+      "pixel_postprocessing": "none"
+    },
+    {
+      "path": "assets/dossier_curien/saga/fool_enclosure_mid.png",
+      "sha256": "1bec75ca2b0c213a72d4bb5b6834863e13100190de7d58c8ad97437292e0a862",
+      "size_bytes": 278835,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "center_contract": {
+        "normalized_box": [
+          0.125,
+          0.2,
+          0.875,
+          0.79
+        ],
+        "pixel_box": [
+          209,
+          188,
+          1463,
+          743
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "fight_strip_contract": {
+        "normalized_box": [
+          0.125,
+          0.75,
+          0.875,
+          1
+        ],
+        "pixel_box": [
+          209,
+          705,
+          1463,
+          941
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "id": "fool_enclosure_mid",
+      "stage": "fool_enclosure",
+      "layer": "mid",
+      "prompt": "Use case: stylized-concept. Create ONE separate genuinely transparent RGBA MIDGROUND OVERLAY for the supplied Fool enclosure fighting-stage background. Use that background ONLY to match metal, rust, light, perspective and canvas alignment. Same native landscape16:9 canvas, about1672x941. Draw a narrow near rusted steel cage upright partly cut off at the extreme LEFT edge, limited to x0–8%, and a matching upright at the extreme RIGHT edge, limited to x92–100%. A small section of narrow overhead iron brace may occupy y0–8% only. Fine painted industrial metal, brown rust spots and dark bolts; no new props or designs. Leave the ENTIRE rest of the canvas transparent. In particular the rectangle x12.5–87.5%, y20–79% and the bottom playing area x12.5–87.5%, y75–100% must contain no visible pixels. Do NOT repeat the cage mesh, floor, staircase, background walls, lights or the original image. No opaque background, ambient wash, shadows across the empty area, haze, glow, particles, lettering, borders, HUD, watermarks, characters or checkerboard baked into pixels. This is a sparse parallax layer with edge-only architectural fragments, not a picture of a room.",
+      "prompt_sha256_utf8": "50a5d4541b3bbd13ac19aad47392324b0d58022f813a08dd26f35309c8d10bea",
+      "reference_paths": [
+        "assets/dossier_curien/saga/fool_enclosure_back.png"
+      ],
+      "selected_generation_basename": "exec-94a438aa-ef59-4c48-b1da-afdf9fbb6756.png",
+      "accepted": true,
+      "opaque": false,
+      "visually_inspected": true,
+      "pixel_postprocessing": "none"
+    },
+    {
+      "path": "assets/dossier_curien/saga/fool_enclosure_front.png",
+      "sha256": "884785172ff77e66840fb206f34c02c53c38b17a84bdb4a815b5f282d98b430b",
+      "size_bytes": 101799,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        196,
+        1672,
+        941
+      ],
+      "center_contract": {
+        "normalized_box": [
+          0.125,
+          0.2,
+          0.875,
+          0.79
+        ],
+        "pixel_box": [
+          209,
+          188,
+          1463,
+          743
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "fight_strip_contract": {
+        "normalized_box": [
+          0.125,
+          0.75,
+          0.875,
+          1
+        ],
+        "pixel_box": [
+          209,
+          705,
+          1463,
+          941
+        ],
+        "alpha_extrema": [
+          0,
+          0
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "id": "fool_enclosure_front",
+      "stage": "fool_enclosure",
+      "layer": "front",
+      "prompt": "Use case: stylized-concept. Create ONE genuinely transparent RGBA FOREGROUND OVERLAY for the supplied Fool enclosure background. Same native wide16:9 ratio, about1672x941, and fine painted dark steel with subdued brown rust. Draw ONLY two very small low near-ground fragments: a bent rusty wire-mesh offcut with its short iron footing at the extreme BOTTOM LEFT within x0–9%, y92–100%, and a low dark steel anchor bracket with two bolts and a little rust debris at the extreme BOTTOM RIGHT within x93–100%, y92–100%. Their bases naturally cut off at the bottom canvas edge. Keep each fragment below the fighters' feet and away from the center. Every other pixel is genuinely transparent. The entire center x12.5–87.5% is completely empty, from top to bottom. No connection between the corners. Do NOT redraw the floor, enclosure, stairs, walls or source background. No full-width shadow or ledge, mist, colored haze, particles, scene, text, logo, HUD, character, border or checkerboard. This is one separate sparse production parallax layer.",
+      "prompt_sha256_utf8": "e9fb312923f81739e8b30fedc0c23db34f6dfe48b1c9a530e54cabd6052bc46d",
+      "reference_paths": [
+        "assets/dossier_curien/saga/fool_enclosure_back.png"
+      ],
+      "selected_generation_basename": "exec-adf9efc0-b6fd-4060-a82a-f5068f5a3de6.png",
+      "accepted": true,
+      "opaque": false,
+      "visually_inspected": true,
+      "pixel_postprocessing": "none"
+    },
+    {
+      "path": "assets/dossier_curien/saga/sun_bio_back.png",
+      "sha256": "4f82719219f06f437b8fc158a52420fc67bdaf919b839ddc2fb3d8c8315ab844",
+      "size_bytes": 2497179,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "id": "sun_bio_back",
+      "stage": "sun_bio",
+      "layer": "back",
+      "prompt": "Use case: stylized-concept / environment adaptation from visual references. Transform the supplied The House of the Dead III gameplay references into ONE polished painted 2D fighting-stage BACKGROUND of Sun's BIO chamber. Images1–3 are actual game references: image1 is the official SEGA 2&3 Return screenshot, images2–3 show the room's architecture and its floor at greater resolution. Preserve the enclosed cylindrical industrial room, broad curved horizontal ledges at several heights, deep dark bands behind the ledges, green-black algae/moss stained surfaces, evenly spaced thick supports, thin hanging brown cables or dead creepers high above, and the damp mottled floor. The low rounded rim around the plant bed seen in image3 may remain as an EMPTY recessed basin far behind the fighters. Remove Sun completely: no trunk, monstrous faces, flower buds, tendril creatures, roots attacking, projectiles or living boss parts. Image4 is ONLY the project's fine painted 2D texture quality and lateral fighting-stage layout; do not copy its stone arches, sky or colosseum motifs.\nOutput one native wide16:9 opaque background, about1672x941, with a side-on combat camera and shallow depth. The whole location remains a dim green-grey industrial BIO chamber, not a sunlit greenhouse or botanical garden. Match the observed dark green palette and restrained pale wall-light patches; add no neon laboratory screens, invented signs, glass dome, garden beds or machinery unsupported by the references. Keep the curved architecture legible and give a clear continuous flat damp maintenance floor throughout the bottom27% of the image. Foot-contact line at81.56% of image height must be unobstructed across x12.5–87.5%; all basin rims, wall roots, supports and large debris stay behind or outside this fighting strip. The center of the scene is calm enough to read two fighters. No characters, monsters, eyes, weapons, smoke screen, text, HUD, health bars, crosshairs, ammo, captions, logos, watermarks, decorative frame or white margins. Fine hand-painted arcade environment, natural material variation, finished edge-to-edge. This is the opaque BACK plane; no foreground framing objects across the combat strip.",
+      "prompt_sha256_utf8": "9bb9742a61b94a5f7ef065820fe6a31eaa3fa4bd13aa85a35ba42932eb09080e",
+      "reference_paths": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot3/stages/sun_official_01.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot3/stages/sun_capture_boss3-1.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot3/stages/sun_capture_boss3-2.jpg",
+        "assets/dossier_curien/saga/strength_colosseum_back.png"
+      ],
+      "selected_generation_basename": "exec-022f43fe-a287-47d5-b0f3-b10f2ba372e2.png",
+      "accepted": true,
+      "opaque": true,
+      "visually_inspected": true,
+      "pixel_postprocessing": "none"
+    },
+    {
+      "path": "assets/dossier_curien/saga/sun_bio_mid.png",
+      "sha256": "09ee27cc891a4ab69735e39b8207666a884565701f5fff1f8cfb045d0056b607",
+      "size_bytes": 395054,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "center_contract": {
+        "normalized_box": [
+          0.125,
+          0.2,
+          0.875,
+          0.79
+        ],
+        "pixel_box": [
+          209,
+          188,
+          1463,
+          743
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "fight_strip_contract": {
+        "normalized_box": [
+          0.125,
+          0.75,
+          0.875,
+          1
+        ],
+        "pixel_box": [
+          209,
+          705,
+          1463,
+          941
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "id": "sun_bio_mid",
+      "stage": "sun_bio",
+      "layer": "mid",
+      "prompt": "Use case: stylized-concept. Create ONE separate genuinely transparent RGBA MIDGROUND OVERLAY for the supplied Sun BIO chamber background. Match its fine painted green-black moss-stained industrial concrete and restrained damp lighting. Use the supplied image ONLY for alignment and material reference, without copying its room. Same native landscape16:9 canvas, about1672x941. Draw only a narrow nearby concrete support edge with a few thin dead creepers at the extreme LEFT border within x0–8%, and a matching fragmented support edge at the extreme RIGHT border within x92–100%. A short thin brown cable may sag only within the top-left x0–10%, y0–9%; no cable crosses the center. All other pixels must be truly transparent. The full rectangle x12.5–87.5%, y20–79% and the lower fighting strip x12.5–87.5%, y75–100% remain completely empty. No Sun monster, face, flowers, attacking roots, eyes, characters, large foliage, new lamps, floor, basin, ledges, architecture behind the edge fragments, fog, color wash, shadows across empty space, glowing effects, words, UI, logo, frame or baked checkerboard. A sparse edge-only parallax overlay, not an opaque scene.",
+      "prompt_sha256_utf8": "33ff510b1164dbcec6a32183b471484c17261093bc4e8e2521c30a532318b4a6",
+      "reference_paths": [
+        "assets/dossier_curien/saga/sun_bio_back.png"
+      ],
+      "selected_generation_basename": "exec-a5a3fadf-cfa3-4007-a8e4-3273fd1da5a6.png",
+      "accepted": true,
+      "opaque": false,
+      "visually_inspected": true,
+      "pixel_postprocessing": "none"
+    },
+    {
+      "path": "assets/dossier_curien/saga/sun_bio_front.png",
+      "sha256": "492cfbe82a74c47ef86ad328fc269eb2e56285dbdcbd06d40d55581d859a469d",
+      "size_bytes": 109846,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        129,
+        1672,
+        941
+      ],
+      "center_contract": {
+        "normalized_box": [
+          0.125,
+          0.2,
+          0.875,
+          0.79
+        ],
+        "pixel_box": [
+          209,
+          188,
+          1463,
+          743
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "fight_strip_contract": {
+        "normalized_box": [
+          0.125,
+          0.75,
+          0.875,
+          1
+        ],
+        "pixel_box": [
+          209,
+          705,
+          1463,
+          941
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "id": "sun_bio_front",
+      "stage": "sun_bio",
+      "layer": "front",
+      "prompt": "Use case: stylized-concept. Create ONE genuinely transparent RGBA FOREGROUND OVERLAY for the supplied Sun BIO chamber background. Preserve its subdued green-black mossy concrete, damp dark surfaces and fine hand-painted arcade style. Same native wide16:9 canvas, about1672x941. Only two tiny low clusters at the very bottom corners: at BOTTOM LEFT within x0–9%, y92–100%, a shallow chipped concrete rim fragment coated in dark moss with a few thin inert dead roots; at BOTTOM RIGHT within x93–100%, y92–100%, another low green-stained concrete chip and a short brown cable resting beside it. Cut the bases naturally at the bottom edge. No living creature or flowers. The ENTIRE central x12.5–87.5% remains genuinely transparent from top to bottom; every other region outside the two specified corner clusters is transparent too. Do not repeat the reference floor, pillars, basin, lights, room or any background pixels. No long horizontal piece joining the corners, cast-shadow wash, haze, glow, particles, writing, HUD, logo, decorative frame or checkerboard baked into pixels. One sparse native RGBA production foreground layer.",
+      "prompt_sha256_utf8": "d8e9c9ce1bd5a4d20c0c0d35b36c77dccae295cbba524b5a0cc35a11c8ff9f0e",
+      "reference_paths": [
+        "assets/dossier_curien/saga/sun_bio_back.png"
+      ],
+      "selected_generation_basename": "exec-69c02d1b-ba2a-49f8-8cfe-752ff8727937.png",
+      "accepted": true,
+      "opaque": false,
+      "visually_inspected": true,
+      "pixel_postprocessing": "none"
+    }
+  ],
+  "validation": {
+    "accepted_png_count": 6,
+    "new_stage_sets": 2,
+    "total_png_bytes": 6703608,
+    "native_dimensions_consistent": true,
+    "all_hashes_distinct": true,
+    "all_overlay_center_contracts_pass": true,
+    "all_overlay_fight_strip_contracts_pass": true,
+    "all_sources_unchanged": true,
+    "all_native_output_bytes_preserved": true
+  }
+}

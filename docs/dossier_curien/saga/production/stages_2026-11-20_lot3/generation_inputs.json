@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "batch": "2026-11-20_lot3",
+  "baseline_commit": "af0e4933c07b9016a6be552ce874b61007dd7836",
+  "generation_method": "built-in image_gen; one separate native image per plane",
+  "specs": [
+    {
+      "id": "fool_enclosure_back",
+      "prompt": "Use case: stylized-concept / environment adaptation from visual references. Transform the supplied The House of the Dead III gameplay screenshots into ONE polished painted 2D fighting-stage BACKGROUND. Image 1 is the official SEGA 2&3 Return screenshot of Fool's enclosure: keep the tall cylindrical industrial cage, dense rust-brown diamond wire mesh, heavy vertical steel uprights, stacked horizontal ring girders and the elevated service stair/catwalk visible behind the mesh. Image 2 is an in-game close view from the D.B.R. guide: match its dark grey metal and the exact cage mesh construction, without its boss or HUD. Image 3 is ONLY the established Dossier Curien painting style and side-on stage layout; do not borrow its stone arches, outdoor sky or any colosseum motifs.\nCreate a wide landscape 16:9 opaque scene, native about1672x941. View the industrial enclosure from a side-on combat camera at ground level, showing its shallow curved mesh wall across the background, two upper catwalk tiers and a short recessed service stair toward the right. The chamber is enclosed and shadowed, with subdued grey-brown metal, weathered rust and restrained dusty industrial light. No zoo, vegetation, outdoor ruins or fantasy prison. The bottom roughly27% is a continuous flat dark metal-and-concrete maintenance fighting strip. The horizontal foot-contact position is at81.56% of image height: leave it clear across x12.5–87.5%, with no rail, pile, stair or obstacle crossing the fighters' feet. The floor is a deliberate lateral-game adaptation, consistent with the facility materials. Keep the central middle of the scene readable, with fine mesh detail quieter than the edges. Paint a complete finished background from edge to edge, tangible detailed surfaces and crisp forms consistent with image3, with depth behind the combat strip. Remove Fool and every other creature, all weapons, human bodies, HUD, health bars, crosshairs, ammo, lettering, captions, logos, score, watermarks and frames. No characters, no silhouettes, no glowing eyes. This file is the opaque BACK plane only; side framing overlays will be generated separately.",
+      "references": [
+        "fool_official_01.jpg",
+        "fool_capture_02.jpg"
+      ],
+      "style": "assets/dossier_curien/saga/strength_colosseum_back.png",
+      "generated_file": "exec-06483872-42af-44c5-b851-bf9666a3ead1.png",
+      "path": "assets/dossier_curien/saga/fool_enclosure_back.png",
+      "sha256": "2e6c796de87f132942a4b51e1c29a61ae1f26b5c668f6efb6be22990e17ed728",
+      "bytes": 3320895,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "visual_review": "accepted; source motifs preserved, no boss/HUD, flat clear fighting strip",
+      "pixel_postprocessing": "none"
+    },
+    {
+      "id": "sun_bio_back",
+      "prompt": "Use case: stylized-concept / environment adaptation from visual references. Transform the supplied The House of the Dead III gameplay references into ONE polished painted 2D fighting-stage BACKGROUND of Sun's BIO chamber. Images1–3 are actual game references: image1 is the official SEGA 2&3 Return screenshot, images2–3 show the room's architecture and its floor at greater resolution. Preserve the enclosed cylindrical industrial room, broad curved horizontal ledges at several heights, deep dark bands behind the ledges, green-black algae/moss stained surfaces, evenly spaced thick supports, thin hanging brown cables or dead creepers high above, and the damp mottled floor. The low rounded rim around the plant bed seen in image3 may remain as an EMPTY recessed basin far behind the fighters. Remove Sun completely: no trunk, monstrous faces, flower buds, tendril creatures, roots attacking, projectiles or living boss parts. Image4 is ONLY the project's fine painted 2D texture quality and lateral fighting-stage layout; do not copy its stone arches, sky or colosseum motifs.\nOutput one native wide16:9 opaque background, about1672x941, with a side-on combat camera and shallow depth. The whole location remains a dim green-grey industrial BIO chamber, not a sunlit greenhouse or botanical garden. Match the observed dark green palette and restrained pale wall-light patches; add no neon laboratory screens, invented signs, glass dome, garden beds or machinery unsupported by the references. Keep the curved architecture legible and give a clear continuous flat damp maintenance floor throughout the bottom27% of the image. Foot-contact line at81.56% of image height must be unobstructed across x12.5–87.5%; all basin rims, wall roots, supports and large debris stay behind or outside this fighting strip. The center of the scene is calm enough to read two fighters. No characters, monsters, eyes, weapons, smoke screen, text, HUD, health bars, crosshairs, ammo, captions, logos, watermarks, decorative frame or white margins. Fine hand-painted arcade environment, natural material variation, finished edge-to-edge. This is the opaque BACK plane; no foreground framing objects across the combat strip.",
+      "references": [
+        "sun_official_01.jpg",
+        "sun_capture_boss3-1.jpg",
+        "sun_capture_boss3-2.jpg"
+      ],
+      "style": "assets/dossier_curien/saga/strength_colosseum_back.png",
+      "generated_file": "exec-022f43fe-a287-47d5-b0f3-b10f2ba372e2.png",
+      "path": "assets/dossier_curien/saga/sun_bio_back.png",
+      "sha256": "4f82719219f06f437b8fc158a52420fc67bdaf919b839ddc2fb3d8c8315ab844",
+      "bytes": 2497179,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "visual_review": "accepted; source motifs preserved, no boss/HUD, flat clear fighting strip",
+      "pixel_postprocessing": "none"
+    }
+  ]
+}

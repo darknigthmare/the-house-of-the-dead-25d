@@ -1,0 +1,32 @@
+Command: npm test
+Exit code: 0
+Node: v24.22.3
+Scope: restored source checkout based on af0e4933, including all 14 lot3 production PNGs.
+Selected unmodified result lines from the complete local npm test log:
+
+> node scripts/qa.mjs --data-only && node scripts/verify_sprite_atlas_v2.mjs && node scripts/verify_sprite_atlas_v3.mjs --all && node scripts/verify_sprite_atlas_v3.mjs --self-test-manifest && node scripts/verify_route_graph_integrity.mjs && node scripts/verify_campaign_routes.mjs && node scripts/verify_enemy_roster.mjs && node scripts/verify_environment_assets.mjs && node scripts/verify_animated_effects.mjs && node scripts/verify_gameplay_support_assets.mjs && node scripts/audit_content_families.mjs && node scripts/optimize_texture_imports.mjs --check && node scripts/verify_dossier_curien_assets.mjs && node scripts/verify_dossier_curien_art.mjs && npm run qa:curien-expansion && npm run qa:curien-motion && npm run qa:curien-gallery
+QA checks: 307/307 passed
+  "verified": [
+Route graph integrity passed.
+Campaign route verification passed.
+ENVIRONMENT ASSET VERIFY PASSED: 1977 assertions; 20 materials, 43 nodes, 8 active destructibles, 14 props, 4 animated effects; 81.13 MiB runtime PNG
+ANIMATED EFFECTS OK: 340/340 checks; optional private sources 0/4 present
+GAMEPLAY SUPPORT OK: 113/113 checks
+CONTENT FAMILY AUDIT: 905 checks, 6 warnings, 0 errors
+- chapter_01/garden_rescue: sam_a1 placement is not arcade-exact (canonical_chapter_verified_scene_placement_pending)
+- chapter_01/mansion_entrance: kenfis_f1 placement is not arcade-exact (canonical_chapter_verified_scene_placement_pending)
+- chapter_01/mansion_entrance: name_g2 placement is not arcade-exact (canonical_chapter_verified_scene_placement_pending)
+TEXTURE IMPORT PROFILE VERIFIED: 132 files, 0 mismatches.
+DOSSIER CURIEN ART: 271 catalogue PNGs verified; 50 additions, native dimensions, SHA-256 and alpha bounds verified.
+DOSSIER CURIEN ART VERIFIED: 1654 checks, 241 Saga PNGs, 8 calibrated poses.
+> node scripts/verify_dossier_curien_expansion.mjs && node scripts/verify_dossier_curien_expansion.mjs --self-test
+DOSSIER CURIEN EXPANSION VERIFIED: 49 PNGs, 40 gallery entries, 65651752 bytes; hashes, RGBA bounds, provenance and paths verified.
+DOSSIER CURIEN EXPANSION SELF-TEST: 10 cases passed.
+> node scripts/verify_dossier_curien_motion.mjs && node scripts/verify_dossier_curien_motion.mjs --self-test
+SAGA MOTION MANIFEST SELF-TEST: 11 cases passed.
+> node scripts/verify_dossier_curien_gallery.mjs && node scripts/verify_dossier_curien_gallery.mjs --self-test
+DOSSIER CURIEN GALLERY VERIFIED (data/assets/dossier_curien_gallery_2026-11-20.json): 9 PNGs, 9 non-playable gallery entries, 7741468 bytes; hashes, RGBA bounds, provenance, distinct identities and paths verified.
+DOSSIER CURIEN GALLERY VERIFIED (data/assets/dossier_curien_gallery_2026-11-20_lot2.json): 12 PNGs, 12 non-playable gallery entries, 14814532 bytes; hashes, RGBA bounds, provenance, distinct identities and paths verified.
+DOSSIER CURIEN GALLERY VERIFIED (data/assets/dossier_curien_gallery_2026-11-20_lot3.json): 8 PNGs, 8 non-playable gallery entries, 11587927 bytes; hashes, RGBA bounds, provenance, distinct identities and paths verified.
+DOSSIER CURIEN GALLERY COLLECTIONS: 3 batches, 29 distinct non-playable entries.
+DOSSIER CURIEN GALLERY SELF-TEST: 24 cases passed.

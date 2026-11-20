@@ -1,0 +1,683 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "timezone": "Europe/Paris",
+  "batch": "2026-11-20_lot3",
+  "baseline_commit": "af0e4933c07b9016a6be552ce874b61007dd7836",
+  "initial_inventory_commit": "59372b618882da17510351f2a5bd46226682eac4",
+  "publication_target": {
+    "pull_request": "https://github.com/darknigthmare/the-house-of-the-dead-25d/pull/2",
+    "branch": "feat/dossier-curien-combat",
+    "merge_requested": false
+  },
+  "sources": {
+    "baseline": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot3/baseline_af0e4933.json",
+    "initial_inventory": "docs/dossier_curien/saga/production/catalogue_2026-11-20/personnages_tenues.json",
+    "previous_delivery": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot2/delta_livraison.json",
+    "current_inventory": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot3/personnages_tenues.json",
+    "generation_manifests": [
+      "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot3/humans_generated.json",
+      "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot3/costumes_generated.json",
+      "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot3/bosses_generated.json"
+    ],
+    "runtime_gallery": "data/assets/dossier_curien_gallery_2026-11-20_lot3.json",
+    "stages": "docs/dossier_curien/saga/production/stages_2026-11-20_lot3/manifest.json",
+    "stage_inventory": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot3/stages_manquants.json",
+    "engine_and_catalogue_validation": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot3/VALIDATION.json"
+  },
+  "summary": {
+    "baseline_task_records": 62,
+    "records_receiving_static_dossier_base_this_batch": 8,
+    "records_with_static_dossier_base_after_previous_batches": 20,
+    "records_with_static_dossier_base_from_three_batches": 28,
+    "records_not_covered_by_these_three_batches": 34,
+    "gallery_images_from_three_batches": 29,
+    "new_human_dossier_adaptations": 2,
+    "new_human_identities": 0,
+    "new_boss_visual_bases": 4,
+    "new_boss_encounters_represented": 4,
+    "new_edition_costume_visual_bases": 2,
+    "explicit_reference_qa_open_this_batch": 1,
+    "explicit_reference_qa_open_among_three_batches_only": 6,
+    "new_playable_profiles": 0,
+    "new_selectable_costumes": 0,
+    "complete_animations_added": 0,
+    "named_motion_gaps_before": 277,
+    "named_motion_gaps_after": 277,
+    "historical_masters_unrecovered_before": 204,
+    "historical_masters_unrecovered_after": 204,
+    "playable_fighters_before": 24,
+    "playable_fighters_after": 24,
+    "story_routes_before": 26,
+    "story_routes_after": 26,
+    "archive_challenges_before": 29,
+    "archive_challenges_after": 29,
+    "selectable_alternate_costumes_before": 2,
+    "selectable_alternate_costumes_after": 2,
+    "gallery_cards_before": 61,
+    "gallery_cards_after_source_integration": 69,
+    "arena_records_before": 22,
+    "arena_records_after_source_integration": 24,
+    "new_gallery_pngs": 8,
+    "new_stage_pngs": 6,
+    "new_png_total": 14,
+    "new_gallery_png_bytes": 11587927,
+    "new_stage_png_bytes": 6703608,
+    "new_png_bytes": 18291535,
+    "imagegen_calls": 16,
+    "rejected_generation_outputs": 2,
+    "rejected_outputs_retained_as_provenance_only": 1,
+    "rejected_outputs_not_committed": 1,
+    "dossier_png_paths_before": 365,
+    "dossier_png_paths_after": 379,
+    "dossier_unique_git_blobs_before": 363,
+    "dossier_unique_git_blobs_after": 377,
+    "stage_catalogue_rows": 61,
+    "stage_catalogue_by_status": {
+      "existant": 17,
+      "adaptation_partielle": 8,
+      "absent": 29,
+      "reference_requise": 7
+    }
+  },
+  "counting_rule": "Une ligne est une tâche graphique, une forme, un ensemble à documenter ou une rencontre. Ces lignes ne sont pas des personnes uniques. Sophie et Curien sont deux adaptations Dossier Curien d’identités avec art historique existant.",
+  "deliveries": [
+    {
+      "inventory_task_id": "sophie",
+      "asset_id": "sophie_richards",
+      "name": "Sophie Richards — HOTD1",
+      "delivery_kind": "existing_identity_dossier_adaptation",
+      "edition_scope": "hotd",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot3/characters/sophie_richards_base.png",
+      "sha256": "80344a47daee690c42cbfff3b27725ca8c0d14a2bfb46d9677ad1b600ecb8bfc",
+      "bytes": 1574153,
+      "source_manifest": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot3/humans_generated.json",
+      "base_art_delivered": true,
+      "source_manifest_status": "static_needs_visual_reference_qa",
+      "canonical_reference_qa_complete_claim": false,
+      "playable_added": false,
+      "selectable_costume_added": false,
+      "animation_complete": false,
+      "exact_limitations": [
+        "Base statique destinée au bestiaire : aucun profil jouable, costume sélectionnable ou animation complète ajouté.",
+        "Adaptation peinte 2D contrôlée sur les éléments visibles des références ; aucune certification de fidélité 1:1.",
+        "Chaussures vues seulement en petit dans la capture arcade : forme fermée à talon visible, teinte sombre bordeaux-brun et finition interprétées. Vérification visuelle précise encore ouverte.",
+        "Le traitement des jambes en bas fins, le dessin des coutures, le petit mécanisme d’accroche du badge et les détails du visage ne sont pas certifiés à l’échelle du modèle original.",
+        "Pose debout calme créée pour la galerie ; elle ne constitue aucune animation ni validation du modèle alternatif Saturn."
+      ],
+      "source_notes": [
+        "Les deux captures du modèle arcade fixent le tailleur rouge sombre, la chemise blanche, le badge DBR à la poitrine et les cheveux courts ; le manuel SEGA p.16 confirme la silhouette et la coiffure.",
+        "La capture portée par Hangedman montre les jambes et les chaussures, avec peu de détail ; la teinte exacte des escarpins et le traitement des bas restent à vérifier.",
+        "Le master historique du projet a été inspecté pour identifier le travail d’adaptation, puis écarté comme référence canonique : cheveux plus longs, pochette médicale et extincteur ne sont pas attestés par les sources retenues."
+      ],
+      "remaining_work": [
+        "Les réserves de référence, d’édition et de mise en scène restent détaillées dans le manifeste source.",
+        "Aucun mouvement, transition ni comportement de combat n’est fourni par cette base statique.",
+        "Un profil jouable ou un sélecteur de costume demande une intégration distincte."
+      ],
+      "git_blob": "5086b825b06624f06f6fa2be7d4a5016346c600c"
+    },
+    {
+      "inventory_task_id": "curien",
+      "asset_id": "dr_curien",
+      "name": "Dr. Curien — HOTD1",
+      "delivery_kind": "existing_identity_dossier_adaptation",
+      "edition_scope": "hotd",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot3/characters/dr_curien_base.png",
+      "sha256": "bfc066bf43c156fb2e8f5d9173eda177520a5133db9e40e2825a25d5dfb1ef5e",
+      "bytes": 1808892,
+      "source_manifest": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot3/humans_generated.json",
+      "base_art_delivered": true,
+      "source_manifest_status": "static_reference_reviewed",
+      "canonical_reference_qa_complete_claim": false,
+      "playable_added": false,
+      "selectable_costume_added": false,
+      "animation_complete": false,
+      "exact_limitations": [
+        "Base statique destinée au bestiaire : aucun profil jouable, costume sélectionnable ou animation complète ajouté.",
+        "Adaptation peinte 2D contrôlée sur les éléments visibles des références ; aucune certification de fidélité 1:1.",
+        "Les menus détails du gilet, des boutons, de la moustache, des lunettes et des embouts de canne sont une interprétation picturale d’un modèle peu détaillé.",
+        "La canne reprend la teinte visible à l’écran ; son matériau, sa couleur intrinsèque sous un autre éclairage et son petit manche caché par les mains ne sont pas certifiés.",
+        "La pose reprend les mains posées sur une canne, avec une orientation de galerie adaptée ; les versions HOTD III, EX et Remake restent distinctes."
+      ],
+      "source_notes": [
+        "Le modèle arcade en pied fixe le manteau taupe/beige, le gilet et pantalon clairs, les chaussures sombres, les lunettes et la canne rosée ; le manuel SEGA p.17 complète le visage et les vêtements.",
+        "Le manuel est monochrome. La palette vient de la capture arcade, dont l’éclairage vert n’est pas transféré au dessin.",
+        "Le master historique du projet, sombre et plus grisonnant, a été inspecté puis conservé intact ; la nouvelle base est guidée par le modèle original en jeu.",
+        "Le texte de l’article communautaire emploie le prénom Roy ; cette attribution n’est pas retenue. Les captures du jeu servent ici de référence visuelle, sans reprendre toutes les affirmations de l’article."
+      ],
+      "remaining_work": [
+        "Les réserves de référence, d’édition et de mise en scène restent détaillées dans le manifeste source.",
+        "Aucun mouvement, transition ni comportement de combat n’est fourni par cette base statique.",
+        "Un profil jouable ou un sélecteur de costume demande une intégration distincte."
+      ],
+      "git_blob": "bb20c86acd252a572ce718db4cee6e60e694d5e0"
+    },
+    {
+      "inventory_task_id": "james_hotd4",
+      "asset_id": "james_hotd4",
+      "name": "James Taylor — HOTD4",
+      "delivery_kind": "edition_costume_static_base",
+      "edition_scope": "hotd4",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot3/costumes/james_hotd4_base.png",
+      "sha256": "e3a58db288ebfce4a6465af3f2e16fbcd1e37c8a667db64c6f6db54315607631",
+      "bytes": 1766431,
+      "source_manifest": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot3/costumes_generated.json",
+      "base_art_delivered": true,
+      "source_manifest_status": "static_reference_reviewed",
+      "canonical_reference_qa_complete_claim": false,
+      "playable_added": false,
+      "selectable_costume_added": false,
+      "animation_complete": false,
+      "exact_limitations": [
+        "Base statique destinée au bestiaire : aucun profil jouable, costume sélectionnable ou animation complète ajouté.",
+        "Adaptation peinte 2D contrôlée sur les éléments visibles des références ; aucune certification de fidélité 1:1.",
+        "Pose de garde adaptée pour Dossier Curien ; détails du visage, coutures, reflets et nuance exacte du manteau interprétés depuis les références.",
+        "La silhouette compacte de l’arme a été corrigée ; ses dimensions, pièces mécaniques et petits détails restent une illustration, sans certification de reproduction exacte du modèle du jeu.",
+        "Cette fiche ne remplace pas le profil de combat James existant et ne crée aucun costume sélectionnable."
+      ],
+      "source_notes": [
+        "La page officielle SEGA montre le manteau bleu-gris, la chemise noire ouverte, le pantalon à fines rayures et les chaussures sombres de James.",
+        "Le rendu en pied rehébergé par IMFDB complète la pose et les détails de costume ; son hébergement est communautaire, pas une page SEGA.",
+        "La première génération avait un boîtier d’arme trop allongé. Une seconde intervention ImageGen a réduit et simplifié sa silhouette avec le rendu de James, le rendu de G Special et une capture de rechargement.",
+        "Aucun équipement Typing ni costume gris de HOTD2 n’est transféré à cette variante."
+      ],
+      "remaining_work": [
+        "Les réserves de référence, d’édition et de mise en scène restent détaillées dans le manifeste source.",
+        "Aucun mouvement, transition ni comportement de combat n’est fourni par cette base statique.",
+        "Un profil jouable ou un sélecteur de costume demande une intégration distincte."
+      ],
+      "git_blob": "c0a1d518464998dfd7b11ddc9d8a169deb0fd75a"
+    },
+    {
+      "inventory_task_id": "g_hotd4special",
+      "asset_id": "g_hotd4special",
+      "name": "Agent G — HOTD4 Special",
+      "delivery_kind": "edition_costume_static_base",
+      "edition_scope": "hotd4_special",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot3/costumes/g_hotd4special_base.png",
+      "sha256": "8d2c663eff6232cc2f25eb23ae5393aa5a2d40aba24123425bd459a6c3e1fcdb",
+      "bytes": 1638061,
+      "source_manifest": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot3/costumes_generated.json",
+      "base_art_delivered": true,
+      "source_manifest_status": "static_reference_reviewed",
+      "canonical_reference_qa_complete_claim": false,
+      "playable_added": false,
+      "selectable_costume_added": false,
+      "animation_complete": false,
+      "exact_limitations": [
+        "Base statique destinée au bestiaire : aucun profil jouable, costume sélectionnable ou animation complète ajouté.",
+        "Adaptation peinte 2D contrôlée sur les éléments visibles des références ; aucune certification de fidélité 1:1.",
+        "Les chaussures sont visibles sur le rendu communautaire en pied, mais pas dans le petit personnage du flyer SEGA ; leur nuance précise et les détails de semelle ne sont pas certifiés.",
+        "Visage, texture du costume, coutures et petits détails de l’arme restent une adaptation peinte des références.",
+        "Cette version conserve l’identité G ; elle ne ferme ni les autres tenues de G ni une série d’animations."
+      ],
+      "source_notes": [
+        "Le rendu en pied rehébergé par IMFDB montre le costume bleu nuit brillant, la chemise bleue, la cravate sombre, les cheveux foncés et les chaussures brunes.",
+        "Le flyer SEGA japonais de 2006, conservé par Arcade Museum, corrobore le même visage, haut de costume et arme ; il ne montre pas tout le bas du corps.",
+        "Le rendu en pied fournit le pantalon et les chaussures. Les descriptions secondaires contradictoires sur la palette n’ont pas remplacé les images inspectées."
+      ],
+      "remaining_work": [
+        "Les réserves de référence, d’édition et de mise en scène restent détaillées dans le manifeste source.",
+        "Aucun mouvement, transition ni comportement de combat n’est fourni par cette base statique.",
+        "Un profil jouable ou un sélecteur de costume demande une intégration distincte."
+      ],
+      "git_blob": "f5900e0f54cf5c4772304559791b8aec863c3b16"
+    },
+    {
+      "inventory_task_id": "high_priestess",
+      "asset_id": "high_priestess",
+      "name": "High Priestess",
+      "delivery_kind": "boss_static_base",
+      "edition_scope": "scarlet_dawn",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot3/bosses/high_priestess_base.png",
+      "sha256": "4d7cddf4ba5d354bdd29093d3e700bf5c2946329822731b1f9382beeb7775caa",
+      "bytes": 1548040,
+      "source_manifest": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot3/bosses_generated.json",
+      "base_art_delivered": true,
+      "source_manifest_status": "static_reference_reviewed",
+      "canonical_reference_qa_complete_claim": false,
+      "playable_added": false,
+      "selectable_costume_added": false,
+      "animation_complete": false,
+      "exact_limitations": [
+        "Une illustration statique de bestiaire ; aucun nouveau combattant jouable, cycle d’animation ou comportement de combat fourni.",
+        "Rendu peint, détails de texture et courbures adaptés à la galerie ; aucune équivalence pixel à pixel ou certification canonique 1:1.",
+        "La disposition suit la vue officielle de face ; aucune vue arrière ni échelle relative native en combat n’est fournie."
+      ],
+      "source_notes": [
+        "Silhouette entière et détail du visage publiés directement par SEGA ; fichiers inspectés avant génération.",
+        "Huit extrémités dentées distinctes, même disposition générale et même anatomie que le rendu officiel.",
+        "Le concept de développement présenté par CGWORLD est un contexte de provenance ; les variantes de peau retirée ou de dégâts ne servent pas au dessin livré.",
+        "Aucun numéro de type ajouté : le modèle de Scarlet Dawn ne doit pas être confondu avec les anciennes interprétations de comics."
+      ],
+      "remaining_work": [
+        "Les réserves de référence, d’édition et de mise en scène restent détaillées dans le manifeste source.",
+        "Aucun mouvement, transition ni comportement de combat n’est fourni par cette base statique.",
+        "Un profil jouable ou un sélecteur de costume demande une intégration distincte."
+      ],
+      "git_blob": "ce71583a09ee33b2476871082cac2a68c527bcee"
+    },
+    {
+      "inventory_task_id": "crawler",
+      "asset_id": "crawler",
+      "name": "Crawler",
+      "delivery_kind": "boss_static_base",
+      "edition_scope": "overkill",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot3/bosses/crawler_base.png",
+      "sha256": "ea197204f588b5cad38992fd4ba8c281964a0d72af3262198f413c6fbc3c5d38",
+      "bytes": 902072,
+      "source_manifest": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot3/bosses_generated.json",
+      "base_art_delivered": true,
+      "source_manifest_status": "static_reference_reviewed",
+      "canonical_reference_qa_complete_claim": false,
+      "playable_added": false,
+      "selectable_costume_added": false,
+      "animation_complete": false,
+      "exact_limitations": [
+        "Une illustration statique de bestiaire ; aucun nouveau combattant jouable, cycle d’animation ou comportement de combat fourni.",
+        "La pose statique est reconstruite à partir de captures en mouvement ; longueur exacte des segments, doigts/orteils et face arrière ne sont pas certifiés.",
+        "Le volume des pieds, la microtexture et la disposition précise des reliefs de la tête restent des interprétations peintes ; la référence ne permet pas de mesurer une correspondance 1:1.",
+        "Aucune attaque, phase de saut ou variante de faiblesse Wii/Extended Cut n’est implémentée."
+      ],
+      "source_notes": [
+        "Trois captures PS3 inspectées et fournies à ImageGen : torse/bras, tête/yeux et pose entière.",
+        "Le rapprochement retient le torse humanoïde, les deux bras terminés en faux, les deux longues jambes et les yeux saillants ; pas de créature générique à six pattes.",
+        "Une quatrième capture distante a servi au contrôle de silhouette, sans devenir une entrée ImageGen.",
+        "Les images sont assombries par la scène et non orthographiques ; les documents conceptuels annoncés par Neoseeker n’étaient pas visuellement accessibles et ne sont pas comptés comme examinés."
+      ],
+      "remaining_work": [
+        "Les réserves de référence, d’édition et de mise en scène restent détaillées dans le manifeste source.",
+        "Aucun mouvement, transition ni comportement de combat n’est fourni par cette base statique.",
+        "Un profil jouable ou un sélecteur de costume demande une intégration distincte."
+      ],
+      "git_blob": "1b6cd4d665424d2c931025f0ec870e29e9ba0728"
+    },
+    {
+      "inventory_task_id": "screamer",
+      "asset_id": "screamer",
+      "name": "Screamer",
+      "delivery_kind": "boss_static_base",
+      "edition_scope": "overkill",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot3/bosses/screamer_base.png",
+      "sha256": "0068cb065b171e5ecd83db2f64115b77730f18be4b26ebb5cc5c69a6f170e033",
+      "bytes": 1076211,
+      "source_manifest": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot3/bosses_generated.json",
+      "base_art_delivered": true,
+      "source_manifest_status": "static_reference_reviewed",
+      "canonical_reference_qa_complete_claim": false,
+      "playable_added": false,
+      "selectable_costume_added": false,
+      "animation_complete": false,
+      "exact_limitations": [
+        "Une illustration statique de bestiaire ; aucun nouveau combattant jouable, cycle d’animation ou comportement de combat fourni.",
+        "La vue entière est un petit artwork Wii au sein d’un menu ; la concordance exacte de chaque détail avec le modèle PS3 ne peut pas être établie.",
+        "La forme du visage, les plis de blouse, la colonne dorsale cachée et les pieds sont adaptés pour une illustration lisible ; aucune certification 1:1.",
+        "Les apparitions, téléportations et animations de cri ne sont pas livrées."
+      ],
+      "source_notes": [
+        "Deux captures PS3 définissent le visage, les cheveux sombres, la blouse et la silhouette voûtée ; leurs doubles et figurants sont exclus.",
+        "Le menu d’art Wii montre une silhouette complète avec pieds nus ; son rôle est limité à la posture et à la continuité du vêtement.",
+        "La première capture PS3, très surexposée par un effet, a été inspectée puis exclue des entrées de génération.",
+        "La sélection conserve une seule créature adulte ; aucune apparition supplémentaire, aucun effet de cri et aucune eau masquant les pieds."
+      ],
+      "remaining_work": [
+        "Les réserves de référence, d’édition et de mise en scène restent détaillées dans le manifeste source.",
+        "Aucun mouvement, transition ni comportement de combat n’est fourni par cette base statique.",
+        "Un profil jouable ou un sélecteur de costume demande une intégration distincte."
+      ],
+      "git_blob": "d3aa22180e4e476b81f2edefdb8dee25d0b1bdf9"
+    },
+    {
+      "inventory_task_id": "brutus",
+      "asset_id": "brutus",
+      "name": "Brutus",
+      "delivery_kind": "boss_static_base",
+      "edition_scope": "overkill",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot3/bosses/brutus_base.png",
+      "sha256": "be58dc0fe9847b94ad6d3de7bd5c9764ba7950fb7f48404c432d3a347b1fd967",
+      "bytes": 1274067,
+      "source_manifest": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot3/bosses_generated.json",
+      "base_art_delivered": true,
+      "source_manifest_status": "static_reference_reviewed",
+      "canonical_reference_qa_complete_claim": false,
+      "playable_added": false,
+      "selectable_costume_added": false,
+      "animation_complete": false,
+      "exact_limitations": [
+        "Une illustration statique de bestiaire ; aucun nouveau combattant jouable, cycle d’animation ou comportement de combat fourni.",
+        "Les captures ne permettent pas de reproduire exactement les tatouages, les lettres de poitrine ni toute la topologie du lanceur et de la batterie.",
+        "Ces petits détails sont une adaptation graphique ; la silhouette et la latéralité sont contrôlées, la fidélité canonique 1:1 ne l’est pas.",
+        "Aucun projectile, arc électrique, partenaire de rencontre, cadavre ou comportement de combat ajouté."
+      ],
+      "source_notes": [
+        "Captures PS3 de face et de dos inspectées : silhouette massive, cagoule, bras électrique droit, pantalon de prison et matériel dorsal.",
+        "Latéralité préservée : le lanceur remplace l’avant-bras anatomique droit (gauche de l’image) ; la main anatomique gauche reste humaine.",
+        "Les petits détails mécaniques et motifs de tatouage sont imparfaitement lisibles dans les captures ; leur géométrie peinte n’est pas donnée comme officielle exacte.",
+        "Premier résultat rejeté : un réticule d’interface avait contaminé le tatouage du ventre. Correction ciblée ImageGen, puis inspection du PNG final sans cible concentrique."
+      ],
+      "remaining_work": [
+        "Les réserves de référence, d’édition et de mise en scène restent détaillées dans le manifeste source.",
+        "Aucun mouvement, transition ni comportement de combat n’est fourni par cette base statique.",
+        "Un profil jouable ou un sélecteur de costume demande une intégration distincte."
+      ],
+      "git_blob": "2f0ede57e3cc0faec5e66e4f754330f40ee74de8"
+    }
+  ],
+  "previous_batches_inventory_task_ids": [
+    "amy",
+    "candi",
+    "clement",
+    "fool",
+    "g_hotd3",
+    "g_overkill",
+    "gary_typing",
+    "goldman_human",
+    "hangedman",
+    "harry",
+    "hermit",
+    "james_typing",
+    "judgment",
+    "papa_caesar",
+    "rogan_hotd3",
+    "strength",
+    "sun",
+    "thornheart",
+    "tower",
+    "varla"
+  ],
+  "this_batch_inventory_task_ids": [
+    "brutus",
+    "crawler",
+    "curien",
+    "g_hotd4special",
+    "high_priestess",
+    "james_hotd4",
+    "screamer",
+    "sophie"
+  ],
+  "cumulative_covered_inventory_task_ids": [
+    "amy",
+    "brutus",
+    "candi",
+    "clement",
+    "crawler",
+    "curien",
+    "fool",
+    "g_hotd3",
+    "g_hotd4special",
+    "g_overkill",
+    "gary_typing",
+    "goldman_human",
+    "hangedman",
+    "harry",
+    "hermit",
+    "high_priestess",
+    "james_hotd4",
+    "james_typing",
+    "judgment",
+    "papa_caesar",
+    "rogan_hotd3",
+    "screamer",
+    "sophie",
+    "strength",
+    "sun",
+    "thornheart",
+    "tower",
+    "varla"
+  ],
+  "uncovered_inventory_task_ids_after_three_batches": [
+    "bart_picard",
+    "coco_sindy",
+    "dan_taylor",
+    "ex_unverified_cameos",
+    "g_saturn2",
+    "goldman_zombie",
+    "hotd2_remake_redesigns",
+    "hotd_remake_redesigns",
+    "jasper_human",
+    "linda_alts",
+    "lobber",
+    "meat_katie",
+    "mobile_nightmare_roster",
+    "mother",
+    "mother_human",
+    "nigel_sebastian",
+    "original_model_amy",
+    "original_model_bruno",
+    "original_model_civilian",
+    "original_model_g",
+    "original_model_goldman",
+    "original_model_harry",
+    "original_model_rogan",
+    "reawakened_roster",
+    "researcher_saturn",
+    "rikiya_alts",
+    "rogan_saturn2",
+    "site_doctor",
+    "sophie_saturn",
+    "sophie_zombie",
+    "stick_alts",
+    "typing2004_kids",
+    "typing2_player_equipment",
+    "yukio"
+  ],
+  "explicit_reference_qa_open_ids_this_batch": [
+    "sophie_richards"
+  ],
+  "explicit_reference_qa_open_ids_among_three_batches_only": [
+    "candi_stryper",
+    "clement_darling",
+    "papa_caesar",
+    "sophie_richards",
+    "thornheart",
+    "varla_guns"
+  ],
+  "known_edition_gaps_not_closed": [
+    "Hangedman Scarlet Dawn : la base du premier jeu livrée au lot1 ne valide pas son redesign.",
+    "Tower : seule l’arène souterraine en eau est livrée ; variante sable et retour chez Goldman encore ouverts.",
+    "Strength : parcours aux murs clairs adapté ; autres embranchements et murs sombres encore ouverts.",
+    "Typing : équipement classique documenté ; région du logo, ports Mac/PS2, Typing2 et Kids2004 non clos.",
+    "Lovers, Empress, Temperance et Star disposent de bases sous EX ; comparaison des modèles HOTD4 encore ouverte.",
+    "Original Mode : les sept substitutions de modèles restent des tâches de mode, pas sept nouvelles identités."
+  ],
+  "new_pngs": [
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot3/characters/sophie_richards_base.png",
+      "kind": "gallery",
+      "asset_id": "sophie_richards",
+      "bytes": 1574153,
+      "sha256": "80344a47daee690c42cbfff3b27725ca8c0d14a2bfb46d9677ad1b600ecb8bfc",
+      "git_blob": "5086b825b06624f06f6fa2be7d4a5016346c600c",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot3/characters/dr_curien_base.png",
+      "kind": "gallery",
+      "asset_id": "dr_curien",
+      "bytes": 1808892,
+      "sha256": "bfc066bf43c156fb2e8f5d9173eda177520a5133db9e40e2825a25d5dfb1ef5e",
+      "git_blob": "bb20c86acd252a572ce718db4cee6e60e694d5e0",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot3/costumes/james_hotd4_base.png",
+      "kind": "gallery",
+      "asset_id": "james_hotd4",
+      "bytes": 1766431,
+      "sha256": "e3a58db288ebfce4a6465af3f2e16fbcd1e37c8a667db64c6f6db54315607631",
+      "git_blob": "c0a1d518464998dfd7b11ddc9d8a169deb0fd75a",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot3/costumes/g_hotd4special_base.png",
+      "kind": "gallery",
+      "asset_id": "g_hotd4special",
+      "bytes": 1638061,
+      "sha256": "8d2c663eff6232cc2f25eb23ae5393aa5a2d40aba24123425bd459a6c3e1fcdb",
+      "git_blob": "f5900e0f54cf5c4772304559791b8aec863c3b16",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot3/bosses/high_priestess_base.png",
+      "kind": "gallery",
+      "asset_id": "high_priestess",
+      "bytes": 1548040,
+      "sha256": "4d7cddf4ba5d354bdd29093d3e700bf5c2946329822731b1f9382beeb7775caa",
+      "git_blob": "ce71583a09ee33b2476871082cac2a68c527bcee",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot3/bosses/crawler_base.png",
+      "kind": "gallery",
+      "asset_id": "crawler",
+      "bytes": 902072,
+      "sha256": "ea197204f588b5cad38992fd4ba8c281964a0d72af3262198f413c6fbc3c5d38",
+      "git_blob": "1b6cd4d665424d2c931025f0ec870e29e9ba0728",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot3/bosses/screamer_base.png",
+      "kind": "gallery",
+      "asset_id": "screamer",
+      "bytes": 1076211,
+      "sha256": "0068cb065b171e5ecd83db2f64115b77730f18be4b26ebb5cc5c69a6f170e033",
+      "git_blob": "d3aa22180e4e476b81f2edefdb8dee25d0b1bdf9",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot3/bosses/brutus_base.png",
+      "kind": "gallery",
+      "asset_id": "brutus",
+      "bytes": 1274067,
+      "sha256": "be58dc0fe9847b94ad6d3de7bd5c9764ba7950fb7f48404c432d3a347b1fd967",
+      "git_blob": "2f0ede57e3cc0faec5e66e4f754330f40ee74de8",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/saga/fool_enclosure_back.png",
+      "kind": "stage",
+      "asset_id": "fool_enclosure_back",
+      "bytes": 3320895,
+      "sha256": "2e6c796de87f132942a4b51e1c29a61ae1f26b5c668f6efb6be22990e17ed728",
+      "git_blob": "4be21b629baffc3ceda2394848597c24ecedcf76",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/dossier_curien/saga/fool_enclosure_mid.png",
+      "kind": "stage",
+      "asset_id": "fool_enclosure_mid",
+      "bytes": 278835,
+      "sha256": "1bec75ca2b0c213a72d4bb5b6834863e13100190de7d58c8ad97437292e0a862",
+      "git_blob": "0f969bb1e849286f625ae19851a508da425ec925",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/saga/fool_enclosure_front.png",
+      "kind": "stage",
+      "asset_id": "fool_enclosure_front",
+      "bytes": 101799,
+      "sha256": "884785172ff77e66840fb206f34c02c53c38b17a84bdb4a815b5f282d98b430b",
+      "git_blob": "25d9a08c2afd7704cc9b96fb91e2700e48c9af97",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/saga/sun_bio_back.png",
+      "kind": "stage",
+      "asset_id": "sun_bio_back",
+      "bytes": 2497179,
+      "sha256": "4f82719219f06f437b8fc158a52420fc67bdaf919b839ddc2fb3d8c8315ab844",
+      "git_blob": "a5db5c347fd71cdf4b65da6a9755f94675be2292",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/dossier_curien/saga/sun_bio_mid.png",
+      "kind": "stage",
+      "asset_id": "sun_bio_mid",
+      "bytes": 395054,
+      "sha256": "09ee27cc891a4ab69735e39b8207666a884565701f5fff1f8cfb045d0056b607",
+      "git_blob": "aa94aa5d150304749fe49bad1f25e77cee13866d",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/saga/sun_bio_front.png",
+      "kind": "stage",
+      "asset_id": "sun_bio_front",
+      "bytes": 109846,
+      "sha256": "492cfbe82a74c47ef86ad328fc269eb2e56285dbdcbd06d40d55581d859a469d",
+      "git_blob": "3dea0df3ccf82fd465b7ea2845b506d60d7a8afd",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA"
+    }
+  ],
+  "verification": {
+    "all_retained_image_bytes_match_generation_outputs": true,
+    "all_size_dimension_mode_and_sha_receipts_match": true,
+    "all_new_png_paths_and_blobs_are_new": true,
+    "all_baseline_pngs_preserved_in_git": true,
+    "all_62_task_ids_preserved": true,
+    "all_35_encounter_rows_preserved": true,
+    "all_eight_runtime_gallery_ids_match_source_shards": true,
+    "all_gallery_flags_preserve_static_non_playable_role": true,
+    "all_six_stage_files_match_manifest": true,
+    "all_four_overlay_center_and_fight_strip_contracts_pass": true,
+    "no_native_manual_game_capture_claimed": true,
+    "no_new_pack_or_web_export_created": true,
+    "validation_scope": "Counts and asset provenance verified locally; engine and catalogue runs are recorded in VALIDATION.json. CI status is checked on the published commit separately."
+  }
+}
