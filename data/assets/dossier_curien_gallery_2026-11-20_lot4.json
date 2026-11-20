@@ -1,0 +1,1904 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "batch": "2026-11-20_lot4",
+  "repository": "darknigthmare/the-house-of-the-dead-25d",
+  "baseline_commit": "c7162f7bb46aa7a3ef0546124949e96e2f25bc49",
+  "scope": "Quatrième lot de galerie : formes de personnages et rencontres de boss d’Overkill. Illustrations statiques non jouables, sans nouveaux profils, transformations ou tenues sélectionnables.",
+  "summary": {
+    "assets": 9,
+    "gallery_entries": 9,
+    "bytes": 12675845,
+    "playable_added": 0,
+    "animation_complete": 0,
+    "by_game": {
+      "hotd": 1,
+      "hotd2": 1,
+      "overkill": 7
+    },
+    "by_category": {
+      "boss_base": 5,
+      "character_form": 4
+    },
+    "by_status": {
+      "static_needs_visual_reference_qa": 3,
+      "static_reference_reviewed": 6
+    }
+  },
+  "production_receipts": [
+    {
+      "path": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot4/humans_generated.json",
+      "sha256": "35b576ddbb2cf1031d745d970d1f90acc86d5e979fc7720705a3cdfa7ad66f4a",
+      "assets": 4
+    },
+    {
+      "path": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot4/bosses_generated.json",
+      "sha256": "d847e1beafb56bec54b763d916a564d6961c9c58c06d757cd01b35321acff6fb",
+      "assets": 5
+    }
+  ],
+  "assets": [
+    {
+      "id": "coco",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot4/bosses/coco_base.png",
+      "selected_generation_basename": "exec-dfbd8108-8012-411b-b544-7577f018ecbb.png",
+      "sha256": "c9a1a358e908868f74d325cb3054b0a9f0955fd2b217ae257a99038da920e3e0",
+      "bytes": 1148566,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        25,
+        15,
+        1193,
+        1222
+      ],
+      "visible_bbox": [
+        49,
+        93,
+        1189,
+        1194
+      ],
+      "alpha_pixel_counts": {
+        "255": 1109,
+        "zero": 1096443,
+        "one_to_127": 31189,
+        "128_to_254": 443775
+      },
+      "fully_transparent_fraction": 0.697254,
+      "name": "Coco",
+      "encounter_id": "coco_sindy",
+      "companion_id": "sindy",
+      "edition_reference": "Extended Cut/Typing boss design, whole model render and in-game identification/gameplay views",
+      "evidence_level": "secondary_full_body_model_with_targeted_anatomy_correction",
+      "source_notes": [
+        "Coco est la petite créature rampante aux doigts très longs et aux ongles verts ; elle n’est pas Sindy.",
+        "Premier essai écarté : le pied arrière lointain était absent ou illisible.",
+        "Correction ciblée par ImageGen : dégager le pied lointain derrière l’avant-bras gauche de l’image, conserver deux bras et deux jambes au total.",
+        "La vue corrigée garde visage déformé, langue, coiffure, costume et griffes ; la pose est légèrement reconstruite pour la lisibilité du quatrième appui."
+      ],
+      "visual_review": {
+        "single_figure": true,
+        "head_count": 1,
+        "arm_count": 2,
+        "leg_count": 2,
+        "visible_front_hands": 2,
+        "visible_rear_feet": 2,
+        "whole_silhouette_visible": true,
+        "facing": "frontal_crawling_three_quarter",
+        "identity_details": "Grande tête adulte difforme, yeux saillants, langue longue, deux mains à ongles verts et deux pieds arrière."
+      },
+      "independent_review": {
+        "reviewer": "root",
+        "date": "2026-11-20",
+        "result": "accepted_after_targeted_correction",
+        "checks": [
+          "Compared to whole Coco render",
+          "Two hands and two feet readable",
+          "No additional limb",
+          "Face, tongue, green nails and hair coherent"
+        ],
+        "note": "Pose slightly rebuilt to expose the far hind foot."
+      },
+      "game": "overkill",
+      "game_label": "The House of the Dead: Overkill / Extended Cut",
+      "category": "boss_base",
+      "status": "static_reference_reviewed",
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "visible_alpha_threshold": 127,
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/wiki_Coco_render.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/wiki_Coco_and_Sindy_weakpoint.jpg",
+        "assets/dossier_curien/saga/isaac_guard.png",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/wiki_Coco_and_sindy_fight.jpg"
+      ],
+      "reference_inputs": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/wiki_Coco_render.jpg",
+          "source_page": "https://thehouseofthedead.fandom.com/wiki/File:Coco_render.jpg",
+          "media_url": "https://static.wikia.nocookie.net/houseofthedead/images/1/14/Coco_render.jpg/revision/latest",
+          "source_kind": "secondary_rehosted_game_model_render",
+          "edition": "Extended Cut/Typing model family; rendering build not independently authenticated",
+          "role": "Coco whole crawling body, adult deformed face, tongue, green nails/costume, two arms and two rear legs.",
+          "sha256": "2fe3a01b5bf30a82d01dc6d2bddd8eb592863b480d12cde0aa3fe4271e1f3657",
+          "bytes": 55206,
+          "dimensions": [
+            1000,
+            1051
+          ],
+          "mode": "RGB",
+          "download_date": "2026-11-20",
+          "inspected_before_acceptance": true,
+          "used_as_imagegen_input": true,
+          "used_for_accepted_asset": true,
+          "used_for_blocked_attempt_only": false,
+          "source_pixels_unmodified": true
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/wiki_Coco_and_Sindy_weakpoint.jpg",
+          "source_page": "https://thehouseofthedead.fandom.com/wiki/Weak_points",
+          "media_url": "https://static.wikia.nocookie.net/houseofthedead/images/9/93/Coco_%26_Sindy_weakpoint.jpg/revision/latest",
+          "source_kind": "secondary_hosted_ingame_identification_sheet",
+          "edition": "Extended Cut in-game identification; PS3/PC visual family",
+          "role": "Small Coco at left and large Sindy at right; game sketches and photos only, no HUD/targets copied.",
+          "sha256": "0acc0b836bd5bd446e99146bdb4125d499004b4b41d167f6daee23afeb0e7b3d",
+          "bytes": 344088,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "mode": "RGB",
+          "download_date": "2026-11-20",
+          "inspected_before_acceptance": true,
+          "used_as_imagegen_input": true,
+          "used_for_accepted_asset": true,
+          "used_for_blocked_attempt_only": false,
+          "source_pixels_unmodified": true
+        },
+        {
+          "path": "assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "bytes": 595313,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "source_kind": "existing_project_style",
+          "role": "Existing Dossier Curien painted shading and contour clarity only; not an identity reference.",
+          "inspected_before_acceptance": true,
+          "used_as_imagegen_input": true
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/wiki_Coco_and_sindy_fight.jpg",
+          "source_page": "https://thehouseofthedead.fandom.com/wiki/The_House_of_the_Dead:_Overkill:_Extended_Cut",
+          "media_url": "https://static.wikia.nocookie.net/houseofthedead/images/c/c1/Coco_and_sindy_fight.jpg/revision/latest",
+          "source_kind": "secondary_gameplay_capture",
+          "edition": "Extended Cut/Typing visual family; 1680x1050 capture platform not independently authenticated",
+          "role": "Four-limbed crawling stance cross-check, used in the targeted Coco correction. Capture shows a 1680x1050 game view, not claimed as native PS3 resolution.",
+          "sha256": "877979b32ad4c4c62cb32105e5fa93fc7056cc9ab13cd78637474fe313324526",
+          "bytes": 334200,
+          "dimensions": [
+            1680,
+            1050
+          ],
+          "mode": "RGB",
+          "download_date": "2026-11-20",
+          "inspected_before_acceptance": true,
+          "used_as_imagegen_input": true,
+          "used_for_accepted_asset": true,
+          "used_for_blocked_attempt_only": false,
+          "source_pixels_unmodified": true
+        }
+      ],
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/File:Coco_render.jpg",
+        "https://thehouseofthedead.fandom.com/wiki/Weak_points",
+        "https://thehouseofthedead.fandom.com/wiki/The_House_of_the_Dead:_Overkill:_Extended_Cut"
+      ],
+      "prompts": [
+        "Use case: stylized-concept. Asset type: ONE static bestiary/gallery sprite master for the existing Dossier Curien 2D game. Native square 1024x1024 transparent RGBA image, entire creature visible and centered with at least 7 percent transparent margins around every extremity. Fine hand-painted arcade sprite shading, crisp readable contours, restrained texture, dimensional anatomy matching the final Isaac style reference. No background, scene, floor, cast shadow blob, border, white outline, words, HUD, labels, title, watermark, duplicate view, victim, attack effects or particles. The final image of Isaac defines ONLY brushwork, contour clarity and painted material shading; do NOT borrow his anatomy, clothes or weapon. Preserve the depicted creature instead of inventing a redesign. This is a referenced 2D adaptation, not an exact official asset.\nINPUTS: Image 1 is the full Coco game-model render and controls her exact anatomy, shape, proportion and visible costume. Image 2 is the PS3 Coco and Sindy identification page: use only the SMALL thin creature at left, not the huge Sindy at right; the concept sketches help confirm Coco's skeletal hands. Image 3 is STYLE ONLY.\nSUBJECT: Coco from The House of the Dead Overkill Extended Cut, the small grotesque ADULT female mutant paired with Sindy. ONE creature only, in the same low four-limbed crawling pose and slightly frontal three-quarter angle as image 1. Preserve the oversized angular adult head and greatly distended mouth, huge protruding eyes in uneven sockets, long broad tongue curving downward, sparse short dark hair spike and torn hair strands, emaciated wiry torso, TWO very long thin arms ending in outsized clawlike hands with long green-painted fingernails; TWO bent legs trailing behind with their own distinct feet as in the original. The visible green straps/top and minimal opaque green costume fragments must follow the render, with pelvis covered. Use the original asymmetric face and gaunt segmented anatomy, not a pretty human face, child proportions, spider body or a generic zombie. Dirty tan/brown skin with muted gray mottling; restrained texture and dark mouth, no extra wounds, dripping blood, saliva or fluids. Keep clear negative space between all FOUR connected limbs, count two hands and two feet. Preserve the broad foreground hand as in the reference without adding extra limbs or duplicate feet. Entire scalp spike, tongue, all fingers, both feet visible with transparent margin. No pole, no Sindy, no sewer, no HUD, no labels.",
+        "Use case: identity-preserve. Edit the FIRST image only, the existing transparent Dossier Curien Coco sprite. Preserve its transparent RGBA background and the complete face, huge mouth, tongue, hair spike, green fingernails, two foreground arms/hands, existing image-right rear foot, painted rendering and palette. The other two images are anatomy references from the game. Correct only the obscured/missing FAR HIND LEG and FOOT: this creature must have exactly two arms ending in hands and exactly TWO bent rear legs ending in feet. The first image currently clearly shows two front hands and only the image-right rear foot. Reveal the far hind leg and its foot behind the image-left forearm, connected back to the same pelvis behind the head, just as the original model's rear limb lies behind the forearm. Move that far leg slightly outward so its bent knee, ankle and small flat broad foot with short blunt toes are legible separately, partly behind and inside the left forearm, with negative space around the ankle. Do not turn it into a third hand or add a fifth limb. The two rear feet have short blunt nails, whereas the two front hands retain long green clawlike nails. Keep the existing pose and all other features intact, no redesign, no extra bones, no duplicated foot, no background, floor, shadow or HUD. Whole creature and every extremity fully in frame. Adult fictional monster, neutral bestiary view, no fluids or added gore."
+      ],
+      "prompt_sha256_utf8": [
+        "4a1a62601e6f8420353a754eb024f9124ec60a897fa9a3e374cd0f75bee7f15f",
+        "949bd1a208f0728d0134f05f019a498f883244974a6974ee093469b124e0f02f"
+      ],
+      "generation_method": "built-in image_gen.imagegen; native transparent PNG; exact byte preservation via filesystem hard link",
+      "limitations": [
+        "Une illustration statique de bestiaire ; aucun combattant jouable, cycle d’animation ou comportement de combat fourni.",
+        "Rendu peint, pose et textures adaptés au projet ; aucune certification canonique 1:1 ou équivalence pixel à pixel.",
+        "Revue des PNG hors moteur. Aucune capture native du jeu du projet ni nouveau test moteur effectué par ce reçu.",
+        "L’appui lointain est rendu plus visible que sur le modèle source ; la pose n’est pas un calque.",
+        "Les captures de la fiche d’identification et du combat appartiennent à la famille visuelle Extended Cut/Typing ; leur plateforme exacte n’est pas affirmée."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot4/bosses_generated.json",
+      "recovery_qa": {
+        "bytes_preserved": true,
+        "dimensions_and_alpha_measured": true,
+        "opaque_pixels_at_canvas_edge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "edge_pixel_alpha_threshold": 127,
+        "canonical_1_to_1_certified": false,
+        "native_game_capture_performed_for_this_receipt": false
+      },
+      "generation_steps": [
+        {
+          "kind": "generate",
+          "prompt_index": 0,
+          "reference_paths": [
+            "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/wiki_Coco_render.jpg",
+            "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/wiki_Coco_and_Sindy_weakpoint.jpg",
+            "assets/dossier_curien/saga/isaac_guard.png"
+          ],
+          "selected": false,
+          "native_basename": "exec-e128c891-5f52-42c2-a5bc-1156f51d7c2a.png"
+        },
+        {
+          "kind": "edit",
+          "prompt_index": 1,
+          "reference_paths": [
+            "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/wiki_Coco_render.jpg",
+            "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/wiki_Coco_and_sindy_fight.jpg"
+          ],
+          "selected": true,
+          "native_basename": "exec-dfbd8108-8012-411b-b544-7577f018ecbb.png",
+          "edit_target": {
+            "native_basename": "exec-e128c891-5f52-42c2-a5bc-1156f51d7c2a.png",
+            "sha256": "71f14b511915b7700c5bec26cf9d78e36b4ff6854087751863b202d4e46854ac",
+            "bytes": 1226076,
+            "binary_in_repository": false,
+            "role": "First Coco output was the primary edit input; the two listed game references were supporting inputs."
+          }
+        }
+      ]
+    },
+    {
+      "id": "goldman_zombie",
+      "name": "Goldman — fin zombie HOTD2",
+      "game": "hotd2",
+      "game_label": "The House of the Dead 2",
+      "category": "character_form",
+      "status": "static_reference_reviewed",
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot4/characters/goldman_zombie_base.png",
+      "generated_file": "exec-82bec8af-882c-4cd9-a80c-826d3f19d663.png",
+      "sha256": "b263803234594a48b4087dd12dcdf7496bf77c2e0826a2e4663f59a34f77e1ec",
+      "bytes": 1906657,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        17,
+        26,
+        999,
+        1536
+      ],
+      "visible_bbox": [
+        40,
+        42,
+        996,
+        1511
+      ],
+      "visible_alpha_threshold": 127,
+      "maximum_alpha_on_canvas_edges": 1,
+      "opaque_pixels_at_canvas_edge": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alpha_zero_pixels": 1000679,
+      "alpha_at_background_samples": {
+        "(0, 0)": 0,
+        "(512, 0)": 0,
+        "(0, 768)": 0,
+        "(1023, 768)": 0,
+        "(512, 1535)": 0,
+        "(512, 10)": 0
+      },
+      "inventory_task_id": "goldman_zombie",
+      "new_identity": false,
+      "sources": [
+        "https://static.wikia.nocookie.net/houseofthedead/images/c/c5/CreatureGoldmanFull.png/revision/latest",
+        "https://static.wikia.nocookie.net/houseofthedead/images/1/17/Goldman_zombie.jpg/revision/latest"
+      ],
+      "source_ids": [
+        "goldman_zombie_original_full",
+        "goldman_zombie_original_ending"
+      ],
+      "source_notes": [
+        "Deux captures de la fin originale ont été inspectées, dont une vue entière de la tête aux chaussures. Elles fixent la palette et les principaux motifs de la tenue dégradée.",
+        "Peau grise verdâtre, petites lunettes sombres, blessures discrètes du visage, veste brun-violet tachée, chemise claire, cravate cuivrée, pantalon sombre et chaussures brun clair ont été comparés au rendu.",
+        "La revue indépendante de root n’a relevé aucun écart bloquant des grands motifs. Les yeux rouges de HOTD4 et les designs de remake ne sont pas repris."
+      ],
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot4/characters/goldman_zombie_hotd2_full.png",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot4/characters/goldman_zombie_hotd2_ending.jpg",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "reference_inputs": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/characters/goldman_zombie_hotd2_full.png",
+          "sha256": "c5144a235ae71966f38d8b67a7c997c75ff4480ff1b4ceea74d6a81de2d28478",
+          "bytes": 182168,
+          "dimensions": [
+            883,
+            903
+          ],
+          "mode": "RGB",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/characters/goldman_zombie_hotd2_ending.jpg",
+          "sha256": "2774a38b570146a1779f8ecdae67ce57b4c20d5b4e81871f74e1d88b5fdcbe4e",
+          "bytes": 119314,
+          "dimensions": [
+            1004,
+            752
+          ],
+          "mode": "RGB",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        },
+        {
+          "path": "assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "bytes": 595313,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "alpha_bbox": [
+            218,
+            55,
+            814,
+            960
+          ],
+          "role": "painting_style_only",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        }
+      ],
+      "prompts": [
+        "Use case: stylized-concept / faithful game-character adaptation from inspected references.\nAsset type: one complete non-playable gallery character for the Dossier Curien 2D game.\nReference roles: image 1 is the full-body in-game appearance of zombie Goldman in the original The House of the Dead 2 ending, and is the authority for his body, clothes, damage and shoes. Image 2 is the same original ending, confirming the face and upper body. Image 3, Isaac, is ONLY the established painted 2D rendering style, edge definition and level of shading; do not borrow his outfit, build, weapon or pose.\nCreate ONE whole zombie Goldman, isolated on a truly transparent background. Preserve the slim adult man's sharply combed short black hair, small oval dark glasses with thin rims, cold mottled grey-green corpse skin, sunken cheeks, closed grim mouth and the small reddish wounds seen on his forehead/cheek. Preserve his badly stained dark brown-purple suit jacket, off-white pointed-collar shirt, muted copper-brown tie, dark blue-charcoal trousers with ragged torn lower hems, and tan-brown closed dress shoes with the dark toe areas visible in the full reference. The jacket should have the same worn, blotched and torn appearance; no pristine grey businessman costume. Preserve the characteristic hunched upright stance with both arms held loosely outward and drooping hands. Keep his entire head, both hands, both trouser hems and both shoes clearly visible. Near-frontal view with only a slight turn toward screen right, close to reference 1. Human-sized body; no giant monster redesign.\nStyle: crisp hand-painted retro 2D action-game sprite, rich but restrained shading, fine controlled texture, readable silhouette, coherent with Isaac's master. Do not make a photorealistic person, a toy, a low-polygon render or a screenshot.\nComposition: single centered full-body subject, generous transparent margin on all four sides, portrait canvas around 1024x1536. Neutral coherent light without environmental color spill. Transparent pixels around and between limbs. No floor, ground slab, background, text, HUD, title, subtitles, watermark, panel, border, scenic props, weapon or additional person. Do not add glowing red eyes from HOTD4, a remake design, invented accessories, exposed organs or gratuitous gore. Retain the specific visible original-game costume instead of a generic zombie suit."
+      ],
+      "prompt_sha256": [
+        "189fab15ed0e1495a7d709055fe4369348d3c4698af35d2d3d32cfa730a5f37d"
+      ],
+      "limitations": [
+        "Base statique destinée au bestiaire : aucun profil jouable, costume sélectionnable ou animation complète ajouté.",
+        "Adaptation peinte 2D contrôlée sur les éléments visibles des références ; aucune certification de fidélité 1:1.",
+        "Sortie native RGBA conservée octet pour octet ; aucun détourage, nettoyage, recadrage, redimensionnement ou réencodage de l’image générée.",
+        "Textures fines, emplacement exact de chaque tache, proportions et pose restent adaptés au style peint ; aucune certification de conformité 1:1.",
+        "Le port précis des deux captures originales n’est pas établi. Cette fiche ne certifie aucune variante propre à Dreamcast, PC ou arcade, ni le retour de Goldman dans HOTD4.",
+        "Aucune animation de la fin ni nouvelle forme jouable ; peau et lésions restent celles d’une illustration de galerie."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot4/humans_generated.json",
+      "generation": {
+        "tool": "image_gen built-in",
+        "date": "2026-11-20",
+        "transparent_background_requested": true,
+        "source_native_output": "/workspace/scratch/da9d6e4777c1/generated_images/exec-82bec8af-882c-4cd9-a80c-826d3f19d663.png",
+        "native_output_unchanged": true,
+        "pixel_edits_after_generation": false,
+        "attempts": 1,
+        "retained_outputs": 1,
+        "attempt_records": [
+          {
+            "attempt": 1,
+            "generated_file": "exec-82bec8af-882c-4cd9-a80c-826d3f19d663.png",
+            "operation": "generate",
+            "prompt": "Use case: stylized-concept / faithful game-character adaptation from inspected references.\nAsset type: one complete non-playable gallery character for the Dossier Curien 2D game.\nReference roles: image 1 is the full-body in-game appearance of zombie Goldman in the original The House of the Dead 2 ending, and is the authority for his body, clothes, damage and shoes. Image 2 is the same original ending, confirming the face and upper body. Image 3, Isaac, is ONLY the established painted 2D rendering style, edge definition and level of shading; do not borrow his outfit, build, weapon or pose.\nCreate ONE whole zombie Goldman, isolated on a truly transparent background. Preserve the slim adult man's sharply combed short black hair, small oval dark glasses with thin rims, cold mottled grey-green corpse skin, sunken cheeks, closed grim mouth and the small reddish wounds seen on his forehead/cheek. Preserve his badly stained dark brown-purple suit jacket, off-white pointed-collar shirt, muted copper-brown tie, dark blue-charcoal trousers with ragged torn lower hems, and tan-brown closed dress shoes with the dark toe areas visible in the full reference. The jacket should have the same worn, blotched and torn appearance; no pristine grey businessman costume. Preserve the characteristic hunched upright stance with both arms held loosely outward and drooping hands. Keep his entire head, both hands, both trouser hems and both shoes clearly visible. Near-frontal view with only a slight turn toward screen right, close to reference 1. Human-sized body; no giant monster redesign.\nStyle: crisp hand-painted retro 2D action-game sprite, rich but restrained shading, fine controlled texture, readable silhouette, coherent with Isaac's master. Do not make a photorealistic person, a toy, a low-polygon render or a screenshot.\nComposition: single centered full-body subject, generous transparent margin on all four sides, portrait canvas around 1024x1536. Neutral coherent light without environmental color spill. Transparent pixels around and between limbs. No floor, ground slab, background, text, HUD, title, subtitles, watermark, panel, border, scenic props, weapon or additional person. Do not add glowing red eyes from HOTD4, a remake design, invented accessories, exposed organs or gratuitous gore. Retain the specific visible original-game costume instead of a generic zombie suit.",
+            "prompt_sha256": "189fab15ed0e1495a7d709055fe4369348d3c4698af35d2d3d32cfa730a5f37d",
+            "references": [
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot4/characters/goldman_zombie_hotd2_full.png",
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot4/characters/goldman_zombie_hotd2_ending.jpg",
+              "assets/dossier_curien/saga/isaac_guard.png"
+            ],
+            "output_sha256": "b263803234594a48b4087dd12dcdf7496bf77c2e0826a2e4663f59a34f77e1ec",
+            "retained": true
+          }
+        ]
+      },
+      "qa": {
+        "output_visually_inspected": true,
+        "subject_and_silhouette_reviewed": true,
+        "whole_subject_silhouette_visible": true,
+        "subject_extent_note": "Homme entier, tête, mains et deux chaussures visibles.",
+        "visible_bounds_clear_of_canvas_edges": true,
+        "opaque_pixels_at_canvas_edge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "maximum_alpha_on_canvas_edges": 1,
+        "alpha_check": "Transparence native conservée. Le RGB de certains pixels transparents peut former un dégradé en prévisualisation ; les échantillons de fond sont alpha0, aucune correction logicielle appliquée.",
+        "native_sha256_matches_saved_png": true,
+        "canonical_1_to_1_certified": false,
+        "reference_limitations_open": false,
+        "ui_or_engine_capture_performed": false,
+        "independent_visual_review": {
+          "reviewer": "root",
+          "date": "2026-11-20",
+          "reference_comparison_performed": true,
+          "blocking_technical_issue_observed": false,
+          "canonical_1_to_1_certified": false,
+          "limitations": [
+            "Textures fines et proportions non certifiées ; port des captures non établi."
+          ]
+        }
+      }
+    },
+    {
+      "id": "jasper_human",
+      "name": "Jasper Guns — forme humaine",
+      "game": "overkill",
+      "game_label": "The House of the Dead: Overkill",
+      "category": "character_form",
+      "status": "static_needs_visual_reference_qa",
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot4/characters/jasper_human_base.png",
+      "generated_file": "exec-8155551a-6bad-4603-b1a9-ddd972bfcfe2.png",
+      "sha256": "eaf4f3e5024b872e2467e789a6f5ff09d8b8646842db5bcad700270a64cb6701",
+      "bytes": 1137291,
+      "dimensions": [
+        1199,
+        1312
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        23,
+        1177,
+        1284
+      ],
+      "visible_bbox": [
+        296,
+        46,
+        919,
+        1268
+      ],
+      "visible_alpha_threshold": 127,
+      "maximum_alpha_on_canvas_edges": 1,
+      "opaque_pixels_at_canvas_edge": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alpha_zero_pixels": 1038053,
+      "alpha_at_background_samples": {
+        "(0, 0)": 0,
+        "(599, 0)": 0,
+        "(0, 656)": 0,
+        "(1198, 656)": 0,
+        "(599, 1311)": 0,
+        "(599, 10)": 0
+      },
+      "inventory_task_id": "jasper_human",
+      "new_identity": false,
+      "sources": [
+        "https://static.wikia.nocookie.net/houseofthedead/images/7/76/Jasper_human.jpg/revision/latest",
+        "https://www.youtube.com/watch?v=zBpsqkWw2D4"
+      ],
+      "source_ids": [
+        "jasper_human_cinematic",
+        "jasper_typing_cinematic"
+      ],
+      "source_notes": [
+        "Le buste de cinématique atteste cheveux courts sombres, lunettes rectangulaires, chemise olive, débardeur violet, pantalon sombre, tube à la bouche, joystick sous la main droite et deux accoudoirs rembourrés.",
+        "Les vignettes PC de The Typing of the Dead: Overkill corroborent sa posture assise avant mutation ; leur résolution de 160×90 par vue ne permet pas de certifier roue, châssis, repose-pieds ni chaussures.",
+        "Le fauteuil est inclus dans la silhouette. La vue trois-quarts et les éléments inférieurs simples sont une adaptation déclarée, pas un relevé 1:1 du modèle."
+      ],
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot4/characters/jasper_human_cinematic.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot4/characters/jasper_typing_overkill_cinematic_row.png",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "reference_inputs": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/characters/jasper_human_cinematic.jpg",
+          "sha256": "6f27559385beda31bd17f64a28ae8844c8ca6b0d191f420077542795ac67d833",
+          "bytes": 19340,
+          "dimensions": [
+            588,
+            630
+          ],
+          "mode": "RGB",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/characters/jasper_typing_overkill_cinematic_row.png",
+          "sha256": "b27ff0ce7a059877822b079674e9ba41fe4cdb4f47f6c354e1eb2c99552fe4ad",
+          "bytes": 82535,
+          "dimensions": [
+            800,
+            90
+          ],
+          "mode": "RGB",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true,
+          "source_transform": {
+            "original": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/characters/jasper_typing_overkill_storyboard_2.jpg",
+            "crop_box": [
+              0,
+              360,
+              800,
+              450
+            ],
+            "resized": false,
+            "pixel_inference": false
+          }
+        },
+        {
+          "path": "assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "bytes": 595313,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "alpha_bbox": [
+            218,
+            55,
+            814,
+            960
+          ],
+          "role": "painting_style_only",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        }
+      ],
+      "prompts": [
+        "Use case: stylized-concept. Create exactly ONE complete character gallery illustration for the Dossier Curien 2D bestiary. Native RGBA with a genuine transparent background. The last reference is ONLY the Isaac sprite painting style: carefully painted arcade game illustration, restrained crisp outlines, realistic adult proportions, readable fabric folds and controlled warm/cool shading. Do not copy Isaac's identity, clothes, weapon or pose. Prioritize the actual character seen in the other references. Keep the entire subject and all included chair parts well inside the canvas, with generous empty transparent margins on all four edges, including below the feet or chair. No scene, floor, cast-shadow oval, gradient backdrop, text, caption, watermark, HUD, menu, logo, frame, duplicate character, collage or sprite sheet. This is a single static adaptation, not an animation. SUBJECT: DR JASPER GUNS, his ordinary HUMAN appearance BEFORE MUTATION in The House of the Dead: Overkill, as seen in the supplied cinematic. One thin young adult man seated in his own dark motorized wheelchair, in a gentle three-quarter front view toward screen-right. Keep his normal-sized human head, pale skin, short slightly spiked dark brown hair, narrow rectangular spectacles, and reserved tired expression. Exactly follow the clearly visible outfit from reference 1: olive/yellow-green collared long-sleeve shirt, plain muted dark purple sleeveless sweater vest with V neck, and dark purple/brown trousers. Both hands rest on the two broad dark padded armrests; retain the simple black joystick control beneath his right hand (viewer left in reference 1). A single thin grey flexible speaking tube reaches from the lower side near his chest to his mouth exactly as in the cinematic; it is not an oxygen mask, nasal cannula, IV, gun or dangling weapon. Keep the tall black padded backrest and dark grey metal chair structure visible in the reference. Reference 2 contains five tiny actual cinematic frames; it is evidence for the seated posture and general chair context only, not a second character to draw. Show his entire seated silhouette and the chair down to its base; use restrained simple dark wheel and footrest shapes and plain dark shoes where the tiny reference does not resolve fine mechanical details. Do not add invented decorative machinery, a racing/sports wheelchair, bright medical equipment, a hospital gown, standing legs or an elaborate exposed motor. Keep his trousers naturally folded over his seated thighs and lower legs, feet resting calmly on the foot support. No mutation, oversized brain, tentacles, levitation, gore, red eyes, mutant skin, syringe, hovering hands, extra people or lab background. The visual emphasis is the well-evidenced face, glasses, olive shirt, purple vest, hands and padded armrests; lower wheelbase and shoe details remain conservative because they are not resolved by the source."
+      ],
+      "prompt_sha256": [
+        "701330af9134afe7c9a33fd6641d8b81161a18091474e2ae87eecb5b0919aa00"
+      ],
+      "limitations": [
+        "Base statique destinée au bestiaire : aucun profil jouable, costume sélectionnable ou animation complète ajouté.",
+        "Adaptation peinte 2D contrôlée sur les éléments visibles des références ; aucune certification de fidélité 1:1.",
+        "Sortie native RGBA conservée octet pour octet ; aucun détourage, nettoyage, recadrage, redimensionnement ou réencodage de l’image générée.",
+        "Réserve visuelle ouverte : géométrie précise du bas du fauteuil, disposition des roues, mécanismes du repose-pieds et chaussures non suffisamment attestés. Les formes sobres produites à ces endroits restent interprétées.",
+        "La source de contexte est la version PC Typing Overkill ; aucune équivalence de tous les détails entre Wii, PS3 et PC n’est certifiée.",
+        "Forme humaine avant mutation ; aucune transformation, attaque ou animation du boss Jasper ajoutée."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot4/humans_generated.json",
+      "generation": {
+        "tool": "image_gen built-in",
+        "date": "2026-11-20",
+        "transparent_background_requested": true,
+        "source_native_output": "/workspace/scratch/da9d6e4777c1/generated_images/exec-8155551a-6bad-4603-b1a9-ddd972bfcfe2.png",
+        "native_output_unchanged": true,
+        "pixel_edits_after_generation": false,
+        "attempts": 1,
+        "retained_outputs": 1,
+        "attempt_records": [
+          {
+            "attempt": 1,
+            "generated_file": "exec-8155551a-6bad-4603-b1a9-ddd972bfcfe2.png",
+            "operation": "generate",
+            "prompt": "Use case: stylized-concept. Create exactly ONE complete character gallery illustration for the Dossier Curien 2D bestiary. Native RGBA with a genuine transparent background. The last reference is ONLY the Isaac sprite painting style: carefully painted arcade game illustration, restrained crisp outlines, realistic adult proportions, readable fabric folds and controlled warm/cool shading. Do not copy Isaac's identity, clothes, weapon or pose. Prioritize the actual character seen in the other references. Keep the entire subject and all included chair parts well inside the canvas, with generous empty transparent margins on all four edges, including below the feet or chair. No scene, floor, cast-shadow oval, gradient backdrop, text, caption, watermark, HUD, menu, logo, frame, duplicate character, collage or sprite sheet. This is a single static adaptation, not an animation. SUBJECT: DR JASPER GUNS, his ordinary HUMAN appearance BEFORE MUTATION in The House of the Dead: Overkill, as seen in the supplied cinematic. One thin young adult man seated in his own dark motorized wheelchair, in a gentle three-quarter front view toward screen-right. Keep his normal-sized human head, pale skin, short slightly spiked dark brown hair, narrow rectangular spectacles, and reserved tired expression. Exactly follow the clearly visible outfit from reference 1: olive/yellow-green collared long-sleeve shirt, plain muted dark purple sleeveless sweater vest with V neck, and dark purple/brown trousers. Both hands rest on the two broad dark padded armrests; retain the simple black joystick control beneath his right hand (viewer left in reference 1). A single thin grey flexible speaking tube reaches from the lower side near his chest to his mouth exactly as in the cinematic; it is not an oxygen mask, nasal cannula, IV, gun or dangling weapon. Keep the tall black padded backrest and dark grey metal chair structure visible in the reference. Reference 2 contains five tiny actual cinematic frames; it is evidence for the seated posture and general chair context only, not a second character to draw. Show his entire seated silhouette and the chair down to its base; use restrained simple dark wheel and footrest shapes and plain dark shoes where the tiny reference does not resolve fine mechanical details. Do not add invented decorative machinery, a racing/sports wheelchair, bright medical equipment, a hospital gown, standing legs or an elaborate exposed motor. Keep his trousers naturally folded over his seated thighs and lower legs, feet resting calmly on the foot support. No mutation, oversized brain, tentacles, levitation, gore, red eyes, mutant skin, syringe, hovering hands, extra people or lab background. The visual emphasis is the well-evidenced face, glasses, olive shirt, purple vest, hands and padded armrests; lower wheelbase and shoe details remain conservative because they are not resolved by the source.",
+            "prompt_sha256": "701330af9134afe7c9a33fd6641d8b81161a18091474e2ae87eecb5b0919aa00",
+            "references": [
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot4/characters/jasper_human_cinematic.jpg",
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot4/characters/jasper_typing_overkill_cinematic_row.png",
+              "assets/dossier_curien/saga/isaac_guard.png"
+            ],
+            "output_sha256": "eaf4f3e5024b872e2467e789a6f5ff09d8b8646842db5bcad700270a64cb6701",
+            "retained": true
+          }
+        ]
+      },
+      "qa": {
+        "output_visually_inspected": true,
+        "subject_and_silhouette_reviewed": true,
+        "whole_subject_silhouette_visible": true,
+        "subject_extent_note": "Homme assis entier, tête, mains, chaussures et fauteuil entier dans le cadre.",
+        "visible_bounds_clear_of_canvas_edges": true,
+        "opaque_pixels_at_canvas_edge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "maximum_alpha_on_canvas_edges": 1,
+        "alpha_check": "Transparence native conservée. Le RGB de certains pixels transparents peut former un dégradé en prévisualisation ; les échantillons de fond sont alpha0, aucune correction logicielle appliquée.",
+        "native_sha256_matches_saved_png": true,
+        "canonical_1_to_1_certified": false,
+        "reference_limitations_open": true,
+        "ui_or_engine_capture_performed": false,
+        "independent_visual_review": {
+          "reviewer": "root",
+          "date": "2026-11-20",
+          "reference_comparison_performed": true,
+          "blocking_technical_issue_observed": false,
+          "canonical_1_to_1_certified": false,
+          "limitations": [
+            "Bas du fauteuil, roues, repose-pieds et chaussures insuffisamment documentés."
+          ]
+        }
+      }
+    },
+    {
+      "id": "lobber",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot4/bosses/lobber_base.png",
+      "selected_generation_basename": "exec-ef41815e-8204-48c8-b6aa-e9d52499d8be.png",
+      "sha256": "9c37b22b798cdd67570cf3cc7db6b76127c087a9ac2dc3cd7251bd448aec804d",
+      "bytes": 1601057,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        15,
+        1253,
+        1254
+      ],
+      "visible_bbox": [
+        56,
+        101,
+        1194,
+        1170
+      ],
+      "alpha_pixel_counts": {
+        "255": 453,
+        "zero": 826516,
+        "one_to_127": 56490,
+        "128_to_254": 689057
+      },
+      "fully_transparent_fraction": 0.525601,
+      "name": "Lobber",
+      "encounter_id": "lobber",
+      "edition_reference": "Overkill full-body game-model render, exact Wii/Extended Cut revision unverified, cross-checked with Extended Cut identification",
+      "evidence_level": "secondary_full_body_model_cross_checked_extended_cut",
+      "source_notes": [
+        "Le rendu entier trouvé et inspecté montre les deux pieds, les deux mains au sol et les bandes du ventre/entrejambe.",
+        "Les captures du marais seules ne suffisaient pas à dessiner le bas du corps ; aucune patte de grenouille n’a été inventée.",
+        "La fiche Extended Cut confirme les grosses poches sous le menton et les reliefs du corps."
+      ],
+      "visual_review": {
+        "single_figure": true,
+        "head_count": 1,
+        "arm_count": 2,
+        "leg_count": 2,
+        "visible_hands": 2,
+        "visible_feet": 2,
+        "whole_silhouette_visible": true,
+        "facing": "frontal_three_quarter_crouch",
+        "identity_details": "Squat bas, quatre appuis, grandes mains, pieds humanoïdes, bandes ventrales et nodules/poches bruns."
+      },
+      "independent_review": {
+        "reviewer": "root",
+        "date": "2026-11-20",
+        "result": "accepted_as_referenced_2d_base",
+        "checks": [
+          "Compared to738x640 full model render",
+          "Two hands and two feet visible",
+          "Crouch and swollen masses coherent"
+        ],
+        "note": "Cloth thickness/folds and skin surface are interpreted."
+      },
+      "game": "overkill",
+      "game_label": "The House of the Dead: Overkill / Extended Cut",
+      "category": "boss_base",
+      "status": "static_reference_reviewed",
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "visible_alpha_threshold": 127,
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/wiki_Lobber_render.png",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/wiki_Lobber_weakpoint.jpg",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "reference_inputs": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/wiki_Lobber_render.png",
+          "source_page": "https://thehouseofthedead.fandom.com/wiki/Lobber",
+          "discovery_page": "https://seore.org/raw/%EB%AC%B8%EC%84%9C%3A%EB%8D%94%20%ED%95%98%EC%9A%B0%EC%8A%A4%20%EC%98%A4%EB%B8%8C%20%EB%8D%94%20%EB%8D%B0%EB%93%9C%20%EC%98%A4%EB%B2%84%ED%82%AC",
+          "media_url": "https://vignette2.wikia.nocookie.net/houseofthedead/images/3/36/Lobber_render.png",
+          "source_kind": "secondary_rehosted_game_model_render",
+          "edition": "Overkill model render; Wii versus Extended Cut revision not independently authenticated",
+          "role": "Complete crouched body, two hands and two feet, wraps across abdomen/pelvis, paired throat glands. The reference resolves the lower-body omission in swamp screenshots.",
+          "sha256": "0fd6466a209e0ce5cfbf2e6b757b3869e3ad9073f06674e0042b71977ec23a17",
+          "bytes": 70226,
+          "dimensions": [
+            738,
+            640
+          ],
+          "mode": "RGB",
+          "download_date": "2026-11-20",
+          "inspected_before_acceptance": true,
+          "used_as_imagegen_input": true,
+          "used_for_accepted_asset": true,
+          "used_for_blocked_attempt_only": false,
+          "source_pixels_unmodified": true
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/wiki_Lobber_weakpoint.jpg",
+          "source_page": "https://thehouseofthedead.fandom.com/wiki/Weak_points",
+          "media_url": "https://static.wikia.nocookie.net/houseofthedead/images/b/b8/Lobber_weakpoint.jpg/revision/latest",
+          "source_kind": "secondary_hosted_ingame_identification_sheet",
+          "edition": "Extended Cut in-game identification",
+          "role": "Facial folds, swollen throat glands and body wrap cross-check; diagram/labels not copied.",
+          "sha256": "7fa2ec34b487d88521ca6c8c6b83cf50d45ea2ee292ed2f35de8345f260a62fd",
+          "bytes": 367046,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "mode": "RGB",
+          "download_date": "2026-11-20",
+          "inspected_before_acceptance": true,
+          "used_as_imagegen_input": true,
+          "used_for_accepted_asset": true,
+          "used_for_blocked_attempt_only": false,
+          "source_pixels_unmodified": true
+        },
+        {
+          "path": "assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "bytes": 595313,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "source_kind": "existing_project_style",
+          "role": "Existing Dossier Curien painted shading and contour clarity only; not an identity reference.",
+          "inspected_before_acceptance": true,
+          "used_as_imagegen_input": true
+        }
+      ],
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/Lobber",
+        "https://thehouseofthedead.fandom.com/wiki/Weak_points"
+      ],
+      "prompts": [
+        "Use case: stylized-concept. Asset type: ONE static bestiary/gallery sprite master for the existing Dossier Curien 2D game. Native square 1024x1024 transparent RGBA image, entire creature visible and centered with at least 7 percent transparent margins around every extremity. Fine hand-painted arcade sprite shading, crisp readable contours, restrained texture, dimensional anatomy matching the final Isaac style reference. No background, scene, floor, cast shadow blob, border, white outline, words, HUD, labels, title, watermark, duplicate view, victim, attack effects or particles. The final image of Isaac defines ONLY brushwork, contour clarity and painted material shading; do NOT borrow his anatomy, clothes or weapon. Preserve the depicted creature instead of inventing a redesign. This is a referenced 2D adaptation, not an exact official asset.\nINPUTS: Image 1 is a whole Lobber game-model render reposted by the game wiki: it controls the full anatomy, stance, proportions, hands, feet and wraps. Image 2 is the PS3 Extended Cut identification page: it controls the facial folds and prominent paired throat glands and confirms the body details. Image 3 is STYLE ONLY.\nSUBJECT: Lobber from The House of the Dead Overkill, in a whole-body low crouch matching image 1. A single hulking adult humanoid/toadlike mutant, one recessed bald human-like head, two large pendulous rounded glands below the jaw, many rounded brown swollen nodules around shoulders, upper arms and back. Heavy wide torso wrapped across the belly and pelvis in dirty pale gray-beige bandage cloth, exactly as the render, not naked and not armored. TWO very long weight-bearing forearms descending in front to huge human-like splayed hands, each with five thick digits and blunt nails. TWO thick legs bent outward in a deep squat behind the arms, ending in broad bare humanoid feet turned outward. Preserve the ground-level crouching silhouette and distinct four extremities from the render. Brown/tan mottled skin, subdued olive-gray folds, irregular nodules in brown/ochre rather than bright neon bubbles, pale dull teeth in the broad frown. Keep head size and heavy pouch structure faithful; no frog snout, no animal hind feet, no tail, no extra limbs, no weapon. Remove the dripping fluids of the model reference. No water, swamp, projectiles, liquid or splashes. All hands, toes, nodules and head wholly inside frame; no UI, no nameplate, no journal page. This is the neutral model stance, not an attack scene."
+      ],
+      "prompt_sha256_utf8": [
+        "5d6a7001d36576b2d051c3672f43c538b5fb9841d3bfa49b52824b4b47579b68"
+      ],
+      "generation_method": "built-in image_gen.imagegen; native transparent PNG; exact byte preservation via filesystem hard link",
+      "limitations": [
+        "Une illustration statique de bestiaire ; aucun combattant jouable, cycle d’animation ou comportement de combat fourni.",
+        "Rendu peint, pose et textures adaptés au projet ; aucune certification canonique 1:1 ou équivalence pixel à pixel.",
+        "Revue des PNG hors moteur. Aucune capture native du jeu du projet ni nouveau test moteur effectué par ce reçu.",
+        "La révision exacte du modèle entier, Wii ou Extended Cut, n’est pas authentifiée.",
+        "Épaisseur/pliage du textile et surface de peau interprétés ; aucun détail 1:1 garanti."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot4/bosses_generated.json",
+      "recovery_qa": {
+        "bytes_preserved": true,
+        "dimensions_and_alpha_measured": true,
+        "opaque_pixels_at_canvas_edge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "edge_pixel_alpha_threshold": 127,
+        "canonical_1_to_1_certified": false,
+        "native_game_capture_performed_for_this_receipt": false
+      },
+      "generation_steps": [
+        {
+          "kind": "generate",
+          "prompt_index": 0,
+          "reference_paths": [
+            "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/wiki_Lobber_render.png",
+            "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/wiki_Lobber_weakpoint.jpg",
+            "assets/dossier_curien/saga/isaac_guard.png"
+          ],
+          "selected": true,
+          "native_basename": "exec-ef41815e-8204-48c8-b6aa-e9d52499d8be.png"
+        }
+      ]
+    },
+    {
+      "id": "meat_katie",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot4/bosses/meat_katie_base.png",
+      "selected_generation_basename": "exec-16455b27-a7ab-4a1e-b45e-018432b19a83.png",
+      "sha256": "bd456fcc72f220bb14f3e79aaaab7b39d594e55cad1d6cb2eb042c04552272f6",
+      "bytes": 1230904,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        9,
+        1236,
+        1254
+      ],
+      "visible_bbox": [
+        53,
+        21,
+        1138,
+        1215
+      ],
+      "alpha_pixel_counts": {
+        "255": 904,
+        "zero": 1085290,
+        "one_to_127": 38186,
+        "128_to_254": 448136
+      },
+      "fully_transparent_fraction": 0.690161,
+      "name": "Meat Katie",
+      "encounter_id": "meat_katie",
+      "edition_reference": "PS3 Extended Cut official reveal poster and shared Extended Cut/Typing gameplay model",
+      "evidence_level": "primary_official_poster_plus_secondary_multiview_gameplay",
+      "source_notes": [
+        "L’annonce officielle SEGA/PlayStation décrit l’hybride humain-vache et son grand couperet ; l’affiche intégrée a été récupérée intacte depuis le CDN public Flickr.",
+        "Crâne à cornes, tablier, ceinture, gants et couperet contrôlés sur la capture de combat.",
+        "La planche vidéo PS3 montre la botte droite et le pied gauche transformé ; aucun HUD, projectile, victime ou décor ne figure dans le PNG."
+      ],
+      "visual_review": {
+        "single_figure": true,
+        "head_count": 1,
+        "horn_count": 2,
+        "arm_count": 2,
+        "leg_count": 2,
+        "whole_silhouette_visible": true,
+        "facing": "frontal_three_quarter",
+        "weapon_hand": "anatomical_right",
+        "white_boot_leg": "anatomical_right",
+        "mutated_bare_foot_leg": "anatomical_left",
+        "identity_details": "Crâne cornu à orbites sombres, tablier blanc, gants blancs, ceinture/outillage, couperet droit, une botte droite et un pied gauche transformé."
+      },
+      "game": "overkill",
+      "game_label": "The House of the Dead: Overkill / Extended Cut",
+      "category": "boss_base",
+      "status": "static_reference_reviewed",
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "visible_alpha_threshold": 127,
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/wiki_Meat_Katie.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/meat_katie_official_poster.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/ps3_video_storyboard_5.jpg",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "reference_inputs": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/wiki_Meat_Katie.jpg",
+          "source_page": "https://thehouseofthedead.fandom.com/wiki/Meat_Katie",
+          "media_url": "https://static.wikia.nocookie.net/houseofthedead/images/c/cb/Meat_Katie.jpg/revision/latest",
+          "source_kind": "secondary_gameplay_capture",
+          "edition": "Extended Cut/Typing visual family; exact capture platform not independently authenticated",
+          "role": "Large skull with two horns, hollow eye sockets, apron, pale gloves, right-handed cleaver and tool belt.",
+          "sha256": "5eea25ec1749669c134a6265e222d9b314793ffd6518df193463577c0d61c995",
+          "bytes": 131940,
+          "dimensions": [
+            1280,
+            720
+          ],
+          "mode": "RGB",
+          "download_date": "2026-11-20",
+          "inspected_before_acceptance": true,
+          "used_as_imagegen_input": true,
+          "used_for_accepted_asset": true,
+          "used_for_blocked_attempt_only": false,
+          "source_pixels_unmodified": true
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/meat_katie_official_poster.jpg",
+          "source_page": "https://blog.playstation.com/2011/08/30/house-of-the-dead-overkill-extended-cut-creeping-flesh-level-reveal/",
+          "media_url": "https://live.staticflickr.com/6081/6097176963_6693fbb007_z.jpg",
+          "original_embedded_url": "http://farm7.static.flickr.com/6081/6097176963_6693fbb007_z.jpg",
+          "source_kind": "primary_official_sega_playstation_poster",
+          "edition": "PS3 Extended Cut reveal, 2011-08-30",
+          "role": "Official Creeping Flesh monster/cleaver depiction. Only figure and weapon used; poster text, setting and graphics excluded.",
+          "sha256": "dd667a64dcbd9c0774895c9c2e137ddcf0c62593ddd946455791044206aabc2d",
+          "bytes": 101764,
+          "dimensions": [
+            640,
+            451
+          ],
+          "mode": "RGB",
+          "download_date": "2026-11-20",
+          "inspected_before_acceptance": true,
+          "used_as_imagegen_input": true,
+          "used_for_accepted_asset": true,
+          "used_for_blocked_attempt_only": false,
+          "source_pixels_unmodified": true
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/ps3_video_storyboard_5.jpg",
+          "source_page": "https://www.youtube.com/watch?v=X4r5zGgNbW8",
+          "source_kind": "secondary_public_video_storyboard",
+          "edition": "PS3 Extended Cut according to uploader GetRektNoob (2024-01-12)",
+          "role": "Native public nine-thumbnail sheet. Middle-center cell shows Meat Katie's whole stance, pale right boot and bare altered left foot. Not a native capture made by this agent.",
+          "sha256": "be1d3b85c6401410f91c6e79c894fd2b7731f2fe9add740de80f69df43d2b9ac",
+          "bytes": 64804,
+          "dimensions": [
+            960,
+            540
+          ],
+          "mode": "RGB",
+          "download_date": "2026-11-20",
+          "inspected_before_acceptance": true,
+          "used_as_imagegen_input": true,
+          "used_for_accepted_asset": true,
+          "used_for_blocked_attempt_only": false,
+          "source_pixels_unmodified": true,
+          "media_url": "https://i.ytimg.com/sb/X4r5zGgNbW8/storyboard3_L3/M5.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgjb7YetBg==&sigh=rs$AOn4CLCsHR5KCPLHr2n9BvDmTVz8_WTrrg",
+          "public_storyboard_fragment_index": 5,
+          "sheet_start_seconds": 444.11538461538464,
+          "sheet_duration_seconds": 88.82307692307693,
+          "grid_columns": 3,
+          "grid_rows": 3,
+          "cell_dimensions": [
+            320,
+            180
+          ],
+          "downloaded_video_excerpt": false,
+          "video_publication_date": "2024-01-12",
+          "video_channel": "GetRektNoob"
+        },
+        {
+          "path": "assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "bytes": 595313,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "source_kind": "existing_project_style",
+          "role": "Existing Dossier Curien painted shading and contour clarity only; not an identity reference.",
+          "inspected_before_acceptance": true,
+          "used_as_imagegen_input": true
+        }
+      ],
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/Meat_Katie",
+        "https://blog.playstation.com/2011/08/30/house-of-the-dead-overkill-extended-cut-creeping-flesh-level-reveal/",
+        "https://www.youtube.com/watch?v=X4r5zGgNbW8"
+      ],
+      "prompts": [
+        "Use case: stylized-concept. Asset type: ONE static bestiary/gallery sprite master for the existing Dossier Curien 2D game. Native square 1024x1024 transparent RGBA image, entire creature visible and centered with at least 7 percent transparent margins around every extremity. Fine hand-painted arcade sprite shading, crisp readable contours, restrained texture, dimensional anatomy matching the final Isaac style reference. No background, scene, floor, cast shadow blob, border, white outline, words, HUD, labels, title, watermark, duplicate view, victim, attack effects or particles. The final image of Isaac defines ONLY brushwork, contour clarity and painted material shading; do NOT borrow his anatomy, clothes or weapon. Preserve the depicted creature instead of inventing a redesign. This is a referenced 2D adaptation, not an exact official asset.\nINPUTS: Image 1 is the PS3 Meat Katie combat close-up: use its skull head, horns, white butcher apron and gauntlet gloves. Image 2 is the official SEGA/PlayStation Creeping Flesh poster: use the monster and especially the oversized notched cleaver profile, NOT the poster text or background. Image 3 is a sheet of PS3 video thumbnails: the CENTER cell of the MIDDLE row shows her whole body with one white boot and one bare mutated foot; use it to confirm the stance and leg asymmetry, never make a grid. Image 4 is STYLE ONLY.\nSUBJECT: Meat Katie, the giant adult female human/cow hybrid butcher boss from The House of the Dead Overkill Extended Cut. ONE complete creature in a stable slightly bent-knee combat-ready stance, frontal three-quarter view. Preserve the actual game's massive bone-like COW SKULL head with empty dark eye sockets, blunt exposed teeth and TWO very long horns sweeping out to the sides then upward. No bull fur mask, no living cow muzzle, no added glowing eyes. Huge broad-shouldered heavy humanoid body with thick arms and legs, pale dirty pink/tan skin with restrained mottling and old scar texture. Torn pale gray-white butcher apron over the dark undershirt, thick dark-brown waist belt, the small metal hacksaw/tool loop hanging from the belt, dirty pale gloves covering BOTH hands and wrists. The apron is ripped down the front/side; the established small bovine udder on the lower abdomen is an incidental anatomical feature partially visible through the torn fabric, not a focal point. Preserve the asymmetry: her anatomical RIGHT foot, on IMAGE LEFT in this near-front view, wears the single pale white butcher boot; her anatomical LEFT foot on IMAGE RIGHT is a bare swollen human/cloven-hoof hybrid. The giant broad heavy cleaver stays in her anatomical RIGHT hand, image LEFT, held outward and downward so the whole blade is visible without hiding her body. Match the official poster's long broad irregularly notched cleaver, with large angular tip, worn metal and dark dry discoloration; do not turn it into a small kitchen knife, sword, axe, chainsaw or hammer. Other hand open near torso. Keep proportions from the game; all horn tips, weapon tip, both feet and fingers inside generous transparent margins. No victims, severed parts, blood spray, fluids, projectiles, carcasses, background, HUD, target circles or text."
+      ],
+      "prompt_sha256_utf8": [
+        "bc4d300c0b9e2d0b10998ce0e15eb420fc3be834f87fda719e68503851798d67"
+      ],
+      "generation_method": "built-in image_gen.imagegen; native transparent PNG; exact byte preservation via filesystem hard link",
+      "limitations": [
+        "Une illustration statique de bestiaire ; aucun combattant jouable, cycle d’animation ou comportement de combat fourni.",
+        "Rendu peint, pose et textures adaptés au projet ; aucune certification canonique 1:1 ou équivalence pixel à pixel.",
+        "Revue des PNG hors moteur. Aucune capture native du jeu du projet ni nouveau test moteur effectué par ce reçu.",
+        "Pose et géométrie fine du couperet, du crâne et du pied altéré adaptées au rendu peint.",
+        "La référence du bas du corps est une vignette de320x180 ; la forme générale est vérifiée, les petits détails de sabot/orteils ne sont pas certifiés."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot4/bosses_generated.json",
+      "recovery_qa": {
+        "bytes_preserved": true,
+        "dimensions_and_alpha_measured": true,
+        "opaque_pixels_at_canvas_edge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "edge_pixel_alpha_threshold": 127,
+        "canonical_1_to_1_certified": false,
+        "native_game_capture_performed_for_this_receipt": false
+      },
+      "generation_steps": [
+        {
+          "kind": "generate",
+          "prompt_index": 0,
+          "reference_paths": [
+            "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/wiki_Meat_Katie.jpg",
+            "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/meat_katie_official_poster.jpg",
+            "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/ps3_video_storyboard_5.jpg",
+            "assets/dossier_curien/saga/isaac_guard.png"
+          ],
+          "selected": true,
+          "native_basename": "exec-16455b27-a7ab-4a1e-b45e-018432b19a83.png"
+        }
+      ],
+      "independent_review": {
+        "reviewer": "root",
+        "date": "2026-11-20",
+        "result": "accepted_as_referenced_2d_base",
+        "checks": [
+          "Compared to gameplay capture, official poster and video storyboard5",
+          "Horns/skull, apron, gloves, belt, right-hand weapon and asymmetric boot/altered foot coherent",
+          "No copied HUD and no additional blocking defect observed"
+        ],
+        "note": "Fine finish of altered foot, belt ring and blade is an interpretation of small source views."
+      }
+    },
+    {
+      "id": "mother_human",
+      "name": "Mother — forme humaine",
+      "game": "overkill",
+      "game_label": "The House of the Dead: Overkill",
+      "category": "character_form",
+      "status": "static_needs_visual_reference_qa",
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot4/characters/mother_human_base.png",
+      "generated_file": "exec-5cdda36b-7e21-466e-8363-2e849c775896.png",
+      "sha256": "b134db5f45a17a49f20a83c9a79881392d30d571d8bff8f8acdbd8b37d76983b",
+      "bytes": 1576892,
+      "dimensions": [
+        1199,
+        1312
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        15,
+        1185,
+        1302
+      ],
+      "visible_bbox": [
+        198,
+        58,
+        969,
+        1269
+      ],
+      "visible_alpha_threshold": 127,
+      "maximum_alpha_on_canvas_edges": 1,
+      "opaque_pixels_at_canvas_edge": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alpha_zero_pixels": 842474,
+      "alpha_at_background_samples": {
+        "(0, 0)": 0,
+        "(599, 0)": 0,
+        "(0, 656)": 0,
+        "(1198, 656)": 0,
+        "(599, 1311)": 0,
+        "(599, 10)": 0
+      },
+      "inventory_task_id": "mother_human",
+      "new_identity": false,
+      "sources": [
+        "https://www.lp.zone/t/lets-play-the-typing-of-the-dead-overkill/2448",
+        "https://www.youtube.com/watch?v=jvmGQYmWrIA"
+      ],
+      "source_ids": [
+        "mother_human_cinematic",
+        "mother_typing_cinematic"
+      ],
+      "source_notes": [
+        "La vraie cinématique fixe le visage âgé, les cheveux blancs, le voile de dentelle bordé de roses rouges, la robe ivoire jaunie, son col rond et le fauteuil rouge capitonné.",
+        "Les petites vues PC montrent robe sur les genoux et dossier haut, sans résoudre l’ourlet ni le piétement. Le cadrage entier constitue une continuation prudente et déclarée.",
+        "L’affiche Jailhouse Judgement / Mother CG render a été examinée puis écartée comme référence de visage : sa caricature décomposée ne remplace pas le modèle humain de la cinématique. Le boss muté est traité dans une fiche séparée."
+      ],
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot4/characters/mother_human_cinematic.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot4/characters/mother_typing_overkill_cinematic_rows.png",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "reference_inputs": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/characters/mother_human_cinematic.jpg",
+          "sha256": "b2f7f71b33a578483bbf7f6870b2a502b869a9662d3932dd633f1140d535e8c2",
+          "bytes": 22837,
+          "dimensions": [
+            482,
+            529
+          ],
+          "mode": "RGB",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/characters/mother_typing_overkill_cinematic_rows.png",
+          "sha256": "a8d24ac7cfd49cf52ec1ce4a73c073cf9bf20e73e4e9ace15a3de1e6b819214d",
+          "bytes": 199046,
+          "dimensions": [
+            800,
+            180
+          ],
+          "mode": "RGB",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true,
+          "source_transform": {
+            "original": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/characters/mother_typing_overkill_storyboard_4.jpg",
+            "crop_box": [
+              0,
+              0,
+              800,
+              180
+            ],
+            "resized": false,
+            "pixel_inference": false
+          }
+        },
+        {
+          "path": "assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "bytes": 595313,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "alpha_bbox": [
+            218,
+            55,
+            814,
+            960
+          ],
+          "role": "painting_style_only",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        }
+      ],
+      "prompts": [
+        "Use case: stylized-concept. Create exactly ONE complete character gallery illustration for the Dossier Curien 2D bestiary. Native RGBA with a genuine transparent background. The last reference is ONLY the Isaac sprite painting style: carefully painted arcade game illustration, restrained crisp outlines, realistic adult proportions, readable fabric folds and controlled warm/cool shading. Do not copy Isaac's identity, clothes, weapon or pose. Prioritize the actual character seen in the other references. Keep the entire subject and all included chair parts well inside the canvas, with generous empty transparent margins on all four edges, including below the feet or chair. No scene, floor, cast-shadow oval, gradient backdrop, text, caption, watermark, HUD, menu, logo, frame, duplicate character, collage or sprite sheet. This is a single static adaptation, not an animation. SUBJECT: MOTHER, the elderly woman in her pre-boss human cinematic appearance in The House of the Dead: Overkill / The Typing of the Dead: Overkill, NOT the giant mutated final boss and NOT a younger woman. She is seated in her canonical high-backed deep red button-tufted armchair. Draw one whole elderly woman together with the entire chair as a single isolated gallery silhouette, a gentle three-quarter front view toward screen-right. Follow reference 1 closely for the face and clothes: thin elderly lined face, pronounced cheekbones, small stern mouth, natural elderly human eyes, white hair parted at the front and gathered under a white lace bridal veil/head covering edged with small dark red roses. She wears a long yellowed ivory wedding dress with a broad round lace collar, rounded short puffed upper sleeves over fitted forearms, lace around the elbow cuffs and small restrained old brown spots on the fabric. Both pale thin hands with narrow reddish nails rest naturally across her lap or on the chair arm. The red diamond/button tufting of the tall rounded chair back is visible behind and above her head as in reference 2. That second image is a row collection of tiny genuine cinematic frames: use it for the seated posture, the broad cream skirt across her lap and high deep red chair shape; do not reproduce the other people. Let the long cream gown fall naturally across her knees to a simple full hem over the feet, keeping lower dress and chair base understated rather than inventing ornament not resolved in those small frames. Show the complete chair silhouette with restrained dark wood base and supports, no amputated frame edge. Use a neutral stationary gallery pose instead of the cinematic transport; do not include carriers, chains, other characters or scene props. No standing figure, high-fashion reinterpretation, crown, tiara, huge bouquet, exposed cleavage, open wound, monstrous face, oversized jaw, giant tongue, extra limbs, tentacles, claws, green zombie skin, gore or mutated boss anatomy. Retain her frail old human cinematic look rather than the grotesque horror-poster exaggeration."
+      ],
+      "prompt_sha256": [
+        "c79e6c294fca84243d52340470dd035568d8b3c951330ca8d020914537e3e2c3"
+      ],
+      "limitations": [
+        "Base statique destinée au bestiaire : aucun profil jouable, costume sélectionnable ou animation complète ajouté.",
+        "Adaptation peinte 2D contrôlée sur les éléments visibles des références ; aucune certification de fidélité 1:1.",
+        "Sortie native RGBA conservée octet pour octet ; aucun détourage, nettoyage, recadrage, redimensionnement ou réencodage de l’image générée.",
+        "Réserve visuelle ouverte : longueur exacte et finition du bas de robe, chaussures cachées, armature basse et pieds du fauteuil non suffisamment attestés ; ils restent interprétés.",
+        "Les pieds ne sont pas montrés séparément : ils sont couverts par la robe longue. Silhouette entière de la femme assise et du fauteuil, sans prétendre à une vue anatomique en pied.",
+        "Pose immobile de galerie : les porteurs et le transport de la scène sont omis. Aucun décor ni personnage supplémentaire ajouté.",
+        "La référence de contexte vient de Typing Overkill PC ; aucune uniformité des détails entre éditions certifiée."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot4/humans_generated.json",
+      "generation": {
+        "tool": "image_gen built-in",
+        "date": "2026-11-20",
+        "transparent_background_requested": true,
+        "source_native_output": "/workspace/scratch/da9d6e4777c1/generated_images/exec-5cdda36b-7e21-466e-8363-2e849c775896.png",
+        "native_output_unchanged": true,
+        "pixel_edits_after_generation": false,
+        "attempts": 1,
+        "retained_outputs": 1,
+        "attempt_records": [
+          {
+            "attempt": 1,
+            "generated_file": "exec-5cdda36b-7e21-466e-8363-2e849c775896.png",
+            "operation": "generate",
+            "prompt": "Use case: stylized-concept. Create exactly ONE complete character gallery illustration for the Dossier Curien 2D bestiary. Native RGBA with a genuine transparent background. The last reference is ONLY the Isaac sprite painting style: carefully painted arcade game illustration, restrained crisp outlines, realistic adult proportions, readable fabric folds and controlled warm/cool shading. Do not copy Isaac's identity, clothes, weapon or pose. Prioritize the actual character seen in the other references. Keep the entire subject and all included chair parts well inside the canvas, with generous empty transparent margins on all four edges, including below the feet or chair. No scene, floor, cast-shadow oval, gradient backdrop, text, caption, watermark, HUD, menu, logo, frame, duplicate character, collage or sprite sheet. This is a single static adaptation, not an animation. SUBJECT: MOTHER, the elderly woman in her pre-boss human cinematic appearance in The House of the Dead: Overkill / The Typing of the Dead: Overkill, NOT the giant mutated final boss and NOT a younger woman. She is seated in her canonical high-backed deep red button-tufted armchair. Draw one whole elderly woman together with the entire chair as a single isolated gallery silhouette, a gentle three-quarter front view toward screen-right. Follow reference 1 closely for the face and clothes: thin elderly lined face, pronounced cheekbones, small stern mouth, natural elderly human eyes, white hair parted at the front and gathered under a white lace bridal veil/head covering edged with small dark red roses. She wears a long yellowed ivory wedding dress with a broad round lace collar, rounded short puffed upper sleeves over fitted forearms, lace around the elbow cuffs and small restrained old brown spots on the fabric. Both pale thin hands with narrow reddish nails rest naturally across her lap or on the chair arm. The red diamond/button tufting of the tall rounded chair back is visible behind and above her head as in reference 2. That second image is a row collection of tiny genuine cinematic frames: use it for the seated posture, the broad cream skirt across her lap and high deep red chair shape; do not reproduce the other people. Let the long cream gown fall naturally across her knees to a simple full hem over the feet, keeping lower dress and chair base understated rather than inventing ornament not resolved in those small frames. Show the complete chair silhouette with restrained dark wood base and supports, no amputated frame edge. Use a neutral stationary gallery pose instead of the cinematic transport; do not include carriers, chains, other characters or scene props. No standing figure, high-fashion reinterpretation, crown, tiara, huge bouquet, exposed cleavage, open wound, monstrous face, oversized jaw, giant tongue, extra limbs, tentacles, claws, green zombie skin, gore or mutated boss anatomy. Retain her frail old human cinematic look rather than the grotesque horror-poster exaggeration.",
+            "prompt_sha256": "c79e6c294fca84243d52340470dd035568d8b3c951330ca8d020914537e3e2c3",
+            "references": [
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot4/characters/mother_human_cinematic.jpg",
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot4/characters/mother_typing_overkill_cinematic_rows.png",
+              "assets/dossier_curien/saga/isaac_guard.png"
+            ],
+            "output_sha256": "b134db5f45a17a49f20a83c9a79881392d30d571d8bff8f8acdbd8b37d76983b",
+            "retained": true
+          }
+        ]
+      },
+      "qa": {
+        "output_visually_inspected": true,
+        "subject_and_silhouette_reviewed": true,
+        "whole_subject_silhouette_visible": true,
+        "subject_extent_note": "Femme assise et fauteuil entiers ; chaussures intentionnellement cachées sous la robe longue.",
+        "visible_bounds_clear_of_canvas_edges": true,
+        "opaque_pixels_at_canvas_edge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "maximum_alpha_on_canvas_edges": 1,
+        "alpha_check": "Transparence native conservée. Le RGB de certains pixels transparents peut former un dégradé en prévisualisation ; les échantillons de fond sont alpha0, aucune correction logicielle appliquée.",
+        "native_sha256_matches_saved_png": true,
+        "canonical_1_to_1_certified": false,
+        "reference_limitations_open": true,
+        "ui_or_engine_capture_performed": false,
+        "independent_visual_review": {
+          "reviewer": "root",
+          "date": "2026-11-20",
+          "reference_comparison_performed": true,
+          "blocking_technical_issue_observed": false,
+          "canonical_1_to_1_certified": false,
+          "limitations": [
+            "Bas de robe et fauteuil interprétés ; chaussures couvertes par la robe."
+          ]
+        }
+      }
+    },
+    {
+      "id": "nigel_sebastian",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot4/bosses/nigel_sebastian_base.png",
+      "selected_generation_basename": "exec-123cb192-f68f-4a6e-b5ff-1197d42c4cd9.png",
+      "sha256": "d6f52171ae57e4baa69601346fa823e5cc78ea4ed1a1ebcb33f94b12610369f5",
+      "bytes": 1139398,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        20,
+        1253,
+        1254
+      ],
+      "visible_bbox": [
+        276,
+        25,
+        987,
+        1230
+      ],
+      "alpha_pixel_counts": {
+        "255": 904,
+        "zero": 1075202,
+        "one_to_127": 33637,
+        "128_to_254": 462773
+      },
+      "fully_transparent_fraction": 0.683746,
+      "name": "Nigel & Sebastian",
+      "encounter_id": "nigel_sebastian",
+      "edition_reference": "Overkill conjoined body from production art, with Extended Cut appearance cross-checked in PS3 gameplay and a PC review capture",
+      "evidence_level": "primary_whole_body_production_plus_secondary_gameplay",
+      "source_notes": [
+        "Une seule anatomie conjointe, deux têtes adultes : les jumeaux ne sont pas artificiellement séparés en deux PNG.",
+        "Le rendu de Rick Nath sert à la silhouette entière ; les captures Extended Cut servent aux bras plus massifs et aux plaques de cheveux sombres de Sebastian.",
+        "Correction de provenance : le prompt désigne la capture du Gamers Library comme PS3 ; son hôte est un article PC et sa plateforme précise n’est pas prouvée. Son apparence Extended Cut a été croisée avec une capture du guide PS3 effectivement inspectée."
+      ],
+      "visual_review": {
+        "single_connected_creature": true,
+        "adult_head_count": 2,
+        "large_arm_count": 2,
+        "weight_bearing_leg_count": 2,
+        "small_exposed_arm_count": 1,
+        "small_exposed_leg_count": 1,
+        "whole_silhouette_visible": true,
+        "facing": "frontal_three_quarter",
+        "identity_details": "Grand corps chauve, petit jumeau adulte fusionné à l’abdomen, membres attachés, chaînes, pagne et pieds nus."
+      },
+      "independent_review": {
+        "reviewer": "root",
+        "date": "2026-11-20",
+        "result": "accepted_as_referenced_2d_base",
+        "checks": [
+          "Compared to production full figure and Extended Cut capture",
+          "Conjoined anatomy and hair patches coherent",
+          "Whole silhouette"
+        ],
+        "note": "Muscle volume and painted detail are interpreted; not certified1:1."
+      },
+      "game": "overkill",
+      "game_label": "The House of the Dead: Overkill / Extended Cut",
+      "category": "boss_base",
+      "status": "static_reference_reviewed",
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "visible_alpha_threshold": 127,
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/nigel_sebastian_rick_nath.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/nigel_sebastian_gamerslibrary.jpg",
+        "assets/dossier_curien/saga/isaac_guard.png",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/stage4_boss4-1.jpg"
+      ],
+      "reference_inputs": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/nigel_sebastian_rick_nath.jpg",
+          "source_page": "https://www.behance.net/gallery/12504423/House-of-the-Dead-Overkill",
+          "media_url": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/c0a8f312504423.5e590efca7095.jpg",
+          "source_kind": "primary_production_artist_portfolio",
+          "edition": "Overkill production art; exact final game revision not established",
+          "role": "Whole conjoined anatomy at far left only. The two orange-trousered figures are unrelated prison enemies and were excluded.",
+          "sha256": "59ad698a1d480b079a006d29dcabefc5bbc10839254ff2771bfcd4681595a7f0",
+          "bytes": 209687,
+          "dimensions": [
+            1400,
+            711
+          ],
+          "mode": "RGB",
+          "download_date": "2026-11-20",
+          "inspected_before_acceptance": true,
+          "used_as_imagegen_input": true,
+          "used_for_accepted_asset": true,
+          "used_for_blocked_attempt_only": false,
+          "source_pixels_unmodified": true
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/nigel_sebastian_gamerslibrary.jpg",
+          "source_page": "https://www.thegamerslibrary.com/the-typing-of-the-dead-overkill-review.html",
+          "media_url": "https://www.thegamerslibrary.com/uploads/4/6/9/8/46989021/4915535_orig.jpg",
+          "source_kind": "secondary_gameplay_capture",
+          "edition": "Extended Cut visual model, reproduced in PC Typing review; capture platform not independently authenticated",
+          "role": "Nigel's heavier upper build, Sebastian's two dark hair patches and face. Prompt names PS3; this receipt narrows the evidence to Extended Cut appearance, because the hosting article is a PC review.",
+          "sha256": "bc1d20fc8e53b1c561c437c49aa25ed7ef2f2acb5939c30fcbc988ff68c884c2",
+          "bytes": 237572,
+          "dimensions": [
+            1100,
+            618
+          ],
+          "mode": "RGB",
+          "download_date": "2026-11-20",
+          "inspected_before_acceptance": true,
+          "used_as_imagegen_input": true,
+          "used_for_accepted_asset": true,
+          "used_for_blocked_attempt_only": false,
+          "source_pixels_unmodified": true
+        },
+        {
+          "path": "assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "bytes": 595313,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "source_kind": "existing_project_style",
+          "role": "Existing Dossier Curien painted shading and contour clarity only; not an identity reference.",
+          "inspected_before_acceptance": true,
+          "used_as_imagegen_input": true
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/stage4_boss4-1.jpg",
+          "source_page": "https://www.k-triggerhappy.com/hodoverkill_ps3/stage4.html",
+          "media_url": "https://www.k-triggerhappy.com/hodoverkill_ps3/boss4-1.jpg",
+          "source_kind": "secondary_hosted_ps3_gameplay_capture",
+          "edition": "PS3 Extended Cut",
+          "role": "Independent PS3 cross-check of the conjoined body and larger arms. Inspected before production; not passed to ImageGen.",
+          "sha256": "5df0478928fd2dcea89c3ab73c249d919c609ed7fb58fc29b5affdd366cf2af0",
+          "bytes": 37590,
+          "dimensions": [
+            750,
+            422
+          ],
+          "mode": "RGB",
+          "download_date": "2026-11-20",
+          "inspected_before_acceptance": true,
+          "used_as_imagegen_input": false,
+          "used_for_accepted_asset": false,
+          "used_for_blocked_attempt_only": false,
+          "source_pixels_unmodified": true
+        }
+      ],
+      "sources": [
+        "https://www.behance.net/gallery/12504423/House-of-the-Dead-Overkill",
+        "https://www.thegamerslibrary.com/the-typing-of-the-dead-overkill-review.html",
+        "https://www.k-triggerhappy.com/hodoverkill_ps3/stage4.html"
+      ],
+      "prompts": [
+        "Use case: stylized-concept. Asset type: ONE static bestiary/gallery sprite master for the existing Dossier Curien 2D game. Native square 1024x1024 transparent RGBA image, entire creature visible and centered with at least 7 percent transparent margins around every extremity. Fine hand-painted arcade sprite shading, crisp readable contours, restrained texture, dimensional anatomy matching the final Isaac style reference. No background, scene, floor, cast shadow blob, border, white outline, words, HUD, labels, title, watermark, duplicate view, victim, attack effects or particles. The final image of Isaac defines ONLY brushwork, contour clarity and painted material shading; do NOT borrow his anatomy, clothes or weapon. Preserve the depicted creature instead of inventing a redesign. This is a referenced 2D adaptation, not an exact official asset.\nINPUTS: Image 1 is Rick Nath's production presentation. Use ONLY the conjoined creature at far LEFT for whole-body structure; completely ignore the two orange-trousered prison-enemy views. Image 2 is the PS3 Extended Cut game view, controlling the heavier upper build and the small twin's dark hair patches, face and coloring. Image 3 is STYLE ONLY.\nSUBJECT: Nigel and Sebastian, the conjoined adult twin boss from The House of the Dead Overkill Extended Cut. ONE anatomically connected creature with exactly TWO adult heads: Nigel the large bald hulking muscular humanoid with a heavy folded belly, and Sebastian the smaller fully adult male twin fused into the front of Nigel's abdomen. Sebastian has a mature creased face and two sparse patches of black hair as in the game capture; he is NOT a baby or a carried child. Preserve the fused small torso and its single thin exposed arm plus thin exposed leg descending on the image-right side of the abdomen exactly as in the production reference. Nigel has his own two massive arms, large human hands wrapped at wrists and forearms in dark chains, and TWO weight-bearing muscular legs ending in bare human feet. A worn beige-gray loincloth with dark brown waistband covers his pelvis. Muted pale tan mottled skin, stern deformed faces, restrained dark mouth interiors and teeth, no additional wounds, blood spray or fluids. Whole body in a slightly turned frontal stance similar to the LEFT model in image 1, feet planted, large arms lowered far enough to keep Sebastian's head, thin arm and leg readable. Preserve original proportions and the continuous belly fusion. No detached twin, no third head, no full independent small body, no duplicate model, no orange trousers. Entire body including both feet and all fingers in frame."
+      ],
+      "prompt_sha256_utf8": [
+        "f5d032aa7a5364aa672a0c348b0b495e88431bf33782780f51cc3979d4a96ce9"
+      ],
+      "generation_method": "built-in image_gen.imagegen; native transparent PNG; exact byte preservation via filesystem hard link",
+      "limitations": [
+        "Une illustration statique de bestiaire ; aucun combattant jouable, cycle d’animation ou comportement de combat fourni.",
+        "Rendu peint, pose et textures adaptés au projet ; aucune certification canonique 1:1 ou équivalence pixel à pixel.",
+        "Revue des PNG hors moteur. Aucune capture native du jeu du projet ni nouveau test moteur effectué par ce reçu.",
+        "Le volume musculaire, les plis et les petits membres sont réinterprétés par le rendu peint.",
+        "La plateforme d’origine de la capture du Gamers Library n’est pas authentifiée ; aucune équivalence exhaustive Wii/PS3/PC n’est fermée."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot4/bosses_generated.json",
+      "recovery_qa": {
+        "bytes_preserved": true,
+        "dimensions_and_alpha_measured": true,
+        "opaque_pixels_at_canvas_edge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "edge_pixel_alpha_threshold": 127,
+        "canonical_1_to_1_certified": false,
+        "native_game_capture_performed_for_this_receipt": false
+      },
+      "generation_steps": [
+        {
+          "kind": "generate",
+          "prompt_index": 0,
+          "reference_paths": [
+            "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/nigel_sebastian_rick_nath.jpg",
+            "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/nigel_sebastian_gamerslibrary.jpg",
+            "assets/dossier_curien/saga/isaac_guard.png"
+          ],
+          "selected": true,
+          "native_basename": "exec-123cb192-f68f-4a6e-b5ff-1197d42c4cd9.png"
+        }
+      ]
+    },
+    {
+      "id": "sindy",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot4/bosses/sindy_base.png",
+      "selected_generation_basename": "exec-1776810e-a1fa-489a-b800-8ae58e5b0acc.png",
+      "sha256": "f4f6e8b3250d4b25a2ad4bcf3784fdc609b20a411fd08b95ce0a5d68bd64498a",
+      "bytes": 1434048,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        25,
+        1240,
+        1254
+      ],
+      "visible_bbox": [
+        167,
+        67,
+        1089,
+        1200
+      ],
+      "alpha_pixel_counts": {
+        "255": 739,
+        "zero": 914428,
+        "one_to_127": 40744,
+        "128_to_254": 616605
+      },
+      "fully_transparent_fraction": 0.581506,
+      "name": "Sindy",
+      "encounter_id": "coco_sindy",
+      "companion_id": "coco",
+      "edition_reference": "Extended Cut/Typing boss design, game model render cross-checked against PS3 combat capture",
+      "evidence_level": "secondary_full_body_model_and_ps3_gameplay",
+      "source_notes": [
+        "Sindy est la grande créature ; le guide PS3 distingue explicitement Coco, petite, et Sindy, massive.",
+        "Coiffure à mèche magenta, vernis, costume assorti, proportions massives et pieds nus contrôlés sur le modèle entier.",
+        "Une seule créature dans ce PNG ; Coco possède son image propre et partage encounter_id."
+      ],
+      "visual_review": {
+        "single_figure": true,
+        "head_count": 1,
+        "arm_count": 2,
+        "leg_count": 2,
+        "whole_silhouette_visible": true,
+        "facing": "frontal_three_quarter",
+        "identity_details": "Silhouette massive, cheveux sombres et mèche rose, ongles magenta, costume magenta, deux pieds nus."
+      },
+      "independent_review": {
+        "reviewer": "root",
+        "date": "2026-11-20",
+        "result": "accepted_as_referenced_2d_base",
+        "checks": [
+          "Compared to whole Sindy model render",
+          "Hair streak, nails, costume, bulk and feet coherent",
+          "No blocking additional defect observed"
+        ],
+        "note": "Gallery stance reconstructed from a foreshortened model pose."
+      },
+      "game": "overkill",
+      "game_label": "The House of the Dead: Overkill / Extended Cut",
+      "category": "boss_base",
+      "status": "static_reference_reviewed",
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "visible_alpha_threshold": 127,
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/wiki_Sindy_render.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/stage2_boss2-1.jpg",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "reference_inputs": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/wiki_Sindy_render.jpg",
+          "source_page": "https://thehouseofthedead.fandom.com/wiki/File:Sindy_render.jpg",
+          "media_url": "https://static.wikia.nocookie.net/houseofthedead/images/6/6f/Sindy_render.jpg/revision/latest",
+          "source_kind": "secondary_rehosted_game_model_render",
+          "edition": "Extended Cut/Typing model family; rendering build not independently authenticated",
+          "role": "Complete Sindy figure: extreme bulk, dark hair with magenta streak, matching costume, nail color and bare feet.",
+          "sha256": "387c12088410fc952bd5f2eb345214f06655826bd01c5ff73e6a8c67638b2d7a",
+          "bytes": 74840,
+          "dimensions": [
+            1000,
+            1210
+          ],
+          "mode": "RGB",
+          "download_date": "2026-11-20",
+          "inspected_before_acceptance": true,
+          "used_as_imagegen_input": true,
+          "used_for_accepted_asset": true,
+          "used_for_blocked_attempt_only": false,
+          "source_pixels_unmodified": true
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/stage2_boss2-1.jpg",
+          "source_page": "https://www.k-triggerhappy.com/hodoverkill_ps3/stage2.html",
+          "media_url": "https://www.k-triggerhappy.com/hodoverkill_ps3/boss2-1.jpg",
+          "source_kind": "secondary_hosted_ps3_gameplay_capture",
+          "edition": "PS3 Extended Cut",
+          "role": "Sindy large in background, Coco small in foreground; confirms encounter identity and relative scale.",
+          "sha256": "439f28b6b894e7ecf03bfe6d4b8faf51b062a708f193324530a33cb6dfe356b2",
+          "bytes": 45924,
+          "dimensions": [
+            750,
+            420
+          ],
+          "mode": "RGB",
+          "download_date": "2026-11-20",
+          "inspected_before_acceptance": true,
+          "used_as_imagegen_input": true,
+          "used_for_accepted_asset": true,
+          "used_for_blocked_attempt_only": false,
+          "source_pixels_unmodified": true
+        },
+        {
+          "path": "assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "bytes": 595313,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "source_kind": "existing_project_style",
+          "role": "Existing Dossier Curien painted shading and contour clarity only; not an identity reference.",
+          "inspected_before_acceptance": true,
+          "used_as_imagegen_input": true
+        }
+      ],
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/File:Sindy_render.jpg",
+        "https://www.k-triggerhappy.com/hodoverkill_ps3/stage2.html"
+      ],
+      "prompts": [
+        "Use case: stylized-concept. Asset type: ONE static bestiary/gallery sprite master for the existing Dossier Curien 2D game. Native square 1024x1024 transparent RGBA image, entire creature visible and centered with at least 7 percent transparent margins around every extremity. Fine hand-painted arcade sprite shading, crisp readable contours, restrained texture, dimensional anatomy matching the final Isaac style reference. No background, scene, floor, cast shadow blob, border, white outline, words, HUD, labels, title, watermark, duplicate view, victim, attack effects or particles. The final image of Isaac defines ONLY brushwork, contour clarity and painted material shading; do NOT borrow his anatomy, clothes or weapon. Preserve the depicted creature instead of inventing a redesign. This is a referenced 2D adaptation, not an exact official asset.\nINPUTS: Image 1 is the complete Sindy game-model render and controls all identity, costume, proportions, hands, feet and hair details. Image 2 is a PS3 Extended Cut combat capture; Sindy is the gigantic upright figure at the BACK, while the small creature in front is Coco and MUST NOT appear in this image. Image 3 is STYLE ONLY.\nSUBJECT: Sindy, the enormous bulky adult female mutant from the Coco and Sindy boss encounter in The House of the Dead Overkill Extended Cut. One complete figure only. Keep her round towering torso and heavy skin folds, massive thick arms with huge hands, short thick legs and two bare human feet, mature monstrous face and uneven teeth, long straight dark gray-brown hair with magenta central streaks, vivid dark pink fingernails. Keep the existing small dark magenta bra and matching opaque briefs shown in the render, with their thin straps and dark edging; preserve full coverage. Neutral threatening monster pose, not sexual: stand firmly on both feet, slightly bent knees, upper body leaning slightly forward, clenched/lowered reaching hands beside the heavy belly. Frontal three-quarter presentation to keep both arms and feet visible. Do not reuse the airborne/falling foreshortening of the source render. Skin is muted dirty pale tan with gray-brown mottling and restrained scar texture, no extra fresh gore or fluids. Keep her extreme canonical bulk; do not slim or beautify her. Entire silhouette in frame. No Coco, no second figure, no props, no sewer scene, no green light beam."
+      ],
+      "prompt_sha256_utf8": [
+        "b0f76c386e8f9782b7feea2c2bb16603b94e88137c65ff13578fdb356802f17f"
+      ],
+      "generation_method": "built-in image_gen.imagegen; native transparent PNG; exact byte preservation via filesystem hard link",
+      "limitations": [
+        "Une illustration statique de bestiaire ; aucun combattant jouable, cycle d’animation ou comportement de combat fourni.",
+        "Rendu peint, pose et textures adaptés au projet ; aucune certification canonique 1:1 ou équivalence pixel à pixel.",
+        "Revue des PNG hors moteur. Aucune capture native du jeu du projet ni nouveau test moteur effectué par ce reçu.",
+        "La pose du modèle rendu est reconstruite en position debout pour la galerie.",
+        "Les détails de peau et l’échelle absolue de combat ne sont pas reproduits pixel à pixel."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot4/bosses_generated.json",
+      "recovery_qa": {
+        "bytes_preserved": true,
+        "dimensions_and_alpha_measured": true,
+        "opaque_pixels_at_canvas_edge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "edge_pixel_alpha_threshold": 127,
+        "canonical_1_to_1_certified": false,
+        "native_game_capture_performed_for_this_receipt": false
+      },
+      "generation_steps": [
+        {
+          "kind": "generate",
+          "prompt_index": 0,
+          "reference_paths": [
+            "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/wiki_Sindy_render.jpg",
+            "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/stage2_boss2-1.jpg",
+            "assets/dossier_curien/saga/isaac_guard.png"
+          ],
+          "selected": true,
+          "native_basename": "exec-1776810e-a1fa-489a-b800-8ae58e5b0acc.png"
+        }
+      ]
+    },
+    {
+      "id": "sophie_zombie",
+      "name": "Sophie Richards — fin zombie arcade",
+      "game": "hotd",
+      "game_label": "The House of the Dead",
+      "category": "character_form",
+      "status": "static_needs_visual_reference_qa",
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot4/characters/sophie_zombie_base.png",
+      "generated_file": "exec-f632f601-1f2a-4dc2-be2f-4650f3b28f2e.png",
+      "sha256": "95b5b6081400d19ba977762acb482caba4f2dc5fa5ffee95f9605dfca43e9b1a",
+      "bytes": 1501032,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        35,
+        1002,
+        1520
+      ],
+      "visible_bbox": [
+        270,
+        40,
+        742,
+        1509
+      ],
+      "visible_alpha_threshold": 127,
+      "maximum_alpha_on_canvas_edges": 1,
+      "opaque_pixels_at_canvas_edge": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alpha_zero_pixels": 1239224,
+      "alpha_at_background_samples": {
+        "(0, 0)": 0,
+        "(512, 0)": 0,
+        "(0, 768)": 0,
+        "(1023, 768)": 0,
+        "(512, 1535)": 0,
+        "(512, 10)": 0
+      },
+      "inventory_task_id": "sophie_zombie",
+      "new_identity": false,
+      "sources": [
+        "https://www.youtube.com/watch?v=9S2p14Kuzw0",
+        "https://hackernoon.com/the-house-of-the-dead-walkthrough-and-review-arcade-sega-model-2"
+      ],
+      "source_ids": [
+        "sophie_arcade_bad_ending",
+        "sophie_arcade_carried"
+      ],
+      "source_notes": [
+        "La fin de l’arcade originale est la référence de cette forme ; les versions Saturn/Windows à peau verte et les remakes ne sont pas utilisées.",
+        "Les deux vignettes de la fin attestent le changement du visage et la continuité du tailleur. La capture arcade où Sophie est portée fournit un appui pour jupe, jambes et chaussures, sans attester leur finition fine.",
+        "Le tailleur rouge sombre, la chemise blanche, les cheveux courts et le badge proviennent du modèle original déjà documenté ; pose, détails du visage, iris blanchâtres et typographie du badge restent une adaptation peinte des petits éléments visibles."
+      ],
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot4/characters/sophie_zombie_arcade_final_frame.png",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot4/characters/sophie_zombie_arcade_body_frame.png",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot3/characters/sophie_carried_arcade_hackernoon.png",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "reference_inputs": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/characters/sophie_zombie_arcade_final_frame.png",
+          "sha256": "a427da607f63966215f02f634a4bee56597cada0293ffea5e0791cb2f835d2b8",
+          "bytes": 35005,
+          "dimensions": [
+            231,
+            180
+          ],
+          "mode": "RGB",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true,
+          "source_transform": {
+            "original": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/characters/sophie_zombie_arcade_storyboard_1.jpg",
+            "crop_box": [
+              231,
+              360,
+              462,
+              540
+            ],
+            "resized": false,
+            "pixel_inference": false
+          }
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/characters/sophie_zombie_arcade_body_frame.png",
+          "sha256": "439e1c367fca7d93b6cedea899a8eae8f3a3f3816b54365905a85a61e4570bee",
+          "bytes": 59359,
+          "dimensions": [
+            231,
+            180
+          ],
+          "mode": "RGB",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true,
+          "source_transform": {
+            "original": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/characters/sophie_zombie_arcade_storyboard_1.jpg",
+            "crop_box": [
+              231,
+              0,
+              462,
+              180
+            ],
+            "resized": false,
+            "pixel_inference": false
+          }
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/characters/sophie_carried_arcade_hackernoon.png",
+          "sha256": "8cebb57ad74d9992170e0d917609cbb0f5e3068775f998a1cfc785066eb56936",
+          "bytes": 113939,
+          "dimensions": [
+            1444,
+            966
+          ],
+          "mode": "RGB",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        },
+        {
+          "path": "assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "bytes": 595313,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "alpha_bbox": [
+            218,
+            55,
+            814,
+            960
+          ],
+          "role": "painting_style_only",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        }
+      ],
+      "prompts": [
+        "Use case: stylized-concept. Create exactly ONE complete character gallery illustration for the Dossier Curien 2D bestiary. Native RGBA with a genuine transparent background. The last reference is ONLY the Isaac sprite painting style: carefully painted arcade game illustration, restrained crisp outlines, realistic adult proportions, readable fabric folds and controlled warm/cool shading. Do not copy Isaac's identity, clothes, weapon or pose. Prioritize the actual character seen in the other references. Keep the entire subject and all included chair parts well inside the canvas, with generous empty transparent margins on all four edges, including below the feet or chair. No scene, floor, cast-shadow oval, gradient backdrop, text, caption, watermark, HUD, menu, logo, frame, duplicate character, collage or sprite sheet. This is a single static adaptation, not an animation. SUBJECT: SOPHIE RICHARDS as revealed in the BAD ENDING of the ORIGINAL THE HOUSE OF THE DEAD ARCADE (Sega Model 2), shown in references 1 and 2. This is the arcade ending form, not the green Saturn/Windows zombie and not the remake. Draw one complete upright adult woman, head, both hands and both shoes fully visible, gently turned three-quarter toward screen-right, with a restrained unnaturally still threatening expression. Reference 1 is a genuine small native preview of the arcade ending close-up: retain her pale ashen complexion, milky pale eyes, sunken eye shadows and subtle dark discoloration around the mouth; do not amplify the low-resolution shadows into open wounds or add graphic gore. Her hair remains the original short straight dark-blonde bob, approximately nape-length, with a parted fringe; the final shot has dark lighting and is not a reason to invent long black hair. Reference 2 is the full-body view immediately before the final reveal in the same arcade ending. Preserve the same ordinary outfit: dark red/burgundy fitted blazer and matching simple short straight skirt, white open-collar button blouse with its collar over the jacket neckline, white cuffs and one small rectangular DBR staff badge on her LEFT chest. Reference 3 is another genuine original arcade cutscene, included only for the original outfit silhouette, hem, legs and dark closed-toe modest-heeled pumps. Do not include Hangedman, being carried, flying, the environment, giant overlay letters or any other subject. Keep the subtle brown/tan hosiery appearance and simple plain dark burgundy-brown shoes suggested by that reference. Both arms slightly away from the torso, hands relaxed but tense, one small natural step forward; no exaggerated claw fingers or attack lunge. No weapon, holster, medical pouch, extinguisher, long hair, torn dress, protruding bones, red luminous demon eyes, strong green skin, dress from a later edition or invented jewelry. The small plain badge may have the tiny letters DBR but no other text. This is a carefully restrained painted adaptation of the arcade evidence, not a fresh horror costume."
+      ],
+      "prompt_sha256": [
+        "fcb179832a9b9df1dc2fb91f3eefa8f25c46fa7590b358d24b46e63fbd221ec2"
+      ],
+      "limitations": [
+        "Base statique destinée au bestiaire : aucun profil jouable, costume sélectionnable ou animation complète ajouté.",
+        "Adaptation peinte 2D contrôlée sur les éléments visibles des références ; aucune certification de fidélité 1:1.",
+        "Sortie native RGBA conservée octet pour octet ; aucun détourage, nettoyage, recadrage, redimensionnement ou réencodage de l’image générée.",
+        "Réserve visuelle ouverte : visage et yeux de la fin seulement visibles dans une vignette de 231×180 pixels ; teinte, décoloration et texture ne sont pas certifiées au pixel près.",
+        "Chaussures, traitement des bas, détails d’accroche et lettrage DBR du badge insuffisamment résolus. La forme et la couleur sobres du dessin ne valent pas preuve canonique de finition.",
+        "Cette forme n’éteint pas le contrôle d’une éventuelle variante de fin Saturn/Windows ou du remake. Aucune animation de transformation ni nouvelle forme jouable."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot4/humans_generated.json",
+      "generation": {
+        "tool": "image_gen built-in",
+        "date": "2026-11-20",
+        "transparent_background_requested": true,
+        "source_native_output": "/workspace/scratch/da9d6e4777c1/generated_images/exec-f632f601-1f2a-4dc2-be2f-4650f3b28f2e.png",
+        "native_output_unchanged": true,
+        "pixel_edits_after_generation": false,
+        "attempts": 1,
+        "retained_outputs": 1,
+        "attempt_records": [
+          {
+            "attempt": 1,
+            "generated_file": "exec-f632f601-1f2a-4dc2-be2f-4650f3b28f2e.png",
+            "operation": "generate",
+            "prompt": "Use case: stylized-concept. Create exactly ONE complete character gallery illustration for the Dossier Curien 2D bestiary. Native RGBA with a genuine transparent background. The last reference is ONLY the Isaac sprite painting style: carefully painted arcade game illustration, restrained crisp outlines, realistic adult proportions, readable fabric folds and controlled warm/cool shading. Do not copy Isaac's identity, clothes, weapon or pose. Prioritize the actual character seen in the other references. Keep the entire subject and all included chair parts well inside the canvas, with generous empty transparent margins on all four edges, including below the feet or chair. No scene, floor, cast-shadow oval, gradient backdrop, text, caption, watermark, HUD, menu, logo, frame, duplicate character, collage or sprite sheet. This is a single static adaptation, not an animation. SUBJECT: SOPHIE RICHARDS as revealed in the BAD ENDING of the ORIGINAL THE HOUSE OF THE DEAD ARCADE (Sega Model 2), shown in references 1 and 2. This is the arcade ending form, not the green Saturn/Windows zombie and not the remake. Draw one complete upright adult woman, head, both hands and both shoes fully visible, gently turned three-quarter toward screen-right, with a restrained unnaturally still threatening expression. Reference 1 is a genuine small native preview of the arcade ending close-up: retain her pale ashen complexion, milky pale eyes, sunken eye shadows and subtle dark discoloration around the mouth; do not amplify the low-resolution shadows into open wounds or add graphic gore. Her hair remains the original short straight dark-blonde bob, approximately nape-length, with a parted fringe; the final shot has dark lighting and is not a reason to invent long black hair. Reference 2 is the full-body view immediately before the final reveal in the same arcade ending. Preserve the same ordinary outfit: dark red/burgundy fitted blazer and matching simple short straight skirt, white open-collar button blouse with its collar over the jacket neckline, white cuffs and one small rectangular DBR staff badge on her LEFT chest. Reference 3 is another genuine original arcade cutscene, included only for the original outfit silhouette, hem, legs and dark closed-toe modest-heeled pumps. Do not include Hangedman, being carried, flying, the environment, giant overlay letters or any other subject. Keep the subtle brown/tan hosiery appearance and simple plain dark burgundy-brown shoes suggested by that reference. Both arms slightly away from the torso, hands relaxed but tense, one small natural step forward; no exaggerated claw fingers or attack lunge. No weapon, holster, medical pouch, extinguisher, long hair, torn dress, protruding bones, red luminous demon eyes, strong green skin, dress from a later edition or invented jewelry. The small plain badge may have the tiny letters DBR but no other text. This is a carefully restrained painted adaptation of the arcade evidence, not a fresh horror costume.",
+            "prompt_sha256": "fcb179832a9b9df1dc2fb91f3eefa8f25c46fa7590b358d24b46e63fbd221ec2",
+            "references": [
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot4/characters/sophie_zombie_arcade_final_frame.png",
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot4/characters/sophie_zombie_arcade_body_frame.png",
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot3/characters/sophie_carried_arcade_hackernoon.png",
+              "assets/dossier_curien/saga/isaac_guard.png"
+            ],
+            "output_sha256": "95b5b6081400d19ba977762acb482caba4f2dc5fa5ffee95f9605dfca43e9b1a",
+            "retained": true
+          }
+        ]
+      },
+      "qa": {
+        "output_visually_inspected": true,
+        "subject_and_silhouette_reviewed": true,
+        "whole_subject_silhouette_visible": true,
+        "subject_extent_note": "Femme entière, tête, mains et deux chaussures visibles.",
+        "visible_bounds_clear_of_canvas_edges": true,
+        "opaque_pixels_at_canvas_edge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "maximum_alpha_on_canvas_edges": 1,
+        "alpha_check": "Transparence native conservée. Le RGB de certains pixels transparents peut former un dégradé en prévisualisation ; les échantillons de fond sont alpha0, aucune correction logicielle appliquée.",
+        "native_sha256_matches_saved_png": true,
+        "canonical_1_to_1_certified": false,
+        "reference_limitations_open": true,
+        "ui_or_engine_capture_performed": false,
+        "independent_visual_review": {
+          "reviewer": "root",
+          "date": "2026-11-20",
+          "reference_comparison_performed": true,
+          "blocking_technical_issue_observed": false,
+          "canonical_1_to_1_certified": false,
+          "limitations": [
+            "Visage, yeux, chaussures et finition/lettrage du badge à vérifier sur des références plus précises."
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,430 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "timezone": "Europe/Paris",
+  "sources": [
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/nigel_sebastian_rick_nath.jpg",
+      "source_page": "https://www.behance.net/gallery/12504423/House-of-the-Dead-Overkill",
+      "media_url": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/c0a8f312504423.5e590efca7095.jpg",
+      "source_kind": "primary_production_artist_portfolio",
+      "edition": "Overkill production art; exact final game revision not established",
+      "role": "Whole conjoined anatomy at far left only. The two orange-trousered figures are unrelated prison enemies and were excluded.",
+      "sha256": "59ad698a1d480b079a006d29dcabefc5bbc10839254ff2771bfcd4681595a7f0",
+      "bytes": 209687,
+      "dimensions": [
+        1400,
+        711
+      ],
+      "mode": "RGB",
+      "download_date": "2026-11-20",
+      "inspected_before_acceptance": true,
+      "used_as_imagegen_input": true,
+      "used_for_accepted_asset": true,
+      "used_for_blocked_attempt_only": false,
+      "source_pixels_unmodified": true
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/nigel_sebastian_gamerslibrary.jpg",
+      "source_page": "https://www.thegamerslibrary.com/the-typing-of-the-dead-overkill-review.html",
+      "media_url": "https://www.thegamerslibrary.com/uploads/4/6/9/8/46989021/4915535_orig.jpg",
+      "source_kind": "secondary_gameplay_capture",
+      "edition": "Extended Cut visual model, reproduced in PC Typing review; capture platform not independently authenticated",
+      "role": "Nigel's heavier upper build, Sebastian's two dark hair patches and face. Prompt names PS3; this receipt narrows the evidence to Extended Cut appearance, because the hosting article is a PC review.",
+      "sha256": "bc1d20fc8e53b1c561c437c49aa25ed7ef2f2acb5939c30fcbc988ff68c884c2",
+      "bytes": 237572,
+      "dimensions": [
+        1100,
+        618
+      ],
+      "mode": "RGB",
+      "download_date": "2026-11-20",
+      "inspected_before_acceptance": true,
+      "used_as_imagegen_input": true,
+      "used_for_accepted_asset": true,
+      "used_for_blocked_attempt_only": false,
+      "source_pixels_unmodified": true
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/stage4_boss4-1.jpg",
+      "source_page": "https://www.k-triggerhappy.com/hodoverkill_ps3/stage4.html",
+      "media_url": "https://www.k-triggerhappy.com/hodoverkill_ps3/boss4-1.jpg",
+      "source_kind": "secondary_hosted_ps3_gameplay_capture",
+      "edition": "PS3 Extended Cut",
+      "role": "Independent PS3 cross-check of the conjoined body and larger arms. Inspected before production; not passed to ImageGen.",
+      "sha256": "5df0478928fd2dcea89c3ab73c249d919c609ed7fb58fc29b5affdd366cf2af0",
+      "bytes": 37590,
+      "dimensions": [
+        750,
+        422
+      ],
+      "mode": "RGB",
+      "download_date": "2026-11-20",
+      "inspected_before_acceptance": true,
+      "used_as_imagegen_input": false,
+      "used_for_accepted_asset": false,
+      "used_for_blocked_attempt_only": false,
+      "source_pixels_unmodified": true
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/wiki_Sindy_render.jpg",
+      "source_page": "https://thehouseofthedead.fandom.com/wiki/File:Sindy_render.jpg",
+      "media_url": "https://static.wikia.nocookie.net/houseofthedead/images/6/6f/Sindy_render.jpg/revision/latest",
+      "source_kind": "secondary_rehosted_game_model_render",
+      "edition": "Extended Cut/Typing model family; rendering build not independently authenticated",
+      "role": "Complete Sindy figure: extreme bulk, dark hair with magenta streak, matching costume, nail color and bare feet.",
+      "sha256": "387c12088410fc952bd5f2eb345214f06655826bd01c5ff73e6a8c67638b2d7a",
+      "bytes": 74840,
+      "dimensions": [
+        1000,
+        1210
+      ],
+      "mode": "RGB",
+      "download_date": "2026-11-20",
+      "inspected_before_acceptance": true,
+      "used_as_imagegen_input": true,
+      "used_for_accepted_asset": true,
+      "used_for_blocked_attempt_only": false,
+      "source_pixels_unmodified": true
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/stage2_boss2-1.jpg",
+      "source_page": "https://www.k-triggerhappy.com/hodoverkill_ps3/stage2.html",
+      "media_url": "https://www.k-triggerhappy.com/hodoverkill_ps3/boss2-1.jpg",
+      "source_kind": "secondary_hosted_ps3_gameplay_capture",
+      "edition": "PS3 Extended Cut",
+      "role": "Sindy large in background, Coco small in foreground; confirms encounter identity and relative scale.",
+      "sha256": "439f28b6b894e7ecf03bfe6d4b8faf51b062a708f193324530a33cb6dfe356b2",
+      "bytes": 45924,
+      "dimensions": [
+        750,
+        420
+      ],
+      "mode": "RGB",
+      "download_date": "2026-11-20",
+      "inspected_before_acceptance": true,
+      "used_as_imagegen_input": true,
+      "used_for_accepted_asset": true,
+      "used_for_blocked_attempt_only": false,
+      "source_pixels_unmodified": true
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/wiki_Coco_render.jpg",
+      "source_page": "https://thehouseofthedead.fandom.com/wiki/File:Coco_render.jpg",
+      "media_url": "https://static.wikia.nocookie.net/houseofthedead/images/1/14/Coco_render.jpg/revision/latest",
+      "source_kind": "secondary_rehosted_game_model_render",
+      "edition": "Extended Cut/Typing model family; rendering build not independently authenticated",
+      "role": "Coco whole crawling body, adult deformed face, tongue, green nails/costume, two arms and two rear legs.",
+      "sha256": "2fe3a01b5bf30a82d01dc6d2bddd8eb592863b480d12cde0aa3fe4271e1f3657",
+      "bytes": 55206,
+      "dimensions": [
+        1000,
+        1051
+      ],
+      "mode": "RGB",
+      "download_date": "2026-11-20",
+      "inspected_before_acceptance": true,
+      "used_as_imagegen_input": true,
+      "used_for_accepted_asset": true,
+      "used_for_blocked_attempt_only": false,
+      "source_pixels_unmodified": true
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/wiki_Coco_and_Sindy_weakpoint.jpg",
+      "source_page": "https://thehouseofthedead.fandom.com/wiki/Weak_points",
+      "media_url": "https://static.wikia.nocookie.net/houseofthedead/images/9/93/Coco_%26_Sindy_weakpoint.jpg/revision/latest",
+      "source_kind": "secondary_hosted_ingame_identification_sheet",
+      "edition": "Extended Cut in-game identification; PS3/PC visual family",
+      "role": "Small Coco at left and large Sindy at right; game sketches and photos only, no HUD/targets copied.",
+      "sha256": "0acc0b836bd5bd446e99146bdb4125d499004b4b41d167f6daee23afeb0e7b3d",
+      "bytes": 344088,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "mode": "RGB",
+      "download_date": "2026-11-20",
+      "inspected_before_acceptance": true,
+      "used_as_imagegen_input": true,
+      "used_for_accepted_asset": true,
+      "used_for_blocked_attempt_only": false,
+      "source_pixels_unmodified": true
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/wiki_Coco_and_sindy_fight.jpg",
+      "source_page": "https://thehouseofthedead.fandom.com/wiki/The_House_of_the_Dead:_Overkill:_Extended_Cut",
+      "media_url": "https://static.wikia.nocookie.net/houseofthedead/images/c/c1/Coco_and_sindy_fight.jpg/revision/latest",
+      "source_kind": "secondary_gameplay_capture",
+      "edition": "Extended Cut/Typing visual family; 1680x1050 capture platform not independently authenticated",
+      "role": "Four-limbed crawling stance cross-check, used in the targeted Coco correction. Capture shows a 1680x1050 game view, not claimed as native PS3 resolution.",
+      "sha256": "877979b32ad4c4c62cb32105e5fa93fc7056cc9ab13cd78637474fe313324526",
+      "bytes": 334200,
+      "dimensions": [
+        1680,
+        1050
+      ],
+      "mode": "RGB",
+      "download_date": "2026-11-20",
+      "inspected_before_acceptance": true,
+      "used_as_imagegen_input": true,
+      "used_for_accepted_asset": true,
+      "used_for_blocked_attempt_only": false,
+      "source_pixels_unmodified": true
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/wiki_Lobber_render.png",
+      "source_page": "https://thehouseofthedead.fandom.com/wiki/Lobber",
+      "discovery_page": "https://seore.org/raw/%EB%AC%B8%EC%84%9C%3A%EB%8D%94%20%ED%95%98%EC%9A%B0%EC%8A%A4%20%EC%98%A4%EB%B8%8C%20%EB%8D%94%20%EB%8D%B0%EB%93%9C%20%EC%98%A4%EB%B2%84%ED%82%AC",
+      "media_url": "https://vignette2.wikia.nocookie.net/houseofthedead/images/3/36/Lobber_render.png",
+      "source_kind": "secondary_rehosted_game_model_render",
+      "edition": "Overkill model render; Wii versus Extended Cut revision not independently authenticated",
+      "role": "Complete crouched body, two hands and two feet, wraps across abdomen/pelvis, paired throat glands. The reference resolves the lower-body omission in swamp screenshots.",
+      "sha256": "0fd6466a209e0ce5cfbf2e6b757b3869e3ad9073f06674e0042b71977ec23a17",
+      "bytes": 70226,
+      "dimensions": [
+        738,
+        640
+      ],
+      "mode": "RGB",
+      "download_date": "2026-11-20",
+      "inspected_before_acceptance": true,
+      "used_as_imagegen_input": true,
+      "used_for_accepted_asset": true,
+      "used_for_blocked_attempt_only": false,
+      "source_pixels_unmodified": true
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/wiki_Lobber_weakpoint.jpg",
+      "source_page": "https://thehouseofthedead.fandom.com/wiki/Weak_points",
+      "media_url": "https://static.wikia.nocookie.net/houseofthedead/images/b/b8/Lobber_weakpoint.jpg/revision/latest",
+      "source_kind": "secondary_hosted_ingame_identification_sheet",
+      "edition": "Extended Cut in-game identification",
+      "role": "Facial folds, swollen throat glands and body wrap cross-check; diagram/labels not copied.",
+      "sha256": "7fa2ec34b487d88521ca6c8c6b83cf50d45ea2ee292ed2f35de8345f260a62fd",
+      "bytes": 367046,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "mode": "RGB",
+      "download_date": "2026-11-20",
+      "inspected_before_acceptance": true,
+      "used_as_imagegen_input": true,
+      "used_for_accepted_asset": true,
+      "used_for_blocked_attempt_only": false,
+      "source_pixels_unmodified": true
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/wiki_Meat_Katie.jpg",
+      "source_page": "https://thehouseofthedead.fandom.com/wiki/Meat_Katie",
+      "media_url": "https://static.wikia.nocookie.net/houseofthedead/images/c/cb/Meat_Katie.jpg/revision/latest",
+      "source_kind": "secondary_gameplay_capture",
+      "edition": "Extended Cut/Typing visual family; exact capture platform not independently authenticated",
+      "role": "Large skull with two horns, hollow eye sockets, apron, pale gloves, right-handed cleaver and tool belt.",
+      "sha256": "5eea25ec1749669c134a6265e222d9b314793ffd6518df193463577c0d61c995",
+      "bytes": 131940,
+      "dimensions": [
+        1280,
+        720
+      ],
+      "mode": "RGB",
+      "download_date": "2026-11-20",
+      "inspected_before_acceptance": true,
+      "used_as_imagegen_input": true,
+      "used_for_accepted_asset": true,
+      "used_for_blocked_attempt_only": false,
+      "source_pixels_unmodified": true
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/meat_katie_official_poster.jpg",
+      "source_page": "https://blog.playstation.com/2011/08/30/house-of-the-dead-overkill-extended-cut-creeping-flesh-level-reveal/",
+      "media_url": "https://live.staticflickr.com/6081/6097176963_6693fbb007_z.jpg",
+      "original_embedded_url": "http://farm7.static.flickr.com/6081/6097176963_6693fbb007_z.jpg",
+      "source_kind": "primary_official_sega_playstation_poster",
+      "edition": "PS3 Extended Cut reveal, 2011-08-30",
+      "role": "Official Creeping Flesh monster/cleaver depiction. Only figure and weapon used; poster text, setting and graphics excluded.",
+      "sha256": "dd667a64dcbd9c0774895c9c2e137ddcf0c62593ddd946455791044206aabc2d",
+      "bytes": 101764,
+      "dimensions": [
+        640,
+        451
+      ],
+      "mode": "RGB",
+      "download_date": "2026-11-20",
+      "inspected_before_acceptance": true,
+      "used_as_imagegen_input": true,
+      "used_for_accepted_asset": true,
+      "used_for_blocked_attempt_only": false,
+      "source_pixels_unmodified": true
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/ps3_video_storyboard_5.jpg",
+      "source_page": "https://www.youtube.com/watch?v=X4r5zGgNbW8",
+      "source_kind": "secondary_public_video_storyboard",
+      "edition": "PS3 Extended Cut according to uploader GetRektNoob (2024-01-12)",
+      "role": "Native public nine-thumbnail sheet. Middle-center cell shows Meat Katie's whole stance, pale right boot and bare altered left foot. Not a native capture made by this agent.",
+      "sha256": "be1d3b85c6401410f91c6e79c894fd2b7731f2fe9add740de80f69df43d2b9ac",
+      "bytes": 64804,
+      "dimensions": [
+        960,
+        540
+      ],
+      "mode": "RGB",
+      "download_date": "2026-11-20",
+      "inspected_before_acceptance": true,
+      "used_as_imagegen_input": true,
+      "used_for_accepted_asset": true,
+      "used_for_blocked_attempt_only": false,
+      "source_pixels_unmodified": true,
+      "media_url": "https://i.ytimg.com/sb/X4r5zGgNbW8/storyboard3_L3/M5.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgjb7YetBg==&sigh=rs$AOn4CLCsHR5KCPLHr2n9BvDmTVz8_WTrrg",
+      "public_storyboard_fragment_index": 5,
+      "sheet_start_seconds": 444.11538461538464,
+      "sheet_duration_seconds": 88.82307692307693,
+      "grid_columns": 3,
+      "grid_rows": 3,
+      "cell_dimensions": [
+        320,
+        180
+      ],
+      "downloaded_video_excerpt": false,
+      "video_publication_date": "2024-01-12",
+      "video_channel": "GetRektNoob"
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/ps3_video_storyboard_12.jpg",
+      "source_page": "https://www.youtube.com/watch?v=X4r5zGgNbW8",
+      "source_kind": "secondary_public_video_storyboard",
+      "edition": "PS3 Extended Cut according to uploader GetRektNoob (2024-01-12)",
+      "role": "Native public nine-thumbnail sheet; bottom-center whole-body Mother view used in blocked generation only.",
+      "sha256": "46d25e4835055809a1c7e2066aed202896db6c7ae1576e6408a923c18b0db5b9",
+      "bytes": 32324,
+      "dimensions": [
+        960,
+        540
+      ],
+      "mode": "RGB",
+      "download_date": "2026-11-20",
+      "inspected_before_acceptance": true,
+      "used_as_imagegen_input": true,
+      "used_for_accepted_asset": false,
+      "used_for_blocked_attempt_only": true,
+      "source_pixels_unmodified": true,
+      "media_url": "https://i.ytimg.com/sb/X4r5zGgNbW8/storyboard3_L3/M12.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgjb7YetBg==&sigh=rs$AOn4CLCsHR5KCPLHr2n9BvDmTVz8_WTrrg",
+      "public_storyboard_fragment_index": 12,
+      "sheet_start_seconds": 1065.876923076923,
+      "sheet_duration_seconds": 88.82307692307693,
+      "grid_columns": 3,
+      "grid_rows": 3,
+      "cell_dimensions": [
+        320,
+        180
+      ],
+      "downloaded_video_excerpt": false,
+      "video_publication_date": "2024-01-12",
+      "video_channel": "GetRektNoob"
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/ps3_video_storyboard_13.jpg",
+      "source_page": "https://www.youtube.com/watch?v=X4r5zGgNbW8",
+      "source_kind": "secondary_public_video_storyboard",
+      "edition": "PS3 Extended Cut according to uploader GetRektNoob (2024-01-12)",
+      "role": "Native public nine-thumbnail sheet; middle-right whole-body Mother view used in blocked generation only. Distal detail limited by320x180 cells.",
+      "sha256": "b12199e11354a05f7b4d1f641c34af9a421220fd0bcc5f4d005ba0ac0cfb0981",
+      "bytes": 36406,
+      "dimensions": [
+        960,
+        540
+      ],
+      "mode": "RGB",
+      "download_date": "2026-11-20",
+      "inspected_before_acceptance": true,
+      "used_as_imagegen_input": true,
+      "used_for_accepted_asset": false,
+      "used_for_blocked_attempt_only": true,
+      "source_pixels_unmodified": true,
+      "media_url": "https://i.ytimg.com/sb/X4r5zGgNbW8/storyboard3_L3/M13.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgjb7YetBg==&sigh=rs$AOn4CLCsHR5KCPLHr2n9BvDmTVz8_WTrrg",
+      "public_storyboard_fragment_index": 13,
+      "sheet_start_seconds": 1154.7,
+      "sheet_duration_seconds": 88.82307692307693,
+      "grid_columns": 3,
+      "grid_rows": 3,
+      "cell_dimensions": [
+        320,
+        180
+      ],
+      "downloaded_video_excerpt": false,
+      "video_publication_date": "2024-01-12",
+      "video_channel": "GetRektNoob"
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/wiki_Mother_weakpoint.jpg",
+      "source_page": "https://thehouseofthedead.fandom.com/wiki/Weak_points",
+      "media_url": "https://static.wikia.nocookie.net/houseofthedead/images/f/f5/Mother_weakpoint.jpg/revision/latest",
+      "source_kind": "secondary_hosted_ingame_identification_sheet",
+      "edition": "Extended Cut in-game identification",
+      "role": "Mutated Mother face, brain masses and long tongue, used in blocked generation only; not the human Mother.",
+      "sha256": "4bc1821388614be615c661473cac31efe3a5e9a2589c7bb71d247dd4bde10da5",
+      "bytes": 250022,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "mode": "RGB",
+      "download_date": "2026-11-20",
+      "inspected_before_acceptance": true,
+      "used_as_imagegen_input": true,
+      "used_for_accepted_asset": false,
+      "used_for_blocked_attempt_only": true,
+      "source_pixels_unmodified": true
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/stage9_boss9-2.jpg",
+      "source_page": "https://www.k-triggerhappy.com/hodoverkill_ps3/stage9.html",
+      "media_url": "https://www.k-triggerhappy.com/hodoverkill_ps3/boss9-2.jpg",
+      "source_kind": "secondary_hosted_ps3_gameplay_capture",
+      "edition": "PS3 Extended Cut",
+      "role": "Mutated Mother closed ventral appendage and raised-foot stance, used in blocked generation only.",
+      "sha256": "061949ac6ddbd86a74177bf2d75950702844e3d5d29df811915d7865f209b25f",
+      "bytes": 23836,
+      "dimensions": [
+        750,
+        420
+      ],
+      "mode": "RGB",
+      "download_date": "2026-11-20",
+      "inspected_before_acceptance": true,
+      "used_as_imagegen_input": true,
+      "used_for_accepted_asset": false,
+      "used_for_blocked_attempt_only": true,
+      "source_pixels_unmodified": true
+    }
+  ],
+  "existing_style_reference": {
+    "path": "assets/dossier_curien/saga/isaac_guard.png",
+    "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+    "bytes": 595313,
+    "dimensions": [
+      1024,
+      1024
+    ],
+    "mode": "RGBA",
+    "source_kind": "existing_project_style",
+    "role": "Existing Dossier Curien painted shading and contour clarity only; not an identity reference.",
+    "inspected_before_acceptance": true,
+    "used_as_imagegen_input": true
+  },
+  "summary": {
+    "retained_identity_images": 17,
+    "retained_image_bytes": 2417475,
+    "accepted_generation_identity_inputs": 12,
+    "blocked_generation_identity_inputs": 4,
+    "review_only_identity_images": 1
+  },
+  "source_handling": "Downloaded reference image bytes retained intact. Only selected relevant references are in the repository; exploratory non-input files remain in scratch.",
+  "research_limits": [
+    "Fandom HTML pages were not accessible; public media CDN images were used and corroborated with indexed pages and gameplay guides.",
+    "Old farm7 Flickr URLs returned403; the same image IDs on the current public live.staticflickr.com CDN returned the official poster.",
+    "The public YouTube MP4 section request returned403; no video was downloaded or re-encoded. Public storyboard JPEG sheets were available and are retained intact.",
+    "The human Mother_render.png was inspected but excluded because it depicts a different form and was not used for the final mutated Mother attempt."
+  ]
+}

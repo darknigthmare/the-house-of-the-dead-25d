@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "references": [
+    {
+      "key": "hangedman_roof_intro",
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/stages/hangedman_roof_intro.png",
+      "url": "https://hackernoon.imgix.net/images/gd0SQf7WPsYcZnyCjkdJj8hy9mA3-8k1338j8.png",
+      "page_url": "https://hackernoon.com/the-house-of-the-dead-walkthrough-and-review-arcade-sega-model-2",
+      "sha256": "c1ea412b49a92c2d73520f7ed1453f1d65468f64d09d98b3317f58e326896a09",
+      "size_bytes": 113039,
+      "dimensions": [
+        1446,
+        970
+      ],
+      "mode": "RGB",
+      "retrieved": "2026-11-20",
+      "visually_inspected": true,
+      "used_as_imagegen_reference": true,
+      "stage": "hangedman_roof",
+      "source_type": "Original The House of the Dead Japanese arcade gameplay capture, hosted by a community walkthrough; author identifies Model 2 emulator",
+      "role": "visual architecture reference",
+      "article_text_reused": false
+    },
+    {
+      "key": "hangedman_roof_battle",
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/stages/hangedman_roof_battle.png",
+      "url": "https://hackernoon.imgix.net/images/gd0SQf7WPsYcZnyCjkdJj8hy9mA3-xd1438qh.png",
+      "page_url": "https://hackernoon.com/the-house-of-the-dead-walkthrough-and-review-arcade-sega-model-2",
+      "sha256": "9ac36b91df8b272147b2c4875097cc0fb3565c510069797b57a08f6b87fa4141",
+      "size_bytes": 199578,
+      "dimensions": [
+        1450,
+        972
+      ],
+      "mode": "RGB",
+      "retrieved": "2026-11-20",
+      "visually_inspected": true,
+      "used_as_imagegen_reference": false,
+      "stage": "hangedman_roof",
+      "source_type": "Original The House of the Dead Japanese arcade gameplay capture, hosted by a community walkthrough; author identifies Model 2 emulator",
+      "role": "cross-check of roof architecture",
+      "article_text_reused": false
+    },
+    {
+      "key": "hangedman_roof_wide",
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/stages/hangedman_roof_wide.png",
+      "url": "https://hackernoon.imgix.net/images/gd0SQf7WPsYcZnyCjkdJj8hy9mA3-we1638za.png",
+      "page_url": "https://hackernoon.com/the-house-of-the-dead-walkthrough-and-review-arcade-sega-model-2",
+      "sha256": "fec8052d39aff63e5ebe050cde8929d267796c94a54ac31483522eb1b04b4abe",
+      "size_bytes": 150621,
+      "dimensions": [
+        1450,
+        1080
+      ],
+      "mode": "RGB",
+      "retrieved": "2026-11-20",
+      "visually_inspected": true,
+      "used_as_imagegen_reference": true,
+      "stage": "hangedman_roof",
+      "source_type": "Original The House of the Dead Japanese arcade gameplay capture, hosted by a community walkthrough; author identifies Model 2 emulator",
+      "role": "visual architecture reference",
+      "article_text_reused": false
+    },
+    {
+      "key": "hangedman_roof_edge",
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/stages/hangedman_roof_edge.png",
+      "url": "https://hackernoon.imgix.net/images/gd0SQf7WPsYcZnyCjkdJj8hy9mA3-1m1838u5.png",
+      "page_url": "https://hackernoon.com/the-house-of-the-dead-walkthrough-and-review-arcade-sega-model-2",
+      "sha256": "ac82b6854a4deb6ef139da5cc6978c6990399edfc093787cc81f4750d3cdd257",
+      "size_bytes": 112110,
+      "dimensions": [
+        1446,
+        1080
+      ],
+      "mode": "RGB",
+      "retrieved": "2026-11-20",
+      "visually_inspected": true,
+      "used_as_imagegen_reference": true,
+      "stage": "hangedman_roof",
+      "source_type": "Original The House of the Dead Japanese arcade gameplay capture, hosted by a community walkthrough; author identifies Model 2 emulator",
+      "role": "visual architecture reference",
+      "article_text_reused": false
+    },
+    {
+      "key": "hermit_dome_curien",
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/stages/hermit_dome_curien.png",
+      "url": "https://hackernoon.imgix.net/images/gd0SQf7WPsYcZnyCjkdJj8hy9mA3-30c38ec.png",
+      "page_url": "https://hackernoon.com/the-house-of-the-dead-walkthrough-and-review-arcade-sega-model-2",
+      "sha256": "13b356d7be1cd7a61d8634da0d768733a9482c73cbdb7947521e14c337aaacb7",
+      "size_bytes": 218812,
+      "dimensions": [
+        1448,
+        972
+      ],
+      "mode": "RGB",
+      "retrieved": "2026-11-20",
+      "visually_inspected": true,
+      "used_as_imagegen_reference": true,
+      "stage": "hermit_dome",
+      "source_type": "Original The House of the Dead Japanese arcade gameplay capture, hosted by a community walkthrough; author identifies Model 2 emulator",
+      "role": "visual architecture reference",
+      "article_text_reused": false
+    },
+    {
+      "key": "hermit_dome_intro",
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/stages/hermit_dome_intro.png",
+      "url": "https://hackernoon.imgix.net/images/gd0SQf7WPsYcZnyCjkdJj8hy9mA3-7xd385m.png",
+      "page_url": "https://hackernoon.com/the-house-of-the-dead-walkthrough-and-review-arcade-sega-model-2",
+      "sha256": "e4b97702eac39f5a1b6b00973156409e074eb7a759399ae4450ddbe6d6aa4fc9",
+      "size_bytes": 249590,
+      "dimensions": [
+        1448,
+        968
+      ],
+      "mode": "RGB",
+      "retrieved": "2026-11-20",
+      "visually_inspected": true,
+      "used_as_imagegen_reference": true,
+      "stage": "hermit_dome",
+      "source_type": "Original The House of the Dead Japanese arcade gameplay capture, hosted by a community walkthrough; author identifies Model 2 emulator",
+      "role": "visual architecture reference",
+      "article_text_reused": false
+    },
+    {
+      "key": "hermit_tunnel_phase",
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/stages/hermit_tunnel_phase.png",
+      "url": "https://hackernoon.imgix.net/images/gd0SQf7WPsYcZnyCjkdJj8hy9mA3-qbe381f.png",
+      "page_url": "https://hackernoon.com/the-house-of-the-dead-walkthrough-and-review-arcade-sega-model-2",
+      "sha256": "fc34dd73e886e7b201d29b29755a65e676d215a2dc0526a2a8802a8cf20a0bfa",
+      "size_bytes": 121094,
+      "dimensions": [
+        1458,
+        1080
+      ],
+      "mode": "RGB",
+      "retrieved": "2026-11-20",
+      "visually_inspected": true,
+      "used_as_imagegen_reference": false,
+      "stage": "hermit_dome",
+      "source_type": "Original The House of the Dead Japanese arcade gameplay capture, hosted by a community walkthrough; author identifies Model 2 emulator",
+      "role": "scope boundary: tunnel pursuit not delivered in this lot",
+      "article_text_reused": false
+    }
+  ]
+}

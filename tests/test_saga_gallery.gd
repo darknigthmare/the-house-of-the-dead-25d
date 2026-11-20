@@ -36,10 +36,12 @@ func _initialize() -> void:
 	var extra_path := "user://gallery_extra_" + stamp + ".json"
 	var lot2_path := "user://gallery_lot2_" + stamp + ".json"
 	var lot3_path := "user://gallery_lot3_" + stamp + ".json"
+	var lot4_path := "user://gallery_lot4_" + stamp + ".json"
 	var collections := [
 		{"manifest":extra_path, "art_root":Bestiary.GALLERY_ART_ROOT},
 		{"manifest":lot2_path, "art_root":Bestiary.LOT2_ART_ROOT},
-		{"manifest":lot3_path, "art_root":Bestiary.LOT3_ART_ROOT}
+		{"manifest":lot3_path, "art_root":Bestiary.LOT3_ART_ROOT},
+		{"manifest":lot4_path, "art_root":Bestiary.LOT4_ART_ROOT}
 	]
 	var base := {"id":"existing_subject", "name":"Existing", "game":"zombie_revenge", "game_label":"Zombie Revenge", "category":"character_base", "path":fixture_art(Bestiary.ART_ROOT + "__fixture_base.png")}
 	var npc := {"id":"test_npc", "name":"NPC", "game":"overkill", "game_label":"Overkill", "category":"npc_base", "path":fixture_art(Bestiary.GALLERY_ART_ROOT + "__fixture_npc.png"), "gallery":true, "playable":false, "animation_complete":false, "runtime_role":"bestiary"}
@@ -93,13 +95,26 @@ func _initialize() -> void:
 	var latest_foreign_path := classic_npc.duplicate()
 	latest_foreign_path.id = "latest_foreign_path"
 	latest_foreign_path.path = later.path
+	var character_form := npc.duplicate()
+	character_form.merge({"id":"test_lot4_form", "category":"character_form", "path":fixture_art(Bestiary.LOT4_ART_ROOT + "__fixture_form.png")}, true)
+	var fourth_boss := npc.duplicate()
+	fourth_boss.merge({"id":"test_lot4_boss", "category":"boss_base", "path":fixture_art(Bestiary.LOT4_ART_ROOT + "__fixture_boss.png")}, true)
+	var third_lot_duplicate := character_form.duplicate()
+	third_lot_duplicate.id = classic_npc.id
+	var third_lot_path := character_form.duplicate()
+	third_lot_path.id = "third_lot_path"
+	third_lot_path.path = classic_npc.path
+	var playable_form := character_form.duplicate()
+	playable_form.id = "false_playable_form"
+	playable_form.playable = true
 	write_manifest(base_path, [base])
 	write_manifest(extra_path, [npc, costume, duplicate, false_playable, complete, foreign, animation, impostor, missing, wrong_role, implicit_gallery, "bad-row"])
 	write_manifest(lot2_path, [later, typing, previous_lot_duplicate, previous_lot_path])
 	write_manifest(lot3_path, [classic_npc, hotd4, special, oldest_duplicate, latest_duplicate, latest_foreign_path])
+	write_manifest(lot4_path, [character_form, fourth_boss, third_lot_duplicate, third_lot_path, playable_form])
 	var gallery := Bestiary.new()
-	check(gallery.load_manifest(base_path, collections), "All four collections load through native resource lookup")
-	check(gallery.assets.size() == 9, "Merge rejects duplicate IDs, foreign paths, missing art, animations and false gallery/runtime/playable/complete claims")
+	check(gallery.load_manifest(base_path, collections), "All five collections load through native resource lookup")
+	check(gallery.assets.size() == 11, "Merge rejects duplicate IDs, foreign paths, missing art, animations and false gallery/runtime/playable/complete claims")
 	var ids := {}
 	for entry in gallery.assets: ids[entry.id] = entry
 	check(ids.has("existing_subject") and ids.existing_subject.path == base.path, "Extension cannot replace an existing subject")
@@ -108,9 +123,12 @@ func _initialize() -> void:
 	check(ids.test_npc.path == npc.path and not ids.has("previous_lot_path"), "Later collections cannot replace previous subjects or claim their image paths")
 	check(ids.has(classic_npc.id) and ids.has(hotd4.id) and ids.has(special.id), "The third batch adds its distinct classic NPC and edition variants")
 	check(ids.test_npc.path == npc.path and ids.test_lot2_npc.path == later.path and not ids.has("latest_foreign_path"), "Third collection preserves both earlier batches and cannot borrow their artwork")
+	check(ids.has(character_form.id) and ids.has(fourth_boss.id), "The fourth batch adds its distinct character form and boss")
+	check(ids.test_lot3_npc.path == classic_npc.path and not ids.has("third_lot_path") and not ids.has("false_playable_form"), "Fourth collection preserves earlier subjects, respects its art root and rejects playable forms")
 	check(ids.has("linda_rotta") and gallery.fighter_id(ids.linda_rotta) < 0, "Linda's identity alone cannot expose a new image as playable")
 	check(gallery.role_label(npc) == "PNJ · non jouable", "NPC card states its non-playable role")
 	check(gallery.role_label(costume) == "Variante de costume · non jouable", "Costume card does not imply an equipped costume")
+	check(gallery.role_label(character_form) == "Forme de personnage · non jouable", "Character form is explicitly static and non-playable")
 	check(gallery.filters.size() == 10 and filter_for(gallery, "zombie_revenge") == 1 and filter_for(gallery, "hotd_ex") == 2, "New game filters extend the established collection order")
 	for game in ["overkill", "hotd3", "scarlet_dawn", "typing", "hotd", "hotd4", "hotd4_special"]:
 		gallery.filter_index = filter_for(gallery, game)
@@ -123,19 +141,25 @@ func _initialize() -> void:
 	check(gallery.family({"game":"hotd4_special"}) == "hotd4_special" and gallery.family({"game":"next_game"}) == "next_game", "Game IDs are not folded into EX by substring")
 	write_manifest(lot2_path, [later, typing])
 	write_manifest(lot3_path, [classic_npc, hotd4, special])
+	write_manifest(lot4_path, "malformed")
+	check(gallery.load_manifest(base_path, collections) and gallery.assets.size() == 9, "Malformed fourth extension preserves every earlier collection")
+	write_manifest(lot4_path, [character_form, fourth_boss])
 	write_manifest(extra_path, "malformed")
-	check(gallery.load_manifest(base_path, collections) and gallery.assets.size() == 6, "Malformed earlier extension preserves the base and both later collections, without retaining stale subjects")
+	check(gallery.load_manifest(base_path, collections) and gallery.assets.size() == 8, "Malformed earlier extension preserves the base and all later collections, without retaining stale subjects")
 	check(gallery.filter_index == 0, "Removed collection resets the unavailable filter")
 	write_manifest(lot2_path, "malformed")
-	check(gallery.load_manifest(base_path, collections) and gallery.assets.size() == 4, "Malformed second extension leaves the independent base and newest batch intact")
+	check(gallery.load_manifest(base_path, collections) and gallery.assets.size() == 6, "Malformed second extension leaves the independent base and both later batches intact")
 	write_manifest(lot3_path, "malformed")
-	check(gallery.load_manifest(base_path, collections) and gallery.assets.size() == 1, "Malformed third extension leaves the independent base intact")
+	check(gallery.load_manifest(base_path, collections) and gallery.assets.size() == 3, "Malformed third extension leaves the independent base and fourth batch intact")
+	write_manifest(lot4_path, "malformed")
+	check(gallery.load_manifest(base_path, collections) and gallery.assets.size() == 1, "Malformed fourth extension leaves the independent base intact")
 	write_manifest(base_path, "malformed")
 	check(not gallery.load_manifest(base_path, collections) and gallery.assets.is_empty(), "Malformed collections do not retain stale subjects")
 	DirAccess.remove_absolute(ProjectSettings.globalize_path(base_path))
 	DirAccess.remove_absolute(ProjectSettings.globalize_path(extra_path))
 	DirAccess.remove_absolute(ProjectSettings.globalize_path(lot2_path))
 	DirAccess.remove_absolute(ProjectSettings.globalize_path(lot3_path))
+	DirAccess.remove_absolute(ProjectSettings.globalize_path(lot4_path))
 	fixture_textures.clear()
 	print("SAGA GALLERY: %d checks, %d failures" % [checks, failures])
 	quit(1 if failures else 0)

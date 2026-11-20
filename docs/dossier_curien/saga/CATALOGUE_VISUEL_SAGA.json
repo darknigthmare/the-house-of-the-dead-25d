@@ -1,6 +1,6 @@
 {
   "titre": "Dossier Curien — Anthologie de combat",
-  "nombre_de_png": 241,
+  "nombre_de_png": 247,
   "nouveaux_png_volume_iii": 86,
   "fichiers": [
     {
@@ -773,6 +773,78 @@
       ],
       "sha256": "f3e4fca1919ff737c3b3f987adbc02ea650b2f25c05f749561474ba973cea8ed",
       "volume": 3
+    },
+    {
+      "fichier": "hangedman_roof_back.png",
+      "usage": "back",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "4cbf2ea7f0666e109445f4c54304d84e2ce2e71257ade9680e72e15a97c195cd",
+      "lot": "2026-11-20_lot4_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot4/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "hangedman_roof_front.png",
+      "usage": "front",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "83e1169ccb05ea4a2d2867be1006ce2aa8b7002d50dd3b7a1c0054fb4fb951e8",
+      "lot": "2026-11-20_lot4_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot4/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "hangedman_roof_mid.png",
+      "usage": "mid",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "0801432ac99203cbf88452f8f2f9e5081a865da31c7a0611406f96882c2ff7b0",
+      "lot": "2026-11-20_lot4_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot4/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "hermit_dome_back.png",
+      "usage": "back",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "d0c0a66a3de8a87259a5f95f7eed0160f14e072dcaaa6a303d3581820b7b8651",
+      "lot": "2026-11-20_lot4_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot4/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "hermit_dome_front.png",
+      "usage": "front",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "2e5bbf40c62f1ca7a06c599fc08af650ee05a8df9b6766f50f15e6db183afd4f",
+      "lot": "2026-11-20_lot4_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot4/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "hermit_dome_mid.png",
+      "usage": "mid",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "83c3fdaeb21d801b2236bad60aa599e4ebce8f44ed1e0a5eed1463399368dc79",
+      "lot": "2026-11-20_lot4_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot4/manifest.json",
+      "statut": "adaptation_2d_documentee"
     },
     {
       "fichier": "hierophant_contact.png",
@@ -2970,5 +3042,6 @@
   },
   "nouveaux_png_stages_2026_11_20": 6,
   "nouveaux_png_stages_2026_11_20_lot2": 6,
-  "nouveaux_png_stages_2026_11_20_lot3": 6
+  "nouveaux_png_stages_2026_11_20_lot3": 6,
+  "nouveaux_png_stages_2026_11_20_lot4": 6
 }

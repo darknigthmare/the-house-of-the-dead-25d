@@ -8,7 +8,8 @@ const Painter := preload("res://src/dossier_curien/presentation.gd")
 const EXPECTED_GALLERY := {
 	Bestiary.GALLERY_MANIFEST: ["amy_crystal", "candi_stryper", "g_hotd3", "g_overkill", "hangedman", "harry_harris", "hermit", "rogan_hotd3", "varla_guns"],
 	Bestiary.LOT2_MANIFEST: ["clement_darling", "fool", "gary_typing", "goldman_human", "james_typing", "kuarl", "papa_caesar", "strength", "sun", "thornheart", "tower", "zeal"],
-	Bestiary.LOT3_MANIFEST: ["brutus", "crawler", "dr_curien", "g_hotd4special", "high_priestess", "james_hotd4", "screamer", "sophie_richards"]
+	Bestiary.LOT3_MANIFEST: ["brutus", "crawler", "dr_curien", "g_hotd4special", "high_priestess", "james_hotd4", "screamer", "sophie_richards"],
+	Bestiary.LOT4_MANIFEST: ["coco", "goldman_zombie", "jasper_human", "lobber", "meat_katie", "mother_human", "nigel_sebastian", "sindy", "sophie_zombie"]
 }
 var a
 var checks := 0
@@ -235,7 +236,7 @@ func gallery_extension() -> void:
 		check(declared == EXPECTED_GALLERY[path], "Every delivered subject is declared exactly once: " + path)
 		extension_entries.append_array(parsed.assets)
 	a.bestiary.select_filter(a,0)
-	check(a.bestiary.assets.size() == 69, "Native gallery preserves the previous sixty-one cards and adds eight static subjects")
+	check(a.bestiary.assets.size() == 78, "Native gallery preserves the previous sixty-nine cards and adds nine static subjects")
 	var loaded := {}
 	var loaded_indices := {}
 	for index in a.bestiary.assets.size():
@@ -285,20 +286,26 @@ func gallery_extension() -> void:
 		await verify_sheet_layout("Gallery game " + str(game))
 
 func additional_stages() -> void:
-	check(Fighter.PROFILES.size() == 24 and Saga.STAGES.size() == 24 and Saga.ART.size() == 24, "Further arenas preserve the playable roster and align twenty-four art registrations")
+	check(Fighter.PROFILES.size() == 24 and Saga.STAGES.size() == 26 and Saga.ART.size() == 26, "Further arenas preserve the playable roster and align twenty-six art registrations")
 	a.case_id = ""
 	a.mode = 1
 	a.chosen = 0
-	var expected_art := {18:"zr_train", 19:"creeping_flesh", 20:"tower_canal", 21:"strength_colosseum", 22:"fool_enclosure", 23:"sun_bio"}
+	var expected_art := {18:"zr_train", 19:"creeping_flesh", 20:"tower_canal", 21:"strength_colosseum", 22:"fool_enclosure", 23:"sun_bio", 24:"hangedman_roof", 25:"hermit_dome"}
 	for stage_index in expected_art:
 		check(Saga.ART[stage_index] == expected_art[stage_index], "Additional arena preserves its stable art index: " + str(stage_index))
 		a.pick_stage(1, stage_index/a.PAGE_SIZE)
-		await verify_sheet_layout("Additional stage selection")
 		var choice: Button
 		for child in a.box.get_children():
 			if child is Button and child.text == Saga.STAGES[stage_index]: choice = child
 		check(choice != null and Saga.STAGE_NOTES.has(stage_index), "New stage is selectable with its documented adaptation note")
 		if choice == null: continue
+		choice.grab_focus()
+		await verify_sheet_layout("Additional stage selection")
+		check(a.get_viewport().gui_get_focus_owner() == choice, "Stage selection keeps keyboard/gamepad focus on its choice")
+		var visible_notes := 0
+		for child in a.box.get_children():
+			if child is Label and child.visible and child.text == Saga.STAGE_NOTES[stage_index]: visible_notes += 1
+		check(visible_notes == 1, "Focused stage presents its complete adaptation note exactly once")
 		choice.pressed.emit()
 		check(a.phase == "fight" and a.stage == stage_index and a.fighters.size() == 2, "New arena enters a real duel with both fighters")
 		check(Painter.floor_y(stage_index) == 601.0, "New stage keeps the existing fighter floor at y=601")

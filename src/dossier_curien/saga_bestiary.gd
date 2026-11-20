@@ -8,10 +8,13 @@ const LOT2_MANIFEST := "res://data/assets/dossier_curien_gallery_2026-11-20_lot2
 const LOT2_ART_ROOT := "res://assets/dossier_curien/gallery_2026-11-20_lot2/"
 const LOT3_MANIFEST := "res://data/assets/dossier_curien_gallery_2026-11-20_lot3.json"
 const LOT3_ART_ROOT := "res://assets/dossier_curien/gallery_2026-11-20_lot3/"
+const LOT4_MANIFEST := "res://data/assets/dossier_curien_gallery_2026-11-20_lot4.json"
+const LOT4_ART_ROOT := "res://assets/dossier_curien/gallery_2026-11-20_lot4/"
 const GALLERY_COLLECTIONS := [
 	{"manifest":GALLERY_MANIFEST, "art_root":GALLERY_ART_ROOT},
 	{"manifest":LOT2_MANIFEST, "art_root":LOT2_ART_ROOT},
-	{"manifest":LOT3_MANIFEST, "art_root":LOT3_ART_ROOT}
+	{"manifest":LOT3_MANIFEST, "art_root":LOT3_ART_ROOT},
+	{"manifest":LOT4_MANIFEST, "art_root":LOT4_ART_ROOT}
 ]
 const BASE_FILTERS := [
 	{"game":"", "label":"Tous"},
@@ -21,7 +24,8 @@ const BASE_FILTERS := [
 const CATEGORIES := {
 	"character_base":"Personnage", "dialogue_portrait":"Personnage de l’histoire",
 	"boss_base":"Boss", "enemy_base":"Créature", "fighter_pose":"Pose de combat",
-	"npc_base":"PNJ", "costume_variant":"Variante de costume"
+	"npc_base":"PNJ", "costume_variant":"Variante de costume",
+	"character_form":"Forme de personnage"
 }
 var assets: Array = []
 var filters: Array = BASE_FILTERS.duplicate(true)
@@ -38,7 +42,7 @@ func load_manifest(path := MANIFEST, additional_collections: Array = []) -> bool
 		if not collection is Dictionary: continue
 		var manifest_path := str(collection.get("manifest", ""))
 		var art_root := str(collection.get("art_root", ""))
-		if manifest_path == "" or art_root not in [GALLERY_ART_ROOT, LOT2_ART_ROOT, LOT3_ART_ROOT]: continue
+		if manifest_path == "" or art_root not in [GALLERY_ART_ROOT, LOT2_ART_ROOT, LOT3_ART_ROOT, LOT4_ART_ROOT]: continue
 		_append_collection(manifest_path, art_root, ids, true)
 	assets.sort_custom(func(a: Dictionary, b: Dictionary): return str(a.get("name", a.id)).naturalnocasecmp_to(str(b.get("name", b.id))) < 0)
 	_refresh_filters()
@@ -160,11 +164,13 @@ func detail(a, index: int) -> void:
 		a.paragraph("PNJ présenté dans la galerie. Cette illustration n’ajoute pas de combattant au duel.")
 	elif str(entry.get("category", "")) == "costume_variant":
 		a.paragraph("Variante de costume consultable dans la galerie. Elle ne peut pas être sélectionnée pour combattre ; les poses et les transitions restent à produire.")
+	elif str(entry.get("category", "")) == "character_form":
+		a.paragraph("Forme de personnage présentée dans la galerie. Cette illustration ne crée ni combattant ni transformation jouable ; les poses et les transitions restent à produire.")
 	else:
 		a.paragraph("Illustration de référence. Ce visuel n’est pas encore associé à une variante jouable dans le mode duel.")
 	if str(entry.get("category", "")) == "dialogue_portrait":
 		a.paragraph("Portrait destiné aux dialogues et aux scènes de l’histoire.")
-	elif str(entry.get("category", "")) not in ["npc_base", "costume_variant"]:
+	elif str(entry.get("category", "")) not in ["npc_base", "costume_variant", "character_form"]:
 		a.paragraph("Les poses et les animations de combat continuent d’être complétées.")
 	a.paragraph("Fiche %d / %d" % [selected+1, entries.size()])
 	if selected > 0: a.button("‹  Fiche précédente", detail.bind(a, selected-1))

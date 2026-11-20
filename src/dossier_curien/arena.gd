@@ -142,12 +142,13 @@ func _refit_sheet(revision: int) -> void:
 	panel.queue_sort()
 	queue_redraw()
 
-func paragraph(line: String) -> void:
+func paragraph(line: String) -> Label:
 	var p := Label.new()
 	p.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	p.custom_minimum_size.x = 505
 	p.text = line
 	box.add_child(p)
+	return p
 
 func button(label: String, call: Callable) -> Button:
 	var b := Button.new()
@@ -349,10 +350,17 @@ func pick_stage(i: int, page := 0) -> void:
 		var first: int = Saga.CASES[case_id].stage
 		order.erase(first)
 		order.push_front(first)
+	var note := paragraph("Choisissez le lieu du duel.")
+	var revision := sheet_revision
+	var describe := func(stage_id: int):
+		note.text = str(Saga.STAGE_NOTES.get(stage_id, "Choisissez le lieu du duel."))
+		_refit_sheet.call_deferred(revision)
 	for index in range(page * PAGE_SIZE, mini((page + 1) * PAGE_SIZE, order.size())):
 		var s: int = order[index]
-		button(STAGES[s], begin_at.bind(s))
-		if Saga.STAGE_NOTES.has(s): paragraph(Saga.STAGE_NOTES[s])
+		var choice := button(STAGES[s], begin_at.bind(s))
+		choice.focus_entered.connect(describe.bind(s))
+		choice.mouse_entered.connect(describe.bind(s))
+		if index == page * PAGE_SIZE: describe.call(s)
 	page_buttons(page, order.size(), func(p): pick_stage(i, p))
 	button("Retour", opponent_menu)
 

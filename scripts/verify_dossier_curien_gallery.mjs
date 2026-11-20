@@ -12,12 +12,14 @@ const BASE_MANIFEST = 'data/assets/dossier_curien_expansion.json';
 const ART_ROOT = 'assets/dossier_curien/gallery_2026-11-20';
 const LOT2_ART_ROOT = 'assets/dossier_curien/gallery_2026-11-20_lot2';
 const LOT3_ART_ROOT = 'assets/dossier_curien/gallery_2026-11-20_lot3';
+const LOT4_ART_ROOT = 'assets/dossier_curien/gallery_2026-11-20_lot4';
 const COLLECTIONS = [
   { path: 'data/assets/dossier_curien_gallery_2026-11-20.json', artRoot: ART_ROOT },
   { path: 'data/assets/dossier_curien_gallery_2026-11-20_lot2.json', artRoot: LOT2_ART_ROOT },
   { path: 'data/assets/dossier_curien_gallery_2026-11-20_lot3.json', artRoot: LOT3_ART_ROOT },
+  { path: 'data/assets/dossier_curien_gallery_2026-11-20_lot4.json', artRoot: LOT4_ART_ROOT },
 ];
-const CATEGORIES = new Set(['character_base', 'npc_base', 'costume_variant', 'boss_base', 'enemy_base', 'dialogue_portrait']);
+const CATEGORIES = new Set(['character_base', 'npc_base', 'costume_variant', 'character_form', 'boss_base', 'enemy_base', 'dialogue_portrait']);
 const GAMES = new Set(['hotd', 'hotd2', 'hotd3', 'hotd4', 'hotd4_special', 'overkill', 'scarlet_dawn', 'zombie_revenge', 'hotd_ex', 'typing', 'typing2', 'english', 'pinball']);
 const ensure = (condition, message) => { if (!condition) throw new Error(message); };
 
@@ -119,8 +121,12 @@ function selfTest() {
     Object.assign(newest.assets[0], { id: 'newest_gallery_costume', category: 'costume_variant', game: 'hotd4_special', path: LOT3_ART_ROOT + '/newest_gallery_costume.png' });
     mkdirSync(join(fixture, LOT3_ART_ROOT), { recursive: true });
     writeFileSync(join(fixture, newest.assets[0].path), sample);
-    const batches = [{ manifest: valid, artRoot: ART_ROOT }, { manifest: later, artRoot: LOT2_ART_ROOT }, { manifest: newest, artRoot: LOT3_ART_ROOT }];
-    assert.equal(validateCollections(batches, fixture, existingIds).reduce((sum, result) => sum + result.gallery, 0), 3); cases++;
+    const fourth = structuredClone(valid);
+    Object.assign(fourth.assets[0], { id: 'fourth_gallery_form', category: 'character_form', game: 'overkill', path: LOT4_ART_ROOT + '/fourth_gallery_form.png' });
+    mkdirSync(join(fixture, LOT4_ART_ROOT), { recursive: true });
+    writeFileSync(join(fixture, fourth.assets[0].path), sample);
+    const batches = [{ manifest: valid, artRoot: ART_ROOT }, { manifest: later, artRoot: LOT2_ART_ROOT }, { manifest: newest, artRoot: LOT3_ART_ROOT }, { manifest: fourth, artRoot: LOT4_ART_ROOT }];
+    assert.equal(validateCollections(batches, fixture, existingIds).reduce((sum, result) => sum + result.gallery, 0), 4); cases++;
     const collision = structuredClone(batches);
     collision[1].manifest.assets[0].id = valid.assets[0].id;
     assert.throws(() => validateCollections(collision, fixture, existingIds), /already belongs/, 'Duplicate across successive gallery batches'); cases++;
@@ -136,6 +142,15 @@ function selfTest() {
     const newestPlayable = structuredClone(batches);
     newestPlayable[2].manifest.assets[0].playable = true;
     assert.throws(() => validateCollections(newestPlayable, fixture, existingIds), /cannot add a playable/, 'Later costume remains a static gallery card'); cases++;
+    const fourthCollision = structuredClone(batches);
+    fourthCollision[3].manifest.assets[0].id = newest.assets[0].id;
+    assert.throws(() => validateCollections(fourthCollision, fixture, existingIds), /already belongs/, 'Fourth batch cannot replace an identity from the third batch'); cases++;
+    const fourthWrongRoot = structuredClone(batches);
+    fourthWrongRoot[3].manifest.assets[0].path = newest.assets[0].path;
+    assert.throws(() => validateCollections(fourthWrongRoot, fixture, existingIds), /path must stay inside/, 'Fourth batch cannot borrow the third batch art root'); cases++;
+    const fourthPlayable = structuredClone(batches);
+    fourthPlayable[3].manifest.assets[0].playable = true;
+    assert.throws(() => validateCollections(fourthPlayable, fixture, existingIds), /cannot add a playable/, 'A character form remains a static gallery card'); cases++;
     const proof = Buffer.from(JSON.stringify({ assets: valid.assets }));
     writeFileSync(join(fixture, asset.provenance), proof);
     const withReceipt = structuredClone(valid);
