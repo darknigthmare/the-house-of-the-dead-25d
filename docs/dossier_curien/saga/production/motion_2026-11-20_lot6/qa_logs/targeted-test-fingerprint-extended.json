@@ -1,0 +1,14 @@
+{
+  "manifest_path": "data/assets/dossier_curien_motion_2026-11-20_lot6.json",
+  "manifest_sha256_at_targeted_test": "70fc10a97e62166dfca850f2b27d4f030926e6b961e5a83fbe277967ec472095",
+  "runtime_entries_sha256": "cee4f604c134f0a93c7f9c8755b1f906b86e99a416ab2aace6d506708c441633",
+  "manifest_provisional_at_targeted_test": true,
+  "test_script_sha256": "ebf38844025047067eebc13384fca11fe1678707b591688b715cb47ddd104a31",
+  "test_command": "Godot 4.7.2 --headless --path CHECKOUT --script res://tests/test_saga_motion.gd",
+  "exit_code": 0,
+  "checks": 227,
+  "failures": 0,
+  "warnings": 0,
+  "previous_checks": 196,
+  "previous_review": "docs/dossier_curien/saga/production/motion_2026-11-20_lot6/pre_extension/FINAL_REVIEW_6_POSES.json"
+}

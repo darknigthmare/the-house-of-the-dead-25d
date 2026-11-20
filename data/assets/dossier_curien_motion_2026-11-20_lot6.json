@@ -1,0 +1,628 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "repository": "darknigthmare/the-house-of-the-dead-25d",
+  "source_commit": "7f14d7b49dcc8d884629245eef71e65198665b8e",
+  "scope": "Nine Rikiya base keyframes consumed by existing combat, taunt and match-end states. Dated additive collection; historical motion manifest, art and initial six lot-6 PNGs preserved. Rikiya's tracked named-pose row is complete; intermediate animation frames remain.",
+  "provisional": false,
+  "summary": {
+    "assets": 9,
+    "bytes": 6765323,
+    "unique_sha256": 9,
+    "by_origin": {
+      "generated_imagegen_native": 9
+    }
+  },
+  "assets": [
+    {
+      "id": "rikiya_crouch",
+      "fighter_id": "rikiya",
+      "art_id": "rikiya",
+      "pose": "crouch",
+      "path": "assets/dossier_curien/motion_2026-11-20_lot6/rikiya_crouch.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 860837,
+      "sha256": "b902791f871c313a26f93a79cab976f17683d1974723ca09bb17681ffa5bb37d",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        32,
+        1240,
+        1230
+      ],
+      "visible_bbox": [
+        264,
+        233,
+        1105,
+        1173
+      ],
+      "visible_alpha_threshold": 127,
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pivot_px": [
+        600,
+        1173
+      ],
+      "standing_height_px": 1299.519,
+      "anchors_px": {
+        "near_sole": [
+          318,
+          1173
+        ],
+        "far_sole": [
+          864,
+          1166
+        ]
+      },
+      "calibration_notes": "Native head landmark span 225 px versus reference 156 px; standing-equivalent scale retained for crouched/airborne limbs. No emitter: empty-hand action. See calibration.json for measured support anchors and limitations.",
+      "calibration_provenance": "docs/dossier_curien/saga/production/motion_2026-11-20_lot6/calibration.json",
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-20_lot6/rikiya_crouch_generation.json",
+      "references": [
+        "assets/dossier_curien/saga/rikiya_guard.png"
+      ],
+      "origin": "generated_imagegen_native",
+      "animation_complete": false,
+      "canonical_1_to_1_certified": false,
+      "status": "native_pixels_visually_reviewed_runtime_calibration",
+      "runtime_consumption": {
+        "selector": "src/dossier_curien/presentation.gd:pose_suffix",
+        "condition": "action empty; grounded; crouching; not guarding"
+      }
+    },
+    {
+      "id": "rikiya_crouch_guard",
+      "fighter_id": "rikiya",
+      "art_id": "rikiya",
+      "pose": "crouch_guard",
+      "path": "assets/dossier_curien/motion_2026-11-20_lot6/rikiya_crouch_guard.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 707382,
+      "sha256": "eecda8d4fa962037ef07c728f40c19b6022c9b7d69c76a04a6a55e05facbcae3",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        130,
+        39,
+        1134,
+        1200
+      ],
+      "visible_bbox": [
+        255,
+        383,
+        992,
+        1193
+      ],
+      "visible_alpha_threshold": 127,
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pivot_px": [
+        585,
+        1193
+      ],
+      "standing_height_px": 1339.949,
+      "anchors_px": {
+        "near_sole": [
+          309,
+          1193
+        ],
+        "far_sole": [
+          817,
+          1191
+        ]
+      },
+      "calibration_notes": "Native head landmark span 232 px versus reference 156 px; standing-equivalent scale retained for crouched/airborne limbs. No emitter: empty-hand action. See calibration.json for measured support anchors and limitations.",
+      "calibration_provenance": "docs/dossier_curien/saga/production/motion_2026-11-20_lot6/calibration.json",
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-20_lot6/rikiya_crouch_guard_generation.json",
+      "references": [
+        "assets/dossier_curien/saga/rikiya_guard.png"
+      ],
+      "origin": "generated_imagegen_native",
+      "animation_complete": false,
+      "canonical_1_to_1_certified": false,
+      "status": "native_pixels_visually_reviewed_runtime_calibration",
+      "runtime_consumption": {
+        "selector": "src/dossier_curien/presentation.gd:pose_suffix",
+        "condition": "action empty; grounded; crouching and guarding"
+      }
+    },
+    {
+      "id": "rikiya_block",
+      "fighter_id": "rikiya",
+      "art_id": "rikiya",
+      "pose": "block",
+      "path": "assets/dossier_curien/motion_2026-11-20_lot6/rikiya_block.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 695994,
+      "sha256": "19cdd26fe0a6fda17b0232866912733b39aac3aab6f8025979ec94730bc6afa2",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        17,
+        15,
+        1253,
+        1254
+      ],
+      "visible_bbox": [
+        307,
+        79,
+        911,
+        1175
+      ],
+      "visible_alpha_threshold": 127,
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pivot_px": [
+        590,
+        1175
+      ],
+      "standing_height_px": 1178.231,
+      "anchors_px": {
+        "near_sole": [
+          360,
+          1175
+        ],
+        "far_sole": [
+          813,
+          1167
+        ]
+      },
+      "calibration_notes": "Native head landmark span 204 px versus reference 156 px; standing-equivalent scale retained for crouched/airborne limbs. No emitter: empty-hand action. See calibration.json for measured support anchors and limitations.",
+      "calibration_provenance": "docs/dossier_curien/saga/production/motion_2026-11-20_lot6/calibration.json",
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-20_lot6/rikiya_block_generation.json",
+      "references": [
+        "assets/dossier_curien/saga/rikiya_guard.png"
+      ],
+      "origin": "generated_imagegen_native",
+      "animation_complete": false,
+      "canonical_1_to_1_certified": false,
+      "status": "native_pixels_visually_reviewed_runtime_calibration",
+      "runtime_consumption": {
+        "selector": "src/dossier_curien/presentation.gd:pose_suffix",
+        "condition": "action empty; grounded; not crouching; block_ticks > 0 or stationary guard"
+      }
+    },
+    {
+      "id": "rikiya_jump_rise",
+      "fighter_id": "rikiya",
+      "art_id": "rikiya",
+      "pose": "jump_rise",
+      "path": "assets/dossier_curien/motion_2026-11-20_lot6/rikiya_jump_rise.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 616605,
+      "sha256": "50a4cde70b08636829625ca367411370fbb9219677a04834667caa1f412daa8f",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        33,
+        49,
+        1216,
+        1254
+      ],
+      "visible_bbox": [
+        356,
+        54,
+        1017,
+        1100
+      ],
+      "visible_alpha_threshold": 127,
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pivot_px": [
+        560,
+        1100
+      ],
+      "standing_height_px": 1103.147,
+      "anchors_px": {
+        "trailing_sole": [
+          390,
+          1100
+        ],
+        "raised_sole": [
+          708,
+          828
+        ]
+      },
+      "calibration_notes": "Native head landmark span 191 px versus reference 156 px; standing-equivalent scale retained for crouched/airborne limbs. No emitter: empty-hand action. See calibration.json for measured support anchors and limitations.",
+      "calibration_provenance": "docs/dossier_curien/saga/production/motion_2026-11-20_lot6/calibration.json",
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-20_lot6/rikiya_jump_rise_generation.json",
+      "references": [
+        "assets/dossier_curien/saga/rikiya_guard.png"
+      ],
+      "origin": "generated_imagegen_native",
+      "animation_complete": false,
+      "canonical_1_to_1_certified": false,
+      "status": "native_pixels_visually_reviewed_runtime_calibration",
+      "runtime_consumption": {
+        "selector": "src/dossier_curien/presentation.gd:pose_suffix",
+        "condition": "action empty; altitude > 0 or vy > 0; vy > 0"
+      }
+    },
+    {
+      "id": "rikiya_jump_fall",
+      "fighter_id": "rikiya",
+      "art_id": "rikiya",
+      "pose": "jump_fall",
+      "path": "assets/dossier_curien/motion_2026-11-20_lot6/rikiya_jump_fall.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 732350,
+      "sha256": "296033a55a35edfd9d69c604cc7a942194fe2e5c7c01e45a82017d132b48f4b6",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        31,
+        1238,
+        1230
+      ],
+      "visible_bbox": [
+        397,
+        75,
+        1044,
+        1160
+      ],
+      "visible_alpha_threshold": 127,
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pivot_px": [
+        585,
+        1160
+      ],
+      "standing_height_px": 1195.558,
+      "anchors_px": {
+        "near_sole": [
+          450,
+          1160
+        ],
+        "far_sole": [
+          779,
+          1155
+        ]
+      },
+      "calibration_notes": "Native head landmark span 207 px versus reference 156 px; standing-equivalent scale retained for crouched/airborne limbs. No emitter: empty-hand action. See calibration.json for measured support anchors and limitations.",
+      "calibration_provenance": "docs/dossier_curien/saga/production/motion_2026-11-20_lot6/calibration.json",
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-20_lot6/rikiya_jump_fall_generation.json",
+      "references": [
+        "assets/dossier_curien/saga/rikiya_guard.png"
+      ],
+      "origin": "generated_imagegen_native",
+      "animation_complete": false,
+      "canonical_1_to_1_certified": false,
+      "status": "native_pixels_visually_reviewed_runtime_calibration",
+      "runtime_consumption": {
+        "selector": "src/dossier_curien/presentation.gd:pose_suffix",
+        "condition": "action empty; altitude > 0; vy <= 0"
+      }
+    },
+    {
+      "id": "rikiya_throw",
+      "fighter_id": "rikiya",
+      "art_id": "rikiya",
+      "pose": "throw",
+      "path": "assets/dossier_curien/motion_2026-11-20_lot6/rikiya_throw.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 760823,
+      "sha256": "db033803b9e469e84b025b285128092e85f43fc6985cb68f921926e4a2ec0c12",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        1234,
+        1254
+      ],
+      "visible_bbox": [
+        137,
+        137,
+        1154,
+        1136
+      ],
+      "visible_alpha_threshold": 127,
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pivot_px": [
+        550,
+        1136
+      ],
+      "standing_height_px": 1212.885,
+      "anchors_px": {
+        "near_sole": [
+          187,
+          1136
+        ],
+        "far_sole": [
+          814,
+          1132
+        ],
+        "near_palm": [
+          886,
+          505
+        ],
+        "far_palm": [
+          1100,
+          360
+        ]
+      },
+      "calibration_notes": "Native head landmark span 210 px versus reference 156 px; standing-equivalent scale retained for crouched/airborne limbs. No emitter: empty-hand action. See calibration.json for measured support anchors and limitations.",
+      "calibration_provenance": "docs/dossier_curien/saga/production/motion_2026-11-20_lot6/calibration.json",
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-20_lot6/rikiya_throw_generation.json",
+      "references": [
+        "assets/dossier_curien/saga/rikiya_guard.png"
+      ],
+      "origin": "generated_imagegen_native",
+      "animation_complete": false,
+      "canonical_1_to_1_certified": false,
+      "status": "native_pixels_visually_reviewed_runtime_calibration",
+      "runtime_consumption": {
+        "selector": "src/dossier_curien/presentation.gd:pose_suffix",
+        "condition": "action == throw; dedicated art precedes generic attack keyframes"
+      }
+    },
+    {
+      "id": "rikiya_victory",
+      "fighter_id": "rikiya",
+      "art_id": "rikiya",
+      "pose": "victory",
+      "path": "assets/dossier_curien/motion_2026-11-20_lot6/rikiya_victory.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 677886,
+      "sha256": "16afcd9c4731683f5666e945befacca9131c793182eceaaf2dcc1b46e36b8b9c",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        11,
+        1204,
+        1238
+      ],
+      "visible_bbox": [
+        395,
+        14,
+        863,
+        1223
+      ],
+      "visible_alpha_threshold": 127,
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pivot_px": [
+        610,
+        1223
+      ],
+      "standing_height_px": 1051.167,
+      "anchors_px": {
+        "near_sole": [
+          453,
+          1223
+        ],
+        "far_sole": [
+          766,
+          1214
+        ]
+      },
+      "calibration_notes": "Native head landmark span 182 px versus reference 156 px; standing-equivalent scale retained for crouched/airborne limbs. No emitter: empty-hand action. See calibration.json for measured support anchors and limitations.",
+      "calibration_provenance": "docs/dossier_curien/saga/production/motion_2026-11-20_lot6/calibration.json",
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-20_lot6/rikiya_victory_generation.json",
+      "references": [
+        "assets/dossier_curien/saga/rikiya_guard.png"
+      ],
+      "origin": "generated_imagegen_native",
+      "animation_complete": false,
+      "canonical_1_to_1_certified": false,
+      "status": "native_pixels_visually_reviewed_runtime_calibration",
+      "runtime_consumption": {
+        "selector": "src/dossier_curien/presentation.gd:pose_suffix",
+        "condition": "arena winner in finish, round or result phase (including its paused equivalent)"
+      }
+    },
+    {
+      "id": "rikiya_taunt",
+      "fighter_id": "rikiya",
+      "art_id": "rikiya",
+      "pose": "taunt",
+      "path": "assets/dossier_curien/motion_2026-11-20_lot6/rikiya_taunt.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 807225,
+      "sha256": "7f7868dc58974638589ca48995668d25e2826162654cd54b1351fc522fa17641",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        33,
+        11,
+        1234,
+        1230
+      ],
+      "visible_bbox": [
+        281,
+        60,
+        979,
+        1196
+      ],
+      "visible_alpha_threshold": 127,
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pivot_px": [
+        590,
+        1196
+      ],
+      "standing_height_px": 1230.212,
+      "anchors_px": {
+        "near_sole": [
+          335,
+          1196
+        ],
+        "far_sole": [
+          839,
+          1190
+        ],
+        "beckoning_palm": [
+          901,
+          385
+        ]
+      },
+      "calibration_notes": "Native head landmark span 213 px versus reference 156 px; standing-equivalent scale retained for crouched/airborne limbs. No emitter: empty-hand action. See calibration.json for measured support anchors and limitations.",
+      "calibration_provenance": "docs/dossier_curien/saga/production/motion_2026-11-20_lot6/calibration.json",
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-20_lot6/rikiya_taunt_generation.json",
+      "references": [
+        "assets/dossier_curien/saga/rikiya_guard.png"
+      ],
+      "origin": "generated_imagegen_native",
+      "animation_complete": false,
+      "canonical_1_to_1_certified": false,
+      "status": "native_pixels_visually_reviewed_runtime_calibration",
+      "runtime_consumption": {
+        "selector": "src/dossier_curien/presentation.gd:pose_suffix",
+        "condition": "action empty; grounded; not crouching, moving or guarding; taunt_ticks > 0"
+      }
+    },
+    {
+      "id": "rikiya_finish",
+      "fighter_id": "rikiya",
+      "art_id": "rikiya",
+      "pose": "finish",
+      "path": "assets/dossier_curien/motion_2026-11-20_lot6/rikiya_finish.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 906221,
+      "sha256": "201740133d73aedb198a7b989c83f6b76447518b933ec4e894843ae8a0afb187",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        31,
+        14,
+        1234,
+        1254
+      ],
+      "visible_bbox": [
+        90,
+        112,
+        1166,
+        1172
+      ],
+      "visible_alpha_threshold": 127,
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pivot_px": [
+        580,
+        1172
+      ],
+      "standing_height_px": 1299.519,
+      "anchors_px": {
+        "near_sole": [
+          157,
+          1172
+        ],
+        "far_sole": [
+          955,
+          1166
+        ],
+        "striking_palm": [
+          1113,
+          365
+        ]
+      },
+      "calibration_notes": "Native head landmark span 225 px versus reference 156 px; standing-equivalent scale retained for crouched/airborne limbs. No emitter: empty-hand action. See calibration.json for measured support anchors and limitations.",
+      "calibration_provenance": "docs/dossier_curien/saga/production/motion_2026-11-20_lot6/calibration.json",
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-20_lot6/rikiya_finish_generation.json",
+      "references": [
+        "assets/dossier_curien/saga/rikiya_guard.png"
+      ],
+      "origin": "generated_imagegen_native",
+      "animation_complete": false,
+      "canonical_1_to_1_certified": false,
+      "status": "native_pixels_visually_reviewed_runtime_calibration",
+      "runtime_consumption": {
+        "selector": "src/dossier_curien/presentation.gd:pose_suffix",
+        "condition": "arena winner in cinematic phase (including its paused equivalent)"
+      }
+    }
+  ]
+}

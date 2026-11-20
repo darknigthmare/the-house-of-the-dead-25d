@@ -1,0 +1,381 @@
+{
+  "date": "2026-11-20",
+  "scope": "Références visuelles des variantes Saturn/PC Mode, lot6. Pas de certification de concordance pixel à pixel entre ports.",
+  "references": [
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/rogan2_thumbnail.jpg",
+      "sha256": "def643755bf6b5f6a19be6fda4fbdba55a040ec1e77de1624c2951441957f8ea",
+      "bytes": 63762,
+      "dimensions": [
+        1280,
+        720
+      ],
+      "mode": "RGB",
+      "native_source_bytes_preserved": true,
+      "visually_inspected": true,
+      "url": "https://i.ytimg.com/vi/mYHcTCZf4wg/maxresdefault.jpg",
+      "page_url": "https://www.youtube.com/watch?v=mYHcTCZf4wg",
+      "source_type": "uploader_thumbnail_composite_of_game_model",
+      "video_title": "The House Of The Dead PC Mode Walkthrough No Commentary (Rogan 2)",
+      "uploader": "LyricBR",
+      "edition_scope": "PC Mode (Windows port)",
+      "reference_limitations": "Miniature publiée par l’auteur de la capture ; modèles contrôlés sur les storyboards du même mode. Le montage des miniatures LyricBR est documenté, pas assimilé à une capture brute plein écran."
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/g2_thumbnail.jpg",
+      "sha256": "30e0579fe1102d68f74e32255074e4a697a405ad12e6751e8bb3d025fe79df4d",
+      "bytes": 64039,
+      "dimensions": [
+        1280,
+        720
+      ],
+      "mode": "RGB",
+      "native_source_bytes_preserved": true,
+      "visually_inspected": true,
+      "url": "https://i.ytimg.com/vi/5ZhcdZuQUnA/maxresdefault.jpg",
+      "page_url": "https://www.youtube.com/watch?v=5ZhcdZuQUnA",
+      "source_type": "uploader_thumbnail_composite_of_game_model",
+      "video_title": "The House Of The Dead PC Mode Walkthrough No Commentary (G 2)",
+      "uploader": "LyricBR",
+      "edition_scope": "PC Mode (Windows port)",
+      "reference_limitations": "Miniature publiée par l’auteur de la capture ; modèles contrôlés sur les storyboards du même mode. Le montage des miniatures LyricBR est documenté, pas assimilé à une capture brute plein écran."
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/sophie_thumbnail.jpg",
+      "sha256": "c330bfea104ac7c84e8bafef3cb806e028a6381c8a46087243e3af4d4f15628c",
+      "bytes": 68213,
+      "dimensions": [
+        1280,
+        720
+      ],
+      "mode": "RGB",
+      "native_source_bytes_preserved": true,
+      "visually_inspected": true,
+      "url": "https://i.ytimg.com/vi/ABYT4bFjoto/maxresdefault.jpg",
+      "page_url": "https://www.youtube.com/watch?v=ABYT4bFjoto",
+      "source_type": "uploader_thumbnail_composite_of_game_model",
+      "video_title": "The House Of The Dead PC Mode Walkthrough No Commentary (Sophie)",
+      "uploader": "LyricBR",
+      "edition_scope": "PC Mode (Windows port)",
+      "reference_limitations": "Miniature publiée par l’auteur de la capture ; modèles contrôlés sur les storyboards du même mode. Le montage des miniatures LyricBR est documenté, pas assimilé à une capture brute plein écran."
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/researcher_thumbnail.jpg",
+      "sha256": "aa34b1fbd38918ae0b5ad8ce0ee1d99ff0b2e31d61989c17e2630da72efedf84",
+      "bytes": 69652,
+      "dimensions": [
+        1280,
+        720
+      ],
+      "mode": "RGB",
+      "native_source_bytes_preserved": true,
+      "visually_inspected": true,
+      "url": "https://i.ytimg.com/vi/orSO1dCHHdk/maxresdefault.jpg",
+      "page_url": "https://www.youtube.com/watch?v=orSO1dCHHdk",
+      "source_type": "uploader_thumbnail_composite_of_game_model",
+      "video_title": "The House Of The Dead PC Mode Walkthrough No Commentary (Researcher)",
+      "uploader": "LyricBR",
+      "edition_scope": "PC Mode (Windows port)",
+      "reference_limitations": "Miniature publiée par l’auteur de la capture ; modèles contrôlés sur les storyboards du même mode. Le montage des miniatures LyricBR est documenté, pas assimilé à une capture brute plein écran."
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/researcher_rocsen_thumb.jpg",
+      "sha256": "7d000b8ba8381aca81cc36275e1e5a563b4462e6e7cc9b8d4e8a5a6d177b66f2",
+      "bytes": 93288,
+      "dimensions": [
+        1280,
+        720
+      ],
+      "mode": "RGB",
+      "native_source_bytes_preserved": true,
+      "visually_inspected": true,
+      "url": "https://i.ytimg.com/vi/gaxE3kF8D7k/maxresdefault.jpg",
+      "page_url": "https://www.youtube.com/watch?v=gaxE3kF8D7k",
+      "source_type": "uploader_gameplay_thumbnail",
+      "video_title": "The House Of The Dead - Playing as Scientist (Jugando como Scientist) - PC Mode",
+      "uploader": "Rocsen",
+      "edition_scope": "PC Mode (Windows port)",
+      "reference_limitations": "Miniature publiée par l’auteur de la capture ; modèles contrôlés sur les storyboards du même mode. Le montage des miniatures LyricBR est documenté, pas assimilé à une capture brute plein écran."
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/mYHcTCZf4wg_M0.jpg",
+      "sha256": "334bd6d6ba742f5a229910d8e44c08fd367f9c4d619fc9eb0bac4f78aac3170e",
+      "bytes": 43004,
+      "dimensions": [
+        960,
+        540
+      ],
+      "mode": "RGB",
+      "native_source_bytes_preserved": true,
+      "visually_inspected": true,
+      "url": "https://i.ytimg.com/sb/mYHcTCZf4wg/storyboard3_L3/M0.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgib9rW1Bg==&sigh=rs$AOn4CLCd6AsNASppV_i1PmnEt5uG5RIVXw",
+      "page_url": "https://www.youtube.com/watch?v=mYHcTCZf4wg",
+      "source_type": "native_youtube_storyboard_sheet",
+      "video_title": "The House Of The Dead PC Mode Walkthrough No Commentary (Rogan 2)",
+      "uploader": "LyricBR",
+      "edition_scope": "PC Mode (Windows port)",
+      "sheet_index": 0,
+      "grid_columns": 3,
+      "grid_rows": 3,
+      "tile_dimensions": [
+        320,
+        180
+      ],
+      "start_seconds_approx": 0,
+      "tile_duration_seconds_approx": 9.927,
+      "reference_limitations": "Grille native YouTube non recadrée. Les détails fins et les coloris peuvent être dégradés par le format, la compression et le port capturé."
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/mYHcTCZf4wg_M15.jpg",
+      "sha256": "406ba6a482f115b29ca62a1eabe45f086e7909802eaeaf1a5c5c8050defd3b93",
+      "bytes": 34530,
+      "dimensions": [
+        960,
+        540
+      ],
+      "mode": "RGB",
+      "native_source_bytes_preserved": true,
+      "visually_inspected": true,
+      "url": "https://i.ytimg.com/sb/mYHcTCZf4wg/storyboard3_L3/M15.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgib9rW1Bg==&sigh=rs$AOn4CLCd6AsNASppV_i1PmnEt5uG5RIVXw",
+      "page_url": "https://www.youtube.com/watch?v=mYHcTCZf4wg",
+      "source_type": "native_youtube_storyboard_sheet",
+      "video_title": "The House Of The Dead PC Mode Walkthrough No Commentary (Rogan 2)",
+      "uploader": "LyricBR",
+      "edition_scope": "PC Mode (Windows port)",
+      "sheet_index": 15,
+      "grid_columns": 3,
+      "grid_rows": 3,
+      "tile_dimensions": [
+        320,
+        180
+      ],
+      "start_seconds_approx": 1340.166,
+      "tile_duration_seconds_approx": 9.927,
+      "reference_limitations": "Grille native YouTube non recadrée. Les détails fins et les coloris peuvent être dégradés par le format, la compression et le port capturé."
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/5ZhcdZuQUnA_M0.jpg",
+      "sha256": "7e8d8eb6fee412345d4245bbc1d7f49f94af214248cc0cdc2966c53808266905",
+      "bytes": 32838,
+      "dimensions": [
+        960,
+        540
+      ],
+      "mode": "RGB",
+      "native_source_bytes_preserved": true,
+      "visually_inspected": true,
+      "url": "https://i.ytimg.com/sb/5ZhcdZuQUnA/storyboard3_L3/M0.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgi8_7W1Bg==&sigh=rs$AOn4CLBWbNHZWKkzSFiJ-ouXfE2mG6sPpg",
+      "page_url": "https://www.youtube.com/watch?v=5ZhcdZuQUnA",
+      "source_type": "native_youtube_storyboard_sheet",
+      "video_title": "The House Of The Dead PC Mode Walkthrough No Commentary (G 2)",
+      "uploader": "LyricBR",
+      "edition_scope": "PC Mode (Windows port)",
+      "sheet_index": 0,
+      "grid_columns": 3,
+      "grid_rows": 3,
+      "tile_dimensions": [
+        320,
+        180
+      ],
+      "start_seconds_approx": 0,
+      "tile_duration_seconds_approx": 9.912,
+      "reference_limitations": "Grille native YouTube non recadrée. Les détails fins et les coloris peuvent être dégradés par le format, la compression et le port capturé."
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/5ZhcdZuQUnA_M18.jpg",
+      "sha256": "43148d1af01a24def9fa11fe04188881b8572df3e163f5180439ec2412c1dd1c",
+      "bytes": 28696,
+      "dimensions": [
+        960,
+        540
+      ],
+      "mode": "RGB",
+      "native_source_bytes_preserved": true,
+      "visually_inspected": true,
+      "url": "https://i.ytimg.com/sb/5ZhcdZuQUnA/storyboard3_L3/M18.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgi8_7W1Bg==&sigh=rs$AOn4CLBWbNHZWKkzSFiJ-ouXfE2mG6sPpg",
+      "page_url": "https://www.youtube.com/watch?v=5ZhcdZuQUnA",
+      "source_type": "native_youtube_storyboard_sheet",
+      "video_title": "The House Of The Dead PC Mode Walkthrough No Commentary (G 2)",
+      "uploader": "LyricBR",
+      "edition_scope": "PC Mode (Windows port)",
+      "sheet_index": 18,
+      "grid_columns": 3,
+      "grid_rows": 3,
+      "tile_dimensions": [
+        320,
+        180
+      ],
+      "start_seconds_approx": 1605.758,
+      "tile_duration_seconds_approx": 9.912,
+      "reference_limitations": "Grille native YouTube non recadrée. Les détails fins et les coloris peuvent être dégradés par le format, la compression et le port capturé."
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/ABYT4bFjoto_M0.jpg",
+      "sha256": "c786ae01b8050d3c526dfad7e62db3731b67bea2fc6ca63ba657ec204ba8eed9",
+      "bytes": 39722,
+      "dimensions": [
+        960,
+        540
+      ],
+      "mode": "RGB",
+      "native_source_bytes_preserved": true,
+      "visually_inspected": true,
+      "url": "https://i.ytimg.com/sb/ABYT4bFjoto/storyboard3_L3/M0.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgjRhba1Bg==&sigh=rs$AOn4CLAt9ciclBycDfRPJOI6oyNcf0oJWQ",
+      "page_url": "https://www.youtube.com/watch?v=ABYT4bFjoto",
+      "source_type": "native_youtube_storyboard_sheet",
+      "video_title": "The House Of The Dead PC Mode Walkthrough No Commentary (Sophie)",
+      "uploader": "LyricBR",
+      "edition_scope": "PC Mode (Windows port)",
+      "sheet_index": 0,
+      "grid_columns": 3,
+      "grid_rows": 3,
+      "tile_dimensions": [
+        320,
+        180
+      ],
+      "start_seconds_approx": 0,
+      "tile_duration_seconds_approx": 9.909,
+      "reference_limitations": "Grille native YouTube non recadrée. Les détails fins et les coloris peuvent être dégradés par le format, la compression et le port capturé."
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/ABYT4bFjoto_M17.jpg",
+      "sha256": "f73e609552e03f39fa6feeabd6828ef7c9f6a518ecb6db9d45af1b19045a9eac",
+      "bytes": 44548,
+      "dimensions": [
+        960,
+        540
+      ],
+      "mode": "RGB",
+      "native_source_bytes_preserved": true,
+      "visually_inspected": true,
+      "url": "https://i.ytimg.com/sb/ABYT4bFjoto/storyboard3_L3/M17.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgjRhba1Bg==&sigh=rs$AOn4CLAt9ciclBycDfRPJOI6oyNcf0oJWQ",
+      "page_url": "https://www.youtube.com/watch?v=ABYT4bFjoto",
+      "source_type": "native_youtube_storyboard_sheet",
+      "video_title": "The House Of The Dead PC Mode Walkthrough No Commentary (Sophie)",
+      "uploader": "LyricBR",
+      "edition_scope": "PC Mode (Windows port)",
+      "sheet_index": 17,
+      "grid_columns": 3,
+      "grid_rows": 3,
+      "tile_dimensions": [
+        320,
+        180
+      ],
+      "start_seconds_approx": 1516.091,
+      "tile_duration_seconds_approx": 9.909,
+      "reference_limitations": "Grille native YouTube non recadrée. Les détails fins et les coloris peuvent être dégradés par le format, la compression et le port capturé."
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/ABYT4bFjoto_M18.jpg",
+      "sha256": "1702a1ea0cc608d18b1c87838751a56005b7618fefee6065bd3f9f06340bb3c9",
+      "bytes": 34602,
+      "dimensions": [
+        960,
+        540
+      ],
+      "mode": "RGB",
+      "native_source_bytes_preserved": true,
+      "visually_inspected": true,
+      "url": "https://i.ytimg.com/sb/ABYT4bFjoto/storyboard3_L3/M18.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgjRhba1Bg==&sigh=rs$AOn4CLAt9ciclBycDfRPJOI6oyNcf0oJWQ",
+      "page_url": "https://www.youtube.com/watch?v=ABYT4bFjoto",
+      "source_type": "native_youtube_storyboard_sheet",
+      "video_title": "The House Of The Dead PC Mode Walkthrough No Commentary (Sophie)",
+      "uploader": "LyricBR",
+      "edition_scope": "PC Mode (Windows port)",
+      "sheet_index": 18,
+      "grid_columns": 3,
+      "grid_rows": 3,
+      "tile_dimensions": [
+        320,
+        180
+      ],
+      "start_seconds_approx": 1605.273,
+      "tile_duration_seconds_approx": 9.909,
+      "reference_limitations": "Grille native YouTube non recadrée. Les détails fins et les coloris peuvent être dégradés par le format, la compression et le port capturé."
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/orSO1dCHHdk_M14.jpg",
+      "sha256": "388d93d000932eed2b65822fce1da1cddc7d2469deb60ffe04f82c4cc635cab2",
+      "bytes": 39588,
+      "dimensions": [
+        960,
+        540
+      ],
+      "mode": "RGB",
+      "native_source_bytes_preserved": true,
+      "visually_inspected": true,
+      "url": "https://i.ytimg.com/sb/orSO1dCHHdk/storyboard3_L3/M14.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgiyiba1Bg==&sigh=rs$AOn4CLB2Lg4dy98fY-FPxY-yYehrohvkPA",
+      "page_url": "https://www.youtube.com/watch?v=orSO1dCHHdk",
+      "source_type": "native_youtube_storyboard_sheet",
+      "video_title": "The House Of The Dead PC Mode Walkthrough No Commentary (Researcher)",
+      "uploader": "LyricBR",
+      "edition_scope": "PC Mode (Windows port)",
+      "sheet_index": 14,
+      "grid_columns": 3,
+      "grid_rows": 3,
+      "tile_dimensions": [
+        320,
+        180
+      ],
+      "start_seconds_approx": 1247.143,
+      "tile_duration_seconds_approx": 9.898,
+      "reference_limitations": "Grille native YouTube non recadrée. Les détails fins et les coloris peuvent être dégradés par le format, la compression et le port capturé."
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/owrOwiLUjZ4_M7.jpg",
+      "sha256": "1a85f3eaa95f6a2e9e708aa0e003253852f150a191e0a4b3dc2bdcc35b51876b",
+      "bytes": 30710,
+      "dimensions": [
+        600,
+        450
+      ],
+      "mode": "RGB",
+      "native_source_bytes_preserved": true,
+      "visually_inspected": true,
+      "url": "https://i.ytimg.com/sb/owrOwiLUjZ4/storyboard3_L2/M7.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgjyvfyLBg==&sigh=rs$AOn4CLB-ib5wCV_BMOvm9VRb4vR8yZmNlg",
+      "page_url": "https://www.youtube.com/watch?v=owrOwiLUjZ4",
+      "source_type": "native_youtube_storyboard_sheet",
+      "video_title": "The House of the Dead (Saturn) Playthrough - NintendoComplete",
+      "uploader": "NintendoComplete",
+      "edition_scope": "Saturn Mode (SEGA Saturn port)",
+      "sheet_index": 7,
+      "grid_columns": 5,
+      "grid_rows": 5,
+      "tile_dimensions": [
+        120,
+        90
+      ],
+      "start_seconds_approx": 1744.493,
+      "tile_duration_seconds_approx": 9.969,
+      "reference_limitations": "Grille native YouTube non recadrée. Les détails fins et les coloris peuvent être dégradés par le format, la compression et le port capturé."
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/owrOwiLUjZ4_M14.jpg",
+      "sha256": "bc621255deacadb2bf6983e6ba10a63c3a48bac74dded50cda1e0607ae8b0fc8",
+      "bytes": 37016,
+      "dimensions": [
+        600,
+        450
+      ],
+      "mode": "RGB",
+      "native_source_bytes_preserved": true,
+      "visually_inspected": true,
+      "url": "https://i.ytimg.com/sb/owrOwiLUjZ4/storyboard3_L2/M14.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgjyvfyLBg==&sigh=rs$AOn4CLB-ib5wCV_BMOvm9VRb4vR8yZmNlg",
+      "page_url": "https://www.youtube.com/watch?v=owrOwiLUjZ4",
+      "source_type": "native_youtube_storyboard_sheet",
+      "video_title": "The House of the Dead (Saturn) Playthrough - NintendoComplete",
+      "uploader": "NintendoComplete",
+      "edition_scope": "Saturn Mode (SEGA Saturn port)",
+      "sheet_index": 14,
+      "grid_columns": 5,
+      "grid_rows": 5,
+      "tile_dimensions": [
+        120,
+        90
+      ],
+      "start_seconds_approx": 3488.986,
+      "tile_duration_seconds_approx": 9.969,
+      "reference_limitations": "Grille native YouTube non recadrée. Les détails fins et les coloris peuvent être dégradés par le format, la compression et le port capturé."
+    }
+  ]
+}

@@ -1,0 +1,1256 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "batch": "2026-11-20_lot6",
+  "repository": "darknigthmare/the-house-of-the-dead-25d",
+  "baseline_commit": "7f14d7b49dcc8d884629245eef71e65198665b8e",
+  "scope": "Sixième lot de galerie : quatre bases visuelles Saturn/PC Mode. Les détails sont documentés par des captures PC, avec réserve explicite sur la concordance Saturn. Illustrations statiques de galerie ; aucune tenue sélectionnable ni animation complète ajoutée.",
+  "summary": {
+    "assets": 4,
+    "gallery_entries": 4,
+    "bytes": 6948144,
+    "playable_added": 0,
+    "animation_complete": 0,
+    "by_game": {
+      "hotd1_saturn": 4
+    },
+    "by_category": {
+      "costume_variant": 4
+    },
+    "by_status": {
+      "static_needs_visual_reference_qa": 4
+    }
+  },
+  "production_receipts": [
+    {
+      "path": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot6/costumes_generated.json",
+      "sha256": "a2acb66ff2737920f7a37e981f0a5f8a58752567a1abdc1180193106fdf4e0b7",
+      "assets": 4
+    }
+  ],
+  "assets": [
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot6/costumes/rogan_saturn2_base.png",
+      "sha256": "81883bb1a652193d866a198a39bf3c136870e1101cc6725800ebac67cf3586aa",
+      "bytes": 1891212,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "format": "PNG",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        6,
+        1004,
+        1536
+      ],
+      "visible_bbox": [
+        145,
+        13,
+        862,
+        1524
+      ],
+      "visible_alpha_threshold": 127,
+      "maximum_alpha_on_canvas_edges": 1,
+      "maximum_alpha_by_edge_top_bottom_left_right": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "opaque_pixels_at_canvas_edge": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alpha_zero_pixels": 1011630,
+      "alpha_at_background_samples": {
+        "(0, 0)": 0,
+        "(512, 0)": 0,
+        "(0, 768)": 0,
+        "(1023, 768)": 0,
+        "(512, 1535)": 0,
+        "(512, 10)": 0,
+        "(100, 768)": 1
+      },
+      "id": "rogan_saturn2",
+      "name": "Rogan2 — Saturn/PC Mode",
+      "game": "hotd1_saturn",
+      "game_label": "The House of the Dead — Saturn/PC Mode",
+      "edition_scope": "Saturn Mode et équivalent PC Mode ; détails visuels sourcés principalement dans le port Windows.",
+      "category": "costume_variant",
+      "status": "static_needs_visual_reference_qa",
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "inventory_task_id": "rogan_saturn2",
+      "new_identity": false,
+      "inventory_family_coverage": "partial",
+      "canonical_role": "selectable_in_saturn_mode",
+      "record_kind": "alternate_model",
+      "generated_file": "exec-e4c1f49c-e3ac-4580-b8b9-f964907c72bf.png",
+      "sources": [
+        "https://www.youtube.com/watch?v=mYHcTCZf4wg",
+        "https://thehouseofthedead.fandom.com/wiki/Saturn_Mode"
+      ],
+      "source_ids": [
+        "rogan2_thumbnail",
+        "mYHcTCZf4wg_M0",
+        "mYHcTCZf4wg_M15",
+        "wiki_saturn_mode_identification"
+      ],
+      "source_notes": [
+        "Casquette sombre à carreaux, visage rasé et cheveux sombres ; visibles dans la miniature et le portrait de sélection PC Mode.",
+        "Veste courte brun-bordeaux sombre, chemise sombre et cravate rouge ; visibles dans la miniature, le portrait et la cinématique finale.",
+        "Pantalon beige/brun à grands carreaux ; visible dans la miniature, la course d’ouverture et les vues de dos finales.",
+        "Pistolet sombre avec poignée brune ; visible dans la miniature et la main pendant les cinématiques.",
+        "Sélection Saturn Mode consultée dans une vignette native120×90 de NintendoComplete ; utilisable pour le mode/nom et la palette générale, pas pour certifier les textures fines."
+      ],
+      "visually_observed_features": [
+        "Casquette sombre à carreaux, visage rasé et cheveux sombres ; visibles dans la miniature et le portrait de sélection PC Mode.",
+        "Veste courte brun-bordeaux sombre, chemise sombre et cravate rouge ; visibles dans la miniature, le portrait et la cinématique finale.",
+        "Pantalon beige/brun à grands carreaux ; visible dans la miniature, la course d’ouverture et les vues de dos finales.",
+        "Pistolet sombre avec poignée brune ; visible dans la miniature et la main pendant les cinématiques.",
+        "Sélection Saturn Mode consultée dans une vignette native120×90 de NintendoComplete ; utilisable pour le mode/nom et la palette générale, pas pour certifier les textures fines."
+      ],
+      "interpreted_or_unresolved_features": [
+        "Forme et teinte détaillées des chaussures non résolues dans les vignettes : chaussures fermées brun sombre interprétées.",
+        "Maillage, texture précise de la casquette et du pantalon, coutures, visage et arme adaptés en peinture 2D.",
+        "Concordance fine Saturn/PC non certifiée ; références détaillées du port Windows, comparaison Saturn limitée aux petites sélections."
+      ],
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/rogan2_thumbnail.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/mYHcTCZf4wg_M0.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/mYHcTCZf4wg_M15.jpg",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "reference_inputs": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/rogan2_thumbnail.jpg",
+          "sha256": "def643755bf6b5f6a19be6fda4fbdba55a040ec1e77de1624c2951441957f8ea",
+          "bytes": 63762,
+          "dimensions": [
+            1280,
+            720
+          ],
+          "mode": "RGB",
+          "format": "JPEG",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true,
+          "binary_in_repository": true,
+          "source_type": "uploader_thumbnail_composite_of_game_model",
+          "page_url": "https://www.youtube.com/watch?v=mYHcTCZf4wg",
+          "image_url": "https://i.ytimg.com/vi/mYHcTCZf4wg/maxresdefault.jpg",
+          "edition_scope": "PC Mode (Windows port)"
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/mYHcTCZf4wg_M0.jpg",
+          "sha256": "334bd6d6ba742f5a229910d8e44c08fd367f9c4d619fc9eb0bac4f78aac3170e",
+          "bytes": 43004,
+          "dimensions": [
+            960,
+            540
+          ],
+          "mode": "RGB",
+          "format": "WEBP",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true,
+          "binary_in_repository": true,
+          "source_type": "native_youtube_storyboard_sheet",
+          "page_url": "https://www.youtube.com/watch?v=mYHcTCZf4wg",
+          "image_url": "https://i.ytimg.com/sb/mYHcTCZf4wg/storyboard3_L3/M0.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgib9rW1Bg==&sigh=rs$AOn4CLCd6AsNASppV_i1PmnEt5uG5RIVXw",
+          "edition_scope": "PC Mode (Windows port)"
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/mYHcTCZf4wg_M15.jpg",
+          "sha256": "406ba6a482f115b29ca62a1eabe45f086e7909802eaeaf1a5c5c8050defd3b93",
+          "bytes": 34530,
+          "dimensions": [
+            960,
+            540
+          ],
+          "mode": "RGB",
+          "format": "WEBP",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true,
+          "binary_in_repository": true,
+          "source_type": "native_youtube_storyboard_sheet",
+          "page_url": "https://www.youtube.com/watch?v=mYHcTCZf4wg",
+          "image_url": "https://i.ytimg.com/sb/mYHcTCZf4wg/storyboard3_L3/M15.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgib9rW1Bg==&sigh=rs$AOn4CLCd6AsNASppV_i1PmnEt5uG5RIVXw",
+          "edition_scope": "PC Mode (Windows port)"
+        },
+        {
+          "path": "assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "bytes": 595313,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "format": "PNG",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "alpha_bbox": [
+            218,
+            55,
+            814,
+            960
+          ],
+          "visible_bbox": [
+            220,
+            57,
+            812,
+            957
+          ],
+          "visible_alpha_threshold": 127,
+          "maximum_alpha_on_canvas_edges": 0,
+          "maximum_alpha_by_edge_top_bottom_left_right": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "opaque_pixels_at_canvas_edge": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "alpha_zero_pixels": 781143,
+          "alpha_at_background_samples": {
+            "(0, 0)": 0,
+            "(512, 0)": 0,
+            "(0, 512)": 0,
+            "(1023, 512)": 0,
+            "(512, 1023)": 0,
+            "(512, 10)": 0,
+            "(100, 512)": 0
+          },
+          "role": "painting_style_only",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true,
+          "binary_in_repository": true
+        }
+      ],
+      "prompts": [
+        "Use case: stylized-concept. Create exactly ONE full-body character illustration for the Dossier Curien 2D game gallery, native RGBA with genuine transparent background. The last reference is ONLY the project painting style: detailed hand-painted arcade character art, crisp controlled outlines, realistic adult anatomy, readable cloth folds, rich but restrained warm/cool shading. Do not copy Isaac's face, skin tone, beard, brown cap, clothing, shotgun, pose or identity. The earlier references show the requested actual model from The House of the Dead PC Mode, the Windows equivalent of Saturn Mode; reproduce this subject's documented outfit and features. Make a single coherent static character, not a collage, not a sprite sheet, not a low-poly screenshot. One person only. No labels, captions, menu, scenery, floor, cast ground shadow, fog, glow, vignette, gradient or baked background. Keep the whole head, all hair or headwear, hands, the complete pistol, both legs and both shoes comfortably inside a portrait canvas with generous genuinely transparent margins. Three-quarter front view toward screen-right, balanced alert standing pose, silhouette readable. Reconstruct the visible low-poly details as hand-painted 2D surfaces without adding new equipment. Subject: adult Thomas Rogan's alternate Rogan 2 model, NOT standard Rogan. Reference 1 is the uploader's close-up montage of the actual game model; references 2 and 3 are native gameplay storyboard sheets showing the same character. In reference 2 use the top-middle character-selection portrait and the running player at top-right; in reference 3 use the top-right frontal close-up and middle-row left/middle back views. Preserve the dark charcoal and gray checked low rounded detective cap with a short front brim, short dark hair visible below it, pale clean-shaven narrow face and serious expression. He wears a short dark burgundy and black-brown tailored blazer with broad lapels over a dark charcoal/olive-gray collared shirt and a narrow deep red necktie. His straight trousers are a distinctly large beige, tan and brown windowpane plaid, clearly different from the dark jacket. Use simple dark brown closed leather shoes without decorative additions. Keep sleeve ends dark and simple. He holds one compact dark-metal semiautomatic pistol with brown wooden grip in a controlled two-handed low-ready hold near his abdomen, muzzle angled diagonally down toward screen-right; all fingers and both wrists anatomically coherent and fully visible. No long coat, no blond hair, no glasses, no beard, no holster, no badge, no ammunition belt. Do not reuse Isaac's brown leather cap or blue jeans. The outfit's cap, red tie and plaid trousers must remain clearly recognizable."
+      ],
+      "prompt_sha256": [
+        "d50b6345cc1e2fe8e70d2d99ea2833e49fc7e0372afd3b8b8fe27dda692daaa9"
+      ],
+      "limitations": [
+        "Galerie statique uniquement : aucun personnage jouable, costume sélectionnable, mode Saturn/PC, statistique, attaque ou animation complète ajouté.",
+        "Les quatre entrées sont des variantes ou modèles de mode ; aucune nouvelle identité canonique déclarée.",
+        "Adaptation peinte 2D des caractéristiques visibles ; aucune certification de fidélité 1:1 aux modèles originaux.",
+        "Les références de détail sont issues du PC Mode Windows. La concordance exacte avec le port Saturn demeure une QA ouverte pour chaque asset.",
+        "PNG natif RGBA conservé octet pour octet ; aucun détourage, nettoyage, recadrage, redimensionnement ou réencodage du résultat généré.",
+        "Les miniatures LyricBR sont des montages du modèle du jeu publiés par leur auteur ; elles sont corroborées par des storyboards natifs, sans être présentées comme des captures brutes plein écran.",
+        "Aucune animation, vue de dos exhaustive, mécanique de sélection ni variante régionale supplémentaire déclarée couverte.",
+        "Forme et teinte détaillées des chaussures non résolues dans les vignettes : chaussures fermées brun sombre interprétées.",
+        "Maillage, texture précise de la casquette et du pantalon, coutures, visage et arme adaptés en peinture 2D.",
+        "Concordance fine Saturn/PC non certifiée ; références détaillées du port Windows, comparaison Saturn limitée aux petites sélections."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot6/costumes_generated.json",
+      "generation": {
+        "tool": "image_gen built-in",
+        "date": "2026-11-20",
+        "transparent_background_requested": true,
+        "source_native_output": "/workspace/scratch/da9d6e4777c1/generated_images/exec-e4c1f49c-e3ac-4580-b8b9-f964907c72bf.png",
+        "native_output_unchanged": true,
+        "pixel_edits_after_generation": false,
+        "attempts": 1,
+        "retained_outputs": 1,
+        "attempt_records": [
+          {
+            "attempt": 1,
+            "generated_file": "exec-e4c1f49c-e3ac-4580-b8b9-f964907c72bf.png",
+            "operation": "generate",
+            "prompt": "Use case: stylized-concept. Create exactly ONE full-body character illustration for the Dossier Curien 2D game gallery, native RGBA with genuine transparent background. The last reference is ONLY the project painting style: detailed hand-painted arcade character art, crisp controlled outlines, realistic adult anatomy, readable cloth folds, rich but restrained warm/cool shading. Do not copy Isaac's face, skin tone, beard, brown cap, clothing, shotgun, pose or identity. The earlier references show the requested actual model from The House of the Dead PC Mode, the Windows equivalent of Saturn Mode; reproduce this subject's documented outfit and features. Make a single coherent static character, not a collage, not a sprite sheet, not a low-poly screenshot. One person only. No labels, captions, menu, scenery, floor, cast ground shadow, fog, glow, vignette, gradient or baked background. Keep the whole head, all hair or headwear, hands, the complete pistol, both legs and both shoes comfortably inside a portrait canvas with generous genuinely transparent margins. Three-quarter front view toward screen-right, balanced alert standing pose, silhouette readable. Reconstruct the visible low-poly details as hand-painted 2D surfaces without adding new equipment. Subject: adult Thomas Rogan's alternate Rogan 2 model, NOT standard Rogan. Reference 1 is the uploader's close-up montage of the actual game model; references 2 and 3 are native gameplay storyboard sheets showing the same character. In reference 2 use the top-middle character-selection portrait and the running player at top-right; in reference 3 use the top-right frontal close-up and middle-row left/middle back views. Preserve the dark charcoal and gray checked low rounded detective cap with a short front brim, short dark hair visible below it, pale clean-shaven narrow face and serious expression. He wears a short dark burgundy and black-brown tailored blazer with broad lapels over a dark charcoal/olive-gray collared shirt and a narrow deep red necktie. His straight trousers are a distinctly large beige, tan and brown windowpane plaid, clearly different from the dark jacket. Use simple dark brown closed leather shoes without decorative additions. Keep sleeve ends dark and simple. He holds one compact dark-metal semiautomatic pistol with brown wooden grip in a controlled two-handed low-ready hold near his abdomen, muzzle angled diagonally down toward screen-right; all fingers and both wrists anatomically coherent and fully visible. No long coat, no blond hair, no glasses, no beard, no holster, no badge, no ammunition belt. Do not reuse Isaac's brown leather cap or blue jeans. The outfit's cap, red tie and plaid trousers must remain clearly recognizable.",
+            "prompt_sha256": "d50b6345cc1e2fe8e70d2d99ea2833e49fc7e0372afd3b8b8fe27dda692daaa9",
+            "arguments_as_sent": {
+              "prompt": "Use case: stylized-concept. Create exactly ONE full-body character illustration for the Dossier Curien 2D game gallery, native RGBA with genuine transparent background. The last reference is ONLY the project painting style: detailed hand-painted arcade character art, crisp controlled outlines, realistic adult anatomy, readable cloth folds, rich but restrained warm/cool shading. Do not copy Isaac's face, skin tone, beard, brown cap, clothing, shotgun, pose or identity. The earlier references show the requested actual model from The House of the Dead PC Mode, the Windows equivalent of Saturn Mode; reproduce this subject's documented outfit and features. Make a single coherent static character, not a collage, not a sprite sheet, not a low-poly screenshot. One person only. No labels, captions, menu, scenery, floor, cast ground shadow, fog, glow, vignette, gradient or baked background. Keep the whole head, all hair or headwear, hands, the complete pistol, both legs and both shoes comfortably inside a portrait canvas with generous genuinely transparent margins. Three-quarter front view toward screen-right, balanced alert standing pose, silhouette readable. Reconstruct the visible low-poly details as hand-painted 2D surfaces without adding new equipment. Subject: adult Thomas Rogan's alternate Rogan 2 model, NOT standard Rogan. Reference 1 is the uploader's close-up montage of the actual game model; references 2 and 3 are native gameplay storyboard sheets showing the same character. In reference 2 use the top-middle character-selection portrait and the running player at top-right; in reference 3 use the top-right frontal close-up and middle-row left/middle back views. Preserve the dark charcoal and gray checked low rounded detective cap with a short front brim, short dark hair visible below it, pale clean-shaven narrow face and serious expression. He wears a short dark burgundy and black-brown tailored blazer with broad lapels over a dark charcoal/olive-gray collared shirt and a narrow deep red necktie. His straight trousers are a distinctly large beige, tan and brown windowpane plaid, clearly different from the dark jacket. Use simple dark brown closed leather shoes without decorative additions. Keep sleeve ends dark and simple. He holds one compact dark-metal semiautomatic pistol with brown wooden grip in a controlled two-handed low-ready hold near his abdomen, muzzle angled diagonally down toward screen-right; all fingers and both wrists anatomically coherent and fully visible. No long coat, no blond hair, no glasses, no beard, no holster, no badge, no ammunition belt. Do not reuse Isaac's brown leather cap or blue jeans. The outfit's cap, red tie and plaid trousers must remain clearly recognizable.",
+              "transparent_background": true,
+              "referenced_image_paths": [
+                "/workspace/scratch/da9d6e4777c1/hotd-current/docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/rogan2_thumbnail.jpg",
+                "/workspace/scratch/da9d6e4777c1/hotd-current/docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/mYHcTCZf4wg_M0.jpg",
+                "/workspace/scratch/da9d6e4777c1/hotd-current/docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/mYHcTCZf4wg_M15.jpg",
+                "/workspace/scratch/da9d6e4777c1/hotd-current/assets/dossier_curien/saga/isaac_guard.png"
+              ]
+            },
+            "references": [
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/rogan2_thumbnail.jpg",
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/mYHcTCZf4wg_M0.jpg",
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/mYHcTCZf4wg_M15.jpg",
+              "assets/dossier_curien/saga/isaac_guard.png"
+            ],
+            "external_reference_inputs": [],
+            "output_sha256": "81883bb1a652193d866a198a39bf3c136870e1101cc6725800ebac67cf3586aa",
+            "retained": true,
+            "tool_refusal": false
+          }
+        ]
+      },
+      "qa": {
+        "output_visually_inspected": true,
+        "subject_and_silhouette_reviewed": true,
+        "whole_subject_silhouette_visible": true,
+        "subject_extent_note": "Tête/coiffure, mains, pistolet, jambes et deux chaussures intégralement visibles.",
+        "visible_bounds_clear_of_canvas_edges": true,
+        "opaque_pixels_at_canvas_edge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "maximum_alpha_on_canvas_edges": 1,
+        "alpha_check": "Transparence native conservée. Le RGB des pixels de fond peut apparaître comme un halo sombre dans un aperçu qui ignore alpha ; les bords restent alpha0–2 au maximum. Aucun pixel alpha>127 sur les bords. Aucun traitement logiciel du PNG appliqué.",
+        "native_sha256_matches_saved_png": true,
+        "canonical_1_to_1_certified": false,
+        "reference_limitations_open": true,
+        "mechanical_classification_open": false,
+        "ui_or_engine_capture_performed": false,
+        "independent_visual_review": {
+          "reviewer": "root",
+          "date": "2026-11-20",
+          "completed": true,
+          "whole_subjects_and_identity_details_reviewed": true,
+          "reference_comparison_performed": true,
+          "blocking_technical_issue_observed": false,
+          "canonical_1_to_1_certified": false,
+          "reference_limitations_open": true,
+          "mechanical_classification_open": false,
+          "note": "Les quatre PNG ont été comparés aux miniatures natives des modèles du jeu et retenus : signes distinctifs du costume, visage et équipement lisibles, silhouettes et armes entières. Six points alpha par PNG contrôlés indépendamment : cinq extérieurs à0 et un point sur le personnage à250–253. Les quatre concordances exactes Saturn/PC restent ouvertes, ainsi que les détails fins et chaussures interprétés."
+        }
+      },
+      "supporting_saturn_reference": "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/owrOwiLUjZ4_M7.jpg"
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot6/costumes/g_saturn2_base.png",
+      "sha256": "9b2be879589ceff02ff11babdd4dadd252be03a3a5e1937ac116042a3013c738",
+      "bytes": 1548763,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "format": "PNG",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        16,
+        1018,
+        1536
+      ],
+      "visible_bbox": [
+        161,
+        19,
+        790,
+        1527
+      ],
+      "visible_alpha_threshold": 127,
+      "maximum_alpha_on_canvas_edges": 2,
+      "maximum_alpha_by_edge_top_bottom_left_right": [
+        0,
+        2,
+        1,
+        0
+      ],
+      "opaque_pixels_at_canvas_edge": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alpha_zero_pixels": 1093125,
+      "alpha_at_background_samples": {
+        "(0, 0)": 0,
+        "(512, 0)": 0,
+        "(0, 768)": 0,
+        "(1023, 768)": 0,
+        "(512, 1535)": 0,
+        "(512, 10)": 0,
+        "(100, 768)": 0
+      },
+      "id": "g_saturn2",
+      "name": "G2 — Saturn/PC Mode",
+      "game": "hotd1_saturn",
+      "game_label": "The House of the Dead — Saturn/PC Mode",
+      "edition_scope": "Saturn Mode et équivalent PC Mode ; détails visuels sourcés principalement dans le port Windows.",
+      "category": "costume_variant",
+      "status": "static_needs_visual_reference_qa",
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "inventory_task_id": "g_saturn2",
+      "new_identity": false,
+      "inventory_family_coverage": "partial",
+      "canonical_role": "selectable_in_saturn_mode",
+      "record_kind": "alternate_model",
+      "generated_file": "exec-f7ca76a6-3a6a-49ad-957d-5e373b14e46b.png",
+      "sources": [
+        "https://www.youtube.com/watch?v=5ZhcdZuQUnA",
+        "https://thehouseofthedead.fandom.com/wiki/Saturn_Mode"
+      ],
+      "source_ids": [
+        "g2_thumbnail",
+        "5ZhcdZuQUnA_M0",
+        "5ZhcdZuQUnA_M18",
+        "wiki_saturn_mode_identification"
+      ],
+      "source_notes": [
+        "Cheveux sombres courts, lunettes à monture claire et barbe/moustache courtes ; visibles dans la miniature et le portrait PC Mode.",
+        "Veste et pantalon noirs, chemise jaune à long col, cravate noire et poignets jaunes ; visibles dans la miniature et les vues finales en jeu.",
+        "Pistolet tenu à la main ; visible dans la miniature et les vues de fin."
+      ],
+      "visually_observed_features": [
+        "Cheveux sombres courts, lunettes à monture claire et barbe/moustache courtes ; visibles dans la miniature et le portrait PC Mode.",
+        "Veste et pantalon noirs, chemise jaune à long col, cravate noire et poignets jaunes ; visibles dans la miniature et les vues finales en jeu.",
+        "Pistolet tenu à la main ; visible dans la miniature et les vues de fin."
+      ],
+      "interpreted_or_unresolved_features": [
+        "Forme détaillée des chaussures non résolue ; chaussures noires fermées interprétées.",
+        "Transparence et reflet des verres, coupe de barbe, coutures et petits mécanismes du pistolet adaptés en peinture.",
+        "Concordance fine Saturn/PC non certifiée ; aucune capture Saturn détaillée de ce modèle obtenue."
+      ],
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/g2_thumbnail.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/5ZhcdZuQUnA_M0.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/5ZhcdZuQUnA_M18.jpg",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "reference_inputs": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/g2_thumbnail.jpg",
+          "sha256": "30e0579fe1102d68f74e32255074e4a697a405ad12e6751e8bb3d025fe79df4d",
+          "bytes": 64039,
+          "dimensions": [
+            1280,
+            720
+          ],
+          "mode": "RGB",
+          "format": "JPEG",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true,
+          "binary_in_repository": true,
+          "source_type": "uploader_thumbnail_composite_of_game_model",
+          "page_url": "https://www.youtube.com/watch?v=5ZhcdZuQUnA",
+          "image_url": "https://i.ytimg.com/vi/5ZhcdZuQUnA/maxresdefault.jpg",
+          "edition_scope": "PC Mode (Windows port)"
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/5ZhcdZuQUnA_M0.jpg",
+          "sha256": "7e8d8eb6fee412345d4245bbc1d7f49f94af214248cc0cdc2966c53808266905",
+          "bytes": 32838,
+          "dimensions": [
+            960,
+            540
+          ],
+          "mode": "RGB",
+          "format": "WEBP",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true,
+          "binary_in_repository": true,
+          "source_type": "native_youtube_storyboard_sheet",
+          "page_url": "https://www.youtube.com/watch?v=5ZhcdZuQUnA",
+          "image_url": "https://i.ytimg.com/sb/5ZhcdZuQUnA/storyboard3_L3/M0.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgi8_7W1Bg==&sigh=rs$AOn4CLBWbNHZWKkzSFiJ-ouXfE2mG6sPpg",
+          "edition_scope": "PC Mode (Windows port)"
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/5ZhcdZuQUnA_M18.jpg",
+          "sha256": "43148d1af01a24def9fa11fe04188881b8572df3e163f5180439ec2412c1dd1c",
+          "bytes": 28696,
+          "dimensions": [
+            960,
+            540
+          ],
+          "mode": "RGB",
+          "format": "WEBP",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true,
+          "binary_in_repository": true,
+          "source_type": "native_youtube_storyboard_sheet",
+          "page_url": "https://www.youtube.com/watch?v=5ZhcdZuQUnA",
+          "image_url": "https://i.ytimg.com/sb/5ZhcdZuQUnA/storyboard3_L3/M18.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgi8_7W1Bg==&sigh=rs$AOn4CLBWbNHZWKkzSFiJ-ouXfE2mG6sPpg",
+          "edition_scope": "PC Mode (Windows port)"
+        },
+        {
+          "path": "assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "bytes": 595313,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "format": "PNG",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "alpha_bbox": [
+            218,
+            55,
+            814,
+            960
+          ],
+          "visible_bbox": [
+            220,
+            57,
+            812,
+            957
+          ],
+          "visible_alpha_threshold": 127,
+          "maximum_alpha_on_canvas_edges": 0,
+          "maximum_alpha_by_edge_top_bottom_left_right": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "opaque_pixels_at_canvas_edge": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "alpha_zero_pixels": 781143,
+          "alpha_at_background_samples": {
+            "(0, 0)": 0,
+            "(512, 0)": 0,
+            "(0, 512)": 0,
+            "(1023, 512)": 0,
+            "(512, 1023)": 0,
+            "(512, 10)": 0,
+            "(100, 512)": 0
+          },
+          "role": "painting_style_only",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true,
+          "binary_in_repository": true
+        }
+      ],
+      "prompts": [
+        "Use case: stylized-concept. Create exactly ONE full-body character illustration for the Dossier Curien 2D game gallery, native RGBA with genuine transparent background. The last reference is ONLY the project painting style: detailed hand-painted arcade character art, crisp controlled outlines, realistic adult anatomy, readable cloth folds, rich but restrained warm/cool shading. Do not copy Isaac's face, skin tone, beard, brown cap, clothing, shotgun, pose or identity. The earlier references show the requested actual model from The House of the Dead PC Mode, the Windows equivalent of Saturn Mode; reproduce this subject's documented outfit and features. Make a single coherent static character, not a collage, not a sprite sheet, not a low-poly screenshot. One person only. No labels, captions, menu, scenery, floor, cast ground shadow, fog, glow, vignette, gradient or baked background. Keep the whole head, all hair or headwear, hands, the complete pistol, both legs and both shoes comfortably inside a portrait canvas with generous genuinely transparent margins. Three-quarter front view toward screen-right, balanced alert standing pose, silhouette readable. Reconstruct the visible low-poly details as hand-painted 2D surfaces without adding new equipment. Subject: adult Agent G's alternate G 2 model, NOT standard clean-shaven G. Reference 1 is the uploader's close-up montage of the actual model; references 2 and 3 are native gameplay storyboard sheets. In reference 2 use the top-middle character-selection portrait; in reference 3 use the final bottom-row left and middle views of the player. Match short dark brown-black hair combed back, a narrow adult face, a neat short dark moustache connected to a close short beard around jaw and chin, and thin light-metal rectangular eyeglasses with clear faintly tinted lenses through which his eyes remain visible. This is ordinary clear eyewear, not opaque black sunglasses. He wears a charcoal-black suit jacket with broad lapels, matching straight black trousers, a vivid mustard-yellow collared shirt with long pointed collar tips, a narrow black necktie, and visible yellow shirt cuffs under the jacket sleeves. Use simple black closed leather dress shoes. One compact dark-metal semiautomatic pistol with a brown grip is held in his right hand lowered alongside the thigh, barrel angled slightly down and outward; left hand rests relaxed near the waist, both hands natural. Keep the silhouette lean and angular rather than bulky. No hat, no white trench coat, no blue shirt, no tactical armor, no decorative badge, no extra weapons. Preserve the yellow-and-black contrast, clear glasses and close beard exactly as the identity features of this alternate model."
+      ],
+      "prompt_sha256": [
+        "4cb8b4efca855914281e559adcc2d27b2b4a6f7e334e3543d68823884ba9a019"
+      ],
+      "limitations": [
+        "Galerie statique uniquement : aucun personnage jouable, costume sélectionnable, mode Saturn/PC, statistique, attaque ou animation complète ajouté.",
+        "Les quatre entrées sont des variantes ou modèles de mode ; aucune nouvelle identité canonique déclarée.",
+        "Adaptation peinte 2D des caractéristiques visibles ; aucune certification de fidélité 1:1 aux modèles originaux.",
+        "Les références de détail sont issues du PC Mode Windows. La concordance exacte avec le port Saturn demeure une QA ouverte pour chaque asset.",
+        "PNG natif RGBA conservé octet pour octet ; aucun détourage, nettoyage, recadrage, redimensionnement ou réencodage du résultat généré.",
+        "Les miniatures LyricBR sont des montages du modèle du jeu publiés par leur auteur ; elles sont corroborées par des storyboards natifs, sans être présentées comme des captures brutes plein écran.",
+        "Aucune animation, vue de dos exhaustive, mécanique de sélection ni variante régionale supplémentaire déclarée couverte.",
+        "Forme détaillée des chaussures non résolue ; chaussures noires fermées interprétées.",
+        "Transparence et reflet des verres, coupe de barbe, coutures et petits mécanismes du pistolet adaptés en peinture.",
+        "Concordance fine Saturn/PC non certifiée ; aucune capture Saturn détaillée de ce modèle obtenue."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot6/costumes_generated.json",
+      "generation": {
+        "tool": "image_gen built-in",
+        "date": "2026-11-20",
+        "transparent_background_requested": true,
+        "source_native_output": "/workspace/scratch/da9d6e4777c1/generated_images/exec-f7ca76a6-3a6a-49ad-957d-5e373b14e46b.png",
+        "native_output_unchanged": true,
+        "pixel_edits_after_generation": false,
+        "attempts": 1,
+        "retained_outputs": 1,
+        "attempt_records": [
+          {
+            "attempt": 1,
+            "generated_file": "exec-f7ca76a6-3a6a-49ad-957d-5e373b14e46b.png",
+            "operation": "generate",
+            "prompt": "Use case: stylized-concept. Create exactly ONE full-body character illustration for the Dossier Curien 2D game gallery, native RGBA with genuine transparent background. The last reference is ONLY the project painting style: detailed hand-painted arcade character art, crisp controlled outlines, realistic adult anatomy, readable cloth folds, rich but restrained warm/cool shading. Do not copy Isaac's face, skin tone, beard, brown cap, clothing, shotgun, pose or identity. The earlier references show the requested actual model from The House of the Dead PC Mode, the Windows equivalent of Saturn Mode; reproduce this subject's documented outfit and features. Make a single coherent static character, not a collage, not a sprite sheet, not a low-poly screenshot. One person only. No labels, captions, menu, scenery, floor, cast ground shadow, fog, glow, vignette, gradient or baked background. Keep the whole head, all hair or headwear, hands, the complete pistol, both legs and both shoes comfortably inside a portrait canvas with generous genuinely transparent margins. Three-quarter front view toward screen-right, balanced alert standing pose, silhouette readable. Reconstruct the visible low-poly details as hand-painted 2D surfaces without adding new equipment. Subject: adult Agent G's alternate G 2 model, NOT standard clean-shaven G. Reference 1 is the uploader's close-up montage of the actual model; references 2 and 3 are native gameplay storyboard sheets. In reference 2 use the top-middle character-selection portrait; in reference 3 use the final bottom-row left and middle views of the player. Match short dark brown-black hair combed back, a narrow adult face, a neat short dark moustache connected to a close short beard around jaw and chin, and thin light-metal rectangular eyeglasses with clear faintly tinted lenses through which his eyes remain visible. This is ordinary clear eyewear, not opaque black sunglasses. He wears a charcoal-black suit jacket with broad lapels, matching straight black trousers, a vivid mustard-yellow collared shirt with long pointed collar tips, a narrow black necktie, and visible yellow shirt cuffs under the jacket sleeves. Use simple black closed leather dress shoes. One compact dark-metal semiautomatic pistol with a brown grip is held in his right hand lowered alongside the thigh, barrel angled slightly down and outward; left hand rests relaxed near the waist, both hands natural. Keep the silhouette lean and angular rather than bulky. No hat, no white trench coat, no blue shirt, no tactical armor, no decorative badge, no extra weapons. Preserve the yellow-and-black contrast, clear glasses and close beard exactly as the identity features of this alternate model.",
+            "prompt_sha256": "4cb8b4efca855914281e559adcc2d27b2b4a6f7e334e3543d68823884ba9a019",
+            "arguments_as_sent": {
+              "prompt": "Use case: stylized-concept. Create exactly ONE full-body character illustration for the Dossier Curien 2D game gallery, native RGBA with genuine transparent background. The last reference is ONLY the project painting style: detailed hand-painted arcade character art, crisp controlled outlines, realistic adult anatomy, readable cloth folds, rich but restrained warm/cool shading. Do not copy Isaac's face, skin tone, beard, brown cap, clothing, shotgun, pose or identity. The earlier references show the requested actual model from The House of the Dead PC Mode, the Windows equivalent of Saturn Mode; reproduce this subject's documented outfit and features. Make a single coherent static character, not a collage, not a sprite sheet, not a low-poly screenshot. One person only. No labels, captions, menu, scenery, floor, cast ground shadow, fog, glow, vignette, gradient or baked background. Keep the whole head, all hair or headwear, hands, the complete pistol, both legs and both shoes comfortably inside a portrait canvas with generous genuinely transparent margins. Three-quarter front view toward screen-right, balanced alert standing pose, silhouette readable. Reconstruct the visible low-poly details as hand-painted 2D surfaces without adding new equipment. Subject: adult Agent G's alternate G 2 model, NOT standard clean-shaven G. Reference 1 is the uploader's close-up montage of the actual model; references 2 and 3 are native gameplay storyboard sheets. In reference 2 use the top-middle character-selection portrait; in reference 3 use the final bottom-row left and middle views of the player. Match short dark brown-black hair combed back, a narrow adult face, a neat short dark moustache connected to a close short beard around jaw and chin, and thin light-metal rectangular eyeglasses with clear faintly tinted lenses through which his eyes remain visible. This is ordinary clear eyewear, not opaque black sunglasses. He wears a charcoal-black suit jacket with broad lapels, matching straight black trousers, a vivid mustard-yellow collared shirt with long pointed collar tips, a narrow black necktie, and visible yellow shirt cuffs under the jacket sleeves. Use simple black closed leather dress shoes. One compact dark-metal semiautomatic pistol with a brown grip is held in his right hand lowered alongside the thigh, barrel angled slightly down and outward; left hand rests relaxed near the waist, both hands natural. Keep the silhouette lean and angular rather than bulky. No hat, no white trench coat, no blue shirt, no tactical armor, no decorative badge, no extra weapons. Preserve the yellow-and-black contrast, clear glasses and close beard exactly as the identity features of this alternate model.",
+              "transparent_background": true,
+              "referenced_image_paths": [
+                "/workspace/scratch/da9d6e4777c1/hotd-current/docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/g2_thumbnail.jpg",
+                "/workspace/scratch/da9d6e4777c1/hotd-current/docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/5ZhcdZuQUnA_M0.jpg",
+                "/workspace/scratch/da9d6e4777c1/hotd-current/docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/5ZhcdZuQUnA_M18.jpg",
+                "/workspace/scratch/da9d6e4777c1/hotd-current/assets/dossier_curien/saga/isaac_guard.png"
+              ]
+            },
+            "references": [
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/g2_thumbnail.jpg",
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/5ZhcdZuQUnA_M0.jpg",
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/5ZhcdZuQUnA_M18.jpg",
+              "assets/dossier_curien/saga/isaac_guard.png"
+            ],
+            "external_reference_inputs": [],
+            "output_sha256": "9b2be879589ceff02ff11babdd4dadd252be03a3a5e1937ac116042a3013c738",
+            "retained": true,
+            "tool_refusal": false
+          }
+        ]
+      },
+      "qa": {
+        "output_visually_inspected": true,
+        "subject_and_silhouette_reviewed": true,
+        "whole_subject_silhouette_visible": true,
+        "subject_extent_note": "Tête/coiffure, mains, pistolet, jambes et deux chaussures intégralement visibles.",
+        "visible_bounds_clear_of_canvas_edges": true,
+        "opaque_pixels_at_canvas_edge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "maximum_alpha_on_canvas_edges": 2,
+        "alpha_check": "Transparence native conservée. Le RGB des pixels de fond peut apparaître comme un halo sombre dans un aperçu qui ignore alpha ; les bords restent alpha0–2 au maximum. Aucun pixel alpha>127 sur les bords. Aucun traitement logiciel du PNG appliqué.",
+        "native_sha256_matches_saved_png": true,
+        "canonical_1_to_1_certified": false,
+        "reference_limitations_open": true,
+        "mechanical_classification_open": false,
+        "ui_or_engine_capture_performed": false,
+        "independent_visual_review": {
+          "reviewer": "root",
+          "date": "2026-11-20",
+          "completed": true,
+          "whole_subjects_and_identity_details_reviewed": true,
+          "reference_comparison_performed": true,
+          "blocking_technical_issue_observed": false,
+          "canonical_1_to_1_certified": false,
+          "reference_limitations_open": true,
+          "mechanical_classification_open": false,
+          "note": "Les quatre PNG ont été comparés aux miniatures natives des modèles du jeu et retenus : signes distinctifs du costume, visage et équipement lisibles, silhouettes et armes entières. Six points alpha par PNG contrôlés indépendamment : cinq extérieurs à0 et un point sur le personnage à250–253. Les quatre concordances exactes Saturn/PC restent ouvertes, ainsi que les détails fins et chaussures interprétés."
+        }
+      }
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot6/costumes/sophie_saturn_base.png",
+      "sha256": "464f45b82e4546014fd69cebd68860e9e1ad803ce4fb54aab874cccbc7a3936d",
+      "bytes": 1756557,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "format": "PNG",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        16,
+        1006,
+        1536
+      ],
+      "visible_bbox": [
+        197,
+        21,
+        815,
+        1502
+      ],
+      "visible_alpha_threshold": 127,
+      "maximum_alpha_on_canvas_edges": 1,
+      "maximum_alpha_by_edge_top_bottom_left_right": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "opaque_pixels_at_canvas_edge": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alpha_zero_pixels": 1167024,
+      "alpha_at_background_samples": {
+        "(0, 0)": 0,
+        "(512, 0)": 0,
+        "(0, 768)": 0,
+        "(1023, 768)": 0,
+        "(512, 1535)": 0,
+        "(512, 10)": 0,
+        "(100, 768)": 0
+      },
+      "id": "sophie_saturn",
+      "name": "Sophie — Saturn/PC Mode",
+      "game": "hotd1_saturn",
+      "game_label": "The House of the Dead — Saturn/PC Mode",
+      "edition_scope": "Saturn Mode et équivalent PC Mode ; détails visuels sourcés principalement dans le port Windows.",
+      "category": "costume_variant",
+      "status": "static_needs_visual_reference_qa",
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "inventory_task_id": "sophie_saturn",
+      "new_identity": false,
+      "inventory_family_coverage": "partial",
+      "canonical_role": "selectable_in_saturn_mode",
+      "record_kind": "mode_model",
+      "generated_file": "exec-59902819-5606-4b9b-af78-6604e79d10c4.png",
+      "sources": [
+        "https://www.youtube.com/watch?v=ABYT4bFjoto",
+        "https://thehouseofthedead.fandom.com/wiki/Saturn_Mode"
+      ],
+      "source_ids": [
+        "sophie_thumbnail",
+        "ABYT4bFjoto_M0",
+        "ABYT4bFjoto_M18",
+        "wiki_saturn_mode_identification"
+      ],
+      "source_notes": [
+        "Cheveux blonds courts en carré, tailleur roux/orange, large col/poignets blancs et badge DBR ; portrait de sélection et cinématique finale PC Mode.",
+        "Jupe courte assortie, jambes de teinte chair et chaussures fermées brun-ocre à talon ; visibles dans la miniature entière du modèle.",
+        "Pistolet avec poignée brune, porté par le modèle joueur ; visible dans la miniature et les deux vues finales.",
+        "Sélection Saturn Mode consultée dans une vignette native120×90 de NintendoComplete ; utilisable pour le mode/nom et la palette générale, pas pour certifier les textures fines."
+      ],
+      "visually_observed_features": [
+        "Cheveux blonds courts en carré, tailleur roux/orange, large col/poignets blancs et badge DBR ; portrait de sélection et cinématique finale PC Mode.",
+        "Jupe courte assortie, jambes de teinte chair et chaussures fermées brun-ocre à talon ; visibles dans la miniature entière du modèle.",
+        "Pistolet avec poignée brune, porté par le modèle joueur ; visible dans la miniature et les deux vues finales.",
+        "Sélection Saturn Mode consultée dans une vignette native120×90 de NintendoComplete ; utilisable pour le mode/nom et la palette générale, pas pour certifier les textures fines."
+      ],
+      "interpreted_or_unresolved_features": [
+        "Miniature composée par l’auteur de la vidéo : elle montre le modèle, mais ne constitue pas une capture brute non montée.",
+        "Motifs fins du badge, texture du tissu, couleur exacte des jambes/éventuels bas et détails de chaussures interprétés en peinture.",
+        "Concordance fine Saturn/PC non certifiée ; sélection Saturn consultée uniquement en petite vignette."
+      ],
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/sophie_thumbnail.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/ABYT4bFjoto_M0.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/ABYT4bFjoto_M18.jpg",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "reference_inputs": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/sophie_thumbnail.jpg",
+          "sha256": "c330bfea104ac7c84e8bafef3cb806e028a6381c8a46087243e3af4d4f15628c",
+          "bytes": 68213,
+          "dimensions": [
+            1280,
+            720
+          ],
+          "mode": "RGB",
+          "format": "JPEG",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true,
+          "binary_in_repository": true,
+          "source_type": "uploader_thumbnail_composite_of_game_model",
+          "page_url": "https://www.youtube.com/watch?v=ABYT4bFjoto",
+          "image_url": "https://i.ytimg.com/vi/ABYT4bFjoto/maxresdefault.jpg",
+          "edition_scope": "PC Mode (Windows port)"
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/ABYT4bFjoto_M0.jpg",
+          "sha256": "c786ae01b8050d3c526dfad7e62db3731b67bea2fc6ca63ba657ec204ba8eed9",
+          "bytes": 39722,
+          "dimensions": [
+            960,
+            540
+          ],
+          "mode": "RGB",
+          "format": "WEBP",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true,
+          "binary_in_repository": true,
+          "source_type": "native_youtube_storyboard_sheet",
+          "page_url": "https://www.youtube.com/watch?v=ABYT4bFjoto",
+          "image_url": "https://i.ytimg.com/sb/ABYT4bFjoto/storyboard3_L3/M0.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgjRhba1Bg==&sigh=rs$AOn4CLAt9ciclBycDfRPJOI6oyNcf0oJWQ",
+          "edition_scope": "PC Mode (Windows port)"
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/ABYT4bFjoto_M18.jpg",
+          "sha256": "1702a1ea0cc608d18b1c87838751a56005b7618fefee6065bd3f9f06340bb3c9",
+          "bytes": 34602,
+          "dimensions": [
+            960,
+            540
+          ],
+          "mode": "RGB",
+          "format": "WEBP",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true,
+          "binary_in_repository": true,
+          "source_type": "native_youtube_storyboard_sheet",
+          "page_url": "https://www.youtube.com/watch?v=ABYT4bFjoto",
+          "image_url": "https://i.ytimg.com/sb/ABYT4bFjoto/storyboard3_L3/M18.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgjRhba1Bg==&sigh=rs$AOn4CLAt9ciclBycDfRPJOI6oyNcf0oJWQ",
+          "edition_scope": "PC Mode (Windows port)"
+        },
+        {
+          "path": "assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "bytes": 595313,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "format": "PNG",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "alpha_bbox": [
+            218,
+            55,
+            814,
+            960
+          ],
+          "visible_bbox": [
+            220,
+            57,
+            812,
+            957
+          ],
+          "visible_alpha_threshold": 127,
+          "maximum_alpha_on_canvas_edges": 0,
+          "maximum_alpha_by_edge_top_bottom_left_right": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "opaque_pixels_at_canvas_edge": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "alpha_zero_pixels": 781143,
+          "alpha_at_background_samples": {
+            "(0, 0)": 0,
+            "(512, 0)": 0,
+            "(0, 512)": 0,
+            "(1023, 512)": 0,
+            "(512, 1023)": 0,
+            "(512, 10)": 0,
+            "(100, 512)": 0
+          },
+          "role": "painting_style_only",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true,
+          "binary_in_repository": true
+        }
+      ],
+      "prompts": [
+        "Use case: stylized-concept. Create exactly ONE full-body character illustration for the Dossier Curien 2D game gallery, native RGBA with genuine transparent background. The last reference is ONLY the project painting style: detailed hand-painted arcade character art, crisp controlled outlines, realistic adult anatomy, readable cloth folds, rich but restrained warm/cool shading. Do not copy Isaac's face, skin tone, beard, brown cap, clothing, shotgun, pose or identity. The earlier references show the requested actual model from The House of the Dead PC Mode, the Windows equivalent of Saturn Mode; reproduce this subject's documented outfit and features. Make a single coherent static character, not a collage, not a sprite sheet, not a low-poly screenshot. One person only. No labels, captions, menu, scenery, floor, cast ground shadow, fog, glow, vignette, gradient or baked background. Keep the whole head, all hair or headwear, hands, the complete pistol, both legs and both shoes comfortably inside a portrait canvas with generous genuinely transparent margins. Three-quarter front view toward screen-right, balanced alert standing pose, silhouette readable. Reconstruct the visible low-poly details as hand-painted 2D surfaces without adding new equipment. Subject: adult Sophie Richards as the selectable PC/Saturn Mode player model, a standing armed costume study distinct from her narrative NPC portrait. Reference 1 is the uploader's montage showing the entire original player model including shoes; reference 2 is the gameplay storyboard with her PC Mode selection portrait in the top-right tile; reference 3 shows her actual player-model front and side views in the first two top-row tiles. Preserve her fair skin, short golden-blond chin-length bob with gentle side part and tucked-back sections, serious focused face, warm burnt-orange/ochre tailored single-breasted blazer with pointed lapels, large sharply pointed white open shirt collar, white shirt front and white cuffs. Matching plain burnt-orange short straight skirt ending at mid-thigh, plain skin-tone legs, and closed ochre-brown pumps with modest block heels and darker soles. On her left breast place a small blue-gray clipped rectangular DBR badge consistent with the source, modest and unobtrusive, no invented decorative emblem. Hold ONE compact dark-metal semiautomatic pistol with brown grip in her right hand lowered near the hip, pointing down and slightly outward; left hand slightly raised in a composed ready gesture. Keep clothing practical and the pose neutral. Preserve the same short bob, skirt length and orange suit palette. No red gown, no long hair, no lab coat, no handbag, no medical kit, no high boots, no stockings pattern, no combat armor, no exposed torso, no extra person. This is an armed static model study, not proof of a playable game mode."
+      ],
+      "prompt_sha256": [
+        "36d8dbdc594b122e7f4e040fcaa377a6c35f663155ee1acb909a541637a6d1fa"
+      ],
+      "limitations": [
+        "Galerie statique uniquement : aucun personnage jouable, costume sélectionnable, mode Saturn/PC, statistique, attaque ou animation complète ajouté.",
+        "Les quatre entrées sont des variantes ou modèles de mode ; aucune nouvelle identité canonique déclarée.",
+        "Adaptation peinte 2D des caractéristiques visibles ; aucune certification de fidélité 1:1 aux modèles originaux.",
+        "Les références de détail sont issues du PC Mode Windows. La concordance exacte avec le port Saturn demeure une QA ouverte pour chaque asset.",
+        "PNG natif RGBA conservé octet pour octet ; aucun détourage, nettoyage, recadrage, redimensionnement ou réencodage du résultat généré.",
+        "Les miniatures LyricBR sont des montages du modèle du jeu publiés par leur auteur ; elles sont corroborées par des storyboards natifs, sans être présentées comme des captures brutes plein écran.",
+        "Aucune animation, vue de dos exhaustive, mécanique de sélection ni variante régionale supplémentaire déclarée couverte.",
+        "Miniature composée par l’auteur de la vidéo : elle montre le modèle, mais ne constitue pas une capture brute non montée.",
+        "Motifs fins du badge, texture du tissu, couleur exacte des jambes/éventuels bas et détails de chaussures interprétés en peinture.",
+        "Concordance fine Saturn/PC non certifiée ; sélection Saturn consultée uniquement en petite vignette."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot6/costumes_generated.json",
+      "generation": {
+        "tool": "image_gen built-in",
+        "date": "2026-11-20",
+        "transparent_background_requested": true,
+        "source_native_output": "/workspace/scratch/da9d6e4777c1/generated_images/exec-59902819-5606-4b9b-af78-6604e79d10c4.png",
+        "native_output_unchanged": true,
+        "pixel_edits_after_generation": false,
+        "attempts": 1,
+        "retained_outputs": 1,
+        "attempt_records": [
+          {
+            "attempt": 1,
+            "generated_file": "exec-59902819-5606-4b9b-af78-6604e79d10c4.png",
+            "operation": "generate",
+            "prompt": "Use case: stylized-concept. Create exactly ONE full-body character illustration for the Dossier Curien 2D game gallery, native RGBA with genuine transparent background. The last reference is ONLY the project painting style: detailed hand-painted arcade character art, crisp controlled outlines, realistic adult anatomy, readable cloth folds, rich but restrained warm/cool shading. Do not copy Isaac's face, skin tone, beard, brown cap, clothing, shotgun, pose or identity. The earlier references show the requested actual model from The House of the Dead PC Mode, the Windows equivalent of Saturn Mode; reproduce this subject's documented outfit and features. Make a single coherent static character, not a collage, not a sprite sheet, not a low-poly screenshot. One person only. No labels, captions, menu, scenery, floor, cast ground shadow, fog, glow, vignette, gradient or baked background. Keep the whole head, all hair or headwear, hands, the complete pistol, both legs and both shoes comfortably inside a portrait canvas with generous genuinely transparent margins. Three-quarter front view toward screen-right, balanced alert standing pose, silhouette readable. Reconstruct the visible low-poly details as hand-painted 2D surfaces without adding new equipment. Subject: adult Sophie Richards as the selectable PC/Saturn Mode player model, a standing armed costume study distinct from her narrative NPC portrait. Reference 1 is the uploader's montage showing the entire original player model including shoes; reference 2 is the gameplay storyboard with her PC Mode selection portrait in the top-right tile; reference 3 shows her actual player-model front and side views in the first two top-row tiles. Preserve her fair skin, short golden-blond chin-length bob with gentle side part and tucked-back sections, serious focused face, warm burnt-orange/ochre tailored single-breasted blazer with pointed lapels, large sharply pointed white open shirt collar, white shirt front and white cuffs. Matching plain burnt-orange short straight skirt ending at mid-thigh, plain skin-tone legs, and closed ochre-brown pumps with modest block heels and darker soles. On her left breast place a small blue-gray clipped rectangular DBR badge consistent with the source, modest and unobtrusive, no invented decorative emblem. Hold ONE compact dark-metal semiautomatic pistol with brown grip in her right hand lowered near the hip, pointing down and slightly outward; left hand slightly raised in a composed ready gesture. Keep clothing practical and the pose neutral. Preserve the same short bob, skirt length and orange suit palette. No red gown, no long hair, no lab coat, no handbag, no medical kit, no high boots, no stockings pattern, no combat armor, no exposed torso, no extra person. This is an armed static model study, not proof of a playable game mode.",
+            "prompt_sha256": "36d8dbdc594b122e7f4e040fcaa377a6c35f663155ee1acb909a541637a6d1fa",
+            "arguments_as_sent": {
+              "prompt": "Use case: stylized-concept. Create exactly ONE full-body character illustration for the Dossier Curien 2D game gallery, native RGBA with genuine transparent background. The last reference is ONLY the project painting style: detailed hand-painted arcade character art, crisp controlled outlines, realistic adult anatomy, readable cloth folds, rich but restrained warm/cool shading. Do not copy Isaac's face, skin tone, beard, brown cap, clothing, shotgun, pose or identity. The earlier references show the requested actual model from The House of the Dead PC Mode, the Windows equivalent of Saturn Mode; reproduce this subject's documented outfit and features. Make a single coherent static character, not a collage, not a sprite sheet, not a low-poly screenshot. One person only. No labels, captions, menu, scenery, floor, cast ground shadow, fog, glow, vignette, gradient or baked background. Keep the whole head, all hair or headwear, hands, the complete pistol, both legs and both shoes comfortably inside a portrait canvas with generous genuinely transparent margins. Three-quarter front view toward screen-right, balanced alert standing pose, silhouette readable. Reconstruct the visible low-poly details as hand-painted 2D surfaces without adding new equipment. Subject: adult Sophie Richards as the selectable PC/Saturn Mode player model, a standing armed costume study distinct from her narrative NPC portrait. Reference 1 is the uploader's montage showing the entire original player model including shoes; reference 2 is the gameplay storyboard with her PC Mode selection portrait in the top-right tile; reference 3 shows her actual player-model front and side views in the first two top-row tiles. Preserve her fair skin, short golden-blond chin-length bob with gentle side part and tucked-back sections, serious focused face, warm burnt-orange/ochre tailored single-breasted blazer with pointed lapels, large sharply pointed white open shirt collar, white shirt front and white cuffs. Matching plain burnt-orange short straight skirt ending at mid-thigh, plain skin-tone legs, and closed ochre-brown pumps with modest block heels and darker soles. On her left breast place a small blue-gray clipped rectangular DBR badge consistent with the source, modest and unobtrusive, no invented decorative emblem. Hold ONE compact dark-metal semiautomatic pistol with brown grip in her right hand lowered near the hip, pointing down and slightly outward; left hand slightly raised in a composed ready gesture. Keep clothing practical and the pose neutral. Preserve the same short bob, skirt length and orange suit palette. No red gown, no long hair, no lab coat, no handbag, no medical kit, no high boots, no stockings pattern, no combat armor, no exposed torso, no extra person. This is an armed static model study, not proof of a playable game mode.",
+              "transparent_background": true,
+              "referenced_image_paths": [
+                "/workspace/scratch/da9d6e4777c1/hotd-current/docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/sophie_thumbnail.jpg",
+                "/workspace/scratch/da9d6e4777c1/hotd-current/docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/ABYT4bFjoto_M0.jpg",
+                "/workspace/scratch/da9d6e4777c1/hotd-current/docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/ABYT4bFjoto_M18.jpg",
+                "/workspace/scratch/da9d6e4777c1/hotd-current/assets/dossier_curien/saga/isaac_guard.png"
+              ]
+            },
+            "references": [
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/sophie_thumbnail.jpg",
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/ABYT4bFjoto_M0.jpg",
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/ABYT4bFjoto_M18.jpg",
+              "assets/dossier_curien/saga/isaac_guard.png"
+            ],
+            "external_reference_inputs": [],
+            "output_sha256": "464f45b82e4546014fd69cebd68860e9e1ad803ce4fb54aab874cccbc7a3936d",
+            "retained": true,
+            "tool_refusal": false
+          }
+        ]
+      },
+      "qa": {
+        "output_visually_inspected": true,
+        "subject_and_silhouette_reviewed": true,
+        "whole_subject_silhouette_visible": true,
+        "subject_extent_note": "Tête/coiffure, mains, pistolet, jambes et deux chaussures intégralement visibles.",
+        "visible_bounds_clear_of_canvas_edges": true,
+        "opaque_pixels_at_canvas_edge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "maximum_alpha_on_canvas_edges": 1,
+        "alpha_check": "Transparence native conservée. Le RGB des pixels de fond peut apparaître comme un halo sombre dans un aperçu qui ignore alpha ; les bords restent alpha0–2 au maximum. Aucun pixel alpha>127 sur les bords. Aucun traitement logiciel du PNG appliqué.",
+        "native_sha256_matches_saved_png": true,
+        "canonical_1_to_1_certified": false,
+        "reference_limitations_open": true,
+        "mechanical_classification_open": false,
+        "ui_or_engine_capture_performed": false,
+        "independent_visual_review": {
+          "reviewer": "root",
+          "date": "2026-11-20",
+          "completed": true,
+          "whole_subjects_and_identity_details_reviewed": true,
+          "reference_comparison_performed": true,
+          "blocking_technical_issue_observed": false,
+          "canonical_1_to_1_certified": false,
+          "reference_limitations_open": true,
+          "mechanical_classification_open": false,
+          "note": "Les quatre PNG ont été comparés aux miniatures natives des modèles du jeu et retenus : signes distinctifs du costume, visage et équipement lisibles, silhouettes et armes entières. Six points alpha par PNG contrôlés indépendamment : cinq extérieurs à0 et un point sur le personnage à250–253. Les quatre concordances exactes Saturn/PC restent ouvertes, ainsi que les détails fins et chaussures interprétés."
+        }
+      },
+      "supporting_saturn_reference": "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/owrOwiLUjZ4_M14.jpg"
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot6/costumes/researcher_saturn_base.png",
+      "sha256": "6137b6e3b6283af77b179fc84b62119b43c13ebf0caf43f09d58b862316ee21b",
+      "bytes": 1751612,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "format": "PNG",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        16,
+        1000,
+        1536
+      ],
+      "visible_bbox": [
+        193,
+        22,
+        827,
+        1521
+      ],
+      "visible_alpha_threshold": 127,
+      "maximum_alpha_on_canvas_edges": 1,
+      "maximum_alpha_by_edge_top_bottom_left_right": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "opaque_pixels_at_canvas_edge": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alpha_zero_pixels": 1126675,
+      "alpha_at_background_samples": {
+        "(0, 0)": 0,
+        "(512, 0)": 0,
+        "(0, 768)": 1,
+        "(1023, 768)": 0,
+        "(512, 1535)": 0,
+        "(512, 10)": 0,
+        "(100, 768)": 0
+      },
+      "id": "researcher_saturn",
+      "name": "Chercheuse DBR — Saturn/PC Mode",
+      "game": "hotd1_saturn",
+      "game_label": "The House of the Dead — Saturn/PC Mode",
+      "edition_scope": "Saturn Mode et équivalent PC Mode ; détails visuels sourcés principalement dans le port Windows.",
+      "category": "costume_variant",
+      "status": "static_needs_visual_reference_qa",
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "inventory_task_id": "researcher_saturn",
+      "new_identity": false,
+      "inventory_family_coverage": "partial",
+      "canonical_role": "selectable_in_saturn_mode",
+      "record_kind": "generic_model",
+      "generated_file": "exec-5dcc3e18-06e1-4741-b62b-79ae998602f7.png",
+      "sources": [
+        "https://www.youtube.com/watch?v=orSO1dCHHdk",
+        "https://www.youtube.com/watch?v=gaxE3kF8D7k",
+        "https://thehouseofthedead.fandom.com/wiki/Saturn_Mode"
+      ],
+      "source_ids": [
+        "researcher_thumbnail",
+        "researcher_rocsen_thumb",
+        "orSO1dCHHdk_M14",
+        "wiki_saturn_mode_identification"
+      ],
+      "source_notes": [
+        "Modèle féminin brun portant des lunettes rondes ; miniature et gros plan final PC Mode. Une seconde capture vidéo montre une courte queue de cheval à la nuque.",
+        "Tunique blanche à col haut fermé et fermeture oblique, badge DBR bleu-gris ; visibles dans le gros plan et la miniature.",
+        "Pantalon blanc et veste/tunique courte aux hanches ; visibles dans la miniature latérale de Rocsen et les vues de dos finales.",
+        "Pistolet porté dans la main droite du modèle ; visible dans la dernière rangée du storyboard final."
+      ],
+      "visually_observed_features": [
+        "Modèle féminin brun portant des lunettes rondes ; miniature et gros plan final PC Mode. Une seconde capture vidéo montre une courte queue de cheval à la nuque.",
+        "Tunique blanche à col haut fermé et fermeture oblique, badge DBR bleu-gris ; visibles dans le gros plan et la miniature.",
+        "Pantalon blanc et veste/tunique courte aux hanches ; visibles dans la miniature latérale de Rocsen et les vues de dos finales.",
+        "Pistolet porté dans la main droite du modèle ; visible dans la dernière rangée du storyboard final."
+      ],
+      "interpreted_or_unresolved_features": [
+        "Chaussures non résolues par les captures retenues : forme fermée blanche basse interprétée.",
+        "Détails d’attache des cheveux, de badge, des coutures et de l’arme adaptés en peinture à partir des surfaces visibles.",
+        "Concordance fine Saturn/PC non certifiée ; aucune capture Saturn détaillée de cette chercheuse obtenue."
+      ],
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/researcher_thumbnail.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/researcher_rocsen_thumb.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/orSO1dCHHdk_M14.jpg",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "reference_inputs": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/researcher_thumbnail.jpg",
+          "sha256": "aa34b1fbd38918ae0b5ad8ce0ee1d99ff0b2e31d61989c17e2630da72efedf84",
+          "bytes": 69652,
+          "dimensions": [
+            1280,
+            720
+          ],
+          "mode": "RGB",
+          "format": "JPEG",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true,
+          "binary_in_repository": true,
+          "source_type": "uploader_thumbnail_composite_of_game_model",
+          "page_url": "https://www.youtube.com/watch?v=orSO1dCHHdk",
+          "image_url": "https://i.ytimg.com/vi/orSO1dCHHdk/maxresdefault.jpg",
+          "edition_scope": "PC Mode (Windows port)"
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/researcher_rocsen_thumb.jpg",
+          "sha256": "7d000b8ba8381aca81cc36275e1e5a563b4462e6e7cc9b8d4e8a5a6d177b66f2",
+          "bytes": 93288,
+          "dimensions": [
+            1280,
+            720
+          ],
+          "mode": "RGB",
+          "format": "JPEG",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true,
+          "binary_in_repository": true,
+          "source_type": "uploader_gameplay_thumbnail",
+          "page_url": "https://www.youtube.com/watch?v=gaxE3kF8D7k",
+          "image_url": "https://i.ytimg.com/vi/gaxE3kF8D7k/maxresdefault.jpg",
+          "edition_scope": "PC Mode (Windows port)"
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/orSO1dCHHdk_M14.jpg",
+          "sha256": "388d93d000932eed2b65822fce1da1cddc7d2469deb60ffe04f82c4cc635cab2",
+          "bytes": 39588,
+          "dimensions": [
+            960,
+            540
+          ],
+          "mode": "RGB",
+          "format": "WEBP",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true,
+          "binary_in_repository": true,
+          "source_type": "native_youtube_storyboard_sheet",
+          "page_url": "https://www.youtube.com/watch?v=orSO1dCHHdk",
+          "image_url": "https://i.ytimg.com/sb/orSO1dCHHdk/storyboard3_L3/M14.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgiyiba1Bg==&sigh=rs$AOn4CLB2Lg4dy98fY-FPxY-yYehrohvkPA",
+          "edition_scope": "PC Mode (Windows port)"
+        },
+        {
+          "path": "assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "bytes": 595313,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "format": "PNG",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "alpha_bbox": [
+            218,
+            55,
+            814,
+            960
+          ],
+          "visible_bbox": [
+            220,
+            57,
+            812,
+            957
+          ],
+          "visible_alpha_threshold": 127,
+          "maximum_alpha_on_canvas_edges": 0,
+          "maximum_alpha_by_edge_top_bottom_left_right": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "opaque_pixels_at_canvas_edge": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "alpha_zero_pixels": 781143,
+          "alpha_at_background_samples": {
+            "(0, 0)": 0,
+            "(512, 0)": 0,
+            "(0, 512)": 0,
+            "(1023, 512)": 0,
+            "(512, 1023)": 0,
+            "(512, 10)": 0,
+            "(100, 512)": 0
+          },
+          "role": "painting_style_only",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true,
+          "binary_in_repository": true
+        }
+      ],
+      "prompts": [
+        "Use case: stylized-concept. Create exactly ONE full-body character illustration for the Dossier Curien 2D game gallery, native RGBA with genuine transparent background. The last reference is ONLY the project painting style: detailed hand-painted arcade character art, crisp controlled outlines, realistic adult anatomy, readable cloth folds, rich but restrained warm/cool shading. Do not copy Isaac's face, skin tone, beard, brown cap, clothing, shotgun, pose or identity. The earlier references show the requested actual model from The House of the Dead PC Mode, the Windows equivalent of Saturn Mode; reproduce this subject's documented outfit and features. Make a single coherent static character, not a collage, not a sprite sheet, not a low-poly screenshot. One person only. No labels, captions, menu, scenery, floor, cast ground shadow, fog, glow, vignette, gradient or baked background. Keep the whole head, all hair or headwear, hands, the complete pistol, both legs and both shoes comfortably inside a portrait canvas with generous genuinely transparent margins. Three-quarter front view toward screen-right, balanced alert standing pose, silhouette readable. Reconstruct the visible low-poly details as hand-painted 2D surfaces without adding new equipment. Subject: the adult FEMALE DBR Researcher selectable PC/Saturn Mode model, not a generic male scientist, not Sophie and not Dr. Curien. Reference 1 is the uploader's close-up montage of the exact original player model. Reference 2 is another uploader's clear gameplay-view thumbnail showing her side profile, hair tied at the nape, tunic and white trousers. Reference 3 is a native gameplay storyboard; only the final bottom-row three tiles show this player character, with her frontal close-up followed by two back views. Preserve fair skin, brown hair pulled smoothly back into a short low ponytail at the nape, as visible in reference 2, with small dark strands beside the ears, thin dark round eyeglasses with clear lenses, and a composed adult face. Her outfit is a neat fitted white laboratory tunic/jacket with long sleeves, a high closed stand collar and a subtle diagonal/asymmetric front fastening as seen in reference 1. Small clipped blue-gray DBR identification badge on her left chest, restrained plain lettering; no new logos. Continue the white jacket to the hips as in the rear gameplay views, with matching straight white trousers. Use simple plain white closed low shoes, minimal details. She holds ONE compact dark-metal semiautomatic pistol with brown grip lowered in her right hand, fingers naturally enclosing the grip and muzzle angled diagonally down toward screen-right. Her left hand is loosely open near her waist. Keep this a normal adult woman of realistic build, wearing trousers, with the white uniform readable against transparency through cool gray shadows and controlled crisp edge shading. No skirt, no male face, no black necktie, no surgical mask, no medical bag, no goggles, no lab props, no oversized weapon and no floor shadow."
+      ],
+      "prompt_sha256": [
+        "3eeb810b45cd78f8de1736f21e18cefbf0ef8c899529624f0e05d089a29093e6"
+      ],
+      "limitations": [
+        "Galerie statique uniquement : aucun personnage jouable, costume sélectionnable, mode Saturn/PC, statistique, attaque ou animation complète ajouté.",
+        "Les quatre entrées sont des variantes ou modèles de mode ; aucune nouvelle identité canonique déclarée.",
+        "Adaptation peinte 2D des caractéristiques visibles ; aucune certification de fidélité 1:1 aux modèles originaux.",
+        "Les références de détail sont issues du PC Mode Windows. La concordance exacte avec le port Saturn demeure une QA ouverte pour chaque asset.",
+        "PNG natif RGBA conservé octet pour octet ; aucun détourage, nettoyage, recadrage, redimensionnement ou réencodage du résultat généré.",
+        "Les miniatures LyricBR sont des montages du modèle du jeu publiés par leur auteur ; elles sont corroborées par des storyboards natifs, sans être présentées comme des captures brutes plein écran.",
+        "Aucune animation, vue de dos exhaustive, mécanique de sélection ni variante régionale supplémentaire déclarée couverte.",
+        "Chaussures non résolues par les captures retenues : forme fermée blanche basse interprétée.",
+        "Détails d’attache des cheveux, de badge, des coutures et de l’arme adaptés en peinture à partir des surfaces visibles.",
+        "Concordance fine Saturn/PC non certifiée ; aucune capture Saturn détaillée de cette chercheuse obtenue."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot6/costumes_generated.json",
+      "generation": {
+        "tool": "image_gen built-in",
+        "date": "2026-11-20",
+        "transparent_background_requested": true,
+        "source_native_output": "/workspace/scratch/da9d6e4777c1/generated_images/exec-5dcc3e18-06e1-4741-b62b-79ae998602f7.png",
+        "native_output_unchanged": true,
+        "pixel_edits_after_generation": false,
+        "attempts": 1,
+        "retained_outputs": 1,
+        "attempt_records": [
+          {
+            "attempt": 1,
+            "generated_file": "exec-5dcc3e18-06e1-4741-b62b-79ae998602f7.png",
+            "operation": "generate",
+            "prompt": "Use case: stylized-concept. Create exactly ONE full-body character illustration for the Dossier Curien 2D game gallery, native RGBA with genuine transparent background. The last reference is ONLY the project painting style: detailed hand-painted arcade character art, crisp controlled outlines, realistic adult anatomy, readable cloth folds, rich but restrained warm/cool shading. Do not copy Isaac's face, skin tone, beard, brown cap, clothing, shotgun, pose or identity. The earlier references show the requested actual model from The House of the Dead PC Mode, the Windows equivalent of Saturn Mode; reproduce this subject's documented outfit and features. Make a single coherent static character, not a collage, not a sprite sheet, not a low-poly screenshot. One person only. No labels, captions, menu, scenery, floor, cast ground shadow, fog, glow, vignette, gradient or baked background. Keep the whole head, all hair or headwear, hands, the complete pistol, both legs and both shoes comfortably inside a portrait canvas with generous genuinely transparent margins. Three-quarter front view toward screen-right, balanced alert standing pose, silhouette readable. Reconstruct the visible low-poly details as hand-painted 2D surfaces without adding new equipment. Subject: the adult FEMALE DBR Researcher selectable PC/Saturn Mode model, not a generic male scientist, not Sophie and not Dr. Curien. Reference 1 is the uploader's close-up montage of the exact original player model. Reference 2 is another uploader's clear gameplay-view thumbnail showing her side profile, hair tied at the nape, tunic and white trousers. Reference 3 is a native gameplay storyboard; only the final bottom-row three tiles show this player character, with her frontal close-up followed by two back views. Preserve fair skin, brown hair pulled smoothly back into a short low ponytail at the nape, as visible in reference 2, with small dark strands beside the ears, thin dark round eyeglasses with clear lenses, and a composed adult face. Her outfit is a neat fitted white laboratory tunic/jacket with long sleeves, a high closed stand collar and a subtle diagonal/asymmetric front fastening as seen in reference 1. Small clipped blue-gray DBR identification badge on her left chest, restrained plain lettering; no new logos. Continue the white jacket to the hips as in the rear gameplay views, with matching straight white trousers. Use simple plain white closed low shoes, minimal details. She holds ONE compact dark-metal semiautomatic pistol with brown grip lowered in her right hand, fingers naturally enclosing the grip and muzzle angled diagonally down toward screen-right. Her left hand is loosely open near her waist. Keep this a normal adult woman of realistic build, wearing trousers, with the white uniform readable against transparency through cool gray shadows and controlled crisp edge shading. No skirt, no male face, no black necktie, no surgical mask, no medical bag, no goggles, no lab props, no oversized weapon and no floor shadow.",
+            "prompt_sha256": "3eeb810b45cd78f8de1736f21e18cefbf0ef8c899529624f0e05d089a29093e6",
+            "arguments_as_sent": {
+              "prompt": "Use case: stylized-concept. Create exactly ONE full-body character illustration for the Dossier Curien 2D game gallery, native RGBA with genuine transparent background. The last reference is ONLY the project painting style: detailed hand-painted arcade character art, crisp controlled outlines, realistic adult anatomy, readable cloth folds, rich but restrained warm/cool shading. Do not copy Isaac's face, skin tone, beard, brown cap, clothing, shotgun, pose or identity. The earlier references show the requested actual model from The House of the Dead PC Mode, the Windows equivalent of Saturn Mode; reproduce this subject's documented outfit and features. Make a single coherent static character, not a collage, not a sprite sheet, not a low-poly screenshot. One person only. No labels, captions, menu, scenery, floor, cast ground shadow, fog, glow, vignette, gradient or baked background. Keep the whole head, all hair or headwear, hands, the complete pistol, both legs and both shoes comfortably inside a portrait canvas with generous genuinely transparent margins. Three-quarter front view toward screen-right, balanced alert standing pose, silhouette readable. Reconstruct the visible low-poly details as hand-painted 2D surfaces without adding new equipment. Subject: the adult FEMALE DBR Researcher selectable PC/Saturn Mode model, not a generic male scientist, not Sophie and not Dr. Curien. Reference 1 is the uploader's close-up montage of the exact original player model. Reference 2 is another uploader's clear gameplay-view thumbnail showing her side profile, hair tied at the nape, tunic and white trousers. Reference 3 is a native gameplay storyboard; only the final bottom-row three tiles show this player character, with her frontal close-up followed by two back views. Preserve fair skin, brown hair pulled smoothly back into a short low ponytail at the nape, as visible in reference 2, with small dark strands beside the ears, thin dark round eyeglasses with clear lenses, and a composed adult face. Her outfit is a neat fitted white laboratory tunic/jacket with long sleeves, a high closed stand collar and a subtle diagonal/asymmetric front fastening as seen in reference 1. Small clipped blue-gray DBR identification badge on her left chest, restrained plain lettering; no new logos. Continue the white jacket to the hips as in the rear gameplay views, with matching straight white trousers. Use simple plain white closed low shoes, minimal details. She holds ONE compact dark-metal semiautomatic pistol with brown grip lowered in her right hand, fingers naturally enclosing the grip and muzzle angled diagonally down toward screen-right. Her left hand is loosely open near her waist. Keep this a normal adult woman of realistic build, wearing trousers, with the white uniform readable against transparency through cool gray shadows and controlled crisp edge shading. No skirt, no male face, no black necktie, no surgical mask, no medical bag, no goggles, no lab props, no oversized weapon and no floor shadow.",
+              "transparent_background": true,
+              "referenced_image_paths": [
+                "/workspace/scratch/da9d6e4777c1/hotd-current/docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/researcher_thumbnail.jpg",
+                "/workspace/scratch/da9d6e4777c1/hotd-current/docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/researcher_rocsen_thumb.jpg",
+                "/workspace/scratch/da9d6e4777c1/hotd-current/docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/orSO1dCHHdk_M14.jpg",
+                "/workspace/scratch/da9d6e4777c1/hotd-current/assets/dossier_curien/saga/isaac_guard.png"
+              ]
+            },
+            "references": [
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/researcher_thumbnail.jpg",
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/researcher_rocsen_thumb.jpg",
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot6/costumes/orSO1dCHHdk_M14.jpg",
+              "assets/dossier_curien/saga/isaac_guard.png"
+            ],
+            "external_reference_inputs": [],
+            "output_sha256": "6137b6e3b6283af77b179fc84b62119b43c13ebf0caf43f09d58b862316ee21b",
+            "retained": true,
+            "tool_refusal": false
+          }
+        ]
+      },
+      "qa": {
+        "output_visually_inspected": true,
+        "subject_and_silhouette_reviewed": true,
+        "whole_subject_silhouette_visible": true,
+        "subject_extent_note": "Tête/coiffure, mains, pistolet, jambes et deux chaussures intégralement visibles.",
+        "visible_bounds_clear_of_canvas_edges": true,
+        "opaque_pixels_at_canvas_edge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "maximum_alpha_on_canvas_edges": 1,
+        "alpha_check": "Transparence native conservée. Le RGB des pixels de fond peut apparaître comme un halo sombre dans un aperçu qui ignore alpha ; les bords restent alpha0–2 au maximum. Aucun pixel alpha>127 sur les bords. Aucun traitement logiciel du PNG appliqué.",
+        "native_sha256_matches_saved_png": true,
+        "canonical_1_to_1_certified": false,
+        "reference_limitations_open": true,
+        "mechanical_classification_open": false,
+        "ui_or_engine_capture_performed": false,
+        "independent_visual_review": {
+          "reviewer": "root",
+          "date": "2026-11-20",
+          "completed": true,
+          "whole_subjects_and_identity_details_reviewed": true,
+          "reference_comparison_performed": true,
+          "blocking_technical_issue_observed": false,
+          "canonical_1_to_1_certified": false,
+          "reference_limitations_open": true,
+          "mechanical_classification_open": false,
+          "note": "Les quatre PNG ont été comparés aux miniatures natives des modèles du jeu et retenus : signes distinctifs du costume, visage et équipement lisibles, silhouettes et armes entières. Six points alpha par PNG contrôlés indépendamment : cinq extérieurs à0 et un point sur le personnage à250–253. Les quatre concordances exactes Saturn/PC restent ouvertes, ainsi que les détails fins et chaussures interprétés."
+        }
+      }
+    }
+  ]
+}

@@ -10,7 +10,8 @@ const EXPECTED_GALLERY := {
 	Bestiary.LOT2_MANIFEST: ["clement_darling", "fool", "gary_typing", "goldman_human", "james_typing", "kuarl", "papa_caesar", "strength", "sun", "thornheart", "tower", "zeal"],
 	Bestiary.LOT3_MANIFEST: ["brutus", "crawler", "dr_curien", "g_hotd4special", "high_priestess", "james_hotd4", "screamer", "sophie_richards"],
 	Bestiary.LOT4_MANIFEST: ["coco", "goldman_zombie", "jasper_human", "lobber", "meat_katie", "mother_human", "nigel_sebastian", "sindy", "sophie_zombie"],
-	Bestiary.LOT5_MANIFEST: ["dan_taylor", "g_typing2", "hangedman_scarlet_dawn", "linda_zr_alt_leather", "linda_zr_alt_qipao", "lisa_typing2", "rikiya_zr_alt_leather", "rikiya_zr_alt_suit", "stick_zr_alt_armor", "stick_zr_alt_suit", "yukio_creature"]
+	Bestiary.LOT5_MANIFEST: ["dan_taylor", "g_typing2", "hangedman_scarlet_dawn", "linda_zr_alt_leather", "linda_zr_alt_qipao", "lisa_typing2", "rikiya_zr_alt_leather", "rikiya_zr_alt_suit", "stick_zr_alt_armor", "stick_zr_alt_suit", "yukio_creature"],
+	Bestiary.LOT6_MANIFEST: ["g_saturn2", "researcher_saturn", "rogan_saturn2", "sophie_saturn"]
 }
 var a
 var checks := 0
@@ -237,7 +238,7 @@ func gallery_extension() -> void:
 		check(declared == EXPECTED_GALLERY[path], "Every delivered subject is declared exactly once: " + path)
 		extension_entries.append_array(parsed.assets)
 	a.bestiary.select_filter(a,0)
-	check(a.bestiary.assets.size() == 89, "Native gallery preserves the previous seventy-eight cards and adds eleven static subjects")
+	check(a.bestiary.assets.size() == 93, "Native gallery preserves the previous eighty-nine cards and adds four static Saturn/PC Mode studies")
 	var loaded := {}
 	var loaded_indices := {}
 	for index in a.bestiary.assets.size():
@@ -287,11 +288,11 @@ func gallery_extension() -> void:
 		await verify_sheet_layout("Gallery game " + str(game))
 
 func additional_stages() -> void:
-	check(Fighter.PROFILES.size() == 24 and Saga.STAGES.size() == 29 and Saga.ART.size() == 29, "Further arenas preserve the playable roster and align twenty-nine art registrations")
+	check(Fighter.PROFILES.size() == 24 and Saga.STAGES.size() == 33 and Saga.ART.size() == 33, "Further arenas preserve the playable roster and align thirty-three art registrations")
 	a.case_id = ""
 	a.mode = 1
 	a.chosen = 0
-	var expected_art := {18:"zr_train", 19:"creeping_flesh", 20:"tower_canal", 21:"strength_colosseum", 22:"fool_enclosure", 23:"sun_bio", 24:"hangedman_roof", 25:"hermit_dome", 26:"prelude_square", 27:"overkill_hospital", 28:"zr_chemical_plant"}
+	var expected_art := {18:"zr_train", 19:"creeping_flesh", 20:"tower_canal", 21:"strength_colosseum", 22:"fool_enclosure", 23:"sun_bio", 24:"hangedman_roof", 25:"hermit_dome", 26:"prelude_square", 27:"overkill_hospital", 28:"zr_chemical_plant", 29:"ams_underground", 30:"scarlet_annex", 31:"overkill_papa", 32:"zr_sewage"}
 	for stage_index in expected_art:
 		check(Saga.ART[stage_index] == expected_art[stage_index], "Additional arena preserves its stable art index: " + str(stage_index))
 		a.pick_stage(1, stage_index/a.PAGE_SIZE)

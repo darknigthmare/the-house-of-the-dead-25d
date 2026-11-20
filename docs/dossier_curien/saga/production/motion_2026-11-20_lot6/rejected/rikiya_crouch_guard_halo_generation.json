@@ -1,0 +1,19 @@
+{
+  "id": "rikiya_crouch_guard",
+  "pose": "crouch_guard",
+  "source_generation_path": "/workspace/scratch/da9d6e4777c1/generated_images/exec-a3889c84-410a-4c4f-ae18-c304ec4fcdbe.png",
+  "prompt": "Use case: identity-preserve. Create ONE new full-body 2D fighting-game keyframe of the exact adult Rikiya Busujima in the attached approved project sprite, which is the authoritative identity, outfit, anatomical proportions and rendering-style reference. Preserve his dense curly black shoulder-length hair, narrow dark sunglasses with thin metal frame, serious clean-shaven face, lean muscular bare torso, open brown leather shoulder-holster harness and its paired silver square buckles, dark blue denim jeans with visible tan seams, brown belt and square silver buckle, brown lace-up shoes. Both hands remain EMPTY; keep holstered details unobtrusive, no drawn firearm. Use the same finely painted crisp arcade-sprite shading, material texture, palette and muscle definition. Lateral three-quarter camera, facing SCREEN RIGHT. Square transparent RGBA canvas. Preserve the reference's head size, torso length, limb thickness and standing anatomical scale: approximately 900 native image pixels tall if standing on a 1024x1024 canvas; the pose may occupy less height because joints bend. Do NOT enlarge a crouched or tucked body to fill the canvas. Hair, fingers, harness and both soles fully inside generous transparent margins. There is only this one character and one pose. Genuine transparent background with clean alpha. No floor, cast shadow, ground plane, scenery, text, labels, sheet, duplicate figure, speed lines, blur, VFX, glow, or opponent. Action: committed LOW DEFENSIVE GUARD. Lowered deep crouch with both knees sharply bent and weight centered, both full shoes planted on one common ground line around y=950. Keep his full-size head, shoulders and torso; do not shrink his body. His near/right elbow tucks down in front of his ribs while its open palm guards beside the right cheek; his far/left forearm angles down and FORWARD across the lower chest and waist, open palm turned outward to intercept a low strike. Chin tucked, head below standing shoulder level, clearly more closed/protective than neutral crouch. The near forearm must not hide his sunglasses or alter the harness. No incoming hit effect and no opponent.",
+  "references": [
+    {
+      "path": "assets/dossier_curien/saga/rikiya_guard.png",
+      "role": "identity_costume_style_anatomy_reference"
+    }
+  ],
+  "generation_tool": "image_gen.imagegen",
+  "transparent_background": true,
+  "date": "2026-11-20",
+  "image_edits": [],
+  "status": "rejected",
+  "rejection_reason": "Large cloudy halo behind the figure despite requested transparent background.",
+  "path": "docs/dossier_curien/saga/production/motion_2026-11-20_lot6/rejected/rikiya_crouch_guard_halo.png"
+}

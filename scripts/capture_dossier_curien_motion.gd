@@ -10,6 +10,7 @@ extends SceneTree
 const Arena := preload("res://src/dossier_curien/arena.gd")
 const Fighter := preload("res://src/dossier_curien/combatant.gd")
 const Painter := preload("res://src/dossier_curien/presentation.gd")
+const Motion := preload("res://src/dossier_curien/saga_motion.gd")
 const CASES := [
 	{"id":"linda_block", "fighter":23, "pose":"block"},
 	{"id":"linda_jump_rise", "fighter":23, "pose":"jump_rise"},
@@ -43,6 +44,15 @@ const CASES := [
 	{"id":"rikiya_walk1", "fighter":16, "pose":"walk1"},
 	{"id":"rikiya_walk2", "fighter":16, "pose":"walk2"},
 	{"id":"rikiya_recovery", "fighter":16, "pose":"recovery"},
+	{"id":"rikiya_jump_rise", "fighter":16, "pose":"jump_rise"},
+	{"id":"rikiya_jump_fall", "fighter":16, "pose":"jump_fall"},
+	{"id":"rikiya_crouch", "fighter":16, "pose":"crouch"},
+	{"id":"rikiya_crouch_guard", "fighter":16, "pose":"crouch_guard"},
+	{"id":"rikiya_block", "fighter":16, "pose":"block"},
+	{"id":"rikiya_throw", "fighter":16, "pose":"throw"},
+	{"id":"rikiya_victory", "fighter":16, "pose":"victory"},
+	{"id":"rikiya_taunt", "fighter":16, "pose":"taunt"},
+	{"id":"rikiya_finish", "fighter":16, "pose":"finish"},
 ]
 
 class CalibrationOverlay:
@@ -169,7 +179,15 @@ func run() -> void:
 	arena.add_child(overlay)
 	var manifest_path := "res://data/assets/dossier_curien_motion.json"
 	var before_hash := FileAccess.get_sha256(manifest_path)
-	var manifest = JSON.parse_string(FileAccess.get_file_as_string(manifest_path))
+	var manifest_hashes := {}
+	var provisional_by_path := {}
+	var any_provisional := false
+	for collection_path in Motion.MANIFESTS:
+		manifest_hashes[collection_path] = FileAccess.get_sha256(collection_path)
+		var collection = JSON.parse_string(FileAccess.get_file_as_string(collection_path))
+		var provisional: bool = collection.get("provisional",false) if collection is Dictionary else true
+		provisional_by_path[collection_path] = provisional
+		any_provisional = any_provisional or provisional
 	for item: Dictionary in CASES:
 		if not selected(item.id): continue
 		var path := output.path_join(item.id + ".png")
@@ -199,10 +217,14 @@ func run() -> void:
 			"standing_world_height":fighter.profile.height, "render_height":arena.visuals.pose_height(fighter,art_id,visible_pose),
 			"native_calibration":arena.visuals.motion.get_entry(art_id+visible_pose), "rendered_emitter_pose":emitter.get("pose", ""), "rendered_emitter_world":emitter_position})
 	var after_hash := FileAccess.get_sha256(manifest_path)
+	var collections_stable := true
+	for collection_path in manifest_hashes:
+		if manifest_hashes[collection_path] != FileAccess.get_sha256(collection_path): collections_stable = false
 	var report := {"scope":"isolated_pose_calibration", "scripted_states":true, "full_gameflow_validated":false, "canonical_fidelity_validated":false,
 		"engine":Engine.get_version_info().string, "display_server":DisplayServer.get_name(), "rendering_method":RenderingServer.get_current_rendering_method(),
-		"manifest_provisional":manifest.get("provisional",false) if manifest is Dictionary else true, "manifest_sha256":before_hash,
-		"manifest_stable_during_capture":before_hash==after_hash, "presentation_sha256":FileAccess.get_sha256("res://src/dossier_curien/presentation.gd"),
+		"manifest_provisional":any_provisional, "manifest_provisional_by_path":provisional_by_path, "manifest_sha256":before_hash,
+		"manifest_stable_during_capture":before_hash==after_hash and collections_stable, "manifest_sha256_by_path":manifest_hashes,
+		"presentation_sha256":FileAccess.get_sha256("res://src/dossier_curien/presentation.gd"),
 		"captures":captures, "failures":failures}
 	var handle := FileAccess.open(output.path_join("capture_report.json"), FileAccess.WRITE)
 	if handle == null:

@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "provisional": false,
+  "reference": {
+    "path": "assets/dossier_curien/saga/rikiya_guard.png",
+    "dimensions": [1024, 1024],
+    "visible_bbox": [218, 57, 889, 958],
+    "standing_height_px": 901,
+    "head_crown_y_px": 57,
+    "chin_y_px": 213,
+    "head_landmark_span_px": 156
+  },
+  "method": "Manual landmarks on unmodified native PNGs. Standing-equivalent height = reference standing height × pose crown-to-chin span / reference crown-to-chin span. This preserves head/anatomical scale when a generated low silhouette fills more of its canvas; the visible crouched bounding-box height is not used as standing height. Pivots follow pelvis axis and lowest planted/supporting sole; aerial pivots mark the virtual sole baseline before simulation altitude is applied.",
+  "native_engine_capture_status": "blocked_af_unix_socket_creation_eperm",
+  "native_engine_capture_evidence": "docs/dossier_curien/saga/production/motion_2026-11-20_lot6/qa_logs/native-display-diagnostic.txt",
+  "limitations": [
+    "Landmarks are visually measured, not a certified skeletal reconstruction.",
+    "One keyframe per action state; intermediate animation frames remain missing.",
+    "No canonical 1:1 certification; these are identity-preserving derivatives of the existing project drawing."
+  ],
+  "poses": {
+    "crouch": {"pivot_px": [600, 1173], "head_crown_y_px": 233, "chin_y_px": 458, "anchors_px": {"near_sole": [318, 1173], "far_sole": [864, 1166]}},
+    "crouch_guard": {"pivot_px": [585, 1193], "head_crown_y_px": 383, "chin_y_px": 615, "anchors_px": {"near_sole": [309, 1193], "far_sole": [817, 1191]}},
+    "block": {"pivot_px": [590, 1175], "head_crown_y_px": 79, "chin_y_px": 283, "anchors_px": {"near_sole": [360, 1175], "far_sole": [813, 1167]}},
+    "jump_rise": {"pivot_px": [560, 1100], "head_crown_y_px": 54, "chin_y_px": 245, "anchors_px": {"trailing_sole": [390, 1100], "raised_sole": [708, 828]}},
+    "jump_fall": {"pivot_px": [585, 1160], "head_crown_y_px": 75, "chin_y_px": 282, "anchors_px": {"near_sole": [450, 1160], "far_sole": [779, 1155]}},
+    "throw": {"pivot_px": [550, 1136], "head_crown_y_px": 137, "chin_y_px": 347, "anchors_px": {"near_sole": [187, 1136], "far_sole": [814, 1132], "near_palm": [886, 505], "far_palm": [1100, 360]}}
+  }
+}

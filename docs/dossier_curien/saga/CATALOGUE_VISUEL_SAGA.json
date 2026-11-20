@@ -1,8 +1,44 @@
 {
   "titre": "Dossier Curien — Anthologie de combat",
-  "nombre_de_png": 256,
+  "nombre_de_png": 268,
   "nouveaux_png_volume_iii": 86,
   "fichiers": [
+    {
+      "fichier": "ams_underground_back.png",
+      "usage": "back",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "859fe289bfe1fb7ce5dfcc1b2dfb18b06497a927715a2a6408bee1cd1be1a6a5",
+      "lot": "2026-11-20_lot6_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot6/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "ams_underground_front.png",
+      "usage": "front",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "09dfa59fa848222db0d66985664ca17f2c735c1937c727b2a626b193be360b9f",
+      "lot": "2026-11-20_lot6_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot6/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "ams_underground_mid.png",
+      "usage": "mid",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "73a083406cc71331962b7360672e9f2507a73b930766157c149394951875f6b5",
+      "lot": "2026-11-20_lot6_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot6/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
     {
       "fichier": "bayou_back.png",
       "usage": "back",
@@ -1831,6 +1867,42 @@
       "volume": 2
     },
     {
+      "fichier": "overkill_papa_back.png",
+      "usage": "back",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "f73447594b1c1bfec2009e43d7c5391ac9fc8c60d225789852ad2c351c4e4f48",
+      "lot": "2026-11-20_lot6_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot6/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "overkill_papa_front.png",
+      "usage": "front",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "e33b6f102600a72ec0f61e07748eb98ebf8656bbe99f0be83f42880b7cf08847",
+      "lot": "2026-11-20_lot6_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot6/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "overkill_papa_mid.png",
+      "usage": "mid",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "d36edc8a14981758a520f3e35fea0fd5644401df4542968462a8a2d42aa34e88",
+      "lot": "2026-11-20_lot6_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot6/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
       "fichier": "overkill_rival.png",
       "usage": "rival",
       "dimensions": [
@@ -2332,6 +2404,42 @@
         960
       ],
       "volume": 3
+    },
+    {
+      "fichier": "scarlet_annex_back.png",
+      "usage": "back",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "0075fc062fc4a6b7c5878963fa7f64ce406dc3e2ec8aa1b4008e23d836230d48",
+      "lot": "2026-11-20_lot6_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot6/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "scarlet_annex_front.png",
+      "usage": "front",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "576acbd9c373c7588515c9d70840a3ce3f6709d77c675e6bcbba8f46cfa37b86",
+      "lot": "2026-11-20_lot6_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot6/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "scarlet_annex_mid.png",
+      "usage": "mid",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "3dbdb68804f3ab51e5cc6fc9198cad997d5a9910acb62aa03fba948a9e97a326",
+      "lot": "2026-11-20_lot6_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot6/manifest.json",
+      "statut": "adaptation_2d_documentee"
     },
     {
       "fichier": "scarlet_back.png",
@@ -3106,6 +3214,42 @@
       "statut": "adaptation_2d_documentee"
     },
     {
+      "fichier": "zr_sewage_back.png",
+      "usage": "back",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "12bc850e759f3066de4aed407e24d5fa875366454a4768779522d77401f582ba",
+      "lot": "2026-11-20_lot6_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot6/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "zr_sewage_front.png",
+      "usage": "front",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "42997cda6964162ec13889d08b573228e2d3da62a0b06b27dbb47fc16b010d6f",
+      "lot": "2026-11-20_lot6_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot6/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "zr_sewage_mid.png",
+      "usage": "mid",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "f4e81047b29b7f679238f538c506cb04c7f6bb6ae254e144acb056e65e18601e",
+      "lot": "2026-11-20_lot6_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot6/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
       "fichier": "zr_train_back.png",
       "usage": "back",
       "dimensions": [
@@ -3152,5 +3296,6 @@
   "nouveaux_png_stages_2026_11_20_lot2": 6,
   "nouveaux_png_stages_2026_11_20_lot3": 6,
   "nouveaux_png_stages_2026_11_20_lot4": 6,
-  "nouveaux_png_stages_2026_11_20_lot5": 9
+  "nouveaux_png_stages_2026_11_20_lot5": 9,
+  "nouveaux_png_stages_2026_11_20_lot6": 12
 }

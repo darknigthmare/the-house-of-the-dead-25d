@@ -1,0 +1,31 @@
+{
+  "id": "rikiya_crouch_guard",
+  "pose": "crouch_guard",
+  "source_generation_path": "/workspace/scratch/da9d6e4777c1/generated_images/exec-8cf15684-8205-4503-bbf6-abbaf51bef7d.png",
+  "prompt": "Use case: precise-object-edit. Edit the attached sprite. Preserve the exact Rikiya character, current low defensive pose, face, curly hair, sunglasses, bare torso, brown shoulder harness, blue denim jeans, brown shoes, hand positions and the existing finely painted arcade rendering. Remove ONLY the enormous gray/beige cloudy circular halo behind and around him. Every pixel that is not part of his body, hair, clothing, hands or shoes must become completely transparent alpha=0. There is no environment, smoke, aura, disk, lighting glow, floor or cast shadow. Preserve clean natural character contours and existing edge antialiasing. Keep the full-body figure at the same scale and position and leave transparent negative space between limbs. Do not add, remove or move any body part; do not recolor or change his anatomy, outfit, face or pose. ONE isolated character PNG with a genuinely transparent RGBA background.",
+  "references": [
+    {
+      "path": "docs/dossier_curien/saga/production/motion_2026-11-20_lot6/rejected/rikiya_crouch_guard_halo.png",
+      "role": "precise_background_correction_input"
+    },
+    {
+      "path": "assets/dossier_curien/saga/rikiya_guard.png",
+      "role": "original_identity_costume_style_anatomy_reference"
+    }
+  ],
+  "generation_tool": "image_gen.imagegen",
+  "transparent_background": true,
+  "date": "2026-11-20",
+  "image_edits": [
+    {
+      "tool": "image_gen.imagegen",
+      "operation": "remove_generated_halo_preserve_character",
+      "input_receipt": "docs/dossier_curien/saga/production/motion_2026-11-20_lot6/rejected/rikiya_crouch_guard_halo_generation.json"
+    }
+  ],
+  "local_pixel_edits": [],
+  "status": "native_pixels_visually_reviewed_runtime_validated",
+  "native_sha256": "eecda8d4fa962037ef07c728f40c19b6022c9b7d69c76a04a6a55e05facbcae3",
+  "native_bytes": 707382,
+  "native_output_copied_without_pixel_changes": true
+}

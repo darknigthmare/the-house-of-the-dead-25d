@@ -1,0 +1,1020 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "timezone": "Europe/Paris",
+  "batch": "2026-11-20_lot6",
+  "baseline_commit": "7f14d7b49dcc8d884629245eef71e65198665b8e",
+  "initial_inventory_commit": "59372b618882da17510351f2a5bd46226682eac4",
+  "publication_target": {
+    "branch": "feat/dossier-curien-lot5",
+    "base": "main",
+    "pull_request": "https://github.com/darknigthmare/the-house-of-the-dead-25d/pull/3",
+    "expected_previous_head": "7f14d7b49dcc8d884629245eef71e65198665b8e",
+    "requires_new_continuation_pull_request": false,
+    "merge_requested": false
+  },
+  "sources": {
+    "baseline": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot6/baseline_7f14d7b4.json",
+    "previous_delivery": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot5/delta_livraison.json",
+    "current_inventory": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot6/personnages_tenues.json",
+    "generation_manifests": [
+      "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot6/costumes_generated.json",
+      "docs/dossier_curien/saga/production/stages_2026-11-20_lot6/manifest.json"
+    ],
+    "runtime_gallery": "data/assets/dossier_curien_gallery_2026-11-20_lot6.json",
+    "runtime_motion": "data/assets/dossier_curien_motion_2026-11-20_lot6.json",
+    "motion_remaining": "docs/dossier_curien/saga/production/motion_2026-11-20_lot6/MANQUANTS.json",
+    "stage_inventory": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot6/stages_manquants.json",
+    "engine_and_catalogue_validation": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot6/VALIDATION.json"
+  },
+  "summary": {
+    "baseline_task_records": 62,
+    "records_receiving_static_dossier_base_this_batch": 4,
+    "newly_covered_task_records_this_batch": 4,
+    "records_with_static_dossier_base_after_previous_batches": 42,
+    "records_with_static_dossier_base_from_six_batches": 46,
+    "records_not_covered_by_these_six_batches": 16,
+    "gallery_images_from_six_batches": 53,
+    "new_character_visual_bases": 0,
+    "new_boss_visual_bases": 0,
+    "new_boss_encounters_represented": 0,
+    "new_edition_costume_visual_bases": 4,
+    "explicit_reference_qa_open_this_batch": 4,
+    "explicit_reference_qa_open_among_six_batches_only": 18,
+    "new_playable_profiles": 0,
+    "new_selectable_costumes": 0,
+    "complete_animations_added": 0,
+    "new_runtime_action_drawings": 9,
+    "named_motion_gaps_before": 277,
+    "named_motion_gaps_after": 268,
+    "historical_masters_unrecovered_before": 204,
+    "historical_masters_unrecovered_after": 204,
+    "playable_fighters_before": 24,
+    "playable_fighters_after": 24,
+    "story_routes_before": 26,
+    "story_routes_after": 26,
+    "archive_challenges_before": 29,
+    "archive_challenges_after": 29,
+    "selectable_alternate_costumes_before": 2,
+    "selectable_alternate_costumes_after": 2,
+    "gallery_cards_before": 89,
+    "gallery_cards_after_source_integration": 93,
+    "arena_records_before": 29,
+    "arena_records_after_source_integration": 33,
+    "new_gallery_pngs": 4,
+    "new_stage_pngs": 12,
+    "new_motion_pngs": 9,
+    "new_png_total": 25,
+    "new_gallery_png_bytes": 6948144,
+    "new_stage_png_bytes": 12386942,
+    "new_motion_png_bytes": 6765323,
+    "new_png_bytes": 26100409,
+    "imagegen_calls": 26,
+    "rejected_generation_outputs": 1,
+    "blocked_generations_without_output": 0,
+    "dossier_png_paths_before": 414,
+    "dossier_png_paths_after": 439,
+    "dossier_unique_git_blobs_before": 412,
+    "dossier_unique_git_blobs_after": 437,
+    "stage_catalogue_rows": 63,
+    "new_stage_inventory_rows": [],
+    "stage_catalogue_by_status": {
+      "existant": 26,
+      "adaptation_partielle": 8,
+      "absent": 22,
+      "reference_requise": 7
+    },
+    "main_boss_encounter_status_counts": {
+      "playable_identity_base_edition_review_required": 14,
+      "static_gallery_base_delivered": 16,
+      "gallery_under_other_edition_label": 4,
+      "dedicated_art_not_delivered": 1
+    }
+  },
+  "counting_rule": "Quatre illustrations statiques couvrent quatre tâches supplémentaires sans clôturer leur QA de port. Neuf autres PNG remplissent neuf actions réellement manquantes de Rikiya. Douze plans forment quatre arènes. Une tâche graphique ou une famille ne correspond pas nécessairement à une personne unique.",
+  "deliveries": [
+    {
+      "inventory_task_id": "rogan_saturn2",
+      "asset_id": "rogan_saturn2",
+      "name": "Rogan2 — Saturn/PC Mode",
+      "delivery_kind": "static_costume_variant_base",
+      "edition_scope": "hotd1_saturn",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot6/costumes/rogan_saturn2_base.png",
+      "sha256": "81883bb1a652193d866a198a39bf3c136870e1101cc6725800ebac67cf3586aa",
+      "bytes": 1891212,
+      "source_manifest": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot6/costumes_generated.json",
+      "base_art_delivered": true,
+      "source_manifest_status": "static_needs_visual_reference_qa",
+      "canonical_reference_qa_complete_claim": false,
+      "playable_added": false,
+      "selectable_costume_added": false,
+      "animation_complete": false,
+      "exact_limitations": [
+        "Galerie statique uniquement : aucun personnage jouable, costume sélectionnable, mode Saturn/PC, statistique, attaque ou animation complète ajouté.",
+        "Les quatre entrées sont des variantes ou modèles de mode ; aucune nouvelle identité canonique déclarée.",
+        "Adaptation peinte 2D des caractéristiques visibles ; aucune certification de fidélité 1:1 aux modèles originaux.",
+        "Les références de détail sont issues du PC Mode Windows. La concordance exacte avec le port Saturn demeure une QA ouverte pour chaque asset.",
+        "PNG natif RGBA conservé octet pour octet ; aucun détourage, nettoyage, recadrage, redimensionnement ou réencodage du résultat généré.",
+        "Les miniatures LyricBR sont des montages du modèle du jeu publiés par leur auteur ; elles sont corroborées par des storyboards natifs, sans être présentées comme des captures brutes plein écran.",
+        "Aucune animation, vue de dos exhaustive, mécanique de sélection ni variante régionale supplémentaire déclarée couverte.",
+        "Forme et teinte détaillées des chaussures non résolues dans les vignettes : chaussures fermées brun sombre interprétées.",
+        "Maillage, texture précise de la casquette et du pantalon, coutures, visage et arme adaptés en peinture 2D.",
+        "Concordance fine Saturn/PC non certifiée ; références détaillées du port Windows, comparaison Saturn limitée aux petites sélections."
+      ],
+      "remaining_work": [
+        "Concordance exacte Saturn/PC, petits détails et pieds à revoir avec sources plus précises.",
+        "Poses et intégration comme costume sélectionnable non livrées."
+      ]
+    },
+    {
+      "inventory_task_id": "g_saturn2",
+      "asset_id": "g_saturn2",
+      "name": "G2 — Saturn/PC Mode",
+      "delivery_kind": "static_costume_variant_base",
+      "edition_scope": "hotd1_saturn",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot6/costumes/g_saturn2_base.png",
+      "sha256": "9b2be879589ceff02ff11babdd4dadd252be03a3a5e1937ac116042a3013c738",
+      "bytes": 1548763,
+      "source_manifest": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot6/costumes_generated.json",
+      "base_art_delivered": true,
+      "source_manifest_status": "static_needs_visual_reference_qa",
+      "canonical_reference_qa_complete_claim": false,
+      "playable_added": false,
+      "selectable_costume_added": false,
+      "animation_complete": false,
+      "exact_limitations": [
+        "Galerie statique uniquement : aucun personnage jouable, costume sélectionnable, mode Saturn/PC, statistique, attaque ou animation complète ajouté.",
+        "Les quatre entrées sont des variantes ou modèles de mode ; aucune nouvelle identité canonique déclarée.",
+        "Adaptation peinte 2D des caractéristiques visibles ; aucune certification de fidélité 1:1 aux modèles originaux.",
+        "Les références de détail sont issues du PC Mode Windows. La concordance exacte avec le port Saturn demeure une QA ouverte pour chaque asset.",
+        "PNG natif RGBA conservé octet pour octet ; aucun détourage, nettoyage, recadrage, redimensionnement ou réencodage du résultat généré.",
+        "Les miniatures LyricBR sont des montages du modèle du jeu publiés par leur auteur ; elles sont corroborées par des storyboards natifs, sans être présentées comme des captures brutes plein écran.",
+        "Aucune animation, vue de dos exhaustive, mécanique de sélection ni variante régionale supplémentaire déclarée couverte.",
+        "Forme détaillée des chaussures non résolue ; chaussures noires fermées interprétées.",
+        "Transparence et reflet des verres, coupe de barbe, coutures et petits mécanismes du pistolet adaptés en peinture.",
+        "Concordance fine Saturn/PC non certifiée ; aucune capture Saturn détaillée de ce modèle obtenue."
+      ],
+      "remaining_work": [
+        "Concordance exacte Saturn/PC, petits détails et pieds à revoir avec sources plus précises.",
+        "Poses et intégration comme costume sélectionnable non livrées."
+      ]
+    },
+    {
+      "inventory_task_id": "sophie_saturn",
+      "asset_id": "sophie_saturn",
+      "name": "Sophie — Saturn/PC Mode",
+      "delivery_kind": "static_costume_variant_base",
+      "edition_scope": "hotd1_saturn",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot6/costumes/sophie_saturn_base.png",
+      "sha256": "464f45b82e4546014fd69cebd68860e9e1ad803ce4fb54aab874cccbc7a3936d",
+      "bytes": 1756557,
+      "source_manifest": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot6/costumes_generated.json",
+      "base_art_delivered": true,
+      "source_manifest_status": "static_needs_visual_reference_qa",
+      "canonical_reference_qa_complete_claim": false,
+      "playable_added": false,
+      "selectable_costume_added": false,
+      "animation_complete": false,
+      "exact_limitations": [
+        "Galerie statique uniquement : aucun personnage jouable, costume sélectionnable, mode Saturn/PC, statistique, attaque ou animation complète ajouté.",
+        "Les quatre entrées sont des variantes ou modèles de mode ; aucune nouvelle identité canonique déclarée.",
+        "Adaptation peinte 2D des caractéristiques visibles ; aucune certification de fidélité 1:1 aux modèles originaux.",
+        "Les références de détail sont issues du PC Mode Windows. La concordance exacte avec le port Saturn demeure une QA ouverte pour chaque asset.",
+        "PNG natif RGBA conservé octet pour octet ; aucun détourage, nettoyage, recadrage, redimensionnement ou réencodage du résultat généré.",
+        "Les miniatures LyricBR sont des montages du modèle du jeu publiés par leur auteur ; elles sont corroborées par des storyboards natifs, sans être présentées comme des captures brutes plein écran.",
+        "Aucune animation, vue de dos exhaustive, mécanique de sélection ni variante régionale supplémentaire déclarée couverte.",
+        "Miniature composée par l’auteur de la vidéo : elle montre le modèle, mais ne constitue pas une capture brute non montée.",
+        "Motifs fins du badge, texture du tissu, couleur exacte des jambes/éventuels bas et détails de chaussures interprétés en peinture.",
+        "Concordance fine Saturn/PC non certifiée ; sélection Saturn consultée uniquement en petite vignette."
+      ],
+      "remaining_work": [
+        "Concordance exacte Saturn/PC, petits détails et pieds à revoir avec sources plus précises.",
+        "Poses et intégration comme costume sélectionnable non livrées."
+      ]
+    },
+    {
+      "inventory_task_id": "researcher_saturn",
+      "asset_id": "researcher_saturn",
+      "name": "Chercheuse DBR — Saturn/PC Mode",
+      "delivery_kind": "static_costume_variant_base",
+      "edition_scope": "hotd1_saturn",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot6/costumes/researcher_saturn_base.png",
+      "sha256": "6137b6e3b6283af77b179fc84b62119b43c13ebf0caf43f09d58b862316ee21b",
+      "bytes": 1751612,
+      "source_manifest": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot6/costumes_generated.json",
+      "base_art_delivered": true,
+      "source_manifest_status": "static_needs_visual_reference_qa",
+      "canonical_reference_qa_complete_claim": false,
+      "playable_added": false,
+      "selectable_costume_added": false,
+      "animation_complete": false,
+      "exact_limitations": [
+        "Galerie statique uniquement : aucun personnage jouable, costume sélectionnable, mode Saturn/PC, statistique, attaque ou animation complète ajouté.",
+        "Les quatre entrées sont des variantes ou modèles de mode ; aucune nouvelle identité canonique déclarée.",
+        "Adaptation peinte 2D des caractéristiques visibles ; aucune certification de fidélité 1:1 aux modèles originaux.",
+        "Les références de détail sont issues du PC Mode Windows. La concordance exacte avec le port Saturn demeure une QA ouverte pour chaque asset.",
+        "PNG natif RGBA conservé octet pour octet ; aucun détourage, nettoyage, recadrage, redimensionnement ou réencodage du résultat généré.",
+        "Les miniatures LyricBR sont des montages du modèle du jeu publiés par leur auteur ; elles sont corroborées par des storyboards natifs, sans être présentées comme des captures brutes plein écran.",
+        "Aucune animation, vue de dos exhaustive, mécanique de sélection ni variante régionale supplémentaire déclarée couverte.",
+        "Chaussures non résolues par les captures retenues : forme fermée blanche basse interprétée.",
+        "Détails d’attache des cheveux, de badge, des coutures et de l’arme adaptés en peinture à partir des surfaces visibles.",
+        "Concordance fine Saturn/PC non certifiée ; aucune capture Saturn détaillée de cette chercheuse obtenue."
+      ],
+      "remaining_work": [
+        "Concordance exacte Saturn/PC, petits détails et pieds à revoir avec sources plus précises.",
+        "Poses et intégration comme costume sélectionnable non livrées."
+      ]
+    }
+  ],
+  "motion_deliveries": [
+    {
+      "asset_id": "rikiya_crouch",
+      "fighter_id": "rikiya",
+      "pose": "crouch",
+      "path": "assets/dossier_curien/motion_2026-11-20_lot6/rikiya_crouch.png",
+      "sha256": "b902791f871c313a26f93a79cab976f17683d1974723ca09bb17681ffa5bb37d",
+      "runtime_consumption": {
+        "selector": "src/dossier_curien/presentation.gd:pose_suffix",
+        "condition": "action empty; grounded; crouching; not guarding"
+      },
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-20_lot6/rikiya_crouch_generation.json",
+      "new_named_gap_resolved": true,
+      "animation_complete": false
+    },
+    {
+      "asset_id": "rikiya_crouch_guard",
+      "fighter_id": "rikiya",
+      "pose": "crouch_guard",
+      "path": "assets/dossier_curien/motion_2026-11-20_lot6/rikiya_crouch_guard.png",
+      "sha256": "eecda8d4fa962037ef07c728f40c19b6022c9b7d69c76a04a6a55e05facbcae3",
+      "runtime_consumption": {
+        "selector": "src/dossier_curien/presentation.gd:pose_suffix",
+        "condition": "action empty; grounded; crouching and guarding"
+      },
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-20_lot6/rikiya_crouch_guard_generation.json",
+      "new_named_gap_resolved": true,
+      "animation_complete": false
+    },
+    {
+      "asset_id": "rikiya_block",
+      "fighter_id": "rikiya",
+      "pose": "block",
+      "path": "assets/dossier_curien/motion_2026-11-20_lot6/rikiya_block.png",
+      "sha256": "19cdd26fe0a6fda17b0232866912733b39aac3aab6f8025979ec94730bc6afa2",
+      "runtime_consumption": {
+        "selector": "src/dossier_curien/presentation.gd:pose_suffix",
+        "condition": "action empty; grounded; not crouching; block_ticks > 0 or stationary guard"
+      },
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-20_lot6/rikiya_block_generation.json",
+      "new_named_gap_resolved": true,
+      "animation_complete": false
+    },
+    {
+      "asset_id": "rikiya_jump_rise",
+      "fighter_id": "rikiya",
+      "pose": "jump_rise",
+      "path": "assets/dossier_curien/motion_2026-11-20_lot6/rikiya_jump_rise.png",
+      "sha256": "50a4cde70b08636829625ca367411370fbb9219677a04834667caa1f412daa8f",
+      "runtime_consumption": {
+        "selector": "src/dossier_curien/presentation.gd:pose_suffix",
+        "condition": "action empty; altitude > 0 or vy > 0; vy > 0"
+      },
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-20_lot6/rikiya_jump_rise_generation.json",
+      "new_named_gap_resolved": true,
+      "animation_complete": false
+    },
+    {
+      "asset_id": "rikiya_jump_fall",
+      "fighter_id": "rikiya",
+      "pose": "jump_fall",
+      "path": "assets/dossier_curien/motion_2026-11-20_lot6/rikiya_jump_fall.png",
+      "sha256": "296033a55a35edfd9d69c604cc7a942194fe2e5c7c01e45a82017d132b48f4b6",
+      "runtime_consumption": {
+        "selector": "src/dossier_curien/presentation.gd:pose_suffix",
+        "condition": "action empty; altitude > 0; vy <= 0"
+      },
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-20_lot6/rikiya_jump_fall_generation.json",
+      "new_named_gap_resolved": true,
+      "animation_complete": false
+    },
+    {
+      "asset_id": "rikiya_throw",
+      "fighter_id": "rikiya",
+      "pose": "throw",
+      "path": "assets/dossier_curien/motion_2026-11-20_lot6/rikiya_throw.png",
+      "sha256": "db033803b9e469e84b025b285128092e85f43fc6985cb68f921926e4a2ec0c12",
+      "runtime_consumption": {
+        "selector": "src/dossier_curien/presentation.gd:pose_suffix",
+        "condition": "action == throw; dedicated art precedes generic attack keyframes"
+      },
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-20_lot6/rikiya_throw_generation.json",
+      "new_named_gap_resolved": true,
+      "animation_complete": false
+    },
+    {
+      "asset_id": "rikiya_victory",
+      "fighter_id": "rikiya",
+      "pose": "victory",
+      "path": "assets/dossier_curien/motion_2026-11-20_lot6/rikiya_victory.png",
+      "sha256": "16afcd9c4731683f5666e945befacca9131c793182eceaaf2dcc1b46e36b8b9c",
+      "runtime_consumption": {
+        "selector": "src/dossier_curien/presentation.gd:pose_suffix",
+        "condition": "arena winner in finish, round or result phase (including its paused equivalent)"
+      },
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-20_lot6/rikiya_victory_generation.json",
+      "new_named_gap_resolved": true,
+      "animation_complete": false
+    },
+    {
+      "asset_id": "rikiya_taunt",
+      "fighter_id": "rikiya",
+      "pose": "taunt",
+      "path": "assets/dossier_curien/motion_2026-11-20_lot6/rikiya_taunt.png",
+      "sha256": "7f7868dc58974638589ca48995668d25e2826162654cd54b1351fc522fa17641",
+      "runtime_consumption": {
+        "selector": "src/dossier_curien/presentation.gd:pose_suffix",
+        "condition": "action empty; grounded; not crouching, moving or guarding; taunt_ticks > 0"
+      },
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-20_lot6/rikiya_taunt_generation.json",
+      "new_named_gap_resolved": true,
+      "animation_complete": false
+    },
+    {
+      "asset_id": "rikiya_finish",
+      "fighter_id": "rikiya",
+      "pose": "finish",
+      "path": "assets/dossier_curien/motion_2026-11-20_lot6/rikiya_finish.png",
+      "sha256": "201740133d73aedb198a7b989c83f6b76447518b933ec4e894843ae8a0afb187",
+      "runtime_consumption": {
+        "selector": "src/dossier_curien/presentation.gd:pose_suffix",
+        "condition": "arena winner in cinematic phase (including its paused equivalent)"
+      },
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-20_lot6/rikiya_finish_generation.json",
+      "new_named_gap_resolved": true,
+      "animation_complete": false
+    }
+  ],
+  "previous_batches_inventory_task_ids": [
+    "amy",
+    "brutus",
+    "candi",
+    "clement",
+    "coco_sindy",
+    "crawler",
+    "curien",
+    "dan_taylor",
+    "fool",
+    "g_hotd3",
+    "g_hotd4special",
+    "g_overkill",
+    "gary_typing",
+    "goldman_human",
+    "goldman_zombie",
+    "hangedman",
+    "harry",
+    "hermit",
+    "high_priestess",
+    "james_hotd4",
+    "james_typing",
+    "jasper_human",
+    "judgment",
+    "linda_alts",
+    "lobber",
+    "meat_katie",
+    "mother_human",
+    "nigel_sebastian",
+    "papa_caesar",
+    "rikiya_alts",
+    "rogan_hotd3",
+    "screamer",
+    "sophie",
+    "sophie_zombie",
+    "stick_alts",
+    "strength",
+    "sun",
+    "thornheart",
+    "tower",
+    "typing2_player_equipment",
+    "varla",
+    "yukio"
+  ],
+  "this_batch_inventory_task_ids": [
+    "g_saturn2",
+    "researcher_saturn",
+    "rogan_saturn2",
+    "sophie_saturn"
+  ],
+  "newly_covered_inventory_task_ids": [
+    "g_saturn2",
+    "researcher_saturn",
+    "rogan_saturn2",
+    "sophie_saturn"
+  ],
+  "cumulative_covered_inventory_task_ids": [
+    "amy",
+    "brutus",
+    "candi",
+    "clement",
+    "coco_sindy",
+    "crawler",
+    "curien",
+    "dan_taylor",
+    "fool",
+    "g_hotd3",
+    "g_hotd4special",
+    "g_overkill",
+    "g_saturn2",
+    "gary_typing",
+    "goldman_human",
+    "goldman_zombie",
+    "hangedman",
+    "harry",
+    "hermit",
+    "high_priestess",
+    "james_hotd4",
+    "james_typing",
+    "jasper_human",
+    "judgment",
+    "linda_alts",
+    "lobber",
+    "meat_katie",
+    "mother_human",
+    "nigel_sebastian",
+    "papa_caesar",
+    "researcher_saturn",
+    "rikiya_alts",
+    "rogan_hotd3",
+    "rogan_saturn2",
+    "screamer",
+    "sophie",
+    "sophie_saturn",
+    "sophie_zombie",
+    "stick_alts",
+    "strength",
+    "sun",
+    "thornheart",
+    "tower",
+    "typing2_player_equipment",
+    "varla",
+    "yukio"
+  ],
+  "uncovered_inventory_task_ids_after_six_batches": [
+    "bart_picard",
+    "ex_unverified_cameos",
+    "hotd2_remake_redesigns",
+    "hotd_remake_redesigns",
+    "mobile_nightmare_roster",
+    "mother",
+    "original_model_amy",
+    "original_model_bruno",
+    "original_model_civilian",
+    "original_model_g",
+    "original_model_goldman",
+    "original_model_harry",
+    "original_model_rogan",
+    "reawakened_roster",
+    "site_doctor",
+    "typing2004_kids"
+  ],
+  "explicit_reference_qa_open_ids_this_batch": [
+    "g_saturn2",
+    "researcher_saturn",
+    "rogan_saturn2",
+    "sophie_saturn"
+  ],
+  "explicit_reference_qa_open_ids_among_six_batches_only": [
+    "candi_stryper",
+    "clement_darling",
+    "g_saturn2",
+    "g_typing2",
+    "jasper_human",
+    "linda_zr_alt_leather",
+    "linda_zr_alt_qipao",
+    "lisa_typing2",
+    "mother_human",
+    "papa_caesar",
+    "researcher_saturn",
+    "rikiya_zr_alt_leather",
+    "rogan_saturn2",
+    "sophie_richards",
+    "sophie_saturn",
+    "sophie_zombie",
+    "thornheart",
+    "varla_guns"
+  ],
+  "known_edition_gaps_not_closed": [
+    "Les quatre bases Saturn/PC Mode sont livrées en galerie ; concordance exacte de port, poses et sélection dans Dossier Curien restent ouvertes.",
+    "Yukio humain, Daniel Typing2 et les variantes supplémentaires des familles Zombie Revenge restent ouverts.",
+    "Les sept substitutions HOTD2 Original Mode restent des tâches de mode et non sept identités nouvelles.",
+    "Les familles remake, éditions mobiles, Reawakened et caméos EX non vérifiés demandent encore des références précises.",
+    "Mother mutée reste absente après le blocage documenté du lot4, sans nouvelle tentative.",
+    "Rikiya possède neuf états supplémentaires ; ses manques nommés dans la matrice sont couverts, mais les images intermédiaires et une revue visuelle du combat restent à faire.",
+    "Les 268 manques nommés sont un minimum de la matrice historique, pas une mesure exhaustive de toutes les animations de la saga."
+  ],
+  "new_pngs": [
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot6/costumes/rogan_saturn2_base.png",
+      "kind": "gallery",
+      "asset_id": "rogan_saturn2",
+      "bytes": 1891212,
+      "sha256": "81883bb1a652193d866a198a39bf3c136870e1101cc6725800ebac67cf3586aa",
+      "git_blob": "9247366f6775b9e16f32449ca739b8e92eafa1b1",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot6/costumes/g_saturn2_base.png",
+      "kind": "gallery",
+      "asset_id": "g_saturn2",
+      "bytes": 1548763,
+      "sha256": "9b2be879589ceff02ff11babdd4dadd252be03a3a5e1937ac116042a3013c738",
+      "git_blob": "03e0ea4091773561a16615e353d979eeff5447b8",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot6/costumes/sophie_saturn_base.png",
+      "kind": "gallery",
+      "asset_id": "sophie_saturn",
+      "bytes": 1756557,
+      "sha256": "464f45b82e4546014fd69cebd68860e9e1ad803ce4fb54aab874cccbc7a3936d",
+      "git_blob": "ea9f0e2f7b7d76a42b87f753654bc00119833fe3",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot6/costumes/researcher_saturn_base.png",
+      "kind": "gallery",
+      "asset_id": "researcher_saturn",
+      "bytes": 1751612,
+      "sha256": "6137b6e3b6283af77b179fc84b62119b43c13ebf0caf43f09d58b862316ee21b",
+      "git_blob": "5227b586f71d7cfbb0628475f365a28a73980f0f",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/saga/ams_underground_back.png",
+      "kind": "stage",
+      "asset_id": "ams_underground_back",
+      "bytes": 2477224,
+      "sha256": "859fe289bfe1fb7ce5dfcc1b2dfb18b06497a927715a2a6408bee1cd1be1a6a5",
+      "git_blob": "b4195ea992ff76e152f0cd48263876187f5f2221",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/dossier_curien/saga/scarlet_annex_back.png",
+      "kind": "stage",
+      "asset_id": "scarlet_annex_back",
+      "bytes": 2504131,
+      "sha256": "0075fc062fc4a6b7c5878963fa7f64ce406dc3e2ec8aa1b4008e23d836230d48",
+      "git_blob": "f84f995991ecfeef1e475e7161a35410541c0ee6",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/dossier_curien/saga/overkill_papa_back.png",
+      "kind": "stage",
+      "asset_id": "overkill_papa_back",
+      "bytes": 2747268,
+      "sha256": "f73447594b1c1bfec2009e43d7c5391ac9fc8c60d225789852ad2c351c4e4f48",
+      "git_blob": "3543cc621152a23a295b83ee198632c90b0c350e",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/dossier_curien/saga/zr_sewage_back.png",
+      "kind": "stage",
+      "asset_id": "zr_sewage_back",
+      "bytes": 3074670,
+      "sha256": "12bc850e759f3066de4aed407e24d5fa875366454a4768779522d77401f582ba",
+      "git_blob": "f2dbf39c4a8a632354a3e1a877b4d7ffcbab636d",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/dossier_curien/saga/ams_underground_mid.png",
+      "kind": "stage",
+      "asset_id": "ams_underground_mid",
+      "bytes": 206514,
+      "sha256": "73a083406cc71331962b7360672e9f2507a73b930766157c149394951875f6b5",
+      "git_blob": "e5224e998c09ff006fc00b7f1e7e17db252fcb5f",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/saga/ams_underground_front.png",
+      "kind": "stage",
+      "asset_id": "ams_underground_front",
+      "bytes": 71667,
+      "sha256": "09dfa59fa848222db0d66985664ca17f2c735c1937c727b2a626b193be360b9f",
+      "git_blob": "8aa98c00dfeb33097c7301b325957807ffadd435",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/saga/scarlet_annex_mid.png",
+      "kind": "stage",
+      "asset_id": "scarlet_annex_mid",
+      "bytes": 236381,
+      "sha256": "3dbdb68804f3ab51e5cc6fc9198cad997d5a9910acb62aa03fba948a9e97a326",
+      "git_blob": "39b00f80110a047317219c6389d48d2b6f93cdc0",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/saga/scarlet_annex_front.png",
+      "kind": "stage",
+      "asset_id": "scarlet_annex_front",
+      "bytes": 80362,
+      "sha256": "576acbd9c373c7588515c9d70840a3ce3f6709d77c675e6bcbba8f46cfa37b86",
+      "git_blob": "138b13d5913a6f47e14fcc711b78501b3d9bc9d3",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/saga/overkill_papa_mid.png",
+      "kind": "stage",
+      "asset_id": "overkill_papa_mid",
+      "bytes": 405942,
+      "sha256": "d36edc8a14981758a520f3e35fea0fd5644401df4542968462a8a2d42aa34e88",
+      "git_blob": "35f293ab315d07d6a189146df6e649115dda26a1",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/saga/overkill_papa_front.png",
+      "kind": "stage",
+      "asset_id": "overkill_papa_front",
+      "bytes": 73829,
+      "sha256": "e33b6f102600a72ec0f61e07748eb98ebf8656bbe99f0be83f42880b7cf08847",
+      "git_blob": "dfb56b9bc96c27e9373d5a17ec38a3f9317e78e6",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/saga/zr_sewage_mid.png",
+      "kind": "stage",
+      "asset_id": "zr_sewage_mid",
+      "bytes": 417255,
+      "sha256": "f4e81047b29b7f679238f538c506cb04c7f6bb6ae254e144acb056e65e18601e",
+      "git_blob": "01812dd4ecab49aa6fd0a7c3ec810768a63e9d82",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/saga/zr_sewage_front.png",
+      "kind": "stage",
+      "asset_id": "zr_sewage_front",
+      "bytes": 91699,
+      "sha256": "42997cda6964162ec13889d08b573228e2d3da62a0b06b27dbb47fc16b010d6f",
+      "git_blob": "d81bb296558e572790865e03e590f626b0776cd1",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/motion_2026-11-20_lot6/rikiya_crouch.png",
+      "kind": "motion",
+      "asset_id": "rikiya_crouch",
+      "bytes": 860837,
+      "sha256": "b902791f871c313a26f93a79cab976f17683d1974723ca09bb17681ffa5bb37d",
+      "git_blob": "debb485b30d40ec1ec4c042d992e67d32440d89b",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/motion_2026-11-20_lot6/rikiya_crouch_guard.png",
+      "kind": "motion",
+      "asset_id": "rikiya_crouch_guard",
+      "bytes": 707382,
+      "sha256": "eecda8d4fa962037ef07c728f40c19b6022c9b7d69c76a04a6a55e05facbcae3",
+      "git_blob": "11eedbccc2ff612393f0373d98e0bb3e8445b65d",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/motion_2026-11-20_lot6/rikiya_block.png",
+      "kind": "motion",
+      "asset_id": "rikiya_block",
+      "bytes": 695994,
+      "sha256": "19cdd26fe0a6fda17b0232866912733b39aac3aab6f8025979ec94730bc6afa2",
+      "git_blob": "fd7615a963bae10c29a1093a3bac8003bd1bf223",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/motion_2026-11-20_lot6/rikiya_jump_rise.png",
+      "kind": "motion",
+      "asset_id": "rikiya_jump_rise",
+      "bytes": 616605,
+      "sha256": "50a4cde70b08636829625ca367411370fbb9219677a04834667caa1f412daa8f",
+      "git_blob": "9e11e266031c1bc469e8b7199e966214442e60f3",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/motion_2026-11-20_lot6/rikiya_jump_fall.png",
+      "kind": "motion",
+      "asset_id": "rikiya_jump_fall",
+      "bytes": 732350,
+      "sha256": "296033a55a35edfd9d69c604cc7a942194fe2e5c7c01e45a82017d132b48f4b6",
+      "git_blob": "e705353a3e2d8957292172fc3f85cdba17e3ca61",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/motion_2026-11-20_lot6/rikiya_throw.png",
+      "kind": "motion",
+      "asset_id": "rikiya_throw",
+      "bytes": 760823,
+      "sha256": "db033803b9e469e84b025b285128092e85f43fc6985cb68f921926e4a2ec0c12",
+      "git_blob": "44a3c021619a4510b043a04df38284e9d1bb33c0",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/motion_2026-11-20_lot6/rikiya_victory.png",
+      "kind": "motion",
+      "asset_id": "rikiya_victory",
+      "bytes": 677886,
+      "sha256": "16afcd9c4731683f5666e945befacca9131c793182eceaaf2dcc1b46e36b8b9c",
+      "git_blob": "c83cb9010479aa43f6361d74c7bfe024bb990176",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/motion_2026-11-20_lot6/rikiya_taunt.png",
+      "kind": "motion",
+      "asset_id": "rikiya_taunt",
+      "bytes": 807225,
+      "sha256": "7f7868dc58974638589ca48995668d25e2826162654cd54b1351fc522fa17641",
+      "git_blob": "709862c6170775fdfd1a61e3b16906f722742c97",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/motion_2026-11-20_lot6/rikiya_finish.png",
+      "kind": "motion",
+      "asset_id": "rikiya_finish",
+      "bytes": 906221,
+      "sha256": "201740133d73aedb198a7b989c83f6b76447518b933ec4e894843ae8a0afb187",
+      "git_blob": "c917345d6d50e94feedab2dc4d8c79f6e5df7964",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA"
+    }
+  ],
+  "rejected_outputs": [
+    {
+      "source_manifest": "docs/dossier_curien/saga/production/motion_2026-11-20_lot6/rejected/rikiya_crouch_guard_halo_generation.json",
+      "id": "rikiya_crouch_guard",
+      "native_sha256": null,
+      "reason": "First crouch_guard output retained a visible halo; replaced by an ImageGen correction, not local pixel cleanup."
+    }
+  ],
+  "blocked_generations": [],
+  "verification": {
+    "all_retained_image_bytes_match_generation_outputs": true,
+    "all_size_dimension_mode_and_sha_receipts_match": true,
+    "all_new_png_paths_and_blobs_are_new": true,
+    "all_414_baseline_png_git_blobs_preserved": true,
+    "all_seven_historical_runtime_manifests_preserved_byte_for_byte": true,
+    "all_62_task_ids_preserved": true,
+    "all_35_encounter_rows_preserved": true,
+    "all_four_runtime_gallery_objects_match_source_shard": true,
+    "source_receipt_sha256_pins_match": true,
+    "all_gallery_flags_preserve_static_non_playable_role": true,
+    "all_twelve_stage_files_match_manifest": true,
+    "all_eight_overlay_center_and_fight_strip_contracts_pass": true,
+    "all_twenty_five_outputs_independently_visually_reviewed": true,
+    "gallery_native_alpha_edge_and_canvas_samples": [
+      {
+        "asset_id": "rogan_saturn2",
+        "edge_max_alpha": 1,
+        "samples": [
+          [
+            80,
+            350,
+            0
+          ],
+          [
+            250,
+            150,
+            0
+          ],
+          [
+            800,
+            200,
+            0
+          ],
+          [
+            150,
+            650,
+            0
+          ],
+          [
+            900,
+            800,
+            0
+          ],
+          [
+            512,
+            30,
+            252
+          ]
+        ],
+        "note": "First five samples lie outside the subject (alpha0); last is inside hair. Native tiny edge alpha retained, not cleaned."
+      },
+      {
+        "asset_id": "g_saturn2",
+        "edge_max_alpha": 2,
+        "samples": [
+          [
+            80,
+            350,
+            0
+          ],
+          [
+            250,
+            150,
+            0
+          ],
+          [
+            800,
+            200,
+            0
+          ],
+          [
+            150,
+            650,
+            0
+          ],
+          [
+            900,
+            800,
+            0
+          ],
+          [
+            512,
+            30,
+            251
+          ]
+        ],
+        "note": "First five samples lie outside the subject (alpha0); last is inside hair. Native tiny edge alpha retained, not cleaned."
+      },
+      {
+        "asset_id": "sophie_saturn",
+        "edge_max_alpha": 1,
+        "samples": [
+          [
+            80,
+            350,
+            0
+          ],
+          [
+            250,
+            150,
+            0
+          ],
+          [
+            800,
+            200,
+            0
+          ],
+          [
+            150,
+            650,
+            0
+          ],
+          [
+            900,
+            800,
+            0
+          ],
+          [
+            512,
+            30,
+            253
+          ]
+        ],
+        "note": "First five samples lie outside the subject (alpha0); last is inside hair. Native tiny edge alpha retained, not cleaned."
+      },
+      {
+        "asset_id": "researcher_saturn",
+        "edge_max_alpha": 1,
+        "samples": [
+          [
+            80,
+            350,
+            0
+          ],
+          [
+            250,
+            150,
+            0
+          ],
+          [
+            800,
+            200,
+            0
+          ],
+          [
+            150,
+            650,
+            0
+          ],
+          [
+            900,
+            800,
+            0
+          ],
+          [
+            512,
+            30,
+            250
+          ]
+        ],
+        "note": "First five samples lie outside the subject (alpha0); last is inside hair. Native tiny edge alpha retained, not cleaned."
+      }
+    ],
+    "motion_gap_delta_is_nine_distinct_named_actions": true,
+    "native_viewport_capture_performed": false,
+    "native_viewport_capture_blocker": "AF_UNIX socket creation denied by environment (EPERM); available Xorg cannot start. No workaround or fabricated rendering claim.",
+    "no_new_pack_or_web_export_created": true,
+    "validation_scope": "Asset provenance and counts checked here; headless engine results in VALIDATION.json. Remote CI is reported separately on the exact published commit."
+  }
+}

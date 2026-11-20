@@ -12,13 +12,17 @@ extends SceneTree
 
 const ADDITIONS_PATH := "res://data/assets/dossier_curien_additions.json"
 const EXPANSION_PATH := "res://data/assets/dossier_curien_expansion.json"
-const MOTION_PATH := "res://data/assets/dossier_curien_motion.json"
+const MOTION_PATHS := [
+	"res://data/assets/dossier_curien_motion.json",
+	"res://data/assets/dossier_curien_motion_2026-11-20_lot6.json"
+]
 const GALLERY_PATHS := [
 	"res://data/assets/dossier_curien_gallery_2026-11-20.json",
 	"res://data/assets/dossier_curien_gallery_2026-11-20_lot2.json",
 	"res://data/assets/dossier_curien_gallery_2026-11-20_lot3.json",
 	"res://data/assets/dossier_curien_gallery_2026-11-20_lot4.json",
-	"res://data/assets/dossier_curien_gallery_2026-11-20_lot5.json"
+	"res://data/assets/dossier_curien_gallery_2026-11-20_lot5.json",
+	"res://data/assets/dossier_curien_gallery_2026-11-20_lot6.json"
 ]
 const ASSET_PREFIX := "res://assets/dossier_curien/"
 const IMPORT_PREFIX := "res://.godot/imported/"
@@ -108,17 +112,18 @@ func _build() -> bool:
 			return _fail("Expansion manifest must be a valid JSON object: " + expansion_source)
 		buffers[EXPANSION_PATH] = expansion_bytes
 		if baseline_set.has(EXPANSION_PATH): refreshed_manifest_count += 1
-	var motion_source := source_root.path_join(MOTION_PATH.trim_prefix("res://"))
-	if not FileAccess.file_exists(motion_source): return _fail("Motion manifest is required: " + motion_source)
-	var motion_bytes := _read_bytes(motion_source)
-	var motion_parser := JSON.new()
-	if _failed or motion_parser.parse(motion_bytes.get_string_from_utf8()) != OK or not motion_parser.data is Dictionary or not motion_parser.data.get("assets") is Array:
-		return _fail("Motion manifest must contain an assets array: " + motion_source)
-	if motion_parser.data.get("provisional", false) == true: return _fail("Finalize the provisional motion catalogue before packaging.")
-	for entry in motion_parser.data.assets:
-		if not entry is Dictionary or entry.get("provenance_pending", false) == true: return _fail("Every motion pose requires finalized provenance.")
-	buffers[MOTION_PATH] = motion_bytes
-	if baseline_set.has(MOTION_PATH): refreshed_manifest_count += 1
+	for motion_path: String in MOTION_PATHS:
+		var motion_source := source_root.path_join(motion_path.trim_prefix("res://"))
+		if not FileAccess.file_exists(motion_source): return _fail("Motion manifest is required: " + motion_source)
+		var motion_bytes := _read_bytes(motion_source)
+		var motion_parser := JSON.new()
+		if _failed or motion_parser.parse(motion_bytes.get_string_from_utf8()) != OK or not motion_parser.data is Dictionary or not motion_parser.data.get("assets") is Array:
+			return _fail("Motion manifest must contain an assets array: " + motion_source)
+		if motion_parser.data.get("provisional", false) == true: return _fail("Finalize the provisional motion catalogue before packaging: " + motion_source)
+		for entry in motion_parser.data.assets:
+			if not entry is Dictionary or entry.get("provenance_pending", false) == true: return _fail("Every motion pose requires finalized provenance: " + motion_source)
+		buffers[motion_path] = motion_bytes
+		if baseline_set.has(motion_path): refreshed_manifest_count += 1
 	for gallery_path: String in GALLERY_PATHS:
 		var gallery_source := source_root.path_join(gallery_path.trim_prefix("res://"))
 		var gallery_bytes := _read_bytes(gallery_source)
@@ -217,7 +222,7 @@ func _build() -> bool:
 		"refreshed_png_imports": refreshed_import_count,
 		"refreshed_ctex_files": refreshed_texture_count,
 		"additions_manifest": ADDITIONS_PATH,
-		"motion_manifest": MOTION_PATH,
+		"motion_manifests": MOTION_PATHS,
 		"packed_files": target_paths.size(),
 		"ordering": "sorted resource paths",
 	}, "\t"))

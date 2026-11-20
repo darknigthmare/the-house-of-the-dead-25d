@@ -9,6 +9,10 @@ import { inflateSync } from 'node:zlib';
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const MANIFEST = 'data/assets/dossier_curien_motion.json';
 const ART_ROOT = 'assets/dossier_curien/motion_2026-11-19';
+const COLLECTIONS = [
+  { manifest: MANIFEST, artRoot: ART_ROOT },
+  { manifest: 'data/assets/dossier_curien_motion_2026-11-20_lot6.json', artRoot: 'assets/dossier_curien/motion_2026-11-20_lot6' },
+];
 const PNG_SIGNATURE = Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]);
 const ensure = (condition, message) => { if (!condition) throw new Error(message); };
 const record = value => value !== null && typeof value === 'object' && !Array.isArray(value);
@@ -108,7 +112,7 @@ const POSES = new Set(['guard','windup','contact','recoil','recovery','jump_rise
 const point = value => Array.isArray(value) && value.length === 2 && value.every(Number.isFinite);
 const within = (value, dimensions) => point(value) && value.every((n,i) => n >= 0 && n <= dimensions[i]);
 
-function validate(data, root, allowProvisional = false) {
+function validate(data, root, allowProvisional = false, artRoot = ART_ROOT) {
   ensure(record(data) && data.schema_version === 1 && Array.isArray(data.assets) && data.assets.length, 'Motion manifest must contain nonempty schema-1 assets');
   ensure(allowProvisional || data.provisional !== true, 'Provisional motion manifest is not a release validation');
   const keys = new Set(), paths = new Set();
@@ -122,7 +126,7 @@ function validate(data, root, allowProvisional = false) {
     ensure(!keys.has(key), `Duplicate pose: ${key}`); keys.add(key);
     ensure(!paths.has(asset.path), `Duplicate path: ${asset.path}`); paths.add(asset.path);
     ensure(typeof asset.path === 'string' && asset.path.endsWith('.png'), `${key}: expected PNG path`);
-    const bytes = readFileSync(checkedPath(root, asset.path, key, ART_ROOT));
+    const bytes = readFileSync(checkedPath(root, asset.path, key, artRoot));
     ensure(Number.isSafeInteger(asset.bytes) && asset.bytes === bytes.length, `${key}: byte count mismatch`);
     ensure(typeof asset.sha256 === 'string' && /^[a-f0-9]{64}$/.test(asset.sha256) && hash(bytes) === asset.sha256, `${key}: SHA-256 mismatch`);
     const metrics = rgbaMetrics(bytes, key, 127);
@@ -142,11 +146,29 @@ function validate(data, root, allowProvisional = false) {
     }
     totalBytes += bytes.length;
   }
-  const actual = pngFiles(root);
+  const actual = pngFiles(root, artRoot);
   ensure(actual.length === paths.size && actual.every(path => paths.has(path)), 'Uncatalogued motion PNG or stale manifest count');
   if (data.summary?.assets !== undefined) ensure(data.summary.assets === keys.size, 'Stale summary.assets');
   if (data.summary?.bytes !== undefined) ensure(data.summary.bytes === totalBytes, 'Stale summary.bytes');
   return { assets: keys.size, bytes: totalBytes };
+}
+
+function validateCollections(root, allowProvisional = false) {
+  const keys = new Set(), paths = new Set(), collections = [];
+  let assets = 0, bytes = 0;
+  for (const collection of COLLECTIONS) {
+    const data = JSON.parse(readFileSync(join(root, collection.manifest), 'utf8'));
+    const result = validate(data, root, allowProvisional, collection.artRoot);
+    for (const asset of data.assets) {
+      const key = (asset.art_id ?? asset.fighter_id) + '_' + asset.pose;
+      ensure(!keys.has(key), `Duplicate pose across motion collections: ${key}`);
+      ensure(!paths.has(asset.path), `Duplicate path across motion collections: ${asset.path}`);
+      keys.add(key); paths.add(asset.path);
+    }
+    assets += result.assets; bytes += result.bytes;
+    collections.push({ manifest: collection.manifest, ...result });
+  }
+  return { assets, bytes, collections };
 }
 
 function selfTest() {
@@ -171,6 +193,21 @@ function selfTest() {
     rejects(data => { data.assets[0].provenance_pending = true; }, /Pending provenance/);
     writeFileSync(join(fixture, ART_ROOT, 'undeclared.png'), sample);
     assert.throws(() => validate(valid, fixture), /Uncatalogued motion PNG/); cases++;
+    rmSync(join(fixture, ART_ROOT, 'undeclared.png'));
+    const addition = structuredClone(valid);
+    addition.assets[0].fighter_id = 'rikiya'; addition.assets[0].pose = 'crouch';
+    addition.assets[0].path = COLLECTIONS[1].artRoot + '/rikiya_crouch.png';
+    mkdirSync(join(fixture, COLLECTIONS[1].artRoot), { recursive: true });
+    writeFileSync(join(fixture, addition.assets[0].path), sample);
+    assert.throws(() => validate(addition, fixture), /path must stay inside/); cases++;
+    assert.equal(validate(addition, fixture, false, COLLECTIONS[1].artRoot).assets, 1); cases++;
+    mkdirSync(join(fixture, dirname(MANIFEST)), { recursive: true });
+    writeFileSync(join(fixture, MANIFEST), JSON.stringify(valid));
+    writeFileSync(join(fixture, COLLECTIONS[1].manifest), JSON.stringify(addition));
+    assert.equal(validateCollections(fixture).assets, 2); cases++;
+    addition.assets[0].fighter_id = 'linda'; addition.assets[0].pose = 'block';
+    writeFileSync(join(fixture, COLLECTIONS[1].manifest), JSON.stringify(addition));
+    assert.throws(() => validateCollections(fixture), /Duplicate pose across motion collections/); cases++;
   } finally { rmSync(fixture, { recursive: true, force: true }); }
   console.log(`SAGA MOTION MANIFEST SELF-TEST: ${cases} cases passed.`);
 }
@@ -178,4 +215,4 @@ function selfTest() {
 const args = process.argv.slice(2);
 ensure(args.length === 0 || (args.length === 1 && ['--self-test','--preview'].includes(args[0])), 'Usage: node scripts/verify_dossier_curien_motion.mjs [--self-test | --preview]');
 if (args[0] === '--self-test') selfTest();
-else console.log((args[0] === '--preview' ? 'SAGA MOTION DEVELOPMENT PREVIEW (not a release gate): ' : 'SAGA MOTION MANIFEST: ') + JSON.stringify(validate(JSON.parse(readFileSync(join(ROOT, MANIFEST), 'utf8')), ROOT, args[0] === '--preview')));
+else console.log((args[0] === '--preview' ? 'SAGA MOTION DEVELOPMENT PREVIEW (not a release gate): ' : 'SAGA MOTION MANIFEST: ') + JSON.stringify(validateCollections(ROOT, args[0] === '--preview')));

@@ -1,0 +1,22 @@
+{
+  "id": "rikiya_finish",
+  "pose": "finish",
+  "source_generation_path": "/workspace/scratch/da9d6e4777c1/generated_images/exec-379dbbdd-78e5-419c-88fb-1aa0cc606c66.png",
+  "prompt": "Use case: identity-preserve. Draw ONE new individual full-body 2D fighting-game keyframe of the exact adult Rikiya Busujima in the attached approved project reference. Preserve identity and style: dense shoulder-length curly black hair, narrow dark sunglasses with thin metal rims, clean-shaven serious face, lean muscular BARE torso, open brown leather shoulder-holster harness with paired silver buckles and brown underarm holsters, dark blue denim jeans with tan stitching, brown belt and square silver buckle, brown lace-up shoes. Hands remain completely EMPTY. Same finely painted crisp arcade-sprite shading, material detail, palette, face, age and body proportions. Lateral three-quarter camera facing SCREEN RIGHT. Square transparent RGBA canvas. Preserve full-size head/torso/anatomy from the reference; keep the entire head, fingers and both soles inside with generous clear margins. Both shoes grounded on one common virtual baseline near the lower canvas edge. Exactly one isolated character on completely transparent negative space; no background, smoke, halo, aura, cast shadow, ground plane, text, labels, VFX, motion trails, prop, opponent, second figure or extra body parts. Action: decisive FINISHER CONTACT, a powerful OPEN-PALM STRIKE toward screen right. Use a strong stable wide forward stance, far/left knee bending over the forward shoe on screen right, near/right rear leg extended to screen left. Turn the hips and torso into the blow. His far/left arm extends forcefully forward at chest height, almost straight but not hyperextended, ending in an OPEN vertical palm with all five natural fingers pointing upward and the HEEL of the palm pressing toward the unseen opponent at screen right. His near/right empty hand remains OPEN and chambered beside his right ribs, elbow drawn back. Clearly distinguish this from a closed-fist punch or a two-handed grab. Keep the palm, fingertips, hair and shoes completely inside the frame with at least 60 pixels of clear margin. Intense focused face, sunglasses and complete brown shoulder harness preserved. Depict only the body contact pose, without impact flash, blood, energy, debris or opponent.",
+  "references": [
+    {
+      "path": "assets/dossier_curien/saga/rikiya_guard.png",
+      "role": "identity_costume_style_anatomy_reference"
+    }
+  ],
+  "generation_tool": "image_gen.imagegen",
+  "transparent_background": true,
+  "date": "2026-11-20",
+  "image_edits": [],
+  "status": "native_pixels_visually_reviewed_runtime_validated",
+  "extension": "last_three_named_rikiya_states",
+  "visual_review_notes": "Distinct open-palm finisher contact. No projectile emitter: existing Rikiya cinematic draws palm marks at the defeated fighter; a palm anchor is stored only for geometry review.",
+  "native_sha256": "201740133d73aedb198a7b989c83f6b76447518b933ec4e894843ae8a0afb187",
+  "native_bytes": 906221,
+  "native_output_copied_without_pixel_changes": true
+}

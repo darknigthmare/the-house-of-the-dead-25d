@@ -1,0 +1,21 @@
+{
+  "id": "rikiya_victory",
+  "pose": "victory",
+  "source_generation_path": "/workspace/scratch/da9d6e4777c1/generated_images/exec-86f83bb9-77c4-43a8-8e6f-8fa3a93bd76f.png",
+  "prompt": "Use case: identity-preserve. Draw ONE new individual full-body 2D fighting-game keyframe of the exact adult Rikiya Busujima in the attached approved project reference. Preserve identity and style: dense shoulder-length curly black hair, narrow dark sunglasses with thin metal rims, clean-shaven serious face, lean muscular BARE torso, open brown leather shoulder-holster harness with paired silver buckles and brown underarm holsters, dark blue denim jeans with tan stitching, brown belt and square silver buckle, brown lace-up shoes. Hands remain completely EMPTY. Same finely painted crisp arcade-sprite shading, material detail, palette, face, age and body proportions. Lateral three-quarter camera facing SCREEN RIGHT. Square transparent RGBA canvas. Preserve full-size head/torso/anatomy from the reference; keep the entire head, fingers and both soles inside with generous clear margins. Both shoes grounded on one common virtual baseline near the lower canvas edge. Exactly one isolated character on completely transparent negative space; no background, smoke, halo, aura, cast shadow, ground plane, text, labels, VFX, motion trails, prop, opponent, second figure or extra body parts. Action: VICTORY after winning a round. He stands nearly upright in a relaxed shoulder-width stance rather than his combat crouch. Arms confidently FOLDED across his bare chest, both hands naturally tucked against the opposite upper arms, elbows visible and balanced; keep the harness straps and buckles visible above and below the arms. Chin lifted very slightly, restrained confident half-smile while still looking right through the same sunglasses. Weight rests comfortably on the rear/right leg, front/left knee lightly relaxed. No clenched raised fist or attack. This silhouette must clearly read as a calm post-fight celebration, not a defensive block.",
+  "references": [
+    {
+      "path": "assets/dossier_curien/saga/rikiya_guard.png",
+      "role": "identity_costume_style_anatomy_reference"
+    }
+  ],
+  "generation_tool": "image_gen.imagegen",
+  "transparent_background": true,
+  "date": "2026-11-20",
+  "image_edits": [],
+  "status": "native_pixels_visually_reviewed_runtime_validated",
+  "extension": "last_three_named_rikiya_states",
+  "native_sha256": "16afcd9c4731683f5666e945befacca9131c793182eceaaf2dcc1b46e36b8b9c",
+  "native_bytes": 677886,
+  "native_output_copied_without_pixel_changes": true
+}

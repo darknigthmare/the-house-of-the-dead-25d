@@ -14,15 +14,17 @@ const LOT2_ART_ROOT = 'assets/dossier_curien/gallery_2026-11-20_lot2';
 const LOT3_ART_ROOT = 'assets/dossier_curien/gallery_2026-11-20_lot3';
 const LOT4_ART_ROOT = 'assets/dossier_curien/gallery_2026-11-20_lot4';
 const LOT5_ART_ROOT = 'assets/dossier_curien/gallery_2026-11-20_lot5';
+const LOT6_ART_ROOT = 'assets/dossier_curien/gallery_2026-11-20_lot6';
 const COLLECTIONS = [
   { path: 'data/assets/dossier_curien_gallery_2026-11-20.json', artRoot: ART_ROOT },
   { path: 'data/assets/dossier_curien_gallery_2026-11-20_lot2.json', artRoot: LOT2_ART_ROOT },
   { path: 'data/assets/dossier_curien_gallery_2026-11-20_lot3.json', artRoot: LOT3_ART_ROOT },
   { path: 'data/assets/dossier_curien_gallery_2026-11-20_lot4.json', artRoot: LOT4_ART_ROOT },
   { path: 'data/assets/dossier_curien_gallery_2026-11-20_lot5.json', artRoot: LOT5_ART_ROOT },
+  { path: 'data/assets/dossier_curien_gallery_2026-11-20_lot6.json', artRoot: LOT6_ART_ROOT },
 ];
 const CATEGORIES = new Set(['character_base', 'npc_base', 'costume_variant', 'character_form', 'boss_base', 'enemy_base', 'dialogue_portrait']);
-const GAMES = new Set(['hotd', 'hotd2', 'hotd3', 'hotd4', 'hotd4_special', 'overkill', 'scarlet_dawn', 'zombie_revenge', 'hotd_ex', 'typing', 'typing2', 'english', 'pinball']);
+const GAMES = new Set(['hotd', 'hotd1_saturn', 'hotd2', 'hotd3', 'hotd4', 'hotd4_special', 'overkill', 'scarlet_dawn', 'zombie_revenge', 'hotd_ex', 'typing', 'typing2', 'english', 'pinball']);
 const ensure = (condition, message) => { if (!condition) throw new Error(message); };
 
 function validateGallery(manifest, root, existingIds, artRoot = ART_ROOT) {
@@ -131,8 +133,12 @@ function selfTest() {
     Object.assign(fifth.assets[0], { id: 'fifth_gallery_costume', category: 'costume_variant', game: 'typing2', path: LOT5_ART_ROOT + '/fifth_gallery_costume.png' });
     mkdirSync(join(fixture, LOT5_ART_ROOT), { recursive: true });
     writeFileSync(join(fixture, fifth.assets[0].path), sample);
-    const batches = [{ manifest: valid, artRoot: ART_ROOT }, { manifest: later, artRoot: LOT2_ART_ROOT }, { manifest: newest, artRoot: LOT3_ART_ROOT }, { manifest: fourth, artRoot: LOT4_ART_ROOT }, { manifest: fifth, artRoot: LOT5_ART_ROOT }];
-    assert.equal(validateCollections(batches, fixture, existingIds).reduce((sum, result) => sum + result.gallery, 0), 5); cases++;
+    const sixth = structuredClone(valid);
+    Object.assign(sixth.assets[0], { id: 'sixth_gallery_costume', category: 'costume_variant', game: 'hotd1_saturn', path: LOT6_ART_ROOT + '/sixth_gallery_costume.png' });
+    mkdirSync(join(fixture, LOT6_ART_ROOT), { recursive: true });
+    writeFileSync(join(fixture, sixth.assets[0].path), sample);
+    const batches = [{ manifest: valid, artRoot: ART_ROOT }, { manifest: later, artRoot: LOT2_ART_ROOT }, { manifest: newest, artRoot: LOT3_ART_ROOT }, { manifest: fourth, artRoot: LOT4_ART_ROOT }, { manifest: fifth, artRoot: LOT5_ART_ROOT }, { manifest: sixth, artRoot: LOT6_ART_ROOT }];
+    assert.equal(validateCollections(batches, fixture, existingIds).reduce((sum, result) => sum + result.gallery, 0), 6); cases++;
     const collision = structuredClone(batches);
     collision[1].manifest.assets[0].id = valid.assets[0].id;
     assert.throws(() => validateCollections(collision, fixture, existingIds), /already belongs/, 'Duplicate across successive gallery batches'); cases++;
@@ -166,6 +172,15 @@ function selfTest() {
     const fifthPlayable = structuredClone(batches);
     fifthPlayable[4].manifest.assets[0].playable = true;
     assert.throws(() => validateCollections(fifthPlayable, fixture, existingIds), /cannot add a playable/, 'A later equipment study remains a static gallery card'); cases++;
+    const sixthCollision = structuredClone(batches);
+    sixthCollision[5].manifest.assets[0].id = fifth.assets[0].id;
+    assert.throws(() => validateCollections(sixthCollision, fixture, existingIds), /already belongs/, 'Sixth batch cannot replace an identity from the fifth batch'); cases++;
+    const sixthWrongRoot = structuredClone(batches);
+    sixthWrongRoot[5].manifest.assets[0].path = fifth.assets[0].path;
+    assert.throws(() => validateCollections(sixthWrongRoot, fixture, existingIds), /path must stay inside/, 'Sixth batch cannot borrow the fifth batch art root'); cases++;
+    const sixthPlayable = structuredClone(batches);
+    sixthPlayable[5].manifest.assets[0].playable = true;
+    assert.throws(() => validateCollections(sixthPlayable, fixture, existingIds), /cannot add a playable/, 'A Saturn Mode gallery study does not become an equipped costume'); cases++;
     const proof = Buffer.from(JSON.stringify({ assets: valid.assets }));
     writeFileSync(join(fixture, asset.provenance), proof);
     const withReceipt = structuredClone(valid);

@@ -1,0 +1,3 @@
+Diagnostic: create a local AF_UNIX socket (no bind, no network connection).
+PermissionError: errno=1; [Errno 1] Operation not permitted
+Native Xorg capture unavailable; no native gameplay capture claimed.

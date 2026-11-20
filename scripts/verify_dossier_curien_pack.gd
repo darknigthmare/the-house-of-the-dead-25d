@@ -7,14 +7,18 @@ extends SceneTree
 ## Optional report: -- --report /absolute/report.json --label final-build
 
 const MANIFEST_PATH := "res://data/assets/dossier_curien_expansion.json"
-const MOTION_MANIFEST_PATH := "res://data/assets/dossier_curien_motion.json"
+const MOTION_MANIFEST_PATHS := [
+	"res://data/assets/dossier_curien_motion.json",
+	"res://data/assets/dossier_curien_motion_2026-11-20_lot6.json"
+]
 const ART_ROOT := "res://assets/dossier_curien/expansion/"
 const GALLERY_COLLECTIONS := [
 	{"manifest":"res://data/assets/dossier_curien_gallery_2026-11-20.json", "art_root":"res://assets/dossier_curien/gallery_2026-11-20/"},
 	{"manifest":"res://data/assets/dossier_curien_gallery_2026-11-20_lot2.json", "art_root":"res://assets/dossier_curien/gallery_2026-11-20_lot2/"},
 	{"manifest":"res://data/assets/dossier_curien_gallery_2026-11-20_lot3.json", "art_root":"res://assets/dossier_curien/gallery_2026-11-20_lot3/"},
 	{"manifest":"res://data/assets/dossier_curien_gallery_2026-11-20_lot4.json", "art_root":"res://assets/dossier_curien/gallery_2026-11-20_lot4/"},
-	{"manifest":"res://data/assets/dossier_curien_gallery_2026-11-20_lot5.json", "art_root":"res://assets/dossier_curien/gallery_2026-11-20_lot5/"}
+	{"manifest":"res://data/assets/dossier_curien_gallery_2026-11-20_lot5.json", "art_root":"res://assets/dossier_curien/gallery_2026-11-20_lot5/"},
+	{"manifest":"res://data/assets/dossier_curien_gallery_2026-11-20_lot6.json", "art_root":"res://assets/dossier_curien/gallery_2026-11-20_lot6/"}
 ]
 const SCRIPT_ROOT := "res://src/dossier_curien/"
 const REQUIRED_SCRIPTS := [
@@ -152,8 +156,8 @@ func _game_contract(scripts: Dictionary) -> int:
 	_check(profiles.size() == 24, "Mounted code contains the 24 combat profiles")
 	_check(cases.has("curien") and manor_routes.size() == 4, "The manor Chronicle has four routes and is counted once")
 	_check(story_count == 26, "Mounted code has 26 routes: manor + other Chronicles + alternates")
-	_check(stages.size() == 29, "Mounted code contains 29 arenas")
-	for prefix in ["zr_train", "creeping_flesh", "tower_canal", "strength_colosseum", "fool_enclosure", "sun_bio", "hangedman_roof", "hermit_dome"]:
+	_check(stages.size() == 33, "Mounted code contains 33 arenas")
+	for prefix in ["zr_train", "creeping_flesh", "tower_canal", "strength_colosseum", "fool_enclosure", "sun_bio", "hangedman_roof", "hermit_dome", "prelude_square", "overkill_hospital", "zr_chemical_plant", "ams_underground", "scarlet_annex", "overkill_papa", "zr_sewage"]:
 		for plane in ["back", "mid", "front"]:
 			var path := "res://assets/dossier_curien/saga/%s_%s.png" % [prefix, plane]
 			_check(ResourceLoader.exists(path, "Texture2D") and ResourceLoader.load(path, "Texture2D") is Texture2D, "Mounted arena plane loads: " + path)
@@ -256,16 +260,19 @@ func _linda(scripts: Dictionary, by_id: Dictionary, linda_id: int) -> void:
 
 
 func _motion(scripts: Dictionary) -> void:
-	var data := _read_object(MOTION_MANIFEST_PATH)
-	if not _check(data.get("assets") is Array and not data.assets.is_empty(), "Mounted motion manifest contains authored poses"): return
-	_check(data.get("provisional", false) != true, "Packed motion manifest is finalized")
+	var assets: Array = []
+	for manifest_path: String in MOTION_MANIFEST_PATHS:
+		var data := _read_object(manifest_path)
+		if not _check(data.get("assets") is Array and not data.assets.is_empty(), "Mounted motion manifest contains authored poses: " + manifest_path): return
+		_check(data.get("provisional", false) != true, "Packed motion manifest is finalized: " + manifest_path)
+		assets.append_array(data.assets)
 	if not scripts.has("saga_motion.gd") or not scripts.has("presentation.gd"): return
 	var motion: RefCounted = scripts["saga_motion.gd"].new()
 	if not _check(motion.load_manifest(), "Packed motion library accepts native textures and dimensions"): return
-	_check(motion.entries.size() == data.assets.size(), "Packed loader omits no authored pose")
+	_check(motion.entries.size() == assets.size(), "Packed loader omits no authored pose from either collection")
 	var painter: RefCounted = scripts["presentation.gd"].new()
 	painter.load_textures()
-	for asset: Dictionary in data.assets:
+	for asset: Dictionary in assets:
 		_check(asset.get("provenance_pending", false) != true, "Packed provenance complete: " + str(asset.get("path", "")))
 		var key := str(asset.get("art_id", asset.get("fighter_id", ""))) + "_" + str(asset.get("pose", ""))
 		var path := _resource_path(str(asset.get("path", "")))
@@ -286,9 +293,10 @@ func _motion(scripts: Dictionary) -> void:
 		else:
 			_check(not painter.pose_emitters.has(key), "No unrelated old emitter retained: " + key)
 		motion_results.append({"key":key, "path":path, "dimensions":dimensions, "pivot_px":asset.pivot_px, "standing_height_px":asset.standing_height_px})
-	counters["motion_manifest_assets"] = data.assets.size()
+	counters["motion_manifests"] = MOTION_MANIFEST_PATHS.size()
+	counters["motion_manifest_assets"] = assets.size()
 	counters["loaded_motion_textures"] = motion_results.size()
-	_check(motion_results.size() == data.assets.size(), "Every authored texture is usable from the mounted PCK")
+	_check(motion_results.size() == assets.size(), "Every authored texture is usable from the mounted PCK")
 
 
 func _options() -> bool:
