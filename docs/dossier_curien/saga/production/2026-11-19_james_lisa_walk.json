@@ -1,0 +1,230 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-19",
+  "batch": "james_lisa_walk",
+  "source_repository": "darknigthmare/the-house-of-the-dead-25d",
+  "source_commit": "a3fbcf13455a945ccc929ce43907a9755d82e6c7",
+  "method": "built-in image_gen, reference-guided edits, one individual pose per PNG; native generated pixels copied without resizing, masking, recoloring or other image processing",
+  "inputs": [
+    {
+      "path": "assets/dossier_curien/saga/james_guard.png",
+      "sha256": "610078facb3648f328a5440a027ed7e01db9378551d519984872090dda7b19e3"
+    },
+    {
+      "path": "assets/dossier_curien/saga/lisa_guard.png",
+      "sha256": "9eae65e1f0b631527c575a522a78a890779ca4f5f1e587743075c9a329793ba2"
+    }
+  ],
+  "assets": [
+    {
+      "path": "assets/dossier_curien/saga/james_walk1.png",
+      "size_bytes": 685143,
+      "sha256": "ba39d3957ac2dd428ee872af76614ce05fe61642eaa8ef38ab2e04e2f91b0a58",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixel_count": 1260326,
+      "alpha_nonzero_mode": 253,
+      "alpha_bbox_any": [
+        33,
+        47,
+        1093,
+        1223
+      ],
+      "alpha_bbox_threshold_127": [
+        218,
+        72,
+        989,
+        1172
+      ],
+      "suggested_pivot_px": [
+        627,
+        1171
+      ],
+      "suggested_pivot_normalized": [
+        0.5,
+        0.9338118022328549
+      ],
+      "generation_source_file": "/workspace/scratch/687d25786392/generated_images/exec-bdce5339-2d5b-489e-9a6a-5cb665a6f717.png",
+      "visual_state": "contact A: near-camera leg forward, far leg trailing",
+      "visual_review": "Full body, right-facing, one pose, no layout or text; weapon and costume preserved in their overall design; distinct near/far leg overlap checked."
+    },
+    {
+      "path": "assets/dossier_curien/saga/james_walk2.png",
+      "size_bytes": 704524,
+      "sha256": "648ca26c6b5893d68ac25d4ab8e8030f0032ed88e88da79789257830e30391d4",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixel_count": 1264974,
+      "alpha_nonzero_mode": 253,
+      "alpha_bbox_any": [
+        0,
+        17,
+        1224,
+        1254
+      ],
+      "alpha_bbox_threshold_127": [
+        212,
+        76,
+        993,
+        1165
+      ],
+      "suggested_pivot_px": [
+        627,
+        1164
+      ],
+      "suggested_pivot_normalized": [
+        0.5,
+        0.9282296650717703
+      ],
+      "generation_source_file": "/workspace/scratch/687d25786392/generated_images/exec-7b51e017-d91a-46bc-b869-c760415abe7b.png",
+      "visual_state": "contact B: near-camera leg trailing, far leg forward",
+      "visual_review": "Full body, right-facing, one pose, no layout or text; weapon and costume preserved in their overall design; distinct near/far leg overlap checked."
+    },
+    {
+      "path": "assets/dossier_curien/saga/lisa_walk1.png",
+      "size_bytes": 690567,
+      "sha256": "c19593f1ecd59a51e0d8270534c1beee4a369259011ee5f3ed803058d46f2fe9",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixel_count": 1265959,
+      "alpha_nonzero_mode": 253,
+      "alpha_bbox_any": [
+        35,
+        41,
+        1234,
+        1216
+      ],
+      "alpha_bbox_threshold_127": [
+        204,
+        69,
+        1000,
+        1171
+      ],
+      "suggested_pivot_px": [
+        627,
+        1170
+      ],
+      "suggested_pivot_normalized": [
+        0.5,
+        0.9330143540669856
+      ],
+      "generation_source_file": "/workspace/scratch/687d25786392/generated_images/exec-2ca96b9e-3ce4-433e-9a31-d61b23057228.png",
+      "visual_state": "contact A: near-camera leg forward, far leg trailing",
+      "visual_review": "Full body, right-facing, one pose, no layout or text; weapon and costume preserved in their overall design; distinct near/far leg overlap checked."
+    },
+    {
+      "path": "assets/dossier_curien/saga/lisa_walk2.png",
+      "size_bytes": 696011,
+      "sha256": "0b4cf948e7813643f0d6a85c59a62c1b7192fe3dd47335b5b7a31d508a529150",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixel_count": 1270943,
+      "alpha_nonzero_mode": 253,
+      "alpha_bbox_any": [
+        0,
+        64,
+        1208,
+        1228
+      ],
+      "alpha_bbox_threshold_127": [
+        206,
+        68,
+        997,
+        1157
+      ],
+      "suggested_pivot_px": [
+        627,
+        1156
+      ],
+      "suggested_pivot_normalized": [
+        0.5,
+        0.9218500797448166
+      ],
+      "generation_source_file": "/workspace/scratch/687d25786392/generated_images/exec-5e2f80e2-cb54-471b-9abc-b2b8b63ef468.png",
+      "visual_state": "contact B: near-camera leg trailing, far leg forward",
+      "visual_review": "Full body, right-facing, one pose, no layout or text; weapon and costume preserved in their overall design; distinct near/far leg overlap checked."
+    }
+  ],
+  "prompts": [
+    {
+      "output": "assets/dossier_curien/saga/james_walk1.png",
+      "initial_prompt": "Use case: precise-object-edit.\nAsset type: one individual full-body 2D fighting-game walking sprite, James Taylor from The House of the Dead 2, contact pose A.\nInput image 1: authoritative existing project sprite; use it to preserve the exact character identity, gray suit, white shirt, dark tie, brown swept hair, face, black shoes, black pistol, proportions, shading, colors, fine pixel-edged painted arcade-sprite style and right-facing orientation.\nPrimary request: change ONLY the walking pose into a cautious forward combat step. Keep the head, torso, arms and two-handed pistol guard closely aligned to the reference. The near-camera leg steps FORWARD toward screen right, its heel contacting the ground; the far leg extends backward toward screen left with its heel lifted and toe touching the same ground line. Clearly readable, natural opposite legs, neither a static wide guard nor a running leap. No body rotation or mirrored character.\nComposition: exactly 1024 x 1024 square canvas; one character only, full body fully inside the image. Torso center around x=512. Maintain reference head height near y=60, ground/lowest sole y=960. Preserve approximately the reference scale and generous clear padding. The character looks and aims toward screen right.\nScene/backdrop: true transparent RGBA background, alpha zero outside the sprite, no background color, no checkerboard, no floor, no cast shadow.\nConstraints: one pose per image, no sprite sheet, no layout, no extra weapon, no muzzle flash, no blur, no FX, no text, no border, no watermark. Preserve every design feature; create the new leg articulation rather than deforming or mirroring the old pose.",
+      "initial_reference": "assets/dossier_curien/saga/james_guard.png",
+      "initial_result_selected": true
+    },
+    {
+      "output": "assets/dossier_curien/saga/james_walk2.png",
+      "initial_prompt": "Use case: precise-object-edit.\nAsset type: one individual full-body 2D fighting-game walking sprite, James Taylor from The House of the Dead 2, contact pose B, the opposite step from contact A.\nInput image 1: authoritative existing project sprite; use it to preserve the exact character identity, gray suit, white shirt, dark tie, brown swept hair, face, black shoes, black pistol, proportions, shading, colors, fine pixel-edged painted arcade-sprite style and right-facing orientation.\nPrimary request: change ONLY the walking pose into the opposite cautious forward combat step. Keep the head, torso, arms and two-handed pistol guard closely aligned to the reference. The FAR-camera leg now steps FORWARD toward screen right, heel planted. The NEAR-camera leg visibly trails BACK toward screen left, knee flexed and heel raised, with only its toe near the ground. Thus the visible near leg is behind, clearly distinct from a near-leg-forward step. No body rotation or mirrored character. Natural walking contact, no running leap or static wide guard.\nComposition: exactly 1024 x 1024 square canvas; one character only, full body fully inside the image. Torso center around x=512. Maintain reference head height near y=60, ground/lowest sole y=960. Preserve approximately the reference scale and generous clear padding. The character looks and aims toward screen right.\nScene/backdrop: true transparent RGBA background, alpha zero outside the sprite, no background color, no checkerboard, no floor, no cast shadow.\nConstraints: one pose per image, no sprite sheet, no layout, no extra weapon, no muzzle flash, no blur, no FX, no text, no border, no watermark. Preserve every design feature; create the new leg articulation rather than deforming or mirroring the old pose.",
+      "initial_reference": "assets/dossier_curien/saga/james_guard.png",
+      "initial_result_selected": false,
+      "correction_prompt": "Use case: precise-object-edit.\nEdit target image 1: James walking with his near-camera leg forward. Image 2: original character-design reference.\nRequired correction: create the OPPOSITE stride by redrawing the legs ONLY. Keep head, chest, arms, pistol, costume and right-facing direction exactly as image 1. This new frame MUST have the foreground / nearer leg trailing to SCREEN LEFT, and the background / farther leg stepping to SCREEN RIGHT. Do NOT return the same foreground-leg-forward pose.\nAnatomy and overlap: from the pelvis, draw the NEAR thigh sloping down-left, its knee LEFT of the pelvis, then its shin descending toward the left rear shoe. This foreground thigh must visibly cover the root of the FAR thigh at the pelvis. The FAR thigh emerges from BEHIND that foreground thigh and slopes down-right into the leading knee and planted leading shoe. The near/rear shoe has the heel raised and its toe at ground. The far/front shoe has a heel contact. Foreground trouser outer seam must be on the LEFT rear leg; the visible right/front leg is the far leg. Keep two anatomically correct legs only. No mirrored upper body, no duplicate limbs, no extra gun.\nMaintain same 1280 x 1280 transparent RGBA canvas, same overall sprite size with head near y70 and ground/lowest sole about y1175, same character center and crisp painted arcade style. True alpha zero outside character, no floor, shadows, background, text, FX or layout. One individual full-body pose.",
+      "correction_references": [
+        "/workspace/scratch/687d25786392/generated_images/exec-bdce5339-2d5b-489e-9a6a-5cb665a6f717.png",
+        "assets/dossier_curien/saga/james_guard.png"
+      ],
+      "correction_reason": "Initial contact B repeated the near-leg-forward support; replaced with a visibly opposite leg overlap."
+    },
+    {
+      "output": "assets/dossier_curien/saga/lisa_walk1.png",
+      "initial_prompt": "Use case: precise-object-edit.\nAsset type: one individual full-body 2D fighting-game walking sprite, Lisa Rogan from The House of the Dead III, contact pose A.\nInput image 1: authoritative existing project sprite; preserve exactly this woman, face and short blond layered hair, dark sunglasses atop head, orange sleeveless cropped zipped vest, dog tags, tan fingerless gloves, navy cargo trousers and pockets, black belt and chunky boots, and the same black pump shotgun carried in two hands. Preserve proportions, shading, colors, fine pixel-edged painted arcade-sprite style and right-facing orientation.\nPrimary request: change ONLY the walking pose into a cautious forward combat step. Keep head, torso, both arms and the shotgun position aligned to the reference. The near-camera leg steps FORWARD toward screen right, heel contacting the ground; the far leg extends backward toward screen left, heel lifted with toe touching the ground line. A natural articulated walk contact with knees relaxed, clearly distinct from static wide guard. No body rotation or mirror. Do not change the firearm or the costume.\nComposition: exactly 1024 x 1024 square canvas, a single full-body character fully inside the image. Torso center x=512, head top about y=60, lowest sole at y=960. Keep reference scale and generous clear padding. Character looks and shotgun points toward screen right.\nScene/backdrop: true transparent RGBA background, alpha zero outside sprite; no colored background, no checkerboard, no floor or cast shadow.\nConstraints: one pose per image, no sheet, no duplicate person, no muzzle flash, no effects, no blur, no lettering, no watermark, no frame. Preserve all design details, naturally redraw the articulated legs.",
+      "initial_reference": "assets/dossier_curien/saga/lisa_guard.png",
+      "initial_result_selected": true
+    },
+    {
+      "output": "assets/dossier_curien/saga/lisa_walk2.png",
+      "initial_prompt": "Use case: precise-object-edit.\nAsset type: one individual full-body 2D fighting-game walking sprite, Lisa Rogan from The House of the Dead III, contact pose B, the opposite step from contact A.\nInput image 1: authoritative existing project sprite; preserve exactly this woman, face and short blond layered hair, dark sunglasses atop head, orange sleeveless cropped zipped vest, dog tags, tan fingerless gloves, navy cargo trousers and pockets, black belt and chunky boots, and the same black pump shotgun carried in two hands. Preserve proportions, shading, colors, fine pixel-edged painted arcade-sprite style and right-facing orientation.\nPrimary request: change ONLY the walking pose into the opposite cautious forward combat step. Keep head, torso, both arms and the shotgun position aligned to the reference. The FAR-camera leg steps FORWARD toward screen right, heel planted. The NEAR-camera leg visibly trails BACK toward screen left, knee bent, heel raised and toe at the ground line. The large outer cargo pocket must remain on the near leg now trailing, making this the distinct opposite support from a near-leg-forward step. Natural articulated walking contact, no running leap, no static wide guard, no rotation or mirror. Do not change the firearm or costume.\nComposition: exactly 1024 x 1024 square canvas, a single full-body character fully inside the image. Torso center x=512, head top about y=60, lowest sole at y=960. Keep reference scale and generous clear padding. Character looks and shotgun points toward screen right.\nScene/backdrop: true transparent RGBA background, alpha zero outside sprite; no colored background, no checkerboard, no floor or cast shadow.\nConstraints: one pose per image, no sheet, no duplicate person, no muzzle flash, no effects, no blur, no lettering, no watermark, no frame. Preserve all design details, naturally redraw the articulated legs.",
+      "initial_reference": "assets/dossier_curien/saga/lisa_guard.png",
+      "initial_result_selected": false,
+      "correction_prompt": "Use case: precise-object-edit.\nEdit target image 1: Lisa walking with her near-camera leg forward. Image 2: original character-design reference.\nRequired correction: create the OPPOSITE stride by redrawing the legs ONLY. Keep head, blond hair, sunglasses, chest, orange vest, dog tags, arms, gloves and shotgun exactly as image 1. Keep her facing and aiming screen RIGHT. This new frame MUST have the foreground / nearer leg trailing to SCREEN LEFT, and the background / farther leg stepping to SCREEN RIGHT. Do NOT return the same foreground-leg-forward pose.\nAnatomy and overlap: from pelvis, draw the NEAR thigh sloping down-left, its knee LEFT of the pelvis, shin descending toward the left rear boot. The LARGE OUTER CARGO POCKET now appears visibly on this LEFT REAR THIGH. That foreground thigh must cover the root of the far thigh at the pelvis. The FAR thigh emerges from BEHIND it and slopes down-right to the leading knee and planted leading boot. No large outer cargo pocket on this farther front leg. Near/rear boot heel raised, toe touching ground. Far/front boot heel planted. Two legs only, anatomically readable opposite contact stride, not a mirror or translation of pose A.\nMaintain same 1280 x 1280 transparent RGBA canvas, same overall sprite size with head near y70 and ground/lowest sole about y1175, same character center and crisp painted arcade style. True alpha zero outside character; no floor, shadows, background, text, FX or layout. One individual full-body pose.",
+      "correction_references": [
+        "/workspace/scratch/687d25786392/generated_images/exec-2ca96b9e-3ce4-433e-9a31-d61b23057228.png",
+        "assets/dossier_curien/saga/lisa_guard.png"
+      ],
+      "correction_reason": "Initial contact B repeated the near-leg-forward support; replaced with a visibly opposite leg overlap."
+    }
+  ],
+  "validation": {
+    "true_rgba_transparency": true,
+    "all_outputs_unique_sha256": true,
+    "output_count": 4,
+    "originals_retained": true,
+    "native_dimensions_preserved": true,
+    "target_dimensions_requested": [
+      1024,
+      1024
+    ],
+    "native_dimensions_returned": [
+      1254,
+      1254
+    ],
+    "alpha_bbox_note": "The native image alpha includes faint pixels beyond the visible silhouette. Ground and visible bounds use alpha > 127; do not infer the foot line from alpha > 0.",
+    "pivot_note": "Suggested x is half the native canvas width; y is the last pixel in the alpha > 127 silhouette. Runtime should apply per-frame alignment against the existing guard."
+  },
+  "limitations": [
+    "These are two walking contact drawings per fighter. They are not a complete fluid walk cycle; passing, up/down and additional transition frames remain to be produced.",
+    "Reference fidelity is to the project guard sprite. The new poses are adapted drawings; strict 1:1 correspondence to the original 3D game animation has not been established.",
+    "Some face, fabric and shading details vary between generated frames despite the preserved design.",
+    "Native outputs measure 1254 x 1254, not the requested 1024 x 1024. Runtime alignment/scaling must handle their measured dimensions and per-frame foot lines.",
+    "Code, runtime bindings and shared catalogues are outside this subtask and have not been changed."
+  ]
+}

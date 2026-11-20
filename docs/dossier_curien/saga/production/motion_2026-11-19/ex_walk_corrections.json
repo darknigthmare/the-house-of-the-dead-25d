@@ -1,0 +1,255 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-19",
+  "scope": "Correction des appuis 2 de Zobio et Zobiko par reconstruction des chaînes hanche-cuisse-genou-pied",
+  "count": 2,
+  "assets": [
+    {
+      "fighter_id": "zobio",
+      "art_id": "zobio",
+      "pose": "walk2",
+      "path": "assets/dossier_curien/motion_2026-11-19/zobio_walk2.png",
+      "source_generation_path": "/workspace/scratch/da9d6e4777c1/generated_images/exec-436d5e24-737f-489b-afd2-13c40d4ef0d9.png",
+      "sha256": "c2a55e424866f808ab6355222b1e67db7ea615737a6342f8f1f4fa0d6df0ba5a",
+      "bytes": 1174571,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        23,
+        1230,
+        1228
+      ],
+      "visible_bbox": [
+        147,
+        84,
+        1064,
+        1174
+      ],
+      "visible_alpha_threshold": 127,
+      "standing_height_px": 1092,
+      "pivot_px": [
+        610,
+        1174
+      ],
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "tool": "image_gen__imagegen",
+      "status": "corrected_pose_visual_reviewed",
+      "bytes_preserved": true,
+      "canonical_1_to_1_certified": false,
+      "animation_complete": false,
+      "leading_leg": "left_far",
+      "trailing_leg": "right_near",
+      "prompts": [
+        "Use case: precise-object-edit. Create ONE sibling full-body 2D fighting-game sprite by editing the attached corrected GUARD sprite. KEEP the entire upper body above the belt essentially unchanged: same head, hair, face, shoulders, torso, arms, hands, costume colors, detailed painted style, right-facing three-quarter view and pixel scale. Square true-transparent RGBA canvas of the same size. Change ONLY the lower body into a heel-to-toe forward STEP with the FAR LEFT leg ahead and the NEAR RIGHT leg behind. This is a very specific bone arrangement, not a generic crossed walking pose. The NEAR anatomical RIGHT leg is the leg on SCREEN LEFT in this reference. Its whole thigh, knee, shin and foot must stay on the LEFT side of the pelvis, extending diagonally DOWN-LEFT to the rear foot. The FAR anatomical LEFT leg is the leg on SCREEN RIGHT: it extends DOWN-RIGHT to the front foot. Preserve the reference's open inverted-V separation between the thighs; do not cross a near-side thigh across the pelvis toward the right knee. Near/right toe at screen-left pushes off with heel raised, far/left HEEL at screen-right is planted and its toes slightly raised. Both ground-contact points on the exact same horizontal floor line. Complete feet and all fingers/hair safe inside the canvas. NO floor, shadow, text, labels, motion blur, VFX, duplicates, extra limbs or extra subjects. Character-specific invariants: Zobio's massive green zombie body, broad hunched shoulders, long rectangular face, wrapped head and eyepatch, one red eye, torn blue-grey short-sleeved jacket, partial rib opening on his left chest and metal staples on the opposite side, brown belt with rectangular GOLD buckle, shredded brown trousers, huge BARE feet. The large exposed GREEN tear on the NEAR/RIGHT trouser thigh must remain on the ENTIRE trailing leg at SCREEN LEFT, above its rear knee, following the same thigh rather than jumping across the crotch. Its long vertical purple shin seam travels with that trailing leg. The far/left thigh and shin are a separate limb extending right; its shorter oblique purple seam follows it. Show two independent hips-to-feet chains. Do not put a large near thigh crossing diagonally in front from left hip to right knee. Keep near thigh in the foreground where it joins pelvis, far thigh behind at that joint.",
+        "Use case: precise-object-edit. Edit ONLY the two purple stitched scars on Zobio's shins in the attached accepted walking-contact sprite. Preserve EVERYTHING else exactly: the same fixed head, face, bandages, eyepatch, torso, fists, jacket, gold rectangular belt buckle, brown torn trousers, colors, pixel scale, canvas size, and the correct OPPOSITE-STEP anatomy. His NEAR/RIGHT thigh visibly runs from the left visible hip diagonally DOWN-LEFT to the rear knee and foot; his FAR/LEFT thigh runs down-right to the front heel. Keep that whole leg arrangement, overlap, silhouette, large tear on the trailing thigh, heel positions and toes completely unchanged. The correction is solely scar continuity: on the REAR shin at SCREEN LEFT put the LONG lengthwise purple seam, with four cross stitches, following the long axis of that rear shin; on the FRONT shin at SCREEN RIGHT put the SHORT oblique purple seam with three cross stitches, slanting across that shin. Those two scar designs belong to those anatomical legs throughout the animation. Do not move limbs or swap calves or rebuild the pose. Genuine transparent RGBA background, one complete character, no crop, no text, no ground, no shadow or effects."
+      ],
+      "references": [
+        {
+          "path": "assets/dossier_curien/expansion/hotd_ex/zobio_ex_guard_v2.png",
+          "role": "identity_and_hip_thigh_geometry_reference"
+        }
+      ],
+      "sources": [
+        "https://www.sega.jp/history/arcade/product/8762/",
+        "https://flyers.arcade-museum.com/videogames/show/5803"
+      ],
+      "visual_review": {
+        "full_body_single_subject": true,
+        "faces_right": true,
+        "no_opaque_edge_clipping": true,
+        "near_thigh_trails_left_from_visible_hip": true,
+        "far_thigh_leads_right_from_hidden_hip": true,
+        "leg_overlaps_rebuilt_not_just_texture_swap": true,
+        "trailing_toe_and_leading_heel_share_ground_line": true,
+        "long_shin_seam_follows_near_rear_leg": true,
+        "short_oblique_seam_follows_far_front_leg": true
+      },
+      "anchors_px": {
+        "near_hip": [
+          465,
+          711
+        ],
+        "near_knee": [
+          348,
+          900
+        ],
+        "near_toe": [
+          309,
+          1167
+        ],
+        "far_hip": [
+          675,
+          719
+        ],
+        "far_knee": [
+          837,
+          910
+        ],
+        "far_heel": [
+          851,
+          1167
+        ]
+      },
+      "calibration_notes": "Hauteur anatomique de la garde corrigée, ajustée au ratio de canevas. Pivots et ancrages de support proposés en pixels natifs ; contrôle moteur final à effectuer.",
+      "limitations": [
+        "Correction d'un contact de marche. Les passages et transitions du cycle restent à produire.",
+        "Appuis, recouvrement des cuisses et continuité des marques contrôlés visuellement ; fidélité canonique 1:1 non certifiée."
+      ]
+    },
+    {
+      "fighter_id": "zobiko",
+      "art_id": "zobiko",
+      "pose": "walk2",
+      "path": "assets/dossier_curien/motion_2026-11-19/zobiko_walk2.png",
+      "source_generation_path": "/workspace/scratch/da9d6e4777c1/generated_images/zobiko_walk2_corrected.png",
+      "sha256": "4ab31eac74fb82582cf06602be8b4d25a9cf32ed0a476194b0a3a80c4d01b7a1",
+      "bytes": 863329,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        31,
+        32,
+        1226,
+        1178
+      ],
+      "visible_bbox": [
+        214,
+        49,
+        1026,
+        1169
+      ],
+      "visible_alpha_threshold": 127,
+      "standing_height_px": 1130,
+      "pivot_px": [
+        610,
+        1169
+      ],
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "tool": "image_gen__imagegen",
+      "status": "corrected_pose_visual_reviewed",
+      "bytes_preserved": true,
+      "canonical_1_to_1_certified": false,
+      "animation_complete": false,
+      "leading_leg": "left_far",
+      "trailing_leg": "right_near",
+      "prompts": [
+        "Use case: precise-object-edit. Create ONE sibling full-body 2D fighting-game sprite by editing the attached corrected GUARD sprite. KEEP the entire upper body above the belt essentially unchanged: same head, hair, face, shoulders, torso, arms, hands, costume colors, detailed painted style, right-facing three-quarter view and pixel scale. Square true-transparent RGBA canvas of the same size. Change ONLY the lower body into a heel-to-toe forward STEP with the FAR LEFT leg ahead and the NEAR RIGHT leg behind. This is a very specific bone arrangement, not a generic crossed walking pose. The NEAR anatomical RIGHT leg is the leg on SCREEN LEFT in this reference. Its whole thigh, knee, shin and foot must stay on the LEFT side of the pelvis, extending diagonally DOWN-LEFT to the rear foot. The FAR anatomical LEFT leg is the leg on SCREEN RIGHT: it extends DOWN-RIGHT to the front foot. Preserve the reference's open inverted-V separation between the thighs; do not cross a near-side thigh across the pelvis toward the right knee. Near/right toe at screen-left pushes off with heel raised, far/left HEEL at screen-right is planted and its toes slightly raised. Both ground-contact points on the exact same horizontal floor line. Complete feet and all fingers/hair safe inside the canvas. NO floor, shadow, text, labels, motion blur, VFX, duplicates, extra limbs or extra subjects. Character-specific invariants: adult Zobiko, mint-green skin, long bright blonde hair with zigzag pointed ends, fringe over one eye, bone fan headband, eyeball earring, stitched cheek, charcoal strapless top with pale upper band and one small tear, grey bloomer shorts with large dark dots, brown belt with skull buckle, bandages and NO shoes. The NEAR/RIGHT leg at SCREEN LEFT has SPARSE diagonal wraps with large mint-green areas visible, including a loose band above the knee: this ENTIRE near thigh must extend backwards down-left with its sparse wraps and foot staying behind. The FAR/LEFT leg at SCREEN RIGHT has a BARE upper thigh then DENSE white bandages from knee to foot, and this ENTIRE far leg must extend forward down-right. Never merely swap the shin wrapping textures: change the direction of each whole thigh from its hip. Preserve each short-leg opening's attachment to its correct thigh. Near thigh overlaps far thigh only at the root, then they separate into an open inverted V. Dense-wrapped left heel ahead, sparse-wrapped right toe behind."
+      ],
+      "references": [
+        {
+          "path": "assets/dossier_curien/expansion/hotd_ex/zobiko_ex_guard_v2.png",
+          "role": "identity_and_hip_thigh_geometry_reference"
+        }
+      ],
+      "sources": [
+        "https://www.sega.jp/history/arcade/product/8762/",
+        "https://flyers.arcade-museum.com/videogames/show/5803"
+      ],
+      "visual_review": {
+        "full_body_single_subject": true,
+        "faces_right": true,
+        "no_opaque_edge_clipping": true,
+        "near_thigh_trails_left_from_visible_hip": true,
+        "far_thigh_leads_right_from_hidden_hip": true,
+        "leg_overlaps_rebuilt_not_just_texture_swap": true,
+        "trailing_toe_and_leading_heel_share_ground_line": true,
+        "sparse_wraps_follow_near_rear_leg": true,
+        "dense_wraps_follow_far_front_leg": true
+      },
+      "anchors_px": {
+        "near_hip": [
+          489,
+          736
+        ],
+        "near_knee": [
+          394,
+          884
+        ],
+        "near_toe": [
+          318,
+          1164
+        ],
+        "far_hip": [
+          696,
+          738
+        ],
+        "far_knee": [
+          817,
+          901
+        ],
+        "far_heel": [
+          898,
+          1166
+        ]
+      },
+      "calibration_notes": "Hauteur anatomique de la garde corrigée, ajustée au ratio de canevas. Pivots et ancrages de support proposés en pixels natifs ; contrôle moteur final à effectuer.",
+      "limitations": [
+        "Correction d'un contact de marche. Les passages et transitions du cycle restent à produire.",
+        "Appuis, recouvrement des cuisses et continuité des marques contrôlés visuellement ; fidélité canonique 1:1 non certifiée."
+      ]
+    }
+  ],
+  "rejected_attempts": [
+    {
+      "fighter_id": "zobio",
+      "source_generation_path": "docs/dossier_curien/saga/production/motion_2026-11-19/rejected/zobio_walk2_scar_swap_only.png",
+      "status": "rejected_not_integrated",
+      "reason": "Coutures inversées mais cuisse proche encore en avant ; appuis identiques à walk1.",
+      "prompt_available": false,
+      "path": "docs/dossier_curien/saga/production/motion_2026-11-19/rejected/zobio_walk2_scar_swap_only.png",
+      "source_generation_filename": "exec-1ed90b71-b5f4-4432-8b12-ef76785e6cff.png",
+      "sha256": "f2847d4bc66840afe8eb638fadabf34dc7c001bb2da50bd3e90f68c0c079885a",
+      "bytes": 1094457,
+      "runtime_active": false
+    },
+    {
+      "fighter_id": "zobiko",
+      "source_generation_path": "docs/dossier_curien/saga/production/motion_2026-11-19/rejected/zobiko_walk2_wrap_swap_only.png",
+      "status": "rejected_not_integrated",
+      "reason": "Bandages inversés mais cuisse proche encore en avant ; appui non alterné.",
+      "prompt_available": false,
+      "path": "docs/dossier_curien/saga/production/motion_2026-11-19/rejected/zobiko_walk2_wrap_swap_only.png",
+      "source_generation_filename": "exec-b2bde07e-c6ae-4195-af39-5ffcfce05e71.png",
+      "sha256": "c574772a49aa34fa9ce6d4f5a22b337988907c7b64a7bce50ff912feff439ed7",
+      "bytes": 856793,
+      "runtime_active": false
+    },
+    {
+      "fighter_id": "zobio",
+      "source_generation_path": "docs/dossier_curien/saga/production/motion_2026-11-19/rejected/zobio_walk2_before_scar_continuity_fix.png",
+      "status": "superseded_intermediate",
+      "reason": "Chaînes articulaires corrigées ; remplacé par la version rétablissant aussi la continuité des deux cicatrices tibiales.",
+      "prompt": "Use case: precise-object-edit. Create ONE sibling full-body 2D fighting-game sprite by editing the attached corrected GUARD sprite. KEEP the entire upper body above the belt essentially unchanged: same head, hair, face, shoulders, torso, arms, hands, costume colors, detailed painted style, right-facing three-quarter view and pixel scale. Square true-transparent RGBA canvas of the same size. Change ONLY the lower body into a heel-to-toe forward STEP with the FAR LEFT leg ahead and the NEAR RIGHT leg behind. This is a very specific bone arrangement, not a generic crossed walking pose. The NEAR anatomical RIGHT leg is the leg on SCREEN LEFT in this reference. Its whole thigh, knee, shin and foot must stay on the LEFT side of the pelvis, extending diagonally DOWN-LEFT to the rear foot. The FAR anatomical LEFT leg is the leg on SCREEN RIGHT: it extends DOWN-RIGHT to the front foot. Preserve the reference's open inverted-V separation between the thighs; do not cross a near-side thigh across the pelvis toward the right knee. Near/right toe at screen-left pushes off with heel raised, far/left HEEL at screen-right is planted and its toes slightly raised. Both ground-contact points on the exact same horizontal floor line. Complete feet and all fingers/hair safe inside the canvas. NO floor, shadow, text, labels, motion blur, VFX, duplicates, extra limbs or extra subjects. Character-specific invariants: Zobio's massive green zombie body, broad hunched shoulders, long rectangular face, wrapped head and eyepatch, one red eye, torn blue-grey short-sleeved jacket, partial rib opening on his left chest and metal staples on the opposite side, brown belt with rectangular GOLD buckle, shredded brown trousers, huge BARE feet. The large exposed GREEN tear on the NEAR/RIGHT trouser thigh must remain on the ENTIRE trailing leg at SCREEN LEFT, above its rear knee, following the same thigh rather than jumping across the crotch. Its long vertical purple shin seam travels with that trailing leg. The far/left thigh and shin are a separate limb extending right; its shorter oblique purple seam follows it. Show two independent hips-to-feet chains. Do not put a large near thigh crossing diagonally in front from left hip to right knee. Keep near thigh in the foreground where it joins pelvis, far thigh behind at that joint.",
+      "path": "docs/dossier_curien/saga/production/motion_2026-11-19/rejected/zobio_walk2_before_scar_continuity_fix.png",
+      "source_generation_filename": "exec-27a703f7-05e4-4d3e-96b1-b43fd3d210ed.png",
+      "sha256": "f5a8243ac88a23fa299148c5e0501f062d2ab47f465446fc3f17782db6e0fb39",
+      "bytes": 1205983,
+      "runtime_active": false
+    }
+  ]
+}

@@ -1,0 +1,188 @@
+{
+  "schema_version": 1,
+  "batch": "kate-walk-20261119",
+  "date": "2026-11-19",
+  "repository": "darknigthmare/the-house-of-the-dead-25d",
+  "base_commit": "a3fbcf13455a945ccc929ce43907a9755d82e6c7",
+  "generator": "built-in image_gen.imagegen",
+  "count": 4,
+  "requested_dimensions": [
+    1024,
+    1024
+  ],
+  "actual_dimensions": [
+    1254,
+    1254
+  ],
+  "reference_use": "Masters de la PR courante, affichés puis fournis au générateur. La tenue, l'identité et les armes ont été maintenues comme contraintes; les poses de marche sont une adaptation au combat 2D.",
+  "qa": {
+    "visual": "Visuels inspectés : un personnage entier par PNG, costume identifiable, arme tenue de face droite, deux positions de jambes distinctes; second appui soirée régénéré pour inverser clairement les jambes.",
+    "header": "PNG RGBA 8 bits, 1254×1254; octets et SHA-256 calculés sur les données originales retournées, puis confirmés par un second helper PNG/DEFLATE.",
+    "alignment": "Boîtes mesurées par décodage PNG au seuil alpha>=16. Format [x0,y0,x1 exclusif,y1 exclusif]. Le pivot d'intention x=627,y=1175.625 n'est pas utilisé comme mesure du contenu réel; les pieds doivent être alignés depuis les boîtes mesurées. Des pixels d'alpha inférieur à 16 débordent largement les silhouettes.",
+    "limitations": [
+      "La fidélité 1:1 aux jeux sources n'est pas certifiée.",
+      "Le cycle possède deux nouvelles poses et les gardes intercalées; ce n'est pas une animation fluide complète.",
+      "Les PNG sources ont été conservés sans redimensionnement ni retouche hors générateur.",
+      "Import Godot et résultat en mouvement à vérifier dans le moteur et la CI."
+    ]
+  },
+  "assets": [
+    {
+      "name": "kate_walk1",
+      "path": "assets/dossier_curien/saga/kate_walk1.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 669426,
+      "bit_depth": 8,
+      "color_type": 6,
+      "sha256": "99dbe1c693da0ad1ec3651f7c7d13e68be7e08f937b0789f767deceb65dd52fd",
+      "prompt": "Use case: identity-preserve. Edit the single reference House of the Dead 4 Kate Green sprite into forward walk CONTACT A. Keep identical face, eyes and blonde ponytail, red blazer with black buttons and pockets, cream scarf with gold chain print, black top and short black skirt, translucent dark tights, knee-high black boots with buckles, the same compact black submachine gun held in two hands, UHD painterly 2D fighting game rendering and right-facing slight three-quarter view. Change only her walking pose: the NEAR visible leg steps toward the RIGHT edge with knee slightly bent and front heel planted; the farther leg trails toward the LEFT edge with heel lifted, toe pushing off. Keep gun steady at chest height, barrel horizontally right. Arms, shoulders, facial identity and torso scale unchanged. The legs form a natural measured walking stride, narrower than the reference combat guard. One whole character only, no duplicate limbs or second figure. Square transparent canvas requested 1024x1024. All hair, weapon and boots in frame with head top around 60/1024 height and lowest sole around 960/1024 height, hips centered at x=512/1024. No ground, no contact shadow, no text, no sprite sheet, no muzzle flash. Genuine transparent RGBA background.",
+      "source": "assets/dossier_curien/saga/kate_guard.png",
+      "reference_sha": "e2755a55c81d5dcc42226e1cad7d36098561946c",
+      "git_blob_sha": "cf539a9237d188e9fca915d236c987a8d08743e3",
+      "png_analysis": {
+        "width": 1254,
+        "height": 1254,
+        "bitDepth": 8,
+        "colorType": 6,
+        "interlace": 0,
+        "size": 669426,
+        "sha256": "99dbe1c693da0ad1ec3651f7c7d13e68be7e08f937b0789f767deceb65dd52fd",
+        "alpha0": 1283707,
+        "alpha255": 1174,
+        "transparentFraction": 0.8163395475785302,
+        "centralNonzero": 288788,
+        "bbox": [
+          57,
+          19,
+          1192,
+          1176
+        ],
+        "bboxAlpha16": [
+          305,
+          68,
+          1012,
+          1174
+        ]
+      }
+    },
+    {
+      "name": "kate_walk2",
+      "path": "assets/dossier_curien/saga/kate_walk2.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 655996,
+      "bit_depth": 8,
+      "color_type": 6,
+      "sha256": "7c0dc4bc86c460c608a3d51e13023389278e1ed4fc2190ea2f81711bddba5149",
+      "prompt": "Use case: identity-preserve and compositing. Two input references: IMAGE 1 is the target character, Kate Green in her House of the Dead 4 red blazer, printed cream scarf, short black skirt, dark tights and knee-high black buckle boots, ponytail, holding her compact black machine gun. IMAGE 2 is strictly a leg-pose reference, the same character in a red long dress. Produce ONE Kate wearing ONLY IMAGE 1's outfit and hairstyle, while copying exactly IMAGE 2's opposite-support walking leg order: the near thigh slopes backward toward the LEFT edge, and the far thigh moves forward toward the RIGHT edge. The near shin and black boot trail behind the hips to the left with heel raised; the far boot leads to the right with heel planted. Transfer no clothing, jewelry, high heels or hair from IMAGE 2; use only its stepping pose. Keep the upper body and gun from IMAGE 1: identical facial identity, shoulders, arms, red blazer pockets and black buttons, cream gold-chain-print scarf, short black skirt and black buckle boots. Right-facing slight three-quarter view. Natural measured forward walking stride, not guard stance. Same UHD painted sprite rendering. Only one full-body figure, no duplicate limbs. Square transparent canvas requested 1024x1024, complete hair and boots inside canvas, head top at about 60/1024 height and soles at 960/1024 height, pelvis centered. No ground, no shadow, no text, no gun flash, no sheet or comparison view. Genuine transparent RGBA.",
+      "source": "assets/dossier_curien/saga/kate_guard.png",
+      "reference_sha": "e2755a55c81d5dcc42226e1cad7d36098561946c",
+      "git_blob_sha": "a52a45d1e86de6457d27d93d49183e02c7fa368e",
+      "png_analysis": {
+        "width": 1254,
+        "height": 1254,
+        "bitDepth": 8,
+        "colorType": 6,
+        "interlace": 0,
+        "size": 655996,
+        "sha256": "7c0dc4bc86c460c608a3d51e13023389278e1ed4fc2190ea2f81711bddba5149",
+        "alpha0": 1286661,
+        "alpha255": 690,
+        "transparentFraction": 0.8182180658257213,
+        "centralNonzero": 281798,
+        "bbox": [
+          0,
+          23,
+          1186,
+          1230
+        ],
+        "bboxAlpha16": [
+          171,
+          69,
+          1019,
+          1180
+        ]
+      }
+    },
+    {
+      "name": "kate_soiree_walk1",
+      "path": "assets/dossier_curien/saga/kate_soiree_walk1.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 661614,
+      "bit_depth": 8,
+      "color_type": 6,
+      "sha256": "8f8f2148496c0d216a929202f23ff9270ce8e409035f9fbe510faa2c493cb8b5",
+      "prompt": "Use case: identity-preserve. Asset type: a single individual animation frame for the existing House of the Dead 2D fighter Kate Green, Scarlet Dawn reception costume. Edit the reference sprite: preserve the exact same face, blonde updo with loose forelock, black lace sleeves, scarlet satin long dress with the same slit, jeweled neck ornament, bracelets, black strapped high heels, compact black machine pistol held in both hands, painterly UHD 2D game rendering, right-facing profile / slight three-quarter view, outline thickness and lighting. Change only the stepping pose into forward walk CONTACT A: the nearer leg extends forward toward screen right, its heel is planted, the rear leg stretches to the left with only its toes touching; pelvis advances slightly with knees relaxed, shoulders remain square and muzzle held horizontally to the right. Distinct natural walking step, not the wide combat guard. Exact square 1024 by 1024 canvas, full body including all hair, muzzle and heels; body scale matching reference, head top around y=60, lowest shoe sole y=960, central foot/pelvis anchor x=512. Only one character in one image, no duplicate limbs, no text, no panel, no sheet, no ground, no floor shadow, no muzzle flash. Preserve genuine transparent RGBA background.",
+      "source": "assets/dossier_curien/saga/kate_soiree_guard.png",
+      "reference_sha": "dddee6b71d8a514fa64e711845191c620ab87fed",
+      "git_blob_sha": "1a7f54e354898878f631a2b5b0f6a61b4dc844b9",
+      "png_analysis": {
+        "width": 1254,
+        "height": 1254,
+        "bitDepth": 8,
+        "colorType": 6,
+        "interlace": 0,
+        "size": 661614,
+        "sha256": "8f8f2148496c0d216a929202f23ff9270ce8e409035f9fbe510faa2c493cb8b5",
+        "alpha0": 1281650,
+        "alpha255": 584,
+        "transparentFraction": 0.8150314527801307,
+        "centralNonzero": 289997,
+        "bbox": [
+          0,
+          3,
+          1254,
+          1254
+        ],
+        "bboxAlpha16": [
+          253,
+          67,
+          948,
+          1175
+        ]
+      }
+    },
+    {
+      "name": "kate_soiree_walk2",
+      "path": "assets/dossier_curien/saga/kate_soiree_walk2.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 709783,
+      "bit_depth": 8,
+      "color_type": 6,
+      "sha256": "41c9cf07fa04929bbda6d236cd4825836763ddedeb1c666516de8b08060c2c1b",
+      "prompt": "Use case: identity-preserve. Edit the single reference Kate Green Scarlet Dawn sprite into a DIFFERENT forward walking support frame. Retain her face, blonde bun, black lace sleeves, red long satin slit dress, jewelry, black strapped high heels, compact black submachine gun, exact rendering and right-facing view. Crucial leg pose: the BARE near leg exposed through the slit now stretches BEHIND her toward the LEFT EDGE of the canvas; its raised heel and pointed toe are behind her hips. The far leg UNDER THE RED SKIRT steps FORWARD toward the RIGHT EDGE of the canvas, that far knee and rightmost black heel leading. The red skirt wraps across the leading far thigh. The visible bare thigh must slope backward to the left, never forward toward the gun. This is the opposite support phase of a measured forward walk. Keep body upright, gun steady horizontally at chest height in both hands, shoulders at same height as reference. Square transparent sprite, requested 1024x1024 pixels. Complete feet and hair within canvas, minimum 60px padding top and bottom; feet baseline at 960/1024 of height, hip anchor x=512/1024 of width. One character only, no shadows, no ground, no text, no muzzle flash, no panel, no duplicate limbs. Genuine RGBA transparent background.",
+      "source": "assets/dossier_curien/saga/kate_soiree_guard.png",
+      "reference_sha": "dddee6b71d8a514fa64e711845191c620ab87fed",
+      "git_blob_sha": "57f7071fff09d2ab87c2cd42aae2be486c1ca273",
+      "png_analysis": {
+        "width": 1254,
+        "height": 1254,
+        "bitDepth": 8,
+        "colorType": 6,
+        "interlace": 0,
+        "size": 709783,
+        "sha256": "41c9cf07fa04929bbda6d236cd4825836763ddedeb1c666516de8b08060c2c1b",
+        "alpha0": 1261654,
+        "alpha255": 601,
+        "transparentFraction": 0.8023155249294761,
+        "centralNonzero": 303911,
+        "bbox": [
+          27,
+          20,
+          1240,
+          1236
+        ],
+        "bboxAlpha16": [
+          155,
+          69,
+          1014,
+          1166
+        ]
+      }
+    }
+  ],
+  "discarded_attempts": 2
+}

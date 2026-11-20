@@ -1,0 +1,3047 @@
+{
+  "titre": "Dossier Curien — Anthologie de combat",
+  "nombre_de_png": 247,
+  "nouveaux_png_volume_iii": 86,
+  "fichiers": [
+    {
+      "fichier": "bayou_back.png",
+      "usage": "back",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "c7407da32beb65d1ad2b237b18765f4f48639c67234958847b97a2c1fc3debfa",
+      "volume": 3
+    },
+    {
+      "fichier": "bayou_front.png",
+      "usage": "front",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "af9871d95f9fd5cde44c4666e45c301e396b188c3f314b10d099cd769a9c7c55",
+      "volume": 3
+    },
+    {
+      "fichier": "bayou_mid.png",
+      "usage": "mid",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "3ee583e5b5433ecb9d335cf5d22fbee72fb730f2dac43c0527e07f26fe6a2578",
+      "volume": 3
+    },
+    {
+      "fichier": "carnival_back.png",
+      "usage": "back",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "7ee88eb625e02ef5333f2ce7d14aa1d4df73b1fa0780a59130a58a0f4d28bf97",
+      "volume": 2
+    },
+    {
+      "fichier": "carnival_front.png",
+      "usage": "front",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "76be70be69b4a00ffaab7ad63684fc95f0ad2d1349b3347e78167606d4d1118b",
+      "lot": "2026-11-19_reprise",
+      "source_production": "docs/dossier_curien/saga/production/2026-11-19_parallax_special_carnival.json"
+    },
+    {
+      "fichier": "carnival_mid.png",
+      "usage": "mid",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "9fbf81119986e4d7ebd8d08836545e9409e637f8793d3ec85b47c734684b36de",
+      "lot": "2026-11-19_reprise",
+      "source_production": "docs/dossier_curien/saga/production/2026-11-19_parallax_special_carnival.json"
+    },
+    {
+      "fichier": "citydespair_back.png",
+      "usage": "back",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "57cf6e5198596a93f40e6b3b50a0a58b9d597d709ca5c188aad332927237f75e",
+      "lot": "reprise-2026-11-19",
+      "validation": "adaptation referencee; fidelite 1:1 a valider"
+    },
+    {
+      "fichier": "citydespair_front.png",
+      "usage": "front",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "fb9259b485bd0a20006fa0f2237cea0338493c9c50453b30c2e0587b79f08a19",
+      "lot": "reprise-2026-11-19",
+      "bounds_px": [
+        0,
+        796,
+        1672,
+        145
+      ],
+      "validation": "adaptation referencee; fidelite 1:1 a valider"
+    },
+    {
+      "fichier": "citydespair_mid.png",
+      "usage": "mid",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "eff8c70dcd9a69054743d76e564c601e44616391f8c160de9cee759e53c8737f",
+      "lot": "reprise-2026-11-19",
+      "bounds_px": [
+        53,
+        311,
+        1619,
+        452
+      ],
+      "validation": "adaptation referencee; fidelite 1:1 a valider"
+    },
+    {
+      "fichier": "clocktower_back.png",
+      "usage": "back",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "b9da253b0f9c161b384edb4801138f6676f22ebadb7ce96d16e82973dea26423",
+      "volume": 3
+    },
+    {
+      "fichier": "clocktower_front.png",
+      "usage": "front",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "fe45420a4b1269e81bba4218591f86aa755d6f6bb9aba5e3359df468117485c4",
+      "volume": 3
+    },
+    {
+      "fichier": "clocktower_mid.png",
+      "usage": "mid",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "f81e5346aec32963d286ab6135358b4fe87bfa1b370078620bec1108ea292a20",
+      "volume": 3
+    },
+    {
+      "fichier": "creeping_flesh_back.png",
+      "usage": "back",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "e57ec22b2cdda8be359ecba99e1e762ab85d237d46f6ab16ccd1e6a29a844ee3",
+      "lot": "2026-11-20_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "creeping_flesh_front.png",
+      "usage": "front",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "63182cc121283c16cf88c9b4b54a6560a00ff7a95660835056a5cdbd28931e41",
+      "lot": "2026-11-20_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "creeping_flesh_mid.png",
+      "usage": "mid",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "f74dd3f54c396cb26772e9006672857d60cd6c95afcd2fab41d1ccbe0c53c659",
+      "lot": "2026-11-20_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "daniel_contact.png",
+      "usage": "contact",
+      "dimensions": [
+        1648,
+        1024
+      ],
+      "sha256": "1159bbf3bcdaef86df9c4d72abb59038f897db43f476a78c240875a67f3b5566",
+      "pivot": [
+        824,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "daniel_ending.png",
+      "usage": "ending",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "454f237a1363d333ce533c6a407fa8c0a6e1c43b38562fdb1bfd8804d92316f9",
+      "volume": 3
+    },
+    {
+      "fichier": "daniel_guard.png",
+      "usage": "guard",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "327faeceb73e8aead844ccf5472fdeb4d30da2eae5a7c0bf6fa87b587e092f6a",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "daniel_intro.png",
+      "usage": "intro",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "6fb815a4f40c1c4da04a7e5c6509639639c419cb273c93f7b2dd0914141fce7c",
+      "volume": 3
+    },
+    {
+      "fichier": "daniel_recoil.png",
+      "usage": "recoil",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "ccf118ccc8b5b3758cb5472fea7aee57aeeb20a8fecb3048abe91f708e539939",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "daniel_rival.png",
+      "usage": "rival",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "1822dacaa7d03ed30c9044e8601911da333a5056270e3577cef0edfb1f81600d",
+      "volume": 3
+    },
+    {
+      "fichier": "daniel_select.png",
+      "usage": "select",
+      "dimensions": [
+        832,
+        832
+      ],
+      "sha256": "e7f6a53935d8f4d51df09fa4afd3fe96d0289acbf372183bc142039ff7d944f5",
+      "volume": 3
+    },
+    {
+      "fichier": "daniel_walk1.png",
+      "usage": "walk1",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "f3b13692f670456cd112b25402fa75eb74f75063c5a3d9a0c3707ed446a70dfb",
+      "volume": 4,
+      "pivot": [
+        512,
+        960
+      ]
+    },
+    {
+      "fichier": "daniel_walk2.png",
+      "usage": "walk2",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "2212bfce392e8bd97b84d767cdbf3d146d6ba1fd25998e26d007b32990a7796b",
+      "volume": 4,
+      "pivot": [
+        512,
+        960
+      ]
+    },
+    {
+      "fichier": "daniel_windup.png",
+      "usage": "windup",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "5e53ff9543d0459a77948aabbaccd8d7d73c879645c76cae3c02877127c2b021",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "death_contact.png",
+      "usage": "contact",
+      "dimensions": [
+        1344,
+        1024
+      ],
+      "sha256": "b8204878bbd43538a6fb2444b4c5fd0d3f52b7b563ad6e79bde7dcfd6d32fe13",
+      "pivot": [
+        672,
+        960
+      ],
+      "volume": 2
+    },
+    {
+      "fichier": "death_guard.png",
+      "usage": "guard",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "59a981db9464ef336215e9e37527bf4ecc7e9b7646e6f63aa9235e74bfbf811b",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 2
+    },
+    {
+      "fichier": "death_recoil.png",
+      "usage": "recoil",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "21baae44ce678e1c5f1a9ed65c3042f50b6c76964d2c235a186197837cd974aa",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "death_select.png",
+      "usage": "select",
+      "dimensions": [
+        832,
+        832
+      ],
+      "sha256": "db90a112b62ba894bb7e948b3c070672164f853bf35340e5776029d535e32c90",
+      "volume": 3
+    },
+    {
+      "fichier": "death_windup.png",
+      "usage": "windup",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "b1e654eacebcfc862ea95d20ea4f9e268c0e57ca3d5202559d041fee58515f95",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "efi_back.png",
+      "usage": "back",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "eeb358ad0eae32f716b0addccba5db21ae03ba7a9306962cea15d72507f96b5e",
+      "volume": 2
+    },
+    {
+      "fichier": "efi_front.png",
+      "usage": "front",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "e62c62275dff3998580f164f0c85b16a61225598af8620943b166d21528531fa",
+      "lot": "2026-11-19_reprise",
+      "source_production": "docs/dossier_curien/saga/production/2026-11-19_parallax.json"
+    },
+    {
+      "fichier": "efi_mid.png",
+      "usage": "mid",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "f43440968ac6fda63e6c90c32892323246daff3eab66e9dc3a28575b697f47c5",
+      "lot": "2026-11-19_reprise",
+      "source_production": "docs/dossier_curien/saga/production/2026-11-19_parallax.json"
+    },
+    {
+      "fichier": "emperor_contact.png",
+      "usage": "contact",
+      "dimensions": [
+        2272,
+        1024
+      ],
+      "sha256": "dd9d870769809eac8e765be54033d03f074a446222e82481582a5dd76bbe63d2",
+      "pivot": [
+        1136,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "emperor_ending.png",
+      "usage": "ending",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "b20d9b5a495ef03f93ea9126192b33a4dfa69ba58b4ea2e62d54c28673aef917",
+      "volume": 3
+    },
+    {
+      "fichier": "emperor_guard.png",
+      "usage": "guard",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "e7a177714b68851536df749966c02229fe16c2d76f600e03cfc6098c76351885",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "emperor_intro.png",
+      "usage": "intro",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "65c80f7d88f523f3f6a6acdece59f9fbc9bde399e70fc7ea88e3ac93c99a0e27",
+      "volume": 3
+    },
+    {
+      "fichier": "emperor_recoil.png",
+      "usage": "recoil",
+      "dimensions": [
+        1120,
+        1024
+      ],
+      "sha256": "07eb1e9bddebcdd1bc4a1bfa9471bd86b085fff5aaa435064cb87be0790d8b18",
+      "pivot": [
+        560,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "emperor_rival.png",
+      "usage": "rival",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "8d8c7e4df0d4a3997c3606dee32aa08c0b114a30e70eecbb27ebfca373a0f630",
+      "volume": 3
+    },
+    {
+      "fichier": "emperor_select.png",
+      "usage": "select",
+      "dimensions": [
+        832,
+        832
+      ],
+      "sha256": "20b7e2d00d5ea8c86c3483251361b2857dc9be0e735f2bb8684194193b859b81",
+      "volume": 3
+    },
+    {
+      "fichier": "emperor_windup.png",
+      "usage": "windup",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "8ab5fb18975e7815076adfd76499505a2bd354cb0a360639ffb200c496c41776",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "ex_back.png",
+      "usage": "back",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "e07d0744aa78914539e62d35574436e427de7194226c9156441588d4cc800fe6",
+      "volume": 2
+    },
+    {
+      "fichier": "ex_duo.png",
+      "usage": "duo",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "3c395e175aa169ae61ee3b29be959d75f7d0b842402fc9cdd5b9eb52a5ef61f4",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 2
+    },
+    {
+      "fichier": "ex_ending.png",
+      "usage": "ending",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "7937cbce5ebedb6f2ebbe850584c4d1625b8b0c67030ee9ef73ac0a0a2d1aa4a",
+      "volume": 2
+    },
+    {
+      "fichier": "ex_front.png",
+      "usage": "front",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "b5720d2bd3b4368dd378ae552d478ee77a3287e45a27714ce993c25e151943a5",
+      "lot": "2026-11-19_reprise",
+      "source_production": "docs/dossier_curien/saga/production/2026-11-19_parallax_ex_revenge.json"
+    },
+    {
+      "fichier": "ex_intro.png",
+      "usage": "intro",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "27fd4ca65213bc415e86ea0d4bbba94895db8088bef81214f14018fff6bb4d9b",
+      "volume": 2
+    },
+    {
+      "fichier": "ex_mid.png",
+      "usage": "mid",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "d58f67fc1497f1dc9fa493e9f622f81ab272621daffa8ace128cc6a5b4e67f5a",
+      "lot": "2026-11-19_reprise",
+      "source_production": "docs/dossier_curien/saga/production/2026-11-19_parallax_ex_revenge.json"
+    },
+    {
+      "fichier": "ex_rival.png",
+      "usage": "rival",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "0174dd4183a380bab41a330738ffa014b7077e1417a2e40714fd6e4b88e23c5b",
+      "volume": 2
+    },
+    {
+      "fichier": "fool_enclosure_back.png",
+      "usage": "back",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "2e6c796de87f132942a4b51e1c29a61ae1f26b5c668f6efb6be22990e17ed728",
+      "lot": "2026-11-20_lot3_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot3/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "fool_enclosure_front.png",
+      "usage": "front",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "884785172ff77e66840fb206f34c02c53c38b17a84bdb4a815b5f282d98b430b",
+      "lot": "2026-11-20_lot3_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot3/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "fool_enclosure_mid.png",
+      "usage": "mid",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "1bec75ca2b0c213a72d4bb5b6834863e13100190de7d58c8ad97437292e0a862",
+      "lot": "2026-11-20_lot3_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot3/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "gary_contact.png",
+      "usage": "contact",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "69e9ee98336c5c9fb01bfd65254a6f02ce83c0bdec2259442295ffdfd79d1045",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "gary_ending.png",
+      "usage": "ending",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "187ce80fcc5d68910527fc3c68f41c53c1d06d89d9a3e7d421fe8cc9a5b6219a",
+      "volume": 3
+    },
+    {
+      "fichier": "gary_guard.png",
+      "usage": "guard",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "a711392dcee59836a07fec7f342263a3752521c88a6df30b013b0d20b97e9afe",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "gary_intro.png",
+      "usage": "intro",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "12cc84188538db07349a2efc369e28de4b9c931a3fa8940d05c4b05725cb6b86",
+      "volume": 3
+    },
+    {
+      "fichier": "gary_melee.png",
+      "usage": "melee",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "c6fa10c27d293ef53ece06bd5b51286c9e45c924eda442ba1d5cca4fcbc9971c",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "gary_recoil.png",
+      "usage": "recoil",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "468d838d846945b653348d68a242fe96bb1b1bce65184ddf6a1cbbc13aeb3f46",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "gary_rival.png",
+      "usage": "rival",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "9033d56089b8847518b58d580f4d8184a8548c264560645f1007c4792ac7a21b",
+      "volume": 3
+    },
+    {
+      "fichier": "gary_select.png",
+      "usage": "select",
+      "dimensions": [
+        832,
+        832
+      ],
+      "sha256": "0ef3816f8882c7f43630c34c3ebdc085c3004b9cffe81d188df9bc173dfa64b9",
+      "volume": 3
+    },
+    {
+      "fichier": "gary_walk1.png",
+      "usage": "walk1",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "f9929b2a7a2ca5df4ef861772ca7e3bfb1b9ddb896793d1845af4a1023f47576",
+      "volume": 4,
+      "pivot": [
+        512,
+        960
+      ]
+    },
+    {
+      "fichier": "gary_walk2.png",
+      "usage": "walk2",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "b4ed8969429f20bf29aa9c10f77732c608e92870c3da9eace15c7bd7cc4905cd",
+      "volume": 4,
+      "pivot": [
+        512,
+        960
+      ]
+    },
+    {
+      "fichier": "gary_windup.png",
+      "usage": "windup",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "04f97e70e4abcc000597f37ff7c259863263db4712d23a54f598890108002a85",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "goldman_back.png",
+      "usage": "back",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "066b3cf793519ac62780084e483922f3c1f3cf9f697f6e143aa038b882338a5f",
+      "volume": 3
+    },
+    {
+      "fichier": "goldman_front.png",
+      "usage": "front",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "912163dc6aa5bc7d6a87e828d8564c1dc415a6c6e7929d01947a48d127b4978a",
+      "volume": 3
+    },
+    {
+      "fichier": "goldman_mid.png",
+      "usage": "mid",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "f3e4fca1919ff737c3b3f987adbc02ea650b2f25c05f749561474ba973cea8ed",
+      "volume": 3
+    },
+    {
+      "fichier": "hangedman_roof_back.png",
+      "usage": "back",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "4cbf2ea7f0666e109445f4c54304d84e2ce2e71257ade9680e72e15a97c195cd",
+      "lot": "2026-11-20_lot4_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot4/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "hangedman_roof_front.png",
+      "usage": "front",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "83e1169ccb05ea4a2d2867be1006ce2aa8b7002d50dd3b7a1c0054fb4fb951e8",
+      "lot": "2026-11-20_lot4_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot4/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "hangedman_roof_mid.png",
+      "usage": "mid",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "0801432ac99203cbf88452f8f2f9e5081a865da31c7a0611406f96882c2ff7b0",
+      "lot": "2026-11-20_lot4_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot4/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "hermit_dome_back.png",
+      "usage": "back",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "d0c0a66a3de8a87259a5f95f7eed0160f14e072dcaaa6a303d3581820b7b8651",
+      "lot": "2026-11-20_lot4_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot4/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "hermit_dome_front.png",
+      "usage": "front",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "2e5bbf40c62f1ca7a06c599fc08af650ee05a8df9b6766f50f15e6db183afd4f",
+      "lot": "2026-11-20_lot4_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot4/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "hermit_dome_mid.png",
+      "usage": "mid",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "83c3fdaeb21d801b2236bad60aa599e4ebce8f44ed1e0a5eed1463399368dc79",
+      "lot": "2026-11-20_lot4_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot4/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "hierophant_contact.png",
+      "usage": "contact",
+      "dimensions": [
+        2704,
+        1024
+      ],
+      "sha256": "8b29ec6c46405f5482a09b72f9aa7f7f9f66e13673585b207972c78f66dc4802",
+      "pivot": [
+        1352,
+        960
+      ],
+      "volume": 2
+    },
+    {
+      "fichier": "hierophant_guard.png",
+      "usage": "guard",
+      "dimensions": [
+        1184,
+        1024
+      ],
+      "sha256": "03b45f4bfb292b79fa5b3ee34d9148235ce13e7ce9abf3996dd9ededf46d5d5e",
+      "pivot": [
+        592,
+        960
+      ],
+      "volume": 2
+    },
+    {
+      "fichier": "hierophant_recoil.png",
+      "usage": "recoil",
+      "dimensions": [
+        1568,
+        1024
+      ],
+      "sha256": "52bcf2b4640e55003a80cbf201d3c5a20be11b2b7e466df1c594c477305b376a",
+      "pivot": [
+        784,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "hierophant_select.png",
+      "usage": "select",
+      "dimensions": [
+        832,
+        832
+      ],
+      "sha256": "d4180a04c129b26dfd2cfe41a920d37a101d2996910ebdc3676131ce1468b710",
+      "volume": 3
+    },
+    {
+      "fichier": "hierophant_windup.png",
+      "usage": "windup",
+      "dimensions": [
+        2304,
+        1024
+      ],
+      "sha256": "c193bffb62edfa5d5109c3dd457ca8a09e7b263210e5d572bcc4187577897eff",
+      "pivot": [
+        1152,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "hotd2_ending.png",
+      "usage": "ending",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "b858f425c6f948c4625b67851a8690e730bc51089ffdc059d3cc54622f1c5638",
+      "volume": 2
+    },
+    {
+      "fichier": "hotd2_final.png",
+      "usage": "final",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "64c531b83aefaf2cb4130fb9e22c61725b7d219f7257ae8f2daaf0e9741fb24f",
+      "volume": 3
+    },
+    {
+      "fichier": "hotd2_intro.png",
+      "usage": "intro",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "411224b3eb97a733247d8840c3fcdd1dd9e16b88d15b08e3aa5f8616d81219c4",
+      "volume": 2
+    },
+    {
+      "fichier": "hotd2_rival.png",
+      "usage": "rival",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "9fcec7f73b5c342e0fcf096bb8224ef24c1f8930eecff02b5a71fbcb331710be",
+      "volume": 2
+    },
+    {
+      "fichier": "hotd3_ending.png",
+      "usage": "ending",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "563d58c90080fc65c693bc49e905e560e7a32342df56e99803bd9e22cbc8ca1d",
+      "volume": 2
+    },
+    {
+      "fichier": "hotd3_final.png",
+      "usage": "final",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "480b919d3dc31a9b2be6edf109271b765dc7131e7364e6ba6b8462352fb0a0e7",
+      "volume": 3
+    },
+    {
+      "fichier": "hotd3_intro.png",
+      "usage": "intro",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "e58d5cd50efaed012da9acedd5df37bc59796fcd162101fb79128ba1eb62ba4c",
+      "volume": 2
+    },
+    {
+      "fichier": "hotd3_rival.png",
+      "usage": "rival",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "f8f89814ec85fc0087a48591e3435e0c16a94245d710f2d574f7fc0192c5113a",
+      "volume": 2
+    },
+    {
+      "fichier": "hotd4_ending.png",
+      "usage": "ending",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "182cfdef5e97500bff1c36bf36337e038d4292a6c848e621560d1db07332f8a7",
+      "volume": 2
+    },
+    {
+      "fichier": "hotd4_final.png",
+      "usage": "final",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "3b16e76a06f790b95c7810cc744d423af781d28713b7a641242dc37326973f9a",
+      "volume": 4
+    },
+    {
+      "fichier": "hotd4_intro.png",
+      "usage": "intro",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "cff312996cbf117a3d7ac2e7c0a5264da22f1a0ce847089d195f196e9591de37",
+      "volume": 2
+    },
+    {
+      "fichier": "hotd4_rival.png",
+      "usage": "rival",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "10ce14a003035d7553f77d59f1dc78eafecf20bad8f8aca9894d962e87919eba",
+      "volume": 2
+    },
+    {
+      "fichier": "isaac_contact.png",
+      "usage": "contact",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "27df310f6ed0aea3b515361540c138422f358233863187749b6a3b8ec0b7a4e1",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 2
+    },
+    {
+      "fichier": "isaac_guard.png",
+      "usage": "guard",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 2
+    },
+    {
+      "fichier": "isaac_recoil.png",
+      "usage": "recoil",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "3f5340a57ca4b1a5c7f537c00d3ae45d83dc7955bb132da264571bb09d01b8f0",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "isaac_select.png",
+      "usage": "select",
+      "dimensions": [
+        832,
+        832
+      ],
+      "sha256": "3a330dda844e4ad96b7b833bc9b9592f64bdb29adb50c2fb31e4729a4fbc390d",
+      "volume": 3
+    },
+    {
+      "fichier": "isaac_windup.png",
+      "usage": "windup",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "8534e36f483cc4963541bf736a28148005d65bb9c22a4345c51e2fc1d770ad01",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "james_contact.png",
+      "usage": "contact",
+      "dimensions": [
+        1056,
+        1024
+      ],
+      "sha256": "dbbe1d72fe7f9d758790c899f7118fa1bec08d400549ad462b208f0a51e77eae",
+      "pivot": [
+        528,
+        960
+      ],
+      "volume": 2
+    },
+    {
+      "fichier": "james_guard.png",
+      "usage": "guard",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "610078facb3648f328a5440a027ed7e01db9378551d519984872090dda7b19e3",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 2
+    },
+    {
+      "fichier": "james_recoil.png",
+      "usage": "recoil",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "baf328a8afe7609ea7e569439c121d0bf7ccc033e7b94316caba49e6fd18982b",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "james_select.png",
+      "usage": "select",
+      "dimensions": [
+        832,
+        832
+      ],
+      "sha256": "915f0cdebbb7dcc52fa2da8c9e3c93281d583c07fbf57d71264a088df10f355d",
+      "volume": 3
+    },
+    {
+      "fichier": "james_walk1.png",
+      "usage": "walk1",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "ba39d3957ac2dd428ee872af76614ce05fe61642eaa8ef38ab2e04e2f91b0a58",
+      "lot": "2026-11-19_reprise",
+      "source_production": "docs/dossier_curien/saga/production/2026-11-19_james_lisa_walk.json",
+      "pivot": [
+        627.0,
+        1171
+      ]
+    },
+    {
+      "fichier": "james_walk2.png",
+      "usage": "walk2",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "648ca26c6b5893d68ac25d4ab8e8030f0032ed88e88da79789257830e30391d4",
+      "lot": "2026-11-19_reprise",
+      "source_production": "docs/dossier_curien/saga/production/2026-11-19_james_lisa_walk.json",
+      "pivot": [
+        627.0,
+        1164
+      ]
+    },
+    {
+      "fichier": "james_windup.png",
+      "usage": "windup",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "99a687a4d5f6b88c087d658f7171a667427580696b4d7cea070a75dcb92ad448",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "jasper_contact.png",
+      "usage": "contact",
+      "dimensions": [
+        1488,
+        1024
+      ],
+      "sha256": "dc4180572a3e0c5704bb7afe8f6dfb317aa91f99b87251c13244df0a635c8c02",
+      "pivot": [
+        744,
+        960
+      ],
+      "volume": 2
+    },
+    {
+      "fichier": "jasper_guard.png",
+      "usage": "guard",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "15e37fdf184afa9221aabcfbafa5910ca25caad4a95609b56cab00bbf059d92b",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 2
+    },
+    {
+      "fichier": "jasper_recoil.png",
+      "usage": "recoil",
+      "dimensions": [
+        1120,
+        1024
+      ],
+      "sha256": "7163241aca1fb5236f7376b2b097f02f8e52e3aad39a85841b4ddf3b1df619d9",
+      "pivot": [
+        560,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "jasper_select.png",
+      "usage": "select",
+      "dimensions": [
+        832,
+        832
+      ],
+      "sha256": "d5a43b11ab19709f8e6e2bafc546c1dd0cd2b99254312123797d545af42e7421",
+      "volume": 3
+    },
+    {
+      "fichier": "jasper_windup.png",
+      "usage": "windup",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "27aa70643b7528e6c50c19a1032da608333924b513631f42118869f040955b89",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "justice_contact.png",
+      "usage": "contact",
+      "dimensions": [
+        1248,
+        1024
+      ],
+      "sha256": "2ef32a45bb1a20ee19a95f47f1c045c7451e577afbf12d0bfb1f9b571d1ec1a4",
+      "pivot": [
+        624,
+        960
+      ],
+      "volume": 2
+    },
+    {
+      "fichier": "justice_guard.png",
+      "usage": "guard",
+      "dimensions": [
+        1248,
+        1024
+      ],
+      "sha256": "70e5bfceb1e5510e0337976b2ee8f1c00b85a0e636d31d7e2bebef886dddd133",
+      "pivot": [
+        624,
+        960
+      ],
+      "volume": 2
+    },
+    {
+      "fichier": "justice_recoil.png",
+      "usage": "recoil",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "e29048a155c3964dd7d070bc5e061dc0850436a6fd1766d4111356e51a582dc6",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "justice_select.png",
+      "usage": "select",
+      "dimensions": [
+        832,
+        832
+      ],
+      "sha256": "aadcfdc4492c093da138e1785b4abd968ac7bc06d7fb6b64b7dc6dd2bc594d38",
+      "volume": 3
+    },
+    {
+      "fichier": "justice_windup.png",
+      "usage": "windup",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "9aebf08ab132404864c678de3c4ccb55937e926e8136bdd107a721976c235c12",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "kate_contact.png",
+      "usage": "contact",
+      "dimensions": [
+        1280,
+        1024
+      ],
+      "sha256": "353971c04687ef29924d7ef910df3b9f7d85995cd609bb2af96c7aaf941377c9",
+      "pivot": [
+        640,
+        960
+      ],
+      "volume": 2
+    },
+    {
+      "fichier": "kate_guard.png",
+      "usage": "guard",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "ae8fd1363a5f9956af74b01406932fa745dee0c51e907fec367010d6dd57650d",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 2
+    },
+    {
+      "fichier": "kate_recoil.png",
+      "usage": "recoil",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "64ef417aab091b441af75f80f2111b7e67d67171ef12d2f3c1017fbb0e49d9b3",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "kate_select.png",
+      "usage": "select",
+      "dimensions": [
+        832,
+        832
+      ],
+      "sha256": "b2052504c453fa952ced33c21d42d44e0d38567580a4face22deecf7e29eed1a",
+      "volume": 3
+    },
+    {
+      "fichier": "kate_soiree_contact.png",
+      "usage": "contact",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "a1ed59c8d37f4afae1fc9a97825fe3adb18ac3fa2e6172064a839e431c4ffa16",
+      "volume": 4,
+      "pivot": [
+        512,
+        960
+      ]
+    },
+    {
+      "fichier": "kate_soiree_guard.png",
+      "usage": "guard",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "179f6d14ce38296e6efe04150d33d5d1d9ffa2eddb6c6d7a6fe31a4d5df01b03",
+      "volume": 4,
+      "pivot": [
+        512,
+        960
+      ]
+    },
+    {
+      "fichier": "kate_soiree_recoil.png",
+      "usage": "recoil",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "72a5e2b8cc27ee5419293b66c326a7ce36eb5a2c241817f814167be9440a985f",
+      "volume": 4,
+      "pivot": [
+        512,
+        960
+      ]
+    },
+    {
+      "fichier": "kate_soiree_select.png",
+      "usage": "select",
+      "dimensions": [
+        832,
+        832
+      ],
+      "sha256": "1007e46b09e1f33a08180468d8a8bbf6be3f3201a7debe954061e1aa3710c3e1",
+      "volume": 4
+    },
+    {
+      "fichier": "kate_soiree_walk1.png",
+      "usage": "walk1",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "8f8f2148496c0d216a929202f23ff9270ce8e409035f9fbe510faa2c493cb8b5",
+      "lot": "reprise-2026-11-19",
+      "pivot": [
+        627,
+        1175
+      ],
+      "bounds_px": [
+        253,
+        67,
+        695,
+        1108
+      ],
+      "validation": "adaptation referencee; fidelite 1:1 a valider"
+    },
+    {
+      "fichier": "kate_soiree_walk2.png",
+      "usage": "walk2",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "41c9cf07fa04929bbda6d236cd4825836763ddedeb1c666516de8b08060c2c1b",
+      "lot": "reprise-2026-11-19",
+      "pivot": [
+        627,
+        1166
+      ],
+      "bounds_px": [
+        155,
+        69,
+        859,
+        1097
+      ],
+      "validation": "adaptation referencee; fidelite 1:1 a valider"
+    },
+    {
+      "fichier": "kate_soiree_windup.png",
+      "usage": "windup",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "4f6e19b559150ce3d73f2f069146e9f2c6748edd869323e2936ff42aeb28a961",
+      "volume": 4,
+      "pivot": [
+        512,
+        960
+      ]
+    },
+    {
+      "fichier": "kate_walk1.png",
+      "usage": "walk1",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "99dbe1c693da0ad1ec3651f7c7d13e68be7e08f937b0789f767deceb65dd52fd",
+      "lot": "reprise-2026-11-19",
+      "pivot": [
+        627,
+        1174
+      ],
+      "bounds_px": [
+        305,
+        68,
+        707,
+        1106
+      ],
+      "validation": "adaptation referencee; fidelite 1:1 a valider"
+    },
+    {
+      "fichier": "kate_walk2.png",
+      "usage": "walk2",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "7c0dc4bc86c460c608a3d51e13023389278e1ed4fc2190ea2f81711bddba5149",
+      "lot": "reprise-2026-11-19",
+      "pivot": [
+        627,
+        1180
+      ],
+      "bounds_px": [
+        171,
+        69,
+        848,
+        1111
+      ],
+      "validation": "adaptation referencee; fidelite 1:1 a valider"
+    },
+    {
+      "fichier": "kate_windup.png",
+      "usage": "windup",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "91246bc097d839ee195f31bfeecd8a2da5838b362165d5f3d327b56c8763a0fb",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "lisa_contact.png",
+      "usage": "contact",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "eb21c6a20e79917f9fdb016159ed3095f7bcefc0ff33272625f90bf6be48745a",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 2
+    },
+    {
+      "fichier": "lisa_guard.png",
+      "usage": "guard",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "9eae65e1f0b631527c575a522a78a890779ca4f5f1e587743075c9a329793ba2",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 2
+    },
+    {
+      "fichier": "lisa_recoil.png",
+      "usage": "recoil",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "e5692637d492354eb3377c235f0cf4f7f091c8d27f9079596fccc7f0015870d0",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "lisa_select.png",
+      "usage": "select",
+      "dimensions": [
+        832,
+        832
+      ],
+      "sha256": "4a7b97b1f77eb446942fca73c5386a0c1d5671ca8259b01b253b9c2b214971b6",
+      "volume": 3
+    },
+    {
+      "fichier": "lisa_walk1.png",
+      "usage": "walk1",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "c19593f1ecd59a51e0d8270534c1beee4a369259011ee5f3ed803058d46f2fe9",
+      "lot": "2026-11-19_reprise",
+      "source_production": "docs/dossier_curien/saga/production/2026-11-19_james_lisa_walk.json",
+      "pivot": [
+        627.0,
+        1170
+      ]
+    },
+    {
+      "fichier": "lisa_walk2.png",
+      "usage": "walk2",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "0b4cf948e7813643f0d6a85c59a62c1b7192fe3dd47335b5b7a31d508a529150",
+      "lot": "2026-11-19_reprise",
+      "source_production": "docs/dossier_curien/saga/production/2026-11-19_james_lisa_walk.json",
+      "pivot": [
+        627.0,
+        1156
+      ]
+    },
+    {
+      "fichier": "lisa_windup.png",
+      "usage": "windup",
+      "dimensions": [
+        1152,
+        1024
+      ],
+      "sha256": "e1fb0e8b54a0e684ba3ca4ce1f97c4f5159e759f597e90a2d267ade9fb0bd835",
+      "pivot": [
+        576,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "moon_contact.png",
+      "usage": "contact",
+      "dimensions": [
+        1456,
+        1024
+      ],
+      "sha256": "bf39fd86d4d4b32a0c6f7821abe0d2ec3679aec675a382bb55ef3db40fd872f5",
+      "volume": 4,
+      "pivot": [
+        728,
+        960
+      ]
+    },
+    {
+      "fichier": "moon_ending.png",
+      "usage": "ending",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "689f2a59f7cf3c4df186d778069aef5eadde5d8e4644c574d88562a7c656de43",
+      "volume": 4
+    },
+    {
+      "fichier": "moon_final.png",
+      "usage": "final",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "43a4db7c9d79debab875f2b5dc28ddafc1f2d0b526ceb26ed774669436d653f3",
+      "volume": 4
+    },
+    {
+      "fichier": "moon_guard.png",
+      "usage": "guard",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "37216e8e9c3537d61d12ac498d7217c57b159ba2edead6721b868221b36378ed",
+      "volume": 4,
+      "pivot": [
+        512,
+        960
+      ]
+    },
+    {
+      "fichier": "moon_intro.png",
+      "usage": "intro",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "5bfb83978aee04b66d8e8ebf62cb9f2b87a47ebb906fb0f25b30ee6b536fa54c",
+      "volume": 4
+    },
+    {
+      "fichier": "moon_recoil.png",
+      "usage": "recoil",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "d73a07065cbda62819eac702fadf88c636a84723ece9903dc3b210a9d9c58a24",
+      "volume": 4,
+      "pivot": [
+        512,
+        960
+      ]
+    },
+    {
+      "fichier": "moon_rival.png",
+      "usage": "rival",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "2e2474868f94ebc48a7bbd1a6cd540cb758ce68fe58a12813dfcc1464e83970f",
+      "volume": 4
+    },
+    {
+      "fichier": "moon_select.png",
+      "usage": "select",
+      "dimensions": [
+        832,
+        832
+      ],
+      "sha256": "9f999ed90a10dde9d9bdabc2ccc5a41ee2c59cbf48e0152a0185dedd8f2ba56f",
+      "volume": 4
+    },
+    {
+      "fichier": "moon_windup.png",
+      "usage": "windup",
+      "dimensions": [
+        1248,
+        1024
+      ],
+      "sha256": "ff21d6a7a716a2482d493377e479e52b2d0ca89bed38b1e134f36624da4f9d73",
+      "volume": 4,
+      "pivot": [
+        624,
+        960
+      ]
+    },
+    {
+      "fichier": "moonstage_back.png",
+      "usage": "back",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "6d2d63d62f2efe78172642f2b60910daaf138b17ec15fa94aefb46eba7ed7a3c",
+      "volume": 4
+    },
+    {
+      "fichier": "moonstage_front.png",
+      "usage": "front",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "808a30a43b5b52dda2d0994df0f79c57283d241a344ebeb1d5703969069d2ad0",
+      "volume": 4
+    },
+    {
+      "fichier": "moonstage_mid.png",
+      "usage": "mid",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "080937c27ae6f91b1b3ade9c5c9502b79df9b561c97744f83e6e171affced56b",
+      "volume": 4
+    },
+    {
+      "fichier": "overkill_ending.png",
+      "usage": "ending",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "7d1efcdf01a36e0a9e9f76f163362ac67433b1aac74342b72ba591da9be91ab7",
+      "volume": 2
+    },
+    {
+      "fichier": "overkill_intro.png",
+      "usage": "intro",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "edda351cf3fc0e67a0d48c68e2bc5a0ab323ad5fa23f2ab120652058f15a026e",
+      "volume": 2
+    },
+    {
+      "fichier": "overkill_rival.png",
+      "usage": "rival",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "14d5d171dbe988a6a19ec803fc5bcd6df390c6509cc4c79b9b80a65c1fb2fda0",
+      "volume": 2
+    },
+    {
+      "fichier": "parts/lisa_goggles.png",
+      "usage": "part",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "f749ad5f05adb0a3356f55d72599ab5e76dd58fa09ae5fe6f0d8abf009c74153",
+      "lot": "2026-11-19_reprise",
+      "source_production": "docs/dossier_curien/saga/production/2026-11-19_props_parts.json"
+    },
+    {
+      "fichier": "parts/lisa_shotgun.png",
+      "usage": "part",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "3f912b7a3486ed7ffd9a4024731130cf5762ef9bffffffecb3274832d263ace7",
+      "lot": "2026-11-19_reprise",
+      "source_production": "docs/dossier_curien/saga/production/2026-11-19_props_parts.json"
+    },
+    {
+      "fichier": "props/efi_alarm_beacon.png",
+      "usage": "prop",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "a2e2b2ec7003321ed6917531f7395774217ee3f9d2008de34444981c0995a0d3",
+      "lot": "2026-11-19_reprise",
+      "source_production": "docs/dossier_curien/saga/production/2026-11-19_props_parts.json"
+    },
+    {
+      "fichier": "props/subway_ticket_machine.png",
+      "usage": "prop",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "e47da7ec2314fbc7f333339463f5d12acca625b1f3d740c68a6327b554b84c8a",
+      "lot": "2026-11-19_reprise",
+      "source_production": "docs/dossier_curien/saga/production/2026-11-19_props_parts.json"
+    },
+    {
+      "fichier": "props/venice_bollard.png",
+      "usage": "prop",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "99af64ef2d4bfd0299ec389b7f4d3f1d600e6cd391ab5e62f58ae2623a879697",
+      "lot": "reprise-2026-11-19",
+      "pivot": [
+        599.5,
+        1116
+      ],
+      "bounds_px": [
+        307,
+        199,
+        585,
+        917
+      ],
+      "validation": "adaptation referencee; fidelite 1:1 a valider"
+    },
+    {
+      "fichier": "props/venice_lamp.png",
+      "usage": "prop",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "1b9034e5e7b2d86459d0c982364d6fc0e686ece282a82690fe091b03218d8314",
+      "lot": "reprise-2026-11-19",
+      "pivot": [
+        627,
+        1238
+      ],
+      "bounds_px": [
+        530,
+        20,
+        194,
+        1218
+      ],
+      "validation": "adaptation referencee; fidelite 1:1 a valider"
+    },
+    {
+      "fichier": "props/venice_railing.png",
+      "usage": "prop",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "4a2eff0e11fef970d3340066800bd0d2c6713ed180f6256f1b32048e3c4d0f16",
+      "lot": "reprise-2026-11-19",
+      "pivot": [
+        626,
+        963
+      ],
+      "bounds_px": [
+        57,
+        464,
+        1138,
+        499
+      ],
+      "validation": "adaptation referencee; fidelite 1:1 a valider"
+    },
+    {
+      "fichier": "reactor_back.png",
+      "usage": "back",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "0e73230e2e02ebcd1b324f1b6a4959caccc4a119cc5bd68d97456233492055c9",
+      "volume": 3
+    },
+    {
+      "fichier": "reactor_front.png",
+      "usage": "front",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "cb240ec708a6ee3d32203b6b117766ee24bc80ac9fd5e8697426652ce98b5401",
+      "volume": 3
+    },
+    {
+      "fichier": "reactor_mid.png",
+      "usage": "mid",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "a9895dbd745e675058befeed4c2daa6e23fe450fee4c98af843ce9e39a70f14d",
+      "volume": 3
+    },
+    {
+      "fichier": "revenge_back.png",
+      "usage": "back",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "80b2479f7675becceb04023d2832470b06640ac8d466b0b5aa9f80b6a2c07a5c",
+      "volume": 2
+    },
+    {
+      "fichier": "revenge_ending.png",
+      "usage": "ending",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "bda5d95b8685d09e56cb367368ee004c262985ba1753fc04ab013a525904ee21",
+      "volume": 2
+    },
+    {
+      "fichier": "revenge_front.png",
+      "usage": "front",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "96f215baee8f645cc104264c1bd13d4d6732b2201e5c67638de180c9514b774e",
+      "lot": "2026-11-19_reprise",
+      "source_production": "docs/dossier_curien/saga/production/2026-11-19_parallax_ex_revenge.json"
+    },
+    {
+      "fichier": "revenge_intro.png",
+      "usage": "intro",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "c90df06b66770977a2ed711fd2d561481010133a1970fd77de20586e3b3f3cf0",
+      "volume": 2
+    },
+    {
+      "fichier": "revenge_mid.png",
+      "usage": "mid",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "f25003f90afff8b387168e895df264b42a98d423103b7945369ed83def35181d",
+      "lot": "2026-11-19_reprise",
+      "source_production": "docs/dossier_curien/saga/production/2026-11-19_parallax_ex_revenge.json"
+    },
+    {
+      "fichier": "revenge_rival.png",
+      "usage": "rival",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "6eb81acc0509e85f5e3a29684abf97da601218272378c5bf6c515f288a504390",
+      "volume": 2
+    },
+    {
+      "fichier": "rikiya_contact.png",
+      "usage": "contact",
+      "dimensions": [
+        1360,
+        1024
+      ],
+      "sha256": "cbff1a29e08939ab1cd87fcc1d7ae43f32d9f07712b0451d39b284e151d1968f",
+      "pivot": [
+        680,
+        960
+      ],
+      "volume": 2
+    },
+    {
+      "fichier": "rikiya_guard.png",
+      "usage": "guard",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "e2802cdbddd07a77ab78dd98fcf7d0409a4c5832b3598cdfea9b73e485d5d646",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 2
+    },
+    {
+      "fichier": "rikiya_recoil.png",
+      "usage": "recoil",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "e66dc4a9529c99fa744e14304323799334dc25eeeed683cbb330258469016f5d",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "rikiya_select.png",
+      "usage": "select",
+      "dimensions": [
+        832,
+        832
+      ],
+      "sha256": "820a2f07df84d65127c0e98caf1e5891bb0461c259707acc72890b0a9eeef32d",
+      "volume": 3
+    },
+    {
+      "fichier": "rikiya_windup.png",
+      "usage": "windup",
+      "dimensions": [
+        1104,
+        1024
+      ],
+      "sha256": "2566ad8571a18a930d44131802225fa71fe62c9f7b4e7e4394aeed5f3e8772b1",
+      "pivot": [
+        552,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "ryan_contact.png",
+      "usage": "contact",
+      "dimensions": [
+        1504,
+        1024
+      ],
+      "sha256": "7eb2e170e480e55efa18e6315b678001fecb34bda60848c8b47f55bed2e99b53",
+      "pivot": [
+        752,
+        960
+      ],
+      "volume": 2
+    },
+    {
+      "fichier": "ryan_guard.png",
+      "usage": "guard",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "e588ef044202d59b6801df1b6345cac3675a890f4355c76bc31140d533ee4f37",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 2
+    },
+    {
+      "fichier": "ryan_recoil.png",
+      "usage": "recoil",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "7f33682df1589f52395aa11e265c0d3e2f42ab9d4ddb4a177498587e3b9eb762",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "ryan_select.png",
+      "usage": "select",
+      "dimensions": [
+        832,
+        832
+      ],
+      "sha256": "48edab81d7284c89f9e6bf6886d4e65432006b65f7254fd620d4343e060b9194",
+      "volume": 3
+    },
+    {
+      "fichier": "ryan_soiree_contact.png",
+      "usage": "contact",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "8005358823ffc299901713c41c7942290b9b12d9395a32252496cab2a71b84f6",
+      "volume": 4,
+      "pivot": [
+        512,
+        960
+      ]
+    },
+    {
+      "fichier": "ryan_soiree_guard.png",
+      "usage": "guard",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "5b2e85891e58230307db321882e61d1b72b5dcfd2ef4e8accbe8c7e66fceb73f",
+      "volume": 4,
+      "pivot": [
+        512,
+        960
+      ]
+    },
+    {
+      "fichier": "ryan_soiree_recoil.png",
+      "usage": "recoil",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "90f55729b2271fb6747b227a2852b12337cffbbd13491efcd6ba32f0c4d49c5e",
+      "volume": 4,
+      "pivot": [
+        512,
+        960
+      ]
+    },
+    {
+      "fichier": "ryan_soiree_select.png",
+      "usage": "select",
+      "dimensions": [
+        832,
+        832
+      ],
+      "sha256": "b73c0dfcfb182f2c14bbbf2a2906a05972f087c5478acfe71bc46766883d3544",
+      "volume": 4
+    },
+    {
+      "fichier": "ryan_soiree_walk1.png",
+      "usage": "walk1",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "2ad04a161ac1c455316670b3a25d066b92cdb20b5022da31c68795a60fed4984",
+      "lot": "2026-11-19_reprise",
+      "source_production": "docs/dossier_curien/saga/production/2026-11-19_ryan_walk.json",
+      "pivot": [
+        627.0,
+        1178
+      ]
+    },
+    {
+      "fichier": "ryan_soiree_walk2.png",
+      "usage": "walk2",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "c102cec14abab58254087dfd13651c05216e457700bf7ec753f31b80bfe2ac15",
+      "lot": "2026-11-19_reprise",
+      "source_production": "docs/dossier_curien/saga/production/2026-11-19_ryan_walk.json",
+      "pivot": [
+        627.0,
+        1176
+      ]
+    },
+    {
+      "fichier": "ryan_soiree_windup.png",
+      "usage": "windup",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "14ecddce9df977271bfdb589223578c07121fb5b06e5b635806c8b8cb5e27978",
+      "volume": 4,
+      "pivot": [
+        512,
+        960
+      ]
+    },
+    {
+      "fichier": "ryan_walk1.png",
+      "usage": "walk1",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "4782715f9fda541e237d5a5317c962880c0f36c42ab9b4767b463f16527cadee",
+      "lot": "2026-11-19_reprise",
+      "source_production": "docs/dossier_curien/saga/production/2026-11-19_ryan_walk.json",
+      "pivot": [
+        627.0,
+        1179
+      ]
+    },
+    {
+      "fichier": "ryan_walk2.png",
+      "usage": "walk2",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "026373764c64660f9efe9418ba41ee4b90fe0b8d83f22537c677f51a8287f790",
+      "lot": "2026-11-19_reprise",
+      "source_production": "docs/dossier_curien/saga/production/2026-11-19_ryan_walk.json",
+      "pivot": [
+        627.0,
+        1176
+      ]
+    },
+    {
+      "fichier": "ryan_windup.png",
+      "usage": "windup",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "8323605f3cb97242895553004ca2151af481e48f168cabfe57166e88f2a06a00",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "scarlet_back.png",
+      "usage": "back",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "f8958618c62001bbd4ec0c53ab12dd49779a981a157e113100a9571c9c107f8e",
+      "volume": 2
+    },
+    {
+      "fichier": "scarlet_ending.png",
+      "usage": "ending",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "1ad002b9ff459a54df3894aeb57b7d0af363ea618b113d252e2c84e196e1cbce",
+      "volume": 2
+    },
+    {
+      "fichier": "scarlet_final.png",
+      "usage": "final",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "17721dbea2e0986ab8d208ebe91438b7bee0edcc0e32af385bbdbcfc62f396fb",
+      "volume": 4
+    },
+    {
+      "fichier": "scarlet_front.png",
+      "usage": "front",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "b72427341ddae7b093195f3c4b115fdffe43b1674dd49708d706dd077aa9f5ba",
+      "lot": "2026-11-19_reprise",
+      "source_production": "docs/dossier_curien/saga/production/2026-11-19_parallax_venice_scarlet.json"
+    },
+    {
+      "fichier": "scarlet_intro.png",
+      "usage": "intro",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "9e71860e7487fd14382389e77080df0eb9d1273b0b497498decc50212bbf0427",
+      "volume": 2
+    },
+    {
+      "fichier": "scarlet_mid.png",
+      "usage": "mid",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "d7ab450e842598c48aa52097d1ef9093d021ca707793cc4b3dce74ef6c14910b",
+      "lot": "2026-11-19_reprise",
+      "source_production": "docs/dossier_curien/saga/production/2026-11-19_parallax_venice_scarlet.json"
+    },
+    {
+      "fichier": "scarlet_rival.png",
+      "usage": "rival",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "ca06c273d0923aee57ca89b397a6d261666c0702e304fd342e3711af205023ab",
+      "volume": 2
+    },
+    {
+      "fichier": "special_back.png",
+      "usage": "back",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "b7d2629601a11e8681761dfec3a7f19aea95c89a16f0a400b4b5d81ae926facd",
+      "volume": 2
+    },
+    {
+      "fichier": "special_ending.png",
+      "usage": "ending",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "447534673bd2bbbec0f8f94961a8fa6e6561271164c45e1deb715e02ef9de369",
+      "volume": 2
+    },
+    {
+      "fichier": "special_front.png",
+      "usage": "front",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "1644a55000427161df7fc628dba0f95e1382a62bd89f1d235607cc0724e43cb7",
+      "lot": "2026-11-19_reprise",
+      "source_production": "docs/dossier_curien/saga/production/2026-11-19_parallax_special_carnival.json"
+    },
+    {
+      "fichier": "special_intro.png",
+      "usage": "intro",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "60135f601476e01f3d0e9582dc9be87753bd6060ed59fae35c2a6d6159fe0779",
+      "volume": 2
+    },
+    {
+      "fichier": "special_mid.png",
+      "usage": "mid",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "d408ef48727cf01533d1bf38b3ce91a96ac9fbfe471a9b9e590a81b32828c67a",
+      "lot": "2026-11-19_reprise",
+      "source_production": "docs/dossier_curien/saga/production/2026-11-19_parallax_special_carnival.json"
+    },
+    {
+      "fichier": "special_rival.png",
+      "usage": "rival",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "1b2c378c268d9b977b7e293597afb6a6d78044022003a0f5c0ff5ed193bb4b46",
+      "volume": 2
+    },
+    {
+      "fichier": "stick_contact.png",
+      "usage": "contact",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "4cf415b21ebc6820c3ba1826933970e2e27a2782eba711482f9f09498b5f1a71",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 2
+    },
+    {
+      "fichier": "stick_guard.png",
+      "usage": "guard",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "f79b0348f5840e607fe3179018d7707c0e84a4a7f22a1ed111408ee9f95912e2",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 2
+    },
+    {
+      "fichier": "stick_recoil.png",
+      "usage": "recoil",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "aae987666a41ec603a4529fae38ae53d5d538e0b9a03bb32bd289b9c6f11dee5",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "stick_select.png",
+      "usage": "select",
+      "dimensions": [
+        832,
+        832
+      ],
+      "sha256": "3464d030fecb700ea0d70f908ef5ec67cb34c5722c4901337a0b3bed85f0e041",
+      "volume": 3
+    },
+    {
+      "fichier": "stick_windup.png",
+      "usage": "windup",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "8088c8642b84332b410de5a8c1dce6020bba5aa581051486395bd84a1b740ede",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "strength_colosseum_back.png",
+      "usage": "back",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "c21815bf401850032d5cf7c5769859b3f1d589ed98eeca4f5616e17cc6802bc7",
+      "lot": "2026-11-20_lot2_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot2/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "strength_colosseum_front.png",
+      "usage": "front",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "69a98ad1dae1e253c2b45cf8bc7cd3d851cfee25e9f352147a2f0c47eb2d1593",
+      "lot": "2026-11-20_lot2_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot2/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "strength_colosseum_mid.png",
+      "usage": "mid",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "4c9ef99396a8fcf54b690b56565f4f6e5e9b57e4ee197b2243fa99a33ba3d9e5",
+      "lot": "2026-11-20_lot2_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot2/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "subway_back.png",
+      "usage": "back",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "f470ec3505b5fe7a19a7855f4585a493efb5a5f29ab9a403494e2c5cdfd28e6c",
+      "volume": 2
+    },
+    {
+      "fichier": "subway_front.png",
+      "usage": "front",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "71f93e5873b899d3c31217a9252b6a55269a462e77efb428460bc5182f50cb44",
+      "lot": "2026-11-19_reprise",
+      "source_production": "docs/dossier_curien/saga/production/2026-11-19_parallax.json"
+    },
+    {
+      "fichier": "subway_mid.png",
+      "usage": "mid",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "b592024d98da742b3950efac36987c35f3224d60a7be4013eae4e80b6b29e863",
+      "lot": "2026-11-19_reprise",
+      "source_production": "docs/dossier_curien/saga/production/2026-11-19_parallax.json"
+    },
+    {
+      "fichier": "sun_bio_back.png",
+      "usage": "back",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "4f82719219f06f437b8fc158a52420fc67bdaf919b839ddc2fb3d8c8315ab844",
+      "lot": "2026-11-20_lot3_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot3/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "sun_bio_front.png",
+      "usage": "front",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "492cfbe82a74c47ef86ad328fc269eb2e56285dbdcbd06d40d55581d859a469d",
+      "lot": "2026-11-20_lot3_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot3/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "sun_bio_mid.png",
+      "usage": "mid",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "09ee27cc891a4ab69735e39b8207666a884565701f5fff1f8cfb045d0056b607",
+      "lot": "2026-11-20_lot3_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot3/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "tower_canal_back.png",
+      "usage": "back",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "d621c3281da6161cc571860eef4c573fd1fc2cd796016e5d47c9db23783db907",
+      "lot": "2026-11-20_lot2_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot2/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "tower_canal_front.png",
+      "usage": "front",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "d333e148e329ec4a4f00af78655c96008b21c8e2f24d32df68fe1b8d7d447831",
+      "lot": "2026-11-20_lot2_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot2/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "tower_canal_mid.png",
+      "usage": "mid",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "d73c8dc1faab3e4441f3bc57d92c5b52bdf9890208444c147b0c6c078807bb9d",
+      "lot": "2026-11-20_lot2_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot2/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "venice_back.png",
+      "usage": "back",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "c71eb8e62992df02070b0bc1cb7d2486bd37e89cfefd44553ef84462e9df7e39",
+      "volume": 2
+    },
+    {
+      "fichier": "venice_front.png",
+      "usage": "front",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "4389ff15e5c2a786b2d783b54d2a232d703dc115776ec9cbeb10314c9dba7280",
+      "lot": "2026-11-19_reprise",
+      "source_production": "docs/dossier_curien/saga/production/2026-11-19_parallax_venice_scarlet.json"
+    },
+    {
+      "fichier": "venice_mid.png",
+      "usage": "mid",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "5f6061a26526dcc7bffd489a84dff8bb16c9c242039b98f8f509b71382d9095c",
+      "lot": "2026-11-19_reprise",
+      "source_production": "docs/dossier_curien/saga/production/2026-11-19_parallax_venice_scarlet.json"
+    },
+    {
+      "fichier": "wheel_contact.png",
+      "usage": "contact",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "a3513f7be48b8752e286e59ffcf5a80b9ad45e45d89ffb137a4b404f7f4d6b98",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "wheel_ending.png",
+      "usage": "ending",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "469898a232e843b90a7a3eacb13d1876c6f3e0cc6f5902b247801e5e74fc1421",
+      "volume": 3
+    },
+    {
+      "fichier": "wheel_guard.png",
+      "usage": "guard",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "5b58335351feb18a24f31652c6a9891d7f14bb55e970a4465a48a34e036e24ef",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "wheel_intro.png",
+      "usage": "intro",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "bad98c2e9587a30af3651dff7867d38fada42264733ee04189270c71957262f6",
+      "volume": 3
+    },
+    {
+      "fichier": "wheel_recoil.png",
+      "usage": "recoil",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "0ae448ffce3ba56f9d78d76ae8cf2b780a10ac9e4be555c3042af0a3d3115735",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "wheel_rival.png",
+      "usage": "rival",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "21c75ca86b3527e55db073f642e161d34fdeeda9fe46d3ab7ae23390322eaa2f",
+      "volume": 3
+    },
+    {
+      "fichier": "wheel_select.png",
+      "usage": "select",
+      "dimensions": [
+        832,
+        832
+      ],
+      "sha256": "3db46547869fcea4432d8dc6c91e9457def1821d4636d88c9f72aa3de8c6874f",
+      "volume": 3
+    },
+    {
+      "fichier": "wheel_windup.png",
+      "usage": "windup",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "55539c47052b17bc2562495cbed21f6505023d8eee86ac69b97bc51c94bc88a3",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "world_contact.png",
+      "usage": "contact",
+      "dimensions": [
+        1696,
+        1024
+      ],
+      "sha256": "80b30f86dad7b5d9d262ab0991c3f447070e961d0a519bbf677d0ced2700d607",
+      "volume": 4,
+      "pivot": [
+        848,
+        960
+      ]
+    },
+    {
+      "fichier": "world_ending.png",
+      "usage": "ending",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "31a0e5455bc02e8752087b8249f64113c7669b041e58a1bf465f19b82ebb9333",
+      "volume": 4
+    },
+    {
+      "fichier": "world_final.png",
+      "usage": "final",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "002024f511a831346f1d814420d6a2bc7a38e443d37d5f75a919e5f424157fb5",
+      "volume": 4
+    },
+    {
+      "fichier": "world_guard.png",
+      "usage": "guard",
+      "dimensions": [
+        1712,
+        1024
+      ],
+      "sha256": "0aa10e22026c87d9f4790de3f7c7a713df3b53fe4594783217d9651e85fa2b7e",
+      "volume": 4,
+      "pivot": [
+        856,
+        960
+      ]
+    },
+    {
+      "fichier": "world_intro.png",
+      "usage": "intro",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "5e1b1426b2ae1c1ef68dcc06bba4d99dbb138fa05434e5ef6ca105b01213a7c4",
+      "volume": 4
+    },
+    {
+      "fichier": "world_recoil.png",
+      "usage": "recoil",
+      "dimensions": [
+        2000,
+        1024
+      ],
+      "sha256": "19a9cc5ac4bbc5b0b5e99d657c97f76f7d1244d6056b8b544ba147a1d4cf35df",
+      "volume": 4,
+      "pivot": [
+        1000,
+        960
+      ]
+    },
+    {
+      "fichier": "world_rival.png",
+      "usage": "rival",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "aea243bbcf5990b3b18b99dc66a44ea3f947ab09e79fe06a6c2aef410dde449c",
+      "volume": 4
+    },
+    {
+      "fichier": "world_select.png",
+      "usage": "select",
+      "dimensions": [
+        832,
+        832
+      ],
+      "sha256": "63d1f59d1147d7238904788e63d6c117dbcc451a90e9fb168c66845f0eccecb3",
+      "volume": 4
+    },
+    {
+      "fichier": "world_windup.png",
+      "usage": "windup",
+      "dimensions": [
+        1600,
+        1024
+      ],
+      "sha256": "5ea9a7c0f409076c20226a40dca5a1458449300801aab6a36eab676811fbe50b",
+      "volume": 4,
+      "pivot": [
+        800,
+        960
+      ]
+    },
+    {
+      "fichier": "worldstage_back.png",
+      "usage": "back",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "08c61ec108bb3ec1df0344745ea147e608bcd390ccea27bc37f68300c847d3ce",
+      "volume": 4
+    },
+    {
+      "fichier": "worldstage_front.png",
+      "usage": "front",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "c2cece3bbc87b3d7679f3af991429d2644fcb7afb94e7262fc0b45a74256f48b",
+      "volume": 4
+    },
+    {
+      "fichier": "worldstage_mid.png",
+      "usage": "mid",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "e2de870d1126232f932491141d61945c14f7e0c890dab27ebf86aa7b9c5e062a",
+      "volume": 4
+    },
+    {
+      "fichier": "zobiko_contact.png",
+      "usage": "contact",
+      "dimensions": [
+        1440,
+        1024
+      ],
+      "sha256": "ead8362101f456ef4c664a46ba9b04c4c19ade6947dd1e98c2c28ae5255ef24a",
+      "pivot": [
+        720,
+        960
+      ],
+      "volume": 2
+    },
+    {
+      "fichier": "zobiko_guard.png",
+      "usage": "guard",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "a692a06bd4e7fb567067d1f255773571098ad6d49fac556298a302e45da3c083",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 2
+    },
+    {
+      "fichier": "zobiko_recoil.png",
+      "usage": "recoil",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "c8c49c1b53e95377e5fcf75a6098febe6017834be53f74141794f6441fc9c956",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "zobiko_select.png",
+      "usage": "select",
+      "dimensions": [
+        832,
+        832
+      ],
+      "sha256": "b63863509dc97f33027ff344f3a084e0dbeb957b1f80d2ba5e6a6a8ee8663af9",
+      "volume": 3
+    },
+    {
+      "fichier": "zobiko_windup.png",
+      "usage": "windup",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "6b2d251fec7170c2200ed46abe98bcf6fd82de2b22902cc0d6daea34035bbd37",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "zobio_contact.png",
+      "usage": "contact",
+      "dimensions": [
+        1200,
+        1024
+      ],
+      "sha256": "359adc7015e4f99a1d433b88056854108df80890358a4d3fb5b5801ac88781d1",
+      "pivot": [
+        600,
+        960
+      ],
+      "volume": 2
+    },
+    {
+      "fichier": "zobio_guard.png",
+      "usage": "guard",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "b8e07ca1eb54f845169295e327ba62e5c21227e8ba421093b8b95bba075fe4e7",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 2
+    },
+    {
+      "fichier": "zobio_recoil.png",
+      "usage": "recoil",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "9c567b7ecd29eb17b27453e208cf0a32d8123daf2a94da6f5cdb3314df61dfc4",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "zobio_select.png",
+      "usage": "select",
+      "dimensions": [
+        832,
+        832
+      ],
+      "sha256": "13f20706248b6a2ae0ea046255711215b3b6751642fea3d05c9944845eaae577",
+      "volume": 3
+    },
+    {
+      "fichier": "zobio_windup.png",
+      "usage": "windup",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "0a6ef9e7189665dc9cffd5d521a516159113a501853396b839b4a4b4052f35b3",
+      "pivot": [
+        512,
+        960
+      ],
+      "volume": 3
+    },
+    {
+      "fichier": "zr_train_back.png",
+      "usage": "back",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "049f885fd9967c4b0d6dd6b873d529c883dd05bab535f9101b68e0bd14c8afbe",
+      "lot": "2026-11-20_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "zr_train_front.png",
+      "usage": "front",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "38d783079ab60120ad18b5c2cb57d916c487ab7f2d38eab12c0e7f99cc2fdd99",
+      "lot": "2026-11-20_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "zr_train_mid.png",
+      "usage": "mid",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "d9e75c2ef015f536b63df712e9b9fad0e5e3773b05388a2000fd082393bf9720",
+      "lot": "2026-11-20_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    }
+  ],
+  "nouveaux_png_volume_iv": 40,
+  "nouveaux_png_reprise_2026_11_19": 38,
+  "lots_reprise_2026_11_19": {
+    "premier_lot_saga": 10,
+    "parallaxe_marche_props_parts": 28
+  },
+  "nouveaux_png_stages_2026_11_20": 6,
+  "nouveaux_png_stages_2026_11_20_lot2": 6,
+  "nouveaux_png_stages_2026_11_20_lot3": 6,
+  "nouveaux_png_stages_2026_11_20_lot4": 6
+}

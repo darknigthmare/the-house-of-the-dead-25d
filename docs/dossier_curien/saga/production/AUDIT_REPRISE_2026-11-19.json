@@ -1,0 +1,651 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-19",
+  "baseline_commit": "a3fbcf13455a945ccc929ce43907a9755d82e6c7",
+  "baseline_combat_png": 203,
+  "baseline_saga_png": 185,
+  "new_png": 28,
+  "new_bytes": 12402664,
+  "new_categories": {
+    "front": 8,
+    "mid": 8,
+    "walk1": 4,
+    "walk2": 4,
+    "part": 2,
+    "prop": 2
+  },
+  "combat_png_after": 253,
+  "saga_png_after": 223,
+  "asset_files": [
+    {
+      "path": "assets/dossier_curien/saga/carnival_front.png",
+      "category": "front",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "76be70be69b4a00ffaab7ad63684fc95f0ad2d1349b3347e78167606d4d1118b",
+      "size_bytes": 184224,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "fully_transparent_percent": 96.716,
+      "bbox_alpha_128": [
+        0,
+        734,
+        1672,
+        941
+      ],
+      "production_report": "docs/dossier_curien/saga/production/2026-11-19_parallax_special_carnival.json"
+    },
+    {
+      "path": "assets/dossier_curien/saga/carnival_mid.png",
+      "category": "mid",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "9fbf81119986e4d7ebd8d08836545e9409e637f8793d3ec85b47c734684b36de",
+      "size_bytes": 252496,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "fully_transparent_percent": 94.7393,
+      "bbox_alpha_128": [
+        19,
+        0,
+        1672,
+        721
+      ],
+      "production_report": "docs/dossier_curien/saga/production/2026-11-19_parallax_special_carnival.json"
+    },
+    {
+      "path": "assets/dossier_curien/saga/efi_front.png",
+      "category": "front",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "e62c62275dff3998580f164f0c85b16a61225598af8620943b166d21528531fa",
+      "size_bytes": 323987,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "fully_transparent_percent": 92.8926,
+      "bbox_alpha_128": [
+        0,
+        512,
+        1672,
+        931
+      ],
+      "production_report": "docs/dossier_curien/saga/production/2026-11-19_parallax.json"
+    },
+    {
+      "path": "assets/dossier_curien/saga/efi_mid.png",
+      "category": "mid",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "f43440968ac6fda63e6c90c32892323246daff3eab66e9dc3a28575b697f47c5",
+      "size_bytes": 256786,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "fully_transparent_percent": 93.629,
+      "bbox_alpha_128": [
+        0,
+        0,
+        1672,
+        731
+      ],
+      "production_report": "docs/dossier_curien/saga/production/2026-11-19_parallax.json"
+    },
+    {
+      "path": "assets/dossier_curien/saga/ex_front.png",
+      "category": "front",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "b5720d2bd3b4368dd378ae552d478ee77a3287e45a27714ce993c25e151943a5",
+      "size_bytes": 125142,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "fully_transparent_percent": 97.9479,
+      "bbox_alpha_128": [
+        0,
+        750,
+        1672,
+        941
+      ],
+      "production_report": "docs/dossier_curien/saga/production/2026-11-19_parallax_ex_revenge.json"
+    },
+    {
+      "path": "assets/dossier_curien/saga/ex_mid.png",
+      "category": "mid",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "d58f67fc1497f1dc9fa493e9f622f81ab272621daffa8ace128cc6a5b4e67f5a",
+      "size_bytes": 162227,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "fully_transparent_percent": 97.3503,
+      "bbox_alpha_128": [
+        14,
+        395,
+        1658,
+        733
+      ],
+      "production_report": "docs/dossier_curien/saga/production/2026-11-19_parallax_ex_revenge.json"
+    },
+    {
+      "path": "assets/dossier_curien/saga/james_walk1.png",
+      "category": "walk1",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "ba39d3957ac2dd428ee872af76614ce05fe61642eaa8ef38ab2e04e2f91b0a58",
+      "size_bytes": 685143,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "fully_transparent_percent": 80.1471,
+      "bbox_alpha_128": [
+        218,
+        72,
+        989,
+        1172
+      ],
+      "production_report": "docs/dossier_curien/saga/production/2026-11-19_james_lisa_walk.json"
+    },
+    {
+      "path": "assets/dossier_curien/saga/james_walk2.png",
+      "category": "walk2",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "648ca26c6b5893d68ac25d4ab8e8030f0032ed88e88da79789257830e30391d4",
+      "size_bytes": 704524,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "fully_transparent_percent": 80.4427,
+      "bbox_alpha_128": [
+        212,
+        76,
+        993,
+        1165
+      ],
+      "production_report": "docs/dossier_curien/saga/production/2026-11-19_james_lisa_walk.json"
+    },
+    {
+      "path": "assets/dossier_curien/saga/lisa_walk1.png",
+      "category": "walk1",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "c19593f1ecd59a51e0d8270534c1beee4a369259011ee5f3ed803058d46f2fe9",
+      "size_bytes": 690567,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "fully_transparent_percent": 80.5053,
+      "bbox_alpha_128": [
+        204,
+        69,
+        1000,
+        1171
+      ],
+      "production_report": "docs/dossier_curien/saga/production/2026-11-19_james_lisa_walk.json"
+    },
+    {
+      "path": "assets/dossier_curien/saga/lisa_walk2.png",
+      "category": "walk2",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "0b4cf948e7813643f0d6a85c59a62c1b7192fe3dd47335b5b7a31d508a529150",
+      "size_bytes": 696011,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "fully_transparent_percent": 80.8223,
+      "bbox_alpha_128": [
+        206,
+        68,
+        997,
+        1157
+      ],
+      "production_report": "docs/dossier_curien/saga/production/2026-11-19_james_lisa_walk.json"
+    },
+    {
+      "path": "assets/dossier_curien/saga/parts/lisa_goggles.png",
+      "category": "part",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "f749ad5f05adb0a3356f55d72599ab5e76dd58fa09ae5fe6f0d8abf009c74153",
+      "size_bytes": 656545,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "fully_transparent_percent": 80.2275,
+      "bbox_alpha_128": [
+        150,
+        391,
+        1110,
+        847
+      ],
+      "production_report": "docs/dossier_curien/saga/production/2026-11-19_props_parts.json"
+    },
+    {
+      "path": "assets/dossier_curien/saga/parts/lisa_shotgun.png",
+      "category": "part",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "3f912b7a3486ed7ffd9a4024731130cf5762ef9bffffffecb3274832d263ace7",
+      "size_bytes": 315637,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "fully_transparent_percent": 90.9735,
+      "bbox_alpha_128": [
+        65,
+        546,
+        1189,
+        768
+      ],
+      "production_report": "docs/dossier_curien/saga/production/2026-11-19_props_parts.json"
+    },
+    {
+      "path": "assets/dossier_curien/saga/props/efi_alarm_beacon.png",
+      "category": "prop",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "a2e2b2ec7003321ed6917531f7395774217ee3f9d2008de34444981c0995a0d3",
+      "size_bytes": 869875,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "fully_transparent_percent": 76.273,
+      "bbox_alpha_128": [
+        390,
+        124,
+        865,
+        1084
+      ],
+      "production_report": "docs/dossier_curien/saga/production/2026-11-19_props_parts.json"
+    },
+    {
+      "path": "assets/dossier_curien/saga/props/subway_ticket_machine.png",
+      "category": "prop",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "e47da7ec2314fbc7f333339463f5d12acca625b1f3d740c68a6327b554b84c8a",
+      "size_bytes": 1310584,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "fully_transparent_percent": 63.1063,
+      "bbox_alpha_128": [
+        383,
+        35,
+        907,
+        1223
+      ],
+      "production_report": "docs/dossier_curien/saga/production/2026-11-19_props_parts.json"
+    },
+    {
+      "path": "assets/dossier_curien/saga/revenge_front.png",
+      "category": "front",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "96f215baee8f645cc104264c1bd13d4d6732b2201e5c67638de180c9514b774e",
+      "size_bytes": 164111,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "fully_transparent_percent": 97.1463,
+      "bbox_alpha_128": [
+        6,
+        806,
+        1666,
+        932
+      ],
+      "production_report": "docs/dossier_curien/saga/production/2026-11-19_parallax_ex_revenge.json"
+    },
+    {
+      "path": "assets/dossier_curien/saga/revenge_mid.png",
+      "category": "mid",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "f25003f90afff8b387168e895df264b42a98d423103b7945369ed83def35181d",
+      "size_bytes": 155384,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "fully_transparent_percent": 97.385,
+      "bbox_alpha_128": [
+        0,
+        235,
+        1672,
+        474
+      ],
+      "production_report": "docs/dossier_curien/saga/production/2026-11-19_parallax_ex_revenge.json"
+    },
+    {
+      "path": "assets/dossier_curien/saga/ryan_soiree_walk1.png",
+      "category": "walk1",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "2ad04a161ac1c455316670b3a25d066b92cdb20b5022da31c68795a60fed4984",
+      "size_bytes": 665425,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "fully_transparent_percent": 82.1047,
+      "bbox_alpha_128": [
+        323,
+        73,
+        928,
+        1179
+      ],
+      "production_report": "docs/dossier_curien/saga/production/2026-11-19_ryan_walk.json"
+    },
+    {
+      "path": "assets/dossier_curien/saga/ryan_soiree_walk2.png",
+      "category": "walk2",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "c102cec14abab58254087dfd13651c05216e457700bf7ec753f31b80bfe2ac15",
+      "size_bytes": 693236,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "fully_transparent_percent": 80.8895,
+      "bbox_alpha_128": [
+        187,
+        71,
+        929,
+        1177
+      ],
+      "production_report": "docs/dossier_curien/saga/production/2026-11-19_ryan_walk.json"
+    },
+    {
+      "path": "assets/dossier_curien/saga/ryan_walk1.png",
+      "category": "walk1",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "4782715f9fda541e237d5a5317c962880c0f36c42ab9b4767b463f16527cadee",
+      "size_bytes": 656794,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "fully_transparent_percent": 81.5513,
+      "bbox_alpha_128": [
+        326,
+        70,
+        944,
+        1180
+      ],
+      "production_report": "docs/dossier_curien/saga/production/2026-11-19_ryan_walk.json"
+    },
+    {
+      "path": "assets/dossier_curien/saga/ryan_walk2.png",
+      "category": "walk2",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "026373764c64660f9efe9418ba41ee4b90fe0b8d83f22537c677f51a8287f790",
+      "size_bytes": 665309,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "fully_transparent_percent": 80.7812,
+      "bbox_alpha_128": [
+        176,
+        70,
+        944,
+        1177
+      ],
+      "production_report": "docs/dossier_curien/saga/production/2026-11-19_ryan_walk.json"
+    },
+    {
+      "path": "assets/dossier_curien/saga/scarlet_front.png",
+      "category": "front",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "b72427341ddae7b093195f3c4b115fdffe43b1674dd49708d706dd077aa9f5ba",
+      "size_bytes": 157433,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "fully_transparent_percent": 97.8053,
+      "bbox_alpha_128": [
+        10,
+        812,
+        1662,
+        934
+      ],
+      "production_report": "docs/dossier_curien/saga/production/2026-11-19_parallax_venice_scarlet.json"
+    },
+    {
+      "path": "assets/dossier_curien/saga/scarlet_mid.png",
+      "category": "mid",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "d7ab450e842598c48aa52097d1ef9093d021ca707793cc4b3dce74ef6c14910b",
+      "size_bytes": 399966,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "fully_transparent_percent": 89.1874,
+      "bbox_alpha_128": [
+        0,
+        0,
+        1672,
+        799
+      ],
+      "production_report": "docs/dossier_curien/saga/production/2026-11-19_parallax_venice_scarlet.json"
+    },
+    {
+      "path": "assets/dossier_curien/saga/special_front.png",
+      "category": "front",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "1644a55000427161df7fc628dba0f95e1382a62bd89f1d235607cc0724e43cb7",
+      "size_bytes": 217062,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "fully_transparent_percent": 95.6952,
+      "bbox_alpha_128": [
+        0,
+        778,
+        1672,
+        941
+      ],
+      "production_report": "docs/dossier_curien/saga/production/2026-11-19_parallax_special_carnival.json"
+    },
+    {
+      "path": "assets/dossier_curien/saga/special_mid.png",
+      "category": "mid",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "d408ef48727cf01533d1bf38b3ce91a96ac9fbfe471a9b9e590a81b32828c67a",
+      "size_bytes": 418446,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "fully_transparent_percent": 88.8146,
+      "bbox_alpha_128": [
+        0,
+        0,
+        1672,
+        742
+      ],
+      "production_report": "docs/dossier_curien/saga/production/2026-11-19_parallax_special_carnival.json"
+    },
+    {
+      "path": "assets/dossier_curien/saga/subway_front.png",
+      "category": "front",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "71f93e5873b899d3c31217a9252b6a55269a462e77efb428460bc5182f50cb44",
+      "size_bytes": 269352,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "fully_transparent_percent": 94.2839,
+      "bbox_alpha_128": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "production_report": "docs/dossier_curien/saga/production/2026-11-19_parallax.json"
+    },
+    {
+      "path": "assets/dossier_curien/saga/subway_mid.png",
+      "category": "mid",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "b592024d98da742b3950efac36987c35f3224d60a7be4013eae4e80b6b29e863",
+      "size_bytes": 322490,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "fully_transparent_percent": 91.7989,
+      "bbox_alpha_128": [
+        0,
+        0,
+        1672,
+        738
+      ],
+      "production_report": "docs/dossier_curien/saga/production/2026-11-19_parallax.json"
+    },
+    {
+      "path": "assets/dossier_curien/saga/venice_front.png",
+      "category": "front",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "4389ff15e5c2a786b2d783b54d2a232d703dc115776ec9cbeb10314c9dba7280",
+      "size_bytes": 109561,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "fully_transparent_percent": 98.6739,
+      "bbox_alpha_128": [
+        0,
+        859,
+        1672,
+        941
+      ],
+      "production_report": "docs/dossier_curien/saga/production/2026-11-19_parallax_venice_scarlet.json"
+    },
+    {
+      "path": "assets/dossier_curien/saga/venice_mid.png",
+      "category": "mid",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "5f6061a26526dcc7bffd489a84dff8bb16c9c242039b98f8f509b71382d9095c",
+      "size_bytes": 274347,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "fully_transparent_percent": 94.6654,
+      "bbox_alpha_128": [
+        0,
+        0,
+        1672,
+        907
+      ],
+      "production_report": "docs/dossier_curien/saga/production/2026-11-19_parallax_venice_scarlet.json"
+    }
+  ],
+  "all_new_outputs": "Native image_gen PNGs retained without pixel edits; imports and runtime transforms are separate.",
+  "fidelity": "Visual continuity with existing project references reviewed; canonical 1:1 fidelity and full fluid animation are not certified.",
+  "source_duplicates": 0,
+  "reconciled_remote_commit": "1586e4c9aee3fe4b20214303e1d098cff24cde5d",
+  "reconciled_remote_combat_png": 225,
+  "reconciled_remote_saga_png": 195,
+  "prior_batch_png_recovered_from_remote": 22,
+  "new_png_total_since_original_baseline": 50,
+  "unrecovered_source_masters": {
+    "count": 204,
+    "bytes": 369644488,
+    "record": "docs/dossier_curien/saga/production/RECUPERATION_LOCALE_2026-11-19.json",
+    "note": "The 22 previous gameplay PNGs are now recovered from GitHub. The 204 source masters belong to an unavailable earlier environment and are not claimed as uploaded."
+  }
+}

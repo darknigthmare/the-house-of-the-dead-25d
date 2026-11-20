@@ -1,0 +1,298 @@
+{
+  "lecture": "Références de travail. Une édition, un service et une attraction sont rattachés à leur apport propre. Le laboratoire mobile de 2003 possède une histoire originale.",
+  "sources": [
+    {
+      "nom": "The House of the Dead",
+      "type": "arcade",
+      "apport": "Manoir Curien et quatre gardiens.",
+      "source": "https://www.sega.jp/history/arcade/product/9038/"
+    },
+    {
+      "nom": "The House of the Dead 2",
+      "type": "arcade",
+      "apport": "Ville aux canaux et dossier Goldman.",
+      "source": "https://www.sega.jp/history/arcade/product/8991/"
+    },
+    {
+      "nom": "The House of the Dead III",
+      "type": "arcade",
+      "apport": "Lisa Rogan, G et complexe EFI.",
+      "source": "https://blog.playstation.com/?p=69102"
+    },
+    {
+      "nom": "The House of the Dead 4",
+      "type": "arcade",
+      "apport": "James Taylor et Kate Green, incident de 2003.",
+      "source": "https://blog.playstation.com/?p=71862"
+    },
+    {
+      "nom": "The House of the Dead 4 Special",
+      "type": "prolongement narratif",
+      "apport": "Kate et G après HOTD4, nouveau déroulement sur borne à sièges rotatifs.",
+      "source": "https://www.sega.jp/history/arcade/product/18157/"
+    },
+    {
+      "nom": "House of the Dead: Scarlet Dawn",
+      "type": "arcade",
+      "apport": "Ryan Taylor et Kate Green ; manoir Scarecrow.",
+      "source": "https://hod.sega.jp/",
+      "source2": "https://www.sega.jp/arcade/detail/hod_scarlet-dawn/"
+    },
+    {
+      "nom": "The House of the Dead: Overkill",
+      "type": "branche grindhouse",
+      "apport": "G et Isaac Washington, esthétique de film d’exploitation.",
+      "source": "https://www.esrb.org/ratings/26030/the-house-of-the-dead-overkill/"
+    },
+    {
+      "nom": "The House of the Dead: Overkill – Extended Cut",
+      "type": "édition étendue",
+      "apport": "Contenu additionnel de la branche Overkill sur PS3.",
+      "source": "https://blog.playstation.com/2011/07/14/the-house-of-the-dead-overkill-hunt-mutants-with-playstation-move-in-3d/"
+    },
+    {
+      "nom": "The House of the Dead: Overkill – The Lost Reels",
+      "type": "adaptation mobile",
+      "apport": "Déclinaison de la branche Overkill en bobines mobiles.",
+      "source": "https://ttabvue.uspto.gov/ttabvue/ttabvue-85539705-EXA-5.pdf",
+      "source2": "https://gameinformer.com/b/news/archive/2013/04/25/sega-assaults-mobile-platforms-with-house-of-the-dead-the-lost-reels"
+    },
+    {
+      "nom": "Zombie Revenge",
+      "type": "beat’em up",
+      "apport": "Stick Breitling, Linda Rotta, Rikiya Busujima. Le port Dreamcast propose un mode de combat et des mini-jeux VMU.",
+      "source": "https://www.sega.jp/history/arcade/product/8161/",
+      "source2": "https://www.digitpress.com/library/manuals/dreamcast/zombie_revenge.pdf"
+    },
+    {
+      "nom": "Loving Deads: The House of the Dead EX",
+      "type": "arcade à mini-jeux",
+      "apport": "Zobio et Zobiko, épreuves de coopération.",
+      "source": "https://www.sega.jp/history/arcade/product/8762/"
+    },
+    {
+      "nom": "The Typing of the Dead",
+      "type": "arcade à clavier",
+      "apport": "Saisie de mots et questionnaires dans les décors et parmi les créatures de HOTD2.",
+      "source": "https://www.sega.jp/history/arcade/product/8146/"
+    },
+    {
+      "nom": "The Typing of the Dead 2",
+      "type": "Windows",
+      "apport": "Jeu Windows sorti en mars 2008 au Japon ; transposition de III au clavier.",
+      "source": "https://www.sega.jp/game/pc/?mode=view&page=6",
+      "source2": "https://game.watch.impress.co.jp/docs/20070420/segat.htm"
+    },
+    {
+      "nom": "The Typing of the Dead: Zombie Panic",
+      "type": "édition PS2",
+      "apport": "Version console japonaise.",
+      "source": "https://www.sega.jp/game/?page=33"
+    },
+    {
+      "nom": "The Typing of the Dead Online",
+      "type": "service PC",
+      "apport": "Déclinaison en ligne de l’entraînement à la frappe.",
+      "source": "https://tod.sega-online.jp/"
+    },
+    {
+      "nom": "The Typing of the Dead: Overkill",
+      "type": "Windows",
+      "apport": "Adaptation de la branche Overkill au clavier.",
+      "source": "https://store.steampowered.com/app/246580/"
+    },
+    {
+      "nom": "K-Typing of the Dead",
+      "type": "service J-PHONE",
+      "apport": "Transposition du défi clavier au téléphone, documentée en 2001.",
+      "source": "https://dengekionline.com/data/news/2001/6/26/924274939db0e22a44e4589b07add3ef.html",
+      "niveau": "presse d’époque"
+    },
+    {
+      "nom": "Zombie Da: Flick of the Dead",
+      "type": "iPhone",
+      "apport": "Saisie japonaise par balayage, 2012.",
+      "source": "https://game.watch.impress.co.jp/docs/news/531538.html",
+      "niveau": "presse d’époque"
+    },
+    {
+      "nom": "English of the Dead",
+      "type": "Nintendo DS",
+      "apport": "Entraînement au vocabulaire anglais dans l’univers HOTD.",
+      "source": "https://www.nintendo.co.jp/ds/software/yznj/index.html"
+    },
+    {
+      "nom": "The Pinball of the Dead",
+      "type": "Game Boy Advance",
+      "apport": "Épreuves de flipper dans l’univers des créatures.",
+      "source": "https://www.esrb.org/ratings/7481/the-pinball-of-the-dead/"
+    },
+    {
+      "nom": "Darts of the Dead",
+      "type": "DARTSLIVE2",
+      "apport": "Visée sur cible de fléchettes et vagues de zombies.",
+      "source": "https://www.sega.jp/topics/detail/171004_arcade_1/"
+    },
+    {
+      "nom": "The Site of the Dead",
+      "type": "RPG i-mode",
+      "apport": "Histoire originale de 2003. Un docteur élève une créature ; quatre applications interconnectées Action, Donjon, Frappe et Zombie Lab.",
+      "source": "https://backup.segakore.fr/segawow/wowsports/release03818_b.html",
+      "niveau": "communiqué SEGA/WOW du 18 août 2003, miroir d’archive"
+    },
+    {
+      "nom": "The House of the Dead Mobile",
+      "type": "Japon, téléphone",
+      "apport": "Édition sur téléphone, illustrée dans le dossier Vodafone en page 3.",
+      "source": "https://www.softbank.jp/-/media/sb/sjp/en/corp/set/data/group/sbm/news/press/vodafone/pdf/050609e_2.pdf",
+      "source2": "https://www.itmedia.co.jp/mobile/spv/0503/23/news064.html"
+    },
+    {
+      "nom": "The House of the Dead: Nightmare",
+      "type": "téléphone Java",
+      "apport": "Réinterprétation documentée du manoir de Rogan en vue du dessus.",
+      "source": "https://kotaku.com/games/the-house-of-the-dead-nightmare",
+      "niveau": "catalogue secondaire ; date et sorties régionales à établir"
+    },
+    {
+      "nom": "The House of the Dead 2 & 3 Return",
+      "type": "compilation Wii",
+      "apport": "Regroupe les deux enquêtes sur Wii.",
+      "source": "https://www.nintendo.com/fr-fr/Jeux/Wii/The-House-of-the-Dead-2-3-Return-283454.html"
+    },
+    {
+      "nom": "The House of the Dead: Remake",
+      "type": "remake du premier jeu",
+      "apport": "Manoir et campagne du premier jeu réinterprétés.",
+      "source": "https://www.microids.com/fr/jeu-the-house-of-the-dead-remake/"
+    },
+    {
+      "nom": "The House of the Dead 2: Remake",
+      "type": "remake du deuxième jeu",
+      "apport": "Campagne de Goldman réinterprétée.",
+      "source": "https://www.microids.com/fr/the-house-of-the-dead-2-remake-fr/"
+    },
+    {
+      "nom": "House of the Dead: Scarlet Dawn – The Attraction",
+      "type": "attraction de groupe",
+      "apport": "Expérience de salle jusqu’à quatre personnes.",
+      "source": "https://www.casegajp.com/en/service/detail2.html"
+    },
+    {
+      "nom": "House of the Dead: Scarlet Dawn – Battle Genesis",
+      "type": "machine à sous",
+      "apport": "Variante de casino, à citer au musée ou dans un défi sans mise.",
+      "source": "https://www.segasammycreation.com/en/news/detail/39"
+    },
+    {
+      "nom": "Winning Cash – House of the Dead Scarlet Dawn on Reels",
+      "type": "machine à sous",
+      "apport": "Variante de casino, à citer au musée ou dans un défi sans mise.",
+      "source": "https://www.segasammycreation.com/en/games/detail/48"
+    },
+    {
+      "nom": "House of the Dead: Reawakened",
+      "type": "attraction d’arcade VR",
+      "apport": "Trois missions jouables en solo ou en coopération. Deux écrans latéraux simulent les volets de la borne et un écran frontal figure la porte. Ce dispositif inspire le rythme de l’épreuve de duel.",
+      "annonce": "2026-10-28",
+      "presentation_annoncee": "IAAPA Orlando du 17 au 20 novembre 2026",
+      "source": "https://segaarcade.com/games/house-of-the-dead-reawakened",
+      "source2": "https://segaarcade.com/news/dare-to-experience-house-of-the-dead-reawakened"
+    }
+  ],
+  "autres_editions_documentees": [
+    {
+      "noms": [
+        "The Typing of the Dead 2003",
+        "The Typing of the Dead 2004"
+      ],
+      "sources": [
+        "https://game.watch.impress.co.jp/docs/20021025/sega.htm",
+        "https://www.sega.jp/game/pc/?page=8"
+      ]
+    },
+    {
+      "noms": [
+        "The Typing of the Dead featuring Rakuten Minna no Shūshoku Katsudō Nikki",
+        "Zombie Da: Typing Lariat for Mac"
+      ],
+      "sources": [
+        "https://www.sega.jp/game/pc/?mode=view&page=6"
+      ]
+    },
+    {
+      "noms": [
+        "The Typing of the Dead US Edition"
+      ],
+      "sources": [
+        "https://www.suruga-ya.jp/product/detail/145020547"
+      ],
+      "niveau": "fiche distributeur et référence HCJ-0313"
+    },
+    {
+      "noms": [
+        "The Typing of the Dead, édition à prix révisé (2005)"
+      ],
+      "sources": [
+        "https://www.sega.jp/game/pc/?mode=start&page=7"
+      ]
+    },
+    {
+      "noms": [
+        "Zombie Da: Typing Lariat (Windows)"
+      ],
+      "sources": [
+        "https://www.sega.jp/game/pc/?mode=start&page=7"
+      ]
+    }
+  ],
+  "notes": [
+    "Ne pas dédoubler Zombie Revenge sous le nom de travail Blood Bullet: The House of the Dead Side Story.",
+    "Vampire Night et Touch the Dead sont des œuvres extérieures.",
+    "Les déclinaisons de bornes, les rééditions de frappe et les jeux SEGA où la série apparaît en invité n’ajoutent pas de campagnes principales.",
+    "Les noms sans publication identifiée, les extensions originales du projet et les films doivent conserver leurs statuts distincts."
+  ],
+  "pistes_documentaires": [
+    {
+      "nom": "The Kanji of the Dead",
+      "statut": "titre provisoire présenté en 2007 ; sortie à établir",
+      "source": "https://game.watch.impress.co.jp/docs/20070420/segat.htm"
+    },
+    {
+      "nom": "Zombie Buster",
+      "statut": "homonyme mobile classé chez Capcom",
+      "source": "https://game.watch.impress.co.jp/docs/20011228/jsky.htm"
+    },
+    {
+      "nom": "Blood Bullet: The House of the Dead Side Story",
+      "statut": "nom de travail de Zombie Revenge",
+      "source": "https://www.mobygames.com/group/365/the-house-of-the-dead-series/"
+    },
+    {
+      "nom": "The House of the Dead for Mobile",
+      "statut": "intitulé de fiche de plateforme pour Mobile 2005",
+      "source": "https://gamefaqs.gamespot.com/mobile/928541-the-house-of-the-dead"
+    }
+  ],
+  "cinema": [
+    {
+      "nom": "House of the Dead",
+      "statut": "adaptation cinéma",
+      "source": "https://catalog.afi.com/Catalog/moviedetails/62771"
+    },
+    {
+      "nom": "House of the Dead 2: Dead Aim",
+      "statut": "adaptation cinéma",
+      "source": "https://www.sonypictures.jp/he/824693"
+    },
+    {
+      "nom": "The House of the Dead, projet de Paul W. S. Anderson",
+      "statut": "projet annoncé par Story Kitchen ; aucune campagne de jeu attribuée",
+      "source": "https://www.story-kitchen.com/news/tomb-raider-the-legend-of-lara-croft-renewed-for-season-2-at-netflix-hmysa"
+    }
+  ],
+  "dossiers_du_projet": [
+    "Requiem",
+    "Absolution"
+  ]
+}

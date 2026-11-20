@@ -1,0 +1,58 @@
+FINAL SOURCE QA — motion 2026-11-19
+
+Godot: 4.6.3.stable.official.7d41c59c4
+Node: v24.22.3
+npm: 11.9.0
+
+All commands below completed with exit code 0 on hotd-recovery.
+No native rendering or interactive playthrough is claimed.
+
+COMMAND: npm test
+RESULT: Complete npm chain passed; 307/307 data QA, 1,977 environment assertions, 1,456 art checks; 49 expansion PNGs and 10 expansion self-tests; 30 motion PNGs (35,895,640 bytes) and 11 motion self-tests. Existing content coverage warnings remain in the log.
+LOG: npm-test-final.txt
+
+COMMAND: godot --headless --path . --script res://tests/test_runner.gd
+RESULT: 1,335 assertions, passed.
+LOG: core-final.txt
+
+COMMAND: godot --headless --path . --script res://scripts/smoke_dossier_saga.gd
+RESULT: 807 checks, 0 failures.
+LOG: saga-final.txt
+
+COMMAND: godot --headless --path . --script res://tests/test_saga_expansion.gd
+RESULT: 124 checks, 0 failures.
+LOG: expansion-final.txt
+
+COMMAND: godot --headless --path . --script res://tests/test_saga_lab.gd
+RESULT: 72/72 exercises; 229 checks, 0 failures.
+LOG: lab-final.txt
+
+COMMAND: godot --headless --path . --script res://tests/test_saga_archives.gd
+RESULT: 29 archives exercised, 0 failures.
+LOG: archives-final.txt
+
+COMMAND: godot --headless --path . --script res://tests/test_saga_rush.gd
+RESULT: 74 checks, 0 failures.
+LOG: rush-final.txt
+
+COMMAND: godot --headless --path . --script res://scripts/smoke_dossier_curien.gd
+RESULT: Menu and knockout paths, 0 failures.
+LOG: curien-menu-ko-final.txt
+
+COMMAND: git diff --check
+RESULT: Passed, no whitespace errors.
+
+Test expectation adjustment: smoke_dossier_saga.gd accepts Linda’s authored _throw pose as a non-firing contact pose. It continues checking the other firearm users and the firing special pose. No runtime behavior was changed by this adjustment.
+Initial diagnostic retained in saga-before-throw-expectation-fix.txt.
+
+PCK runtime script hash mismatches: []
+PCK motion manifest equals current source: True
+PCK scripts compared: 11
+Resource test and pack startup reports are separate: COMPAT_PACK_QA.json, compat-pack-runtime.json.
+
+Final calibration rebuild: linda_block emitter_px is [679,444]. Runtime code is unchanged; general suites above were not repeated.
+Final PCK: HOTD_Motion_Compat46_Final.pck
+SHA256: 918e8331c03696d9b13ce77d50764c14bf24c0e895610c541f454d430529863d
+Bytes: 289338520
+Final PCK validation: 956 checks / 0 failures; motion behavior: 65 checks / 0 failures; 30-frame headless main-scene startup: exit 0, no errors.
+Updated source manifest passed the 30-PNG Node release gate.

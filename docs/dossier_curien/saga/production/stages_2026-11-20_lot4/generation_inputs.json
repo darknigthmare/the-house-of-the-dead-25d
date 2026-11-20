@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "batch": "2026-11-20_lot4",
+  "baseline_commit": "c7162f7bb46aa7a3ef0546124949e96e2f25bc49",
+  "generation_method": "built-in image_gen; one separate native image per plane",
+  "specs": [
+    {
+      "id": "hangedman_roof_back",
+      "prompt": "Use case: stylized-concept / environment adaptation from visual references. Create ONE complete painted 2D fighting-stage BACKGROUND adapting the original 1997 arcade The House of the Dead Hangedman rooftop encounter. Images 1 and 2 are actual original arcade gameplay captures: retain the long blue-grey slate mansard roofs, small narrow lit dormer windows, dark ornate stone facade with repeated arched openings, carved cornices and stone balustrades. Image 3 shows the original encounter's large pale moon and deep indigo night sky with thin cool clouds. These are the architectural and palette references. Image 4 is ONLY the Dossier Curien project's established detailed painted rendering and lateral combat layout. Do not copy its ruined colosseum, broken arches or warm stones. Remove all reference characters, flying creatures, hostages, weapons, blood or hit flashes, health bars, interface, ammo and lettering.\nOutput a wide landscape 16:9 opaque scene, native about 1672x941, viewed from a side-on fighting camera on a level upper terrace of Curien's mansion. A shallow row of elegant dark stone arcades and a balustraded gallery sit behind the play area; their blue-grey sloping slate roofs and two or three small dormers are legible above. The pale moon is in the upper-left sky, with cool moonlight across weathered slate, stone cornices and the terrace. The overall mood is the original quiet blue-indigo mansion night. No burning mansion, orange fire, helicopter, modern city, Scarlet Dawn motifs, church spires or invented Gothic castle. Preserve the mansion architecture shown in the captures, with restrained ornament and tangible materials.\nAdapt the first-person rooftop viewpoint into a clear horizontal fighting terrace: the lower roughly 27 percent is a continuous flat grey stone paving surface, sufficiently wide for two fighters and running edge to edge. This flat terrace is an explicit game-layout adaptation. The foot-contact line at 81.56 percent of image height must be clear across x12.5–87.5 percent. All balustrades, walls, roof slopes and steps stay behind that fighting strip. Keep the middle readable; no protruding foreground rails or objects cross the fighters' space. Crisp painted material detail with atmospheric depth, matching the style reference quality. This is the BACK plane only, fully opaque and finished edge to edge. No people, monsters, bats, silhouettes, glowing eyes, text, HUD, borders, watermarks or logos.",
+      "references": [
+        "hangedman_roof_wide.png",
+        "hangedman_roof_edge.png",
+        "hangedman_roof_intro.png"
+      ],
+      "style": "assets/dossier_curien/saga/strength_colosseum_back.png",
+      "generated_file": "exec-a3e4e1d2-0ca1-4b90-b1c3-cdc069b01444.png",
+      "path": "assets/dossier_curien/saga/hangedman_roof_back.png",
+      "sha256": "4cbf2ea7f0666e109445f4c54304d84e2ce2e71257ade9680e72e15a97c195cd",
+      "bytes": 2528424,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "visual_review": "accepted; source motifs compared with inspected arcade captures, no character or HUD, clear flat lateral fighting strip",
+      "pixel_postprocessing": "none"
+    },
+    {
+      "id": "hermit_dome_back",
+      "prompt": "Use case: stylized-concept / environment adaptation from visual references. Create ONE complete painted 2D fighting-stage BACKGROUND of the cultivation dome where Hermit first appears in the original 1997 arcade The House of the Dead. Images 1 and 2 are original arcade gameplay screenshots of that same green room. Keep their specific motifs: cylindrical chamber, immense green plant-growth panels with spiral fiddlehead fern shapes and thin curving vine stems, dark segmented industrial framing, clusters of vertical pale cyan-white luminous tubes, a shallow curved metal handrail behind the foreground platform, and a vivid mottled green floor made of large hexagonal slabs and inset industrial panels. The second image reveals the pale geometric grid high in the ceiling. Remove Doctor Curien, Hermit, all creature parts and every HUD or weak-point diagram. Image 3 is ONLY the Dossier Curien project's established detailed painted quality and lateral combat layout; do not copy its outdoor sky, ruins or colosseum stone architecture.\nOutput one wide 16:9 opaque background, native about 1672x941, with a side-on camera and shallow curved depth suitable for a 2D fighting stage. Build the room around three or four large vertical plant-growth panels with readable curled fern forms, separated by dark ribs and two restrained clusters of pale vertical tubes. Green light dominates, with black-green recesses and yellow-green highlights on the floor. This is the original game's enclosed cultivation chamber, not Sun's later BIO room, not a tropical garden, glass greenhouse or generic modern laboratory. No screens, invented text or signage, monstrous roots, glowing eyes or science-fiction pods. Keep its fern-growth patterns recognisable without turning them into a giant plant boss.\nThe bottom roughly 27 percent must be a continuous level playing floor of green hexagonal slabs and subtle inset metal plates, widened into a horizontal fighting strip. Foot-contact line is at 81.56 percent of image height, clear across x12.5–87.5 percent. The curved handrail remains entirely behind the fighters, above the floor zone; no rail, fern, basin, stairs or debris cuts across the fighting strip. Keep central values controlled for silhouette readability. Include a subdued segmented ceiling rim high at the top, no sky. Fine painted arcade scenery with detailed weathered surfaces, edge-to-edge completion. No characters, monsters, weapons, visible corpses, HUD, lettering, health bars, crosshairs, logos, watermark, frame or white border. This is the opaque BACK plane only; the separate foreground overlays will be minimal edge fragments.",
+      "references": [
+        "hermit_dome_curien.png",
+        "hermit_dome_intro.png"
+      ],
+      "style": "assets/dossier_curien/saga/strength_colosseum_back.png",
+      "generated_file": "exec-612a3570-27dc-439a-b35d-3fd2811011c3.png",
+      "path": "assets/dossier_curien/saga/hermit_dome_back.png",
+      "sha256": "d0c0a66a3de8a87259a5f95f7eed0160f14e072dcaaa6a303d3581820b7b8651",
+      "bytes": 2863113,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "visual_review": "accepted; source motifs compared with inspected arcade captures, no character or HUD, clear flat lateral fighting strip",
+      "pixel_postprocessing": "none"
+    }
+  ]
+}

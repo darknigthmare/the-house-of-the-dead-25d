@@ -1,0 +1,19 @@
+{
+  "recovery_date": "2026-11-19",
+  "original_record_sha256": "a4689864862f4ae01cb370b8af4d6e9b0878d6912d1444e8dc80ac5f1da47fe9",
+  "original_record_basename": "characters_root_prompts.json",
+  "normalization": "Absolute machine-specific image paths replaced by repository paths when recovered, otherwise historical_source/<path>. Original prompt wording and source attributions retained.",
+  "original_record": {
+    "generated_by": "built-in image_gen",
+    "entries": [
+      {
+        "id": "linda_rotta",
+        "name": "Linda Rotta",
+        "source": "https://static.wikia.nocookie.net/houseofthedead/images/3/3f/Linda_Full.jpg/revision/latest?cb=20200217050952",
+        "reference": "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_characters/linda_full.jpg",
+        "image": "docs/dossier_curien/sources_art/recovered-2026-11-19/linda_rotta_wrong_hand_initial.png",
+        "prompt": "Use case: style-transfer. Edit the supplied original SEGA Linda Rotta full-body render from Zombie Revenge (1999) into ONE production-ready 2D fighting-game base sprite of the SAME adult character, with genuine transparent background. Reference image is the authoritative identity and costume source. Preserve her exact golden-blonde asymmetric short bob with side fringe and longer front strand, serious face, yellow cropped sleeveless tank top, two black belt straps and stacked silver buckles, frayed blue denim shorts, white wrap around LEFT upper arm, full-finger purple-blue gloves, brown double-strap holster on RIGHT thigh, bare legs, yellow sneakers with blue-purple side details and white soles, and silver-and-dark pistol. Do not replace shorts with trousers or sneakers with boots. Full body from hair to both soles completely inside frame with 8% safety margin. Adapt only the stance and medium: three-quarter lateral combat view facing RIGHT, feet planted at the same ground line, knees slightly flexed, pistol held low and safely toward screen right, free hand ready near the chest, composed alert neutral stance. Detailed hand-painted arcade fighting sprite, crisp controllable silhouette and restrained fine outlines, readable material shading, realistic original body proportions. No scenery, floor, shadow, text, name label, panel, extra character, duplicated pose, particles or glow. Preserve the original distinctive costume and identity rather than redesigning them. Portrait framing around 1024x1536."
+      }
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+Dossier Curien — http://127.0.0.1:28716/
+Gardez cette fenêtre ouverte pour jouer. Ctrl+C pour fermer.
+127.0.0.1 - - [19/Nov/2026 10:05:58] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2026 10:05:58] "GET /index.png HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2026 10:05:58] "GET /index.js HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2026 10:05:58] "GET /index.icon.png HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2026 10:06:18] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2026 10:06:18] "GET /index.png HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2026 10:06:18] "GET /index.js HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2026 10:06:18] "GET /index.icon.png HTTP/1.1" 200 -
+127.0.0.1 - - [19/Nov/2026 10:07:09] "GET / HTTP/1.1" 304 -

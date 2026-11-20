@@ -1,0 +1,198 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-19",
+  "repository": "darknigthmare/the-house-of-the-dead-25d",
+  "branch": "feat/dossier-curien-combat",
+  "reconciled_parent_commit": "1586e4c9aee3fe4b20214303e1d098cff24cde5d",
+  "godot_version": "4.7.1.stable.official.a13da4feb",
+  "tests": [
+    {
+      "id": "assets",
+      "command": "npm run qa:curien-assets",
+      "exit_code": 0,
+      "result": {
+        "catalogue_pngs": 253,
+        "addition_alpha_receipts": 50,
+        "checks": 1456,
+        "saga_pngs": 223,
+        "calibrated_poses": 8
+      },
+      "log_sha256": "86fbbdc154ddbdb177a75090fb44c3abcbe3881fe06ca0abf23b49d47a1c5922",
+      "result_excerpt": [
+        "DOSSIER CURIEN ART: 253 catalogue PNGs verified; 50 additions, native dimensions, SHA-256 and alpha bounds verified.",
+        "DOSSIER CURIEN ART VERIFIED: 1456 checks, 223 Saga PNGs, 8 calibrated poses."
+      ],
+      "warnings": []
+    },
+    {
+      "id": "npm",
+      "command": "npm test",
+      "exit_code": 0,
+      "result": {},
+      "log_sha256": "e34af4bcdc077320479ee0054fec38b5a0f6c8663f7ba9e8834f533bb7113542",
+      "result_excerpt": [
+        "ENVIRONMENT ASSET VERIFY PASSED: 1977 assertions; 20 materials, 43 nodes, 8 active destructibles, 14 props, 4 animated effects; 81.13 MiB runtime PNG",
+        "DOSSIER CURIEN ART: 253 catalogue PNGs verified; 50 additions, native dimensions, SHA-256 and alpha bounds verified.",
+        "DOSSIER CURIEN ART VERIFIED: 1456 checks, 223 Saga PNGs, 8 calibrated poses."
+      ],
+      "warnings": [
+        "- chapter_01/garden_rescue: sam_a1 placement is not arcade-exact (canonical_chapter_verified_scene_placement_pending)",
+        "- chapter_01/mansion_entrance: kenfis_f1 placement is not arcade-exact (canonical_chapter_verified_scene_placement_pending)",
+        "- chapter_01/mansion_entrance: name_g2 placement is not arcade-exact (canonical_chapter_verified_scene_placement_pending)",
+        "- 37/38 active actor profiles still mirror right from left; 1 complete V3 profile uses authored right views",
+        "- 25/38 active actor profiles still mirror back-right from back-left; 1 complete V3 profile uses authored diagonals",
+        "- 37/38 active actor profiles still expose 8 V2 semantic cells per direction; 1 profile has five multi-frame V3 clips"
+      ]
+    },
+    {
+      "id": "web_structure",
+      "command": "npm run qa:web",
+      "exit_code": 0,
+      "result": {},
+      "log_sha256": "21800a86a08dfc3d9a8ddc294521317691042ab659986f5d0a0b09c5a12560c6",
+      "result_excerpt": [
+        "ENVIRONMENT ASSET VERIFY PASSED: 1977 assertions; 20 materials, 43 nodes, 8 active destructibles, 14 props, 4 animated effects; 81.13 MiB runtime PNG"
+      ],
+      "warnings": [
+        "- chapter_01/garden_rescue: sam_a1 placement is not arcade-exact (canonical_chapter_verified_scene_placement_pending)",
+        "- chapter_01/mansion_entrance: kenfis_f1 placement is not arcade-exact (canonical_chapter_verified_scene_placement_pending)",
+        "- chapter_01/mansion_entrance: name_g2 placement is not arcade-exact (canonical_chapter_verified_scene_placement_pending)",
+        "- 37/38 active actor profiles still mirror right from left; 1 complete V3 profile uses authored right views",
+        "- 25/38 active actor profiles still mirror back-right from back-left; 1 complete V3 profile uses authored diagonals",
+        "- 37/38 active actor profiles still expose 8 V2 semantic cells per direction; 1 profile has five multi-frame V3 clips"
+      ]
+    },
+    {
+      "id": "web_export",
+      "command": "npm run verify:web",
+      "exit_code": 0,
+      "result": {},
+      "log_sha256": "56311e383c01b02848af963899452e9a5b8ea45dfb773c737105d2ad8efe9285",
+      "result_excerpt": [
+        "Web export verified."
+      ],
+      "warnings": []
+    },
+    {
+      "id": "core",
+      "command": "godot --headless --path . --script res://tests/test_runner.gd",
+      "exit_code": 0,
+      "result": {
+        "assertions": 1335
+      },
+      "log_sha256": "86ebcf4725c371ca1e64385e78a88f5d75e17d96d5aa572e86fe2617915302d3",
+      "result_excerpt": [
+        "CORE TESTS PASSED: 1335 assertions"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "saga_source",
+      "command": "godot --headless --path . --script res://scripts/smoke_dossier_saga.gd",
+      "exit_code": 0,
+      "result": {
+        "checks": 772,
+        "failures": 0
+      },
+      "log_sha256": "7e6cc91d6ea115606af782075f3988a48c6956d67cf9e75124c9381b5cd821ab",
+      "result_excerpt": [
+        "DOSSIER SAGA: 772 checks, 0 failures"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "archives",
+      "command": "godot --headless --path . --script res://tests/test_saga_archives.gd",
+      "exit_code": 0,
+      "result": {
+        "archives_exercised": 29,
+        "failures": 0
+      },
+      "log_sha256": "2156bc4786df5ae38fb2cd9e94cd51a4363c398007409a273879ad29000f659f",
+      "result_excerpt": [
+        "29 archives exercised, 0 failures"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "boss_rush",
+      "command": "godot --headless --path . --script res://tests/test_saga_rush.gd",
+      "exit_code": 0,
+      "result": {
+        "checks": 74,
+        "failures": 0
+      },
+      "log_sha256": "b94994d1c0c549e4534b0e1745f95c9afb12628f66372e4e8302cb12d61c6864",
+      "result_excerpt": [
+        "Boss Rush AMS: 74 checks, 0 failures."
+      ],
+      "warnings": [
+        "WARNING: 4 ObjectDB instances were leaked at exit (run with `--verbose` for details)."
+      ]
+    },
+    {
+      "id": "training",
+      "command": "godot --headless --path . --script res://tests/test_saga_lab.gd",
+      "exit_code": 0,
+      "result": {
+        "exercises": 69,
+        "checks": 220,
+        "errors": 0
+      },
+      "log_sha256": "36121da09e818c8536dc9317a1443342cf2ab1cfa1336bb74d9a2deb2c202dc7",
+      "result_excerpt": [
+        "Atelier technique : 69/69 exercices, 220 contrôles, 0 erreurs."
+      ],
+      "warnings": []
+    },
+    {
+      "id": "saga_packed",
+      "command": "godot --headless --main-pack anthology-merged.pck --script /checkout/scripts/smoke_dossier_saga.gd",
+      "exit_code": 0,
+      "result": {
+        "checks": 772,
+        "failures": 0
+      },
+      "log_sha256": "7e6cc91d6ea115606af782075f3988a48c6956d67cf9e75124c9381b5cd821ab",
+      "result_excerpt": [
+        "DOSSIER SAGA: 772 checks, 0 failures"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "assembly_and_browser_preparation",
+      "command": "python3 docs/dossier_curien/saga/jeu/preparer_web.py",
+      "exit_code": 0,
+      "result": {},
+      "log_sha256": "a79dca176b2bfce964a1be33d9ecc7336716fde9127f4b8c6d1dc7e29ab18c02",
+      "result_excerpt": [
+        "Paquet vérifié : /workspace/scratch/687d25786392/hotd/docs/dossier_curien/saga/jeu/HOTD_Anthologie.pck",
+        "La version navigateur est prête. Lancez python3 Jouer.py ou ouvrez Jouer-Windows.cmd."
+      ],
+      "warnings": []
+    }
+  ],
+  "pack": {
+    "bytes": 50384932,
+    "sha256": "94317806dba0c1a39246f275d06a7dd2e99066b4e0941d8a1e89d1a7bea897e0",
+    "fragments": 14,
+    "resources": 549,
+    "preserved_files": 437,
+    "refreshed_source_files": 11,
+    "new_png_imports": 50,
+    "new_ctex_files": 50,
+    "assembly_sha256_matches": true
+  },
+  "visual_review": {
+    "individual_generated_pngs": "Reviewed during production; the 16 new layer combat bands have alpha max <=1/255.",
+    "current_browser_build": "Blocked: local Chromium failed with socket() Operation not permitted; shared desktop MCP was unavailable. No current browser screenshot or visual playthrough is claimed."
+  },
+  "limitations": [
+    "The two Lisa parts are independent assets, not an assembled animated rig.",
+    "Two-contact walks still interpolate through the existing guard and are not complete hand-drawn animation cycles.",
+    "Canonical 1:1 fidelity remains unapproved.",
+    "204 older production masters remain unavailable; the 22 previous gameplay PNGs are recovered from the remote branch.",
+    "Boss Rush exits successfully but reports 4 ObjectDB instances leaked at shutdown.",
+    "The rail-shooter content audit retains 6 known warnings; these are recorded with the npm and web checks."
+  ]
+}

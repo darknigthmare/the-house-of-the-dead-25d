@@ -1,0 +1,660 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "batch": "2026-11-20_lot3",
+  "baseline_commit": "af0e4933c07b9016a6be552ce874b61007dd7836",
+  "scope": "Deux variantes par édition pour le bestiaire",
+  "summary": {
+    "assets": 2,
+    "gallery_entries": 2,
+    "bytes": 3404492,
+    "playable_added": 0,
+    "animation_complete": 0,
+    "new_selectable_costumes": 0,
+    "new_identities": 0,
+    "new_retained_drawings": 2,
+    "imagegen_calls": 3,
+    "rejected_outputs": 1,
+    "by_game": {
+      "hotd4": 1,
+      "hotd4_special": 1
+    },
+    "by_category": {
+      "costume_variant": 2
+    },
+    "by_status": {
+      "static_reference_reviewed": 2
+    }
+  },
+  "sources": [
+    {
+      "id": "hotd4_sega_upper",
+      "title": "James et Kate — page officielle SEGA HOTD4, haut des corps",
+      "url": "https://hod4.sega.jp/howto_character.html",
+      "kind": "primary_official_web_art",
+      "local_paths": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot3/costumes/james_hotd4_official_upper.jpg"
+      ],
+      "note": "James est le personnage de gauche ; Kate ne fait pas partie de cette nouvelle fiche.",
+      "accessed_on": "2026-11-20",
+      "image_url": "https://hod4.sega.jp/img/chara_pic02.jpg"
+    },
+    {
+      "id": "hotd4_sega_legs",
+      "title": "James et Kate — page officielle SEGA HOTD4, jambes et chaussures",
+      "url": "https://hod4.sega.jp/howto_character.html",
+      "kind": "primary_official_web_art",
+      "local_paths": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot3/costumes/james_hotd4_official_legs.jpg"
+      ],
+      "note": "Partie basse de la même illustration officielle ; jambes de James à gauche.",
+      "accessed_on": "2026-11-20",
+      "image_url": "https://hod4.sega.jp/img/chara_pic05.jpg"
+    },
+    {
+      "id": "james_hotd4_render",
+      "title": "James HOTD4 — rendu en pied rehébergé par IMFDB",
+      "url": "https://www.imfdb.org/wiki/The_House_of_the_Dead_4",
+      "kind": "community_rehosted_game_render",
+      "local_paths": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot3/costumes/james_hotd4_render_imfdb.jpg"
+      ],
+      "note": "Le contexte de publication initial du rendu n’est pas documenté ici ; les vêtements concordent avec la page SEGA.",
+      "accessed_on": "2026-11-20",
+      "image_url": "https://www.imfdb.org/images/3/39/Hod4_James.jpg"
+    },
+    {
+      "id": "hotd4_reload",
+      "title": "HOTD4 — vue de l’arme durant un rechargement",
+      "url": "https://www.imfdb.org/wiki/The_House_of_the_Dead_4",
+      "kind": "community_gameplay_capture",
+      "local_paths": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot3/costumes/hotd4_james_reload_imfdb.jpg"
+      ],
+      "note": "Capture complémentaire utilisée uniquement pour la correction ciblée du boîtier de l’arme.",
+      "accessed_on": "2026-11-20",
+      "image_url": "https://www.imfdb.org/images/e/e4/Hod4_reload.jpg"
+    },
+    {
+      "id": "g_hotd4special_render",
+      "title": "G HOTD4 Special — rendu en pied rehébergé par IMFDB",
+      "url": "https://www.imfdb.org/wiki/The_House_of_the_Dead_4",
+      "kind": "community_rehosted_game_render",
+      "local_paths": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot3/costumes/g_hotd4special_render_imfdb.jpg"
+      ],
+      "note": "Source du bas du costume et des chaussures ; visage et haut de tenue recoupés avec le flyer SEGA 2006.",
+      "accessed_on": "2026-11-20",
+      "image_url": "https://www.imfdb.org/images/8/89/Hod4sp_G.jpg"
+    },
+    {
+      "id": "g_hotd4special_flyer",
+      "title": "The House of the Dead 4 Special — flyer japonais SEGA 2006",
+      "url": "https://flyers.arcade-museum.com/videogames/show/5090",
+      "kind": "primary_promotional_flyer_rehosted",
+      "local_paths": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot3/costumes/g_hotd4special_sega_flyer.jpg"
+      ],
+      "note": "Publication SEGA, scan hébergé par Arcade Museum ; G apparaît à côté de Kate, à gauche du flyer.",
+      "accessed_on": "2026-11-20",
+      "image_url": "https://flyers.arcade-museum.com/videogame-flyers/5/house-of-the-dead-4-special-05083-01.jpg"
+    }
+  ],
+  "assets": [
+    {
+      "id": "james_hotd4",
+      "name": "James Taylor — HOTD4",
+      "game": "hotd4",
+      "game_label": "The House of the Dead 4",
+      "category": "costume_variant",
+      "status": "static_reference_reviewed",
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot3/costumes/james_hotd4_base.png",
+      "generated_file": "exec-481c671a-8df2-439e-980b-862a66214478.png",
+      "sha256": "e3a58db288ebfce4a6465af3f2e16fbcd1e37c8a667db64c6f6db54315607631",
+      "bytes": 1766431,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        12,
+        1010,
+        1536
+      ],
+      "visible_bbox": [
+        100,
+        28,
+        923,
+        1511
+      ],
+      "visible_alpha_threshold": 127,
+      "maximum_alpha_on_canvas_edges": 1,
+      "opaque_pixels_at_canvas_edge": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "inventory_task_id": "james_hotd4",
+      "new_identity": false,
+      "sources": [
+        "https://hod4.sega.jp/howto_character.html",
+        "https://www.imfdb.org/wiki/The_House_of_the_Dead_4"
+      ],
+      "source_ids": [
+        "hotd4_sega_upper",
+        "hotd4_sega_legs",
+        "james_hotd4_render",
+        "hotd4_reload",
+        "g_hotd4special_render"
+      ],
+      "source_notes": [
+        "La page officielle SEGA montre le manteau bleu-gris, la chemise noire ouverte, le pantalon à fines rayures et les chaussures sombres de James.",
+        "Le rendu en pied rehébergé par IMFDB complète la pose et les détails de costume ; son hébergement est communautaire, pas une page SEGA.",
+        "La première génération avait un boîtier d’arme trop allongé. Une seconde intervention ImageGen a réduit et simplifié sa silhouette avec le rendu de James, le rendu de G Special et une capture de rechargement.",
+        "Aucun équipement Typing ni costume gris de HOTD2 n’est transféré à cette variante."
+      ],
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot3/costumes/james_hotd4_render_imfdb.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot3/costumes/james_hotd4_official_upper.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot3/costumes/james_hotd4_official_legs.jpg",
+        "assets/dossier_curien/saga/isaac_guard.png",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot3/costumes/james_hotd4_before_weapon_revision.png",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot3/costumes/hotd4_james_reload_imfdb.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot3/costumes/g_hotd4special_render_imfdb.jpg"
+      ],
+      "reference_inputs": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/costumes/james_hotd4_render_imfdb.jpg",
+          "sha256": "85f23d3f160c475e49f759c87dd8990947d3c409b9d8bfc711176242f586e227",
+          "bytes": 28314,
+          "dimensions": [
+            352,
+            704
+          ],
+          "mode": "RGB",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/costumes/james_hotd4_official_upper.jpg",
+          "sha256": "068491e78d4feb0386a9a961e93c73b706c837270f22e745dd7f64fad9507601",
+          "bytes": 23169,
+          "dimensions": [
+            270,
+            305
+          ],
+          "mode": "RGB",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/costumes/james_hotd4_official_legs.jpg",
+          "sha256": "fdc04aada10f4588a55de055ecc7b8aba84c3948d5ac5c7ef480d11a6484f2a4",
+          "bytes": 9607,
+          "dimensions": [
+            270,
+            254
+          ],
+          "mode": "RGB",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        },
+        {
+          "path": "assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "bytes": 595313,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "alpha_bbox": [
+            218,
+            55,
+            814,
+            960
+          ],
+          "visible_bbox": [
+            220,
+            57,
+            812,
+            957
+          ],
+          "visible_alpha_threshold": 127,
+          "maximum_alpha_on_canvas_edges": 0,
+          "opaque_pixels_at_canvas_edge": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "role": "painting_style_only",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/costumes/james_hotd4_before_weapon_revision.png",
+          "sha256": "6e428e8b978a7fd12c3b1cf38bdd174890b30065a02a1b78de98a673312b16c8",
+          "bytes": 1772610,
+          "dimensions": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "alpha_bbox": [
+            0,
+            19,
+            1006,
+            1522
+          ],
+          "visible_bbox": [
+            100,
+            27,
+            922,
+            1511
+          ],
+          "visible_alpha_threshold": 127,
+          "maximum_alpha_on_canvas_edges": 1,
+          "opaque_pixels_at_canvas_edge": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "role": "generated_edit_target",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/costumes/hotd4_james_reload_imfdb.jpg",
+          "sha256": "d2a05cc3ed84108898708007d097dadef43bf679ec7709efbed7acbfba6d7e3c",
+          "bytes": 84908,
+          "dimensions": [
+            960,
+            539
+          ],
+          "mode": "RGB",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/costumes/g_hotd4special_render_imfdb.jpg",
+          "sha256": "306886e463a9d6e8061d62a7a1aca52718115e17deb23659b99da7e59cb19aeb",
+          "bytes": 29567,
+          "dimensions": [
+            340,
+            709
+          ],
+          "mode": "RGB",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        }
+      ],
+      "prompts": [
+        "Use case: stylized-concept. Asset type: ONE complete full-body native RGBA illustration for the Dossier Curien 2D bestiary gallery. Genuine fully transparent background, no scene or floor. Match the LAST image ONLY for its refined hand-painted arcade sprite technique: crisp restrained contours, detailed natural cloth shading, readable silhouette, natural adult human proportions. Do not transfer Isaac's identity, ethnicity, clothing, cap, shotgun or boots. Use the other images as strict subject and costume evidence, retaining the visible garment shapes, colors, hair, facial structure and weapon silhouette of the specified edition. Keep exactly one entire figure, head, both hands, weapon and both shoes fully inside the canvas, with generous transparent margin on ALL sides and beneath soles. Use a clear three-quarter view toward screen-right, with readable garment construction. No dramatic colored environmental light, no background gradient, no ground shadow ellipse, no halo, no letters, caption, logo, watermark, border, duplicate character, collage, sprite sheet, cropped limbs or invented accessories. Preserve the game-specific costume rather than substituting generic tactical clothing. This is a referenced painted 2D adaptation, not a claim to be an original game screenshot. SUBJECT: JAMES TAYLOR specifically from THE HOUSE OF THE DEAD 4. Image 1 is the original promotional/model render rehosted by IMFDB and shows his full body; image 2 is the original SEGA official character webpage upper-body art (James is the man at LEFT; do not include Kate); image 3 is the matching SEGA lower-body art (use only the pinstriped trouser legs and dark shoes at LEFT); image 4 is style only. Reproduce James's mature clean-shaven angular face, pronounced cheekbones, short swept-up/spiky brown hair, and his exact OPEN slate blue-gray leather long jacket with broad lapels, vertical seam lines, hip pockets and thigh-length hem. Under it is a plain BLACK open-collar shirt; NO necktie and NO waistcoat. Trousers are very dark charcoal/black with repeated narrow light vertical PINSTRIPES, straight and slightly broad at the hems; ordinary very dark brown near-black formal shoes. Retain the subtle brown wrist/cuff details and bare fingers as visible in image 1; no added armor, belts or shoulder holsters. Hold the same black compact stockless box-shaped submachine gun shown in the references, with its integrated weapon light, in both hands at chest height, barrel diagonally toward screen-right, without hiding the face or cropping the muzzle. Keep the original proportions and recognizable geometry, not a pistol, shotgun or long rifle. Use a stable alert stance with one foot slightly forward, keeping the coat hem and pinstripes readable. Do not use his gray HOTD2 suit, Typing equipment, beard, sunglasses, hat or a different edition.",
+        "Use case: precise-object-edit. Image 1 is the EDIT TARGET: the finished full-body transparent Dossier Curien James Taylor HOTD4 illustration. Preserve its entire body, face, hair, clothing colors, coat seams, pinstriped trousers, hands, shoes, proportions, pose, framing, canvas shape, painted style and existing transparency. Change ONLY the firearm held in his hands to match the recognizable compact modified stockless gun in the game references. Image 2 is the original full-body James HOTD4 render, identity already matched; inspect only its firearm. Image 3 is a gameplay close-up of the same gun during reload, for the dark rectangular compact receiver and simple large flat side panels. Image 4 is Agent G from HOTD4 Special holding the same weapon, for its flat-sided box-like profile and compact muzzle/light. Keep ONE gun in the same orientation and location, with James's existing two-handed grip, integrating it naturally with his hands. Make its upper receiver SHORTER and plainer, with a thick smooth rectangular body, short muzzle, small cylindrical weapon light just beneath the muzzle, ordinary trigger guard and a straight slim magazine extending below the pistol grip. Remove the overly long slotted rifle-like front housing and the long decorative horizontal grooves of image1. Match the source weapon's proportions and obvious silhouette rather than adding realistic firearm embellishments. No stock, long rifle barrel, scope, rail tower, extra grips, decals or extra weapon. Do not change anything else; keep both feet and head fully visible, same clear margins, native RGBA and genuine transparent background. No opaque backdrop, floor shadow, text or logo."
+      ],
+      "prompt_sha256": [
+        "8039c14e574d5bcebfaf155c09f4011856045b601742b525b74416c7b8e618b7",
+        "56bf43fb1707aa7911986fe041c707a6c3ee400d72167d88f36e181de4a25f88"
+      ],
+      "limitations": [
+        "Base statique destinée au bestiaire : aucun profil jouable, costume sélectionnable ou animation complète ajouté.",
+        "Adaptation peinte 2D contrôlée sur les éléments visibles des références ; aucune certification de fidélité 1:1.",
+        "Pose de garde adaptée pour Dossier Curien ; détails du visage, coutures, reflets et nuance exacte du manteau interprétés depuis les références.",
+        "La silhouette compacte de l’arme a été corrigée ; ses dimensions, pièces mécaniques et petits détails restent une illustration, sans certification de reproduction exacte du modèle du jeu.",
+        "Cette fiche ne remplace pas le profil de combat James existant et ne crée aucun costume sélectionnable."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot3/costumes_generated.json",
+      "generation": {
+        "tool": "image_gen built-in",
+        "date": "2026-11-20",
+        "transparent_background_requested": true,
+        "source_native_output": "/workspace/scratch/da9d6e4777c1/generated_images/exec-481c671a-8df2-439e-980b-862a66214478.png",
+        "native_output_unchanged": true,
+        "pixel_edits_after_generation": false,
+        "attempts": 2,
+        "retained_outputs": 1,
+        "attempt_records": [
+          {
+            "attempt": 1,
+            "generated_file": "exec-4e9104b8-bca1-495b-9605-3f03beb3d26f.png",
+            "operation": "generate",
+            "prompt": "Use case: stylized-concept. Asset type: ONE complete full-body native RGBA illustration for the Dossier Curien 2D bestiary gallery. Genuine fully transparent background, no scene or floor. Match the LAST image ONLY for its refined hand-painted arcade sprite technique: crisp restrained contours, detailed natural cloth shading, readable silhouette, natural adult human proportions. Do not transfer Isaac's identity, ethnicity, clothing, cap, shotgun or boots. Use the other images as strict subject and costume evidence, retaining the visible garment shapes, colors, hair, facial structure and weapon silhouette of the specified edition. Keep exactly one entire figure, head, both hands, weapon and both shoes fully inside the canvas, with generous transparent margin on ALL sides and beneath soles. Use a clear three-quarter view toward screen-right, with readable garment construction. No dramatic colored environmental light, no background gradient, no ground shadow ellipse, no halo, no letters, caption, logo, watermark, border, duplicate character, collage, sprite sheet, cropped limbs or invented accessories. Preserve the game-specific costume rather than substituting generic tactical clothing. This is a referenced painted 2D adaptation, not a claim to be an original game screenshot. SUBJECT: JAMES TAYLOR specifically from THE HOUSE OF THE DEAD 4. Image 1 is the original promotional/model render rehosted by IMFDB and shows his full body; image 2 is the original SEGA official character webpage upper-body art (James is the man at LEFT; do not include Kate); image 3 is the matching SEGA lower-body art (use only the pinstriped trouser legs and dark shoes at LEFT); image 4 is style only. Reproduce James's mature clean-shaven angular face, pronounced cheekbones, short swept-up/spiky brown hair, and his exact OPEN slate blue-gray leather long jacket with broad lapels, vertical seam lines, hip pockets and thigh-length hem. Under it is a plain BLACK open-collar shirt; NO necktie and NO waistcoat. Trousers are very dark charcoal/black with repeated narrow light vertical PINSTRIPES, straight and slightly broad at the hems; ordinary very dark brown near-black formal shoes. Retain the subtle brown wrist/cuff details and bare fingers as visible in image 1; no added armor, belts or shoulder holsters. Hold the same black compact stockless box-shaped submachine gun shown in the references, with its integrated weapon light, in both hands at chest height, barrel diagonally toward screen-right, without hiding the face or cropping the muzzle. Keep the original proportions and recognizable geometry, not a pistol, shotgun or long rifle. Use a stable alert stance with one foot slightly forward, keeping the coat hem and pinstripes readable. Do not use his gray HOTD2 suit, Typing equipment, beard, sunglasses, hat or a different edition.",
+            "prompt_sha256": "8039c14e574d5bcebfaf155c09f4011856045b601742b525b74416c7b8e618b7",
+            "references": [
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot3/costumes/james_hotd4_render_imfdb.jpg",
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot3/costumes/james_hotd4_official_upper.jpg",
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot3/costumes/james_hotd4_official_legs.jpg",
+              "assets/dossier_curien/saga/isaac_guard.png"
+            ],
+            "output_sha256": "6e428e8b978a7fd12c3b1cf38bdd174890b30065a02a1b78de98a673312b16c8",
+            "retained": false
+          },
+          {
+            "attempt": 2,
+            "generated_file": "exec-481c671a-8df2-439e-980b-862a66214478.png",
+            "operation": "precise-object-edit",
+            "prompt": "Use case: precise-object-edit. Image 1 is the EDIT TARGET: the finished full-body transparent Dossier Curien James Taylor HOTD4 illustration. Preserve its entire body, face, hair, clothing colors, coat seams, pinstriped trousers, hands, shoes, proportions, pose, framing, canvas shape, painted style and existing transparency. Change ONLY the firearm held in his hands to match the recognizable compact modified stockless gun in the game references. Image 2 is the original full-body James HOTD4 render, identity already matched; inspect only its firearm. Image 3 is a gameplay close-up of the same gun during reload, for the dark rectangular compact receiver and simple large flat side panels. Image 4 is Agent G from HOTD4 Special holding the same weapon, for its flat-sided box-like profile and compact muzzle/light. Keep ONE gun in the same orientation and location, with James's existing two-handed grip, integrating it naturally with his hands. Make its upper receiver SHORTER and plainer, with a thick smooth rectangular body, short muzzle, small cylindrical weapon light just beneath the muzzle, ordinary trigger guard and a straight slim magazine extending below the pistol grip. Remove the overly long slotted rifle-like front housing and the long decorative horizontal grooves of image1. Match the source weapon's proportions and obvious silhouette rather than adding realistic firearm embellishments. No stock, long rifle barrel, scope, rail tower, extra grips, decals or extra weapon. Do not change anything else; keep both feet and head fully visible, same clear margins, native RGBA and genuine transparent background. No opaque backdrop, floor shadow, text or logo.",
+            "prompt_sha256": "56bf43fb1707aa7911986fe041c707a6c3ee400d72167d88f36e181de4a25f88",
+            "references": [
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot3/costumes/james_hotd4_before_weapon_revision.png",
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot3/costumes/james_hotd4_render_imfdb.jpg",
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot3/costumes/hotd4_james_reload_imfdb.jpg",
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot3/costumes/g_hotd4special_render_imfdb.jpg"
+            ],
+            "output_sha256": "e3a58db288ebfce4a6465af3f2e16fbcd1e37c8a667db64c6f6db54315607631",
+            "retained": true,
+            "edit_target_archived_as": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/costumes/james_hotd4_before_weapon_revision.png",
+            "input_note": "La première image utilisée dans l’appel était alors le fichier james_hotd4_base.png ; ses octets exacts sont archivés dans edit_target_archived_as avant remplacement par la sortie retenue."
+          }
+        ]
+      },
+      "qa": {
+        "output_visually_inspected": true,
+        "subject_and_silhouette_reviewed": true,
+        "whole_head_hands_feet_visible": true,
+        "visible_bounds_clear_of_canvas_edges": true,
+        "opaque_pixels_at_canvas_edge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "maximum_alpha_on_canvas_edges": 1,
+        "alpha_check": "Transparence native conservée ; le RGB des zones transparentes peut contenir un dégradé. Aucun détourage, nettoyage, redimensionnement ou réencodage après ImageGen.",
+        "native_sha256_matches_saved_png": true,
+        "canonical_1_to_1_certified": false,
+        "reference_limitations_open": false,
+        "ui_or_engine_capture_performed": false
+      }
+    },
+    {
+      "id": "g_hotd4special",
+      "name": "Agent G — HOTD4 Special",
+      "game": "hotd4_special",
+      "game_label": "The House of the Dead 4 Special",
+      "category": "costume_variant",
+      "status": "static_reference_reviewed",
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot3/costumes/g_hotd4special_base.png",
+      "generated_file": "exec-66934230-fa1b-48fe-9d30-b49a49dd4b0f.png",
+      "sha256": "8d2c663eff6232cc2f25eb23ae5393aa5a2d40aba24123425bd459a6c3e1fcdb",
+      "bytes": 1638061,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        48,
+        1010,
+        1520
+      ],
+      "visible_bbox": [
+        176,
+        52,
+        812,
+        1498
+      ],
+      "visible_alpha_threshold": 127,
+      "maximum_alpha_on_canvas_edges": 1,
+      "opaque_pixels_at_canvas_edge": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "inventory_task_id": "g_hotd4special",
+      "new_identity": false,
+      "sources": [
+        "https://www.imfdb.org/wiki/The_House_of_the_Dead_4",
+        "https://flyers.arcade-museum.com/videogames/show/5090",
+        "https://flyers.arcade-museum.com/videogame-flyers/5/house-of-the-dead-4-special-05083-01.jpg"
+      ],
+      "source_ids": [
+        "g_hotd4special_render",
+        "g_hotd4special_flyer"
+      ],
+      "source_notes": [
+        "Le rendu en pied rehébergé par IMFDB montre le costume bleu nuit brillant, la chemise bleue, la cravate sombre, les cheveux foncés et les chaussures brunes.",
+        "Le flyer SEGA japonais de 2006, conservé par Arcade Museum, corrobore le même visage, haut de costume et arme ; il ne montre pas tout le bas du corps.",
+        "Le rendu en pied fournit le pantalon et les chaussures. Les descriptions secondaires contradictoires sur la palette n’ont pas remplacé les images inspectées."
+      ],
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot3/costumes/g_hotd4special_render_imfdb.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot3/costumes/g_hotd4special_sega_flyer.jpg",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "reference_inputs": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/costumes/g_hotd4special_render_imfdb.jpg",
+          "sha256": "306886e463a9d6e8061d62a7a1aca52718115e17deb23659b99da7e59cb19aeb",
+          "bytes": 29567,
+          "dimensions": [
+            340,
+            709
+          ],
+          "mode": "RGB",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/costumes/g_hotd4special_sega_flyer.jpg",
+          "sha256": "b8966a3506d89ab73427ec36e0c32fe033c09d8084ab7b019fbcb86cb756a878",
+          "bytes": 357987,
+          "dimensions": [
+            850,
+            1200
+          ],
+          "mode": "RGB",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        },
+        {
+          "path": "assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "bytes": 595313,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "alpha_bbox": [
+            218,
+            55,
+            814,
+            960
+          ],
+          "visible_bbox": [
+            220,
+            57,
+            812,
+            957
+          ],
+          "visible_alpha_threshold": 127,
+          "maximum_alpha_on_canvas_edges": 0,
+          "opaque_pixels_at_canvas_edge": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "role": "painting_style_only",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        }
+      ],
+      "prompts": [
+        "Use case: stylized-concept. Asset type: ONE complete full-body native RGBA illustration for the Dossier Curien 2D bestiary gallery. Genuine fully transparent background, no scene or floor. Match the LAST image ONLY for its refined hand-painted arcade sprite technique: crisp restrained contours, detailed natural cloth shading, readable silhouette, natural adult human proportions. Do not transfer Isaac's identity, ethnicity, clothing, cap, shotgun or boots. Use the other images as strict subject and costume evidence, retaining the visible garment shapes, colors, hair, facial structure and weapon silhouette of the specified edition. Keep exactly one entire figure, head, both hands, weapon and both shoes fully inside the canvas, with generous transparent margin on ALL sides and beneath soles. Use a clear three-quarter view toward screen-right, with readable garment construction. No dramatic colored environmental light, no background gradient, no ground shadow ellipse, no halo, no letters, caption, logo, watermark, border, duplicate character, collage, sprite sheet, cropped limbs or invented accessories. Preserve the game-specific costume rather than substituting generic tactical clothing. This is a referenced painted 2D adaptation, not a claim to be an original game screenshot. SUBJECT: AGENT G specifically from THE HOUSE OF THE DEAD 4 SPECIAL. Image 1 is the full-body original promotional/model render rehosted by IMFDB; image 2 is the 2006 SEGA Japanese promotional flyer which corroborates this exact G design (G is the suited man at lower-left beside Kate; no other flyer elements should appear); image 3 is style only. Reproduce his lean mature clean-shaven face, short dark brown-to-black hair neatly slicked back with a visible part, and the fitted glossy textured DEEP NAVY two-piece suit. Single-breasted jacket with narrow notched lapels and restrained seams, matching full-length navy trousers. Shirt is saturated dark BLUE with a slight violet cast, its collar and cuffs visible; narrow near-black necktie, never a yellow tie. Plain dark BROWN formal slip-on shoes as shown. No sunglasses, grey hair, waistcoat, white shirt, tactical gear, gloves, hat, badge or added jewelry. Preserve this Special appearance, not the aged vest costume from HOTD III or the Overkill design. Pose close to image 1: upright alert three-quarter stance, full torso and both shoes visible, his right hand holding the same black compact stockless submachine gun with a small weapon light LOW beside his right thigh, barrel pointed diagonally downward, and his left hand naturally open at his side. The weapon is the recognizable rectangular compact firearm seen in the render, not a handgun or shotgun. Let the body angle slightly toward screen-right without reversing the garment details or adding a second weapon."
+      ],
+      "prompt_sha256": [
+        "e35405a90aa8daf2407edbfe879bdfa152c79aeb27e56deac19f5b4da9e2b500"
+      ],
+      "limitations": [
+        "Base statique destinée au bestiaire : aucun profil jouable, costume sélectionnable ou animation complète ajouté.",
+        "Adaptation peinte 2D contrôlée sur les éléments visibles des références ; aucune certification de fidélité 1:1.",
+        "Les chaussures sont visibles sur le rendu communautaire en pied, mais pas dans le petit personnage du flyer SEGA ; leur nuance précise et les détails de semelle ne sont pas certifiés.",
+        "Visage, texture du costume, coutures et petits détails de l’arme restent une adaptation peinte des références.",
+        "Cette version conserve l’identité G ; elle ne ferme ni les autres tenues de G ni une série d’animations."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot3/costumes_generated.json",
+      "generation": {
+        "tool": "image_gen built-in",
+        "date": "2026-11-20",
+        "transparent_background_requested": true,
+        "source_native_output": "/workspace/scratch/da9d6e4777c1/generated_images/exec-66934230-fa1b-48fe-9d30-b49a49dd4b0f.png",
+        "native_output_unchanged": true,
+        "pixel_edits_after_generation": false,
+        "attempts": 1,
+        "retained_outputs": 1,
+        "attempt_records": [
+          {
+            "attempt": 1,
+            "generated_file": "exec-66934230-fa1b-48fe-9d30-b49a49dd4b0f.png",
+            "operation": "generate",
+            "prompt": "Use case: stylized-concept. Asset type: ONE complete full-body native RGBA illustration for the Dossier Curien 2D bestiary gallery. Genuine fully transparent background, no scene or floor. Match the LAST image ONLY for its refined hand-painted arcade sprite technique: crisp restrained contours, detailed natural cloth shading, readable silhouette, natural adult human proportions. Do not transfer Isaac's identity, ethnicity, clothing, cap, shotgun or boots. Use the other images as strict subject and costume evidence, retaining the visible garment shapes, colors, hair, facial structure and weapon silhouette of the specified edition. Keep exactly one entire figure, head, both hands, weapon and both shoes fully inside the canvas, with generous transparent margin on ALL sides and beneath soles. Use a clear three-quarter view toward screen-right, with readable garment construction. No dramatic colored environmental light, no background gradient, no ground shadow ellipse, no halo, no letters, caption, logo, watermark, border, duplicate character, collage, sprite sheet, cropped limbs or invented accessories. Preserve the game-specific costume rather than substituting generic tactical clothing. This is a referenced painted 2D adaptation, not a claim to be an original game screenshot. SUBJECT: AGENT G specifically from THE HOUSE OF THE DEAD 4 SPECIAL. Image 1 is the full-body original promotional/model render rehosted by IMFDB; image 2 is the 2006 SEGA Japanese promotional flyer which corroborates this exact G design (G is the suited man at lower-left beside Kate; no other flyer elements should appear); image 3 is style only. Reproduce his lean mature clean-shaven face, short dark brown-to-black hair neatly slicked back with a visible part, and the fitted glossy textured DEEP NAVY two-piece suit. Single-breasted jacket with narrow notched lapels and restrained seams, matching full-length navy trousers. Shirt is saturated dark BLUE with a slight violet cast, its collar and cuffs visible; narrow near-black necktie, never a yellow tie. Plain dark BROWN formal slip-on shoes as shown. No sunglasses, grey hair, waistcoat, white shirt, tactical gear, gloves, hat, badge or added jewelry. Preserve this Special appearance, not the aged vest costume from HOTD III or the Overkill design. Pose close to image 1: upright alert three-quarter stance, full torso and both shoes visible, his right hand holding the same black compact stockless submachine gun with a small weapon light LOW beside his right thigh, barrel pointed diagonally downward, and his left hand naturally open at his side. The weapon is the recognizable rectangular compact firearm seen in the render, not a handgun or shotgun. Let the body angle slightly toward screen-right without reversing the garment details or adding a second weapon.",
+            "prompt_sha256": "e35405a90aa8daf2407edbfe879bdfa152c79aeb27e56deac19f5b4da9e2b500",
+            "references": [
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot3/costumes/g_hotd4special_render_imfdb.jpg",
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot3/costumes/g_hotd4special_sega_flyer.jpg",
+              "assets/dossier_curien/saga/isaac_guard.png"
+            ],
+            "output_sha256": "8d2c663eff6232cc2f25eb23ae5393aa5a2d40aba24123425bd459a6c3e1fcdb",
+            "retained": true
+          }
+        ]
+      },
+      "qa": {
+        "output_visually_inspected": true,
+        "subject_and_silhouette_reviewed": true,
+        "whole_head_hands_feet_visible": true,
+        "visible_bounds_clear_of_canvas_edges": true,
+        "opaque_pixels_at_canvas_edge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "maximum_alpha_on_canvas_edges": 1,
+        "alpha_check": "Transparence native conservée ; le RGB des zones transparentes peut contenir un dégradé. Aucun détourage, nettoyage, redimensionnement ou réencodage après ImageGen.",
+        "native_sha256_matches_saved_png": true,
+        "canonical_1_to_1_certified": false,
+        "reference_limitations_open": false,
+        "ui_or_engine_capture_performed": false
+      }
+    }
+  ],
+  "rejected_outputs": [
+    {
+      "id": "james_hotd4_attempt_1",
+      "generated_file": "exec-4e9104b8-bca1-495b-9605-3f03beb3d26f.png",
+      "archived_path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/costumes/james_hotd4_before_weapon_revision.png",
+      "sha256": "6e428e8b978a7fd12c3b1cf38bdd174890b30065a02a1b78de98a673312b16c8",
+      "bytes": 1772610,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        19,
+        1006,
+        1522
+      ],
+      "visible_bbox": [
+        100,
+        27,
+        922,
+        1511
+      ],
+      "visible_alpha_threshold": 127,
+      "maximum_alpha_on_canvas_edges": 1,
+      "opaque_pixels_at_canvas_edge": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "reason": "Boîtier et avant de l’arme trop allongés ; remplacés par la correction ciblée ImageGen."
+    }
+  ],
+  "verification": {
+    "native_output_hashes_match": true,
+    "all_reference_files_present": true,
+    "visible_bounds_have_margin": true,
+    "opaque_edge_pixels": 0,
+    "all_assets_gallery_only": true,
+    "in_engine_render_observed": false,
+    "publication_state": "local_receipt_ready_for_merge",
+    "asset_validator": {
+      "script": "scripts/verify_dossier_curien_expansion.mjs",
+      "entry_point": "validate",
+      "art_root": "assets/dossier_curien/gallery_2026-11-20_lot3/costumes",
+      "result": {
+        "assets": 2,
+        "gallery": 2,
+        "bytes": 3404492
+      },
+      "passed": true
+    },
+    "combined_receipt_review": {
+      "scope": "humans_generated.json + costumes_generated.json + HUMANS.md + COSTUMES.md",
+      "targeted_assertions": 47,
+      "local_markdown_links": 20,
+      "passed": true
+    },
+    "independent_visual_review": {
+      "reviewer": "root",
+      "date": "2026-11-20",
+      "whole_figures_and_identity_details_reviewed": true,
+      "reference_comparison_performed": true,
+      "native_transparency_checked": true,
+      "canonical_1_to_1_certified": false,
+      "open_points": []
+    }
+  }
+}

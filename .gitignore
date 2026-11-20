@@ -15,6 +15,9 @@ reference_build/
 *.tmp
 .tmp-*
 *.log
+docs/dossier_curien/saga/jeu/HOTD_Anthologie.pck
+docs/dossier_curien/saga/jeu/site/
+docs/dossier_curien/saga/jeu_motion_compat46/HOTD_Motion_Compat46.pck
 __pycache__/
 *.py[cod]
 .env*

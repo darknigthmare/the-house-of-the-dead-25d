@@ -1,0 +1,847 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "timezone": "Etc/UTC",
+  "repository": "darknigthmare/the-house-of-the-dead-25d",
+  "base_commit": "af0e4933c07b9016a6be552ce874b61007dd7836",
+  "scope": "Four static Dossier Curien boss gallery illustrations: High Priestess, Screamer, Crawler, Brutus. Inspected references; no gameplay or canonical 1:1 certification.",
+  "summary": {
+    "accepted_images": 4,
+    "new_gallery_entries": 4,
+    "represented_encounters": 4,
+    "new_playable_fighters": 0,
+    "imagegen_calls": 5,
+    "rejected_generation_count": 1,
+    "accepted_native_png_bytes": 4800390,
+    "unique_accepted_sha256": 4,
+    "native_dimensions": [
+      1254,
+      1254
+    ],
+    "native_mode": "RGBA",
+    "primary_reference_images_retained": 3,
+    "secondary_reference_images_retained": 12,
+    "identity_images_used_for_generation": 11
+  },
+  "assets": [
+    {
+      "id": "high_priestess",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot3/bosses/high_priestess_base.png",
+      "selected_generation_basename": "exec-8b8f7e3e-ae2c-4bcf-9c52-e9860dc937e9.png",
+      "sha256": "4d7cddf4ba5d354bdd29093d3e700bf5c2946329822731b1f9382beeb7775caa",
+      "bytes": 1548040,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        19,
+        1240,
+        1254
+      ],
+      "visible_bbox": [
+        38,
+        76,
+        1204,
+        1198
+      ],
+      "visible_alpha_threshold": 127,
+      "alpha_pixel_counts": {
+        "255": 1158,
+        "zero": 971465,
+        "one_to_127": 78448,
+        "128_to_254": 521445
+      },
+      "fully_transparent_fraction": 0.617777,
+      "name": "High Priestess",
+      "game": "scarlet_dawn",
+      "game_label": "House of the Dead: Scarlet Dawn",
+      "category": "boss_base",
+      "status": "static_reference_reviewed",
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "sources": [
+        "https://hod.sega.jp/",
+        "https://cgworld.jp/feature/201810-cgw243-hod.html"
+      ],
+      "source_notes": [
+        "Silhouette entière et détail du visage publiés directement par SEGA ; fichiers inspectés avant génération.",
+        "Huit extrémités dentées distinctes, même disposition générale et même anatomie que le rendu officiel.",
+        "Le concept de développement présenté par CGWORLD est un contexte de provenance ; les variantes de peau retirée ou de dégâts ne servent pas au dessin livré.",
+        "Aucun numéro de type ajouté : le modèle de Scarlet Dawn ne doit pas être confondu avec les anciennes interprétations de comics."
+      ],
+      "edition_reference": "Scarlet Dawn arcade, official SEGA release-site render and detail",
+      "evidence_level": "strong_primary_full_body",
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/high_priestess_sega_render.png",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/high_priestess_sega_detail.png",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "reference_inputs": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/high_priestess_sega_render.png",
+          "source_page": "https://hod.sega.jp/",
+          "media_url": "https://hod.sega.jp/images/top/chara_creature_img_uncompress//highpriestess.png",
+          "source_kind": "primary_official_sega_render",
+          "edition": "Scarlet Dawn arcade",
+          "download_date": "2026-11-20",
+          "sha256": "521d4dc1c9e803e6aa1d9215c4daf0641fd24eed0484b7d3d8f40c0cf02b8742",
+          "bytes": 286345,
+          "dimensions": [
+            1069,
+            1080
+          ],
+          "mode": "P",
+          "inspected_before_acceptance": true,
+          "used_as_imagegen_input": true,
+          "role": "Primary official whole-creature anatomy, proportions, eight club-tipped tentacles and layout."
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/high_priestess_sega_detail.png",
+          "source_page": "https://hod.sega.jp/",
+          "media_url": "https://hod.sega.jp/images/top/chara_creature_bg/highpriestess_b.png",
+          "source_kind": "primary_official_sega_render",
+          "edition": "Scarlet Dawn arcade",
+          "download_date": "2026-11-20",
+          "sha256": "ed75c10a5c6e603f3de4a68a9e0aea9659edb95bd06a454b44b92f4c0d8749c3",
+          "bytes": 470211,
+          "dimensions": [
+            1600,
+            1000
+          ],
+          "mode": "P",
+          "inspected_before_acceptance": true,
+          "used_as_imagegen_input": true,
+          "role": "Primary official face close-up: orange eyes, folded mantle and vertical toothed maw."
+        },
+        {
+          "path": "assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "bytes": 595313,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "source_kind": "existing_project_style",
+          "role": "Existing Dossier Curien painted shading and contour clarity only; not a boss identity reference."
+        }
+      ],
+      "prompts": [
+        "Use case: stylized-concept. Asset type: ONE static bestiary/gallery sprite master for the existing Dossier Curien 2D game. Native square 1024x1024 transparent RGBA image, entire creature visible and centered with at least 7 percent transparent margins around every extremity. Fine hand-painted arcade sprite shading, crisp readable contours, restrained texture, dimensional anatomy like the final style reference. No background, scene, floor, cast shadow blob, border, white outline, words, HUD, labels, title, watermark, duplicate view, separate characters, victims, attack effects or particles. The final image of Isaac defines ONLY brushwork, contour clarity and painted material shading; do NOT borrow his anatomy, clothes or weapon. Preserve the creature depicted by the preceding game references instead of inventing a redesign. This is a referenced 2D adaptation, not an exact official asset.\nINPUTS: Image 1 is the full official SEGA Scarlet Dawn High Priestess render and controls the complete anatomy, count, layout, proportions and coloration. Image 2 is the official face close-up and controls the orange eyes, folded pale gray skin and vertical beak-toothed mouth. Image 3 is STYLE ONLY.\nSUBJECT: High Priestess from House of the Dead Scarlet Dawn, the huge octopus-like creature. Copy the structural silhouette of image 1 closely: one central upright pointed mantle/head, heavy folded blue-gray to pale slate flesh, two small vivid amber-orange eyes with black vertical pupils, and ONE long VERTICAL maw framed by crowded inward-curving ivory beaklike teeth. Dark muted red fleshy inner areas; no added gore or fluids. EXACTLY EIGHT long sinuous tentacles rooted in the body, EACH ending in one broad flattened paddle/club with a pale speckled outer shell and dark reddish toothed underside. Count eight clubs: four raised around the upper/side silhouette and four curved around the lower silhouette, following image 1. Keep every club connected continuously to its own tentacle; eight tips total, no ninth limb, no generic tiny suction-cup rows replacing the clubs. Use essentially the same frontal presentation and tentacle layout as image 1 to preserve visibility and reference fidelity. Retain the fleshy webbing and long lower curves. Remove the white sticker border of the official PNG completely. True transparent empty space between the tentacles. No human legs, no humanoid arms, no wings, no crown, no clothing, no water. All tentacles, clubs and mantle tip wholly in frame."
+      ],
+      "prompt_sha256_utf8": [
+        "98bb65451fe7e82fbe16ffbe9151a126e58135c344869410957fb820c9e44e93"
+      ],
+      "generation_method": "built-in image_gen.imagegen; native transparent PNG; exact byte preservation via filesystem hard link",
+      "limitations": [
+        "Une illustration statique de bestiaire ; aucun nouveau combattant jouable, cycle d’animation ou comportement de combat fourni.",
+        "Rendu peint, détails de texture et courbures adaptés à la galerie ; aucune équivalence pixel à pixel ou certification canonique 1:1.",
+        "La disposition suit la vue officielle de face ; aucune vue arrière ni échelle relative native en combat n’est fournie."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot3/bosses_generated.json",
+      "recovery_qa": {
+        "bytes_preserved": true,
+        "dimensions_and_alpha_measured": true,
+        "opaque_pixels_at_canvas_edge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "edge_pixel_alpha_threshold": 127,
+        "canonical_1_to_1_certified": false,
+        "native_game_capture_performed_for_this_receipt": false
+      },
+      "visual_review": {
+        "single_figure": true,
+        "head_count": 1,
+        "tentacle_count": 8,
+        "club_tip_count": 8,
+        "whole_silhouette_visible": true,
+        "facing": "frontal_as_official_reference",
+        "identity_details": "Mantle bleu-gris plissé, deux yeux orange, gueule verticale à becs, huit tentacules et huit palettes dentées."
+      },
+      "generation_steps": [
+        {
+          "kind": "generate",
+          "prompt_index": 0,
+          "reference_paths": [
+            "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/high_priestess_sega_render.png",
+            "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/high_priestess_sega_detail.png",
+            "assets/dossier_curien/saga/isaac_guard.png"
+          ],
+          "selected": true,
+          "native_basename": "exec-8b8f7e3e-ae2c-4bcf-9c52-e9860dc937e9.png"
+        }
+      ],
+      "independent_review": {
+        "reviewer": "root",
+        "date": "2026-11-20",
+        "result": "accepted_as_referenced_2d_base",
+        "checks": [
+          "Compared to official full SEGA render",
+          "Eight distinct tips and connected tentacles",
+          "Whole silhouette",
+          "Eyes and mouth coherent"
+        ],
+        "note": "Small colored preview edge pixels were measured by root at alpha 1–4; none of the sampled colored fringe pixels exceed alpha127. Native alpha retained."
+      }
+    },
+    {
+      "id": "crawler",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot3/bosses/crawler_base.png",
+      "selected_generation_basename": "exec-702b662e-6f92-4307-98cc-950ddf51ea1f.png",
+      "sha256": "ea197204f588b5cad38992fd4ba8c281964a0d72af3262198f413c6fbc3c5d38",
+      "bytes": 902072,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        18,
+        1240,
+        1230
+      ],
+      "visible_bbox": [
+        159,
+        42,
+        1086,
+        1207
+      ],
+      "visible_alpha_threshold": 127,
+      "alpha_pixel_counts": {
+        "255": 834,
+        "zero": 1219147,
+        "one_to_127": 48992,
+        "128_to_254": 303543
+      },
+      "fully_transparent_fraction": 0.775284,
+      "name": "Crawler",
+      "game": "overkill",
+      "game_label": "The House of the Dead: Overkill",
+      "category": "boss_base",
+      "status": "static_reference_reviewed",
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "sources": [
+        "https://www.k-triggerhappy.com/hodoverkill_ps3/stage6.html",
+        "https://thehouseofthedead.fandom.com/wiki/Crawler"
+      ],
+      "source_notes": [
+        "Trois captures PS3 inspectées et fournies à ImageGen : torse/bras, tête/yeux et pose entière.",
+        "Le rapprochement retient le torse humanoïde, les deux bras terminés en faux, les deux longues jambes et les yeux saillants ; pas de créature générique à six pattes.",
+        "Une quatrième capture distante a servi au contrôle de silhouette, sans devenir une entrée ImageGen.",
+        "Les images sont assombries par la scène et non orthographiques ; les documents conceptuels annoncés par Neoseeker n’étaient pas visuellement accessibles et ne sont pas comptés comme examinés."
+      ],
+      "edition_reference": "PS3 Extended Cut / Director’s Cut walkthrough screenshots",
+      "evidence_level": "moderate_secondary_hosted_gameplay",
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/crawler_boss6-1.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/crawler_boss6-2.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/crawler_boss6-4.jpg",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "reference_inputs": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/crawler_boss6-1.jpg",
+          "source_page": "https://www.k-triggerhappy.com/hodoverkill_ps3/stage6.html",
+          "media_url": "https://www.k-triggerhappy.com/hodoverkill_ps3/boss6-1.jpg",
+          "source_kind": "secondary_hosted_ps3_gameplay_capture",
+          "edition": "Overkill PS3 Extended Cut / Director's Cut walkthrough",
+          "download_date": "2026-11-20",
+          "sha256": "c45a711e74a8b3deea55d81dfaa5600da4d03ab93493c63c740a1a6ab91893fe",
+          "bytes": 30459,
+          "dimensions": [
+            750,
+            421
+          ],
+          "mode": "RGB",
+          "inspected_before_acceptance": true,
+          "used_as_imagegen_input": true,
+          "role": "PS3 game close-up: humanlike chest/abdomen and scythe arms."
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/crawler_boss6-2.jpg",
+          "source_page": "https://www.k-triggerhappy.com/hodoverkill_ps3/stage6.html",
+          "media_url": "https://www.k-triggerhappy.com/hodoverkill_ps3/boss6-2.jpg",
+          "source_kind": "secondary_hosted_ps3_gameplay_capture",
+          "edition": "Overkill PS3 Extended Cut / Director's Cut walkthrough",
+          "download_date": "2026-11-20",
+          "sha256": "65b99b12789e84659d66c571db1018bae458e2d767cbe33e7bb5aacdaa34aaf8",
+          "bytes": 21911,
+          "dimensions": [
+            750,
+            422
+          ],
+          "mode": "RGB",
+          "inspected_before_acceptance": true,
+          "used_as_imagegen_input": true,
+          "role": "PS3 game close-up: narrow mantis-like head and large pale eyes."
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/crawler_boss6-4.jpg",
+          "source_page": "https://www.k-triggerhappy.com/hodoverkill_ps3/stage6.html",
+          "media_url": "https://www.k-triggerhappy.com/hodoverkill_ps3/boss6-4.jpg",
+          "source_kind": "secondary_hosted_ps3_gameplay_capture",
+          "edition": "Overkill PS3 Extended Cut / Director's Cut walkthrough",
+          "download_date": "2026-11-20",
+          "sha256": "2f2a1336b5160f644fdf7f40edd19d110e537d4c77e12f3d545836c13cd8e00b",
+          "bytes": 26685,
+          "dimensions": [
+            750,
+            421
+          ],
+          "mode": "RGB",
+          "inspected_before_acceptance": true,
+          "used_as_imagegen_input": true,
+          "role": "PS3 game full stance: long articulated legs and two long organic arm blades."
+        },
+        {
+          "path": "assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "bytes": 595313,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "source_kind": "existing_project_style",
+          "role": "Existing Dossier Curien painted shading and contour clarity only; not a boss identity reference."
+        }
+      ],
+      "prompts": [
+        "Use case: stylized-concept. Asset type: ONE static bestiary/gallery sprite master for the existing Dossier Curien 2D game. Native square 1024x1024 transparent RGBA image, entire creature visible and centered with at least 7 percent transparent margins around every extremity. Fine hand-painted arcade sprite shading, crisp readable contours, restrained texture, dimensional anatomy like the final style reference. No background, scene, floor, cast shadow blob, border, white outline, words, HUD, labels, title, watermark, duplicate view, separate characters, victims, attack effects or particles. The final image of Isaac defines ONLY brushwork, contour clarity and painted material shading; do NOT borrow his anatomy, clothes or weapon. Preserve the creature depicted by the preceding game references instead of inventing a redesign. This is a referenced 2D adaptation, not an exact official asset.\nINPUTS: Images 1-3 are actual PS3 Extended Cut Crawler gameplay captures. They control creature anatomy and head identity. Only extract the one large mantis-like boss; ignore the train, foliage, sky, HUD, crosshairs and lighting effects. Image 4 is STYLE ONLY.\nSUBJECT: Crawler from The House of the Dead Overkill / Extended Cut. Preserve the reference's bizarre mutated HUMAN torso combined with a mantis-like head and limbs: tall gaunt muscular chest with clearly visible humanlike ribs/abdominals, small thin pelvis, dark gray-brown/olive mottled leathery flesh. Exactly TWO long articulated ARMS, each ending in ONE very long tapered sickle blade instead of a hand, and exactly TWO very long angular digitigrade LEGS, no extra insect legs or extra blades. Upper arms retain humanoid muscle anatomy, forearms curve into organic talons with muted red-brown inner cutting edges. Head narrow and insectlike, two conspicuous pale green-gray round bulging eyes at the sides, elongated jaw/mandible region, small pointed crown ridges matching the images. No antennae, no wings, no tail, no armor and no clothing. Do not turn him into a generic six-legged green praying mantis or a beetle.\nPOSE: entire upright creature in a compact poised stance, torso nearly frontal angled slightly RIGHT as in the close-up, with TWO bent long legs apart supporting the body, both foot tips visible. Two bent scythe-arms held separated in front/at sides, one raised modestly and the other lowered, tips fully inside the canvas and not crossing the face. Keep the whole silhouette readable and unoccluded by other limbs. Long blade proportions and thin waist consistent with the gameplay images. No lunge effects, no train."
+      ],
+      "prompt_sha256_utf8": [
+        "f2fd8bd58d265dab08ea36f69e496531624a4aa2ea33d26498d3d943c2218b7e"
+      ],
+      "generation_method": "built-in image_gen.imagegen; native transparent PNG; exact byte preservation via filesystem hard link",
+      "limitations": [
+        "Une illustration statique de bestiaire ; aucun nouveau combattant jouable, cycle d’animation ou comportement de combat fourni.",
+        "La pose statique est reconstruite à partir de captures en mouvement ; longueur exacte des segments, doigts/orteils et face arrière ne sont pas certifiés.",
+        "Le volume des pieds, la microtexture et la disposition précise des reliefs de la tête restent des interprétations peintes ; la référence ne permet pas de mesurer une correspondance 1:1.",
+        "Aucune attaque, phase de saut ou variante de faiblesse Wii/Extended Cut n’est implémentée."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot3/bosses_generated.json",
+      "recovery_qa": {
+        "bytes_preserved": true,
+        "dimensions_and_alpha_measured": true,
+        "opaque_pixels_at_canvas_edge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "edge_pixel_alpha_threshold": 127,
+        "canonical_1_to_1_certified": false,
+        "native_game_capture_performed_for_this_receipt": false
+      },
+      "visual_review": {
+        "single_figure": true,
+        "head_count": 1,
+        "arm_count": 2,
+        "leg_count": 2,
+        "organic_scythe_count": 2,
+        "whole_silhouette_visible": true,
+        "facing": "near_frontal_head_turned_left",
+        "identity_details": "Torse humain aminci, tête de mante à gros yeux pâles, deux bras-faux organiques et deux jambes longues articulées."
+      },
+      "generation_steps": [
+        {
+          "kind": "generate",
+          "prompt_index": 0,
+          "reference_paths": [
+            "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/crawler_boss6-1.jpg",
+            "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/crawler_boss6-2.jpg",
+            "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/crawler_boss6-4.jpg",
+            "assets/dossier_curien/saga/isaac_guard.png"
+          ],
+          "selected": true,
+          "native_basename": "exec-702b662e-6f92-4307-98cc-950ddf51ea1f.png"
+        }
+      ],
+      "independent_review": {
+        "reviewer": "root",
+        "date": "2026-11-20",
+        "result": "accepted_as_referenced_2d_base",
+        "checks": [
+          "Two scythe arms and two legs compared to boss6-1",
+          "Prominent eyes",
+          "Whole readable silhouette"
+        ],
+        "note": "No additional blocking defect found; adaptation limits and no 1:1 certification remain."
+      }
+    },
+    {
+      "id": "screamer",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot3/bosses/screamer_base.png",
+      "selected_generation_basename": "exec-2d6f0719-83af-48ae-aa30-fc52f3c7cd9b.png",
+      "sha256": "0068cb065b171e5ecd83db2f64115b77730f18be4b26ebb5cc5c69a6f170e033",
+      "bytes": 1076211,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        14,
+        1236,
+        1254
+      ],
+      "visible_bbox": [
+        128,
+        61,
+        1121,
+        1194
+      ],
+      "visible_alpha_threshold": 127,
+      "alpha_pixel_counts": {
+        "255": 809,
+        "zero": 1122496,
+        "one_to_127": 33597,
+        "128_to_254": 415614
+      },
+      "fully_transparent_fraction": 0.713822,
+      "name": "Screamer",
+      "game": "overkill",
+      "game_label": "The House of the Dead: Overkill",
+      "category": "boss_base",
+      "status": "static_reference_reviewed",
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "sources": [
+        "https://www.k-triggerhappy.com/hodoverkill_ps3/stage3.html",
+        "https://www.mobygames.com/game/40939/the-house-of-the-dead-overkill/screenshots/wii/496620/",
+        "https://thehouseofthedead.fandom.com/wiki/Screamer"
+      ],
+      "source_notes": [
+        "Deux captures PS3 définissent le visage, les cheveux sombres, la blouse et la silhouette voûtée ; leurs doubles et figurants sont exclus.",
+        "Le menu d’art Wii montre une silhouette complète avec pieds nus ; son rôle est limité à la posture et à la continuité du vêtement.",
+        "La première capture PS3, très surexposée par un effet, a été inspectée puis exclue des entrées de génération.",
+        "La sélection conserve une seule créature adulte ; aucune apparition supplémentaire, aucun effet de cri et aucune eau masquant les pieds."
+      ],
+      "edition_reference": "PS3 Extended Cut gameplay; supplementary full-body Wii in-game artwork",
+      "evidence_level": "moderate_mixed_editions_gameplay_and_ingame_art",
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/screamer_wii_art_menu.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/screamer_boss3-3.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/screamer_boss3-2.jpg",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "reference_inputs": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/screamer_wii_art_menu.jpg",
+          "sha256": "98e98851d301cf86d5c866e5d39c312d91b5b01cb4966033aa004e9725aa69ec",
+          "bytes": 17208,
+          "dimensions": [
+            853,
+            480
+          ],
+          "mode": "RGB",
+          "source_page": "https://www.mobygames.com/game/40939/the-house-of-the-dead-overkill/screenshots/wii/496620/",
+          "media_url": "https://cdn.mobygames.com/screenshots/11626844-the-house-of-the-dead-overkill-wii-unlock-art-and-music-as-you-p.jpg",
+          "source_kind": "secondary_hosted_wii_ingame_art_menu",
+          "edition": "The House of the Dead: Overkill, Wii; in-game Bosses art menu",
+          "download_date": "2026-11-20",
+          "inspected_before_acceptance": true,
+          "used_as_imagegen_input": true,
+          "role": "Supplementary whole-body reference from the Wii in-game art menu; stoop, gown and bare feet. Small artwork inside a menu; not a PS3 orthographic model."
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/screamer_boss3-3.jpg",
+          "source_page": "https://www.k-triggerhappy.com/hodoverkill_ps3/stage3.html",
+          "media_url": "https://www.k-triggerhappy.com/hodoverkill_ps3/boss3-3.jpg",
+          "source_kind": "secondary_hosted_ps3_gameplay_capture",
+          "edition": "Overkill PS3 Extended Cut / Director's Cut walkthrough",
+          "download_date": "2026-11-20",
+          "sha256": "ccaf7a327376e970921c1e7cf472c5d71b6bb09bd15cc14f5246a6b70733f0bf",
+          "bytes": 26954,
+          "dimensions": [
+            750,
+            422
+          ],
+          "mode": "RGB",
+          "inspected_before_acceptance": true,
+          "used_as_imagegen_input": true,
+          "role": "PS3 game frame corroborating adult female silhouette, face, arms and gown; duplicate apparitions excluded from final sprite."
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/screamer_boss3-2.jpg",
+          "source_page": "https://www.k-triggerhappy.com/hodoverkill_ps3/stage3.html",
+          "media_url": "https://www.k-triggerhappy.com/hodoverkill_ps3/boss3-2.jpg",
+          "source_kind": "secondary_hosted_ps3_gameplay_capture",
+          "edition": "Overkill PS3 Extended Cut / Director's Cut walkthrough",
+          "download_date": "2026-11-20",
+          "sha256": "203eaa79d0142543ed366ba302bedbb9f6a1a83a454e9d869f78c6a575de4831",
+          "bytes": 28825,
+          "dimensions": [
+            750,
+            419
+          ],
+          "mode": "RGB",
+          "inspected_before_acceptance": true,
+          "used_as_imagegen_input": true,
+          "role": "PS3 game frame corroborating gown, heavy stoop and dark hair; nearby generic mutants are not identity references."
+        },
+        {
+          "path": "assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "bytes": 595313,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "source_kind": "existing_project_style",
+          "role": "Existing Dossier Curien painted shading and contour clarity only; not a boss identity reference."
+        }
+      ],
+      "prompts": [
+        "Use case: stylized-concept. Asset type: ONE static bestiary/gallery sprite master for the existing Dossier Curien 2D game. Native square 1024x1024 transparent RGBA image, entire creature visible and centered with at least 7 percent transparent margins around every extremity. Fine hand-painted arcade sprite shading, crisp readable contours, restrained texture, dimensional anatomy like the final style reference. No background, scene, floor, cast shadow blob, border, white outline, words, HUD, labels, title, watermark, duplicate view, separate characters, victims, attack effects or particles. The final image of Isaac defines ONLY brushwork, contour clarity and painted material shading; do NOT borrow his anatomy, clothes or weapon. Preserve the creature depicted by the preceding game references instead of inventing a redesign. This is a referenced 2D adaptation, not an exact official asset.\nINPUTS: Image 1 is the in-game Wii art menu showing the WHOLE Screamer figure in its central small framed artwork; it controls full-body posture, gown length and bare feet. Images 2-3 are PS3 Extended Cut gameplay captures: extract ONLY the adult female Screamer in the near foreground (image 2) / near right (image 3); ignore her duplicate apparitions, other hospital mutants, water and all interface graphics. These establish the final gray skin, dark hair, pale worn hospital gown and hunched form. Image 4 is STYLE ONLY.\nSUBJECT: Screamer from The House of the Dead Overkill, an ADULT mutated woman. Preserve the visible character identity: long dark tangled hair hanging around the face and shoulders, pale gray sickly skin, enlarged hunched upper back and prominent bowed spine pushing the head low forward between raised shoulders, disproportionately long strong arms held out with clawed HUMAN hands. One head, two arms, two legs, no extra limbs. Open unnaturally stretched screaming mouth with small worn teeth, gaunt distressed facial features. Her plain worn pale gray-blue/dirty gray hospital patient gown has short sleeves, a broad neckline and an uneven lower hem around the knees; opaque cloth fully covers torso/pelvis. Do not change her into a nurse, schoolgirl, witch, glamorous woman or generic naked ghoul. No cap, no shoes, no weapon, no jewelry and no added costume accessories.\nPOSE: whole figure in a low hunched almost frontal stance, head leaning forward in a silent scream, long arms reaching partly outward with two separate splayed hands clearly visible, two bent legs apart and BOTH BARE HUMAN FEET fully visible. Keep the heavy stoop and gown/body proportions of the central concept artwork, checked against the game images. Do not make a normal upright torso. Hair may partly veil the face but mouth and stoop remain readable. Subtle worn/stained fabric and distressed skin, no open viscera, no blood splashes, no supernatural glow or apparitions."
+      ],
+      "prompt_sha256_utf8": [
+        "1be117607c6cb659bd00127447a3f5e3750388718a82835e9f601f8aa7697f03"
+      ],
+      "generation_method": "built-in image_gen.imagegen; native transparent PNG; exact byte preservation via filesystem hard link",
+      "limitations": [
+        "Une illustration statique de bestiaire ; aucun nouveau combattant jouable, cycle d’animation ou comportement de combat fourni.",
+        "La vue entière est un petit artwork Wii au sein d’un menu ; la concordance exacte de chaque détail avec le modèle PS3 ne peut pas être établie.",
+        "La forme du visage, les plis de blouse, la colonne dorsale cachée et les pieds sont adaptés pour une illustration lisible ; aucune certification 1:1.",
+        "Les apparitions, téléportations et animations de cri ne sont pas livrées."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot3/bosses_generated.json",
+      "recovery_qa": {
+        "bytes_preserved": true,
+        "dimensions_and_alpha_measured": true,
+        "opaque_pixels_at_canvas_edge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "edge_pixel_alpha_threshold": 127,
+        "canonical_1_to_1_certified": false,
+        "native_game_capture_performed_for_this_receipt": false
+      },
+      "visual_review": {
+        "single_figure": true,
+        "head_count": 1,
+        "arm_count": 2,
+        "leg_count": 2,
+        "bare_foot_count": 2,
+        "whole_silhouette_visible": true,
+        "facing": "near_frontal",
+        "identity_details": "Femme adulte mutée, bouche ouverte, cheveux noirs emmêlés, forte voûte dorsale, blouse grise à manches courtes, deux mains et deux pieds nus."
+      },
+      "generation_steps": [
+        {
+          "kind": "generate",
+          "prompt_index": 0,
+          "reference_paths": [
+            "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/screamer_wii_art_menu.jpg",
+            "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/screamer_boss3-3.jpg",
+            "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/screamer_boss3-2.jpg",
+            "assets/dossier_curien/saga/isaac_guard.png"
+          ],
+          "selected": true,
+          "native_basename": "exec-2d6f0719-83af-48ae-aa30-fc52f3c7cd9b.png"
+        }
+      ],
+      "independent_review": {
+        "reviewer": "root",
+        "date": "2026-11-20",
+        "result": "accepted_as_referenced_2d_base",
+        "checks": [
+          "Compared with PS3 gameplay and Wii in-game artwork",
+          "Stoop, gown and bare feet readable"
+        ],
+        "note": "No additional blocking defect found; adaptation limits and no 1:1 certification remain."
+      }
+    },
+    {
+      "id": "brutus",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot3/bosses/brutus_base.png",
+      "selected_generation_basename": "exec-6b15f1a5-6604-4759-9075-db1f6a08e560.png",
+      "sha256": "be58dc0fe9847b94ad6d3de7bd5c9764ba7950fb7f48404c432d3a347b1fd967",
+      "bytes": 1274067,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        33,
+        47,
+        1236,
+        1230
+      ],
+      "visible_bbox": [
+        213,
+        56,
+        1084,
+        1209
+      ],
+      "visible_alpha_threshold": 127,
+      "alpha_pixel_counts": {
+        "255": 1088,
+        "zero": 1052066,
+        "one_to_127": 24172,
+        "128_to_254": 495190
+      },
+      "fully_transparent_fraction": 0.669034,
+      "name": "Brutus",
+      "game": "overkill",
+      "game_label": "The House of the Dead: Overkill",
+      "category": "boss_base",
+      "status": "static_reference_reviewed",
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "sources": [
+        "https://www.k-triggerhappy.com/hodoverkill_ps3/stage8.html",
+        "https://thehouseofthedead.fandom.com/wiki/Brutus",
+        "https://thehouseofthedead.fandom.com/wiki/Weak_points"
+      ],
+      "source_notes": [
+        "Captures PS3 de face et de dos inspectées : silhouette massive, cagoule, bras électrique droit, pantalon de prison et matériel dorsal.",
+        "Latéralité préservée : le lanceur remplace l’avant-bras anatomique droit (gauche de l’image) ; la main anatomique gauche reste humaine.",
+        "Les petits détails mécaniques et motifs de tatouage sont imparfaitement lisibles dans les captures ; leur géométrie peinte n’est pas donnée comme officielle exacte.",
+        "Premier résultat rejeté : un réticule d’interface avait contaminé le tatouage du ventre. Correction ciblée ImageGen, puis inspection du PNG final sans cible concentrique."
+      ],
+      "edition_reference": "PS3 Extended Cut / Director’s Cut walkthrough screenshots",
+      "evidence_level": "moderate_secondary_hosted_gameplay",
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/brutus_boss8-1.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/brutus_boss8-3.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/brutus_boss8-4.jpg",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "reference_inputs": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/brutus_boss8-1.jpg",
+          "source_page": "https://www.k-triggerhappy.com/hodoverkill_ps3/stage8.html",
+          "media_url": "https://www.k-triggerhappy.com/hodoverkill_ps3/boss8-1.jpg",
+          "source_kind": "secondary_hosted_ps3_gameplay_capture",
+          "edition": "Overkill PS3 Extended Cut / Director's Cut walkthrough",
+          "download_date": "2026-11-20",
+          "sha256": "c6ba360b577e29f21ce850bc9a4c8adbb94ca9d3b38580935a30dae2015e4c7d",
+          "bytes": 44362,
+          "dimensions": [
+            750,
+            421
+          ],
+          "mode": "RGB",
+          "inspected_before_acceptance": true,
+          "used_as_imagegen_input": true,
+          "role": "PS3 whole-body game frame: hood, stance, trousers, boots and anatomical right electrical weapon."
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/brutus_boss8-3.jpg",
+          "source_page": "https://www.k-triggerhappy.com/hodoverkill_ps3/stage8.html",
+          "media_url": "https://www.k-triggerhappy.com/hodoverkill_ps3/boss8-3.jpg",
+          "source_kind": "secondary_hosted_ps3_gameplay_capture",
+          "edition": "Overkill PS3 Extended Cut / Director's Cut walkthrough",
+          "download_date": "2026-11-20",
+          "sha256": "db708d7e87225a3ee7c8915676e1c646bb18a3da1ea3987c9e44d3042a3fff50",
+          "bytes": 39888,
+          "dimensions": [
+            750,
+            420
+          ],
+          "mode": "RGB",
+          "inspected_before_acceptance": true,
+          "used_as_imagegen_input": true,
+          "role": "PS3 rear/side frame: back equipment and tattoo coverage; the red/white targeting marker is interface, not a tattoo."
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/brutus_boss8-4.jpg",
+          "source_page": "https://www.k-triggerhappy.com/hodoverkill_ps3/stage8.html",
+          "media_url": "https://www.k-triggerhappy.com/hodoverkill_ps3/boss8-4.jpg",
+          "source_kind": "secondary_hosted_ps3_gameplay_capture",
+          "edition": "Overkill PS3 Extended Cut / Director's Cut walkthrough",
+          "download_date": "2026-11-20",
+          "sha256": "6bf34f969164e7030ea0156b7c4a99a311d46d21158fd55e69d82f63b6d812cb",
+          "bytes": 40657,
+          "dimensions": [
+            750,
+            421
+          ],
+          "mode": "RGB",
+          "inspected_before_acceptance": true,
+          "used_as_imagegen_input": true,
+          "role": "PS3 game frame corroborating broad stance and electrical equipment; effects excluded from the final sprite."
+        },
+        {
+          "path": "assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "bytes": 595313,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "source_kind": "existing_project_style",
+          "role": "Existing Dossier Curien painted shading and contour clarity only; not a boss identity reference."
+        }
+      ],
+      "prompts": [
+        "Use case: stylized-concept. Asset type: ONE static bestiary/gallery sprite master for the existing Dossier Curien 2D game. Native square 1024x1024 transparent RGBA image, entire creature visible and centered with at least 7 percent transparent margins around every extremity. Fine hand-painted arcade sprite shading, crisp readable contours, restrained texture, dimensional anatomy like the final style reference. No background, scene, floor, cast shadow blob, border, white outline, words, HUD, labels, title, watermark, duplicate view, separate characters, victims, attack effects or particles. The final image of Isaac defines ONLY brushwork, contour clarity and painted material shading; do NOT borrow his anatomy, clothes or weapon. Preserve the creature depicted by the preceding game references instead of inventing a redesign. This is a referenced 2D adaptation, not an exact official asset.\nINPUTS: Images 1-3 are actual PS3 Extended Cut Brutus gameplay captures: image 1 shows his whole body and weapon silhouette, image 2 shows his back tattoo pattern and equipment, image 3 reinforces the broad stance and back electrical hardware. Extract ONLY the large masked prisoner boss. Ignore surrounding prisoners, tanks, level machinery, interface markers and electric effects. Image 4 is STYLE ONLY.\nSUBJECT: Brutus from The House of the Dead Overkill. One very large, thick muscular adult male mutant prisoner, bare tattooed upper torso, scarred pale grayish flesh, dense faded dark prison/tribal tattoos over chest, shoulders, upper arms and back. Head completely covered by the dark black-brown bag-like executioner hood visible in the game; keep its simple coarse cloth shape, do not add horns, ornate mask, helmet or glowing eyes. Muted dirty orange prison trousers, broad worn brown belt, heavy dark leather lower-leg cuffs and black work boots. Preserve stocky proportions, heavy chest, rounded thick shoulders, thick arms and legs rather than a slim armored soldier.\nCRITICAL LATERALITY: his ANATOMICAL RIGHT FOREARM is replaced by the mechanical electrical bolt launcher seen in image 1, with heavy dark steel cylindrical barrel/coils and bulky mount attached at the right elbow. In a nearly frontal stance his RIGHT WEAPON ARM is on the VIEWER'S LEFT. No human right hand. His ANATOMICAL LEFT arm ends in a normal open human LEFT HAND on VIEWER'S RIGHT, with a thick brown leather wrist cuff. One weaponized arm and one hand only; do not mirror these. A compact industrial battery pack on the back and smaller belt-mounted hardware/cables follow the visible game equipment; only the portions naturally visible in a slight three-quarter view should show. No giant invented shoulder armor, no handheld rifle, no chainsaw, no shield.\nPOSE: broad planted frontal guard with torso turned very slightly to his left so the weaponized right arm remains readable on viewer left. Right cannon bent forward/down a little, left hand raised halfway with clawlike fingers. Both whole legs and boots visible, feet apart at a common floor height. Keep hood, body and equipment fully inside the frame. Show the equipment powered down: no lightning arcs, muzzle flash, blue aura or projectile. No extra prisoner, partner or corpse. Do not invent legible tattoo words where the source is too small.",
+        "Use case: precise-object-edit. Image 1 is the EDIT TARGET, the full transparent Dossier Curien Brutus sprite. Image 2 is supporting gameplay identity reference only. Correct ONLY the false concentric bullseye / target tattoo on the middle of Brutus's belly. That circular target is a mistaken copy of a game HUD marker and IS NOT part of the character. Remove every concentric ring and central target dot from the belly, replacing that small area with ordinary mottled pale scarred skin matching the surrounding abdomen. Retain a natural navel if visible, but absolutely no circle, roundel, crosshair or target tattoo. Do not add any replacement tattoo or lettering in this area. Preserve everything else as closely as possible: full-body composition and pose, hood, face covering, all other faded tribal tattoos, chest, shoulders, dark electrical launcher replacing ANATOMICAL RIGHT forearm on viewer LEFT, normal left hand on viewer RIGHT, back battery, belt hardware, muted orange prison trousers, cuffs, boots, crisp painted rendering and native transparent background. No extra characters, effects, scenery, shadow or text. Whole silhouette must remain entirely visible with transparent margins."
+      ],
+      "prompt_sha256_utf8": [
+        "140a70b3e5894b80e26403121712341540a8210aff4f190a0f64e79b9b7c35ba",
+        "2b3be25870bdd9cef0f0427ec9f20a4930bbd7a055bbc76c107e85e224dddd89"
+      ],
+      "generation_method": "built-in image_gen.imagegen; native transparent PNG; exact byte preservation via filesystem hard link",
+      "limitations": [
+        "Une illustration statique de bestiaire ; aucun nouveau combattant jouable, cycle d’animation ou comportement de combat fourni.",
+        "Les captures ne permettent pas de reproduire exactement les tatouages, les lettres de poitrine ni toute la topologie du lanceur et de la batterie.",
+        "Ces petits détails sont une adaptation graphique ; la silhouette et la latéralité sont contrôlées, la fidélité canonique 1:1 ne l’est pas.",
+        "Aucun projectile, arc électrique, partenaire de rencontre, cadavre ou comportement de combat ajouté."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot3/bosses_generated.json",
+      "recovery_qa": {
+        "bytes_preserved": true,
+        "dimensions_and_alpha_measured": true,
+        "opaque_pixels_at_canvas_edge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "edge_pixel_alpha_threshold": 127,
+        "canonical_1_to_1_certified": false,
+        "native_game_capture_performed_for_this_receipt": false
+      },
+      "visual_review": {
+        "single_figure": true,
+        "head_count": 1,
+        "arm_count": 2,
+        "leg_count": 2,
+        "human_hand_count": 1,
+        "weaponized_arm": "anatomical_right",
+        "normal_hand": "anatomical_left",
+        "whole_silhouette_visible": true,
+        "false_hud_target_removed": true,
+        "facing": "near_frontal",
+        "identity_details": "Prisonnier massif cagoulé, torse tatoué, lanceur électrique à droite, batterie dorsale et de ceinture, pantalon orange, poignets/chevilles de cuir, bottes."
+      },
+      "generation_steps": [
+        {
+          "kind": "generate",
+          "prompt_index": 0,
+          "reference_paths": [
+            "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/brutus_boss8-1.jpg",
+            "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/brutus_boss8-3.jpg",
+            "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/brutus_boss8-4.jpg",
+            "assets/dossier_curien/saga/isaac_guard.png"
+          ],
+          "selected": false,
+          "native_basename": "exec-bf9795a3-e919-416a-bac4-04598ad77fae.png"
+        },
+        {
+          "kind": "precise-object-edit",
+          "prompt_index": 1,
+          "reference_paths": [
+            "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/brutus_boss8-1.jpg"
+          ],
+          "edit_target_native_basename": "exec-bf9795a3-e919-416a-bac4-04598ad77fae.png",
+          "edit_target_sha256": "9f635354f2d64feadbb64f223cf7d57caefa25fa19d4fced2fd75f71bd2ad7b8",
+          "selected": true,
+          "native_basename": "exec-6b15f1a5-6604-4759-9075-db1f6a08e560.png"
+        }
+      ],
+      "independent_review": {
+        "reviewer": "root",
+        "date": "2026-11-20",
+        "result": "accepted_as_referenced_2d_base",
+        "checks": [
+          "Corrected belly has no target motif",
+          "Weapon remains on viewer left / anatomical right"
+        ],
+        "note": "No additional blocking defect found; adaptation limits and no 1:1 certification remain."
+      }
+    }
+  ],
+  "reference_inventory_path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/source_index.json",
+  "rejected_generations": [
+    {
+      "id": "brutus_false_hud_tattoo",
+      "asset_id": "brutus",
+      "native_basename": "exec-bf9795a3-e919-416a-bac4-04598ad77fae.png",
+      "sha256": "9f635354f2d64feadbb64f223cf7d57caefa25fa19d4fced2fd75f71bd2ad7b8",
+      "bytes": 1211707,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "status": "rejected",
+      "reason": "Un cercle concentrique de ciblage de la capture avait été recopié comme tatouage du ventre ; ce motif d’interface n’est pas un détail canonique.",
+      "prompt": "Use case: stylized-concept. Asset type: ONE static bestiary/gallery sprite master for the existing Dossier Curien 2D game. Native square 1024x1024 transparent RGBA image, entire creature visible and centered with at least 7 percent transparent margins around every extremity. Fine hand-painted arcade sprite shading, crisp readable contours, restrained texture, dimensional anatomy like the final style reference. No background, scene, floor, cast shadow blob, border, white outline, words, HUD, labels, title, watermark, duplicate view, separate characters, victims, attack effects or particles. The final image of Isaac defines ONLY brushwork, contour clarity and painted material shading; do NOT borrow his anatomy, clothes or weapon. Preserve the creature depicted by the preceding game references instead of inventing a redesign. This is a referenced 2D adaptation, not an exact official asset.\nINPUTS: Images 1-3 are actual PS3 Extended Cut Brutus gameplay captures: image 1 shows his whole body and weapon silhouette, image 2 shows his back tattoo pattern and equipment, image 3 reinforces the broad stance and back electrical hardware. Extract ONLY the large masked prisoner boss. Ignore surrounding prisoners, tanks, level machinery, interface markers and electric effects. Image 4 is STYLE ONLY.\nSUBJECT: Brutus from The House of the Dead Overkill. One very large, thick muscular adult male mutant prisoner, bare tattooed upper torso, scarred pale grayish flesh, dense faded dark prison/tribal tattoos over chest, shoulders, upper arms and back. Head completely covered by the dark black-brown bag-like executioner hood visible in the game; keep its simple coarse cloth shape, do not add horns, ornate mask, helmet or glowing eyes. Muted dirty orange prison trousers, broad worn brown belt, heavy dark leather lower-leg cuffs and black work boots. Preserve stocky proportions, heavy chest, rounded thick shoulders, thick arms and legs rather than a slim armored soldier.\nCRITICAL LATERALITY: his ANATOMICAL RIGHT FOREARM is replaced by the mechanical electrical bolt launcher seen in image 1, with heavy dark steel cylindrical barrel/coils and bulky mount attached at the right elbow. In a nearly frontal stance his RIGHT WEAPON ARM is on the VIEWER'S LEFT. No human right hand. His ANATOMICAL LEFT arm ends in a normal open human LEFT HAND on VIEWER'S RIGHT, with a thick brown leather wrist cuff. One weaponized arm and one hand only; do not mirror these. A compact industrial battery pack on the back and smaller belt-mounted hardware/cables follow the visible game equipment; only the portions naturally visible in a slight three-quarter view should show. No giant invented shoulder armor, no handheld rifle, no chainsaw, no shield.\nPOSE: broad planted frontal guard with torso turned very slightly to his left so the weaponized right arm remains readable on viewer left. Right cannon bent forward/down a little, left hand raised halfway with clawlike fingers. Both whole legs and boots visible, feet apart at a common floor height. Keep hood, body and equipment fully inside the frame. Show the equipment powered down: no lightning arcs, muzzle flash, blue aura or projectile. No extra prisoner, partner or corpse. Do not invent legible tattoo words where the source is too small.",
+      "prompt_sha256_utf8": "140a70b3e5894b80e26403121712341540a8210aff4f190a0f64e79b9b7c35ba",
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/brutus_boss8-1.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/brutus_boss8-3.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/brutus_boss8-4.jpg",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "binary_in_repository": false,
+      "local_retention": "Original native rejected PNG retained only in generated_images outside the repository.",
+      "replacement_path": "assets/dossier_curien/gallery_2026-11-20_lot3/bosses/brutus_base.png"
+    }
+  ],
+  "postprocessing": {
+    "generated_pixels_edited_after_imagegen": false,
+    "resized": false,
+    "cropped": false,
+    "alpha_recomputed": false,
+    "source_image_pixels_modified": false,
+    "brutus_correction_method": "Built-in ImageGen targeted edit removed the mistaken belly target; the corrected native output is the accepted file."
+  },
+  "review_scope": {
+    "visual_comparison_to_listed_inputs": true,
+    "sha256_and_prompt_hashes_recomputed": true,
+    "all_repo_reference_paths_verified": true,
+    "one_image_per_gallery_entry": true,
+    "source_editions_explicit": true,
+    "runtime_integration_owned_by_publication_agent": true
+  },
+  "limitations": [
+    "Static gallery art only; no gameplay or animation completeness claimed.",
+    "User requested reference fidelity; inspected evidence supports these adaptations but does not establish canonical 1:1 reproduction.",
+    "High Priestess has stronger direct official full-body evidence than the three Overkill bosses.",
+    "Screamer uses a supplementary Wii menu artwork with PS3 gameplay; edition parity is not assumed.",
+    "Low-alpha edge pixels remain native. Visible bounds use alpha >127; no visible subject pixels touch the canvas edge.",
+    "No native game capture or engine rendering validation was performed by this art receipt; integration validation is separate."
+  ]
+}

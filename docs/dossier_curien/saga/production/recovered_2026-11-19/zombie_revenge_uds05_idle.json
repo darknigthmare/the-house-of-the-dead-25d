@@ -1,0 +1,32 @@
+{
+  "recovery_date": "2026-11-19",
+  "original_record_sha256": "93bb104ea5d17f00a98a31c6dcd8871d0b8f5131395a41ea4b8676dcf2730d31",
+  "original_record_basename": "uds05_idle.json",
+  "normalization": "Absolute machine-specific image paths replaced by repository paths when recovered, otherwise historical_source/<path>. Original prompt wording and source attributions retained.",
+  "original_record": {
+    "id": "uds05",
+    "name": "UDS-05",
+    "file": "assets/dossier_curien/expansion/zombie_revenge_bosses/uds05_idle.png",
+    "source_image": "assets/dossier_curien/expansion/zombie_revenge_bosses/uds05_idle.png",
+    "prompt": "Use case: stylized-concept. Asset type: one individual 2D high-detail hand-painted fighting-game sprite, transparent PNG. References show the canonical character at different views; use them for accurate shape and colors, not framing, UI or scenery. Subject: UDS-05 from Sega Zombie Revenge. The target is the cable-haired humanoid in FIRST reference, the very tall slender figure on FAR RIGHT of SECOND reference, and the same creature in THIRD reference gameplay frames. Preserve ochre gray-tan leathery body, tall long-legged silhouette, very long thin lower arms ending in massive long hands, bare feet, ribbed almost skeletal abdomen with black vertical grooves, oval skull with small dark eyes and a row of vertical grill-like mouth teeth, ribbed black electrical cables emerging from back of head and hanging to shoulders, pale lavender high fleshy collar around neck. Lower torso and long legs continuous organic ribbed body, not human clothes or metal robot boots. Full body of only the central boss, three-quarter side idle facing right. No smaller minions, no effects, no electricity arcs, no invented weapons, no Predator mask. Composition: ONE character, all its body and extremities fully inside image, 12% transparent margins on ALL sides, orthographic eye-level camera, native 2D illustration with crisp restrained ink contours and detailed game shading. Anatomical and costume fidelity is more important than embellishment. Background actual alpha transparency. No scenery, no ground plane, no cast shadow, no haze, glow or opaque halo, no labels, text, watermark, HUD, bars, border, no multiple poses or panels. Do not add any body features absent from references.",
+    "references": [
+      "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_bosses/uds05.png",
+      "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_bosses/manual_uds-26.png",
+      "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_bosses/storyboard_01.jpg"
+    ],
+    "sources": [
+      "https://sesesega.hatenablog.jp/entry/zombierevenge",
+      "https://www.digitpress.com/library/manuals/dreamcast/zombie_revenge.pdf"
+    ],
+    "limitations": "2D adaptation based on original game screenshots and manual; exact 1:1 fidelity not certified.",
+    "size": [
+      1024,
+      1536
+    ],
+    "mode": "RGBA",
+    "alpha_extrema": [
+      0,
+      254
+    ]
+  }
+}

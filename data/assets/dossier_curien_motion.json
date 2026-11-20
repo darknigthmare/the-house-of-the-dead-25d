@@ -1,0 +1,2327 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-19",
+  "repository": "darknigthmare/the-house-of-the-dead-25d",
+  "scope": "Individual combat poses. Intermediate animation frames remain; no canonical 1:1 certification.",
+  "provisional": false,
+  "summary": {
+    "assets": 30,
+    "bytes": 35895640,
+    "by_origin": {
+      "recovered_local": 4,
+      "generated_this_wave": 24,
+      "existing_corrected_guard": 2
+    },
+    "unique_sha256": 30
+  },
+  "assets": [
+    {
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-19/calibration.json",
+      "references": [
+        "assets/dossier_curien/expansion/zombie_revenge_characters/linda_rotta_base.png"
+      ],
+      "source_file": "exec-f37984fd-b01f-4ed1-a30c-6abdb668b3ce.png",
+      "prompt_recovered": false,
+      "limitations": [
+        "Original prompt unavailable. Native PNG recovered byte-for-byte and visually reviewed; not a new generation."
+      ],
+      "id": "linda_block",
+      "fighter_id": "linda",
+      "art_id": "linda",
+      "pose": "block",
+      "path": "assets/dossier_curien/motion_2026-11-19/linda_block.png",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "bytes": 1743939,
+      "sha256": "405869cb8761fba7e90b0fb2d3747b3f08e80977fb4fbbc63b3bfe9ca5327269",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        23,
+        1004,
+        1536
+      ],
+      "visible_bbox": [
+        127,
+        72,
+        893,
+        1455
+      ],
+      "visible_alpha_threshold": 127,
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "origin": "recovered_local",
+      "animation_complete": false,
+      "canonical_1_to_1_certified": false,
+      "status": "visual_reviewed_runtime_calibration",
+      "pivot_px": [
+        510,
+        1455
+      ],
+      "standing_height_px": 1387,
+      "calibration_notes": "Muzzle measured on the native PNG after the off-engine projection review; no pixel modification.",
+      "emitter_px": [
+        679,
+        444
+      ]
+    },
+    {
+      "fighter_id": "linda",
+      "art_id": "linda",
+      "pose": "finish",
+      "path": "assets/dossier_curien/motion_2026-11-19/linda_finish.png",
+      "sha256": "7e87969565daefc2ee3a01269639223839b2ba06b9257d86bbfcb5fe5da23ee2",
+      "bytes": 1532990,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        996,
+        1512
+      ],
+      "visible_bbox": [
+        91,
+        526,
+        885,
+        1434
+      ],
+      "visible_alpha_threshold": 127,
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pivot_px": [
+        475,
+        1434
+      ],
+      "emitter_px": [
+        881,
+        684
+      ],
+      "anchors_px": {
+        "left_palm": [
+          680,
+          790
+        ]
+      },
+      "standing_height_px": 1387,
+      "calibration_notes": "Pivot et émetteur repérés visuellement en pixels natifs. Échelle anatomique proposée commune au maître debout (1387 px), y compris les poses fléchies ; réglage final à vérifier dans le moteur.",
+      "prompt": "Use case: identity-preserve. Asset: ONE individual full-body 2D fighting-game sprite of the adult Linda Rotta from Zombie Revenge, a sibling pose for image 1. Image 1 is the approved painted sprite STYLE, face, anatomical scale and character reference. Image 2 is the original character COSTUME reference. Keep the same golden-blonde short asymmetric bob and long forward strand, serious face, yellow cropped tank top, double black belts with stacked silver buckles, frayed blue denim shorts, white bandage around anatomical LEFT upper arm, purple full-finger gloves, brown double-strap holster on anatomical RIGHT thigh, bare legs, yellow sneakers with blue-purple marks and white soles. Keep the pistol in anatomical RIGHT hand, never swap hands or costume sides. Same detailed hand-painted crisp 2D arcade shading and body proportions. Right-facing lateral three-quarter view. Portrait 1024x1536 composition, full hair, arms, hands, pistol and both soles entirely inside image with at least 60px empty margins on ALL sides. Genuine transparent RGBA background, no floor, glow, shadow outside body, scenery, text, graphic UI, labels, sheets, other character, duplicated limb, projectile or muzzle flash. Change ONLY the pose to the final aiming key pose of her finishing technique 'Dernière issue': a LOW, strongly braced kneeling marksman stance facing screen right. Rear RIGHT knee near the invisible ground behind her, front LEFT foot planted flat forward and left knee bent at a right angle. Torso upright above the lowered hips. RIGHT gloved hand holds the pistol and extends it straight screen right at eye height, LEFT gloved hand supports the underside of the right wrist in a two-hand shooting grip. Determined narrowed eyes look along the sights. Arms and muzzle fully inside frame. One pistol only, no target, victim, violence, blood, flashes or effects. Keep head size, torso length and limb thickness the same pixel scale as image 1; the lowered pose must occupy a shorter vertical silhouette with extra empty space overhead, never enlarge her to fill the portrait canvas. Both complete yellow shoes visible.",
+      "references": [
+        "assets/dossier_curien/expansion/zombie_revenge_characters/linda_rotta_base.png",
+        "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_characters/linda_full.jpg"
+      ],
+      "sources": [
+        "https://static.wikia.nocookie.net/houseofthedead/images/3/3f/Linda_Full.jpg/revision/latest?cb=20200217050952",
+        "https://www.digitpress.com/library/manuals/dreamcast/zombie_revenge.pdf"
+      ],
+      "tool": "image_gen__imagegen",
+      "transparency_requested": true,
+      "bytes_preserved": true,
+      "status": "visual_reviewed_runtime_calibration",
+      "canonical_1_to_1_certified": false,
+      "animation_complete": false,
+      "visual_review": {
+        "single_full_body_subject": true,
+        "faces_right": true,
+        "right_hand_pistol": true,
+        "left_upper_arm_bandage": true,
+        "right_thigh_holster": true,
+        "costume_consistent": true,
+        "no_opaque_edge_clipping": true
+      },
+      "limitations": [
+        "Pose individuelle adaptée au mode de combat. Les transitions et images intermédiaires restent à produire et à contrôler.",
+        "Référence d'identité et de costume inspectée ; fidélité 1:1 non certifiée."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-19/linda_production.json",
+      "reference_roles": [
+        {
+          "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_rotta_base.png",
+          "role": "style_identity_scale_reference"
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_characters/linda_full.jpg",
+          "role": "original_costume_reference"
+        }
+      ],
+      "id": "linda_finish",
+      "origin": "generated_this_wave"
+    },
+    {
+      "fighter_id": "linda",
+      "art_id": "linda",
+      "pose": "jump_fall",
+      "path": "assets/dossier_curien/motion_2026-11-19/linda_jump_fall.png",
+      "sha256": "88b65896a9a6379b743836855b8027cf33fe44145ceecbc27bf28753e06d1633",
+      "bytes": 1673285,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        39,
+        1018,
+        1536
+      ],
+      "visible_bbox": [
+        191,
+        130,
+        866,
+        1394
+      ],
+      "visible_alpha_threshold": 127,
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pivot_px": [
+        500,
+        1394
+      ],
+      "emitter_px": [
+        598,
+        541
+      ],
+      "anchors_px": {
+        "left_palm": [
+          813,
+          434
+        ]
+      },
+      "standing_height_px": 1387,
+      "calibration_notes": "Pivot et émetteur repérés visuellement en pixels natifs. Échelle anatomique proposée commune au maître debout (1387 px), y compris les poses fléchies ; réglage final à vérifier dans le moteur.",
+      "prompt": "Use case: identity-preserve. Asset: ONE individual full-body 2D fighting-game sprite of the adult Linda Rotta from Zombie Revenge, a sibling pose for image 1. Image 1 is the approved painted sprite STYLE, face, anatomical scale and character reference. Image 2 is the original character COSTUME reference. Keep the same golden-blonde short asymmetric bob and long forward strand, serious face, yellow cropped tank top, double black belts with stacked silver buckles, frayed blue denim shorts, white bandage around anatomical LEFT upper arm, purple full-finger gloves, brown double-strap holster on anatomical RIGHT thigh, bare legs, yellow sneakers with blue-purple marks and white soles. Keep the pistol in anatomical RIGHT hand, never swap hands or costume sides. Same detailed hand-painted crisp 2D arcade shading and body proportions. Right-facing lateral three-quarter view. Portrait 1024x1536 composition, full hair, arms, hands, pistol and both soles entirely inside image with safe margins. Genuine transparent RGBA background, no floor, glow, shadow outside body, scenery, text, graphic UI, labels, sheets, other character, duplicated limb, projectile or muzzle flash. Change ONLY the pose to the DESCENDING half of a jump, just before landing: torso leaning slightly forward, head looking toward screen right, both legs bent under the body and the leading left foot reaching slightly downward while the trailing right knee is tucked, both feet airborne. Her right hand draws the pistol close across her lower chest with its muzzle safely pointed right, her left forearm lifted open for balance. Clearly a falling/landing-preparation pose, not the upward knee-thrust pose. Keep head size and torso length approximately the same pixel size as image 1; do not enlarge the crouched silhouette to fill the canvas.",
+      "references": [
+        "assets/dossier_curien/expansion/zombie_revenge_characters/linda_rotta_base.png",
+        "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_characters/linda_full.jpg"
+      ],
+      "sources": [
+        "https://static.wikia.nocookie.net/houseofthedead/images/3/3f/Linda_Full.jpg/revision/latest?cb=20200217050952",
+        "https://www.digitpress.com/library/manuals/dreamcast/zombie_revenge.pdf"
+      ],
+      "tool": "image_gen__imagegen",
+      "transparency_requested": true,
+      "bytes_preserved": true,
+      "status": "visual_reviewed_runtime_calibration",
+      "canonical_1_to_1_certified": false,
+      "animation_complete": false,
+      "visual_review": {
+        "single_full_body_subject": true,
+        "faces_right": true,
+        "right_hand_pistol": true,
+        "left_upper_arm_bandage": true,
+        "right_thigh_holster": true,
+        "costume_consistent": true,
+        "no_opaque_edge_clipping": true
+      },
+      "limitations": [
+        "Pose individuelle adaptée au mode de combat. Les transitions et images intermédiaires restent à produire et à contrôler.",
+        "Référence d'identité et de costume inspectée ; fidélité 1:1 non certifiée."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-19/linda_production.json",
+      "reference_roles": [
+        {
+          "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_rotta_base.png",
+          "role": "style_identity_scale_reference"
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_characters/linda_full.jpg",
+          "role": "original_costume_reference"
+        }
+      ],
+      "id": "linda_jump_fall",
+      "origin": "generated_this_wave"
+    },
+    {
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-19/calibration.json",
+      "references": [
+        "assets/dossier_curien/expansion/zombie_revenge_characters/linda_rotta_base.png"
+      ],
+      "source_file": "exec-d11400fb-c0f8-45ea-881f-2cd52ff3f6e3.png",
+      "prompt_recovered": false,
+      "limitations": [
+        "Original prompt unavailable. Native PNG recovered byte-for-byte and visually reviewed; not a new generation."
+      ],
+      "id": "linda_jump_rise",
+      "fighter_id": "linda",
+      "art_id": "linda",
+      "pose": "jump_rise",
+      "path": "assets/dossier_curien/motion_2026-11-19/linda_jump_rise.png",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "bytes": 1619241,
+      "sha256": "b75cd2e5c906434aeae315b5fc40485f60cc15ef628b70fc60e416fd72df6792",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        9,
+        1014,
+        1520
+      ],
+      "visible_bbox": [
+        132,
+        67,
+        898,
+        1408
+      ],
+      "visible_alpha_threshold": 127,
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "origin": "recovered_local",
+      "animation_complete": false,
+      "canonical_1_to_1_certified": false,
+      "status": "visual_reviewed_runtime_calibration",
+      "pivot_px": [
+        500,
+        1408
+      ],
+      "standing_height_px": 1387,
+      "calibration_notes": "Ground pivot and standing-equivalent anatomical scale; native pixels remain unchanged.",
+      "emitter_px": [
+        617,
+        471
+      ]
+    },
+    {
+      "fighter_id": "linda",
+      "art_id": "linda",
+      "pose": "reload",
+      "path": "assets/dossier_curien/motion_2026-11-19/linda_reload.png",
+      "sha256": "ab7faf26f60d3f19c39ac1a2fd23210a37cecf83a3f839e5aa661f1969e23fdb",
+      "bytes": 1768257,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        25,
+        1021,
+        1536
+      ],
+      "visible_bbox": [
+        126,
+        58,
+        898,
+        1484
+      ],
+      "visible_alpha_threshold": 127,
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pivot_px": [
+        509,
+        1484
+      ],
+      "emitter_px": [
+        752,
+        202
+      ],
+      "anchors_px": {
+        "magazine_top": [
+          675,
+          395
+        ],
+        "left_palm": [
+          713,
+          492
+        ]
+      },
+      "standing_height_px": 1387,
+      "calibration_notes": "Pivot et émetteur repérés visuellement en pixels natifs. Échelle anatomique proposée commune au maître debout (1387 px), y compris les poses fléchies ; réglage final à vérifier dans le moteur.",
+      "prompt": "Use case: identity-preserve. Asset: ONE individual full-body 2D fighting-game sprite of the adult Linda Rotta from Zombie Revenge, a sibling pose for image 1. Image 1 is the approved painted sprite STYLE, face, anatomical scale and character reference. Image 2 is the original character COSTUME reference. Keep the same golden-blonde short asymmetric bob and long forward strand, serious face, yellow cropped tank top, double black belts with stacked silver buckles, frayed blue denim shorts, white bandage around anatomical LEFT upper arm, purple full-finger gloves, brown double-strap holster on anatomical RIGHT thigh, bare legs, yellow sneakers with blue-purple marks and white soles. Keep the pistol in anatomical RIGHT hand, never swap hands or costume sides. Same detailed hand-painted crisp 2D arcade shading and body proportions. Right-facing lateral three-quarter view. Portrait 1024x1536 composition, full hair, arms, hands, pistol and both soles entirely inside image with safe margins. Genuine transparent RGBA background, no floor, glow, shadow outside body, scenery, text, graphic UI, labels, sheets, other character, duplicated limb, projectile or muzzle flash. Change ONLY the pose to a mechanically readable PISTOL RELOAD: feet planted on a common baseline, knees softly bent in alert stance, gaze toward the weapon, right hand retains pistol at chest height pointing diagonally up toward screen right, with trigger finger straight beside frame. Left gloved hand holds one straight pistol magazine directly beneath the grip, just about to insert it into the magazine well. Show a small visible gap between magazine and bottom of grip so the action reads unmistakably. One pistol, one magazine, two hands, five fingers per hand. No ejected shell or spare flying magazine. The same thigh holster remains empty, on her right thigh.",
+      "references": [
+        "assets/dossier_curien/expansion/zombie_revenge_characters/linda_rotta_base.png",
+        "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_characters/linda_full.jpg"
+      ],
+      "sources": [
+        "https://static.wikia.nocookie.net/houseofthedead/images/3/3f/Linda_Full.jpg/revision/latest?cb=20200217050952",
+        "https://www.digitpress.com/library/manuals/dreamcast/zombie_revenge.pdf"
+      ],
+      "tool": "image_gen__imagegen",
+      "transparency_requested": true,
+      "bytes_preserved": true,
+      "status": "visual_reviewed_runtime_calibration",
+      "canonical_1_to_1_certified": false,
+      "animation_complete": false,
+      "visual_review": {
+        "single_full_body_subject": true,
+        "faces_right": true,
+        "right_hand_pistol": true,
+        "left_upper_arm_bandage": true,
+        "right_thigh_holster": true,
+        "costume_consistent": true,
+        "no_opaque_edge_clipping": true
+      },
+      "limitations": [
+        "Pose individuelle adaptée au mode de combat. Les transitions et images intermédiaires restent à produire et à contrôler.",
+        "Référence d'identité et de costume inspectée ; fidélité 1:1 non certifiée."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-19/linda_production.json",
+      "reference_roles": [
+        {
+          "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_rotta_base.png",
+          "role": "style_identity_scale_reference"
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_characters/linda_full.jpg",
+          "role": "original_costume_reference"
+        }
+      ],
+      "id": "linda_reload",
+      "origin": "generated_this_wave"
+    },
+    {
+      "fighter_id": "linda",
+      "art_id": "linda",
+      "pose": "taunt",
+      "path": "assets/dossier_curien/motion_2026-11-19/linda_taunt.png",
+      "sha256": "f556009716dc9bab0468c3407f09031cf5db8bd74672d984f78baf0b257303fa",
+      "bytes": 1708889,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        30,
+        1010,
+        1536
+      ],
+      "visible_bbox": [
+        200,
+        65,
+        853,
+        1460
+      ],
+      "visible_alpha_threshold": 127,
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pivot_px": [
+        510,
+        1460
+      ],
+      "emitter_px": [
+        257,
+        877
+      ],
+      "anchors_px": {
+        "left_palm": [
+          778,
+          337
+        ]
+      },
+      "standing_height_px": 1387,
+      "calibration_notes": "Pivot et émetteur repérés visuellement en pixels natifs. Échelle anatomique proposée commune au maître debout (1387 px), y compris les poses fléchies ; réglage final à vérifier dans le moteur.",
+      "prompt": "Use case: identity-preserve. Asset: ONE individual full-body 2D fighting-game sprite of the adult Linda Rotta from Zombie Revenge, a sibling pose for image 1. Image 1 is the approved painted sprite STYLE, face, anatomical scale and character reference. Image 2 is the original character COSTUME reference. Keep the same golden-blonde short asymmetric bob and long forward strand, serious face, yellow cropped tank top, double black belts with stacked silver buckles, frayed blue denim shorts, white bandage around anatomical LEFT upper arm, purple full-finger gloves, brown double-strap holster on anatomical RIGHT thigh, bare legs, yellow sneakers with blue-purple marks and white soles. Keep the pistol in anatomical RIGHT hand, never swap hands or costume sides. Same detailed hand-painted crisp 2D arcade shading and body proportions. Right-facing lateral three-quarter view. Portrait 1024x1536 composition, full hair, arms, hands, pistol and both soles entirely inside image with at least 60px empty margins on ALL sides. Genuine transparent RGBA background, no floor, glow, shadow outside body, scenery, text, graphic UI, labels, sheets, other character, duplicated limb, projectile or muzzle flash. Change ONLY the pose to a confident COME-HERE TAUNT: feet firmly planted in a relaxed balanced guard, torso upright, face turned toward screen right with one slightly raised eyebrow and a restrained challenging half-smile. LEFT forearm raised in front of the chest and left palm turned upward toward screen right, fingers making a small beckoning come-here gesture; right hand keeps the same pistol lowered near her right thigh pointing diagonally down-right. This must read as a distinct small beckoning gesture, not a clenched-fist victory or an attack. Match head and body pixel scale to image 1 and keep both shoes complete.",
+      "references": [
+        "assets/dossier_curien/expansion/zombie_revenge_characters/linda_rotta_base.png",
+        "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_characters/linda_full.jpg"
+      ],
+      "sources": [
+        "https://static.wikia.nocookie.net/houseofthedead/images/3/3f/Linda_Full.jpg/revision/latest?cb=20200217050952",
+        "https://www.digitpress.com/library/manuals/dreamcast/zombie_revenge.pdf"
+      ],
+      "tool": "image_gen__imagegen",
+      "transparency_requested": true,
+      "bytes_preserved": true,
+      "status": "visual_reviewed_runtime_calibration",
+      "canonical_1_to_1_certified": false,
+      "animation_complete": false,
+      "visual_review": {
+        "single_full_body_subject": true,
+        "faces_right": true,
+        "right_hand_pistol": true,
+        "left_upper_arm_bandage": true,
+        "right_thigh_holster": true,
+        "costume_consistent": true,
+        "no_opaque_edge_clipping": true
+      },
+      "limitations": [
+        "Pose individuelle adaptée au mode de combat. Les transitions et images intermédiaires restent à produire et à contrôler.",
+        "Référence d'identité et de costume inspectée ; fidélité 1:1 non certifiée."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-19/linda_production.json",
+      "reference_roles": [
+        {
+          "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_rotta_base.png",
+          "role": "style_identity_scale_reference"
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_characters/linda_full.jpg",
+          "role": "original_costume_reference"
+        }
+      ],
+      "id": "linda_taunt",
+      "origin": "generated_this_wave"
+    },
+    {
+      "fighter_id": "linda",
+      "art_id": "linda",
+      "pose": "throw",
+      "path": "assets/dossier_curien/motion_2026-11-19/linda_throw.png",
+      "sha256": "5d1f298050cef8f7ae810cb5128069e232106be5ff10dc4ea3c61a1478b0e55b",
+      "bytes": 1682090,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        17,
+        1023,
+        1536
+      ],
+      "visible_bbox": [
+        21,
+        268,
+        1015,
+        1326
+      ],
+      "visible_alpha_threshold": 127,
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pivot_px": [
+        470,
+        1326
+      ],
+      "emitter_px": [
+        352,
+        824
+      ],
+      "anchors_px": {
+        "left_palm": [
+          950,
+          461
+        ]
+      },
+      "standing_height_px": 1387,
+      "calibration_notes": "Pivot et émetteur repérés visuellement en pixels natifs. Échelle anatomique proposée commune au maître debout (1387 px), y compris les poses fléchies ; réglage final à vérifier dans le moteur.",
+      "prompt": "Use case: identity-preserve. Asset: ONE individual full-body 2D fighting-game sprite of the adult Linda Rotta from Zombie Revenge, a sibling pose for image 1. Image 1 is the approved painted sprite STYLE, face, anatomical scale and character reference. Image 2 is the original character COSTUME reference. Keep the same golden-blonde short asymmetric bob and long forward strand, serious face, yellow cropped tank top, double black belts with stacked silver buckles, frayed blue denim shorts, white bandage around anatomical LEFT upper arm, purple full-finger gloves, brown double-strap holster on anatomical RIGHT thigh, bare legs, yellow sneakers with blue-purple marks and white soles. Keep the pistol in anatomical RIGHT hand, never swap hands or costume sides. Same detailed hand-painted crisp 2D arcade shading and body proportions. Right-facing lateral three-quarter view. Portrait 1024x1536 composition, full hair, arms, hands, pistol and both soles entirely inside image with safe margins. Genuine transparent RGBA background, no floor, glow, shadow outside body, scenery, text, graphic UI, labels, sheets, other character, duplicated limb, projectile or muzzle flash. Change ONLY the pose to a wrestling GRAB / THROW STARTUP against an unseen opponent to screen right: low grounded lunge, left knee bent forward, rear right leg braced with its foot firmly planted behind, hips lowered, left empty hand reaching forward and open at shoulder height to grasp the unseen opponent's lapel, left arm long but not locked. Right hand retains the same pistol close to her right hip, muzzle diagonally down-right and away from her left hand. Her torso leans forward and her face looks right intently. The opponent is NOT drawn; only Linda. Make the gesture a clear committed grab, not a pointing/taunting or shooting pose. Both complete shoes visible on a common floor baseline, no floor painted.",
+      "references": [
+        "assets/dossier_curien/expansion/zombie_revenge_characters/linda_rotta_base.png",
+        "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_characters/linda_full.jpg"
+      ],
+      "sources": [
+        "https://static.wikia.nocookie.net/houseofthedead/images/3/3f/Linda_Full.jpg/revision/latest?cb=20200217050952",
+        "https://www.digitpress.com/library/manuals/dreamcast/zombie_revenge.pdf"
+      ],
+      "tool": "image_gen__imagegen",
+      "transparency_requested": true,
+      "bytes_preserved": true,
+      "status": "visual_reviewed_runtime_calibration",
+      "canonical_1_to_1_certified": false,
+      "animation_complete": false,
+      "visual_review": {
+        "single_full_body_subject": true,
+        "faces_right": true,
+        "right_hand_pistol": true,
+        "left_upper_arm_bandage": true,
+        "right_thigh_holster": true,
+        "costume_consistent": true,
+        "no_opaque_edge_clipping": true
+      },
+      "limitations": [
+        "Pose individuelle adaptée au mode de combat. Les transitions et images intermédiaires restent à produire et à contrôler.",
+        "Référence d'identité et de costume inspectée ; fidélité 1:1 non certifiée.",
+        "La main tendue reste dans le cadre, à 9 px du bord droit ; éviter un nouveau recadrage."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-19/linda_production.json",
+      "reference_roles": [
+        {
+          "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_rotta_base.png",
+          "role": "style_identity_scale_reference"
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_characters/linda_full.jpg",
+          "role": "original_costume_reference"
+        }
+      ],
+      "id": "linda_throw",
+      "origin": "generated_this_wave"
+    },
+    {
+      "fighter_id": "linda",
+      "art_id": "linda",
+      "pose": "victory",
+      "path": "assets/dossier_curien/motion_2026-11-19/linda_victory.png",
+      "sha256": "cd6eb4bac89b1f34943707409734c660b7a9f7321eb039b75581ffee9609c0fe",
+      "bytes": 1770080,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        16,
+        1008,
+        1496
+      ],
+      "visible_bbox": [
+        186,
+        19,
+        892,
+        1490
+      ],
+      "visible_alpha_threshold": 127,
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pivot_px": [
+        594,
+        1490
+      ],
+      "emitter_px": [
+        231,
+        911
+      ],
+      "anchors_px": {
+        "left_fist": [
+          645,
+          259
+        ]
+      },
+      "standing_height_px": 1387,
+      "calibration_notes": "Pivot et émetteur repérés visuellement en pixels natifs. Échelle anatomique proposée commune au maître debout (1387 px), y compris les poses fléchies ; réglage final à vérifier dans le moteur.",
+      "prompt": "Use case: identity-preserve. Asset: ONE individual full-body 2D fighting-game sprite of the adult Linda Rotta from Zombie Revenge, a sibling pose for image 1. Image 1 is the approved painted sprite STYLE, face, anatomical scale and character reference. Image 2 is the original character COSTUME reference. Keep the same golden-blonde short asymmetric bob and long forward strand, serious face, yellow cropped tank top, double black belts with stacked silver buckles, frayed blue denim shorts, white bandage around anatomical LEFT upper arm, purple full-finger gloves, brown double-strap holster on anatomical RIGHT thigh, bare legs, yellow sneakers with blue-purple marks and white soles. Keep the pistol in anatomical RIGHT hand, never swap hands or costume sides. Same detailed hand-painted crisp 2D arcade shading and body proportions. Right-facing lateral three-quarter view. Portrait 1024x1536 composition, full hair, arms, hands, pistol and both soles entirely inside image with safe margins. Genuine transparent RGBA background, no floor, glow, shadow outside body, scenery, text, graphic UI, labels, sheets, other character, duplicated limb, projectile or muzzle flash. Change ONLY the pose to a reserved VICTORY stance after a fight: standing tall with relaxed legs, weight on her rear right leg, left foot resting lightly forward; her empty left purple-gloved fist is raised decisively near her left shoulder, elbow bent, while her right hand lowers the pistol beside her right hip with the muzzle toward the ground at screen right. Chin raised a little, slight confident satisfied smile, face still looking right. Keep the full outfit and mature original proportions; not a glamour pose. Both complete shoes visible on a common floor baseline, no floor painted.",
+      "references": [
+        "assets/dossier_curien/expansion/zombie_revenge_characters/linda_rotta_base.png",
+        "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_characters/linda_full.jpg"
+      ],
+      "sources": [
+        "https://static.wikia.nocookie.net/houseofthedead/images/3/3f/Linda_Full.jpg/revision/latest?cb=20200217050952",
+        "https://www.digitpress.com/library/manuals/dreamcast/zombie_revenge.pdf"
+      ],
+      "tool": "image_gen__imagegen",
+      "transparency_requested": true,
+      "bytes_preserved": true,
+      "status": "visual_reviewed_runtime_calibration",
+      "canonical_1_to_1_certified": false,
+      "animation_complete": false,
+      "visual_review": {
+        "single_full_body_subject": true,
+        "faces_right": true,
+        "right_hand_pistol": true,
+        "left_upper_arm_bandage": true,
+        "right_thigh_holster": true,
+        "costume_consistent": true,
+        "no_opaque_edge_clipping": true
+      },
+      "limitations": [
+        "Pose individuelle adaptée au mode de combat. Les transitions et images intermédiaires restent à produire et à contrôler.",
+        "Référence d'identité et de costume inspectée ; fidélité 1:1 non certifiée.",
+        "Les cheveux restent dans le cadre, à 19 px du bord supérieur ; éviter un nouveau recadrage."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-19/linda_production.json",
+      "reference_roles": [
+        {
+          "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_rotta_base.png",
+          "role": "style_identity_scale_reference"
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_characters/linda_full.jpg",
+          "role": "original_costume_reference"
+        }
+      ],
+      "id": "linda_victory",
+      "origin": "generated_this_wave"
+    },
+    {
+      "fighter_id": "rikiya",
+      "art_id": "rikiya",
+      "pose": "recovery",
+      "path": "assets/dossier_curien/motion_2026-11-19/rikiya_recovery.png",
+      "sha256": "bd89027bc90c5adfd627bac9e3d20efd8cd55521a29fad3b619c84dac48bd7bd",
+      "bytes": 816047,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        1246,
+        1254
+      ],
+      "visible_bbox": [
+        265,
+        74,
+        1027,
+        1179
+      ],
+      "visible_alpha_threshold": 127,
+      "standing_height_px": 1103.373,
+      "pivot_px": [
+        610,
+        1179
+      ],
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "saturated_red_pixels_alpha128plus": 0,
+      "anchors_px": {
+        "right_palm": [
+          545,
+          479
+        ],
+        "left_palm": [
+          970,
+          402
+        ]
+      },
+      "prompt": "Use case: identity-preserve. Draw ONE individual ATTACK RECOVERY keyframe of the exact adult Rikiya Busujima in the references. Image 1 shows his preceding straight attack; image 2 shows his original guard and full identity. Rikiya Busujima: dense curly black shoulder-length hair, dark narrow sunglasses, lean defined muscular bare torso, open brown leather shoulder-holster harness with silver buckles, dark blue denim jeans with visible stitching and brown belt with square metal buckle, brown lace-up shoes. Both hands EMPTY in relaxed OPEN-HAND martial arts guard. Keep sunglasses and holster harness, no gun drawn. Preserve exact face, curls, sunglasses, brown harness, jeans details, proportions and crisp finely painted 2D fighting-sprite style. Square true-transparent RGBA canvas, right-facing lateral three-quarter view, entire head, hands and both shoes inside frame with safe margins. Show the RETURN from the extended attack: the anatomical LEFT striking arm on the far side has retracted halfway, elbow bending toward his ribs while the hand changes from a fist to a half-open palm held forward at chest level; the anatomical RIGHT hand begins opening from the chambered fist near his abdomen. Torso untwists upright out of the lunge, weight shifts back toward his rear right leg, both knees soften. Keep the arm halfway between the fully extended contact and the high neutral guard; do not simply copy either reference pose. No pain grimace or backward hit reaction: he is recovering from HIS attack. Both shoes braced on one common baseline, no levitation. One character, one pose, no opponent, weapon, VFX, ground, shadow, letters, multiple views or duplicates.",
+      "references": [
+        "assets/dossier_curien/saga/rikiya_contact.png",
+        "assets/dossier_curien/saga/rikiya_guard.png"
+      ],
+      "sources": [
+        "https://www.sega.jp/history/arcade/product/8161/"
+      ],
+      "source_notes": [
+        "Source de l'épisode héritée de BIBLE_SAGA.md ; les références pixel effectivement inspectées pour cette production sont les sprites locaux listés. Cette passe ne constitue pas une nouvelle validation indépendante du costume contre la borne."
+      ],
+      "tool": "image_gen__imagegen",
+      "transparency_requested": true,
+      "bytes_preserved": true,
+      "status": "visual_reviewed_runtime_calibration",
+      "canonical_1_to_1_certified": false,
+      "animation_complete": false,
+      "calibration_notes": "Hauteur anatomique proposée : boîte visible alpha≥128 de la garde de référence, multipliée par le ratio de hauteur des canevas (1254/1024). Pivot horizontal proche de l'axe du bassin ; ancrages repérés visuellement en pixels natifs. Réglage moteur final à vérifier.",
+      "visual_review": {
+        "single_full_body_subject": true,
+        "faces_right": true,
+        "unarmed": true,
+        "costume_consistent_with_guard": true,
+        "no_opaque_edge_clipping": true
+      },
+      "limitations": [
+        "Un appui ou une pose de rétraction dessinée individuellement. Deux contacts ne constituent pas un cycle de marche fluide : passages, variations de hauteur et raccords restent à produire.",
+        "Cohérence contrôlée contre les poses locales existantes ; fidélité canonique 1:1 non certifiée."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-19/zr_walk_production.json",
+      "reference_roles": [
+        {
+          "path": "assets/dossier_curien/saga/rikiya_contact.png",
+          "role": "preceding_attack_pose_reference"
+        },
+        {
+          "path": "assets/dossier_curien/saga/rikiya_guard.png",
+          "role": "identity_costume_style_reference"
+        }
+      ],
+      "id": "rikiya_recovery",
+      "origin": "generated_this_wave"
+    },
+    {
+      "fighter_id": "rikiya",
+      "art_id": "rikiya",
+      "pose": "walk1",
+      "path": "assets/dossier_curien/motion_2026-11-19/rikiya_walk1.png",
+      "sha256": "5c80550a0eb1c75cea8718a8200b288f7e886e0a30b5f2038098ea761da5dca8",
+      "bytes": 703105,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        1246,
+        1254
+      ],
+      "visible_bbox": [
+        237,
+        64,
+        1047,
+        1162
+      ],
+      "visible_alpha_threshold": 127,
+      "standing_height_px": 1103.373,
+      "pivot_px": [
+        610,
+        1162
+      ],
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "saturated_red_pixels_alpha128plus": 0,
+      "anchors_px": {
+        "right_palm": [
+          650,
+          315
+        ],
+        "left_palm": [
+          997,
+          406
+        ]
+      },
+      "prompt": "Use case: identity-preserve. Create ONE individual WALK CONTACT keyframe sprite as a sibling of the attached existing 2D fighting sprite. The supplied image is the identity, style and clothing reference. Rikiya Busujima: dense curly black shoulder-length hair, dark narrow sunglasses, lean defined muscular bare torso, open brown leather shoulder-holster harness with silver buckles, dark blue denim jeans with visible stitching and brown belt with square metal buckle, brown lace-up shoes. Both hands EMPTY in relaxed OPEN-HAND martial arts guard. Keep sunglasses and holster harness, no gun drawn. Preserve the exact face, body build, clothing, materials, color palette, line weight, finely shaded crisp hand-painted pixel-art style, and anatomical scale of this reference. Full-body lateral three-quarter view facing RIGHT. Square 1024x1024 transparent RGBA canvas, same head size and torso length as reference, hair top around y=60 and soles near y=950, at least 45px empty margins all around. CHANGE the stance to an unmistakable forward WALK contact: the character's anatomical RIGHT leg (the NEAR leg, its hip nearer the viewer) swings FORWARD toward SCREEN RIGHT; its knee is lightly bent and its heel touches the ground ahead of his pelvis. His anatomical LEFT leg (FAR leg) extends BACK toward SCREEN LEFT, supporting the trailing toe on the same ground line. Show two separate feet, one ahead and one behind, no shuffle with both legs forward. The near right thigh must visibly cross in front of the far thigh as it advances. Upper body stays alert, moving only subtly with the stride, hands retain the character's unarmed guard. Pelvis remains at frame center; do not lean into a deep attack lunge. One character, one pose, genuinely transparent background, no floor, ground shadow, motion blur, weapon, text, labels, VFX, extra limbs or sheet.",
+      "references": [
+        "assets/dossier_curien/saga/rikiya_guard.png"
+      ],
+      "sources": [
+        "https://www.sega.jp/history/arcade/product/8161/"
+      ],
+      "source_notes": [
+        "Source de l'épisode héritée de BIBLE_SAGA.md ; les références pixel effectivement inspectées pour cette production sont les sprites locaux listés. Cette passe ne constitue pas une nouvelle validation indépendante du costume contre la borne."
+      ],
+      "tool": "image_gen__imagegen",
+      "transparency_requested": true,
+      "bytes_preserved": true,
+      "status": "visual_reviewed_runtime_calibration",
+      "canonical_1_to_1_certified": false,
+      "animation_complete": false,
+      "calibration_notes": "Hauteur anatomique proposée : boîte visible alpha≥128 de la garde de référence, multipliée par le ratio de hauteur des canevas (1254/1024). Pivot horizontal proche de l'axe du bassin ; ancrages repérés visuellement en pixels natifs. Réglage moteur final à vérifier.",
+      "visual_review": {
+        "single_full_body_subject": true,
+        "faces_right": true,
+        "unarmed": true,
+        "costume_consistent_with_guard": true,
+        "no_opaque_edge_clipping": true,
+        "support_leg_alternation": true
+      },
+      "leading_leg": "right_near",
+      "trailing_leg": "left_far",
+      "limitations": [
+        "Un appui ou une pose de rétraction dessinée individuellement. Deux contacts ne constituent pas un cycle de marche fluide : passages, variations de hauteur et raccords restent à produire.",
+        "Cohérence contrôlée contre les poses locales existantes ; fidélité canonique 1:1 non certifiée."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-19/zr_walk_production.json",
+      "reference_roles": [
+        {
+          "path": "assets/dossier_curien/saga/rikiya_guard.png",
+          "role": "identity_costume_style_reference"
+        }
+      ],
+      "id": "rikiya_walk1",
+      "origin": "generated_this_wave"
+    },
+    {
+      "fighter_id": "rikiya",
+      "art_id": "rikiya",
+      "pose": "walk2",
+      "path": "assets/dossier_curien/motion_2026-11-19/rikiya_walk2.png",
+      "sha256": "6be8cdd1dbed0293cd5ce2c931ac02dfacb7c2398eb5e53deee132f45df9307e",
+      "bytes": 779531,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "visible_bbox": [
+        207,
+        67,
+        1074,
+        1171
+      ],
+      "visible_alpha_threshold": 127,
+      "standing_height_px": 1103.373,
+      "pivot_px": [
+        610,
+        1171
+      ],
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "saturated_red_pixels_alpha128plus": 0,
+      "anchors_px": {
+        "right_palm": [
+          638,
+          315
+        ],
+        "left_palm": [
+          1012,
+          397
+        ]
+      },
+      "prompt": "Use case: precise-object-edit. Edit the attached character sprite into a sibling stance, preserving his ENTIRE upper-body design, camera, face, sunglasses, curly hair, harness and open-palm guard. Rikiya Busujima: dense curly black shoulder-length hair, dark narrow sunglasses, lean defined muscular bare torso, open brown leather shoulder-holster harness with silver buckles, dark blue denim jeans with visible stitching and brown belt with square metal buckle, brown lace-up shoes. Both hands EMPTY in relaxed OPEN-HAND martial arts guard. Keep sunglasses and holster harness, no gun drawn. Maintain his RIGHT-facing three-quarter view and the exact crisp painted fighting-sprite style. Keep the reference's leg anatomy and side arrangement: the near/right leg is the leg on SCREEN LEFT, the far/left leg is the leg on SCREEN RIGHT. Do not cross the legs or swap their overlap. The change is narrowly specified: raise his hips slightly and straighten his knees a little so he is taking a small heel-to-toe step. Keep the near RIGHT thigh, near RIGHT knee and near RIGHT boot ALL in the LEFT half of the image, moving backward toward screen-left, near/right heel raised while toes touch floor. Keep the far LEFT thigh, far LEFT knee and far LEFT shoe ALL in the RIGHT half of the image, moving forward toward screen-right, far/left heel on floor and toe slightly raised. The crotch forms an inverted V with open transparent space between the legs, like the reference, no diagonal front thigh crossing the pelvis. This is the opposite support arrangement from right-leg-forward walking. Both contact points share one horizontal floor line. One entire character on a square true-transparent RGBA canvas, generous margins, both full shoes and hair visible, full figure framed at the same relative scale as reference. No floor, shadow, glow, words, UI, gun, extra limb, duplicated pose or montage.",
+      "references": [
+        "assets/dossier_curien/saga/rikiya_guard.png"
+      ],
+      "sources": [
+        "https://www.sega.jp/history/arcade/product/8161/"
+      ],
+      "source_notes": [
+        "Source de l'épisode héritée de BIBLE_SAGA.md ; les références pixel effectivement inspectées pour cette production sont les sprites locaux listés. Cette passe ne constitue pas une nouvelle validation indépendante du costume contre la borne."
+      ],
+      "tool": "image_gen__imagegen",
+      "transparency_requested": true,
+      "bytes_preserved": true,
+      "status": "visual_reviewed_runtime_calibration",
+      "canonical_1_to_1_certified": false,
+      "animation_complete": false,
+      "calibration_notes": "Hauteur anatomique proposée : boîte visible alpha≥128 de la garde de référence, multipliée par le ratio de hauteur des canevas (1254/1024). Pivot horizontal proche de l'axe du bassin ; ancrages repérés visuellement en pixels natifs. Réglage moteur final à vérifier.",
+      "visual_review": {
+        "single_full_body_subject": true,
+        "faces_right": true,
+        "unarmed": true,
+        "costume_consistent_with_guard": true,
+        "no_opaque_edge_clipping": true,
+        "support_leg_alternation": true
+      },
+      "leading_leg": "left_far",
+      "trailing_leg": "right_near",
+      "limitations": [
+        "Un appui ou une pose de rétraction dessinée individuellement. Deux contacts ne constituent pas un cycle de marche fluide : passages, variations de hauteur et raccords restent à produire.",
+        "Cohérence contrôlée contre les poses locales existantes ; fidélité canonique 1:1 non certifiée."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-19/zr_walk_production.json",
+      "reference_roles": [
+        {
+          "path": "assets/dossier_curien/saga/rikiya_guard.png",
+          "role": "identity_costume_style_reference"
+        }
+      ],
+      "id": "rikiya_walk2",
+      "origin": "generated_this_wave"
+    },
+    {
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-19/calibration.json",
+      "references": [
+        "assets/dossier_curien/rogan_guard.png"
+      ],
+      "source_file": "exec-821987a7-28a0-4eb9-a62e-efcb384bfe1e.png",
+      "prompt_recovered": false,
+      "limitations": [
+        "Original prompt unavailable. Native PNG recovered byte-for-byte and visually reviewed; not a new generation."
+      ],
+      "id": "rogan_crouch",
+      "fighter_id": "rogan",
+      "art_id": "rogan",
+      "pose": "crouch",
+      "path": "assets/dossier_curien/motion_2026-11-19/rogan_crouch.png",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "bytes": 1299986,
+      "sha256": "d4d65d7c6453d612faf68a1dd33d413dcee607fe552ab7142925cfc074bafa6f",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        19,
+        1010,
+        1518
+      ],
+      "visible_bbox": [
+        131,
+        670,
+        830,
+        1456
+      ],
+      "visible_alpha_threshold": 127,
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "origin": "recovered_local",
+      "animation_complete": false,
+      "canonical_1_to_1_certified": false,
+      "status": "visual_reviewed_runtime_calibration",
+      "pivot_px": [
+        454,
+        1456
+      ],
+      "standing_height_px": 1259,
+      "calibration_notes": "Native crouch has a larger head than the classic master; standing-equivalent scale 1.4 times 899 px. Needs actual-render review.",
+      "emitter_px": [
+        824,
+        875
+      ]
+    },
+    {
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-19/calibration.json",
+      "references": [
+        "assets/dossier_curien/rogan_guard.png"
+      ],
+      "source_file": "exec-511b0284-cb57-4c38-ab3e-57382d0a99cd.png",
+      "prompt_recovered": false,
+      "limitations": [
+        "Original prompt unavailable. Native PNG recovered byte-for-byte and visually reviewed; not a new generation."
+      ],
+      "id": "rogan_jump_rise",
+      "fighter_id": "rogan",
+      "art_id": "rogan",
+      "pose": "jump_rise",
+      "path": "assets/dossier_curien/motion_2026-11-19/rogan_jump_rise.png",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "bytes": 1276194,
+      "sha256": "82992346b67d245ad78bdc762a639bb14459b67c36548bf1daa6b8ddd380dfbe",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        23,
+        19,
+        970,
+        1528
+      ],
+      "visible_bbox": [
+        225,
+        151,
+        764,
+        1043
+      ],
+      "visible_alpha_threshold": 127,
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "origin": "recovered_local",
+      "animation_complete": false,
+      "canonical_1_to_1_certified": false,
+      "status": "visual_reviewed_runtime_calibration",
+      "pivot_px": [
+        500,
+        1043
+      ],
+      "standing_height_px": 899,
+      "calibration_notes": "Head scale compared with classic 1024-square master despite taller canvas; jump altitude applied exactly once.",
+      "emitter_px": [
+        757,
+        321
+      ]
+    },
+    {
+      "fighter_id": "stick",
+      "art_id": "stick",
+      "pose": "recovery",
+      "path": "assets/dossier_curien/motion_2026-11-19/stick_recovery.png",
+      "sha256": "ad6635b49365a148b86be3305f914cf3be1cb1815b2bfbbf893f1a092cb9fd5d",
+      "bytes": 773864,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        31,
+        1224,
+        1226
+      ],
+      "visible_bbox": [
+        239,
+        122,
+        992,
+        1168
+      ],
+      "visible_alpha_threshold": 127,
+      "standing_height_px": 1102.148,
+      "pivot_px": [
+        610,
+        1168
+      ],
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "saturated_red_pixels_alpha128plus": 0,
+      "anchors_px": {
+        "right_fist": [
+          548,
+          511
+        ],
+        "left_fist": [
+          816,
+          369
+        ]
+      },
+      "prompt": "Use case: identity-preserve. Create ONE individual ATTACK RECOVERY keyframe of the same adult Stick Breitling for a 2D fighting game. Image 1 shows the preceding uppercut contact; image 2 shows the target neutral guard and authoritative outfit. Stick Breitling: slicked-back sandy blond hair, square jaw, muscular build, sleeveless dark navy crew-neck shirt, olive/dark charcoal cargo trousers, olive utility pouches on belt with rectangular metal buckle, black fingerless fighting gloves with dark wrist cuffs, black laced combat boots. Both hands EMPTY in compact boxing guard. Keep all accessories and pocket positions. Preserve exactly the character's face, colors, proportions, crisp detailed painted pixel-art style and costume accessories. Right-facing lateral three-quarter, square true-transparent RGBA canvas, full hair and both boots safely inside frame with margins. Change the contact pose to the clearly readable RETRACTION after the uppercut: the previously raised anatomical LEFT punching arm has now bent downward, fist drawing BACK toward his left collarbone with elbow angled downward in front of ribs; RIGHT fist remains compact near the waist/ribs. Shoulders untwist from the punch, head lowers toward the opponent at screen right, weight settles back over two bent knees. Hands and elbows distinctly different from both the raised contact and the final boxing guard. Both feet remain braced on a common ground line, no hopping, no extra step, no hit reaction or injury. This is recovery of HIS attack, not recoiling from an opponent. Keep anatomy pixel scale consistent with references. One figure, one pose, no opponent, weapon, floor, cast shadow, words, montage, effects or duplicates.",
+      "references": [
+        "assets/dossier_curien/saga/stick_contact.png",
+        "assets/dossier_curien/saga/stick_guard.png"
+      ],
+      "sources": [
+        "https://www.sega.jp/history/arcade/product/8161/"
+      ],
+      "source_notes": [
+        "Source de l'épisode héritée de BIBLE_SAGA.md ; les références pixel effectivement inspectées pour cette production sont les sprites locaux listés. Cette passe ne constitue pas une nouvelle validation indépendante du costume contre la borne."
+      ],
+      "tool": "image_gen__imagegen",
+      "transparency_requested": true,
+      "bytes_preserved": true,
+      "status": "visual_reviewed_runtime_calibration",
+      "canonical_1_to_1_certified": false,
+      "animation_complete": false,
+      "calibration_notes": "Hauteur anatomique proposée : boîte visible alpha≥128 de la garde de référence, multipliée par le ratio de hauteur des canevas (1254/1024). Pivot horizontal proche de l'axe du bassin ; ancrages repérés visuellement en pixels natifs. Réglage moteur final à vérifier.",
+      "visual_review": {
+        "single_full_body_subject": true,
+        "faces_right": true,
+        "unarmed": true,
+        "costume_consistent_with_guard": true,
+        "no_opaque_edge_clipping": true
+      },
+      "limitations": [
+        "Un appui ou une pose de rétraction dessinée individuellement. Deux contacts ne constituent pas un cycle de marche fluide : passages, variations de hauteur et raccords restent à produire.",
+        "Cohérence contrôlée contre les poses locales existantes ; fidélité canonique 1:1 non certifiée."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-19/zr_walk_production.json",
+      "reference_roles": [
+        {
+          "path": "assets/dossier_curien/saga/stick_contact.png",
+          "role": "preceding_attack_pose_reference"
+        },
+        {
+          "path": "assets/dossier_curien/saga/stick_guard.png",
+          "role": "identity_costume_style_reference"
+        }
+      ],
+      "id": "stick_recovery",
+      "origin": "generated_this_wave"
+    },
+    {
+      "fighter_id": "stick",
+      "art_id": "stick",
+      "pose": "walk1",
+      "path": "assets/dossier_curien/motion_2026-11-19/stick_walk1.png",
+      "sha256": "7e59bf01f8d98d80af2990e8fc1275e8f9a3e988e926c9f10dd524b4ff6ae5fa",
+      "bytes": 750652,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        39,
+        1224,
+        1230
+      ],
+      "visible_bbox": [
+        224,
+        67,
+        992,
+        1181
+      ],
+      "visible_alpha_threshold": 127,
+      "standing_height_px": 1102.148,
+      "pivot_px": [
+        610,
+        1181
+      ],
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "saturated_red_pixels_alpha128plus": 0,
+      "anchors_px": {
+        "right_fist": [
+          743,
+          337
+        ],
+        "left_fist": [
+          931,
+          328
+        ]
+      },
+      "prompt": "Use case: identity-preserve. Create ONE individual WALK CONTACT keyframe sprite as a sibling of the attached existing 2D fighting sprite. The supplied image is the identity, style and clothing reference. Stick Breitling: slicked-back sandy blond hair, square jaw, muscular build, sleeveless dark navy crew-neck shirt, olive/dark charcoal cargo trousers, olive utility pouches on belt with rectangular metal buckle, black fingerless fighting gloves with dark wrist cuffs, black laced combat boots. Both hands EMPTY in compact boxing guard. Keep all accessories and pocket positions. Preserve the exact face, body build, clothing, materials, color palette, line weight, finely shaded crisp hand-painted pixel-art style, and anatomical scale of this reference. Full-body lateral three-quarter view facing RIGHT. Square 1024x1024 transparent RGBA canvas, same head size and torso length as reference, hair top around y=60 and soles near y=950, at least 45px empty margins all around. CHANGE the stance to an unmistakable forward WALK contact: the character's anatomical RIGHT leg (the NEAR leg, its hip nearer the viewer) swings FORWARD toward SCREEN RIGHT; its knee is lightly bent and its heel touches the ground ahead of his pelvis. His anatomical LEFT leg (FAR leg) extends BACK toward SCREEN LEFT, supporting the trailing toe on the same ground line. Show two separate feet, one ahead and one behind, no shuffle with both legs forward. The near right thigh must visibly cross in front of the far thigh as it advances. Upper body stays alert, moving only subtly with the stride, hands retain the character's unarmed guard. Pelvis remains at frame center; do not lean into a deep attack lunge. One character, one pose, genuinely transparent background, no floor, ground shadow, motion blur, weapon, text, labels, VFX, extra limbs or sheet.",
+      "references": [
+        "assets/dossier_curien/saga/stick_guard.png"
+      ],
+      "sources": [
+        "https://www.sega.jp/history/arcade/product/8161/"
+      ],
+      "source_notes": [
+        "Source de l'épisode héritée de BIBLE_SAGA.md ; les références pixel effectivement inspectées pour cette production sont les sprites locaux listés. Cette passe ne constitue pas une nouvelle validation indépendante du costume contre la borne."
+      ],
+      "tool": "image_gen__imagegen",
+      "transparency_requested": true,
+      "bytes_preserved": true,
+      "status": "visual_reviewed_runtime_calibration",
+      "canonical_1_to_1_certified": false,
+      "animation_complete": false,
+      "calibration_notes": "Hauteur anatomique proposée : boîte visible alpha≥128 de la garde de référence, multipliée par le ratio de hauteur des canevas (1254/1024). Pivot horizontal proche de l'axe du bassin ; ancrages repérés visuellement en pixels natifs. Réglage moteur final à vérifier.",
+      "visual_review": {
+        "single_full_body_subject": true,
+        "faces_right": true,
+        "unarmed": true,
+        "costume_consistent_with_guard": true,
+        "no_opaque_edge_clipping": true,
+        "support_leg_alternation": true
+      },
+      "leading_leg": "right_near",
+      "trailing_leg": "left_far",
+      "limitations": [
+        "Un appui ou une pose de rétraction dessinée individuellement. Deux contacts ne constituent pas un cycle de marche fluide : passages, variations de hauteur et raccords restent à produire.",
+        "Cohérence contrôlée contre les poses locales existantes ; fidélité canonique 1:1 non certifiée."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-19/zr_walk_production.json",
+      "reference_roles": [
+        {
+          "path": "assets/dossier_curien/saga/stick_guard.png",
+          "role": "identity_costume_style_reference"
+        }
+      ],
+      "id": "stick_walk1",
+      "origin": "generated_this_wave"
+    },
+    {
+      "fighter_id": "stick",
+      "art_id": "stick",
+      "pose": "walk2",
+      "path": "assets/dossier_curien/motion_2026-11-19/stick_walk2.png",
+      "sha256": "651c27f1f016f764a39f8548dacb478d99d731e75977726b95e53c5a09cd9329",
+      "bytes": 770682,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        160,
+        65,
+        1200,
+        1230
+      ],
+      "visible_bbox": [
+        215,
+        68,
+        1001,
+        1165
+      ],
+      "visible_alpha_threshold": 127,
+      "standing_height_px": 1102.148,
+      "pivot_px": [
+        610,
+        1165
+      ],
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "saturated_red_pixels_alpha128plus": 0,
+      "anchors_px": {
+        "right_fist": [
+          743,
+          337
+        ],
+        "left_fist": [
+          931,
+          328
+        ]
+      },
+      "prompt": "Use case: identity-preserve. Create ONE individual OPPOSITE WALK CONTACT keyframe sprite. Image 1 is the newly painted WALK1 sprite and the exact pose-set scale/style reference. Image 2 is the original guard identity/costume reference. Stick Breitling: slicked-back sandy blond hair, square jaw, muscular build, sleeveless dark navy crew-neck shirt, olive/dark charcoal cargo trousers, olive utility pouches on belt with rectangular metal buckle, black fingerless fighting gloves with dark wrist cuffs, black laced combat boots. Both hands EMPTY in compact boxing guard. Keep all accessories and pocket positions. Keep the same full-body lateral three-quarter camera facing RIGHT, head, face, muscular anatomy, outfit details and crisp painted pixel-art rendering as image 1. Square true-transparent RGBA canvas, SAME dimensions, head size, torso length, pelvis position and bottom floor line as image 1, entire figure with 45px safe margins. Change ONLY to the SECOND half-stride: REVERSE which anatomical leg is forward while keeping the character facing right. The anatomical LEFT leg, farther from viewer, is now extended FORWARD toward SCREEN RIGHT with heel contacting the ground. The anatomical RIGHT leg, closer to viewer, is now extended BACK toward SCREEN LEFT with its heel lifted and toe planted on the SAME floor line. The near right thigh is visibly trailing, crossing in front of the far leg at the pelvis; do NOT reuse the near-right-leg-forward arrangement of image 1. The large outer RIGHT thigh cargo pocket must now be visible on the TRAILING leg extending toward screen LEFT, rather than the leading rightward leg. Keep alert unarmed guard arms with a small natural counter-sway, no attack lunge. Two separated feet on one common floor level, one forward and one backward. One person, one image, no floor, contact shadow, VFX, motion blur, text, labels, weapons, duplicate body or extra limbs.",
+      "references": [
+        "assets/dossier_curien/motion_2026-11-19/stick_walk1.png",
+        "assets/dossier_curien/saga/stick_guard.png"
+      ],
+      "sources": [
+        "https://www.sega.jp/history/arcade/product/8161/"
+      ],
+      "source_notes": [
+        "Source de l'épisode héritée de BIBLE_SAGA.md ; les références pixel effectivement inspectées pour cette production sont les sprites locaux listés. Cette passe ne constitue pas une nouvelle validation indépendante du costume contre la borne."
+      ],
+      "tool": "image_gen__imagegen",
+      "transparency_requested": true,
+      "bytes_preserved": true,
+      "status": "visual_reviewed_runtime_calibration",
+      "canonical_1_to_1_certified": false,
+      "animation_complete": false,
+      "calibration_notes": "Hauteur anatomique proposée : boîte visible alpha≥128 de la garde de référence, multipliée par le ratio de hauteur des canevas (1254/1024). Pivot horizontal proche de l'axe du bassin ; ancrages repérés visuellement en pixels natifs. Réglage moteur final à vérifier.",
+      "visual_review": {
+        "single_full_body_subject": true,
+        "faces_right": true,
+        "unarmed": true,
+        "costume_consistent_with_guard": true,
+        "no_opaque_edge_clipping": true,
+        "support_leg_alternation": true
+      },
+      "leading_leg": "left_far",
+      "trailing_leg": "right_near",
+      "limitations": [
+        "Un appui ou une pose de rétraction dessinée individuellement. Deux contacts ne constituent pas un cycle de marche fluide : passages, variations de hauteur et raccords restent à produire.",
+        "Cohérence contrôlée contre les poses locales existantes ; fidélité canonique 1:1 non certifiée."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-19/zr_walk_production.json",
+      "reference_roles": [
+        {
+          "path": "assets/dossier_curien/motion_2026-11-19/stick_walk1.png",
+          "role": "opposite_stride_scale_reference"
+        },
+        {
+          "path": "assets/dossier_curien/saga/stick_guard.png",
+          "role": "identity_costume_style_reference"
+        }
+      ],
+      "id": "stick_walk2",
+      "origin": "generated_this_wave"
+    },
+    {
+      "id": "zobiko_contact",
+      "path": "assets/dossier_curien/motion_2026-11-19/zobiko_contact.png",
+      "source_file": "exec-163f6a2e-e7b0-4702-b06f-231779923d06.png",
+      "prompt": "Use case: identity-preserve. Asset: ONE individual transparent full-body 2D fighting-game sprite for ZOBIKO from Loving Deads: House of the Dead EX. Edit supplied corrected guard as exact costume/identity and rendering reference. Keep the SAME adult fantasy zombie, slender petite build, turquoise-mint skin, large visible blue eye, long golden BLONDE hair below waist with angular zigzag tips, broad fringe covering right eye, dark headband with pale rib-bone fan, eyeball earrings and small stitched cheek mark. Charcoal strapless top with pale edge, grey puffed bloomer SHORTS with large dark polka dots, brown belt and SKULL buckle. White wraps on LEFT forearm, LEFT shin/foot, and winding loosely around RIGHT leg; bare bandaged feet, NO shoes. Same head size and limb anatomy as reference, same crisp hand-painted arcade sprite aesthetic. Facing RIGHT, entire body and flowing hair inside a square RGBA transparent canvas with comfortable margins. No props, weapon, victim, extra character, particles, hearts, words, floor, shadow, glow or collage. Change ONLY action pose. Pose: forward open-palm strike at full extension toward screen RIGHT. Extend the unbandaged near arm from shoulder with a clearly readable open palm held vertically, fingers together, thumb to side. Opposite bandaged arm bends in guard near chest. Shift weight over front bent knee with rear heel lifted; hair trails modestly toward LEFT. Anatomically correct wrists, two arms and two legs, same proportions as original, no perspective enlargement of hand. Single fighter alone.",
+      "tool": "image_gen__imagegen",
+      "references": [
+        "assets/dossier_curien/expansion/hotd_ex/zobiko_ex_guard_v2.png"
+      ],
+      "sources": [
+        "https://www.sega.jp/history/arcade/product/8762/",
+        "https://flyers.arcade-museum.com/videogames/show/5803"
+      ],
+      "status": "visual_reviewed_runtime_calibration",
+      "canonical_1_to_1_certified": false,
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-19/ex_production.json",
+      "fighter_id": "zobiko",
+      "art_id": "zobiko",
+      "pose": "contact",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 986014,
+      "sha256": "f3652101f7bedce4b256b69aaad842afb75e3d3531eb73242c28348b0ec95696",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        15,
+        1240,
+        1238
+      ],
+      "visible_bbox": [
+        123,
+        47,
+        1102,
+        1164
+      ],
+      "visible_alpha_threshold": 127,
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "origin": "generated_this_wave",
+      "animation_complete": false,
+      "pivot_px": [
+        610,
+        1160
+      ],
+      "standing_height_px": 1130,
+      "calibration_notes": "Ground pivot and standing-equivalent anatomical scale; native pixels remain unchanged.",
+      "anchors_px": {
+        "contact": [
+          1073,
+          332
+        ]
+      }
+    },
+    {
+      "sources": [
+        "https://www.sega.jp/history/arcade/product/8762/",
+        "https://flyers.arcade-museum.com/videogames/show/5803",
+        "https://segabits.com/forums/index.php?topic=4593.0"
+      ],
+      "references": [
+        "assets/dossier_curien/expansion/hotd_ex/zobiko_ex_guard_v2.png"
+      ],
+      "provenance": "docs/dossier_curien/saga/production/recovered_2026-11-19/hotd_ex_manifest.json",
+      "prompts": [
+        "Use case: identity-preserve. Edit target IMAGE 1, the current Zobiko fighting sprite, to match the official appearance in IMAGE 2 promotional Zobiko render and IMAGE 3 SEGA EX flyer. Preserve target's finely painted crisp 2D fighting-game style and one isolated full-body right-facing guard, but CORRECT identity, hair and clothing faithfully to reference. Zobiko: light mint blue-green skin, slender petite proportions, large blue eye, tiny stitched scar on left cheek, long bright BLONDE hair extending below waist with angular zigzag pointed ends and a broad swooping fringe covering her right eye; dark headband with individual pale rib bones fanning backward; eyeball ear ornaments, no metal hoop earrings. Charcoal strapless top with light grey top band, small irregular tear at her RIGHT side. Charcoal/grey bloomer SHORTS with large dark circular dots, brown belt with pale skull buckle. White bandages over her left forearm, left shin and foot, and loosely winding around her right leg. Her feet are bandage-wrapped and have NO boots or shoes. REMOVE purple ruffled skirt, purple bra, black vest, short haircut and boots from original target, replace only with official clothing and long hair. Modest playful neutral combat guard, fists raised softly, both knees lightly bent, face turned RIGHT. No gun, no violent damage, no sexualized posing. One character, both complete feet, entire long hair and hair ornament in frame. Square genuine transparent RGBA canvas with generous 7% margins all around; no floor, ground shadow, scenery, hearts, text, labels, duplicates or sheet."
+      ],
+      "limitations": [
+        "Correction basée sur dépliant SEGA et rendu promotionnel inspectés. Le rendu de référence vient de Sonic & SEGA All-Stars Racing; costume EX recoupé avec le dépliant.",
+        "One static drawing. Additional movement, attacks, hit reactions, transitions and visual identity review are required for a complete animated fighter."
+      ],
+      "id": "zobiko_guard",
+      "fighter_id": "zobiko",
+      "art_id": "zobiko",
+      "pose": "guard",
+      "path": "assets/dossier_curien/motion_2026-11-19/zobiko_guard.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 893644,
+      "sha256": "ce743f5274f71fc23a0604cec0078048aaad7ff566b8fb34a7ce4f3ce523056e",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        10,
+        1216,
+        1237
+      ],
+      "visible_bbox": [
+        254,
+        50,
+        869,
+        1180
+      ],
+      "visible_alpha_threshold": 127,
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "origin": "existing_corrected_guard",
+      "animation_complete": false,
+      "canonical_1_to_1_certified": false,
+      "status": "visual_reviewed_runtime_calibration",
+      "pivot_px": [
+        615,
+        1180
+      ],
+      "standing_height_px": 1130,
+      "calibration_notes": "Ground pivot and standing-equivalent anatomical scale; native pixels remain unchanged."
+    },
+    {
+      "id": "zobiko_recoil",
+      "path": "assets/dossier_curien/motion_2026-11-19/zobiko_recoil.png",
+      "source_file": "exec-487f4442-e754-431b-b84a-2ff7d23b2b3c.png",
+      "prompt": "Use case: identity-preserve. Edit corrected ZOBIKO reference into ONE new individual full-body transparent 2D fighting sprite. Preserve the identical slender adult fantasy zombie, mint blue-green skin, large blue eye, blonde long zigzag-tipped hair and side fringe, eyeball earrings, dark headband and pale rib-bone ornaments, stitched cheek, dark strapless top with pale edging, grey puffed polka-dot SHORTS and skull belt. Preserve LEFT forearm bandages and leg/feet wraps as original; NO boots, NO skirt, no weapon. Exact same head proportions and detailed hand-painted rendering. Facing screen RIGHT, entire body and every hair tip within SQUARE canvas with margins; native transparent RGBA, no background/floor/shadow/effects/hearts/text or additional subject. Change action only. Pose: mild impact reaction to a chest hit arriving from screen RIGHT, with NO injury. Upper torso leans back toward LEFT, head and hair lag backwards, eyes briefly surprised but same face, both forearms partially open in protective reaction. Knees bend and feet remain planted at same baseline. Clearly distinct from guard and attack, no extreme contortion, no violent damage. Keep bandages on the same anatomical limb.",
+      "tool": "image_gen__imagegen",
+      "references": [
+        "assets/dossier_curien/expansion/hotd_ex/zobiko_ex_guard_v2.png"
+      ],
+      "sources": [
+        "https://www.sega.jp/history/arcade/product/8762/",
+        "https://flyers.arcade-museum.com/videogames/show/5803"
+      ],
+      "status": "visual_reviewed_runtime_calibration",
+      "canonical_1_to_1_certified": false,
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-19/ex_production.json",
+      "fighter_id": "zobiko",
+      "art_id": "zobiko",
+      "pose": "recoil",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 1042312,
+      "sha256": "f9cdda8153cac24ffcf5ee221a43864971eee669b52fd86c2c14dce476fc3999",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        15,
+        1242,
+        1230
+      ],
+      "visible_bbox": [
+        134,
+        66,
+        960,
+        1176
+      ],
+      "visible_alpha_threshold": 127,
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "origin": "generated_this_wave",
+      "animation_complete": false,
+      "pivot_px": [
+        656,
+        1178
+      ],
+      "standing_height_px": 1130,
+      "calibration_notes": "Ground pivot and standing-equivalent anatomical scale; native pixels remain unchanged."
+    },
+    {
+      "id": "zobiko_recovery",
+      "path": "assets/dossier_curien/motion_2026-11-19/zobiko_recovery.png",
+      "source_file": "exec-22b87050-0698-4ae9-a73b-1ef272fd0d41.png",
+      "prompt": "Use case: identity-preserve. Edit corrected ZOBIKO reference into ONE new individual full-body transparent 2D fighting sprite. Preserve the identical slender adult fantasy zombie, mint blue-green skin, large blue eye, blonde long zigzag-tipped hair and side fringe, eyeball earrings, dark headband and pale rib-bone ornaments, stitched cheek, dark strapless top with pale edging, grey puffed polka-dot SHORTS and skull belt. Preserve LEFT forearm bandages and leg/feet wraps as original; NO boots, NO skirt, no weapon. Exact same head proportions and detailed hand-painted rendering. Facing screen RIGHT, entire body and every hair tip within SQUARE canvas with margins; native transparent RGBA, no background/floor/shadow/effects/hearts/text or additional subject. Change action only. Pose: retracting an open-palm forward strike, halfway back toward neutral guard. Unbandaged arm bends with elbow below shoulder and hand still extended at upper-chest height toward RIGHT, palm vertical; bandaged opposite arm stays folded in protective guard. Torso untwists, knees settle softly, rear heel lowers. Hair settles behind back. This is a recovery intermediary with compact silhouette, not the fully extended strike and not identical to original guard. Keep wraps on original limb.",
+      "tool": "image_gen__imagegen",
+      "references": [
+        "assets/dossier_curien/expansion/hotd_ex/zobiko_ex_guard_v2.png"
+      ],
+      "sources": [
+        "https://www.sega.jp/history/arcade/product/8762/",
+        "https://flyers.arcade-museum.com/videogames/show/5803"
+      ],
+      "status": "visual_reviewed_runtime_calibration",
+      "canonical_1_to_1_certified": false,
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-19/ex_production.json",
+      "fighter_id": "zobiko",
+      "art_id": "zobiko",
+      "pose": "recovery",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 848586,
+      "sha256": "33fbc03233709e205de9e2a42d0dd53f49d038ec716fb253d2bcd86511f71cbc",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        25,
+        21,
+        1232,
+        1204
+      ],
+      "visible_bbox": [
+        252,
+        44,
+        862,
+        1179
+      ],
+      "visible_alpha_threshold": 127,
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "origin": "generated_this_wave",
+      "animation_complete": false,
+      "pivot_px": [
+        615,
+        1176
+      ],
+      "standing_height_px": 1130,
+      "calibration_notes": "Ground pivot and standing-equivalent anatomical scale; native pixels remain unchanged."
+    },
+    {
+      "id": "zobiko_walk1",
+      "path": "assets/dossier_curien/motion_2026-11-19/zobiko_walk1.png",
+      "source_file": "exec-4a9daada-535f-40aa-81db-9e80f8509f06.png",
+      "prompt": "Use case: identity-preserve. Edit supplied corrected ZOBIKO from House of the Dead EX into ONE frame of a forward WALK toward RIGHT. Preserve exact adult fantasy zombie identity, mint skin, same head and slender anatomy, bright blonde long zigzag hair, large blue visible eye and fringe, skull belt buckle, grey polka-dot bloomer SHORTS, charcoal strapless top, eyeball earrings and pale bone headband. Same detailed hand-painted sprite style, full body visible on same SQUARE transparent RGBA canvas, generous margins; no floor, shadow, text, hearts, effects, accessories or extra character. BOTH forearms remain in original modest guard. Crucial identity landmark: her near RIGHT leg has widely spaced white winding strips exposing mint shin; her far LEFT shin and foot are densely wrapped in solid white. NEVER move the wraps from one leg to the other. Feet bandaged, no shoes. Keep head/torso same pixel size as reference. Contact A: near RIGHT leg with SPARSE winding wraps swings in FRONT of the other thigh and steps forward toward lower RIGHT, heel down and toes slightly lifted. Far LEFT leg with dense white shin wraps extends BACK toward lower LEFT, heel lifted and toes on floor. At the hips the sparse-wrap right thigh is visibly IN FRONT. Keep knees softly flexed and pelvis stable. Entire long hair behind with minimal sway. Clearly a step, not standing guard.",
+      "tool": "image_gen__imagegen",
+      "references": [
+        "assets/dossier_curien/expansion/hotd_ex/zobiko_ex_guard_v2.png"
+      ],
+      "sources": [
+        "https://www.sega.jp/history/arcade/product/8762/",
+        "https://flyers.arcade-museum.com/videogames/show/5803"
+      ],
+      "status": "visual_reviewed_runtime_calibration",
+      "canonical_1_to_1_certified": false,
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-19/ex_production.json",
+      "fighter_id": "zobiko",
+      "art_id": "zobiko",
+      "pose": "walk1",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 851086,
+      "sha256": "22d0b83eaa87a05303b2d56ebb8d751aeaa34d81af7828595eb4f0f769c1ef4c",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        33,
+        21,
+        1228,
+        1216
+      ],
+      "visible_bbox": [
+        280,
+        46,
+        950,
+        1175
+      ],
+      "visible_alpha_threshold": 127,
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "origin": "generated_this_wave",
+      "animation_complete": false,
+      "pivot_px": [
+        600,
+        1175
+      ],
+      "standing_height_px": 1130,
+      "calibration_notes": "Ground pivot and standing-equivalent anatomical scale; native pixels remain unchanged."
+    },
+    {
+      "fighter_id": "zobiko",
+      "art_id": "zobiko",
+      "pose": "walk2",
+      "path": "assets/dossier_curien/motion_2026-11-19/zobiko_walk2.png",
+      "sha256": "4ab31eac74fb82582cf06602be8b4d25a9cf32ed0a476194b0a3a80c4d01b7a1",
+      "bytes": 863329,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        31,
+        32,
+        1226,
+        1178
+      ],
+      "visible_bbox": [
+        214,
+        49,
+        1026,
+        1169
+      ],
+      "visible_alpha_threshold": 127,
+      "standing_height_px": 1130,
+      "pivot_px": [
+        610,
+        1169
+      ],
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "tool": "image_gen__imagegen",
+      "status": "visual_reviewed_runtime_calibration",
+      "bytes_preserved": true,
+      "canonical_1_to_1_certified": false,
+      "animation_complete": false,
+      "leading_leg": "left_far",
+      "trailing_leg": "right_near",
+      "prompts": [
+        "Use case: precise-object-edit. Create ONE sibling full-body 2D fighting-game sprite by editing the attached corrected GUARD sprite. KEEP the entire upper body above the belt essentially unchanged: same head, hair, face, shoulders, torso, arms, hands, costume colors, detailed painted style, right-facing three-quarter view and pixel scale. Square true-transparent RGBA canvas of the same size. Change ONLY the lower body into a heel-to-toe forward STEP with the FAR LEFT leg ahead and the NEAR RIGHT leg behind. This is a very specific bone arrangement, not a generic crossed walking pose. The NEAR anatomical RIGHT leg is the leg on SCREEN LEFT in this reference. Its whole thigh, knee, shin and foot must stay on the LEFT side of the pelvis, extending diagonally DOWN-LEFT to the rear foot. The FAR anatomical LEFT leg is the leg on SCREEN RIGHT: it extends DOWN-RIGHT to the front foot. Preserve the reference's open inverted-V separation between the thighs; do not cross a near-side thigh across the pelvis toward the right knee. Near/right toe at screen-left pushes off with heel raised, far/left HEEL at screen-right is planted and its toes slightly raised. Both ground-contact points on the exact same horizontal floor line. Complete feet and all fingers/hair safe inside the canvas. NO floor, shadow, text, labels, motion blur, VFX, duplicates, extra limbs or extra subjects. Character-specific invariants: adult Zobiko, mint-green skin, long bright blonde hair with zigzag pointed ends, fringe over one eye, bone fan headband, eyeball earring, stitched cheek, charcoal strapless top with pale upper band and one small tear, grey bloomer shorts with large dark dots, brown belt with skull buckle, bandages and NO shoes. The NEAR/RIGHT leg at SCREEN LEFT has SPARSE diagonal wraps with large mint-green areas visible, including a loose band above the knee: this ENTIRE near thigh must extend backwards down-left with its sparse wraps and foot staying behind. The FAR/LEFT leg at SCREEN RIGHT has a BARE upper thigh then DENSE white bandages from knee to foot, and this ENTIRE far leg must extend forward down-right. Never merely swap the shin wrapping textures: change the direction of each whole thigh from its hip. Preserve each short-leg opening's attachment to its correct thigh. Near thigh overlaps far thigh only at the root, then they separate into an open inverted V. Dense-wrapped left heel ahead, sparse-wrapped right toe behind."
+      ],
+      "references": [
+        "assets/dossier_curien/expansion/hotd_ex/zobiko_ex_guard_v2.png"
+      ],
+      "sources": [
+        "https://www.sega.jp/history/arcade/product/8762/",
+        "https://flyers.arcade-museum.com/videogames/show/5803"
+      ],
+      "visual_review": {
+        "full_body_single_subject": true,
+        "faces_right": true,
+        "no_opaque_edge_clipping": true,
+        "near_thigh_trails_left_from_visible_hip": true,
+        "far_thigh_leads_right_from_hidden_hip": true,
+        "leg_overlaps_rebuilt_not_just_texture_swap": true,
+        "trailing_toe_and_leading_heel_share_ground_line": true,
+        "sparse_wraps_follow_near_rear_leg": true,
+        "dense_wraps_follow_far_front_leg": true
+      },
+      "anchors_px": {
+        "near_hip": [
+          489,
+          736
+        ],
+        "near_knee": [
+          394,
+          884
+        ],
+        "near_toe": [
+          318,
+          1164
+        ],
+        "far_hip": [
+          696,
+          738
+        ],
+        "far_knee": [
+          817,
+          901
+        ],
+        "far_heel": [
+          898,
+          1166
+        ]
+      },
+      "calibration_notes": "Hauteur anatomique de la garde corrigée, ajustée au ratio de canevas. Pivots et ancrages de support proposés en pixels natifs ; contrôle moteur final à effectuer.",
+      "limitations": [
+        "Correction d'un contact de marche. Les passages et transitions du cycle restent à produire.",
+        "Appuis, recouvrement des cuisses et continuité des marques contrôlés visuellement ; fidélité canonique 1:1 non certifiée."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-19/ex_walk_corrections.json",
+      "reference_roles": [
+        {
+          "path": "assets/dossier_curien/expansion/hotd_ex/zobiko_ex_guard_v2.png",
+          "role": "identity_and_hip_thigh_geometry_reference"
+        }
+      ],
+      "id": "zobiko_walk2",
+      "origin": "generated_this_wave"
+    },
+    {
+      "id": "zobiko_windup",
+      "path": "assets/dossier_curien/motion_2026-11-19/zobiko_windup.png",
+      "source_file": "exec-3446c156-5acf-475b-9bb5-5ac3599cdc53.png",
+      "prompt": "Use case: identity-preserve. Asset: ONE individual transparent full-body 2D fighting-game sprite for ZOBIKO from Loving Deads: House of the Dead EX. Edit supplied corrected guard as exact costume/identity and rendering reference. Keep the SAME adult fantasy zombie, slender petite build, turquoise-mint skin, large visible blue eye, long golden BLONDE hair below waist with angular zigzag tips, broad fringe covering right eye, dark headband with pale rib-bone fan, eyeball earrings and small stitched cheek mark. Charcoal strapless top with pale edge, grey puffed bloomer SHORTS with large dark polka dots, brown belt and SKULL buckle. White wraps on LEFT forearm, LEFT shin/foot, and winding loosely around RIGHT leg; bare bandaged feet, NO shoes. Same head size and limb anatomy as reference, same crisp hand-painted arcade sprite aesthetic. Facing RIGHT, entire body and flowing hair inside a square RGBA transparent canvas with comfortable margins. No props, weapon, victim, extra character, particles, hearts, words, floor, shadow, glow or collage. Change ONLY action pose. Pose: compact anticipation for a forward palm strike. Pull the near palm back beside shoulder, elbow flexed behind the ribcage, opposite bandaged forearm guarding the chin; shoulders rotate slightly away from screen RIGHT, knees bent, weight on rear leg. Preserve original long blonde hair flowing downward with tiny opposite sway. Clear fully clothed defensive stance; not a dance pose.",
+      "tool": "image_gen__imagegen",
+      "references": [
+        "assets/dossier_curien/expansion/hotd_ex/zobiko_ex_guard_v2.png"
+      ],
+      "sources": [
+        "https://www.sega.jp/history/arcade/product/8762/",
+        "https://flyers.arcade-museum.com/videogames/show/5803"
+      ],
+      "status": "visual_reviewed_runtime_calibration",
+      "canonical_1_to_1_certified": false,
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-19/ex_production.json",
+      "fighter_id": "zobiko",
+      "art_id": "zobiko",
+      "pose": "windup",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 940478,
+      "sha256": "b59454401c3ff8578692dae3a075b0ba80214fe5a976233501dc312f77c4c530",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        17,
+        1244,
+        1210
+      ],
+      "visible_bbox": [
+        199,
+        85,
+        883,
+        1173
+      ],
+      "visible_alpha_threshold": 127,
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "origin": "generated_this_wave",
+      "animation_complete": false,
+      "pivot_px": [
+        615,
+        1170
+      ],
+      "standing_height_px": 1130,
+      "calibration_notes": "Ground pivot and standing-equivalent anatomical scale; native pixels remain unchanged."
+    },
+    {
+      "id": "zobio_contact",
+      "path": "assets/dossier_curien/motion_2026-11-19/zobio_contact.png",
+      "source_file": "exec-1cd8447b-f985-4373-bcf5-f5863af07f62.png",
+      "prompt": "Use case: identity-preserve. Asset: ONE individual transparent full-body 2D fighting-game sprite for ZOBIO from Loving Deads: House of the Dead EX. Edit the supplied corrected guard sprite as the identity and rendering reference. Preserve exactly its huge hunched shoulders, chunky limbs, flat rectangular face and blocky jaw, head wraps, right eyepatch and visible red left eye with purple tear, sparse dark hair, sickly yellow-green skin, torn blue-grey short-sleeved open jacket, small asymmetrical exposed rib patch and staples, ragged brown knee trousers, rectangular GOLD belt buckle and completely BARE feet. Keep hand-painted arcade rendering, facing RIGHT, same proportions, material shading and anatomical scale as reference. Entire character and all toes/fingers enclosed with generous safe margins, square canvas. No shoes, no new gear, no effects, no aura, no floor or shadow, no text, no labels, no collage, no additional character. Genuine transparent RGBA. Change ONLY action pose. Pose: heavy forward punch at maximum contact toward screen RIGHT. Near arm extends strongly horizontally from shoulder with one enormous closed fist, shoulder and torso rotate into the strike, opposite fist retracts near chest. Front knee bends over planted bare front foot; rear bare foot pushes off, heel slightly raised. Keep body width and reference limb lengths, do not enlarge the fist through perspective. Clear full side silhouette. One fighter alone; do not add an opponent or impact effect.",
+      "tool": "image_gen__imagegen",
+      "references": [
+        "assets/dossier_curien/expansion/hotd_ex/zobio_ex_guard_v2.png"
+      ],
+      "sources": [
+        "https://www.sega.jp/history/arcade/product/8762/",
+        "https://flyers.arcade-museum.com/videogames/show/5803"
+      ],
+      "status": "visual_reviewed_runtime_calibration",
+      "canonical_1_to_1_certified": false,
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-19/ex_production.json",
+      "fighter_id": "zobio",
+      "art_id": "zobio",
+      "pose": "contact",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 1275049,
+      "sha256": "c9647fc0c0209b0a53e91e14cfdb29b7ec294f74f1e3d7818f0d4772ca726480",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        21,
+        1238,
+        1254
+      ],
+      "visible_bbox": [
+        51,
+        145,
+        1230,
+        1132
+      ],
+      "visible_alpha_threshold": 127,
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "origin": "generated_this_wave",
+      "animation_complete": false,
+      "pivot_px": [
+        534,
+        1132
+      ],
+      "standing_height_px": 1092,
+      "calibration_notes": "Ground pivot and standing-equivalent anatomical scale; native pixels remain unchanged.",
+      "anchors_px": {
+        "contact": [
+          1206,
+          357
+        ]
+      }
+    },
+    {
+      "sources": [
+        "https://www.sega.jp/history/arcade/product/8762/",
+        "https://flyers.arcade-museum.com/videogames/show/5803",
+        "https://sega.fandom.com/wiki/Zobio"
+      ],
+      "references": [
+        "assets/dossier_curien/expansion/hotd_ex/zobio_ex_guard_v2.png"
+      ],
+      "provenance": "docs/dossier_curien/saga/production/recovered_2026-11-19/hotd_ex_manifest.json",
+      "prompts": [
+        "Use case: identity-preserve. Edit target IMAGE 1 (the existing Zobio fighting sprite). Images 2 and 3 are SEGA's official EX flyer and are the authoritative character design reference. Make one corrected version of ZOBIO alone, keeping target's detailed hand-painted 2D fighting sprite rendering, RIGHT-facing lateral three-quarter guard and full-body composition, but faithfully correct the design to the official Zobio in the flyers. Huge green zombie with heavy hunched broad shoulders, long flat rectangular face, blocky chin, flat drooping mouth, black short sparse hair partly under poorly tied pale head bandages. Right eye obscured by dark eyepatch, left eye red with purple drip under it. Torn blue-grey short-sleeved jacket, open, only a portion of ribs exposed at his LEFT upper chest; surgical staples on opposite torso, do not make a symmetrical full skeleton chest design. Brown shredded knee-length/well-worn trousers, black/brown plain belt with rectangular GOLD buckle, NEVER a skull buckle. Crucially both large feet completely BARE, NO boots or shoes. No forearm boxer wraps (keep the mostly bare massive green hands/arms seen in the flyer). Preserve stitches, bandaged head, torn jacket and lopsided goofy monster proportions. His new guard has fists raised at chest height, both elbows distinct, small bent-knee stance facing right, one Zobio only, no Zobiko. Entire body within a square true transparent RGBA canvas with at least 7% margin on every edge, no crop of hair or bare feet. No background, floor, contact shadow, words, flyer artwork, logo, montage, accessory sheet or other characters."
+      ],
+      "limitations": [
+        "Correction basée sur dépliant SEGA inspecté. Posture latérale originale pour le mode combat; pas extraction du jeu.",
+        "One static drawing. Additional movement, attacks, hit reactions, transitions and visual identity review are required for a complete animated fighter."
+      ],
+      "id": "zobio_guard",
+      "fighter_id": "zobio",
+      "art_id": "zobio",
+      "pose": "guard",
+      "path": "assets/dossier_curien/motion_2026-11-19/zobio_guard.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 1261512,
+      "sha256": "95f63787267fd799e100da9fc4570d2a112de22c7411d01313e651e92d4db48f",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        33,
+        51,
+        1176,
+        1254
+      ],
+      "visible_bbox": [
+        241,
+        85,
+        1007,
+        1177
+      ],
+      "visible_alpha_threshold": 127,
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "origin": "existing_corrected_guard",
+      "animation_complete": false,
+      "canonical_1_to_1_certified": false,
+      "status": "visual_reviewed_runtime_calibration",
+      "pivot_px": [
+        624,
+        1177
+      ],
+      "standing_height_px": 1092,
+      "calibration_notes": "Ground pivot and standing-equivalent anatomical scale; native pixels remain unchanged."
+    },
+    {
+      "id": "zobio_recoil",
+      "path": "assets/dossier_curien/motion_2026-11-19/zobio_recoil.png",
+      "source_file": "exec-121f8ca8-c2c9-4b8f-ab2f-3074a498b0c6.png",
+      "prompt": "Use case: identity-preserve. Edit the supplied corrected ZOBIO from House of the Dead EX into ONE new individual 2D fighting sprite. EXACT same art style, yellow-green skin, massive hunched broad shoulders, square drooping face, head wraps/eyepatch/red eye/purple tear, asymmetrical small rib exposure/staples, ripped blue-grey open short-sleeve jacket, ripped brown knee-length trousers and rectangular GOLD buckle. Both feet completely BARE. Facing RIGHT, same head and body proportions. Full body and all extremities within SQUARE canvas with generous margin. Genuine transparent RGBA background. No new objects, no opponent, no wound/blood/effects, no shadow or floor, no text or labels, ONE character. Pose: controlled reaction to being hit at chest height from screen RIGHT, no visible injury. Torso leans back toward screen LEFT, head pulls back, knees flex, near left-on-image forearm opens away from abdomen and far forearm raises protectively beside face. Both bare feet remain contacting same floor line, front heel partly lifted, staggering but not falling. Jacket hem follows motion. Must read clearly as flinch, distinct from attack and guard. Five fingers on visible open hand, preserve bulky anatomy.",
+      "tool": "image_gen__imagegen",
+      "references": [
+        "assets/dossier_curien/expansion/hotd_ex/zobio_ex_guard_v2.png"
+      ],
+      "sources": [
+        "https://www.sega.jp/history/arcade/product/8762/",
+        "https://flyers.arcade-museum.com/videogames/show/5803"
+      ],
+      "status": "visual_reviewed_runtime_calibration",
+      "canonical_1_to_1_certified": false,
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-19/ex_production.json",
+      "fighter_id": "zobio",
+      "art_id": "zobio",
+      "pose": "recoil",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 1342546,
+      "sha256": "e9af6bae2d5690d959b9a210bc996309502cd5308fb7befb0210b67ed33ca898",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        20,
+        1240,
+        1238
+      ],
+      "visible_bbox": [
+        112,
+        119,
+        1053,
+        1184
+      ],
+      "visible_alpha_threshold": 127,
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "origin": "generated_this_wave",
+      "animation_complete": false,
+      "pivot_px": [
+        666,
+        1180
+      ],
+      "standing_height_px": 1092,
+      "calibration_notes": "Ground pivot and standing-equivalent anatomical scale; native pixels remain unchanged."
+    },
+    {
+      "id": "zobio_recovery",
+      "path": "assets/dossier_curien/motion_2026-11-19/zobio_recovery.png",
+      "source_file": "exec-10e80e3d-db1c-4195-8135-5271c4ab413c.png",
+      "prompt": "Use case: identity-preserve. Edit the supplied corrected ZOBIO from House of the Dead EX into ONE new individual 2D fighting sprite. EXACT same art style, yellow-green skin, massive hunched broad shoulders, square drooping face, head wraps/eyepatch/red eye/purple tear, asymmetrical small rib exposure/staples, ripped blue-grey open short-sleeve jacket, ripped brown knee-length trousers and rectangular GOLD buckle. Both feet completely BARE. Facing RIGHT, same head and body proportions. Full body and all extremities within SQUARE canvas with generous margin. Genuine transparent RGBA background. No new objects, no opponent, no wound/blood/effects, no shadow or floor, no text or labels, ONE character. Pose: recovery immediately after a forward heavy punch, returning toward guard. His near (viewer side, previously left-on-image) arm is halfway bent across front of torso with fist in front at sternum height, elbow no longer fully extended; opposite fist guards his chin. Torso untwists toward original guard, front knee still slightly bent, rear bare heel settles down. Keep head and shoulder scale identical, no exaggerated perspective. It must read as retracting the punch with a compact intermediary silhouette, visibly different from original symmetrical guard.",
+      "tool": "image_gen__imagegen",
+      "references": [
+        "assets/dossier_curien/expansion/hotd_ex/zobio_ex_guard_v2.png"
+      ],
+      "sources": [
+        "https://www.sega.jp/history/arcade/product/8762/",
+        "https://flyers.arcade-museum.com/videogames/show/5803"
+      ],
+      "status": "visual_reviewed_runtime_calibration",
+      "canonical_1_to_1_certified": false,
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-19/ex_production.json",
+      "fighter_id": "zobio",
+      "art_id": "zobio",
+      "pose": "recovery",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 1173319,
+      "sha256": "acc09af6761ff1c5cef76177cad3efb149c3086fe08ee9763601c73ac570d724",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        61,
+        1196,
+        1214
+      ],
+      "visible_bbox": [
+        253,
+        86,
+        963,
+        1172
+      ],
+      "visible_alpha_threshold": 127,
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "origin": "generated_this_wave",
+      "animation_complete": false,
+      "pivot_px": [
+        612,
+        1170
+      ],
+      "standing_height_px": 1092,
+      "calibration_notes": "Ground pivot and standing-equivalent anatomical scale; native pixels remain unchanged."
+    },
+    {
+      "id": "zobio_walk1",
+      "path": "assets/dossier_curien/motion_2026-11-19/zobio_walk1.png",
+      "source_file": "exec-1b305ced-dc4e-4c70-9dbf-313c06f1e51d.png",
+      "prompt": "Use case: identity-preserve. Edit supplied corrected ZOBIO game sprite for exactly ONE individual frame of his forward walking animation toward screen RIGHT. Retain his massive hunched yellow-green body, flat square face, head bandages/eye patch/red eye/purple tear, bare huge green hands and feet, blue-grey ripped short-sleeved jacket, asymmetrical small rib patch, staples and brown ragged knee trousers with GOLD rectangular buckle. Maintain original head/torso size and proportions and detailed painted rendering. Arms remain in guard, loosely bent. Same square canvas, character fully visible with safe margins. Ground contact line at approximately 92 percent canvas height. No additional character, text, effects, ground or shadow. Native truly transparent RGBA. This is a WALK, not an attack or run. Frame A: near RIGHT leg (viewer-side leg, starting on left side of source) has swung forward toward screen RIGHT, heel touching the ground in front of hip and toes raised a little; opposite LEFT leg stays behind toward LEFT with heel lifted and toes on ground. Show that near leg visibly crossing in front of the far leg. BOTH knees mildly flexed. Pelvis advances slightly, opposite shoulders compensate subtly. A clear broad step contact, without crossing ankles or changing camera angle.",
+      "tool": "image_gen__imagegen",
+      "references": [
+        "assets/dossier_curien/expansion/hotd_ex/zobio_ex_guard_v2.png"
+      ],
+      "sources": [
+        "https://www.sega.jp/history/arcade/product/8762/",
+        "https://flyers.arcade-museum.com/videogames/show/5803"
+      ],
+      "status": "visual_reviewed_runtime_calibration",
+      "canonical_1_to_1_certified": false,
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-19/ex_production.json",
+      "fighter_id": "zobio",
+      "art_id": "zobio",
+      "pose": "walk1",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 1121270,
+      "sha256": "b19e793afb9de218aec72f04b42517058054a457c3009c2ad874f0faf2d16c66",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        25,
+        1232,
+        1236
+      ],
+      "visible_bbox": [
+        224,
+        84,
+        1001,
+        1166
+      ],
+      "visible_alpha_threshold": 127,
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "origin": "generated_this_wave",
+      "animation_complete": false,
+      "pivot_px": [
+        604,
+        1167
+      ],
+      "standing_height_px": 1092,
+      "calibration_notes": "Ground pivot and standing-equivalent anatomical scale; native pixels remain unchanged."
+    },
+    {
+      "fighter_id": "zobio",
+      "art_id": "zobio",
+      "pose": "walk2",
+      "path": "assets/dossier_curien/motion_2026-11-19/zobio_walk2.png",
+      "sha256": "c2a55e424866f808ab6355222b1e67db7ea615737a6342f8f1f4fa0d6df0ba5a",
+      "bytes": 1174571,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        23,
+        1230,
+        1228
+      ],
+      "visible_bbox": [
+        147,
+        84,
+        1064,
+        1174
+      ],
+      "visible_alpha_threshold": 127,
+      "standing_height_px": 1092,
+      "pivot_px": [
+        610,
+        1174
+      ],
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "tool": "image_gen__imagegen",
+      "status": "visual_reviewed_runtime_calibration",
+      "bytes_preserved": true,
+      "canonical_1_to_1_certified": false,
+      "animation_complete": false,
+      "leading_leg": "left_far",
+      "trailing_leg": "right_near",
+      "prompts": [
+        "Use case: precise-object-edit. Create ONE sibling full-body 2D fighting-game sprite by editing the attached corrected GUARD sprite. KEEP the entire upper body above the belt essentially unchanged: same head, hair, face, shoulders, torso, arms, hands, costume colors, detailed painted style, right-facing three-quarter view and pixel scale. Square true-transparent RGBA canvas of the same size. Change ONLY the lower body into a heel-to-toe forward STEP with the FAR LEFT leg ahead and the NEAR RIGHT leg behind. This is a very specific bone arrangement, not a generic crossed walking pose. The NEAR anatomical RIGHT leg is the leg on SCREEN LEFT in this reference. Its whole thigh, knee, shin and foot must stay on the LEFT side of the pelvis, extending diagonally DOWN-LEFT to the rear foot. The FAR anatomical LEFT leg is the leg on SCREEN RIGHT: it extends DOWN-RIGHT to the front foot. Preserve the reference's open inverted-V separation between the thighs; do not cross a near-side thigh across the pelvis toward the right knee. Near/right toe at screen-left pushes off with heel raised, far/left HEEL at screen-right is planted and its toes slightly raised. Both ground-contact points on the exact same horizontal floor line. Complete feet and all fingers/hair safe inside the canvas. NO floor, shadow, text, labels, motion blur, VFX, duplicates, extra limbs or extra subjects. Character-specific invariants: Zobio's massive green zombie body, broad hunched shoulders, long rectangular face, wrapped head and eyepatch, one red eye, torn blue-grey short-sleeved jacket, partial rib opening on his left chest and metal staples on the opposite side, brown belt with rectangular GOLD buckle, shredded brown trousers, huge BARE feet. The large exposed GREEN tear on the NEAR/RIGHT trouser thigh must remain on the ENTIRE trailing leg at SCREEN LEFT, above its rear knee, following the same thigh rather than jumping across the crotch. Its long vertical purple shin seam travels with that trailing leg. The far/left thigh and shin are a separate limb extending right; its shorter oblique purple seam follows it. Show two independent hips-to-feet chains. Do not put a large near thigh crossing diagonally in front from left hip to right knee. Keep near thigh in the foreground where it joins pelvis, far thigh behind at that joint.",
+        "Use case: precise-object-edit. Edit ONLY the two purple stitched scars on Zobio's shins in the attached accepted walking-contact sprite. Preserve EVERYTHING else exactly: the same fixed head, face, bandages, eyepatch, torso, fists, jacket, gold rectangular belt buckle, brown torn trousers, colors, pixel scale, canvas size, and the correct OPPOSITE-STEP anatomy. His NEAR/RIGHT thigh visibly runs from the left visible hip diagonally DOWN-LEFT to the rear knee and foot; his FAR/LEFT thigh runs down-right to the front heel. Keep that whole leg arrangement, overlap, silhouette, large tear on the trailing thigh, heel positions and toes completely unchanged. The correction is solely scar continuity: on the REAR shin at SCREEN LEFT put the LONG lengthwise purple seam, with four cross stitches, following the long axis of that rear shin; on the FRONT shin at SCREEN RIGHT put the SHORT oblique purple seam with three cross stitches, slanting across that shin. Those two scar designs belong to those anatomical legs throughout the animation. Do not move limbs or swap calves or rebuild the pose. Genuine transparent RGBA background, one complete character, no crop, no text, no ground, no shadow or effects."
+      ],
+      "references": [
+        "assets/dossier_curien/expansion/hotd_ex/zobio_ex_guard_v2.png"
+      ],
+      "sources": [
+        "https://www.sega.jp/history/arcade/product/8762/",
+        "https://flyers.arcade-museum.com/videogames/show/5803"
+      ],
+      "visual_review": {
+        "full_body_single_subject": true,
+        "faces_right": true,
+        "no_opaque_edge_clipping": true,
+        "near_thigh_trails_left_from_visible_hip": true,
+        "far_thigh_leads_right_from_hidden_hip": true,
+        "leg_overlaps_rebuilt_not_just_texture_swap": true,
+        "trailing_toe_and_leading_heel_share_ground_line": true,
+        "long_shin_seam_follows_near_rear_leg": true,
+        "short_oblique_seam_follows_far_front_leg": true
+      },
+      "anchors_px": {
+        "near_hip": [
+          465,
+          711
+        ],
+        "near_knee": [
+          348,
+          900
+        ],
+        "near_toe": [
+          309,
+          1167
+        ],
+        "far_hip": [
+          675,
+          719
+        ],
+        "far_knee": [
+          837,
+          910
+        ],
+        "far_heel": [
+          851,
+          1167
+        ]
+      },
+      "calibration_notes": "Hauteur anatomique de la garde corrigée, ajustée au ratio de canevas. Pivots et ancrages de support proposés en pixels natifs ; contrôle moteur final à effectuer.",
+      "limitations": [
+        "Correction d'un contact de marche. Les passages et transitions du cycle restent à produire.",
+        "Appuis, recouvrement des cuisses et continuité des marques contrôlés visuellement ; fidélité canonique 1:1 non certifiée."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-19/ex_walk_corrections.json",
+      "reference_roles": [
+        {
+          "path": "assets/dossier_curien/expansion/hotd_ex/zobio_ex_guard_v2.png",
+          "role": "identity_and_hip_thigh_geometry_reference"
+        }
+      ],
+      "id": "zobio_walk2",
+      "origin": "generated_this_wave"
+    },
+    {
+      "id": "zobio_windup",
+      "path": "assets/dossier_curien/motion_2026-11-19/zobio_windup.png",
+      "source_file": "exec-610f7735-344c-4ee3-a92e-e0344d7d9e7a.png",
+      "prompt": "Use case: identity-preserve. Asset: ONE individual transparent full-body 2D fighting-game sprite for ZOBIO from Loving Deads: House of the Dead EX. Edit the supplied corrected guard sprite as the identity and rendering reference. Preserve exactly its huge hunched shoulders, chunky limbs, flat rectangular face and blocky jaw, head wraps, right eyepatch and visible red left eye with purple tear, sparse dark hair, sickly yellow-green skin, torn blue-grey short-sleeved open jacket, small asymmetrical exposed rib patch and staples, ragged brown knee trousers, rectangular GOLD belt buckle and completely BARE feet. Keep hand-painted arcade rendering, facing RIGHT, same proportions, material shading and anatomical scale as reference. Entire character and all toes/fingers enclosed with generous safe margins, square canvas. No shoes, no new gear, no effects, no aura, no floor or shadow, no text, no labels, no collage, no additional character. Genuine transparent RGBA. Change ONLY action pose. Pose: anticipation before a heavy rightward forward punch. Pull the near heavy fist back beside the lower ribs, elbow bent strongly behind torso, turn shoulders slightly back, opposite fist raised defensively near face; load weight onto the rear bent leg, front bare foot remains planted. This is a readable compact coiled wind-up, visibly different from guard, NOT the punch contact. Both fists and all legs visible.",
+      "tool": "image_gen__imagegen",
+      "references": [
+        "assets/dossier_curien/expansion/hotd_ex/zobio_ex_guard_v2.png"
+      ],
+      "sources": [
+        "https://www.sega.jp/history/arcade/product/8762/",
+        "https://flyers.arcade-museum.com/videogames/show/5803"
+      ],
+      "status": "visual_reviewed_runtime_calibration",
+      "canonical_1_to_1_certified": false,
+      "provenance": "docs/dossier_curien/saga/production/motion_2026-11-19/ex_production.json",
+      "fighter_id": "zobio",
+      "art_id": "zobio",
+      "pose": "windup",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 1453092,
+      "sha256": "ed8176aa68eacf23d7abab0afc146e3d8f52dfa5f819085d8d8e77839c50c456",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        23,
+        1240,
+        1254
+      ],
+      "visible_bbox": [
+        150,
+        107,
+        1081,
+        1172
+      ],
+      "visible_alpha_threshold": 127,
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "origin": "generated_this_wave",
+      "animation_complete": false,
+      "pivot_px": [
+        624,
+        1177
+      ],
+      "standing_height_px": 1092,
+      "calibration_notes": "Ground pivot and standing-equivalent anatomical scale; native pixels remain unchanged.",
+      "anchors_px": {
+        "right_fist": [
+          370,
+          552
+        ]
+      }
+    }
+  ]
+}

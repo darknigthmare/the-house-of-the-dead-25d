@@ -1,0 +1,20 @@
+MOTION COMPAT46 DISTRIBUTION ASSEMBLY QA
+
+Python: 3.12.14
+Distribution: /workspace/scratch/da9d6e4777c1/hotd-recovery/docs/dossier_curien/saga/jeu_motion_compat46
+Reconstructed file: /tmp/hotd-motion-distribution-qa-yq4vt5ff/HOTD_Motion_Compat46.pck
+Pack bytes: 289338520
+Pack SHA256: 918e8331c03696d9b13ce77d50764c14bf24c0e895610c541f454d430529863d
+81 raw parts; no .pck assembled inside the workspace.
+
+full_round_trip: PASS
+{"test": "full_round_trip", "exit_code": 0, "seconds": 2.02, "stdout": "Paquet vérifié : /tmp/hotd-motion-distribution-qa-yq4vt5ff/HOTD_Motion_Compat46.pck", "stderr": "", "bytes": 289338520, "sha256": "918e8331c03696d9b13ce77d50764c14bf24c0e895610c541f454d430529863d", "fragment_count": 81, "workspace_pck_created": false, "temporary_cleanup": true}
+
+existing_identical_output: PASS
+{"test": "existing_identical_output", "exit_code": 0, "seconds": 0.272, "stdout": "Paquet déjà vérifié : /tmp/hotd-motion-distribution-qa-yq4vt5ff/HOTD_Motion_Compat46.pck", "stderr": "", "unchanged": true}
+
+existing_unknown_output_refused: PASS
+{"test": "existing_unknown_output_refused", "exit_code": 1, "seconds": 0.037, "stdout": "", "stderr": "Un autre fichier existe à l’emplacement /tmp/hotd-motion-distribution-qa-yq4vt5ff/preserved-existing.pck. Choisissez un autre chemin.", "existing_bytes_preserved": true}
+
+corrupted_fragment_refused: PASS
+{"test": "corrupted_fragment_refused", "exit_code": 1, "seconds": 0.037, "stdout": "", "stderr": "Fragment incomplet ou endommagé : Motion_Compat46.part01", "no_final_output": true, "temporary_cleanup": true, "published_fragment_unchanged": true}

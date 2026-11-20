@@ -1,0 +1,3221 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "baseline_commit": "59372b618882da17510351f2a5bd46226682eac4",
+  "counting_rule": "Une ligne est une tâche graphique, une forme, un ensemble à documenter ou une rencontre. Ne jamais sommer ces lignes comme des personnages uniques.",
+  "playable_baseline": [
+    {
+      "profile_index": 0,
+      "id": "rogan",
+      "name": "Thomas Rogan",
+      "home": "curien",
+      "dossier_playable": true,
+      "art_paths": [
+        "assets/dossier_curien/motion_2026-11-19/rogan_crouch.png",
+        "assets/dossier_curien/motion_2026-11-19/rogan_jump_rise.png",
+        "assets/dossier_curien/rogan_contact.png",
+        "assets/dossier_curien/rogan_ending.png",
+        "assets/dossier_curien/rogan_guard.png",
+        "assets/dossier_curien/rogan_intro.png",
+        "assets/dossier_curien/rogan_recoil.png",
+        "assets/dossier_curien/rogan_recovery.png",
+        "assets/dossier_curien/rogan_rival.png",
+        "assets/dossier_curien/rogan_select.png",
+        "assets/dossier_curien/rogan_windup.png"
+      ],
+      "animation_complete_claim": false,
+      "evidence": "src/dossier_curien/combatant.gd::PROFILES"
+    },
+    {
+      "profile_index": 1,
+      "id": "g",
+      "name": "Agent G",
+      "home": "curien",
+      "dossier_playable": true,
+      "art_paths": [
+        "assets/dossier_curien/g_contact.png",
+        "assets/dossier_curien/g_guard.png",
+        "assets/dossier_curien/g_recoil.png",
+        "assets/dossier_curien/g_recovery.png",
+        "assets/dossier_curien/g_select.png",
+        "assets/dossier_curien/g_windup.png"
+      ],
+      "animation_complete_claim": false,
+      "evidence": "src/dossier_curien/combatant.gd::PROFILES"
+    },
+    {
+      "profile_index": 2,
+      "id": "chariot",
+      "name": "Chariot",
+      "home": "curien",
+      "dossier_playable": true,
+      "art_paths": [
+        "assets/dossier_curien/chariot_contact.png",
+        "assets/dossier_curien/chariot_guard.png",
+        "assets/dossier_curien/chariot_recoil.png",
+        "assets/dossier_curien/chariot_recovery.png",
+        "assets/dossier_curien/chariot_select.png",
+        "assets/dossier_curien/chariot_windup.png"
+      ],
+      "animation_complete_claim": false,
+      "evidence": "src/dossier_curien/combatant.gd::PROFILES"
+    },
+    {
+      "profile_index": 3,
+      "id": "magician",
+      "name": "Magician",
+      "home": "curien",
+      "dossier_playable": true,
+      "art_paths": [
+        "assets/dossier_curien/magician_contact.png",
+        "assets/dossier_curien/magician_guard.png",
+        "assets/dossier_curien/magician_recoil.png",
+        "assets/dossier_curien/magician_recovery.png",
+        "assets/dossier_curien/magician_select.png",
+        "assets/dossier_curien/magician_windup.png"
+      ],
+      "animation_complete_claim": false,
+      "evidence": "src/dossier_curien/combatant.gd::PROFILES"
+    },
+    {
+      "profile_index": 4,
+      "id": "james",
+      "name": "James Taylor",
+      "home": "hotd2",
+      "dossier_playable": true,
+      "art_paths": [
+        "assets/dossier_curien/saga/james_contact.png",
+        "assets/dossier_curien/saga/james_guard.png",
+        "assets/dossier_curien/saga/james_recoil.png",
+        "assets/dossier_curien/saga/james_select.png",
+        "assets/dossier_curien/saga/james_walk1.png",
+        "assets/dossier_curien/saga/james_walk2.png",
+        "assets/dossier_curien/saga/james_windup.png"
+      ],
+      "animation_complete_claim": false,
+      "evidence": "src/dossier_curien/combatant.gd::PROFILES"
+    },
+    {
+      "profile_index": 5,
+      "id": "lisa",
+      "name": "Lisa Rogan",
+      "home": "hotd3",
+      "dossier_playable": true,
+      "art_paths": [
+        "assets/dossier_curien/saga/lisa_contact.png",
+        "assets/dossier_curien/saga/lisa_guard.png",
+        "assets/dossier_curien/saga/lisa_recoil.png",
+        "assets/dossier_curien/saga/lisa_select.png",
+        "assets/dossier_curien/saga/lisa_walk1.png",
+        "assets/dossier_curien/saga/lisa_walk2.png",
+        "assets/dossier_curien/saga/lisa_windup.png",
+        "assets/dossier_curien/saga/parts/lisa_goggles.png",
+        "assets/dossier_curien/saga/parts/lisa_shotgun.png"
+      ],
+      "animation_complete_claim": false,
+      "evidence": "src/dossier_curien/combatant.gd::PROFILES"
+    },
+    {
+      "profile_index": 6,
+      "id": "kate",
+      "name": "Kate Green",
+      "home": "hotd4",
+      "dossier_playable": true,
+      "art_paths": [
+        "assets/dossier_curien/saga/kate_contact.png",
+        "assets/dossier_curien/saga/kate_guard.png",
+        "assets/dossier_curien/saga/kate_recoil.png",
+        "assets/dossier_curien/saga/kate_select.png",
+        "assets/dossier_curien/saga/kate_soiree_contact.png",
+        "assets/dossier_curien/saga/kate_soiree_guard.png",
+        "assets/dossier_curien/saga/kate_soiree_recoil.png",
+        "assets/dossier_curien/saga/kate_soiree_select.png",
+        "assets/dossier_curien/saga/kate_soiree_walk1.png",
+        "assets/dossier_curien/saga/kate_soiree_walk2.png",
+        "assets/dossier_curien/saga/kate_soiree_windup.png",
+        "assets/dossier_curien/saga/kate_walk1.png",
+        "assets/dossier_curien/saga/kate_walk2.png",
+        "assets/dossier_curien/saga/kate_windup.png"
+      ],
+      "animation_complete_claim": false,
+      "evidence": "src/dossier_curien/combatant.gd::PROFILES"
+    },
+    {
+      "profile_index": 7,
+      "id": "ryan",
+      "name": "Ryan Taylor",
+      "home": "scarlet",
+      "dossier_playable": true,
+      "art_paths": [
+        "assets/dossier_curien/saga/ryan_contact.png",
+        "assets/dossier_curien/saga/ryan_guard.png",
+        "assets/dossier_curien/saga/ryan_recoil.png",
+        "assets/dossier_curien/saga/ryan_select.png",
+        "assets/dossier_curien/saga/ryan_soiree_contact.png",
+        "assets/dossier_curien/saga/ryan_soiree_guard.png",
+        "assets/dossier_curien/saga/ryan_soiree_recoil.png",
+        "assets/dossier_curien/saga/ryan_soiree_select.png",
+        "assets/dossier_curien/saga/ryan_soiree_walk1.png",
+        "assets/dossier_curien/saga/ryan_soiree_walk2.png",
+        "assets/dossier_curien/saga/ryan_soiree_windup.png",
+        "assets/dossier_curien/saga/ryan_walk1.png",
+        "assets/dossier_curien/saga/ryan_walk2.png",
+        "assets/dossier_curien/saga/ryan_windup.png"
+      ],
+      "animation_complete_claim": false,
+      "evidence": "src/dossier_curien/combatant.gd::PROFILES"
+    },
+    {
+      "profile_index": 8,
+      "id": "isaac",
+      "name": "Isaac Washington",
+      "home": "overkill",
+      "dossier_playable": true,
+      "art_paths": [
+        "assets/dossier_curien/saga/isaac_contact.png",
+        "assets/dossier_curien/saga/isaac_guard.png",
+        "assets/dossier_curien/saga/isaac_recoil.png",
+        "assets/dossier_curien/saga/isaac_select.png",
+        "assets/dossier_curien/saga/isaac_windup.png"
+      ],
+      "animation_complete_claim": false,
+      "evidence": "src/dossier_curien/combatant.gd::PROFILES"
+    },
+    {
+      "profile_index": 9,
+      "id": "zobio",
+      "name": "Zobio",
+      "home": "ex",
+      "dossier_playable": true,
+      "art_paths": [
+        "assets/dossier_curien/expansion/hotd_ex/zobio_ex_guard_v2.png",
+        "assets/dossier_curien/motion_2026-11-19/zobio_contact.png",
+        "assets/dossier_curien/motion_2026-11-19/zobio_guard.png",
+        "assets/dossier_curien/motion_2026-11-19/zobio_recoil.png",
+        "assets/dossier_curien/motion_2026-11-19/zobio_recovery.png",
+        "assets/dossier_curien/motion_2026-11-19/zobio_walk1.png",
+        "assets/dossier_curien/motion_2026-11-19/zobio_walk2.png",
+        "assets/dossier_curien/motion_2026-11-19/zobio_windup.png",
+        "assets/dossier_curien/saga/zobio_contact.png",
+        "assets/dossier_curien/saga/zobio_guard.png",
+        "assets/dossier_curien/saga/zobio_recoil.png",
+        "assets/dossier_curien/saga/zobio_select.png",
+        "assets/dossier_curien/saga/zobio_windup.png"
+      ],
+      "animation_complete_claim": false,
+      "evidence": "src/dossier_curien/combatant.gd::PROFILES"
+    },
+    {
+      "profile_index": 10,
+      "id": "stick",
+      "name": "Stick Breitling",
+      "home": "revenge",
+      "dossier_playable": true,
+      "art_paths": [
+        "assets/dossier_curien/motion_2026-11-19/stick_recovery.png",
+        "assets/dossier_curien/motion_2026-11-19/stick_walk1.png",
+        "assets/dossier_curien/motion_2026-11-19/stick_walk2.png",
+        "assets/dossier_curien/saga/stick_contact.png",
+        "assets/dossier_curien/saga/stick_guard.png",
+        "assets/dossier_curien/saga/stick_recoil.png",
+        "assets/dossier_curien/saga/stick_select.png",
+        "assets/dossier_curien/saga/stick_windup.png"
+      ],
+      "animation_complete_claim": false,
+      "evidence": "src/dossier_curien/combatant.gd::PROFILES"
+    },
+    {
+      "profile_index": 11,
+      "id": "hierophant",
+      "name": "Hierophant",
+      "home": "hotd2",
+      "dossier_playable": true,
+      "art_paths": [
+        "assets/dossier_curien/saga/hierophant_contact.png",
+        "assets/dossier_curien/saga/hierophant_guard.png",
+        "assets/dossier_curien/saga/hierophant_recoil.png",
+        "assets/dossier_curien/saga/hierophant_select.png",
+        "assets/dossier_curien/saga/hierophant_windup.png"
+      ],
+      "animation_complete_claim": false,
+      "evidence": "src/dossier_curien/combatant.gd::PROFILES"
+    },
+    {
+      "profile_index": 12,
+      "id": "death",
+      "name": "Death",
+      "home": "hotd3",
+      "dossier_playable": true,
+      "art_paths": [
+        "assets/dossier_curien/saga/death_contact.png",
+        "assets/dossier_curien/saga/death_guard.png",
+        "assets/dossier_curien/saga/death_recoil.png",
+        "assets/dossier_curien/saga/death_select.png",
+        "assets/dossier_curien/saga/death_windup.png"
+      ],
+      "animation_complete_claim": false,
+      "evidence": "src/dossier_curien/combatant.gd::PROFILES"
+    },
+    {
+      "profile_index": 13,
+      "id": "justice",
+      "name": "Justice",
+      "home": "hotd4",
+      "dossier_playable": true,
+      "art_paths": [
+        "assets/dossier_curien/expansion/hotd_ex/justice_ex_guard.png",
+        "assets/dossier_curien/saga/justice_contact.png",
+        "assets/dossier_curien/saga/justice_guard.png",
+        "assets/dossier_curien/saga/justice_recoil.png",
+        "assets/dossier_curien/saga/justice_select.png",
+        "assets/dossier_curien/saga/justice_windup.png"
+      ],
+      "animation_complete_claim": false,
+      "evidence": "src/dossier_curien/combatant.gd::PROFILES"
+    },
+    {
+      "profile_index": 14,
+      "id": "jasper",
+      "name": "Jasper Guns",
+      "home": "overkill",
+      "dossier_playable": true,
+      "art_paths": [
+        "assets/dossier_curien/saga/jasper_contact.png",
+        "assets/dossier_curien/saga/jasper_guard.png",
+        "assets/dossier_curien/saga/jasper_recoil.png",
+        "assets/dossier_curien/saga/jasper_select.png",
+        "assets/dossier_curien/saga/jasper_windup.png"
+      ],
+      "animation_complete_claim": false,
+      "evidence": "src/dossier_curien/combatant.gd::PROFILES"
+    },
+    {
+      "profile_index": 15,
+      "id": "zobiko",
+      "name": "Zobiko",
+      "home": "ex",
+      "dossier_playable": true,
+      "art_paths": [
+        "assets/dossier_curien/expansion/hotd_ex/zobiko_ex_guard_v2.png",
+        "assets/dossier_curien/motion_2026-11-19/zobiko_contact.png",
+        "assets/dossier_curien/motion_2026-11-19/zobiko_guard.png",
+        "assets/dossier_curien/motion_2026-11-19/zobiko_recoil.png",
+        "assets/dossier_curien/motion_2026-11-19/zobiko_recovery.png",
+        "assets/dossier_curien/motion_2026-11-19/zobiko_walk1.png",
+        "assets/dossier_curien/motion_2026-11-19/zobiko_walk2.png",
+        "assets/dossier_curien/motion_2026-11-19/zobiko_windup.png",
+        "assets/dossier_curien/saga/zobiko_contact.png",
+        "assets/dossier_curien/saga/zobiko_guard.png",
+        "assets/dossier_curien/saga/zobiko_recoil.png",
+        "assets/dossier_curien/saga/zobiko_select.png",
+        "assets/dossier_curien/saga/zobiko_windup.png"
+      ],
+      "animation_complete_claim": false,
+      "evidence": "src/dossier_curien/combatant.gd::PROFILES"
+    },
+    {
+      "profile_index": 16,
+      "id": "rikiya",
+      "name": "Rikiya Busujima",
+      "home": "revenge",
+      "dossier_playable": true,
+      "art_paths": [
+        "assets/dossier_curien/motion_2026-11-19/rikiya_recovery.png",
+        "assets/dossier_curien/motion_2026-11-19/rikiya_walk1.png",
+        "assets/dossier_curien/motion_2026-11-19/rikiya_walk2.png",
+        "assets/dossier_curien/saga/rikiya_contact.png",
+        "assets/dossier_curien/saga/rikiya_guard.png",
+        "assets/dossier_curien/saga/rikiya_recoil.png",
+        "assets/dossier_curien/saga/rikiya_select.png",
+        "assets/dossier_curien/saga/rikiya_windup.png"
+      ],
+      "animation_complete_claim": false,
+      "evidence": "src/dossier_curien/combatant.gd::PROFILES"
+    },
+    {
+      "profile_index": 17,
+      "id": "emperor",
+      "name": "Emperor",
+      "home": "hotd2",
+      "dossier_playable": true,
+      "art_paths": [
+        "assets/dossier_curien/saga/emperor_contact.png",
+        "assets/dossier_curien/saga/emperor_ending.png",
+        "assets/dossier_curien/saga/emperor_guard.png",
+        "assets/dossier_curien/saga/emperor_intro.png",
+        "assets/dossier_curien/saga/emperor_recoil.png",
+        "assets/dossier_curien/saga/emperor_rival.png",
+        "assets/dossier_curien/saga/emperor_select.png",
+        "assets/dossier_curien/saga/emperor_windup.png"
+      ],
+      "animation_complete_claim": false,
+      "evidence": "src/dossier_curien/combatant.gd::PROFILES"
+    },
+    {
+      "profile_index": 18,
+      "id": "wheel",
+      "name": "Wheel of Fate",
+      "home": "hotd3",
+      "dossier_playable": true,
+      "art_paths": [
+        "assets/dossier_curien/saga/wheel_contact.png",
+        "assets/dossier_curien/saga/wheel_ending.png",
+        "assets/dossier_curien/saga/wheel_guard.png",
+        "assets/dossier_curien/saga/wheel_intro.png",
+        "assets/dossier_curien/saga/wheel_recoil.png",
+        "assets/dossier_curien/saga/wheel_rival.png",
+        "assets/dossier_curien/saga/wheel_select.png",
+        "assets/dossier_curien/saga/wheel_windup.png"
+      ],
+      "animation_complete_claim": false,
+      "evidence": "src/dossier_curien/combatant.gd::PROFILES"
+    },
+    {
+      "profile_index": 19,
+      "id": "gary",
+      "name": "Gary Stewart",
+      "home": "hotd2",
+      "dossier_playable": true,
+      "art_paths": [
+        "assets/dossier_curien/saga/gary_contact.png",
+        "assets/dossier_curien/saga/gary_ending.png",
+        "assets/dossier_curien/saga/gary_guard.png",
+        "assets/dossier_curien/saga/gary_intro.png",
+        "assets/dossier_curien/saga/gary_melee.png",
+        "assets/dossier_curien/saga/gary_recoil.png",
+        "assets/dossier_curien/saga/gary_rival.png",
+        "assets/dossier_curien/saga/gary_select.png",
+        "assets/dossier_curien/saga/gary_walk1.png",
+        "assets/dossier_curien/saga/gary_walk2.png",
+        "assets/dossier_curien/saga/gary_windup.png"
+      ],
+      "animation_complete_claim": false,
+      "evidence": "src/dossier_curien/combatant.gd::PROFILES"
+    },
+    {
+      "profile_index": 20,
+      "id": "daniel",
+      "name": "Daniel Curien",
+      "home": "hotd3",
+      "dossier_playable": true,
+      "art_paths": [
+        "assets/dossier_curien/saga/daniel_contact.png",
+        "assets/dossier_curien/saga/daniel_ending.png",
+        "assets/dossier_curien/saga/daniel_guard.png",
+        "assets/dossier_curien/saga/daniel_intro.png",
+        "assets/dossier_curien/saga/daniel_recoil.png",
+        "assets/dossier_curien/saga/daniel_rival.png",
+        "assets/dossier_curien/saga/daniel_select.png",
+        "assets/dossier_curien/saga/daniel_walk1.png",
+        "assets/dossier_curien/saga/daniel_walk2.png",
+        "assets/dossier_curien/saga/daniel_windup.png"
+      ],
+      "animation_complete_claim": false,
+      "evidence": "src/dossier_curien/combatant.gd::PROFILES"
+    },
+    {
+      "profile_index": 21,
+      "id": "world",
+      "name": "The World",
+      "home": "hotd4",
+      "dossier_playable": true,
+      "art_paths": [
+        "assets/dossier_curien/saga/world_contact.png",
+        "assets/dossier_curien/saga/world_ending.png",
+        "assets/dossier_curien/saga/world_final.png",
+        "assets/dossier_curien/saga/world_guard.png",
+        "assets/dossier_curien/saga/world_intro.png",
+        "assets/dossier_curien/saga/world_recoil.png",
+        "assets/dossier_curien/saga/world_rival.png",
+        "assets/dossier_curien/saga/world_select.png",
+        "assets/dossier_curien/saga/world_windup.png"
+      ],
+      "animation_complete_claim": false,
+      "evidence": "src/dossier_curien/combatant.gd::PROFILES"
+    },
+    {
+      "profile_index": 22,
+      "id": "moon",
+      "name": "Moon",
+      "home": "scarlet",
+      "dossier_playable": true,
+      "art_paths": [
+        "assets/dossier_curien/saga/moon_contact.png",
+        "assets/dossier_curien/saga/moon_ending.png",
+        "assets/dossier_curien/saga/moon_final.png",
+        "assets/dossier_curien/saga/moon_guard.png",
+        "assets/dossier_curien/saga/moon_intro.png",
+        "assets/dossier_curien/saga/moon_recoil.png",
+        "assets/dossier_curien/saga/moon_rival.png",
+        "assets/dossier_curien/saga/moon_select.png",
+        "assets/dossier_curien/saga/moon_windup.png"
+      ],
+      "animation_complete_claim": false,
+      "evidence": "src/dossier_curien/combatant.gd::PROFILES"
+    },
+    {
+      "profile_index": 23,
+      "id": "linda",
+      "name": "Linda Rotta",
+      "home": "revenge",
+      "dossier_playable": true,
+      "art_paths": [
+        "assets/dossier_curien/expansion/zombie_revenge_characters/linda_contact.png",
+        "assets/dossier_curien/expansion/zombie_revenge_characters/linda_crouch.png",
+        "assets/dossier_curien/expansion/zombie_revenge_characters/linda_crouch_guard.png",
+        "assets/dossier_curien/expansion/zombie_revenge_characters/linda_recoil.png",
+        "assets/dossier_curien/expansion/zombie_revenge_characters/linda_recovery.png",
+        "assets/dossier_curien/expansion/zombie_revenge_characters/linda_rotta_base.png",
+        "assets/dossier_curien/expansion/zombie_revenge_characters/linda_slide_contact.png",
+        "assets/dossier_curien/expansion/zombie_revenge_characters/linda_walk1.png",
+        "assets/dossier_curien/expansion/zombie_revenge_characters/linda_walk2.png",
+        "assets/dossier_curien/expansion/zombie_revenge_characters/linda_windup.png",
+        "assets/dossier_curien/motion_2026-11-19/linda_block.png",
+        "assets/dossier_curien/motion_2026-11-19/linda_finish.png",
+        "assets/dossier_curien/motion_2026-11-19/linda_jump_fall.png",
+        "assets/dossier_curien/motion_2026-11-19/linda_jump_rise.png",
+        "assets/dossier_curien/motion_2026-11-19/linda_reload.png",
+        "assets/dossier_curien/motion_2026-11-19/linda_taunt.png",
+        "assets/dossier_curien/motion_2026-11-19/linda_throw.png",
+        "assets/dossier_curien/motion_2026-11-19/linda_victory.png"
+      ],
+      "animation_complete_claim": false,
+      "evidence": "src/dossier_curien/combatant.gd::PROFILES"
+    }
+  ],
+  "gallery_baseline": [
+    {
+      "id": "justice_ex",
+      "name": "Justice — EX",
+      "game": "hotd_ex",
+      "category": "boss_base",
+      "path": "assets/dossier_curien/expansion/hotd_ex/justice_ex_guard.png",
+      "playable": false,
+      "runtime_role": "bestiary",
+      "status": "static_needs_visual_reference_qa",
+      "animation_complete": false,
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/Justice",
+        "https://www.sega.jp/history/arcade/product/8762/"
+      ],
+      "limitations": [
+        "Reconstruction 2D d'après descriptions documentées; référence visuelle externe non récupérée. Garde latérale créée pour le projet.",
+        "One static drawing. Additional movement, attacks, hit reactions, transitions and visual identity review are required for a complete animated fighter."
+      ]
+    },
+    {
+      "id": "temperance_ex",
+      "name": "Temperance — EX cameo",
+      "game": "hotd_ex",
+      "category": "boss_base",
+      "path": "assets/dossier_curien/expansion/hotd_ex/temperance_ex_guard.png",
+      "playable": false,
+      "runtime_role": "bestiary",
+      "status": "static_reference_reviewed",
+      "animation_complete": false,
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/Temperance",
+        "https://static.wikia.nocookie.net/houseofthedead/images/5/5e/Temperance_HOD4Render.png/revision/latest"
+      ],
+      "limitations": [
+        "Model reference is original The House of the Dead 4 render, reused as cameo in EX. No distinct EX redesign is documented.",
+        "One static drawing. Additional movement, attacks, hit reactions, transitions and visual identity review are required for a complete animated fighter."
+      ]
+    },
+    {
+      "id": "empress_ex",
+      "name": "The Empress — EX",
+      "game": "hotd_ex",
+      "category": "boss_base",
+      "path": "assets/dossier_curien/expansion/hotd_ex/empress_ex_guard.png",
+      "playable": false,
+      "runtime_role": "bestiary",
+      "status": "static_needs_visual_reference_qa",
+      "animation_complete": false,
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/The_Empress",
+        "https://www.youtube.com/watch?v=mjpnpPiScPM&t=10206s"
+      ],
+      "limitations": [
+        "Reconstruction 2D d'après description explicite de la variante EX; référence visuelle externe non récupérée. Type EX à confirmer séparément du 1210 de HOD4.",
+        "One static drawing. Additional movement, attacks, hit reactions, transitions and visual identity review are required for a complete animated fighter."
+      ]
+    },
+    {
+      "id": "lovers_ex",
+      "name": "The Lovers — EX cameo",
+      "game": "hotd_ex",
+      "category": "boss_base",
+      "path": "assets/dossier_curien/expansion/hotd_ex/lovers_ex_guard.png",
+      "playable": false,
+      "runtime_role": "bestiary",
+      "status": "static_reference_reviewed",
+      "animation_complete": false,
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/The_Lovers",
+        "https://static.wikia.nocookie.net/houseofthedead/images/9/92/Lovers_HOD4Render.png/revision/latest"
+      ],
+      "limitations": [
+        "Model reference is original The House of the Dead 4 render. EX cameo is confirmed, but screenshot-specific color grading has not been verified. The canonical conjoined male/female organism is retained as one character.",
+        "One static drawing. Additional movement, attacks, hit reactions, transitions and visual identity review are required for a complete animated fighter."
+      ]
+    },
+    {
+      "id": "star_ex",
+      "name": "The Star masqué — EX",
+      "game": "hotd_ex",
+      "category": "boss_base",
+      "path": "assets/dossier_curien/expansion/hotd_ex/star_ex_guard.png",
+      "playable": false,
+      "runtime_role": "bestiary",
+      "status": "static_needs_visual_reference_qa",
+      "animation_complete": false,
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/The_Star",
+        "https://www.youtube.com/watch?v=mjpnpPiScPM&t=10100s"
+      ],
+      "limitations": [
+        "Reconstruction 2D d'après descriptions documentées; référence visuelle externe non récupérée. Pose de garde sans armes adaptée pour le projet.",
+        "One static drawing. Additional movement, attacks, hit reactions, transitions and visual identity review are required for a complete animated fighter."
+      ]
+    },
+    {
+      "id": "zobiko_ex_guard_v2",
+      "name": "Zobiko — correction costume original",
+      "game": "hotd_ex",
+      "category": "character_base",
+      "path": "assets/dossier_curien/expansion/hotd_ex/zobiko_ex_guard_v2.png",
+      "playable": false,
+      "runtime_role": "bestiary",
+      "status": "static_reference_reviewed",
+      "animation_complete": false,
+      "sources": [
+        "https://www.sega.jp/history/arcade/product/8762/",
+        "https://flyers.arcade-museum.com/videogames/show/5803",
+        "https://segabits.com/forums/index.php?topic=4593.0"
+      ],
+      "limitations": [
+        "Correction basée sur dépliant SEGA et rendu promotionnel inspectés. Le rendu de référence vient de Sonic & SEGA All-Stars Racing; costume EX recoupé avec le dépliant.",
+        "One static drawing. Additional movement, attacks, hit reactions, transitions and visual identity review are required for a complete animated fighter."
+      ]
+    },
+    {
+      "id": "zobio_ex_guard_v2",
+      "name": "Zobio — correction costume original",
+      "game": "hotd_ex",
+      "category": "character_base",
+      "path": "assets/dossier_curien/expansion/hotd_ex/zobio_ex_guard_v2.png",
+      "playable": false,
+      "runtime_role": "bestiary",
+      "status": "static_reference_reviewed",
+      "animation_complete": false,
+      "sources": [
+        "https://www.sega.jp/history/arcade/product/8762/",
+        "https://flyers.arcade-museum.com/videogames/show/5803",
+        "https://sega.fandom.com/wiki/Zobio"
+      ],
+      "limitations": [
+        "Correction basée sur dépliant SEGA inspecté. Posture latérale originale pour le mode combat; pas extraction du jeu.",
+        "One static drawing. Additional movement, attacks, hit reactions, transitions and visual identity review are required for a complete animated fighter."
+      ]
+    },
+    {
+      "id": "uds03",
+      "name": "UDS-03",
+      "game": "zombie_revenge",
+      "category": "boss_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/uds03_idle.png",
+      "playable": false,
+      "runtime_role": "bestiary",
+      "status": "static_reference_reviewed",
+      "animation_complete": false,
+      "sources": [
+        "https://sesesega.hatenablog.jp/entry/zombierevenge",
+        "https://www.digitpress.com/library/manuals/dreamcast/zombie_revenge.pdf"
+      ],
+      "limitations": [
+        "2D adaptation based on original game screenshots and manual; exact 1:1 fidelity not certified.",
+        "One static drawing. Additional movement, attacks, hit reactions, transitions and visual identity review are required for a complete animated fighter."
+      ]
+    },
+    {
+      "id": "neclien",
+      "name": "UDS-03 Neclien",
+      "game": "zombie_revenge",
+      "category": "boss_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/neclien_idle.png",
+      "playable": false,
+      "runtime_role": "bestiary",
+      "status": "static_reference_reviewed",
+      "animation_complete": false,
+      "sources": [
+        "https://sesesega.hatenablog.jp/entry/zombierevenge"
+      ],
+      "limitations": [
+        "2D adaptation based on an original in-game screenshot; exact 1:1 fidelity not certified.",
+        "Very low-alpha pixels reach the lower edge, while the visible silhouette (alpha > 127) and both feet remain inside the frame. Do not treat the alpha>0 bounds alone as evidence of cropped anatomy.",
+        "One static drawing. Additional movement, attacks, hit reactions, transitions and visual identity review are required for a complete animated fighter."
+      ]
+    },
+    {
+      "id": "uds04c",
+      "name": "UDS-04C",
+      "game": "zombie_revenge",
+      "category": "boss_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/uds04c_idle.png",
+      "playable": false,
+      "runtime_role": "bestiary",
+      "status": "static_reference_reviewed",
+      "animation_complete": false,
+      "sources": [
+        "https://sesesega.hatenablog.jp/entry/zombierevenge"
+      ],
+      "limitations": [
+        "2D adaptation based on an original in-game screenshot; exact 1:1 fidelity not certified.",
+        "One static drawing. Additional movement, attacks, hit reactions, transitions and visual identity review are required for a complete animated fighter."
+      ]
+    },
+    {
+      "id": "uds05",
+      "name": "UDS-05",
+      "game": "zombie_revenge",
+      "category": "boss_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/uds05_idle.png",
+      "playable": false,
+      "runtime_role": "bestiary",
+      "status": "static_reference_reviewed",
+      "animation_complete": false,
+      "sources": [
+        "https://sesesega.hatenablog.jp/entry/zombierevenge",
+        "https://www.digitpress.com/library/manuals/dreamcast/zombie_revenge.pdf"
+      ],
+      "limitations": [
+        "2D adaptation based on original game screenshots and manual; exact 1:1 fidelity not certified.",
+        "One static drawing. Additional movement, attacks, hit reactions, transitions and visual identity review are required for a complete animated fighter."
+      ]
+    },
+    {
+      "id": "uds06b",
+      "name": "UDS-06B",
+      "game": "zombie_revenge",
+      "category": "boss_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/uds06b_idle.png",
+      "playable": false,
+      "runtime_role": "bestiary",
+      "status": "static_needs_provenance_review",
+      "animation_complete": false,
+      "sources": [
+        "https://sesesega.hatenablog.jp/entry/zombierevenge"
+      ],
+      "limitations": [
+        "Recovered unlabelled generated master and identified by visual comparison to the saved UDS-06B screenshot. Original generation prompt and tool result record were not recovered. Identity match is an audit inference; exact 1:1 fidelity is not certified.",
+        "One static drawing. Additional movement, attacks, hit reactions, transitions and visual identity review are required for a complete animated fighter."
+      ]
+    },
+    {
+      "id": "zed",
+      "name": "ZED",
+      "game": "zombie_revenge",
+      "category": "boss_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/zed_idle.png",
+      "playable": false,
+      "runtime_role": "bestiary",
+      "status": "static_reference_reviewed",
+      "animation_complete": false,
+      "sources": [
+        "https://sesesega.hatenablog.jp/entry/zombierevenge"
+      ],
+      "limitations": [
+        "2D adaptation based on an original in-game screenshot; exact 1:1 fidelity not certified.",
+        "One static drawing. Additional movement, attacks, hit reactions, transitions and visual identity review are required for a complete animated fighter."
+      ]
+    },
+    {
+      "id": "linda_rotta",
+      "name": "Linda Rotta",
+      "game": "zombie_revenge",
+      "category": "character_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_rotta_base.png",
+      "playable": true,
+      "runtime_role": "playable_fighter_guard",
+      "status": "static_reference_reviewed",
+      "animation_complete": false,
+      "sources": [
+        "https://static.wikia.nocookie.net/houseofthedead/images/3/3f/Linda_Full.jpg/revision/latest?cb=20200217050952",
+        "https://www.digitpress.com/library/manuals/dreamcast/zombie_revenge.pdf"
+      ],
+      "limitations": [
+        "Garde adaptée en 2D depuis le rendu officiel. Pistolet dans la main droite, bandage au bras gauche et étui à la cuisse droite.",
+        "Jouable dans une adaptation de combat AMS. Dix dessins disponibles : garde et neuf poses dédiées ; animation continue complète et fidélité exacte 1:1 non certifiées."
+      ]
+    },
+    {
+      "id": "marco_cloud_portrait",
+      "name": "Marco Cloud",
+      "game": "zombie_revenge",
+      "category": "dialogue_portrait",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_characters/marco_cloud_portrait.png",
+      "playable": false,
+      "runtime_role": "dialogue_portrait",
+      "status": "static_reference_reviewed",
+      "animation_complete": false,
+      "sources": [
+        "https://static.wikia.nocookie.net/houseofthedead/images/8/8d/Marco_Cloud.jpg/revision/latest"
+      ],
+      "limitations": [
+        "Portrait limité aux parties visibles dans les références; ce fichier n'est pas un sprite de combat en pied. Adaptation 2D, fidélité exacte non certifiée.",
+        "Deliberate portrait crop. Not a complete full-body fighter sprite.",
+        "One static drawing. Additional movement, attacks, hit reactions, transitions and visual identity review are required for a complete animated fighter."
+      ]
+    },
+    {
+      "id": "yoko_portrait",
+      "name": "Yoko",
+      "game": "zombie_revenge",
+      "category": "dialogue_portrait",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_characters/yoko_portrait.png",
+      "playable": false,
+      "runtime_role": "dialogue_portrait",
+      "status": "static_reference_reviewed",
+      "animation_complete": false,
+      "sources": [
+        "https://static.wikia.nocookie.net/houseofthedead/images/f/fd/Yoko.jpg/revision/latest",
+        "https://static.wikia.nocookie.net/houseofthedead/images/7/7e/Yokowarning.jpg/revision/latest",
+        "https://www.digitpress.com/library/manuals/dreamcast/zombie_revenge.pdf"
+      ],
+      "limitations": [
+        "Portrait limité aux parties visibles dans les références; ce fichier n'est pas un sprite de combat en pied. Adaptation 2D, fidélité exacte non certifiée.",
+        "Deliberate portrait crop. Not a complete full-body fighter sprite.",
+        "One static drawing. Additional movement, attacks, hit reactions, transitions and visual identity review are required for a complete animated fighter."
+      ]
+    },
+    {
+      "id": "bat_zombie",
+      "name": "Bat Zombie",
+      "game": "zombie_revenge",
+      "category": "enemy_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/bat_zombie_base.png",
+      "playable": false,
+      "runtime_role": "bestiary",
+      "status": "static_reference_reviewed",
+      "animation_complete": false,
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge_Perfect_Guide",
+        "https://thehouseofthedead.fandom.com/wiki/List_of_zombies_in_Zombie_Revenge"
+      ],
+      "limitations": [
+        "Static base pose adapted from the Zombie Revenge Perfect Guide reference crop; complete animation and exact 1:1 fidelity are not certified.",
+        "One static drawing. Additional movement, attacks, hit reactions, transitions and visual identity review are required for a complete animated fighter."
+      ]
+    },
+    {
+      "id": "buddy",
+      "name": "Buddy",
+      "game": "zombie_revenge",
+      "category": "enemy_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/buddy_base.png",
+      "playable": false,
+      "runtime_role": "bestiary",
+      "status": "static_reference_reviewed",
+      "animation_complete": false,
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge_Perfect_Guide",
+        "https://thehouseofthedead.fandom.com/wiki/List_of_zombies_in_Zombie_Revenge"
+      ],
+      "limitations": [
+        "Static base pose adapted from the Zombie Revenge Perfect Guide reference crop; complete animation and exact 1:1 fidelity are not certified.",
+        "One static drawing. Additional movement, attacks, hit reactions, transitions and visual identity review are required for a complete animated fighter."
+      ]
+    },
+    {
+      "id": "factory_worker_1",
+      "name": "Factory Worker Zombie 1",
+      "game": "zombie_revenge",
+      "category": "enemy_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/factory_worker_1_base.png",
+      "playable": false,
+      "runtime_role": "bestiary",
+      "status": "static_reference_reviewed",
+      "animation_complete": false,
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge_Perfect_Guide",
+        "https://thehouseofthedead.fandom.com/wiki/List_of_zombies_in_Zombie_Revenge"
+      ],
+      "limitations": [
+        "Static base pose adapted from the Zombie Revenge Perfect Guide reference crop; complete animation and exact 1:1 fidelity are not certified.",
+        "One static drawing. Additional movement, attacks, hit reactions, transitions and visual identity review are required for a complete animated fighter."
+      ]
+    },
+    {
+      "id": "hedgeros",
+      "name": "Hedgeros",
+      "game": "zombie_revenge",
+      "category": "enemy_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/hedgeros_base.png",
+      "playable": false,
+      "runtime_role": "bestiary",
+      "status": "static_reference_reviewed",
+      "animation_complete": false,
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge_Perfect_Guide",
+        "https://thehouseofthedead.fandom.com/wiki/List_of_zombies_in_Zombie_Revenge"
+      ],
+      "limitations": [
+        "Static base pose adapted from the Zombie Revenge Perfect Guide reference crop; complete animation and exact 1:1 fidelity are not certified.",
+        "One static drawing. Additional movement, attacks, hit reactions, transitions and visual identity review are required for a complete animated fighter."
+      ]
+    },
+    {
+      "id": "hedlin",
+      "name": "Hedlin",
+      "game": "zombie_revenge",
+      "category": "enemy_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/hedlin_base.png",
+      "playable": false,
+      "runtime_role": "bestiary",
+      "status": "static_reference_reviewed",
+      "animation_complete": false,
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge_Perfect_Guide",
+        "https://thehouseofthedead.fandom.com/wiki/List_of_zombies_in_Zombie_Revenge"
+      ],
+      "limitations": [
+        "Static base pose adapted from the Zombie Revenge Perfect Guide reference crop; complete animation and exact 1:1 fidelity are not certified.",
+        "One static drawing. Additional movement, attacks, hit reactions, transitions and visual identity review are required for a complete animated fighter."
+      ]
+    },
+    {
+      "id": "latch",
+      "name": "Latch",
+      "game": "zombie_revenge",
+      "category": "enemy_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/latch_base.png",
+      "playable": false,
+      "runtime_role": "bestiary",
+      "status": "static_reference_reviewed",
+      "animation_complete": false,
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge_Perfect_Guide",
+        "https://thehouseofthedead.fandom.com/wiki/List_of_zombies_in_Zombie_Revenge"
+      ],
+      "limitations": [
+        "Static base pose adapted from the Zombie Revenge Perfect Guide reference crop; complete animation and exact 1:1 fidelity are not certified.",
+        "One static drawing. Additional movement, attacks, hit reactions, transitions and visual identity review are required for a complete animated fighter."
+      ]
+    },
+    {
+      "id": "mccoy",
+      "name": "McCoy",
+      "game": "zombie_revenge",
+      "category": "enemy_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/mccoy_base.png",
+      "playable": false,
+      "runtime_role": "bestiary",
+      "status": "static_reference_reviewed",
+      "animation_complete": false,
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge_Perfect_Guide",
+        "https://thehouseofthedead.fandom.com/wiki/List_of_zombies_in_Zombie_Revenge"
+      ],
+      "limitations": [
+        "Static base pose adapted from the Zombie Revenge Perfect Guide reference crop; complete animation and exact 1:1 fidelity are not certified.",
+        "One static drawing. Additional movement, attacks, hit reactions, transitions and visual identity review are required for a complete animated fighter."
+      ]
+    },
+    {
+      "id": "biff",
+      "name": "Biff",
+      "game": "zombie_revenge",
+      "category": "enemy_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/biff_base.png",
+      "playable": false,
+      "runtime_role": "bestiary",
+      "status": "generated_reference_reviewed",
+      "animation_complete": false,
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge_Perfect_Guide",
+        "https://thehouseofthedead.fandom.com/wiki/List_of_zombies_in_Zombie_Revenge",
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge"
+      ],
+      "limitations": [
+        "Adaptation 2D depuis le modèle du guide original, inspection du cadrage et de la silhouette effectuée ; fidélité exacte 1:1 non certifiée.",
+        "Dessin statique individuel. Cycle de marche, attaques, réactions et comportement de combat encore à produire."
+      ]
+    },
+    {
+      "id": "ebitan",
+      "name": "Ebitan",
+      "game": "zombie_revenge",
+      "category": "enemy_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/ebitan_base.png",
+      "playable": false,
+      "runtime_role": "bestiary",
+      "status": "generated_reference_reviewed",
+      "animation_complete": false,
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge_Perfect_Guide",
+        "https://thehouseofthedead.fandom.com/wiki/List_of_zombies_in_Zombie_Revenge",
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge"
+      ],
+      "limitations": [
+        "Adaptation 2D depuis le modèle du guide original, inspection du cadrage et de la silhouette effectuée ; fidélité exacte 1:1 non certifiée.",
+        "Dessin statique individuel. Cycle de marche, attaques, réactions et comportement de combat encore à produire."
+      ]
+    },
+    {
+      "id": "factory_worker_2",
+      "name": "Factory Worker 2",
+      "game": "zombie_revenge",
+      "category": "enemy_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/factory_worker_2_base.png",
+      "playable": false,
+      "runtime_role": "bestiary",
+      "status": "generated_reference_reviewed",
+      "animation_complete": false,
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge_Perfect_Guide",
+        "https://thehouseofthedead.fandom.com/wiki/List_of_zombies_in_Zombie_Revenge",
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge"
+      ],
+      "limitations": [
+        "Adaptation 2D depuis le modèle du guide original, inspection du cadrage et de la silhouette effectuée ; fidélité exacte 1:1 non certifiée.",
+        "Dessin statique individuel. Cycle de marche, attaques, réactions et comportement de combat encore à produire."
+      ]
+    },
+    {
+      "id": "frog",
+      "name": "Frog",
+      "game": "zombie_revenge",
+      "category": "enemy_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/frog_base.png",
+      "playable": false,
+      "runtime_role": "bestiary",
+      "status": "generated_reference_reviewed",
+      "animation_complete": false,
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge_Perfect_Guide",
+        "https://thehouseofthedead.fandom.com/wiki/List_of_zombies_in_Zombie_Revenge",
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge"
+      ],
+      "limitations": [
+        "Adaptation 2D depuis le modèle du guide original, inspection du cadrage et de la silhouette effectuée ; fidélité exacte 1:1 non certifiée.",
+        "Dessin statique individuel. Cycle de marche, attaques, réactions et comportement de combat encore à produire."
+      ]
+    },
+    {
+      "id": "hedrian",
+      "name": "Hedrian",
+      "game": "zombie_revenge",
+      "category": "enemy_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/hedrian_base.png",
+      "playable": false,
+      "runtime_role": "bestiary",
+      "status": "generated_reference_reviewed",
+      "animation_complete": false,
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge_Perfect_Guide",
+        "https://thehouseofthedead.fandom.com/wiki/List_of_zombies_in_Zombie_Revenge",
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge"
+      ],
+      "limitations": [
+        "Adaptation 2D depuis le modèle du guide original, inspection du cadrage et de la silhouette effectuée ; fidélité exacte 1:1 non certifiée.",
+        "Dessin statique individuel. Cycle de marche, attaques, réactions et comportement de combat encore à produire."
+      ]
+    },
+    {
+      "id": "hermonkey",
+      "name": "Hermonkey",
+      "game": "zombie_revenge",
+      "category": "enemy_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/hermonkey_base.png",
+      "playable": false,
+      "runtime_role": "bestiary",
+      "status": "generated_reference_reviewed",
+      "animation_complete": false,
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge_Perfect_Guide",
+        "https://thehouseofthedead.fandom.com/wiki/List_of_zombies_in_Zombie_Revenge",
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge"
+      ],
+      "limitations": [
+        "Adaptation 2D depuis le modèle du guide original, inspection du cadrage et de la silhouette effectuée ; fidélité exacte 1:1 non certifiée.",
+        "Dessin statique individuel. Cycle de marche, attaques, réactions et comportement de combat encore à produire."
+      ]
+    },
+    {
+      "id": "mansion_zombie_1",
+      "name": "Mansion Zombie 1",
+      "game": "zombie_revenge",
+      "category": "enemy_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/mansion_zombie_1_base.png",
+      "playable": false,
+      "runtime_role": "bestiary",
+      "status": "generated_reference_reviewed",
+      "animation_complete": false,
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge_Perfect_Guide",
+        "https://thehouseofthedead.fandom.com/wiki/List_of_zombies_in_Zombie_Revenge",
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge"
+      ],
+      "limitations": [
+        "Adaptation 2D depuis le modèle du guide original, inspection du cadrage et de la silhouette effectuée ; fidélité exacte 1:1 non certifiée.",
+        "Dessin statique individuel. Cycle de marche, attaques, réactions et comportement de combat encore à produire."
+      ]
+    },
+    {
+      "id": "mansion_zombie_2",
+      "name": "Mansion Zombie 2",
+      "game": "zombie_revenge",
+      "category": "enemy_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/mansion_zombie_2_base.png",
+      "playable": false,
+      "runtime_role": "bestiary",
+      "status": "generated_reference_reviewed",
+      "animation_complete": false,
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge_Perfect_Guide",
+        "https://thehouseofthedead.fandom.com/wiki/List_of_zombies_in_Zombie_Revenge",
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge"
+      ],
+      "limitations": [
+        "Adaptation 2D depuis le modèle du guide original, inspection du cadrage et de la silhouette effectuée ; fidélité exacte 1:1 non certifiée.",
+        "Dessin statique individuel. Cycle de marche, attaques, réactions et comportement de combat encore à produire."
+      ]
+    },
+    {
+      "id": "mecha_zombie",
+      "name": "Mecha Zombie",
+      "game": "zombie_revenge",
+      "category": "enemy_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/mecha_zombie_base.png",
+      "playable": false,
+      "runtime_role": "bestiary",
+      "status": "generated_reference_reviewed",
+      "animation_complete": false,
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge_Perfect_Guide",
+        "https://thehouseofthedead.fandom.com/wiki/List_of_zombies_in_Zombie_Revenge",
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge"
+      ],
+      "limitations": [
+        "Adaptation 2D depuis le modèle du guide original, inspection du cadrage et de la silhouette effectuée ; fidélité exacte 1:1 non certifiée.",
+        "Dessin statique individuel. Cycle de marche, attaques, réactions et comportement de combat encore à produire."
+      ]
+    },
+    {
+      "id": "mummy",
+      "name": "Mummy",
+      "game": "zombie_revenge",
+      "category": "enemy_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/mummy_base.png",
+      "playable": false,
+      "runtime_role": "bestiary",
+      "status": "generated_reference_reviewed",
+      "animation_complete": false,
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge_Perfect_Guide",
+        "https://thehouseofthedead.fandom.com/wiki/List_of_zombies_in_Zombie_Revenge",
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge"
+      ],
+      "limitations": [
+        "Adaptation 2D depuis le modèle du guide original, inspection du cadrage et de la silhouette effectuée ; fidélité exacte 1:1 non certifiée.",
+        "Dessin statique individuel. Cycle de marche, attaques, réactions et comportement de combat encore à produire."
+      ]
+    },
+    {
+      "id": "uds02",
+      "name": "UDS-02",
+      "game": "zombie_revenge",
+      "category": "boss_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/uds02_idle.png",
+      "playable": false,
+      "runtime_role": "bestiary",
+      "status": "generated_reference_reviewed",
+      "animation_complete": false,
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge_Perfect_Guide",
+        "https://www.digitpress.com/library/manuals/dreamcast/zombie_revenge.pdf",
+        "https://sesesega.hatenablog.jp/entry/zombierevenge"
+      ],
+      "limitations": [
+        "Adaptation 2D depuis les références indiquées et inspectées. Un sprite maître statique, non un cycle d’animation ; fidélité exacte 1:1 non certifiée.",
+        "Illustration de bestiaire ; aucun nouveau boss jouable ni IA de boss ne sont annoncés pour ce visuel."
+      ]
+    },
+    {
+      "id": "black_magician",
+      "name": "Black Magician Type 01",
+      "game": "zombie_revenge",
+      "category": "boss_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/black_magician_idle.png",
+      "playable": false,
+      "runtime_role": "bestiary",
+      "status": "generated_reference_reviewed",
+      "animation_complete": false,
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/Zombie_Revenge_Perfect_Guide",
+        "https://sesesega.hatenablog.jp/entry/zombierevenge",
+        "https://thehouseofthedead.fandom.com/wiki/Black_Magician_Type_01"
+      ],
+      "limitations": [
+        "Adaptation 2D depuis les références indiquées et inspectées. Un sprite maître statique, non un cycle d’animation ; fidélité exacte 1:1 non certifiée.",
+        "Illustration de bestiaire ; aucun nouveau boss jouable ni IA de boss ne sont annoncés pour ce visuel."
+      ]
+    },
+    {
+      "id": "uds_tpii_00",
+      "name": "UDS-TP II 00",
+      "game": "zombie_revenge",
+      "category": "boss_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/uds_tpii_00_idle.png",
+      "playable": false,
+      "runtime_role": "bestiary",
+      "status": "generated_reference_reviewed",
+      "animation_complete": false,
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/UDS-TP_II",
+        "https://www.youtube.com/watch?v=ji1Qvgc7OBc&t=567s"
+      ],
+      "limitations": [
+        "Adaptation 2D depuis les références indiquées et inspectées. Un sprite maître statique, non un cycle d’animation ; fidélité exacte 1:1 non certifiée.",
+        "Illustration de bestiaire ; aucun nouveau boss jouable ni IA de boss ne sont annoncés pour ce visuel."
+      ]
+    },
+    {
+      "id": "uds_tpii_01",
+      "name": "UDS-TP II 01",
+      "game": "zombie_revenge",
+      "category": "boss_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/uds_tpii_01_idle.png",
+      "playable": false,
+      "runtime_role": "bestiary",
+      "status": "generated_reference_reviewed",
+      "animation_complete": false,
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/UDS-TP_II",
+        "https://www.youtube.com/watch?v=ji1Qvgc7OBc&t=567s"
+      ],
+      "limitations": [
+        "Adaptation 2D depuis les références indiquées et inspectées. Un sprite maître statique, non un cycle d’animation ; fidélité exacte 1:1 non certifiée.",
+        "Illustration de bestiaire ; aucun nouveau boss jouable ni IA de boss ne sont annoncés pour ce visuel."
+      ]
+    },
+    {
+      "id": "nikelle",
+      "name": "UDS-07 Nikelle",
+      "game": "zombie_revenge",
+      "category": "boss_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/nikelle_idle.png",
+      "playable": false,
+      "runtime_role": "bestiary",
+      "status": "generated_needs_visual_reference_qa",
+      "animation_complete": false,
+      "sources": [
+        "https://sesesega.hatenablog.jp/entry/zombierevenge",
+        "https://cdn-ak.f.st-hatena.com/images/fotolife/B/BUNNY/20230116/20230116154802.png",
+        "https://www.youtube.com/watch?v=ji1Qvgc7OBc&t=353s"
+      ],
+      "limitations": [
+        "Adaptation depuis une capture de jeu basse résolution et un storyboard original. Le dessin complet et les détails fins restent à confronter à un rendu SEGA haute résolution ; fidélité exacte 1:1 non certifiée. Sprite maître statique sans animation.",
+        "Illustration de bestiaire ; aucun nouveau boss jouable ni IA de boss ne sont annoncés pour ce visuel."
+      ]
+    },
+    {
+      "id": "warm_hedlin",
+      "name": "Warm Hedlin (Worm Hedlin)",
+      "game": "zombie_revenge",
+      "category": "boss_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/warm_hedlin_idle.png",
+      "playable": false,
+      "runtime_role": "bestiary",
+      "status": "generated_needs_visual_reference_qa",
+      "animation_complete": false,
+      "sources": [
+        "https://sesesega.hatenablog.jp/entry/zombierevenge",
+        "https://www.youtube.com/watch?v=ji1Qvgc7OBc&t=56s",
+        "https://thehouseofthedead.fandom.com/wiki/Biological_Weapon"
+      ],
+      "limitations": [
+        "Adaptation depuis captures originales basse résolution : tête et corps distingués par références du combat de Biological Weapon. Détails fins et exactitude 1:1 à valider sur rendu officiel plus défini. Un organisme/sprite statique ; pas de cycle animé.",
+        "Illustration de bestiaire ; aucun nouveau boss jouable ni IA de boss ne sont annoncés pour ce visuel."
+      ]
+    },
+    {
+      "id": "shell_hedlin",
+      "name": "Shell Hedlin",
+      "game": "zombie_revenge",
+      "category": "boss_base",
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/shell_hedlin_idle.png",
+      "playable": false,
+      "runtime_role": "bestiary",
+      "status": "generated_needs_visual_reference_qa",
+      "animation_complete": false,
+      "sources": [
+        "https://sesesega.hatenablog.jp/entry/zombierevenge",
+        "https://www.youtube.com/watch?v=ji1Qvgc7OBc&t=56s",
+        "https://thehouseofthedead.fandom.com/wiki/Biological_Weapon"
+      ],
+      "limitations": [
+        "Adaptation depuis captures originales basse résolution : tête et corps distingués par références du combat de Biological Weapon. Détails fins et exactitude 1:1 à valider sur rendu officiel plus défini. Un organisme/sprite statique ; pas de cycle animé.",
+        "Illustration de bestiaire ; aucun nouveau boss jouable ni IA de boss ne sont annoncés pour ce visuel."
+      ]
+    }
+  ],
+  "implemented_costumes": [
+    {
+      "id": "kate_soiree",
+      "paths": [
+        "assets/dossier_curien/saga/kate_soiree_contact.png",
+        "assets/dossier_curien/saga/kate_soiree_guard.png",
+        "assets/dossier_curien/saga/kate_soiree_recoil.png",
+        "assets/dossier_curien/saga/kate_soiree_select.png",
+        "assets/dossier_curien/saga/kate_soiree_walk1.png",
+        "assets/dossier_curien/saga/kate_soiree_walk2.png",
+        "assets/dossier_curien/saga/kate_soiree_windup.png"
+      ],
+      "playable_profile": "kate"
+    },
+    {
+      "id": "ryan_soiree",
+      "paths": [
+        "assets/dossier_curien/saga/ryan_soiree_contact.png",
+        "assets/dossier_curien/saga/ryan_soiree_guard.png",
+        "assets/dossier_curien/saga/ryan_soiree_recoil.png",
+        "assets/dossier_curien/saga/ryan_soiree_select.png",
+        "assets/dossier_curien/saga/ryan_soiree_walk1.png",
+        "assets/dossier_curien/saga/ryan_soiree_walk2.png",
+        "assets/dossier_curien/saga/ryan_soiree_windup.png"
+      ],
+      "playable_profile": "ryan"
+    }
+  ],
+  "main_boss_encounters": [
+    {
+      "game": "hotd1",
+      "design_id": "chariot",
+      "name": "Chariot",
+      "canonical_role": "boss_encounter",
+      "baseline_status": "dossier_playable_base_exists",
+      "art_paths": [
+        "assets/dossier_curien/chariot_contact.png",
+        "assets/dossier_curien/chariot_guard.png",
+        "assets/dossier_curien/chariot_recoil.png",
+        "assets/dossier_curien/chariot_recovery.png",
+        "assets/dossier_curien/chariot_select.png",
+        "assets/dossier_curien/chariot_windup.png"
+      ],
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "appearance_note": "La base d’un autre épisode ne valide pas automatiquement la variante de cette édition."
+    },
+    {
+      "game": "hotd1",
+      "design_id": "hangedman",
+      "name": "Hangedman",
+      "canonical_role": "boss_encounter",
+      "baseline_status": "legacy_art_dossier_adaptation_missing",
+      "art_paths": [
+        "assets/sprites/bosses/hangedman.png",
+        "assets/sprites_v2/bosses/hangedman/hangedman__v2__action_cycle__8dirx8f.png"
+      ],
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "appearance_note": "La base d’un autre épisode ne valide pas automatiquement la variante de cette édition."
+    },
+    {
+      "game": "hotd1",
+      "design_id": "hermit",
+      "name": "Hermit",
+      "canonical_role": "boss_encounter",
+      "baseline_status": "legacy_art_dossier_adaptation_missing",
+      "art_paths": [
+        "assets/sprites/bosses/hermit-type-6803.png",
+        "assets/sprites_v2/bosses/hermit/hermit__v2__action_cycle__8dirx8f.png"
+      ],
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "appearance_note": "La base d’un autre épisode ne valide pas automatiquement la variante de cette édition."
+    },
+    {
+      "game": "hotd1",
+      "design_id": "magician",
+      "name": "Magician",
+      "canonical_role": "boss_encounter",
+      "baseline_status": "dossier_playable_base_exists",
+      "art_paths": [
+        "assets/dossier_curien/magician_contact.png",
+        "assets/dossier_curien/magician_guard.png",
+        "assets/dossier_curien/magician_recoil.png",
+        "assets/dossier_curien/magician_recovery.png",
+        "assets/dossier_curien/magician_select.png",
+        "assets/dossier_curien/magician_windup.png"
+      ],
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "appearance_note": "La base d’un autre épisode ne valide pas automatiquement la variante de cette édition."
+    },
+    {
+      "game": "hotd2",
+      "design_id": "judgment",
+      "name": "Judgment (Zeal + Kuarl)",
+      "canonical_role": "boss_encounter",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "art_paths": [],
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "appearance_note": "La base d’un autre épisode ne valide pas automatiquement la variante de cette édition."
+    },
+    {
+      "game": "hotd2",
+      "design_id": "hierophant",
+      "name": "Hierophant",
+      "canonical_role": "boss_encounter",
+      "baseline_status": "dossier_playable_base_exists",
+      "art_paths": [
+        "assets/dossier_curien/saga/hierophant_contact.png",
+        "assets/dossier_curien/saga/hierophant_guard.png",
+        "assets/dossier_curien/saga/hierophant_recoil.png",
+        "assets/dossier_curien/saga/hierophant_select.png",
+        "assets/dossier_curien/saga/hierophant_windup.png"
+      ],
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "appearance_note": "La base d’un autre épisode ne valide pas automatiquement la variante de cette édition."
+    },
+    {
+      "game": "hotd2",
+      "design_id": "tower",
+      "name": "Tower",
+      "canonical_role": "boss_encounter",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "art_paths": [],
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "appearance_note": "La base d’un autre épisode ne valide pas automatiquement la variante de cette édition."
+    },
+    {
+      "game": "hotd2",
+      "design_id": "strength",
+      "name": "Strength",
+      "canonical_role": "boss_encounter",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "art_paths": [],
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "appearance_note": "La base d’un autre épisode ne valide pas automatiquement la variante de cette édition."
+    },
+    {
+      "game": "hotd2",
+      "design_id": "magician",
+      "name": "Magician",
+      "canonical_role": "boss_encounter",
+      "baseline_status": "dossier_playable_base_exists",
+      "art_paths": [
+        "assets/dossier_curien/magician_contact.png",
+        "assets/dossier_curien/magician_guard.png",
+        "assets/dossier_curien/magician_recoil.png",
+        "assets/dossier_curien/magician_recovery.png",
+        "assets/dossier_curien/magician_select.png",
+        "assets/dossier_curien/magician_windup.png"
+      ],
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "appearance_note": "La base d’un autre épisode ne valide pas automatiquement la variante de cette édition."
+    },
+    {
+      "game": "hotd2",
+      "design_id": "emperor",
+      "name": "Emperor",
+      "canonical_role": "boss_encounter",
+      "baseline_status": "dossier_playable_base_exists",
+      "art_paths": [
+        "assets/dossier_curien/saga/emperor_contact.png",
+        "assets/dossier_curien/saga/emperor_ending.png",
+        "assets/dossier_curien/saga/emperor_guard.png",
+        "assets/dossier_curien/saga/emperor_intro.png",
+        "assets/dossier_curien/saga/emperor_recoil.png",
+        "assets/dossier_curien/saga/emperor_rival.png",
+        "assets/dossier_curien/saga/emperor_select.png",
+        "assets/dossier_curien/saga/emperor_windup.png"
+      ],
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "appearance_note": "La base d’un autre épisode ne valide pas automatiquement la variante de cette édition."
+    },
+    {
+      "game": "hotd3",
+      "design_id": "death",
+      "name": "Death",
+      "canonical_role": "boss_encounter",
+      "baseline_status": "dossier_playable_base_exists",
+      "art_paths": [
+        "assets/dossier_curien/saga/death_contact.png",
+        "assets/dossier_curien/saga/death_guard.png",
+        "assets/dossier_curien/saga/death_recoil.png",
+        "assets/dossier_curien/saga/death_select.png",
+        "assets/dossier_curien/saga/death_windup.png"
+      ],
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "appearance_note": "La base d’un autre épisode ne valide pas automatiquement la variante de cette édition."
+    },
+    {
+      "game": "hotd3",
+      "design_id": "fool",
+      "name": "Fool",
+      "canonical_role": "boss_encounter",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "art_paths": [],
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "appearance_note": "La base d’un autre épisode ne valide pas automatiquement la variante de cette édition."
+    },
+    {
+      "game": "hotd3",
+      "design_id": "sun",
+      "name": "Sun",
+      "canonical_role": "boss_encounter",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "art_paths": [],
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "appearance_note": "La base d’un autre épisode ne valide pas automatiquement la variante de cette édition."
+    },
+    {
+      "game": "hotd3",
+      "design_id": "wheel",
+      "name": "Wheel of Fate",
+      "canonical_role": "boss_encounter",
+      "baseline_status": "dossier_playable_base_exists",
+      "art_paths": [
+        "assets/dossier_curien/saga/wheel_contact.png",
+        "assets/dossier_curien/saga/wheel_ending.png",
+        "assets/dossier_curien/saga/wheel_guard.png",
+        "assets/dossier_curien/saga/wheel_intro.png",
+        "assets/dossier_curien/saga/wheel_recoil.png",
+        "assets/dossier_curien/saga/wheel_rival.png",
+        "assets/dossier_curien/saga/wheel_select.png",
+        "assets/dossier_curien/saga/wheel_windup.png"
+      ],
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "appearance_note": "La base d’un autre épisode ne valide pas automatiquement la variante de cette édition."
+    },
+    {
+      "game": "hotd4",
+      "design_id": "justice",
+      "name": "Justice",
+      "canonical_role": "boss_encounter",
+      "baseline_status": "dossier_playable_base_exists",
+      "art_paths": [
+        "assets/dossier_curien/expansion/hotd_ex/justice_ex_guard.png",
+        "assets/dossier_curien/saga/justice_contact.png",
+        "assets/dossier_curien/saga/justice_guard.png",
+        "assets/dossier_curien/saga/justice_recoil.png",
+        "assets/dossier_curien/saga/justice_select.png",
+        "assets/dossier_curien/saga/justice_windup.png"
+      ],
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "appearance_note": "La base d’un autre épisode ne valide pas automatiquement la variante de cette édition."
+    },
+    {
+      "game": "hotd4",
+      "design_id": "lovers",
+      "name": "Lovers",
+      "canonical_role": "boss_encounter",
+      "baseline_status": "gallery_art_exists_under_ex_label",
+      "art_paths": [
+        "assets/dossier_curien/expansion/hotd_ex/lovers_ex_guard.png"
+      ],
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "appearance_note": "La base d’un autre épisode ne valide pas automatiquement la variante de cette édition."
+    },
+    {
+      "game": "hotd4",
+      "design_id": "empress",
+      "name": "Empress",
+      "canonical_role": "boss_encounter",
+      "baseline_status": "gallery_art_exists_under_ex_label",
+      "art_paths": [
+        "assets/dossier_curien/expansion/hotd_ex/empress_ex_guard.png"
+      ],
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "appearance_note": "La base d’un autre épisode ne valide pas automatiquement la variante de cette édition."
+    },
+    {
+      "game": "hotd4",
+      "design_id": "temperance",
+      "name": "Temperance",
+      "canonical_role": "boss_encounter",
+      "baseline_status": "gallery_art_exists_under_ex_label",
+      "art_paths": [
+        "assets/dossier_curien/expansion/hotd_ex/temperance_ex_guard.png"
+      ],
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "appearance_note": "La base d’un autre épisode ne valide pas automatiquement la variante de cette édition."
+    },
+    {
+      "game": "hotd4",
+      "design_id": "star",
+      "name": "Star",
+      "canonical_role": "boss_encounter",
+      "baseline_status": "gallery_art_exists_under_ex_label",
+      "art_paths": [
+        "assets/dossier_curien/expansion/hotd_ex/star_ex_guard.png"
+      ],
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "appearance_note": "La base d’un autre épisode ne valide pas automatiquement la variante de cette édition."
+    },
+    {
+      "game": "hotd4",
+      "design_id": "world",
+      "name": "The World",
+      "canonical_role": "boss_encounter",
+      "baseline_status": "dossier_playable_base_exists",
+      "art_paths": [
+        "assets/dossier_curien/saga/world_contact.png",
+        "assets/dossier_curien/saga/world_ending.png",
+        "assets/dossier_curien/saga/world_final.png",
+        "assets/dossier_curien/saga/world_guard.png",
+        "assets/dossier_curien/saga/world_intro.png",
+        "assets/dossier_curien/saga/world_recoil.png",
+        "assets/dossier_curien/saga/world_rival.png",
+        "assets/dossier_curien/saga/world_select.png",
+        "assets/dossier_curien/saga/world_windup.png"
+      ],
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "appearance_note": "La base d’un autre épisode ne valide pas automatiquement la variante de cette édition."
+    },
+    {
+      "game": "hotd4_special",
+      "design_id": "justice",
+      "name": "Justice",
+      "canonical_role": "boss_encounter",
+      "baseline_status": "dossier_playable_base_exists",
+      "art_paths": [
+        "assets/dossier_curien/expansion/hotd_ex/justice_ex_guard.png",
+        "assets/dossier_curien/saga/justice_contact.png",
+        "assets/dossier_curien/saga/justice_guard.png",
+        "assets/dossier_curien/saga/justice_recoil.png",
+        "assets/dossier_curien/saga/justice_select.png",
+        "assets/dossier_curien/saga/justice_windup.png"
+      ],
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "appearance_note": "La base d’un autre épisode ne valide pas automatiquement la variante de cette édition."
+    },
+    {
+      "game": "hotd4_special",
+      "design_id": "magician",
+      "name": "Magician",
+      "canonical_role": "boss_encounter",
+      "baseline_status": "dossier_playable_base_exists",
+      "art_paths": [
+        "assets/dossier_curien/magician_contact.png",
+        "assets/dossier_curien/magician_guard.png",
+        "assets/dossier_curien/magician_recoil.png",
+        "assets/dossier_curien/magician_recovery.png",
+        "assets/dossier_curien/magician_select.png",
+        "assets/dossier_curien/magician_windup.png"
+      ],
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "appearance_note": "La base d’un autre épisode ne valide pas automatiquement la variante de cette édition."
+    },
+    {
+      "game": "scarlet",
+      "design_id": "chariot",
+      "name": "Chariot",
+      "canonical_role": "boss_encounter",
+      "baseline_status": "dossier_playable_base_exists",
+      "art_paths": [
+        "assets/dossier_curien/chariot_contact.png",
+        "assets/dossier_curien/chariot_guard.png",
+        "assets/dossier_curien/chariot_recoil.png",
+        "assets/dossier_curien/chariot_recovery.png",
+        "assets/dossier_curien/chariot_select.png",
+        "assets/dossier_curien/chariot_windup.png"
+      ],
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "appearance_note": "La base d’un autre épisode ne valide pas automatiquement la variante de cette édition."
+    },
+    {
+      "game": "scarlet",
+      "design_id": "hangedman",
+      "name": "Hangedman",
+      "canonical_role": "boss_encounter",
+      "baseline_status": "legacy_art_dossier_adaptation_missing",
+      "art_paths": [
+        "assets/sprites/bosses/hangedman.png",
+        "assets/sprites_v2/bosses/hangedman/hangedman__v2__action_cycle__8dirx8f.png"
+      ],
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "appearance_note": "La base d’un autre épisode ne valide pas automatiquement la variante de cette édition."
+    },
+    {
+      "game": "scarlet",
+      "design_id": "high_priestess",
+      "name": "High Priestess",
+      "canonical_role": "boss_encounter",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "art_paths": [],
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "appearance_note": "La base d’un autre épisode ne valide pas automatiquement la variante de cette édition."
+    },
+    {
+      "game": "scarlet",
+      "design_id": "moon",
+      "name": "Moon",
+      "canonical_role": "boss_encounter",
+      "baseline_status": "dossier_playable_base_exists",
+      "art_paths": [
+        "assets/dossier_curien/saga/moon_contact.png",
+        "assets/dossier_curien/saga/moon_ending.png",
+        "assets/dossier_curien/saga/moon_final.png",
+        "assets/dossier_curien/saga/moon_guard.png",
+        "assets/dossier_curien/saga/moon_intro.png",
+        "assets/dossier_curien/saga/moon_recoil.png",
+        "assets/dossier_curien/saga/moon_rival.png",
+        "assets/dossier_curien/saga/moon_select.png",
+        "assets/dossier_curien/saga/moon_windup.png"
+      ],
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "appearance_note": "La base d’un autre épisode ne valide pas automatiquement la variante de cette édition."
+    },
+    {
+      "game": "overkill",
+      "design_id": "jasper",
+      "name": "Jasper Guns — mutant",
+      "canonical_role": "boss_encounter",
+      "baseline_status": "dossier_playable_base_exists",
+      "art_paths": [
+        "assets/dossier_curien/saga/jasper_contact.png",
+        "assets/dossier_curien/saga/jasper_guard.png",
+        "assets/dossier_curien/saga/jasper_recoil.png",
+        "assets/dossier_curien/saga/jasper_select.png",
+        "assets/dossier_curien/saga/jasper_windup.png"
+      ],
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "appearance_note": "La base d’un autre épisode ne valide pas automatiquement la variante de cette édition."
+    },
+    {
+      "game": "overkill",
+      "design_id": "screamer",
+      "name": "Screamer",
+      "canonical_role": "boss_encounter",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "art_paths": [],
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "appearance_note": "La base d’un autre épisode ne valide pas automatiquement la variante de cette édition."
+    },
+    {
+      "game": "overkill",
+      "design_id": "nigel_sebastian",
+      "name": "Nigel & Sebastian",
+      "canonical_role": "boss_encounter",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "art_paths": [],
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "appearance_note": "La base d’un autre épisode ne valide pas automatiquement la variante de cette édition."
+    },
+    {
+      "game": "overkill",
+      "design_id": "crawler",
+      "name": "Crawler",
+      "canonical_role": "boss_encounter",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "art_paths": [],
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "appearance_note": "La base d’un autre épisode ne valide pas automatiquement la variante de cette édition."
+    },
+    {
+      "game": "overkill",
+      "design_id": "lobber",
+      "name": "Lobber",
+      "canonical_role": "boss_encounter",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "art_paths": [],
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "appearance_note": "La base d’un autre épisode ne valide pas automatiquement la variante de cette édition."
+    },
+    {
+      "game": "overkill",
+      "design_id": "brutus",
+      "name": "Brutus",
+      "canonical_role": "boss_encounter",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "art_paths": [],
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "appearance_note": "La base d’un autre épisode ne valide pas automatiquement la variante de cette édition."
+    },
+    {
+      "game": "overkill",
+      "design_id": "mother",
+      "name": "Mother — boss",
+      "canonical_role": "boss_encounter",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "art_paths": [],
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "appearance_note": "La base d’un autre épisode ne valide pas automatiquement la variante de cette édition."
+    },
+    {
+      "game": "overkill_extended_cut",
+      "design_id": "coco_sindy",
+      "name": "Coco & Sindy",
+      "canonical_role": "boss_encounter",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "art_paths": [],
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "appearance_note": "La base d’un autre épisode ne valide pas automatiquement la variante de cette édition."
+    },
+    {
+      "game": "overkill_extended_cut",
+      "design_id": "meat_katie",
+      "name": "Meat Katie",
+      "canonical_role": "boss_encounter",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "art_paths": [],
+      "source_ids": [
+        "wiki_bosses",
+        "sega_creeping_flesh"
+      ],
+      "appearance_note": "La base d’un autre épisode ne valide pas automatiquement la variante de cette édition."
+    }
+  ],
+  "production_targets": [
+    {
+      "id": "varla",
+      "name": "Varla Guns",
+      "game": "overkill_extended_cut",
+      "record_kind": "character_identity",
+      "canonical_role": "protagonist_playable_in_extended_cut",
+      "priority": "P1",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "portraits_verified_full_costume_to_cross_check",
+      "source_ids": [
+        "sega_overkill_manual",
+        "sega_naked_terror"
+      ],
+      "notes": "Varla est PNJ dans Overkill original et jouable dans Extended Cut.",
+      "reuse_paths": []
+    },
+    {
+      "id": "candi",
+      "name": "Candi Stryper",
+      "game": "overkill_extended_cut",
+      "record_kind": "character_identity",
+      "canonical_role": "playable_protagonist",
+      "priority": "P1",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "portraits_verified_full_costume_to_cross_check",
+      "source_ids": [
+        "sega_overkill_manual",
+        "sega_naked_terror"
+      ],
+      "notes": "Candy dans certains textes est une graphie alternative, pas une autre personne.",
+      "reuse_paths": []
+    },
+    {
+      "id": "amy",
+      "name": "Amy Crystal",
+      "game": "hotd2",
+      "record_kind": "character_identity",
+      "canonical_role": "supporting_npc",
+      "priority": "P1",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "body_monochrome_plus_color_game_capture",
+      "source_ids": [
+        "sega_hotd2_manual",
+        "game_hotd2_visuals"
+      ],
+      "notes": "La version originale et la page Remake divergent sur sa nationalité ; ne pas mélanger les biographies.",
+      "reuse_paths": []
+    },
+    {
+      "id": "harry",
+      "name": "Harry Harris",
+      "game": "hotd2",
+      "record_kind": "character_identity",
+      "canonical_role": "supporting_npc",
+      "priority": "P1",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "body_monochrome_plus_color_game_capture",
+      "source_ids": [
+        "sega_hotd2_manual",
+        "game_hotd2_visuals"
+      ],
+      "notes": "Rôle PNJ de campagne ; l’objet Original Mode est une substitution du modèle joueur.",
+      "reuse_paths": []
+    },
+    {
+      "id": "goldman_human",
+      "name": "Goldman — forme humaine",
+      "game": "hotd2",
+      "record_kind": "character_identity",
+      "canonical_role": "human_antagonist",
+      "priority": "P1",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "seated_body_monochrome_color_reference_required",
+      "source_ids": [
+        "sega_hotd2_manual"
+      ],
+      "notes": "Les trois fichiers goldman_back/mid/front sont une arène, pas son sprite.",
+      "reuse_paths": []
+    },
+    {
+      "id": "thornheart",
+      "name": "Thornheart",
+      "game": "scarlet",
+      "record_kind": "character_identity",
+      "canonical_role": "human_antagonist",
+      "priority": "P2",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "sega_scarlet",
+        "wiki_thornheart_gallery"
+      ],
+      "notes": "Le Mystery Man des fins antérieures ne doit pas être compté à nouveau comme autre identité.",
+      "reuse_paths": []
+    },
+    {
+      "id": "papa_caesar",
+      "name": "Papa Caesar",
+      "game": "overkill",
+      "record_kind": "character_identity",
+      "canonical_role": "human_antagonist",
+      "priority": "P2",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "wiki_characters",
+        "overkill_concept_index"
+      ],
+      "notes": "Concept art du jeu à récupérer ; ne pas fabriquer une tenue à partir du seul nom.",
+      "reuse_paths": []
+    },
+    {
+      "id": "clement",
+      "name": "Clement Darling",
+      "game": "overkill",
+      "record_kind": "character_identity",
+      "canonical_role": "human_antagonist",
+      "priority": "P2",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "wiki_characters",
+        "overkill_concept_index"
+      ],
+      "notes": "Concept art du directeur à récupérer ; un PNG ne crée pas de combattant jouable.",
+      "reuse_paths": []
+    },
+    {
+      "id": "sophie",
+      "name": "Sophie Richards",
+      "game": "hotd1",
+      "record_kind": "character_identity",
+      "canonical_role": "supporting_npc",
+      "priority": "P2",
+      "baseline_status": "legacy_art_available_dossier_adaptation_missing",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "legacy_art_exists_canonical_reference_review_required",
+      "source_ids": [
+        "microids_remake1",
+        "wiki_characters"
+      ],
+      "notes": "",
+      "reuse_paths": [
+        "assets/sprites/heroes/sophie-hotd.png",
+        "assets/sprites_v2/npcs/sophie_richards/sophie_richards__v2__action_cycle__8dirx8f.png"
+      ]
+    },
+    {
+      "id": "curien",
+      "name": "Dr. Curien",
+      "game": "hotd1",
+      "record_kind": "character_identity",
+      "canonical_role": "human_antagonist",
+      "priority": "P2",
+      "baseline_status": "legacy_art_available_dossier_adaptation_missing",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "legacy_art_exists_canonical_reference_review_required",
+      "source_ids": [
+        "microids_remake1",
+        "wiki_characters"
+      ],
+      "notes": "",
+      "reuse_paths": [
+        "assets/sprites/npcs/dr-curien.png",
+        "assets/sprites_v2/npcs/dr_curien/dr_curien__v2__action_cycle__8dirx8f.png"
+      ]
+    },
+    {
+      "id": "dan_taylor",
+      "name": "Dan Taylor",
+      "game": "hotd3",
+      "record_kind": "supporting_subject",
+      "canonical_role": "prologue_playable_partner",
+      "priority": "P3",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "sega_hotd3_manual",
+        "game_hotd3_visuals",
+        "wiki_characters"
+      ],
+      "notes": "Nom et rôle à corroborer au générique ; capture de jeu visible. Ne pas confondre avec Daniel Curien ni renommer Scott.",
+      "reuse_paths": []
+    },
+    {
+      "id": "yukio",
+      "name": "Yukio",
+      "game": "hotd3",
+      "record_kind": "supporting_subject",
+      "canonical_role": "npc_and_creature_form",
+      "priority": "P3",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "wiki_characters"
+      ],
+      "notes": "Identité secondaire et forme à documenter avant production ; pas de costume inventé.",
+      "reuse_paths": []
+    },
+    {
+      "id": "jasper_human",
+      "name": "Jasper Guns — forme humaine",
+      "game": "overkill",
+      "record_kind": "character_form",
+      "canonical_role": "human_npc",
+      "priority": "P3",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "overkill_concept_index"
+      ],
+      "notes": "Même identité que le boss Jasper déjà jouable ; nouvelle forme visuelle, pas nouveau nom de roster.",
+      "reuse_paths": []
+    },
+    {
+      "id": "mother_human",
+      "name": "Mother — forme humaine",
+      "game": "overkill",
+      "record_kind": "character_form",
+      "canonical_role": "human_npc",
+      "priority": "P3",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "wiki_characters",
+        "overkill_concept_index"
+      ],
+      "notes": "Liée à la forme boss Mother ; ne pas additionner deux nouvelles identités.",
+      "reuse_paths": []
+    },
+    {
+      "id": "bart_picard",
+      "name": "Bart Picard",
+      "game": "overkill",
+      "record_kind": "supporting_subject",
+      "canonical_role": "offscreen_or_text_only",
+      "priority": "P3",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "sega_overkill_manual"
+      ],
+      "notes": "Nom dans la lettre du manuel ; apparence physique non attestée ici. Aucune génération canonique autorisée par cette seule mention.",
+      "reuse_paths": []
+    },
+    {
+      "id": "hangedman",
+      "name": "Hangedman",
+      "game": "hotd1",
+      "record_kind": "boss_encounter_design",
+      "canonical_role": "boss",
+      "priority": "P2",
+      "baseline_status": "legacy_art_dossier_adaptation_missing",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "legacy_art_exists_canonical_reference_review_required",
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "notes": "",
+      "reuse_paths": [
+        "assets/sprites/bosses/hangedman.png",
+        "assets/sprites_v2/bosses/hangedman/hangedman__v2__action_cycle__8dirx8f.png"
+      ]
+    },
+    {
+      "id": "hermit",
+      "name": "Hermit",
+      "game": "hotd1",
+      "record_kind": "boss_encounter_design",
+      "canonical_role": "boss",
+      "priority": "P2",
+      "baseline_status": "legacy_art_dossier_adaptation_missing",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "legacy_art_exists_canonical_reference_review_required",
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "notes": "",
+      "reuse_paths": [
+        "assets/sprites/bosses/hermit-type-6803.png",
+        "assets/sprites_v2/bosses/hermit/hermit__v2__action_cycle__8dirx8f.png"
+      ]
+    },
+    {
+      "id": "judgment",
+      "name": "Judgment (Zeal + Kuarl)",
+      "game": "hotd2",
+      "record_kind": "boss_encounter_design",
+      "canonical_role": "boss",
+      "priority": "P2",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "notes": "Une rencontre peut réunir plusieurs individus ; cette ligne ne constitue pas un décompte d’identités. Référence visuelle de l’édition requise avant production.",
+      "reuse_paths": []
+    },
+    {
+      "id": "tower",
+      "name": "Tower",
+      "game": "hotd2",
+      "record_kind": "boss_encounter_design",
+      "canonical_role": "boss",
+      "priority": "P2",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "notes": "Une rencontre peut réunir plusieurs individus ; cette ligne ne constitue pas un décompte d’identités. Référence visuelle de l’édition requise avant production.",
+      "reuse_paths": []
+    },
+    {
+      "id": "strength",
+      "name": "Strength",
+      "game": "hotd2",
+      "record_kind": "boss_encounter_design",
+      "canonical_role": "boss",
+      "priority": "P2",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "notes": "Une rencontre peut réunir plusieurs individus ; cette ligne ne constitue pas un décompte d’identités. Référence visuelle de l’édition requise avant production.",
+      "reuse_paths": []
+    },
+    {
+      "id": "fool",
+      "name": "Fool",
+      "game": "hotd3",
+      "record_kind": "boss_encounter_design",
+      "canonical_role": "boss",
+      "priority": "P2",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "notes": "Une rencontre peut réunir plusieurs individus ; cette ligne ne constitue pas un décompte d’identités. Référence visuelle de l’édition requise avant production.",
+      "reuse_paths": []
+    },
+    {
+      "id": "sun",
+      "name": "Sun",
+      "game": "hotd3",
+      "record_kind": "boss_encounter_design",
+      "canonical_role": "boss",
+      "priority": "P2",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "notes": "Une rencontre peut réunir plusieurs individus ; cette ligne ne constitue pas un décompte d’identités. Référence visuelle de l’édition requise avant production.",
+      "reuse_paths": []
+    },
+    {
+      "id": "high_priestess",
+      "name": "High Priestess",
+      "game": "scarlet",
+      "record_kind": "boss_encounter_design",
+      "canonical_role": "boss",
+      "priority": "P2",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "notes": "Une rencontre peut réunir plusieurs individus ; cette ligne ne constitue pas un décompte d’identités. Référence visuelle de l’édition requise avant production.",
+      "reuse_paths": []
+    },
+    {
+      "id": "screamer",
+      "name": "Screamer",
+      "game": "overkill",
+      "record_kind": "boss_encounter_design",
+      "canonical_role": "boss",
+      "priority": "P3",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "notes": "Une rencontre peut réunir plusieurs individus ; cette ligne ne constitue pas un décompte d’identités. Référence visuelle de l’édition requise avant production.",
+      "reuse_paths": []
+    },
+    {
+      "id": "nigel_sebastian",
+      "name": "Nigel & Sebastian",
+      "game": "overkill",
+      "record_kind": "boss_encounter_design",
+      "canonical_role": "boss",
+      "priority": "P3",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "notes": "Une rencontre peut réunir plusieurs individus ; cette ligne ne constitue pas un décompte d’identités. Référence visuelle de l’édition requise avant production.",
+      "reuse_paths": []
+    },
+    {
+      "id": "crawler",
+      "name": "Crawler",
+      "game": "overkill",
+      "record_kind": "boss_encounter_design",
+      "canonical_role": "boss",
+      "priority": "P3",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "notes": "Une rencontre peut réunir plusieurs individus ; cette ligne ne constitue pas un décompte d’identités. Référence visuelle de l’édition requise avant production.",
+      "reuse_paths": []
+    },
+    {
+      "id": "lobber",
+      "name": "Lobber",
+      "game": "overkill",
+      "record_kind": "boss_encounter_design",
+      "canonical_role": "boss",
+      "priority": "P3",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "notes": "Une rencontre peut réunir plusieurs individus ; cette ligne ne constitue pas un décompte d’identités. Référence visuelle de l’édition requise avant production.",
+      "reuse_paths": []
+    },
+    {
+      "id": "brutus",
+      "name": "Brutus",
+      "game": "overkill",
+      "record_kind": "boss_encounter_design",
+      "canonical_role": "boss",
+      "priority": "P3",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "notes": "Une rencontre peut réunir plusieurs individus ; cette ligne ne constitue pas un décompte d’identités. Référence visuelle de l’édition requise avant production.",
+      "reuse_paths": []
+    },
+    {
+      "id": "mother",
+      "name": "Mother — boss",
+      "game": "overkill",
+      "record_kind": "boss_encounter_design",
+      "canonical_role": "boss",
+      "priority": "P3",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "notes": "Une rencontre peut réunir plusieurs individus ; cette ligne ne constitue pas un décompte d’identités. Référence visuelle de l’édition requise avant production.",
+      "reuse_paths": []
+    },
+    {
+      "id": "coco_sindy",
+      "name": "Coco & Sindy",
+      "game": "overkill_extended_cut",
+      "record_kind": "boss_encounter_design",
+      "canonical_role": "boss",
+      "priority": "P3",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "wiki_bosses"
+      ],
+      "notes": "Une rencontre peut réunir plusieurs individus ; cette ligne ne constitue pas un décompte d’identités. Référence visuelle de l’édition requise avant production.",
+      "reuse_paths": []
+    },
+    {
+      "id": "meat_katie",
+      "name": "Meat Katie",
+      "game": "overkill_extended_cut",
+      "record_kind": "boss_encounter_design",
+      "canonical_role": "boss",
+      "priority": "P3",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "wiki_bosses",
+        "sega_creeping_flesh"
+      ],
+      "notes": "Une rencontre peut réunir plusieurs individus ; cette ligne ne constitue pas un décompte d’identités. Référence visuelle de l’édition requise avant production. Nom Meat Katie confirmé par le billet SEGA PlayStation du30août2011 ; graphie Meat Katey dans un index secondaire de collectibles, sans créer une seconde identité.",
+      "reuse_paths": []
+    },
+    {
+      "id": "g_overkill",
+      "name": "Agent G — Overkill",
+      "game": "overkill",
+      "record_kind": "era_costume",
+      "canonical_role": "playable_protagonist",
+      "priority": "P1",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "portrait_verified_full_costume_to_cross_check",
+      "source_ids": [
+        "sega_overkill_manual",
+        "sega_overkill_press"
+      ],
+      "notes": "Même agent G, apparence de la branche Overkill ; base HOTD1 insuffisante.",
+      "reuse_paths": []
+    },
+    {
+      "id": "g_hotd3",
+      "name": "Agent G — HOTDIII",
+      "game": "hotd3",
+      "record_kind": "era_costume",
+      "canonical_role": "playable_protagonist",
+      "priority": "P1",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "full_body_promotional_and_game_reference_inspected",
+      "source_ids": [
+        "sega_hotd3_manual",
+        "game_hotd3_visuals"
+      ],
+      "notes": "Cheveux grisonnants, chemise bleu clair, gilet gris, cravate jaune ; variante d’âge, pas nouvel agent.",
+      "reuse_paths": []
+    },
+    {
+      "id": "rogan_hotd3",
+      "name": "Thomas Rogan — HOTDIII",
+      "game": "hotd3",
+      "record_kind": "era_costume",
+      "canonical_role": "prologue_playable_then_npc",
+      "priority": "P1",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "game_reference_inspected_partial_boot_occlusion",
+      "source_ids": [
+        "sega_hotd3_manual",
+        "game_hotd3_visuals"
+      ],
+      "notes": "Blouson brun, t-shirt blanc, pantalon kaki ; rendu sous éclairage vert à ne pas prendre comme couleur de peau.",
+      "reuse_paths": []
+    },
+    {
+      "id": "james_hotd4",
+      "name": "James Taylor — HOTD4",
+      "game": "hotd4",
+      "record_kind": "edition_costume",
+      "canonical_role": "playable_protagonist",
+      "priority": "P3",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "corpus_04"
+      ],
+      "notes": "La base James HOTD2 ne clôt pas sa variante de2003.",
+      "reuse_paths": []
+    },
+    {
+      "id": "g_hotd4special",
+      "name": "G — HOTD4 Special",
+      "game": "hotd4_special",
+      "record_kind": "edition_costume",
+      "canonical_role": "playable_protagonist",
+      "priority": "P3",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "corpus_05"
+      ],
+      "notes": "Même identité ; vérifier costume et arme, éviter simple recolor non sourcé.",
+      "reuse_paths": []
+    },
+    {
+      "id": "james_typing",
+      "name": "James — matériel de Typing",
+      "game": "typing",
+      "record_kind": "equipment_variant",
+      "canonical_role": "playable_protagonist",
+      "priority": "P3",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "sega_typing_manual",
+        "wiki_typing"
+      ],
+      "notes": "Clavier/ordinateur : préciser édition et couleur du logo matériel ; pas nouveau personnage.",
+      "reuse_paths": []
+    },
+    {
+      "id": "gary_typing",
+      "name": "Gary — matériel de Typing",
+      "game": "typing",
+      "record_kind": "equipment_variant",
+      "canonical_role": "playable_protagonist",
+      "priority": "P3",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "sega_typing_manual",
+        "wiki_typing"
+      ],
+      "notes": "Même règle de matériel/édition.",
+      "reuse_paths": []
+    },
+    {
+      "id": "typing2_player_equipment",
+      "name": "Lisa/G/Daniel — équipement Typing2",
+      "game": "typing2",
+      "record_kind": "variant_set_to_document",
+      "canonical_role": "playable_roles_to_verify",
+      "priority": "P3",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "sega_typing2_press"
+      ],
+      "notes": "Ne pas extrapoler un sac Dreamcast à partir du premier Typing.",
+      "reuse_paths": []
+    },
+    {
+      "id": "typing2004_kids",
+      "name": "James/Gary — Kids2004",
+      "game": "typing2004",
+      "record_kind": "age_variant_set_to_document",
+      "canonical_role": "playable_roles_reported_secondary",
+      "priority": "P3",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "wiki_typing"
+      ],
+      "notes": "Le wiki décrit des versions enfants ; capture ou manuel primaire exigé avant noms de variantes et génération.",
+      "reuse_paths": []
+    },
+    {
+      "id": "rogan_saturn2",
+      "name": "Rogan2 — Saturn Mode",
+      "game": "hotd1_saturn",
+      "record_kind": "alternate_model",
+      "canonical_role": "selectable_in_saturn_mode",
+      "priority": "P3",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "wiki_saturn",
+        "museum_saturn"
+      ],
+      "notes": "Modèle alternatif, pas seconde personne ; couleur et pièces de tenue non inventées.",
+      "reuse_paths": []
+    },
+    {
+      "id": "g_saturn2",
+      "name": "G2 — Saturn Mode",
+      "game": "hotd1_saturn",
+      "record_kind": "alternate_model",
+      "canonical_role": "selectable_in_saturn_mode",
+      "priority": "P3",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "wiki_saturn",
+        "museum_saturn"
+      ],
+      "notes": "Même règle.",
+      "reuse_paths": []
+    },
+    {
+      "id": "sophie_saturn",
+      "name": "Sophie — modèle Saturn Mode",
+      "game": "hotd1_saturn",
+      "record_kind": "mode_model",
+      "canonical_role": "selectable_in_saturn_mode",
+      "priority": "P3",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "wiki_saturn",
+        "museum_saturn"
+      ],
+      "notes": "PNJ narratif et sélection de mode sont deux statuts distincts.",
+      "reuse_paths": []
+    },
+    {
+      "id": "researcher_saturn",
+      "name": "Chercheur DBR — Saturn Mode",
+      "game": "hotd1_saturn",
+      "record_kind": "generic_model",
+      "canonical_role": "selectable_in_saturn_mode",
+      "priority": "P3",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "wiki_saturn",
+        "museum_saturn"
+      ],
+      "notes": "Chercheurs génériques existent dans le jeu historique ; modèle de ce mode à comparer.",
+      "reuse_paths": []
+    },
+    {
+      "id": "stick_alts",
+      "name": "Stick — tenues alternatives Dreamcast",
+      "game": "zombie_revenge",
+      "record_kind": "costume_set_to_document",
+      "canonical_role": "playable_protagonist",
+      "priority": "P3",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "gamefaqs_zr_costumes",
+        "sega_zr_manual"
+      ],
+      "notes": "Commande de changement attestée secondaire ; nombre et apparences distinctes non comptés.",
+      "reuse_paths": []
+    },
+    {
+      "id": "linda_alts",
+      "name": "Linda — tenues alternatives Dreamcast",
+      "game": "zombie_revenge",
+      "record_kind": "costume_set_to_document",
+      "canonical_role": "playable_protagonist",
+      "priority": "P3",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "gamefaqs_zr_costumes",
+        "sega_zr_manual"
+      ],
+      "notes": "Ne pas transformer les8 nouvelles poses en8 tenues.",
+      "reuse_paths": []
+    },
+    {
+      "id": "rikiya_alts",
+      "name": "Rikiya — tenues alternatives Dreamcast",
+      "game": "zombie_revenge",
+      "record_kind": "costume_set_to_document",
+      "canonical_role": "playable_protagonist",
+      "priority": "P3",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "gamefaqs_zr_costumes",
+        "sega_zr_manual"
+      ],
+      "notes": "Référence exacte requise pour une éventuelle tenue hommage ; pas de nom de film déduit seul.",
+      "reuse_paths": []
+    },
+    {
+      "id": "sophie_zombie",
+      "name": "Sophie — fin zombie",
+      "game": "hotd1",
+      "record_kind": "ending_form",
+      "canonical_role": "alternate_ending",
+      "priority": "P3",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "wiki_characters"
+      ],
+      "notes": "Même personne ; fin alternative et rééditions à identifier.",
+      "reuse_paths": []
+    },
+    {
+      "id": "goldman_zombie",
+      "name": "Goldman — fin zombie",
+      "game": "hotd2",
+      "record_kind": "ending_form",
+      "canonical_role": "alternate_ending",
+      "priority": "P3",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "wiki_characters"
+      ],
+      "notes": "Même personne ; ne pas substituer cette forme à Goldman humain.",
+      "reuse_paths": []
+    },
+    {
+      "id": "hotd_remake_redesigns",
+      "name": "Rogan/G/Sophie/Curien et boss — Remake1",
+      "game": "hotd_remake",
+      "record_kind": "edition_redesign_set",
+      "canonical_role": "mixed",
+      "priority": "P3",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "microids_remake1"
+      ],
+      "notes": "Comparer chaque redesign au jeu initial ; aucune nouvelle identité par défaut.",
+      "reuse_paths": []
+    },
+    {
+      "id": "hotd2_remake_redesigns",
+      "name": "Personnages et boss — Remake2",
+      "game": "hotd2_remake",
+      "record_kind": "edition_redesign_set",
+      "canonical_role": "mixed",
+      "priority": "P3",
+      "baseline_status": "dedicated_art_absent_at_baseline",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "microids_remake2"
+      ],
+      "notes": "Comparer chaque redesign ; ne pas déclarer toutes les bases de1998 conformes au remake.",
+      "reuse_paths": []
+    },
+    {
+      "id": "original_model_amy",
+      "name": "Amy — objet Original Mode",
+      "game": "hotd2_original",
+      "record_kind": "model_substitution_item",
+      "canonical_role": "model_substitution",
+      "priority": "P3",
+      "baseline_status": "mode_not_implemented_no_new_identity_count",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "sega_hotd2_manual",
+        "wiki_original"
+      ],
+      "notes": "Objet remplaçant le modèle joueur ; ne rend pas le PNJ protagoniste de la campagne. Bruno est un invité extérieur, pas un agent AMS.",
+      "reuse_paths": []
+    },
+    {
+      "id": "original_model_harry",
+      "name": "Harry — objet Original Mode",
+      "game": "hotd2_original",
+      "record_kind": "model_substitution_item",
+      "canonical_role": "model_substitution",
+      "priority": "P3",
+      "baseline_status": "mode_not_implemented_no_new_identity_count",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "sega_hotd2_manual",
+        "wiki_original"
+      ],
+      "notes": "Objet remplaçant le modèle joueur ; ne rend pas le PNJ protagoniste de la campagne. Bruno est un invité extérieur, pas un agent AMS.",
+      "reuse_paths": []
+    },
+    {
+      "id": "original_model_g",
+      "name": "G — objet Original Mode",
+      "game": "hotd2_original",
+      "record_kind": "model_substitution_item",
+      "canonical_role": "model_substitution",
+      "priority": "P3",
+      "baseline_status": "mode_not_implemented_no_new_identity_count",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "sega_hotd2_manual",
+        "wiki_original"
+      ],
+      "notes": "Objet remplaçant le modèle joueur ; ne rend pas le PNJ protagoniste de la campagne. Bruno est un invité extérieur, pas un agent AMS.",
+      "reuse_paths": []
+    },
+    {
+      "id": "original_model_rogan",
+      "name": "Rogan — objet Original Mode",
+      "game": "hotd2_original",
+      "record_kind": "model_substitution_item",
+      "canonical_role": "model_substitution",
+      "priority": "P3",
+      "baseline_status": "mode_not_implemented_no_new_identity_count",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "sega_hotd2_manual",
+        "wiki_original"
+      ],
+      "notes": "Objet remplaçant le modèle joueur ; ne rend pas le PNJ protagoniste de la campagne. Bruno est un invité extérieur, pas un agent AMS.",
+      "reuse_paths": []
+    },
+    {
+      "id": "original_model_goldman",
+      "name": "Goldman — objet Original Mode",
+      "game": "hotd2_original",
+      "record_kind": "model_substitution_item",
+      "canonical_role": "model_substitution",
+      "priority": "P3",
+      "baseline_status": "mode_not_implemented_no_new_identity_count",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "sega_hotd2_manual",
+        "wiki_original"
+      ],
+      "notes": "Objet remplaçant le modèle joueur ; ne rend pas le PNJ protagoniste de la campagne. Bruno est un invité extérieur, pas un agent AMS.",
+      "reuse_paths": []
+    },
+    {
+      "id": "original_model_civilian",
+      "name": "Civilian — objet Original Mode",
+      "game": "hotd2_original",
+      "record_kind": "model_substitution_item",
+      "canonical_role": "model_substitution",
+      "priority": "P3",
+      "baseline_status": "mode_not_implemented_no_new_identity_count",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "sega_hotd2_manual",
+        "wiki_original"
+      ],
+      "notes": "Objet remplaçant le modèle joueur ; ne rend pas le PNJ protagoniste de la campagne. Bruno est un invité extérieur, pas un agent AMS.",
+      "reuse_paths": []
+    },
+    {
+      "id": "original_model_bruno",
+      "name": "Bruno Delinger — objet Original Mode",
+      "game": "hotd2_original",
+      "record_kind": "model_substitution_item",
+      "canonical_role": "guest_model",
+      "priority": "P3",
+      "baseline_status": "mode_not_implemented_no_new_identity_count",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "sega_hotd2_manual",
+        "wiki_original"
+      ],
+      "notes": "Objet remplaçant le modèle joueur ; ne rend pas le PNJ protagoniste de la campagne. Bruno est un invité extérieur, pas un agent AMS.",
+      "reuse_paths": []
+    },
+    {
+      "id": "site_doctor",
+      "name": "Docteur et créature de The Site of the Dead",
+      "game": "site",
+      "record_kind": "research_gap",
+      "canonical_role": "unknown_or_mixed",
+      "priority": "P4",
+      "baseline_status": "scope_documented_roster_not_established",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "corpus_22"
+      ],
+      "notes": "Rôles du jeu mobile documentés ; noms, design et évolution à établir.",
+      "reuse_paths": []
+    },
+    {
+      "id": "reawakened_roster",
+      "name": "Personnages de Reawakened",
+      "game": "reawakened",
+      "record_kind": "research_gap",
+      "canonical_role": "unknown_or_mixed",
+      "priority": "P4",
+      "baseline_status": "scope_documented_roster_not_established",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "sega_reawakened",
+        "sega_reawakened_product"
+      ],
+      "notes": "Annonce officielle vérifiée le20novembre ; aucun nouveau roster nominatif dérivé d’un décor ou de commentaires Reddit.",
+      "reuse_paths": []
+    },
+    {
+      "id": "mobile_nightmare_roster",
+      "name": "Variantes Mobile / Nightmare",
+      "game": "mobile",
+      "record_kind": "research_gap",
+      "canonical_role": "unknown_or_mixed",
+      "priority": "P4",
+      "baseline_status": "scope_documented_roster_not_established",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "wiki_characters"
+      ],
+      "notes": "Éditions et noms de personnages à recouper ; Mobile2/V/Deluxe ne créent pas de nouveaux héros sans preuve.",
+      "reuse_paths": []
+    },
+    {
+      "id": "ex_unverified_cameos",
+      "name": "Rôles des apparitions secondaires EX",
+      "game": "ex",
+      "record_kind": "research_gap",
+      "canonical_role": "unknown_or_mixed",
+      "priority": "P4",
+      "baseline_status": "scope_documented_roster_not_established",
+      "dossier_playable_at_baseline": false,
+      "reference_readiness": "visual_reference_required",
+      "source_ids": [
+        "sega_ex",
+        "wiki_bosses"
+      ],
+      "notes": "Temperance/Lovers sont étiquetés cameo dans le projet. La catégorie de production boss_base ne prouve pas un combat de boss dans EX.",
+      "reuse_paths": []
+    }
+  ],
+  "coverage": {
+    "registered_primary_entries": [
+      {
+        "title": "The House of the Dead",
+        "type": "arcade",
+        "sources": [
+          "corpus_01"
+        ],
+        "character_coverage": "named_principals_and_boss_designs_indexed_crowds_not_exhaustive"
+      },
+      {
+        "title": "The House of the Dead 2",
+        "type": "arcade",
+        "sources": [
+          "corpus_02"
+        ],
+        "character_coverage": "named_principals_and_boss_designs_indexed_crowds_not_exhaustive"
+      },
+      {
+        "title": "The House of the Dead III",
+        "type": "arcade",
+        "sources": [
+          "corpus_03"
+        ],
+        "character_coverage": "named_principals_and_boss_designs_indexed_crowds_not_exhaustive"
+      },
+      {
+        "title": "The House of the Dead 4",
+        "type": "arcade",
+        "sources": [
+          "corpus_04"
+        ],
+        "character_coverage": "named_principals_and_boss_designs_indexed_crowds_not_exhaustive"
+      },
+      {
+        "title": "The House of the Dead 4 Special",
+        "type": "prolongement narratif",
+        "sources": [
+          "corpus_05"
+        ],
+        "character_coverage": "named_principals_and_boss_designs_indexed_crowds_not_exhaustive"
+      },
+      {
+        "title": "House of the Dead: Scarlet Dawn",
+        "type": "arcade",
+        "sources": [
+          "corpus_06"
+        ],
+        "character_coverage": "named_principals_and_boss_designs_indexed_crowds_not_exhaustive"
+      },
+      {
+        "title": "The House of the Dead: Overkill",
+        "type": "branche grindhouse",
+        "sources": [
+          "corpus_07"
+        ],
+        "character_coverage": "named_principals_and_boss_designs_indexed_crowds_not_exhaustive"
+      },
+      {
+        "title": "The House of the Dead: Overkill – Extended Cut",
+        "type": "édition étendue",
+        "sources": [
+          "corpus_08"
+        ],
+        "character_coverage": "edition_registered_visual_roster_not_exhaustively_reviewed"
+      },
+      {
+        "title": "The House of the Dead: Overkill – The Lost Reels",
+        "type": "adaptation mobile",
+        "sources": [
+          "corpus_09"
+        ],
+        "character_coverage": "edition_registered_visual_roster_not_exhaustively_reviewed"
+      },
+      {
+        "title": "Zombie Revenge",
+        "type": "beat’em up",
+        "sources": [
+          "corpus_10"
+        ],
+        "character_coverage": "three_playable_heroes_and_42_published_gallery_pose_assets_indexed_alternate_costumes_pending"
+      },
+      {
+        "title": "Loving Deads: The House of the Dead EX",
+        "type": "arcade à mini-jeux",
+        "sources": [
+          "corpus_11"
+        ],
+        "character_coverage": "two_playable_heroes_and_seven_gallery_cards_indexed_cameos_need_confirmation"
+      },
+      {
+        "title": "The Typing of the Dead",
+        "type": "arcade à clavier",
+        "sources": [
+          "corpus_12"
+        ],
+        "character_coverage": "edition_registered_visual_roster_not_exhaustively_reviewed"
+      },
+      {
+        "title": "The Typing of the Dead 2",
+        "type": "Windows",
+        "sources": [
+          "corpus_13"
+        ],
+        "character_coverage": "edition_registered_visual_roster_not_exhaustively_reviewed"
+      },
+      {
+        "title": "The Typing of the Dead: Zombie Panic",
+        "type": "édition PS2",
+        "sources": [
+          "corpus_14"
+        ],
+        "character_coverage": "edition_registered_visual_roster_not_exhaustively_reviewed"
+      },
+      {
+        "title": "The Typing of the Dead Online",
+        "type": "service PC",
+        "sources": [
+          "corpus_15"
+        ],
+        "character_coverage": "edition_registered_visual_roster_not_exhaustively_reviewed"
+      },
+      {
+        "title": "The Typing of the Dead: Overkill",
+        "type": "Windows",
+        "sources": [
+          "corpus_16"
+        ],
+        "character_coverage": "edition_registered_visual_roster_not_exhaustively_reviewed"
+      },
+      {
+        "title": "K-Typing of the Dead",
+        "type": "service J-PHONE",
+        "sources": [
+          "corpus_17"
+        ],
+        "character_coverage": "edition_registered_visual_roster_not_exhaustively_reviewed"
+      },
+      {
+        "title": "Zombie Da: Flick of the Dead",
+        "type": "iPhone",
+        "sources": [
+          "corpus_18"
+        ],
+        "character_coverage": "edition_registered_visual_roster_not_exhaustively_reviewed"
+      },
+      {
+        "title": "English of the Dead",
+        "type": "Nintendo DS",
+        "sources": [
+          "corpus_19"
+        ],
+        "character_coverage": "edition_registered_visual_roster_not_exhaustively_reviewed"
+      },
+      {
+        "title": "The Pinball of the Dead",
+        "type": "Game Boy Advance",
+        "sources": [
+          "corpus_20"
+        ],
+        "character_coverage": "edition_registered_visual_roster_not_exhaustively_reviewed"
+      },
+      {
+        "title": "Darts of the Dead",
+        "type": "DARTSLIVE2",
+        "sources": [
+          "corpus_21"
+        ],
+        "character_coverage": "edition_registered_visual_roster_not_exhaustively_reviewed"
+      },
+      {
+        "title": "The Site of the Dead",
+        "type": "RPG i-mode",
+        "sources": [
+          "corpus_22"
+        ],
+        "character_coverage": "edition_registered_visual_roster_not_exhaustively_reviewed"
+      },
+      {
+        "title": "The House of the Dead Mobile",
+        "type": "Japon, téléphone",
+        "sources": [
+          "corpus_23"
+        ],
+        "character_coverage": "edition_registered_visual_roster_not_exhaustively_reviewed"
+      },
+      {
+        "title": "The House of the Dead: Nightmare",
+        "type": "téléphone Java",
+        "sources": [
+          "corpus_24"
+        ],
+        "character_coverage": "edition_registered_visual_roster_not_exhaustively_reviewed"
+      },
+      {
+        "title": "The House of the Dead 2 & 3 Return",
+        "type": "compilation Wii",
+        "sources": [
+          "corpus_25"
+        ],
+        "character_coverage": "same_identity_base_edition_visual_differences_pending"
+      },
+      {
+        "title": "The House of the Dead: Remake",
+        "type": "remake du premier jeu",
+        "sources": [
+          "corpus_26"
+        ],
+        "character_coverage": "same_identity_base_edition_visual_differences_pending"
+      },
+      {
+        "title": "The House of the Dead 2: Remake",
+        "type": "remake du deuxième jeu",
+        "sources": [
+          "corpus_27"
+        ],
+        "character_coverage": "same_identity_base_edition_visual_differences_pending"
+      },
+      {
+        "title": "House of the Dead: Scarlet Dawn – The Attraction",
+        "type": "attraction de groupe",
+        "sources": [
+          "corpus_28"
+        ],
+        "character_coverage": "edition_registered_visual_roster_not_exhaustively_reviewed"
+      },
+      {
+        "title": "House of the Dead: Scarlet Dawn – Battle Genesis",
+        "type": "machine à sous",
+        "sources": [
+          "corpus_29"
+        ],
+        "character_coverage": "edition_registered_visual_roster_not_exhaustively_reviewed"
+      },
+      {
+        "title": "Winning Cash – House of the Dead Scarlet Dawn on Reels",
+        "type": "machine à sous",
+        "sources": [
+          "corpus_30"
+        ],
+        "character_coverage": "edition_registered_visual_roster_not_exhaustively_reviewed"
+      },
+      {
+        "title": "House of the Dead: Reawakened",
+        "type": "attraction d’arcade VR",
+        "sources": [
+          "corpus_31"
+        ],
+        "character_coverage": "official_title_verified_named_roster_not_established"
+      }
+    ],
+    "additional_editions": [
+      {
+        "noms": [
+          "The Typing of the Dead 2003",
+          "The Typing of the Dead 2004"
+        ],
+        "sources": [
+          "https://game.watch.impress.co.jp/docs/20021025/sega.htm",
+          "https://www.sega.jp/game/pc/?page=8"
+        ]
+      },
+      {
+        "noms": [
+          "The Typing of the Dead featuring Rakuten Minna no Shūshoku Katsudō Nikki",
+          "Zombie Da: Typing Lariat for Mac"
+        ],
+        "sources": [
+          "https://www.sega.jp/game/pc/?mode=view&page=6"
+        ]
+      },
+      {
+        "noms": [
+          "The Typing of the Dead US Edition"
+        ],
+        "sources": [
+          "https://www.suruga-ya.jp/product/detail/145020547"
+        ],
+        "niveau": "fiche distributeur et référence HCJ-0313"
+      },
+      {
+        "noms": [
+          "The Typing of the Dead, édition à prix révisé (2005)"
+        ],
+        "sources": [
+          "https://www.sega.jp/game/pc/?mode=start&page=7"
+        ]
+      },
+      {
+        "noms": [
+          "Zombie Da: Typing Lariat (Windows)"
+        ],
+        "sources": [
+          "https://www.sega.jp/game/pc/?mode=start&page=7"
+        ]
+      }
+    ],
+    "archive_leads_and_homonyms": [
+      {
+        "nom": "The Kanji of the Dead",
+        "statut": "titre provisoire présenté en 2007 ; sortie à établir",
+        "source": "https://game.watch.impress.co.jp/docs/20070420/segat.htm"
+      },
+      {
+        "nom": "Zombie Buster",
+        "statut": "homonyme mobile classé chez Capcom",
+        "source": "https://game.watch.impress.co.jp/docs/20011228/jsky.htm"
+      },
+      {
+        "nom": "Blood Bullet: The House of the Dead Side Story",
+        "statut": "nom de travail de Zombie Revenge",
+        "source": "https://www.mobygames.com/group/365/the-house-of-the-dead-series/"
+      },
+      {
+        "nom": "The House of the Dead for Mobile",
+        "statut": "intitulé de fiche de plateforme pour Mobile 2005",
+        "source": "https://gamefaqs.gamespot.com/mobile/928541-the-house-of-the-dead"
+      }
+    ],
+    "cinema_separate_continuity": [
+      {
+        "nom": "House of the Dead",
+        "statut": "adaptation cinéma",
+        "source": "https://catalog.afi.com/Catalog/moviedetails/62771"
+      },
+      {
+        "nom": "House of the Dead 2: Dead Aim",
+        "statut": "adaptation cinéma",
+        "source": "https://www.sonypictures.jp/he/824693"
+      },
+      {
+        "nom": "The House of the Dead, projet de Paul W. S. Anderson",
+        "statut": "projet annoncé par Story Kitchen ; aucune campagne de jeu attribuée",
+        "source": "https://www.story-kitchen.com/news/tomb-raider-the-legend-of-lara-croft-renewed-for-season-2-at-netflix-hmysa"
+      }
+    ],
+    "project_created_stories": [
+      "Requiem",
+      "Absolution"
+    ],
+    "coverage_limit": "Corpus de jeux et éditions couvert ; personnages secondaires, foules, tous ennemis ordinaires et toutes couleurs de costumes non déclarés exhaustifs. Les films, guests et créations du projet sont séparés des identités des jeux."
+  },
+  "new_wave_note": "Consulter les manifestes *_generated.json pour les images créées après ce baseline ; cela ne modifie ni le roster jouable ni les menus de costumes automatiquement.",
+  "gallery_semantics": "playable:false décrit la fiche de galerie, pas nécessairement l’identité. Linda, Zobio et Zobiko ont aussi un profil jouable indépendant ; aucune fiche ne prouve à elle seule une entrée de sélection."
+}

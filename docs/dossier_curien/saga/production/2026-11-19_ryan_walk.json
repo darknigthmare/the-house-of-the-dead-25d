@@ -1,0 +1,315 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-19",
+  "timezone": "Europe/Paris",
+  "batch": "ryan_walk_base_and_reception",
+  "repository": "darknigthmare/the-house-of-the-dead-25d",
+  "audited_head": "a3fbcf13455a945ccc929ce43907a9755d82e6c7",
+  "generation_method": "Built-in image_gen.imagegen; one individual sprite per image; two targeted corrections also used image_gen; no CLI/API fallback.",
+  "status": "Generated and visually inspected. Runtime integration assigned to root; not certified arcade-exact.",
+  "references": [
+    {
+      "path": "assets/dossier_curien/saga/ryan_guard.png",
+      "role": "existing project base-costume guard, identity/style/weapon/canvas reference",
+      "sha256": "e588ef044202d59b6801df1b6345cac3675a890f4355c76bc31140d533ee4f37",
+      "size_bytes": 474062
+    },
+    {
+      "path": "assets/dossier_curien/saga/ryan_soiree_guard.png",
+      "role": "existing project reception-costume guard, identity/style/weapon reference",
+      "sha256": "5b2e85891e58230307db321882e61d1b72b5dcfd2ef4e8accbe8c7e66fceb73f",
+      "size_bytes": 484876
+    },
+    {
+      "url": "https://hod.sega.jp/images/top/chara_player_img_uncompress/02.png",
+      "role": "official SEGA Scarlet Dawn Ryan Taylor costume reference; downloaded and visually inspected, not copied into the game",
+      "sha256": "319b12cb87e0d6c5a7a4768258df471752c93a5befdfb081c94e63b20f21e55c",
+      "size_bytes": 251773
+    }
+  ],
+  "files": [
+    {
+      "file": "assets/dossier_curien/saga/ryan_walk1.png",
+      "usage": "walk1",
+      "costume": "project_base",
+      "selected_generation_basename": "exec-e1ba90b1-b404-43f7-8442-ee8867fdac85.png",
+      "prompt": "Use case: precise-object-edit. Asset type: one individual transparent PNG 2D fighting-game walk animation frame, square 1024 by 1024. Edit the supplied character sprite. Preserve the reference character's exact face, hairstyle, clothing, gloves, submachine gun, painterly linework, palette, detail level, lighting and right-facing side-view orientation. Keep the gun held securely with both hands in the exact chest-high guard of the reference, no firing effect. Preserve upper-body size and identity. Redraw only the walking stance, natural trousers folds and tiny body response needed for an authentic grounded step. Full body with clean true transparent alpha, no ground or cast shadow. Maintain top of hair at y=55 and lower edge of grounded shoe at y=960 on this 1024 square canvas; central animation origin remains (512,960), body centered on x512. One character, one pose, nothing else. Do not make a sheet, multiple figures, labels, text, borders, floor, scene, added equipment or motion trail. Do not mirror or flip the source. Both arms and gun remain aimed to the RIGHT in both phases. The feet and legs must change visibly from the wide stationary guard into an anatomical walking contact pose.\nPose WALK1: the near-side leg is extended FORWARD to image-right, its shoe heel contacting the y960 ground line near x650, toe pointing right and slightly lifted. The far-side leg extends backward to image-left, its heel lifted and ball of the shoe contacting near x390. Mid-stride length substantially narrower than the stationary fighting stance; both legs visibly separate. Weight travels right, pelvis stays centered, no jump, no crouch. Render the same side of the character as the reference.\nCostume invariants: brown side-parted hair, fully long striped white sleeves with buttoned cuffs, charcoal waistcoat without a chain, striped dark and gold tie, navy trousers, polished black shoes, same black compact gun. Keep the stylized painted face from Image 1.",
+      "correction_prompt": null,
+      "visual_check": {
+        "one_character": true,
+        "faces_right": true,
+        "gun_held_with_two_hands": true,
+        "individual_canvas": true,
+        "opposite_support_visible": true,
+        "horizontal_mirror_used": false,
+        "ground_shadow": false
+      },
+      "registration_note": "Native canvas retained. Origin x is canvas midpoint; y is measured grounded-shoe lower edge at alpha>=128. Use normalized values in renderer, not the requested-but-unfulfilled 1024 size.",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "size_bytes": 656794,
+      "sha256": "4782715f9fda541e237d5a5317c962880c0f36c42ab9b4767b463f16527cadee",
+      "alpha": {
+        "extrema": [
+          0,
+          255
+        ],
+        "fully_transparent_pixels": 1282408,
+        "fully_opaque_pixels": 876,
+        "partially_transparent_pixels": 289232,
+        "nonzero_bbox": [
+          19,
+          63,
+          1230,
+          1238
+        ],
+        "bbox_threshold_128": [
+          326,
+          70,
+          944,
+          1180
+        ],
+        "distribution": {
+          "alpha_1_to_15": 10991,
+          "alpha_16_to_127": 3177,
+          "alpha_128_to_239": 3959,
+          "alpha_240_to_254": 271105,
+          "alpha_255": 876
+        }
+      },
+      "pivot_pixels": [
+        627.0,
+        1180
+      ],
+      "pivot_normalized": [
+        0.5,
+        0.9409888357256778
+      ],
+      "body_height_pixels": 1110,
+      "body_height_normalized": 0.8851674641148325,
+      "top_normalized": 0.05582137161084529
+    },
+    {
+      "file": "assets/dossier_curien/saga/ryan_walk2.png",
+      "usage": "walk2",
+      "costume": "project_base",
+      "selected_generation_basename": "exec-be9e43e4-ecf3-425a-8d4a-97ce40ceca25.png",
+      "prompt": "Use case: precise-object-edit. Asset type: one individual transparent PNG 2D fighting-game walk animation frame, square 1024 by 1024. Edit the supplied character sprite. Preserve the reference character's exact face, hairstyle, clothing, gloves, submachine gun, painterly linework, palette, detail level, lighting and right-facing side-view orientation. Keep the gun held securely with both hands in the exact chest-high guard of the reference, no firing effect. Preserve upper-body size and identity. Redraw only the walking stance, natural trousers folds and tiny body response needed for an authentic grounded step. Full body with clean true transparent alpha, no ground or cast shadow. Maintain top of hair at y=55 and lower edge of grounded shoe at y=960 on this 1024 square canvas; central animation origin remains (512,960), body centered on x512. One character, one pose, nothing else. Do not make a sheet, multiple figures, labels, text, borders, floor, scene, added equipment or motion trail. Do not mirror or flip the source. Both arms and gun remain aimed to the RIGHT in both phases. The feet and legs must change visibly from the wide stationary guard into an anatomical walking contact pose.\nPose WALK2, the opposite support from WALK1: the FAR-side leg is extended FORWARD to image-right, its heel contacting the y960 ground line near x650, toe pointing right and slightly lifted. The NEAR-side leg passes clearly backward toward image-left, heel lifted and ball of that shoe contacting near x390. The visible near thigh angles down-left, revealing the forward far leg down-right; carefully preserve this leg occlusion so this is not the same leg pose as WALK1. Mid-stride narrower than stationary guard; body/pelvis and gun remain stable, no jump, no crouch. Render the same side of the character as the reference; change which leg leads, never mirror the entire character.\nCostume invariants: brown side-parted hair, fully long striped white sleeves with buttoned cuffs, charcoal waistcoat without a chain, striped dark and gold tie, navy trousers, polished black shoes, same black compact gun. Keep the stylized painted face from Image 1.",
+      "correction_prompt": "Use case: precise-object-edit. Edit the attached individual transparent game sprite into the OPPOSITE LEG STEP. Retain 1280x1280 transparent canvas. Absolutely preserve every part ABOVE THE WAIST including head position, face, hairstyle, shirt, waistcoat, arms, both hands and submachine gun: same pixels, same position, same scale and facing RIGHT. Change ONLY trousers and legs BELOW THE WAIST. In the current image, the near thigh runs diagonally down-right across the front. CHANGE THAT: draw the visible near-side thigh running diagonally DOWN-LEFT from the near hip, its knee visibly behind the hip, then its shin angled DOWN-RIGHT toward a heel-lifted rear shoe at image-left. The visible outside trouser seam must follow the leg BACK to image-left, not cross in front to image-right. Draw the far-side leg passing BEHIND that near thigh and extending FORWARD to image-right, fairly straight, with its shoe heel planted on the ground at y1180 near x815 and toe pointing right. This is an anatomical reversed support pose, back leg belongs to near hip and front leg to far hip. It must have clearly different knee locations and opposite overlap ordering versus input, not merely different wrinkles. The near/rear knee should be around (480,875); the far/front knee around (730,865). Keep full figure, black shoes, navy trousers, source painterly linework, genuine alpha outside figure. No mirroring, no additional figure, no text, no ground or shadow.",
+      "visual_check": {
+        "one_character": true,
+        "faces_right": true,
+        "gun_held_with_two_hands": true,
+        "individual_canvas": true,
+        "opposite_support_visible": true,
+        "horizontal_mirror_used": false,
+        "ground_shadow": false
+      },
+      "registration_note": "Native canvas retained. Origin x is canvas midpoint; y is measured grounded-shoe lower edge at alpha>=128. Use normalized values in renderer, not the requested-but-unfulfilled 1024 size.",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "size_bytes": 665309,
+      "sha256": "026373764c64660f9efe9418ba41ee4b90fe0b8d83f22537c677f51a8287f790",
+      "alpha": {
+        "extrema": [
+          0,
+          255
+        ],
+        "fully_transparent_pixels": 1270298,
+        "fully_opaque_pixels": 1016,
+        "partially_transparent_pixels": 301202,
+        "nonzero_bbox": [
+          0,
+          0,
+          1236,
+          1232
+        ],
+        "bbox_threshold_128": [
+          176,
+          70,
+          944,
+          1177
+        ],
+        "distribution": {
+          "alpha_1_to_15": 12640,
+          "alpha_16_to_127": 3433,
+          "alpha_128_to_239": 3960,
+          "alpha_240_to_254": 281169,
+          "alpha_255": 1016
+        }
+      },
+      "pivot_pixels": [
+        627.0,
+        1177
+      ],
+      "pivot_normalized": [
+        0.5,
+        0.9385964912280702
+      ],
+      "body_height_pixels": 1107,
+      "body_height_normalized": 0.8827751196172249,
+      "top_normalized": 0.05582137161084529
+    },
+    {
+      "file": "assets/dossier_curien/saga/ryan_soiree_walk1.png",
+      "usage": "walk1",
+      "costume": "reception",
+      "selected_generation_basename": "exec-0b3b748c-0ce8-4f46-9758-7623d848aa52.png",
+      "prompt": "Use case: precise-object-edit. Asset type: one individual transparent PNG 2D fighting-game walk animation frame, square 1024 by 1024. Edit the supplied character sprite. Preserve the reference character's exact face, hairstyle, clothing, gloves, submachine gun, painterly linework, palette, detail level, lighting and right-facing side-view orientation. Keep the gun held securely with both hands in the exact chest-high guard of the reference, no firing effect. Preserve upper-body size and identity. Redraw only the walking stance, natural trousers folds and tiny body response needed for an authentic grounded step. Full body with clean true transparent alpha, no ground or cast shadow. Maintain top of hair at y=55 and lower edge of grounded shoe at y=960 on this 1024 square canvas; central animation origin remains (512,960), body centered on x512. One character, one pose, nothing else. Do not make a sheet, multiple figures, labels, text, borders, floor, scene, added equipment or motion trail. Do not mirror or flip the source. Both arms and gun remain aimed to the RIGHT in both phases. The feet and legs must change visibly from the wide stationary guard into an anatomical walking contact pose.\nInput Image 1 is the sprite edit target and absolute rendering/camera/size/weapon guide. Input Image 2 is official Ryan Taylor Scarlet Dawn costume reference only; do NOT copy its frontal standing pose or white outline.\nPose WALK1: the near-side leg is extended FORWARD to image-right, its shoe heel contacting the y960 ground line near x650, toe pointing right and slightly lifted. The far-side leg extends backward to image-left, its heel lifted and ball of the shoe contacting near x390. Mid-stride length substantially narrower than the stationary fighting stance; both legs visibly separate. Weight travels right, pelvis stays centered, no jump, no crouch. Render the same side of the character as the reference.\nCostume invariants: short dark hair and exact side-profile face of Image1, ivory striped shirt sleeves rolled to elbow with exposed forearms, black tailored waistcoat with the thin gold watch chain draping across lower waist, loosened striped black-and-gold tie, black trousers and shoes, black gloves and wristwatch. Preserve every costume detail and the Image1 weapon.",
+      "correction_prompt": null,
+      "visual_check": {
+        "one_character": true,
+        "faces_right": true,
+        "gun_held_with_two_hands": true,
+        "individual_canvas": true,
+        "opposite_support_visible": true,
+        "horizontal_mirror_used": false,
+        "ground_shadow": false
+      },
+      "registration_note": "Native canvas retained. Origin x is canvas midpoint; y is measured grounded-shoe lower edge at alpha>=128. Use normalized values in renderer, not the requested-but-unfulfilled 1024 size.",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "size_bytes": 665425,
+      "sha256": "2ad04a161ac1c455316670b3a25d066b92cdb20b5022da31c68795a60fed4984",
+      "alpha": {
+        "extrema": [
+          0,
+          255
+        ],
+        "fully_transparent_pixels": 1291109,
+        "fully_opaque_pixels": 625,
+        "partially_transparent_pixels": 280782,
+        "nonzero_bbox": [
+          0,
+          29,
+          1192,
+          1202
+        ],
+        "bbox_threshold_128": [
+          323,
+          73,
+          928,
+          1179
+        ],
+        "distribution": {
+          "alpha_1_to_15": 10621,
+          "alpha_16_to_127": 3633,
+          "alpha_128_to_239": 4154,
+          "alpha_240_to_254": 262374,
+          "alpha_255": 625
+        }
+      },
+      "pivot_pixels": [
+        627.0,
+        1179
+      ],
+      "pivot_normalized": [
+        0.5,
+        0.9401913875598086
+      ],
+      "body_height_pixels": 1106,
+      "body_height_normalized": 0.8819776714513556,
+      "top_normalized": 0.058213716108452954
+    },
+    {
+      "file": "assets/dossier_curien/saga/ryan_soiree_walk2.png",
+      "usage": "walk2",
+      "costume": "reception",
+      "selected_generation_basename": "exec-0e82106c-2b51-4a6f-881e-69150a6cc82b.png",
+      "prompt": "Use case: precise-object-edit. Asset type: one individual transparent PNG 2D fighting-game walk animation frame, square 1024 by 1024. Edit the supplied character sprite. Preserve the reference character's exact face, hairstyle, clothing, gloves, submachine gun, painterly linework, palette, detail level, lighting and right-facing side-view orientation. Keep the gun held securely with both hands in the exact chest-high guard of the reference, no firing effect. Preserve upper-body size and identity. Redraw only the walking stance, natural trousers folds and tiny body response needed for an authentic grounded step. Full body with clean true transparent alpha, no ground or cast shadow. Maintain top of hair at y=55 and lower edge of grounded shoe at y=960 on this 1024 square canvas; central animation origin remains (512,960), body centered on x512. One character, one pose, nothing else. Do not make a sheet, multiple figures, labels, text, borders, floor, scene, added equipment or motion trail. Do not mirror or flip the source. Both arms and gun remain aimed to the RIGHT in both phases. The feet and legs must change visibly from the wide stationary guard into an anatomical walking contact pose.\nInput Image 1 is the sprite edit target and absolute rendering/camera/size/weapon guide. Input Image 2 is official Ryan Taylor Scarlet Dawn costume reference only; do NOT copy its frontal standing pose or white outline.\nPose WALK2, the opposite support from WALK1: the FAR-side leg is extended FORWARD to image-right, its heel contacting the y960 ground line near x650, toe pointing right and slightly lifted. The NEAR-side leg passes clearly backward toward image-left, heel lifted and ball of that shoe contacting near x390. The visible near thigh angles down-left, revealing the forward far leg down-right; carefully preserve this leg occlusion so this is not the same leg pose as WALK1. Mid-stride narrower than stationary guard; body/pelvis and gun remain stable, no jump, no crouch. Render the same side of the character as the reference; change which leg leads, never mirror the entire character.\nCostume invariants: short dark hair and exact side-profile face of Image1, ivory striped shirt sleeves rolled to elbow with exposed forearms, black tailored waistcoat with the thin gold watch chain draping across lower waist, loosened striped black-and-gold tie, black trousers and shoes, black gloves and wristwatch. Preserve every costume detail and the Image1 weapon.",
+      "correction_prompt": "Use case: precise-object-edit. Edit the attached individual transparent game sprite into the OPPOSITE LEG STEP. Retain 1280x1280 transparent canvas. Absolutely preserve every part ABOVE THE WAIST including head position, face, short dark hairstyle, rolled-sleeve shirt, black waistcoat and gold chain, forearms, both gloves and submachine gun: same pixels, same position, same scale and facing RIGHT. Change ONLY trousers and legs BELOW THE WAIST. In the current image, the near thigh runs diagonally down-right across the front. CHANGE THAT: draw the visible near-side thigh running diagonally DOWN-LEFT from the near hip, its knee visibly behind the hip, then its shin angled DOWN-RIGHT toward a heel-lifted rear shoe at image-left. The visible outside trouser seam must follow the leg BACK to image-left, not cross in front to image-right. Draw the far-side leg passing BEHIND that near thigh and extending FORWARD to image-right, fairly straight, with its shoe heel planted on the ground at y1180 near x815 and toe pointing right. This is an anatomical reversed support pose, back leg belongs to near hip and front leg to far hip. It must have clearly different knee locations and opposite overlap ordering versus input, not merely different wrinkles. The near/rear knee should be around (480,875); the far/front knee around (730,865). Keep full figure, black shoes, black trousers, source realistic painted linework, genuine alpha outside figure. No mirroring, no additional figure, no text, no ground or shadow.",
+      "visual_check": {
+        "one_character": true,
+        "faces_right": true,
+        "gun_held_with_two_hands": true,
+        "individual_canvas": true,
+        "opposite_support_visible": true,
+        "horizontal_mirror_used": false,
+        "ground_shadow": false
+      },
+      "registration_note": "Native canvas retained. Origin x is canvas midpoint; y is measured grounded-shoe lower edge at alpha>=128. Use normalized values in renderer, not the requested-but-unfulfilled 1024 size.",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "size_bytes": 693236,
+      "sha256": "c102cec14abab58254087dfd13651c05216e457700bf7ec753f31b80bfe2ac15",
+      "alpha": {
+        "extrema": [
+          0,
+          255
+        ],
+        "fully_transparent_pixels": 1272000,
+        "fully_opaque_pixels": 621,
+        "partially_transparent_pixels": 299895,
+        "nonzero_bbox": [
+          0,
+          19,
+          1234,
+          1254
+        ],
+        "bbox_threshold_128": [
+          187,
+          71,
+          929,
+          1177
+        ],
+        "distribution": {
+          "alpha_1_to_15": 15608,
+          "alpha_16_to_127": 3715,
+          "alpha_128_to_239": 4380,
+          "alpha_240_to_254": 276192,
+          "alpha_255": 621
+        }
+      },
+      "pivot_pixels": [
+        627.0,
+        1177
+      ],
+      "pivot_normalized": [
+        0.5,
+        0.9385964912280702
+      ],
+      "body_height_pixels": 1106,
+      "body_height_normalized": 0.8819776714513556,
+      "top_normalized": 0.05661881977671451
+    }
+  ],
+  "rejected_variants": [
+    {
+      "requested": "ryan_walk2.png",
+      "generation_basename": "exec-fcfe8bca-e2e0-49cb-8591-b11f3e3a51b1.png",
+      "reason": "Initial pose retained the same near-leg-forward overlap as walk1; replaced by targeted opposite-leg edit."
+    },
+    {
+      "requested": "ryan_soiree_walk2.png",
+      "generation_basename": "exec-a5d94b96-2703-4ac2-833d-0db2d0e8105a.png",
+      "reason": "Initial pose retained the same near-leg-forward overlap as walk1; replaced by targeted opposite-leg edit."
+    }
+  ],
+  "limits": [
+    "The generator did not obey requested 1024x1024 raster size; final native sizes are measured below and no resampling is performed.",
+    "These are two authored support poses per costume, suitable for the existing four-phase walk cycle with guard passing frames; not a dense complete animation set.",
+    "Official reference informs reception costume. Base-costume art deliberately matches the existing project design.",
+    "Canvas pivot and grounded edge require renderer registration using actual measured metadata.",
+    "Image-level identity and costume continuity were visually inspected; no claim of exact Sega master equivalence or certified 1:1 fidelity.",
+    "No runtime script, catalog, Godot import metadata, commit or remote push is changed by this batch.",
+    "Low-alpha isolated pixels are present beyond the solid silhouette; alpha>=128 bounds were used for grounding. No manual alpha cleanup was performed."
+  ],
+  "validation": {
+    "all_final_hashes_unique": true,
+    "all_have_transparent_alpha": true,
+    "all_square": true,
+    "postprocessing": "Byte-for-byte file copies only; PIL used for measurement, no pixel editing."
+  }
+}

@@ -1,0 +1,552 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "repository": "House of the Dead 2D",
+  "baseline_commit": "6291e0d723eb4bc5050ffd3de699f6e55a575642",
+  "scope": "Lot 2 — quatre bases humaines de galerie, sans ajout de personnage jouable.",
+  "summary": {
+    "assets": 4,
+    "gallery_entries": 4,
+    "bytes": 4764872,
+    "playable_added": 0,
+    "animation_complete": 0,
+    "new_retained_drawings": 4,
+    "imagegen_calls": 4,
+    "by_game": {
+      "hotd2": 1,
+      "scarlet_dawn": 1,
+      "overkill": 2
+    },
+    "by_category": {
+      "npc_base": 4
+    },
+    "by_status": {
+      "static_reference_reviewed": 1,
+      "static_needs_visual_reference_qa": 3
+    }
+  },
+  "assets": [
+    {
+      "id": "goldman_human",
+      "name": "Goldman — forme humaine",
+      "game": "hotd2",
+      "game_label": "The House of the Dead 2",
+      "generated_file": "exec-9ca4b2fe-ba31-4bcc-93b7-4a5aca0d6253.png",
+      "status": "static_reference_reviewed",
+      "category": "npc_base",
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot2/characters/goldman_human_base.png",
+      "sha256": "9e0bce590c78813dd2ab0bc6d95077cc8ab2c3aa70ce9dd1700b31d37e4a9058",
+      "bytes": 1532697,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        81,
+        31,
+        1004,
+        1514
+      ],
+      "visible_bbox": [
+        266,
+        35,
+        760,
+        1508
+      ],
+      "visible_alpha_threshold": 127,
+      "sources": [
+        "https://www.digitpress.com/library/manuals/dreamcast/house_dead_2.pdf",
+        "https://www.youtube.com/watch?v=mIG8p0gB2Ew",
+        "https://i.ytimg.com/vi/mIG8p0gB2Ew/hqdefault.jpg"
+      ],
+      "source_ids": [
+        "goldman_manual",
+        "goldman_color"
+      ],
+      "source_notes": [
+        "Le manuel SEGA fixe l’identité et la silhouette du costume assis ; la miniature communautaire du modèle original apporte une référence de couleur.",
+        "Forme humaine originale de HOTD 2 ; le modèle de HOTD 4, le remake et la transformation de fin ne sont pas mélangés."
+      ],
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot2/characters/goldman_hotd2_game_thumbnail.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot2/characters/goldman_hotd2_manual_detail.png",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "reference_inputs": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot2/characters/goldman_hotd2_game_thumbnail.jpg",
+          "sha256": "b6a831727e2b255416fe8c9f8cf876d31da942546cc7a86b7e92701e5df77055",
+          "bytes": 24116,
+          "dimensions": [
+            480,
+            360
+          ],
+          "mode": "RGB",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot2/characters/goldman_hotd2_manual_detail.png",
+          "sha256": "f24c2ef37d493fd190d1a68b09982472b1a5b006531dfd2edf8a5d0bac6258f7",
+          "bytes": 26265,
+          "dimensions": [
+            432,
+            612
+          ],
+          "mode": "RGB",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        },
+        {
+          "path": "assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "bytes": 595313,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "role": "painting_style_only",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        }
+      ],
+      "prompts": [
+        "Use case: stylized-concept. Asset type: one native transparent RGBA character sprite for the Dossier Curien 2D bestiary gallery. Create GOLDMAN in his human appearance from the original The House of the Dead 2, as a full-body standing character, three-quarter view facing screen-right. Image 1 is identity and color evidence from the original game's Goldman model: dark short swept-back hair, pale skin, thin rectangular lightly tinted spectacles, severe clean-shaven face, a charcoal business suit with a subdued plum cast, white dress shirt and muted ochre-gold necktie. Image 2 is the SEGA manual depiction of the SAME Goldman seated, used only for his clothing and lean adult proportions; adapt him to standing with both legs and plain dark formal shoes fully visible. Image 3 (Isaac) is ONLY the drawing-style reference: readable hand-painted arcade sprite, crisp outlined contours, carefully painted cloth folds, rich restrained shading and natural human anatomy. Do not copy Isaac's face, cap, brown jacket, gun or fighting stance. Goldman is unarmed: dignified tense upright stance, feet slightly apart, one hand lightly adjusting the other cuff in front of his waist. Retain both empty hands, five fingers each where visible, fitted suit, ordinary lapels, no added badges or ornate props. Center one entire figure with clear transparent space on every side and beneath both soles, roughly 85 percent canvas height. True transparent background; no scenery, chair, desk, text, lettering, labels, logo, border, duplicate figure, cropped head or feet. This is a carefully referenced 2D adaptation, not a screenshot or a literal copied polygon render."
+      ],
+      "prompt_sha256": [
+        "a8ef7245c5a235c888d692d7353a97fc6ef524d976dee7656ad9b8ac942dc7e5"
+      ],
+      "limitations": [
+        "Une base statique pour le bestiaire. Aucun profil de combat, mouvement, costume sélectionnable ni animation complète ajouté.",
+        "Adaptation 2D pour Dossier Curien ; aucune certification de reproduction 1:1 du jeu d’origine.",
+        "Pose debout et mains ajustant une manche créées pour la galerie, alors que les deux références montrent Goldman assis.",
+        "Costume, chaussures et cravate interprétés depuis un petit rendu monochrome et une miniature couleur ; détails de couture et teinte exacte non certifiés."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot2/humans_generated.json",
+      "generation": {
+        "tool": "image_gen built-in",
+        "date": "2026-11-20",
+        "transparent_background_requested": true,
+        "source_native_output": "/workspace/scratch/da9d6e4777c1/generated_images/exec-9ca4b2fe-ba31-4bcc-93b7-4a5aca0d6253.png",
+        "native_output_unchanged": true,
+        "attempts": 1,
+        "pixel_edits_after_generation": false
+      },
+      "qa": {
+        "output_visually_inspected": true,
+        "subject_and_silhouette_reviewed": true,
+        "whole_head_hands_feet_visible": true,
+        "visible_bounds_clear_of_canvas_edges": true,
+        "maximum_alpha_on_canvas_edges": 0,
+        "alpha_check": "Présence de transparence réelle ; mesure conservée telle quelle, sans nettoyage.",
+        "native_sha256_matches_saved_png": true,
+        "ui_or_engine_capture_performed": false,
+        "reference_limitations_open": false
+      }
+    },
+    {
+      "id": "thornheart",
+      "name": "Thornheart",
+      "game": "scarlet_dawn",
+      "game_label": "House of the Dead: Scarlet Dawn",
+      "generated_file": "exec-53f861ee-743a-4a37-8941-c8e6c9eebbf5.png",
+      "status": "static_needs_visual_reference_qa",
+      "category": "npc_base",
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot2/characters/thornheart_base.png",
+      "sha256": "f8e3a0256e788d43eef25c5ca67064ebe77d95fe4aca4184766818e8cf670693",
+      "bytes": 589379,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        25,
+        21,
+        1234,
+        1236
+      ],
+      "visible_bbox": [
+        436,
+        31,
+        782,
+        1231
+      ],
+      "visible_alpha_threshold": 127,
+      "sources": [
+        "https://hod.sega.jp/result/054.html",
+        "https://hod.sega.jp/images/result/rank_s_pct.png"
+      ],
+      "source_ids": [
+        "thornheart_official"
+      ],
+      "source_notes": [
+        "Visage, buste, cravate blanche, costume sombre et pochette rouge recoupés avec l’image officielle SEGA du rang S.",
+        "Apparence Scarlet Dawn uniquement ; les silhouettes du mystérieux homme dans III et 4 ne sont pas certifiées équivalentes."
+      ],
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot2/characters/thornheart_rank_s_official.png",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "reference_inputs": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot2/characters/thornheart_rank_s_official.png",
+          "sha256": "b93e6669bf39d24254f4aa091d6da70e51b3f93c126da3adaebf7eb3900ab78b",
+          "bytes": 13402,
+          "dimensions": [
+            272,
+            278
+          ],
+          "mode": "P",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        },
+        {
+          "path": "assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "bytes": 595313,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "role": "painting_style_only",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        }
+      ],
+      "prompts": [
+        "Use case: stylized-concept. Asset type: one whole-body native transparent RGBA sprite for the Dossier Curien bestiary gallery. Create THORNHEART in his House of the Dead: Scarlet Dawn appearance, a standing three-quarter figure facing screen-right. Image 1 is the official SEGA Scarlet Dawn portrait: preserve this character's gaunt aged pale-gray face, deep wrinkles, hollow cheeks, high forehead, short slicked-back gray hair, pale gray eyes, stern faintly sinister expression, very dark charcoal formal jacket with satin-like black lapels, white dress shirt, long white necktie and small red pocket square. Image 2 (Isaac) is ONLY an art-style sample: detailed hand-painted 2D arcade sprite, controlled dark contours, strong readable silhouette, richly shaded cloth folds and realistic adult anatomy. Do not copy Isaac's face, hair, skin, hat, brown clothing, weapon or crouch. Since the portrait does not show the lower body, make a restrained gallery adaptation with plain matching dark tailored trousers and plain polished black dress shoes; do not add a cloak, patterned waistcoat, cane, medals, machinery or invented decorative accessories. Tall lean upright proportions, shoulders slightly drawn back, hands loosely clasped in front near the waist, both feet planted. One character only, complete head through both soles, all fingers where visible anatomically coherent. Center him on a square canvas with ample completely clear transparent margin on every edge, figure about 85 percent of the canvas height. Native clean alpha background without colored mist or shadow, no floor, background scene, frame, text, name label, watermark or duplicate view. This is a new 2D stylistic adaptation of a sourced bust; the unshown lower-body construction is deliberately simple and will remain documented as needing visual-reference review."
+      ],
+      "prompt_sha256": [
+        "8cdc624b014788cf46e466a60be5f184aaa9486b68ed8eff31d1452e4b02553f"
+      ],
+      "limitations": [
+        "Une base statique pour le bestiaire. Aucun profil de combat, mouvement, costume sélectionnable ni animation complète ajouté.",
+        "Adaptation 2D pour Dossier Curien ; aucune certification de reproduction 1:1 du jeu d’origine.",
+        "Pantalon sombre, chaussures noires, stature entière et pose des mains reconstruits sobrement depuis le buste ; référence plein pied toujours manquante.",
+        "Le statut de vérification visuelle reste ouvert pour ces parties non montrées ; aucune fidélité intégrale de tenue n’est affirmée."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot2/humans_generated.json",
+      "generation": {
+        "tool": "image_gen built-in",
+        "date": "2026-11-20",
+        "transparent_background_requested": true,
+        "source_native_output": "/workspace/scratch/da9d6e4777c1/generated_images/exec-53f861ee-743a-4a37-8941-c8e6c9eebbf5.png",
+        "native_output_unchanged": true,
+        "attempts": 1,
+        "pixel_edits_after_generation": false
+      },
+      "qa": {
+        "output_visually_inspected": true,
+        "subject_and_silhouette_reviewed": true,
+        "whole_head_hands_feet_visible": true,
+        "visible_bounds_clear_of_canvas_edges": true,
+        "maximum_alpha_on_canvas_edges": 0,
+        "alpha_check": "Présence de transparence réelle ; mesure conservée telle quelle, sans nettoyage.",
+        "native_sha256_matches_saved_png": true,
+        "ui_or_engine_capture_performed": false,
+        "reference_limitations_open": true
+      }
+    },
+    {
+      "id": "papa_caesar",
+      "name": "Papa Caesar",
+      "game": "overkill",
+      "game_label": "The House of the Dead: Overkill",
+      "generated_file": "exec-ff76dbf3-94cb-4cb4-805b-1fa87cc6d70d.png",
+      "status": "static_needs_visual_reference_qa",
+      "category": "npc_base",
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot2/characters/papa_caesar_base.png",
+      "sha256": "d123a603c6ddd6c9372cd4b88887c29ac022ecc65db04e5e25bb5c439a6df30c",
+      "bytes": 1947397,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        1018,
+        1536
+      ],
+      "visible_bbox": [
+        147,
+        10,
+        846,
+        1520
+      ],
+      "visible_alpha_threshold": 127,
+      "sources": [
+        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/246580/manuals/TOTDO_STEAM_MANUAL_ENG.PDF?t=1763675367",
+        "https://www.youtube.com/watch?v=7Stu6VTJg6g",
+        "https://i.ytimg.com/vi/7Stu6VTJg6g/hqdefault.jpg",
+        "https://www.imfdb.org/wiki/House_of_the_Dead%3A_Overkill%2C_The",
+        "https://www.imfdb.org/images/a/a3/TOTD-CaesarMagnum.jpg",
+        "https://thehouseofthedead.fandom.com/wiki/Papa_Caesar"
+      ],
+      "source_ids": [
+        "papa_manual",
+        "papa_wii_game",
+        "papa_green_shirt",
+        "papa_appearance_text"
+      ],
+      "source_notes": [
+        "Visage et foulard issus du manuel officiel ; longue chemise à poches, manches retroussées et ensemble vert vus en captures du jeu.",
+        "Canne à poignée claire et mocassins rouges reposent sur une description textuelle secondaire ; leur dessin exact n’a pas été confirmé visuellement."
+      ],
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot2/characters/papa_caesar_wii_game_thumbnail.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot2/characters/papa_caesar_official_manual_detail.png",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot2/characters/papa_caesar_green_shirt_game.jpg",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "reference_inputs": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot2/characters/papa_caesar_wii_game_thumbnail.jpg",
+          "sha256": "6a2634bffff202071f840d1d2e427fefad077e5764bcb068b1420d8f3a94a377",
+          "bytes": 15315,
+          "dimensions": [
+            480,
+            360
+          ],
+          "mode": "RGB",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot2/characters/papa_caesar_official_manual_detail.png",
+          "sha256": "0262d048752ed4eec222c557d106116bdb1f7cc368516941efc8123bb8c8e64b",
+          "bytes": 162042,
+          "dimensions": [
+            429,
+            423
+          ],
+          "mode": "RGB",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot2/characters/papa_caesar_green_shirt_game.jpg",
+          "sha256": "e23b86244f8299ae78f1665379e410e919f692456b3e9aafcf1d2fe73fe2ccd3",
+          "bytes": 107411,
+          "dimensions": [
+            960,
+            540
+          ],
+          "mode": "RGB",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        },
+        {
+          "path": "assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "bytes": 595313,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "role": "painting_style_only",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        }
+      ],
+      "prompts": [
+        "Use case: stylized-concept. Asset type: one native transparent RGBA character sprite for the Dossier Curien 2D bestiary gallery. Create PAPA CAESAR from The House of the Dead: Overkill, one whole standing figure in a three-quarter view facing screen-right. References 1 and 3 show his actual green outfit in game; reference 2 is the official SEGA manual portrait for his face and patterned neck scarf. Reference 4 (Isaac) supplies ONLY drawing style: painted 2D arcade sprite, clean dark contours, dimensional cloth shading, warm detailed face, readable realistic adult anatomy. Do not copy Isaac's skin tone, cap, jacket, firearm or fighting crouch. Papa is a middle-aged pale-to-light-tan man with short swept-back gray-brown hair, pronounced gray sideburns and a matching short moustache and goatee, a haughty hard expression. Reproduce the visible long mint-to-emerald green safari-style shirt with four patch pockets and rolled short sleeves, matching straight green trousers, open pointed collar and red ascot with small pale dots, red pocket square, gold bracelets and a red gemstone ring. Standing gallery adaptation: relaxed aristocratic posture, one hand holding a slender red-brown walking cane with a light beige curved grip down beside him, the other hand resting near his waist. Based on documented appearance, choose plain burgundy-red loafers; the exact shoe trim is an understated adaptation because the available game reference is dark at the feet. Keep the cane unobstructed and complete from handle to tip; both shoes entirely visible. Center the single figure at about 85 percent canvas height, generous clear transparent margins. No gun, extra accessories, speech bubbles, text, logos, watermark, desk, scenery or ground shadow; no cropped head, fingers, shoes or cane. True transparent background. The result is a coherent 2D gallery adaptation of the supplied character evidence, not a claim of a one-to-one official model."
+      ],
+      "prompt_sha256": [
+        "ada71b47b4064cb82c2d9e51c850bffcf2252f4b4f8d1b7c61970caeaa1a8283"
+      ],
+      "limitations": [
+        "Une base statique pour le bestiaire. Aucun profil de combat, mouvement, costume sélectionnable ni animation complète ajouté.",
+        "Adaptation 2D pour Dossier Curien ; aucune certification de reproduction 1:1 du jeu d’origine.",
+        "Le pied est trop sombre dans la miniature Wii pour certifier la coupe du mocassin. Forme de canne, ferrures et détails des chaussures restent à revoir sur un plein pied net.",
+        "Références Wii, manuel PC et cinématique PC/Extended Cut rapprochés pour une base Overkill ; aucune équivalence 1:1 entre éditions n’est revendiquée.",
+        "Pose de galerie avec canne ; le téléphone du manuel et le revolver de la capture ne sont pas reproduits."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot2/humans_generated.json",
+      "generation": {
+        "tool": "image_gen built-in",
+        "date": "2026-11-20",
+        "transparent_background_requested": true,
+        "source_native_output": "/workspace/scratch/da9d6e4777c1/generated_images/exec-ff76dbf3-94cb-4cb4-805b-1fa87cc6d70d.png",
+        "native_output_unchanged": true,
+        "attempts": 1,
+        "pixel_edits_after_generation": false
+      },
+      "qa": {
+        "output_visually_inspected": true,
+        "subject_and_silhouette_reviewed": true,
+        "whole_head_hands_feet_visible": true,
+        "visible_bounds_clear_of_canvas_edges": true,
+        "maximum_alpha_on_canvas_edges": 1,
+        "alpha_check": "Présence de transparence réelle ; mesure conservée telle quelle, sans nettoyage.",
+        "native_sha256_matches_saved_png": true,
+        "ui_or_engine_capture_performed": false,
+        "reference_limitations_open": true
+      }
+    },
+    {
+      "id": "clement_darling",
+      "name": "Clement Darling",
+      "game": "overkill",
+      "game_label": "The House of the Dead: Overkill",
+      "generated_file": "exec-51a8fbfe-3460-4ff9-9f76-85e1e36b02bb.png",
+      "status": "static_needs_visual_reference_qa",
+      "category": "npc_base",
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot2/characters/clement_darling_base.png",
+      "sha256": "5c62a633d582a01c1e09c65ad3e6659a9c70fdbb11311f81c511916a8b0901df",
+      "bytes": 695399,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        26,
+        1240,
+        1238
+      ],
+      "visible_bbox": [
+        416,
+        30,
+        804,
+        1234
+      ],
+      "visible_alpha_threshold": 127,
+      "sources": [
+        "https://www.lp.zone/t/lets-play-the-typing-of-the-dead-overkill/2448",
+        "https://i.imgur.com/6me77Rr.jpg"
+      ],
+      "source_ids": [
+        "clement_cutscene"
+      ],
+      "source_notes": [
+        "Capture de cinématique attribuée à Clement dans le post CAST de LP Zone, téléchargée et inspectée ; visage, cheveux, veste rayée, col et cravate sont visibles.",
+        "La teinte bleue est reprise avec prudence à cause de l’éclairage de la cinématique."
+      ],
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot2/characters/clement_darling_game_lpzone.jpg",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "reference_inputs": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot2/characters/clement_darling_game_lpzone.jpg",
+          "sha256": "6cc9eddb85a082c37daeb3bcaed5aa1e76bcf14daaa57a6322c70ab55e66bd20",
+          "bytes": 29915,
+          "dimensions": [
+            855,
+            689
+          ],
+          "mode": "RGB",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        },
+        {
+          "path": "assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "bytes": 595313,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "role": "painting_style_only",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        }
+      ],
+      "prompts": [
+        "Use case: stylized-concept. Asset type: one whole-body native transparent RGBA character sprite for the Dossier Curien bestiary gallery. Create WARDEN CLEMENT DARLING from The House of the Dead: Overkill in a non-combat standing three-quarter pose facing screen-right. Image 1 is the game's Clement as seen in a cutscene: preserve his very pale sickly complexion, angular gaunt clean-shaven face, heavy dark circles and tired half-lidded eyes, long narrow nose, slight disturbing half-smile, medium brown hair with a deep side part and a loose strand across his forehead. Preserve his desaturated dusty blue suit jacket with fine pale vertical pinstripes, unusually wide 1970s-style lapels, pale cream-gray collared shirt with long pointed collar, and broad green-teal striped necktie. Image 2 (Isaac) is ONLY the Dossier Curien drawing-style reference: crisp dark outlines, dimensional hand-painted arcade sprite shading, readable fabric folds, natural adult proportions. Do not copy Isaac's face, cap, colors, gun or action stance. Clement has a slim adult build, a slight awkward forward stoop, one empty hand touching his jacket lapel and the other hanging relaxed at his side, both complete legs visible. The reference ends at the chest: extend the tailored blue pinstriped outfit into simple matching straight trousers and plain dark formal shoes as a restrained gallery adaptation, without claiming those unseen details are an exact official model. No weapon, medical gadget, keys, badges, lab coat or extra accessories. One complete centered figure, square canvas, roughly 85 percent canvas height with generous transparent clearance above the head and below both shoes. True native transparent background with clean alpha, no colored halo, shadows, floor, scenery, labels, text, logos, frames, extra figure or cropped anatomy. The output is a 2D gallery adaptation based on the supplied cutscene, not a photorealistic human or copied screenshot."
+      ],
+      "prompt_sha256": [
+        "3cdefb02b7b87bfaeaedf2c7b652b6a0dc5e42c5cb63d67a7c6ca456707c98e8"
+      ],
+      "limitations": [
+        "Une base statique pour le bestiaire. Aucun profil de combat, mouvement, costume sélectionnable ni animation complète ajouté.",
+        "Adaptation 2D pour Dossier Curien ; aucune certification de reproduction 1:1 du jeu d’origine.",
+        "Pantalon assorti, chaussures sombres, stature entière et pose debout adaptés depuis le seul buste ; référence plein pied toujours manquante.",
+        "La continuité des rayures sur le pantalon et la coupe des chaussures sont une reconstruction, pas une tenue intégralement vérifiée."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot2/humans_generated.json",
+      "generation": {
+        "tool": "image_gen built-in",
+        "date": "2026-11-20",
+        "transparent_background_requested": true,
+        "source_native_output": "/workspace/scratch/da9d6e4777c1/generated_images/exec-51a8fbfe-3460-4ff9-9f76-85e1e36b02bb.png",
+        "native_output_unchanged": true,
+        "attempts": 1,
+        "pixel_edits_after_generation": false
+      },
+      "qa": {
+        "output_visually_inspected": true,
+        "subject_and_silhouette_reviewed": true,
+        "whole_head_hands_feet_visible": true,
+        "visible_bounds_clear_of_canvas_edges": true,
+        "maximum_alpha_on_canvas_edges": 1,
+        "alpha_check": "Présence de transparence réelle ; mesure conservée telle quelle, sans nettoyage.",
+        "native_sha256_matches_saved_png": true,
+        "ui_or_engine_capture_performed": false,
+        "reference_limitations_open": true
+      }
+    }
+  ],
+  "verification": {
+    "date": "2026-11-20",
+    "validator": "scripts/verify_dossier_curien_expansion.mjs::validate",
+    "art_root": "assets/dossier_curien/gallery_2026-11-20_lot2/characters",
+    "result": {
+      "assets": 4,
+      "gallery": 4,
+      "bytes": 4764872
+    },
+    "exact_ids_verified": true,
+    "static_gallery_roles_verified": true,
+    "native_outputs_unchanged": true,
+    "local_report_links_checked": 14
+  }
+}

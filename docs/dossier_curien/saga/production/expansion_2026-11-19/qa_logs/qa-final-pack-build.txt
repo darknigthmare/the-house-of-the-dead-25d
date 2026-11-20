@@ -1,0 +1,15 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+{
+	"added_ctex_files": 49,
+	"added_png_imports": 49,
+	"additions_manifest": "res://data/assets/dossier_curien_additions.json",
+	"baseline_files": 549,
+	"ordering": "sorted resource paths",
+	"output": "/workspace/scratch/48fce8c2d471/HOTD_Anthologie_final.pck",
+	"packed_files": 659,
+	"preserved_files": 538,
+	"replaced_source_files": 11,
+	"sha256": "690ebbb7f1c82cc9954ac474ff5b87e9e8a6b29f6fb714ae698ab4c71c7733a3",
+	"status": "ok"
+}

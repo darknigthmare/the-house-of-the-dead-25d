@@ -1,0 +1,566 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-19",
+  "scope": "Deux appuis de marche alternés et une récupération pour Stick Breitling et Rikiya Busujima",
+  "count": 6,
+  "assets": [
+    {
+      "fighter_id": "stick",
+      "art_id": "stick",
+      "pose": "walk1",
+      "path": "assets/dossier_curien/motion_2026-11-19/stick_walk1.png",
+      "sha256": "7e59bf01f8d98d80af2990e8fc1275e8f9a3e988e926c9f10dd524b4ff6ae5fa",
+      "bytes": 750652,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        39,
+        1224,
+        1230
+      ],
+      "visible_bbox": [
+        224,
+        67,
+        992,
+        1181
+      ],
+      "visible_alpha_threshold": 127,
+      "standing_height_px": 1102.148,
+      "pivot_px": [
+        610,
+        1181
+      ],
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "saturated_red_pixels_alpha128plus": 0,
+      "anchors_px": {
+        "right_fist": [
+          743,
+          337
+        ],
+        "left_fist": [
+          931,
+          328
+        ]
+      },
+      "prompt": "Use case: identity-preserve. Create ONE individual WALK CONTACT keyframe sprite as a sibling of the attached existing 2D fighting sprite. The supplied image is the identity, style and clothing reference. Stick Breitling: slicked-back sandy blond hair, square jaw, muscular build, sleeveless dark navy crew-neck shirt, olive/dark charcoal cargo trousers, olive utility pouches on belt with rectangular metal buckle, black fingerless fighting gloves with dark wrist cuffs, black laced combat boots. Both hands EMPTY in compact boxing guard. Keep all accessories and pocket positions. Preserve the exact face, body build, clothing, materials, color palette, line weight, finely shaded crisp hand-painted pixel-art style, and anatomical scale of this reference. Full-body lateral three-quarter view facing RIGHT. Square 1024x1024 transparent RGBA canvas, same head size and torso length as reference, hair top around y=60 and soles near y=950, at least 45px empty margins all around. CHANGE the stance to an unmistakable forward WALK contact: the character's anatomical RIGHT leg (the NEAR leg, its hip nearer the viewer) swings FORWARD toward SCREEN RIGHT; its knee is lightly bent and its heel touches the ground ahead of his pelvis. His anatomical LEFT leg (FAR leg) extends BACK toward SCREEN LEFT, supporting the trailing toe on the same ground line. Show two separate feet, one ahead and one behind, no shuffle with both legs forward. The near right thigh must visibly cross in front of the far thigh as it advances. Upper body stays alert, moving only subtly with the stride, hands retain the character's unarmed guard. Pelvis remains at frame center; do not lean into a deep attack lunge. One character, one pose, genuinely transparent background, no floor, ground shadow, motion blur, weapon, text, labels, VFX, extra limbs or sheet.",
+      "source_generation_path": "/workspace/scratch/da9d6e4777c1/generated_images/exec-83d0805f-575d-4f40-bf20-84e80cea433f.png",
+      "references": [
+        {
+          "path": "assets/dossier_curien/saga/stick_guard.png",
+          "role": "identity_costume_style_reference"
+        }
+      ],
+      "sources": [
+        "https://www.sega.jp/history/arcade/product/8161/"
+      ],
+      "source_notes": [
+        "Source de l'épisode héritée de BIBLE_SAGA.md ; les références pixel effectivement inspectées pour cette production sont les sprites locaux listés. Cette passe ne constitue pas une nouvelle validation indépendante du costume contre la borne."
+      ],
+      "tool": "image_gen__imagegen",
+      "transparency_requested": true,
+      "bytes_preserved": true,
+      "status": "generated_pose_visual_reviewed",
+      "canonical_1_to_1_certified": false,
+      "animation_complete": false,
+      "calibration_notes": "Hauteur anatomique proposée : boîte visible alpha≥128 de la garde de référence, multipliée par le ratio de hauteur des canevas (1254/1024). Pivot horizontal proche de l'axe du bassin ; ancrages repérés visuellement en pixels natifs. Réglage moteur final à vérifier.",
+      "visual_review": {
+        "single_full_body_subject": true,
+        "faces_right": true,
+        "unarmed": true,
+        "costume_consistent_with_guard": true,
+        "no_opaque_edge_clipping": true,
+        "support_leg_alternation": true
+      },
+      "leading_leg": "right_near",
+      "trailing_leg": "left_far",
+      "limitations": [
+        "Un appui ou une pose de rétraction dessinée individuellement. Deux contacts ne constituent pas un cycle de marche fluide : passages, variations de hauteur et raccords restent à produire.",
+        "Cohérence contrôlée contre les poses locales existantes ; fidélité canonique 1:1 non certifiée."
+      ]
+    },
+    {
+      "fighter_id": "stick",
+      "art_id": "stick",
+      "pose": "walk2",
+      "path": "assets/dossier_curien/motion_2026-11-19/stick_walk2.png",
+      "sha256": "651c27f1f016f764a39f8548dacb478d99d731e75977726b95e53c5a09cd9329",
+      "bytes": 770682,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        160,
+        65,
+        1200,
+        1230
+      ],
+      "visible_bbox": [
+        215,
+        68,
+        1001,
+        1165
+      ],
+      "visible_alpha_threshold": 127,
+      "standing_height_px": 1102.148,
+      "pivot_px": [
+        610,
+        1165
+      ],
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "saturated_red_pixels_alpha128plus": 0,
+      "anchors_px": {
+        "right_fist": [
+          743,
+          337
+        ],
+        "left_fist": [
+          931,
+          328
+        ]
+      },
+      "prompt": "Use case: identity-preserve. Create ONE individual OPPOSITE WALK CONTACT keyframe sprite. Image 1 is the newly painted WALK1 sprite and the exact pose-set scale/style reference. Image 2 is the original guard identity/costume reference. Stick Breitling: slicked-back sandy blond hair, square jaw, muscular build, sleeveless dark navy crew-neck shirt, olive/dark charcoal cargo trousers, olive utility pouches on belt with rectangular metal buckle, black fingerless fighting gloves with dark wrist cuffs, black laced combat boots. Both hands EMPTY in compact boxing guard. Keep all accessories and pocket positions. Keep the same full-body lateral three-quarter camera facing RIGHT, head, face, muscular anatomy, outfit details and crisp painted pixel-art rendering as image 1. Square true-transparent RGBA canvas, SAME dimensions, head size, torso length, pelvis position and bottom floor line as image 1, entire figure with 45px safe margins. Change ONLY to the SECOND half-stride: REVERSE which anatomical leg is forward while keeping the character facing right. The anatomical LEFT leg, farther from viewer, is now extended FORWARD toward SCREEN RIGHT with heel contacting the ground. The anatomical RIGHT leg, closer to viewer, is now extended BACK toward SCREEN LEFT with its heel lifted and toe planted on the SAME floor line. The near right thigh is visibly trailing, crossing in front of the far leg at the pelvis; do NOT reuse the near-right-leg-forward arrangement of image 1. The large outer RIGHT thigh cargo pocket must now be visible on the TRAILING leg extending toward screen LEFT, rather than the leading rightward leg. Keep alert unarmed guard arms with a small natural counter-sway, no attack lunge. Two separated feet on one common floor level, one forward and one backward. One person, one image, no floor, contact shadow, VFX, motion blur, text, labels, weapons, duplicate body or extra limbs.",
+      "source_generation_path": "/workspace/scratch/da9d6e4777c1/generated_images/exec-c40a7a0e-b501-4ec9-bb0f-0f9f67863695.png",
+      "references": [
+        {
+          "path": "assets/dossier_curien/motion_2026-11-19/stick_walk1.png",
+          "role": "opposite_stride_scale_reference"
+        },
+        {
+          "path": "assets/dossier_curien/saga/stick_guard.png",
+          "role": "identity_costume_style_reference"
+        }
+      ],
+      "sources": [
+        "https://www.sega.jp/history/arcade/product/8161/"
+      ],
+      "source_notes": [
+        "Source de l'épisode héritée de BIBLE_SAGA.md ; les références pixel effectivement inspectées pour cette production sont les sprites locaux listés. Cette passe ne constitue pas une nouvelle validation indépendante du costume contre la borne."
+      ],
+      "tool": "image_gen__imagegen",
+      "transparency_requested": true,
+      "bytes_preserved": true,
+      "status": "generated_pose_visual_reviewed",
+      "canonical_1_to_1_certified": false,
+      "animation_complete": false,
+      "calibration_notes": "Hauteur anatomique proposée : boîte visible alpha≥128 de la garde de référence, multipliée par le ratio de hauteur des canevas (1254/1024). Pivot horizontal proche de l'axe du bassin ; ancrages repérés visuellement en pixels natifs. Réglage moteur final à vérifier.",
+      "visual_review": {
+        "single_full_body_subject": true,
+        "faces_right": true,
+        "unarmed": true,
+        "costume_consistent_with_guard": true,
+        "no_opaque_edge_clipping": true,
+        "support_leg_alternation": true
+      },
+      "leading_leg": "left_far",
+      "trailing_leg": "right_near",
+      "limitations": [
+        "Un appui ou une pose de rétraction dessinée individuellement. Deux contacts ne constituent pas un cycle de marche fluide : passages, variations de hauteur et raccords restent à produire.",
+        "Cohérence contrôlée contre les poses locales existantes ; fidélité canonique 1:1 non certifiée."
+      ]
+    },
+    {
+      "fighter_id": "stick",
+      "art_id": "stick",
+      "pose": "recovery",
+      "path": "assets/dossier_curien/motion_2026-11-19/stick_recovery.png",
+      "sha256": "ad6635b49365a148b86be3305f914cf3be1cb1815b2bfbbf893f1a092cb9fd5d",
+      "bytes": 773864,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        31,
+        1224,
+        1226
+      ],
+      "visible_bbox": [
+        239,
+        122,
+        992,
+        1168
+      ],
+      "visible_alpha_threshold": 127,
+      "standing_height_px": 1102.148,
+      "pivot_px": [
+        610,
+        1168
+      ],
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "saturated_red_pixels_alpha128plus": 0,
+      "anchors_px": {
+        "right_fist": [
+          548,
+          511
+        ],
+        "left_fist": [
+          816,
+          369
+        ]
+      },
+      "prompt": "Use case: identity-preserve. Create ONE individual ATTACK RECOVERY keyframe of the same adult Stick Breitling for a 2D fighting game. Image 1 shows the preceding uppercut contact; image 2 shows the target neutral guard and authoritative outfit. Stick Breitling: slicked-back sandy blond hair, square jaw, muscular build, sleeveless dark navy crew-neck shirt, olive/dark charcoal cargo trousers, olive utility pouches on belt with rectangular metal buckle, black fingerless fighting gloves with dark wrist cuffs, black laced combat boots. Both hands EMPTY in compact boxing guard. Keep all accessories and pocket positions. Preserve exactly the character's face, colors, proportions, crisp detailed painted pixel-art style and costume accessories. Right-facing lateral three-quarter, square true-transparent RGBA canvas, full hair and both boots safely inside frame with margins. Change the contact pose to the clearly readable RETRACTION after the uppercut: the previously raised anatomical LEFT punching arm has now bent downward, fist drawing BACK toward his left collarbone with elbow angled downward in front of ribs; RIGHT fist remains compact near the waist/ribs. Shoulders untwist from the punch, head lowers toward the opponent at screen right, weight settles back over two bent knees. Hands and elbows distinctly different from both the raised contact and the final boxing guard. Both feet remain braced on a common ground line, no hopping, no extra step, no hit reaction or injury. This is recovery of HIS attack, not recoiling from an opponent. Keep anatomy pixel scale consistent with references. One figure, one pose, no opponent, weapon, floor, cast shadow, words, montage, effects or duplicates.",
+      "source_generation_path": "/workspace/scratch/da9d6e4777c1/generated_images/exec-0f2b7af0-b018-4756-a226-2cbb4e6c1ef1.png",
+      "references": [
+        {
+          "path": "assets/dossier_curien/saga/stick_contact.png",
+          "role": "preceding_attack_pose_reference"
+        },
+        {
+          "path": "assets/dossier_curien/saga/stick_guard.png",
+          "role": "identity_costume_style_reference"
+        }
+      ],
+      "sources": [
+        "https://www.sega.jp/history/arcade/product/8161/"
+      ],
+      "source_notes": [
+        "Source de l'épisode héritée de BIBLE_SAGA.md ; les références pixel effectivement inspectées pour cette production sont les sprites locaux listés. Cette passe ne constitue pas une nouvelle validation indépendante du costume contre la borne."
+      ],
+      "tool": "image_gen__imagegen",
+      "transparency_requested": true,
+      "bytes_preserved": true,
+      "status": "generated_pose_visual_reviewed",
+      "canonical_1_to_1_certified": false,
+      "animation_complete": false,
+      "calibration_notes": "Hauteur anatomique proposée : boîte visible alpha≥128 de la garde de référence, multipliée par le ratio de hauteur des canevas (1254/1024). Pivot horizontal proche de l'axe du bassin ; ancrages repérés visuellement en pixels natifs. Réglage moteur final à vérifier.",
+      "visual_review": {
+        "single_full_body_subject": true,
+        "faces_right": true,
+        "unarmed": true,
+        "costume_consistent_with_guard": true,
+        "no_opaque_edge_clipping": true
+      },
+      "limitations": [
+        "Un appui ou une pose de rétraction dessinée individuellement. Deux contacts ne constituent pas un cycle de marche fluide : passages, variations de hauteur et raccords restent à produire.",
+        "Cohérence contrôlée contre les poses locales existantes ; fidélité canonique 1:1 non certifiée."
+      ]
+    },
+    {
+      "fighter_id": "rikiya",
+      "art_id": "rikiya",
+      "pose": "walk1",
+      "path": "assets/dossier_curien/motion_2026-11-19/rikiya_walk1.png",
+      "sha256": "5c80550a0eb1c75cea8718a8200b288f7e886e0a30b5f2038098ea761da5dca8",
+      "bytes": 703105,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        1246,
+        1254
+      ],
+      "visible_bbox": [
+        237,
+        64,
+        1047,
+        1162
+      ],
+      "visible_alpha_threshold": 127,
+      "standing_height_px": 1103.373,
+      "pivot_px": [
+        610,
+        1162
+      ],
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "saturated_red_pixels_alpha128plus": 0,
+      "anchors_px": {
+        "right_palm": [
+          650,
+          315
+        ],
+        "left_palm": [
+          997,
+          406
+        ]
+      },
+      "prompt": "Use case: identity-preserve. Create ONE individual WALK CONTACT keyframe sprite as a sibling of the attached existing 2D fighting sprite. The supplied image is the identity, style and clothing reference. Rikiya Busujima: dense curly black shoulder-length hair, dark narrow sunglasses, lean defined muscular bare torso, open brown leather shoulder-holster harness with silver buckles, dark blue denim jeans with visible stitching and brown belt with square metal buckle, brown lace-up shoes. Both hands EMPTY in relaxed OPEN-HAND martial arts guard. Keep sunglasses and holster harness, no gun drawn. Preserve the exact face, body build, clothing, materials, color palette, line weight, finely shaded crisp hand-painted pixel-art style, and anatomical scale of this reference. Full-body lateral three-quarter view facing RIGHT. Square 1024x1024 transparent RGBA canvas, same head size and torso length as reference, hair top around y=60 and soles near y=950, at least 45px empty margins all around. CHANGE the stance to an unmistakable forward WALK contact: the character's anatomical RIGHT leg (the NEAR leg, its hip nearer the viewer) swings FORWARD toward SCREEN RIGHT; its knee is lightly bent and its heel touches the ground ahead of his pelvis. His anatomical LEFT leg (FAR leg) extends BACK toward SCREEN LEFT, supporting the trailing toe on the same ground line. Show two separate feet, one ahead and one behind, no shuffle with both legs forward. The near right thigh must visibly cross in front of the far thigh as it advances. Upper body stays alert, moving only subtly with the stride, hands retain the character's unarmed guard. Pelvis remains at frame center; do not lean into a deep attack lunge. One character, one pose, genuinely transparent background, no floor, ground shadow, motion blur, weapon, text, labels, VFX, extra limbs or sheet.",
+      "source_generation_path": "/workspace/scratch/da9d6e4777c1/generated_images/exec-f033e8c7-4d9b-44bf-b58b-564cd929fa7e.png",
+      "references": [
+        {
+          "path": "assets/dossier_curien/saga/rikiya_guard.png",
+          "role": "identity_costume_style_reference"
+        }
+      ],
+      "sources": [
+        "https://www.sega.jp/history/arcade/product/8161/"
+      ],
+      "source_notes": [
+        "Source de l'épisode héritée de BIBLE_SAGA.md ; les références pixel effectivement inspectées pour cette production sont les sprites locaux listés. Cette passe ne constitue pas une nouvelle validation indépendante du costume contre la borne."
+      ],
+      "tool": "image_gen__imagegen",
+      "transparency_requested": true,
+      "bytes_preserved": true,
+      "status": "generated_pose_visual_reviewed",
+      "canonical_1_to_1_certified": false,
+      "animation_complete": false,
+      "calibration_notes": "Hauteur anatomique proposée : boîte visible alpha≥128 de la garde de référence, multipliée par le ratio de hauteur des canevas (1254/1024). Pivot horizontal proche de l'axe du bassin ; ancrages repérés visuellement en pixels natifs. Réglage moteur final à vérifier.",
+      "visual_review": {
+        "single_full_body_subject": true,
+        "faces_right": true,
+        "unarmed": true,
+        "costume_consistent_with_guard": true,
+        "no_opaque_edge_clipping": true,
+        "support_leg_alternation": true
+      },
+      "leading_leg": "right_near",
+      "trailing_leg": "left_far",
+      "limitations": [
+        "Un appui ou une pose de rétraction dessinée individuellement. Deux contacts ne constituent pas un cycle de marche fluide : passages, variations de hauteur et raccords restent à produire.",
+        "Cohérence contrôlée contre les poses locales existantes ; fidélité canonique 1:1 non certifiée."
+      ]
+    },
+    {
+      "fighter_id": "rikiya",
+      "art_id": "rikiya",
+      "pose": "walk2",
+      "path": "assets/dossier_curien/motion_2026-11-19/rikiya_walk2.png",
+      "sha256": "6be8cdd1dbed0293cd5ce2c931ac02dfacb7c2398eb5e53deee132f45df9307e",
+      "bytes": 779531,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "visible_bbox": [
+        207,
+        67,
+        1074,
+        1171
+      ],
+      "visible_alpha_threshold": 127,
+      "standing_height_px": 1103.373,
+      "pivot_px": [
+        610,
+        1171
+      ],
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "saturated_red_pixels_alpha128plus": 0,
+      "anchors_px": {
+        "right_palm": [
+          638,
+          315
+        ],
+        "left_palm": [
+          1012,
+          397
+        ]
+      },
+      "prompt": "Use case: precise-object-edit. Edit the attached character sprite into a sibling stance, preserving his ENTIRE upper-body design, camera, face, sunglasses, curly hair, harness and open-palm guard. Rikiya Busujima: dense curly black shoulder-length hair, dark narrow sunglasses, lean defined muscular bare torso, open brown leather shoulder-holster harness with silver buckles, dark blue denim jeans with visible stitching and brown belt with square metal buckle, brown lace-up shoes. Both hands EMPTY in relaxed OPEN-HAND martial arts guard. Keep sunglasses and holster harness, no gun drawn. Maintain his RIGHT-facing three-quarter view and the exact crisp painted fighting-sprite style. Keep the reference's leg anatomy and side arrangement: the near/right leg is the leg on SCREEN LEFT, the far/left leg is the leg on SCREEN RIGHT. Do not cross the legs or swap their overlap. The change is narrowly specified: raise his hips slightly and straighten his knees a little so he is taking a small heel-to-toe step. Keep the near RIGHT thigh, near RIGHT knee and near RIGHT boot ALL in the LEFT half of the image, moving backward toward screen-left, near/right heel raised while toes touch floor. Keep the far LEFT thigh, far LEFT knee and far LEFT shoe ALL in the RIGHT half of the image, moving forward toward screen-right, far/left heel on floor and toe slightly raised. The crotch forms an inverted V with open transparent space between the legs, like the reference, no diagonal front thigh crossing the pelvis. This is the opposite support arrangement from right-leg-forward walking. Both contact points share one horizontal floor line. One entire character on a square true-transparent RGBA canvas, generous margins, both full shoes and hair visible, full figure framed at the same relative scale as reference. No floor, shadow, glow, words, UI, gun, extra limb, duplicated pose or montage.",
+      "source_generation_path": "/workspace/scratch/da9d6e4777c1/generated_images/exec-ef3568fc-d6b1-4327-9b09-b02cb124aa88.png",
+      "references": [
+        {
+          "path": "assets/dossier_curien/saga/rikiya_guard.png",
+          "role": "identity_costume_style_reference"
+        }
+      ],
+      "sources": [
+        "https://www.sega.jp/history/arcade/product/8161/"
+      ],
+      "source_notes": [
+        "Source de l'épisode héritée de BIBLE_SAGA.md ; les références pixel effectivement inspectées pour cette production sont les sprites locaux listés. Cette passe ne constitue pas une nouvelle validation indépendante du costume contre la borne."
+      ],
+      "tool": "image_gen__imagegen",
+      "transparency_requested": true,
+      "bytes_preserved": true,
+      "status": "generated_pose_visual_reviewed",
+      "canonical_1_to_1_certified": false,
+      "animation_complete": false,
+      "calibration_notes": "Hauteur anatomique proposée : boîte visible alpha≥128 de la garde de référence, multipliée par le ratio de hauteur des canevas (1254/1024). Pivot horizontal proche de l'axe du bassin ; ancrages repérés visuellement en pixels natifs. Réglage moteur final à vérifier.",
+      "visual_review": {
+        "single_full_body_subject": true,
+        "faces_right": true,
+        "unarmed": true,
+        "costume_consistent_with_guard": true,
+        "no_opaque_edge_clipping": true,
+        "support_leg_alternation": true
+      },
+      "leading_leg": "left_far",
+      "trailing_leg": "right_near",
+      "limitations": [
+        "Un appui ou une pose de rétraction dessinée individuellement. Deux contacts ne constituent pas un cycle de marche fluide : passages, variations de hauteur et raccords restent à produire.",
+        "Cohérence contrôlée contre les poses locales existantes ; fidélité canonique 1:1 non certifiée."
+      ]
+    },
+    {
+      "fighter_id": "rikiya",
+      "art_id": "rikiya",
+      "pose": "recovery",
+      "path": "assets/dossier_curien/motion_2026-11-19/rikiya_recovery.png",
+      "sha256": "bd89027bc90c5adfd627bac9e3d20efd8cd55521a29fad3b619c84dac48bd7bd",
+      "bytes": 816047,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        1246,
+        1254
+      ],
+      "visible_bbox": [
+        265,
+        74,
+        1027,
+        1179
+      ],
+      "visible_alpha_threshold": 127,
+      "standing_height_px": 1103.373,
+      "pivot_px": [
+        610,
+        1179
+      ],
+      "opaque_edge_pixels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "saturated_red_pixels_alpha128plus": 0,
+      "anchors_px": {
+        "right_palm": [
+          545,
+          479
+        ],
+        "left_palm": [
+          970,
+          402
+        ]
+      },
+      "prompt": "Use case: identity-preserve. Draw ONE individual ATTACK RECOVERY keyframe of the exact adult Rikiya Busujima in the references. Image 1 shows his preceding straight attack; image 2 shows his original guard and full identity. Rikiya Busujima: dense curly black shoulder-length hair, dark narrow sunglasses, lean defined muscular bare torso, open brown leather shoulder-holster harness with silver buckles, dark blue denim jeans with visible stitching and brown belt with square metal buckle, brown lace-up shoes. Both hands EMPTY in relaxed OPEN-HAND martial arts guard. Keep sunglasses and holster harness, no gun drawn. Preserve exact face, curls, sunglasses, brown harness, jeans details, proportions and crisp finely painted 2D fighting-sprite style. Square true-transparent RGBA canvas, right-facing lateral three-quarter view, entire head, hands and both shoes inside frame with safe margins. Show the RETURN from the extended attack: the anatomical LEFT striking arm on the far side has retracted halfway, elbow bending toward his ribs while the hand changes from a fist to a half-open palm held forward at chest level; the anatomical RIGHT hand begins opening from the chambered fist near his abdomen. Torso untwists upright out of the lunge, weight shifts back toward his rear right leg, both knees soften. Keep the arm halfway between the fully extended contact and the high neutral guard; do not simply copy either reference pose. No pain grimace or backward hit reaction: he is recovering from HIS attack. Both shoes braced on one common baseline, no levitation. One character, one pose, no opponent, weapon, VFX, ground, shadow, letters, multiple views or duplicates.",
+      "source_generation_path": "/workspace/scratch/da9d6e4777c1/generated_images/exec-b06e55c6-fb08-4a10-a774-37e017ce5904.png",
+      "references": [
+        {
+          "path": "assets/dossier_curien/saga/rikiya_contact.png",
+          "role": "preceding_attack_pose_reference"
+        },
+        {
+          "path": "assets/dossier_curien/saga/rikiya_guard.png",
+          "role": "identity_costume_style_reference"
+        }
+      ],
+      "sources": [
+        "https://www.sega.jp/history/arcade/product/8161/"
+      ],
+      "source_notes": [
+        "Source de l'épisode héritée de BIBLE_SAGA.md ; les références pixel effectivement inspectées pour cette production sont les sprites locaux listés. Cette passe ne constitue pas une nouvelle validation indépendante du costume contre la borne."
+      ],
+      "tool": "image_gen__imagegen",
+      "transparency_requested": true,
+      "bytes_preserved": true,
+      "status": "generated_pose_visual_reviewed",
+      "canonical_1_to_1_certified": false,
+      "animation_complete": false,
+      "calibration_notes": "Hauteur anatomique proposée : boîte visible alpha≥128 de la garde de référence, multipliée par le ratio de hauteur des canevas (1254/1024). Pivot horizontal proche de l'axe du bassin ; ancrages repérés visuellement en pixels natifs. Réglage moteur final à vérifier.",
+      "visual_review": {
+        "single_full_body_subject": true,
+        "faces_right": true,
+        "unarmed": true,
+        "costume_consistent_with_guard": true,
+        "no_opaque_edge_clipping": true
+      },
+      "limitations": [
+        "Un appui ou une pose de rétraction dessinée individuellement. Deux contacts ne constituent pas un cycle de marche fluide : passages, variations de hauteur et raccords restent à produire.",
+        "Cohérence contrôlée contre les poses locales existantes ; fidélité canonique 1:1 non certifiée."
+      ]
+    }
+  ],
+  "rejected_attempts": [
+    {
+      "fighter_id": "rikiya",
+      "pose": "walk2",
+      "attempt": "initial",
+      "source_generation_path": "docs/dossier_curien/saga/production/motion_2026-11-19/rejected/rikiya_walk2_initial_repeated_lead.png",
+      "prompt": "Use case: identity-preserve. Create ONE individual OPPOSITE WALK CONTACT keyframe sprite. Image 1 is the newly painted WALK1 sprite and the exact pose-set scale/style reference. Image 2 is the original guard identity/costume reference. Rikiya Busujima: dense curly black shoulder-length hair, dark narrow sunglasses, lean defined muscular bare torso, open brown leather shoulder-holster harness with silver buckles, dark blue denim jeans with visible stitching and brown belt with square metal buckle, brown lace-up shoes. Both hands EMPTY in relaxed OPEN-HAND martial arts guard. Keep sunglasses and holster harness, no gun drawn. Keep the same full-body lateral three-quarter camera facing RIGHT, head, face, muscular anatomy, outfit details and crisp painted pixel-art rendering as image 1. Square true-transparent RGBA canvas, SAME dimensions, head size, torso length, pelvis position and bottom floor line as image 1, entire figure with 45px safe margins. Change ONLY to the SECOND half-stride: REVERSE which anatomical leg is forward while keeping the character facing right. The anatomical LEFT leg, farther from viewer, is now extended FORWARD toward SCREEN RIGHT with heel contacting the ground. The anatomical RIGHT leg, closer to viewer, is now extended BACK toward SCREEN LEFT with its heel lifted and toe planted on the SAME floor line. The near right thigh is visibly trailing, crossing in front of the far leg at the pelvis; do NOT reuse the near-right-leg-forward arrangement of image 1. The near RIGHT side seam and thigh must travel BACK toward screen LEFT, while the far left thigh advances right. Keep alert unarmed guard arms with a small natural counter-sway, no attack lunge. Two separated feet on one common floor level, one forward and one backward. One person, one image, no floor, contact shadow, VFX, motion blur, text, labels, weapons, duplicate body or extra limbs.",
+      "status": "rejected_not_integrated",
+      "reason": "La jambe proche/droite restait devant ; l'appui ne s'inversait pas suffisamment par rapport à walk1.",
+      "path": "docs/dossier_curien/saga/production/motion_2026-11-19/rejected/rikiya_walk2_initial_repeated_lead.png",
+      "source_generation_filename": "exec-f4f5a082-34d1-4abe-b5a8-bdace3e02713.png",
+      "sha256": "bbe0fc9c8e3650b9fe91dcc59176e28bde459fbf8ca36a8075cc7efac18a2a6c",
+      "bytes": 708406,
+      "runtime_active": false
+    },
+    {
+      "fighter_id": "rikiya",
+      "pose": "walk2",
+      "attempt": "second",
+      "source_generation_path": "docs/dossier_curien/saga/production/motion_2026-11-19/rejected/rikiya_walk2_second_repeated_lead.png",
+      "prompt": "Use case: identity-preserve. Make ONE new individual walking sprite of the exact adult character in the supplied image. Rikiya Busujima: dense curly black shoulder-length hair, dark narrow sunglasses, lean defined muscular bare torso, open brown leather shoulder-holster harness with silver buckles, dark blue denim jeans with visible stitching and brown belt with square metal buckle, brown lace-up shoes. Both hands EMPTY in relaxed OPEN-HAND martial arts guard. Keep sunglasses and holster harness, no gun drawn. Preserve reference identity, face, sunglasses, costume, detailed crisp painted pixel-art style and proportions. True transparent RGBA square canvas, full body, right-facing three-quarter view, both entire shoes and curls safely in frame. Walking key pose: LEFT LEG IN FRONT, RIGHT LEG BEHIND. Use the reference's leg-side arrangement: his near anatomical RIGHT leg begins at the canvas-left hip and runs diagonally DOWN-LEFT to the BACK foot, while his far anatomical LEFT leg begins at the canvas-right hip and runs diagonally DOWN-RIGHT to the FORWARD foot. The near/right knee must be clearly LEFT of the pelvis and the far/left knee clearly RIGHT of the pelvis. Preserve the outer right-jeans leg on the rear-left side. Make an ordinary stride instead of the reference's wide low fighting stance: hips a little higher, legs less bent, rear RIGHT heel up with toe pushing off at screen-left, forward LEFT heel contacting ground at screen-right with its toe just lifted slightly. Both feet touch the same invisible floor line. Keep open-palm guard, do not swap arms. Head and torso stay approximately at the same scale as reference adjusted proportionally to the output canvas. Crucially do not put the near/right leg in front. No text, scenery, floor, cast shadow, VFX, gun, duplicated body or sheet.",
+      "status": "rejected_not_integrated",
+      "reason": "La jambe proche/droite restait devant ; l'appui ne s'inversait pas suffisamment par rapport à walk1.",
+      "path": "docs/dossier_curien/saga/production/motion_2026-11-19/rejected/rikiya_walk2_second_repeated_lead.png",
+      "source_generation_filename": "exec-aa9522ba-9330-486a-9f3a-8cfdf49044c5.png",
+      "sha256": "1cba58d393e38be9f61c7aa826532b5e8594b547f0da807952a691b9063ee0dc",
+      "bytes": 724063,
+      "runtime_active": false
+    }
+  ]
+}

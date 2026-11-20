@@ -1,0 +1,269 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-19",
+  "batch": "Agent G — quatre poses de combat",
+  "repository": "darknigthmare/the-house-of-the-dead-25d",
+  "base_commit": "a3fbcf13455a945ccc929ce43907a9755d82e6c7",
+  "generator": "built-in image_gen.imagegen",
+  "reference": {
+    "file": "assets/dossier_curien/g_guard.png",
+    "git_blob_sha": "34075e8e6778f4a4053cbea73c93713eb33c18f8",
+    "sha256": "87e721884ef400c9dec8db297beac5a332227d0f275b329488f37026e4669859",
+    "catalog": "docs/dossier_curien/CATALOGUE_VISUEL.json",
+    "source_game": "The House of the Dead, arcade Model 2",
+    "source_status": "Master existant de la PR, déjà catalogué comme candidat Model 2. Il demeure le contrat de costume et de silhouette utilisé pour ce lot.",
+    "png_analysis": {
+      "width": 1024,
+      "height": 1024,
+      "bitDepth": 8,
+      "colorType": 6,
+      "interlace": 0,
+      "size": 318328,
+      "sha256": "87e721884ef400c9dec8db297beac5a332227d0f275b329488f37026e4669859",
+      "alpha0": 853099,
+      "alpha255": 725,
+      "transparentFraction": 0.8135786056518555,
+      "centralNonzero": 195477,
+      "bbox": [
+        226,
+        55,
+        798,
+        960
+      ],
+      "bboxAlpha16": [
+        228,
+        56,
+        796,
+        958
+      ]
+    }
+  },
+  "count": 4,
+  "qa": {
+    "visual": "Quatre poses distinctes examinées : préparation avec coudes repliés, tir bras tendus sans flash intégré, retour de l'arme à la poitrine, recul du buste sous un impact. Chaque image contient un seul G entier, coiffure courte noire et costume bleu marine/ardoise du master conservés.",
+    "technical": "Décodage PNG8 RGBA non entrelacé, décompression IDAT et reconstruction des lignes; dimensions, octets, SHA256, alpha nul et bbox alpha>=16 mesurés sur les données originales.",
+    "bbox_convention": "[x0,y0,x1 exclusif,y1 exclusif], coordonnées pixels depuis le coin supérieur gauche. Ne pas confondre avec largeur/hauteur. Les points d'alpha<16 peuvent étendre la boîte alpha>0.",
+    "alignment": "Le pivot d'intention (627,1175.625) est la conversion proportionnelle de (512,960) sur 1024. Utiliser les boîtes seuil16 pour mesurer réellement les pieds et éviter les pixels parasites, puis vérifier les deux orientations en jeu.",
+    "weapon": "Bouche estimée du pistolet de g_contact à (1107,207) dans le PNG1254. Bord droit identifié dans la région supérieure du pistolet; point d'effet à vérifier en jeu. Aucun flash n'est inclus dans ce sprite.",
+    "limitations": [
+      "Fidélité 1:1 au rendu Model 2 non certifiée : il s'agit de nouvelles poses dessinées à partir d'un master candidat.",
+      "Aucun test d'import ni lancement Godot possible dans cet agent : environnement local indisponible.",
+      "Les temps de coups, collisions et comportements de combat doivent rester ceux du jeu ; ce lot est visuel."
+    ]
+  },
+  "assets": [
+    {
+      "id": "g_windup",
+      "file": "assets/dossier_curien/g_windup.png",
+      "pose": "windup",
+      "facing": "right",
+      "git_blob_sha": "74d8db1241a86d6132b480f7e4ee377f7b5e691d",
+      "size_px": [
+        1254,
+        1254
+      ],
+      "color_mode": "RGBA",
+      "bytes": 506216,
+      "sha256": "a5239c05f5ad4c15ef7bd749b944bf85a3a66ef89d83f3c3169b49b467153dc6",
+      "bbox_alpha16_xyxy": [
+        278,
+        84,
+        925,
+        1175
+      ],
+      "png_analysis": {
+        "width": 1254,
+        "height": 1254,
+        "bitDepth": 8,
+        "colorType": 6,
+        "interlace": 0,
+        "size": 506216,
+        "sha256": "a5239c05f5ad4c15ef7bd749b944bf85a3a66ef89d83f3c3169b49b467153dc6",
+        "alpha0": 1292661,
+        "alpha255": 503,
+        "transparentFraction": 0.8220336072892104,
+        "centralNonzero": 279750,
+        "bbox": [
+          31,
+          32,
+          1232,
+          1236
+        ],
+        "bboxAlpha16": [
+          278,
+          84,
+          925,
+          1175
+        ]
+      },
+      "pivot_intent_px": [
+        627,
+        1175.625
+      ],
+      "prompt": "Use case: identity-preserve. Edit the single reference Agent G sprite from the original House of the Dead arcade / Model 2 into one ATTACK WINDUP animation frame. Preserve exact character: short combed black hair, clean-shaven angular face, dark navy/slate blue single-breasted suit, medium blue shirt, slate tie, black leather shoes and the same compact black semiautomatic pistol. Retain reference 2D painted pixel-art-like game rendering, proportions, right-facing slight three-quarter side view and lighting. Pose change only: knees flex slightly, torso readies forward, BOTH elbows bend so the pistol is close in front of the sternum, muzzle pointing horizontally right; hands already hold a firm two-handed shooting grip. It is the preparation BEFORE extending arms to fire. Neutral focused expression, both feet planted in the same fighting base. One entire figure only. Requested square 1024x1024 transparent canvas; foot baseline 960/1024 of canvas height, top of hair 55/1024 height, pelvis centered x=512/1024. Leave clear padding beyond all extremities. No muzzle flash, no particles, no shadows, no floor, no enemy, no blood, no text or sheet. Genuine transparent RGBA."
+    },
+    {
+      "id": "g_contact",
+      "file": "assets/dossier_curien/g_contact.png",
+      "pose": "contact",
+      "facing": "right",
+      "git_blob_sha": "1d50b7bd4cfae8ecf1bd6aecc13d4d62c5d81990",
+      "size_px": [
+        1254,
+        1254
+      ],
+      "color_mode": "RGBA",
+      "bytes": 534446,
+      "sha256": "024133b59ca76a6fbc4af04610a727e25f3c13519af85c5682beb663a4b7b170",
+      "bbox_alpha16_xyxy": [
+        278,
+        75,
+        1109,
+        1175
+      ],
+      "png_analysis": {
+        "width": 1254,
+        "height": 1254,
+        "bitDepth": 8,
+        "colorType": 6,
+        "interlace": 0,
+        "size": 534446,
+        "sha256": "024133b59ca76a6fbc4af04610a727e25f3c13519af85c5682beb663a4b7b170",
+        "alpha0": 1273642,
+        "alpha255": 891,
+        "transparentFraction": 0.8099389767735272,
+        "centralNonzero": 296270,
+        "bbox": [
+          23,
+          0,
+          1244,
+          1191
+        ],
+        "bboxAlpha16": [
+          278,
+          75,
+          1109,
+          1175
+        ]
+      },
+      "pivot_intent_px": [
+        627,
+        1175.625
+      ],
+      "prompt": "Use case: identity-preserve. Edit the single reference Agent G sprite from original House of the Dead arcade / Model 2 into one ATTACK CONTACT animation frame. Preserve exact face, short combed black hair, clean-shaven angular jaw, dark navy/slate blue single-breasted suit, medium blue shirt, slate tie, black leather shoes and same compact black semiautomatic pistol. Retain reference 2D painted pixel-art-like game rendering, proportions, right-facing slight three-quarter side view and lighting. Pose change only: both arms extend fully toward screen RIGHT in a strong two-handed pistol aim, muzzle horizontally right at shoulder height, shoulders drive a little forward, front knee flexes and rear leg braces. Show decisive firing posture but NO integrated muzzle flash, NO smoke, NO cartridge, NO beam; these are separate engine effects. Gun muzzle must remain completely inside canvas with substantial empty space beyond it. One entire figure only. Requested square 1024x1024 transparent canvas; foot baseline 960/1024 height, top of hair 55/1024 height, pelvis centered x=512/1024. Same fighting base and scale as reference. No shadows, floor, enemy, blood, text or sheet. Genuine transparent RGBA.",
+      "weapon_muzzle": {
+        "source_px": [
+          1107,
+          207
+        ],
+        "edge_bounds": {
+          "x_min": 1101,
+          "x_max": 1107,
+          "y_min": 188,
+          "y_max": 226
+        },
+        "method": "Inspection visuelle du canon, complétée par le bord droit alpha>=32 dans la région du pistolet. Coordonnée du centre de bouche estimée, à contrôler en jeu."
+      }
+    },
+    {
+      "id": "g_recovery",
+      "file": "assets/dossier_curien/g_recovery.png",
+      "pose": "recovery",
+      "facing": "right",
+      "git_blob_sha": "4a51506f693955ae7f8872ab37d2f41995c4e57f",
+      "size_px": [
+        1254,
+        1254
+      ],
+      "color_mode": "RGBA",
+      "bytes": 505987,
+      "sha256": "bf0aeaba105749ed37eb6dd4f5ea23ce087d5722b0d7d8022026f1d2771382c1",
+      "bbox_alpha16_xyxy": [
+        281,
+        70,
+        926,
+        1175
+      ],
+      "png_analysis": {
+        "width": 1254,
+        "height": 1254,
+        "bitDepth": 8,
+        "colorType": 6,
+        "interlace": 0,
+        "size": 505987,
+        "sha256": "bf0aeaba105749ed37eb6dd4f5ea23ce087d5722b0d7d8022026f1d2771382c1",
+        "alpha0": 1299857,
+        "alpha255": 600,
+        "transparentFraction": 0.8266097133510883,
+        "centralNonzero": 272621,
+        "bbox": [
+          20,
+          35,
+          1210,
+          1216
+        ],
+        "bboxAlpha16": [
+          281,
+          70,
+          926,
+          1175
+        ]
+      },
+      "pivot_intent_px": [
+        627,
+        1175.625
+      ],
+      "prompt": "Use case: identity-preserve. Edit the single reference Agent G sprite from original House of the Dead arcade / Model 2 into one ATTACK RECOVERY animation frame. Preserve exact face, short combed black hair, clean-shaven angular jaw, dark navy/slate blue single-breasted suit, medium blue shirt, slate tie, black leather shoes and same compact black semiautomatic pistol. Retain reference 2D painted pixel-art-like game rendering, proportions, right-facing slight three-quarter side view and lighting. Pose change only: after firing, BOTH elbows soften and the two-handed pistol grip travels BACK toward the lower chest, gun slightly LOWER than its firing line while muzzle remains pointed right and slightly down. Torso straightens as weight returns to center, knees remain ready, jacket and tie settle. This is a clear follow-through returning to guard, visually distinct from rigid firing arms and from tightly braced windup. One entire figure only. Requested square 1024x1024 transparent canvas; foot baseline 960/1024 height, top of hair 55/1024 height, pelvis centered x=512/1024. Same body scale and base of feet as reference. No muzzle flash, smoke, particles, shadows, floor, enemy, blood, text or sheet. Genuine transparent RGBA."
+    },
+    {
+      "id": "g_recoil",
+      "file": "assets/dossier_curien/g_recoil.png",
+      "pose": "recoil",
+      "facing": "right",
+      "git_blob_sha": "437ae568f95888c7f66fc5a1e52b1f8cc412fb8b",
+      "size_px": [
+        1254,
+        1254
+      ],
+      "color_mode": "RGBA",
+      "bytes": 585946,
+      "sha256": "7fd3d7a2b57f9d6dfd4343c7dc34a91d6d57e20b32c57a66b93c432cb1ea299b",
+      "bbox_alpha16_xyxy": [
+        295,
+        84,
+        885,
+        1172
+      ],
+      "png_analysis": {
+        "width": 1254,
+        "height": 1254,
+        "bitDepth": 8,
+        "colorType": 6,
+        "interlace": 0,
+        "size": 585946,
+        "sha256": "7fd3d7a2b57f9d6dfd4343c7dc34a91d6d57e20b32c57a66b93c432cb1ea299b",
+        "alpha0": 1271071,
+        "alpha255": 440,
+        "transparentFraction": 0.8083040172564222,
+        "centralNonzero": 301374,
+        "bbox": [
+          33,
+          41,
+          1214,
+          1237
+        ],
+        "bboxAlpha16": [
+          295,
+          84,
+          885,
+          1172
+        ]
+      },
+      "pivot_intent_px": [
+        627,
+        1175.625
+      ],
+      "prompt": "Use case: identity-preserve. Edit the single reference Agent G sprite from original House of the Dead arcade / Model 2 into one HIT REACTION animation frame, not gun recoil. Preserve exact face, short combed black hair, clean-shaven angular jaw, dark navy/slate blue single-breasted suit, medium blue shirt, slate tie, black leather shoes and same compact black semiautomatic pistol. Retain reference 2D painted pixel-art-like game rendering, proportions, right-facing slight three-quarter side view and lighting. Pose change only: his upper torso and head recoil BACK toward screen LEFT from a hit coming from the right; shoulders twist backward, face briefly winces, knees flex and the front foot heel lifts while rear foot remains supporting. Keep pistol retained in his right hand close to his torso, support hand breaks slightly away in a natural flinch. One entire figure only. Requested square 1024x1024 transparent canvas; lowest supporting foot baseline 960/1024 height, top hair roughly 55/1024 height, pelvis centered x=512/1024. Complete pistol, hands and shoes within frame. No visible attacker, wounds, blood, impact flash, smoke, shadows, floor, text or sheet. Genuine transparent RGBA."
+    }
+  ]
+}

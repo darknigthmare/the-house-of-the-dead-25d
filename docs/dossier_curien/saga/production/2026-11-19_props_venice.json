@@ -1,0 +1,225 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-19",
+  "project": "House of the Dead 2D — Dossier Curien",
+  "batch": "Venise : props individuels",
+  "base_commit": "a3fbcf13455a945ccc929ce43907a9755d82e6c7",
+  "asset_count": 3,
+  "generation_calls": 4,
+  "notes": [
+    "Les PNG sont conservés tels que produits par imagegen ; aucun redimensionnement ou détourage par code.",
+    "Les dimensions demandées dans les prompts sont indicatives ; les dimensions réelles 1254×1254 proviennent de l'en-tête PNG.",
+    "Mesures alpha et empreintes SHA256 calculées après décodage PNG, inflation zlib et défiltrage RGBA en JavaScript ; ce calcul ne modifie pas les images.",
+    "Le fond original venice_back.png n'a pas pu être relu directement par le connecteur (>1 MiB). La référence de palette et de perspective est la capture de duel existante récupérée et inspectée.",
+    "Le test de placement dans Godot reste à réaliser ; aucun contrôle visuel en moteur n'a été exécuté pendant l'indisponibilité de l'environnement local."
+  ],
+  "references": [
+    {
+      "id": "project_duels_saga",
+      "kind": "project_render",
+      "repository": "darknigthmare/the-house-of-the-dead-25d",
+      "ref": "a3fbcf13455a945ccc929ce43907a9755d82e6c7",
+      "path": "docs/dossier_curien/saga/Six_duels_en_jeu.jpg",
+      "git_blob_sha": "67a1f40e80c5a152c8f4a784ee9d1c99bcc63d65",
+      "url": "https://github.com/darknigthmare/the-house-of-the-dead-25d/blob/a3fbcf13455a945ccc929ce43907a9755d82e6c7/docs/dossier_curien/saga/Six_duels_en_jeu.jpg",
+      "observations": "Vignette en haut à gauche : pont à balustres de pierre, potelets de quai avec chaîne, pierre ocrée/ivoire vieillie et verdissure, façades terracotta délavées, vue latérale."
+    },
+    {
+      "id": "sega_hotd2",
+      "kind": "official_episode_reference",
+      "url": "https://www.sega.jp/history/arcade/product/8991/",
+      "role": "Identification de l'épisode d'arcade ; cette page ne valide pas les objets générés comme des modèles exacts."
+    },
+    {
+      "id": "project_catalogue_sources",
+      "kind": "project_provenance",
+      "path": "docs/dossier_curien/saga/SOURCES_SAGA.json",
+      "ref": "a3fbcf13455a945ccc929ce43907a9755d82e6c7",
+      "git_blob_sha": "81a79a20d6dbc3bd0382e7239d940596a8ed0e6e"
+    }
+  ],
+  "assets": [
+    {
+      "id": "venice_lamp",
+      "path": "assets/dossier_curien/saga/props/venice_lamp.png",
+      "git_blob_sha": "3f8b135a1305ea06f50eb46740bd8bd142afa5ca",
+      "sha256": "1b9034e5e7b2d86459d0c982364d6fc0e686ece282a82690fe091b03218d8314",
+      "size_bytes": 263671,
+      "dimensions_px": [
+        1254,
+        1254
+      ],
+      "format": "PNG",
+      "color_mode": "RGBA",
+      "bit_depth": 8,
+      "interlace": 0,
+      "bbox_alpha_gte_16_px": [
+        530,
+        20,
+        724,
+        1238
+      ],
+      "bbox_alpha_gt_0_px": [
+        27,
+        18,
+        1202,
+        1240
+      ],
+      "source_pivot_px": [
+        627,
+        1238
+      ],
+      "pivot_definition": "Centre inférieur de la boîte alpha >=16 ; coordonnées xmax/ymax exclusives, sans normalisation du raster.",
+      "alpha_zero_pixels": 1484944,
+      "alpha_255_pixels": 333,
+      "transparent_fraction": 0.9443109004932223,
+      "reference_ids": [
+        "project_duels_saga",
+        "sega_hotd2",
+        "project_catalogue_sources"
+      ],
+      "prompt": "Create exactly ONE standalone game prop image for the existing fan-made House of the Dead 2D fighting arena 'Quai de la cité inondée' inspired by The House of the Dead 2: a single old Venetian cast-iron streetlamp. This is an original modular scenery adaptation, not a claim to reproduce a particular official model. Square 1024 x 1024 composition, truly transparent alpha background. Full lamp from finial to complete foot, centered, generous transparent margins on every side, no cropped edge. View directly from the side/front at human eye level, very shallow three-quarter depth appropriate for a 2D side-view fighting game, vertical post perfectly upright. One slender weathered dark olive-black wrought-iron post, sturdy fluted circular foot, restrained classical mouldings, one glass lantern at the top with a modest pagoda-like cap and small finial, muted warm amber light contained inside the glass. Coherent high-resolution hand-painted realistic game-sprite style, crisp readable outer silhouette and carefully painted stone-city patina, like an aged 1998 arcade horror city reinterpreted as detailed painted 2D art. Environment palette to match: old ochre-ivory limestone, worn terracotta architecture, green-grey canal water, soft overcast daylight, restrained warm amber lighting. Use dark green-black oxidized metal with tiny warm highlights, no modern LEDs, no futuristic elements. Directional light softly from upper left, dark right plane, no excessive bloom. Only ONE lamp, no characters, no canal, no floor, no pavement slab, no surrounding scenery, no picture frame, no text, no logo, no label, no sprite sheet, no multiple variants, no cast shadow on the transparent canvas. The very bottom of the foot sits approximately at y=960 on the 1024 square canvas; keep the prop centered around x=512. Entire silhouette must be complete.",
+      "tool": "image_gen__imagegen",
+      "transparent_background": true,
+      "visual_review": {
+        "status": "accepted_for_modular_stage_integration",
+        "single_prop": true,
+        "full_silhouette": true,
+        "no_character": true,
+        "no_ground_shadow": true,
+        "notes": "Lampadaire vénitien individuel ; adaptation de mobilier cohérente avec l'ambiance. Aucun lampadaire identique n'est certifié visible dans la vignette du décor.",
+        "alpha_edge_note": "Les franges saturées repérées dans l'aperçu ont une opacité alpha <=2/255 ; aucun pixel rouge/jaune détecté par le contrôle ne dépasse 15. Les speckles alpha>0 rendent les bounds non filtrées impropres au placement.",
+        "saturated_fringe_scan": {
+          "red": 62,
+          "yellow": 141,
+          "redAlpha16": 0,
+          "yellowAlpha16": 0,
+          "maxAlpha": 2
+        }
+      },
+      "fidelity_status": "adaptation_originale_du_decor; conformité 1:1 non certifiée"
+    },
+    {
+      "id": "venice_railing",
+      "path": "assets/dossier_curien/saga/props/venice_railing.png",
+      "git_blob_sha": "d350574663a4918e50550b74982e3efe4c9e0fa7",
+      "sha256": "4a2eff0e11fef970d3340066800bd0d2c6713ed180f6256f1b32048e3c4d0f16",
+      "size_bytes": 1148715,
+      "dimensions_px": [
+        1254,
+        1254
+      ],
+      "format": "PNG",
+      "color_mode": "RGBA",
+      "bit_depth": 8,
+      "interlace": 0,
+      "bbox_alpha_gte_16_px": [
+        57,
+        464,
+        1195,
+        963
+      ],
+      "bbox_alpha_gt_0_px": [
+        47,
+        19,
+        1240,
+        1254
+      ],
+      "source_pivot_px": [
+        626,
+        963
+      ],
+      "pivot_definition": "Centre inférieur de la boîte alpha >=16 ; coordonnées xmax/ymax exclusives, sans normalisation du raster.",
+      "alpha_zero_pixels": 1127035,
+      "alpha_255_pixels": 2358,
+      "transparent_fraction": 0.7167081288839032,
+      "reference_ids": [
+        "project_duels_saga",
+        "sega_hotd2",
+        "project_catalogue_sources"
+      ],
+      "prompt": "Create exactly ONE standalone modular game scenery prop for the fan-made House of the Dead 2D fighting arena 'Quai de la cité inondée', inspired by The House of the Dead 2. The prop is one SHORT DAMAGED VENETIAN LIMESTONE BALUSTRADE MODULE: a continuous horizontal rectangular stone foot plinth, three short vase-shaped stone balusters between two simple square end posts, and one continuous low handrail with a chipped right corner and a visible crack near the middle. One coherent joined railing object, not an exploded diagram and not separate loose debris. Age and minor damage are important, but retain a stable readable architectural silhouette. Low waist-height railing, roughly three times wider than tall. Direct front elevation with only a very slight view of the top surfaces, appropriate for a side-on 2D fighting arena; verticals remain vertical, base and handrail essentially horizontal. Antique pale ivory-ochre limestone, grey damp pores and fine cracks, tiny restrained dark green moss at the foot, realistic worn edges. Match the hand-painted realistic high-resolution sprite style and muted old-city canal palette of the accompanying antique lamp: diffuse upper-left daylight, soft warm edge highlights and cool grey-green shade. This is an original modular scenery adaptation based on the stone bridge and canal architecture, not a claim of an exact official object. Square canvas, centered complete object surrounded by generous true transparent alpha margins, no cropped ends. All solid parts should be contained between x=80 and x=944 and y=310 and y=900 on a conceptual 1024 square canvas. The air gaps between balusters must be genuinely transparent. There is NO background, no ground plane, no wall behind the railing, no pavement slab beyond its integral narrow base, no canal, no bridge arch, no characters, no extra props, no floating rubble, no cast shadow on transparency, no text, no logo, no watermark, no border, no collage, no sprite sheet. One single complete balustrade prop only.",
+      "revision_prompt": "Precisely clean the transparent cutout edges of the single stone balustrade prop in the immediately preceding image. KEEP THE SAME exact balustrade: pale aged limestone, two square end posts, three vase-shaped balusters, horizontal handrail with central crack and chipped right corner, moss at the integral base, same frontal viewpoint, same scale and same square canvas. The sole required change is removing every bright yellow, red, white or green fringe, colored ghost pixel, floating speck or stray residue around the outside silhouette and inside the baluster openings. These pixels must become fully transparent, not replaced by a colored backdrop. The outer edge must be tight and clean, with natural neutral-color antialiasing; preserve fine stone detail within the silhouette. Completely transparent background and completely transparent gaps. Do not add scenery, floor, shadow, text, border, props or characters. Do not alter the stone shape or introduce any new damage. Produce exactly one complete, professionally cleaned transparent PNG prop.",
+      "revisions": 1,
+      "tool": "image_gen__imagegen",
+      "transparent_background": true,
+      "visual_review": {
+        "status": "accepted_for_modular_stage_integration",
+        "single_prop": true,
+        "full_silhouette": true,
+        "no_character": true,
+        "no_ground_shadow": true,
+        "notes": "Module court de balustrade endommagée, inspiré des balustres du pont visible dans la vignette de l'arène.",
+        "alpha_edge_note": "Les franges saturées repérées dans l'aperçu ont une opacité alpha <=2/255 ; aucun pixel rouge/jaune détecté par le contrôle ne dépasse 15. Les speckles alpha>0 rendent les bounds non filtrées impropres au placement.",
+        "saturated_fringe_scan": {
+          "red": 3152,
+          "yellow": 6706,
+          "redAlpha16": 0,
+          "yellowAlpha16": 0,
+          "maxAlpha": 2
+        }
+      },
+      "fidelity_status": "adaptation_originale_du_decor; conformité 1:1 non certifiée"
+    },
+    {
+      "id": "venice_bollard",
+      "path": "assets/dossier_curien/saga/props/venice_bollard.png",
+      "git_blob_sha": "4ce9c68111a81a9e89e67b972f420320e39fb558",
+      "sha256": "99af64ef2d4bfd0299ec389b7f4d3f1d600e6cd391ab5e62f58ae2623a879697",
+      "size_bytes": 1201798,
+      "dimensions_px": [
+        1254,
+        1254
+      ],
+      "format": "PNG",
+      "color_mode": "RGBA",
+      "bit_depth": 8,
+      "interlace": 0,
+      "bbox_alpha_gte_16_px": [
+        307,
+        199,
+        892,
+        1116
+      ],
+      "bbox_alpha_gt_0_px": [
+        0,
+        7,
+        1238,
+        1254
+      ],
+      "source_pivot_px": [
+        599.5,
+        1116
+      ],
+      "pivot_definition": "Centre inférieur de la boîte alpha >=16 ; coordonnées xmax/ymax exclusives, sans normalisation du raster.",
+      "alpha_zero_pixels": 1129945,
+      "alpha_255_pixels": 379,
+      "transparent_fraction": 0.7185586664936955,
+      "reference_ids": [
+        "project_duels_saga",
+        "sega_hotd2",
+        "project_catalogue_sources"
+      ],
+      "prompt": "Create exactly ONE individual modular game prop: a squat ancient Venetian canal-side STONE MOORING BOLLARD, matching the waist-low cylindrical stone posts seen along the foreground quay of the fan-made House of the Dead 2D arena 'Quai de la cité inondée'. One complete isolated object on a square truly transparent alpha canvas. The bollard is a short thick roughly cylindrical weathered limestone post, with gently faceted vertical sides, a rounded chipped cap slightly wider than the shaft, and a narrow irregular but stable foot. A single small rust-dark iron mooring ring is attached at the upper left side; include the entire ring, without rope or a long hanging chain. The object is pale warm grey and ivory-ochre stone, darker green-grey dampness and sparse restrained moss along the bottom, brown rust around the ring, fine aged stone pits. Front view with very shallow three-quarter depth and just a small view of the cap, no exaggerated perspective or dramatic tilt. High-resolution hand-painted realistic game-sprite style, crisp restrained silhouette and practical readable material detail, muted aged Italian canal-city palette matching the companion stone balustrade and green-black streetlamp. Soft diffuse daylight from upper left, cool grey-green shade on the right. This is a scenery adaptation for the fighting-game stage, not an official asset extraction or a claim of exact canon. Keep one solid post centered, full silhouette and generous transparent margin on all four sides; on a conceptual 1024 square canvas its full visible shape should lie inside x=280..744, y=160..960. No cropped edges, no background, no floor, no pavement island, no canal, no buildings, no characters, no second bollard, no disconnected debris, no cast shadow on transparency, no colored matte or fringe, no text, no watermark, no border, no sprite sheet.",
+      "tool": "image_gen__imagegen",
+      "transparent_background": true,
+      "visual_review": {
+        "status": "accepted_for_modular_stage_integration",
+        "single_prop": true,
+        "full_silhouette": true,
+        "no_character": true,
+        "no_ground_shadow": true,
+        "notes": "Potelet de pierre avec anneau d'amarrage, interprétation des potelets visibles au bord du quai.",
+        "alpha_edge_note": "Les franges saturées repérées dans l'aperçu ont une opacité alpha <=2/255 ; aucun pixel rouge/jaune détecté par le contrôle ne dépasse 15. Les speckles alpha>0 rendent les bounds non filtrées impropres au placement.",
+        "saturated_fringe_scan": {
+          "red": 171,
+          "yellow": 659,
+          "redAlpha16": 0,
+          "yellowAlpha16": 0,
+          "maxAlpha": 2
+        }
+      },
+      "fidelity_status": "adaptation_originale_du_decor; conformité 1:1 non certifiée"
+    }
+  ]
+}

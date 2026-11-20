@@ -1,5 +1,6 @@
 extends SceneTree
 
+const DossierCurienTest := preload("res://tests/test_dossier_curien.gd")
 const Rules := preload("res://src/core/arcade_rule_set.gd")
 const AmmoControllerType := preload("res://src/core/ammo_controller.gd")
 const ScoreManagerType := preload("res://src/core/score_manager.gd")
@@ -29,6 +30,7 @@ var _assertions: int = 0
 
 
 func _initialize() -> void:
+	DossierCurienTest.run(_expect_true)
 	_test_rule_table()
 	_test_ammo_and_independent_guns()
 	_test_scores()

@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-19",
+  "notes": "Native PNGs remain untouched. Render pivots are in native pixels. Anatomical scale uses standing-equivalent height; fighter altitude is applied once.",
+  "standing_heights": {
+    "rogan": 899,
+    "linda": 1387,
+    "zobio": 1092,
+    "zobiko": 1130,
+    "stick": 1102.148,
+    "rikiya": 1103.373
+  },
+  "assets": {
+    "rogan_jump_rise": {
+      "origin": "recovered_local",
+      "source_file": "exec-511b0284-cb57-4c38-ab3e-57382d0a99cd.png",
+      "references": [
+        "assets/dossier_curien/rogan_guard.png"
+      ],
+      "pivot_px": [
+        500,
+        1043
+      ],
+      "standing_height_px": 899,
+      "emitter_px": [
+        757,
+        321
+      ],
+      "calibration_notes": "Head scale compared with classic 1024-square master despite taller canvas; jump altitude applied exactly once."
+    },
+    "rogan_crouch": {
+      "origin": "recovered_local",
+      "source_file": "exec-821987a7-28a0-4eb9-a62e-efcb384bfe1e.png",
+      "references": [
+        "assets/dossier_curien/rogan_guard.png"
+      ],
+      "pivot_px": [
+        454,
+        1456
+      ],
+      "standing_height_px": 1259,
+      "emitter_px": [
+        824,
+        875
+      ],
+      "calibration_notes": "Native crouch has a larger head than the classic master; standing-equivalent scale 1.4 times 899 px. Needs actual-render review."
+    },
+    "linda_jump_rise": {
+      "origin": "recovered_local",
+      "source_file": "exec-d11400fb-c0f8-45ea-881f-2cd52ff3f6e3.png",
+      "references": [
+        "assets/dossier_curien/expansion/zombie_revenge_characters/linda_rotta_base.png"
+      ],
+      "pivot_px": [
+        500,
+        1408
+      ],
+      "standing_height_px": 1387,
+      "emitter_px": [
+        617,
+        471
+      ]
+    },
+    "linda_block": {
+      "origin": "recovered_local",
+      "source_file": "exec-f37984fd-b01f-4ed1-a30c-6abdb668b3ce.png",
+      "references": [
+        "assets/dossier_curien/expansion/zombie_revenge_characters/linda_rotta_base.png"
+      ],
+      "pivot_px": [
+        510,
+        1455
+      ],
+      "standing_height_px": 1387,
+      "emitter_px": [
+        679,
+        444
+      ],
+      "calibration_notes": "Muzzle measured on the native PNG after the off-engine projection review; no pixel modification."
+    },
+    "zobio_guard": {
+      "origin": "existing_corrected_guard",
+      "pivot_px": [
+        624,
+        1177
+      ],
+      "standing_height_px": 1092
+    },
+    "zobiko_guard": {
+      "origin": "existing_corrected_guard",
+      "pivot_px": [
+        615,
+        1180
+      ],
+      "standing_height_px": 1130
+    },
+    "zobio_windup": {
+      "pivot_px": [
+        624,
+        1177
+      ],
+      "anchors_px": {
+        "right_fist": [
+          370,
+          552
+        ]
+      }
+    },
+    "zobio_contact": {
+      "pivot_px": [
+        534,
+        1132
+      ],
+      "anchors_px": {
+        "contact": [
+          1206,
+          357
+        ]
+      }
+    },
+    "zobio_recoil": {
+      "pivot_px": [
+        666,
+        1180
+      ]
+    },
+    "zobio_recovery": {
+      "pivot_px": [
+        612,
+        1170
+      ]
+    },
+    "zobio_walk1": {
+      "pivot_px": [
+        604,
+        1167
+      ]
+    },
+    "zobiko_windup": {
+      "pivot_px": [
+        615,
+        1170
+      ]
+    },
+    "zobiko_contact": {
+      "pivot_px": [
+        610,
+        1160
+      ],
+      "anchors_px": {
+        "contact": [
+          1073,
+          332
+        ]
+      }
+    },
+    "zobiko_recoil": {
+      "pivot_px": [
+        656,
+        1178
+      ]
+    },
+    "zobiko_recovery": {
+      "pivot_px": [
+        615,
+        1176
+      ]
+    },
+    "zobiko_walk1": {
+      "pivot_px": [
+        600,
+        1175
+      ]
+    }
+  }
+}

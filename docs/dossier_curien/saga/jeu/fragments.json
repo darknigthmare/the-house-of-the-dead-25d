@@ -1,0 +1,149 @@
+{
+  "fichier": "HOTD_Anthologie.pck",
+  "octets": 95935632,
+  "sha256": "690ebbb7f1c82cc9954ac474ff5b87e9e8a6b29f6fb714ae698ab4c71c7733a3",
+  "fragments": [
+    {
+      "fichier": "Anthologie.part01",
+      "octets": 3600000,
+      "sha256": "ee806a4028e97379243048023e45551f978f434da64862f0f69219f72c12b7e9"
+    },
+    {
+      "fichier": "Anthologie.part02",
+      "octets": 3600000,
+      "sha256": "125b1275178f8e2e8698b99949d6f1a90c999842823f4088f4e82dcb4edcf5a6"
+    },
+    {
+      "fichier": "Anthologie.part03",
+      "octets": 3600000,
+      "sha256": "6a144b7c734c07d3a8133a1134be044b5051bcb5d45ac7d03f7b660e9b266492"
+    },
+    {
+      "fichier": "Anthologie.part04",
+      "octets": 3600000,
+      "sha256": "efd2ec310b2a7af78b231068c9c4e6a4fdeec652e1cbfdca828d367e519fb4db"
+    },
+    {
+      "fichier": "Anthologie.part05",
+      "octets": 3600000,
+      "sha256": "e0bdfb7bed3168989e109f83f9150f97ee0c4fe1172b188fe25af9d71f8a0587"
+    },
+    {
+      "fichier": "Anthologie.part06",
+      "octets": 3600000,
+      "sha256": "ac0a262bfc56abe2c04408399fab904c5477d1749b9bc25d213c1ee403de1a6a"
+    },
+    {
+      "fichier": "Anthologie.part07",
+      "octets": 3600000,
+      "sha256": "11ae3d2e9c463cb49fc496eb1c857f6ce06110ab9808d56acfea81859d3d4b94"
+    },
+    {
+      "fichier": "Anthologie.part08",
+      "octets": 3600000,
+      "sha256": "6b87de9e8be9bead3d7ae9761bc055b814fe842f3b733efc62141c9a2054bad0"
+    },
+    {
+      "fichier": "Anthologie.part09",
+      "octets": 3600000,
+      "sha256": "7e80ab0fa4dff5c0ab06aa4cc2c0ce66c5a47b57a254e9e2b9723c9db58c9a2c"
+    },
+    {
+      "fichier": "Anthologie.part10",
+      "octets": 3600000,
+      "sha256": "7848480941c5b9aabc29e3bce2d3b2608e1f703abf4d2f72bff307485d8a1d7c"
+    },
+    {
+      "fichier": "Anthologie.part11",
+      "octets": 3600000,
+      "sha256": "736375ac77d96e7014625f44fb7c03418304a851be8e7d700cba4df16ff338b7"
+    },
+    {
+      "fichier": "Anthologie.part12",
+      "octets": 3600000,
+      "sha256": "decf5d648a2373b72d43cc63a9a5d29b94fe71d364ed3678ec8846b76255f092"
+    },
+    {
+      "fichier": "Anthologie.part13",
+      "octets": 3600000,
+      "sha256": "1b282c88dfcc935faecf9243aa34bc558c844ede11cb7c664a5237a5e5482824"
+    },
+    {
+      "fichier": "Anthologie.part14",
+      "octets": 3600000,
+      "sha256": "87f850b51a2270d88bd9e40cff991499e79e8589591f6ed3335a2b5db55b8767"
+    },
+    {
+      "fichier": "Anthologie.part15",
+      "octets": 3600000,
+      "sha256": "494a5e62d0d2e0b29a45134305e4b8f64031c7aeacbc5e1988c3dab3c0bc9ae6"
+    },
+    {
+      "fichier": "Anthologie.part16",
+      "octets": 3600000,
+      "sha256": "059f017ddf19b105e54fed0bb302af0f438e7abfbe30655e2e2da8597150d070"
+    },
+    {
+      "fichier": "Anthologie.part17",
+      "octets": 3600000,
+      "sha256": "c971aeec5280e8da7a7d3d9c6dbf823865a3c18d30773d48872f7fe2da323c1d"
+    },
+    {
+      "fichier": "Anthologie.part18",
+      "octets": 3600000,
+      "sha256": "b7d227439c72573098738983735345fb2e436f5cb7721052ee95b817363d7a08"
+    },
+    {
+      "fichier": "Anthologie.part19",
+      "octets": 3600000,
+      "sha256": "41987a0bc86f0232f0d80b9a0c0231e3bd70f8955339f00a7c6faee8bd58f5dc"
+    },
+    {
+      "fichier": "Anthologie.part20",
+      "octets": 3600000,
+      "sha256": "c5f401c2c9f1796745065ba9eead933e734c10ac1ec37ed2a2d7a332bf8a8972"
+    },
+    {
+      "fichier": "Anthologie.part21",
+      "octets": 3600000,
+      "sha256": "2fd9c73930815e05451538ed9f0cf241e38dfba9e08772c5023427c51325ce3a"
+    },
+    {
+      "fichier": "Anthologie.part22",
+      "octets": 3600000,
+      "sha256": "b88c09627dc276f5f9356dc4695ffa99dbd94977084297a405d8fb2fa5908cc6"
+    },
+    {
+      "fichier": "Anthologie.part23",
+      "octets": 3600000,
+      "sha256": "c423a99f908b6ad50b1f0bb81e4ea8c18423ec9001f783568b1bc77bc5ee5660"
+    },
+    {
+      "fichier": "Anthologie.part24",
+      "octets": 3600000,
+      "sha256": "eb4430905008b155b10ccd7c809175531704bde5b966d3a1f53769923342e766"
+    },
+    {
+      "fichier": "Anthologie.part25",
+      "octets": 3600000,
+      "sha256": "6811a6e452d5364bd936eca9ccb746d27aa1381e227ee44704a87d53368c0618"
+    },
+    {
+      "fichier": "Anthologie.part26",
+      "octets": 3600000,
+      "sha256": "f1cf0c820f6c802488286a78067e4de3e4e79c9f2471fc5f4c9f4e03c544305a"
+    },
+    {
+      "fichier": "Anthologie.part27",
+      "octets": 2335632,
+      "sha256": "8fa1214093f0777b4c796022bc41e796b0825a365533920867accfefc6633a83"
+    }
+  ],
+  "versions_precedentes": [
+    "c219dcc57ecfb9c1b2276b747a7880932742686aa6685be477834efba60e1dfc",
+    "939fd72bd2bec1ac54ea4a4e0ef632fe5fe373544060b06a960dd2a4c664806a",
+    "39427ac915a341181ca988a29d509b8e33cf20cfc8b248871717be700743f892",
+    "b27ed801246a01c3650b2d99ae090a1b8aeceb48f52e52b980727db61f6d9ee4",
+    "94317806dba0c1a39246f275d06a7dd2e99066b4e0941d8a1e89d1a7bea897e0"
+  ]
+}

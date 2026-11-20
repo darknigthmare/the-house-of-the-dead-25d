@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-19",
+  "base_commit": "a3fbcf13455a945ccc929ce43907a9755d82e6c7",
+  "generator": "built-in image_gen",
+  "mode": "reference-based transparent raster generation",
+  "scope": "Four missing EFI and Subway parallax layers; no shared renderer or catalogue edits by this production task",
+  "asset_count": 4,
+  "assets": [
+    {
+      "id": "efi_mid",
+      "path": "assets/dossier_curien/saga/efi_mid.png",
+      "kind": "parallax_mid",
+      "sha256": "f43440968ac6fda63e6c90c32892323246daff3eab66e9dc3a28575b697f47c5",
+      "size_bytes": 256786,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "transparent_background_requested": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "fully_transparent_percent": 93.629,
+      "combat_band_normalized": [
+        0.125,
+        0.2,
+        0.875,
+        0.79
+      ],
+      "combat_band_alpha_max": 1,
+      "reference": {
+        "path": "assets/dossier_curien/saga/efi_back.png",
+        "sha256": "eeb358ad0eae32f716b0addccba5db21ae03ba7a9306962cea15d72507f96b5e",
+        "role": "Existing project backplate: style, palette, camera, environment continuity"
+      },
+      "generation_id": "exec-e0544917-1719-4750-a7d4-afec93b55bcf",
+      "prompt": "Use case: stylized-concept. Asset type: ONE transparent middle-depth parallax overlay for an existing 2D fighting game stage, 1600 x 900 landscape. The input image is a strict style, perspective and lighting reference only; do NOT reproduce its opaque background. Create an independently compositable RGBA overlay for this abandoned EFI industrial factory. At the extreme LEFT edge, a slim bundle of aged dark steel vertical conduit pipes, their wall brackets, one small corroded electrical junction box with two tiny amber indicator lamps. At the extreme RIGHT edge, two narrow steel pipes and a rusty elbow bend. These are sparse edge framing elements: all visible geometry must stay within the outermost 12 percent on either side. Geometry meets the ground around source y=735. Match the reference's blue gray tarnished metal, rusty yellow accents, upper left soft daylight and very restrained amber local light, realistic painted game environment detail. Maintain the same straight-on side-view camera and scale. Every part of the central region x=200..1400 must be fully transparent, as must the space behind and between the pipes. No characters, no creatures, no text, no labels, no UI, no black/white background, no checkerboard drawn in the image, no opaque wall, no floor plane, no fog plate, no collage, no asset grid. Output only this single overlay with genuine alpha transparency.",
+      "visual_review": {
+        "status": "reviewed",
+        "observations": "Sparse edge geometry; open central fighting band; no character, UI, text or opaque background. Foreground rubble is confined to lower corners outside the fighting band."
+      }
+    },
+    {
+      "id": "subway_mid",
+      "path": "assets/dossier_curien/saga/subway_mid.png",
+      "kind": "parallax_mid",
+      "sha256": "b592024d98da742b3950efac36987c35f3224d60a7be4013eae4e80b6b29e863",
+      "size_bytes": 322490,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "transparent_background_requested": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "fully_transparent_percent": 91.799,
+      "combat_band_normalized": [
+        0.125,
+        0.2,
+        0.875,
+        0.79
+      ],
+      "combat_band_alpha_max": 1,
+      "reference": {
+        "path": "assets/dossier_curien/saga/subway_back.png",
+        "sha256": "f470ec3505b5fe7a19a7855f4585a493efb5a5f29ab9a403494e2c5cdfd28e6c",
+        "role": "Existing project backplate: style, palette, camera, environment continuity"
+      },
+      "generation_id": "exec-fbde83d7-a90d-4fe3-80ec-aa3c90830e06",
+      "prompt": "Use case: stylized-concept. Asset type: ONE transparent middle-depth parallax overlay for an existing 2D fighting game stage, 1600 x 900 landscape. The input image is a strict style, perspective and lighting reference only; do NOT reproduce its opaque background. Create a sparse independently compositable RGBA middle-depth overlay for this abandoned subway platform. One partial slim tiled utility pier at the extreme LEFT border and one partial matching pier at the extreme RIGHT border, with small cracked off-white square tiles, a faded deep blue horizontal band, exposed concrete at the base, a few bolted thin metal conduit runs and two tiny warning lamp housings. Keep all geometry inside the outermost 10 percent of image width; most of each pier is offscreen. Pier feet align near source y=735. Match the reference's straight-on side-view, cold cyan overhead illumination, muted rust and occasional very subdued red edge bounce. Realistically painted high-detail game background finish. The entire central region x=200..1400 is completely transparent from top to bottom. Empty spaces between the edge pieces are transparent. No subway train, no background wall, no floor plane, no roof spanning the image, no people, no text, no signs, no labels, no UI, no blood additions, no solid backdrop or painted checkerboard. Output one usable landscape overlay with genuine alpha transparency.",
+      "visual_review": {
+        "status": "reviewed",
+        "observations": "Sparse edge geometry; open central fighting band; no character, UI, text or opaque background. Foreground rubble is confined to lower corners outside the fighting band."
+      }
+    },
+    {
+      "id": "efi_front",
+      "path": "assets/dossier_curien/saga/efi_front.png",
+      "kind": "parallax_front",
+      "sha256": "e62c62275dff3998580f164f0c85b16a61225598af8620943b166d21528531fa",
+      "size_bytes": 323987,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "transparent_background_requested": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "fully_transparent_percent": 92.893,
+      "combat_band_normalized": [
+        0.125,
+        0.2,
+        0.875,
+        0.79
+      ],
+      "combat_band_alpha_max": 1,
+      "reference": {
+        "path": "assets/dossier_curien/saga/efi_back.png",
+        "sha256": "eeb358ad0eae32f716b0addccba5db21ae03ba7a9306962cea15d72507f96b5e",
+        "role": "Existing project backplate: style, palette, camera, environment continuity"
+      },
+      "generation_id": "exec-83bb2894-c112-45c3-9c8c-771fcd1df754",
+      "prompt": "Use case: stylized-concept. Asset type: ONE transparent foreground parallax overlay for the referenced 2D fighting game factory stage, 1600 x 900 landscape. Use the image only for exact industrial material, straight-on camera and lighting continuity, never reproduce its opaque background. Draw sparse close-foreground framing: very dark blue-gray corroded steel railing stumps, one near the extreme bottom LEFT corner and another near the extreme bottom RIGHT corner; a bent short cable and tiny broken concrete stones beside each stump. Keep all painted geometry strictly inside the outermost 11 percent on either side and mainly below y=700. Left stump may rise to y=550, right to y=600, thick enough to read as foreground but narrow. Match the reference's rusty yellow traces on metal, dark desaturated blue-gray shadows, subdued warm daylight rim from upper left. This is a single compositable foreground plane; no central objects and no floor strip spanning the frame. Central x=200..1400 must have alpha zero everywhere. No people, no creatures, no text, no numbers, no logos, no UI, no walls, no opaque background, no baked shadow plane, no haze, no checkerboard, no montage. Output only the foreground objects and true transparent empty canvas.",
+      "visual_review": {
+        "status": "reviewed",
+        "observations": "Sparse edge geometry; open central fighting band; no character, UI, text or opaque background. Foreground rubble is confined to lower corners outside the fighting band."
+      }
+    },
+    {
+      "id": "subway_front",
+      "path": "assets/dossier_curien/saga/subway_front.png",
+      "kind": "parallax_front",
+      "sha256": "71f93e5873b899d3c31217a9252b6a55269a462e77efb428460bc5182f50cb44",
+      "size_bytes": 269352,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "transparent_background_requested": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "fully_transparent_percent": 94.284,
+      "combat_band_normalized": [
+        0.125,
+        0.2,
+        0.875,
+        0.79
+      ],
+      "combat_band_alpha_max": 1,
+      "reference": {
+        "path": "assets/dossier_curien/saga/subway_back.png",
+        "sha256": "f470ec3505b5fe7a19a7855f4585a493efb5a5f29ab9a403494e2c5cdfd28e6c",
+        "role": "Existing project backplate: style, palette, camera, environment continuity"
+      },
+      "generation_id": "exec-b6ad4d2a-a7f2-470f-8d25-eee4a47786ae",
+      "prompt": "Use case: stylized-concept. Asset type: ONE transparent foreground parallax overlay for the referenced 2D fighting game subway stage, 1600 x 900 landscape. Use the image as exact style, perspective and lighting reference, not as an edit target to reproduce. Draw sparse independently compositable close foreground details: two very dark damaged metal conduit ends with loose insulated cables hanging from the extreme top LEFT corner, short loose cable loops at the extreme top RIGHT corner; near each bottom corner, a small angular pile of broken off-white subway tiles and concrete with tiny deep-blue tile fragments. Cables confined to x=0..170 or x=1430..1600 and y=0..240, debris confined to outermost 11 percent and y=760..900. All foreground elements have dark blue-gray shadow masses, subtle cyan rim illumination with just a little reflected orange on the far left, matching the reference. Center x=200..1400 must be completely transparent throughout; keep the fighters and the platform floor fully unobstructed. No character, no train, no solid pillars, no station background, no floor plane, no roof across the middle, no text, no signs, no UI, no added gore, no solid backdrop or checkerboard. Output a single polished parallax foreground overlay with true alpha transparency.",
+      "visual_review": {
+        "status": "reviewed",
+        "observations": "Sparse edge geometry; open central fighting band; no character, UI, text or opaque background. Foreground rubble is confined to lower corners outside the fighting band."
+      }
+    }
+  ],
+  "validation": {
+    "image_generation_only": true,
+    "images_edited_after_generation": false,
+    "original_files_copied_without_resampling": true,
+    "alpha_note": "The central fighting band is alpha 0 except isolated residual alpha 1 values (1/255 opacity); no visible opaque plate. Foreground corner debris extends below the fighting band.",
+    "resolution_note": "Native generated output is 1672 x 941, nearly 16:9, preserved byte for byte; stage renderer must scale the full canvas using its existing background rectangle."
+  },
+  "fidelity_limits": [
+    "These overlays continue the existing project backplates. They are original game illustrations, not extracted official episode assets.",
+    "No pixel-for-pixel comparison against official in-game camera captures has been performed; canonical 1:1 fidelity is not certified.",
+    "Final engine compositing and camera-drift review are performed by the integration task."
+  ]
+}

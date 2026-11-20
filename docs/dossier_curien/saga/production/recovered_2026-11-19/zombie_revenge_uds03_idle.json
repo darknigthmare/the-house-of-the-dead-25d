@@ -1,0 +1,31 @@
+{
+  "recovery_date": "2026-11-19",
+  "original_record_sha256": "1080412059329d442565408ebd32921fd5152c731f56f7773a497a57ff432493",
+  "original_record_basename": "uds03_idle.json",
+  "normalization": "Absolute machine-specific image paths replaced by repository paths when recovered, otherwise historical_source/<path>. Original prompt wording and source attributions retained.",
+  "original_record": {
+    "id": "uds03",
+    "name": "UDS-03",
+    "file": "assets/dossier_curien/expansion/zombie_revenge_bosses/uds03_idle.png",
+    "source_image": "assets/dossier_curien/expansion/zombie_revenge_bosses/uds03_idle.png",
+    "prompt": "Use case: stylized-concept. Asset type: one individual 2D high-detail hand-painted fighting-game sprite, transparent PNG. References show the canonical character at different views; use them for accurate shape and colors, not framing, UI or scenery. Subject: UDS-03 from Sega Zombie Revenge. The target in the FIRST reference is the giant pale grotesque humanoid with scrap blades embedded in its body; in the SECOND reference it is the full-body monster in the UPPER RIGHT, not the lower-left charred figure or the far-right cable-head figure. Preserve pale gray-beige sinewy skin, long bony bare legs and feet, huge upper body but gaunt abdomen, ugly irregular elongated head with deep dark sockets and exposed teeth, one red muscle-textured LEFT forearm, dark metal wrist band, and a few glass/metal shards and pipes projecting from shoulder/chest as in reference. Black fitted briefs around the hips. Full body in hunched 3/4 side idle facing right. Maintain its original anatomy and blade placements as closely as the reference allows. No chainsaw, no armor plates, no clothes except the original briefs, no fresh blood or viscera. Composition: ONE character, all its body and extremities fully inside image, 12% transparent margins on ALL sides, orthographic eye-level camera, native 2D illustration with crisp restrained ink contours and detailed game shading. Anatomical and costume fidelity is more important than embellishment. Background actual alpha transparency. No scenery, no ground plane, no cast shadow, no haze, glow or opaque halo, no labels, text, watermark, HUD, bars, border, no multiple poses or panels. Do not add any body features absent from references.",
+    "references": [
+      "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_bosses/uds03.png",
+      "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_bosses/manual_uds-26.png"
+    ],
+    "sources": [
+      "https://sesesega.hatenablog.jp/entry/zombierevenge",
+      "https://www.digitpress.com/library/manuals/dreamcast/zombie_revenge.pdf"
+    ],
+    "limitations": "2D adaptation based on original game screenshots and manual; exact 1:1 fidelity not certified.",
+    "size": [
+      1199,
+      1312
+    ],
+    "mode": "RGBA",
+    "alpha_extrema": [
+      0,
+      255
+    ]
+  }
+}

@@ -1,0 +1,668 @@
+{
+  "baseline_commit": "c7162f7bb46aa7a3ef0546124949e96e2f25bc49",
+  "engine_versions": {
+    "godot": "4.7.2.stable.official.ed1daf0bf",
+    "node": "v24.22.3",
+    "python": "Python 3.12.14"
+  },
+  "input_count": 86,
+  "mutated_inputs": [],
+  "commands": [
+    {
+      "name": "lot4-gallery-final",
+      "exit_code": 0,
+      "errors": [],
+      "summary": [
+        "SAGA GALLERY: 41 checks, 0 failures"
+      ],
+      "log": "qa_logs/godot-gallery-final.txt",
+      "executed_argv": [
+        "godot",
+        "--headless",
+        "--path",
+        "/workspace/scratch/da9d6e4777c1/hotd-current",
+        "--script",
+        "res://tests/test_saga_gallery.gd"
+      ]
+    },
+    {
+      "name": "lot4-expansion-final",
+      "exit_code": 0,
+      "errors": [],
+      "summary": [
+        "SAGA EXPANSION: 675 checks, 0 failures"
+      ],
+      "log": "qa_logs/godot-expansion-final.txt",
+      "executed_argv": [
+        "godot",
+        "--headless",
+        "--path",
+        "/workspace/scratch/da9d6e4777c1/hotd-current",
+        "--script",
+        "res://tests/test_saga_expansion.gd"
+      ]
+    },
+    {
+      "name": "lot4-npm-full-final",
+      "exit_code": 0,
+      "errors": [],
+      "summary": [
+        "QA checks: 307/307 passed",
+        "ENVIRONMENT ASSET VERIFY PASSED: 1977 assertions; 20 materials, 43 nodes, 8 active destructibles, 14 props, 4 animated effects; 81.13 MiB runtime PNG",
+        "ANIMATED EFFECTS OK: 340/340 checks; optional private sources 0/4 present",
+        "GAMEPLAY SUPPORT OK: 113/113 checks",
+        "CONTENT FAMILY AUDIT: 905 checks, 6 warnings, 0 errors",
+        "TEXTURE IMPORT PROFILE VERIFIED: 132 files, 0 mismatches.",
+        "DOSSIER CURIEN ART VERIFIED: 1720 checks, 247 Saga PNGs, 8 calibrated poses.",
+        "DOSSIER CURIEN EXPANSION VERIFIED: 49 PNGs, 40 gallery entries, 65651752 bytes; hashes, RGBA bounds, provenance and paths verified.",
+        "DOSSIER CURIEN EXPANSION SELF-TEST: 10 cases passed.",
+        "SAGA MOTION MANIFEST: {\"assets\":30,\"bytes\":35895640}",
+        "SAGA MOTION MANIFEST SELF-TEST: 11 cases passed.",
+        "DOSSIER CURIEN GALLERY VERIFIED (data/assets/dossier_curien_gallery_2026-11-20.json): 9 PNGs, 9 non-playable gallery entries, 7741468 bytes; hashes, RGBA bounds, provenance, distinct identities and paths verified.",
+        "DOSSIER CURIEN GALLERY VERIFIED (data/assets/dossier_curien_gallery_2026-11-20_lot2.json): 12 PNGs, 12 non-playable gallery entries, 14814532 bytes; hashes, RGBA bounds, provenance, distinct identities and paths verified.",
+        "DOSSIER CURIEN GALLERY VERIFIED (data/assets/dossier_curien_gallery_2026-11-20_lot3.json): 8 PNGs, 8 non-playable gallery entries, 11587927 bytes; hashes, RGBA bounds, provenance, distinct identities and paths verified.",
+        "DOSSIER CURIEN GALLERY VERIFIED (data/assets/dossier_curien_gallery_2026-11-20_lot4.json): 9 PNGs, 9 non-playable gallery entries, 12675845 bytes; hashes, RGBA bounds, provenance, distinct identities and paths verified.",
+        "DOSSIER CURIEN GALLERY COLLECTIONS: 4 batches, 38 distinct non-playable entries.",
+        "DOSSIER CURIEN GALLERY SELF-TEST: 27 cases passed."
+      ],
+      "log": "qa_logs/npm-test-summary.txt",
+      "executed_argv": [
+        "npm",
+        "test"
+      ]
+    }
+  ],
+  "import": {
+    "argv": [
+      "godot",
+      "--headless",
+      "--path",
+      "/workspace/scratch/da9d6e4777c1/hotd-current",
+      "--editor",
+      "--import"
+    ],
+    "exit_code": 0,
+    "errors": []
+  },
+  "integrity": {
+    "baseline_pngs": 379,
+    "all_baseline_pngs_unchanged": true,
+    "current_png_paths": 394,
+    "current_unique_git_png_blobs": 392,
+    "new_png_paths": 15,
+    "new_png_bytes": 18952552,
+    "old_manifests_unchanged": [
+      "data/assets/dossier_curien_expansion.json",
+      "data/assets/dossier_curien_gallery_2026-11-20.json",
+      "data/assets/dossier_curien_gallery_2026-11-20_lot2.json",
+      "data/assets/dossier_curien_gallery_2026-11-20_lot3.json"
+    ]
+  },
+  "new_pngs": {
+    "assets/dossier_curien/gallery_2026-11-20_lot4/bosses/coco_base.png": {
+      "git_blob": "27b07b004260e8c911336fb0b8decf11734f553c",
+      "bytes": 1148566,
+      "sha256": "c9a1a358e908868f74d325cb3054b0a9f0955fd2b217ae257a99038da920e3e0"
+    },
+    "assets/dossier_curien/gallery_2026-11-20_lot4/bosses/lobber_base.png": {
+      "git_blob": "9513fb3781dfd25e51240c14daa3316554ee1b4a",
+      "bytes": 1601057,
+      "sha256": "9c37b22b798cdd67570cf3cc7db6b76127c087a9ac2dc3cd7251bd448aec804d"
+    },
+    "assets/dossier_curien/gallery_2026-11-20_lot4/bosses/meat_katie_base.png": {
+      "git_blob": "fd8601c3c9e4dcde3bbe982196148dd354a36317",
+      "bytes": 1230904,
+      "sha256": "bd456fcc72f220bb14f3e79aaaab7b39d594e55cad1d6cb2eb042c04552272f6"
+    },
+    "assets/dossier_curien/gallery_2026-11-20_lot4/bosses/nigel_sebastian_base.png": {
+      "git_blob": "acbf7dd448c5a33c7da14c6cf7636a211bee4885",
+      "bytes": 1139398,
+      "sha256": "d6f52171ae57e4baa69601346fa823e5cc78ea4ed1a1ebcb33f94b12610369f5"
+    },
+    "assets/dossier_curien/gallery_2026-11-20_lot4/bosses/sindy_base.png": {
+      "git_blob": "09c072194ace37834fedf9d2ff16628785ea4fe2",
+      "bytes": 1434048,
+      "sha256": "f4f6e8b3250d4b25a2ad4bcf3784fdc609b20a411fd08b95ce0a5d68bd64498a"
+    },
+    "assets/dossier_curien/gallery_2026-11-20_lot4/characters/goldman_zombie_base.png": {
+      "git_blob": "b6b6af5d1447faebbd391661de0ac138f3bfac33",
+      "bytes": 1906657,
+      "sha256": "b263803234594a48b4087dd12dcdf7496bf77c2e0826a2e4663f59a34f77e1ec"
+    },
+    "assets/dossier_curien/gallery_2026-11-20_lot4/characters/jasper_human_base.png": {
+      "git_blob": "605d3bcbd139af60dcd5acf562ad3dd467624032",
+      "bytes": 1137291,
+      "sha256": "eaf4f3e5024b872e2467e789a6f5ff09d8b8646842db5bcad700270a64cb6701"
+    },
+    "assets/dossier_curien/gallery_2026-11-20_lot4/characters/mother_human_base.png": {
+      "git_blob": "ae24b5290098c7f59671c6eb9c43f99dead72a6f",
+      "bytes": 1576892,
+      "sha256": "b134db5f45a17a49f20a83c9a79881392d30d571d8bff8f8acdbd8b37d76983b"
+    },
+    "assets/dossier_curien/gallery_2026-11-20_lot4/characters/sophie_zombie_base.png": {
+      "git_blob": "8de170136ec0b8f91a830582f0502ccf1c109f35",
+      "bytes": 1501032,
+      "sha256": "95b5b6081400d19ba977762acb482caba4f2dc5fa5ffee95f9605dfca43e9b1a"
+    },
+    "assets/dossier_curien/saga/hangedman_roof_back.png": {
+      "git_blob": "c6921a62c820a64ddcb0f16ab0a57a609464a5b9",
+      "bytes": 2528424,
+      "sha256": "4cbf2ea7f0666e109445f4c54304d84e2ce2e71257ade9680e72e15a97c195cd"
+    },
+    "assets/dossier_curien/saga/hangedman_roof_front.png": {
+      "git_blob": "0e43b985e1ddd7eaaa8ca985070fba2a6f428727",
+      "bytes": 93863,
+      "sha256": "83e1169ccb05ea4a2d2867be1006ce2aa8b7002d50dd3b7a1c0054fb4fb951e8"
+    },
+    "assets/dossier_curien/saga/hangedman_roof_mid.png": {
+      "git_blob": "895d430b3cdc19c8d6137ad4160e0a653d33cad7",
+      "bytes": 421462,
+      "sha256": "0801432ac99203cbf88452f8f2f9e5081a865da31c7a0611406f96882c2ff7b0"
+    },
+    "assets/dossier_curien/saga/hermit_dome_back.png": {
+      "git_blob": "eea2ba718f6d5ebe64d86c36b12ab80acad61e1c",
+      "bytes": 2863113,
+      "sha256": "d0c0a66a3de8a87259a5f95f7eed0160f14e072dcaaa6a303d3581820b7b8651"
+    },
+    "assets/dossier_curien/saga/hermit_dome_front.png": {
+      "git_blob": "216a6589bc064ab83011d038d5bbb527379ab86d",
+      "bytes": 88592,
+      "sha256": "2e5bbf40c62f1ca7a06c599fc08af650ee05a8df9b6766f50f15e6db183afd4f"
+    },
+    "assets/dossier_curien/saga/hermit_dome_mid.png": {
+      "git_blob": "36e11638c9c06998d5953384a6f52f476154db23",
+      "bytes": 281253,
+      "sha256": "83c3fdaeb21d801b2236bad60aa599e4ebce8f44ed1e0a5eed1463399368dc79"
+    }
+  },
+  "qa_inputs": [
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot4/bosses/coco_base.png",
+      "sha256": "c9a1a358e908868f74d325cb3054b0a9f0955fd2b217ae257a99038da920e3e0",
+      "bytes": 1148566
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot4/bosses/coco_base.png.import",
+      "sha256": "299ad85794d80b5b9eb667482c2dcaff4c2a415256a56fb7e438c36b8acab6e8",
+      "bytes": 984
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot4/bosses/lobber_base.png",
+      "sha256": "9c37b22b798cdd67570cf3cc7db6b76127c087a9ac2dc3cd7251bd448aec804d",
+      "bytes": 1601057
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot4/bosses/lobber_base.png.import",
+      "sha256": "4d8715ac533a1453fde6b3c4fd18261aa7acd15f65fd8dd269d9d3ced8958148",
+      "bytes": 990
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot4/bosses/meat_katie_base.png",
+      "sha256": "bd456fcc72f220bb14f3e79aaaab7b39d594e55cad1d6cb2eb042c04552272f6",
+      "bytes": 1230904
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot4/bosses/meat_katie_base.png.import",
+      "sha256": "8dbaae465127bd5624fbd9251f10e5fd93abf3e0bc4d90b19e378aae2a67e6bd",
+      "bytes": 1002
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot4/bosses/nigel_sebastian_base.png",
+      "sha256": "d6f52171ae57e4baa69601346fa823e5cc78ea4ed1a1ebcb33f94b12610369f5",
+      "bytes": 1139398
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot4/bosses/nigel_sebastian_base.png.import",
+      "sha256": "45b13cab94068364c93223a6b66cb94186db3b29bc70842bd00c187302a6be11",
+      "bytes": 1017
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot4/bosses/sindy_base.png",
+      "sha256": "f4f6e8b3250d4b25a2ad4bcf3784fdc609b20a411fd08b95ce0a5d68bd64498a",
+      "bytes": 1434048
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot4/bosses/sindy_base.png.import",
+      "sha256": "2c5871d2e186a959f175833c483c86130b4cf082fff89476c1e705cc86ae3d19",
+      "bytes": 987
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot4/characters/goldman_zombie_base.png",
+      "sha256": "b263803234594a48b4087dd12dcdf7496bf77c2e0826a2e4663f59a34f77e1ec",
+      "bytes": 1906657
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot4/characters/goldman_zombie_base.png.import",
+      "sha256": "1a15517afbb09946554b5dafdf2ecab45028c358cc58dcb14073ec253583d704",
+      "bytes": 1018
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot4/characters/jasper_human_base.png",
+      "sha256": "eaf4f3e5024b872e2467e789a6f5ff09d8b8646842db5bcad700270a64cb6701",
+      "bytes": 1137291
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot4/characters/jasper_human_base.png.import",
+      "sha256": "de025bbcd456ec128b918fdc2fc7a212d9d1eb466ad35a1ce194b1dd87b2f61c",
+      "bytes": 1012
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot4/characters/mother_human_base.png",
+      "sha256": "b134db5f45a17a49f20a83c9a79881392d30d571d8bff8f8acdbd8b37d76983b",
+      "bytes": 1576892
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot4/characters/mother_human_base.png.import",
+      "sha256": "79e2fedba4cf1766ebaa973e7b539db670fdefea9f7aa7f28b2cd1d8a531e3f8",
+      "bytes": 1011
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot4/characters/sophie_zombie_base.png",
+      "sha256": "95b5b6081400d19ba977762acb482caba4f2dc5fa5ffee95f9605dfca43e9b1a",
+      "bytes": 1501032
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot4/characters/sophie_zombie_base.png.import",
+      "sha256": "31f340979a2bd0d26d9a81f0795e584d94e7c943a00f315e28ab7b32f0b1fdb0",
+      "bytes": 1015
+    },
+    {
+      "path": "assets/dossier_curien/saga/hangedman_roof_back.png",
+      "sha256": "4cbf2ea7f0666e109445f4c54304d84e2ce2e71257ade9680e72e15a97c195cd",
+      "bytes": 2528424
+    },
+    {
+      "path": "assets/dossier_curien/saga/hangedman_roof_back.png.import",
+      "sha256": "f3fde7a8a9867a6344bb7d6aa71191f456222c916c4966d00d142b7e24a53fe7",
+      "bytes": 988
+    },
+    {
+      "path": "assets/dossier_curien/saga/hangedman_roof_front.png",
+      "sha256": "83e1169ccb05ea4a2d2867be1006ce2aa8b7002d50dd3b7a1c0054fb4fb951e8",
+      "bytes": 93863
+    },
+    {
+      "path": "assets/dossier_curien/saga/hangedman_roof_front.png.import",
+      "sha256": "298c66645cfd40fb9b2c658f38399cd33f1f7b6ba36410b925cd7a306a3612a6",
+      "bytes": 991
+    },
+    {
+      "path": "assets/dossier_curien/saga/hangedman_roof_mid.png",
+      "sha256": "0801432ac99203cbf88452f8f2f9e5081a865da31c7a0611406f96882c2ff7b0",
+      "bytes": 421462
+    },
+    {
+      "path": "assets/dossier_curien/saga/hangedman_roof_mid.png.import",
+      "sha256": "dda11105db83819dc9b5856a2aea1561c5a526af51f25b4a098fe17c50b59f7c",
+      "bytes": 985
+    },
+    {
+      "path": "assets/dossier_curien/saga/hermit_dome_back.png",
+      "sha256": "d0c0a66a3de8a87259a5f95f7eed0160f14e072dcaaa6a303d3581820b7b8651",
+      "bytes": 2863113
+    },
+    {
+      "path": "assets/dossier_curien/saga/hermit_dome_back.png.import",
+      "sha256": "b1a6a6122949b4db1c3d31431ea67ce2f9eb27a54a292c6d8050ba2c2b1eb18c",
+      "bytes": 979
+    },
+    {
+      "path": "assets/dossier_curien/saga/hermit_dome_front.png",
+      "sha256": "2e5bbf40c62f1ca7a06c599fc08af650ee05a8df9b6766f50f15e6db183afd4f",
+      "bytes": 88592
+    },
+    {
+      "path": "assets/dossier_curien/saga/hermit_dome_front.png.import",
+      "sha256": "e16f5f62f5afef5c675ca16858ed848c95515ff7be823446ec49562f86f19a8d",
+      "bytes": 982
+    },
+    {
+      "path": "assets/dossier_curien/saga/hermit_dome_mid.png",
+      "sha256": "83c3fdaeb21d801b2236bad60aa599e4ebce8f44ed1e0a5eed1463399368dc79",
+      "bytes": 281253
+    },
+    {
+      "path": "assets/dossier_curien/saga/hermit_dome_mid.png.import",
+      "sha256": "21995a7826cf1a51dbbade248f04f3472a06fa3a12bca40f918b5aefbf37085d",
+      "bytes": 976
+    },
+    {
+      "path": "assets/dossier_curien/saga/isaac_guard.png",
+      "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+      "bytes": 595313
+    },
+    {
+      "path": "assets/dossier_curien/saga/strength_colosseum_back.png",
+      "sha256": "c21815bf401850032d5cf7c5769859b3f1d589ed98eeca4f5616e17cc6802bc7",
+      "bytes": 3290066
+    },
+    {
+      "path": "data/assets/dossier_curien_gallery_2026-11-20_lot4.json",
+      "sha256": "c1f970994f8a6eb7c6dd1de2ddc22e9eb74bf5040a6ad18f295daecd9d3a0df2",
+      "bytes": 119073
+    },
+    {
+      "path": "docs/dossier_curien/saga/CATALOGUE_VISUEL_SAGA.json",
+      "sha256": "16ab4635938b6212b037fa408ffccacb26d858e0d14753b2cfb47bc63f524b46",
+      "bytes": 72553
+    },
+    {
+      "path": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot4/bosses_generated.json",
+      "sha256": "d847e1beafb56bec54b763d916a564d6961c9c58c06d757cd01b35321acff6fb",
+      "bytes": 78139
+    },
+    {
+      "path": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot4/humans_generated.json",
+      "sha256": "35b576ddbb2cf1031d745d970d1f90acc86d5e979fc7720705a3cdfa7ad66f4a",
+      "bytes": 74626
+    },
+    {
+      "path": "docs/dossier_curien/saga/production/stages_2026-11-20_lot4/manifest.json",
+      "sha256": "1091006b849bacd691a2100eba5f07d7f047b7f3a11c1faae779b27e6ed474ef",
+      "bytes": 30439
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/characters/sophie_carried_arcade_hackernoon.png",
+      "sha256": "8cebb57ad74d9992170e0d917609cbb0f5e3068775f998a1cfc785066eb56936",
+      "bytes": 113939
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/meat_katie_official_poster.jpg",
+      "sha256": "dd667a64dcbd9c0774895c9c2e137ddcf0c62593ddd946455791044206aabc2d",
+      "bytes": 101764
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/nigel_sebastian_gamerslibrary.jpg",
+      "sha256": "bc1d20fc8e53b1c561c437c49aa25ed7ef2f2acb5939c30fcbc988ff68c884c2",
+      "bytes": 237572
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/nigel_sebastian_rick_nath.jpg",
+      "sha256": "59ad698a1d480b079a006d29dcabefc5bbc10839254ff2771bfcd4681595a7f0",
+      "bytes": 209687
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/ps3_video_storyboard_12.jpg",
+      "sha256": "46d25e4835055809a1c7e2066aed202896db6c7ae1576e6408a923c18b0db5b9",
+      "bytes": 32324
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/ps3_video_storyboard_13.jpg",
+      "sha256": "b12199e11354a05f7b4d1f641c34af9a421220fd0bcc5f4d005ba0ac0cfb0981",
+      "bytes": 36406
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/ps3_video_storyboard_5.jpg",
+      "sha256": "be1d3b85c6401410f91c6e79c894fd2b7731f2fe9add740de80f69df43d2b9ac",
+      "bytes": 64804
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/source_index.json",
+      "sha256": "cbaa001fb30ead8601ac86d34a70223110f8152fdfa02a464ca8c91ed78fe2dd",
+      "bytes": 20594
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/stage2_boss2-1.jpg",
+      "sha256": "439f28b6b894e7ecf03bfe6d4b8faf51b062a708f193324530a33cb6dfe356b2",
+      "bytes": 45924
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/stage4_boss4-1.jpg",
+      "sha256": "5df0478928fd2dcea89c3ab73c249d919c609ed7fb58fc29b5affdd366cf2af0",
+      "bytes": 37590
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/stage9_boss9-2.jpg",
+      "sha256": "061949ac6ddbd86a74177bf2d75950702844e3d5d29df811915d7865f209b25f",
+      "bytes": 23836
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/wiki_Coco_and_Sindy_weakpoint.jpg",
+      "sha256": "0acc0b836bd5bd446e99146bdb4125d499004b4b41d167f6daee23afeb0e7b3d",
+      "bytes": 344088
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/wiki_Coco_and_sindy_fight.jpg",
+      "sha256": "877979b32ad4c4c62cb32105e5fa93fc7056cc9ab13cd78637474fe313324526",
+      "bytes": 334200
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/wiki_Coco_render.jpg",
+      "sha256": "2fe3a01b5bf30a82d01dc6d2bddd8eb592863b480d12cde0aa3fe4271e1f3657",
+      "bytes": 55206
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/wiki_Lobber_render.png",
+      "sha256": "0fd6466a209e0ce5cfbf2e6b757b3869e3ad9073f06674e0042b71977ec23a17",
+      "bytes": 70226
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/wiki_Lobber_weakpoint.jpg",
+      "sha256": "7fa2ec34b487d88521ca6c8c6b83cf50d45ea2ee292ed2f35de8345f260a62fd",
+      "bytes": 367046
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/wiki_Meat_Katie.jpg",
+      "sha256": "5eea25ec1749669c134a6265e222d9b314793ffd6518df193463577c0d61c995",
+      "bytes": 131940
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/wiki_Mother_weakpoint.jpg",
+      "sha256": "4bc1821388614be615c661473cac31efe3a5e9a2589c7bb71d247dd4bde10da5",
+      "bytes": 250022
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/wiki_Sindy_render.jpg",
+      "sha256": "387c12088410fc952bd5f2eb345214f06655826bd01c5ff73e6a8c67638b2d7a",
+      "bytes": 74840
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/characters/goldman_zombie_hotd2_ending.jpg",
+      "sha256": "2774a38b570146a1779f8ecdae67ce57b4c20d5b4e81871f74e1d88b5fdcbe4e",
+      "bytes": 119314
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/characters/goldman_zombie_hotd2_full.png",
+      "sha256": "c5144a235ae71966f38d8b67a7c997c75ff4480ff1b4ceea74d6a81de2d28478",
+      "bytes": 182168
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/characters/jasper_human_cinematic.jpg",
+      "sha256": "6f27559385beda31bd17f64a28ae8844c8ca6b0d191f420077542795ac67d833",
+      "bytes": 19340
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/characters/jasper_typing_overkill_cinematic_row.png",
+      "sha256": "b27ff0ce7a059877822b079674e9ba41fe4cdb4f47f6c354e1eb2c99552fe4ad",
+      "bytes": 82535
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/characters/jasper_typing_overkill_storyboard_2.jpg",
+      "sha256": "517f5d870ad75417e8119680f077cafc5b8b1b543b45c20ab9b81faed81d66bd",
+      "bytes": 34170
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/characters/mother_human_cinematic.jpg",
+      "sha256": "b2f7f71b33a578483bbf7f6870b2a502b869a9662d3932dd633f1140d535e8c2",
+      "bytes": 22837
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/characters/mother_typing_overkill_cinematic_rows.png",
+      "sha256": "a8d24ac7cfd49cf52ec1ce4a73c073cf9bf20e73e4e9ace15a3de1e6b819214d",
+      "bytes": 199046
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/characters/mother_typing_overkill_storyboard_4.jpg",
+      "sha256": "3da49719df665d371f617c31db8710220551cfa93c60f6ebac39aae83bb91016",
+      "bytes": 38704
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/characters/sophie_zombie_arcade_body_frame.png",
+      "sha256": "439e1c367fca7d93b6cedea899a8eae8f3a3f3816b54365905a85a61e4570bee",
+      "bytes": 59359
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/characters/sophie_zombie_arcade_final_frame.png",
+      "sha256": "a427da607f63966215f02f634a4bee56597cada0293ffea5e0791cb2f835d2b8",
+      "bytes": 35005
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/characters/sophie_zombie_arcade_storyboard_1.jpg",
+      "sha256": "3513bfac4a85af84a0a5d6ed0eb32f9037e8ecc6ade0bda46d0683b436b2ad92",
+      "bytes": 25912
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/stages/hangedman_roof_battle.png",
+      "sha256": "9ac36b91df8b272147b2c4875097cc0fb3565c510069797b57a08f6b87fa4141",
+      "bytes": 199578
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/stages/hangedman_roof_edge.png",
+      "sha256": "ac82b6854a4deb6ef139da5cc6978c6990399edfc093787cc81f4750d3cdd257",
+      "bytes": 112110
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/stages/hangedman_roof_intro.png",
+      "sha256": "c1ea412b49a92c2d73520f7ed1453f1d65468f64d09d98b3317f58e326896a09",
+      "bytes": 113039
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/stages/hangedman_roof_wide.png",
+      "sha256": "fec8052d39aff63e5ebe050cde8929d267796c94a54ac31483522eb1b04b4abe",
+      "bytes": 150621
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/stages/hermit_dome_curien.png",
+      "sha256": "13b356d7be1cd7a61d8634da0d768733a9482c73cbdb7947521e14c337aaacb7",
+      "bytes": 218812
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/stages/hermit_dome_intro.png",
+      "sha256": "e4b97702eac39f5a1b6b00973156409e074eb7a759399ae4450ddbe6d6aa4fc9",
+      "bytes": 249590
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/stages/hermit_tunnel_phase.png",
+      "sha256": "fc34dd73e886e7b201d29b29755a65e676d215a2dc0526a2a8802a8cf20a0bfa",
+      "bytes": 121094
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/stages/source_index.json",
+      "sha256": "4028796107b245526f55d9dd041ec015f9c5867aa952912104b44559b70f2981",
+      "bytes": 6619
+    },
+    {
+      "path": "scripts/build_dossier_curien_compat.gd",
+      "sha256": "b54e4067d0b2d5568c3503446a4f330b0a8d19efe6094b6442503d76b1adf5b1",
+      "bytes": 8616
+    },
+    {
+      "path": "scripts/build_dossier_curien_pack.gd",
+      "sha256": "2b0930779667c9de4af81da2816756b55adfd1ace88a4748615ac40e6e772b08",
+      "bytes": 13495
+    },
+    {
+      "path": "scripts/smoke_dossier_saga.gd",
+      "sha256": "6607aec1bc9e2be8a02a8dfb27e1a5da54ca46aadedcd44f9bac3a7a7a7f0fe3",
+      "bytes": 24844
+    },
+    {
+      "path": "scripts/verify_dossier_curien_art.mjs",
+      "sha256": "1b14c9c4ef188a39df9a5085cf04339aebbf2ba1ce413cadd1cb9225baefab2e",
+      "bytes": 4024
+    },
+    {
+      "path": "scripts/verify_dossier_curien_gallery.mjs",
+      "sha256": "1a78f856ed8a43e45d7d90ee411486667e959564cc1225f6ed2c692766e1c5d2",
+      "bytes": 13972
+    },
+    {
+      "path": "scripts/verify_dossier_curien_pack.gd",
+      "sha256": "c067437a16dbea2ca52efb974d8cbf38a0f1c139a59a058f921acbb62402041b",
+      "bytes": 22322
+    },
+    {
+      "path": "src/dossier_curien/arena.gd",
+      "sha256": "e0d849075b4a48b612cefccc300125e53bc1ce90abd9166f6b25302ae8d901be",
+      "bytes": 31197
+    },
+    {
+      "path": "src/dossier_curien/saga.gd",
+      "sha256": "402df8b9d3ede33b24a8e73b2157bc94efdcc53ff18c0c1e7c81e07e3940ce10",
+      "bytes": 20098
+    },
+    {
+      "path": "src/dossier_curien/saga_bestiary.gd",
+      "sha256": "d8d79320d1dfd92c3b1d3f7271aedaf751198eac76e2bee8d92f6e43c1117b94",
+      "bytes": 10599
+    },
+    {
+      "path": "tests/test_saga_expansion.gd",
+      "sha256": "b79ba60ef07b8a04c198cae99d2e88108ab840ee2e623f66c8aaa9aec16e88ef",
+      "bytes": 21035
+    },
+    {
+      "path": "tests/test_saga_gallery.gd",
+      "sha256": "41534b4c4d5ee6cd556be387aa63f69153530ac8ad456e27c709bcd1bc1e4899",
+      "bytes": 11001
+    }
+  ],
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "timezone": "Europe/Paris",
+  "lot": "2026-11-20_lot4",
+  "status": "pass",
+  "working_directory": "/workspace/scratch/da9d6e4777c1/hotd-current",
+  "runtime_totals": {
+    "fighters": 24,
+    "story_routes": 26,
+    "arenas": 26,
+    "archives": 29,
+    "selectable_costumes": 2,
+    "gallery_entries": 78
+  },
+  "test_counts": {
+    "expansion": 675,
+    "gallery": 41,
+    "gallery_validator": 27,
+    "art": 1720,
+    "saga_pngs": 247
+  },
+  "stage_menu_regression": {
+    "initial_targeted_checks": 81,
+    "initial_failures": 5,
+    "corrected_targeted_checks": 97,
+    "corrected_failures": 0,
+    "included_in_expansion_checks": true,
+    "layout_gate_relaxed": false,
+    "fix": "One complete note follows keyboard/gamepad focus or mouse hover; five choices and both pagination directions are retained."
+  },
+  "generation_accounting": {
+    "attempts": 17,
+    "retained_pngs": 15,
+    "rejected_pngs": 1,
+    "blocked_without_png": 1,
+    "blocked_subject": "mother_boss",
+    "rejected_coco_png_committed": false
+  },
+  "limits": {
+    "headless": true,
+    "native_viewport_capture": false,
+    "manual_full_keyboard_or_gamepad_session": false,
+    "new_pck_built": false,
+    "new_game_web_export": false,
+    "canonical_1_to_1_certified": false,
+    "minimum_motion_gaps": 277,
+    "unrecovered_historical_masters": 204,
+    "explicit_visual_reference_qa_open_in_four_lots": 9,
+    "four_lots_gallery_entries": 38
+  },
+  "publication_ci": "Only the exact published commit workflow is evidence; its final status is recorded in PR #2 and the publication receipt.",
+  "documentation_links": {
+    "documents": 12,
+    "local_inline_markdown_targets": 281,
+    "missing": [],
+    "historical_unmaterialized_targets_resolved_in_git_tree": 12,
+    "external_urls_and_section_anchors_checked": false
+  }
+}

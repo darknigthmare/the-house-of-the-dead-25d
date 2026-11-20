@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "engine": "4.6.3-stable (official)",
+  "engine_contract": "compatibility build for Godot 4.6",
+  "pack_file": "HOTD_Motion_Compat46_Final.pck",
+  "pack_bytes": 289338520,
+  "pack_sha256": "918e8331c03696d9b13ce77d50764c14bf24c0e895610c541f454d430529863d",
+  "source_motion_manifest_sha256": "d1eb9878ecb1d55a63a71ec544d3e4e888954f08a1e77f123976427551618270",
+  "final_calibration": {
+    "linda_block_emitter_px": [
+      679,
+      444
+    ]
+  },
+  "mounted_pck_resource_checks": 956,
+  "mounted_pck_resource_failures": 0,
+  "motion_textures_loaded": 30,
+  "headless_startup": {
+    "working_directory": "/tmp",
+    "quit_after_frames": 30,
+    "exit_code": 0,
+    "errors": [],
+    "log": "compat-pack-startup.txt"
+  },
+  "motion_behavior_from_pack": {
+    "checks": 65,
+    "failures": 0,
+    "exit_code": 0,
+    "log": "compat-pack-motion.txt"
+  },
+  "limitations": [
+    "Headless startup and resource loading do not validate native rendered appearance.",
+    "No interactive end-to-end playthrough was observed.",
+    "Historical Godot 4.7 release was not rebuilt or validated with Godot 4.6."
+  ]
+}

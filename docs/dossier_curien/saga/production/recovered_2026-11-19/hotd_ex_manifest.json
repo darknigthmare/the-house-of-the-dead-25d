@@ -1,0 +1,128 @@
+{
+  "recovery_date": "2026-11-19",
+  "original_record_sha256": "55279ad558b3551a1cd1af904af18c9058129bbf1d0bc4093f3769db2d4ef70d",
+  "original_record_basename": "manifest.json",
+  "normalization": "Absolute machine-specific image paths replaced by repository paths when recovered, otherwise historical_source/<path>. Original prompt wording and source attributions retained.",
+  "original_record": {
+    "game": "Loving Deads: The House of the Dead EX",
+    "generated_at": "2026-11-19",
+    "assets": [
+      {
+        "id": "justice_ex",
+        "name": "Justice — EX",
+        "sources": [
+          "https://thehouseofthedead.fandom.com/wiki/Justice",
+          "https://www.sega.jp/history/arcade/product/8762/"
+        ],
+        "prompt": "Use case: stylized-concept. Asset type: ONE isolated full-body 2D fighting-game character master sprite for House of the Dead 2D / Dossier Curien. Subject: Justice exactly in his distinct Loving Deads: The House of the Dead EX arcade design, NOT the flesh-pink House of the Dead 4 version. Huge squat four-armed zombie beast, two pairs of muscular arms clearly separated, powerful wide torso, thick short legs and broad bare feet. His skin is dark grey-blue, with left face and left shoulder distinctly darker blue. His exaggerated broad mouth has large yellow pointed teeth, with several bright red damaged teeth. His cheeks are supported by ragged pale medical headwrap and padded cloth around his jaw, pale blue strips draped across his head. Dark navy ragged waistcloth with one long hanging front panel. Iron shackles on ALL four wrists and both ankles, with no dangling chains. Preserve his brutish hunched proportions and asymmetrical face. Pose: readable neutral guard, body at lateral three-quarter view looking RIGHT, knees bent, all four hands held forward at two levels. Art: crisp finely hand-painted 2D arcade fighting sprite, detailed controlled shading and clean contour, no 3D render or realistic photo. Whole character centered on square 1024x1024 genuine transparent RGBA canvas with head near y=60 and soles near y=960; generous margins around hands, every limb fully visible. No scene, floor, cast shadow, platform, background, labels, lettering, watermark, collage, sprite sheet, other person, duplicate body or additional equipment. Do not turn him into a generic four-armed fantasy demon. Fidelity to EX's bandaged toothache Justice is essential.",
+        "limits": "Reconstruction 2D d'après descriptions documentées; référence visuelle externe non récupérée. Garde latérale créée pour le projet.",
+        "source_path": "assets/dossier_curien/expansion/hotd_ex/justice_ex_guard.png",
+        "output_path": "assets/dossier_curien/expansion/hotd_ex/justice_ex_guard.png",
+        "tool": "image_gen__imagegen",
+        "status": "generated_needs_visual_reference_qa"
+      },
+      {
+        "id": "star_ex",
+        "name": "The Star masqué — EX",
+        "sources": [
+          "https://thehouseofthedead.fandom.com/wiki/The_Star",
+          "https://www.youtube.com/watch?v=mjpnpPiScPM&t=10100s"
+        ],
+        "prompt": "Use case: stylized-concept. Asset type: ONE isolated full-body 2D fighting-game character master sprite for House of the Dead 2D / Dossier Curien. Subject: The Star, the masked romantic antagonist from Loving Deads: The House of the Dead EX arcade, not his exposed-face House of the Dead 4 form. Reproduce the recognizable EX design: slim tall adult male humanoid, full white theatrical mask with narrow red slit eyes and red tear-like vertical streak below each eye, red hood raised; very long red hooded trench coat down to ankles, coat open at the front; light grey and black vertically striped fitted waistcoat covering chest, ragged black/grey striped trousers, dark brown knee-high boots, brown belt and small thigh straps, dark brown fingerless gloves. Exposed skin pale ivory. Preserve the reserved slender human proportions, never a hulking zombie or superhero. Neutral poised lateral three-quarter fighting guard facing RIGHT, slight levitation with both feet visible, forearms ready and hands empty; small controlled flow in coat tails. This EX form uses bats and mechanical claws in his own encounter; do NOT transplant the HOD4 twin swords into this clean EX neutral pose. Art: finely hand-painted detailed 2D fighting-game sprite, crisp silhouette, restrained shading, no photorealism, no 3D render. One complete character centered on square 1024x1024 genuine transparent RGBA canvas, head around y=60 and boots around y=950, full hood coat hem and both boots entirely inside frame. No floor, shadow disc, stage, scenery, particles, bats, claws, words, text, logo, frame, contact sheet, duplicates or accessory display. His white mask and striped waistcoat must remain clearly legible.",
+        "limits": "Reconstruction 2D d'après descriptions documentées; référence visuelle externe non récupérée. Pose de garde sans armes adaptée pour le projet.",
+        "source_path": "assets/dossier_curien/expansion/hotd_ex/star_ex_guard.png",
+        "output_path": "assets/dossier_curien/expansion/hotd_ex/star_ex_guard.png",
+        "tool": "image_gen__imagegen",
+        "status": "generated_needs_visual_reference_qa"
+      },
+      {
+        "id": "empress_ex",
+        "name": "The Empress — EX",
+        "sources": [
+          "https://thehouseofthedead.fandom.com/wiki/The_Empress",
+          "https://www.youtube.com/watch?v=mjpnpPiScPM&t=10206s"
+        ],
+        "prompt": "Use case: stylized-concept. Asset type: ONE isolated full-body detailed 2D fighting-game sprite for House of the Dead 2D / Dossier Curien. Subject: The Empress specifically from Loving Deads: The House of the Dead EX. Faithful EX-only traits: large athletic biomechanical humanoid assassin with silver-grey skin, visibly branching dark red veins across body, bulging luminous red eyes, two nostril openings and NO visible mouth. Dark silver torso armor and shoulder plates, chest armor shaped into two rounded feminine pectoral plates with the small Venus alchemical mark at center. Strong long silver limbs. Stylized integrated roller skates with small spiked wheels at front and back of each foot, both skates clearly visible. Weapon is the iconic yellow industrial double-ended chainsaw, a single long staff-like tool with central handgrip housing and toothed chainsaw blades projecting from opposite ends; subtle red/orange weathering and metal chain teeth. Hold weapon diagonally across the body in a compact ready stance; entire weapon visible. Lateral three-quarter view facing RIGHT, weight lowered for skating. Preserve her alien monstrous design; no human female face, no hair, no princess crown, no ornamental fantasy armor. Art: high-detail hand-painted 2D fighting-game sprite, clean readable contour and directional shading, no photograph or 3D render. Exactly one complete character, whole body plus complete double-ended tool on square 1024x1024 genuine transparent RGBA canvas, head near top margin and wheels near y=960; generous unpainted margins. No floor, cast shadow, rail station, extra character, second disconnected chainsaw, blood splatter, effects, text, labels, sheet or collage.",
+        "limits": "Reconstruction 2D d'après description explicite de la variante EX; référence visuelle externe non récupérée. Type EX à confirmer séparément du 1210 de HOD4.",
+        "source_path": "assets/dossier_curien/expansion/hotd_ex/empress_ex_guard.png",
+        "output_path": "assets/dossier_curien/expansion/hotd_ex/empress_ex_guard.png",
+        "tool": "image_gen__imagegen",
+        "status": "generated_needs_visual_reference_qa"
+      },
+      {
+        "id": "zobio_ex_guard_v2",
+        "name": "Zobio — correction costume original",
+        "sources": [
+          "https://www.sega.jp/history/arcade/product/8762/",
+          "https://flyers.arcade-museum.com/videogames/show/5803",
+          "https://sega.fandom.com/wiki/Zobio"
+        ],
+        "references": [
+          "assets/dossier_curien/saga/zobio_guard.png",
+          "docs/dossier_curien/sources_art/references-2026-11-19/hotd_ex/flyer_front.jpg",
+          "docs/dossier_curien/sources_art/references-2026-11-19/hotd_ex/flyer_back.jpg"
+        ],
+        "prompt": "Use case: identity-preserve. Edit target IMAGE 1 (the existing Zobio fighting sprite). Images 2 and 3 are SEGA's official EX flyer and are the authoritative character design reference. Make one corrected version of ZOBIO alone, keeping target's detailed hand-painted 2D fighting sprite rendering, RIGHT-facing lateral three-quarter guard and full-body composition, but faithfully correct the design to the official Zobio in the flyers. Huge green zombie with heavy hunched broad shoulders, long flat rectangular face, blocky chin, flat drooping mouth, black short sparse hair partly under poorly tied pale head bandages. Right eye obscured by dark eyepatch, left eye red with purple drip under it. Torn blue-grey short-sleeved jacket, open, only a portion of ribs exposed at his LEFT upper chest; surgical staples on opposite torso, do not make a symmetrical full skeleton chest design. Brown shredded knee-length/well-worn trousers, black/brown plain belt with rectangular GOLD buckle, NEVER a skull buckle. Crucially both large feet completely BARE, NO boots or shoes. No forearm boxer wraps (keep the mostly bare massive green hands/arms seen in the flyer). Preserve stitches, bandaged head, torn jacket and lopsided goofy monster proportions. His new guard has fists raised at chest height, both elbows distinct, small bent-knee stance facing right, one Zobio only, no Zobiko. Entire body within a square true transparent RGBA canvas with at least 7% margin on every edge, no crop of hair or bare feet. No background, floor, contact shadow, words, flyer artwork, logo, montage, accessory sheet or other characters.",
+        "limits": "Correction basée sur dépliant SEGA inspecté. Posture latérale originale pour le mode combat; pas extraction du jeu.",
+        "source_path": "assets/dossier_curien/expansion/hotd_ex/zobio_ex_guard_v2.png",
+        "output_path": "assets/dossier_curien/expansion/hotd_ex/zobio_ex_guard_v2.png",
+        "tool": "image_gen__imagegen",
+        "status": "generated_reference_reviewed"
+      },
+      {
+        "id": "zobiko_ex_guard_v2",
+        "name": "Zobiko — correction costume original",
+        "sources": [
+          "https://www.sega.jp/history/arcade/product/8762/",
+          "https://flyers.arcade-museum.com/videogames/show/5803",
+          "https://segabits.com/forums/index.php?topic=4593.0"
+        ],
+        "references": [
+          "assets/dossier_curien/saga/zobiko_guard.png",
+          "docs/dossier_curien/sources_art/references-2026-11-19/hotd_ex/zobiko_promo.png",
+          "docs/dossier_curien/sources_art/references-2026-11-19/hotd_ex/flyer_back.jpg"
+        ],
+        "prompt": "Use case: identity-preserve. Edit target IMAGE 1, the current Zobiko fighting sprite, to match the official appearance in IMAGE 2 promotional Zobiko render and IMAGE 3 SEGA EX flyer. Preserve target's finely painted crisp 2D fighting-game style and one isolated full-body right-facing guard, but CORRECT identity, hair and clothing faithfully to reference. Zobiko: light mint blue-green skin, slender petite proportions, large blue eye, tiny stitched scar on left cheek, long bright BLONDE hair extending below waist with angular zigzag pointed ends and a broad swooping fringe covering her right eye; dark headband with individual pale rib bones fanning backward; eyeball ear ornaments, no metal hoop earrings. Charcoal strapless top with light grey top band, small irregular tear at her RIGHT side. Charcoal/grey bloomer SHORTS with large dark circular dots, brown belt with pale skull buckle. White bandages over her left forearm, left shin and foot, and loosely winding around her right leg. Her feet are bandage-wrapped and have NO boots or shoes. REMOVE purple ruffled skirt, purple bra, black vest, short haircut and boots from original target, replace only with official clothing and long hair. Modest playful neutral combat guard, fists raised softly, both knees lightly bent, face turned RIGHT. No gun, no violent damage, no sexualized posing. One character, both complete feet, entire long hair and hair ornament in frame. Square genuine transparent RGBA canvas with generous 7% margins all around; no floor, ground shadow, scenery, hearts, text, labels, duplicates or sheet.",
+        "limits": "Correction basée sur dépliant SEGA et rendu promotionnel inspectés. Le rendu de référence vient de Sonic & SEGA All-Stars Racing; costume EX recoupé avec le dépliant.",
+        "source_path": "assets/dossier_curien/expansion/hotd_ex/zobiko_ex_guard_v2.png",
+        "output_path": "assets/dossier_curien/expansion/hotd_ex/zobiko_ex_guard_v2.png",
+        "tool": "image_gen__imagegen",
+        "status": "generated_reference_reviewed"
+      },
+      {
+        "id": "lovers_ex",
+        "name": "The Lovers — EX cameo",
+        "references": [
+          "docs/dossier_curien/sources_art/references-2026-11-19/hotd_ex/lovers_hod4_render.png"
+        ],
+        "sources": [
+          "https://thehouseofthedead.fandom.com/wiki/The_Lovers",
+          "https://static.wikia.nocookie.net/houseofthedead/images/9/92/Lovers_HOD4Render.png/revision/latest"
+        ],
+        "limits": "Model reference is original The House of the Dead 4 render. EX cameo is confirmed, but screenshot-specific color grading has not been verified. The canonical conjoined male/female organism is retained as one character.",
+        "prompt": "Create a single full-body detailed 2D fighting-game character sprite master for the House of the Dead 2D project. Transparent background. Entire silhouette within frame with 12% breathing room on all sides; do not crop any appendage. Facing right in a readable three-quarter side view in an idle guard pose. Sharp intentional hand-painted pixel-art style suitable for downsampling, restrained fine texture, crisp contour, dramatic arcade shading. No ground, no cast shadow outside body, no text, no title, no UI, no border, no extra subjects. Preserve distinctive anatomy and proportions from reference. This is a fan sprite adaptation of the real named game character, not a redesign. Character: The Lovers Type-6805, the conjoined spider creature reused in Loving Deads: The House of the Dead EX. Use the attached actual game render as the shape and color reference. It is one conjoined organism with the small reddish male spider head perched and physically connected above the huge purple female arachnid. Preserve the female's squat barrel-like purple/ochre striped body, cluster of six pale round eyes, small purple mandibles with ochre jointed tips, four low thick segmented supporting legs, and the male's two enormous upward arched attack limbs with thorn-like spikes and yellow ochre streaking. Do not normalize its anatomy into a realistic eight-legged spider. Maintain the extra small red head centered above the large female face, with its extremely long jointed slashing arms arching overhead. This pair is anatomically one connected game boss, not two separate loose spiders. Show the whole coherent organism in right-facing three-quarter idle stance, all tips visible.",
+        "status": "generated_reference_reviewed",
+        "source_path": "assets/dossier_curien/expansion/hotd_ex/lovers_ex_guard.png",
+        "output_path": "assets/dossier_curien/expansion/hotd_ex/lovers_ex_guard.png",
+        "tool": "image_gen.imagegen"
+      },
+      {
+        "id": "temperance_ex",
+        "name": "Temperance — EX cameo",
+        "references": [
+          "docs/dossier_curien/sources_art/references-2026-11-19/hotd_ex/temperance_hod4_render.png"
+        ],
+        "sources": [
+          "https://thehouseofthedead.fandom.com/wiki/Temperance",
+          "https://static.wikia.nocookie.net/houseofthedead/images/5/5e/Temperance_HOD4Render.png/revision/latest"
+        ],
+        "limits": "Model reference is original The House of the Dead 4 render, reused as cameo in EX. No distinct EX redesign is documented.",
+        "prompt": "Create a single full-body detailed 2D fighting-game character sprite master for the House of the Dead 2D project. Transparent background. Entire silhouette within frame with 12% breathing room on all sides; do not crop any appendage. Facing right in a readable three-quarter side view in an idle guard pose. Sharp intentional hand-painted pixel-art style suitable for downsampling, restrained fine texture, crisp contour, dramatic arcade shading. No ground, no cast shadow outside body, no text, no title, no UI, no border, no extra subjects. Preserve distinctive anatomy and proportions from reference. This is a fan sprite adaptation of the real named game character, not a redesign. Character: Temperance Type-0483 from The House of the Dead 4, cameo in Loving Deads: The House of the Dead EX. Follow the attached actual game render closely. An extremely enormous obese humanoid monster, cold pale desaturated bluish-grey veined skin, huge hanging round stomach with subtle folds, very small bald head merging into immense trapezius and shoulders with effectively no neck, deep tiny red eyes, broad compressed horizontal mouth with small orange teeth. Preserve the very specific broad black tribal tattoos branching symmetrically over the pectorals, shoulders, arms and sides of belly; the front center stomach remains bare mottled skin. Huge muscular arms hang down slightly bent in guard, tiny legs relative to torso, close-fitting almost black trousers and dark heavy shoes with pale trim. A single black fingerless padded glove on his anatomical right hand, bare opposite hand. Do not make a muscular bodybuilder, no belly belt, no loincloth, no new jewelry or accessories, no weapons. Full body right-facing three-quarter view, readable silhouette with the enormous belly volume and integrated tiny head.",
+        "status": "generated_reference_reviewed",
+        "source_path": "assets/dossier_curien/expansion/hotd_ex/temperance_ex_guard.png",
+        "output_path": "assets/dossier_curien/expansion/hotd_ex/temperance_ex_guard.png",
+        "tool": "image_gen.imagegen"
+      }
+    ]
+  }
+}

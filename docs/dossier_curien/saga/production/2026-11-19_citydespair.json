@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-19",
+  "repository": "darknigthmare/the-house-of-the-dead-25d",
+  "audited_head": "a3fbcf13455a945ccc929ce43907a9755d82e6c7",
+  "stage_id": "citydespair",
+  "display_name": "Rue de Despair",
+  "source_game": "The House of the Dead 4",
+  "chapter": "4 — Despair",
+  "status": "new painted lateral adaptation; canonical 1:1 layout not certified",
+  "generator": "built-in image_gen",
+  "sources": [
+    {
+      "kind": "official SEGA announcement",
+      "url": "https://blog.playstation.com/2012/03/14/the-house-of-the-dead-4-coming-to-psn-in-april/",
+      "role": "Identifies James/Kate, game and PS3 edition; not a street geometry reference"
+    },
+    {
+      "kind": "gameplay capture source",
+      "url": "https://www.k-triggerhappy.com/hod4/chapter4.html",
+      "role": "Chapter 4 Despair progression: underground shops, surface street, Temperance"
+    },
+    {
+      "kind": "gameplay image viewed in image search",
+      "url": "https://www.k-triggerhappy.com/hod4/boss4-1.jpg",
+      "role": "Ruined street environment and masonry behind Temperance"
+    },
+    {
+      "kind": "gameplay image link identified; direct view unavailable",
+      "url": "https://www.k-triggerhappy.com/hod4/chapter4-8.jpg",
+      "role": "Surface street after leaving the underground"
+    },
+    {
+      "kind": "gameplay image link identified; direct view unavailable",
+      "url": "https://www.k-triggerhappy.com/hod4/chapter4-9.jpg",
+      "role": "Street later in the chapter"
+    },
+    {
+      "kind": "PS3 longplay",
+      "url": "https://www.youtube.com/watch?v=IM1bOrpmJVM&t=1549s",
+      "role": "Chapter 4 Despair starts at 25:49; source identified in web results, not fully watched"
+    }
+  ],
+  "render_contract": {
+    "canvas": [
+      1672,
+      941
+    ],
+    "destination": [
+      -38,
+      -14,
+      1356,
+      754
+    ],
+    "foot_line_y": 601,
+    "parallax_pixels": {
+      "back": 17,
+      "mid": 32,
+      "front": 58
+    },
+    "order": [
+      "background",
+      "middle",
+      "fighters",
+      "foreground"
+    ],
+    "central_corridor_fraction": [
+      0.18,
+      0.84
+    ],
+    "alpha_qa": {
+      "mid": {
+        "central_max_alpha": 2,
+        "central_pixels_nonzero": 31,
+        "transparent_fraction": 0.9721079580411758
+      },
+      "front": {
+        "central_max_alpha": 1,
+        "central_pixels_nonzero": 16,
+        "transparent_fraction": 0.9760441401542693
+      }
+    },
+    "qa_note": "PNG headers, full inflate/unfilter, SHA-256 (known-answer tested) and alpha distribution verified in JavaScript. Central residual alpha is at most 2/255 for middle and 1/255 for foreground: visually clear, not mathematically alpha-zero. No engine screenshot was possible because the local execution environment is unavailable."
+  },
+  "assets": [
+    {
+      "width": 1672,
+      "height": 941,
+      "bitDepth": 8,
+      "colorType": 2,
+      "interlace": 0,
+      "size": 2860346,
+      "sha256": "57cf6e5198596a93f40e6b3b50a0a58b9d597d709ca5c188aad332927237f75e",
+      "path": "assets/dossier_curien/saga/citydespair_back.png",
+      "git_blob_sha": "3ab696612dff62154235c8291e58499efdda9aab",
+      "prompt": "Use case: stylized-concept. Asset type: one opaque background layer for a 2D fighting game, House of the Dead 2D / Dossier Curien. Primary request: faithful visual adaptation of the ruined city street reached near the end of Chapter 4, Despair, in SEGA's The House of the Dead 4 (2005), immediately before the Temperance encounter. This is a new lateral composition for combat, based on the game's European city environment, not a claim to be an extracted game texture. Produce a 1600 by 900 pixel, 16:9 landscape image. Scene: deserted early-2000s European commercial street after disaster, tall worn pale-stone and warm-brown masonry façades with repetitive rectangular windows, dark empty shopfronts, a recessed street passage behind the middle, cracked asphalt and a low pavement, restrained dust haze under an overcast smoke-grey sky. Faithful arcade-survival-horror palette: desaturated beige masonry, soot brown, cold steel grey, a few muted ochre details. Style: highly detailed hand-painted realistic 2D game environment with crisp architectural edges, matching a painted fighting-game stage, no cartoon exaggeration. Composition: fixed side-on camera at fighter chest height, near-orthographic lateral street elevation, buildings all behind combatants. Preserve an uninterrupted flat horizontal fighting strip throughout the full width at y=750 on the 900-high canvas (the game foot line is y=601/720); subtle ground texture down to the bottom, no central obstacle. Keep the main x=430..1170 / y=180..780 area free of any props in front of fighters. Distant rubble only along far building bases, not on the playable strip. Architectural details frame the outer left and right, central street remains legible. Ambient cool daylight, restrained warm reflected light, no dramatic orange flames. This image is ONLY the backdrop: no separate foreground lampposts, no foreground rubble piles, no opaque silhouette decorations. No people, no monsters, no weapons, no HUD, no reticles, no readable signs, no title, no watermark, no grid, no montage, no borders. Full bleed opaque scene.",
+      "reference_images": []
+    },
+    {
+      "width": 1672,
+      "height": 941,
+      "bitDepth": 8,
+      "colorType": 6,
+      "interlace": 0,
+      "size": 157964,
+      "sha256": "eff8c70dcd9a69054743d76e564c601e44616391f8c160de9cee759e53c8737f",
+      "alpha0": 1529468,
+      "alpha255": 778,
+      "transparentFraction": 0.9721079580411758,
+      "centralNonzero": 31,
+      "bbox": [
+        50,
+        56,
+        1672,
+        770
+      ],
+      "path": "assets/dossier_curien/saga/citydespair_mid.png",
+      "git_blob_sha": "0164119c9f886eeef41f98e7169191c08153f72f",
+      "prompt": "Use case: precise-object-edit. Asset type: separate transparent MIDDLE parallax layer for the existing House of the Dead 4 Despair street background shown immediately above. The reference image is a style, palette, lighting and camera reference only. Do NOT reproduce the street, walls, shopfronts, sky, road or pavement. Output an RGBA PNG canvas with exactly the same landscape dimensions and framing as the reference, 1672 by 941, with actual transparency everywhere except the following two modest edge props. On the extreme LEFT edge, x=45..250, place one old weathered dark cast-iron street lamp: a simple European 2000-era narrow square glass lantern on a slender round iron post, unlit, upper tip at y=335 and base at y=760; weak cool rim light matching the reference. On the extreme RIGHT edge x=1475..1665, put one low damaged rectangular metal road barrier, dark oxidised steel with a small pale stone footing, top y=600, bottom y=760, cropped only a little at the right canvas edge. Both props sit behind fighters, parallel to the screen, and match the desaturated beige stone/cool grey background. Preserve the fixed side camera and the same ground-line perspective; no dramatic perspective angle, no shadow cast across the centre. Entire central zone x=290..1410, y=0..941 must be fully transparent with alpha=0; entire sky and all ground are absent. High-quality realistic painted 2D fighting-game asset, crisp silhouette details and clean antialiased transparent edges. One composite parallax layer, not a sheet, no border. No ground, no pavement, no backdrop, no checkerboard painted into pixels, no black matte, no white matte, no people, no zombies, no labels, no text, no logos, no additional decorations.",
+      "reference_images": [
+        "citydespair_back"
+      ]
+    },
+    {
+      "width": 1672,
+      "height": 941,
+      "bitDepth": 8,
+      "colorType": 6,
+      "interlace": 0,
+      "size": 153320,
+      "sha256": "fb9259b485bd0a20006fa0f2237cea0338493c9c50453b30c2e0587b79f08a19",
+      "alpha0": 1535661,
+      "alpha255": 64,
+      "transparentFraction": 0.9760441401542693,
+      "centralNonzero": 16,
+      "bbox": [
+        0,
+        121,
+        1672,
+        941
+      ],
+      "path": "assets/dossier_curien/saga/citydespair_front.png",
+      "git_blob_sha": "75e3c18b74b373845770bca30861f739f873f5ba",
+      "prompt": "Use case: precise-object-edit. Asset type: separate transparent FOREGROUND parallax layer for the House of the Dead 4 Despair street. Reference image 1 is the ruined European street backdrop; reference image 2 is its separate streetlamp-and-barrier middle layer. Use only their realistic painted material detail, desaturated colour palette, cool daylight and lateral camera. Output a new 1672 by 941 landscape RGBA PNG, with true transparency, keeping exactly their full canvas. Do not copy either complete reference or any lamp/barrier. Only draw TWO low broken street elements at the extreme lower edges: LEFT x=0..235, y=820..940, a small cluster of fallen beige limestone cornice fragments and dark dust, with angular edges, breaking the canvas on the extreme left and bottom; RIGHT x=1500..1671,y=790..940, a bent rust-dark metal roller-shutter fragment resting diagonally on a few broken masonry chunks, cropped by the extreme right and bottom. Both lie close to the viewer and are low enough not to conceal a standing fighter's body. They are lit softly from upper left with restrained cool rim lighting and short contact shading limited to their own shapes. Preserve all of x=270..1420 across the full height as completely empty transparent alpha=0. All upper canvas must be transparent. No connecting floor, no background, no visible rectangular sheet, no checkerboard baked into image, no painted black or white matte, no large smoke plume, no additional props, no vegetation, no people, no monsters, no HUD, no letters, no labels, no grid, no title. Detailed realistic hand-painted fighting-game art. This is a single isolated parallax layer with clean antialiased transparent edges.",
+      "reference_images": [
+        "citydespair_back",
+        "citydespair_mid"
+      ]
+    }
+  ]
+}

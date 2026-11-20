@@ -1,0 +1,249 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "generator": "image_gen",
+  "assets": [
+    {
+      "id": "g_overkill",
+      "name": "G — Overkill",
+      "game": "overkill",
+      "game_label": "The House of the Dead: Overkill",
+      "category": "costume_variant",
+      "path": "assets/dossier_curien/gallery_2026-11-20/costumes/g_overkill_base.png",
+      "generated_file": "exec-eb6a1c38-2103-42df-abdc-1ed3a09aba06.png",
+      "status": "static_reference_reviewed",
+      "sources": [
+        "https://www.behance.net/gallery/12504423/House-of-the-Dead-Overkill",
+        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/246580/manuals/TOTDO_STEAM_MANUAL_ENG.PDF?t=1763675367"
+      ],
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20/characters/overkill_agent_g_rick_nath.jpg",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "input_reference_files": [
+        "references_2026-11-20/overkill_artist_8.jpg",
+        "hotd-current/assets/dossier_curien/saga/isaac_guard.png",
+        "references_2026-11-20/overkill_manual_spread_9.png"
+      ],
+      "source_notes": [
+        "Rendu couleur plein pied publié par Rick Nath, artiste ayant participé à la direction artistique ; manuel officiel SEGA, page imprimée19.",
+        "Image source : https://mir-s3-cdn-cf.behance.net/project_modules/disp/232acb12504423.5e590efc02a1e.jpg"
+      ],
+      "prompts": [
+        "Create exactly ONE full-body 2D hand-painted arcade fighting-game gallery master of young Agent G from The House of the Dead: Overkill, on a genuine fully transparent RGBA background. The first reference is primary production artwork published by artist Rick Nath: follow that character's identity and outfit closely. Young clean-shaven light-skinned man, short dark brown close-cropped hair, distinctive rectangular dark lenses in dark red frames, tailored single-breasted BLACK suit jacket with notch lapels, open-collar warm ivory/light salmon shirt, black trousers and plain dark low dress shoes. Preserve the red inner-jacket accent visible in the reference, no necktie, no armor. The second reference is the existing Dossier Curien Isaac guard sprite: match its finely painted 2D arcade sprite technique, crisp outlined contour, textured but controlled shading, readable silhouette and human proportions, NOT its clothes, face, shotgun, hat or colors. The third reference is the official SEGA manual spread that confirms Agent G's face and outfit. Pose: one relaxed combat-ready neutral guard, three-quarter lateral view facing RIGHT, knees slightly flexed, both feet fully visible planted apart, head and torso upright. Hold ONE large dark semi-automatic pistol with both hands near chest level aimed slightly toward the right; this is a new adaptation pose, do not reproduce the two-gun poster composition. Draw every limb and all fingers coherently, with separated forearms. Square canvas about 1024x1024 with generous clear margins above hair and outside both hands and feet; whole figure visible from hair to soles, feet about 92% of canvas height. No ground, no shadow ellipse, no environment, no text, no label, no border, no watermark, no sprite sheet, no collage, no duplicate figure, no motion blur. This is a static non-playable costume study for a game gallery, not a literal screenshot. Keep age and face distinct from older Agent G in III."
+      ],
+      "limitations": [
+        "Une silhouette statique de galerie ; profil de combat, mouvements, animations et sélection de costume non ajoutés.",
+        "Pose latérale créée pour Dossier Curien ; comparaison des références sans certification de reproduction 1:1.",
+        "Variante d’époque de G ; aucune nouvelle identité.",
+        "Une arme et garde à deux mains dans l’adaptation, deux armes sur le rendu source."
+      ],
+      "visual_review": "Figure complète ; lunettes rouges, chemise claire, veste et pantalon noirs ; mains et pieds non coupés.",
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary"
+    },
+    {
+      "id": "varla_guns",
+      "name": "Varla Guns",
+      "game": "overkill",
+      "game_label": "The House of the Dead: Overkill",
+      "category": "character_base",
+      "path": "assets/dossier_curien/gallery_2026-11-20/characters/varla_guns_base.png",
+      "generated_file": "exec-d4488559-e4a7-46d9-a906-2e26446b31c9.png",
+      "status": "static_needs_visual_reference_qa",
+      "sources": [
+        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/246580/manuals/TOTDO_STEAM_MANUAL_ENG.PDF?t=1763675367",
+        "https://blog.playstation.com/2011/08/01/house-of-the-dead-overkill-naked-terror-revealed/",
+        "https://www.behance.net/gallery/12504423/House-of-the-Dead-Overkill",
+        "https://www.imfdb.org/images/3/34/TTOTD-XM8-1.jpg",
+        "https://thehouseofthedead.fandom.com/wiki/Varla_Guns"
+      ],
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20/characters/overkill_varla_candi_game.jpg",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "input_reference_files": [
+        "references_2026-11-20/varla_candi_before_katie.jpg",
+        "references_2026-11-20/overkill_manual_spread_10.png",
+        "references_2026-11-20/overkill_artist_1.jpg",
+        "hotd-current/assets/dossier_curien/saga/isaac_guard.png",
+        "generated_images/exec-eecf299b-2fe0-403e-a7d9-5386dc49cdf4.png"
+      ],
+      "source_notes": [
+        "Portrait du manuel SEGA p20, capture du jeu (Varla à gauche), menu publié par Rick Nath vus avant la génération.",
+        "Le wiki communautaire complète la description des bottes, tatouages, holster et pendentif ; accès au texte indexé, image plein pied non récupérée."
+      ],
+      "prompts": [
+        "Create ONE isolated full-body hand-painted 2D arcade game character master: VARLA GUNS, the adult heroine from The House of the Dead: Overkill — Extended Cut. First reference: she is the DARK-HAIRED woman on the LEFT of the gameplay still; keep her identity, long violet-black hair, side-parted fringe, pale complexion, dark eyes, dark lip color and tough composed expression. Second reference: the official SEGA manual, Varla is the top portrait on the LEFT page. Third reference: the production-art menu shows her at center; it supports the black cropped sleeveless vest, red miniskirt and right-thigh holster. Fourth reference is Isaac's existing Dossier Curien sprite: match its finely painted arcade technique, crisp silhouette, detailed controlled shading and grounded anatomy, not his face/clothes/weapon. Clothing: sleeveless short black vest over a black top, midriff visible, short deep-red skirt with a high side slit, brown leather gun belt and brown holster strapped to her anatomical RIGHT thigh, light brown knee-high western boots with purple star decorations. Dark red sunglasses rest ON TOP of her head, not over eyes. Keep the small right-upper-arm butterfly/rose tattoos, paired revolver navel motif and simple star pendant understated rather than enlarged. Treat skirt/boot details as a documented 2D reconstruction, not a new fashion redesign. Pose: practical neutral fighting guard facing RIGHT, three-quarter lateral view, weight balanced on both fully visible feet, knees modestly bent, ONE dark semi-automatic handgun held in both hands near chest height, calm ready stance. Non-erotic action-game illustration; no exaggerated anatomy or pin-up posing. Exactly one complete adult woman, all head/hair/boots/hands visible with generous transparent margins on a square 1024x1024-ish canvas. Genuine transparent RGBA background, no floor or shadow ellipse, no environment, no other characters, no extra limbs, no text, no badges, no UI, no watermark, no sprite sheet, no collage, no logos. Preserve the existing game-series identity; avoid making a generic biker heroine.",
+        "Edit this exact supplied Varla Guns sprite, preserving the complete figure, pose, face, hairstyle, red sunglasses, clothes, tattoos, right-thigh holster, boots, weapon, lighting, pixel dimensions and framing. Make ONLY these two corrections: (1) change the small silver necklace pendant from its five-point star to a SIX-POINT Star of David formed by two interlocking equilateral triangles, small and understated on the same necklace in exactly the same position, matching the documented original costume; (2) remove the unwanted bright red/yellow fringe and stray colored pixels around the outer silhouette. The silhouette must have clean natural dark/brown antialiased edges and fully transparent pixels outside, with no colored halo and no background. Retain genuine RGBA transparency. Do not crop or rescale or redraw the woman, do not change the visible right-arm butterfly/rose tattoos, do not add/remove clothing, and do not alter anatomy or gun. Single complete character, no scene, no shadow, no text."
+      ],
+      "limitations": [
+        "Une silhouette statique de galerie ; profil de combat, mouvements, animations et sélection de costume non ajoutés.",
+        "Pose latérale créée pour Dossier Curien ; comparaison des références sans certification de reproduction 1:1.",
+        "La jupe, les bottes, le holster et les détails de tatouage sont reconstruits avec une description secondaire ; une vue canonique plein pied reste nécessaire.",
+        "Le pendentif a été corrigé en étoile à six branches via ImageGen ; les pixels de la sortie retenue n’ont pas été retouchés localement.",
+        "Quelques pixels périphériques de très faible alpha subsistent ; ne pas assimiler les couleurs RGB de pixels alpha1 à un contour opaque."
+      ],
+      "visual_review": "Silhouette complète ; cheveux noirs-violets, lunettes sur la tête, haut noir, jupe rouge, holster à la cuisse droite, bottes brunes étoilées. Revue canonique détaillée encore ouverte.",
+      "attempts": [
+        {
+          "generated_file": "exec-eecf299b-2fe0-403e-a7d9-5386dc49cdf4.png",
+          "retained": false,
+          "reason": "Pendentif à cinq branches ; remplacé par la correction."
+        },
+        {
+          "generated_file": "exec-d4488559-e4a7-46d9-a906-2e26446b31c9.png",
+          "retained": true,
+          "reason": "Pendentif corrigé ; pose et tenue conservées."
+        }
+      ],
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary"
+    },
+    {
+      "id": "candi_stryper",
+      "name": "Candi Stryper",
+      "game": "overkill",
+      "game_label": "The House of the Dead: Overkill",
+      "category": "character_base",
+      "path": "assets/dossier_curien/gallery_2026-11-20/characters/candi_stryper_base.png",
+      "generated_file": "exec-c78e39d2-f263-4166-9523-804bcaa29a3e.png",
+      "status": "static_needs_visual_reference_qa",
+      "sources": [
+        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/246580/manuals/TOTDO_STEAM_MANUAL_ENG.PDF?t=1763675367",
+        "https://blog.playstation.com/2011/08/01/house-of-the-dead-overkill-naked-terror-revealed/",
+        "https://www.imfdb.org/images/3/34/TTOTD-XM8-1.jpg",
+        "https://thehouseofthedead.fandom.com/wiki/Candi_Stryper"
+      ],
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20/characters/overkill_varla_candi_game.jpg",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "input_reference_files": [
+        "references_2026-11-20/varla_candi_before_katie.jpg",
+        "references_2026-11-20/overkill_manual_spread_10.png",
+        "hotd-current/assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "source_notes": [
+        "Portrait du manuel SEGA p20 et capture couleur du jeu (Candi à droite) vus avant la génération.",
+        "La description communautaire complète la jupe rayée, les résilles, les chaussures et l’orthèse de jambe droite ; pas de vue plein pied externe récupérée."
+      ],
+      "prompts": [
+        "Generate exactly ONE transparent full-body 2D hand-painted arcade character master of CANDI STRYPER, the adult blonde heroine from The House of the Dead: Overkill — Extended Cut. Use the FIRST reference gameplay still: Candi is the BLONDE woman on the RIGHT, not the dark-haired Varla. Match Candi's adult face, blue eyes, blonde hair arranged in two curled pigtails with RED ribbons, and pale yellow short-sleeved blouse. SECOND reference is official SEGA manual: Candi is the middle portrait on the LEFT page; use it to confirm her identity, curled pigtails and face. THIRD reference is Isaac guard from Dossier Curien, for painting technique only: fine hand-painted arcade sprite texture, crisp outline, detailed controlled shading, grounded human anatomy. Canonical documented clothing: yellow short-sleeved shirt tied above the waist, short red-and-white vertically striped skirt, red fishnet tights, practical red-and-white sneakers, a visible metal medical leg brace strapped along her anatomical RIGHT leg from thigh/knee toward ankle. The lower-body clothes and brace are reconstructed from the documented costume description, with simple readable hardware; do not change them into knee-high boots, armor or generic tactical gear. Keep all clothing opaque, adult proportions natural, restrained practical stance. Pose: neutral combat-ready guard in three-quarter lateral view facing RIGHT, both feet firmly visible, ONE large dark semi-automatic pistol held securely in both hands near chest level, alert and slightly concerned expression. Not a pin-up or erotic image. One complete adult woman only on a square ~1024x1024 transparent RGBA canvas; generous empty margins outside hair, hands, knees and soles, feet at about92% height. No scene, ground, shadow ellipse, other person, detached limbs, wheelchair, text, badge lettering, logos, watermark, UI, collage or sprite sheet. Create a recognizable static base for the game's gallery; do not copy the cropped shot or invent an alternate costume.",
+        "Clean the transparency edge of this exact Candi Stryper 2D arcade sprite. Preserve the character, adult face, expression, blond curled pigtails, red ribbons, yellow tied blouse, red-white striped skirt, red fishnet tights, single brace on HER RIGHT leg (the left side of this canvas), sneakers, handgun, stance, proportions, entire canvas and all existing details. Remove ONLY the stray bright red/yellow pixels and colored halo outside her outline, especially around hair, shoulders, elbows and shoes. Use clean natural antialiased contour pixels matching the adjacent object, with genuinely fully transparent pixels outside. Keep RGBA transparency, same complete framing, generous margins, no rescaling, no new background or ground/shadow, no added elements, no text. This is an edge cleanup of the supplied image, not a new character or alternate costume."
+      ],
+      "limitations": [
+        "Une silhouette statique de galerie ; profil de combat, mouvements, animations et sélection de costume non ajoutés.",
+        "Pose latérale créée pour Dossier Curien ; comparaison des références sans certification de reproduction 1:1.",
+        "Le bas de la tenue et l’orthèse sont une reconstruction à contrôler avec une vue canonique plein pied.",
+        "La tentative de nettoyage alpha n’a pas été retenue : elle ne résolvait pas mieux les pixels périphériques très transparents et modifiait inutilement le dessin."
+      ],
+      "visual_review": "Figure complète ; cheveux blonds et rubans rouges, chemisier jaune, jupe rayée, résilles rouges, orthèse sur la jambe droite et deux baskets visibles.",
+      "attempts": [
+        {
+          "generated_file": "exec-c78e39d2-f263-4166-9523-804bcaa29a3e.png",
+          "retained": true,
+          "reason": "Dessin de base retenu après comparaison."
+        },
+        {
+          "generated_file": "exec-6bd931c6-1798-4b0a-a847-8c78d9ff268d.png",
+          "retained": false,
+          "reason": "Pas de gain visuel du nettoyage ; la première sortie est conservée."
+        }
+      ],
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary"
+    },
+    {
+      "id": "amy_crystal",
+      "name": "Amy Crystal",
+      "game": "hotd2",
+      "game_label": "The House of the Dead 2",
+      "category": "npc_base",
+      "path": "assets/dossier_curien/gallery_2026-11-20/characters/amy_crystal_base.png",
+      "generated_file": "exec-a0c16d69-c369-46b6-8018-4e346a6cf2fb.png",
+      "status": "static_reference_reviewed",
+      "sources": [
+        "https://www.digitpress.com/library/manuals/dreamcast/house_dead_2.pdf",
+        "https://www.imfdb.org/images/0/06/Hod2_AmyandHarry.jpg",
+        "https://thehouseofthedead.fandom.com/wiki/Amy_Crystal"
+      ],
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20/characters/hotd2_amy_harry_game.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20/characters/hotd2_amy_manual_detail.png",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "input_reference_files": [
+        "references_characters_2026-11-20/hotd2_amy_harry.jpg",
+        "references_characters_2026-11-20/hotd2_manual_pdfpage03.png",
+        "references_characters_2026-11-20/hotd2_amy_manual_detail.png",
+        "hotd-current/assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "source_notes": [
+        "Manuel Dreamcast SEGA, page imprimée4 : silhouette entière et détail rendu du PDF.",
+        "Capture originale couleur : tête, veste rouge, col gris et ceinture ; le manuel fixe la jupe et les bottes."
+      ],
+      "prompts": [
+        "Create exactly ONE isolated full-body 2D hand-painted gallery character: AMY CRYSTAL from the original The House of the Dead 2 (SEGA, not its remake). Follow the FIRST reference game screenshot: Amy is the adult brown-haired woman at LEFT wearing the SCARLET RED fitted jacket. Use the SECOND and THIRD references, official Dreamcast manual printed page4 and its rendered detail, to preserve her complete original outfit silhouette including skirt and boots. Adult woman about29, short dark brown hair swept to one side, brown eyes, composed alert expression, small triangular earrings. Grey turtleneck under fitted scarlet red hip-length jacket, wide BLACK belt across the waist with rectangular GOLD buckle, BLACK skirt ending above the knees, dark opaque tights, light-grey mid-calf boots with dark padded cuffs as suggested by the monochrome manual. Do not turn the skirt into trousers, and do not use the cream jacket alternate artwork. The manual is monochrome so exact boot colors remain a 2D reconstruction; keep their shapes simple and neutral. FOURTH reference Isaac guard is for Dossier Curien's crisp finely hand-painted arcade sprite style, controlled textured shading and grounded proportions ONLY. Pose: calm neutral agent guard facing RIGHT in three-quarter lateral view, legs slightly separated with both feet fully visible, one chrome/silver large semi-automatic pistol held securely with both hands near chest height. No firing, no injury, no pin-up stance. One complete adult human with coherent arms and fingers, generous margins above hair and outside hands and feet on a square ~1024x1024 transparent RGBA canvas, soles around92% height. No background, scene, ground, cast shadow ellipse, other characters, loose props, text, lettering, logo, UI, watermark, frame, collage or sprite sheet. This is one static NPC gallery master; stay faithful to Amy's original head, red jacket, grey collar, belt, black skirt and leg silhouette."
+      ],
+      "limitations": [
+        "Une silhouette statique de galerie ; profil de combat, mouvements, animations et sélection de costume non ajoutés.",
+        "Pose latérale créée pour Dossier Curien ; comparaison des références sans certification de reproduction 1:1.",
+        "Le bas du corps n’est visible que dans le manuel monochrome ; la couleur exacte des bottes et leurs surfaces demandent une référence couleur plus complète.",
+        "Le costume crème de certains guides n’a pas été mélangé à la veste rouge du modèle original."
+      ],
+      "visual_review": "Jupe conservée, col gris, ceinture noire à boucle dorée, veste rouge ; deux pieds et canon entièrement dans le cadre.",
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary"
+    },
+    {
+      "id": "harry_harris",
+      "name": "Harry Harris",
+      "game": "hotd2",
+      "game_label": "The House of the Dead 2",
+      "category": "npc_base",
+      "path": "assets/dossier_curien/gallery_2026-11-20/characters/harry_harris_base.png",
+      "generated_file": "exec-68d25060-42aa-4688-8438-3eb932ae46c7.png",
+      "status": "static_reference_reviewed",
+      "sources": [
+        "https://www.digitpress.com/library/manuals/dreamcast/house_dead_2.pdf",
+        "https://www.imfdb.org/images/0/06/Hod2_AmyandHarry.jpg",
+        "https://thehouseofthedead.fandom.com/wiki/Harry_Harris"
+      ],
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20/characters/hotd2_amy_harry_game.jpg",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "input_reference_files": [
+        "references_characters_2026-11-20/hotd2_amy_harry.jpg",
+        "references_characters_2026-11-20/hotd2_manual_pdfpage03.png",
+        "hotd-current/assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "source_notes": [
+        "Capture couleur du jeu : Harry à droite derrière Amy ; manuel SEGA p4 pour la silhouette et le rôle.",
+        "G Overkill n’a pas servi de référence d’identité : Harry conserve ses lunettes noires, sa cravate grise et son costume fermé."
+      ],
+      "prompts": [
+        "Generate ONE full-body isolated hand-painted 2D arcade game gallery master of HARRY HARRIS from the original SEGA The House of the Dead 2. FIRST reference gameplay screenshot: Harry is the adult male agent behind Amy on the RIGHT. SECOND reference is the official Dreamcast manual page4: Harry is the central standing man below the Amy heading, NOT seated Goldman. Match his sturdy build, broad shoulders, age around40, clean-shaven pale face, very short dark hair slicked up/back and dark BLACK sunglasses. Clothing is a slightly faded charcoal-black formal single-breasted suit, matching straight trousers, WHITE shirt, GREY necktie, plain dark grey formal shoes. Preserve the buttoned jacket, solemn face and black lens shape; no red glasses, no open collar, no leather jacket, no tactical armor, no beard. Third reference Isaac guard defines only the existing Dossier Curien style: finely painted arcade sprite, clear dark outline, controlled detailed shading, realistic human proportions rather than photographic or3D. Pose: relaxed ready guard facing RIGHT, body in three-quarter lateral view, knees very slightly flexed, one silver/chrome semi-automatic pistol gripped low at chest height with both hands, elbows readable and distinct. Both feet and all fingers fully in view, whole figure from hair to soles, generous transparent margins on a square ~1024x1024 canvas; do not crop shoes. One adult man only. Genuine transparent RGBA background, no environment, floor, cast shadow blob, text, names, badge, logo, watermark, border, UI, collage, sprite sheet, extra person, extra arms, blood or injury. This is a single static NPC gallery drawing, no claim of a complete playable fighter. Pose and exact shoe surface are an adaptation, while identity, grey tie and original suit must match the references."
+      ],
+      "limitations": [
+        "Une silhouette statique de galerie ; profil de combat, mouvements, animations et sélection de costume non ajoutés.",
+        "Pose latérale créée pour Dossier Curien ; comparaison des références sans certification de reproduction 1:1.",
+        "Pose de garde adaptée ; détail des chaussures reconstruit, les sources montrant surtout le haut et les jambes."
+      ],
+      "visual_review": "Costume charbon fermé, chemise blanche, cravate grise, lunettes noires ; absence de coupe aux pieds et aux mains.",
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary"
+    }
+  ]
+}

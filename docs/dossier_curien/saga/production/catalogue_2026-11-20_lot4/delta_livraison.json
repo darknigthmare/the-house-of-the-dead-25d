@@ -1,0 +1,949 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "timezone": "Europe/Paris",
+  "batch": "2026-11-20_lot4",
+  "baseline_commit": "c7162f7bb46aa7a3ef0546124949e96e2f25bc49",
+  "initial_inventory_commit": "59372b618882da17510351f2a5bd46226682eac4",
+  "publication_target": {
+    "pull_request": "https://github.com/darknigthmare/the-house-of-the-dead-25d/pull/2",
+    "branch": "feat/dossier-curien-combat",
+    "merge_requested": false
+  },
+  "sources": {
+    "baseline": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot4/baseline_c7162f7b.json",
+    "initial_inventory": "docs/dossier_curien/saga/production/catalogue_2026-11-20/personnages_tenues.json",
+    "previous_delivery": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot3/delta_livraison.json",
+    "current_inventory": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot4/personnages_tenues.json",
+    "generation_manifests": [
+      "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot4/humans_generated.json",
+      "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot4/bosses_generated.json"
+    ],
+    "runtime_gallery": "data/assets/dossier_curien_gallery_2026-11-20_lot4.json",
+    "stages": "docs/dossier_curien/saga/production/stages_2026-11-20_lot4/manifest.json",
+    "stage_inventory": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot4/stages_manquants.json",
+    "engine_and_catalogue_validation": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot4/VALIDATION.json"
+  },
+  "summary": {
+    "baseline_task_records": 62,
+    "records_receiving_static_dossier_base_this_batch": 8,
+    "records_with_static_dossier_base_after_previous_batches": 28,
+    "records_with_static_dossier_base_from_four_batches": 36,
+    "records_not_covered_by_these_four_batches": 26,
+    "gallery_images_from_four_batches": 38,
+    "new_character_form_visual_bases": 4,
+    "new_human_form_bases": 2,
+    "new_zombie_form_bases": 2,
+    "new_human_identities": 0,
+    "new_boss_visual_bases": 5,
+    "new_boss_encounters_represented": 4,
+    "new_edition_costume_visual_bases": 0,
+    "explicit_reference_qa_open_this_batch": 3,
+    "explicit_reference_qa_open_among_four_batches_only": 9,
+    "new_playable_profiles": 0,
+    "new_selectable_costumes": 0,
+    "complete_animations_added": 0,
+    "named_motion_gaps_before": 277,
+    "named_motion_gaps_after": 277,
+    "historical_masters_unrecovered_before": 204,
+    "historical_masters_unrecovered_after": 204,
+    "playable_fighters_before": 24,
+    "playable_fighters_after": 24,
+    "story_routes_before": 26,
+    "story_routes_after": 26,
+    "archive_challenges_before": 29,
+    "archive_challenges_after": 29,
+    "selectable_alternate_costumes_before": 2,
+    "selectable_alternate_costumes_after": 2,
+    "gallery_cards_before": 69,
+    "gallery_cards_after_source_integration": 78,
+    "arena_records_before": 24,
+    "arena_records_after_source_integration": 26,
+    "new_gallery_pngs": 9,
+    "new_stage_pngs": 6,
+    "new_png_total": 15,
+    "new_gallery_png_bytes": 12675845,
+    "new_stage_png_bytes": 6276707,
+    "new_png_bytes": 18952552,
+    "imagegen_calls": 17,
+    "rejected_generation_outputs": 1,
+    "blocked_generations_without_output": 1,
+    "dossier_png_paths_before": 379,
+    "dossier_png_paths_after": 394,
+    "dossier_unique_git_blobs_before": 377,
+    "dossier_unique_git_blobs_after": 392,
+    "stage_catalogue_rows": 61,
+    "stage_catalogue_by_status": {
+      "existant": 19,
+      "adaptation_partielle": 8,
+      "absent": 27,
+      "reference_requise": 7
+    },
+    "main_boss_encounter_status_counts": {
+      "playable_identity_base_edition_review_required": 14,
+      "static_gallery_base_delivered": 15,
+      "gallery_under_other_edition_label": 4,
+      "edition_redesign_not_covered": 1,
+      "dedicated_art_not_delivered": 1
+    }
+  },
+  "counting_rule": "Une ligne est une tâche graphique, une forme, une rencontre ou un ensemble à documenter, pas une personne unique. Coco et Sindy ont deux images sur une ligne ; Nigel et Sebastian forment une seule anatomie conjointe.",
+  "deliveries": [
+    {
+      "inventory_task_id": "jasper_human",
+      "asset_id": "jasper_human",
+      "name": "Jasper Guns — forme humaine",
+      "delivery_kind": "static_character_form_base",
+      "edition_scope": "overkill",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot4/characters/jasper_human_base.png",
+      "sha256": "eaf4f3e5024b872e2467e789a6f5ff09d8b8646842db5bcad700270a64cb6701",
+      "bytes": 1137291,
+      "source_manifest": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot4/humans_generated.json",
+      "base_art_delivered": true,
+      "source_manifest_status": "static_needs_visual_reference_qa",
+      "canonical_reference_qa_complete_claim": false,
+      "playable_added": false,
+      "selectable_costume_added": false,
+      "animation_complete": false,
+      "exact_limitations": [
+        "Base statique destinée au bestiaire : aucun profil jouable, costume sélectionnable ou animation complète ajouté.",
+        "Adaptation peinte 2D contrôlée sur les éléments visibles des références ; aucune certification de fidélité 1:1.",
+        "Sortie native RGBA conservée octet pour octet ; aucun détourage, nettoyage, recadrage, redimensionnement ou réencodage de l’image générée.",
+        "Réserve visuelle ouverte : géométrie précise du bas du fauteuil, disposition des roues, mécanismes du repose-pieds et chaussures non suffisamment attestés. Les formes sobres produites à ces endroits restent interprétées.",
+        "La source de contexte est la version PC Typing Overkill ; aucune équivalence de tous les détails entre Wii, PS3 et PC n’est certifiée.",
+        "Forme humaine avant mutation ; aucune transformation, attaque ou animation du boss Jasper ajoutée."
+      ],
+      "source_notes": [
+        "Le buste de cinématique atteste cheveux courts sombres, lunettes rectangulaires, chemise olive, débardeur violet, pantalon sombre, tube à la bouche, joystick sous la main droite et deux accoudoirs rembourrés.",
+        "Les vignettes PC de The Typing of the Dead: Overkill corroborent sa posture assise avant mutation ; leur résolution de 160×90 par vue ne permet pas de certifier roue, châssis, repose-pieds ni chaussures.",
+        "Le fauteuil est inclus dans la silhouette. La vue trois-quarts et les éléments inférieurs simples sont une adaptation déclarée, pas un relevé 1:1 du modèle."
+      ],
+      "remaining_work": [
+        "Les réserves de référence et d’édition restent détaillées dans le manifeste source.",
+        "Les poses, transitions et comportements de combat restent à produire.",
+        "Aucune transformation jouable ni tenue sélectionnable n’est fournie par cette base statique."
+      ],
+      "git_blob": "605d3bcbd139af60dcd5acf562ad3dd467624032"
+    },
+    {
+      "inventory_task_id": "mother_human",
+      "asset_id": "mother_human",
+      "name": "Mother — forme humaine",
+      "delivery_kind": "static_character_form_base",
+      "edition_scope": "overkill",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot4/characters/mother_human_base.png",
+      "sha256": "b134db5f45a17a49f20a83c9a79881392d30d571d8bff8f8acdbd8b37d76983b",
+      "bytes": 1576892,
+      "source_manifest": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot4/humans_generated.json",
+      "base_art_delivered": true,
+      "source_manifest_status": "static_needs_visual_reference_qa",
+      "canonical_reference_qa_complete_claim": false,
+      "playable_added": false,
+      "selectable_costume_added": false,
+      "animation_complete": false,
+      "exact_limitations": [
+        "Base statique destinée au bestiaire : aucun profil jouable, costume sélectionnable ou animation complète ajouté.",
+        "Adaptation peinte 2D contrôlée sur les éléments visibles des références ; aucune certification de fidélité 1:1.",
+        "Sortie native RGBA conservée octet pour octet ; aucun détourage, nettoyage, recadrage, redimensionnement ou réencodage de l’image générée.",
+        "Réserve visuelle ouverte : longueur exacte et finition du bas de robe, chaussures cachées, armature basse et pieds du fauteuil non suffisamment attestés ; ils restent interprétés.",
+        "Les pieds ne sont pas montrés séparément : ils sont couverts par la robe longue. Silhouette entière de la femme assise et du fauteuil, sans prétendre à une vue anatomique en pied.",
+        "Pose immobile de galerie : les porteurs et le transport de la scène sont omis. Aucun décor ni personnage supplémentaire ajouté.",
+        "La référence de contexte vient de Typing Overkill PC ; aucune uniformité des détails entre éditions certifiée."
+      ],
+      "source_notes": [
+        "La vraie cinématique fixe le visage âgé, les cheveux blancs, le voile de dentelle bordé de roses rouges, la robe ivoire jaunie, son col rond et le fauteuil rouge capitonné.",
+        "Les petites vues PC montrent robe sur les genoux et dossier haut, sans résoudre l’ourlet ni le piétement. Le cadrage entier constitue une continuation prudente et déclarée.",
+        "L’affiche Jailhouse Judgement / Mother CG render a été examinée puis écartée comme référence de visage : sa caricature décomposée ne remplace pas le modèle humain de la cinématique. Le boss muté est traité dans une fiche séparée."
+      ],
+      "remaining_work": [
+        "Les réserves de référence et d’édition restent détaillées dans le manifeste source.",
+        "Les poses, transitions et comportements de combat restent à produire.",
+        "Aucune transformation jouable ni tenue sélectionnable n’est fournie par cette base statique."
+      ],
+      "git_blob": "ae24b5290098c7f59671c6eb9c43f99dead72a6f"
+    },
+    {
+      "inventory_task_id": "sophie_zombie",
+      "asset_id": "sophie_zombie",
+      "name": "Sophie Richards — fin zombie arcade",
+      "delivery_kind": "static_character_form_base",
+      "edition_scope": "hotd",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot4/characters/sophie_zombie_base.png",
+      "sha256": "95b5b6081400d19ba977762acb482caba4f2dc5fa5ffee95f9605dfca43e9b1a",
+      "bytes": 1501032,
+      "source_manifest": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot4/humans_generated.json",
+      "base_art_delivered": true,
+      "source_manifest_status": "static_needs_visual_reference_qa",
+      "canonical_reference_qa_complete_claim": false,
+      "playable_added": false,
+      "selectable_costume_added": false,
+      "animation_complete": false,
+      "exact_limitations": [
+        "Base statique destinée au bestiaire : aucun profil jouable, costume sélectionnable ou animation complète ajouté.",
+        "Adaptation peinte 2D contrôlée sur les éléments visibles des références ; aucune certification de fidélité 1:1.",
+        "Sortie native RGBA conservée octet pour octet ; aucun détourage, nettoyage, recadrage, redimensionnement ou réencodage de l’image générée.",
+        "Réserve visuelle ouverte : visage et yeux de la fin seulement visibles dans une vignette de 231×180 pixels ; teinte, décoloration et texture ne sont pas certifiées au pixel près.",
+        "Chaussures, traitement des bas, détails d’accroche et lettrage DBR du badge insuffisamment résolus. La forme et la couleur sobres du dessin ne valent pas preuve canonique de finition.",
+        "Cette forme n’éteint pas le contrôle d’une éventuelle variante de fin Saturn/Windows ou du remake. Aucune animation de transformation ni nouvelle forme jouable."
+      ],
+      "source_notes": [
+        "La fin de l’arcade originale est la référence de cette forme ; les versions Saturn/Windows à peau verte et les remakes ne sont pas utilisées.",
+        "Les deux vignettes de la fin attestent le changement du visage et la continuité du tailleur. La capture arcade où Sophie est portée fournit un appui pour jupe, jambes et chaussures, sans attester leur finition fine.",
+        "Le tailleur rouge sombre, la chemise blanche, les cheveux courts et le badge proviennent du modèle original déjà documenté ; pose, détails du visage, iris blanchâtres et typographie du badge restent une adaptation peinte des petits éléments visibles."
+      ],
+      "remaining_work": [
+        "Les réserves de référence et d’édition restent détaillées dans le manifeste source.",
+        "Les poses, transitions et comportements de combat restent à produire.",
+        "Aucune transformation jouable ni tenue sélectionnable n’est fournie par cette base statique."
+      ],
+      "git_blob": "8de170136ec0b8f91a830582f0502ccf1c109f35"
+    },
+    {
+      "inventory_task_id": "goldman_zombie",
+      "asset_id": "goldman_zombie",
+      "name": "Goldman — fin zombie HOTD2",
+      "delivery_kind": "static_character_form_base",
+      "edition_scope": "hotd2",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot4/characters/goldman_zombie_base.png",
+      "sha256": "b263803234594a48b4087dd12dcdf7496bf77c2e0826a2e4663f59a34f77e1ec",
+      "bytes": 1906657,
+      "source_manifest": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot4/humans_generated.json",
+      "base_art_delivered": true,
+      "source_manifest_status": "static_reference_reviewed",
+      "canonical_reference_qa_complete_claim": false,
+      "playable_added": false,
+      "selectable_costume_added": false,
+      "animation_complete": false,
+      "exact_limitations": [
+        "Base statique destinée au bestiaire : aucun profil jouable, costume sélectionnable ou animation complète ajouté.",
+        "Adaptation peinte 2D contrôlée sur les éléments visibles des références ; aucune certification de fidélité 1:1.",
+        "Sortie native RGBA conservée octet pour octet ; aucun détourage, nettoyage, recadrage, redimensionnement ou réencodage de l’image générée.",
+        "Textures fines, emplacement exact de chaque tache, proportions et pose restent adaptés au style peint ; aucune certification de conformité 1:1.",
+        "Le port précis des deux captures originales n’est pas établi. Cette fiche ne certifie aucune variante propre à Dreamcast, PC ou arcade, ni le retour de Goldman dans HOTD4.",
+        "Aucune animation de la fin ni nouvelle forme jouable ; peau et lésions restent celles d’une illustration de galerie."
+      ],
+      "source_notes": [
+        "Deux captures de la fin originale ont été inspectées, dont une vue entière de la tête aux chaussures. Elles fixent la palette et les principaux motifs de la tenue dégradée.",
+        "Peau grise verdâtre, petites lunettes sombres, blessures discrètes du visage, veste brun-violet tachée, chemise claire, cravate cuivrée, pantalon sombre et chaussures brun clair ont été comparés au rendu.",
+        "La revue indépendante de root n’a relevé aucun écart bloquant des grands motifs. Les yeux rouges de HOTD4 et les designs de remake ne sont pas repris."
+      ],
+      "remaining_work": [
+        "Les réserves de référence et d’édition restent détaillées dans le manifeste source.",
+        "Les poses, transitions et comportements de combat restent à produire.",
+        "Aucune transformation jouable ni tenue sélectionnable n’est fournie par cette base statique."
+      ],
+      "git_blob": "b6b6af5d1447faebbd391661de0ac138f3bfac33"
+    },
+    {
+      "inventory_task_id": "nigel_sebastian",
+      "asset_id": "nigel_sebastian",
+      "name": "Nigel & Sebastian",
+      "delivery_kind": "boss_static_base",
+      "edition_scope": "overkill",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot4/bosses/nigel_sebastian_base.png",
+      "sha256": "d6f52171ae57e4baa69601346fa823e5cc78ea4ed1a1ebcb33f94b12610369f5",
+      "bytes": 1139398,
+      "source_manifest": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot4/bosses_generated.json",
+      "base_art_delivered": true,
+      "source_manifest_status": "static_reference_reviewed",
+      "canonical_reference_qa_complete_claim": false,
+      "playable_added": false,
+      "selectable_costume_added": false,
+      "animation_complete": false,
+      "exact_limitations": [
+        "Une illustration statique de bestiaire ; aucun combattant jouable, cycle d’animation ou comportement de combat fourni.",
+        "Rendu peint, pose et textures adaptés au projet ; aucune certification canonique 1:1 ou équivalence pixel à pixel.",
+        "Revue des PNG hors moteur. Aucune capture native du jeu du projet ni nouveau test moteur effectué par ce reçu.",
+        "Le volume musculaire, les plis et les petits membres sont réinterprétés par le rendu peint.",
+        "La plateforme d’origine de la capture du Gamers Library n’est pas authentifiée ; aucune équivalence exhaustive Wii/PS3/PC n’est fermée."
+      ],
+      "source_notes": [
+        "Une seule anatomie conjointe, deux têtes adultes : les jumeaux ne sont pas artificiellement séparés en deux PNG.",
+        "Le rendu de Rick Nath sert à la silhouette entière ; les captures Extended Cut servent aux bras plus massifs et aux plaques de cheveux sombres de Sebastian.",
+        "Correction de provenance : le prompt désigne la capture du Gamers Library comme PS3 ; son hôte est un article PC et sa plateforme précise n’est pas prouvée. Son apparence Extended Cut a été croisée avec une capture du guide PS3 effectivement inspectée."
+      ],
+      "remaining_work": [
+        "Les réserves de référence et d’édition restent détaillées dans le manifeste source.",
+        "Les poses, transitions et comportements de combat restent à produire.",
+        "Aucune transformation jouable ni tenue sélectionnable n’est fournie par cette base statique."
+      ],
+      "git_blob": "acbf7dd448c5a33c7da14c6cf7636a211bee4885"
+    },
+    {
+      "inventory_task_id": "lobber",
+      "asset_id": "lobber",
+      "name": "Lobber",
+      "delivery_kind": "boss_static_base",
+      "edition_scope": "overkill",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot4/bosses/lobber_base.png",
+      "sha256": "9c37b22b798cdd67570cf3cc7db6b76127c087a9ac2dc3cd7251bd448aec804d",
+      "bytes": 1601057,
+      "source_manifest": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot4/bosses_generated.json",
+      "base_art_delivered": true,
+      "source_manifest_status": "static_reference_reviewed",
+      "canonical_reference_qa_complete_claim": false,
+      "playable_added": false,
+      "selectable_costume_added": false,
+      "animation_complete": false,
+      "exact_limitations": [
+        "Une illustration statique de bestiaire ; aucun combattant jouable, cycle d’animation ou comportement de combat fourni.",
+        "Rendu peint, pose et textures adaptés au projet ; aucune certification canonique 1:1 ou équivalence pixel à pixel.",
+        "Revue des PNG hors moteur. Aucune capture native du jeu du projet ni nouveau test moteur effectué par ce reçu.",
+        "La révision exacte du modèle entier, Wii ou Extended Cut, n’est pas authentifiée.",
+        "Épaisseur/pliage du textile et surface de peau interprétés ; aucun détail 1:1 garanti."
+      ],
+      "source_notes": [
+        "Le rendu entier trouvé et inspecté montre les deux pieds, les deux mains au sol et les bandes du ventre/entrejambe.",
+        "Les captures du marais seules ne suffisaient pas à dessiner le bas du corps ; aucune patte de grenouille n’a été inventée.",
+        "La fiche Extended Cut confirme les grosses poches sous le menton et les reliefs du corps."
+      ],
+      "remaining_work": [
+        "Les réserves de référence et d’édition restent détaillées dans le manifeste source.",
+        "Les poses, transitions et comportements de combat restent à produire.",
+        "Aucune transformation jouable ni tenue sélectionnable n’est fournie par cette base statique."
+      ],
+      "git_blob": "9513fb3781dfd25e51240c14daa3316554ee1b4a"
+    },
+    {
+      "inventory_task_id": "coco_sindy",
+      "asset_id": "coco",
+      "name": "Coco",
+      "delivery_kind": "boss_static_base",
+      "edition_scope": "overkill",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot4/bosses/coco_base.png",
+      "sha256": "c9a1a358e908868f74d325cb3054b0a9f0955fd2b217ae257a99038da920e3e0",
+      "bytes": 1148566,
+      "source_manifest": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot4/bosses_generated.json",
+      "base_art_delivered": true,
+      "source_manifest_status": "static_reference_reviewed",
+      "canonical_reference_qa_complete_claim": false,
+      "playable_added": false,
+      "selectable_costume_added": false,
+      "animation_complete": false,
+      "exact_limitations": [
+        "Une illustration statique de bestiaire ; aucun combattant jouable, cycle d’animation ou comportement de combat fourni.",
+        "Rendu peint, pose et textures adaptés au projet ; aucune certification canonique 1:1 ou équivalence pixel à pixel.",
+        "Revue des PNG hors moteur. Aucune capture native du jeu du projet ni nouveau test moteur effectué par ce reçu.",
+        "L’appui lointain est rendu plus visible que sur le modèle source ; la pose n’est pas un calque.",
+        "Les captures de la fiche d’identification et du combat appartiennent à la famille visuelle Extended Cut/Typing ; leur plateforme exacte n’est pas affirmée."
+      ],
+      "source_notes": [
+        "Coco est la petite créature rampante aux doigts très longs et aux ongles verts ; elle n’est pas Sindy.",
+        "Premier essai écarté : le pied arrière lointain était absent ou illisible.",
+        "Correction ciblée par ImageGen : dégager le pied lointain derrière l’avant-bras gauche de l’image, conserver deux bras et deux jambes au total.",
+        "La vue corrigée garde visage déformé, langue, coiffure, costume et griffes ; la pose est légèrement reconstruite pour la lisibilité du quatrième appui."
+      ],
+      "remaining_work": [
+        "Les réserves de référence et d’édition restent détaillées dans le manifeste source.",
+        "Les poses, transitions et comportements de combat restent à produire.",
+        "Aucune transformation jouable ni tenue sélectionnable n’est fournie par cette base statique."
+      ],
+      "git_blob": "27b07b004260e8c911336fb0b8decf11734f553c"
+    },
+    {
+      "inventory_task_id": "coco_sindy",
+      "asset_id": "sindy",
+      "name": "Sindy",
+      "delivery_kind": "boss_static_base",
+      "edition_scope": "overkill",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot4/bosses/sindy_base.png",
+      "sha256": "f4f6e8b3250d4b25a2ad4bcf3784fdc609b20a411fd08b95ce0a5d68bd64498a",
+      "bytes": 1434048,
+      "source_manifest": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot4/bosses_generated.json",
+      "base_art_delivered": true,
+      "source_manifest_status": "static_reference_reviewed",
+      "canonical_reference_qa_complete_claim": false,
+      "playable_added": false,
+      "selectable_costume_added": false,
+      "animation_complete": false,
+      "exact_limitations": [
+        "Une illustration statique de bestiaire ; aucun combattant jouable, cycle d’animation ou comportement de combat fourni.",
+        "Rendu peint, pose et textures adaptés au projet ; aucune certification canonique 1:1 ou équivalence pixel à pixel.",
+        "Revue des PNG hors moteur. Aucune capture native du jeu du projet ni nouveau test moteur effectué par ce reçu.",
+        "La pose du modèle rendu est reconstruite en position debout pour la galerie.",
+        "Les détails de peau et l’échelle absolue de combat ne sont pas reproduits pixel à pixel."
+      ],
+      "source_notes": [
+        "Sindy est la grande créature ; le guide PS3 distingue explicitement Coco, petite, et Sindy, massive.",
+        "Coiffure à mèche magenta, vernis, costume assorti, proportions massives et pieds nus contrôlés sur le modèle entier.",
+        "Une seule créature dans ce PNG ; Coco possède son image propre et partage encounter_id."
+      ],
+      "remaining_work": [
+        "Les réserves de référence et d’édition restent détaillées dans le manifeste source.",
+        "Les poses, transitions et comportements de combat restent à produire.",
+        "Aucune transformation jouable ni tenue sélectionnable n’est fournie par cette base statique."
+      ],
+      "git_blob": "09c072194ace37834fedf9d2ff16628785ea4fe2"
+    },
+    {
+      "inventory_task_id": "meat_katie",
+      "asset_id": "meat_katie",
+      "name": "Meat Katie",
+      "delivery_kind": "boss_static_base",
+      "edition_scope": "overkill",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot4/bosses/meat_katie_base.png",
+      "sha256": "bd456fcc72f220bb14f3e79aaaab7b39d594e55cad1d6cb2eb042c04552272f6",
+      "bytes": 1230904,
+      "source_manifest": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot4/bosses_generated.json",
+      "base_art_delivered": true,
+      "source_manifest_status": "static_reference_reviewed",
+      "canonical_reference_qa_complete_claim": false,
+      "playable_added": false,
+      "selectable_costume_added": false,
+      "animation_complete": false,
+      "exact_limitations": [
+        "Une illustration statique de bestiaire ; aucun combattant jouable, cycle d’animation ou comportement de combat fourni.",
+        "Rendu peint, pose et textures adaptés au projet ; aucune certification canonique 1:1 ou équivalence pixel à pixel.",
+        "Revue des PNG hors moteur. Aucune capture native du jeu du projet ni nouveau test moteur effectué par ce reçu.",
+        "Pose et géométrie fine du couperet, du crâne et du pied altéré adaptées au rendu peint.",
+        "La référence du bas du corps est une vignette de320x180 ; la forme générale est vérifiée, les petits détails de sabot/orteils ne sont pas certifiés."
+      ],
+      "source_notes": [
+        "L’annonce officielle SEGA/PlayStation décrit l’hybride humain-vache et son grand couperet ; l’affiche intégrée a été récupérée intacte depuis le CDN public Flickr.",
+        "Crâne à cornes, tablier, ceinture, gants et couperet contrôlés sur la capture de combat.",
+        "La planche vidéo PS3 montre la botte droite et le pied gauche transformé ; aucun HUD, projectile, victime ou décor ne figure dans le PNG."
+      ],
+      "remaining_work": [
+        "Les réserves de référence et d’édition restent détaillées dans le manifeste source.",
+        "Les poses, transitions et comportements de combat restent à produire.",
+        "Aucune transformation jouable ni tenue sélectionnable n’est fournie par cette base statique."
+      ],
+      "git_blob": "fd8601c3c9e4dcde3bbe982196148dd354a36317"
+    }
+  ],
+  "previous_batches_inventory_task_ids": [
+    "amy",
+    "brutus",
+    "candi",
+    "clement",
+    "crawler",
+    "curien",
+    "fool",
+    "g_hotd3",
+    "g_hotd4special",
+    "g_overkill",
+    "gary_typing",
+    "goldman_human",
+    "hangedman",
+    "harry",
+    "hermit",
+    "high_priestess",
+    "james_hotd4",
+    "james_typing",
+    "judgment",
+    "papa_caesar",
+    "rogan_hotd3",
+    "screamer",
+    "sophie",
+    "strength",
+    "sun",
+    "thornheart",
+    "tower",
+    "varla"
+  ],
+  "this_batch_inventory_task_ids": [
+    "coco_sindy",
+    "goldman_zombie",
+    "jasper_human",
+    "lobber",
+    "meat_katie",
+    "mother_human",
+    "nigel_sebastian",
+    "sophie_zombie"
+  ],
+  "cumulative_covered_inventory_task_ids": [
+    "amy",
+    "brutus",
+    "candi",
+    "clement",
+    "coco_sindy",
+    "crawler",
+    "curien",
+    "fool",
+    "g_hotd3",
+    "g_hotd4special",
+    "g_overkill",
+    "gary_typing",
+    "goldman_human",
+    "goldman_zombie",
+    "hangedman",
+    "harry",
+    "hermit",
+    "high_priestess",
+    "james_hotd4",
+    "james_typing",
+    "jasper_human",
+    "judgment",
+    "lobber",
+    "meat_katie",
+    "mother_human",
+    "nigel_sebastian",
+    "papa_caesar",
+    "rogan_hotd3",
+    "screamer",
+    "sophie",
+    "sophie_zombie",
+    "strength",
+    "sun",
+    "thornheart",
+    "tower",
+    "varla"
+  ],
+  "uncovered_inventory_task_ids_after_four_batches": [
+    "bart_picard",
+    "dan_taylor",
+    "ex_unverified_cameos",
+    "g_saturn2",
+    "hotd2_remake_redesigns",
+    "hotd_remake_redesigns",
+    "linda_alts",
+    "mobile_nightmare_roster",
+    "mother",
+    "original_model_amy",
+    "original_model_bruno",
+    "original_model_civilian",
+    "original_model_g",
+    "original_model_goldman",
+    "original_model_harry",
+    "original_model_rogan",
+    "reawakened_roster",
+    "researcher_saturn",
+    "rikiya_alts",
+    "rogan_saturn2",
+    "site_doctor",
+    "sophie_saturn",
+    "stick_alts",
+    "typing2004_kids",
+    "typing2_player_equipment",
+    "yukio"
+  ],
+  "explicit_reference_qa_open_ids_this_batch": [
+    "jasper_human",
+    "mother_human",
+    "sophie_zombie"
+  ],
+  "explicit_reference_qa_open_ids_among_four_batches_only": [
+    "candi_stryper",
+    "clement_darling",
+    "jasper_human",
+    "mother_human",
+    "papa_caesar",
+    "sophie_richards",
+    "sophie_zombie",
+    "thornheart",
+    "varla_guns"
+  ],
+  "known_edition_gaps_not_closed": [
+    "Hangedman Scarlet Dawn : la base du premier jeu livrée au lot1 ne valide pas son redesign.",
+    "Tower : seule l’arène souterraine en eau est livrée ; variante sable et retour chez Goldman encore ouverts.",
+    "Strength : parcours aux murs clairs adapté ; autres embranchements et murs sombres encore ouverts.",
+    "Typing : équipement classique documenté ; région du logo, ports Mac/PS2, Typing2 et Kids2004 non clos.",
+    "Lovers, Empress, Temperance et Star disposent de bases sous EX ; comparaison des modèles HOTD4 encore ouverte.",
+    "Original Mode : les sept substitutions de modèles restent des tâches de mode, pas sept nouvelles identités."
+  ],
+  "new_pngs": [
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot4/characters/jasper_human_base.png",
+      "kind": "gallery",
+      "asset_id": "jasper_human",
+      "bytes": 1137291,
+      "sha256": "eaf4f3e5024b872e2467e789a6f5ff09d8b8646842db5bcad700270a64cb6701",
+      "git_blob": "605d3bcbd139af60dcd5acf562ad3dd467624032",
+      "dimensions": [
+        1199,
+        1312
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot4/characters/mother_human_base.png",
+      "kind": "gallery",
+      "asset_id": "mother_human",
+      "bytes": 1576892,
+      "sha256": "b134db5f45a17a49f20a83c9a79881392d30d571d8bff8f8acdbd8b37d76983b",
+      "git_blob": "ae24b5290098c7f59671c6eb9c43f99dead72a6f",
+      "dimensions": [
+        1199,
+        1312
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot4/characters/sophie_zombie_base.png",
+      "kind": "gallery",
+      "asset_id": "sophie_zombie",
+      "bytes": 1501032,
+      "sha256": "95b5b6081400d19ba977762acb482caba4f2dc5fa5ffee95f9605dfca43e9b1a",
+      "git_blob": "8de170136ec0b8f91a830582f0502ccf1c109f35",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot4/characters/goldman_zombie_base.png",
+      "kind": "gallery",
+      "asset_id": "goldman_zombie",
+      "bytes": 1906657,
+      "sha256": "b263803234594a48b4087dd12dcdf7496bf77c2e0826a2e4663f59a34f77e1ec",
+      "git_blob": "b6b6af5d1447faebbd391661de0ac138f3bfac33",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot4/bosses/nigel_sebastian_base.png",
+      "kind": "gallery",
+      "asset_id": "nigel_sebastian",
+      "bytes": 1139398,
+      "sha256": "d6f52171ae57e4baa69601346fa823e5cc78ea4ed1a1ebcb33f94b12610369f5",
+      "git_blob": "acbf7dd448c5a33c7da14c6cf7636a211bee4885",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot4/bosses/lobber_base.png",
+      "kind": "gallery",
+      "asset_id": "lobber",
+      "bytes": 1601057,
+      "sha256": "9c37b22b798cdd67570cf3cc7db6b76127c087a9ac2dc3cd7251bd448aec804d",
+      "git_blob": "9513fb3781dfd25e51240c14daa3316554ee1b4a",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot4/bosses/coco_base.png",
+      "kind": "gallery",
+      "asset_id": "coco",
+      "bytes": 1148566,
+      "sha256": "c9a1a358e908868f74d325cb3054b0a9f0955fd2b217ae257a99038da920e3e0",
+      "git_blob": "27b07b004260e8c911336fb0b8decf11734f553c",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot4/bosses/sindy_base.png",
+      "kind": "gallery",
+      "asset_id": "sindy",
+      "bytes": 1434048,
+      "sha256": "f4f6e8b3250d4b25a2ad4bcf3784fdc609b20a411fd08b95ce0a5d68bd64498a",
+      "git_blob": "09c072194ace37834fedf9d2ff16628785ea4fe2",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot4/bosses/meat_katie_base.png",
+      "kind": "gallery",
+      "asset_id": "meat_katie",
+      "bytes": 1230904,
+      "sha256": "bd456fcc72f220bb14f3e79aaaab7b39d594e55cad1d6cb2eb042c04552272f6",
+      "git_blob": "fd8601c3c9e4dcde3bbe982196148dd354a36317",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/saga/hangedman_roof_back.png",
+      "kind": "stage",
+      "asset_id": "hangedman_roof_back",
+      "bytes": 2528424,
+      "sha256": "4cbf2ea7f0666e109445f4c54304d84e2ce2e71257ade9680e72e15a97c195cd",
+      "git_blob": "c6921a62c820a64ddcb0f16ab0a57a609464a5b9",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/dossier_curien/saga/hangedman_roof_mid.png",
+      "kind": "stage",
+      "asset_id": "hangedman_roof_mid",
+      "bytes": 421462,
+      "sha256": "0801432ac99203cbf88452f8f2f9e5081a865da31c7a0611406f96882c2ff7b0",
+      "git_blob": "895d430b3cdc19c8d6137ad4160e0a653d33cad7",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/saga/hangedman_roof_front.png",
+      "kind": "stage",
+      "asset_id": "hangedman_roof_front",
+      "bytes": 93863,
+      "sha256": "83e1169ccb05ea4a2d2867be1006ce2aa8b7002d50dd3b7a1c0054fb4fb951e8",
+      "git_blob": "0e43b985e1ddd7eaaa8ca985070fba2a6f428727",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/saga/hermit_dome_back.png",
+      "kind": "stage",
+      "asset_id": "hermit_dome_back",
+      "bytes": 2863113,
+      "sha256": "d0c0a66a3de8a87259a5f95f7eed0160f14e072dcaaa6a303d3581820b7b8651",
+      "git_blob": "eea2ba718f6d5ebe64d86c36b12ab80acad61e1c",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/dossier_curien/saga/hermit_dome_mid.png",
+      "kind": "stage",
+      "asset_id": "hermit_dome_mid",
+      "bytes": 281253,
+      "sha256": "83c3fdaeb21d801b2236bad60aa599e4ebce8f44ed1e0a5eed1463399368dc79",
+      "git_blob": "36e11638c9c06998d5953384a6f52f476154db23",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/saga/hermit_dome_front.png",
+      "kind": "stage",
+      "asset_id": "hermit_dome_front",
+      "bytes": 88592,
+      "sha256": "2e5bbf40c62f1ca7a06c599fc08af650ee05a8df9b6766f50f15e6db183afd4f",
+      "git_blob": "216a6589bc064ab83011d038d5bbb527379ab86d",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA"
+    }
+  ],
+  "rejected_outputs": [
+    {
+      "source_manifest": "bosses_generated.json",
+      "id": "coco_missing_far_hind_foot",
+      "asset_id": "coco",
+      "native_basename": "exec-e128c891-5f52-42c2-a5bc-1156f51d7c2a.png",
+      "reason": "Far hind leg/foot absent or unreadable: only two front hands and one rear foot clearly visible.",
+      "binary_in_repository": false,
+      "prompt_index": 0,
+      "sha256": "71f14b511915b7700c5bec26cf9d78e36b4ff6854087751863b202d4e46854ac",
+      "bytes": 1226076,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "prompt": "Use case: stylized-concept. Asset type: ONE static bestiary/gallery sprite master for the existing Dossier Curien 2D game. Native square 1024x1024 transparent RGBA image, entire creature visible and centered with at least 7 percent transparent margins around every extremity. Fine hand-painted arcade sprite shading, crisp readable contours, restrained texture, dimensional anatomy matching the final Isaac style reference. No background, scene, floor, cast shadow blob, border, white outline, words, HUD, labels, title, watermark, duplicate view, victim, attack effects or particles. The final image of Isaac defines ONLY brushwork, contour clarity and painted material shading; do NOT borrow his anatomy, clothes or weapon. Preserve the depicted creature instead of inventing a redesign. This is a referenced 2D adaptation, not an exact official asset.\nINPUTS: Image 1 is the full Coco game-model render and controls her exact anatomy, shape, proportion and visible costume. Image 2 is the PS3 Coco and Sindy identification page: use only the SMALL thin creature at left, not the huge Sindy at right; the concept sketches help confirm Coco's skeletal hands. Image 3 is STYLE ONLY.\nSUBJECT: Coco from The House of the Dead Overkill Extended Cut, the small grotesque ADULT female mutant paired with Sindy. ONE creature only, in the same low four-limbed crawling pose and slightly frontal three-quarter angle as image 1. Preserve the oversized angular adult head and greatly distended mouth, huge protruding eyes in uneven sockets, long broad tongue curving downward, sparse short dark hair spike and torn hair strands, emaciated wiry torso, TWO very long thin arms ending in outsized clawlike hands with long green-painted fingernails; TWO bent legs trailing behind with their own distinct feet as in the original. The visible green straps/top and minimal opaque green costume fragments must follow the render, with pelvis covered. Use the original asymmetric face and gaunt segmented anatomy, not a pretty human face, child proportions, spider body or a generic zombie. Dirty tan/brown skin with muted gray mottling; restrained texture and dark mouth, no extra wounds, dripping blood, saliva or fluids. Keep clear negative space between all FOUR connected limbs, count two hands and two feet. Preserve the broad foreground hand as in the reference without adding extra limbs or duplicate feet. Entire scalp spike, tongue, all fingers, both feet visible with transparent margin. No pole, no Sindy, no sewer, no HUD, no labels.",
+      "prompt_sha256_utf8": "4a1a62601e6f8420353a754eb024f9124ec60a897fa9a3e374cd0f75bee7f15f",
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/wiki_Coco_render.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/wiki_Coco_and_Sindy_weakpoint.jpg",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "replacement_path": "assets/dossier_curien/gallery_2026-11-20_lot4/bosses/coco_base.png",
+      "storage_note": "Native generated image remains outside the repository; no rejected PNG was placed in docs or assets."
+    }
+  ],
+  "blocked_generations": [
+    {
+      "source_manifest": "bosses_generated.json",
+      "id": "mother_boss_output_moderation",
+      "asset_id": "mother_boss",
+      "stage": "output",
+      "http_status": 400,
+      "code": "moderation_blocked",
+      "categories": [
+        "sexual"
+      ],
+      "request_id": "2fdaa80a-e0ca-4006-942d-cc7c716598f4",
+      "png_produced": false,
+      "active_entry_created": false,
+      "prompt_index": 0,
+      "reason": "ImageGen output safety system rejected the generated output under sexual category. No native image was returned. No equivalent retry performed.",
+      "name": "Mother — forme mutée finale",
+      "game": "overkill",
+      "encounter_id": "mother",
+      "status": "missing_base_generation_blocked",
+      "prompt": "Use case: stylized-concept. Asset type: ONE static bestiary/gallery sprite master for the existing Dossier Curien 2D game. Native square 1024x1024 transparent RGBA image, entire creature visible and centered with at least 7 percent transparent margins around every extremity. Fine hand-painted arcade sprite shading, crisp readable contours, restrained texture, dimensional anatomy matching the final Isaac style reference. No background, scene, floor, cast shadow blob, border, white outline, words, HUD, labels, title, watermark, duplicate view, victim, attack effects or particles. The final image of Isaac defines ONLY brushwork, contour clarity and painted material shading; do NOT borrow his anatomy, clothes or weapon. Preserve the depicted creature instead of inventing a redesign. This is a referenced 2D adaptation, not an exact official asset.\nINPUTS: Images 1 and 2 are sheets of PS3 Extended Cut video thumbnails, not layout templates. The BOTTOM-CENTER cell of image 1 and MIDDLE-RIGHT cell of image 2 show the entire tall MUTATED MOTHER including both legs and feet: use those silhouettes and body proportions. Image 3 is the PS3 in-game identification sheet; use its photographs of her face, huge rounded brain lobes, long tongue and sagging chest, but none of its page layout, labels or markings. Image 4 is the PS3 combat close-up showing the closed layered ventral appendage and hands. Image 5 is STYLE ONLY. Do not confuse this mutant form with the elderly human woman in a bridal dress or with Varla's normal human form.\nSUBJECT: Fully mutated Mother, the giant final boss from The House of the Dead Overkill Extended Cut. ONE complete fictional ADULT monster in a neutral static bestiary stance, frontal slightly three-quarter view; entire head mass, both hands, legs and feet visible. Lean towering humanoid proportions with long thin legs and very long slender arms ending in enormous bony hands and elongated clawlike fingers. A relatively small mature female face with white eyes, an unhinged long mouth and one long dull reddish tongue hanging down to the upper torso. The gigantic clustered rounded brain lobes grow behind and around the head and merge into the upper back, preserving the silhouette from the game, not a flower crown or a wig. Pallid gray-tan to slate skin with dark folds and restrained mottling, sculpted bony sternum and rib/abdominal forms. Preserve the adult monster's sagging chest in a neutral anatomical way, without emphasis. Preserve the broad thick layered ventral/tail apron folded fully CLOSED over the pelvis, as in the PS3 close-up, fully concealing the crotch; no opening, exposed genitals, birth action or sexual scene. Two long legs stand apart in a slightly hunched stance; both broad slender bare feet rest flat, toes entirely visible. Arms lowered outward enough that each huge hand remains separate from the legs; no throwing gesture, props, victims or tiny mutants. Keep the lanky limbs and massive upper-head cluster from the gameplay; do not transform her into a bulky ogre, generic zombie, insect, spider or attractive human. No added blood, wounds, drips or viscera. No extra limb, duplicate character, clothing invented from another form, background, labels, HUD or target marks. Crisp entire silhouette, transparent background.",
+      "prompt_sha256_utf8": "a105427b192b36f83d535a857e91cf7d0656cd5d97921253d7cefc013b9c2f7e",
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/ps3_video_storyboard_12.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/ps3_video_storyboard_13.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/wiki_Mother_weakpoint.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/stage9_boss9-2.jpg",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "reference_inputs": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/ps3_video_storyboard_12.jpg",
+          "source_page": "https://www.youtube.com/watch?v=X4r5zGgNbW8",
+          "source_kind": "secondary_public_video_storyboard",
+          "edition": "PS3 Extended Cut according to uploader GetRektNoob (2024-01-12)",
+          "role": "Native public nine-thumbnail sheet; bottom-center whole-body Mother view used in blocked generation only.",
+          "sha256": "46d25e4835055809a1c7e2066aed202896db6c7ae1576e6408a923c18b0db5b9",
+          "bytes": 32324,
+          "dimensions": [
+            960,
+            540
+          ],
+          "mode": "RGB",
+          "download_date": "2026-11-20",
+          "inspected_before_acceptance": true,
+          "used_as_imagegen_input": true,
+          "used_for_accepted_asset": false,
+          "used_for_blocked_attempt_only": true,
+          "source_pixels_unmodified": true,
+          "media_url": "https://i.ytimg.com/sb/X4r5zGgNbW8/storyboard3_L3/M12.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgjb7YetBg==&sigh=rs$AOn4CLCsHR5KCPLHr2n9BvDmTVz8_WTrrg",
+          "public_storyboard_fragment_index": 12,
+          "sheet_start_seconds": 1065.876923076923,
+          "sheet_duration_seconds": 88.82307692307693,
+          "grid_columns": 3,
+          "grid_rows": 3,
+          "cell_dimensions": [
+            320,
+            180
+          ],
+          "downloaded_video_excerpt": false,
+          "video_publication_date": "2024-01-12",
+          "video_channel": "GetRektNoob"
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/ps3_video_storyboard_13.jpg",
+          "source_page": "https://www.youtube.com/watch?v=X4r5zGgNbW8",
+          "source_kind": "secondary_public_video_storyboard",
+          "edition": "PS3 Extended Cut according to uploader GetRektNoob (2024-01-12)",
+          "role": "Native public nine-thumbnail sheet; middle-right whole-body Mother view used in blocked generation only. Distal detail limited by320x180 cells.",
+          "sha256": "b12199e11354a05f7b4d1f641c34af9a421220fd0bcc5f4d005ba0ac0cfb0981",
+          "bytes": 36406,
+          "dimensions": [
+            960,
+            540
+          ],
+          "mode": "RGB",
+          "download_date": "2026-11-20",
+          "inspected_before_acceptance": true,
+          "used_as_imagegen_input": true,
+          "used_for_accepted_asset": false,
+          "used_for_blocked_attempt_only": true,
+          "source_pixels_unmodified": true,
+          "media_url": "https://i.ytimg.com/sb/X4r5zGgNbW8/storyboard3_L3/M13.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgjb7YetBg==&sigh=rs$AOn4CLCsHR5KCPLHr2n9BvDmTVz8_WTrrg",
+          "public_storyboard_fragment_index": 13,
+          "sheet_start_seconds": 1154.7,
+          "sheet_duration_seconds": 88.82307692307693,
+          "grid_columns": 3,
+          "grid_rows": 3,
+          "cell_dimensions": [
+            320,
+            180
+          ],
+          "downloaded_video_excerpt": false,
+          "video_publication_date": "2024-01-12",
+          "video_channel": "GetRektNoob"
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/wiki_Mother_weakpoint.jpg",
+          "source_page": "https://thehouseofthedead.fandom.com/wiki/Weak_points",
+          "media_url": "https://static.wikia.nocookie.net/houseofthedead/images/f/f5/Mother_weakpoint.jpg/revision/latest",
+          "source_kind": "secondary_hosted_ingame_identification_sheet",
+          "edition": "Extended Cut in-game identification",
+          "role": "Mutated Mother face, brain masses and long tongue, used in blocked generation only; not the human Mother.",
+          "sha256": "4bc1821388614be615c661473cac31efe3a5e9a2589c7bb71d247dd4bde10da5",
+          "bytes": 250022,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "mode": "RGB",
+          "download_date": "2026-11-20",
+          "inspected_before_acceptance": true,
+          "used_as_imagegen_input": true,
+          "used_for_accepted_asset": false,
+          "used_for_blocked_attempt_only": true,
+          "source_pixels_unmodified": true
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot4/bosses/stage9_boss9-2.jpg",
+          "source_page": "https://www.k-triggerhappy.com/hodoverkill_ps3/stage9.html",
+          "media_url": "https://www.k-triggerhappy.com/hodoverkill_ps3/boss9-2.jpg",
+          "source_kind": "secondary_hosted_ps3_gameplay_capture",
+          "edition": "PS3 Extended Cut",
+          "role": "Mutated Mother closed ventral appendage and raised-foot stance, used in blocked generation only.",
+          "sha256": "061949ac6ddbd86a74177bf2d75950702844e3d5d29df811915d7865f209b25f",
+          "bytes": 23836,
+          "dimensions": [
+            750,
+            420
+          ],
+          "mode": "RGB",
+          "download_date": "2026-11-20",
+          "inspected_before_acceptance": true,
+          "used_as_imagegen_input": true,
+          "used_for_accepted_asset": false,
+          "used_for_blocked_attempt_only": true,
+          "source_pixels_unmodified": true
+        },
+        {
+          "path": "assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "bytes": 595313,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "source_kind": "existing_project_style",
+          "role": "Existing Dossier Curien painted shading and contour clarity only; not an identity reference.",
+          "inspected_before_acceptance": true,
+          "used_as_imagegen_input": true
+        }
+      ],
+      "sources": [
+        "https://www.youtube.com/watch?v=X4r5zGgNbW8",
+        "https://thehouseofthedead.fandom.com/wiki/Weak_points",
+        "https://www.k-triggerhappy.com/hodoverkill_ps3/stage9.html"
+      ],
+      "limitations": [
+        "Aucun PNG renvoyé : aucune fiche active et aucune lacune fermée pour Mother mutée.",
+        "Les deux planches vidéo publiques donnent une silhouette entière, mais les vues unitaires font320x180 et ne certifient pas les détails des pieds ou l’échelle.",
+        "Aucun extrait vidéo téléchargé : la tentative MP4 a renvoyé403. Les planches sont des vignettes publiques intactes, pas des captures natives produites par cet agent.",
+        "Le prompt demandait une pose de bestiaire non sexuelle et un appendice ventral fermé ; la sortie a néanmoins été bloquée par le contrôle automatique. Aucune relance équivalente ni version habillée inventée."
+      ]
+    }
+  ],
+  "verification": {
+    "all_retained_image_bytes_match_generation_outputs": true,
+    "all_size_dimension_mode_and_sha_receipts_match": true,
+    "all_new_png_paths_and_blobs_are_new": true,
+    "all_baseline_pngs_preserved_in_git": true,
+    "all_62_task_ids_preserved": true,
+    "all_35_encounter_rows_preserved": true,
+    "all_nine_runtime_gallery_ids_match_source_shards": true,
+    "all_gallery_flags_preserve_static_non_playable_role": true,
+    "all_six_stage_files_match_manifest": true,
+    "all_four_overlay_center_and_fight_strip_contracts_pass": true,
+    "no_native_manual_game_capture_claimed": true,
+    "no_new_pack_or_web_export_created": true,
+    "validation_scope": "Counts and asset provenance verified locally; engine/catalogue results in VALIDATION.json. CI is checked on the exact published commit separately."
+  }
+}

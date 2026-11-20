@@ -1,0 +1,313 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-19",
+  "recovered_active_static_assets": 23,
+  "recovered_active_bytes": 33219880,
+  "active_manifest": "data/assets/dossier_curien_expansion.json",
+  "archive_files": [
+    {
+      "path": "docs/dossier_curien/sources_art/recovered-2026-11-19/linda_rotta_wrong_hand_initial.png",
+      "sha256": "cdb9b87b1d2d250c23b9032f0d156724492d8a60a919a55662edc2b2463dc084",
+      "bytes": 1764509,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "source_basename": "exec-7b6f88d9-adb1-433c-b6a0-e5b49cbf3eab.png",
+      "status": "archived_source_only",
+      "reason": "Rejected initial Linda pose: pistol held in the wrong anatomical hand; corrected linda_rotta_base is used instead.",
+      "runtime_asset": false
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/recovered-2026-11-19/james_walk2_initial_rejected.png",
+      "sha256": "d1826bc47dd5ddf213e961a9113b84516333a1b53a37b9a860439e21a299d20f",
+      "bytes": 702895,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "source_basename": "exec-9abaf35f-a15f-42c2-890b-3fb1b6f4747d.png",
+      "status": "archived_source_only",
+      "reason": "Initial contact B repeated the near-leg-forward support; a corrected opposite support is already tracked.",
+      "runtime_asset": false
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/recovered-2026-11-19/lisa_walk2_initial_rejected.png",
+      "sha256": "b000011c0a69f80da3fc04930e94a6c0b9b914f212d71a0dd0e68e71983f0cfc",
+      "bytes": 702184,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "source_basename": "exec-ff119013-669f-400e-b0b2-9fdb3d3a41d2.png",
+      "status": "archived_source_only",
+      "reason": "Initial contact B repeated the near-leg-forward support; a corrected opposite support is already tracked.",
+      "runtime_asset": false
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/recovered-2026-11-19/ryan_walk2_initial_rejected.png",
+      "sha256": "f956c8f6889201c36b313d36247b79751b95e5acc1263ae76b44e3b43558af07",
+      "bytes": 694363,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "source_basename": "exec-fcfe8bca-e2e0-49cb-8591-b11f3e3a51b1.png",
+      "status": "archived_source_only",
+      "reason": "Rejected same-leg overlap recorded in 2026-11-19_ryan_walk.json.",
+      "runtime_asset": false
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/recovered-2026-11-19/ryan_soiree_walk2_initial_rejected.png",
+      "sha256": "9a0a3747afe82b02c513569d0f2b77e512f3ae27ce5299c5210469dd4f4f94e2",
+      "bytes": 653643,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "source_basename": "exec-a5d94b96-2703-4ac2-833d-0db2d0e8105a.png",
+      "status": "archived_source_only",
+      "reason": "Rejected same-leg overlap recorded in 2026-11-19_ryan_walk.json.",
+      "runtime_asset": false
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/recovered-2026-11-19/menu_gothique_concept.png",
+      "sha256": "c299f27b87cab889072c40e77f5e2035de01aa97fb3e73ab34c83ef966e01dfa",
+      "bytes": 2338391,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "source_basename": "Menu gothique de The House of the Dead.png",
+      "status": "archived_source_only",
+      "reason": "Historical menu concept recovered from an earlier library download. Mockup only; fictional text, labels and portraits are not implemented features or canonical reference.",
+      "runtime_asset": false
+    }
+  ],
+  "reference_files": [
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-19/hotd_ex/flyer_front.jpg",
+      "sha256": "b3d116e27c017ba9f8d0339db94c1ebcc5833bbf17b96b8b0f07ad29d18e44e7",
+      "bytes": 321739,
+      "source_basename": "flyer_front.jpg",
+      "role": "reference_image",
+      "runtime_asset": false
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-19/hotd_ex/flyer_back.jpg",
+      "sha256": "4e40b8a8c16b57ff2eaa63f129c1df4ceec8a7c9c92836bac3fde1329307238b",
+      "bytes": 339164,
+      "source_basename": "flyer_back.jpg",
+      "role": "reference_image",
+      "runtime_asset": false
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-19/hotd_ex/zobiko_promo.png",
+      "sha256": "96947e172111c420afafdd728f19b63fed80504556c8ce138c079a53e451955a",
+      "bytes": 376405,
+      "source_basename": "zobiko_promo.png",
+      "role": "reference_image",
+      "runtime_asset": false
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-19/hotd_ex/lovers_hod4_render.png",
+      "sha256": "dca9d06ff55a41f503ac08dfc2b7238218bd07a77920edd4cfeaaa267fa44790",
+      "bytes": 245758,
+      "source_basename": "lovers_hod4_render.png",
+      "role": "reference_image",
+      "runtime_asset": false
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-19/hotd_ex/temperance_hod4_render.png",
+      "sha256": "4e09d3177a0e2613cba4445672b2e021ba195b2006b4c291410900d2b1c16825",
+      "bytes": 259492,
+      "source_basename": "temperance_hod4_render.png",
+      "role": "reference_image",
+      "runtime_asset": false
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_bosses/neclien.png",
+      "sha256": "35d50cc0e183d56fe8b61f5314f79ca04fa56d049f794ec31391c3932c284d8d",
+      "bytes": 314065,
+      "source_basename": "neclien.png",
+      "role": "reference_image",
+      "runtime_asset": false
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_bosses/uds03.png",
+      "sha256": "9783d678a29114c4637f93dd49e4b02a2e0a340a7e29dbb0527124179e7963d7",
+      "bytes": 150236,
+      "source_basename": "uds03.png",
+      "role": "reference_image",
+      "runtime_asset": false
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_bosses/manual_uds-26.png",
+      "sha256": "df96717d408773914548ac8712c68182cc67b70a83d05994a955eaf4e74b26e6",
+      "bytes": 203105,
+      "source_basename": "manual_uds-26.png",
+      "role": "reference_image",
+      "runtime_asset": false
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_bosses/uds04c.png",
+      "sha256": "ef2c65dae4b508e5666f17a8fd91776754f34a2cbdd4336835f39ebae2daa5fe",
+      "bytes": 257436,
+      "source_basename": "uds04c.png",
+      "role": "reference_image",
+      "runtime_asset": false
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_bosses/uds05.png",
+      "sha256": "11c353e3e35f3ef6fa80d0383152c5cfe5aa79a7ec1625713200ccbb306002ac",
+      "bytes": 342994,
+      "source_basename": "uds05.png",
+      "role": "reference_image",
+      "runtime_asset": false
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_bosses/storyboard_01.jpg",
+      "sha256": "4b97719e71dfd86d308ed8857fb05b0fa857faa8232e2d14021e3306a8109648",
+      "bytes": 51276,
+      "source_basename": "storyboard_01.jpg",
+      "role": "reference_image",
+      "runtime_asset": false
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_bosses/zed.png",
+      "sha256": "793f6308d8db63b75c96c48687a382792cccc996c28a5ed1e19f032a559c35f3",
+      "bytes": 150816,
+      "source_basename": "zed.png",
+      "role": "reference_image",
+      "runtime_asset": false
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_enemies/latch_reference.png",
+      "sha256": "287bb6150c9e73a9b6b5013aae5ff8eea6a7a025c70beb05eb1e5ff480423e7f",
+      "bytes": 116163,
+      "source_basename": "latch_reference.png",
+      "role": "reference_image",
+      "runtime_asset": false
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_enemies/mccoy_reference.png",
+      "sha256": "aaeb54f55c5b16ce9f350964f7c3dbfaa6e4470e5c0f653d824437f7938d20d2",
+      "bytes": 131866,
+      "source_basename": "mccoy_reference.png",
+      "role": "reference_image",
+      "runtime_asset": false
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_enemies/buddy_reference.png",
+      "sha256": "67038d469f038cbbb88ee5f3673ba782fabd729aac56345c9a123851989fe31c",
+      "bytes": 112087,
+      "source_basename": "buddy_reference.png",
+      "role": "reference_image",
+      "runtime_asset": false
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_enemies/bat_zombie_reference.png",
+      "sha256": "8c4a0a5ba30251969fe8dcd583cad99568dbc19c0a6faf067179e30f6277bc99",
+      "bytes": 133273,
+      "source_basename": "bat_zombie_reference.png",
+      "role": "reference_image",
+      "runtime_asset": false
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_enemies/hedgeros_reference.png",
+      "sha256": "c387fe607ab79eee7e0ede89678faa732eac83a9410f53743cbc2401a8b647c8",
+      "bytes": 126907,
+      "source_basename": "hedgeros_reference.png",
+      "role": "reference_image",
+      "runtime_asset": false
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_enemies/hedlin_reference.png",
+      "sha256": "25392e3126a586c9a6fbf833d7c17c888c8ec97dc2197bd2c7947377ec087871",
+      "bytes": 124191,
+      "source_basename": "hedlin_reference.png",
+      "role": "reference_image",
+      "runtime_asset": false
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_enemies/factory_worker_1_reference.png",
+      "sha256": "4126d2064c0336a2890899c7b45059a12a182ff88e32ea31b9adc5a0f29efef4",
+      "bytes": 130013,
+      "source_basename": "factory_worker_1_reference.png",
+      "role": "reference_image",
+      "runtime_asset": false
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_bosses/uds06b.png",
+      "sha256": "8589af35c4e07ca10f2f031ac10dba80b197852920181b8240cb4e7ec56bde56",
+      "bytes": 319288,
+      "source_basename": "uds06b.png",
+      "role": "reference_image",
+      "runtime_asset": false
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_characters/linda_full.jpg",
+      "sha256": "7b13a93b7d77c01db3f1688842b04876d76cc41b999cd722faabfb94fc2bb7bc",
+      "bytes": 47200,
+      "source_basename": "linda_full.jpg",
+      "role": "reference_image",
+      "runtime_asset": false
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_characters/Yoko.jpg",
+      "sha256": "f4a36e50304b9bc6d03a32d5ba7658564b16e1f540338c5bacbd4c451d7eb2af",
+      "bytes": 46894,
+      "source_basename": "Yoko.jpg",
+      "role": "reference_image",
+      "runtime_asset": false
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_characters/Yokowarning.jpg",
+      "sha256": "531185cbc950c2764c40ca53244dcbf58aee3febebb36d59b3ce6048f87a1775",
+      "bytes": 43420,
+      "source_basename": "Yokowarning.jpg",
+      "role": "reference_image",
+      "runtime_asset": false
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_characters/Marco_Cloud.jpg",
+      "sha256": "25771d552ffc532ce2772fdf2279520bbdc7d1c827f307f8a95a0e72f2bdeb4f",
+      "bytes": 213546,
+      "source_basename": "Marco_Cloud.jpg",
+      "role": "reference_image",
+      "runtime_asset": false
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_enemies/guide_30_31.png",
+      "sha256": "07220d7b015171a25ec28e976789c4de69e439135eea91ea21b08e46e56f3150",
+      "bytes": 1519174,
+      "source_basename": "guide_30_31.png",
+      "role": "reference_image",
+      "runtime_asset": false
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-19/zombie_revenge_enemies/guide_32_33.png",
+      "sha256": "95b58a7a3a8e0cb545593a4b9567fbb9cc34faf47b785cf482869f58096381d7",
+      "bytes": 1619912,
+      "source_basename": "guide_32_33.png",
+      "role": "reference_image",
+      "runtime_asset": false
+    }
+  ],
+  "historical_missing_masters": {
+    "previously_reported_count": 204,
+    "recovered_count": 0,
+    "status": "not_present_in_available_workspace",
+    "old_environment_directory_exists": false,
+    "exact_historical_filenames_checked": 11,
+    "exact_historical_filenames_found": 0,
+    "historic_production_directories_found": 0,
+    "existing_originals_already_tracked": 15,
+    "note": "Available project copies contain the same 15 already tracked source masters. The unavailable 204 historical masters have not been recreated or claimed recovered."
+  },
+  "exclusions": [
+    "Byte-identical generated master duplicates were not recopied beside their named runtime files.",
+    "Archived rejected variants and the menu mockup are not counted as new active sprites.",
+    "Reference captures and scans are separated from generated artwork."
+  ]
+}

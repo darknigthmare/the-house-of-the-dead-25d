@@ -1,0 +1,259 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-19",
+  "repository": "darknigthmare/the-house-of-the-dead-25d",
+  "audited_head": "a3fbcf13455a945ccc929ce43907a9755d82e6c7",
+  "preparation_commit": "c68582530a932c4ffad4faf3994235911e097c42",
+  "fighter_id": "rogan",
+  "purpose": "Complete the four missing individually painted attack/reaction poses without adding a character or costume.",
+  "generator": "built-in image_gen",
+  "reference": {
+    "path": "assets/dossier_curien/rogan_guard.png",
+    "git_blob_sha": "2f93537b6c2f169c97e5cc547741818ececce367",
+    "sha256": "a8aeaa9d9be3c5b00b1b3d5bb85d7d345b0dc7c3dc7350a330e78162be7f7916",
+    "size_px": [
+      1024,
+      1024
+    ],
+    "bbox_alpha16": [
+      218,
+      57,
+      804,
+      958
+    ],
+    "role": "Exact visual identity, costume, weapon, style and registration master, inspected before generation",
+    "source_catalogue": "docs/dossier_curien/CATALOGUE_VISUEL.json",
+    "heritage_references": {
+      "projet": "https://github.com/darknigthmare/the-house-of-the-dead-25d/tree/e8bf0524",
+      "arcade": "https://www.sega.jp/history/arcade/product/9038/",
+      "duo": "https://hackernoon.imgix.net/images/gd0SQf7WPsYcZnyCjkdJj8hy9mA3-aof388r.png",
+      "chariot": "https://hackernoon.imgix.net/images/gd0SQf7WPsYcZnyCjkdJj8hy9mA3-5um384i.png",
+      "magician": "https://hackernoon.imgix.net/images/gd0SQf7WPsYcZnyCjkdJj8hy9mA3-ls9383g.png",
+      "magician_alt": "https://hackernoon.imgix.net/images/gd0SQf7WPsYcZnyCjkdJj8hy9mA3-eo838xw.png"
+    },
+    "heritage_note": "Reference URLs are retained from the original catalogue. This batch compares to the project's existing sprite; it does not independently certify canonical Model2 1:1 fidelity."
+  },
+  "assets": [
+    {
+      "width": 1254,
+      "height": 1254,
+      "bitDepth": 8,
+      "colorType": 6,
+      "interlace": 0,
+      "size": 683450,
+      "sha256": "b9fccf0dd617c4a136dc7418709a9d80870cc868219c94f14b97451ca1c482a9",
+      "alpha0": 1189369,
+      "alpha255": 541,
+      "transparentFraction": 0.7563477891480913,
+      "centralNonzero": 383084,
+      "bbox": [
+        0,
+        63,
+        1198,
+        1254
+      ],
+      "bboxAlpha16": [
+        269,
+        81,
+        985,
+        1171
+      ],
+      "path": "assets/dossier_curien/rogan_windup.png",
+      "file": "rogan_windup.png",
+      "pose": "windup",
+      "git_blob_sha": "325311bbcc65e452c8ca040a6c87b3491325f2b7",
+      "prompt": "Use case: identity-preserve. Asset type: ONE individual 2D fighting-game sprite animation frame for Thomas Rogan, original The House of the Dead arcade Model 2 costume, Dossier Curien. Input image 1 is the EXACT existing master rogan_guard.png; preserve this character rather than redesigning him. Produce the pre-shot WINDUP keyframe. Same young adult white male face, same swept-back copper-brown hair, same long brown knee-length overcoat and lapels with dark buttons, same pale shirt, black tie, lavender-grey waistcoat and trousers, brown leather shoes, same compact black semiautomatic pistol and two-handed grip. Same crisp finely detailed shaded 2D sprite rendering with restrained pixel-like edge detail and warm brown/grey palette; do not turn into photo/3D or a different costume. Face toward screen RIGHT. Body pose: feet remain on the same grounded locations as the master; bend both knees just slightly and settle the hips; draw the elbows closer to the ribs and hold the pistol horizontally at upper chest height, ready to extend toward the right, eyes focused straight toward the opponent. The pose should visibly anticipate the shot while keeping the gun close. Full body including entire hair, coat hems, both shoes and entire muzzle. Square 1024x1024 transparent canvas. Registration is essential: keep TOP of hair about y=55/1024 of canvas height, the ground baseline at y=960/1024, body root on x=512/1024; size and shoe placements like the reference. Do not reframe, zoom, recenter to the arm extension or add padding differently. Leave surrounding canvas truly transparent with alpha=0. One person, one pose, one pistol, two arms, two hands, no duplicate body, no extra weapon. No muzzle flash, no bullet, no smoke, no shell, no impact spark, no floor or cast shadow, no background, no black/white matte, no border, no letters, no labels, no sheet.",
+      "input_images": [
+        "rogan_guard"
+      ],
+      "facing": "right",
+      "requested_registration_normalized_1024": {
+        "pivot": [
+          512,
+          960
+        ],
+        "head_y": 55
+      },
+      "pivot_px": [
+        627,
+        1175.625
+      ],
+      "muzzle_px": null
+    },
+    {
+      "width": 1254,
+      "height": 1254,
+      "bitDepth": 8,
+      "colorType": 6,
+      "interlace": 0,
+      "size": 774576,
+      "sha256": "90be155e83df651ec88efc6f0f6107118e26b2320056c4e217d2b1f56623cafc",
+      "alpha0": 1154141,
+      "alpha255": 564,
+      "transparentFraction": 0.7339454733687925,
+      "centralNonzero": 408988,
+      "bbox": [
+        0,
+        0,
+        1224,
+        1254
+      ],
+      "bboxAlpha16": [
+        266,
+        78,
+        1173,
+        1174
+      ],
+      "path": "assets/dossier_curien/rogan_contact.png",
+      "file": "rogan_contact.png",
+      "pose": "contact",
+      "git_blob_sha": "b1dbcefb0ec1edb260fc0f6014ab9326b3bc06c1",
+      "prompt": "Use case: identity-preserve. Asset type: ONE individual transparent 2D fighting-game sprite frame, Thomas Rogan original House of the Dead arcade costume. Reference image 1 is the exact existing rogan_guard master, reference image 2 is the matching new windup frame. Preserve the same face, copper-brown swept hair, brown knee-length overcoat and dark buttons, white shirt, black tie, lavender-grey waistcoat and trousers, brown leather shoes and compact dark semiautomatic pistol. Preserve the master's crisp detailed shaded 2D sprite style and palette. Primary request: CONTACT / FIRING keyframe. Face RIGHT. Extend both arms together in a stable two-handed pistol shooting stance, almost fully straight horizontally toward screen right at upper chest/shoulder height; shoulders advance slightly, eyes aligned toward sights, knees braced, rear foot planted and front foot still planted. This MUST be a distinctly fully extended shooting pose, not the guard with bent elbows. Keep the same lower-body locations and grounded shoe baseline as the references. Pistol barrel points exactly horizontally right with full muzzle clearly visible, space beyond the muzzle at the right edge. Do NOT paint a muzzle flash: engine VFX will be placed later. One subject and one firearm only. Square 1024x1024 canvas, entire hair, coat and both feet visible. Keep registration: hair top about y=55/1024 of canvas height, soles on y=960/1024, central root/pivot x=512/1024. The body retains the same scale and stance despite extended arms: do not shrink, zoom out, change crop or recenter on the wider arm silhouette. Keep the muzzle within x=965/1024. Surrounding pixels genuinely transparent. No background, no floor, no opaque shadows, no white/black matte, no smoke, no spark, no flash, no blood, no text, no caption, no montage, no other pose, no sheet. Faithful identity and garments from the supplied master, no redesign.",
+      "input_images": [
+        "rogan_guard",
+        "rogan_windup"
+      ],
+      "facing": "right",
+      "requested_registration_normalized_1024": {
+        "pivot": [
+          512,
+          960
+        ],
+        "head_y": 55
+      },
+      "pivot_px": [
+        627,
+        1175.625
+      ],
+      "muzzle_px": [
+        1173,
+        230
+      ]
+    },
+    {
+      "width": 1254,
+      "height": 1254,
+      "bitDepth": 8,
+      "colorType": 6,
+      "interlace": 0,
+      "size": 745628,
+      "sha256": "6942f046e734d17000c5de3d08fd4bde0c665ddbe5750b31081d3320776bfbb7",
+      "alpha0": 1159783,
+      "alpha255": 456,
+      "transparentFraction": 0.7375333541916267,
+      "centralNonzero": 412177,
+      "bbox": [
+        0,
+        19,
+        1240,
+        1254
+      ],
+      "bboxAlpha16": [
+        265,
+        77,
+        1002,
+        1174
+      ],
+      "path": "assets/dossier_curien/rogan_recovery.png",
+      "file": "rogan_recovery.png",
+      "pose": "recovery",
+      "git_blob_sha": "a92a4d942f5c8c9f09056e0cc61646468bfea7ab",
+      "prompt": "Use case: identity-preserve. Asset type: ONE individual 2D fighting-game recovery animation sprite for Thomas Rogan in his original House of the Dead arcade outfit. Input image 1 is the ORIGINAL rogan_guard identity master. Image 2 is windup. Image 3 is fully extended pistol contact. Keep this same man, precise face and swept copper-brown hair, same long brown overcoat with lapels and dark buttons, same white shirt, black tie, grey-lavender waistcoat and trousers, brown leather shoes, same compact black pistol. Keep the same shaded hand-drawn sprite rendering and edge detail; do not change style or costume. Draw the RECOVERY after the contact shot, facing RIGHT: elbows visibly folding back toward the torso, arms halfway between fully extended and guard; the pistol remains held securely in BOTH hands, its muzzle points right with a very slight upward tilt, held at shoulder height near x=800/1024 rather than the fully extended x=950/1024. Upper chest draws back slightly and the front shoulder relaxes. Eyes continue watching opponent. Feet and legs remain braced in the same stance and exactly the same grounded positions as the reference; coat hem settles behind the hips. Distinct return motion, not another fully extended firing frame and not the original tucked-in windup. ONE full body on a square1024x1024 true transparent RGBA canvas, preserve registration: head top y55/1024, shoe soles baseline y960/1024, root x512/1024, unchanged body scale. Do not shrink or recenter the whole body because the arms changed. Full head, whole coat, both shoes and entire weapon visible. No muzzle flash, smoke, casings, bullets, impact effects, blood, floor, shadow, background, labels, text, panel, grid, duplicate figures or additional objects.",
+      "input_images": [
+        "rogan_guard",
+        "rogan_windup",
+        "rogan_contact"
+      ],
+      "facing": "right",
+      "requested_registration_normalized_1024": {
+        "pivot": [
+          512,
+          960
+        ],
+        "head_y": 55
+      },
+      "pivot_px": [
+        627,
+        1175.625
+      ],
+      "muzzle_px": null
+    },
+    {
+      "width": 1254,
+      "height": 1254,
+      "bitDepth": 8,
+      "colorType": 6,
+      "interlace": 0,
+      "size": 820987,
+      "sha256": "3eb7f96dfea94995a3160db54b77d5f30f0857e43bb17d28db300893126df0de",
+      "alpha0": 1153793,
+      "alpha255": 311,
+      "transparentFraction": 0.73372417196391,
+      "centralNonzero": 412457,
+      "bbox": [
+        0,
+        7,
+        1240,
+        1254
+      ],
+      "bboxAlpha16": [
+        260,
+        71,
+        968,
+        1172
+      ],
+      "path": "assets/dossier_curien/rogan_recoil.png",
+      "file": "rogan_recoil.png",
+      "pose": "recoil",
+      "git_blob_sha": "e3cba766c29638483362c8e916178615fa03219c",
+      "prompt": "Use case: identity-preserve. Asset type: ONE individual transparent 2D fighting-game HIT REACTION sprite for Thomas Rogan, original The House of the Dead arcade outfit. Reference1 is the original rogan_guard.png exact identity master; reference2 windup, reference3 firing contact, reference4 recovery are matching animation frames. Preserve the same recognisable young face, copper-brown swept hair, long brown overcoat with lapels and dark buttons, white shirt and black tie, grey-lavender waistcoat and trousers, brown leather shoes and compact black semiautomatic pistol. Same detailed shaded hand-drawn sprite style and restrained pixel-edge finish as the master. Draw a clearly different RECOIL FROM RECEIVING A HIT in his upper body, facing RIGHT: upper torso and shoulders pushed backward toward the LEFT, chin lifts and face winces, elbows fold toward the torso protectively while still safely holding the one pistol in both hands. Gun points upward-right, never at himself. Coat front opens and coat tails lag subtly toward screen right. Keep both feet grounded on their original baseline with knees absorbing the impact; legs stay the same length and overall body scale. This is an impact reaction, NOT a gun-firing recoil and NOT an attack. Keep the grounded pivot at x512/1024 and feet baseline y960/1024. Head and all extremities remain inside the square 1024x1024 canvas with the same top margin around55/1024; do not recenter or resize the full body because the head moved left. One person, one pose, two arms, two hands, one gun. Full hair, coat and both shoes visible. True transparent RGBA background. No wound, no blood, no gore, no flash, smoke, bullet, effect, shadow, floor, backdrop, label, lettering, border, montage or extra object. Preserve the original costume exactly.",
+      "input_images": [
+        "rogan_guard",
+        "rogan_windup",
+        "rogan_contact",
+        "rogan_recovery"
+      ],
+      "facing": "right",
+      "requested_registration_normalized_1024": {
+        "pivot": [
+          512,
+          960
+        ],
+        "head_y": 55
+      },
+      "pivot_px": [
+        627,
+        1175.625
+      ],
+      "muzzle_px": null
+    }
+  ],
+  "contact_vfx": {
+    "source_muzzle_px": [
+      1173,
+      230
+    ],
+    "source_canvas": [
+      1254,
+      1254
+    ],
+    "normalized_1024_muzzle": [
+      957.8564593301436,
+      187.81499202551834
+    ],
+    "normalized_1024_offset_from_pivot": [
+      445.8564593301436,
+      772.1850079744817
+    ],
+    "measurement": "Visual identification of front of pistol; alpha>=128 rightmost gun-column scan (x1167..1172, y211..248) confirms muzzle-face span. Point uses outside-right x1173 and centre y230; visual estimate uncertainty ±8 source px. No muzzle flash baked into art."
+  },
+  "qa": {
+    "method": "PNG IHDR parsed, full DEFLATE inflate + PNG unfilter, alpha distribution and alpha>=16 bounding boxes measured in JavaScript. SHA256 known-answer abc passed and guard hash matches catalogue.",
+    "coordinate_convention": "bounding boxes are [x0,y0,x1_exclusive,y1_exclusive] in source pixels",
+    "dimensions_note": "Requested1024x1024; generator returned1254x1254 consistently. Preserve original files; use proportional registration in renderer.",
+    "alpha_note": "There are tiny alpha residuals below16 outside the visible silhouettes, including at canvas edges; alpha>=16 excludes this noise. No opaque matte is present.",
+    "visual_review": "One full-body sprite per image; correct brown coat/waistcoat/trousers/shoes and two-handed black pistol. Windup elbows tucked, contact fully extended, recovery partly retracted, recoil upper-body hit reaction. No flash, smoke, gore, floor or duplicate figures.",
+    "engine_test": "Not performed by this agent: execution environment unavailable.",
+    "fidelity_status": "Animation keyframes produced from the project's candidate Model2 master, canonical 1:1 fidelity not certified."
+  }
+}

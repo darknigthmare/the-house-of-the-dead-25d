@@ -1,0 +1,3 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+{"build_kind":"compatibility_from_sources","engine":"4.6.3-stable (official)","original_release_validated":false,"output":"/tmp/HOTD_Motion_Compat46_Final.pck","resources":722,"sha256":"918e8331c03696d9b13ce77d50764c14bf24c0e895610c541f454d430529863d","status":"ok"}

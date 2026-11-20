@@ -1,0 +1,290 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "scope": "Lot3 boss visual references; downloaded original bytes, no crops or retouching",
+  "summary": {
+    "reference_images": 15,
+    "primary_official_sega_images": 3,
+    "secondary_hosted_game_images": 12,
+    "bytes": 1198170,
+    "unique_images_used_for_generation": 11
+  },
+  "sources": [
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/high_priestess_sega_render.png",
+      "source_page": "https://hod.sega.jp/",
+      "media_url": "https://hod.sega.jp/images/top/chara_creature_img_uncompress//highpriestess.png",
+      "source_kind": "primary_official_sega_render",
+      "edition": "Scarlet Dawn arcade",
+      "download_date": "2026-11-20",
+      "sha256": "521d4dc1c9e803e6aa1d9215c4daf0641fd24eed0484b7d3d8f40c0cf02b8742",
+      "bytes": 286345,
+      "dimensions": [
+        1069,
+        1080
+      ],
+      "mode": "P",
+      "inspected_before_acceptance": true,
+      "used_as_imagegen_input": true,
+      "role": "Primary official whole-creature anatomy, proportions, eight club-tipped tentacles and layout."
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/high_priestess_sega_scene.jpg",
+      "source_page": "https://hod.sega.jp/",
+      "media_url": "https://hod.sega.jp/images/top/chara_creature_bg/highpriestess_a.jpg",
+      "source_kind": "primary_official_sega_game_image",
+      "edition": "Scarlet Dawn arcade",
+      "download_date": "2026-11-20",
+      "sha256": "40818c08f85d582d199a49b14b57302d03a1d2cf6922174b9c2db4e7ff303359",
+      "bytes": 52686,
+      "dimensions": [
+        1600,
+        1000
+      ],
+      "mode": "RGB",
+      "inspected_before_acceptance": true,
+      "used_as_imagegen_input": false,
+      "role": "Inspected official scene corroborating in-game face and material colors; not an ImageGen input."
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/high_priestess_sega_detail.png",
+      "source_page": "https://hod.sega.jp/",
+      "media_url": "https://hod.sega.jp/images/top/chara_creature_bg/highpriestess_b.png",
+      "source_kind": "primary_official_sega_render",
+      "edition": "Scarlet Dawn arcade",
+      "download_date": "2026-11-20",
+      "sha256": "ed75c10a5c6e603f3de4a68a9e0aea9659edb95bd06a454b44b92f4c0d8749c3",
+      "bytes": 470211,
+      "dimensions": [
+        1600,
+        1000
+      ],
+      "mode": "P",
+      "inspected_before_acceptance": true,
+      "used_as_imagegen_input": true,
+      "role": "Primary official face close-up: orange eyes, folded mantle and vertical toothed maw."
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/screamer_boss3-1.jpg",
+      "source_page": "https://www.k-triggerhappy.com/hodoverkill_ps3/stage3.html",
+      "media_url": "https://www.k-triggerhappy.com/hodoverkill_ps3/boss3-1.jpg",
+      "source_kind": "secondary_hosted_ps3_gameplay_capture",
+      "edition": "Overkill PS3 Extended Cut / Director's Cut walkthrough",
+      "download_date": "2026-11-20",
+      "sha256": "c0bf336ce5c681fd5db988d827630cfd71ac0b3fd4d3f61a2cb981b7dc9d8d29",
+      "bytes": 36396,
+      "dimensions": [
+        750,
+        420
+      ],
+      "mode": "RGB",
+      "inspected_before_acceptance": true,
+      "used_as_imagegen_input": false,
+      "role": "Inspected washed-out flash/teleportation frame; too little anatomical detail to use as ImageGen input."
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/screamer_boss3-2.jpg",
+      "source_page": "https://www.k-triggerhappy.com/hodoverkill_ps3/stage3.html",
+      "media_url": "https://www.k-triggerhappy.com/hodoverkill_ps3/boss3-2.jpg",
+      "source_kind": "secondary_hosted_ps3_gameplay_capture",
+      "edition": "Overkill PS3 Extended Cut / Director's Cut walkthrough",
+      "download_date": "2026-11-20",
+      "sha256": "203eaa79d0142543ed366ba302bedbb9f6a1a83a454e9d869f78c6a575de4831",
+      "bytes": 28825,
+      "dimensions": [
+        750,
+        419
+      ],
+      "mode": "RGB",
+      "inspected_before_acceptance": true,
+      "used_as_imagegen_input": true,
+      "role": "PS3 game frame corroborating gown, heavy stoop and dark hair; nearby generic mutants are not identity references."
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/screamer_boss3-3.jpg",
+      "source_page": "https://www.k-triggerhappy.com/hodoverkill_ps3/stage3.html",
+      "media_url": "https://www.k-triggerhappy.com/hodoverkill_ps3/boss3-3.jpg",
+      "source_kind": "secondary_hosted_ps3_gameplay_capture",
+      "edition": "Overkill PS3 Extended Cut / Director's Cut walkthrough",
+      "download_date": "2026-11-20",
+      "sha256": "ccaf7a327376e970921c1e7cf472c5d71b6bb09bd15cc14f5246a6b70733f0bf",
+      "bytes": 26954,
+      "dimensions": [
+        750,
+        422
+      ],
+      "mode": "RGB",
+      "inspected_before_acceptance": true,
+      "used_as_imagegen_input": true,
+      "role": "PS3 game frame corroborating adult female silhouette, face, arms and gown; duplicate apparitions excluded from final sprite."
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/crawler_boss6-1.jpg",
+      "source_page": "https://www.k-triggerhappy.com/hodoverkill_ps3/stage6.html",
+      "media_url": "https://www.k-triggerhappy.com/hodoverkill_ps3/boss6-1.jpg",
+      "source_kind": "secondary_hosted_ps3_gameplay_capture",
+      "edition": "Overkill PS3 Extended Cut / Director's Cut walkthrough",
+      "download_date": "2026-11-20",
+      "sha256": "c45a711e74a8b3deea55d81dfaa5600da4d03ab93493c63c740a1a6ab91893fe",
+      "bytes": 30459,
+      "dimensions": [
+        750,
+        421
+      ],
+      "mode": "RGB",
+      "inspected_before_acceptance": true,
+      "used_as_imagegen_input": true,
+      "role": "PS3 game close-up: humanlike chest/abdomen and scythe arms."
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/crawler_boss6-2.jpg",
+      "source_page": "https://www.k-triggerhappy.com/hodoverkill_ps3/stage6.html",
+      "media_url": "https://www.k-triggerhappy.com/hodoverkill_ps3/boss6-2.jpg",
+      "source_kind": "secondary_hosted_ps3_gameplay_capture",
+      "edition": "Overkill PS3 Extended Cut / Director's Cut walkthrough",
+      "download_date": "2026-11-20",
+      "sha256": "65b99b12789e84659d66c571db1018bae458e2d767cbe33e7bb5aacdaa34aaf8",
+      "bytes": 21911,
+      "dimensions": [
+        750,
+        422
+      ],
+      "mode": "RGB",
+      "inspected_before_acceptance": true,
+      "used_as_imagegen_input": true,
+      "role": "PS3 game close-up: narrow mantis-like head and large pale eyes."
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/crawler_boss6-3.jpg",
+      "source_page": "https://www.k-triggerhappy.com/hodoverkill_ps3/stage6.html",
+      "media_url": "https://www.k-triggerhappy.com/hodoverkill_ps3/boss6-3.jpg",
+      "source_kind": "secondary_hosted_ps3_gameplay_capture",
+      "edition": "Overkill PS3 Extended Cut / Director's Cut walkthrough",
+      "download_date": "2026-11-20",
+      "sha256": "c6c895c23aaa16e532663b8ebe87ff55c6f613ca17db5bfa8addc88a9407352b",
+      "bytes": 34070,
+      "dimensions": [
+        750,
+        422
+      ],
+      "mode": "RGB",
+      "inspected_before_acceptance": true,
+      "used_as_imagegen_input": false,
+      "role": "Inspected distant airborne silhouette for limb count; not an ImageGen input."
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/crawler_boss6-4.jpg",
+      "source_page": "https://www.k-triggerhappy.com/hodoverkill_ps3/stage6.html",
+      "media_url": "https://www.k-triggerhappy.com/hodoverkill_ps3/boss6-4.jpg",
+      "source_kind": "secondary_hosted_ps3_gameplay_capture",
+      "edition": "Overkill PS3 Extended Cut / Director's Cut walkthrough",
+      "download_date": "2026-11-20",
+      "sha256": "2f2a1336b5160f644fdf7f40edd19d110e537d4c77e12f3d545836c13cd8e00b",
+      "bytes": 26685,
+      "dimensions": [
+        750,
+        421
+      ],
+      "mode": "RGB",
+      "inspected_before_acceptance": true,
+      "used_as_imagegen_input": true,
+      "role": "PS3 game full stance: long articulated legs and two long organic arm blades."
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/brutus_boss8-1.jpg",
+      "source_page": "https://www.k-triggerhappy.com/hodoverkill_ps3/stage8.html",
+      "media_url": "https://www.k-triggerhappy.com/hodoverkill_ps3/boss8-1.jpg",
+      "source_kind": "secondary_hosted_ps3_gameplay_capture",
+      "edition": "Overkill PS3 Extended Cut / Director's Cut walkthrough",
+      "download_date": "2026-11-20",
+      "sha256": "c6ba360b577e29f21ce850bc9a4c8adbb94ca9d3b38580935a30dae2015e4c7d",
+      "bytes": 44362,
+      "dimensions": [
+        750,
+        421
+      ],
+      "mode": "RGB",
+      "inspected_before_acceptance": true,
+      "used_as_imagegen_input": true,
+      "role": "PS3 whole-body game frame: hood, stance, trousers, boots and anatomical right electrical weapon."
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/brutus_boss8-2.jpg",
+      "source_page": "https://www.k-triggerhappy.com/hodoverkill_ps3/stage8.html",
+      "media_url": "https://www.k-triggerhappy.com/hodoverkill_ps3/boss8-2.jpg",
+      "source_kind": "secondary_hosted_ps3_gameplay_capture",
+      "edition": "Overkill PS3 Extended Cut / Director's Cut walkthrough",
+      "download_date": "2026-11-20",
+      "sha256": "a50a31ed23fdea18157a645ecf2dabe696715367e782489960fe17e0d2a6ca79",
+      "bytes": 41513,
+      "dimensions": [
+        750,
+        422
+      ],
+      "mode": "RGB",
+      "inspected_before_acceptance": true,
+      "used_as_imagegen_input": false,
+      "role": "Inspected distant boss among generic mutants; not an ImageGen input."
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/brutus_boss8-3.jpg",
+      "source_page": "https://www.k-triggerhappy.com/hodoverkill_ps3/stage8.html",
+      "media_url": "https://www.k-triggerhappy.com/hodoverkill_ps3/boss8-3.jpg",
+      "source_kind": "secondary_hosted_ps3_gameplay_capture",
+      "edition": "Overkill PS3 Extended Cut / Director's Cut walkthrough",
+      "download_date": "2026-11-20",
+      "sha256": "db708d7e87225a3ee7c8915676e1c646bb18a3da1ea3987c9e44d3042a3fff50",
+      "bytes": 39888,
+      "dimensions": [
+        750,
+        420
+      ],
+      "mode": "RGB",
+      "inspected_before_acceptance": true,
+      "used_as_imagegen_input": true,
+      "role": "PS3 rear/side frame: back equipment and tattoo coverage; the red/white targeting marker is interface, not a tattoo."
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/brutus_boss8-4.jpg",
+      "source_page": "https://www.k-triggerhappy.com/hodoverkill_ps3/stage8.html",
+      "media_url": "https://www.k-triggerhappy.com/hodoverkill_ps3/boss8-4.jpg",
+      "source_kind": "secondary_hosted_ps3_gameplay_capture",
+      "edition": "Overkill PS3 Extended Cut / Director's Cut walkthrough",
+      "download_date": "2026-11-20",
+      "sha256": "6bf34f969164e7030ea0156b7c4a99a311d46d21158fd55e69d82f63b6d812cb",
+      "bytes": 40657,
+      "dimensions": [
+        750,
+        421
+      ],
+      "mode": "RGB",
+      "inspected_before_acceptance": true,
+      "used_as_imagegen_input": true,
+      "role": "PS3 game frame corroborating broad stance and electrical equipment; effects excluded from the final sprite."
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot3/bosses/screamer_wii_art_menu.jpg",
+      "sha256": "98e98851d301cf86d5c866e5d39c312d91b5b01cb4966033aa004e9725aa69ec",
+      "bytes": 17208,
+      "dimensions": [
+        853,
+        480
+      ],
+      "mode": "RGB",
+      "source_page": "https://www.mobygames.com/game/40939/the-house-of-the-dead-overkill/screenshots/wii/496620/",
+      "media_url": "https://cdn.mobygames.com/screenshots/11626844-the-house-of-the-dead-overkill-wii-unlock-art-and-music-as-you-p.jpg",
+      "source_kind": "secondary_hosted_wii_ingame_art_menu",
+      "edition": "The House of the Dead: Overkill, Wii; in-game Bosses art menu",
+      "download_date": "2026-11-20",
+      "inspected_before_acceptance": true,
+      "used_as_imagegen_input": true,
+      "role": "Supplementary whole-body reference from the Wii in-game art menu; stoop, gown and bare feet. Small artwork inside a menu; not a PS3 orthographic model."
+    }
+  ],
+  "notes": [
+    "High Priestess uses direct SEGA Scarlet Dawn release-site imagery; no prototype damage concept is used.",
+    "Overkill gameplay captures are hosted by a third-party walkthrough of the PS3 Extended Cut. Hosting is secondary; the images depict the game.",
+    "The supplementary Screamer menu image is explicitly from Wii. Its central full-body artwork does not establish exact parity of all details across Wii and PS3.",
+    "Reference files are retained byte for byte; no entire manual or video is rehosted."
+  ]
+}
