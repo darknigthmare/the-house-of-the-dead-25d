@@ -5,6 +5,10 @@ const Fighter := preload("res://src/dossier_curien/combatant.gd")
 const Saga := preload("res://src/dossier_curien/saga.gd")
 const Bestiary := preload("res://src/dossier_curien/saga_bestiary.gd")
 const Painter := preload("res://src/dossier_curien/presentation.gd")
+const EXPECTED_GALLERY := {
+	Bestiary.GALLERY_MANIFEST: ["amy_crystal", "candi_stryper", "g_hotd3", "g_overkill", "hangedman", "harry_harris", "hermit", "rogan_hotd3", "varla_guns"],
+	Bestiary.LOT2_MANIFEST: ["clement_darling", "fool", "gary_typing", "goldman_human", "james_typing", "kuarl", "papa_caesar", "strength", "sun", "thornheart", "tower", "zeal"]
+}
 var a
 var checks := 0
 var failures := 0
@@ -217,24 +221,51 @@ func invalid_gallery_data() -> void:
 	DirAccess.remove_absolute(ProjectSettings.globalize_path(path))
 
 func gallery_extension() -> void:
-	var path := Bestiary.GALLERY_MANIFEST
-	check(FileAccess.file_exists(path), "New gallery manifest ships with the source project")
-	if not FileAccess.file_exists(path): return
-	var parsed = JSON.parse_string(FileAccess.get_file_as_string(path))
-	check(parsed is Dictionary and parsed.get("assets") is Array and not parsed.assets.is_empty(), "New gallery manifest declares its subjects")
-	if not parsed is Dictionary or not parsed.get("assets") is Array: return
-	a.bestiary.show(a)
-	check(a.bestiary.assets.size() == 49, "Native gallery contains all forty existing and nine new subject cards")
+	var extension_entries := []
+	for path: String in EXPECTED_GALLERY:
+		check(FileAccess.file_exists(path), "Every gallery manifest ships with the source project: " + path)
+		if not FileAccess.file_exists(path): continue
+		var parsed = JSON.parse_string(FileAccess.get_file_as_string(path))
+		check(parsed is Dictionary and parsed.get("assets") is Array and not parsed.assets.is_empty(), "Gallery manifest declares its subjects: " + path)
+		if not parsed is Dictionary or not parsed.get("assets") is Array: continue
+		var declared := []
+		for entry in parsed.assets: declared.append(str(entry.id))
+		declared.sort()
+		check(declared == EXPECTED_GALLERY[path], "Every delivered subject is declared exactly once: " + path)
+		extension_entries.append_array(parsed.assets)
+	a.bestiary.select_filter(a,0)
+	check(a.bestiary.assets.size() == 61, "Native gallery preserves the previous forty-nine cards and adds twelve static subjects")
 	var loaded := {}
-	for entry in a.bestiary.assets: loaded[entry.id] = entry
+	var loaded_indices := {}
+	for index in a.bestiary.assets.size():
+		var entry: Dictionary = a.bestiary.assets[index]
+		loaded[entry.id] = entry
+		loaded_indices[entry.id] = index
+	var original = JSON.parse_string(FileAccess.get_file_as_string(Bestiary.MANIFEST))
+	var original_visible := 0
+	for entry in original.assets:
+		if entry.get("gallery", true) == false or entry.get("category", "") in ["fighter_pose", "animation_pose"]: continue
+		original_visible += 1
+		check(loaded.has(entry.id) and str(loaded[entry.id].path).trim_prefix("res://") == str(entry.path).trim_prefix("res://"), "The original gallery subject retains its artwork: " + str(entry.id))
+	check(original_visible == 40, "The original expansion still contributes its forty subject cards")
 	var games := {}
-	for entry in parsed.assets:
+	for entry in extension_entries:
 		check(loaded.has(entry.id), "New subject is visible in the native gallery: " + str(entry.id))
 		if not loaded.has(entry.id): continue
 		var item: Dictionary = loaded[entry.id]
 		check(a.bestiary.fighter_id(item) < 0 and a.bestiary.role_label(item).contains("non jouable"), "New card remains explicitly non-playable: " + str(entry.id))
-		check(ResourceLoader.load(item.path) is Texture2D, "Native gallery texture loads: " + str(entry.id))
+		var texture: Texture2D = ResourceLoader.load(item.path)
+		check(texture is Texture2D, "Native gallery texture loads: " + str(entry.id))
+		if texture is Texture2D:
+			check(texture.get_size().is_equal_approx(Vector2(float(entry.dimensions[0]), float(entry.dimensions[1]))), "Gallery import preserves the declared native dimensions and aspect ratio: " + str(entry.id))
 		games[a.bestiary.family(item)] = str(item.id)
+		a.bestiary.detail(a, int(loaded_indices[entry.id]))
+		var playable_button := false
+		for child in a.box.get_children():
+			if child is Button and child.text.begins_with("Jouer"): playable_button = true
+		check(not playable_button and a.phase == "bestiary_detail", "Static subject opens its detail without a Play action: " + str(entry.id))
+		await verify_sheet_layout("Gallery detail " + str(entry.id))
+	a.bestiary.show(a)
 	for game in games:
 		var wanted := -1
 		for index in a.bestiary.filters.size():
@@ -251,24 +282,15 @@ func gallery_extension() -> void:
 		check(a.get_viewport().gui_get_focus_owner() is OptionButton, "Dropdown replacement preserves keyboard/gamepad navigation: " + str(game))
 		for item in a.bestiary.filtered(): check(a.bestiary.family(item) == game, "Game selector excludes other collections")
 		await verify_sheet_layout("Gallery game " + str(game))
-		var selected := 0
-		var subjects: Array = a.bestiary.filtered()
-		for index in subjects.size():
-			if str(subjects[index].id) == str(games[game]): selected = index
-		a.bestiary.detail(a, selected)
-		var playable_button := false
-		for child in a.box.get_children():
-			if child is Button and child.text.begins_with("Jouer"): playable_button = true
-		check(not playable_button, "Gallery extension does not offer a Play action")
-		await verify_sheet_layout("Gallery detail " + str(game))
-		a.bestiary.show(a)
 
 func additional_stages() -> void:
-	check(Fighter.PROFILES.size() == 24 and Saga.STAGES.size() == 20 and Saga.ART.size() == 20, "Two new stages preserve the playable roster and align twenty art registrations")
+	check(Fighter.PROFILES.size() == 24 and Saga.STAGES.size() == 22 and Saga.ART.size() == 22, "Further arenas preserve the playable roster and align twenty-two art registrations")
 	a.case_id = ""
 	a.mode = 1
 	a.chosen = 0
-	for stage_index in [18,19]:
+	var expected_art := {18:"zr_train", 19:"creeping_flesh", 20:"tower_canal", 21:"strength_colosseum"}
+	for stage_index in expected_art:
+		check(Saga.ART[stage_index] == expected_art[stage_index], "Additional arena preserves its stable art index: " + str(stage_index))
 		a.pick_stage(1, stage_index/a.PAGE_SIZE)
 		await verify_sheet_layout("Additional stage selection")
 		var choice: Button

@@ -4,6 +4,12 @@ const MANIFEST := "res://data/assets/dossier_curien_expansion.json"
 const GALLERY_MANIFEST := "res://data/assets/dossier_curien_gallery_2026-11-20.json"
 const ART_ROOT := "res://assets/dossier_curien/expansion/"
 const GALLERY_ART_ROOT := "res://assets/dossier_curien/gallery_2026-11-20/"
+const LOT2_MANIFEST := "res://data/assets/dossier_curien_gallery_2026-11-20_lot2.json"
+const LOT2_ART_ROOT := "res://assets/dossier_curien/gallery_2026-11-20_lot2/"
+const GALLERY_COLLECTIONS := [
+	{"manifest":GALLERY_MANIFEST, "art_root":GALLERY_ART_ROOT},
+	{"manifest":LOT2_MANIFEST, "art_root":LOT2_ART_ROOT}
+]
 const BASE_FILTERS := [
 	{"game":"", "label":"Tous"},
 	{"game":"zombie_revenge", "label":"Zombie Revenge"},
@@ -20,12 +26,17 @@ var filter_index := 0
 var page := 0
 var selected := -1
 
-func load_manifest(path := MANIFEST, additional_path := "") -> bool:
+func load_manifest(path := MANIFEST, additional_collections: Array = []) -> bool:
 	assets.clear()
 	var ids := {}
 	_append_collection(path, ART_ROOT, ids)
-	var extra: String = GALLERY_MANIFEST if path == MANIFEST and additional_path == "" else additional_path
-	if extra != "": _append_collection(extra, GALLERY_ART_ROOT, ids, true)
+	var extras: Array = GALLERY_COLLECTIONS if path == MANIFEST and additional_collections.is_empty() else additional_collections
+	for collection in extras:
+		if not collection is Dictionary: continue
+		var manifest_path := str(collection.get("manifest", ""))
+		var art_root := str(collection.get("art_root", ""))
+		if manifest_path == "" or art_root not in [GALLERY_ART_ROOT, LOT2_ART_ROOT]: continue
+		_append_collection(manifest_path, art_root, ids, true)
 	assets.sort_custom(func(a: Dictionary, b: Dictionary): return str(a.get("name", a.id)).naturalnocasecmp_to(str(b.get("name", b.id))) < 0)
 	_refresh_filters()
 	return not assets.is_empty()
@@ -37,7 +48,7 @@ func _append_collection(path: String, art_root: String, ids: Dictionary, gallery
 	for item in parsed.assets:
 		if not item is Dictionary: continue
 		if item.get("gallery", true) == false: continue
-		if gallery_only and (item.get("playable", true) != false or item.get("animation_complete", true) != false): continue
+		if gallery_only and (item.get("gallery", false) != true or item.get("playable", true) != false or item.get("animation_complete", true) != false or item.get("runtime_role", "") != "bestiary"): continue
 		var id := str(item.get("id", ""))
 		var asset_path := str(item.get("path", ""))
 		if not asset_path.begins_with("res://"): asset_path = "res://" + asset_path

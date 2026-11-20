@@ -1,0 +1,235 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "scope": "Références réellement utilisées pour les quatre humains du lot 2.",
+  "sources": [
+    {
+      "id": "goldman_manual",
+      "url": "https://www.digitpress.com/library/manuals/dreamcast/house_dead_2.pdf",
+      "type": "official_manual_rehosted",
+      "publisher": "SEGA",
+      "host": "Digital Press",
+      "observed": "Manuel Dreamcast, page imprimée 4 / index PDF 2 : Goldman assis, visage, costume, pantalon et chaussures visibles en monochrome.",
+      "local_reference": "docs/dossier_curien/sources_art/references-2026-11-20_lot2/characters/goldman_hotd2_manual_detail.png",
+      "extraction": {
+        "pdf_page_index": 2,
+        "clip_points": [
+          45,
+          198,
+          153,
+          351
+        ],
+        "render_scale": 4
+      },
+      "limitations": [
+        "Petit rendu monochrome ; la découpe du document ne crée pas de détail absent du PDF."
+      ],
+      "review_date": "2026-11-20",
+      "visual_reviewed": true,
+      "file": {
+        "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot2/characters/goldman_hotd2_manual_detail.png",
+        "sha256": "f24c2ef37d493fd190d1a68b09982472b1a5b006531dfd2edf8a5d0bac6258f7",
+        "bytes": 26265,
+        "dimensions": [
+          432,
+          612
+        ],
+        "mode": "RGB"
+      }
+    },
+    {
+      "id": "goldman_color",
+      "url": "https://www.youtube.com/watch?v=mIG8p0gB2Ew",
+      "image_url": "https://i.ytimg.com/vi/mIG8p0gB2Ew/hqdefault.jpg",
+      "type": "community_video_thumbnail_of_game_model",
+      "observed": "Miniature téléchargée et vue : modèle humain de Goldman assis, cheveux sombres, lunettes légèrement teintées, costume sombre à dominante prune, chemise blanche et cravate ocre.",
+      "local_reference": "docs/dossier_curien/sources_art/references-2026-11-20_lot2/characters/goldman_hotd2_game_thumbnail.jpg",
+      "limitations": [
+        "Miniature éditorialisée avec texte, pas une capture de vidéo à un instant mesuré ; la vidéo complète n’a pas été visionnée.",
+        "Couleurs du modèle sous son éclairage, pas un nuancier officiel."
+      ],
+      "review_date": "2026-11-20",
+      "visual_reviewed": true,
+      "file": {
+        "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot2/characters/goldman_hotd2_game_thumbnail.jpg",
+        "sha256": "b6a831727e2b255416fe8c9f8cf876d31da942546cc7a86b7e92701e5df77055",
+        "bytes": 24116,
+        "dimensions": [
+          480,
+          360
+        ],
+        "mode": "RGB"
+      }
+    },
+    {
+      "id": "thornheart_official",
+      "url": "https://hod.sega.jp/result/054.html",
+      "image_url": "https://hod.sega.jp/images/result/rank_s_pct.png",
+      "type": "official_sega_website_image",
+      "publisher": "SEGA",
+      "observed": "Image officielle du rang S, téléchargée et vue : buste de Thornheart, visage âgé et creusé, cheveux rabattus, costume sombre, cravate blanche et pochette rouge.",
+      "local_reference": "docs/dossier_curien/sources_art/references-2026-11-20_lot2/characters/thornheart_rank_s_official.png",
+      "limitations": [
+        "La page de résultat ouverte affiche un autre rang ; le PNG de rang S a été obtenu directement dans le même répertoire public du site.",
+        "Le buste ne montre ni pantalon, ni chaussures, ni silhouette entière."
+      ],
+      "review_date": "2026-11-20",
+      "visual_reviewed": true,
+      "file": {
+        "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot2/characters/thornheart_rank_s_official.png",
+        "sha256": "b93e6669bf39d24254f4aa091d6da70e51b3f93c126da3adaebf7eb3900ab78b",
+        "bytes": 13402,
+        "dimensions": [
+          272,
+          278
+        ],
+        "mode": "P"
+      }
+    },
+    {
+      "id": "papa_manual",
+      "url": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/246580/manuals/TOTDO_STEAM_MANUAL_ENG.PDF?t=1763675367",
+      "type": "official_manual",
+      "publisher": "SEGA",
+      "observed": "Manuel de The Typing of the Dead: Overkill, page imprimée 20 / index PDF 10 : portrait de Papa Caesar, cheveux, barbe, chemise à poches et foulard à pois.",
+      "local_reference": "docs/dossier_curien/sources_art/references-2026-11-20_lot2/characters/papa_caesar_official_manual_detail.png",
+      "extraction": {
+        "pdf_page_index": 10,
+        "clip_points": [
+          38,
+          316,
+          181,
+          457
+        ],
+        "render_scale": 3
+      },
+      "limitations": [
+        "Portrait monochrome ; le téléphone montré dans le manuel n’est pas repris dans la pose adaptée."
+      ],
+      "review_date": "2026-11-20",
+      "visual_reviewed": true,
+      "file": {
+        "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot2/characters/papa_caesar_official_manual_detail.png",
+        "sha256": "0262d048752ed4eec222c557d106116bdb1f7cc368516941efc8123bb8c8e64b",
+        "bytes": 162042,
+        "dimensions": [
+          429,
+          423
+        ],
+        "mode": "RGB"
+      }
+    },
+    {
+      "id": "papa_wii_game",
+      "url": "https://www.youtube.com/watch?v=7Stu6VTJg6g",
+      "image_url": "https://i.ytimg.com/vi/7Stu6VTJg6g/hqdefault.jpg",
+      "type": "community_video_thumbnail_of_offscreen_game_capture",
+      "observed": "Miniature téléchargée et vue : Papa debout dans une cinématique Wii, longue chemise verte à poches, pantalon vert, foulard rouge ; le bas des pieds est très sombre.",
+      "local_reference": "docs/dossier_curien/sources_art/references-2026-11-20_lot2/characters/papa_caesar_wii_game_thumbnail.jpg",
+      "limitations": [
+        "Image de jeu filmée sur écran, définition et balance de couleurs limitées ; chaussures et canne insuffisamment lisibles. La vidéo complète n’a pas été visionnée."
+      ],
+      "review_date": "2026-11-20",
+      "visual_reviewed": true,
+      "file": {
+        "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot2/characters/papa_caesar_wii_game_thumbnail.jpg",
+        "sha256": "6a2634bffff202071f840d1d2e427fefad077e5764bcb068b1420d8f3a94a377",
+        "bytes": 15315,
+        "dimensions": [
+          480,
+          360
+        ],
+        "mode": "RGB"
+      }
+    },
+    {
+      "id": "papa_green_shirt",
+      "url": "https://www.imfdb.org/wiki/House_of_the_Dead%3A_Overkill%2C_The",
+      "image_url": "https://www.imfdb.org/images/a/a3/TOTD-CaesarMagnum.jpg",
+      "type": "game_cutscene_rehosted_by_community",
+      "host": "IMFDB",
+      "observed": "Capture du jeu déjà téléchargée au lot 1, revue au lot 2 : manches retroussées, chemise verte, bracelets et bague de Papa à gauche de Varla.",
+      "local_reference": "docs/dossier_curien/sources_art/references-2026-11-20_lot2/characters/papa_caesar_green_shirt_game.jpg",
+      "limitations": [
+        "Visage et jambes hors champ ; le revolver de la cinématique ne fait pas partie de la pose retenue."
+      ],
+      "review_date": "2026-11-20",
+      "visual_reviewed": true,
+      "file": {
+        "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot2/characters/papa_caesar_green_shirt_game.jpg",
+        "sha256": "e23b86244f8299ae78f1665379e410e919f692456b3e9aafcf1d2fe73fe2ccd3",
+        "bytes": 107411,
+        "dimensions": [
+          960,
+          540
+        ],
+        "mode": "RGB"
+      }
+    },
+    {
+      "id": "papa_appearance_text",
+      "url": "https://thehouseofthedead.fandom.com/wiki/Papa_Caesar",
+      "type": "secondary_wiki_indexed_excerpt",
+      "observed": "Description Appearance consultée via résultat de recherche : ensemble vert, mocassins rouges, foulard rouge, bracelets, bague rouge et canne en bois rouge à poignée beige.",
+      "local_reference": null,
+      "limitations": [
+        "Source textuelle communautaire ; la page directe était inaccessible. Ne vaut pas inspection visuelle des mocassins ou de la canne."
+      ],
+      "review_date": "2026-11-20",
+      "visual_reviewed": false
+    },
+    {
+      "id": "clement_cutscene",
+      "url": "https://www.lp.zone/t/lets-play-the-typing-of-the-dead-overkill/2448",
+      "image_url": "https://i.imgur.com/6me77Rr.jpg",
+      "type": "game_cutscene_rehosted_by_community",
+      "host": "LP Zone / Imgur",
+      "observed": "Post 2, CAST, identifie Clement Darling. Capture téléchargée et vue : visage creusé, cheveux bruns rabattus, veste bleue à fines rayures, grand col clair et cravate verte/bleutée rayée.",
+      "local_reference": "docs/dossier_curien/sources_art/references-2026-11-20_lot2/characters/clement_darling_game_lpzone.jpg",
+      "limitations": [
+        "Hébergement communautaire d’une capture du jeu, pas publication officielle SEGA.",
+        "Cadrage au buste ; pantalon, chaussures et morphologie entière non montrés. Éclairage bleuté de cinématique."
+      ],
+      "review_date": "2026-11-20",
+      "visual_reviewed": true,
+      "file": {
+        "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot2/characters/clement_darling_game_lpzone.jpg",
+        "sha256": "6cc9eddb85a082c37daeb3bcaed5aa1e76bcf14daaa57a6322c70ab55e66bd20",
+        "bytes": 29915,
+        "dimensions": [
+          855,
+          689
+        ],
+        "mode": "RGB"
+      }
+    },
+    {
+      "id": "dossier_style",
+      "type": "existing_project_art_style",
+      "url": null,
+      "local_reference": "assets/dossier_curien/saga/isaac_guard.png",
+      "observed": "Isaac guard existant et inspecté ; référence de peinture et contours seulement, jamais de tenue ou d’identité pour ces quatre personnages.",
+      "limitations": [
+        "La pose de combat et l’arme d’Isaac ne sont pas reprises."
+      ],
+      "review_date": "2026-11-20",
+      "visual_reviewed": true,
+      "file": {
+        "path": "assets/dossier_curien/saga/isaac_guard.png",
+        "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+        "bytes": 595313,
+        "dimensions": [
+          1024,
+          1024
+        ],
+        "mode": "RGBA"
+      }
+    }
+  ],
+  "method": [
+    "Les sources visuelles locales ont été ouvertes et vues avant génération.",
+    "Les découpes de PDF sont des extraits documentaires ; les PNG générés sont copiés natifs, sans recadrage, recoloration ni recompression.",
+    "Une miniature vidéo inspectée ne signifie pas que toute la vidéo a été vue.",
+    "Le statut de galerie ne donne aucun statut jouable et ne ferme aucune animation manquante."
+  ]
+}

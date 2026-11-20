@@ -1,0 +1,203 @@
+{
+  "sources": [
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot2/bosses/judgment_sega_key.jpg",
+      "source_page": "https://www.sonicteam.com/HOD2and3RETURN/jp/2008/02/judgment_1.html",
+      "media_url": "https://www.sonicteam.com/HOD2and3RETURN/jp/images/BOSS1_A.jpg",
+      "source_kind": "primary_sega_official_site",
+      "download_date": "2026-11-20",
+      "sha256": "4b5814b6d2e4b3befbfbbe9dfee0d4681fb06be3be7c5cd4617f6c47509ef38e",
+      "bytes": 118401,
+      "dimensions": [
+        260,
+        347
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot2/bosses/judgment_sega_action.jpg",
+      "source_page": "https://www.sonicteam.com/HOD2and3RETURN/jp/2008/02/judgment_1.html",
+      "media_url": "https://www.sonicteam.com/HOD2and3RETURN/jp/images/JUDGMENT_01_01.jpg",
+      "source_kind": "primary_sega_official_site",
+      "download_date": "2026-11-20",
+      "sha256": "7b2ffb6f86a4ce82fc6c1de6a30b84d139af22d6d8638041ce22bdbadb650390",
+      "bytes": 29094,
+      "dimensions": [
+        260,
+        195
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot2/bosses/judgment_phase_transition_sega.jpg",
+      "source_page": "https://www.sonicteam.com/HOD2and3RETURN/jp/2008/02/judgment_1.html",
+      "media_url": "https://www.sonicteam.com/HOD2and3RETURN/jp/images/JUDGMENT_03.jpg",
+      "source_kind": "primary_sega_official_site",
+      "download_date": "2026-11-20",
+      "sha256": "a11c086ff43453149b9a59426d1ac7777b0c997b33b02c092a2401e4e445d8d2",
+      "bytes": 29611,
+      "dimensions": [
+        260,
+        195
+      ],
+      "mode": "RGB",
+      "role": "Context screenshot inspected; Kuarl remains visible during the transition. Not used as a Zeal close-up or a generation input."
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot2/bosses/tower_sega_key.jpg",
+      "source_page": "https://www.sonicteam.com/HOD2and3RETURN/jp/2008/02/tower.html",
+      "media_url": "https://www.sonicteam.com/HOD2and3RETURN/jp/images/BOSS3_2.jpg",
+      "source_kind": "primary_sega_official_site",
+      "download_date": "2026-11-20",
+      "sha256": "ec4cd239f3f91f84920494e0efea81793beea5b83822ec12ead577a27cfa08ed",
+      "bytes": 101282,
+      "dimensions": [
+        260,
+        347
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot2/bosses/tower_sega_game.jpg",
+      "source_page": "https://www.sonicteam.com/HOD2and3RETURN/jp/2008/02/tower.html",
+      "media_url": "https://www.sonicteam.com/HOD2and3RETURN/jp/images/TOWER_03_1.jpg",
+      "source_kind": "primary_sega_official_site",
+      "download_date": "2026-11-20",
+      "sha256": "e88529b8f57e131c785342daadeb8d90032a35d03eb6f8f7cd5cfbc30d03b0d9",
+      "bytes": 32062,
+      "dimensions": [
+        260,
+        195
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot2/bosses/strength_sega_key.jpg",
+      "source_page": "https://www.sonicteam.com/HOD2and3RETURN/jp/2008/02/strength.html",
+      "media_url": "https://www.sonicteam.com/HOD2and3RETURN/jp/images/BOSS4.jpg",
+      "source_kind": "primary_sega_official_site",
+      "download_date": "2026-11-20",
+      "sha256": "bb770eaeb5fc57988673ff9250eabb4e74079d25787e2cd09a84ac035dc93cbf",
+      "bytes": 117160,
+      "dimensions": [
+        260,
+        347
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot2/bosses/strength_sega_game.jpg",
+      "source_page": "https://www.sonicteam.com/HOD2and3RETURN/jp/2008/02/strength.html",
+      "media_url": "https://www.sonicteam.com/HOD2and3RETURN/jp/images/STRENGTH_08_1.jpg",
+      "source_kind": "primary_sega_official_site",
+      "download_date": "2026-11-20",
+      "sha256": "4c120b6ce5f49390e1d5e5b35a302835b65491e0d8e37d01c0ec0e8f28fb5479",
+      "bytes": 31621,
+      "dimensions": [
+        260,
+        195
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot2/bosses/fool_sega_key.jpg",
+      "source_page": "https://www.sonicteam.com/HOD2and3RETURN/jp/2008/02/type0028_fool_1.html",
+      "media_url": "https://www.sonicteam.com/HOD2and3RETURN/jp/images/zb02_st2net.jpg",
+      "source_kind": "primary_sega_official_site",
+      "download_date": "2026-11-20",
+      "sha256": "a831446105db3e6c1e4188b41690b9071b9bda3e4778ec54606a03c7e44cd164",
+      "bytes": 120355,
+      "dimensions": [
+        260,
+        347
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot2/bosses/fool_sega_game.jpg",
+      "source_page": "https://www.sonicteam.com/HOD2and3RETURN/jp/2008/02/type0028_fool_1.html",
+      "media_url": "https://www.sonicteam.com/HOD2and3RETURN/jp/images/Fool_06.jpg",
+      "source_kind": "primary_sega_official_site",
+      "download_date": "2026-11-20",
+      "sha256": "1d560ef248c552256c848f18cabe54c9b5c36e8625b053eabbeb15b083c836dd",
+      "bytes": 22878,
+      "dimensions": [
+        260,
+        195
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot2/bosses/sun_sega_key.jpg",
+      "source_page": "https://www.sonicteam.com/HOD2and3RETURN/jp/2008/02/type8830_sun.html",
+      "media_url": "https://www.sonicteam.com/HOD2and3RETURN/jp/images/zb03_st3bossroom2.jpg",
+      "source_kind": "primary_sega_official_site",
+      "download_date": "2026-11-20",
+      "sha256": "4281b1343446d2086b5f97fd14efe01198b91e964249e681b3a7dec93777fca7",
+      "bytes": 118747,
+      "dimensions": [
+        260,
+        347
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot2/bosses/sun_sega_game.jpg",
+      "source_page": "https://www.sonicteam.com/HOD2and3RETURN/jp/2008/02/type8830_sun.html",
+      "media_url": "https://www.sonicteam.com/HOD2and3RETURN/jp/images/Sun_01.jpg",
+      "source_kind": "primary_sega_official_site",
+      "download_date": "2026-11-20",
+      "sha256": "ebc643a53070b4baa9aa78336c2d0fe9a34219cf4377dda7d756410b601bdb56",
+      "bytes": 23749,
+      "dimensions": [
+        260,
+        195
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot2/bosses/sun_sega_head.jpg",
+      "source_page": "https://www.sonicteam.com/HOD2and3RETURN/jp/2008/02/type8830_sun.html",
+      "media_url": "https://www.sonicteam.com/HOD2and3RETURN/jp/images/Sun_06.jpg",
+      "source_kind": "primary_sega_official_site",
+      "download_date": "2026-11-20",
+      "sha256": "d454bc4dee789be9263dd2cbd8466c36e41e73c91a0603514ea178c794230f0f",
+      "bytes": 28998,
+      "dimensions": [
+        260,
+        195
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot2/bosses/fool_model_secondary.png",
+      "source_page": "https://mzh.moegirl.org.cn/Fool",
+      "media_url": "https://storage.moegirl.org.cn/moegirl/commons/c/cd/Fool-HOD3.png",
+      "source_kind": "secondary_wiki_hosted_game_model",
+      "download_date": "2026-11-20",
+      "role": "Supplementary anatomy/extent reference cross-checked against official SEGA images; not attributed to SEGA as hosting source.",
+      "sha256": "8713a1b08c45a0d812987a34cb92b9407bdd79f52eb4256dd7963d91ef0a1321",
+      "bytes": 229019,
+      "dimensions": [
+        620,
+        578
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot2/bosses/sun_model_secondary.png",
+      "source_page": "https://thehouseofthedead.fandom.com/wiki/Sun",
+      "media_url": "https://vignette.wikia.nocookie.net/houseofthedead/images/1/16/Sun_Render.png/revision/latest?cb=20200129202108",
+      "source_kind": "secondary_wiki_hosted_game_model",
+      "download_date": "2026-11-20",
+      "role": "Supplementary anatomy/extent reference cross-checked against official SEGA images; not attributed to SEGA as hosting source.",
+      "sha256": "1aeb5335421aa3b42b7cfe8bc465a8703f61b007a6e37b9f3bca39da754f7d7f",
+      "bytes": 182436,
+      "dimensions": [
+        898,
+        999
+      ],
+      "mode": "RGBA"
+    }
+  ]
+}

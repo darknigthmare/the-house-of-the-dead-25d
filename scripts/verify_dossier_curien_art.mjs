@@ -37,7 +37,7 @@ for (const entry of catalogue.fichiers) {
     check(existsSync(path + '.import'), `Godot import is committed: ${entry.fichier}`);
     check(existsSync(join(root, entry.source_production)), `Production reference exists: ${entry.fichier}`);
   }
-  if (entry.lot === '2026-11-20_stages') {
+  if (['2026-11-20_stages', '2026-11-20_lot2_stages'].includes(entry.lot)) {
     check(['back', 'mid', 'front'].includes(entry.usage), `New stage layer is identified: ${entry.fichier}`);
     check(bytes[25] === (entry.usage === 'back' ? 2 : 6), `Native RGB backdrop or RGBA overlay: ${entry.fichier}`);
     check(existsSync(path + '.import'), `New stage import is committed: ${entry.fichier}`);

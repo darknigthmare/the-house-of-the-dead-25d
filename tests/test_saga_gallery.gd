@@ -34,6 +34,11 @@ func _initialize() -> void:
 	var stamp := str(Time.get_ticks_usec())
 	var base_path := "user://gallery_base_" + stamp + ".json"
 	var extra_path := "user://gallery_extra_" + stamp + ".json"
+	var lot2_path := "user://gallery_lot2_" + stamp + ".json"
+	var collections := [
+		{"manifest":extra_path, "art_root":Bestiary.GALLERY_ART_ROOT},
+		{"manifest":lot2_path, "art_root":Bestiary.LOT2_ART_ROOT}
+	]
 	var base := {"id":"existing_subject", "name":"Existing", "game":"zombie_revenge", "game_label":"Zombie Revenge", "category":"character_base", "path":fixture_art(Bestiary.ART_ROOT + "__fixture_base.png")}
 	var npc := {"id":"test_npc", "name":"NPC", "game":"overkill", "game_label":"Overkill", "category":"npc_base", "path":fixture_art(Bestiary.GALLERY_ART_ROOT + "__fixture_npc.png"), "gallery":true, "playable":false, "animation_complete":false, "runtime_role":"bestiary"}
 	var costume := npc.duplicate()
@@ -58,35 +63,57 @@ func _initialize() -> void:
 	var missing := npc.duplicate()
 	missing.id = "missing_image"
 	missing.path = Bestiary.GALLERY_ART_ROOT + "__missing.png"
+	var wrong_role := npc.duplicate()
+	wrong_role.id = "false_runtime_role"
+	wrong_role.runtime_role = "fighter"
+	var implicit_gallery := npc.duplicate()
+	implicit_gallery.id = "implicit_gallery"
+	implicit_gallery.erase("gallery")
+	var later := npc.duplicate()
+	later.merge({"id":"test_lot2_npc", "game":"scarlet_dawn", "game_label":"Scarlet Dawn", "path":fixture_art(Bestiary.LOT2_ART_ROOT + "__fixture_later.png")}, true)
+	var typing := costume.duplicate()
+	typing.merge({"id":"test_lot2_costume", "game":"typing", "game_label":"The Typing of the Dead", "path":fixture_art(Bestiary.LOT2_ART_ROOT + "__fixture_typing.png")}, true)
+	var previous_lot_duplicate := later.duplicate()
+	previous_lot_duplicate.id = npc.id
+	var previous_lot_path := later.duplicate()
+	previous_lot_path.id = "previous_lot_path"
+	previous_lot_path.path = npc.path
 	write_manifest(base_path, [base])
-	write_manifest(extra_path, [npc, costume, duplicate, false_playable, complete, foreign, animation, impostor, missing, "bad-row"])
+	write_manifest(extra_path, [npc, costume, duplicate, false_playable, complete, foreign, animation, impostor, missing, wrong_role, implicit_gallery, "bad-row"])
+	write_manifest(lot2_path, [later, typing, previous_lot_duplicate, previous_lot_path])
 	var gallery := Bestiary.new()
-	check(gallery.load_manifest(base_path, extra_path), "Both collections load through native resource lookup")
-	check(gallery.assets.size() == 4, "Merge rejects duplicate IDs, foreign paths, missing art, animations and false playable/complete claims")
+	check(gallery.load_manifest(base_path, collections), "All three collections load through native resource lookup")
+	check(gallery.assets.size() == 6, "Merge rejects duplicate IDs, foreign paths, missing art, animations and false gallery/runtime/playable/complete claims")
 	var ids := {}
 	for entry in gallery.assets: ids[entry.id] = entry
 	check(ids.has("existing_subject") and ids.existing_subject.path == base.path, "Extension cannot replace an existing subject")
 	check(ids.has("test_npc") and ids.has("test_costume"), "New NPC and costume categories remain visible")
+	check(ids.has(later.id) and ids.has(typing.id), "The later batch adds subjects from its own art directory")
+	check(ids.test_npc.path == npc.path and not ids.has("previous_lot_path"), "Later collections cannot replace previous subjects or claim their image paths")
 	check(ids.has("linda_rotta") and gallery.fighter_id(ids.linda_rotta) < 0, "Linda's identity alone cannot expose a new image as playable")
 	check(gallery.role_label(npc) == "PNJ · non jouable", "NPC card states its non-playable role")
 	check(gallery.role_label(costume) == "Variante de costume · non jouable", "Costume card does not imply an equipped costume")
-	check(gallery.filters.size() == 5 and filter_for(gallery, "zombie_revenge") == 1 and filter_for(gallery, "hotd_ex") == 2, "New game filters extend the established collection order")
-	for game in ["overkill", "hotd3"]:
+	check(gallery.filters.size() == 7 and filter_for(gallery, "zombie_revenge") == 1 and filter_for(gallery, "hotd_ex") == 2, "New game filters extend the established collection order")
+	for game in ["overkill", "hotd3", "scarlet_dawn", "typing"]:
 		gallery.filter_index = filter_for(gallery, game)
 		var entries: Array = gallery.filtered()
 		check(not entries.is_empty(), "New game filter has subjects: " + game)
 		for entry in entries: check(gallery.family(entry) == game, "Filter isolates the selected game: " + game)
 	gallery.filter_index = filter_for(gallery, "hotd3")
-	gallery.load_manifest(base_path, extra_path)
+	gallery.load_manifest(base_path, collections)
 	check(gallery.filters[gallery.filter_index].game == "hotd3", "Reload preserves the chosen game's filter")
 	check(gallery.family({"game":"hotd4_special"}) == "hotd4_special" and gallery.family({"game":"next_game"}) == "next_game", "Game IDs are not folded into EX by substring")
+	write_manifest(lot2_path, [later, typing])
 	write_manifest(extra_path, "malformed")
-	check(gallery.load_manifest(base_path, extra_path) and gallery.assets.size() == 1, "Malformed extension preserves the base and removes stale extra subjects")
+	check(gallery.load_manifest(base_path, collections) and gallery.assets.size() == 3, "Malformed earlier extension preserves the base and later collection, without retaining stale subjects")
 	check(gallery.filter_index == 0, "Removed collection resets the unavailable filter")
+	write_manifest(lot2_path, "malformed")
+	check(gallery.load_manifest(base_path, collections) and gallery.assets.size() == 1, "Malformed later extension leaves the independent base intact")
 	write_manifest(base_path, "malformed")
-	check(not gallery.load_manifest(base_path, extra_path) and gallery.assets.is_empty(), "Malformed collections do not retain stale subjects")
+	check(not gallery.load_manifest(base_path, collections) and gallery.assets.is_empty(), "Malformed collections do not retain stale subjects")
 	DirAccess.remove_absolute(ProjectSettings.globalize_path(base_path))
 	DirAccess.remove_absolute(ProjectSettings.globalize_path(extra_path))
+	DirAccess.remove_absolute(ProjectSettings.globalize_path(lot2_path))
 	fixture_textures.clear()
 	print("SAGA GALLERY: %d checks, %d failures" % [checks, failures])
 	quit(1 if failures else 0)

@@ -1,6 +1,6 @@
 {
   "titre": "Dossier Curien — Anthologie de combat",
-  "nombre_de_png": 229,
+  "nombre_de_png": 235,
   "nouveaux_png_volume_iii": 86,
   "fichiers": [
     {
@@ -2354,6 +2354,42 @@
       "volume": 3
     },
     {
+      "fichier": "strength_colosseum_back.png",
+      "usage": "back",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "c21815bf401850032d5cf7c5769859b3f1d589ed98eeca4f5616e17cc6802bc7",
+      "lot": "2026-11-20_lot2_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot2/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "strength_colosseum_front.png",
+      "usage": "front",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "69a98ad1dae1e253c2b45cf8bc7cd3d851cfee25e9f352147a2f0c47eb2d1593",
+      "lot": "2026-11-20_lot2_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot2/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "strength_colosseum_mid.png",
+      "usage": "mid",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "4c9ef99396a8fcf54b690b56565f4f6e5e9b57e4ee197b2243fa99a33ba3d9e5",
+      "lot": "2026-11-20_lot2_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot2/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
       "fichier": "subway_back.png",
       "usage": "back",
       "dimensions": [
@@ -2384,6 +2420,42 @@
       "sha256": "b592024d98da742b3950efac36987c35f3224d60a7be4013eae4e80b6b29e863",
       "lot": "2026-11-19_reprise",
       "source_production": "docs/dossier_curien/saga/production/2026-11-19_parallax.json"
+    },
+    {
+      "fichier": "tower_canal_back.png",
+      "usage": "back",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "d621c3281da6161cc571860eef4c573fd1fc2cd796016e5d47c9db23783db907",
+      "lot": "2026-11-20_lot2_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot2/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "tower_canal_front.png",
+      "usage": "front",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "d333e148e329ec4a4f00af78655c96008b21c8e2f24d32df68fe1b8d7d447831",
+      "lot": "2026-11-20_lot2_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot2/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "tower_canal_mid.png",
+      "usage": "mid",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "d73c8dc1faab3e4441f3bc57d92c5b52bdf9890208444c147b0c6c078807bb9d",
+      "lot": "2026-11-20_lot2_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot2/manifest.json",
+      "statut": "adaptation_2d_documentee"
     },
     {
       "fichier": "venice_back.png",
@@ -2824,5 +2896,6 @@
     "premier_lot_saga": 10,
     "parallaxe_marche_props_parts": 28
   },
-  "nouveaux_png_stages_2026_11_20": 6
+  "nouveaux_png_stages_2026_11_20": 6,
+  "nouveaux_png_stages_2026_11_20_lot2": 6
 }

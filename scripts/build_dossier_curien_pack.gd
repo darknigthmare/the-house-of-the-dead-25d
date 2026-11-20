@@ -13,7 +13,10 @@ extends SceneTree
 const ADDITIONS_PATH := "res://data/assets/dossier_curien_additions.json"
 const EXPANSION_PATH := "res://data/assets/dossier_curien_expansion.json"
 const MOTION_PATH := "res://data/assets/dossier_curien_motion.json"
-const GALLERY_PATH := "res://data/assets/dossier_curien_gallery_2026-11-20.json"
+const GALLERY_PATHS := [
+	"res://data/assets/dossier_curien_gallery_2026-11-20.json",
+	"res://data/assets/dossier_curien_gallery_2026-11-20_lot2.json"
+]
 const ASSET_PREFIX := "res://assets/dossier_curien/"
 const IMPORT_PREFIX := "res://.godot/imported/"
 const REQUIRED_BASE_FILES := [
@@ -113,16 +116,17 @@ func _build() -> bool:
 		if not entry is Dictionary or entry.get("provenance_pending", false) == true: return _fail("Every motion pose requires finalized provenance.")
 	buffers[MOTION_PATH] = motion_bytes
 	if baseline_set.has(MOTION_PATH): refreshed_manifest_count += 1
-	var gallery_source := source_root.path_join(GALLERY_PATH.trim_prefix("res://"))
-	var gallery_bytes := _read_bytes(gallery_source)
-	var gallery_parser := JSON.new()
-	if _failed or gallery_parser.parse(gallery_bytes.get_string_from_utf8()) != OK or not gallery_parser.data is Dictionary or not gallery_parser.data.get("assets") is Array:
-		return _fail("Gallery manifest must contain an assets array: " + gallery_source)
-	for entry in gallery_parser.data.assets:
-		if not entry is Dictionary or entry.get("playable", true) != false or entry.get("animation_complete", true) != false:
-			return _fail("Gallery illustrations must remain explicitly non-playable and incomplete.")
-	buffers[GALLERY_PATH] = gallery_bytes
-	if baseline_set.has(GALLERY_PATH): refreshed_manifest_count += 1
+	for gallery_path: String in GALLERY_PATHS:
+		var gallery_source := source_root.path_join(gallery_path.trim_prefix("res://"))
+		var gallery_bytes := _read_bytes(gallery_source)
+		var gallery_parser := JSON.new()
+		if _failed or gallery_parser.parse(gallery_bytes.get_string_from_utf8()) != OK or not gallery_parser.data is Dictionary or not gallery_parser.data.get("assets") is Array:
+			return _fail("Gallery manifest must contain an assets array: " + gallery_source)
+		for entry in gallery_parser.data.assets:
+			if not entry is Dictionary or entry.get("gallery", false) != true or entry.get("playable", true) != false or entry.get("animation_complete", true) != false or entry.get("runtime_role", "") != "bestiary":
+				return _fail("Gallery illustrations must remain explicitly non-playable, incomplete and assigned to the bestiary.")
+		buffers[gallery_path] = gallery_bytes
+		if baseline_set.has(gallery_path): refreshed_manifest_count += 1
 
 	var source_assets := source_root.path_join(ASSET_PREFIX.trim_prefix("res://"))
 	if not DirAccess.dir_exists_absolute(source_assets):

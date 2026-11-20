@@ -1,0 +1,20 @@
+Command: npm test
+Exit code: 0
+
+QA checks: 307/307 passed
+ENEMY ROSTER OK: 25 profiles, 25 unique types, 25 dedicated directional atlases.
+ENVIRONMENT ASSET VERIFY PASSED: 1977 assertions; 20 materials, 43 nodes, 8 active destructibles, 14 props, 4 animated effects; 81.13 MiB runtime PNG
+ANIMATED EFFECTS OK: 340/340 checks; optional private sources 0/4 present
+GAMEPLAY SUPPORT OK: 113/113 checks
+CONTENT FAMILY AUDIT: 905 checks, 6 warnings, 0 errors
+TEXTURE IMPORT PROFILE VERIFIED: 132 files, 0 mismatches.
+DOSSIER CURIEN ART: 265 catalogue PNGs verified; 50 additions, native dimensions, SHA-256 and alpha bounds verified.
+DOSSIER CURIEN ART VERIFIED: 1588 checks, 235 Saga PNGs, 8 calibrated poses.
+DOSSIER CURIEN EXPANSION VERIFIED: 49 PNGs, 40 gallery entries, 65651752 bytes; hashes, RGBA bounds, provenance and paths verified.
+DOSSIER CURIEN EXPANSION SELF-TEST: 10 cases passed.
+SAGA MOTION MANIFEST: {"assets":30,"bytes":35895640}
+SAGA MOTION MANIFEST SELF-TEST: 11 cases passed.
+DOSSIER CURIEN GALLERY VERIFIED (data/assets/dossier_curien_gallery_2026-11-20.json): 9 PNGs, 9 non-playable gallery entries, 7741468 bytes; hashes, RGBA bounds, provenance, distinct identities and paths verified.
+DOSSIER CURIEN GALLERY VERIFIED (data/assets/dossier_curien_gallery_2026-11-20_lot2.json): 12 PNGs, 12 non-playable gallery entries, 14814532 bytes; hashes, RGBA bounds, provenance, distinct identities and paths verified.
+DOSSIER CURIEN GALLERY COLLECTIONS: 2 batches, 21 distinct non-playable entries.
+DOSSIER CURIEN GALLERY SELF-TEST: 21 cases passed.

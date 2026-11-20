@@ -8,9 +8,11 @@ extends SceneTree
 
 const MANIFEST_PATH := "res://data/assets/dossier_curien_expansion.json"
 const MOTION_MANIFEST_PATH := "res://data/assets/dossier_curien_motion.json"
-const GALLERY_MANIFEST_PATH := "res://data/assets/dossier_curien_gallery_2026-11-20.json"
 const ART_ROOT := "res://assets/dossier_curien/expansion/"
-const GALLERY_ART_ROOT := "res://assets/dossier_curien/gallery_2026-11-20/"
+const GALLERY_COLLECTIONS := [
+	{"manifest":"res://data/assets/dossier_curien_gallery_2026-11-20.json", "art_root":"res://assets/dossier_curien/gallery_2026-11-20/"},
+	{"manifest":"res://data/assets/dossier_curien_gallery_2026-11-20_lot2.json", "art_root":"res://assets/dossier_curien/gallery_2026-11-20_lot2/"}
+]
 const SCRIPT_ROOT := "res://src/dossier_curien/"
 const REQUIRED_SCRIPTS := [
 	"arena.gd", "combatant.gd", "presentation.gd", "saga.gd", "saga_bestiary.gd",
@@ -147,8 +149,8 @@ func _game_contract(scripts: Dictionary) -> int:
 	_check(profiles.size() == 24, "Mounted code contains the 24 combat profiles")
 	_check(cases.has("curien") and manor_routes.size() == 4, "The manor Chronicle has four routes and is counted once")
 	_check(story_count == 26, "Mounted code has 26 routes: manor + other Chronicles + alternates")
-	_check(stages.size() == 20, "Mounted code contains 20 arenas")
-	for prefix in ["zr_train", "creeping_flesh"]:
+	_check(stages.size() == 22, "Mounted code contains 22 arenas")
+	for prefix in ["zr_train", "creeping_flesh", "tower_canal", "strength_colosseum"]:
 		for plane in ["back", "mid", "front"]:
 			var path := "res://assets/dossier_curien/saga/%s_%s.png" % [prefix, plane]
 			_check(ResourceLoader.exists(path, "Texture2D") and ResourceLoader.load(path, "Texture2D") is Texture2D, "Mounted arena plane loads: " + path)
@@ -329,16 +331,18 @@ func _run() -> void:
 		_finish()
 		return
 	var collection := _manifest_textures(manifest.assets, manifest.summary)
-	var extra := _read_object(GALLERY_MANIFEST_PATH)
-	if not _check(extra.get("assets") is Array and not extra.assets.is_empty() and extra.get("summary") is Dictionary, "Mounted gallery extension has subjects and a summary"):
-		_finish()
-		return
-	var additional := _manifest_textures(extra.assets, extra.summary, GALLERY_ART_ROOT)
-	for identity in additional.by_id:
-		_check(not collection.by_id.has(identity), "Gallery extension preserves distinct subject identities: " + str(identity))
-		var entry: Dictionary = additional.by_id[identity]
-		_check(entry.get("playable", true) == false and entry.get("animation_complete", true) == false and entry.get("runtime_role", "") == "bestiary", "Gallery subject remains explicitly non-playable: " + str(identity))
-	collection.expected_gallery.merge(additional.expected_gallery)
+	for batch: Dictionary in GALLERY_COLLECTIONS:
+		var extra := _read_object(batch.manifest)
+		if not _check(extra.get("assets") is Array and not extra.assets.is_empty() and extra.get("summary") is Dictionary, "Mounted gallery extension has subjects and a summary: " + str(batch.manifest)):
+			_finish()
+			return
+		var additional := _manifest_textures(extra.assets, extra.summary, batch.art_root)
+		for identity in additional.by_id:
+			_check(not collection.by_id.has(identity), "Gallery extension preserves distinct subject identities across every batch: " + str(identity))
+			var entry: Dictionary = additional.by_id[identity]
+			_check(entry.get("gallery", false) == true and entry.get("playable", true) == false and entry.get("animation_complete", true) == false and entry.get("runtime_role", "") == "bestiary", "Gallery subject remains explicitly non-playable: " + str(identity))
+		collection.by_id.merge(additional.by_id)
+		collection.expected_gallery.merge(additional.expected_gallery)
 	var linda_id := _game_contract(scripts)
 	_gallery(scripts, collection.expected_gallery, linda_id)
 	_linda(scripts, collection.by_id, linda_id)

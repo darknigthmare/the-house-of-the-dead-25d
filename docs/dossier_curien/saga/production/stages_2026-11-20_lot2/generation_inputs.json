@@ -1,0 +1,127 @@
+{
+  "batch": "2026-11-20_lot2",
+  "generation_method": "image_gen built-in",
+  "files": [
+    {
+      "key": "lot2_strength_back",
+      "id": "strength_colosseum_back",
+      "stage": "strength_colosseum",
+      "layer": "back",
+      "file": "exec-1246454a-90b0-45b2-bb23-51ac9edc9967.png",
+      "reference_files": [
+        "strength_phase4.jpg",
+        "strength_phase2.jpg",
+        "strength_intro.jpg"
+      ],
+      "reference_paths": [
+        "assets/dossier_curien/saga/carnival_back.png"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: ONE opaque wide16:9 hand-painted background for a side-on 2D fighting arena, native about1600x900. Subject: the stone maze INSIDE THE COLOSSEUM from the ORIGINAL The House of the Dead2, Strength encounter, focusing on its LIGHT/PALE WALL route. Input images1 and2 are real in-game screenshots: preserve the pale weathered stone and brick blockwork, grey mortar, square piers, upper openings and arches, outdoor deep blue dusk sky visible above the walls, and worn gravel/stone ground. Image3 shows the metal release cage: use the rusty vertical iron bars and squared barred enclosure as a RECESSED background feature to one side. Remove the boss, weapon, blood, hit effects, UI and all lettering from these references. Image4 is ONLY the project's rendering quality and lateral combat layout: tactile detailed painted surfaces, clear flat fight strip; do not borrow the fairground or its motifs.\nCreate a readable SIDE-ON adaptation of the pale masonry maze court, with a sequence of stone partition walls and arch openings extending across the background rather than a central corridor receding away from the viewer. Keep the release cage built into a dark recess near the far left in the background. Show the original maze's patchy light stone, deeper cracks, a few moss stains, simple squared piers and glimpses of distant upper colosseum arches. Do not turn this into a pristine Roman amphitheatre, giant gladiator stadium, medieval castle or modern factory. Avoid inventing a pool or giant central monument. The fighting surface is a continuous level band of worn grey limestone paving and packed gritty ground across the ENTIRE width, begins around74% canvas height, fighter foot line at81.6%, ground continues through bottom edge. No elevation changes, no prop on the fight strip, no foreground bars covering the center. Main area x12.5–87.5% remains easy to read behind fighters.\nNatural dim cool dusk illumination with gentle warm reflections from pale stone; no flames, spotlights or invented lamps. Hand-painted high-detail arcade background, strong material identity, moderate atmospheric depth. Exactly ONE production backplate, no characters, monsters, statues of people, weapons, dismemberment, text, numbers, captions, logos, watermark, border, collage, panels, transparent area. Original lateral adaptation of the reference setting, no implication of exact original camera geometry."
+    },
+    {
+      "key": "lot2_strength_front",
+      "id": "strength_colosseum_front",
+      "stage": "strength_colosseum",
+      "layer": "front",
+      "file": "exec-1a37c939-361d-46b6-a0c6-4d4f4258bf6f.png",
+      "reference_files": [],
+      "reference_paths": [
+        "assets/dossier_curien/saga/strength_colosseum_back.png"
+      ],
+      "prompt": "Create ONE genuinely transparent RGBA FOREGROUND OVERLAY PNG for the supplied original-HOTD2 pale masonry Strength Colosseum background, about1672x941 landscape16:9. Match its fine hand-painted 2D arcade style, cool dusk light, pale dirty stones and small moss stains. Draw ONLY a small low pile of chipped limestone and gravel in the extreme BOTTOM LEFT corner, limited to x0–10%, y91–100%, and a dark rusty broken cage footing with a few small stones in the extreme BOTTOM RIGHT corner, limited to x92–100%, y91–100%. Cut their bases at the bottom edge naturally. This is a separate parallax layer, NOT a full picture or a room. All other pixels must be genuinely transparent, with no shadow ellipse, background color, haze, sky, floor, wall or scene left over. Central x12.5–87.5% stays completely empty from top to bottom, including the fight area rectangle y20–79%. No central props, no long bar joining the corners, no humans, creatures, weapons, gore, writing, captions, logos, frames, UI or checkerboard baked into the image. One clean native RGBA production layer."
+    },
+    {
+      "key": "lot2_strength_mid",
+      "id": "strength_colosseum_mid",
+      "stage": "strength_colosseum",
+      "layer": "mid",
+      "file": "exec-cecb53b5-d38b-4104-8a11-6f78b0f09635.png",
+      "reference_files": [],
+      "reference_paths": [
+        "assets/dossier_curien/saga/strength_colosseum_back.png"
+      ],
+      "prompt": "Use case: stylized-concept. Create ONE isolated genuinely transparent RGBA16:9 MIDGROUND PARALLAX OVERLAY for the supplied pale-brick Strength colosseum maze background, same native approximately1672x941 landscape size. The supplied image is ONLY a material, lighting and camera reference; do not repeat the scene or ground. Draw only a close rough PALE stone pier cut by the LEFT edge, entirely inside x0–8% of the canvas, and a narrow rusted iron cage door jamb cut by the RIGHT edge inside x94–100%, both matching the game's cool dusk and weathered materials. Keep upper and lower ends within the image or naturally cropped by outer edge. The objects must NOT extend into x12.5–87.5% at ANY height. Entire central80% and especially rectangle x12.5–87.5%, y20–79% must have alpha0, absolutely empty. No connecting bars, chains, lintel or opaque wash between the edges. No ground or distant walls, no sky, no haze, no glow, no cast shadow in the transparent middle. High-quality detailed hand-painted arcade game layer, clean natural silhouette edges. No people, zombies, weapons, blood, typography, UI, watermark, labels, panels, border or checkerboard texture. Exactly one separate nearly-empty layer containing those two edge fragments."
+    },
+    {
+      "key": "lot2_tower_back",
+      "id": "tower_canal_back",
+      "stage": "tower_canal",
+      "layer": "back",
+      "file": "exec-55786f27-c4e0-42b5-a869-7892bb9a6356.png",
+      "reference_files": [
+        "tower_phase1.jpg",
+        "tower_phase2.jpg"
+      ],
+      "reference_paths": [
+        "assets/dossier_curien/saga/carnival_back.png"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: ONE full opaque 16:9 landscape background for the Dossier Curien side-view 2D fighting game, native about1600x900. Subject: the underground WATER chamber of TOWER from the ORIGINAL The House of the Dead 2, not the sand variant or the 2025 remake. Input image1 and image2 are actual game captures showing the right setting: massive damp weathered grey-green stone blocks, thick squared piers and ledges, large rounded archways opening into darkness, shallow blue-grey churning water and a high shadowy stone ceiling. They define the canonical materials, arches and colors. Remove the serpent boss, splashes caused by it, all people, HUD, text and watermark. Image3 is ONLY the existing Dossier Curien background painting technique, dense tangible textures and lateral arena layout; do not reproduce its fairground, moon, tents, water wheel, wooden boardwalk or decorative frame.\nAdaptation: build a clearly SIDE-ON waterway chamber, the repeated arches arranged horizontally across the background. Blue-grey canal water occupies the middle-distance lower band. A broad continuous level grey stone maintenance ledge runs from the extreme left edge to the extreme right across the foreground, with the fighter foot-contact line at81.6% of total image height. The ledge begins around75% height and extends to bottom edge; flat worn stone paving, no steps, barriers, holes or tall obstacles along the fighting line. This extra usable ledge is a deliberate 2D arena adaptation, not an assertion of the original level's exact floor. No walkway heading into a central vanishing point. Keep the main playable region from x12.5–87.5% visually readable; background arch shadows can be dark but avoid pure black expanses. Cool subdued overhead light and reflected water illumination; no invented neon, candles or religious objects.\nStyle: rich detailed hand-painted videogame background, grounded aged stone and water, restrained atmospheric depth, clear readable silhouettes. Composition entirely fills a clean16:9 frame without a border. No figures, creatures, weapons, blood, UI, letters, numbers, captions, logo, watermark, cutscene panels or collage. Fully opaque image, not transparent. Generate one usable final game backplate, not a concept sheet."
+    },
+    {
+      "key": "lot2_tower_front",
+      "id": "tower_canal_front",
+      "stage": "tower_canal",
+      "layer": "front",
+      "file": "exec-20b1f001-520d-48c1-a1d5-81ef0dbe9689.png",
+      "reference_files": [],
+      "reference_paths": [
+        "assets/dossier_curien/saga/tower_canal_back.png"
+      ],
+      "prompt": "Create ONE genuine transparent RGBA 16:9 FOREGROUND PARALLAX OVERLAY for the supplied damp stone Tower canal background, same native about1672x941 landscape canvas. This is an almost empty game layer. Match the supplied painting technique, blue-grey limestone, slight moss and restrained cool reflected light. Draw a small irregular chunk of nearer wet masonry and two tiny tufts of dark moss in the EXTREME BOTTOM LEFT corner, occupying only x0–10%, y88–100%. Draw a second low crumbling stone edge in EXTREME BOTTOM RIGHT, only x90–100%, y90–100%. Keep both stone fragments naturally cropped by the outer/bottom canvas edges. The rest of the entire canvas is100% transparent: no room, no floor strip, no water, no background, no contact shadow or haze connecting the corners. Especially preserve an absolutely empty alpha0 rectangle x12.5–87.5%, y20–79%, and clear all central x12.5–87.5% from top to bottom. Do not produce a decorative border or copied background. No creatures, people, objects in the center, weapons, letters, logos, HUD, caption or checkerboard texture. Exactly one usable separate foreground layer with two low corner fragments and true alpha."
+    },
+    {
+      "key": "lot2_tower_mid",
+      "id": "tower_canal_mid",
+      "stage": "tower_canal",
+      "layer": "mid",
+      "file": "exec-c928c200-7fb8-4b48-adf4-634a388c256b.png",
+      "reference_files": [],
+      "reference_paths": [
+        "assets/dossier_curien/saga/tower_canal_back.png"
+      ],
+      "prompt": "Create ONE genuinely transparent RGBA 16:9 MIDGROUND OVERLAY PNG for the supplied Tower canal fighting-stage background. Match its exact cool grey-green wet stone, finely hand-painted arcade rendering and soft light. Use the supplied image ONLY as alignment/material reference; do NOT repeat its water, floor, room, arches or opaque backdrop. Same landscape canvas ratio and native about1672x941. Draw only a narrow near stone pier partly outside the FAR LEFT border (visible material restricted to x0–9% of canvas) and a matching irregular pier edge along FAR RIGHT (x91–100%), plus a thin damp upper lintel confined to y0–10%. These are simple nearer framing masonry fragments with a little moss; no ornate frame, no UI border. The ENTIRE central rectangle x12.5–87.5%, y20–79% must be completely TRANSPARENT with alpha0, and at least the middle80% of total image must show nothing at all. No haze, glows, particles, shadows, reflections, color wash or semi-transparent scene in the empty region. The bottom playable area from x12.5–87.5%, y75–100% also stays empty. Keep the outer objects partly cut off by canvas edges, not centered. One separate production parallax layer, not a picture of a scene. No characters, serpents, weapons, typography, logo, background color or checkerboard baked into pixels."
+    }
+  ],
+  "sources": [
+    {
+      "key": "tower_phase1",
+      "file": "tower_phase1.jpg",
+      "page_url": "https://www.k-triggerhappy.com/hod2/chapter3.html",
+      "media_url": "https://www.k-triggerhappy.com/hod2/boss3-1.jpg",
+      "stage": "tower_canal",
+      "role": "Damp masonry, stone arches and the first-phase water chamber"
+    },
+    {
+      "key": "tower_phase2",
+      "file": "tower_phase2.jpg",
+      "page_url": "https://www.k-triggerhappy.com/hod2/chapter3.html",
+      "media_url": "https://www.k-triggerhappy.com/hod2/boss3-2.jpg",
+      "stage": "tower_canal",
+      "role": "Water variant of the second-phase room, dark arches and stone piers"
+    },
+    {
+      "key": "strength_phase4",
+      "file": "strength_phase4.jpg",
+      "page_url": "https://www.k-triggerhappy.com/hod2/chapter4.html",
+      "media_url": "https://www.k-triggerhappy.com/hod2/boss4-4.jpg",
+      "stage": "strength_colosseum",
+      "role": "Pale brick and stone maze walls, ground and upper sky openings"
+    },
+    {
+      "key": "strength_phase2",
+      "file": "strength_phase2.jpg",
+      "page_url": "https://www.k-triggerhappy.com/hod2/chapter4.html",
+      "media_url": "https://www.k-triggerhappy.com/hod2/boss4-2.jpg",
+      "stage": "strength_colosseum",
+      "role": "Maze partitions; main color follows the pale-wall variant, not this dark route"
+    },
+    {
+      "key": "strength_intro",
+      "file": "strength_intro.jpg",
+      "page_url": "https://www.k-triggerhappy.com/hod2/chapter4.html",
+      "media_url": "https://www.k-triggerhappy.com/hod2/boss4.jpg",
+      "stage": "strength_colosseum",
+      "role": "Release cage with rusty iron bars"
+    }
+  ]
+}

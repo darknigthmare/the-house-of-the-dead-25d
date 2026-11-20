@@ -1,0 +1,378 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "batch": "2026-11-20_lot2",
+  "baseline_commit": "6291e0d723eb4bc5050ffd3de699f6e55a575642",
+  "generation_method": "image_gen built-in",
+  "summary": {
+    "assets": 2,
+    "bytes": 1687671,
+    "imagegen_calls": 2,
+    "new_playable_profiles": 0,
+    "new_selectable_costumes": 0,
+    "new_identities": 0
+  },
+  "sources": [
+    {
+      "id": "typing_jp_packaging",
+      "url": "https://en.wikipedia.org/wiki/The_Typing_of_the_Dead",
+      "media_url": "https://lambda.vgmtreasurechest.com/soundtracks/house-of-the-dead-2-the-arcade/the%20typing%20of%20THE%20DEAD.jpg",
+      "type": "Official Japanese Dreamcast cover artwork scanned and hosted by a third party",
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot2/costumes/typing_jp_cover.jpg",
+      "scope": "James/Gary faces, hair, suits and front keyboards; not a back view",
+      "sha256": "bef3c89f761a3a4a65469d69807d5f44583910caed18ac179eeab794523df2b6",
+      "bytes": 774264,
+      "dimensions": [
+        1023,
+        1024
+      ],
+      "mode": "RGB"
+    },
+    {
+      "id": "typing_equipment_cutscene",
+      "url": "https://gamecola.net/2011/12/the-typing-of-the-dead-dc/",
+      "media_url": "https://gamecola.net/wp-content/uploads/2011/12/9f76e685768e804087a8935227b811771.jpg",
+      "type": "Actual game cutscene reproduced by GameCola, with AG.ru watermark",
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot2/costumes/typing_backpack_gamecola.jpg",
+      "scope": "James/Amy/Harry with keyboard, vertical white console and horizontal black/yellow cylinder; original capture platform not certified",
+      "sha256": "f4e9352a78fe23f1edd972c9f0c67d29ce332482174a2b808c904040c16f0484",
+      "bytes": 53212,
+      "dimensions": [
+        622,
+        466
+      ],
+      "mode": "RGB"
+    },
+    {
+      "id": "hotd2_manual_identity",
+      "url": "https://www.digitpress.com/library/manuals/dreamcast/house_dead_2.pdf",
+      "type": "Official SEGA Dreamcast manual, printed pages2–3, PDF index1; hosted by Digitpress",
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot2/costumes/hotd2_manual_jamesgary_page_2_3.png",
+      "scope": "Identity, clothing cut and full-body proportions; equipment from Typing supplied separately",
+      "sha256": "934ece3b0dbd8a2bb9479b50cd9a34daee182dfac895ddb6c7b26c7cc7f26963",
+      "bytes": 187068,
+      "dimensions": [
+        1054,
+        532
+      ],
+      "mode": "RGB"
+    },
+    {
+      "id": "typing_manual_context",
+      "url": "https://www.digitpress.com/library/manuals/dreamcast/typing_dead.pdf",
+      "type": "Official SEGA Dreamcast manual, inspected locally",
+      "scope": "Confirms Dreamcast context and shows keyboard artwork; full manual not committed"
+    }
+  ],
+  "assets": [
+    {
+      "id": "james_typing",
+      "name": "James Taylor — Typing",
+      "game": "typing",
+      "game_label": "The Typing of the Dead",
+      "category": "costume_variant",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot2/costumes/james_typing_base.png",
+      "generated_file": "exec-0e105e0f-37c1-443d-9acf-3e4ed1d7f3a4.png",
+      "status": "static_reference_reviewed",
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "sha256": "74e29b432573b2afccba116d0c404c7db829be0d2542d803804b9ff5bdf2e9d1",
+      "bytes": 853111,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        22,
+        1230,
+        1254
+      ],
+      "visible_bbox": [
+        317,
+        26,
+        916,
+        1228
+      ],
+      "visible_alpha_threshold": 127,
+      "sources": [
+        "https://en.wikipedia.org/wiki/The_Typing_of_the_Dead",
+        "https://gamecola.net/2011/12/the-typing-of-the-dead-dc/",
+        "https://www.digitpress.com/library/manuals/dreamcast/house_dead_2.pdf",
+        "https://www.digitpress.com/library/manuals/dreamcast/typing_dead.pdf"
+      ],
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot2/costumes/typing_jp_cover.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot2/costumes/typing_backpack_gamecola.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot2/costumes/hotd2_manual_jamesgary_page_2_3.png",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "source_notes": [
+        "Costume gris, chemise claire, cravate sombre, cheveux courts coiffés en arrière ; clavier suspendu, console blanche et pile noire à embouts jaunes observés sur James dans la capture.",
+        "La capture de matériel est publiée dans un article Dreamcast mais porte AG.ru : le port exact de capture est inconnu. Le design de matériel classique est documenté ; une région précise du logo de console n’est pas certifiée."
+      ],
+      "prompts": [
+        "Use case: stylized-concept. Create exactly ONE complete full-body 2D hand-painted arcade gallery character with genuine transparent RGBA background, square canvas about1024x1024, generous clear margin around head, hands, equipment and both shoes. Style reference is the LAST image, Isaac from the existing Dossier Curien project: match its finely painted arcade sprite technique, crisp restrained outline, controlled detailed shading, natural adult anatomy and readable silhouette, not Isaac's clothes, weapon or ethnicity. Pose is a calm alert three-quarter view facing RIGHT, both feet visible and planted, hands poised over a waist-level KEYBOARD as though typing. This is an equipment variation of an existing person, not a new identity. No firearms or gun-shaped keyboard, no futuristic armor, no holsters or generic laptop. Equipment follows the actual gameplay image: one slim off-white full-width rectangular keyboard with small grey keys hangs HORIZONTALLY in front of the waist from thin brown shoulder straps; one off-white Sega Dreamcast console is mounted VERTICALLY as a flat square backpack, plus ONE oversized HORIZONTAL cylindrical black battery with yellow ends strapped across its TOP. The cylinder has a circular metallic terminal on its end. Keep this amusing equipment's recognizable simple geometry and functional straps, no extra batteries, second console, screen, monitor or cables whipping out. The exact tiny key legends and hardware labels need not be legible; no large added lettering. Backpack should read clearly behind the nearer shoulder while hands/keyboard remain separate. Neutral natural colors, no dramatic green scene tint. All gear and both shoes fully inside frame. One figure only; no companions, zombie, environment, floor, shadow ellipse, text label, logo banner, UI, watermark, montage or sprite sheet. This is an original painted 2D adaptation guided by the sources, not an extracted game model.\nSUBJECT: JAMES TAYLOR in The Typing of the Dead, classic adult appearance and console/keyboard equipment. In image1 (the Japanese Dreamcast box art), James is the mature short-haired man at the LEFT wearing a SILVER-GREY SUIT, white/light-grey collared shirt and dark charcoal tie. Keep that grey two-piece suit and matching trousers, black plain dress shoes, sober buttoned jacket, short swept-back dark brown hair, clean-shaven angular adult face. Do not copy Gary, the younger brown-jacketed man nearer center. Image2 is an actual game cutscene: James is the grey-suited man on the LEFT; use his exact shoulder-strap arrangement and white console with black/yellow cylindrical battery. Do not copy Harry on the right or Amy at the back. Image3 is the official HOTD2 manual confirming James's face and full suit proportions; it is identity/clothing evidence, not the new equipment. Image4 is style only. Use a confident neutral stance, face and chest turned slightly right, keyboard at waist with both hands touching its keys, console and cylinder visible behind the upper back. Do not age him into his later HOTD4 appearance."
+      ],
+      "prompt_sha256": [
+        "ed2c17f173769abe79a381aa822698eb41d95e241ac93537022f6fb717b86569"
+      ],
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot2/costumes_generated.json",
+      "limitations": [
+        "Base statique de galerie : aucun nouveau profil jouable, animation complète ou costume sélectionnable en duel.",
+        "Pose latérale créée pour Dossier Curien ; référence examinée, sans certification de fidélité1:1.",
+        "Connectique, sérigraphie minuscule, touches et couleurs de logo selon région sont simplifiées et non certifiées.",
+        "Les ports Mac/PS2, Typing2 et Kids2004 restent des variantes distinctes non produites."
+      ],
+      "generation": {
+        "tool": "image_gen built-in",
+        "date": "2026-11-20",
+        "transparent_background_requested": true,
+        "source_native_output": "/workspace/scratch/da9d6e4777c1/generated_images/exec-0e105e0f-37c1-443d-9acf-3e4ed1d7f3a4.png",
+        "native_bytes_preserved": true,
+        "attempts_retained": 1
+      },
+      "qa": {
+        "subject_and_costume_visually_inspected": true,
+        "transparent_alpha_verified": true,
+        "opaque_pixels_at_canvas_edge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "cropped_subject_detected": false,
+        "canonical_1_to_1_certified": false,
+        "in_engine_render_observed": false
+      },
+      "reference_inputs": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot2/costumes/typing_jp_cover.jpg",
+          "sha256": "bef3c89f761a3a4a65469d69807d5f44583910caed18ac179eeab794523df2b6",
+          "bytes": 774264,
+          "dimensions": [
+            1023,
+            1024
+          ],
+          "mode": "RGB"
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot2/costumes/typing_backpack_gamecola.jpg",
+          "sha256": "f4e9352a78fe23f1edd972c9f0c67d29ce332482174a2b808c904040c16f0484",
+          "bytes": 53212,
+          "dimensions": [
+            622,
+            466
+          ],
+          "mode": "RGB"
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot2/costumes/hotd2_manual_jamesgary_page_2_3.png",
+          "sha256": "934ece3b0dbd8a2bb9479b50cd9a34daee182dfac895ddb6c7b26c7cc7f26963",
+          "bytes": 187068,
+          "dimensions": [
+            1054,
+            532
+          ],
+          "mode": "RGB"
+        },
+        {
+          "path": "assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "bytes": 595313,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "alpha_bbox": [
+            218,
+            55,
+            814,
+            960
+          ],
+          "visible_bbox": [
+            220,
+            57,
+            812,
+            957
+          ],
+          "visible_alpha_threshold": 127,
+          "edge_counts": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gary_typing",
+      "name": "Gary Stewart — Typing",
+      "game": "typing",
+      "game_label": "The Typing of the Dead",
+      "category": "costume_variant",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot2/costumes/gary_typing_base.png",
+      "generated_file": "exec-a8bc95d9-3d6a-402e-9918-9b7041510bca.png",
+      "status": "static_reference_reviewed",
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "sha256": "b9e951a4a0c5b29f84c25e676a8240743a3968ec7a8d74852ef57d529418a2d2",
+      "bytes": 834560,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        9,
+        1232,
+        1254
+      ],
+      "visible_bbox": [
+        295,
+        66,
+        935,
+        1213
+      ],
+      "visible_alpha_threshold": 127,
+      "sources": [
+        "https://en.wikipedia.org/wiki/The_Typing_of_the_Dead",
+        "https://gamecola.net/2011/12/the-typing-of-the-dead-dc/",
+        "https://www.digitpress.com/library/manuals/dreamcast/house_dead_2.pdf",
+        "https://www.digitpress.com/library/manuals/dreamcast/typing_dead.pdf"
+      ],
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot2/costumes/typing_jp_cover.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot2/costumes/hotd2_manual_jamesgary_page_2_3.png",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot2/costumes/typing_backpack_gamecola.jpg",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "source_notes": [
+        "Costume brun et coiffure à frange recoupés avec la jaquette japonaise et le manuel HOTD2 ; matériel de Typing repris d’une capture montrant James, Amy et Harry, pas d’une vue de dos directe de Gary.",
+        "La capture de matériel est publiée dans un article Dreamcast mais porte AG.ru : le port exact de capture est inconnu. Le design de matériel classique est documenté ; une région précise du logo de console n’est pas certifiée."
+      ],
+      "prompts": [
+        "Use case: stylized-concept. Create exactly ONE complete full-body 2D hand-painted arcade gallery character with genuine transparent RGBA background, square canvas about1024x1024, generous clear margin around head, hands, equipment and both shoes. Style reference is the LAST image, Isaac from the existing Dossier Curien project: match its finely painted arcade sprite technique, crisp restrained outline, controlled detailed shading, natural adult anatomy and readable silhouette, not Isaac's clothes, weapon or ethnicity. Pose is a calm alert three-quarter view facing RIGHT, both feet visible and planted, hands poised over a waist-level KEYBOARD as though typing. This is an equipment variation of an existing person, not a new identity. No firearms or gun-shaped keyboard, no futuristic armor, no holsters or generic laptop. Equipment follows the actual gameplay image: one slim off-white full-width rectangular keyboard with small grey keys hangs HORIZONTALLY in front of the waist from thin brown shoulder straps; one off-white Sega Dreamcast console is mounted VERTICALLY as a flat square backpack, plus ONE oversized HORIZONTAL cylindrical black battery with yellow ends strapped across its TOP. The cylinder has a circular metallic terminal on its end. Keep this amusing equipment's recognizable simple geometry and functional straps, no extra batteries, second console, screen, monitor or cables whipping out. The exact tiny key legends and hardware labels need not be legible; no large added lettering. Backpack should read clearly behind the nearer shoulder while hands/keyboard remain separate. Neutral natural colors, no dramatic green scene tint. All gear and both shoes fully inside frame. One figure only; no companions, zombie, environment, floor, shadow ellipse, text label, logo banner, UI, watermark, montage or sprite sheet. This is an original painted 2D adaptation guided by the sources, not an extracted game model.\nSUBJECT: GARY STEWART in The Typing of the Dead, classic adult appearance and console/keyboard equipment. In image1 (the Japanese Dreamcast box art), Gary is the YOUNGER man toward the CENTER/LOWER RIGHT, with short dark-brown curtain-parted hair, a longer fringe across his forehead, a BROWN SUIT JACKET, white collared shirt and dark tie. James is the older grey-suited man at left: do not copy James's grey clothing, slicked hair or face. Keep Gary's brown two-piece suit, matching dark-brown trousers, pale shirt, dark tie, plain black dress shoes, clean-shaven youthful adult face. Image2 is the official HOTD2 manual: Gary is shown on the UPPER RIGHT; use his face, hair and suit cut. Image3 is ONLY actual Typing equipment evidence on other agents; transfer their small white keyboard at waist, brown straps, vertical white Dreamcast console and top horizontal black cylindrical battery with yellow ends onto Gary, without borrowing Harry's sunglasses, Amy's red clothes or James's grey suit. Image4 is style only. Keep this clearly an adult man, alert yet slightly tentative. Three-quarter stance facing right, both hands lightly typing, both shoes and all equipment in frame. No pistol, no sunglasses, no cap, no child version, no invented alternate fashion."
+      ],
+      "prompt_sha256": [
+        "3f147e587b79063208e1dd0b52b0f72d6995884ea9c9a180fd1684b668e1368b"
+      ],
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot2/costumes_generated.json",
+      "limitations": [
+        "Base statique de galerie : aucun nouveau profil jouable, animation complète ou costume sélectionnable en duel.",
+        "Pose latérale créée pour Dossier Curien ; référence examinée, sans certification de fidélité1:1.",
+        "Connectique, sérigraphie minuscule, touches et couleurs de logo selon région sont simplifiées et non certifiées.",
+        "Les ports Mac/PS2, Typing2 et Kids2004 restent des variantes distinctes non produites.",
+        "Le dos de Gary n’est pas montré dans les références récupérées ; le matériel commun est documenté sur les autres agents de la même séquence."
+      ],
+      "generation": {
+        "tool": "image_gen built-in",
+        "date": "2026-11-20",
+        "transparent_background_requested": true,
+        "source_native_output": "/workspace/scratch/da9d6e4777c1/generated_images/exec-a8bc95d9-3d6a-402e-9918-9b7041510bca.png",
+        "native_bytes_preserved": true,
+        "attempts_retained": 1
+      },
+      "qa": {
+        "subject_and_costume_visually_inspected": true,
+        "transparent_alpha_verified": true,
+        "opaque_pixels_at_canvas_edge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "cropped_subject_detected": false,
+        "canonical_1_to_1_certified": false,
+        "in_engine_render_observed": false
+      },
+      "reference_inputs": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot2/costumes/typing_jp_cover.jpg",
+          "sha256": "bef3c89f761a3a4a65469d69807d5f44583910caed18ac179eeab794523df2b6",
+          "bytes": 774264,
+          "dimensions": [
+            1023,
+            1024
+          ],
+          "mode": "RGB"
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot2/costumes/hotd2_manual_jamesgary_page_2_3.png",
+          "sha256": "934ece3b0dbd8a2bb9479b50cd9a34daee182dfac895ddb6c7b26c7cc7f26963",
+          "bytes": 187068,
+          "dimensions": [
+            1054,
+            532
+          ],
+          "mode": "RGB"
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot2/costumes/typing_backpack_gamecola.jpg",
+          "sha256": "f4e9352a78fe23f1edd972c9f0c67d29ce332482174a2b808c904040c16f0484",
+          "bytes": 53212,
+          "dimensions": [
+            622,
+            466
+          ],
+          "mode": "RGB"
+        },
+        {
+          "path": "assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "bytes": 595313,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "alpha_bbox": [
+            218,
+            55,
+            814,
+            960
+          ],
+          "visible_bbox": [
+            220,
+            57,
+            812,
+            957
+          ],
+          "visible_alpha_threshold": 127,
+          "edge_counts": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    }
+  ],
+  "rejected_outputs": [],
+  "pixel_postprocessing": "none"
+}

@@ -6,11 +6,13 @@ const STAGES := ["Cour du manoir", "Antichambre", "Laboratoire de Curien", "Quai
 	"Poste de sécurité EFI", "Métro souterrain", "Complexe déserté", "Réception de Scarecrow Mansion",
 	"Fête foraine de Bayou City", "Plateau de Loving Deads", "Rue en quarantaine",
 	"Toit de la tour Goldman", "Chambre d’incubation EFI", "Passage de la tour de l’horloge", "Ponton du bayou", "Parvis du siège Goldman", "Ruines du domaine Scarecrow", "Rue dévastée de Despair",
-	"Toit du train — Zombie Revenge", "Abattoir — Creeping Flesh"]
-const ART := ["", "", "", "venice", "efi", "subway", "special", "scarlet", "carnival", "ex", "revenge", "goldman", "reactor", "clocktower", "bayou", "worldstage", "moonstage", "citydespair", "zr_train", "creeping_flesh"]
+	"Toit du train — Zombie Revenge", "Abattoir — Creeping Flesh", "Canal souterrain — Tower", "Colisée — Strength"]
+const ART := ["", "", "", "venice", "efi", "subway", "special", "scarlet", "carnival", "ex", "revenge", "goldman", "reactor", "clocktower", "bayou", "worldstage", "moonstage", "citydespair", "zr_train", "creeping_flesh", "tower_canal", "strength_colosseum"]
 const STAGE_NOTES := {
 	18: "Adaptation 2D documentée du toit du train de Zombie Revenge.",
-	19: "Adaptation 2D documentée de l’abattoir de Creeping Flesh, dans Overkill."
+	19: "Adaptation 2D documentée de l’abattoir de Creeping Flesh, dans Overkill.",
+	20: "Adaptation 2D documentée du canal souterrain de Tower, dans The House of the Dead 2.",
+	21: "Adaptation 2D documentée du colisée de Strength, dans The House of the Dead 2."
 }
 const CASES := {
 	"curien": {"name":"The House of the Dead","place":"Manoir Curien","lead":0,"stage":0,"guests":[1,2,3],
