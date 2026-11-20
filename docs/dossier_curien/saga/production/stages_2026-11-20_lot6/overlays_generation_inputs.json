@@ -1,0 +1,559 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "batch": "2026-11-20_lot6",
+  "specs": [
+    {
+      "id": "ams_underground_mid",
+      "stage": "ams_underground",
+      "layer": "mid",
+      "reference": "assets/dossier_curien/saga/ams_underground_back.png",
+      "prompt": "Use case: stylized-concept. Create ONE separate genuinely transparent RGBA MIDGROUND OVERLAY for the supplied AMS underground corridor fighting arena background. Use the supplied image only for material, palette, restrained light, fine painted texture, side-on perspective and canvas alignment. Match its faded grey-green painted metal, an ochre stripe and cold fluorescent light. Same native landscape16:9 canvas, about1672x941. Draw ONLY one narrow grey-green door-jamb fragment at the extreme LEFT within x0–6percent, and one thin dark hanging cable with a small fixing bracket at the extreme RIGHT within x94–100percent. No horizontal connecting element. Every pixel outside these two narrow edge zones must be genuinely transparent. The entire central x12.5–87.5percent is completely empty from top to bottom. In particular rectangle x12.5–87.5percent,y20–79percent and lower fighting strip x12.5–87.5percent,y75–100percent have no visible pixels. No connection between the two edge fragments. Do not repeat the source scene, floor, water, ceiling, room walls, building, furniture or background. No ambient color wash, shadow across transparent space, haze, glow, particles, characters, monsters, lettering, HUD, border, logo, watermark or baked checkerboard. One very sparse separate production parallax layer, not an opaque environment picture.",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        1654,
+        941
+      ],
+      "center_contract": {
+        "normalized_box": [
+          0.125,
+          0.2,
+          0.875,
+          0.79
+        ],
+        "pixel_box": [
+          209,
+          188,
+          1463,
+          743
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "fight_strip_contract": {
+        "normalized_box": [
+          0.125,
+          0.75,
+          0.875,
+          1
+        ],
+        "pixel_box": [
+          209,
+          705,
+          1463,
+          941
+        ],
+        "alpha_extrema": [
+          0,
+          0
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "generated_file": "exec-f8f1c6c3-470b-4c9e-bc32-c52b0edec5a1.png",
+      "path": "assets/dossier_curien/saga/ams_underground_mid.png",
+      "sha256": "73a083406cc71331962b7360672e9f2507a73b930766157c149394951875f6b5",
+      "size_bytes": 206514,
+      "pixel_postprocessing": "none",
+      "accepted": true,
+      "visually_inspected": true
+    },
+    {
+      "id": "ams_underground_front",
+      "stage": "ams_underground",
+      "layer": "front",
+      "reference": "assets/dossier_curien/saga/ams_underground_back.png",
+      "prompt": "Use case: stylized-concept. Create ONE separate genuinely transparent RGBA FOREGROUND OVERLAY for the supplied AMS underground corridor fighting arena background. Use the supplied image only for material, palette, restrained light, fine painted texture, side-on perspective and canvas alignment. Match its faded grey-green painted metal, an ochre stripe and cold fluorescent light. Same native landscape16:9 canvas, about1672x941. Draw ONLY one tiny worn metal threshold corner naturally cropped at the extreme BOTTOM LEFT within x0–7percent,y95–100percent, and a tiny dull floor bracket at the extreme BOTTOM RIGHT within x95–100percent,y96–100percent. Every pixel outside these two narrow edge zones must be genuinely transparent. The entire central x12.5–87.5percent is completely empty from top to bottom. In particular rectangle x12.5–87.5percent,y20–79percent and lower fighting strip x12.5–87.5percent,y75–100percent have no visible pixels. No connection between the two edge fragments. Do not repeat the source scene, floor, water, ceiling, room walls, building, furniture or background. No ambient color wash, shadow across transparent space, haze, glow, particles, characters, monsters, lettering, HUD, border, logo, watermark or baked checkerboard. One very sparse separate production parallax layer, not an opaque environment picture.",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        621,
+        1672,
+        941
+      ],
+      "center_contract": {
+        "normalized_box": [
+          0.125,
+          0.2,
+          0.875,
+          0.79
+        ],
+        "pixel_box": [
+          209,
+          188,
+          1463,
+          743
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "fight_strip_contract": {
+        "normalized_box": [
+          0.125,
+          0.75,
+          0.875,
+          1
+        ],
+        "pixel_box": [
+          209,
+          705,
+          1463,
+          941
+        ],
+        "alpha_extrema": [
+          0,
+          0
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "generated_file": "exec-363491c7-9a11-4c60-b9d0-9eeecabc9480.png",
+      "path": "assets/dossier_curien/saga/ams_underground_front.png",
+      "sha256": "09dfa59fa848222db0d66985664ca17f2c735c1937c727b2a626b193be360b9f",
+      "size_bytes": 71667,
+      "pixel_postprocessing": "none",
+      "accepted": true,
+      "visually_inspected": true
+    },
+    {
+      "id": "scarlet_annex_mid",
+      "stage": "scarlet_annex",
+      "layer": "mid",
+      "reference": "assets/dossier_curien/saga/scarlet_annex_back.png",
+      "prompt": "Use case: stylized-concept. Create ONE separate genuinely transparent RGBA MIDGROUND OVERLAY for the supplied Scarlet Dawn Annex hall fighting arena background. Use the supplied image only for material, palette, restrained light, fine painted texture, side-on perspective and canvas alignment. Match its dark polished red-brown carved wood and restrained warm amber chandelier highlights. Same native landscape16:9 canvas, about1672x941. Draw ONLY one slim cropped vertical carved wooden pillar at the extreme LEFT within x0–6percent, and the thin vertical outer edge of another dark wood post at the extreme RIGHT within x94–100percent. Decorative carving must stay inside those narrow strips. Every pixel outside these two narrow edge zones must be genuinely transparent. The entire central x12.5–87.5percent is completely empty from top to bottom. In particular rectangle x12.5–87.5percent,y20–79percent and lower fighting strip x12.5–87.5percent,y75–100percent have no visible pixels. No connection between the two edge fragments. Do not repeat the source scene, floor, water, ceiling, room walls, building, furniture or background. No ambient color wash, shadow across transparent space, haze, glow, particles, characters, monsters, lettering, HUD, border, logo, watermark or baked checkerboard. One very sparse separate production parallax layer, not an opaque environment picture.",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "center_contract": {
+        "normalized_box": [
+          0.125,
+          0.2,
+          0.875,
+          0.79
+        ],
+        "pixel_box": [
+          209,
+          188,
+          1463,
+          743
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "fight_strip_contract": {
+        "normalized_box": [
+          0.125,
+          0.75,
+          0.875,
+          1
+        ],
+        "pixel_box": [
+          209,
+          705,
+          1463,
+          941
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "generated_file": "exec-228c7109-a500-4dfe-96ff-95d6403f07bf.png",
+      "path": "assets/dossier_curien/saga/scarlet_annex_mid.png",
+      "sha256": "3dbdb68804f3ab51e5cc6fc9198cad997d5a9910acb62aa03fba948a9e97a326",
+      "size_bytes": 236381,
+      "pixel_postprocessing": "none",
+      "accepted": true,
+      "visually_inspected": true
+    },
+    {
+      "id": "scarlet_annex_front",
+      "stage": "scarlet_annex",
+      "layer": "front",
+      "reference": "assets/dossier_curien/saga/scarlet_annex_back.png",
+      "prompt": "Use case: stylized-concept. Create ONE separate genuinely transparent RGBA FOREGROUND OVERLAY for the supplied Scarlet Dawn Annex hall fighting arena background. Use the supplied image only for material, palette, restrained light, fine painted texture, side-on perspective and canvas alignment. Match its dark polished red-brown carved wood and restrained warm amber chandelier highlights. Same native landscape16:9 canvas, about1672x941. Draw ONLY a small carved dark wooden plinth corner at the extreme BOTTOM LEFT within x0–7percent,y95–100percent, and a tiny polished brown pillar-foot corner at the extreme BOTTOM RIGHT within x95–100percent,y96–100percent. Every pixel outside these two narrow edge zones must be genuinely transparent. The entire central x12.5–87.5percent is completely empty from top to bottom. In particular rectangle x12.5–87.5percent,y20–79percent and lower fighting strip x12.5–87.5percent,y75–100percent have no visible pixels. No connection between the two edge fragments. Do not repeat the source scene, floor, water, ceiling, room walls, building, furniture or background. No ambient color wash, shadow across transparent space, haze, glow, particles, characters, monsters, lettering, HUD, border, logo, watermark or baked checkerboard. One very sparse separate production parallax layer, not an opaque environment picture.",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        567,
+        1672,
+        941
+      ],
+      "center_contract": {
+        "normalized_box": [
+          0.125,
+          0.2,
+          0.875,
+          0.79
+        ],
+        "pixel_box": [
+          209,
+          188,
+          1463,
+          743
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "fight_strip_contract": {
+        "normalized_box": [
+          0.125,
+          0.75,
+          0.875,
+          1
+        ],
+        "pixel_box": [
+          209,
+          705,
+          1463,
+          941
+        ],
+        "alpha_extrema": [
+          0,
+          0
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "generated_file": "exec-1a117c43-bfcc-411c-99fd-e7e12eb2a790.png",
+      "path": "assets/dossier_curien/saga/scarlet_annex_front.png",
+      "sha256": "576acbd9c373c7588515c9d70840a3ce3f6709d77c675e6bcbba8f46cfa37b86",
+      "size_bytes": 80362,
+      "pixel_postprocessing": "none",
+      "accepted": true,
+      "visually_inspected": true
+    },
+    {
+      "id": "overkill_papa_mid",
+      "stage": "overkill_papa",
+      "layer": "mid",
+      "reference": "assets/dossier_curien/saga/overkill_papa_back.png",
+      "prompt": "Use case: stylized-concept. Create ONE separate genuinely transparent RGBA MIDGROUND OVERLAY for the supplied Overkill Papa mansion entrance hall fighting arena background. Use the supplied image only for material, palette, restrained light, fine painted texture, side-on perspective and canvas alignment. Match its peeling off-white painted wood, dull brown varnish and dirty warm yellow-brown indoor light. Same native landscape16:9 canvas, about1672x941. Draw ONLY one narrow off-white peeling wooden baluster post at the extreme LEFT within x0–6percent, and one slim worn brown door-jamb edge at the extreme RIGHT within x94–100percent. No horizontal railing across the frame. Every pixel outside these two narrow edge zones must be genuinely transparent. The entire central x12.5–87.5percent is completely empty from top to bottom. In particular rectangle x12.5–87.5percent,y20–79percent and lower fighting strip x12.5–87.5percent,y75–100percent have no visible pixels. No connection between the two edge fragments. Do not repeat the source scene, floor, water, ceiling, room walls, building, furniture or background. No ambient color wash, shadow across transparent space, haze, glow, particles, characters, monsters, lettering, HUD, border, logo, watermark or baked checkerboard. One very sparse separate production parallax layer, not an opaque environment picture.",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "center_contract": {
+        "normalized_box": [
+          0.125,
+          0.2,
+          0.875,
+          0.79
+        ],
+        "pixel_box": [
+          209,
+          188,
+          1463,
+          743
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "fight_strip_contract": {
+        "normalized_box": [
+          0.125,
+          0.75,
+          0.875,
+          1
+        ],
+        "pixel_box": [
+          209,
+          705,
+          1463,
+          941
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "generated_file": "exec-916c2968-e71a-42a7-be76-98d65cfe5752.png",
+      "path": "assets/dossier_curien/saga/overkill_papa_mid.png",
+      "sha256": "d36edc8a14981758a520f3e35fea0fd5644401df4542968462a8a2d42aa34e88",
+      "size_bytes": 405942,
+      "pixel_postprocessing": "none",
+      "accepted": true,
+      "visually_inspected": true
+    },
+    {
+      "id": "overkill_papa_front",
+      "stage": "overkill_papa",
+      "layer": "front",
+      "reference": "assets/dossier_curien/saga/overkill_papa_back.png",
+      "prompt": "Use case: stylized-concept. Create ONE separate genuinely transparent RGBA FOREGROUND OVERLAY for the supplied Overkill Papa mansion entrance hall fighting arena background. Use the supplied image only for material, palette, restrained light, fine painted texture, side-on perspective and canvas alignment. Match its peeling off-white painted wood, dull brown varnish and dirty warm yellow-brown indoor light. Same native landscape16:9 canvas, about1672x941. Draw ONLY one tiny chipped off-white wooden stair-post base at the extreme BOTTOM LEFT within x0–7percent,y95–100percent, and a tiny dark weathered floorboard splinter at the extreme BOTTOM RIGHT within x95–100percent,y96–100percent. Every pixel outside these two narrow edge zones must be genuinely transparent. The entire central x12.5–87.5percent is completely empty from top to bottom. In particular rectangle x12.5–87.5percent,y20–79percent and lower fighting strip x12.5–87.5percent,y75–100percent have no visible pixels. No connection between the two edge fragments. Do not repeat the source scene, floor, water, ceiling, room walls, building, furniture or background. No ambient color wash, shadow across transparent space, haze, glow, particles, characters, monsters, lettering, HUD, border, logo, watermark or baked checkerboard. One very sparse separate production parallax layer, not an opaque environment picture.",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        299,
+        1672,
+        941
+      ],
+      "center_contract": {
+        "normalized_box": [
+          0.125,
+          0.2,
+          0.875,
+          0.79
+        ],
+        "pixel_box": [
+          209,
+          188,
+          1463,
+          743
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "fight_strip_contract": {
+        "normalized_box": [
+          0.125,
+          0.75,
+          0.875,
+          1
+        ],
+        "pixel_box": [
+          209,
+          705,
+          1463,
+          941
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "generated_file": "exec-57369fe6-c931-4bb3-aa92-dbf2dd2bab67.png",
+      "path": "assets/dossier_curien/saga/overkill_papa_front.png",
+      "sha256": "e33b6f102600a72ec0f61e07748eb98ebf8656bbe99f0be83f42880b7cf08847",
+      "size_bytes": 73829,
+      "pixel_postprocessing": "none",
+      "accepted": true,
+      "visually_inspected": true
+    },
+    {
+      "id": "zr_sewage_mid",
+      "stage": "zr_sewage",
+      "layer": "mid",
+      "reference": "assets/dossier_curien/saga/zr_sewage_back.png",
+      "prompt": "Use case: stylized-concept. Create ONE separate genuinely transparent RGBA MIDGROUND OVERLAY for the supplied Zombie Revenge industrial sewage plant fighting arena background. Use the supplied image only for material, palette, restrained light, fine painted texture, side-on perspective and canvas alignment. Match its damp dark stone, rust-brown corroded iron and muted cold green industrial light. Same native landscape16:9 canvas, about1672x941. Draw ONLY one narrow rust-brown vertical pipe fragment at the extreme LEFT within x0–6percent, and one narrow dark damp concrete pier edge at the extreme RIGHT within x94–100percent. Pipe brackets must remain inside the same edge strips. Every pixel outside these two narrow edge zones must be genuinely transparent. The entire central x12.5–87.5percent is completely empty from top to bottom. In particular rectangle x12.5–87.5percent,y20–79percent and lower fighting strip x12.5–87.5percent,y75–100percent have no visible pixels. No connection between the two edge fragments. Do not repeat the source scene, floor, water, ceiling, room walls, building, furniture or background. No ambient color wash, shadow across transparent space, haze, glow, particles, characters, monsters, lettering, HUD, border, logo, watermark or baked checkerboard. One very sparse separate production parallax layer, not an opaque environment picture.",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "center_contract": {
+        "normalized_box": [
+          0.125,
+          0.2,
+          0.875,
+          0.79
+        ],
+        "pixel_box": [
+          209,
+          188,
+          1463,
+          743
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "fight_strip_contract": {
+        "normalized_box": [
+          0.125,
+          0.75,
+          0.875,
+          1
+        ],
+        "pixel_box": [
+          209,
+          705,
+          1463,
+          941
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "generated_file": "exec-a3c46579-b09b-4228-9764-cbd6d35f3e76.png",
+      "path": "assets/dossier_curien/saga/zr_sewage_mid.png",
+      "sha256": "f4e81047b29b7f679238f538c506cb04c7f6bb6ae254e144acb056e65e18601e",
+      "size_bytes": 417255,
+      "pixel_postprocessing": "none",
+      "accepted": true,
+      "visually_inspected": true
+    },
+    {
+      "id": "zr_sewage_front",
+      "stage": "zr_sewage",
+      "layer": "front",
+      "reference": "assets/dossier_curien/saga/zr_sewage_back.png",
+      "prompt": "Use case: stylized-concept. Create ONE separate genuinely transparent RGBA FOREGROUND OVERLAY for the supplied Zombie Revenge industrial sewage plant fighting arena background. Use the supplied image only for material, palette, restrained light, fine painted texture, side-on perspective and canvas alignment. Match its damp dark stone, rust-brown corroded iron and muted cold green industrial light. Same native landscape16:9 canvas, about1672x941. Draw ONLY one tiny rusted pipe-foot and bolt plate at the extreme BOTTOM LEFT within x0–7percent,y95–100percent, and a tiny wet concrete lip fragment at the extreme BOTTOM RIGHT within x95–100percent,y96–100percent. Every pixel outside these two narrow edge zones must be genuinely transparent. The entire central x12.5–87.5percent is completely empty from top to bottom. In particular rectangle x12.5–87.5percent,y20–79percent and lower fighting strip x12.5–87.5percent,y75–100percent have no visible pixels. No connection between the two edge fragments. Do not repeat the source scene, floor, water, ceiling, room walls, building, furniture or background. No ambient color wash, shadow across transparent space, haze, glow, particles, characters, monsters, lettering, HUD, border, logo, watermark or baked checkerboard. One very sparse separate production parallax layer, not an opaque environment picture.",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        248,
+        1672,
+        941
+      ],
+      "center_contract": {
+        "normalized_box": [
+          0.125,
+          0.2,
+          0.875,
+          0.79
+        ],
+        "pixel_box": [
+          209,
+          188,
+          1463,
+          743
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "fight_strip_contract": {
+        "normalized_box": [
+          0.125,
+          0.75,
+          0.875,
+          1
+        ],
+        "pixel_box": [
+          209,
+          705,
+          1463,
+          941
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "generated_file": "exec-5e1ac027-e72c-4100-a3db-45749d7a3ea0.png",
+      "path": "assets/dossier_curien/saga/zr_sewage_front.png",
+      "sha256": "42997cda6964162ec13889d08b573228e2d3da62a0b06b27dbb47fc16b010d6f",
+      "size_bytes": 91699,
+      "pixel_postprocessing": "none",
+      "accepted": true,
+      "visually_inspected": true
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "rikiya_taunt",
+  "pose": "taunt",
+  "source_generation_path": "/workspace/scratch/da9d6e4777c1/generated_images/exec-8b0dab9c-dc79-4ae8-91e1-27a1524aec61.png",
+  "prompt": "Use case: identity-preserve. Draw ONE new individual full-body 2D fighting-game keyframe of the exact adult Rikiya Busujima in the attached approved project reference. Preserve identity and style: dense shoulder-length curly black hair, narrow dark sunglasses with thin metal rims, clean-shaven serious face, lean muscular BARE torso, open brown leather shoulder-holster harness with paired silver buckles and brown underarm holsters, dark blue denim jeans with tan stitching, brown belt and square silver buckle, brown lace-up shoes. Hands remain completely EMPTY. Same finely painted crisp arcade-sprite shading, material detail, palette, face, age and body proportions. Lateral three-quarter camera facing SCREEN RIGHT. Square transparent RGBA canvas. Preserve full-size head/torso/anatomy from the reference; keep the entire head, fingers and both soles inside with generous clear margins. Both shoes grounded on one common virtual baseline near the lower canvas edge. Exactly one isolated character on completely transparent negative space; no background, smoke, halo, aura, cast shadow, ground plane, text, labels, VFX, motion trails, prop, opponent, second figure or extra body parts. Action: neutral TAUNT / COME-HERE invitation, no attack. Keep a relaxed upright martial stance, weight back on the rear/right leg and a slight playful forward tilt of the chin. The near/right arm extends forward at mid-chest level with elbow comfortably bent, palm facing UP, fingers naturally curled in a clear beckoning gesture; do not make an obscene gesture. His far/left empty hand rests relaxed against his left hip beside the belt. Fingers must be anatomically clean and legible. Calm challenging slight smirk, unchanged face and sunglasses. Keep the beckoning hand fully inside the image. This is a cosmetic invitation, not a strike, block, grasp or victory with folded arms.",
+  "references": [
+    {
+      "path": "assets/dossier_curien/saga/rikiya_guard.png",
+      "role": "identity_costume_style_anatomy_reference"
+    }
+  ],
+  "generation_tool": "image_gen.imagegen",
+  "transparent_background": true,
+  "date": "2026-11-20",
+  "image_edits": [],
+  "status": "native_pixels_visually_reviewed_runtime_validated",
+  "extension": "last_three_named_rikiya_states",
+  "visual_review_notes": "Readable open-palm beckoning gesture, other hand on hip; face and costume retained. Uses the opposite beckoning hand from the written brief; the cosmetic timer has no side-specific collision or equipment.",
+  "native_sha256": "7f7868dc58974638589ca48995668d25e2826162654cd54b1351fc522fa17641",
+  "native_bytes": 807225,
+  "native_output_copied_without_pixel_changes": true
+}

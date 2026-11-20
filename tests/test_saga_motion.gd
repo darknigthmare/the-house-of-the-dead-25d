@@ -2,6 +2,7 @@ extends SceneTree
 const Fighter := preload("res://src/dossier_curien/combatant.gd")
 const Painter := preload("res://src/dossier_curien/presentation.gd")
 const Motion := preload("res://src/dossier_curien/saga_motion.gd")
+const Arena := preload("res://src/dossier_curien/arena.gd")
 var checks := 0
 var failures := 0
 func check(ok: bool, label: String) -> void:
@@ -38,6 +39,19 @@ func manifest_validation() -> void:
 	check(not clean.has("emitter_px") and clean.anchors_px.keys()==["good"], "Only bounded optional anchors exposed")
 	check(not library.load_data(null) and library.entries.is_empty(), "Malformed manifest clears preceding library")
 	check(not library.load_manifest("res://data/assets/not_present_motion.json"), "Missing manifest falls back safely")
+	check(library.load_data({"schema_version":1,"assets":[valid]},false), "Historical fixture reloads")
+	var addition := entry("rikiya","crouch")
+	addition.fighter_id = "rikiya"
+	addition.path = "assets/dossier_curien/motion_2026-11-20_lot6/rikiya_crouch.png"
+	check(library.append_data({"schema_version":1,"assets":[addition]},false) and library.entries.size()==2, "Dated collection adds a distinct action without clearing history")
+	check(not library.append_data(null,false) and library.entries.size()==2, "Malformed addition preserves preceding poses")
+	var collision := valid.duplicate(true)
+	collision.path = "assets/dossier_curien/motion_2026-11-20_lot6/linda_block.png"
+	collision.pivot_px = [5,5]
+	check(not library.append_data({"schema_version":1,"assets":[collision]},false), "Duplicate from a later collection cannot replace historical identity")
+	check(library.get_entry("linda_block").pivot_px == [620,1160], "Historical native calibration survives collection collision")
+	for path in ["res://assets/dossier_curien/motion_2026-11-20_lot6/../escape.png","res://assets/dossier_curien/motion_2026-11-20_lot6_extra/pose.png"]:
+		check(not Motion.safe_path(path), "New collection cannot extend its path boundary: "+path)
 
 func cosmetic_timing() -> void:
 	var f := Fighter.new(23,400,1)
@@ -151,9 +165,149 @@ func pose_selection_and_scale() -> void:
 	check(is_equal_approx(muzzle_right.x-400,400-muzzle_left.x) and is_equal_approx(muzzle_right.y,muzzle_left.y), "Facing mirrors barrel around body without changing height")
 	check(is_equal_approx(size.y/1254.0,261.0/1000.0), "Low and aerial art use standing anatomical reference")
 
+func rikiya_runtime_poses() -> void:
+	var painter := Painter.new()
+	painter.load_textures()
+	var historical = JSON.parse_string(FileAccess.get_file_as_string(Motion.MANIFEST))
+	var additions = JSON.parse_string(FileAccess.get_file_as_string(Motion.MANIFESTS[1]))
+	check(painter.motion.entries.size()==historical.assets.size()+additions.assets.size(), "Default renderer loads all dated motion collections")
+	for item in historical.assets:
+		var key: String = str(item.get("art_id",item.fighter_id))+"_"+str(item.pose)
+		var actual: Dictionary = painter.motion.get_entry(key)
+		check(actual.get("path","")=="res://"+str(item.path) and actual.get("pivot_px")==item.pivot_px and actual.get("standing_height_px")==item.standing_height_px, "Historical drawing and native calibration retained: "+key)
+	var rikiya := Fighter.new(16,400,1)
+	for item in additions.assets:
+		var texture := painter.saga_texture(item.id)
+		check(texture != null and texture.get_size()==Vector2(item.dimensions[0],item.dimensions[1]), "Renderer consumes native texture: "+str(item.id))
+		var native_size := Vector2(item.dimensions[0],item.dimensions[1])
+		var pivot := Vector2(item.pivot_px[0],item.pivot_px[1])
+		var size := Motion.canvas_size(item,float(rikiya.profile.height))
+		for facing in [-1,1]:
+			var transform := Transform2D(0.0,Vector2(400,601))
+			transform.x *= facing
+			check(Painter.painted_point(pivot,native_size,size,pivot/native_size,transform).is_equal_approx(Vector2(400,601)), "Native pivot pins both facings: "+str(item.id)+" "+str(facing))
+		check(not painter.motion.has_pose("rikiya_zr_alt_suit",str(item.pose)), "Base motion does not leak into gallery-only costume: "+str(item.pose))
+	rikiya.step(0,true,"",700)
+	check(painter.pose_suffix(rikiya)=="_crouch", "Real down input selects new crouch")
+	check(is_equal_approx(painter.pose_height(rikiya,"rikiya","_crouch"),284.0), "Authored crouch avoids secondary 71-percent body shrink")
+	rikiya.step(-1,true,"",700)
+	check(painter.pose_suffix(rikiya)=="_crouch_guard" and not rikiya.moving, "Real down-back input selects new low guard")
+	check(is_equal_approx(painter.pose_height(rikiya,"rikiya","_crouch_guard"),284.0), "Low guard keeps its calibrated anatomical scale")
+	rikiya.step(0,false,"",700)
+	check(painter.pose_suffix(rikiya)=="", "Releasing low guard returns to neutral artwork")
+	rikiya.step(0,false,"jump",700)
+	check(painter.pose_suffix(rikiya)=="_jump_rise", "Real jump command selects rise before apex")
+	var saw_descent := false
+	for tick in 60:
+		rikiya.step(0,false,"",700)
+		if rikiya.altitude > 0 and rikiya.vy <= 0:
+			saw_descent = true
+			check(painter.pose_suffix(rikiya)=="_jump_fall", "Real negative jump velocity selects descent")
+		if rikiya.altitude == 0: break
+	check(saw_descent and rikiya.altitude==0 and painter.pose_suffix(rikiya)=="", "Jump completes rise, fall and neutral landing")
+	rikiya = Fighter.new(16,400,1)
+	rikiya.step(-1,false,"",470)
+	var attacker := Fighter.new(0,470,-1)
+	attacker.begin("light")
+	attacker.tick = int(attacker.move_data().start)
+	check(not attacker.hit(rikiya) and rikiya.block_ticks>0 and rikiya.health==100, "Real blocked hit retains original damage rules")
+	check(painter.pose_suffix(rikiya)=="_block", "Real standing guard impact selects new block over moving guard")
+	for tick in 8: rikiya.step(0,false,"",470)
+	check(painter.pose_suffix(rikiya)=="", "Block timer expires to neutral pose")
+	rikiya.step(0,false,"throw",470)
+	check(rikiya.action=="throw" and painter.pose_suffix(rikiya)=="_throw", "Real throw command selects dedicated grasp art")
+	var throw_end := int(rikiya.move_data().end)
+	for tick in throw_end:
+		rikiya.step(0,false,"",470)
+		if rikiya.action=="throw": check(painter.pose_suffix(rikiya)=="_throw", "Throw retains dedicated drawing during its existing timing")
+	check(rikiya.action=="" and painter.pose_suffix(rikiya)=="", "Throw recovery returns to existing neutral artwork")
+	rikiya.stun = 4
+	check(painter.pose_suffix(rikiya)=="_recoil", "Existing hit reaction still overrides new neutral action poses")
+
+func press(arena, keycode: int) -> void:
+	var event := InputEventKey.new()
+	event.pressed = true
+	event.keycode = keycode
+	arena._input(event)
+
+func rikiya_match_end_states() -> void:
+	var arena := Arena.new()
+	root.add_child(arena)
+	arena.set_physics_process(false)
+	arena.mode = 2
+	arena.stage = 0
+	arena.case_id = ""
+	arena.edition_id = ""
+	arena.phase = "fight"
+	arena.clock_ticks = 3600
+	arena.wins = [0,0]
+	arena.fighters = [Fighter.new(16,400,1),Fighter.new(16,470,-1)]
+	arena.panel.hide()
+	press(arena,KEY_O)
+	arena._physics_process(1.0/60.0)
+	var winner = arena.fighters[0]
+	check(winner.taunt_ticks==60 and arena.visuals.pose_suffix(winner)=="_taunt", "Rikiya O key selects the new cosmetic taunt through arena input")
+	check(winner.action=="" and winner.health==100 and arena.fighters[1].health==100, "Taunt art adds no attack, damage or new action")
+	for tick in 60: arena._physics_process(1.0/60.0)
+	check(winner.taunt_ticks==0 and arena.visuals.pose_suffix(winner)=="", "Rikiya taunt expires to existing guard after sixty ticks")
+	press(arena,KEY_O)
+	arena._physics_process(1.0/60.0)
+	press(arena,KEY_J)
+	arena._physics_process(1.0/60.0)
+	check(winner.taunt_ticks==0 and winner.action=="light" and arena.visuals.pose_suffix(winner)!="_taunt", "Real attack input cancels Rikiya's taunt without delay")
+	# A real light hit produces the round/match transitions; no fake winner
+	# dictionary substitutes for the arena's KO and finisher input handling.
+	arena.fighters = [Fighter.new(16,400,1),Fighter.new(16,470,-1)]
+	arena.fighters[1].health = 1
+	press(arena,KEY_J)
+	for tick in 20:
+		arena._physics_process(1.0/60.0)
+		if arena.phase != "fight": break
+	winner = arena.fighters[0]
+	check(arena.phase=="round" and arena.winner==0 and arena.wins[0]==1 and arena.fighters[1].health==0, "Actual Rikiya hit wins an ordinary round")
+	check(arena.visuals.pose_suffix(winner,"rikiya",arena,0)=="_victory", "Ordinary round winner displays dedicated victory over frozen attack")
+	check(arena.visuals.pose_suffix(arena.fighters[1],"rikiya",arena,1)!="_victory", "Same-character defeated fighter cannot inherit winner art")
+	arena.phase = "fight"
+	arena.clock_ticks = 3600
+	arena.action_queue = ["",""]
+	arena.fighters = [Fighter.new(16,400,1),Fighter.new(16,470,-1)]
+	arena.fighters[1].health = 1
+	arena.panel.hide()
+	press(arena,KEY_J)
+	for tick in 20:
+		arena._physics_process(1.0/60.0)
+		if arena.phase != "fight": break
+	winner = arena.fighters[0]
+	check(arena.phase=="finish" and arena.wins[0]==2 and arena.finish_ticks==150, "Second real KO opens the existing finisher opportunity")
+	check(arena.visuals.pose_suffix(winner,"rikiya",arena,0)=="_victory", "Victory remains visible during the finisher opportunity")
+	press(arena,KEY_ESCAPE)
+	check(arena.phase=="pause" and arena.resume_phase=="finish" and arena.visuals.pose_suffix(winner,"rikiya",arena,0)=="_victory", "Pausing the actual finisher opportunity preserves winner celebration")
+	press(arena,KEY_ESCAPE)
+	press(arena,KEY_Y)
+	check(arena.phase=="finish", "Defeated side's finisher key cannot trigger Rikiya's finish")
+	press(arena,KEY_I)
+	check(arena.phase=="cinematic" and arena.finish_ticks==72, "Winner's actual I key starts the existing finisher cinematic")
+	check(arena.visuals.pose_suffix(winner,"rikiya",arena,0)=="_finish", "Finisher cinematic consumes the new open-palm contact drawing")
+	check(arena.visuals.pose_suffix(arena.fighters[1],"rikiya",arena,1)!="_finish", "Defeated same-character fighter does not inherit finisher art")
+	check(not Painter.action_effects_active(arena), "Frozen winning attack cannot leak ordinary combat effects into finisher")
+	var finisher: Dictionary = arena.visuals.motion.get_entry("rikiya_finish")
+	check(not finisher.has("emitter_px") and finisher.anchors_px.has("striking_palm"), "Target-centered palm cinematic retains a review anchor without unused projectile emitter")
+	for tick in 71: arena._physics_process(1.0/60.0)
+	check(arena.phase=="cinematic" and arena.finish_ticks==1 and arena.visuals.pose_suffix(winner,"rikiya",arena,0)=="_finish", "Finisher pose lasts through the final cinematic tick")
+	arena._physics_process(1.0/60.0)
+	check(arena.phase=="result" and arena.visuals.pose_suffix(winner,"rikiya",arena,0)=="_victory", "Completed finisher transitions back to victory on results")
+	check(not Painter.action_effects_active(arena), "Result celebration does not restore stale combat effects")
+	arena.audio_player.stop()
+	arena.queue_free()
+	# Match sheets defer their old controls' deletion; let the real scene tree
+	# complete that cleanup before closing this headless integration test.
+	await process_frame
+
 func run() -> void:
 	manifest_validation()
 	cosmetic_timing()
 	pose_selection_and_scale()
+	rikiya_runtime_poses()
+	await rikiya_match_end_states()
 	print("SAGA MOTION: %d checks, %d failures" % [checks,failures])
 	quit(0 if failures==0 else 1)

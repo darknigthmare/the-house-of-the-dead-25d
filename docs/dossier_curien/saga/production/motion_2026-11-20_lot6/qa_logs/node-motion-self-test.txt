@@ -1,0 +1,1 @@
+SAGA MOTION MANIFEST SELF-TEST: 15 cases passed.

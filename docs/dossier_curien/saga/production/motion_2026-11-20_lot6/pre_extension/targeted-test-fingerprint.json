@@ -1,0 +1,10 @@
+{
+  "manifest_path": "data/assets/dossier_curien_motion_2026-11-20_lot6.json",
+  "manifest_sha256_at_targeted_test": "38ccaeef5ee42ba2e17cd44eeef44a0e5796a22aa76646cff8b9e58991da0656",
+  "runtime_entries_sha256": "89c5a73a934020def9c2928c2e57aa0a3495a3eb7735f0d8451d7e43d841ae80",
+  "manifest_provisional_at_targeted_test": true,
+  "test_command": "Godot 4.7.2 --headless --path CHECKOUT --script res://tests/test_saga_motion.gd",
+  "exit_code": 0,
+  "checks": 196,
+  "failures": 0
+}

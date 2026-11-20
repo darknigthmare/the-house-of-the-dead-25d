@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "timezone": "Europe/Paris",
+  "batch": "2026-11-20_lot6",
+  "baseline_commit": "7f14d7b49dcc8d884629245eef71e65198665b8e",
+  "generation_method": "built-in image_gen, one native output per plane",
+  "specs": [
+    {
+      "id": "ams_underground_back",
+      "stage": "ams_underground",
+      "runtime_index": 29,
+      "name": "Sous-sols AMS — Escape",
+      "prompt": "Use case: stylized-concept. Asset type: 2D fighting arena background. Adapt an underground AMS service corridor from CHAPTER1 ESCAPE of The House of the Dead4. Images1–4 are actual chapter1 gameplay captures. They establish plain institutional walls in faded grey-green and blue-grey paint, a narrow ochre horizontal stripe at low waist height, flat segmented wall panels, metal service doors and large horizontal louvered vents, modest rectangular wall intercoms and ceiling panels with cracked plaster or dangling dark cable at an edge. The third image shows the same stripe and muted teal palette in a corridor bend; do not treat the source monsters as architecture. Create a single service junction viewed side-on: central double sliding service doors, louvered vent sections and one shallow open side recess at the right, all behind a continuous worn grey-green floor. The close low ceiling has simple fluorescent strips with restrained white-green light, one broken panel and sparse dark cabling at the outer left. Subtle earthquake wear, small scuffs and dust near wall bases, not a ruined cavern. Keep the recognizable plain corridor, old door controls and ochre stripe, not a command room. No futuristic science-fiction pods, computers, lab tanks, sewer water, medieval arches, printed warnings or excessive sparks. No original boss creature, original blood splashes or body parts. Produce one continuous wide landscape 16:9 opaque BACK plane, native about 1672x941. Detailed painted 2D fighting-game scenery in the quality of the last style reference. That last image controls ONLY painterly rendering, image ratio and the lateral combat layout, NOT subject architecture. The camera faces the setting laterally, with shallow depth and an uninterrupted level floor spanning the full lower 27 percent. The fighters contact the floor at y=81.56 percent of image height; keep x=12.5 to87.5 percent clear at this line. Architectural spacing and this continuous fighting strip are explicit adaptations of the original game view. Keep central values readable and all scene props BEHIND the fighting strip. Fine convincing weathered materials, completed edge-to-edge. One single scene, no panels, collage, inset images or captions. Remove all people, creatures, corpses, weapons, user interface, score, lettering, reticles, logos and watermarks from reference screenshots. No labels, readable signage, floating interface effects, white borders or vignette. Do not replace the recognizable setting with generic fantasy scenery.",
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot6/stages/h4-chapter1-3.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot6/stages/h4-chapter1-4.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot6/stages/h4-chapter1-7.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot6/stages/h4-chapter1-8.jpg"
+      ],
+      "style": "assets/dossier_curien/saga/strength_colosseum_back.png",
+      "generated_file": "exec-6d11c3dd-83f8-42aa-8a4b-8ee12465429a.png",
+      "path": "assets/dossier_curien/saga/ams_underground_back.png",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "sha256": "859fe289bfe1fb7ce5dfcc1b2dfb18b06497a927715a2a6408bee1cd1be1a6a5",
+      "pixel_postprocessing": "none",
+      "accepted": true,
+      "visually_inspected": true
+    },
+    {
+      "id": "scarlet_annex_back",
+      "stage": "scarlet_annex",
+      "runtime_index": 30,
+      "name": "Annexe — Scarlet Dawn",
+      "prompt": "Use case: stylized-concept. Asset type: 2D fighting arena background. Adapt the two-storey dining hall in the ANNEX, Route A of House of the Dead Scarlet Dawn. Image1 is an actual arcade screen photo of this dining hall and is the architectural authority. Retain rich dark red-brown polished wood panelling and pillars, warm green lower walls, a continuous upper wooden balcony with carved balustrades and curving side balconies, heavy coffered wood ceiling and a brilliant warm crystal chandelier hanging high above the center. On the back wall, restrained decorative rectangular wood panels, a dark wooden double door and wall sconces with small pale shades. The hall is grand but has the dense enclosed proportions of the original capture. Preserve warm amber chandelier light and dark green/brown shadows, with a pale smoky shaft from the left. Open the dining floor laterally for combat and place any modest furniture only at distant rear edges; the playable foreground is uninterrupted polished but worn brown parquet. Show the balcony behind the combatants, never a railing across their lane. Fine restrained age and dust, no extravagant palace redesign. This is the Annex hall, not Scarecrow Manor prologue or an isolated piano room. Do not copy the photo's camera glare, screen border, white score circle, cyan HUD, players or enemies. Do not add a fantasy throne, bright stained glass, giant staircase in the combat lane or modern technology. Produce one continuous wide landscape 16:9 opaque BACK plane, native about 1672x941. Detailed painted 2D fighting-game scenery in the quality of the last style reference. That last image controls ONLY painterly rendering, image ratio and the lateral combat layout, NOT subject architecture. The camera faces the setting laterally, with shallow depth and an uninterrupted level floor spanning the full lower 27 percent. The fighters contact the floor at y=81.56 percent of image height; keep x=12.5 to87.5 percent clear at this line. Architectural spacing and this continuous fighting strip are explicit adaptations of the original game view. Keep central values readable and all scene props BEHIND the fighting strip. Fine convincing weathered materials, completed edge-to-edge. One single scene, no panels, collage, inset images or captions. Remove all people, creatures, corpses, weapons, user interface, score, lettering, reticles, logos and watermarks from reference screenshots. No labels, readable signage, floating interface effects, white borders or vignette. Do not replace the recognizable setting with generic fantasy scenery.",
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot6/stages/sd-10.jpg"
+      ],
+      "style": "assets/dossier_curien/saga/strength_colosseum_back.png",
+      "generated_file": "exec-ffa5e966-e389-4af8-8350-2aee27d5e53d.png",
+      "path": "assets/dossier_curien/saga/scarlet_annex_back.png",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "sha256": "0075fc062fc4a6b7c5878963fa7f64ce406dc3e2ec8aa1b4008e23d836230d48",
+      "pixel_postprocessing": "none",
+      "accepted": true,
+      "visually_inspected": true
+    },
+    {
+      "id": "overkill_papa_back",
+      "stage": "overkill_papa",
+      "runtime_index": 31,
+      "name": "Manoir — Papa’s Palace of Pain",
+      "prompt": "Use case: stylized-concept. Asset type: 2D fighting arena background. Adapt the entrance hall of PAPA'S PALACE OF PAIN in The House of the Dead Overkill Extended Cut / PS3 Japanese Director's Cut. The first two images are actual PS3 gameplay captures of the same entrance hall, seen from its staircase and upper balcony. Preserve the neglected mansion: desaturated olive-brown walls with pale peeling trim, plain tall wooden double doors with rectangular mouldings, narrow boarded side windows, worn brown plank floor, and an upper gallery with heavily weathered off-white turned wooden balusters and a brown handrail. The first image's central front stairs must be moved fully into the rear-left architectural zone to create an unobstructed lateral floor. The balcony continues across the back wall; one plain doorway is visible upstairs. Include a small faded framed picture and a worn dark chair deep against the far side wall, inspired by the second reference. A modest aged chandelier hangs high in the middle, intact but dusty, above all fighting space. Dirty yellow-brown indoor light and dull olive shadows, modest water stains, peeling paint and loose boards at outer walls, not a pristine luxury ballroom. The entire lower 27percent is flat worn plank floor, with no stair edge or furniture obstructing it. Do not turn this into the Scarlet Dawn hall, gothic castle, tiled hospital, outdoor plantation or underground laboratory. No people, bodies, gore, guns, green pickups, score, health icons or watermark. Produce one continuous wide landscape 16:9 opaque BACK plane, native about 1672x941. Detailed painted 2D fighting-game scenery in the quality of the last style reference. That last image controls ONLY painterly rendering, image ratio and the lateral combat layout, NOT subject architecture. The camera faces the setting laterally, with shallow depth and an uninterrupted level floor spanning the full lower 27 percent. The fighters contact the floor at y=81.56 percent of image height; keep x=12.5 to87.5 percent clear at this line. Architectural spacing and this continuous fighting strip are explicit adaptations of the original game view. Keep central values readable and all scene props BEHIND the fighting strip. Fine convincing weathered materials, completed edge-to-edge. One single scene, no panels, collage, inset images or captions. Remove all people, creatures, corpses, weapons, user interface, score, lettering, reticles, logos and watermarks from reference screenshots. No labels, readable signage, floating interface effects, white borders or vignette. Do not replace the recognizable setting with generic fantasy scenery.",
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot6/stages/ov-stage1-2.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot6/stages/ov-civ1-2.jpg"
+      ],
+      "style": "assets/dossier_curien/saga/strength_colosseum_back.png",
+      "generated_file": "exec-1b8597e5-767f-4470-8532-a2d6726bcfea.png",
+      "path": "assets/dossier_curien/saga/overkill_papa_back.png",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "sha256": "f73447594b1c1bfec2009e43d7c5391ac9fc8c60d225789852ad2c351c4e4f48",
+      "pixel_postprocessing": "none",
+      "accepted": true,
+      "visually_inspected": true
+    },
+    {
+      "id": "zr_sewage_back",
+      "stage": "zr_sewage",
+      "runtime_index": 32,
+      "name": "Égouts industriels — Zombie Revenge",
+      "prompt": "Use case: stylized-concept. Asset type: 2D fighting arena background. Adapt AREA3 INDUSTRIAL SEWAGE PLANT from Zombie Revenge. The first image is a native gameplay storyboard: the top-right cell carries the Area3 location title, and the six cells in the second and third rows show repeated angles of the same industrial water channel. Those views establish thick damp dark grey brick and concrete walls, a low pale grimy concrete service bank, broad dark teal-green flowing water, rust-brown pipes following the wall horizontally, and corroded metal fittings. The images are small; interpret fine textures modestly without claiming exact reconstruction. Adapt the original oblique view into a single clear lateral fighting stage. Set the water channel horizontally BEHIND a wide continuous foreground service bank. The foreground is flat dry-ish stained concrete with no water or rail crossing the fighters at y81.56percent. A short low corroded rail is permitted only on the distant rear ledge. The back wall is a close dirty green-grey masonry surface, with two rusted horizontal pipes and one dark rectangular service opening, no grand arched sewer tunnel. A pipe bends down at the far right above the rear water. Dim damp industrial light, muted green highlights on water, convincing small moss stains, no glowing toxic sludge, giant tanks or science-fiction machinery. Keep the claustrophobic industrial drainage setting distinct from the already-generated chemical plant. The widened concrete bank and continuous side-on water layout are explicit arena adaptations. No character portraits, Linda, enemies, gun pickups, score, green lettering or video watermark; do not reproduce the contact-sheet grid. Produce one continuous wide landscape 16:9 opaque BACK plane, native about 1672x941. Detailed painted 2D fighting-game scenery in the quality of the last style reference. That last image controls ONLY painterly rendering, image ratio and the lateral combat layout, NOT subject architecture. The camera faces the setting laterally, with shallow depth and an uninterrupted level floor spanning the full lower 27 percent. The fighters contact the floor at y=81.56 percent of image height; keep x=12.5 to87.5 percent clear at this line. Architectural spacing and this continuous fighting strip are explicit adaptations of the original game view. Keep central values readable and all scene props BEHIND the fighting strip. Fine convincing weathered materials, completed edge-to-edge. One single scene, no panels, collage, inset images or captions. Remove all people, creatures, corpses, weapons, user interface, score, lettering, reticles, logos and watermarks from reference screenshots. No labels, readable signage, floating interface effects, white borders or vignette. Do not replace the recognizable setting with generic fantasy scenery.",
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/stages/zr_longplay_storyboard_3.jpg"
+      ],
+      "style": "assets/dossier_curien/saga/strength_colosseum_back.png",
+      "generated_file": "exec-5eb18d21-22ea-4826-9d78-c904f9e35c18.png",
+      "path": "assets/dossier_curien/saga/zr_sewage_back.png",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "sha256": "12bc850e759f3066de4aed407e24d5fa875366454a4768779522d77401f582ba",
+      "pixel_postprocessing": "none",
+      "accepted": true,
+      "visually_inspected": true
+    }
+  ]
+}

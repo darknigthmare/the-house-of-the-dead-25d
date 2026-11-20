@@ -1,0 +1,237 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "status": "integrated_named_keyframes_native_pixels_reviewed_runtime_tests_passed",
+  "scope": "Rikiya base: six reachable combat action states, one unmodified native PNG per state.",
+  "source_commit": "7f14d7b49dcc8d884629245eef71e65198665b8e",
+  "accepted_assets": 6,
+  "rejected_attempts": 1,
+  "bytes": 4373991,
+  "new_complete_animations": 0,
+  "canonical_1_to_1_certified": false,
+  "native_gameplay_capture_performed": false,
+  "manifest": {
+    "path": "data/assets/dossier_curien_motion_2026-11-20_lot6.json",
+    "sha256": "e80fdc4e3558fc18988fbc421850e266e64b314e30616ee183d93b0f2530821e",
+    "provisional": false,
+    "runtime_entries_sha256": "89c5a73a934020def9c2928c2e57aa0a3495a3eb7735f0d8451d7e43d841ae80",
+    "targeted_test_manifest_sha256": "38ccaeef5ee42ba2e17cd44eeef44a0e5796a22aa76646cff8b9e58991da0656",
+    "runtime_entries_unchanged_after_status_finalization": true
+  },
+  "historical_manifest": {
+    "path": "data/assets/dossier_curien_motion.json",
+    "sha256": "d1eb9878ecb1d55a63a71ec544d3e4e888954f08a1e77f123976427551618270",
+    "assets": 30,
+    "unchanged_from_source_commit": true
+  },
+  "combined_motion_catalogue": {
+    "assets": 36,
+    "bytes": 40269631
+  },
+  "named_gaps": {
+    "baseline_path": "docs/dossier_curien/saga/production/motion_2026-11-19/MANQUANTS.json",
+    "baseline_sha256": "012e809b4b410d091ebca2214b5163722e10e891788e1f27bf70fda54a201640",
+    "before": 277,
+    "after": 271,
+    "resolved_this_lot": 6,
+    "resolved_cumulative_from_299": 28,
+    "rikiya_remaining": [
+      "victory",
+      "taunt",
+      "finish"
+    ],
+    "historical_masters_unrecovered": 204
+  },
+  "visual_reviews": [
+    {
+      "reviewer": "lot6_motion",
+      "scope": "Every final native image plus guard/contact/walk references",
+      "accepted": true,
+      "checks": [
+        "same identity/outfit",
+        "six distinguishable states",
+        "full body and limbs in frame",
+        "unarmed hands",
+        "true alpha and clean visible bounds",
+        "no local pixel edits"
+      ]
+    },
+    {
+      "reviewer": "root",
+      "scope": "Independent view of six native PNGs compared with historical Rikiya guard",
+      "accepted": true,
+      "checks": [
+        "coherent identity, harness, jeans, shoes and empty hands",
+        "six distinct action states",
+        "complete limbs and support feet",
+        "head calibration addresses enlarged low-pose canvas"
+      ],
+      "limitation": "Source-image review only, not rendered gameplay capture"
+    }
+  ],
+  "tests": [
+    {
+      "kind": "Godot targeted motion",
+      "engine": "4.7.2.stable.official.ed1daf0bf",
+      "command": "Godot --headless --path CHECKOUT --script res://tests/test_saga_motion.gd",
+      "checks": 196,
+      "failures": 0,
+      "exit_code": 0,
+      "log": "docs/dossier_curien/saga/production/motion_2026-11-20_lot6/qa_logs/godot-motion-targeted.txt",
+      "log_sha256": "4d5ab617966b0cedbe93e9a4d63ee3ed37ac9d76c1bd6aecb76d6f05e174bed5"
+    },
+    {
+      "kind": "Node final release manifest",
+      "command": "node scripts/verify_dossier_curien_motion.mjs",
+      "result": "passed; 36 assets, 40269631 bytes, two collections",
+      "log": "docs/dossier_curien/saga/production/motion_2026-11-20_lot6/qa_logs/node-motion-release.txt",
+      "log_sha256": "8a890a5714577b4847161f153dbf29bdc26ce6c14190243a1c13c7b30873c732"
+    },
+    {
+      "kind": "Node manifest self-test",
+      "command": "node scripts/verify_dossier_curien_motion.mjs --self-test",
+      "cases": 15,
+      "result": "passed",
+      "log": "docs/dossier_curien/saga/production/motion_2026-11-20_lot6/qa_logs/node-motion-self-test.txt",
+      "log_sha256": "0cb7513e5bb51bcd7a492c74e25574dc8917a563111e125bf47638c8f6932c27"
+    }
+  ],
+  "preservation": {
+    "historical_motion_pngs_unchanged": true,
+    "historical_manifest_and_gap_report_unchanged": true,
+    "existing_rikiya_guard_unchanged": true,
+    "presentation_and_combatant_unchanged": true,
+    "verification": "git diff --exit-code against source_commit for the named historical paths; native output SHA-256 equality for all new images"
+  },
+  "native_capture_limit": {
+    "status": "blocked",
+    "reason": "AF_UNIX socket creation raises PermissionError errno=1 (EPERM); local Xorg cannot establish listening sockets. No bypass attempted.",
+    "diagnostic": "docs/dossier_curien/saga/production/motion_2026-11-20_lot6/qa_logs/native-display-diagnostic.txt",
+    "diagnostic_sha256": "b2c73ae6842038962634b716fa344b09e306035cc14c6394b72402d7684d1a3d",
+    "xorg_log": "docs/dossier_curien/saga/production/motion_2026-11-20_lot6/qa_logs/xorg-capture-attempt.txt"
+  },
+  "calibration": {
+    "path": "docs/dossier_curien/saga/production/motion_2026-11-20_lot6/calibration.json",
+    "sha256": "11d80d7a5b2ff301bdb22bf6bba098f5371a064129e1e5e9ad4102242c116adf",
+    "method": "Manually reviewed crown/chin and support landmarks, native coordinates, runtime-only scale and pivots",
+    "engine_visual_verification": false
+  },
+  "pixel_operations": "Direct copies only. One background correction generated with image_gen.imagegen; rejected native attempt and prompt retained. No local resize/cutout/recolor/reencode.",
+  "assets": [
+    {
+      "id": "rikiya_crouch",
+      "path": "assets/dossier_curien/motion_2026-11-20_lot6/rikiya_crouch.png",
+      "sha256": "b902791f871c313a26f93a79cab976f17683d1974723ca09bb17681ffa5bb37d",
+      "bytes": 860837,
+      "source_generation_path": "/workspace/scratch/da9d6e4777c1/generated_images/exec-0a409ed6-7d3a-43fd-adbd-b71beb7dc073.png",
+      "source_identical": true,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "pivot_px": [
+        600,
+        1173
+      ],
+      "standing_height_px": 1299.519,
+      "runtime_state": "action empty; grounded; crouching; not guarding"
+    },
+    {
+      "id": "rikiya_crouch_guard",
+      "path": "assets/dossier_curien/motion_2026-11-20_lot6/rikiya_crouch_guard.png",
+      "sha256": "eecda8d4fa962037ef07c728f40c19b6022c9b7d69c76a04a6a55e05facbcae3",
+      "bytes": 707382,
+      "source_generation_path": "/workspace/scratch/da9d6e4777c1/generated_images/exec-8cf15684-8205-4503-bbf6-abbaf51bef7d.png",
+      "source_identical": true,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "pivot_px": [
+        585,
+        1193
+      ],
+      "standing_height_px": 1339.949,
+      "runtime_state": "action empty; grounded; crouching and guarding"
+    },
+    {
+      "id": "rikiya_block",
+      "path": "assets/dossier_curien/motion_2026-11-20_lot6/rikiya_block.png",
+      "sha256": "19cdd26fe0a6fda17b0232866912733b39aac3aab6f8025979ec94730bc6afa2",
+      "bytes": 695994,
+      "source_generation_path": "/workspace/scratch/da9d6e4777c1/generated_images/exec-ad90b0e3-60c4-42ac-8203-67afd8f0cb1f.png",
+      "source_identical": true,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "pivot_px": [
+        590,
+        1175
+      ],
+      "standing_height_px": 1178.231,
+      "runtime_state": "action empty; grounded; not crouching; block_ticks > 0 or stationary guard"
+    },
+    {
+      "id": "rikiya_jump_rise",
+      "path": "assets/dossier_curien/motion_2026-11-20_lot6/rikiya_jump_rise.png",
+      "sha256": "50a4cde70b08636829625ca367411370fbb9219677a04834667caa1f412daa8f",
+      "bytes": 616605,
+      "source_generation_path": "/workspace/scratch/da9d6e4777c1/generated_images/exec-11ed7233-fd24-4e2c-93b6-a5541128fdfd.png",
+      "source_identical": true,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "pivot_px": [
+        560,
+        1100
+      ],
+      "standing_height_px": 1103.147,
+      "runtime_state": "action empty; altitude > 0 or vy > 0; vy > 0"
+    },
+    {
+      "id": "rikiya_jump_fall",
+      "path": "assets/dossier_curien/motion_2026-11-20_lot6/rikiya_jump_fall.png",
+      "sha256": "296033a55a35edfd9d69c604cc7a942194fe2e5c7c01e45a82017d132b48f4b6",
+      "bytes": 732350,
+      "source_generation_path": "/workspace/scratch/da9d6e4777c1/generated_images/exec-14e788ce-3351-4aa2-b5d1-4a5b5d2786d9.png",
+      "source_identical": true,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "pivot_px": [
+        585,
+        1160
+      ],
+      "standing_height_px": 1195.558,
+      "runtime_state": "action empty; altitude > 0; vy <= 0"
+    },
+    {
+      "id": "rikiya_throw",
+      "path": "assets/dossier_curien/motion_2026-11-20_lot6/rikiya_throw.png",
+      "sha256": "db033803b9e469e84b025b285128092e85f43fc6985cb68f921926e4a2ec0c12",
+      "bytes": 760823,
+      "source_generation_path": "/workspace/scratch/da9d6e4777c1/generated_images/exec-642d9ccc-e892-40b5-93a2-3d02c72e556b.png",
+      "source_identical": true,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "pivot_px": [
+        550,
+        1136
+      ],
+      "standing_height_px": 1212.885,
+      "runtime_state": "action == throw; dedicated art precedes generic attack keyframes"
+    }
+  ],
+  "limits": [
+    "One pose per named state does not complete animation between frames.",
+    "Native full-duel visual verification remains pending an environment that permits a display server.",
+    "Calibration landmarks are manual estimates relative to the existing project artwork.",
+    "No new playable roster entry, selectable costume or gallery card is counted."
+  ],
+  "publication_scope": "No export, commit, push or merge by the motion task; common integration and PR publication handled separately."
+}

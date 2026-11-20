@@ -1,0 +1,20 @@
+{
+  "id": "rikiya_crouch",
+  "pose": "crouch",
+  "source_generation_path": "/workspace/scratch/da9d6e4777c1/generated_images/exec-0a409ed6-7d3a-43fd-adbd-b71beb7dc073.png",
+  "prompt": "Use case: identity-preserve. Create ONE new full-body 2D fighting-game keyframe of the exact adult Rikiya Busujima in the attached approved project sprite, which is the authoritative identity, outfit, anatomical proportions and rendering-style reference. Preserve his dense curly black shoulder-length hair, narrow dark sunglasses with thin metal frame, serious clean-shaven face, lean muscular bare torso, open brown leather shoulder-holster harness and its paired silver square buckles, dark blue denim jeans with visible tan seams, brown belt and square silver buckle, brown lace-up shoes. Both hands remain EMPTY; keep holstered details unobtrusive, no drawn firearm. Use the same finely painted crisp arcade-sprite shading, material texture, palette and muscle definition. Lateral three-quarter camera, facing SCREEN RIGHT. Square transparent RGBA canvas. Preserve the reference's head size, torso length, limb thickness and standing anatomical scale: approximately 900 native image pixels tall if standing on a 1024x1024 canvas; the pose may occupy less height because joints bend. Do NOT enlarge a crouched or tucked body to fill the canvas. Hair, fingers, harness and both soles fully inside generous transparent margins. There is only this one character and one pose. Genuine transparent background with clean alpha. No floor, cast shadow, ground plane, scenery, text, labels, sheet, duplicate figure, speed lines, blur, VFX, glow, or opponent. Action: neutral ground CROUCH, not a block or attack. Deep controlled martial-arts squat with hips lowered and both knees bent; near/right thigh slopes down toward screen-left and far/left shin stands toward screen-right, both complete shoes planted on the same ground line around y=950. He keeps his torso upright and facing right, shoulders relaxed, near/right hand open near the collarbone and far/left hand open ahead at chest level, as in his standing guard but lowered. His head should sit around the middle-upper canvas, roughly y=300, with empty transparency above. Preserve full-size head, chest and arms; the compressed overall height must come from the bend in his knees. Readable open space around both forearms, no overlapping extra fingers.",
+  "references": [
+    {
+      "path": "assets/dossier_curien/saga/rikiya_guard.png",
+      "role": "identity_costume_style_anatomy_reference"
+    }
+  ],
+  "generation_tool": "image_gen.imagegen",
+  "transparent_background": true,
+  "date": "2026-11-20",
+  "image_edits": [],
+  "native_sha256": "b902791f871c313a26f93a79cab976f17683d1974723ca09bb17681ffa5bb37d",
+  "native_bytes": 860837,
+  "native_output_copied_without_pixel_changes": true,
+  "status": "native_pixels_visually_reviewed_runtime_validated"
+}

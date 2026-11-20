@@ -1,0 +1,415 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "batch": "2026-11-20_lot5",
+  "specs": [
+    {
+      "id": "prelude_square_mid",
+      "stage": "prelude_square",
+      "layer": "mid",
+      "reference": "assets/dossier_curien/saga/prelude_square_back.png",
+      "prompt": "Use case: stylized-concept. Create ONE separate genuinely transparent RGBA MIDGROUND OVERLAY for the supplied A Prelude old Italian square fighting arena background. Use the supplied image only for material, palette, restrained light, fine painted texture, side-on perspective and canvas alignment. Match its weathered ochre plaster, dark wrought iron and damp stone in muted golden-grey light. Same native landscape 16:9 canvas, about 1672x941. Draw ONLY a slender section of one black ornate lamp post at the extreme LEFT edge within x0–7%, and the very narrow side of an aged ochre shopfront stone pier at the extreme RIGHT edge within x93–100%. Any ornamental scrolls must remain inside those same edge strips. Every pixel outside these two narrow edge zones must be genuinely transparent. The entire central x12.5–87.5% is completely empty from top to bottom. In particular the rectangle x12.5–87.5%, y20–79% and the lower fighting strip x12.5–87.5%, y75–100% have no visible pixels. No connection between the edge fragments. Do not repeat the source scene, floor, sky, room walls, buildings, beds, machinery or background. No ambient color wash, shadow across transparent space, haze, glow, particles, characters, monsters, lettering, HUD, border, logo, watermark or baked checkerboard. One very sparse separate production parallax layer, not an opaque environment picture.",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "center_contract": {
+        "normalized_box": [
+          0.125,
+          0.2,
+          0.875,
+          0.79
+        ],
+        "pixel_box": [
+          209,
+          188,
+          1463,
+          743
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "fight_strip_contract": {
+        "normalized_box": [
+          0.125,
+          0.75,
+          0.875,
+          1
+        ],
+        "pixel_box": [
+          209,
+          705,
+          1463,
+          941
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "path": "assets/dossier_curien/saga/prelude_square_mid.png",
+      "sha256": "027e96aaf54e763a016277029cd40d434a60de73e4cfeeedc66814e32ba415ad",
+      "size_bytes": 342834,
+      "generated_file": "exec-1d0bd6e1-8a19-4256-a232-7cf79beb9793.png",
+      "pixel_postprocessing": "none",
+      "visual_review": "accepted by root; visible material confined to side strips or lower outer corners, consistent materials, no visible center obstruction or HUD"
+    },
+    {
+      "id": "prelude_square_front",
+      "stage": "prelude_square",
+      "layer": "front",
+      "reference": "assets/dossier_curien/saga/prelude_square_back.png",
+      "prompt": "Use case: stylized-concept. Create ONE separate genuinely transparent RGBA FOREGROUND OVERLAY for the supplied A Prelude old Italian square fighting arena background. Use the supplied image only for material, palette, restrained light, fine painted texture, side-on perspective and canvas alignment. Match its weathered ochre plaster, dark wrought iron and damp stone in muted golden-grey light. Same native landscape 16:9 canvas, about 1672x941. Draw ONLY a small black lamp foot on a dark stone plinth, naturally cropped by the extreme BOTTOM LEFT within x0–8%, y94–100%, and two tiny damp cobblestone edge fragments at the extreme BOTTOM RIGHT within x94–100%, y95–100%. Every pixel outside these two narrow edge zones must be genuinely transparent. The entire central x12.5–87.5% is completely empty from top to bottom. In particular the rectangle x12.5–87.5%, y20–79% and the lower fighting strip x12.5–87.5%, y75–100% have no visible pixels. No connection between the edge fragments. Do not repeat the source scene, floor, sky, room walls, buildings, beds, machinery or background. No ambient color wash, shadow across transparent space, haze, glow, particles, characters, monsters, lettering, HUD, border, logo, watermark or baked checkerboard. One very sparse separate production parallax layer, not an opaque environment picture.",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        194,
+        1672,
+        941
+      ],
+      "center_contract": {
+        "normalized_box": [
+          0.125,
+          0.2,
+          0.875,
+          0.79
+        ],
+        "pixel_box": [
+          209,
+          188,
+          1463,
+          743
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "fight_strip_contract": {
+        "normalized_box": [
+          0.125,
+          0.75,
+          0.875,
+          1
+        ],
+        "pixel_box": [
+          209,
+          705,
+          1463,
+          941
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "path": "assets/dossier_curien/saga/prelude_square_front.png",
+      "sha256": "09179d9f2fa9b0ef9da3ed9b2b71bd21221659f22b9745d71f0f1f2bff00a46e",
+      "size_bytes": 87497,
+      "generated_file": "exec-5e00d78b-23d8-46be-afe4-941934b93d4e.png",
+      "pixel_postprocessing": "none",
+      "visual_review": "accepted by root; visible material confined to side strips or lower outer corners, consistent materials, no visible center obstruction or HUD"
+    },
+    {
+      "id": "overkill_hospital_mid",
+      "stage": "overkill_hospital",
+      "layer": "mid",
+      "reference": "assets/dossier_curien/saga/overkill_hospital_back.png",
+      "prompt": "Use case: stylized-concept. Create ONE separate genuinely transparent RGBA MIDGROUND OVERLAY for the supplied Ballistic Trauma hospital shared ward fighting arena background. Use the supplied image only for material, palette, restrained light, fine painted texture, side-on perspective and canvas alignment. Match its dirty blue-grey fabric, worn painted tubular steel and cold muted hospital lighting. Same native landscape 16:9 canvas, about 1672x941. Draw ONLY one narrow hanging fold of a dark blue-grey privacy curtain at the extreme LEFT edge within x0–7%, and a thin vertical worn tubular steel curtain support at the extreme RIGHT edge within x93–100%. Do not add any connecting ceiling rail across the center. Every pixel outside these two narrow edge zones must be genuinely transparent. The entire central x12.5–87.5% is completely empty from top to bottom. In particular the rectangle x12.5–87.5%, y20–79% and the lower fighting strip x12.5–87.5%, y75–100% have no visible pixels. No connection between the edge fragments. Do not repeat the source scene, floor, sky, room walls, buildings, beds, machinery or background. No ambient color wash, shadow across transparent space, haze, glow, particles, characters, monsters, lettering, HUD, border, logo, watermark or baked checkerboard. One very sparse separate production parallax layer, not an opaque environment picture.",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "center_contract": {
+        "normalized_box": [
+          0.125,
+          0.2,
+          0.875,
+          0.79
+        ],
+        "pixel_box": [
+          209,
+          188,
+          1463,
+          743
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "fight_strip_contract": {
+        "normalized_box": [
+          0.125,
+          0.75,
+          0.875,
+          1
+        ],
+        "pixel_box": [
+          209,
+          705,
+          1463,
+          941
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "path": "assets/dossier_curien/saga/overkill_hospital_mid.png",
+      "sha256": "ec00ea125826caa58b1eda574fe0e0b61c2dd1f12ea3d7a0bf13d31a060beb86",
+      "size_bytes": 282999,
+      "generated_file": "exec-fac9fe18-f6ee-4c61-9c6a-0ac0de162bbc.png",
+      "pixel_postprocessing": "none",
+      "visual_review": "accepted by root; visible material confined to side strips or lower outer corners, consistent materials, no visible center obstruction or HUD"
+    },
+    {
+      "id": "overkill_hospital_front",
+      "stage": "overkill_hospital",
+      "layer": "front",
+      "reference": "assets/dossier_curien/saga/overkill_hospital_back.png",
+      "prompt": "Use case: stylized-concept. Create ONE separate genuinely transparent RGBA FOREGROUND OVERLAY for the supplied Ballistic Trauma hospital shared ward fighting arena background. Use the supplied image only for material, palette, restrained light, fine painted texture, side-on perspective and canvas alignment. Match its dirty blue-grey fabric, worn painted tubular steel and cold muted hospital lighting. Same native landscape 16:9 canvas, about 1672x941. Draw ONLY a tiny near-ground tubular hospital-bed foot and small caster at the extreme BOTTOM LEFT within x0–8%, y94–100%, and one small dark floor bracket at the extreme BOTTOM RIGHT within x94–100%, y95–100%. Every pixel outside these two narrow edge zones must be genuinely transparent. The entire central x12.5–87.5% is completely empty from top to bottom. In particular the rectangle x12.5–87.5%, y20–79% and the lower fighting strip x12.5–87.5%, y75–100% have no visible pixels. No connection between the edge fragments. Do not repeat the source scene, floor, sky, room walls, buildings, beds, machinery or background. No ambient color wash, shadow across transparent space, haze, glow, particles, characters, monsters, lettering, HUD, border, logo, watermark or baked checkerboard. One very sparse separate production parallax layer, not an opaque environment picture.",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        161,
+        1672,
+        941
+      ],
+      "center_contract": {
+        "normalized_box": [
+          0.125,
+          0.2,
+          0.875,
+          0.79
+        ],
+        "pixel_box": [
+          209,
+          188,
+          1463,
+          743
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "fight_strip_contract": {
+        "normalized_box": [
+          0.125,
+          0.75,
+          0.875,
+          1
+        ],
+        "pixel_box": [
+          209,
+          705,
+          1463,
+          941
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "path": "assets/dossier_curien/saga/overkill_hospital_front.png",
+      "sha256": "8666c7270cbe5eb9f1d51d764d7768652ac32887ba1e9b669b79e01897ff01cf",
+      "size_bytes": 90840,
+      "generated_file": "exec-9e83770f-452e-4afb-b7f0-154d845df7a6.png",
+      "pixel_postprocessing": "none",
+      "visual_review": "accepted by root; visible material confined to side strips or lower outer corners, consistent materials, no visible center obstruction or HUD"
+    },
+    {
+      "id": "zr_chemical_plant_mid",
+      "stage": "zr_chemical_plant",
+      "layer": "mid",
+      "reference": "assets/dossier_curien/saga/zr_chemical_plant_back.png",
+      "prompt": "Use case: stylized-concept. Create ONE separate genuinely transparent RGBA MIDGROUND OVERLAY for the supplied Zombie Revenge chemical plant fighting arena background. Use the supplied image only for material, palette, restrained light, fine painted texture, side-on perspective and canvas alignment. Match its weathered teal-painted steel, dull rusted pipe metal and dirty grey-green industrial lighting. Same native landscape 16:9 canvas, about 1672x941. Draw ONLY one narrow vertical teal-painted steel upright at the extreme LEFT edge within x0–7%, and the thin visible side of a rusted vertical pipe at the extreme RIGHT edge within x93–100%. All bolts and brackets stay strictly inside those edge strips. Every pixel outside these two narrow edge zones must be genuinely transparent. The entire central x12.5–87.5% is completely empty from top to bottom. In particular the rectangle x12.5–87.5%, y20–79% and the lower fighting strip x12.5–87.5%, y75–100% have no visible pixels. No connection between the edge fragments. Do not repeat the source scene, floor, sky, room walls, buildings, beds, machinery or background. No ambient color wash, shadow across transparent space, haze, glow, particles, characters, monsters, lettering, HUD, border, logo, watermark or baked checkerboard. One very sparse separate production parallax layer, not an opaque environment picture.",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "center_contract": {
+        "normalized_box": [
+          0.125,
+          0.2,
+          0.875,
+          0.79
+        ],
+        "pixel_box": [
+          209,
+          188,
+          1463,
+          743
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "fight_strip_contract": {
+        "normalized_box": [
+          0.125,
+          0.75,
+          0.875,
+          1
+        ],
+        "pixel_box": [
+          209,
+          705,
+          1463,
+          941
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "path": "assets/dossier_curien/saga/zr_chemical_plant_mid.png",
+      "sha256": "97098e48e4902be1f487cab9e09dd37e4d94c1f49bd82cfeb26c05e36028aba3",
+      "size_bytes": 336310,
+      "generated_file": "exec-28b3759c-eadd-4950-8340-190e576c354a.png",
+      "pixel_postprocessing": "none",
+      "visual_review": "accepted by root; visible material confined to side strips or lower outer corners, consistent materials, no visible center obstruction or HUD"
+    },
+    {
+      "id": "zr_chemical_plant_front",
+      "stage": "zr_chemical_plant",
+      "layer": "front",
+      "reference": "assets/dossier_curien/saga/zr_chemical_plant_back.png",
+      "prompt": "Use case: stylized-concept. Create ONE separate genuinely transparent RGBA FOREGROUND OVERLAY for the supplied Zombie Revenge chemical plant fighting arena background. Use the supplied image only for material, palette, restrained light, fine painted texture, side-on perspective and canvas alignment. Match its weathered teal-painted steel, dull rusted pipe metal and dirty grey-green industrial lighting. Same native landscape 16:9 canvas, about 1672x941. Draw ONLY a small low rusted industrial floor bracket and short grated plate corner at the extreme BOTTOM LEFT within x0–8%, y94–100%, and a tiny steel base-plate corner at the extreme BOTTOM RIGHT within x94–100%, y95–100%. Every pixel outside these two narrow edge zones must be genuinely transparent. The entire central x12.5–87.5% is completely empty from top to bottom. In particular the rectangle x12.5–87.5%, y20–79% and the lower fighting strip x12.5–87.5%, y75–100% have no visible pixels. No connection between the edge fragments. Do not repeat the source scene, floor, sky, room walls, buildings, beds, machinery or background. No ambient color wash, shadow across transparent space, haze, glow, particles, characters, monsters, lettering, HUD, border, logo, watermark or baked checkerboard. One very sparse separate production parallax layer, not an opaque environment picture.",
+      "dimensions": [
+        1673,
+        940
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        98,
+        1673,
+        940
+      ],
+      "center_contract": {
+        "normalized_box": [
+          0.125,
+          0.2,
+          0.875,
+          0.79
+        ],
+        "pixel_box": [
+          209,
+          188,
+          1463,
+          742
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "fight_strip_contract": {
+        "normalized_box": [
+          0.125,
+          0.75,
+          0.875,
+          1
+        ],
+        "pixel_box": [
+          209,
+          705,
+          1463,
+          940
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "path": "assets/dossier_curien/saga/zr_chemical_plant_front.png",
+      "sha256": "c7599d911ab67f7273d6ef6e2b08bed48ad148e65da38a27d73b4d5552708305",
+      "size_bytes": 93225,
+      "generated_file": "exec-56107b18-5ee6-45ec-9bdf-aa284d0d9e2a.png",
+      "pixel_postprocessing": "none",
+      "visual_review": "accepted by root; visible material confined to side strips or lower outer corners, consistent materials, no visible center obstruction or HUD"
+    }
+  ]
+}

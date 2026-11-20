@@ -1,0 +1,1054 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "timezone": "Europe/Paris",
+  "batch": "2026-11-20_lot5",
+  "repository": "darknigthmare/the-house-of-the-dead-25d",
+  "audit": {
+    "baseline_commit": "6da249f2c2cc9a988e31230dae1f805e3d7e1daf",
+    "arenas_before": 26,
+    "arenas_after_source_integration": 29
+  },
+  "generation_method": "image_gen built-in; nine separate calls; native output bytes copied unchanged",
+  "stages": [
+    {
+      "id": "prelude_square",
+      "suggested_name": "Place d’A Prelude",
+      "game": "The House of the Dead 2",
+      "source_platform": "Classic HOTD2 gameplay from a guide covering arcade/Wii; exact captured port not established",
+      "status": "adaptation_2d",
+      "runtime_stage_index": 26,
+      "inventory_task_id": "hotd2_rues",
+      "reference_keys": [
+        "hotd2_prelude_chapter1-1",
+        "hotd2_prelude_boss1-1",
+        "hotd2_prelude_boss1-2"
+      ],
+      "retained_motifs": [
+        "Aged ochre stucco and stone, wrought-iron balconies, shutters and red awnings",
+        "Square crenellated brick tower with paired arched openings",
+        "Black branching street lamps, damp dark cobbles and golden-grey sky"
+      ],
+      "adaptation_decisions": [
+        "Opening street and Judgment plaza motifs composed into one clear lateral square",
+        "Level foreground widened and facade spacing adjusted for two fighters",
+        "One adapted square only; canal routes and other chapter branches remain separate"
+      ]
+    },
+    {
+      "id": "overkill_hospital",
+      "suggested_name": "Hôpital — Ballistic Trauma",
+      "game": "The House of the Dead: Overkill Extended Cut",
+      "source_platform": "PlayStation 3 guide; Extended Cut / Japanese Director’s Cut",
+      "status": "adaptation_2d",
+      "runtime_stage_index": 27,
+      "inventory_task_id": "overkill_hospital",
+      "reference_keys": [
+        "overkill_hospital_ps3_civ3-3",
+        "overkill_hospital_ps3_civ3-2"
+      ],
+      "retained_motifs": [
+        "Blue-grey patient ward walls, lower tiles with dark trim",
+        "Tubular hospital beds, privacy curtains and ceiling tracks",
+        "Damaged ceiling grid, fluorescent lights and dirty alternating floor tiles"
+      ],
+      "adaptation_decisions": [
+        "Third-floor shared ward opened laterally; all beds stay behind the fighting strip",
+        "Adjacent corridor supports shared wall and door material, not a second delivered arena",
+        "Not the circular Screamer boss room; other hospital rooms and routes remain missing"
+      ]
+    },
+    {
+      "id": "zr_chemical_plant",
+      "suggested_name": "Usine chimique — Zombie Revenge",
+      "game": "Zombie Revenge",
+      "source_platform": "Dreamcast according to public longplay author Retronomicon / NVSGamer",
+      "status": "adaptation_2d",
+      "runtime_stage_index": 28,
+      "inventory_task_id": "zr_plant",
+      "reference_keys": [
+        "zr_longplay_storyboard_5",
+        "zr_longplay_storyboard_6",
+        "zr_longplay_storyboard_7"
+      ],
+      "retained_motifs": [
+        "Large pale industrial tanks, heavy horizontal pipework",
+        "Teal steel uprights and braces, rear grated platforms",
+        "Yellow-black hazard edges, simple dark rails and dirty grey-green floor"
+      ],
+      "adaptation_decisions": [
+        "Actual on-screen AREA4 CHEMICAL PLANT title retained as location evidence",
+        "First two rows of native storyboard6 are architecture references; individual cells only320×180",
+        "Tank spacing, fine surface detail and open lateral fighting strip interpreted; no native high-resolution video frame obtained",
+        "One plant room only; adjacent offices, boss room and other branches not delivered"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "hotd2_prelude_chapter1-1",
+      "page_url": "https://www.k-triggerhappy.com/hod2/chapter1.html",
+      "url": "https://www.k-triggerhappy.com/hod2/chapter1-1.jpg",
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/stages/hotd2_prelude_chapter1-1.jpg",
+      "bytes": 41868,
+      "sha256": "c1f3ce6c39c43ef24c1d6abc42ee4fef1fe66c34f21d4cf70e73191e0d086113",
+      "dimensions": [
+        800,
+        489
+      ],
+      "mode": "RGB",
+      "retrieved": "2026-11-20",
+      "visually_inspected": true,
+      "used_as_imagegen_reference": true,
+      "source_type": "gameplay_capture_community_host",
+      "source_platform": "HOTD2 capture from a guide covering arcade/Wii; exact captured platform not established",
+      "role": "architecture and palette reference",
+      "source_pixels_modified": false
+    },
+    {
+      "id": "hotd2_prelude_boss1-1",
+      "page_url": "https://www.k-triggerhappy.com/hod2/chapter1.html",
+      "url": "https://www.k-triggerhappy.com/hod2/boss1-1.jpg",
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/stages/hotd2_prelude_boss1-1.jpg",
+      "bytes": 48367,
+      "sha256": "ee55ab8fe406536b9531c92b079022ed2a88c47e0e1ee64a1bbd3651d3015e62",
+      "dimensions": [
+        800,
+        491
+      ],
+      "mode": "RGB",
+      "retrieved": "2026-11-20",
+      "visually_inspected": true,
+      "used_as_imagegen_reference": true,
+      "source_type": "gameplay_capture_community_host",
+      "source_platform": "HOTD2 capture from a guide covering arcade/Wii; exact captured platform not established",
+      "role": "architecture and palette reference",
+      "source_pixels_modified": false
+    },
+    {
+      "id": "hotd2_prelude_boss1-2",
+      "page_url": "https://www.k-triggerhappy.com/hod2/chapter1.html",
+      "url": "https://www.k-triggerhappy.com/hod2/boss1-2.jpg",
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/stages/hotd2_prelude_boss1-2.jpg",
+      "bytes": 53710,
+      "sha256": "aae3b674762983dc8b78e1e15e898f2ef8aa3889a6ec14e2803f76216b0cef8f",
+      "dimensions": [
+        800,
+        489
+      ],
+      "mode": "RGB",
+      "retrieved": "2026-11-20",
+      "visually_inspected": true,
+      "used_as_imagegen_reference": true,
+      "source_type": "gameplay_capture_community_host",
+      "source_platform": "HOTD2 capture from a guide covering arcade/Wii; exact captured platform not established",
+      "role": "architecture and palette reference",
+      "source_pixels_modified": false
+    },
+    {
+      "id": "overkill_hospital_ps3_civ3-2",
+      "page_url": "https://www.k-triggerhappy.com/hodoverkill_ps3/stage3.html",
+      "url": "https://www.k-triggerhappy.com/hodoverkill_ps3/civ3-2.jpg",
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/stages/overkill_hospital_ps3_civ3-2.jpg",
+      "bytes": 27497,
+      "sha256": "66399b693135f748d6d2f1e80bb1673d30f92863da9e51c9f1abb07e7a0b12a8",
+      "dimensions": [
+        750,
+        421
+      ],
+      "mode": "RGB",
+      "retrieved": "2026-11-20",
+      "visually_inspected": true,
+      "used_as_imagegen_reference": true,
+      "source_type": "gameplay_capture_community_host",
+      "source_platform": "PlayStation 3 guide, Overkill Extended Cut / Japanese Directors Cut",
+      "role": "architecture and palette reference",
+      "source_pixels_modified": false
+    },
+    {
+      "id": "overkill_hospital_ps3_civ3-3",
+      "page_url": "https://www.k-triggerhappy.com/hodoverkill_ps3/stage3.html",
+      "url": "https://www.k-triggerhappy.com/hodoverkill_ps3/civ3-3.jpg",
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/stages/overkill_hospital_ps3_civ3-3.jpg",
+      "bytes": 29637,
+      "sha256": "a19eaa02c2e73925445a42b05c9610ac02eecbb808642bbd92a6442f63bfdfc0",
+      "dimensions": [
+        750,
+        421
+      ],
+      "mode": "RGB",
+      "retrieved": "2026-11-20",
+      "visually_inspected": true,
+      "used_as_imagegen_reference": true,
+      "source_type": "gameplay_capture_community_host",
+      "source_platform": "PlayStation 3 guide, Overkill Extended Cut / Japanese Directors Cut",
+      "role": "architecture and palette reference",
+      "source_pixels_modified": false
+    },
+    {
+      "id": "zr_longplay_storyboard_5",
+      "url": "https://i.ytimg.com/sb/ne37UXflHqw/storyboard3_L3/M5.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgjmh9O-Bg==&sigh=rs$AOn4CLB3oOHhlnlunQ7VyR8yXsT7wm-tPw",
+      "page_url": "https://www.youtube.com/watch?v=ne37UXflHqw",
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/stages/zr_longplay_storyboard_5.jpg",
+      "bytes": 39722,
+      "sha256": "d50eaf06d0aa7916bf154a48c27a567d9565e77531f7466db2930d94b199c10c",
+      "fragment_index": 5,
+      "source_grid": [
+        3,
+        3
+      ],
+      "cell_dimensions": [
+        320,
+        180
+      ],
+      "approximate_fragment_start_seconds": 446.7025862068965,
+      "timing_note": "Approximate yt-dlp storyboard fragment duration; exact gameplay timestamp not certified.",
+      "dimensions": [
+        960,
+        540
+      ],
+      "mode": "RGB",
+      "retrieved": "2026-11-20",
+      "visually_inspected": true,
+      "used_as_imagegen_reference": false,
+      "source_type": "gameplay_video_storyboard_native",
+      "source_platform": "Dreamcast according to public video author Retronomicon",
+      "role": "Area4ChemicalPlant architecture reference, with title/office context",
+      "source_pixels_modified": false,
+      "limitations": [
+        "Native storyboard cells are 320x180; no upscaling or inferred pixels.",
+        "Watermarks and HUD are present only in source, not desired in generated scenery."
+      ]
+    },
+    {
+      "id": "zr_longplay_storyboard_6",
+      "url": "https://i.ytimg.com/sb/ne37UXflHqw/storyboard3_L3/M6.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgjmh9O-Bg==&sigh=rs$AOn4CLB3oOHhlnlunQ7VyR8yXsT7wm-tPw",
+      "page_url": "https://www.youtube.com/watch?v=ne37UXflHqw",
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/stages/zr_longplay_storyboard_6.jpg",
+      "bytes": 43824,
+      "sha256": "61139c2ffd4191c4139e5473937cf16de4786d394068a35abbefd736794cfd8a",
+      "fragment_index": 6,
+      "source_grid": [
+        3,
+        3
+      ],
+      "cell_dimensions": [
+        320,
+        180
+      ],
+      "approximate_fragment_start_seconds": 536.0431034482758,
+      "timing_note": "Approximate yt-dlp storyboard fragment duration; exact gameplay timestamp not certified.",
+      "dimensions": [
+        960,
+        540
+      ],
+      "mode": "RGB",
+      "retrieved": "2026-11-20",
+      "visually_inspected": true,
+      "used_as_imagegen_reference": true,
+      "source_type": "gameplay_video_storyboard_native",
+      "source_platform": "Dreamcast according to public video author Retronomicon",
+      "role": "Area4ChemicalPlant architecture reference, with title/office context",
+      "source_pixels_modified": false,
+      "limitations": [
+        "Native storyboard cells are 320x180; no upscaling or inferred pixels.",
+        "Watermarks and HUD are present only in source, not desired in generated scenery."
+      ]
+    },
+    {
+      "id": "zr_longplay_storyboard_7",
+      "url": "https://i.ytimg.com/sb/ne37UXflHqw/storyboard3_L3/M7.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgjmh9O-Bg==&sigh=rs$AOn4CLB3oOHhlnlunQ7VyR8yXsT7wm-tPw",
+      "page_url": "https://www.youtube.com/watch?v=ne37UXflHqw",
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/stages/zr_longplay_storyboard_7.jpg",
+      "bytes": 45050,
+      "sha256": "7e0df8185ef7785e5e264fe900c7e5651f9c0b5dadb6c60d5a52760e347b5918",
+      "fragment_index": 7,
+      "source_grid": [
+        3,
+        3
+      ],
+      "cell_dimensions": [
+        320,
+        180
+      ],
+      "approximate_fragment_start_seconds": 625.3836206896551,
+      "timing_note": "Approximate yt-dlp storyboard fragment duration; exact gameplay timestamp not certified.",
+      "dimensions": [
+        960,
+        540
+      ],
+      "mode": "RGB",
+      "retrieved": "2026-11-20",
+      "visually_inspected": true,
+      "used_as_imagegen_reference": false,
+      "source_type": "gameplay_video_storyboard_native",
+      "source_platform": "Dreamcast according to public video author Retronomicon",
+      "role": "Area4ChemicalPlant architecture reference, with title/office context",
+      "source_pixels_modified": false,
+      "limitations": [
+        "Native storyboard cells are 320x180; no upscaling or inferred pixels.",
+        "Watermarks and HUD are present only in source, not desired in generated scenery."
+      ]
+    },
+    {
+      "id": "zr_longplay_storyboard_2",
+      "url": "https://i.ytimg.com/sb/ne37UXflHqw/storyboard3_L3/M2.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgjmh9O-Bg==&sigh=rs$AOn4CLB3oOHhlnlunQ7VyR8yXsT7wm-tPw",
+      "page_url": "https://www.youtube.com/watch?v=ne37UXflHqw",
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/stages/zr_longplay_storyboard_2.jpg",
+      "bytes": 39760,
+      "sha256": "47edc3ac0eee3faa3c2838c1773a41a1ad2300dd24fe55157d635ac56b6bb04d",
+      "fragment_index": 2,
+      "source_grid": [
+        3,
+        3
+      ],
+      "cell_dimensions": [
+        320,
+        180
+      ],
+      "approximate_fragment_start_seconds": 178.6810344827586,
+      "timing_note": "Approximate yt-dlp storyboard fragment duration; exact gameplay timestamp not certified.",
+      "dimensions": [
+        960,
+        540
+      ],
+      "mode": "RGB",
+      "retrieved": "2026-11-20",
+      "visually_inspected": true,
+      "used_as_imagegen_reference": false,
+      "source_type": "gameplay_video_storyboard_native",
+      "source_platform": "Dreamcast according to public video author Retronomicon / NVSGamer",
+      "role": "Inventory evidence: on-screen AREA2 EDWARD STREET title in top-middle cell, partially overlaid by character; narrow dark brick streets and service alleys.",
+      "source_pixels_modified": false
+    },
+    {
+      "id": "zr_longplay_storyboard_3",
+      "url": "https://i.ytimg.com/sb/ne37UXflHqw/storyboard3_L3/M3.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgjmh9O-Bg==&sigh=rs$AOn4CLB3oOHhlnlunQ7VyR8yXsT7wm-tPw",
+      "page_url": "https://www.youtube.com/watch?v=ne37UXflHqw",
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/stages/zr_longplay_storyboard_3.jpg",
+      "bytes": 46198,
+      "sha256": "6f3bf60e5e1f7d19f01f54bce8e29c767e06c96432c9bc12192a0e830f5280ef",
+      "fragment_index": 3,
+      "source_grid": [
+        3,
+        3
+      ],
+      "cell_dimensions": [
+        320,
+        180
+      ],
+      "approximate_fragment_start_seconds": 268.0215517241379,
+      "timing_note": "Approximate yt-dlp storyboard fragment duration; exact gameplay timestamp not certified.",
+      "dimensions": [
+        960,
+        540
+      ],
+      "mode": "RGB",
+      "retrieved": "2026-11-20",
+      "visually_inspected": true,
+      "used_as_imagegen_reference": false,
+      "source_type": "gameplay_video_storyboard_native",
+      "source_platform": "Dreamcast according to public video author Retronomicon / NVSGamer",
+      "role": "Inventory evidence: on-screen AREA3 INDUSTRIAL SEWAGE PLANT title in top-right cell and subsequent water channel gameplay.",
+      "source_pixels_modified": false
+    },
+    {
+      "id": "zr_longplay_storyboard_10",
+      "url": "https://i.ytimg.com/sb/ne37UXflHqw/storyboard3_L3/M10.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgjmh9O-Bg==&sigh=rs$AOn4CLB3oOHhlnlunQ7VyR8yXsT7wm-tPw",
+      "page_url": "https://www.youtube.com/watch?v=ne37UXflHqw",
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/stages/zr_longplay_storyboard_10.jpg",
+      "bytes": 50892,
+      "sha256": "731e676db6ce08b527dd72ff484fd035948b1cdfdbdb0c03d9323b4a936941ad",
+      "fragment_index": 10,
+      "source_grid": [
+        3,
+        3
+      ],
+      "cell_dimensions": [
+        320,
+        180
+      ],
+      "approximate_fragment_start_seconds": 893.405172413793,
+      "timing_note": "Approximate yt-dlp storyboard fragment duration; exact gameplay timestamp not certified.",
+      "dimensions": [
+        960,
+        540
+      ],
+      "mode": "RGB",
+      "retrieved": "2026-11-20",
+      "visually_inspected": true,
+      "used_as_imagegen_reference": false,
+      "source_type": "gameplay_video_storyboard_native",
+      "source_platform": "Dreamcast according to public video author Retronomicon / NVSGamer",
+      "role": "Context only: train ending and transition to yellow-lit industrial interior. No Cassandra title visible; naming relies on video chapter metadata.",
+      "source_pixels_modified": false
+    },
+    {
+      "id": "zr_longplay_storyboard_11",
+      "url": "https://i.ytimg.com/sb/ne37UXflHqw/storyboard3_L3/M11.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgjmh9O-Bg==&sigh=rs$AOn4CLB3oOHhlnlunQ7VyR8yXsT7wm-tPw",
+      "page_url": "https://www.youtube.com/watch?v=ne37UXflHqw",
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/stages/zr_longplay_storyboard_11.jpg",
+      "bytes": 51378,
+      "sha256": "e290b048e711856f17a264c6e0d463bb91f82f3eff8376e961dc4ee21c4c8106",
+      "fragment_index": 11,
+      "source_grid": [
+        3,
+        3
+      ],
+      "cell_dimensions": [
+        320,
+        180
+      ],
+      "approximate_fragment_start_seconds": 982.7456896551723,
+      "timing_note": "Approximate yt-dlp storyboard fragment duration; exact gameplay timestamp not certified.",
+      "dimensions": [
+        960,
+        540
+      ],
+      "mode": "RGB",
+      "retrieved": "2026-11-20",
+      "visually_inspected": true,
+      "used_as_imagegen_reference": false,
+      "source_type": "gameplay_video_storyboard_native",
+      "source_platform": "Dreamcast according to public video author Retronomicon / NVSGamer",
+      "role": "Inventory evidence: yellow-lit industrial interior after train and before mutant boss. No Cassandra title visible; association relies on author chapter sequence, not an on-screen title.",
+      "source_pixels_modified": false
+    }
+  ],
+  "style_references": [
+    {
+      "path": "assets/dossier_curien/saga/strength_colosseum_back.png",
+      "sha256": "c21815bf401850032d5cf7c5769859b3f1d589ed98eeca4f5616e17cc6802bc7",
+      "size_bytes": 3290066,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "role": "Painting quality, texture and lateral layout only; not architectural evidence for the three source locations"
+    }
+  ],
+  "calibration": {
+    "renderer": "src/dossier_curien/presentation.gd",
+    "back_and_overlay_rect": [
+      -38,
+      -14,
+      1356,
+      754
+    ],
+    "suggested_floor_y": 601,
+    "foot_line_normalized_y": 0.8156498673740054,
+    "drift_multipliers": {
+      "back": 17,
+      "mid": 32,
+      "front": 58
+    },
+    "center_contract": {
+      "normalized_box": [
+        0.125,
+        0.2,
+        0.875,
+        0.79
+      ],
+      "maximum_alpha": 1,
+      "rounding": "int(width_or_height * fraction), end exclusive; pixel boxes recorded per file"
+    },
+    "fight_strip_contract": {
+      "normalized_box": [
+        0.125,
+        0.75,
+        0.875,
+        1
+      ],
+      "maximum_alpha": 1
+    },
+    "native_dimensions_by_id": {
+      "prelude_square_back": [
+        1672,
+        941
+      ],
+      "overkill_hospital_back": [
+        1672,
+        941
+      ],
+      "zr_chemical_plant_back": [
+        1672,
+        941
+      ],
+      "prelude_square_mid": [
+        1672,
+        941
+      ],
+      "prelude_square_front": [
+        1672,
+        941
+      ],
+      "overkill_hospital_mid": [
+        1672,
+        941
+      ],
+      "overkill_hospital_front": [
+        1672,
+        941
+      ],
+      "zr_chemical_plant_mid": [
+        1672,
+        941
+      ],
+      "zr_chemical_plant_front": [
+        1673,
+        940
+      ]
+    },
+    "source_pixels": "Preserved byte-for-byte; existing renderer scales every layer into its rectangle. One native foreground is1673×940, the other eight files1672×941."
+  },
+  "review": {
+    "all_nine_images_visually_inspected": true,
+    "backgrounds_have_unobstructed_lateral_floor": true,
+    "no_character_or_hud_generated": true,
+    "style_compared_with_existing_strength_stage": true,
+    "overlays_limited_to_margins": true,
+    "native_engine_capture_performed": false,
+    "runtime_motion_validation": "Headless integration documented separately; no manual play session or native viewport capture claimed."
+  },
+  "limitations": [
+    "Generated lateral 2D adaptations, not extracted SEGA backgrounds or certified1:1 reproductions.",
+    "One room or square per arena, not complete game chapters.",
+    "HOTD2 captured port unconfirmed; Overkill reference isPS3; Zombie Revenge Dreamcast attribution is the video author’s.",
+    "Zombie Revenge architecture is inferred from native public320×180 storyboard cells. Exact per-cell timestamps and high-resolution video frames were not obtained.",
+    "Cassandra inventory naming relies on author chapter metadata and sequence; no retained on-screen title. Areas2,3,4 have directly visible title evidence.",
+    "Nominally empty overlay pixels include native alpha1/255 remnants; measured center and fighting-strip maxima are at most1.",
+    "Native dimensions differ slightly for one foreground; no local pixel resize or cleanup performed.",
+    "Native runtime rendering not visually captured in this production report."
+  ],
+  "rejected_outputs": [],
+  "pixel_postprocessing": "none",
+  "files": [
+    {
+      "path": "assets/dossier_curien/saga/prelude_square_back.png",
+      "sha256": "ae1b19b0eaf05fa4454fb552d2b180786cd608ba59d5db1daf46d754e24946f7",
+      "size_bytes": 3201924,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "id": "prelude_square_back",
+      "stage": "prelude_square",
+      "layer": "back",
+      "prompt": "Use case: stylized-concept. Asset type: 2D fighting arena background. Adapt the street square of A Prelude in the ORIGINAL The House of the Dead 2. Images1,2,3 are actual game captures, from the opening street and the Judgment encounter; they control architecture and palette. Use the aged Italian square: three-storey worn ochre/olive stucco facades with exposed brick and stone lower courses, shallow iron balconies, dark narrow windows with shutters, terracotta roofs, modest red canvas awnings, a square crenellated brick tower with paired arched openings rising behind the buildings, and ornate black branching street lamps with pale lanterns. Muted golden-grey clouded sky and a damp dark cobblestone surface. Keep the close old-city scale of the captures. Compose one modest square with the tall crenellated tower behind the right-centre facade and a shopfront corner to the left; place one branching lamp at each side, behind the fighters. The playable foreground is level wet cobblestone paving, not a canal, bridge or asphalt highway. Gentle aged highlights, no neon, bright modern adverts, church cathedral, parked modern vehicles or remake architecture. Thin distant rainfall atmosphere is acceptable but no bright rain streaks or particles cross the combat area. Do not reproduce Zeal, Kuarl, zombies, guns or HUD. Produce one continuous wide landscape 16:9 opaque BACK plane, native about 1672x941. Detailed painted 2D fighting-game scenery in the quality of the last style reference. That last image controls ONLY painterly rendering, image ratio and the lateral combat layout, NOT subject architecture. The camera faces the setting laterally, with shallow depth and an uninterrupted level floor spanning the full lower 27 percent. The fighters contact the floor at y=81.56 percent of image height; keep x=12.5 to87.5 percent clear at this line. Architectural spacing and this continuous fighting strip are explicit adaptations of the original game view. Keep central values readable, with buildings, beds, equipment and rails BEHIND the fighting strip. Fine convincing weathered materials, completed edge-to-edge. One single scene, no panels, collage, inset images or captions. Remove all people, creatures, corpses, weapons, user interface, score, lettering, reticles, logos and watermarks from reference screenshots. No labels, readable signage, floating interface effects, white borders or vignette. Do not invent a different franchise or replace the recognizable setting with generic fantasy scenery.",
+      "prompt_sha256_utf8": "803e2ad256e3494d4a4def1175115161587a32d784158233baedf7759641033e",
+      "reference_paths": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/stages/hotd2_prelude_chapter1-1.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/stages/hotd2_prelude_boss1-1.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/stages/hotd2_prelude_boss1-2.jpg",
+        "assets/dossier_curien/saga/strength_colosseum_back.png"
+      ],
+      "selected_generation_basename": "exec-8b45ecaa-4236-4919-8035-01068246a181.png",
+      "accepted": true,
+      "opaque": true,
+      "visually_inspected": true,
+      "pixel_postprocessing": "none"
+    },
+    {
+      "path": "assets/dossier_curien/saga/overkill_hospital_back.png",
+      "sha256": "cf682d28d2257aa7f32f31553df83df50ae2c41ace04b151d146d98b53d79af4",
+      "size_bytes": 2773909,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "id": "overkill_hospital_back",
+      "stage": "overkill_hospital",
+      "layer": "back",
+      "prompt": "Use case: stylized-concept. Asset type: 2D fighting arena background. Adapt the patient ward of BALLISTIC TRAUMA in The House of the Dead Overkill Extended Cut / PS3 Japanese Director's Cut. Image1 is an actual ward gameplay view and controls the room layout: worn pale grey-blue hospital walls with a lower pale tiled band and a thin dark horizontal trim, square ceiling grid with missing panels and exposed pipes, metal overhead curtain tracks, dark hanging privacy curtains and old tubular-framed hospital beds with muted grey bedding. The dirty square floor tiles alternate dark charcoal/olive and desaturated light grey. Image2 is supporting reference for the same hospital's wall tiles, long vents, damaged ceiling and institutional double doors, not a separate room to paste in. The last image is only painting quality / lateral floor layout. Create a continuous ward viewed from the side, with two beds aligned against the rear wall, one partly concealed by a dark curtain, an open central bay and a modest closed double door toward the right. Keep every bed and its rails entirely behind the combat floor. Cool dirty fluorescent lighting with desaturated grey-green shadows; no red circular MRI boss arena, ornate mansion, futuristic lab, glowing pods, clean luxury clinic or invented medical machines. The ceiling tracks and pipes are plausible continuations of the visible ward hardware; rubble remains at the wall edges, with no piles or fallen object in the fighting lane. No patients, nurses, ghosts, body parts, blood pools, posters, medical labels or HUD. Produce one continuous wide landscape 16:9 opaque BACK plane, native about 1672x941. Detailed painted 2D fighting-game scenery in the quality of the last style reference. That last image controls ONLY painterly rendering, image ratio and the lateral combat layout, NOT subject architecture. The camera faces the setting laterally, with shallow depth and an uninterrupted level floor spanning the full lower 27 percent. The fighters contact the floor at y=81.56 percent of image height; keep x=12.5 to87.5 percent clear at this line. Architectural spacing and this continuous fighting strip are explicit adaptations of the original game view. Keep central values readable, with buildings, beds, equipment and rails BEHIND the fighting strip. Fine convincing weathered materials, completed edge-to-edge. One single scene, no panels, collage, inset images or captions. Remove all people, creatures, corpses, weapons, user interface, score, lettering, reticles, logos and watermarks from reference screenshots. No labels, readable signage, floating interface effects, white borders or vignette. Do not invent a different franchise or replace the recognizable setting with generic fantasy scenery.",
+      "prompt_sha256_utf8": "ced14922b5e463d43c2c0ec2daffb869f314496f5fd416ea47deace3fd522c3c",
+      "reference_paths": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/stages/overkill_hospital_ps3_civ3-3.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/stages/overkill_hospital_ps3_civ3-2.jpg",
+        "assets/dossier_curien/saga/strength_colosseum_back.png"
+      ],
+      "selected_generation_basename": "exec-46a488b3-0c20-487c-9139-a76a0332d589.png",
+      "accepted": true,
+      "opaque": true,
+      "visually_inspected": true,
+      "pixel_postprocessing": "none"
+    },
+    {
+      "path": "assets/dossier_curien/saga/zr_chemical_plant_back.png",
+      "sha256": "ec3a86677912eb5c335b3a55391203bbfbf59349e4cf238fd510967a02c5b369",
+      "size_bytes": 2885222,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "id": "zr_chemical_plant_back",
+      "stage": "zr_chemical_plant",
+      "layer": "back",
+      "prompt": "Use case: stylized-concept. Asset type: 2D fighting arena background. Adapt the CHEMICAL PLANT of Zombie Revenge on Dreamcast, from the gameplay storyboard in Image1. The first two rows of that storyboard show repeated angles of the SAME industrial room and are the visual reference; the lower-row character closeups and the whole contact-sheet grid are NOT the output composition. Retain the room's heavy weathered industrial structure: very large pale olive-beige rounded tank bodies, dark teal steel vertical columns and bracing, thick horizontal pipework, short grated service platforms with simple rusted railings and black/yellow hazard edges, discoloured square grey-green tiled floor, dirty beige concrete walls and small deep shadowed industrial openings. Pipes and tank bases are substantial, not science-fiction tubes; the room looks cramped, damp and old, with a muted green-grey industrial palette and restrained warm brown light in the rear recesses. Adapt the high oblique gameplay camera to a lower lateral fighting camera. Two large tank masses and a short grated maintenance ledge occupy the back of the scene; the ledge and its rail are behind the fighters, and the entire foreground remains flat tiled floor. Maintain a single continuous hall with readable depth; do not include sewers, water channels, giant plants, trains, an outdoor refinery, windows over a city, futuristic capsules or large explosions. Do not copy Linda, other characters, enemies, portraits, weapon pickups, score, lettered signs or the video watermark. The small storyboard gives architectural evidence; fine surface detail is a restrained painted interpretation, not a photogrammetric reconstruction. Produce one continuous wide landscape 16:9 opaque BACK plane, native about 1672x941. Detailed painted 2D fighting-game scenery in the quality of the last style reference. That last image controls ONLY painterly rendering, image ratio and the lateral combat layout, NOT subject architecture. The camera faces the setting laterally, with shallow depth and an uninterrupted level floor spanning the full lower 27 percent. The fighters contact the floor at y=81.56 percent of image height; keep x=12.5 to87.5 percent clear at this line. Architectural spacing and this continuous fighting strip are explicit adaptations of the original game view. Keep central values readable, with buildings, beds, equipment and rails BEHIND the fighting strip. Fine convincing weathered materials, completed edge-to-edge. One single scene, no panels, collage, inset images or captions. Remove all people, creatures, corpses, weapons, user interface, score, lettering, reticles, logos and watermarks from reference screenshots. No labels, readable signage, floating interface effects, white borders or vignette. Do not invent a different franchise or replace the recognizable setting with generic fantasy scenery.",
+      "prompt_sha256_utf8": "fde41a475b1d639796cb5e906f2e2cf8d785dc76881b77f0d8c759ed9b347b77",
+      "reference_paths": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/stages/zr_longplay_storyboard_6.jpg",
+        "assets/dossier_curien/saga/strength_colosseum_back.png"
+      ],
+      "selected_generation_basename": "exec-ad077a47-adb5-404a-9b64-06f114b25550.png",
+      "accepted": true,
+      "opaque": true,
+      "visually_inspected": true,
+      "pixel_postprocessing": "none"
+    },
+    {
+      "path": "assets/dossier_curien/saga/prelude_square_mid.png",
+      "sha256": "027e96aaf54e763a016277029cd40d434a60de73e4cfeeedc66814e32ba415ad",
+      "size_bytes": 342834,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "id": "prelude_square_mid",
+      "stage": "prelude_square",
+      "layer": "mid",
+      "prompt": "Use case: stylized-concept. Create ONE separate genuinely transparent RGBA MIDGROUND OVERLAY for the supplied A Prelude old Italian square fighting arena background. Use the supplied image only for material, palette, restrained light, fine painted texture, side-on perspective and canvas alignment. Match its weathered ochre plaster, dark wrought iron and damp stone in muted golden-grey light. Same native landscape 16:9 canvas, about 1672x941. Draw ONLY a slender section of one black ornate lamp post at the extreme LEFT edge within x0–7%, and the very narrow side of an aged ochre shopfront stone pier at the extreme RIGHT edge within x93–100%. Any ornamental scrolls must remain inside those same edge strips. Every pixel outside these two narrow edge zones must be genuinely transparent. The entire central x12.5–87.5% is completely empty from top to bottom. In particular the rectangle x12.5–87.5%, y20–79% and the lower fighting strip x12.5–87.5%, y75–100% have no visible pixels. No connection between the edge fragments. Do not repeat the source scene, floor, sky, room walls, buildings, beds, machinery or background. No ambient color wash, shadow across transparent space, haze, glow, particles, characters, monsters, lettering, HUD, border, logo, watermark or baked checkerboard. One very sparse separate production parallax layer, not an opaque environment picture.",
+      "prompt_sha256_utf8": "061adf89cd9dc9583a9f4aff901813263fb2a8188c0a9a3f688bc463fc86bcfd",
+      "reference_paths": [
+        "assets/dossier_curien/saga/prelude_square_back.png"
+      ],
+      "selected_generation_basename": "exec-1d0bd6e1-8a19-4256-a232-7cf79beb9793.png",
+      "accepted": true,
+      "opaque": false,
+      "visually_inspected": true,
+      "pixel_postprocessing": "none",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "center_contract": {
+        "normalized_box": [
+          0.125,
+          0.2,
+          0.875,
+          0.79
+        ],
+        "pixel_box": [
+          209,
+          188,
+          1463,
+          743
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "fight_strip_contract": {
+        "normalized_box": [
+          0.125,
+          0.75,
+          0.875,
+          1
+        ],
+        "pixel_box": [
+          209,
+          705,
+          1463,
+          941
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      }
+    },
+    {
+      "path": "assets/dossier_curien/saga/prelude_square_front.png",
+      "sha256": "09179d9f2fa9b0ef9da3ed9b2b71bd21221659f22b9745d71f0f1f2bff00a46e",
+      "size_bytes": 87497,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "id": "prelude_square_front",
+      "stage": "prelude_square",
+      "layer": "front",
+      "prompt": "Use case: stylized-concept. Create ONE separate genuinely transparent RGBA FOREGROUND OVERLAY for the supplied A Prelude old Italian square fighting arena background. Use the supplied image only for material, palette, restrained light, fine painted texture, side-on perspective and canvas alignment. Match its weathered ochre plaster, dark wrought iron and damp stone in muted golden-grey light. Same native landscape 16:9 canvas, about 1672x941. Draw ONLY a small black lamp foot on a dark stone plinth, naturally cropped by the extreme BOTTOM LEFT within x0–8%, y94–100%, and two tiny damp cobblestone edge fragments at the extreme BOTTOM RIGHT within x94–100%, y95–100%. Every pixel outside these two narrow edge zones must be genuinely transparent. The entire central x12.5–87.5% is completely empty from top to bottom. In particular the rectangle x12.5–87.5%, y20–79% and the lower fighting strip x12.5–87.5%, y75–100% have no visible pixels. No connection between the edge fragments. Do not repeat the source scene, floor, sky, room walls, buildings, beds, machinery or background. No ambient color wash, shadow across transparent space, haze, glow, particles, characters, monsters, lettering, HUD, border, logo, watermark or baked checkerboard. One very sparse separate production parallax layer, not an opaque environment picture.",
+      "prompt_sha256_utf8": "b8b68d312c0d5e9275f332c636a566188c4cb844db241215a406edd0e17e81f3",
+      "reference_paths": [
+        "assets/dossier_curien/saga/prelude_square_back.png"
+      ],
+      "selected_generation_basename": "exec-5e00d78b-23d8-46be-afe4-941934b93d4e.png",
+      "accepted": true,
+      "opaque": false,
+      "visually_inspected": true,
+      "pixel_postprocessing": "none",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        194,
+        1672,
+        941
+      ],
+      "center_contract": {
+        "normalized_box": [
+          0.125,
+          0.2,
+          0.875,
+          0.79
+        ],
+        "pixel_box": [
+          209,
+          188,
+          1463,
+          743
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "fight_strip_contract": {
+        "normalized_box": [
+          0.125,
+          0.75,
+          0.875,
+          1
+        ],
+        "pixel_box": [
+          209,
+          705,
+          1463,
+          941
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      }
+    },
+    {
+      "path": "assets/dossier_curien/saga/overkill_hospital_mid.png",
+      "sha256": "ec00ea125826caa58b1eda574fe0e0b61c2dd1f12ea3d7a0bf13d31a060beb86",
+      "size_bytes": 282999,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "id": "overkill_hospital_mid",
+      "stage": "overkill_hospital",
+      "layer": "mid",
+      "prompt": "Use case: stylized-concept. Create ONE separate genuinely transparent RGBA MIDGROUND OVERLAY for the supplied Ballistic Trauma hospital shared ward fighting arena background. Use the supplied image only for material, palette, restrained light, fine painted texture, side-on perspective and canvas alignment. Match its dirty blue-grey fabric, worn painted tubular steel and cold muted hospital lighting. Same native landscape 16:9 canvas, about 1672x941. Draw ONLY one narrow hanging fold of a dark blue-grey privacy curtain at the extreme LEFT edge within x0–7%, and a thin vertical worn tubular steel curtain support at the extreme RIGHT edge within x93–100%. Do not add any connecting ceiling rail across the center. Every pixel outside these two narrow edge zones must be genuinely transparent. The entire central x12.5–87.5% is completely empty from top to bottom. In particular the rectangle x12.5–87.5%, y20–79% and the lower fighting strip x12.5–87.5%, y75–100% have no visible pixels. No connection between the edge fragments. Do not repeat the source scene, floor, sky, room walls, buildings, beds, machinery or background. No ambient color wash, shadow across transparent space, haze, glow, particles, characters, monsters, lettering, HUD, border, logo, watermark or baked checkerboard. One very sparse separate production parallax layer, not an opaque environment picture.",
+      "prompt_sha256_utf8": "2348fab5ee90b663537ce5e83817c84428aa0a62aeb09ea405aac2d4d768812e",
+      "reference_paths": [
+        "assets/dossier_curien/saga/overkill_hospital_back.png"
+      ],
+      "selected_generation_basename": "exec-fac9fe18-f6ee-4c61-9c6a-0ac0de162bbc.png",
+      "accepted": true,
+      "opaque": false,
+      "visually_inspected": true,
+      "pixel_postprocessing": "none",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "center_contract": {
+        "normalized_box": [
+          0.125,
+          0.2,
+          0.875,
+          0.79
+        ],
+        "pixel_box": [
+          209,
+          188,
+          1463,
+          743
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "fight_strip_contract": {
+        "normalized_box": [
+          0.125,
+          0.75,
+          0.875,
+          1
+        ],
+        "pixel_box": [
+          209,
+          705,
+          1463,
+          941
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      }
+    },
+    {
+      "path": "assets/dossier_curien/saga/overkill_hospital_front.png",
+      "sha256": "8666c7270cbe5eb9f1d51d764d7768652ac32887ba1e9b669b79e01897ff01cf",
+      "size_bytes": 90840,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "id": "overkill_hospital_front",
+      "stage": "overkill_hospital",
+      "layer": "front",
+      "prompt": "Use case: stylized-concept. Create ONE separate genuinely transparent RGBA FOREGROUND OVERLAY for the supplied Ballistic Trauma hospital shared ward fighting arena background. Use the supplied image only for material, palette, restrained light, fine painted texture, side-on perspective and canvas alignment. Match its dirty blue-grey fabric, worn painted tubular steel and cold muted hospital lighting. Same native landscape 16:9 canvas, about 1672x941. Draw ONLY a tiny near-ground tubular hospital-bed foot and small caster at the extreme BOTTOM LEFT within x0–8%, y94–100%, and one small dark floor bracket at the extreme BOTTOM RIGHT within x94–100%, y95–100%. Every pixel outside these two narrow edge zones must be genuinely transparent. The entire central x12.5–87.5% is completely empty from top to bottom. In particular the rectangle x12.5–87.5%, y20–79% and the lower fighting strip x12.5–87.5%, y75–100% have no visible pixels. No connection between the edge fragments. Do not repeat the source scene, floor, sky, room walls, buildings, beds, machinery or background. No ambient color wash, shadow across transparent space, haze, glow, particles, characters, monsters, lettering, HUD, border, logo, watermark or baked checkerboard. One very sparse separate production parallax layer, not an opaque environment picture.",
+      "prompt_sha256_utf8": "7d4a45708e42f9202334de3d442832050f8cf15f14def33a2d02013f0078e7bf",
+      "reference_paths": [
+        "assets/dossier_curien/saga/overkill_hospital_back.png"
+      ],
+      "selected_generation_basename": "exec-9e83770f-452e-4afb-b7f0-154d845df7a6.png",
+      "accepted": true,
+      "opaque": false,
+      "visually_inspected": true,
+      "pixel_postprocessing": "none",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        161,
+        1672,
+        941
+      ],
+      "center_contract": {
+        "normalized_box": [
+          0.125,
+          0.2,
+          0.875,
+          0.79
+        ],
+        "pixel_box": [
+          209,
+          188,
+          1463,
+          743
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "fight_strip_contract": {
+        "normalized_box": [
+          0.125,
+          0.75,
+          0.875,
+          1
+        ],
+        "pixel_box": [
+          209,
+          705,
+          1463,
+          941
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      }
+    },
+    {
+      "path": "assets/dossier_curien/saga/zr_chemical_plant_mid.png",
+      "sha256": "97098e48e4902be1f487cab9e09dd37e4d94c1f49bd82cfeb26c05e36028aba3",
+      "size_bytes": 336310,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "id": "zr_chemical_plant_mid",
+      "stage": "zr_chemical_plant",
+      "layer": "mid",
+      "prompt": "Use case: stylized-concept. Create ONE separate genuinely transparent RGBA MIDGROUND OVERLAY for the supplied Zombie Revenge chemical plant fighting arena background. Use the supplied image only for material, palette, restrained light, fine painted texture, side-on perspective and canvas alignment. Match its weathered teal-painted steel, dull rusted pipe metal and dirty grey-green industrial lighting. Same native landscape 16:9 canvas, about 1672x941. Draw ONLY one narrow vertical teal-painted steel upright at the extreme LEFT edge within x0–7%, and the thin visible side of a rusted vertical pipe at the extreme RIGHT edge within x93–100%. All bolts and brackets stay strictly inside those edge strips. Every pixel outside these two narrow edge zones must be genuinely transparent. The entire central x12.5–87.5% is completely empty from top to bottom. In particular the rectangle x12.5–87.5%, y20–79% and the lower fighting strip x12.5–87.5%, y75–100% have no visible pixels. No connection between the edge fragments. Do not repeat the source scene, floor, sky, room walls, buildings, beds, machinery or background. No ambient color wash, shadow across transparent space, haze, glow, particles, characters, monsters, lettering, HUD, border, logo, watermark or baked checkerboard. One very sparse separate production parallax layer, not an opaque environment picture.",
+      "prompt_sha256_utf8": "f55de269041606613d04665784e19601253a740eb7f6be2ebf28312eb2aca6d4",
+      "reference_paths": [
+        "assets/dossier_curien/saga/zr_chemical_plant_back.png"
+      ],
+      "selected_generation_basename": "exec-28b3759c-eadd-4950-8340-190e576c354a.png",
+      "accepted": true,
+      "opaque": false,
+      "visually_inspected": true,
+      "pixel_postprocessing": "none",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "center_contract": {
+        "normalized_box": [
+          0.125,
+          0.2,
+          0.875,
+          0.79
+        ],
+        "pixel_box": [
+          209,
+          188,
+          1463,
+          743
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "fight_strip_contract": {
+        "normalized_box": [
+          0.125,
+          0.75,
+          0.875,
+          1
+        ],
+        "pixel_box": [
+          209,
+          705,
+          1463,
+          941
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      }
+    },
+    {
+      "path": "assets/dossier_curien/saga/zr_chemical_plant_front.png",
+      "sha256": "c7599d911ab67f7273d6ef6e2b08bed48ad148e65da38a27d73b4d5552708305",
+      "size_bytes": 93225,
+      "dimensions": [
+        1673,
+        940
+      ],
+      "mode": "RGBA",
+      "id": "zr_chemical_plant_front",
+      "stage": "zr_chemical_plant",
+      "layer": "front",
+      "prompt": "Use case: stylized-concept. Create ONE separate genuinely transparent RGBA FOREGROUND OVERLAY for the supplied Zombie Revenge chemical plant fighting arena background. Use the supplied image only for material, palette, restrained light, fine painted texture, side-on perspective and canvas alignment. Match its weathered teal-painted steel, dull rusted pipe metal and dirty grey-green industrial lighting. Same native landscape 16:9 canvas, about 1672x941. Draw ONLY a small low rusted industrial floor bracket and short grated plate corner at the extreme BOTTOM LEFT within x0–8%, y94–100%, and a tiny steel base-plate corner at the extreme BOTTOM RIGHT within x94–100%, y95–100%. Every pixel outside these two narrow edge zones must be genuinely transparent. The entire central x12.5–87.5% is completely empty from top to bottom. In particular the rectangle x12.5–87.5%, y20–79% and the lower fighting strip x12.5–87.5%, y75–100% have no visible pixels. No connection between the edge fragments. Do not repeat the source scene, floor, sky, room walls, buildings, beds, machinery or background. No ambient color wash, shadow across transparent space, haze, glow, particles, characters, monsters, lettering, HUD, border, logo, watermark or baked checkerboard. One very sparse separate production parallax layer, not an opaque environment picture.",
+      "prompt_sha256_utf8": "087694e60c2f46fab07326d440167b15f1f3e2789027b0b8ac6995ceab2e2b1d",
+      "reference_paths": [
+        "assets/dossier_curien/saga/zr_chemical_plant_back.png"
+      ],
+      "selected_generation_basename": "exec-56107b18-5ee6-45ec-9bdf-aa284d0d9e2a.png",
+      "accepted": true,
+      "opaque": false,
+      "visually_inspected": true,
+      "pixel_postprocessing": "none",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        98,
+        1673,
+        940
+      ],
+      "center_contract": {
+        "normalized_box": [
+          0.125,
+          0.2,
+          0.875,
+          0.79
+        ],
+        "pixel_box": [
+          209,
+          188,
+          1463,
+          742
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "fight_strip_contract": {
+        "normalized_box": [
+          0.125,
+          0.75,
+          0.875,
+          1
+        ],
+        "pixel_box": [
+          209,
+          705,
+          1463,
+          940
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      }
+    }
+  ],
+  "validation": {
+    "attempted_imagegen_calls": 9,
+    "accepted_png_count": 9,
+    "new_stage_sets": 3,
+    "total_png_bytes": 10094760,
+    "native_dimensions_consistent": false,
+    "native_dimensions_variation": "zr_chemical_plant_front1673×940; other eight1672×941",
+    "all_hashes_distinct": true,
+    "all_overlay_center_contracts_pass": true,
+    "all_overlay_fight_strip_contracts_pass": true,
+    "all_sources_unchanged": true,
+    "all_native_output_bytes_preserved": true
+  }
+}

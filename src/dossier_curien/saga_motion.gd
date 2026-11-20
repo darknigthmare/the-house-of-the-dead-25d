@@ -2,17 +2,28 @@ extends RefCounted
 
 const MANIFEST := "res://data/assets/dossier_curien_motion.json"
 const ART_ROOT := "res://assets/dossier_curien/motion_2026-11-19/"
+const MANIFESTS := [MANIFEST, "res://data/assets/dossier_curien_motion_2026-11-20_lot6.json"]
+const ART_ROOTS := [ART_ROOT, "res://assets/dossier_curien/motion_2026-11-20_lot6/"]
 const POSES := ["guard","windup","contact","recoil","recovery","jump_rise","jump_fall","crouch","crouch_guard","block","throw","victory","taunt","finish","reload","walk1","walk2","slide_contact"]
 var entries := {}
 
-func load_manifest(path := MANIFEST) -> bool:
+func load_manifest(path := "") -> bool:
 	entries.clear()
-	if not FileAccess.file_exists(path): return false
-	return load_data(JSON.parse_string(FileAccess.get_file_as_string(path)))
+	# Dated collections are additive. Missing or malformed additions must not
+	# discard the historical poses, and a duplicate never replaces their art.
+	var paths: Array = MANIFESTS if path.is_empty() else [path]
+	for manifest_path in paths:
+		if FileAccess.file_exists(manifest_path):
+			append_data(JSON.parse_string(FileAccess.get_file_as_string(manifest_path)))
+	return not entries.is_empty()
 
 func load_data(data: Variant, require_resources := true) -> bool:
 	entries.clear()
+	return append_data(data, require_resources)
+
+func append_data(data: Variant, require_resources := true) -> bool:
 	if not data is Dictionary or data.get("schema_version") != 1 or not data.get("assets") is Array: return false
+	var previous_size := entries.size()
 	for item in data.assets:
 		if not item is Dictionary: continue
 		var fighter := str(item.get("fighter_id", ""))
@@ -44,7 +55,7 @@ func load_data(data: Variant, require_resources := true) -> bool:
 				if within(item.anchors_px[name],dimensions): anchors[name] = item.anchors_px[name]
 		entry.anchors_px = anchors
 		entries[key] = entry
-	return not entries.is_empty()
+	return entries.size() > previous_size
 
 func get_entry(key: String) -> Dictionary:
 	return entries.get(key,{})
@@ -59,7 +70,10 @@ static func identifier(value: String) -> bool:
 	return true
 
 static func safe_path(path: String) -> bool:
-	if not path.begins_with(ART_ROOT) or not path.ends_with(".png") or path.contains("\\") or path.to_utf8_buffer().has(0): return false
+	var registered_root := false
+	for root in ART_ROOTS:
+		if path.begins_with(root): registered_root = true
+	if not registered_root or not path.ends_with(".png") or path.contains("\\") or path.to_utf8_buffer().has(0): return false
 	for segment in path.trim_prefix("res://").split("/"):
 		if segment in ["", ".", ".."] or segment.contains(":"): return false
 	return true

@@ -1,0 +1,1 @@
+SAGA MOTION MANIFEST: {"assets":39,"bytes":42660963,"collections":[{"manifest":"data/assets/dossier_curien_motion.json","assets":30,"bytes":35895640},{"manifest":"data/assets/dossier_curien_motion_2026-11-20_lot6.json","assets":9,"bytes":6765323}]}

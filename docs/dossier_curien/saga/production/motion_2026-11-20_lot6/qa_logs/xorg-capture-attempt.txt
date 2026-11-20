@@ -1,0 +1,16 @@
+[ 33703.071] _XSERVTransSocketOpenCOTSServer: Unable to open socket for local
+[ 33703.071] _XSERVTransOpen: transport open failed for local/9308e5d18b85:91
+[ 33703.071] _XSERVTransMakeAllCOTSServerListeners: failed to open listener for local
+[ 33703.071] _XSERVTransSocketOpenCOTSServer: Unable to open socket for unix
+[ 33703.071] _XSERVTransOpen: transport open failed for unix/9308e5d18b85:91
+[ 33703.071] _XSERVTransMakeAllCOTSServerListeners: failed to open listener for unix
+[ 33703.071] (EE)
+Fatal server error:
+[ 33703.071] (EE) Cannot establish any listening sockets - Make sure an X server isn't already running(EE)
+[ 33703.072] (EE)
+Please consult the The X.Org Foundation support
+	 at http://wiki.x.org
+ for help.
+[ 33703.072] (EE) Please also check the log file at "/tmp/hotd-lot6-motion-Xorg.log" for additional information.
+[ 33703.072] (EE)
+[ 33703.072] (EE) Server terminated with error (1). Closing log file.

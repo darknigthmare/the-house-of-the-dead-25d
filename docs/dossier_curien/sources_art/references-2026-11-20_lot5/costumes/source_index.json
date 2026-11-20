@@ -1,0 +1,345 @@
+{
+  "date": "2026-11-20",
+  "timezone": "Etc/UTC",
+  "sources": [
+    {
+      "id": "stick_alternate_suit_model",
+      "title": "StickAltSkin1.jpg — rendu de modèle réhébergé",
+      "url": "https://static.wikia.nocookie.net/houseofthedead/images/6/64/StickAltSkin1.jpg/revision/latest",
+      "identification_url": "https://thehouseofthedead.fandom.com/wiki/Stick_Breitling",
+      "kind": "community_hosted_game_model_render",
+      "accessed_on": "2026-11-20",
+      "local_paths": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/stick_alternate_suit_model.webp"
+      ],
+      "local_files": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/stick_alternate_suit_model.webp",
+          "sha256": "3efe85c591a4b10486777c8b956795fae29bee71a4b0107dc90652d77b672763",
+          "bytes": 23402,
+          "dimensions": [
+            415,
+            780
+          ],
+          "mode": "RGB"
+        }
+      ],
+      "native_source_bytes_unchanged": true,
+      "visually_inspected": true,
+      "note": "Rendu de modèle hébergé par The Wiki of the Dead, pas de lien primaire SEGA de cette image récupéré ; utilisé pour la tenue visible, sans certification 1:1."
+    },
+    {
+      "id": "stick_red_armor_model",
+      "title": "StickAltSkin2.jpg — rendu de modèle réhébergé",
+      "url": "https://static.wikia.nocookie.net/houseofthedead/images/f/f7/StickAltSkin2.jpg/revision/latest",
+      "identification_url": "https://thehouseofthedead.fandom.com/wiki/Stick_Breitling",
+      "kind": "community_hosted_game_model_render",
+      "accessed_on": "2026-11-20",
+      "local_paths": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/stick_red_armor_model.webp"
+      ],
+      "local_files": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/stick_red_armor_model.webp",
+          "sha256": "3c29776f315e665b971316e8a8d21e4da188d001de22fe7ff4d9f8e0cc15c34a",
+          "bytes": 18678,
+          "dimensions": [
+            450,
+            595
+          ],
+          "mode": "RGB"
+        }
+      ],
+      "native_source_bytes_unchanged": true,
+      "visually_inspected": true,
+      "note": "Rendu de modèle hébergé par The Wiki of the Dead, pas de lien primaire SEGA de cette image récupéré ; utilisé pour la tenue visible, sans certification 1:1."
+    },
+    {
+      "id": "linda_white_dress_model",
+      "title": "LindaAltSkin1.jpg — rendu de modèle réhébergé",
+      "url": "https://static.wikia.nocookie.net/houseofthedead/images/8/8a/LindaAltSkin1.jpg/revision/latest",
+      "identification_url": "https://thehouseofthedead.fandom.com/wiki/Linda_Rotta",
+      "kind": "community_hosted_game_model_render",
+      "accessed_on": "2026-11-20",
+      "local_paths": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/linda_white_dress_model.webp"
+      ],
+      "local_files": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/linda_white_dress_model.webp",
+          "sha256": "46858588d51a24a06588e60f6bf667547bc4a26242ea3464772070882ddc76bb",
+          "bytes": 30314,
+          "dimensions": [
+            493,
+            802
+          ],
+          "mode": "RGB"
+        }
+      ],
+      "native_source_bytes_unchanged": true,
+      "visually_inspected": true,
+      "note": "Rendu de modèle hébergé par The Wiki of the Dead, pas de lien primaire SEGA de cette image récupéré ; utilisé pour la tenue visible, sans certification 1:1."
+    },
+    {
+      "id": "linda_black_leather_model",
+      "title": "LindaAltSkin2.jpg — rendu de modèle réhébergé",
+      "url": "https://static.wikia.nocookie.net/houseofthedead/images/f/fc/LindaAltSkin2.jpg/revision/latest",
+      "identification_url": "https://thehouseofthedead.fandom.com/wiki/Linda_Rotta",
+      "kind": "community_hosted_game_model_render",
+      "accessed_on": "2026-11-20",
+      "local_paths": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/linda_black_leather_model.webp"
+      ],
+      "local_files": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/linda_black_leather_model.webp",
+          "sha256": "1be9cd165a74f297c99cfeb18ac27aece6e3e067cebff317ff12acda42d412c7",
+          "bytes": 11080,
+          "dimensions": [
+            211,
+            409
+          ],
+          "mode": "RGB"
+        }
+      ],
+      "native_source_bytes_unchanged": true,
+      "visually_inspected": true,
+      "note": "Rendu de modèle hébergé par The Wiki of the Dead, pas de lien primaire SEGA de cette image récupéré ; utilisé pour la tenue visible, sans certification 1:1."
+    },
+    {
+      "id": "rikiya_suit_hat_model",
+      "title": "BusujimaAltSkin1.jpg — rendu de modèle réhébergé",
+      "url": "https://static.wikia.nocookie.net/houseofthedead/images/c/c2/BusujimaAltSkin1.jpg/revision/latest",
+      "identification_url": "https://ultimatepopculture.fandom.com/wiki/Rikiya_Busujima",
+      "kind": "community_hosted_game_model_render",
+      "accessed_on": "2026-11-20",
+      "local_paths": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/rikiya_suit_hat_model.webp"
+      ],
+      "local_files": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/rikiya_suit_hat_model.webp",
+          "sha256": "bc51857da458154f25ce80dbd3c664fd7bd5db3427e1efdf9e4bb66f8b2133d5",
+          "bytes": 19524,
+          "dimensions": [
+            442,
+            819
+          ],
+          "mode": "RGB"
+        }
+      ],
+      "native_source_bytes_unchanged": true,
+      "visually_inspected": true,
+      "note": "Rendu de modèle hébergé par The Wiki of the Dead, pas de lien primaire SEGA de cette image récupéré ; utilisé pour la tenue visible, sans certification 1:1."
+    },
+    {
+      "id": "rikiya_black_leather_model",
+      "title": "BusujimaAltSkin2.jpg — rendu de modèle réhébergé",
+      "url": "https://static.wikia.nocookie.net/houseofthedead/images/0/0d/BusujimaAltSkin2.jpg/revision/latest",
+      "identification_url": "https://ultimatepopculture.fandom.com/wiki/Rikiya_Busujima",
+      "kind": "community_hosted_game_model_render",
+      "accessed_on": "2026-11-20",
+      "local_paths": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/rikiya_black_leather_model.webp"
+      ],
+      "local_files": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/rikiya_black_leather_model.webp",
+          "sha256": "54676b2ae6f2c8d70a12b4ea98b8266604d199f90fd40d969c60d23230deef0c",
+          "bytes": 15872,
+          "dimensions": [
+            205,
+            431
+          ],
+          "mode": "RGB"
+        }
+      ],
+      "native_source_bytes_unchanged": true,
+      "visually_inspected": true,
+      "note": "Rendu de modèle hébergé par The Wiki of the Dead, pas de lien primaire SEGA de cette image récupéré ; utilisé pour la tenue visible, sans certification 1:1."
+    },
+    {
+      "id": "linda_white_dress_gameplay",
+      "title": "AJT I PLAY : Zombie Revenge \"Different Outfits\"",
+      "author": "AJTComicsBrand",
+      "url": "https://www.youtube.com/watch?v=B0BFu9W6VWQ",
+      "kind": "community_gameplay_public_storyboard",
+      "accessed_on": "2026-11-20",
+      "download_url": "https://i.ytimg.com/sb/B0BFu9W6VWQ/storyboard3_L2/M1.jpg?sqp=-oaymwGhAUg48quKqQOYAYgBAZUBAAAEQpgBMqABPKgBBLIBQBANDBAVHyYtDg4PEhcrLCkPDhAVHyoyKQ8RFBgmPTgtERQeKjFLRzYVHCkuOUdNPyUuNz1HUlFFM0BCQ0xERkO6AUARERUjRENDQxETFi9DQ0NDFRYpQ0NDQ0MjL0NDQ0NDQ0RDQ0NDQ0JCQ0NDQ0NCQkJDQ0NDQkJCQkNDQ0JCQkJCovOX_wMGCNiVtJwG&sigh=rs$AOn4CLDJlL-4gDTZX2IdfVd1f9XtHYdSIA",
+      "local_paths": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/linda_white_dress_gameplay_storyboard_1.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/linda_white_dress_gameplay_row.png"
+      ],
+      "local_files": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/linda_white_dress_gameplay_storyboard_1.jpg",
+          "sha256": "72c2b47f7869b1984fc34f4793e8918fd591b6b3a8b3ac45565f6d4bc6c3caa6",
+          "bytes": 40216,
+          "dimensions": [
+            600,
+            450
+          ],
+          "mode": "RGB",
+          "native_source_bytes_unchanged": true
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/linda_white_dress_gameplay_row.png",
+          "sha256": "302259b89e579274e398c61730a3b5de3edcf56b4b5100651794b0853809faef",
+          "bytes": 74269,
+          "dimensions": [
+            480,
+            90
+          ],
+          "mode": "RGB",
+          "source_transform": {
+            "original": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/linda_white_dress_gameplay_storyboard_1.jpg",
+            "crop_box": [
+              120,
+              360,
+              600,
+              450
+            ],
+            "resized": false,
+            "pixel_inference": false,
+            "estimated_frame_times_seconds": [
+              230,
+              235,
+              240,
+              245
+            ]
+          }
+        }
+      ],
+      "visually_inspected": true,
+      "note": "Vidéo communautaire de changement de tenues ; storyboard natif 120×90 par vue. Utilisé uniquement comme contexte de jeu. Les vues ne certifient ni la géométrie des pieds ni tous les éléments d’une tenue donnée."
+    },
+    {
+      "id": "linda_leather_gameplay",
+      "title": "zombie revenge - dreamcast - redream - andro - let's play IV - linda rotta - costume iII - ft twitch",
+      "author": "Hans Grub",
+      "url": "https://www.youtube.com/watch?v=CEO_ng8MEtM",
+      "kind": "community_gameplay_public_storyboard",
+      "accessed_on": "2026-11-20",
+      "download_url": "https://i.ytimg.com/sb/CEO_ng8MEtM/storyboard3_L2/M0.jpg?sqp=-oaymwGhAUg48quKqQOYAYgBAZUBAAAEQpgBMqABPKgBBLIBQBANDBAVHyYtDg4PEhcrLCkPDhAVHyoyKQ8RFBgmPTgtERQeKjFLRzYVHCkuOUdNPyUuNz1HUlFFM0BCQ0xERkO6AUARERUjRENDQxETFi9DQ0NDFRYpQ0NDQ0MjL0NDQ0NDQ0RDQ0NDQ0JCQ0NDQ0NCQkJDQ0NDQkJCQkNDQ0JCQkJCovOX_wMGCNPIzKEG&sigh=rs$AOn4CLDKNTWfw9h0lPf9lipmb-cmr_UsSA",
+      "local_paths": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/linda_leather_gameplay_storyboard_0.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/linda_leather_gameplay_rows.png"
+      ],
+      "local_files": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/linda_leather_gameplay_storyboard_0.jpg",
+          "sha256": "364df6bfbb97428f12fe09a6aed4a1482c5afc4ef59e324345919c2cc99a5704",
+          "bytes": 41620,
+          "dimensions": [
+            800,
+            450
+          ],
+          "mode": "RGB",
+          "native_source_bytes_unchanged": true
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/linda_leather_gameplay_rows.png",
+          "sha256": "84a33c6a8cf52a833c77a2a72ea626c6222418fdda37ae0901ea095b5d2d09ca",
+          "bytes": 175642,
+          "dimensions": [
+            800,
+            180
+          ],
+          "mode": "RGB",
+          "source_transform": {
+            "original": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/linda_leather_gameplay_storyboard_0.jpg",
+            "crop_box": [
+              0,
+              270,
+              800,
+              450
+            ],
+            "resized": false,
+            "pixel_inference": false,
+            "estimated_frame_times_seconds": [
+              150,
+              160,
+              170,
+              180,
+              190,
+              200,
+              210,
+              220,
+              230,
+              240
+            ]
+          }
+        }
+      ],
+      "visually_inspected": true,
+      "note": "Vidéo communautaire titrée Linda costume III, Dreamcast sous Redream Android ; storyboard natif 160×90 par vue, avec interface émulateur. La petite silhouette ne permet pas de certifier les bottes, les semelles ou le lettrage dorsal."
+    },
+    {
+      "id": "zr_dreamcast_manual",
+      "title": "SEGA — Zombie Revenge, manuel Dreamcast",
+      "url": "https://www.digitpress.com/library/manuals/dreamcast/zombie_revenge.pdf",
+      "kind": "primary_manual_public_scan",
+      "accessed_on": "2026-11-20",
+      "local_paths": [],
+      "pages": [
+        {
+          "printed_page": 8,
+          "pdf_page_index": 7
+        },
+        {
+          "printed_page": 11,
+          "pdf_page_index": 10
+        }
+      ],
+      "note": "Le manuel décrit la tenue 2 Player accessible avec Start en Arcade Mode et une troisième tenue avec Start+Y en Original Mode. Cela atteste le mécanisme général, pas la géométrie exacte de chacun des six rendus ni l’exhaustivité de toutes les variantes régionales."
+    },
+    {
+      "id": "zr_prima_armor_item",
+      "title": "Greg Kramer — Prima’s Official Strategy Guide: Zombie Revenge",
+      "url": "https://archive.org/details/zombie-revenge-prima-guide",
+      "text_url": "https://archive.org/stream/zombie-revenge-prima-guide/Zombie%20Revenge%20Prima%20Guide_djvu.txt",
+      "kind": "licensed_strategy_guide_public_scan",
+      "accessed_on": "2026-11-20",
+      "local_paths": [],
+      "note": "La section objets décrit ARMOR comme une protection temporaire, avec une icône. Le passage ne suffit pas à établir que ce bonus et le modèle rouge du troisième costume sont la même mécanique ; le lot ne les confond pas."
+    },
+    {
+      "id": "zr_gamespot_armor_review",
+      "title": "GameSpot — Zombie Revenge Review, 2000",
+      "url": "https://www.gamespot.com/reviews/zombie-revenge-review/1900-2540798/",
+      "kind": "contemporary_review",
+      "accessed_on": "2026-11-20",
+      "local_paths": [],
+      "note": "Le test décrit une armure liée à un objet et à la prise de dégâts. Cette description et l’identification communautaire du modèle rouge comme troisième tenue ne sont pas fusionnées en une affirmation mécanique certaine."
+    },
+    {
+      "id": "zr_stick_costume_identification",
+      "title": "Stick — galerie et identification communautaires",
+      "url": "https://thehouseofthedead.fandom.com/wiki/Stick_Breitling",
+      "kind": "community_character_article",
+      "accessed_on": "2026-11-20",
+      "local_paths": [],
+      "note": "Identification secondaire des rendus alternatifs. Les noms descriptifs français du lot ne sont pas présentés comme des noms officiels de costumes. Les troisièmes apparences sont rattachées à Original Mode par cette source, pas par une comparaison exhaustive des éditions."
+    },
+    {
+      "id": "zr_linda_costume_identification",
+      "title": "Linda — galerie et identification communautaires",
+      "url": "https://thehouseofthedead.fandom.com/wiki/Linda_Rotta",
+      "kind": "community_character_article",
+      "accessed_on": "2026-11-20",
+      "local_paths": [],
+      "note": "Identification secondaire des rendus alternatifs. Les noms descriptifs français du lot ne sont pas présentés comme des noms officiels de costumes. Les troisièmes apparences sont rattachées à Original Mode par cette source, pas par une comparaison exhaustive des éditions."
+    },
+    {
+      "id": "zr_rikiya_costume_identification",
+      "title": "Rikiya — galerie et identification communautaires",
+      "url": "https://ultimatepopculture.fandom.com/wiki/Rikiya_Busujima",
+      "kind": "community_character_article",
+      "accessed_on": "2026-11-20",
+      "local_paths": [],
+      "note": "Identification secondaire des rendus alternatifs. Les noms descriptifs français du lot ne sont pas présentés comme des noms officiels de costumes. Les troisièmes apparences sont rattachées à Original Mode par cette source, pas par une comparaison exhaustive des éditions."
+    }
+  ],
+  "generated_outputs_edited_with_local_pixel_tools": false,
+  "reference_crop_policy": "Découpes de références seulement ; aucun rééchantillonnage ni inférence de pixels. Sorties imagegen conservées sans mutation."
+}

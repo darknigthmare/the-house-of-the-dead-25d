@@ -1,0 +1,1152 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "timezone": "Europe/Paris",
+  "batch": "2026-11-20_lot6",
+  "repository": "darknigthmare/the-house-of-the-dead-25d",
+  "audit": {
+    "baseline_commit": "7f14d7b49dcc8d884629245eef71e65198665b8e",
+    "arenas_before": 29,
+    "arenas_after_source_integration": 33
+  },
+  "generation_method": "Built-in image_gen, twelve separate image calls; native output bytes copied unchanged",
+  "stages": [
+    {
+      "id": "ams_underground",
+      "suggested_name": "Sous-sols AMS — Escape",
+      "game": "The House of the Dead 4",
+      "source_platform": "Gameplay captures from an arcade/PS3 guide; exact captured port not established",
+      "status": "adaptation_2d",
+      "runtime_stage_index": 29,
+      "inventory_task_id": "hotd4_ams",
+      "reference_keys": [
+        "h4-chapter1-3",
+        "h4-chapter1-4",
+        "h4-chapter1-7",
+        "h4-chapter1-8"
+      ],
+      "retained_motifs": [
+        "Grey-green segmented institutional walls and low ochre stripe",
+        "Louvered metal vents, service doors and wall control panels",
+        "Damaged low ceiling, sparse cables and dirty fluorescent light"
+      ],
+      "adaptation_decisions": [
+        "Multiple chapter1 corridor angles composed into a lateral service junction",
+        "Door spacing and uninterrupted foreground enlarged for two fighters",
+        "Only one corridor adaptation; offices, other escape paths and Justice encounter remain separate"
+      ]
+    },
+    {
+      "id": "scarlet_annex",
+      "suggested_name": "Annexe — Scarlet Dawn",
+      "game": "House of the Dead: Scarlet Dawn",
+      "source_platform": "Arcade screen photographs of Route A; route identified as Annex by secondary textual sources",
+      "status": "adaptation_2d",
+      "runtime_stage_index": 30,
+      "inventory_task_id": "scarlet_annex",
+      "reference_keys": [
+        "sd-10",
+        "sd-11",
+        "sd-12"
+      ],
+      "retained_motifs": [
+        "Dark red-brown wooden panelling and coffered ceiling",
+        "Carved upper balconies and green lower walls",
+        "Large warm chandelier and restrained wall sconces"
+      ],
+      "adaptation_decisions": [
+        "Only sd-10 dining-hall photograph is supplied to generation; sd-11/12 document neighbouring Annex rooms",
+        "Lateral spacing, rear door, small furniture and foreground floor interpreted",
+        "Fine floor pattern is not certified from the source photo; no claim of exact parquet reconstruction",
+        "Piano room, lift routes and Chariot encounter are not delivered as separate arenas"
+      ]
+    },
+    {
+      "id": "overkill_papa",
+      "suggested_name": "Manoir — Papa’s Palace of Pain",
+      "game": "The House of the Dead: Overkill Extended Cut",
+      "source_platform": "PlayStation 3; Japanese guide names the edition Director’s Cut",
+      "status": "adaptation_2d",
+      "runtime_stage_index": 31,
+      "inventory_task_id": "overkill_papa",
+      "reference_keys": [
+        "ov-stage1-2",
+        "ov-civ1-2"
+      ],
+      "retained_motifs": [
+        "Peeling olive-brown walls, plain pale door trims and boarded windows",
+        "Upper gallery with off-white turned wooden balusters",
+        "Worn plank floor, old chair and faded framed picture"
+      ],
+      "adaptation_decisions": [
+        "Staircase moved into rear-left architecture to keep combat floor clear",
+        "Foyer composed from two gameplay angles; light and weathering interpreted",
+        "Garden, upper rooms, basement and Jasper boss room remain separate"
+      ]
+    },
+    {
+      "id": "zr_sewage",
+      "suggested_name": "Égouts industriels — Zombie Revenge",
+      "game": "Zombie Revenge",
+      "source_platform": "Dreamcast according to public longplay author Retronomicon / NVSGamer",
+      "status": "adaptation_2d",
+      "runtime_stage_index": 32,
+      "inventory_task_id": "zr_river",
+      "reference_keys": [
+        "zr_longplay_storyboard_3"
+      ],
+      "retained_motifs": [
+        "Dark teal water channel and damp low concrete service banks",
+        "Grimy masonry, rust-brown pipes and dark industrial openings",
+        "Close industrial drainage space with muted green-grey lighting"
+      ],
+      "adaptation_decisions": [
+        "On-screen AREA3 INDUSTRIAL SEWAGE PLANT title visible in top-right storyboard cell",
+        "Six repeated views in lower two rows establish the channel; individual cells are320×180",
+        "Foreground bank widened and water moved behind fighting strip; fine surfaces and fittings interpreted",
+        "One channel segment only; adjacent streets, plant interiors and boss sequences remain separate"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "h4-chapter1-3",
+      "page_url": "https://www.k-triggerhappy.com/hod4/chapter1.html",
+      "url": "https://www.k-triggerhappy.com/hod4/chapter1-3.jpg",
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot6/stages/h4-chapter1-3.jpg",
+      "sha256": "d7bf6eae3e6a9d94d33365eaac1db3d840095e2ebc0bc046f65ea28e9244e3fe",
+      "bytes": 46559,
+      "dimensions": [
+        800,
+        448
+      ],
+      "mode": "RGB",
+      "retrieved": "2026-11-20",
+      "visually_inspected": true,
+      "used_as_imagegen_reference": true,
+      "source_type": "gameplay_capture_community_host",
+      "source_platform": "HOTD4; guide covers arcade and PS3, captured port not established",
+      "source_pixels_modified": false,
+      "role": "architecture, material and palette reference; screenshot HUD and characters excluded from generation"
+    },
+    {
+      "id": "h4-chapter1-4",
+      "page_url": "https://www.k-triggerhappy.com/hod4/chapter1.html",
+      "url": "https://www.k-triggerhappy.com/hod4/chapter1-4.jpg",
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot6/stages/h4-chapter1-4.jpg",
+      "sha256": "b05178f63ef730151300d3ff8e9ce6879b005369f57266dba1c4974082284233",
+      "bytes": 34627,
+      "dimensions": [
+        800,
+        449
+      ],
+      "mode": "RGB",
+      "retrieved": "2026-11-20",
+      "visually_inspected": true,
+      "used_as_imagegen_reference": true,
+      "source_type": "gameplay_capture_community_host",
+      "source_platform": "HOTD4; guide covers arcade and PS3, captured port not established",
+      "source_pixels_modified": false,
+      "role": "architecture, material and palette reference; screenshot HUD and characters excluded from generation"
+    },
+    {
+      "id": "h4-chapter1-7",
+      "page_url": "https://www.k-triggerhappy.com/hod4/chapter1.html",
+      "url": "https://www.k-triggerhappy.com/hod4/chapter1-7.jpg",
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot6/stages/h4-chapter1-7.jpg",
+      "sha256": "1920e2e199f6d3b7dafe680469f9103b1ea768583a26aa19ff08685a676c340a",
+      "bytes": 27666,
+      "dimensions": [
+        800,
+        448
+      ],
+      "mode": "RGB",
+      "retrieved": "2026-11-20",
+      "visually_inspected": true,
+      "used_as_imagegen_reference": true,
+      "source_type": "gameplay_capture_community_host",
+      "source_platform": "HOTD4; guide covers arcade and PS3, captured port not established",
+      "source_pixels_modified": false,
+      "role": "architecture, material and palette reference; screenshot HUD and characters excluded from generation"
+    },
+    {
+      "id": "h4-chapter1-8",
+      "page_url": "https://www.k-triggerhappy.com/hod4/chapter1.html",
+      "url": "https://www.k-triggerhappy.com/hod4/chapter1-8.jpg",
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot6/stages/h4-chapter1-8.jpg",
+      "sha256": "f3187135a430f9751c5ec2f3d185e170aaa04f5442113d34d1c58fe248ca313c",
+      "bytes": 36642,
+      "dimensions": [
+        800,
+        449
+      ],
+      "mode": "RGB",
+      "retrieved": "2026-11-20",
+      "visually_inspected": true,
+      "used_as_imagegen_reference": true,
+      "source_type": "gameplay_capture_community_host",
+      "source_platform": "HOTD4; guide covers arcade and PS3, captured port not established",
+      "source_pixels_modified": false,
+      "role": "architecture, material and palette reference; screenshot HUD and characters excluded from generation"
+    },
+    {
+      "id": "sd-10",
+      "page_url": "https://k-triggerhappy.com/blog/hod_scarletdawn-secretscore/",
+      "url": "https://i0.wp.com/k-triggerhappy.com/blog/wp-content/uploads/2018/11/1115-10.jpg?resize=446%2C260&ssl=1",
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot6/stages/sd-10.jpg",
+      "sha256": "b4fcc05634a02585d9fd88b2dc32374d57e6411b7c51798980c03b6d578c5fd0",
+      "bytes": 54403,
+      "dimensions": [
+        446,
+        260
+      ],
+      "mode": "RGB",
+      "retrieved": "2026-11-20",
+      "visually_inspected": true,
+      "used_as_imagegen_reference": true,
+      "source_type": "gameplay_screen_photo_community_host",
+      "source_platform": "Scarlet Dawn arcade screen photographs",
+      "source_pixels_modified": false,
+      "role": "architecture, material and palette reference; screenshot HUD and characters excluded from generation"
+    },
+    {
+      "id": "sd-11",
+      "page_url": "https://k-triggerhappy.com/blog/hod_scarletdawn-secretscore/",
+      "url": "https://i0.wp.com/k-triggerhappy.com/blog/wp-content/uploads/2018/11/1115-11.jpg?resize=447%2C259&ssl=1",
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot6/stages/sd-11.jpg",
+      "sha256": "c866e90d3e82369d27026dad49af4328f147d3e0f1b84995d45e27657295978f",
+      "bytes": 46279,
+      "dimensions": [
+        447,
+        259
+      ],
+      "mode": "RGB",
+      "retrieved": "2026-11-20",
+      "visually_inspected": true,
+      "used_as_imagegen_reference": false,
+      "source_type": "gameplay_screen_photo_community_host",
+      "source_platform": "Scarlet Dawn arcade screen photographs",
+      "source_pixels_modified": false,
+      "role": "architecture, material and palette reference; screenshot HUD and characters excluded from generation"
+    },
+    {
+      "id": "sd-12",
+      "page_url": "https://k-triggerhappy.com/blog/hod_scarletdawn-secretscore/",
+      "url": "https://i0.wp.com/k-triggerhappy.com/blog/wp-content/uploads/2018/11/1115-12.jpg?resize=446%2C263&ssl=1",
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot6/stages/sd-12.jpg",
+      "sha256": "070c08c30ba8d4fc92ab1bbae9d7f9f9314ca185e784a7aeeceae6d01841c6fb",
+      "bytes": 48816,
+      "dimensions": [
+        446,
+        263
+      ],
+      "mode": "RGB",
+      "retrieved": "2026-11-20",
+      "visually_inspected": true,
+      "used_as_imagegen_reference": false,
+      "source_type": "gameplay_screen_photo_community_host",
+      "source_platform": "Scarlet Dawn arcade screen photographs",
+      "source_pixels_modified": false,
+      "role": "architecture, material and palette reference; screenshot HUD and characters excluded from generation"
+    },
+    {
+      "id": "ov-stage1-2",
+      "page_url": "https://www.k-triggerhappy.com/hodoverkill_ps3/stage1.html",
+      "url": "https://www.k-triggerhappy.com/hodoverkill_ps3/stage1-2.jpg",
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot6/stages/ov-stage1-2.jpg",
+      "sha256": "565c8c839e14666f2a4219a173aaedd83aead3d1247e0e61ecb63d8d2f6cc258",
+      "bytes": 38504,
+      "dimensions": [
+        750,
+        422
+      ],
+      "mode": "RGB",
+      "retrieved": "2026-11-20",
+      "visually_inspected": true,
+      "used_as_imagegen_reference": true,
+      "source_type": "gameplay_capture_community_host",
+      "source_platform": "PlayStation 3 Extended Cut / Japanese Director’s Cut",
+      "source_pixels_modified": false,
+      "role": "architecture, material and palette reference; screenshot HUD and characters excluded from generation"
+    },
+    {
+      "id": "ov-civ1-2",
+      "page_url": "https://www.k-triggerhappy.com/hodoverkill_ps3/stage1.html",
+      "url": "https://www.k-triggerhappy.com/hodoverkill_ps3/civ1-2.jpg",
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot6/stages/ov-civ1-2.jpg",
+      "sha256": "c9c0630f96e75581770bf6ffdccc7349112e5a1a844de6e942826ab9ccf1ffe9",
+      "bytes": 29362,
+      "dimensions": [
+        750,
+        420
+      ],
+      "mode": "RGB",
+      "retrieved": "2026-11-20",
+      "visually_inspected": true,
+      "used_as_imagegen_reference": true,
+      "source_type": "gameplay_capture_community_host",
+      "source_platform": "PlayStation 3 Extended Cut / Japanese Director’s Cut",
+      "source_pixels_modified": false,
+      "role": "architecture, material and palette reference; screenshot HUD and characters excluded from generation"
+    },
+    {
+      "id": "zr_longplay_storyboard_3",
+      "url": "https://i.ytimg.com/sb/ne37UXflHqw/storyboard3_L3/M3.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgjmh9O-Bg==&sigh=rs$AOn4CLB3oOHhlnlunQ7VyR8yXsT7wm-tPw",
+      "page_url": "https://www.youtube.com/watch?v=ne37UXflHqw",
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/stages/zr_longplay_storyboard_3.jpg",
+      "bytes": 46198,
+      "sha256": "6f3bf60e5e1f7d19f01f54bce8e29c767e06c96432c9bc12192a0e830f5280ef",
+      "fragment_index": 3,
+      "source_grid": [
+        3,
+        3
+      ],
+      "cell_dimensions": [
+        320,
+        180
+      ],
+      "approximate_fragment_start_seconds": 268.0215517241379,
+      "timing_note": "Approximate yt-dlp storyboard fragment duration; exact gameplay timestamp not certified.",
+      "dimensions": [
+        960,
+        540
+      ],
+      "mode": "RGB",
+      "retrieved": "2026-11-20",
+      "visually_inspected": true,
+      "used_as_imagegen_reference": true,
+      "source_type": "gameplay_video_storyboard_native",
+      "source_platform": "Dreamcast according to public video author Retronomicon / NVSGamer",
+      "role": "Area3 Industrial Sewage Plant title and six repeated room views. Native 320×180 cells; no local crop or upscale. Fine detail remains interpreted.",
+      "source_pixels_modified": false
+    }
+  ],
+  "style_references": [
+    {
+      "path": "assets/dossier_curien/saga/strength_colosseum_back.png",
+      "sha256": "c21815bf401850032d5cf7c5769859b3f1d589ed98eeca4f5616e17cc6802bc7",
+      "size_bytes": 3290066,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "role": "Painterly texture, ratio and lateral layout only; not architectural evidence"
+    }
+  ],
+  "calibration": {
+    "renderer": "src/dossier_curien/presentation.gd",
+    "back_and_overlay_rect": [
+      -38,
+      -14,
+      1356,
+      754
+    ],
+    "suggested_floor_y": 601,
+    "foot_line_normalized_y": 0.8156498673740054,
+    "drift_multipliers": {
+      "back": 17,
+      "mid": 32,
+      "front": 58
+    },
+    "center_contract": {
+      "normalized_box": [
+        0.125,
+        0.2,
+        0.875,
+        0.79
+      ],
+      "maximum_alpha": 1,
+      "rounding": "int(width_or_height * fraction), end exclusive; boxes recorded per file"
+    },
+    "fight_strip_contract": {
+      "normalized_box": [
+        0.125,
+        0.75,
+        0.875,
+        1
+      ],
+      "maximum_alpha": 1
+    },
+    "native_dimensions_by_id": {
+      "ams_underground_back": [
+        1672,
+        941
+      ],
+      "scarlet_annex_back": [
+        1672,
+        941
+      ],
+      "overkill_papa_back": [
+        1672,
+        941
+      ],
+      "zr_sewage_back": [
+        1672,
+        941
+      ],
+      "ams_underground_mid": [
+        1672,
+        941
+      ],
+      "ams_underground_front": [
+        1672,
+        941
+      ],
+      "scarlet_annex_mid": [
+        1672,
+        941
+      ],
+      "scarlet_annex_front": [
+        1672,
+        941
+      ],
+      "overkill_papa_mid": [
+        1672,
+        941
+      ],
+      "overkill_papa_front": [
+        1672,
+        941
+      ],
+      "zr_sewage_mid": [
+        1672,
+        941
+      ],
+      "zr_sewage_front": [
+        1672,
+        941
+      ]
+    },
+    "source_pixels": "Preserved byte-for-byte; existing renderer scales layers into its rectangle."
+  },
+  "review": {
+    "all_twelve_images_visually_inspected": true,
+    "backgrounds_have_unobstructed_lateral_floor": true,
+    "no_character_or_hud_generated": true,
+    "style_compared_with_existing_strength_stage": true,
+    "overlays_limited_to_margins": true,
+    "native_engine_capture_performed": false,
+    "runtime_motion_validation": "Headless integration recorded separately; native display creation blocked by environment AF_UNIX EPERM. No manual play session or viewport capture claimed.",
+    "independent_peer_review": {
+      "reviewer": "lot6_saturn",
+      "scope": "Four native backgrounds, ten references and eight overlays viewed independently",
+      "blocking_errors_found": false,
+      "no_character_or_hud_copied": true,
+      "floor_water_and_stairs_do_not_obstruct_fighting_strip": true,
+      "annex_floor_observation": "Generated foreground reads as irregular brown paving; reference sd-10 does not establish that pattern. Interpreted floor limitation retained.",
+      "sewage_mechanics_observation": "Source characters also move in water; widened foreground bank is an arena adaptation, not a claim that source water is non-traversable.",
+      "overlay_edge_rgb_observation": "Isolated vivid red RGB pixels at Papa/ZR edges had alpha at most 9/255 in inspected points; no opaque red fringe. No pixels changed.",
+      "native_rendering_review_performed": false
+    }
+  },
+  "limitations": [
+    "Generated lateral 2D adaptations, not extracted SEGA backgrounds or certified1:1 reproductions.",
+    "One corridor, hall or channel per arena; no complete chapter coverage.",
+    "HOTD4 screenshot port not established; Scarlet Dawn photograph has limited detail; Overkill references are PS3.",
+    "Zombie Revenge reference is a native storyboard with320×180 cells; fine textures and lateral layout are interpreted.",
+    "Scarlet Annex foreground floor is interpreted; exact pattern not certified.",
+    "Nominally empty overlay pixels include native alpha1/255 remnants; center and fight-strip maxima measured at most1.",
+    "No native viewport capture: the environment denies AF_UNIX socket creation required by available Xorg. Headless tests are a separate verification scope."
+  ],
+  "rejected_outputs": [],
+  "pixel_postprocessing": "none",
+  "files": [
+    {
+      "path": "assets/dossier_curien/saga/ams_underground_back.png",
+      "sha256": "859fe289bfe1fb7ce5dfcc1b2dfb18b06497a927715a2a6408bee1cd1be1a6a5",
+      "size_bytes": 2477224,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "id": "ams_underground_back",
+      "stage": "ams_underground",
+      "layer": "back",
+      "prompt": "Use case: stylized-concept. Asset type: 2D fighting arena background. Adapt an underground AMS service corridor from CHAPTER1 ESCAPE of The House of the Dead4. Images1–4 are actual chapter1 gameplay captures. They establish plain institutional walls in faded grey-green and blue-grey paint, a narrow ochre horizontal stripe at low waist height, flat segmented wall panels, metal service doors and large horizontal louvered vents, modest rectangular wall intercoms and ceiling panels with cracked plaster or dangling dark cable at an edge. The third image shows the same stripe and muted teal palette in a corridor bend; do not treat the source monsters as architecture. Create a single service junction viewed side-on: central double sliding service doors, louvered vent sections and one shallow open side recess at the right, all behind a continuous worn grey-green floor. The close low ceiling has simple fluorescent strips with restrained white-green light, one broken panel and sparse dark cabling at the outer left. Subtle earthquake wear, small scuffs and dust near wall bases, not a ruined cavern. Keep the recognizable plain corridor, old door controls and ochre stripe, not a command room. No futuristic science-fiction pods, computers, lab tanks, sewer water, medieval arches, printed warnings or excessive sparks. No original boss creature, original blood splashes or body parts. Produce one continuous wide landscape 16:9 opaque BACK plane, native about 1672x941. Detailed painted 2D fighting-game scenery in the quality of the last style reference. That last image controls ONLY painterly rendering, image ratio and the lateral combat layout, NOT subject architecture. The camera faces the setting laterally, with shallow depth and an uninterrupted level floor spanning the full lower 27 percent. The fighters contact the floor at y=81.56 percent of image height; keep x=12.5 to87.5 percent clear at this line. Architectural spacing and this continuous fighting strip are explicit adaptations of the original game view. Keep central values readable and all scene props BEHIND the fighting strip. Fine convincing weathered materials, completed edge-to-edge. One single scene, no panels, collage, inset images or captions. Remove all people, creatures, corpses, weapons, user interface, score, lettering, reticles, logos and watermarks from reference screenshots. No labels, readable signage, floating interface effects, white borders or vignette. Do not replace the recognizable setting with generic fantasy scenery.",
+      "prompt_sha256_utf8": "6c0eaff38d1a8a607d13f530c83f6f93d8e3a41d8b0b8cc7e89c6ea31d04afce",
+      "reference_paths": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot6/stages/h4-chapter1-3.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot6/stages/h4-chapter1-4.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot6/stages/h4-chapter1-7.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot6/stages/h4-chapter1-8.jpg",
+        "assets/dossier_curien/saga/strength_colosseum_back.png"
+      ],
+      "selected_generation_basename": "exec-6d11c3dd-83f8-42aa-8a4b-8ee12465429a.png",
+      "accepted": true,
+      "opaque": true,
+      "visually_inspected": true,
+      "pixel_postprocessing": "none"
+    },
+    {
+      "path": "assets/dossier_curien/saga/scarlet_annex_back.png",
+      "sha256": "0075fc062fc4a6b7c5878963fa7f64ce406dc3e2ec8aa1b4008e23d836230d48",
+      "size_bytes": 2504131,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "id": "scarlet_annex_back",
+      "stage": "scarlet_annex",
+      "layer": "back",
+      "prompt": "Use case: stylized-concept. Asset type: 2D fighting arena background. Adapt the two-storey dining hall in the ANNEX, Route A of House of the Dead Scarlet Dawn. Image1 is an actual arcade screen photo of this dining hall and is the architectural authority. Retain rich dark red-brown polished wood panelling and pillars, warm green lower walls, a continuous upper wooden balcony with carved balustrades and curving side balconies, heavy coffered wood ceiling and a brilliant warm crystal chandelier hanging high above the center. On the back wall, restrained decorative rectangular wood panels, a dark wooden double door and wall sconces with small pale shades. The hall is grand but has the dense enclosed proportions of the original capture. Preserve warm amber chandelier light and dark green/brown shadows, with a pale smoky shaft from the left. Open the dining floor laterally for combat and place any modest furniture only at distant rear edges; the playable foreground is uninterrupted polished but worn brown parquet. Show the balcony behind the combatants, never a railing across their lane. Fine restrained age and dust, no extravagant palace redesign. This is the Annex hall, not Scarecrow Manor prologue or an isolated piano room. Do not copy the photo's camera glare, screen border, white score circle, cyan HUD, players or enemies. Do not add a fantasy throne, bright stained glass, giant staircase in the combat lane or modern technology. Produce one continuous wide landscape 16:9 opaque BACK plane, native about 1672x941. Detailed painted 2D fighting-game scenery in the quality of the last style reference. That last image controls ONLY painterly rendering, image ratio and the lateral combat layout, NOT subject architecture. The camera faces the setting laterally, with shallow depth and an uninterrupted level floor spanning the full lower 27 percent. The fighters contact the floor at y=81.56 percent of image height; keep x=12.5 to87.5 percent clear at this line. Architectural spacing and this continuous fighting strip are explicit adaptations of the original game view. Keep central values readable and all scene props BEHIND the fighting strip. Fine convincing weathered materials, completed edge-to-edge. One single scene, no panels, collage, inset images or captions. Remove all people, creatures, corpses, weapons, user interface, score, lettering, reticles, logos and watermarks from reference screenshots. No labels, readable signage, floating interface effects, white borders or vignette. Do not replace the recognizable setting with generic fantasy scenery.",
+      "prompt_sha256_utf8": "b7e19526abbb55755e407bc1f08d5c24499453430864357f24cbc07e3590c525",
+      "reference_paths": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot6/stages/sd-10.jpg",
+        "assets/dossier_curien/saga/strength_colosseum_back.png"
+      ],
+      "selected_generation_basename": "exec-ffa5e966-e389-4af8-8350-2aee27d5e53d.png",
+      "accepted": true,
+      "opaque": true,
+      "visually_inspected": true,
+      "pixel_postprocessing": "none"
+    },
+    {
+      "path": "assets/dossier_curien/saga/overkill_papa_back.png",
+      "sha256": "f73447594b1c1bfec2009e43d7c5391ac9fc8c60d225789852ad2c351c4e4f48",
+      "size_bytes": 2747268,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "id": "overkill_papa_back",
+      "stage": "overkill_papa",
+      "layer": "back",
+      "prompt": "Use case: stylized-concept. Asset type: 2D fighting arena background. Adapt the entrance hall of PAPA'S PALACE OF PAIN in The House of the Dead Overkill Extended Cut / PS3 Japanese Director's Cut. The first two images are actual PS3 gameplay captures of the same entrance hall, seen from its staircase and upper balcony. Preserve the neglected mansion: desaturated olive-brown walls with pale peeling trim, plain tall wooden double doors with rectangular mouldings, narrow boarded side windows, worn brown plank floor, and an upper gallery with heavily weathered off-white turned wooden balusters and a brown handrail. The first image's central front stairs must be moved fully into the rear-left architectural zone to create an unobstructed lateral floor. The balcony continues across the back wall; one plain doorway is visible upstairs. Include a small faded framed picture and a worn dark chair deep against the far side wall, inspired by the second reference. A modest aged chandelier hangs high in the middle, intact but dusty, above all fighting space. Dirty yellow-brown indoor light and dull olive shadows, modest water stains, peeling paint and loose boards at outer walls, not a pristine luxury ballroom. The entire lower 27percent is flat worn plank floor, with no stair edge or furniture obstructing it. Do not turn this into the Scarlet Dawn hall, gothic castle, tiled hospital, outdoor plantation or underground laboratory. No people, bodies, gore, guns, green pickups, score, health icons or watermark. Produce one continuous wide landscape 16:9 opaque BACK plane, native about 1672x941. Detailed painted 2D fighting-game scenery in the quality of the last style reference. That last image controls ONLY painterly rendering, image ratio and the lateral combat layout, NOT subject architecture. The camera faces the setting laterally, with shallow depth and an uninterrupted level floor spanning the full lower 27 percent. The fighters contact the floor at y=81.56 percent of image height; keep x=12.5 to87.5 percent clear at this line. Architectural spacing and this continuous fighting strip are explicit adaptations of the original game view. Keep central values readable and all scene props BEHIND the fighting strip. Fine convincing weathered materials, completed edge-to-edge. One single scene, no panels, collage, inset images or captions. Remove all people, creatures, corpses, weapons, user interface, score, lettering, reticles, logos and watermarks from reference screenshots. No labels, readable signage, floating interface effects, white borders or vignette. Do not replace the recognizable setting with generic fantasy scenery.",
+      "prompt_sha256_utf8": "9b563c4262cdf76cd99a0b2dff5667ea49e3e2a3e210d4560c7009a392ab7ed8",
+      "reference_paths": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot6/stages/ov-stage1-2.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot6/stages/ov-civ1-2.jpg",
+        "assets/dossier_curien/saga/strength_colosseum_back.png"
+      ],
+      "selected_generation_basename": "exec-1b8597e5-767f-4470-8532-a2d6726bcfea.png",
+      "accepted": true,
+      "opaque": true,
+      "visually_inspected": true,
+      "pixel_postprocessing": "none"
+    },
+    {
+      "path": "assets/dossier_curien/saga/zr_sewage_back.png",
+      "sha256": "12bc850e759f3066de4aed407e24d5fa875366454a4768779522d77401f582ba",
+      "size_bytes": 3074670,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "id": "zr_sewage_back",
+      "stage": "zr_sewage",
+      "layer": "back",
+      "prompt": "Use case: stylized-concept. Asset type: 2D fighting arena background. Adapt AREA3 INDUSTRIAL SEWAGE PLANT from Zombie Revenge. The first image is a native gameplay storyboard: the top-right cell carries the Area3 location title, and the six cells in the second and third rows show repeated angles of the same industrial water channel. Those views establish thick damp dark grey brick and concrete walls, a low pale grimy concrete service bank, broad dark teal-green flowing water, rust-brown pipes following the wall horizontally, and corroded metal fittings. The images are small; interpret fine textures modestly without claiming exact reconstruction. Adapt the original oblique view into a single clear lateral fighting stage. Set the water channel horizontally BEHIND a wide continuous foreground service bank. The foreground is flat dry-ish stained concrete with no water or rail crossing the fighters at y81.56percent. A short low corroded rail is permitted only on the distant rear ledge. The back wall is a close dirty green-grey masonry surface, with two rusted horizontal pipes and one dark rectangular service opening, no grand arched sewer tunnel. A pipe bends down at the far right above the rear water. Dim damp industrial light, muted green highlights on water, convincing small moss stains, no glowing toxic sludge, giant tanks or science-fiction machinery. Keep the claustrophobic industrial drainage setting distinct from the already-generated chemical plant. The widened concrete bank and continuous side-on water layout are explicit arena adaptations. No character portraits, Linda, enemies, gun pickups, score, green lettering or video watermark; do not reproduce the contact-sheet grid. Produce one continuous wide landscape 16:9 opaque BACK plane, native about 1672x941. Detailed painted 2D fighting-game scenery in the quality of the last style reference. That last image controls ONLY painterly rendering, image ratio and the lateral combat layout, NOT subject architecture. The camera faces the setting laterally, with shallow depth and an uninterrupted level floor spanning the full lower 27 percent. The fighters contact the floor at y=81.56 percent of image height; keep x=12.5 to87.5 percent clear at this line. Architectural spacing and this continuous fighting strip are explicit adaptations of the original game view. Keep central values readable and all scene props BEHIND the fighting strip. Fine convincing weathered materials, completed edge-to-edge. One single scene, no panels, collage, inset images or captions. Remove all people, creatures, corpses, weapons, user interface, score, lettering, reticles, logos and watermarks from reference screenshots. No labels, readable signage, floating interface effects, white borders or vignette. Do not replace the recognizable setting with generic fantasy scenery.",
+      "prompt_sha256_utf8": "0d9c3ed6b1e69f8b75dcb24ef86989dd478cd6d3ef2c3f8d4b566d64bd4c4393",
+      "reference_paths": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/stages/zr_longplay_storyboard_3.jpg",
+        "assets/dossier_curien/saga/strength_colosseum_back.png"
+      ],
+      "selected_generation_basename": "exec-5eb18d21-22ea-4826-9d78-c904f9e35c18.png",
+      "accepted": true,
+      "opaque": true,
+      "visually_inspected": true,
+      "pixel_postprocessing": "none"
+    },
+    {
+      "path": "assets/dossier_curien/saga/ams_underground_mid.png",
+      "sha256": "73a083406cc71331962b7360672e9f2507a73b930766157c149394951875f6b5",
+      "size_bytes": 206514,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "id": "ams_underground_mid",
+      "stage": "ams_underground",
+      "layer": "mid",
+      "prompt": "Use case: stylized-concept. Create ONE separate genuinely transparent RGBA MIDGROUND OVERLAY for the supplied AMS underground corridor fighting arena background. Use the supplied image only for material, palette, restrained light, fine painted texture, side-on perspective and canvas alignment. Match its faded grey-green painted metal, an ochre stripe and cold fluorescent light. Same native landscape16:9 canvas, about1672x941. Draw ONLY one narrow grey-green door-jamb fragment at the extreme LEFT within x0–6percent, and one thin dark hanging cable with a small fixing bracket at the extreme RIGHT within x94–100percent. No horizontal connecting element. Every pixel outside these two narrow edge zones must be genuinely transparent. The entire central x12.5–87.5percent is completely empty from top to bottom. In particular rectangle x12.5–87.5percent,y20–79percent and lower fighting strip x12.5–87.5percent,y75–100percent have no visible pixels. No connection between the two edge fragments. Do not repeat the source scene, floor, water, ceiling, room walls, building, furniture or background. No ambient color wash, shadow across transparent space, haze, glow, particles, characters, monsters, lettering, HUD, border, logo, watermark or baked checkerboard. One very sparse separate production parallax layer, not an opaque environment picture.",
+      "prompt_sha256_utf8": "1fba3cfe7ca3a0dafc67985477f90e68a3c3f3c680e17c1115114a324c66e4a0",
+      "reference_paths": [
+        "assets/dossier_curien/saga/ams_underground_back.png"
+      ],
+      "selected_generation_basename": "exec-f8f1c6c3-470b-4c9e-bc32-c52b0edec5a1.png",
+      "accepted": true,
+      "opaque": false,
+      "visually_inspected": true,
+      "pixel_postprocessing": "none",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        1654,
+        941
+      ],
+      "center_contract": {
+        "normalized_box": [
+          0.125,
+          0.2,
+          0.875,
+          0.79
+        ],
+        "pixel_box": [
+          209,
+          188,
+          1463,
+          743
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "fight_strip_contract": {
+        "normalized_box": [
+          0.125,
+          0.75,
+          0.875,
+          1
+        ],
+        "pixel_box": [
+          209,
+          705,
+          1463,
+          941
+        ],
+        "alpha_extrema": [
+          0,
+          0
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      }
+    },
+    {
+      "path": "assets/dossier_curien/saga/ams_underground_front.png",
+      "sha256": "09dfa59fa848222db0d66985664ca17f2c735c1937c727b2a626b193be360b9f",
+      "size_bytes": 71667,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "id": "ams_underground_front",
+      "stage": "ams_underground",
+      "layer": "front",
+      "prompt": "Use case: stylized-concept. Create ONE separate genuinely transparent RGBA FOREGROUND OVERLAY for the supplied AMS underground corridor fighting arena background. Use the supplied image only for material, palette, restrained light, fine painted texture, side-on perspective and canvas alignment. Match its faded grey-green painted metal, an ochre stripe and cold fluorescent light. Same native landscape16:9 canvas, about1672x941. Draw ONLY one tiny worn metal threshold corner naturally cropped at the extreme BOTTOM LEFT within x0–7percent,y95–100percent, and a tiny dull floor bracket at the extreme BOTTOM RIGHT within x95–100percent,y96–100percent. Every pixel outside these two narrow edge zones must be genuinely transparent. The entire central x12.5–87.5percent is completely empty from top to bottom. In particular rectangle x12.5–87.5percent,y20–79percent and lower fighting strip x12.5–87.5percent,y75–100percent have no visible pixels. No connection between the two edge fragments. Do not repeat the source scene, floor, water, ceiling, room walls, building, furniture or background. No ambient color wash, shadow across transparent space, haze, glow, particles, characters, monsters, lettering, HUD, border, logo, watermark or baked checkerboard. One very sparse separate production parallax layer, not an opaque environment picture.",
+      "prompt_sha256_utf8": "d32bff662e66a761061f26b19a47145a12ddfe1a299fbc2e7dacee0a4ff5f790",
+      "reference_paths": [
+        "assets/dossier_curien/saga/ams_underground_back.png"
+      ],
+      "selected_generation_basename": "exec-363491c7-9a11-4c60-b9d0-9eeecabc9480.png",
+      "accepted": true,
+      "opaque": false,
+      "visually_inspected": true,
+      "pixel_postprocessing": "none",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        621,
+        1672,
+        941
+      ],
+      "center_contract": {
+        "normalized_box": [
+          0.125,
+          0.2,
+          0.875,
+          0.79
+        ],
+        "pixel_box": [
+          209,
+          188,
+          1463,
+          743
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "fight_strip_contract": {
+        "normalized_box": [
+          0.125,
+          0.75,
+          0.875,
+          1
+        ],
+        "pixel_box": [
+          209,
+          705,
+          1463,
+          941
+        ],
+        "alpha_extrema": [
+          0,
+          0
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      }
+    },
+    {
+      "path": "assets/dossier_curien/saga/scarlet_annex_mid.png",
+      "sha256": "3dbdb68804f3ab51e5cc6fc9198cad997d5a9910acb62aa03fba948a9e97a326",
+      "size_bytes": 236381,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "id": "scarlet_annex_mid",
+      "stage": "scarlet_annex",
+      "layer": "mid",
+      "prompt": "Use case: stylized-concept. Create ONE separate genuinely transparent RGBA MIDGROUND OVERLAY for the supplied Scarlet Dawn Annex hall fighting arena background. Use the supplied image only for material, palette, restrained light, fine painted texture, side-on perspective and canvas alignment. Match its dark polished red-brown carved wood and restrained warm amber chandelier highlights. Same native landscape16:9 canvas, about1672x941. Draw ONLY one slim cropped vertical carved wooden pillar at the extreme LEFT within x0–6percent, and the thin vertical outer edge of another dark wood post at the extreme RIGHT within x94–100percent. Decorative carving must stay inside those narrow strips. Every pixel outside these two narrow edge zones must be genuinely transparent. The entire central x12.5–87.5percent is completely empty from top to bottom. In particular rectangle x12.5–87.5percent,y20–79percent and lower fighting strip x12.5–87.5percent,y75–100percent have no visible pixels. No connection between the two edge fragments. Do not repeat the source scene, floor, water, ceiling, room walls, building, furniture or background. No ambient color wash, shadow across transparent space, haze, glow, particles, characters, monsters, lettering, HUD, border, logo, watermark or baked checkerboard. One very sparse separate production parallax layer, not an opaque environment picture.",
+      "prompt_sha256_utf8": "d5cd2c3f58a5acb0eac790a9deffeab9f8e5116aebfe1e4a44ff412dae71e332",
+      "reference_paths": [
+        "assets/dossier_curien/saga/scarlet_annex_back.png"
+      ],
+      "selected_generation_basename": "exec-228c7109-a500-4dfe-96ff-95d6403f07bf.png",
+      "accepted": true,
+      "opaque": false,
+      "visually_inspected": true,
+      "pixel_postprocessing": "none",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "center_contract": {
+        "normalized_box": [
+          0.125,
+          0.2,
+          0.875,
+          0.79
+        ],
+        "pixel_box": [
+          209,
+          188,
+          1463,
+          743
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "fight_strip_contract": {
+        "normalized_box": [
+          0.125,
+          0.75,
+          0.875,
+          1
+        ],
+        "pixel_box": [
+          209,
+          705,
+          1463,
+          941
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      }
+    },
+    {
+      "path": "assets/dossier_curien/saga/scarlet_annex_front.png",
+      "sha256": "576acbd9c373c7588515c9d70840a3ce3f6709d77c675e6bcbba8f46cfa37b86",
+      "size_bytes": 80362,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "id": "scarlet_annex_front",
+      "stage": "scarlet_annex",
+      "layer": "front",
+      "prompt": "Use case: stylized-concept. Create ONE separate genuinely transparent RGBA FOREGROUND OVERLAY for the supplied Scarlet Dawn Annex hall fighting arena background. Use the supplied image only for material, palette, restrained light, fine painted texture, side-on perspective and canvas alignment. Match its dark polished red-brown carved wood and restrained warm amber chandelier highlights. Same native landscape16:9 canvas, about1672x941. Draw ONLY a small carved dark wooden plinth corner at the extreme BOTTOM LEFT within x0–7percent,y95–100percent, and a tiny polished brown pillar-foot corner at the extreme BOTTOM RIGHT within x95–100percent,y96–100percent. Every pixel outside these two narrow edge zones must be genuinely transparent. The entire central x12.5–87.5percent is completely empty from top to bottom. In particular rectangle x12.5–87.5percent,y20–79percent and lower fighting strip x12.5–87.5percent,y75–100percent have no visible pixels. No connection between the two edge fragments. Do not repeat the source scene, floor, water, ceiling, room walls, building, furniture or background. No ambient color wash, shadow across transparent space, haze, glow, particles, characters, monsters, lettering, HUD, border, logo, watermark or baked checkerboard. One very sparse separate production parallax layer, not an opaque environment picture.",
+      "prompt_sha256_utf8": "7cbc89c891a7d47ebf77431218a550c925f9a136ca5731b8c6c0b0710a56735a",
+      "reference_paths": [
+        "assets/dossier_curien/saga/scarlet_annex_back.png"
+      ],
+      "selected_generation_basename": "exec-1a117c43-bfcc-411c-99fd-e7e12eb2a790.png",
+      "accepted": true,
+      "opaque": false,
+      "visually_inspected": true,
+      "pixel_postprocessing": "none",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        567,
+        1672,
+        941
+      ],
+      "center_contract": {
+        "normalized_box": [
+          0.125,
+          0.2,
+          0.875,
+          0.79
+        ],
+        "pixel_box": [
+          209,
+          188,
+          1463,
+          743
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "fight_strip_contract": {
+        "normalized_box": [
+          0.125,
+          0.75,
+          0.875,
+          1
+        ],
+        "pixel_box": [
+          209,
+          705,
+          1463,
+          941
+        ],
+        "alpha_extrema": [
+          0,
+          0
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      }
+    },
+    {
+      "path": "assets/dossier_curien/saga/overkill_papa_mid.png",
+      "sha256": "d36edc8a14981758a520f3e35fea0fd5644401df4542968462a8a2d42aa34e88",
+      "size_bytes": 405942,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "id": "overkill_papa_mid",
+      "stage": "overkill_papa",
+      "layer": "mid",
+      "prompt": "Use case: stylized-concept. Create ONE separate genuinely transparent RGBA MIDGROUND OVERLAY for the supplied Overkill Papa mansion entrance hall fighting arena background. Use the supplied image only for material, palette, restrained light, fine painted texture, side-on perspective and canvas alignment. Match its peeling off-white painted wood, dull brown varnish and dirty warm yellow-brown indoor light. Same native landscape16:9 canvas, about1672x941. Draw ONLY one narrow off-white peeling wooden baluster post at the extreme LEFT within x0–6percent, and one slim worn brown door-jamb edge at the extreme RIGHT within x94–100percent. No horizontal railing across the frame. Every pixel outside these two narrow edge zones must be genuinely transparent. The entire central x12.5–87.5percent is completely empty from top to bottom. In particular rectangle x12.5–87.5percent,y20–79percent and lower fighting strip x12.5–87.5percent,y75–100percent have no visible pixels. No connection between the two edge fragments. Do not repeat the source scene, floor, water, ceiling, room walls, building, furniture or background. No ambient color wash, shadow across transparent space, haze, glow, particles, characters, monsters, lettering, HUD, border, logo, watermark or baked checkerboard. One very sparse separate production parallax layer, not an opaque environment picture.",
+      "prompt_sha256_utf8": "721514b4f2493b17400cc197fbced246825261e9326c6c744bfbfe69e480929e",
+      "reference_paths": [
+        "assets/dossier_curien/saga/overkill_papa_back.png"
+      ],
+      "selected_generation_basename": "exec-916c2968-e71a-42a7-be76-98d65cfe5752.png",
+      "accepted": true,
+      "opaque": false,
+      "visually_inspected": true,
+      "pixel_postprocessing": "none",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "center_contract": {
+        "normalized_box": [
+          0.125,
+          0.2,
+          0.875,
+          0.79
+        ],
+        "pixel_box": [
+          209,
+          188,
+          1463,
+          743
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "fight_strip_contract": {
+        "normalized_box": [
+          0.125,
+          0.75,
+          0.875,
+          1
+        ],
+        "pixel_box": [
+          209,
+          705,
+          1463,
+          941
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      }
+    },
+    {
+      "path": "assets/dossier_curien/saga/overkill_papa_front.png",
+      "sha256": "e33b6f102600a72ec0f61e07748eb98ebf8656bbe99f0be83f42880b7cf08847",
+      "size_bytes": 73829,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "id": "overkill_papa_front",
+      "stage": "overkill_papa",
+      "layer": "front",
+      "prompt": "Use case: stylized-concept. Create ONE separate genuinely transparent RGBA FOREGROUND OVERLAY for the supplied Overkill Papa mansion entrance hall fighting arena background. Use the supplied image only for material, palette, restrained light, fine painted texture, side-on perspective and canvas alignment. Match its peeling off-white painted wood, dull brown varnish and dirty warm yellow-brown indoor light. Same native landscape16:9 canvas, about1672x941. Draw ONLY one tiny chipped off-white wooden stair-post base at the extreme BOTTOM LEFT within x0–7percent,y95–100percent, and a tiny dark weathered floorboard splinter at the extreme BOTTOM RIGHT within x95–100percent,y96–100percent. Every pixel outside these two narrow edge zones must be genuinely transparent. The entire central x12.5–87.5percent is completely empty from top to bottom. In particular rectangle x12.5–87.5percent,y20–79percent and lower fighting strip x12.5–87.5percent,y75–100percent have no visible pixels. No connection between the two edge fragments. Do not repeat the source scene, floor, water, ceiling, room walls, building, furniture or background. No ambient color wash, shadow across transparent space, haze, glow, particles, characters, monsters, lettering, HUD, border, logo, watermark or baked checkerboard. One very sparse separate production parallax layer, not an opaque environment picture.",
+      "prompt_sha256_utf8": "463055c253e0da7b6e311bbd00230cd15773aabe319d95ec5e99385ee077d1e1",
+      "reference_paths": [
+        "assets/dossier_curien/saga/overkill_papa_back.png"
+      ],
+      "selected_generation_basename": "exec-57369fe6-c931-4bb3-aa92-dbf2dd2bab67.png",
+      "accepted": true,
+      "opaque": false,
+      "visually_inspected": true,
+      "pixel_postprocessing": "none",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        299,
+        1672,
+        941
+      ],
+      "center_contract": {
+        "normalized_box": [
+          0.125,
+          0.2,
+          0.875,
+          0.79
+        ],
+        "pixel_box": [
+          209,
+          188,
+          1463,
+          743
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "fight_strip_contract": {
+        "normalized_box": [
+          0.125,
+          0.75,
+          0.875,
+          1
+        ],
+        "pixel_box": [
+          209,
+          705,
+          1463,
+          941
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      }
+    },
+    {
+      "path": "assets/dossier_curien/saga/zr_sewage_mid.png",
+      "sha256": "f4e81047b29b7f679238f538c506cb04c7f6bb6ae254e144acb056e65e18601e",
+      "size_bytes": 417255,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "id": "zr_sewage_mid",
+      "stage": "zr_sewage",
+      "layer": "mid",
+      "prompt": "Use case: stylized-concept. Create ONE separate genuinely transparent RGBA MIDGROUND OVERLAY for the supplied Zombie Revenge industrial sewage plant fighting arena background. Use the supplied image only for material, palette, restrained light, fine painted texture, side-on perspective and canvas alignment. Match its damp dark stone, rust-brown corroded iron and muted cold green industrial light. Same native landscape16:9 canvas, about1672x941. Draw ONLY one narrow rust-brown vertical pipe fragment at the extreme LEFT within x0–6percent, and one narrow dark damp concrete pier edge at the extreme RIGHT within x94–100percent. Pipe brackets must remain inside the same edge strips. Every pixel outside these two narrow edge zones must be genuinely transparent. The entire central x12.5–87.5percent is completely empty from top to bottom. In particular rectangle x12.5–87.5percent,y20–79percent and lower fighting strip x12.5–87.5percent,y75–100percent have no visible pixels. No connection between the two edge fragments. Do not repeat the source scene, floor, water, ceiling, room walls, building, furniture or background. No ambient color wash, shadow across transparent space, haze, glow, particles, characters, monsters, lettering, HUD, border, logo, watermark or baked checkerboard. One very sparse separate production parallax layer, not an opaque environment picture.",
+      "prompt_sha256_utf8": "d641a94301662d3bc823a2a8ba45f39f85acf446937244295cfc26b509dd43d3",
+      "reference_paths": [
+        "assets/dossier_curien/saga/zr_sewage_back.png"
+      ],
+      "selected_generation_basename": "exec-a3c46579-b09b-4228-9764-cbd6d35f3e76.png",
+      "accepted": true,
+      "opaque": false,
+      "visually_inspected": true,
+      "pixel_postprocessing": "none",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "center_contract": {
+        "normalized_box": [
+          0.125,
+          0.2,
+          0.875,
+          0.79
+        ],
+        "pixel_box": [
+          209,
+          188,
+          1463,
+          743
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "fight_strip_contract": {
+        "normalized_box": [
+          0.125,
+          0.75,
+          0.875,
+          1
+        ],
+        "pixel_box": [
+          209,
+          705,
+          1463,
+          941
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      }
+    },
+    {
+      "path": "assets/dossier_curien/saga/zr_sewage_front.png",
+      "sha256": "42997cda6964162ec13889d08b573228e2d3da62a0b06b27dbb47fc16b010d6f",
+      "size_bytes": 91699,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "id": "zr_sewage_front",
+      "stage": "zr_sewage",
+      "layer": "front",
+      "prompt": "Use case: stylized-concept. Create ONE separate genuinely transparent RGBA FOREGROUND OVERLAY for the supplied Zombie Revenge industrial sewage plant fighting arena background. Use the supplied image only for material, palette, restrained light, fine painted texture, side-on perspective and canvas alignment. Match its damp dark stone, rust-brown corroded iron and muted cold green industrial light. Same native landscape16:9 canvas, about1672x941. Draw ONLY one tiny rusted pipe-foot and bolt plate at the extreme BOTTOM LEFT within x0–7percent,y95–100percent, and a tiny wet concrete lip fragment at the extreme BOTTOM RIGHT within x95–100percent,y96–100percent. Every pixel outside these two narrow edge zones must be genuinely transparent. The entire central x12.5–87.5percent is completely empty from top to bottom. In particular rectangle x12.5–87.5percent,y20–79percent and lower fighting strip x12.5–87.5percent,y75–100percent have no visible pixels. No connection between the two edge fragments. Do not repeat the source scene, floor, water, ceiling, room walls, building, furniture or background. No ambient color wash, shadow across transparent space, haze, glow, particles, characters, monsters, lettering, HUD, border, logo, watermark or baked checkerboard. One very sparse separate production parallax layer, not an opaque environment picture.",
+      "prompt_sha256_utf8": "8890c1c25034db334ea3b15ef215e9e0f798f80c26c565c1123488f597583b8a",
+      "reference_paths": [
+        "assets/dossier_curien/saga/zr_sewage_back.png"
+      ],
+      "selected_generation_basename": "exec-5e1ac027-e72c-4100-a3db-45749d7a3ea0.png",
+      "accepted": true,
+      "opaque": false,
+      "visually_inspected": true,
+      "pixel_postprocessing": "none",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        248,
+        1672,
+        941
+      ],
+      "center_contract": {
+        "normalized_box": [
+          0.125,
+          0.2,
+          0.875,
+          0.79
+        ],
+        "pixel_box": [
+          209,
+          188,
+          1463,
+          743
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      },
+      "fight_strip_contract": {
+        "normalized_box": [
+          0.125,
+          0.75,
+          0.875,
+          1
+        ],
+        "pixel_box": [
+          209,
+          705,
+          1463,
+          941
+        ],
+        "alpha_extrema": [
+          0,
+          1
+        ],
+        "maximum_allowed_alpha": 1,
+        "pass": true
+      }
+    }
+  ],
+  "validation": {
+    "attempted_imagegen_calls": 12,
+    "accepted_png_count": 12,
+    "new_stage_sets": 4,
+    "total_png_bytes": 12386942,
+    "native_dimensions_consistent": true,
+    "all_hashes_distinct": true,
+    "all_overlay_center_contracts_pass": true,
+    "all_overlay_fight_strip_contracts_pass": true,
+    "all_sources_unchanged": true,
+    "all_native_output_bytes_preserved": true
+  }
+}

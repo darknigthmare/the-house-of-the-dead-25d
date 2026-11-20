@@ -2,15 +2,36 @@
 
 Depuis le jeu complet, choisissez **Dossier Curien** dans le menu d’arcade. Dans la version autonome, le menu du mode combat apparaît au démarrage.
 
-## Sources du 20 novembre 2026 — huit arènes et quatre lots de galerie
+## Sources du 20 novembre 2026 — six lots et nouvelles poses de Rikiya
 
-Les sources contiennent **24 combattants, 26 parcours Histoire, 26 arènes et 29 épreuves d’archives**. Pour les nouvelles arènes, ouvrez **Duel contre IA**, **Duel local** ou **Entraînement**, puis choisissez les combattants. Avec cinq arènes par page, la **quatrième page** contient **Toit du train — Zombie Revenge** et **Abattoir — Creeping Flesh** ; la **cinquième page** contient **Canal souterrain — Tower**, **Colisée — Strength**, **Enclos du D.B.R. — Fool**, **Chambre BIO — Sun** et **Terrasse de Hangedman** ; la **sixième page** contient **Dôme de culture — Hermit**. Une note complète décrit l’arène au focus clavier/manette ou au survol de la souris. Ces adaptations 2D documentées utilisent chacune trois plans peints. Les rapports du [premier lot](saga/production/stages_2026-11-20/RAPPORT.md), des [lieux de HOTD2](saga/production/stages_2026-11-20_lot2/RAPPORT.md), des [salles de boss de HOTD III](saga/production/stages_2026-11-20_lot3/RAPPORT.md) et des [lieux du HOTD original](saga/production/stages_2026-11-20_lot4/RAPPORT.md) présentent les références et les limites. Ces salles ne représentent pas tous les parcours de leurs chapitres ; le tunnel de poursuite d’Hermit reste à produire.
+Les sources contiennent **24 combattants, 26 parcours Histoire, 33 arènes et 29 épreuves d’archives**. Pour essayer les arènes, ouvrez **Duel contre IA**, **Duel local** ou **Entraînement**, puis choisissez les combattants. Le menu présente cinq arènes par page.
 
-Dans **Bestiaire & personnages**, le sélecteur de jeu donne accès aux **78 fiches**. Le quatrième lot ajoute les formes humaines de Jasper et Mother, les fins zombies de Sophie et Goldman, Nigel & Sebastian, Lobber, Coco, Sindy et Meat Katie aux 69 fiches précédentes. Les filtres des jeux d’origine permettent de les retrouver. Les mentions **PNJ · non jouable**, **Boss · non jouable**, **Variante de costume · non jouable** et **Forme de personnage · non jouable** indiquent leur rôle. Une forme humaine ou zombie de galerie n’ajoute pas de transformation en duel. Les deux tenues de réception de Kate et Ryan restent les variantes équipables existantes.
+| Page | Arènes ajoutées le 20 novembre |
+| --- | --- |
+| 4 | Toit du train — Zombie Revenge ; Abattoir — Creeping Flesh. |
+| 5 | Canal souterrain — Tower ; Colisée — Strength ; Enclos du D.B.R. — Fool ; Chambre BIO — Sun ; Terrasse de Hangedman. |
+| 6 | Dôme de culture — Hermit ; Place d’A Prelude ; Hôpital — Ballistic Trauma ; Usine chimique — Zombie Revenge ; **Sous-sols AMS — Escape**. |
+| 7 | **Annexe — Scarlet Dawn ; Manoir — Papa’s Palace of Pain ; Égouts industriels — Zombie Revenge**. |
 
-Le [bilan du quatrième lot](saga/production/catalogue_2026-11-20_lot4/BILAN_LOT.md), le [catalogue courant des personnages et tenues](saga/production/catalogue_2026-11-20_lot4/PERSONNAGES_TENUES.md) et le [reçu de validation](saga/production/catalogue_2026-11-20_lot4/VALIDATION.md) distinguent les images livrées, le chargement natif et les limites. Chaque fiche conserve les réserves de ses références : neuf des 38 ajouts des quatre lots signalent encore une référence visuelle à compléter. Mother humaine est consultable ; sa forme boss reste manquante. Les [premier](saga/production/catalogue_2026-11-20/BILAN_LOT.md), [deuxième](saga/production/catalogue_2026-11-20_lot2/BILAN_LOT.md) et [troisième](saga/production/catalogue_2026-11-20_lot3/BILAN_LOT.md) bilans gardent leur périmètre daté.
+Une note complète décrit chaque adaptation au focus clavier/manette ou au survol de la souris. Les quatre lieux du sixième lot possèdent chacun trois plans peints ; le [rapport des arènes](saga/production/stages_2026-11-20_lot6/RAPPORT.md) précise les références, les portions couvertes et celles qui restent à produire.
 
-**Pour ces ajouts, lancez le projet depuis les sources avec Godot 4.7.1. Les PCK et fichiers web du 19 novembre n’ont pas été reconstruits et ne contiennent pas ces huit arènes ni les 38 fiches ajoutées le 20 novembre.** Leurs instructions ci-dessous restent valables pour les contenus qu’ils livrent. Les contrôles locaux des troisième et quatrième lots utilisent Godot 4.7.2 en mode headless ; ceux des deux premiers utilisaient Godot 4.6.3. Aucune capture native ni session interactive complète de ces lots n’est revendiquée.
+### Essayer les neuf poses de Rikiya
+
+Dans **Entraînement**, sélectionnez **Rikiya Busujima**, puis une arène. Sautez pour voir les dessins distincts de montée et de descente, maintenez **↓** pour vous accroupir et **↓ + arrière** pour la garde basse. **U**, à portée de l’adversaire, déclenche la projection ; **O** ouvre la provocation au neutre.
+
+Pour voir **le blocage sur impact**, **la victoire** et **la finition**, choisissez **Duel contre IA** ou **Duel local**. Recevez un coup en maintenant arrière pour bloquer. La victoire affiche sa pose dédiée ; après une victoire décisive par K.-O., **I** déclenche la finition. Les équivalents pour J2 et la manette figurent dans le tableau des commandes ci-dessous.
+
+Les neuf dessins utilisent leurs dimensions natives et une calibration propre. Le [rapport motion](saga/production/motion_2026-11-20_lot6/RAPPORT.md), son [manifeste](../../data/assets/dossier_curien_motion_2026-11-20_lot6.json) et l’[inventaire dérivé](saga/production/motion_2026-11-20_lot6/MANQUANTS.json) suivent les états de combat et la réduction de **277 à 268 poses minimales manquantes**. Les 30 poses du premier lot motion restent chargées ; de nouvelles images intermédiaires sont encore nécessaires pour former des animations complètes.
+
+### Consulter les modèles Saturn/PC Mode
+
+Dans **Bestiaire & personnages**, le sélecteur de jeu donne accès aux **93 fiches**. Choisissez **The House of the Dead — Saturn/PC Mode** pour Rogan2, G2, Sophie et la chercheuse DBR. Le statut **Variante de costume · non jouable** précise leur rôle de galerie. Ces études n’ajoutent pas de sélection de modèle de combat. Les tenues de réception de Kate et Ryan restent les deux variantes équipables existantes.
+
+Les références détaillées proviennent surtout du PC Mode Windows. La concordance exacte avec Saturn et certains détails de chaussures restent à vérifier dans le [reçu des costumes](saga/production/catalogue_2026-11-20_lot6/COSTUMES.md). Les collections précédentes, dont les variantes Zombie Revenge et l’équipement Typing 2, restent consultables avec leurs réserves propres. Au total, **18 des 53 ajouts de galerie** des six lots gardent une référence visuelle à compléter.
+
+Le [bilan courant](saga/production/catalogue_2026-11-20_lot6/BILAN_LOT.md), le [listing des personnages et tenues](saga/production/catalogue_2026-11-20_lot6/PERSONNAGES_TENUES.md), le [listing des stages](saga/production/catalogue_2026-11-20_lot6/STAGES_MANQUANTS.md) et le [reçu de validation](saga/production/catalogue_2026-11-20_lot6/VALIDATION.md) distinguent les livraisons, leur chargement et les manques. Mother humaine est consultable ; sa forme boss reste absente. Les bilans des [premier](saga/production/catalogue_2026-11-20/BILAN_LOT.md), [deuxième](saga/production/catalogue_2026-11-20_lot2/BILAN_LOT.md), [troisième](saga/production/catalogue_2026-11-20_lot3/BILAN_LOT.md), [quatrième](saga/production/catalogue_2026-11-20_lot4/BILAN_LOT.md) et [cinquième](saga/production/catalogue_2026-11-20_lot5/BILAN_LOT.md) lots gardent leur périmètre daté.
+
+**Lancez ces ajouts depuis les sources avec Godot 4.7.1. Les PCK et fichiers web du 19 novembre n’ont pas été reconstruits : ils ne contiennent pas les 15 arènes, les 53 fiches de galerie ni les neuf poses de Rikiya ajoutées le 20 novembre.** Les instructions des paquets ci-dessous restent valables pour leurs contenus livrés. Les contrôles locaux des lots 3 à 6 utilisent Godot 4.7.2 ; ceux des deux premiers utilisaient Godot 4.6.3. La revue des images et les tests headless sont consignés dans le rapport motion. Aucune capture native du renderer ni session manuelle complète de ces nouveaux lots n’est revendiquée.
 
 ## Lot motion du 19 novembre 2026 — 30 poses intégrées
 
