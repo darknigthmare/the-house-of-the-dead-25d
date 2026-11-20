@@ -84,7 +84,7 @@ func cases_and_routes() -> void:
 
 func roster_and_stages() -> void:
 	verify(Fighter.PROFILES.size() == 24, "Gallery-only silhouettes preserve the 24 playable fighters")
-	verify(Saga.STAGES.size() == 26 and Saga.ART.size() == 26, "Twenty-six arenas have aligned art registrations")
+	verify(Saga.STAGES.size() == 29 and Saga.ART.size() == 29, "Twenty-nine arenas have aligned art registrations")
 	for i in Fighter.PROFILES.size():
 		var profile: Dictionary = Fighter.PROFILES[i]
 		verify(arena.visuals.guard_art(i) is Texture2D, "Registered combat art for " + str(profile.id))

@@ -10,11 +10,14 @@ const LOT3_MANIFEST := "res://data/assets/dossier_curien_gallery_2026-11-20_lot3
 const LOT3_ART_ROOT := "res://assets/dossier_curien/gallery_2026-11-20_lot3/"
 const LOT4_MANIFEST := "res://data/assets/dossier_curien_gallery_2026-11-20_lot4.json"
 const LOT4_ART_ROOT := "res://assets/dossier_curien/gallery_2026-11-20_lot4/"
+const LOT5_MANIFEST := "res://data/assets/dossier_curien_gallery_2026-11-20_lot5.json"
+const LOT5_ART_ROOT := "res://assets/dossier_curien/gallery_2026-11-20_lot5/"
 const GALLERY_COLLECTIONS := [
 	{"manifest":GALLERY_MANIFEST, "art_root":GALLERY_ART_ROOT},
 	{"manifest":LOT2_MANIFEST, "art_root":LOT2_ART_ROOT},
 	{"manifest":LOT3_MANIFEST, "art_root":LOT3_ART_ROOT},
-	{"manifest":LOT4_MANIFEST, "art_root":LOT4_ART_ROOT}
+	{"manifest":LOT4_MANIFEST, "art_root":LOT4_ART_ROOT},
+	{"manifest":LOT5_MANIFEST, "art_root":LOT5_ART_ROOT}
 ]
 const BASE_FILTERS := [
 	{"game":"", "label":"Tous"},
@@ -42,7 +45,7 @@ func load_manifest(path := MANIFEST, additional_collections: Array = []) -> bool
 		if not collection is Dictionary: continue
 		var manifest_path := str(collection.get("manifest", ""))
 		var art_root := str(collection.get("art_root", ""))
-		if manifest_path == "" or art_root not in [GALLERY_ART_ROOT, LOT2_ART_ROOT, LOT3_ART_ROOT, LOT4_ART_ROOT]: continue
+		if manifest_path == "" or art_root not in [GALLERY_ART_ROOT, LOT2_ART_ROOT, LOT3_ART_ROOT, LOT4_ART_ROOT, LOT5_ART_ROOT]: continue
 		_append_collection(manifest_path, art_root, ids, true)
 	assets.sort_custom(func(a: Dictionary, b: Dictionary): return str(a.get("name", a.id)).naturalnocasecmp_to(str(b.get("name", b.id))) < 0)
 	_refresh_filters()

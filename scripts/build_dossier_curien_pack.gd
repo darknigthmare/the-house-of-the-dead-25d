@@ -17,7 +17,8 @@ const GALLERY_PATHS := [
 	"res://data/assets/dossier_curien_gallery_2026-11-20.json",
 	"res://data/assets/dossier_curien_gallery_2026-11-20_lot2.json",
 	"res://data/assets/dossier_curien_gallery_2026-11-20_lot3.json",
-	"res://data/assets/dossier_curien_gallery_2026-11-20_lot4.json"
+	"res://data/assets/dossier_curien_gallery_2026-11-20_lot4.json",
+	"res://data/assets/dossier_curien_gallery_2026-11-20_lot5.json"
 ]
 const ASSET_PREFIX := "res://assets/dossier_curien/"
 const IMPORT_PREFIX := "res://.godot/imported/"

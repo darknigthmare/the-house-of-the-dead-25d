@@ -13,11 +13,13 @@ const ART_ROOT = 'assets/dossier_curien/gallery_2026-11-20';
 const LOT2_ART_ROOT = 'assets/dossier_curien/gallery_2026-11-20_lot2';
 const LOT3_ART_ROOT = 'assets/dossier_curien/gallery_2026-11-20_lot3';
 const LOT4_ART_ROOT = 'assets/dossier_curien/gallery_2026-11-20_lot4';
+const LOT5_ART_ROOT = 'assets/dossier_curien/gallery_2026-11-20_lot5';
 const COLLECTIONS = [
   { path: 'data/assets/dossier_curien_gallery_2026-11-20.json', artRoot: ART_ROOT },
   { path: 'data/assets/dossier_curien_gallery_2026-11-20_lot2.json', artRoot: LOT2_ART_ROOT },
   { path: 'data/assets/dossier_curien_gallery_2026-11-20_lot3.json', artRoot: LOT3_ART_ROOT },
   { path: 'data/assets/dossier_curien_gallery_2026-11-20_lot4.json', artRoot: LOT4_ART_ROOT },
+  { path: 'data/assets/dossier_curien_gallery_2026-11-20_lot5.json', artRoot: LOT5_ART_ROOT },
 ];
 const CATEGORIES = new Set(['character_base', 'npc_base', 'costume_variant', 'character_form', 'boss_base', 'enemy_base', 'dialogue_portrait']);
 const GAMES = new Set(['hotd', 'hotd2', 'hotd3', 'hotd4', 'hotd4_special', 'overkill', 'scarlet_dawn', 'zombie_revenge', 'hotd_ex', 'typing', 'typing2', 'english', 'pinball']);
@@ -125,8 +127,12 @@ function selfTest() {
     Object.assign(fourth.assets[0], { id: 'fourth_gallery_form', category: 'character_form', game: 'overkill', path: LOT4_ART_ROOT + '/fourth_gallery_form.png' });
     mkdirSync(join(fixture, LOT4_ART_ROOT), { recursive: true });
     writeFileSync(join(fixture, fourth.assets[0].path), sample);
-    const batches = [{ manifest: valid, artRoot: ART_ROOT }, { manifest: later, artRoot: LOT2_ART_ROOT }, { manifest: newest, artRoot: LOT3_ART_ROOT }, { manifest: fourth, artRoot: LOT4_ART_ROOT }];
-    assert.equal(validateCollections(batches, fixture, existingIds).reduce((sum, result) => sum + result.gallery, 0), 4); cases++;
+    const fifth = structuredClone(valid);
+    Object.assign(fifth.assets[0], { id: 'fifth_gallery_costume', category: 'costume_variant', game: 'typing2', path: LOT5_ART_ROOT + '/fifth_gallery_costume.png' });
+    mkdirSync(join(fixture, LOT5_ART_ROOT), { recursive: true });
+    writeFileSync(join(fixture, fifth.assets[0].path), sample);
+    const batches = [{ manifest: valid, artRoot: ART_ROOT }, { manifest: later, artRoot: LOT2_ART_ROOT }, { manifest: newest, artRoot: LOT3_ART_ROOT }, { manifest: fourth, artRoot: LOT4_ART_ROOT }, { manifest: fifth, artRoot: LOT5_ART_ROOT }];
+    assert.equal(validateCollections(batches, fixture, existingIds).reduce((sum, result) => sum + result.gallery, 0), 5); cases++;
     const collision = structuredClone(batches);
     collision[1].manifest.assets[0].id = valid.assets[0].id;
     assert.throws(() => validateCollections(collision, fixture, existingIds), /already belongs/, 'Duplicate across successive gallery batches'); cases++;
@@ -151,6 +157,15 @@ function selfTest() {
     const fourthPlayable = structuredClone(batches);
     fourthPlayable[3].manifest.assets[0].playable = true;
     assert.throws(() => validateCollections(fourthPlayable, fixture, existingIds), /cannot add a playable/, 'A character form remains a static gallery card'); cases++;
+    const fifthCollision = structuredClone(batches);
+    fifthCollision[4].manifest.assets[0].id = fourth.assets[0].id;
+    assert.throws(() => validateCollections(fifthCollision, fixture, existingIds), /already belongs/, 'Fifth batch cannot replace an identity from the fourth batch'); cases++;
+    const fifthWrongRoot = structuredClone(batches);
+    fifthWrongRoot[4].manifest.assets[0].path = fourth.assets[0].path;
+    assert.throws(() => validateCollections(fifthWrongRoot, fixture, existingIds), /path must stay inside/, 'Fifth batch cannot borrow the fourth batch art root'); cases++;
+    const fifthPlayable = structuredClone(batches);
+    fifthPlayable[4].manifest.assets[0].playable = true;
+    assert.throws(() => validateCollections(fifthPlayable, fixture, existingIds), /cannot add a playable/, 'A later equipment study remains a static gallery card'); cases++;
     const proof = Buffer.from(JSON.stringify({ assets: valid.assets }));
     writeFileSync(join(fixture, asset.provenance), proof);
     const withReceipt = structuredClone(valid);

@@ -6,8 +6,9 @@ const STAGES := ["Cour du manoir", "Antichambre", "Laboratoire de Curien", "Quai
 	"Poste de sécurité EFI", "Métro souterrain", "Complexe déserté", "Réception de Scarecrow Mansion",
 	"Fête foraine de Bayou City", "Plateau de Loving Deads", "Rue en quarantaine",
 	"Toit de la tour Goldman", "Chambre d’incubation EFI", "Passage de la tour de l’horloge", "Ponton du bayou", "Parvis du siège Goldman", "Ruines du domaine Scarecrow", "Rue dévastée de Despair",
-	"Toit du train — Zombie Revenge", "Abattoir — Creeping Flesh", "Canal souterrain — Tower", "Colisée — Strength", "Enclos du D.B.R. — Fool", "Chambre BIO — Sun", "Terrasse de Hangedman", "Dôme de culture — Hermit"]
-const ART := ["", "", "", "venice", "efi", "subway", "special", "scarlet", "carnival", "ex", "revenge", "goldman", "reactor", "clocktower", "bayou", "worldstage", "moonstage", "citydespair", "zr_train", "creeping_flesh", "tower_canal", "strength_colosseum", "fool_enclosure", "sun_bio", "hangedman_roof", "hermit_dome"]
+	"Toit du train — Zombie Revenge", "Abattoir — Creeping Flesh", "Canal souterrain — Tower", "Colisée — Strength", "Enclos du D.B.R. — Fool", "Chambre BIO — Sun", "Terrasse de Hangedman", "Dôme de culture — Hermit",
+	"Place d’A Prelude", "Hôpital — Ballistic Trauma", "Usine chimique — Zombie Revenge"]
+const ART := ["", "", "", "venice", "efi", "subway", "special", "scarlet", "carnival", "ex", "revenge", "goldman", "reactor", "clocktower", "bayou", "worldstage", "moonstage", "citydespair", "zr_train", "creeping_flesh", "tower_canal", "strength_colosseum", "fool_enclosure", "sun_bio", "hangedman_roof", "hermit_dome", "prelude_square", "overkill_hospital", "zr_chemical_plant"]
 const STAGE_NOTES := {
 	18: "Adaptation 2D documentée du toit du train de Zombie Revenge.",
 	19: "Adaptation 2D documentée de l’abattoir de Creeping Flesh, dans Overkill.",
@@ -16,7 +17,10 @@ const STAGE_NOTES := {
 	22: "Adaptation 2D documentée de la salle de Fool au D.B.R., dans The House of the Dead III. Les autres salles et parcours ne sont pas couverts.",
 	23: "Adaptation 2D documentée de la salle de Sun à BIO, dans The House of the Dead III. Les autres salles et parcours ne sont pas couverts.",
 	24: "Adaptation 2D documentée de la terrasse de Hangedman dans The House of the Dead original de 1997. Les autres toits et parcours ne sont pas couverts.",
-	25: "Adaptation 2D documentée du dôme de culture de Hermit dans The House of the Dead original de 1997. Le tunnel de poursuite et les autres parcours ne sont pas couverts."
+	25: "Adaptation 2D documentée du dôme de culture de Hermit dans The House of the Dead original de 1997. Le tunnel de poursuite et les autres parcours ne sont pas couverts.",
+	26: "Adaptation 2D documentée de la place d’A Prelude dans The House of the Dead 2 classique. Le port exact des captures et les autres rues restent à préciser.",
+	27: "Adaptation 2D documentée d’une salle commune de l’hôpital de Ballistic Trauma dans Overkill Extended Cut sur PS3. La salle circulaire de Screamer et les autres secteurs restent distincts.",
+	28: "Adaptation 2D documentée de l’usine chimique, AREA 4 CHEMICAL PLANT dans Zombie Revenge sur Dreamcast. Les autres secteurs et sous-zones restent à couvrir."
 }
 const CASES := {
 	"curien": {"name":"The House of the Dead","place":"Manoir Curien","lead":0,"stage":0,"guests":[1,2,3],

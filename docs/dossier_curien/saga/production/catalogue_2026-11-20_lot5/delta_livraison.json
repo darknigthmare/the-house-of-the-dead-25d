@@ -1,0 +1,1222 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "timezone": "Europe/Paris",
+  "batch": "2026-11-20_lot5",
+  "baseline_commit": "6da249f2c2cc9a988e31230dae1f805e3d7e1daf",
+  "initial_inventory_commit": "59372b618882da17510351f2a5bd46226682eac4",
+  "publication_target": {
+    "branch": "feat/dossier-curien-lot5",
+    "base": "main",
+    "previous_pull_request": "https://github.com/darknigthmare/the-house-of-the-dead-25d/pull/2",
+    "previous_pull_request_state": "merged",
+    "requires_new_continuation_pull_request": true,
+    "merge_requested": false
+  },
+  "sources": {
+    "baseline": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot5/baseline_6da249f2.json",
+    "initial_inventory": "docs/dossier_curien/saga/production/catalogue_2026-11-20/personnages_tenues.json",
+    "previous_delivery": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot4/delta_livraison.json",
+    "current_inventory": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot5/personnages_tenues.json",
+    "generation_manifests": [
+      "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot5/characters_generated.json",
+      "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot5/costumes_generated.json"
+    ],
+    "runtime_gallery": "data/assets/dossier_curien_gallery_2026-11-20_lot5.json",
+    "stages": "docs/dossier_curien/saga/production/stages_2026-11-20_lot5/manifest.json",
+    "stage_inventory": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot5/stages_manquants.json",
+    "engine_and_catalogue_validation": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot5/VALIDATION.json"
+  },
+  "summary": {
+    "baseline_task_records": 62,
+    "records_receiving_static_dossier_base_this_batch": 7,
+    "newly_covered_task_records_this_batch": 6,
+    "records_with_static_dossier_base_after_previous_batches": 36,
+    "records_with_static_dossier_base_from_five_batches": 42,
+    "records_not_covered_by_these_five_batches": 20,
+    "gallery_images_from_five_batches": 49,
+    "new_character_visual_bases": 2,
+    "new_human_identity_bases": 1,
+    "new_creature_form_bases": 1,
+    "new_identities_represented_in_gallery": 2,
+    "new_boss_visual_bases": 1,
+    "new_boss_encounters_represented": 1,
+    "new_edition_costume_visual_bases": 8,
+    "explicit_reference_qa_open_this_batch": 5,
+    "explicit_reference_qa_open_among_five_batches_only": 14,
+    "new_playable_profiles": 0,
+    "new_selectable_costumes": 0,
+    "complete_animations_added": 0,
+    "named_motion_gaps_before": 277,
+    "named_motion_gaps_after": 277,
+    "historical_masters_unrecovered_before": 204,
+    "historical_masters_unrecovered_after": 204,
+    "playable_fighters_before": 24,
+    "playable_fighters_after": 24,
+    "story_routes_before": 26,
+    "story_routes_after": 26,
+    "archive_challenges_before": 29,
+    "archive_challenges_after": 29,
+    "selectable_alternate_costumes_before": 2,
+    "selectable_alternate_costumes_after": 2,
+    "gallery_cards_before": 78,
+    "gallery_cards_after_source_integration": 89,
+    "arena_records_before": 26,
+    "arena_records_after_source_integration": 29,
+    "new_gallery_pngs": 11,
+    "new_stage_pngs": 9,
+    "new_png_total": 20,
+    "new_gallery_png_bytes": 16483233,
+    "new_stage_png_bytes": 10094760,
+    "new_png_bytes": 26577993,
+    "imagegen_calls": 21,
+    "rejected_generation_outputs": 1,
+    "blocked_generations_without_output": 0,
+    "dossier_png_paths_before": 394,
+    "dossier_png_paths_after": 414,
+    "dossier_unique_git_blobs_before": 392,
+    "dossier_unique_git_blobs_after": 412,
+    "stage_catalogue_rows": 63,
+    "new_stage_inventory_rows": [
+      "zr_edward_street",
+      "zr_cassandra"
+    ],
+    "stage_catalogue_by_status": {
+      "existant": 22,
+      "adaptation_partielle": 8,
+      "absent": 26,
+      "reference_requise": 7
+    },
+    "main_boss_encounter_status_counts": {
+      "playable_identity_base_edition_review_required": 14,
+      "static_gallery_base_delivered": 16,
+      "gallery_under_other_edition_label": 4,
+      "dedicated_art_not_delivered": 1
+    }
+  },
+  "counting_rule": "Une ligne est une tâche graphique, une forme, une rencontre ou une famille, pas une personne unique. Onze images touchent sept tâches dont six nouvellement couvertes ; Hangedman avait déjà une base HOTD1. Six variantes Zombie Revenge correspondent à trois familles ; Lisa/G Typing2 à une seule famille. Couvert signifie au moins une base, pas famille terminée.",
+  "deliveries": [
+    {
+      "inventory_task_id": "dan_taylor",
+      "asset_id": "dan_taylor",
+      "name": "Dan — prologue de HOTD III",
+      "delivery_kind": "static_character_base",
+      "edition_scope": "hotd3",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot5/characters/dan_hotd3_base.png",
+      "sha256": "578c77f0b721014c7e20ea042414f87fb60ed3b9c898c82dfeeb92185a57ddce",
+      "bytes": 924732,
+      "git_blob": "172bbef0e94f545bcca7ec31b73b7bcb0697a892",
+      "source_manifest": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot5/characters_generated.json",
+      "base_art_delivered": true,
+      "source_manifest_status": "static_reference_reviewed",
+      "canonical_reference_qa_complete_claim": false,
+      "playable_added": false,
+      "selectable_costume_added": false,
+      "animation_complete": false,
+      "exact_limitations": [
+        "Base statique de galerie/bestiaire : aucun profil jouable, costume sélectionnable ni animation complète ajouté.",
+        "Adaptation peinte en 2D des références inspectées ; aucune équivalence canonique 1:1 certifiée.",
+        "PNG natif conservé octet pour octet : aucun détourage logiciel, nettoyage, recadrage, redimensionnement ou réencodage après image_gen.",
+        "Patronyme Taylor non confirmé par une source primaire directement consultée ; nom de galerie limité à Dan.",
+        "Détails sous les sous-titres, sangle de holster, semelles, petites poches et forme exacte de l’arme restent adaptés. Port HOTD III de la capture réhébergée non certifié."
+      ],
+      "source_notes": [
+        "Le personnage retenu est le commando à droite de Rogan, corroboré par les deux portraits : casquette beige, cheveux clairs, visage sans lunettes, radio et gilet noir. Dan est distinct de Daniel Curien et de Scott.",
+        "Le nom affiché reste Dan — prologue de HOTD III. dan_taylor est l’identifiant historique de tâche ; aucune source primaire consultée ne suffit à certifier le patronyme Taylor.",
+        "La silhouette complète est visible dans la capture, avec les genouillères et le holster. Pose et éclairage sont adaptés ; les petites parties des bottes masquées par les sous-titres restent simples."
+      ],
+      "remaining_work": [
+        "Réserves de référence, d’édition et de mécanique détaillées dans le reçu.",
+        "Poses, transitions et comportements de combat encore à produire.",
+        "Familles Typing2, Yukio et variantes Zombie Revenge restent partielles."
+      ]
+    },
+    {
+      "inventory_task_id": "typing2_player_equipment",
+      "asset_id": "lisa_typing2",
+      "name": "Lisa Rogan — équipement Typing 2",
+      "delivery_kind": "static_costume_variant_base",
+      "edition_scope": "typing2",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot5/characters/lisa_typing2_base.png",
+      "sha256": "d753669a6d62ee6e036967b1a6b8545f5ca7d5029ef57eb5660adf99d2355e39",
+      "bytes": 1762035,
+      "git_blob": "78152a967b50383a85b1f0d15a9e035eb763c0bd",
+      "source_manifest": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot5/characters_generated.json",
+      "base_art_delivered": true,
+      "source_manifest_status": "static_needs_visual_reference_qa",
+      "canonical_reference_qa_complete_claim": false,
+      "playable_added": false,
+      "selectable_costume_added": false,
+      "animation_complete": false,
+      "exact_limitations": [
+        "Base statique de galerie/bestiaire : aucun profil jouable, costume sélectionnable ni animation complète ajouté.",
+        "Adaptation peinte en 2D des références inspectées ; aucune équivalence canonique 1:1 certifiée.",
+        "PNG natif conservé octet pour octet : aucun détourage logiciel, nettoyage, recadrage, redimensionnement ou réencodage après image_gen.",
+        "Réserve visuelle ouverte : capture Typing 2 entière de Lisa avec détails du pantalon, du dos et des bottes encore manquante ; silhouette inférieure recoupée seulement avec HOTD III.",
+        "Volume du boîtier, petits évents, fixation de la pile, nombre exact de touches et angle du clavier-fusil adaptés pour la lisibilité. La prise de vue arrière rend les poches de pantalon interprétées.",
+        "La tâche de groupe typing2_player_equipment reste partielle : Daniel non généré, identité et matériel propre encore à documenter."
+      ],
+      "source_notes": [
+        "Les captures avant/arrière sont directement attribuées à Typing 2 PC : tenue orange de Lisa, console grise et pile jaune/noire, clavier-fusil noir tenu à deux mains.",
+        "Le rendu HOTD III entier apporte uniquement la base du pantalon et des bottes. La vue arrière trois-quarts et les détails fins de sangles, touches et semelles restent une reconstruction peinte.",
+        "Aucun matériel déduit de Typing 1 ; Daniel n’est ni généré ni couvert par ces deux variantes."
+      ],
+      "remaining_work": [
+        "Réserves de référence, d’édition et de mécanique détaillées dans le reçu.",
+        "Poses, transitions et comportements de combat encore à produire.",
+        "Familles Typing2, Yukio et variantes Zombie Revenge restent partielles."
+      ]
+    },
+    {
+      "inventory_task_id": "typing2_player_equipment",
+      "asset_id": "g_typing2",
+      "name": "Agent G — équipement Typing 2",
+      "delivery_kind": "static_costume_variant_base",
+      "edition_scope": "typing2",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot5/characters/g_typing2_base.png",
+      "sha256": "484e4e34d0f3a98d4eaf9fea21e36cc4ef428a8e823f61d9d866f5a3d6900311",
+      "bytes": 1852870,
+      "git_blob": "3d1d69caf3de9dc68105061e9e84f20b88c88d06",
+      "source_manifest": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot5/characters_generated.json",
+      "base_art_delivered": true,
+      "source_manifest_status": "static_needs_visual_reference_qa",
+      "canonical_reference_qa_complete_claim": false,
+      "playable_added": false,
+      "selectable_costume_added": false,
+      "animation_complete": false,
+      "exact_limitations": [
+        "Base statique de galerie/bestiaire : aucun profil jouable, costume sélectionnable ni animation complète ajouté.",
+        "Adaptation peinte en 2D des références inspectées ; aucune équivalence canonique 1:1 certifiée.",
+        "PNG natif conservé octet pour octet : aucun détourage logiciel, nettoyage, recadrage, redimensionnement ou réencodage après image_gen.",
+        "Réserve visuelle ouverte : capture Typing 2 entière de G avec chaussures détaillées manquante ; bas du costume recoupé avec un rendu HOTD III.",
+        "Géométrie du clavier-fusil, sangles et attache de batterie simplifiées ; aucune exactitude touche par touche ou échelle technique revendiquée.",
+        "La tâche typing2_player_equipment reste partielle : aucune variante Daniel produite."
+      ],
+      "source_notes": [
+        "Les captures avant/arrière de Typing 2 attestent G âgé, chemise bleue, gilet clair, console dorsale grise à pile et clavier-fusil noir.",
+        "Le rendu HOTD III en entier est limité à la silhouette du costume sous-jacent. La géométrie de chaque touche et de l’attache dorsale n’est pas un relevé technique.",
+        "Le personnage conserve le filtre Typing 2 et n’est pas fusionné avec les variantes d’équipement du premier Typing."
+      ],
+      "remaining_work": [
+        "Réserves de référence, d’édition et de mécanique détaillées dans le reçu.",
+        "Poses, transitions et comportements de combat encore à produire.",
+        "Familles Typing2, Yukio et variantes Zombie Revenge restent partielles."
+      ]
+    },
+    {
+      "inventory_task_id": "hangedman",
+      "asset_id": "hangedman_scarlet_dawn",
+      "name": "Hangedman — Scarlet Dawn",
+      "delivery_kind": "boss_static_base",
+      "edition_scope": "scarlet_dawn",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot5/bosses/hangedman_scarlet_dawn_base.png",
+      "sha256": "bfe00376bd3115de1553731a82277a4e1f77fa1110b65e43ae529a774d5d5aab",
+      "bytes": 1964937,
+      "git_blob": "1486b0efa658d4854427e3025070c50d032ad001",
+      "source_manifest": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot5/characters_generated.json",
+      "base_art_delivered": true,
+      "source_manifest_status": "static_reference_reviewed",
+      "canonical_reference_qa_complete_claim": false,
+      "playable_added": false,
+      "selectable_costume_added": false,
+      "animation_complete": false,
+      "exact_limitations": [
+        "Base statique de galerie/bestiaire : aucun profil jouable, costume sélectionnable ni animation complète ajouté.",
+        "Adaptation peinte en 2D des références inspectées ; aucune équivalence canonique 1:1 certifiée.",
+        "PNG natif conservé octet pour octet : aucun détourage logiciel, nettoyage, recadrage, redimensionnement ou réencodage après image_gen.",
+        "Rendu entier réhébergé, origine éditeur exacte non vérifiée ; ne pas l’attribuer directement à SEGA.",
+        "Orientation des ailes, trous de membrane, grain de fourrure/peau et petits doigts adaptés ; réserves de provenance conservées malgré silhouette recoupée.",
+        "La rencontre Scarlet Dawn était distincte du modèle original déjà présent ; ce dessin ne crée pas une nouvelle tâche dans les 62 cibles de production."
+      ],
+      "source_notes": [
+        "Le rendu montre en entier la refonte Scarlet Dawn : tête courte de chauve-souris, oreilles latérales, yeux rouges, corps organique gris sombre, queue mince et très grandes ailes lacérées.",
+        "La capture réelle du jeu recoupe le modèle et la rencontre mais présente de forts reflets ; le rendu réhébergé apporte les détails. Sa publication éditeur d’origine n’a pas été récupérée.",
+        "Pose flottante et membrane des ailes adaptées en 2D. Le long bec, l’armure, les bandes et les harnais de l’ancienne apparence ne sont pas repris."
+      ],
+      "remaining_work": [
+        "Réserves de référence, d’édition et de mécanique détaillées dans le reçu.",
+        "Poses, transitions et comportements de combat encore à produire.",
+        "Familles Typing2, Yukio et variantes Zombie Revenge restent partielles."
+      ]
+    },
+    {
+      "inventory_task_id": "yukio",
+      "asset_id": "yukio_creature",
+      "name": "Yukio — forme de créature (HOTD III)",
+      "delivery_kind": "static_character_form_base",
+      "edition_scope": "hotd3",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot5/characters/yukio_creature_base.png",
+      "sha256": "044fed6323a2aeba89ec5674f07b724ae94b257f235eaa6df318659c68a813cd",
+      "bytes": 1328127,
+      "git_blob": "285468933791facac32d802e70c96407699ae590",
+      "source_manifest": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot5/characters_generated.json",
+      "base_art_delivered": true,
+      "source_manifest_status": "static_reference_reviewed",
+      "canonical_reference_qa_complete_claim": false,
+      "playable_added": false,
+      "selectable_costume_added": false,
+      "animation_complete": false,
+      "exact_limitations": [
+        "Base statique de galerie/bestiaire : aucun profil jouable, costume sélectionnable ni animation complète ajouté.",
+        "Adaptation peinte en 2D des références inspectées ; aucune équivalence canonique 1:1 certifiée.",
+        "PNG natif conservé octet pour octet : aucun détourage logiciel, nettoyage, recadrage, redimensionnement ou réencodage après image_gen.",
+        "Adaptation volontairement non graphique : blessures ouvertes remplacées par tissu et marques de surface ; différence visuelle documentée.",
+        "Tenue humaine non produite et non déduite de la tenue mutilée. La tâche yukio reste partielle.",
+        "Extraction du rendu et port exact non établis ; asymétrie des déchirures, manches et protection du genou conservée dans son principe, pas point par point."
+      ],
+      "source_notes": [
+        "L’apparence du rendu entier est recoupée avec une capture nommée Yukio dans le guide : petites lunettes sombres, casquette, uniforme beige déchiré, gilet et radio noirs, deux couteaux.",
+        "L’image retenue remplace volontairement les blessures graphiques du modèle par du tissu fermé, des déchirures et une coloration sombre. Cette simplification déclarée interdit de la présenter comme une reproduction anatomique 1:1.",
+        "Seule la forme de créature est couverte. L’apparence humaine intacte, le prologue et les transitions restent à documenter ; le surnom de fan Casey n’est pas utilisé."
+      ],
+      "remaining_work": [
+        "Réserves de référence, d’édition et de mécanique détaillées dans le reçu.",
+        "Poses, transitions et comportements de combat encore à produire.",
+        "Familles Typing2, Yukio et variantes Zombie Revenge restent partielles."
+      ]
+    },
+    {
+      "inventory_task_id": "stick_alts",
+      "asset_id": "stick_zr_alt_suit",
+      "name": "Stick Breitling — costume sombre alternatif",
+      "delivery_kind": "static_costume_variant_base",
+      "edition_scope": "zombie_revenge",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot5/costumes/stick_zr_alt_suit_base.png",
+      "sha256": "3a8a663581f36ba7dc23ada03457add637913ec28da0b9cca49d622743820364",
+      "bytes": 1618188,
+      "git_blob": "90bd8471d5065e59c173f8c1170d8445b5809402",
+      "source_manifest": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot5/costumes_generated.json",
+      "base_art_delivered": true,
+      "source_manifest_status": "static_reference_reviewed",
+      "canonical_reference_qa_complete_claim": false,
+      "playable_added": false,
+      "selectable_costume_added": false,
+      "animation_complete": false,
+      "exact_limitations": [
+        "Galerie statique uniquement : aucun personnage jouable, costume sélectionnable, statistique, attaque ou animation complète ajouté.",
+        "Adaptation peinte 2D contrôlée sur les éléments visibles ; aucune certification de fidélité 1:1 aux modèles originaux.",
+        "PNG natif RGBA conservé octet pour octet ; aucun détourage, nettoyage, recadrage, redimensionnement ou réencodage du résultat généré.",
+        "La famille de tenues reste partiellement couverte ; deux images livrées ne prouvent pas un inventaire exhaustif de toutes les variantes.",
+        "Le port précis du rendu source et ses textures originales ne sont pas certifiés ; motifs fins, gants et accessoires restent une interprétation peinte.",
+        "Aucune autre tenue, palette ou variante régionale de Stick n’est déclarée couverte."
+      ],
+      "source_notes": [
+        "Rendu entier : coiffure blonde tirée en arrière, costume sombre violacé, chemise bleu clair ouverte, petit emblème de crâne, gants bordeaux, décorations métalliques et deux pistolets argentés.",
+        "La posture debout trois-quarts et le modelé des tissus sont adaptés en peinture 2D."
+      ],
+      "remaining_work": [
+        "Réserves de référence, d’édition et de mécanique détaillées dans le reçu.",
+        "Poses, transitions et comportements de combat encore à produire.",
+        "Familles Typing2, Yukio et variantes Zombie Revenge restent partielles."
+      ]
+    },
+    {
+      "inventory_task_id": "stick_alts",
+      "asset_id": "stick_zr_alt_armor",
+      "name": "Stick Breitling — apparence en armure rouge",
+      "delivery_kind": "static_costume_variant_base",
+      "edition_scope": "zombie_revenge",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot5/costumes/stick_zr_alt_armor_base.png",
+      "sha256": "10bbfa53a49faaeb406c498133e97915052785e55ebb61dcbeebe9325689838e",
+      "bytes": 976355,
+      "git_blob": "aba27bd208b987ef1aa873781cc06563e377234a",
+      "source_manifest": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot5/costumes_generated.json",
+      "base_art_delivered": true,
+      "source_manifest_status": "static_reference_reviewed",
+      "canonical_reference_qa_complete_claim": false,
+      "playable_added": false,
+      "selectable_costume_added": false,
+      "animation_complete": false,
+      "exact_limitations": [
+        "Galerie statique uniquement : aucun personnage jouable, costume sélectionnable, statistique, attaque ou animation complète ajouté.",
+        "Adaptation peinte 2D contrôlée sur les éléments visibles ; aucune certification de fidélité 1:1 aux modèles originaux.",
+        "PNG natif RGBA conservé octet pour octet ; aucun détourage, nettoyage, recadrage, redimensionnement ou réencodage du résultat généré.",
+        "La famille de tenues reste partiellement couverte ; deux images livrées ne prouvent pas un inventaire exhaustif de toutes les variantes.",
+        "Réserve documentaire : association exacte entre modèle rouge, sélection de troisième tenue et éventuel bonus temporaire à vérifier sur capture de menu et de jeu.",
+        "La lame verte et la posture sont reproduites comme éléments du rendu, sans implémentation de transformation, arme ou pouvoir."
+      ],
+      "source_notes": [
+        "Rendu entier : casque rouge anguleux, épaulières et plaques rouges sur combinaison noire côtelée, bordure claire à la taille, bottes rouges et lame verte.",
+        "Le modèle est retenu comme apparence visuelle. Le bonus ARMOR temporaire décrit dans le guide et le troisième costume décrit sur le wiki ne sont pas assimilés sans preuve supplémentaire."
+      ],
+      "remaining_work": [
+        "Réserves de référence, d’édition et de mécanique détaillées dans le reçu.",
+        "Poses, transitions et comportements de combat encore à produire.",
+        "Familles Typing2, Yukio et variantes Zombie Revenge restent partielles."
+      ]
+    },
+    {
+      "inventory_task_id": "rikiya_alts",
+      "asset_id": "rikiya_zr_alt_suit",
+      "name": "Rikiya Busujima — costume bleu et chapeau",
+      "delivery_kind": "static_costume_variant_base",
+      "edition_scope": "zombie_revenge",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot5/costumes/rikiya_zr_alt_suit_base.png",
+      "sha256": "ffa985e1cca141dec576a5435e4e0e52cb5be61611c4ea4a612f8a54de24bdb2",
+      "bytes": 1484727,
+      "git_blob": "5c634c5a0ac46f6aaa4fddb5769f14eea5376856",
+      "source_manifest": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot5/costumes_generated.json",
+      "base_art_delivered": true,
+      "source_manifest_status": "static_reference_reviewed",
+      "canonical_reference_qa_complete_claim": false,
+      "playable_added": false,
+      "selectable_costume_added": false,
+      "animation_complete": false,
+      "exact_limitations": [
+        "Galerie statique uniquement : aucun personnage jouable, costume sélectionnable, statistique, attaque ou animation complète ajouté.",
+        "Adaptation peinte 2D contrôlée sur les éléments visibles ; aucune certification de fidélité 1:1 aux modèles originaux.",
+        "PNG natif RGBA conservé octet pour octet ; aucun détourage, nettoyage, recadrage, redimensionnement ou réencodage du résultat généré.",
+        "La famille de tenues reste partiellement couverte ; deux images livrées ne prouvent pas un inventaire exhaustif de toutes les variantes.",
+        "Les détails de plume, visage, doigts et arme sont adaptés ; aucun nom de costume tiré d’une œuvre tierce n’est ajouté.",
+        "Le premier PNG rejeté n’est pas livré dans le dépôt ; son empreinte et son utilisation comme entrée de correction figurent dans le reçu."
+      ],
+      "source_notes": [
+        "Rendu entier : fedora bleu-gris à plume brune, cheveux noirs, costume bleu-gris, chemise noire, cravate et pochette rouges, revers olive, chaussures sombres et pistolet à canon long.",
+        "Le premier dessin coupait une chaussure ; une édition imagegen a réduit et recentré le personnage en préservant pose et tenue. Le PNG livré est la seconde sortie native."
+      ],
+      "remaining_work": [
+        "Réserves de référence, d’édition et de mécanique détaillées dans le reçu.",
+        "Poses, transitions et comportements de combat encore à produire.",
+        "Familles Typing2, Yukio et variantes Zombie Revenge restent partielles."
+      ]
+    },
+    {
+      "inventory_task_id": "linda_alts",
+      "asset_id": "linda_zr_alt_qipao",
+      "name": "Linda Rotta — robe blanche fleurie",
+      "delivery_kind": "static_costume_variant_base",
+      "edition_scope": "zombie_revenge",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot5/costumes/linda_zr_alt_qipao_base.png",
+      "sha256": "1cdbd2f38eeca2fcbe6dd2d6a82563b408f49c981af09a10cb6bb46bb9594a09",
+      "bytes": 1571425,
+      "git_blob": "3d877f22b198b76f5b684d2f3ff5b9b79e3be181",
+      "source_manifest": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot5/costumes_generated.json",
+      "base_art_delivered": true,
+      "source_manifest_status": "static_needs_visual_reference_qa",
+      "canonical_reference_qa_complete_claim": false,
+      "playable_added": false,
+      "selectable_costume_added": false,
+      "animation_complete": false,
+      "exact_limitations": [
+        "Galerie statique uniquement : aucun personnage jouable, costume sélectionnable, statistique, attaque ou animation complète ajouté.",
+        "Adaptation peinte 2D contrôlée sur les éléments visibles ; aucune certification de fidélité 1:1 aux modèles originaux.",
+        "PNG natif RGBA conservé octet pour octet ; aucun détourage, nettoyage, recadrage, redimensionnement ou réencodage du résultat généré.",
+        "La famille de tenues reste partiellement couverte ; deux images livrées ne prouvent pas un inventaire exhaustif de toutes les variantes.",
+        "QA visuelle ouverte : jambes sous le recadrage, chaussures, semelles et proportions exactes de la tenue en jeu non attestées suffisamment. Les chaussures produites sont interprétées, non certifiées canoniques.",
+        "Qipao est un identifiant de travail descriptif ; aucun nom officiel de costume n’est revendiqué."
+      ],
+      "source_notes": [
+        "Le rendu atteste le carré blond, la robe blanche sans manches à col haut, le motif floral rouge, les bordures sombres, la bande claire au bras gauche, les gants et les deux sangles brunes sur la cuisse droite.",
+        "Le rendu est coupé aux cuisses. Les petites vues de jeu servent au contexte ; elles ne résolvent pas les chaussures. Jambes et chaussures basses sombres sont une complétion sobre déclarée."
+      ],
+      "remaining_work": [
+        "Réserves de référence, d’édition et de mécanique détaillées dans le reçu.",
+        "Poses, transitions et comportements de combat encore à produire.",
+        "Familles Typing2, Yukio et variantes Zombie Revenge restent partielles."
+      ]
+    },
+    {
+      "inventory_task_id": "linda_alts",
+      "asset_id": "linda_zr_alt_leather",
+      "name": "Linda Rotta — combinaison noire, Original Mode",
+      "delivery_kind": "static_costume_variant_base",
+      "edition_scope": "zombie_revenge",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot5/costumes/linda_zr_alt_leather_base.png",
+      "sha256": "e5e4a649d6c69aa5d0b10cc323eacf3a69b53c9e7887c664561dbb0071a7bf89",
+      "bytes": 1409225,
+      "git_blob": "3cf38fac4bbb7609b808db722139a0575579beb4",
+      "source_manifest": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot5/costumes_generated.json",
+      "base_art_delivered": true,
+      "source_manifest_status": "static_needs_visual_reference_qa",
+      "canonical_reference_qa_complete_claim": false,
+      "playable_added": false,
+      "selectable_costume_added": false,
+      "animation_complete": false,
+      "exact_limitations": [
+        "Galerie statique uniquement : aucun personnage jouable, costume sélectionnable, statistique, attaque ou animation complète ajouté.",
+        "Adaptation peinte 2D contrôlée sur les éléments visibles ; aucune certification de fidélité 1:1 aux modèles originaux.",
+        "PNG natif RGBA conservé octet pour octet ; aucun détourage, nettoyage, recadrage, redimensionnement ou réencodage du résultat généré.",
+        "La famille de tenues reste partiellement couverte ; deux images livrées ne prouvent pas un inventaire exhaustif de toutes les variantes.",
+        "QA visuelle ouverte : bouts des bottes, semelles, construction précise de la ceinture et du petit pendentif restent interprétés.",
+        "Le mot DIVA est signalé au dos par le wiki ; il n’est ni visible dans cette pose ni inventé sur la poitrine."
+      ],
+      "source_notes": [
+        "Le rendu atteste carré blond, combinaison noire brillante à manches longues, ouverture en V, collier à petits éléments clairs, ceinture ornée, gants et bande claire au bras gauche.",
+        "Les bouts des bottes sont hors cadre. Les vignettes vidéo ne résolvent pas leur dessin ; les bouts et semelles sont complétés simplement. Vue de face, sans lettrage dorsal visible."
+      ],
+      "remaining_work": [
+        "Réserves de référence, d’édition et de mécanique détaillées dans le reçu.",
+        "Poses, transitions et comportements de combat encore à produire.",
+        "Familles Typing2, Yukio et variantes Zombie Revenge restent partielles."
+      ]
+    },
+    {
+      "inventory_task_id": "rikiya_alts",
+      "asset_id": "rikiya_zr_alt_leather",
+      "name": "Rikiya Busujima — tenue cuir, Original Mode",
+      "delivery_kind": "static_costume_variant_base",
+      "edition_scope": "zombie_revenge",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot5/costumes/rikiya_zr_alt_leather_base.png",
+      "sha256": "204fb7ff80df21547a888bf99f4e376ce6d707e7a40bc535595cce95f6e780b9",
+      "bytes": 1590612,
+      "git_blob": "1c7638c1f7019a186164a7feb65261b700a00ceb",
+      "source_manifest": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot5/costumes_generated.json",
+      "base_art_delivered": true,
+      "source_manifest_status": "static_needs_visual_reference_qa",
+      "canonical_reference_qa_complete_claim": false,
+      "playable_added": false,
+      "selectable_costume_added": false,
+      "animation_complete": false,
+      "exact_limitations": [
+        "Galerie statique uniquement : aucun personnage jouable, costume sélectionnable, statistique, attaque ou animation complète ajouté.",
+        "Adaptation peinte 2D contrôlée sur les éléments visibles ; aucune certification de fidélité 1:1 aux modèles originaux.",
+        "PNG natif RGBA conservé octet pour octet ; aucun détourage, nettoyage, recadrage, redimensionnement ou réencodage du résultat généré.",
+        "La famille de tenues reste partiellement couverte ; deux images livrées ne prouvent pas un inventaire exhaustif de toutes les variantes.",
+        "QA visuelle ouverte : chaussures, semelles et géométrie fine de la boucle restent non certifiées. Le rendu ne permet pas de verrouiller un lettrage exact sur la boucle ; le ZR produit reste une interprétation graphique.",
+        "Pas de tenue Project X Zone substituée à la référence Zombie Revenge ; pas de nouvelle identité."
+      ],
+      "source_notes": [
+        "Le rendu atteste cheveux noirs volumineux, lunettes sombres, foulard blanc, blouson noir à larges revers et épaules rembourrées, pantalon noir, boucle argentée et bandes cloutées aux cuisses.",
+        "Le rendu coupe les pieds. La silhouette des chaussures fermées noires est complétée sobrement ; la pose debout trois-quarts est adaptée."
+      ],
+      "remaining_work": [
+        "Réserves de référence, d’édition et de mécanique détaillées dans le reçu.",
+        "Poses, transitions et comportements de combat encore à produire.",
+        "Familles Typing2, Yukio et variantes Zombie Revenge restent partielles."
+      ]
+    }
+  ],
+  "previous_batches_inventory_task_ids": [
+    "amy",
+    "brutus",
+    "candi",
+    "clement",
+    "coco_sindy",
+    "crawler",
+    "curien",
+    "fool",
+    "g_hotd3",
+    "g_hotd4special",
+    "g_overkill",
+    "gary_typing",
+    "goldman_human",
+    "goldman_zombie",
+    "hangedman",
+    "harry",
+    "hermit",
+    "high_priestess",
+    "james_hotd4",
+    "james_typing",
+    "jasper_human",
+    "judgment",
+    "lobber",
+    "meat_katie",
+    "mother_human",
+    "nigel_sebastian",
+    "papa_caesar",
+    "rogan_hotd3",
+    "screamer",
+    "sophie",
+    "sophie_zombie",
+    "strength",
+    "sun",
+    "thornheart",
+    "tower",
+    "varla"
+  ],
+  "this_batch_inventory_task_ids": [
+    "dan_taylor",
+    "hangedman",
+    "linda_alts",
+    "rikiya_alts",
+    "stick_alts",
+    "typing2_player_equipment",
+    "yukio"
+  ],
+  "newly_covered_inventory_task_ids": [
+    "dan_taylor",
+    "linda_alts",
+    "rikiya_alts",
+    "stick_alts",
+    "typing2_player_equipment",
+    "yukio"
+  ],
+  "cumulative_covered_inventory_task_ids": [
+    "amy",
+    "brutus",
+    "candi",
+    "clement",
+    "coco_sindy",
+    "crawler",
+    "curien",
+    "dan_taylor",
+    "fool",
+    "g_hotd3",
+    "g_hotd4special",
+    "g_overkill",
+    "gary_typing",
+    "goldman_human",
+    "goldman_zombie",
+    "hangedman",
+    "harry",
+    "hermit",
+    "high_priestess",
+    "james_hotd4",
+    "james_typing",
+    "jasper_human",
+    "judgment",
+    "linda_alts",
+    "lobber",
+    "meat_katie",
+    "mother_human",
+    "nigel_sebastian",
+    "papa_caesar",
+    "rikiya_alts",
+    "rogan_hotd3",
+    "screamer",
+    "sophie",
+    "sophie_zombie",
+    "stick_alts",
+    "strength",
+    "sun",
+    "thornheart",
+    "tower",
+    "typing2_player_equipment",
+    "varla",
+    "yukio"
+  ],
+  "uncovered_inventory_task_ids_after_five_batches": [
+    "bart_picard",
+    "ex_unverified_cameos",
+    "g_saturn2",
+    "hotd2_remake_redesigns",
+    "hotd_remake_redesigns",
+    "mobile_nightmare_roster",
+    "mother",
+    "original_model_amy",
+    "original_model_bruno",
+    "original_model_civilian",
+    "original_model_g",
+    "original_model_goldman",
+    "original_model_harry",
+    "original_model_rogan",
+    "reawakened_roster",
+    "researcher_saturn",
+    "rogan_saturn2",
+    "site_doctor",
+    "sophie_saturn",
+    "typing2004_kids"
+  ],
+  "explicit_reference_qa_open_ids_this_batch": [
+    "g_typing2",
+    "linda_zr_alt_leather",
+    "linda_zr_alt_qipao",
+    "lisa_typing2",
+    "rikiya_zr_alt_leather"
+  ],
+  "explicit_reference_qa_open_ids_among_five_batches_only": [
+    "candi_stryper",
+    "clement_darling",
+    "g_typing2",
+    "jasper_human",
+    "linda_zr_alt_leather",
+    "linda_zr_alt_qipao",
+    "lisa_typing2",
+    "mother_human",
+    "papa_caesar",
+    "rikiya_zr_alt_leather",
+    "sophie_richards",
+    "sophie_zombie",
+    "thornheart",
+    "varla_guns"
+  ],
+  "known_edition_gaps_not_closed": [
+    "Hangedman Scarlet Dawn a une base dédiée dans ce lot ; poses, animation et intégration de combat restent ouvertes.",
+    "Tower : arène souterraine en eau livrée précédemment ; variante sable et retour chez Goldman encore ouverts.",
+    "Strength : parcours aux murs clairs adapté ; autres embranchements et murs sombres encore ouverts.",
+    "Typing : Lisa/G Typing2 ont deux bases à QA ouverte ; Daniel Typing2, variantes régionales, Mac/PS2 et Kids2004 ne sont pas clos.",
+    "Lovers, Empress, Temperance et Star disposent de bases sous EX ; comparaison HOTD4 encore ouverte.",
+    "Original Mode HOTD2 : les sept substitutions de modèles restent des tâches de mode, pas sept nouvelles identités.",
+    "Zombie Revenge : six variantes visuelles couvrent partiellement trois familles ; mécanique de l’armure rouge, sélection et exhaustivité non certifiées.",
+    "Yukio humain et Mother mutée restent sans base livrée ; le blocage de génération Mother du lot4 n’a pas été retenté.",
+    "Tenues Saturn Mode de Rogan/G encore manquantes."
+  ],
+  "new_pngs": [
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot5/characters/dan_hotd3_base.png",
+      "kind": "gallery",
+      "asset_id": "dan_taylor",
+      "bytes": 924732,
+      "sha256": "578c77f0b721014c7e20ea042414f87fb60ed3b9c898c82dfeeb92185a57ddce",
+      "git_blob": "172bbef0e94f545bcca7ec31b73b7bcb0697a892",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot5/characters/lisa_typing2_base.png",
+      "kind": "gallery",
+      "asset_id": "lisa_typing2",
+      "bytes": 1762035,
+      "sha256": "d753669a6d62ee6e036967b1a6b8545f5ca7d5029ef57eb5660adf99d2355e39",
+      "git_blob": "78152a967b50383a85b1f0d15a9e035eb763c0bd",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot5/characters/g_typing2_base.png",
+      "kind": "gallery",
+      "asset_id": "g_typing2",
+      "bytes": 1852870,
+      "sha256": "484e4e34d0f3a98d4eaf9fea21e36cc4ef428a8e823f61d9d866f5a3d6900311",
+      "git_blob": "3d1d69caf3de9dc68105061e9e84f20b88c88d06",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot5/bosses/hangedman_scarlet_dawn_base.png",
+      "kind": "gallery",
+      "asset_id": "hangedman_scarlet_dawn",
+      "bytes": 1964937,
+      "sha256": "bfe00376bd3115de1553731a82277a4e1f77fa1110b65e43ae529a774d5d5aab",
+      "git_blob": "1486b0efa658d4854427e3025070c50d032ad001",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot5/characters/yukio_creature_base.png",
+      "kind": "gallery",
+      "asset_id": "yukio_creature",
+      "bytes": 1328127,
+      "sha256": "044fed6323a2aeba89ec5674f07b724ae94b257f235eaa6df318659c68a813cd",
+      "git_blob": "285468933791facac32d802e70c96407699ae590",
+      "dimensions": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot5/costumes/stick_zr_alt_suit_base.png",
+      "kind": "gallery",
+      "asset_id": "stick_zr_alt_suit",
+      "bytes": 1618188,
+      "sha256": "3a8a663581f36ba7dc23ada03457add637913ec28da0b9cca49d622743820364",
+      "git_blob": "90bd8471d5065e59c173f8c1170d8445b5809402",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot5/costumes/stick_zr_alt_armor_base.png",
+      "kind": "gallery",
+      "asset_id": "stick_zr_alt_armor",
+      "bytes": 976355,
+      "sha256": "10bbfa53a49faaeb406c498133e97915052785e55ebb61dcbeebe9325689838e",
+      "git_blob": "aba27bd208b987ef1aa873781cc06563e377234a",
+      "dimensions": [
+        1090,
+        1443
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot5/costumes/rikiya_zr_alt_suit_base.png",
+      "kind": "gallery",
+      "asset_id": "rikiya_zr_alt_suit",
+      "bytes": 1484727,
+      "sha256": "ffa985e1cca141dec576a5435e4e0e52cb5be61611c4ea4a612f8a54de24bdb2",
+      "git_blob": "5c634c5a0ac46f6aaa4fddb5769f14eea5376856",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot5/costumes/linda_zr_alt_qipao_base.png",
+      "kind": "gallery",
+      "asset_id": "linda_zr_alt_qipao",
+      "bytes": 1571425,
+      "sha256": "1cdbd2f38eeca2fcbe6dd2d6a82563b408f49c981af09a10cb6bb46bb9594a09",
+      "git_blob": "3d877f22b198b76f5b684d2f3ff5b9b79e3be181",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot5/costumes/linda_zr_alt_leather_base.png",
+      "kind": "gallery",
+      "asset_id": "linda_zr_alt_leather",
+      "bytes": 1409225,
+      "sha256": "e5e4a649d6c69aa5d0b10cc323eacf3a69b53c9e7887c664561dbb0071a7bf89",
+      "git_blob": "3cf38fac4bbb7609b808db722139a0575579beb4",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot5/costumes/rikiya_zr_alt_leather_base.png",
+      "kind": "gallery",
+      "asset_id": "rikiya_zr_alt_leather",
+      "bytes": 1590612,
+      "sha256": "204fb7ff80df21547a888bf99f4e376ce6d707e7a40bc535595cce95f6e780b9",
+      "git_blob": "1c7638c1f7019a186164a7feb65261b700a00ceb",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/saga/prelude_square_back.png",
+      "kind": "stage",
+      "asset_id": "prelude_square_back",
+      "bytes": 3201924,
+      "sha256": "ae1b19b0eaf05fa4454fb552d2b180786cd608ba59d5db1daf46d754e24946f7",
+      "git_blob": "fe4527926c1ce6647d91e649c3268ff6d5e606a8",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/dossier_curien/saga/overkill_hospital_back.png",
+      "kind": "stage",
+      "asset_id": "overkill_hospital_back",
+      "bytes": 2773909,
+      "sha256": "cf682d28d2257aa7f32f31553df83df50ae2c41ace04b151d146d98b53d79af4",
+      "git_blob": "96c1ec3aec59f8d8b1f94b24370091c2a026b0ac",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/dossier_curien/saga/zr_chemical_plant_back.png",
+      "kind": "stage",
+      "asset_id": "zr_chemical_plant_back",
+      "bytes": 2885222,
+      "sha256": "ec3a86677912eb5c335b3a55391203bbfbf59349e4cf238fd510967a02c5b369",
+      "git_blob": "bff7101362bdf4f8ba90809e89ee32b68b269c77",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/dossier_curien/saga/prelude_square_mid.png",
+      "kind": "stage",
+      "asset_id": "prelude_square_mid",
+      "bytes": 342834,
+      "sha256": "027e96aaf54e763a016277029cd40d434a60de73e4cfeeedc66814e32ba415ad",
+      "git_blob": "e366a009dcb1c84337c31ee4eb2bb2da72333e3b",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/saga/prelude_square_front.png",
+      "kind": "stage",
+      "asset_id": "prelude_square_front",
+      "bytes": 87497,
+      "sha256": "09179d9f2fa9b0ef9da3ed9b2b71bd21221659f22b9745d71f0f1f2bff00a46e",
+      "git_blob": "6b826d734c61c59c86d5d0965b6d28ec2e59f42b",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/saga/overkill_hospital_mid.png",
+      "kind": "stage",
+      "asset_id": "overkill_hospital_mid",
+      "bytes": 282999,
+      "sha256": "ec00ea125826caa58b1eda574fe0e0b61c2dd1f12ea3d7a0bf13d31a060beb86",
+      "git_blob": "1314190feba70320adf26cd5a1994d174f0a5b05",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/saga/overkill_hospital_front.png",
+      "kind": "stage",
+      "asset_id": "overkill_hospital_front",
+      "bytes": 90840,
+      "sha256": "8666c7270cbe5eb9f1d51d764d7768652ac32887ba1e9b669b79e01897ff01cf",
+      "git_blob": "a0eaf7a0581ce9ca2002a5f30172d8767374ffce",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/saga/zr_chemical_plant_mid.png",
+      "kind": "stage",
+      "asset_id": "zr_chemical_plant_mid",
+      "bytes": 336310,
+      "sha256": "97098e48e4902be1f487cab9e09dd37e4d94c1f49bd82cfeb26c05e36028aba3",
+      "git_blob": "0d5d7c6c40a2338b88a6b73545daff8284176f42",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/dossier_curien/saga/zr_chemical_plant_front.png",
+      "kind": "stage",
+      "asset_id": "zr_chemical_plant_front",
+      "bytes": 93225,
+      "sha256": "c7599d911ab67f7273d6ef6e2b08bed48ad148e65da38a27d73b4d5552708305",
+      "git_blob": "dbf1f73b6924b4f7318cfed3cbf92d5c0e409b8a",
+      "dimensions": [
+        1673,
+        940
+      ],
+      "mode": "RGBA"
+    }
+  ],
+  "rejected_outputs": [
+    {
+      "source_manifest": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot5/costumes_generated.json",
+      "id": "rikiya_zr_alt_suit",
+      "attempt": 1,
+      "generated_file": "exec-c4342ce6-ff05-4658-9dc0-48313df8a570.png",
+      "source_native_output": "/workspace/scratch/da9d6e4777c1/generated_images/exec-c4342ce6-ff05-4658-9dc0-48313df8a570.png",
+      "sha256": "28c4de4ce51551e1f927931a5df6ac1eb96c2b45d0d47c900e07e599cfcfcc6b",
+      "bytes": 1754996,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        33,
+        0,
+        1010,
+        1536
+      ],
+      "visible_bbox": [
+        176,
+        4,
+        858,
+        1536
+      ],
+      "visible_alpha_threshold": 127,
+      "maximum_alpha_on_canvas_edges": 236,
+      "maximum_alpha_by_edge_top_bottom_left_right": [
+        17,
+        236,
+        0,
+        0
+      ],
+      "opaque_pixels_at_canvas_edge": [
+        0,
+        18,
+        0,
+        0
+      ],
+      "alpha_zero_pixels": 1103288,
+      "alpha_at_background_samples": {
+        "(0, 0)": 0,
+        "(512, 0)": 0,
+        "(0, 768)": 0,
+        "(1023, 768)": 0,
+        "(512, 1535)": 0,
+        "(512, 10)": 0,
+        "(100, 768)": 0
+      },
+      "binary_in_repository": false,
+      "retained": false,
+      "used_as_edit_input": true,
+      "reason": "La chaussure avant atteint le bord inférieur (alpha maximal236) ; la plume est trop proche du bord supérieur. Sortie rejetée et reprise par imagegen, sans édition de pixels locale.",
+      "prompt": "Use case: stylized-concept. Create exactly ONE complete full-body illustration for the Dossier Curien 2D game costume gallery. Native RGBA, genuinely transparent background. Subject: adult Rikiya Busujima in the SUIT AND HAT alternate costume shown in reference 1 from Zombie Revenge. Reference 1 is the exact identity and clothing reference. Reference 2 controls ONLY the hand-painted arcade character-art style: crisp careful outlines, detailed shaded cloth, realistic adult proportions, controlled highlights. Do not copy Isaac's identity, cap, brown jacket, shotgun, posture or clothing. Preserve the entire subject from hat feather through both black shoes within a tall portrait canvas with generous transparent margins on every edge. No scene, floor, shadow oval, glow background, title, text, UI, label, collage, sheet or second figure. Rikiya is a lean adult Japanese man with a long sharply angular face, pronounced cheekbones and a stern concentrated expression, medium tan skin and messy black neck-length hair visible beneath a dark slate-blue fedora. Keep the short brim, indented crown, black hatband and one small brown feather at the side of the hat. His outfit is the dark slate-blue matching suit shown in reference 1: long single-breasted jacket with plain lapels, black collared shirt, vivid red necktie and small red breast-pocket triangle, slightly loose straight/flared trousers, black simple low-heeled shoes, and muted olive cuffs. No extra badges, armor, necklaces, belt ornaments, holsters or suit patterns. Keep the standing pose close to the complete source model: gentle three-quarter front view, feet apart, anatomical right arm lowered at viewer-left with the very long-barreled silver-and-dark handgun pointed down, greenish/dark grip details as seen in the source. The anatomical left arm at viewer-right is raised loosely, with index and little finger extended, middle and ring fingers folded and thumb visible; exactly one ordinary five-finger hand with no fused or duplicate fingers. Make the handgun one coherent handheld pistol with its barrel fully visible and no attached rifle stock. Retain the recognizable hat, shaggy hair, red tie and slate-blue suit palette rather than copying his shirtless default or his black leather variant. Single static wardrobe adaptation, no new identity or animation.",
+      "replaced_by": "rikiya_zr_alt_suit"
+    }
+  ],
+  "blocked_generations": [],
+  "verification": {
+    "all_retained_image_bytes_match_generation_outputs": true,
+    "all_size_dimension_mode_and_sha_receipts_match": true,
+    "all_new_png_paths_and_blobs_are_new": true,
+    "all_baseline_png_paths_preserved": true,
+    "no_historical_png_git_diff": true,
+    "all_five_historical_runtime_manifests_preserved_byte_for_byte": true,
+    "all_62_task_ids_preserved": true,
+    "all_35_encounter_rows_preserved": true,
+    "all_eleven_runtime_gallery_objects_match_source_shards": true,
+    "source_receipt_sha256_pins_match": true,
+    "all_gallery_flags_preserve_static_non_playable_role": true,
+    "all_nine_stage_files_match_manifest": true,
+    "all_six_overlay_center_and_fight_strip_contracts_pass": true,
+    "all_twenty_outputs_independently_visually_reviewed": true,
+    "no_native_manual_game_capture_claimed": true,
+    "no_new_pack_or_web_export_created": true,
+    "validation_scope": "Asset counts and provenance checked locally; engine/catalogue results in VALIDATION.json. Remote CI and PR state checked on the exact published commit separately.",
+    "gallery_native_alpha_edge_and_canvas_samples": [
+      {
+        "asset_id": "dan_taylor",
+        "edge_max_alpha": 1,
+        "samples": [
+          [
+            125,
+            313,
+            0
+          ],
+          [
+            1128,
+            501,
+            0
+          ],
+          [
+            1128,
+            1128,
+            0
+          ]
+        ]
+      },
+      {
+        "asset_id": "lisa_typing2",
+        "edge_max_alpha": 1,
+        "samples": [
+          [
+            102,
+            384,
+            0
+          ],
+          [
+            921,
+            614,
+            0
+          ],
+          [
+            921,
+            1382,
+            0
+          ]
+        ]
+      },
+      {
+        "asset_id": "g_typing2",
+        "edge_max_alpha": 1,
+        "samples": [
+          [
+            102,
+            384,
+            0
+          ],
+          [
+            921,
+            614,
+            252
+          ],
+          [
+            921,
+            1382,
+            0
+          ]
+        ]
+      },
+      {
+        "asset_id": "hangedman_scarlet_dawn",
+        "edge_max_alpha": 0,
+        "samples": [
+          [
+            102,
+            384,
+            0
+          ],
+          [
+            921,
+            614,
+            244
+          ],
+          [
+            921,
+            1382,
+            0
+          ]
+        ]
+      },
+      {
+        "asset_id": "yukio_creature",
+        "edge_max_alpha": 1,
+        "samples": [
+          [
+            108,
+            362,
+            0
+          ],
+          [
+            977,
+            579,
+            0
+          ],
+          [
+            977,
+            1303,
+            0
+          ]
+        ]
+      },
+      {
+        "asset_id": "stick_zr_alt_suit",
+        "edge_max_alpha": 1,
+        "samples": [
+          [
+            102,
+            384,
+            0
+          ],
+          [
+            921,
+            614,
+            0
+          ],
+          [
+            921,
+            1382,
+            0
+          ]
+        ]
+      },
+      {
+        "asset_id": "stick_zr_alt_armor",
+        "edge_max_alpha": 1,
+        "samples": [
+          [
+            109,
+            360,
+            0
+          ],
+          [
+            981,
+            577,
+            0
+          ],
+          [
+            981,
+            1298,
+            0
+          ]
+        ]
+      },
+      {
+        "asset_id": "rikiya_zr_alt_suit",
+        "edge_max_alpha": 0,
+        "samples": [
+          [
+            102,
+            384,
+            0
+          ],
+          [
+            921,
+            614,
+            0
+          ],
+          [
+            921,
+            1382,
+            0
+          ]
+        ]
+      },
+      {
+        "asset_id": "linda_zr_alt_qipao",
+        "edge_max_alpha": 0,
+        "samples": [
+          [
+            102,
+            384,
+            0
+          ],
+          [
+            921,
+            614,
+            0
+          ],
+          [
+            921,
+            1382,
+            0
+          ]
+        ]
+      },
+      {
+        "asset_id": "linda_zr_alt_leather",
+        "edge_max_alpha": 0,
+        "samples": [
+          [
+            102,
+            384,
+            0
+          ],
+          [
+            921,
+            614,
+            0
+          ],
+          [
+            921,
+            1382,
+            0
+          ]
+        ]
+      },
+      {
+        "asset_id": "rikiya_zr_alt_leather",
+        "edge_max_alpha": 0,
+        "samples": [
+          [
+            102,
+            384,
+            0
+          ],
+          [
+            921,
+            614,
+            0
+          ],
+          [
+            921,
+            1382,
+            0
+          ]
+        ]
+      }
+    ],
+    "canvas_sample_note": "These normalized canvas samples may intersect the subject; they are raw alpha observations, not all background samples. Edge maxima are measured separately."
+  }
+}

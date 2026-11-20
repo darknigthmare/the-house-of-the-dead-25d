@@ -13,7 +13,8 @@ const GALLERY_COLLECTIONS := [
 	{"manifest":"res://data/assets/dossier_curien_gallery_2026-11-20.json", "art_root":"res://assets/dossier_curien/gallery_2026-11-20/"},
 	{"manifest":"res://data/assets/dossier_curien_gallery_2026-11-20_lot2.json", "art_root":"res://assets/dossier_curien/gallery_2026-11-20_lot2/"},
 	{"manifest":"res://data/assets/dossier_curien_gallery_2026-11-20_lot3.json", "art_root":"res://assets/dossier_curien/gallery_2026-11-20_lot3/"},
-	{"manifest":"res://data/assets/dossier_curien_gallery_2026-11-20_lot4.json", "art_root":"res://assets/dossier_curien/gallery_2026-11-20_lot4/"}
+	{"manifest":"res://data/assets/dossier_curien_gallery_2026-11-20_lot4.json", "art_root":"res://assets/dossier_curien/gallery_2026-11-20_lot4/"},
+	{"manifest":"res://data/assets/dossier_curien_gallery_2026-11-20_lot5.json", "art_root":"res://assets/dossier_curien/gallery_2026-11-20_lot5/"}
 ]
 const SCRIPT_ROOT := "res://src/dossier_curien/"
 const REQUIRED_SCRIPTS := [
@@ -151,7 +152,7 @@ func _game_contract(scripts: Dictionary) -> int:
 	_check(profiles.size() == 24, "Mounted code contains the 24 combat profiles")
 	_check(cases.has("curien") and manor_routes.size() == 4, "The manor Chronicle has four routes and is counted once")
 	_check(story_count == 26, "Mounted code has 26 routes: manor + other Chronicles + alternates")
-	_check(stages.size() == 26, "Mounted code contains 26 arenas")
+	_check(stages.size() == 29, "Mounted code contains 29 arenas")
 	for prefix in ["zr_train", "creeping_flesh", "tower_canal", "strength_colosseum", "fool_enclosure", "sun_bio", "hangedman_roof", "hermit_dome"]:
 		for plane in ["back", "mid", "front"]:
 			var path := "res://assets/dossier_curien/saga/%s_%s.png" % [prefix, plane]

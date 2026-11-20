@@ -1,0 +1,306 @@
+{
+  "date": "2026-11-20",
+  "scope": "LOT5 personnages et Hangedman SD",
+  "sources": [
+    {
+      "id": "typing2_front",
+      "title": "Lisa et G — cinématique de Typing 2, vue avant",
+      "url": "https://www.myabandonware.com/media/screenshots/t/the-typing-of-the-dead-2-1hej/the-typing-of-the-dead-2_4.png",
+      "kind": "community_gameplay_capture",
+      "local_paths": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/typing2_lisa_g_front.png"
+      ],
+      "accessed_on": "2026-11-20",
+      "note": "Capture 800×600 attribuée au jeu PC The Typing of the Dead 2 par sa galerie. Visages, tenues et claviers-fusils noirs tenus dans les mains visibles ; bas des jambes hors cadre. Pixels du jeu, hébergement communautaire ; pas publication SEGA récupérée directement.",
+      "local_files": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/typing2_lisa_g_front.png",
+          "sha256": "28874ea5ecf79882908a8a5aa478fa093e232b9cf35e017971510d6cbc81a2e1",
+          "bytes": 163429,
+          "dimensions": [
+            800,
+            600
+          ],
+          "mode": "P",
+          "format": "PNG"
+        }
+      ],
+      "identification_url": "https://www.myabandonware.com/game/the-typing-of-the-dead-2-z9f"
+    },
+    {
+      "id": "typing2_back",
+      "title": "Lisa et G — consoles dorsales et batteries, Typing 2",
+      "url": "https://www.myabandonware.com/media/screenshots/t/the-typing-of-the-dead-2-1hej/the-typing-of-the-dead-2_3.png",
+      "kind": "community_gameplay_capture",
+      "local_paths": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/typing2_lisa_g_back.png"
+      ],
+      "accessed_on": "2026-11-20",
+      "note": "Capture complémentaire du véhicule : boîtier gris à couvercle circulaire, sangles et grosse pile cylindrique jaune/noire bien visibles. Preuve propre à Typing 2 ; aucune transposition du matériel de Typing 1.",
+      "local_files": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/typing2_lisa_g_back.png",
+          "sha256": "79391d246790fdf9cb17b304012340f73088d0106c11194d49be475f4c26c66e",
+          "bytes": 109793,
+          "dimensions": [
+            800,
+            600
+          ],
+          "mode": "P",
+          "format": "PNG"
+        }
+      ],
+      "identification_url": "https://www.myabandonware.com/game/the-typing-of-the-dead-2-z9f"
+    },
+    {
+      "id": "typing2_review_small",
+      "title": "Typing 2 — petite capture de cinématique dans Game Watch",
+      "url": "https://game.watch.impress.co.jp/docs/20080321/td03.gif",
+      "kind": "gameplay_capture_hosted_by_review",
+      "local_paths": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/typing2_review_03.gif"
+      ],
+      "accessed_on": "2026-11-20",
+      "note": "Capture à faible définition : Lisa entière en arrière-plan et console dorsale de G au premier plan. Consultée comme corroboration, non fournie à image_gen ; détail des chaussures trop réduit pour relever la géométrie exacte.",
+      "local_files": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/typing2_review_03.gif",
+          "sha256": "811076ba58a60b8930e48ef55250ba7684d6fe61d7b31a995d009eaaafb3bb58",
+          "bytes": 12677,
+          "dimensions": [
+            160,
+            120
+          ],
+          "mode": "P",
+          "format": "GIF"
+        }
+      ],
+      "identification_url": "https://game.watch.impress.co.jp/docs/20080321/zonbida2.htm"
+    },
+    {
+      "id": "hotd3_g_lisa_bust",
+      "title": "G et Lisa — rendu promotionnel HOTD III, buste",
+      "url": "https://www.imfdb.org/images/9/9e/HodIII_GandLisa.jpg",
+      "kind": "promotional_render_rehosted",
+      "local_paths": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/hotd3_g_lisa_art.jpg"
+      ],
+      "accessed_on": "2026-11-20",
+      "note": "Référence héritée du lot initial, réinspectée et copiée sans conversion. Couleurs et visages de la tenue HOTD III ; aucune preuve du matériel de Typing 2. Non fournie à image_gen dans ce lot. La publication éditeur d’origine n’a pas été récupérée.",
+      "local_files": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/hotd3_g_lisa_art.jpg",
+          "sha256": "4bbd140e8c07d205432f74064d27f553077984b031203b1b86e685043d67b684",
+          "bytes": 70805,
+          "dimensions": [
+            859,
+            960
+          ],
+          "mode": "RGB",
+          "format": "JPEG"
+        }
+      ],
+      "identification_url": "https://www.imfdb.org/wiki/The_House_of_the_Dead_III"
+    },
+    {
+      "id": "hotd3_g_lisa_full",
+      "title": "G et Lisa — tenue HOTD III en entier",
+      "url": "https://www.imfdb.org/images/3/37/HodIII_GandLisa_2.jpg",
+      "kind": "promotional_render_rehosted",
+      "local_paths": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/hotd3_g_lisa_art2.jpg"
+      ],
+      "accessed_on": "2026-11-20",
+      "note": "Rendu réhébergé déjà archivé, réinspecté : pantalons et chaussures des deux personnages. Utilisé seulement pour le costume sous-jacent ; les armes ordinaires, Death et le décor ne sont pas transposés. L’équivalence fine des chaussures et du dos entre HOTD III et Typing 2 reste une réserve.",
+      "local_files": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/hotd3_g_lisa_art2.jpg",
+          "sha256": "299a0d5df7e92b0d1d1d9614cee2b4b6755c6354dca242911cdfa51f970a474f",
+          "bytes": 42837,
+          "dimensions": [
+            688,
+            960
+          ],
+          "mode": "RGB",
+          "format": "JPEG"
+        }
+      ],
+      "identification_url": "https://www.imfdb.org/wiki/The_House_of_the_Dead_III"
+    },
+    {
+      "id": "dan_prologue_full",
+      "title": "Dan à droite de Rogan — prologue HOTD III",
+      "url": "https://www.imfdb.org/images/6/60/HodIII_DanandRogan.jpg",
+      "kind": "community_gameplay_capture_rehosted",
+      "local_paths": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/hotd3_dan_rogan.jpg"
+      ],
+      "accessed_on": "2026-11-20",
+      "note": "Capture 1280×960 déjà archivée : Rogan à gauche, Dan en uniforme clair à droite. Dan visible de la casquette aux bottes, gilet noir, radio, holster de cuisse, genouillères et arme basse. Sous-titres recouvrant une petite partie des bottes ; éclairage vert de scène neutralisé dans le dessin. Capture ne prouvant pas le patronyme Taylor.",
+      "local_files": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/hotd3_dan_rogan.jpg",
+          "sha256": "b4464925c0206115e642c7bbcd787f3f4607a60a7ea46fc2c0625e952f36cff2",
+          "bytes": 201641,
+          "dimensions": [
+            1280,
+            960
+          ],
+          "mode": "RGB",
+          "format": "JPEG"
+        }
+      ],
+      "identification_url": "https://www.imfdb.org/wiki/The_House_of_the_Dead_III"
+    },
+    {
+      "id": "dan_portrait",
+      "title": "Dan — portrait réhébergé",
+      "url": "https://static.wikia.nocookie.net/houseofthedead/images/5/52/Dan-Taylor.jpg",
+      "kind": "character_art_rehosted_origin_not_verified",
+      "local_paths": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/dan_rehosted_portrait.webp"
+      ],
+      "accessed_on": "2026-11-20",
+      "note": "Fichier cité dans la galerie du wiki comme art du personnage ; reçu en WebP malgré son URL .jpg. Buste et visage seulement. Le nom de fichier et l’article communautaire n’établissent pas à eux seuls le patronyme comme preuve primaire ; le libellé galerie reste Dan.",
+      "local_files": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/dan_rehosted_portrait.webp",
+          "sha256": "37269e32c1e346501eb3d734307ba8f9947ea3630a7a65f973c83505f8d1c44a",
+          "bytes": 15628,
+          "dimensions": [
+            346,
+            403
+          ],
+          "mode": "RGB",
+          "format": "WEBP"
+        }
+      ],
+      "identification_url": "https://thehouseofthedead.fandom.com/wiki/Dan_Taylor"
+    },
+    {
+      "id": "dan_game_portrait",
+      "title": "Dan — petit portrait HOTD III",
+      "url": "https://static.wikia.nocookie.net/houseofthedead/images/f/fc/DanFaceHODIII.png",
+      "kind": "game_portrait_rehosted",
+      "local_paths": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/dan_game_portrait.webp"
+      ],
+      "accessed_on": "2026-11-20",
+      "note": "Portrait 100×88 corroborant visage sans lunettes et casquette beige ; WebP reçu sous une URL .png. Aucun détail de corps ajouté par cette petite image.",
+      "local_files": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/dan_game_portrait.webp",
+          "sha256": "7881177c3e8390609b382c1ea3e41b6db8633e42b980967aa8e3f0083b87ee18",
+          "bytes": 3354,
+          "dimensions": [
+            100,
+            88
+          ],
+          "mode": "RGB",
+          "format": "WEBP"
+        }
+      ],
+      "identification_url": "https://thehouseofthedead.fandom.com/wiki/Dan_Taylor"
+    },
+    {
+      "id": "hangedman_sd_render",
+      "title": "Hangedman Scarlet Dawn — rendu entier réhébergé",
+      "url": "https://static.wikia.nocookie.net/houseofthedead/images/6/60/Hangedman_SD.png",
+      "kind": "character_render_rehosted_origin_not_verified",
+      "local_paths": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/hangedman_sd_rehosted_render.webp"
+      ],
+      "accessed_on": "2026-11-20",
+      "note": "Rendu entier 720×1080 retrouvé sous le nom Hangedman SD.png. La galerie communautaire le classe parmi ses images dites officielles, mais aucune publication SEGA d’origine n’a été récupérée : origine exacte non vérifiée. Le modèle est recoupé avec une capture de Scarlet Dawn. WebP natif conservé ; bordure blanche de la source exclue du dessin.",
+      "local_files": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/hangedman_sd_rehosted_render.webp",
+          "sha256": "7d2a607beb9d07cec6ebaada893023a87c8d260522feca3ed38b7602a580d603",
+          "bytes": 83490,
+          "dimensions": [
+            716,
+            1080
+          ],
+          "mode": "RGBA",
+          "format": "WEBP"
+        }
+      ],
+      "identification_url": "https://thehouseofthedead.fandom.com/wiki/Hangedman/Gallery"
+    },
+    {
+      "id": "hangedman_sd_game",
+      "title": "Hangedman — capture d’écran arcade Scarlet Dawn",
+      "url": "https://k-triggerhappy.com/blog/wp-content/uploads/2018/10/1014-06.jpg",
+      "kind": "community_photo_of_arcade_gameplay",
+      "local_paths": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/hangedman_sd_gameplay_capture.jpg"
+      ],
+      "accessed_on": "2026-11-20",
+      "note": "Photographie de l’écran de la rencontre Hangedman dans le guide Scarlet Dawn, avec Kelly au premier plan. Silhouette sombre, jambes/claws et contexte corroborés ; flash, surbrillance et cadrage en limitent les détails. Aucun HUD, partenaire ni décor repris.",
+      "local_files": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/hangedman_sd_gameplay_capture.jpg",
+          "sha256": "1a34b3be85cb8ea317187ae6759b73244c37b6de5e3786394009e2828c4a8a5f",
+          "bytes": 172995,
+          "dimensions": [
+            993,
+            523
+          ],
+          "mode": "RGB",
+          "format": "JPEG"
+        }
+      ],
+      "identification_url": "https://k-triggerhappy.com/blog/hod_scarletdawn-hangedman/"
+    },
+    {
+      "id": "yukio_creature_render",
+      "title": "Yukio — rendu entier de la forme de créature",
+      "url": "https://static.wikia.nocookie.net/houseofthedead/images/c/c9/Yukio_Zombie_Render.png",
+      "kind": "game_model_render_rehosted_origin_not_verified",
+      "local_paths": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/yukio_creature_rehosted_render.webp"
+      ],
+      "accessed_on": "2026-11-20",
+      "note": "Rendu entier au nom Yukio Zombie Render.png trouvé dans une galerie communautaire. Apparence recoupée avec la capture du guide japonais nommant ユキオ (Yukio). WebP natif conservé malgré URL .png. L’origine de l’extraction du modèle et le port exact ne sont pas certifiés.",
+      "local_files": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/yukio_creature_rehosted_render.webp",
+          "sha256": "7d2befcf535dfa4721a3ade6cd6a6fa5d61209bdf7a9e689956d174b45ad8353",
+          "bytes": 145848,
+          "dimensions": [
+            665,
+            1536
+          ],
+          "mode": "RGBA",
+          "format": "WEBP"
+        }
+      ],
+      "identification_url": "https://ultimatepopculture.fandom.com/wiki/Creature_(The_House_of_the_Dead)"
+    },
+    {
+      "id": "yukio_creature_game",
+      "title": "Yukio — capture du miniboss HOTD III",
+      "url": "https://www.k-triggerhappy.com/hod3/enemy-Yukio.jpg",
+      "kind": "community_gameplay_capture",
+      "local_paths": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/yukio_creature_gameplay_capture.jpg"
+      ],
+      "accessed_on": "2026-11-20",
+      "note": "Capture associée à la rubrique ユキオ(Yukio) du guide ennemi HOTD III. Casquette sombre, petites lunettes, gilet avec radio, uniforme beige et deux couteaux reconnaissables. Preuve visuelle de la forme de créature, pas de sa tenue humaine intacte.",
+      "local_files": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/yukio_creature_gameplay_capture.jpg",
+          "sha256": "ec6d78e644896f292a5892ee6c90867dedf5605603903b9cff8014c6e4a537be",
+          "bytes": 56323,
+          "dimensions": [
+            800,
+            500
+          ],
+          "mode": "RGB",
+          "format": "JPEG"
+        }
+      ],
+      "identification_url": "https://www.k-triggerhappy.com/hod3/enemy.html"
+    }
+  ]
+}

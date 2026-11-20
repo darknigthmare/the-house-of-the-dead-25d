@@ -1,6 +1,6 @@
 {
   "titre": "Dossier Curien — Anthologie de combat",
-  "nombre_de_png": 247,
+  "nombre_de_png": 256,
   "nouveaux_png_volume_iii": 86,
   "fichiers": [
     {
@@ -1785,6 +1785,42 @@
       "volume": 2
     },
     {
+      "fichier": "overkill_hospital_back.png",
+      "usage": "back",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "cf682d28d2257aa7f32f31553df83df50ae2c41ace04b151d146d98b53d79af4",
+      "lot": "2026-11-20_lot5_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot5/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "overkill_hospital_front.png",
+      "usage": "front",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "8666c7270cbe5eb9f1d51d764d7768652ac32887ba1e9b669b79e01897ff01cf",
+      "lot": "2026-11-20_lot5_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot5/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "overkill_hospital_mid.png",
+      "usage": "mid",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "ec00ea125826caa58b1eda574fe0e0b61c2dd1f12ea3d7a0bf13d31a060beb86",
+      "lot": "2026-11-20_lot5_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot5/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
       "fichier": "overkill_intro.png",
       "usage": "intro",
       "dimensions": [
@@ -1825,6 +1861,42 @@
       "sha256": "3f912b7a3486ed7ffd9a4024731130cf5762ef9bffffffecb3274832d263ace7",
       "lot": "2026-11-19_reprise",
       "source_production": "docs/dossier_curien/saga/production/2026-11-19_props_parts.json"
+    },
+    {
+      "fichier": "prelude_square_back.png",
+      "usage": "back",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "ae1b19b0eaf05fa4454fb552d2b180786cd608ba59d5db1daf46d754e24946f7",
+      "lot": "2026-11-20_lot5_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot5/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "prelude_square_front.png",
+      "usage": "front",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "09179d9f2fa9b0ef9da3ed9b2b71bd21221659f22b9745d71f0f1f2bff00a46e",
+      "lot": "2026-11-20_lot5_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot5/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "prelude_square_mid.png",
+      "usage": "mid",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "027e96aaf54e763a016277029cd40d434a60de73e4cfeeedc66814e32ba415ad",
+      "lot": "2026-11-20_lot5_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot5/manifest.json",
+      "statut": "adaptation_2d_documentee"
     },
     {
       "fichier": "props/efi_alarm_beacon.png",
@@ -2998,6 +3070,42 @@
       "volume": 3
     },
     {
+      "fichier": "zr_chemical_plant_back.png",
+      "usage": "back",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "ec3a86677912eb5c335b3a55391203bbfbf59349e4cf238fd510967a02c5b369",
+      "lot": "2026-11-20_lot5_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot5/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "zr_chemical_plant_front.png",
+      "usage": "front",
+      "dimensions": [
+        1673,
+        940
+      ],
+      "sha256": "c7599d911ab67f7273d6ef6e2b08bed48ad148e65da38a27d73b4d5552708305",
+      "lot": "2026-11-20_lot5_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot5/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
+      "fichier": "zr_chemical_plant_mid.png",
+      "usage": "mid",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "97098e48e4902be1f487cab9e09dd37e4d94c1f49bd82cfeb26c05e36028aba3",
+      "lot": "2026-11-20_lot5_stages",
+      "source_production": "docs/dossier_curien/saga/production/stages_2026-11-20_lot5/manifest.json",
+      "statut": "adaptation_2d_documentee"
+    },
+    {
       "fichier": "zr_train_back.png",
       "usage": "back",
       "dimensions": [
@@ -3043,5 +3151,6 @@
   "nouveaux_png_stages_2026_11_20": 6,
   "nouveaux_png_stages_2026_11_20_lot2": 6,
   "nouveaux_png_stages_2026_11_20_lot3": 6,
-  "nouveaux_png_stages_2026_11_20_lot4": 6
+  "nouveaux_png_stages_2026_11_20_lot4": 6,
+  "nouveaux_png_stages_2026_11_20_lot5": 9
 }

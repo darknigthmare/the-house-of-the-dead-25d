@@ -1,0 +1,2773 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "batch": "2026-11-20_lot5",
+  "repository": "darknigthmare/the-house-of-the-dead-25d",
+  "baseline_commit": "6da249f2c2cc9a988e31230dae1f805e3d7e1daf",
+  "scope": "Cinquième lot de galerie : Dan, Yukio créature, Hangedman Scarlet Dawn, équipements de Lisa/G dans Typing 2 et six variantes visuelles Zombie Revenge. Bases statiques non jouables ; aucune tenue sélectionnable ni animation complète ajoutée.",
+  "summary": {
+    "assets": 11,
+    "gallery_entries": 11,
+    "bytes": 16483233,
+    "playable_added": 0,
+    "animation_complete": 0,
+    "by_game": {
+      "hotd3": 2,
+      "scarlet_dawn": 1,
+      "typing2": 2,
+      "zombie_revenge": 6
+    },
+    "by_category": {
+      "boss_base": 1,
+      "character_base": 1,
+      "character_form": 1,
+      "costume_variant": 8
+    },
+    "by_status": {
+      "static_needs_visual_reference_qa": 5,
+      "static_reference_reviewed": 6
+    }
+  },
+  "production_receipts": [
+    {
+      "path": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot5/characters_generated.json",
+      "sha256": "62888ad52af0868eb8300c4e1b03300b4221056fa8ea8143825fc7755192479b",
+      "assets": 5
+    },
+    {
+      "path": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot5/costumes_generated.json",
+      "sha256": "0e7c665ce0e94238462db1dd3e099ef8e2cb1b7f2fdde44ff62376f04a37c322",
+      "assets": 6
+    }
+  ],
+  "assets": [
+    {
+      "id": "dan_taylor",
+      "name": "Dan — prologue de HOTD III",
+      "game": "hotd3",
+      "game_label": "The House of the Dead III",
+      "category": "character_base",
+      "inventory_task_id": "dan_taylor",
+      "new_identity": true,
+      "status": "static_reference_reviewed",
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot5/characters/dan_hotd3_base.png",
+      "sha256": "578c77f0b721014c7e20ea042414f87fb60ed3b9c898c82dfeeb92185a57ddce",
+      "bytes": 924732,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "format": "PNG",
+      "generated_file": "exec-d6f9e0b1-1c11-4218-896b-a518167167f3.png",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        15,
+        1230,
+        1241
+      ],
+      "visible_bbox": [
+        298,
+        20,
+        899,
+        1238
+      ],
+      "visible_alpha_threshold": 127,
+      "maximum_alpha_on_canvas_edges": 1,
+      "maximum_alpha_per_canvas_edge": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "opaque_pixels_at_canvas_edge": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alpha_zero_pixels": 1180112,
+      "alpha_at_background_samples": [
+        {
+          "x": 0,
+          "y": 0,
+          "alpha": 0
+        },
+        {
+          "x": 1253,
+          "y": 0,
+          "alpha": 0
+        },
+        {
+          "x": 0,
+          "y": 1253,
+          "alpha": 0
+        },
+        {
+          "x": 1253,
+          "y": 1253,
+          "alpha": 0
+        },
+        {
+          "x": 10,
+          "y": 10,
+          "alpha": 0
+        },
+        {
+          "x": 1243,
+          "y": 10,
+          "alpha": 0
+        },
+        {
+          "x": 10,
+          "y": 1243,
+          "alpha": 0
+        },
+        {
+          "x": 1243,
+          "y": 1243,
+          "alpha": 0
+        }
+      ],
+      "sources": [
+        "https://www.imfdb.org/images/6/60/HodIII_DanandRogan.jpg",
+        "https://static.wikia.nocookie.net/houseofthedead/images/5/52/Dan-Taylor.jpg",
+        "https://static.wikia.nocookie.net/houseofthedead/images/f/fc/DanFaceHODIII.png",
+        "https://www.imfdb.org/wiki/The_House_of_the_Dead_III",
+        "https://thehouseofthedead.fandom.com/wiki/Dan_Taylor"
+      ],
+      "source_ids": [
+        "dan_prologue_full",
+        "dan_portrait",
+        "dan_game_portrait"
+      ],
+      "source_notes": [
+        "Le personnage retenu est le commando à droite de Rogan, corroboré par les deux portraits : casquette beige, cheveux clairs, visage sans lunettes, radio et gilet noir. Dan est distinct de Daniel Curien et de Scott.",
+        "Le nom affiché reste Dan — prologue de HOTD III. dan_taylor est l’identifiant historique de tâche ; aucune source primaire consultée ne suffit à certifier le patronyme Taylor.",
+        "La silhouette complète est visible dans la capture, avec les genouillères et le holster. Pose et éclairage sont adaptés ; les petites parties des bottes masquées par les sous-titres restent simples."
+      ],
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/hotd3_dan_rogan.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/dan_rehosted_portrait.webp",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/dan_game_portrait.webp",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "reference_inputs": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/hotd3_dan_rogan.jpg",
+          "sha256": "b4464925c0206115e642c7bbcd787f3f4607a60a7ea46fc2c0625e952f36cff2",
+          "bytes": 201641,
+          "dimensions": [
+            1280,
+            960
+          ],
+          "mode": "RGB",
+          "format": "JPEG",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/dan_rehosted_portrait.webp",
+          "sha256": "37269e32c1e346501eb3d734307ba8f9947ea3630a7a65f973c83505f8d1c44a",
+          "bytes": 15628,
+          "dimensions": [
+            346,
+            403
+          ],
+          "mode": "RGB",
+          "format": "WEBP",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/dan_game_portrait.webp",
+          "sha256": "7881177c3e8390609b382c1ea3e41b6db8633e42b980967aa8e3f0083b87ee18",
+          "bytes": 3354,
+          "dimensions": [
+            100,
+            88
+          ],
+          "mode": "RGB",
+          "format": "WEBP",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        },
+        {
+          "path": "assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "bytes": 595313,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "format": "PNG",
+          "role": "painting_style_only",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        }
+      ],
+      "prompts": [
+        "Use case: stylized-concept. Produce exactly one full-body character as a native transparent PNG cutout for the Dossier Curien static bestiary gallery. A polished hand-painted 2D arcade illustration, crisp dark silhouette, controlled painterly shading and realistic adult anatomy. The LAST attached image, Isaac, is PAINTING STYLE ONLY: never copy that man, his skin tone, cap, moustache, jacket, trousers or gun. All subject design comes from the subject reference images. Keep the entire subject, all fingers, feet and equipment fully inside the canvas with generous transparent margins on every edge. No background, floor, ground shadow, typography, UI, label, logo, panel, duplicate body, montage or spritesheet. No photographic rendering or plastic 3D appearance. This is a reference-based fan illustration, not an official asset. Transparent background must be real alpha, with no white outline.\nSubject: Dan, the uniformed adult commando on the RIGHT of the first game screenshot from The House of the Dead III, not Rogan on the left. The second and third references show Dan's face and cap. Isolate only Dan. Make one whole-body three-quarter view facing RIGHT, with a calm alert stance and slightly bent knees. Preserve the short light blond hair, clean-shaven young adult face, beige short-brim military cap, pale beige long-sleeved uniform shirt and matching pale trousers, dark green undershirt at collar, black tactical vest, chest radio microphone with coiled cable, belt pouches, black thigh holster/straps, separate black knee pads and black combat boots. Clothing and proportions should match the first screenshot; remove the scene's green lighting and show the natural beige fabric and skin. Hold the compact black pump shotgun from the first screenshot low beside his right leg with the barrel angled down, entire weapon visible, and raise his other hand to the radio in the same calm gesture. Do not add sunglasses, facial hair, helmet, red scarf, futuristic armour or extra weapons. The screenshot partly obscures very low boot detail with subtitles; keep boot soles plain. Aim for a square composition with both boots and the entire cap visible."
+      ],
+      "prompt_sha256": "e39d7c95bfe3695f7383081983ec1f01077c1c2bd53d3db8f1f020ca4e45a630",
+      "limitations": [
+        "Base statique de galerie/bestiaire : aucun profil jouable, costume sélectionnable ni animation complète ajouté.",
+        "Adaptation peinte en 2D des références inspectées ; aucune équivalence canonique 1:1 certifiée.",
+        "PNG natif conservé octet pour octet : aucun détourage logiciel, nettoyage, recadrage, redimensionnement ou réencodage après image_gen.",
+        "Patronyme Taylor non confirmé par une source primaire directement consultée ; nom de galerie limité à Dan.",
+        "Détails sous les sous-titres, sangle de holster, semelles, petites poches et forme exacte de l’arme restent adaptés. Port HOTD III de la capture réhébergée non certifié."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot5/characters_generated.json",
+      "generation": {
+        "tool": "image_gen built-in",
+        "date": "2026-11-20",
+        "transparent_background_requested": true,
+        "source_native_output": "/workspace/scratch/da9d6e4777c1/generated_images/exec-d6f9e0b1-1c11-4218-896b-a518167167f3.png",
+        "native_output_unchanged": true,
+        "pixel_edits_after_generation": false,
+        "attempts": 1,
+        "retained_outputs": 1,
+        "attempt_records": [
+          {
+            "attempt": 1,
+            "generated_file": "exec-d6f9e0b1-1c11-4218-896b-a518167167f3.png",
+            "operation": "generate",
+            "prompt": "Use case: stylized-concept. Produce exactly one full-body character as a native transparent PNG cutout for the Dossier Curien static bestiary gallery. A polished hand-painted 2D arcade illustration, crisp dark silhouette, controlled painterly shading and realistic adult anatomy. The LAST attached image, Isaac, is PAINTING STYLE ONLY: never copy that man, his skin tone, cap, moustache, jacket, trousers or gun. All subject design comes from the subject reference images. Keep the entire subject, all fingers, feet and equipment fully inside the canvas with generous transparent margins on every edge. No background, floor, ground shadow, typography, UI, label, logo, panel, duplicate body, montage or spritesheet. No photographic rendering or plastic 3D appearance. This is a reference-based fan illustration, not an official asset. Transparent background must be real alpha, with no white outline.\nSubject: Dan, the uniformed adult commando on the RIGHT of the first game screenshot from The House of the Dead III, not Rogan on the left. The second and third references show Dan's face and cap. Isolate only Dan. Make one whole-body three-quarter view facing RIGHT, with a calm alert stance and slightly bent knees. Preserve the short light blond hair, clean-shaven young adult face, beige short-brim military cap, pale beige long-sleeved uniform shirt and matching pale trousers, dark green undershirt at collar, black tactical vest, chest radio microphone with coiled cable, belt pouches, black thigh holster/straps, separate black knee pads and black combat boots. Clothing and proportions should match the first screenshot; remove the scene's green lighting and show the natural beige fabric and skin. Hold the compact black pump shotgun from the first screenshot low beside his right leg with the barrel angled down, entire weapon visible, and raise his other hand to the radio in the same calm gesture. Do not add sunglasses, facial hair, helmet, red scarf, futuristic armour or extra weapons. The screenshot partly obscures very low boot detail with subtitles; keep boot soles plain. Aim for a square composition with both boots and the entire cap visible.",
+            "prompt_sha256": "e39d7c95bfe3695f7383081983ec1f01077c1c2bd53d3db8f1f020ca4e45a630",
+            "references": [
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/hotd3_dan_rogan.jpg",
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/dan_rehosted_portrait.webp",
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/dan_game_portrait.webp",
+              "assets/dossier_curien/saga/isaac_guard.png"
+            ],
+            "output_sha256": "578c77f0b721014c7e20ea042414f87fb60ed3b9c898c82dfeeb92185a57ddce",
+            "retained": true
+          }
+        ]
+      },
+      "qa": {
+        "output_visually_inspected": true,
+        "subject_and_silhouette_reviewed": true,
+        "whole_subject_silhouette_visible": true,
+        "subject_extent_note": "Casquette, deux mains, radio, arme basse entière, deux jambes et deux bottes entièrement dans le cadre.",
+        "visible_bounds_clear_of_canvas_edges": true,
+        "opaque_pixels_at_canvas_edge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "maximum_alpha_on_canvas_edges": 1,
+        "alpha_check": "Transparence native réelle ; échantillons de fond alpha0, sauf le coin inférieur gauche de Lisa à alpha1. Quelques résidus natifs alpha1 au bord sont consignés et préservés. Le RGB caché sous alpha0 peut apparaître comme un halo dans certains aperçus ; aucun fond ajouté ni retraité.",
+        "native_sha256_matches_saved_png": true,
+        "canonical_1_to_1_certified": false,
+        "reference_limitations_open": false,
+        "ui_or_engine_capture_performed": false
+      }
+    },
+    {
+      "id": "lisa_typing2",
+      "name": "Lisa Rogan — équipement Typing 2",
+      "game": "typing2",
+      "game_label": "The Typing of the Dead 2",
+      "category": "costume_variant",
+      "inventory_task_id": "typing2_player_equipment",
+      "new_identity": false,
+      "status": "static_needs_visual_reference_qa",
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot5/characters/lisa_typing2_base.png",
+      "sha256": "d753669a6d62ee6e036967b1a6b8545f5ca7d5029ef57eb5660adf99d2355e39",
+      "bytes": 1762035,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "format": "PNG",
+      "generated_file": "exec-896c8056-4ee8-4067-92d8-d84b121b5bed.png",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        21,
+        1018,
+        1536
+      ],
+      "visible_bbox": [
+        143,
+        25,
+        946,
+        1515
+      ],
+      "visible_alpha_threshold": 127,
+      "maximum_alpha_on_canvas_edges": 1,
+      "maximum_alpha_per_canvas_edge": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "opaque_pixels_at_canvas_edge": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alpha_zero_pixels": 1112766,
+      "alpha_at_background_samples": [
+        {
+          "x": 0,
+          "y": 0,
+          "alpha": 0
+        },
+        {
+          "x": 1023,
+          "y": 0,
+          "alpha": 0
+        },
+        {
+          "x": 0,
+          "y": 1535,
+          "alpha": 1
+        },
+        {
+          "x": 1023,
+          "y": 1535,
+          "alpha": 0
+        },
+        {
+          "x": 10,
+          "y": 10,
+          "alpha": 0
+        },
+        {
+          "x": 1013,
+          "y": 10,
+          "alpha": 0
+        },
+        {
+          "x": 10,
+          "y": 1525,
+          "alpha": 0
+        },
+        {
+          "x": 1013,
+          "y": 1525,
+          "alpha": 0
+        }
+      ],
+      "sources": [
+        "https://www.myabandonware.com/media/screenshots/t/the-typing-of-the-dead-2-1hej/the-typing-of-the-dead-2_4.png",
+        "https://www.myabandonware.com/media/screenshots/t/the-typing-of-the-dead-2-1hej/the-typing-of-the-dead-2_3.png",
+        "https://game.watch.impress.co.jp/docs/20080321/td03.gif",
+        "https://www.imfdb.org/images/3/37/HodIII_GandLisa_2.jpg",
+        "https://www.myabandonware.com/game/the-typing-of-the-dead-2-z9f",
+        "https://game.watch.impress.co.jp/docs/20080321/zonbida2.htm",
+        "https://www.imfdb.org/wiki/The_House_of_the_Dead_III"
+      ],
+      "source_ids": [
+        "typing2_front",
+        "typing2_back",
+        "typing2_review_small",
+        "hotd3_g_lisa_full"
+      ],
+      "source_notes": [
+        "Les captures avant/arrière sont directement attribuées à Typing 2 PC : tenue orange de Lisa, console grise et pile jaune/noire, clavier-fusil noir tenu à deux mains.",
+        "Le rendu HOTD III entier apporte uniquement la base du pantalon et des bottes. La vue arrière trois-quarts et les détails fins de sangles, touches et semelles restent une reconstruction peinte.",
+        "Aucun matériel déduit de Typing 1 ; Daniel n’est ni généré ni couvert par ces deux variantes."
+      ],
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/typing2_lisa_g_front.png",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/typing2_lisa_g_back.png",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/hotd3_g_lisa_art2.jpg",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "reference_inputs": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/typing2_lisa_g_front.png",
+          "sha256": "28874ea5ecf79882908a8a5aa478fa093e232b9cf35e017971510d6cbc81a2e1",
+          "bytes": 163429,
+          "dimensions": [
+            800,
+            600
+          ],
+          "mode": "P",
+          "format": "PNG",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/typing2_lisa_g_back.png",
+          "sha256": "79391d246790fdf9cb17b304012340f73088d0106c11194d49be475f4c26c66e",
+          "bytes": 109793,
+          "dimensions": [
+            800,
+            600
+          ],
+          "mode": "P",
+          "format": "PNG",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/hotd3_g_lisa_art2.jpg",
+          "sha256": "299a0d5df7e92b0d1d1d9614cee2b4b6755c6354dca242911cdfa51f970a474f",
+          "bytes": 42837,
+          "dimensions": [
+            688,
+            960
+          ],
+          "mode": "RGB",
+          "format": "JPEG",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        },
+        {
+          "path": "assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "bytes": 595313,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "format": "PNG",
+          "role": "painting_style_only",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        }
+      ],
+      "prompts": [
+        "Use case: stylized-concept. Produce exactly one full-body character as a native transparent PNG cutout for the Dossier Curien static bestiary gallery. A polished hand-painted 2D arcade illustration, crisp dark silhouette, controlled painterly shading and realistic adult anatomy. The LAST attached image, Isaac, is PAINTING STYLE ONLY: never copy that man, his skin tone, cap, moustache, jacket, trousers or gun. All subject design comes from the subject reference images. Keep the entire subject, all fingers, feet and equipment fully inside the canvas with generous transparent margins on every edge. No background, floor, ground shadow, typography, UI, label, logo, panel, duplicate body, montage or spritesheet. No photographic rendering or plastic 3D appearance. This is a reference-based fan illustration, not an official asset. Transparent background must be real alpha, with no white outline.\nSubject: Lisa Rogan in The Typing of the Dead 2 (2008 PC), the blonde adult woman in the first two actual game captures. Isolate Lisa only. Use a full-body three-quarter view turned toward the RIGHT, a little from her back side so the backpack remains visible, alert standing stance with both boots clear. Preserve her short angular chin-length blonde bob with side part, youthful adult face, sleeveless orange high-collared zip vest, fitted dark blue/charcoal jeans and dark mid-calf boots. The third reference shows the underlying HOTD III costume and complete boot silhouette only, not Typing 2 equipment: omit both men/monster from that image. The FIRST and SECOND references establish the Typing 2 gear. She wears a slim light-grey rectangular Dreamcast-shaped console vertically on her back, circular central lid, discreet side ventilation grooves and narrow shoulder straps. A large yellow-and-black cylindrical battery lies horizontally across its top, as visible in the actual capture. Keep that compact box/battery silhouette, not a generic computer tower or radio backpack. In both hands at waist-to-chest height she holds the distinctive long BLACK KEYBOARD-SHOTGUN: rows of small dark keys run lengthwise along the top of a chunky gun-shaped grip/body, with the front aimed gently to the right. Copy this visibly unusual hardware from reference 1, not an ordinary shotgun. No keyboard hanging horizontally from her chest, no Typing 1 blue uniform, no headset or invented cables. A compact readable whole character, with enough three-quarter angle to see both the black keys and the light-grey backpack. Do not reproduce console brand text, cinematic subtitles or on-screen UI."
+      ],
+      "prompt_sha256": "a1adb5ae23cbf1c8ca641fe7d312687a096d781fefd42e15061e973e19bac379",
+      "limitations": [
+        "Base statique de galerie/bestiaire : aucun profil jouable, costume sélectionnable ni animation complète ajouté.",
+        "Adaptation peinte en 2D des références inspectées ; aucune équivalence canonique 1:1 certifiée.",
+        "PNG natif conservé octet pour octet : aucun détourage logiciel, nettoyage, recadrage, redimensionnement ou réencodage après image_gen.",
+        "Réserve visuelle ouverte : capture Typing 2 entière de Lisa avec détails du pantalon, du dos et des bottes encore manquante ; silhouette inférieure recoupée seulement avec HOTD III.",
+        "Volume du boîtier, petits évents, fixation de la pile, nombre exact de touches et angle du clavier-fusil adaptés pour la lisibilité. La prise de vue arrière rend les poches de pantalon interprétées.",
+        "La tâche de groupe typing2_player_equipment reste partielle : Daniel non généré, identité et matériel propre encore à documenter."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot5/characters_generated.json",
+      "generation": {
+        "tool": "image_gen built-in",
+        "date": "2026-11-20",
+        "transparent_background_requested": true,
+        "source_native_output": "/workspace/scratch/da9d6e4777c1/generated_images/exec-896c8056-4ee8-4067-92d8-d84b121b5bed.png",
+        "native_output_unchanged": true,
+        "pixel_edits_after_generation": false,
+        "attempts": 1,
+        "retained_outputs": 1,
+        "attempt_records": [
+          {
+            "attempt": 1,
+            "generated_file": "exec-896c8056-4ee8-4067-92d8-d84b121b5bed.png",
+            "operation": "generate",
+            "prompt": "Use case: stylized-concept. Produce exactly one full-body character as a native transparent PNG cutout for the Dossier Curien static bestiary gallery. A polished hand-painted 2D arcade illustration, crisp dark silhouette, controlled painterly shading and realistic adult anatomy. The LAST attached image, Isaac, is PAINTING STYLE ONLY: never copy that man, his skin tone, cap, moustache, jacket, trousers or gun. All subject design comes from the subject reference images. Keep the entire subject, all fingers, feet and equipment fully inside the canvas with generous transparent margins on every edge. No background, floor, ground shadow, typography, UI, label, logo, panel, duplicate body, montage or spritesheet. No photographic rendering or plastic 3D appearance. This is a reference-based fan illustration, not an official asset. Transparent background must be real alpha, with no white outline.\nSubject: Lisa Rogan in The Typing of the Dead 2 (2008 PC), the blonde adult woman in the first two actual game captures. Isolate Lisa only. Use a full-body three-quarter view turned toward the RIGHT, a little from her back side so the backpack remains visible, alert standing stance with both boots clear. Preserve her short angular chin-length blonde bob with side part, youthful adult face, sleeveless orange high-collared zip vest, fitted dark blue/charcoal jeans and dark mid-calf boots. The third reference shows the underlying HOTD III costume and complete boot silhouette only, not Typing 2 equipment: omit both men/monster from that image. The FIRST and SECOND references establish the Typing 2 gear. She wears a slim light-grey rectangular Dreamcast-shaped console vertically on her back, circular central lid, discreet side ventilation grooves and narrow shoulder straps. A large yellow-and-black cylindrical battery lies horizontally across its top, as visible in the actual capture. Keep that compact box/battery silhouette, not a generic computer tower or radio backpack. In both hands at waist-to-chest height she holds the distinctive long BLACK KEYBOARD-SHOTGUN: rows of small dark keys run lengthwise along the top of a chunky gun-shaped grip/body, with the front aimed gently to the right. Copy this visibly unusual hardware from reference 1, not an ordinary shotgun. No keyboard hanging horizontally from her chest, no Typing 1 blue uniform, no headset or invented cables. A compact readable whole character, with enough three-quarter angle to see both the black keys and the light-grey backpack. Do not reproduce console brand text, cinematic subtitles or on-screen UI.",
+            "prompt_sha256": "a1adb5ae23cbf1c8ca641fe7d312687a096d781fefd42e15061e973e19bac379",
+            "references": [
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/typing2_lisa_g_front.png",
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/typing2_lisa_g_back.png",
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/hotd3_g_lisa_art2.jpg",
+              "assets/dossier_curien/saga/isaac_guard.png"
+            ],
+            "output_sha256": "d753669a6d62ee6e036967b1a6b8545f5ca7d5029ef57eb5660adf99d2355e39",
+            "retained": true
+          }
+        ]
+      },
+      "qa": {
+        "output_visually_inspected": true,
+        "subject_and_silhouette_reviewed": true,
+        "whole_subject_silhouette_visible": true,
+        "subject_extent_note": "Tête, console et pile, clavier-fusil complet, mains et deux bottes dans le cadre.",
+        "visible_bounds_clear_of_canvas_edges": true,
+        "opaque_pixels_at_canvas_edge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "maximum_alpha_on_canvas_edges": 1,
+        "alpha_check": "Transparence native réelle ; échantillons de fond alpha0, sauf le coin inférieur gauche de Lisa à alpha1. Quelques résidus natifs alpha1 au bord sont consignés et préservés. Le RGB caché sous alpha0 peut apparaître comme un halo dans certains aperçus ; aucun fond ajouté ni retraité.",
+        "native_sha256_matches_saved_png": true,
+        "canonical_1_to_1_certified": false,
+        "reference_limitations_open": true,
+        "ui_or_engine_capture_performed": false
+      }
+    },
+    {
+      "id": "g_typing2",
+      "name": "Agent G — équipement Typing 2",
+      "game": "typing2",
+      "game_label": "The Typing of the Dead 2",
+      "category": "costume_variant",
+      "inventory_task_id": "typing2_player_equipment",
+      "new_identity": false,
+      "status": "static_needs_visual_reference_qa",
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot5/characters/g_typing2_base.png",
+      "sha256": "484e4e34d0f3a98d4eaf9fea21e36cc4ef428a8e823f61d9d866f5a3d6900311",
+      "bytes": 1852870,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "format": "PNG",
+      "generated_file": "exec-41042bfe-e144-480d-b590-4d5c59e87af9.png",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        17,
+        996,
+        1536
+      ],
+      "visible_bbox": [
+        128,
+        25,
+        953,
+        1511
+      ],
+      "visible_alpha_threshold": 127,
+      "maximum_alpha_on_canvas_edges": 1,
+      "maximum_alpha_per_canvas_edge": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "opaque_pixels_at_canvas_edge": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alpha_zero_pixels": 1087156,
+      "alpha_at_background_samples": [
+        {
+          "x": 0,
+          "y": 0,
+          "alpha": 0
+        },
+        {
+          "x": 1023,
+          "y": 0,
+          "alpha": 0
+        },
+        {
+          "x": 0,
+          "y": 1535,
+          "alpha": 0
+        },
+        {
+          "x": 1023,
+          "y": 1535,
+          "alpha": 0
+        },
+        {
+          "x": 10,
+          "y": 10,
+          "alpha": 0
+        },
+        {
+          "x": 1013,
+          "y": 10,
+          "alpha": 0
+        },
+        {
+          "x": 10,
+          "y": 1525,
+          "alpha": 0
+        },
+        {
+          "x": 1013,
+          "y": 1525,
+          "alpha": 0
+        }
+      ],
+      "sources": [
+        "https://www.myabandonware.com/media/screenshots/t/the-typing-of-the-dead-2-1hej/the-typing-of-the-dead-2_4.png",
+        "https://www.myabandonware.com/media/screenshots/t/the-typing-of-the-dead-2-1hej/the-typing-of-the-dead-2_3.png",
+        "https://game.watch.impress.co.jp/docs/20080321/td03.gif",
+        "https://www.imfdb.org/images/3/37/HodIII_GandLisa_2.jpg",
+        "https://www.myabandonware.com/game/the-typing-of-the-dead-2-z9f",
+        "https://game.watch.impress.co.jp/docs/20080321/zonbida2.htm",
+        "https://www.imfdb.org/wiki/The_House_of_the_Dead_III"
+      ],
+      "source_ids": [
+        "typing2_front",
+        "typing2_back",
+        "typing2_review_small",
+        "hotd3_g_lisa_full"
+      ],
+      "source_notes": [
+        "Les captures avant/arrière de Typing 2 attestent G âgé, chemise bleue, gilet clair, console dorsale grise à pile et clavier-fusil noir.",
+        "Le rendu HOTD III en entier est limité à la silhouette du costume sous-jacent. La géométrie de chaque touche et de l’attache dorsale n’est pas un relevé technique.",
+        "Le personnage conserve le filtre Typing 2 et n’est pas fusionné avec les variantes d’équipement du premier Typing."
+      ],
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/typing2_lisa_g_front.png",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/typing2_lisa_g_back.png",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/hotd3_g_lisa_art2.jpg",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "reference_inputs": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/typing2_lisa_g_front.png",
+          "sha256": "28874ea5ecf79882908a8a5aa478fa093e232b9cf35e017971510d6cbc81a2e1",
+          "bytes": 163429,
+          "dimensions": [
+            800,
+            600
+          ],
+          "mode": "P",
+          "format": "PNG",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/typing2_lisa_g_back.png",
+          "sha256": "79391d246790fdf9cb17b304012340f73088d0106c11194d49be475f4c26c66e",
+          "bytes": 109793,
+          "dimensions": [
+            800,
+            600
+          ],
+          "mode": "P",
+          "format": "PNG",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/hotd3_g_lisa_art2.jpg",
+          "sha256": "299a0d5df7e92b0d1d1d9614cee2b4b6755c6354dca242911cdfa51f970a474f",
+          "bytes": 42837,
+          "dimensions": [
+            688,
+            960
+          ],
+          "mode": "RGB",
+          "format": "JPEG",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        },
+        {
+          "path": "assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "bytes": 595313,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "format": "PNG",
+          "role": "painting_style_only",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        }
+      ],
+      "prompts": [
+        "Use case: stylized-concept. Produce exactly one full-body character as a native transparent PNG cutout for the Dossier Curien static bestiary gallery. A polished hand-painted 2D arcade illustration, crisp dark silhouette, controlled painterly shading and realistic adult anatomy. The LAST attached image, Isaac, is PAINTING STYLE ONLY: never copy that man, his skin tone, cap, moustache, jacket, trousers or gun. All subject design comes from the subject reference images. Keep the entire subject, all fingers, feet and equipment fully inside the canvas with generous transparent margins on every edge. No background, floor, ground shadow, typography, UI, label, logo, panel, duplicate body, montage or spritesheet. No photographic rendering or plastic 3D appearance. This is a reference-based fan illustration, not an official asset. Transparent background must be real alpha, with no white outline.\nSubject: Agent G in The Typing of the Dead 2 (2008 PC), the older grey-haired adult man in the first two actual game captures. Isolate G only, not Lisa or any monster. A whole-body three-quarter view facing RIGHT, slightly viewed from his back side so the backpack is readable, alert relaxed stance with both shoes visible. Preserve his lean middle-aged face, grey-streaked slicked-back dark hair, pale blue long-sleeved shirt, pale grey buttoned waistcoat, narrow muted gold necktie, grey formal trousers and simple dark shoes. The third reference establishes only the complete underlying HOTD III suit/trousers/shoes, not Typing 2 equipment. The first and second actual Typing 2 captures alone establish equipment. On his back is a slim light-grey rectangular Dreamcast-shaped console with circular central lid, small ventilation grooves and narrow shoulder straps. A large yellow-and-black cylindrical battery lies horizontally along its top, visible above the shoulders as in the captures. Keep it a compact console, not a bulky generic PC or radio backpack. In both hands hold the distinctive long BLACK KEYBOARD-SHOTGUN at a low ready angle to the right: visible rows of small black keys lengthwise on top of its elongated chunky gun-shaped body, with natural hand positions matching reference 1. Show both keyboard surface and backpack clearly with the three-quarter angle. No separate chest-mounted keyboard and no equipment borrowed from The Typing of the Dead 1. Do not reproduce console brand text or game UI. Keep a naturally slim older-agent build rather than a bodybuilder."
+      ],
+      "prompt_sha256": "1322cbe3d81f9ec475407ba8d1b86252fd75e5f1fcab4fc4a236ed99ef721ab2",
+      "limitations": [
+        "Base statique de galerie/bestiaire : aucun profil jouable, costume sélectionnable ni animation complète ajouté.",
+        "Adaptation peinte en 2D des références inspectées ; aucune équivalence canonique 1:1 certifiée.",
+        "PNG natif conservé octet pour octet : aucun détourage logiciel, nettoyage, recadrage, redimensionnement ou réencodage après image_gen.",
+        "Réserve visuelle ouverte : capture Typing 2 entière de G avec chaussures détaillées manquante ; bas du costume recoupé avec un rendu HOTD III.",
+        "Géométrie du clavier-fusil, sangles et attache de batterie simplifiées ; aucune exactitude touche par touche ou échelle technique revendiquée.",
+        "La tâche typing2_player_equipment reste partielle : aucune variante Daniel produite."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot5/characters_generated.json",
+      "generation": {
+        "tool": "image_gen built-in",
+        "date": "2026-11-20",
+        "transparent_background_requested": true,
+        "source_native_output": "/workspace/scratch/da9d6e4777c1/generated_images/exec-41042bfe-e144-480d-b590-4d5c59e87af9.png",
+        "native_output_unchanged": true,
+        "pixel_edits_after_generation": false,
+        "attempts": 1,
+        "retained_outputs": 1,
+        "attempt_records": [
+          {
+            "attempt": 1,
+            "generated_file": "exec-41042bfe-e144-480d-b590-4d5c59e87af9.png",
+            "operation": "generate",
+            "prompt": "Use case: stylized-concept. Produce exactly one full-body character as a native transparent PNG cutout for the Dossier Curien static bestiary gallery. A polished hand-painted 2D arcade illustration, crisp dark silhouette, controlled painterly shading and realistic adult anatomy. The LAST attached image, Isaac, is PAINTING STYLE ONLY: never copy that man, his skin tone, cap, moustache, jacket, trousers or gun. All subject design comes from the subject reference images. Keep the entire subject, all fingers, feet and equipment fully inside the canvas with generous transparent margins on every edge. No background, floor, ground shadow, typography, UI, label, logo, panel, duplicate body, montage or spritesheet. No photographic rendering or plastic 3D appearance. This is a reference-based fan illustration, not an official asset. Transparent background must be real alpha, with no white outline.\nSubject: Agent G in The Typing of the Dead 2 (2008 PC), the older grey-haired adult man in the first two actual game captures. Isolate G only, not Lisa or any monster. A whole-body three-quarter view facing RIGHT, slightly viewed from his back side so the backpack is readable, alert relaxed stance with both shoes visible. Preserve his lean middle-aged face, grey-streaked slicked-back dark hair, pale blue long-sleeved shirt, pale grey buttoned waistcoat, narrow muted gold necktie, grey formal trousers and simple dark shoes. The third reference establishes only the complete underlying HOTD III suit/trousers/shoes, not Typing 2 equipment. The first and second actual Typing 2 captures alone establish equipment. On his back is a slim light-grey rectangular Dreamcast-shaped console with circular central lid, small ventilation grooves and narrow shoulder straps. A large yellow-and-black cylindrical battery lies horizontally along its top, visible above the shoulders as in the captures. Keep it a compact console, not a bulky generic PC or radio backpack. In both hands hold the distinctive long BLACK KEYBOARD-SHOTGUN at a low ready angle to the right: visible rows of small black keys lengthwise on top of its elongated chunky gun-shaped body, with natural hand positions matching reference 1. Show both keyboard surface and backpack clearly with the three-quarter angle. No separate chest-mounted keyboard and no equipment borrowed from The Typing of the Dead 1. Do not reproduce console brand text or game UI. Keep a naturally slim older-agent build rather than a bodybuilder.",
+            "prompt_sha256": "1322cbe3d81f9ec475407ba8d1b86252fd75e5f1fcab4fc4a236ed99ef721ab2",
+            "references": [
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/typing2_lisa_g_front.png",
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/typing2_lisa_g_back.png",
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/hotd3_g_lisa_art2.jpg",
+              "assets/dossier_curien/saga/isaac_guard.png"
+            ],
+            "output_sha256": "484e4e34d0f3a98d4eaf9fea21e36cc4ef428a8e823f61d9d866f5a3d6900311",
+            "retained": true
+          }
+        ]
+      },
+      "qa": {
+        "output_visually_inspected": true,
+        "subject_and_silhouette_reviewed": true,
+        "whole_subject_silhouette_visible": true,
+        "subject_extent_note": "Tête, console et pile, clavier-fusil complet, mains et deux chaussures dans le cadre.",
+        "visible_bounds_clear_of_canvas_edges": true,
+        "opaque_pixels_at_canvas_edge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "maximum_alpha_on_canvas_edges": 1,
+        "alpha_check": "Transparence native réelle ; échantillons de fond alpha0, sauf le coin inférieur gauche de Lisa à alpha1. Quelques résidus natifs alpha1 au bord sont consignés et préservés. Le RGB caché sous alpha0 peut apparaître comme un halo dans certains aperçus ; aucun fond ajouté ni retraité.",
+        "native_sha256_matches_saved_png": true,
+        "canonical_1_to_1_certified": false,
+        "reference_limitations_open": true,
+        "ui_or_engine_capture_performed": false
+      }
+    },
+    {
+      "id": "hangedman_scarlet_dawn",
+      "name": "Hangedman — Scarlet Dawn",
+      "game": "scarlet_dawn",
+      "game_label": "House of the Dead: Scarlet Dawn",
+      "category": "boss_base",
+      "inventory_task_id": "hangedman",
+      "new_identity": false,
+      "status": "static_reference_reviewed",
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot5/bosses/hangedman_scarlet_dawn_base.png",
+      "sha256": "bfe00376bd3115de1553731a82277a4e1f77fa1110b65e43ae529a774d5d5aab",
+      "bytes": 1964937,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "format": "PNG",
+      "generated_file": "exec-53b9e11e-814f-4ebb-9766-3607ddbb2d35.png",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        17,
+        6,
+        998,
+        1521
+      ],
+      "visible_bbox": [
+        39,
+        13,
+        987,
+        1518
+      ],
+      "visible_alpha_threshold": 127,
+      "maximum_alpha_on_canvas_edges": 0,
+      "maximum_alpha_per_canvas_edge": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels_at_canvas_edge": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alpha_zero_pixels": 995702,
+      "alpha_at_background_samples": [
+        {
+          "x": 0,
+          "y": 0,
+          "alpha": 0
+        },
+        {
+          "x": 1023,
+          "y": 0,
+          "alpha": 0
+        },
+        {
+          "x": 0,
+          "y": 1535,
+          "alpha": 0
+        },
+        {
+          "x": 1023,
+          "y": 1535,
+          "alpha": 0
+        },
+        {
+          "x": 10,
+          "y": 10,
+          "alpha": 0
+        },
+        {
+          "x": 1013,
+          "y": 10,
+          "alpha": 0
+        },
+        {
+          "x": 10,
+          "y": 1525,
+          "alpha": 0
+        },
+        {
+          "x": 1013,
+          "y": 1525,
+          "alpha": 0
+        }
+      ],
+      "sources": [
+        "https://static.wikia.nocookie.net/houseofthedead/images/6/60/Hangedman_SD.png",
+        "https://k-triggerhappy.com/blog/wp-content/uploads/2018/10/1014-06.jpg",
+        "https://thehouseofthedead.fandom.com/wiki/Hangedman/Gallery",
+        "https://k-triggerhappy.com/blog/hod_scarletdawn-hangedman/"
+      ],
+      "source_ids": [
+        "hangedman_sd_render",
+        "hangedman_sd_game"
+      ],
+      "source_notes": [
+        "Le rendu montre en entier la refonte Scarlet Dawn : tête courte de chauve-souris, oreilles latérales, yeux rouges, corps organique gris sombre, queue mince et très grandes ailes lacérées.",
+        "La capture réelle du jeu recoupe le modèle et la rencontre mais présente de forts reflets ; le rendu réhébergé apporte les détails. Sa publication éditeur d’origine n’a pas été récupérée.",
+        "Pose flottante et membrane des ailes adaptées en 2D. Le long bec, l’armure, les bandes et les harnais de l’ancienne apparence ne sont pas repris."
+      ],
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/hangedman_sd_rehosted_render.webp",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/hangedman_sd_gameplay_capture.jpg",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "reference_inputs": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/hangedman_sd_rehosted_render.webp",
+          "sha256": "7d2a607beb9d07cec6ebaada893023a87c8d260522feca3ed38b7602a580d603",
+          "bytes": 83490,
+          "dimensions": [
+            716,
+            1080
+          ],
+          "mode": "RGBA",
+          "format": "WEBP",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/hangedman_sd_gameplay_capture.jpg",
+          "sha256": "1a34b3be85cb8ea317187ae6759b73244c37b6de5e3786394009e2828c4a8a5f",
+          "bytes": 172995,
+          "dimensions": [
+            993,
+            523
+          ],
+          "mode": "RGB",
+          "format": "JPEG",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        },
+        {
+          "path": "assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "bytes": 595313,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "format": "PNG",
+          "role": "painting_style_only",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        }
+      ],
+      "prompts": [
+        "Use case: stylized-concept. Produce exactly one full-body character as a native transparent PNG cutout for the Dossier Curien static bestiary gallery. A polished hand-painted 2D arcade illustration, crisp dark silhouette, controlled painterly shading and realistic adult anatomy. The LAST attached image, Isaac, is PAINTING STYLE ONLY: never copy that man, his skin tone, cap, moustache, jacket, trousers or gun. All subject design comes from the subject reference images. Keep the entire subject, all fingers, feet and equipment fully inside the canvas with generous transparent margins on every edge. No background, floor, ground shadow, typography, UI, label, logo, panel, duplicate body, montage or spritesheet. No photographic rendering or plastic 3D appearance. This is a reference-based fan illustration, not an official asset. Transparent background must be real alpha, with no white outline.\nSubject: Hangedman, specifically the Scarlet Dawn redesign shown completely in reference 1, corroborated by the actual Scarlet Dawn screen in reference 2. One isolated floating bat-like humanoid creature, three-quarter view facing slightly RIGHT. Both enormous wings, every wing tip, both hands, both clawed feet and the thin curving tail must be visible, with wide transparent padding. Preserve the source silhouette: huge ragged dark brown-black bat membranes raised high in a broad V, thin pale-grey bony wing supports, pointed hooks at the wing joints, a few small membrane holes, grey-black mottled muscular torso and limbs with rough sparse fur texture and segmented abdomen. Small mammalian bat head with broad pointed side ears, short snout, sparse dark swept-back hairs and two small round red glowing eyes. Long narrow grey fingers and long hooked claws on hands and feet. Bent hovering legs, thin tail curving behind. Subtle desaturated reddish-brown surface discoloration only; no open wounds or gore. The subject reference is dark; make the anatomy readable with neutral soft highlights while maintaining charcoal-grey skin and very dark wings. Do not copy its white sticker border. Do not use the original game's long bird-like beak, long upright rabbit ears, leather harness, metal shoulder plates, belts, goggles or bandage armour. This is the distinct Scarlet Dawn organic bat design, not the original Hangedman. The final Isaac image supplies only the clean painted arcade rendering style. No human character and no environment."
+      ],
+      "prompt_sha256": "ef80202c2f42b4939add561263567fecebd967b9ee09759806705500da63c187",
+      "limitations": [
+        "Base statique de galerie/bestiaire : aucun profil jouable, costume sélectionnable ni animation complète ajouté.",
+        "Adaptation peinte en 2D des références inspectées ; aucune équivalence canonique 1:1 certifiée.",
+        "PNG natif conservé octet pour octet : aucun détourage logiciel, nettoyage, recadrage, redimensionnement ou réencodage après image_gen.",
+        "Rendu entier réhébergé, origine éditeur exacte non vérifiée ; ne pas l’attribuer directement à SEGA.",
+        "Orientation des ailes, trous de membrane, grain de fourrure/peau et petits doigts adaptés ; réserves de provenance conservées malgré silhouette recoupée.",
+        "La rencontre Scarlet Dawn était distincte du modèle original déjà présent ; ce dessin ne crée pas une nouvelle tâche dans les 62 cibles de production."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot5/characters_generated.json",
+      "generation": {
+        "tool": "image_gen built-in",
+        "date": "2026-11-20",
+        "transparent_background_requested": true,
+        "source_native_output": "/workspace/scratch/da9d6e4777c1/generated_images/exec-53b9e11e-814f-4ebb-9766-3607ddbb2d35.png",
+        "native_output_unchanged": true,
+        "pixel_edits_after_generation": false,
+        "attempts": 1,
+        "retained_outputs": 1,
+        "attempt_records": [
+          {
+            "attempt": 1,
+            "generated_file": "exec-53b9e11e-814f-4ebb-9766-3607ddbb2d35.png",
+            "operation": "generate",
+            "prompt": "Use case: stylized-concept. Produce exactly one full-body character as a native transparent PNG cutout for the Dossier Curien static bestiary gallery. A polished hand-painted 2D arcade illustration, crisp dark silhouette, controlled painterly shading and realistic adult anatomy. The LAST attached image, Isaac, is PAINTING STYLE ONLY: never copy that man, his skin tone, cap, moustache, jacket, trousers or gun. All subject design comes from the subject reference images. Keep the entire subject, all fingers, feet and equipment fully inside the canvas with generous transparent margins on every edge. No background, floor, ground shadow, typography, UI, label, logo, panel, duplicate body, montage or spritesheet. No photographic rendering or plastic 3D appearance. This is a reference-based fan illustration, not an official asset. Transparent background must be real alpha, with no white outline.\nSubject: Hangedman, specifically the Scarlet Dawn redesign shown completely in reference 1, corroborated by the actual Scarlet Dawn screen in reference 2. One isolated floating bat-like humanoid creature, three-quarter view facing slightly RIGHT. Both enormous wings, every wing tip, both hands, both clawed feet and the thin curving tail must be visible, with wide transparent padding. Preserve the source silhouette: huge ragged dark brown-black bat membranes raised high in a broad V, thin pale-grey bony wing supports, pointed hooks at the wing joints, a few small membrane holes, grey-black mottled muscular torso and limbs with rough sparse fur texture and segmented abdomen. Small mammalian bat head with broad pointed side ears, short snout, sparse dark swept-back hairs and two small round red glowing eyes. Long narrow grey fingers and long hooked claws on hands and feet. Bent hovering legs, thin tail curving behind. Subtle desaturated reddish-brown surface discoloration only; no open wounds or gore. The subject reference is dark; make the anatomy readable with neutral soft highlights while maintaining charcoal-grey skin and very dark wings. Do not copy its white sticker border. Do not use the original game's long bird-like beak, long upright rabbit ears, leather harness, metal shoulder plates, belts, goggles or bandage armour. This is the distinct Scarlet Dawn organic bat design, not the original Hangedman. The final Isaac image supplies only the clean painted arcade rendering style. No human character and no environment.",
+            "prompt_sha256": "ef80202c2f42b4939add561263567fecebd967b9ee09759806705500da63c187",
+            "references": [
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/hangedman_sd_rehosted_render.webp",
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/hangedman_sd_gameplay_capture.jpg",
+              "assets/dossier_curien/saga/isaac_guard.png"
+            ],
+            "output_sha256": "bfe00376bd3115de1553731a82277a4e1f77fa1110b65e43ae529a774d5d5aab",
+            "retained": true
+          }
+        ]
+      },
+      "qa": {
+        "output_visually_inspected": true,
+        "subject_and_silhouette_reviewed": true,
+        "whole_subject_silhouette_visible": true,
+        "subject_extent_note": "Deux ailes entières avec toutes les pointes, tête, doigts, griffes des pieds et queue à l’intérieur du cadre.",
+        "visible_bounds_clear_of_canvas_edges": true,
+        "opaque_pixels_at_canvas_edge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "maximum_alpha_on_canvas_edges": 0,
+        "alpha_check": "Transparence native réelle ; échantillons de fond alpha0, sauf le coin inférieur gauche de Lisa à alpha1. Quelques résidus natifs alpha1 au bord sont consignés et préservés. Le RGB caché sous alpha0 peut apparaître comme un halo dans certains aperçus ; aucun fond ajouté ni retraité.",
+        "native_sha256_matches_saved_png": true,
+        "canonical_1_to_1_certified": false,
+        "reference_limitations_open": false,
+        "ui_or_engine_capture_performed": false
+      }
+    },
+    {
+      "id": "yukio_creature",
+      "name": "Yukio — forme de créature (HOTD III)",
+      "game": "hotd3",
+      "game_label": "The House of the Dead III",
+      "category": "character_form",
+      "inventory_task_id": "yukio",
+      "new_identity": true,
+      "status": "static_reference_reviewed",
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot5/characters/yukio_creature_base.png",
+      "sha256": "044fed6323a2aeba89ec5674f07b724ae94b257f235eaa6df318659c68a813cd",
+      "bytes": 1328127,
+      "dimensions": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "format": "PNG",
+      "generated_file": "exec-541405c3-aaf5-4cc0-a29c-9065163049e5.png",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        9,
+        1072,
+        1434
+      ],
+      "visible_bbox": [
+        102,
+        28,
+        1047,
+        1432
+      ],
+      "visible_alpha_threshold": 127,
+      "maximum_alpha_on_canvas_edges": 1,
+      "maximum_alpha_per_canvas_edge": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "opaque_pixels_at_canvas_edge": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alpha_zero_pixels": 998830,
+      "alpha_at_background_samples": [
+        {
+          "x": 0,
+          "y": 0,
+          "alpha": 0
+        },
+        {
+          "x": 1085,
+          "y": 0,
+          "alpha": 0
+        },
+        {
+          "x": 0,
+          "y": 1447,
+          "alpha": 0
+        },
+        {
+          "x": 1085,
+          "y": 1447,
+          "alpha": 0
+        },
+        {
+          "x": 10,
+          "y": 10,
+          "alpha": 0
+        },
+        {
+          "x": 1075,
+          "y": 10,
+          "alpha": 0
+        },
+        {
+          "x": 10,
+          "y": 1437,
+          "alpha": 0
+        },
+        {
+          "x": 1075,
+          "y": 1437,
+          "alpha": 0
+        }
+      ],
+      "sources": [
+        "https://static.wikia.nocookie.net/houseofthedead/images/c/c9/Yukio_Zombie_Render.png",
+        "https://www.k-triggerhappy.com/hod3/enemy-Yukio.jpg",
+        "https://ultimatepopculture.fandom.com/wiki/Creature_(The_House_of_the_Dead)",
+        "https://www.k-triggerhappy.com/hod3/enemy.html"
+      ],
+      "source_ids": [
+        "yukio_creature_render",
+        "yukio_creature_game"
+      ],
+      "source_notes": [
+        "L’apparence du rendu entier est recoupée avec une capture nommée Yukio dans le guide : petites lunettes sombres, casquette, uniforme beige déchiré, gilet et radio noirs, deux couteaux.",
+        "L’image retenue remplace volontairement les blessures graphiques du modèle par du tissu fermé, des déchirures et une coloration sombre. Cette simplification déclarée interdit de la présenter comme une reproduction anatomique 1:1.",
+        "Seule la forme de créature est couverte. L’apparence humaine intacte, le prologue et les transitions restent à documenter ; le surnom de fan Casey n’est pas utilisé."
+      ],
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/yukio_creature_rehosted_render.webp",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/yukio_creature_gameplay_capture.jpg",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "reference_inputs": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/yukio_creature_rehosted_render.webp",
+          "sha256": "7d2befcf535dfa4721a3ade6cd6a6fa5d61209bdf7a9e689956d174b45ad8353",
+          "bytes": 145848,
+          "dimensions": [
+            665,
+            1536
+          ],
+          "mode": "RGBA",
+          "format": "WEBP",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/yukio_creature_gameplay_capture.jpg",
+          "sha256": "ec6d78e644896f292a5892ee6c90867dedf5605603903b9cff8014c6e4a537be",
+          "bytes": 56323,
+          "dimensions": [
+            800,
+            500
+          ],
+          "mode": "RGB",
+          "format": "JPEG",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        },
+        {
+          "path": "assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "bytes": 595313,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "format": "PNG",
+          "role": "painting_style_only",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true
+        }
+      ],
+      "prompts": [
+        "Use case: stylized-concept. Produce exactly one full-body character as a native transparent PNG cutout for the Dossier Curien static bestiary gallery. A polished hand-painted 2D arcade illustration, crisp dark silhouette, controlled painterly shading and realistic adult anatomy. The LAST attached image, Isaac, is PAINTING STYLE ONLY: never copy that man, his skin tone, cap, moustache, jacket, trousers or gun. All subject design comes from the subject reference images. Keep the entire subject, all fingers, feet and equipment fully inside the canvas with generous transparent margins on every edge. No background, floor, ground shadow, typography, UI, label, logo, panel, duplicate body, montage or spritesheet. No photographic rendering or plastic 3D appearance. This is a reference-based fan illustration, not an official asset. Transparent background must be real alpha, with no white outline.\nSubject: Yukio, the reanimated commando miniboss from The House of the Dead III. Use the first model reference for the whole-body silhouette and the second actual game capture for the recognizable face, uniform and two-knife stance. Make a NON-GRAPHIC arcade adaptation of this fictional monster. Keep an adult male body with pallid grey-tan skin, severe hollow face, dark soft military cap, small dark sunglasses, beige short/torn-sleeved uniform shirt, black tactical vest with chest radio and coiled cable, black belt pouches, faded beige trousers, dark gloves and black combat boots. Exactly two combat knives, one in each hand, held out in the threatening forward stance of reference 2. Preserve the knife silhouettes and broad serrated spine, with full blades inside the image. Retain asymmetrically ragged fabric and his left trouser leg and knee protection more intact. Translate all graphic damage in the source into CLOSED dark surface discoloration and ragged cloth: no exposed muscle, organs, bloody holes, flowing blood or dismemberment. All limbs intact, no gore. The vest must remain solid fabric across the chest and abdomen; trousers cover his thighs. Slightly crouched full-body three-quarter pose facing RIGHT, both boots separately readable and the whole cap visible. Do not turn him into clean human Dan, and do not borrow Isaac's face or clothes. Keep his identity from the source while using controlled readable painted shading and transparent margins."
+      ],
+      "prompt_sha256": "cdcc709a8a932d41ba73ce6a2fa6e9732c5f36f5c8d28f5d3972cd377716e675",
+      "limitations": [
+        "Base statique de galerie/bestiaire : aucun profil jouable, costume sélectionnable ni animation complète ajouté.",
+        "Adaptation peinte en 2D des références inspectées ; aucune équivalence canonique 1:1 certifiée.",
+        "PNG natif conservé octet pour octet : aucun détourage logiciel, nettoyage, recadrage, redimensionnement ou réencodage après image_gen.",
+        "Adaptation volontairement non graphique : blessures ouvertes remplacées par tissu et marques de surface ; différence visuelle documentée.",
+        "Tenue humaine non produite et non déduite de la tenue mutilée. La tâche yukio reste partielle.",
+        "Extraction du rendu et port exact non établis ; asymétrie des déchirures, manches et protection du genou conservée dans son principe, pas point par point."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot5/characters_generated.json",
+      "generation": {
+        "tool": "image_gen built-in",
+        "date": "2026-11-20",
+        "transparent_background_requested": true,
+        "source_native_output": "/workspace/scratch/da9d6e4777c1/generated_images/exec-541405c3-aaf5-4cc0-a29c-9065163049e5.png",
+        "native_output_unchanged": true,
+        "pixel_edits_after_generation": false,
+        "attempts": 1,
+        "retained_outputs": 1,
+        "attempt_records": [
+          {
+            "attempt": 1,
+            "generated_file": "exec-541405c3-aaf5-4cc0-a29c-9065163049e5.png",
+            "operation": "generate",
+            "prompt": "Use case: stylized-concept. Produce exactly one full-body character as a native transparent PNG cutout for the Dossier Curien static bestiary gallery. A polished hand-painted 2D arcade illustration, crisp dark silhouette, controlled painterly shading and realistic adult anatomy. The LAST attached image, Isaac, is PAINTING STYLE ONLY: never copy that man, his skin tone, cap, moustache, jacket, trousers or gun. All subject design comes from the subject reference images. Keep the entire subject, all fingers, feet and equipment fully inside the canvas with generous transparent margins on every edge. No background, floor, ground shadow, typography, UI, label, logo, panel, duplicate body, montage or spritesheet. No photographic rendering or plastic 3D appearance. This is a reference-based fan illustration, not an official asset. Transparent background must be real alpha, with no white outline.\nSubject: Yukio, the reanimated commando miniboss from The House of the Dead III. Use the first model reference for the whole-body silhouette and the second actual game capture for the recognizable face, uniform and two-knife stance. Make a NON-GRAPHIC arcade adaptation of this fictional monster. Keep an adult male body with pallid grey-tan skin, severe hollow face, dark soft military cap, small dark sunglasses, beige short/torn-sleeved uniform shirt, black tactical vest with chest radio and coiled cable, black belt pouches, faded beige trousers, dark gloves and black combat boots. Exactly two combat knives, one in each hand, held out in the threatening forward stance of reference 2. Preserve the knife silhouettes and broad serrated spine, with full blades inside the image. Retain asymmetrically ragged fabric and his left trouser leg and knee protection more intact. Translate all graphic damage in the source into CLOSED dark surface discoloration and ragged cloth: no exposed muscle, organs, bloody holes, flowing blood or dismemberment. All limbs intact, no gore. The vest must remain solid fabric across the chest and abdomen; trousers cover his thighs. Slightly crouched full-body three-quarter pose facing RIGHT, both boots separately readable and the whole cap visible. Do not turn him into clean human Dan, and do not borrow Isaac's face or clothes. Keep his identity from the source while using controlled readable painted shading and transparent margins.",
+            "prompt_sha256": "cdcc709a8a932d41ba73ce6a2fa6e9732c5f36f5c8d28f5d3972cd377716e675",
+            "references": [
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/yukio_creature_rehosted_render.webp",
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot5/characters/yukio_creature_gameplay_capture.jpg",
+              "assets/dossier_curien/saga/isaac_guard.png"
+            ],
+            "output_sha256": "044fed6323a2aeba89ec5674f07b724ae94b257f235eaa6df318659c68a813cd",
+            "retained": true
+          }
+        ]
+      },
+      "qa": {
+        "output_visually_inspected": true,
+        "subject_and_silhouette_reviewed": true,
+        "whole_subject_silhouette_visible": true,
+        "subject_extent_note": "Casquette, deux mains et deux couteaux complets, deux jambes et deux bottes à l’intérieur du cadre.",
+        "visible_bounds_clear_of_canvas_edges": true,
+        "opaque_pixels_at_canvas_edge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "maximum_alpha_on_canvas_edges": 1,
+        "alpha_check": "Transparence native réelle ; échantillons de fond alpha0, sauf le coin inférieur gauche de Lisa à alpha1. Quelques résidus natifs alpha1 au bord sont consignés et préservés. Le RGB caché sous alpha0 peut apparaître comme un halo dans certains aperçus ; aucun fond ajouté ni retraité.",
+        "native_sha256_matches_saved_png": true,
+        "canonical_1_to_1_certified": false,
+        "reference_limitations_open": false,
+        "ui_or_engine_capture_performed": false
+      }
+    },
+    {
+      "id": "stick_zr_alt_suit",
+      "name": "Stick Breitling — costume sombre alternatif",
+      "game": "zombie_revenge",
+      "game_label": "Zombie Revenge",
+      "edition_scope": "Zombie Revenge — jeu original / Arcade Mode Dreamcast ; ensemble de tenues 2 Player.",
+      "category": "costume_variant",
+      "status": "static_reference_reviewed",
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot5/costumes/stick_zr_alt_suit_base.png",
+      "generated_file": "exec-8d774060-af08-4d56-9324-a65c86ce38ca.png",
+      "sha256": "3a8a663581f36ba7dc23ada03457add637913ec28da0b9cca49d622743820364",
+      "bytes": 1618188,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        38,
+        968,
+        1536
+      ],
+      "visible_bbox": [
+        234,
+        44,
+        782,
+        1508
+      ],
+      "visible_alpha_threshold": 127,
+      "maximum_alpha_on_canvas_edges": 1,
+      "maximum_alpha_by_edge_top_bottom_left_right": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "opaque_pixels_at_canvas_edge": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alpha_zero_pixels": 1102642,
+      "alpha_at_background_samples": {
+        "(0, 0)": 0,
+        "(512, 0)": 0,
+        "(0, 768)": 0,
+        "(1023, 768)": 0,
+        "(512, 1535)": 0,
+        "(512, 10)": 0,
+        "(100, 768)": 0
+      },
+      "inventory_task_id": "stick_alts",
+      "new_identity": false,
+      "inventory_family_coverage": "partial",
+      "sources": [
+        "https://static.wikia.nocookie.net/houseofthedead/images/6/64/StickAltSkin1.jpg/revision/latest",
+        "https://www.digitpress.com/library/manuals/dreamcast/zombie_revenge.pdf",
+        "https://thehouseofthedead.fandom.com/wiki/Stick_Breitling"
+      ],
+      "source_ids": [
+        "stick_alternate_suit_model",
+        "zr_dreamcast_manual",
+        "zr_stick_costume_identification"
+      ],
+      "source_notes": [
+        "Rendu entier : coiffure blonde tirée en arrière, costume sombre violacé, chemise bleu clair ouverte, petit emblème de crâne, gants bordeaux, décorations métalliques et deux pistolets argentés.",
+        "La posture debout trois-quarts et le modelé des tissus sont adaptés en peinture 2D."
+      ],
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/stick_alternate_suit_model.webp",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "reference_inputs": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/stick_alternate_suit_model.webp",
+          "sha256": "3efe85c591a4b10486777c8b956795fae29bee71a4b0107dc90652d77b672763",
+          "bytes": 23402,
+          "dimensions": [
+            415,
+            780
+          ],
+          "mode": "RGB",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true,
+          "binary_in_repository": true
+        },
+        {
+          "path": "assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "bytes": 595313,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "alpha_bbox": [
+            218,
+            55,
+            814,
+            960
+          ],
+          "visible_bbox": [
+            220,
+            57,
+            812,
+            957
+          ],
+          "visible_alpha_threshold": 127,
+          "maximum_alpha_on_canvas_edges": 0,
+          "maximum_alpha_by_edge_top_bottom_left_right": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "opaque_pixels_at_canvas_edge": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "alpha_zero_pixels": 781143,
+          "alpha_at_background_samples": {
+            "(0, 0)": 0,
+            "(512, 0)": 0,
+            "(0, 512)": 0,
+            "(1023, 512)": 0,
+            "(512, 1023)": 0,
+            "(512, 10)": 0,
+            "(100, 512)": 0
+          },
+          "role": "painting_style_only",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true,
+          "binary_in_repository": true
+        }
+      ],
+      "prompts": [
+        "Use case: stylized-concept. Create exactly ONE full-body character illustration for the Dossier Curien 2D game gallery, native RGBA with genuine transparent background. Subject: adult Stick Breitling in his actual dark alternate suit from Zombie Revenge, copying the costume and identity from reference 1. Reference 2 is ONLY the Dossier Curien painting style: detailed hand-painted arcade character art, crisp controlled outlines, realistic adult anatomy, readable folds, warm/cool shading. Do not copy Isaac's identity, clothes, shotgun, cap, pose, or palette. Keep Stick's entire head, hands, both pistols, legs and both shoes well inside a tall portrait canvas with generous transparent margins. One person only, no sheet, no labels, no scene, no floor, no oval shadow, no gradient background, no UI. Use the complete visible outfit in reference 1: fair-skinned adult man with blond/light-brown hair slicked straight back, long narrow face and serious expression, no beard, no glasses. Dark charcoal slightly purple-black suit jacket with lapels over a pale blue open-neck shirt with narrow vertical chest opening, dark belt and matching straight trousers. Preserve the small silver skull-like emblem on the jacket breast, subdued tonal decorative markings on the upper sleeves, small silver metal decorations at cuffs and down the outer lower trousers, and simple black pointed shoes with silver ankle ornaments. Keep decoration placement restrained and aligned to the reference; do not invent a new large insignia or readable text. Dark burgundy fingerless gloves and the dark wrist device visible at the wrist. A silver semiautomatic pistol is held down in EACH hand with fingers naturally enclosing each grip and barrels safely pointed toward the ground. Preserve two separate coherent pistols, not rifles or revolvers. Standing relaxed ready stance close to the source, a gentle three-quarter front turn toward screen-right, knees slightly bent, full silhouette readable. Keep the black jacket and trousers distinct against transparency through controlled edge lighting. Match the reference proportions and outfit; do not make him futuristic, armored, shirtless, heavily muscular, or give him a trenchcoat. This is a single static costume study, not a new character or an animation."
+      ],
+      "prompt_sha256": [
+        "e7f2ce988e8788ffe6517fef8fa9f10c9dc55c8f61951c40f2ff0ff0e3aa7fbd"
+      ],
+      "limitations": [
+        "Galerie statique uniquement : aucun personnage jouable, costume sélectionnable, statistique, attaque ou animation complète ajouté.",
+        "Adaptation peinte 2D contrôlée sur les éléments visibles ; aucune certification de fidélité 1:1 aux modèles originaux.",
+        "PNG natif RGBA conservé octet pour octet ; aucun détourage, nettoyage, recadrage, redimensionnement ou réencodage du résultat généré.",
+        "La famille de tenues reste partiellement couverte ; deux images livrées ne prouvent pas un inventaire exhaustif de toutes les variantes.",
+        "Le port précis du rendu source et ses textures originales ne sont pas certifiés ; motifs fins, gants et accessoires restent une interprétation peinte.",
+        "Aucune autre tenue, palette ou variante régionale de Stick n’est déclarée couverte."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot5/costumes_generated.json",
+      "generation": {
+        "tool": "image_gen built-in",
+        "date": "2026-11-20",
+        "transparent_background_requested": true,
+        "source_native_output": "/workspace/scratch/da9d6e4777c1/generated_images/exec-8d774060-af08-4d56-9324-a65c86ce38ca.png",
+        "native_output_unchanged": true,
+        "pixel_edits_after_generation": false,
+        "attempts": 1,
+        "retained_outputs": 1,
+        "attempt_records": [
+          {
+            "attempt": 1,
+            "generated_file": "exec-8d774060-af08-4d56-9324-a65c86ce38ca.png",
+            "operation": "generate",
+            "prompt": "Use case: stylized-concept. Create exactly ONE full-body character illustration for the Dossier Curien 2D game gallery, native RGBA with genuine transparent background. Subject: adult Stick Breitling in his actual dark alternate suit from Zombie Revenge, copying the costume and identity from reference 1. Reference 2 is ONLY the Dossier Curien painting style: detailed hand-painted arcade character art, crisp controlled outlines, realistic adult anatomy, readable folds, warm/cool shading. Do not copy Isaac's identity, clothes, shotgun, cap, pose, or palette. Keep Stick's entire head, hands, both pistols, legs and both shoes well inside a tall portrait canvas with generous transparent margins. One person only, no sheet, no labels, no scene, no floor, no oval shadow, no gradient background, no UI. Use the complete visible outfit in reference 1: fair-skinned adult man with blond/light-brown hair slicked straight back, long narrow face and serious expression, no beard, no glasses. Dark charcoal slightly purple-black suit jacket with lapels over a pale blue open-neck shirt with narrow vertical chest opening, dark belt and matching straight trousers. Preserve the small silver skull-like emblem on the jacket breast, subdued tonal decorative markings on the upper sleeves, small silver metal decorations at cuffs and down the outer lower trousers, and simple black pointed shoes with silver ankle ornaments. Keep decoration placement restrained and aligned to the reference; do not invent a new large insignia or readable text. Dark burgundy fingerless gloves and the dark wrist device visible at the wrist. A silver semiautomatic pistol is held down in EACH hand with fingers naturally enclosing each grip and barrels safely pointed toward the ground. Preserve two separate coherent pistols, not rifles or revolvers. Standing relaxed ready stance close to the source, a gentle three-quarter front turn toward screen-right, knees slightly bent, full silhouette readable. Keep the black jacket and trousers distinct against transparency through controlled edge lighting. Match the reference proportions and outfit; do not make him futuristic, armored, shirtless, heavily muscular, or give him a trenchcoat. This is a single static costume study, not a new character or an animation.",
+            "prompt_sha256": "e7f2ce988e8788ffe6517fef8fa9f10c9dc55c8f61951c40f2ff0ff0e3aa7fbd",
+            "arguments_as_sent": {
+              "transparent_background": true,
+              "referenced_image_paths": [
+                "/workspace/scratch/da9d6e4777c1/hotd-current/docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/stick_alternate_suit_model.webp",
+                "/workspace/scratch/da9d6e4777c1/hotd-current/assets/dossier_curien/saga/isaac_guard.png"
+              ],
+              "prompt": "Use case: stylized-concept. Create exactly ONE full-body character illustration for the Dossier Curien 2D game gallery, native RGBA with genuine transparent background. Subject: adult Stick Breitling in his actual dark alternate suit from Zombie Revenge, copying the costume and identity from reference 1. Reference 2 is ONLY the Dossier Curien painting style: detailed hand-painted arcade character art, crisp controlled outlines, realistic adult anatomy, readable folds, warm/cool shading. Do not copy Isaac's identity, clothes, shotgun, cap, pose, or palette. Keep Stick's entire head, hands, both pistols, legs and both shoes well inside a tall portrait canvas with generous transparent margins. One person only, no sheet, no labels, no scene, no floor, no oval shadow, no gradient background, no UI. Use the complete visible outfit in reference 1: fair-skinned adult man with blond/light-brown hair slicked straight back, long narrow face and serious expression, no beard, no glasses. Dark charcoal slightly purple-black suit jacket with lapels over a pale blue open-neck shirt with narrow vertical chest opening, dark belt and matching straight trousers. Preserve the small silver skull-like emblem on the jacket breast, subdued tonal decorative markings on the upper sleeves, small silver metal decorations at cuffs and down the outer lower trousers, and simple black pointed shoes with silver ankle ornaments. Keep decoration placement restrained and aligned to the reference; do not invent a new large insignia or readable text. Dark burgundy fingerless gloves and the dark wrist device visible at the wrist. A silver semiautomatic pistol is held down in EACH hand with fingers naturally enclosing each grip and barrels safely pointed toward the ground. Preserve two separate coherent pistols, not rifles or revolvers. Standing relaxed ready stance close to the source, a gentle three-quarter front turn toward screen-right, knees slightly bent, full silhouette readable. Keep the black jacket and trousers distinct against transparency through controlled edge lighting. Match the reference proportions and outfit; do not make him futuristic, armored, shirtless, heavily muscular, or give him a trenchcoat. This is a single static costume study, not a new character or an animation."
+            },
+            "references": [
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/stick_alternate_suit_model.webp",
+              "assets/dossier_curien/saga/isaac_guard.png"
+            ],
+            "external_reference_inputs": [],
+            "output_sha256": "3a8a663581f36ba7dc23ada03457add637913ec28da0b9cca49d622743820364",
+            "retained": true,
+            "tool_refusal": false
+          }
+        ]
+      },
+      "qa": {
+        "output_visually_inspected": true,
+        "subject_and_silhouette_reviewed": true,
+        "whole_subject_silhouette_visible": true,
+        "subject_extent_note": "Tête, cheveux, mains, deux pistolets et deux chaussures entièrement visibles.",
+        "visible_bounds_clear_of_canvas_edges": true,
+        "opaque_pixels_at_canvas_edge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "maximum_alpha_on_canvas_edges": 1,
+        "alpha_check": "Transparence native conservée. Les couleurs RGB de pixels transparents peuvent produire un fond apparent dans une prévisualisation qui ignore alpha ; les échantillons de fond sont alpha0. Aucune correction logicielle appliquée.",
+        "native_sha256_matches_saved_png": true,
+        "canonical_1_to_1_certified": false,
+        "reference_limitations_open": false,
+        "mechanical_classification_open": false,
+        "ui_or_engine_capture_performed": false,
+        "independent_visual_review": {
+          "reviewer": "root",
+          "date": "2026-11-20",
+          "completed": true,
+          "whole_subjects_and_identity_details_reviewed": true,
+          "reference_comparison_performed": true,
+          "blocking_technical_issue_observed": false,
+          "canonical_1_to_1_certified": false,
+          "note": "Les six PNG ont été comparés aux rendus sources et retenus. Silhouettes entières, tenue/visage/équipement lisibles ; portée limitée des références respectée. Les pixels alpha sont contrôlés séparément.",
+          "reference_limitations_open": false,
+          "mechanical_classification_open": false
+        }
+      }
+    },
+    {
+      "id": "stick_zr_alt_armor",
+      "name": "Stick Breitling — apparence en armure rouge",
+      "game": "zombie_revenge",
+      "game_label": "Zombie Revenge",
+      "edition_scope": "Zombie Revenge — Dreamcast Original Mode, identification du modèle rouge par source secondaire ; mécanisme exact réservé.",
+      "category": "costume_variant",
+      "status": "static_reference_reviewed",
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot5/costumes/stick_zr_alt_armor_base.png",
+      "generated_file": "exec-331e6f58-344f-4002-b222-679faa5d8b00.png",
+      "sha256": "10bbfa53a49faaeb406c498133e97915052785e55ebb61dcbeebe9325689838e",
+      "bytes": 976355,
+      "dimensions": [
+        1090,
+        1443
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        19,
+        1080,
+        1443
+      ],
+      "visible_bbox": [
+        142,
+        121,
+        1036,
+        1387
+      ],
+      "visible_alpha_threshold": 127,
+      "maximum_alpha_on_canvas_edges": 1,
+      "maximum_alpha_by_edge_top_bottom_left_right": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "opaque_pixels_at_canvas_edge": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alpha_zero_pixels": 1149598,
+      "alpha_at_background_samples": {
+        "(0, 0)": 0,
+        "(545, 0)": 0,
+        "(0, 721)": 0,
+        "(1089, 721)": 0,
+        "(545, 1442)": 0,
+        "(545, 10)": 0,
+        "(100, 721)": 0
+      },
+      "inventory_task_id": "stick_alts",
+      "new_identity": false,
+      "inventory_family_coverage": "partial",
+      "sources": [
+        "https://static.wikia.nocookie.net/houseofthedead/images/f/f7/StickAltSkin2.jpg/revision/latest",
+        "https://www.digitpress.com/library/manuals/dreamcast/zombie_revenge.pdf",
+        "https://thehouseofthedead.fandom.com/wiki/Stick_Breitling",
+        "https://archive.org/details/zombie-revenge-prima-guide",
+        "https://www.gamespot.com/reviews/zombie-revenge-review/1900-2540798/"
+      ],
+      "source_ids": [
+        "stick_red_armor_model",
+        "zr_dreamcast_manual",
+        "zr_stick_costume_identification",
+        "zr_prima_armor_item",
+        "zr_gamespot_armor_review"
+      ],
+      "source_notes": [
+        "Rendu entier : casque rouge anguleux, épaulières et plaques rouges sur combinaison noire côtelée, bordure claire à la taille, bottes rouges et lame verte.",
+        "Le modèle est retenu comme apparence visuelle. Le bonus ARMOR temporaire décrit dans le guide et le troisième costume décrit sur le wiki ne sont pas assimilés sans preuve supplémentaire."
+      ],
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/stick_red_armor_model.webp",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "reference_inputs": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/stick_red_armor_model.webp",
+          "sha256": "3c29776f315e665b971316e8a8d21e4da188d001de22fe7ff4d9f8e0cc15c34a",
+          "bytes": 18678,
+          "dimensions": [
+            450,
+            595
+          ],
+          "mode": "RGB",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true,
+          "binary_in_repository": true
+        },
+        {
+          "path": "assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "bytes": 595313,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "alpha_bbox": [
+            218,
+            55,
+            814,
+            960
+          ],
+          "visible_bbox": [
+            220,
+            57,
+            812,
+            957
+          ],
+          "visible_alpha_threshold": 127,
+          "maximum_alpha_on_canvas_edges": 0,
+          "maximum_alpha_by_edge_top_bottom_left_right": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "opaque_pixels_at_canvas_edge": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "alpha_zero_pixels": 781143,
+          "alpha_at_background_samples": {
+            "(0, 0)": 0,
+            "(512, 0)": 0,
+            "(0, 512)": 0,
+            "(1023, 512)": 0,
+            "(512, 1023)": 0,
+            "(512, 10)": 0,
+            "(100, 512)": 0
+          },
+          "role": "painting_style_only",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true,
+          "binary_in_repository": true
+        }
+      ],
+      "prompts": [
+        "Use case: stylized-concept. Produce exactly ONE full-body static costume illustration for Dossier Curien's game gallery. True native RGBA transparent background. Subject: Stick Breitling's red armor appearance from Zombie Revenge Original Mode, faithfully using reference 1 for the entire visible design. Reference 2 is only the painted arcade art style, clean controlled outlines, detailed material shading and realistic human proportions; do not copy Isaac or any of his clothes, colors, cap, shotgun or pose. Show one complete armored human figure at a modest scale that leaves at least 7 percent empty transparent margin above the head, below both boots and on both sides. A full head-to-toe portrait, no cropped helmet, fingers, weapon or feet. Match the actual source armor, not a famous superhero design: bright red glossy segmented armor over a black ribbed flexible undersuit, a sealed compact red helmet with angular dark eye recesses and pale thin eye slits, red cheek plates and narrow dark horizontal mouth grille, very broad rounded red shoulder plates, red curved chest armor with the small dark circular inset, black flexible abdomen, red waist/codpiece with simple straight white trim, red thigh/knee/shin plates, red boot armor and dark textured gloves with small pale fingertip details. Retain the black ribbed elbow and shoulder connectors and the simple asymmetrical plate contours shown in the source. No emblem or text on the breast, no cape, no gun, no extra weapons, no added futuristic machinery. Pose close to the supplied whole model, gentle three-quarter front ready stance, feet separated and knees slightly bent. One arm rests with a lightly closed fist; the other hand at viewer-right holds ONE short green glowing straight energy blade with a small dark handle, angled up and out exactly as in the reference. Keep the entire green blade inside the canvas. Limit the weapon glow to the blade itself; no background wash or particles. Preserve the red/black/white palette, the existing helmet proportions and the fully covered adult figure. No face exposed, bare chest, cartoon armor exaggeration, duplicate limbs, floor, shadow oval, backdrop, UI, caption, watermark, sheet or second figure. This is a static study of an existing game appearance; it does not introduce a new character or animation."
+      ],
+      "prompt_sha256": [
+        "56b64f3f1aa0cea0df09f5241ff6bdbb342543cfbfb29be833fc35e8d42b753c"
+      ],
+      "limitations": [
+        "Galerie statique uniquement : aucun personnage jouable, costume sélectionnable, statistique, attaque ou animation complète ajouté.",
+        "Adaptation peinte 2D contrôlée sur les éléments visibles ; aucune certification de fidélité 1:1 aux modèles originaux.",
+        "PNG natif RGBA conservé octet pour octet ; aucun détourage, nettoyage, recadrage, redimensionnement ou réencodage du résultat généré.",
+        "La famille de tenues reste partiellement couverte ; deux images livrées ne prouvent pas un inventaire exhaustif de toutes les variantes.",
+        "Réserve documentaire : association exacte entre modèle rouge, sélection de troisième tenue et éventuel bonus temporaire à vérifier sur capture de menu et de jeu.",
+        "La lame verte et la posture sont reproduites comme éléments du rendu, sans implémentation de transformation, arme ou pouvoir."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot5/costumes_generated.json",
+      "generation": {
+        "tool": "image_gen built-in",
+        "date": "2026-11-20",
+        "transparent_background_requested": true,
+        "source_native_output": "/workspace/scratch/da9d6e4777c1/generated_images/exec-331e6f58-344f-4002-b222-679faa5d8b00.png",
+        "native_output_unchanged": true,
+        "pixel_edits_after_generation": false,
+        "attempts": 1,
+        "retained_outputs": 1,
+        "attempt_records": [
+          {
+            "attempt": 1,
+            "generated_file": "exec-331e6f58-344f-4002-b222-679faa5d8b00.png",
+            "operation": "generate",
+            "prompt": "Use case: stylized-concept. Produce exactly ONE full-body static costume illustration for Dossier Curien's game gallery. True native RGBA transparent background. Subject: Stick Breitling's red armor appearance from Zombie Revenge Original Mode, faithfully using reference 1 for the entire visible design. Reference 2 is only the painted arcade art style, clean controlled outlines, detailed material shading and realistic human proportions; do not copy Isaac or any of his clothes, colors, cap, shotgun or pose. Show one complete armored human figure at a modest scale that leaves at least 7 percent empty transparent margin above the head, below both boots and on both sides. A full head-to-toe portrait, no cropped helmet, fingers, weapon or feet. Match the actual source armor, not a famous superhero design: bright red glossy segmented armor over a black ribbed flexible undersuit, a sealed compact red helmet with angular dark eye recesses and pale thin eye slits, red cheek plates and narrow dark horizontal mouth grille, very broad rounded red shoulder plates, red curved chest armor with the small dark circular inset, black flexible abdomen, red waist/codpiece with simple straight white trim, red thigh/knee/shin plates, red boot armor and dark textured gloves with small pale fingertip details. Retain the black ribbed elbow and shoulder connectors and the simple asymmetrical plate contours shown in the source. No emblem or text on the breast, no cape, no gun, no extra weapons, no added futuristic machinery. Pose close to the supplied whole model, gentle three-quarter front ready stance, feet separated and knees slightly bent. One arm rests with a lightly closed fist; the other hand at viewer-right holds ONE short green glowing straight energy blade with a small dark handle, angled up and out exactly as in the reference. Keep the entire green blade inside the canvas. Limit the weapon glow to the blade itself; no background wash or particles. Preserve the red/black/white palette, the existing helmet proportions and the fully covered adult figure. No face exposed, bare chest, cartoon armor exaggeration, duplicate limbs, floor, shadow oval, backdrop, UI, caption, watermark, sheet or second figure. This is a static study of an existing game appearance; it does not introduce a new character or animation.",
+            "prompt_sha256": "56b64f3f1aa0cea0df09f5241ff6bdbb342543cfbfb29be833fc35e8d42b753c",
+            "arguments_as_sent": {
+              "transparent_background": true,
+              "referenced_image_paths": [
+                "/workspace/scratch/da9d6e4777c1/hotd-current/docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/stick_red_armor_model.webp",
+                "/workspace/scratch/da9d6e4777c1/hotd-current/assets/dossier_curien/saga/isaac_guard.png"
+              ],
+              "prompt": "Use case: stylized-concept. Produce exactly ONE full-body static costume illustration for Dossier Curien's game gallery. True native RGBA transparent background. Subject: Stick Breitling's red armor appearance from Zombie Revenge Original Mode, faithfully using reference 1 for the entire visible design. Reference 2 is only the painted arcade art style, clean controlled outlines, detailed material shading and realistic human proportions; do not copy Isaac or any of his clothes, colors, cap, shotgun or pose. Show one complete armored human figure at a modest scale that leaves at least 7 percent empty transparent margin above the head, below both boots and on both sides. A full head-to-toe portrait, no cropped helmet, fingers, weapon or feet. Match the actual source armor, not a famous superhero design: bright red glossy segmented armor over a black ribbed flexible undersuit, a sealed compact red helmet with angular dark eye recesses and pale thin eye slits, red cheek plates and narrow dark horizontal mouth grille, very broad rounded red shoulder plates, red curved chest armor with the small dark circular inset, black flexible abdomen, red waist/codpiece with simple straight white trim, red thigh/knee/shin plates, red boot armor and dark textured gloves with small pale fingertip details. Retain the black ribbed elbow and shoulder connectors and the simple asymmetrical plate contours shown in the source. No emblem or text on the breast, no cape, no gun, no extra weapons, no added futuristic machinery. Pose close to the supplied whole model, gentle three-quarter front ready stance, feet separated and knees slightly bent. One arm rests with a lightly closed fist; the other hand at viewer-right holds ONE short green glowing straight energy blade with a small dark handle, angled up and out exactly as in the reference. Keep the entire green blade inside the canvas. Limit the weapon glow to the blade itself; no background wash or particles. Preserve the red/black/white palette, the existing helmet proportions and the fully covered adult figure. No face exposed, bare chest, cartoon armor exaggeration, duplicate limbs, floor, shadow oval, backdrop, UI, caption, watermark, sheet or second figure. This is a static study of an existing game appearance; it does not introduce a new character or animation."
+            },
+            "references": [
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/stick_red_armor_model.webp",
+              "assets/dossier_curien/saga/isaac_guard.png"
+            ],
+            "external_reference_inputs": [],
+            "output_sha256": "10bbfa53a49faaeb406c498133e97915052785e55ebb61dcbeebe9325689838e",
+            "retained": true,
+            "tool_refusal": false
+          }
+        ]
+      },
+      "qa": {
+        "output_visually_inspected": true,
+        "subject_and_silhouette_reviewed": true,
+        "whole_subject_silhouette_visible": true,
+        "subject_extent_note": "Casque, bras, lame verte et deux bottes entièrement visibles.",
+        "visible_bounds_clear_of_canvas_edges": true,
+        "opaque_pixels_at_canvas_edge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "maximum_alpha_on_canvas_edges": 1,
+        "alpha_check": "Transparence native conservée. Les couleurs RGB de pixels transparents peuvent produire un fond apparent dans une prévisualisation qui ignore alpha ; les échantillons de fond sont alpha0. Aucune correction logicielle appliquée.",
+        "native_sha256_matches_saved_png": true,
+        "canonical_1_to_1_certified": false,
+        "reference_limitations_open": false,
+        "mechanical_classification_open": true,
+        "ui_or_engine_capture_performed": false,
+        "independent_visual_review": {
+          "reviewer": "root",
+          "date": "2026-11-20",
+          "completed": true,
+          "whole_subjects_and_identity_details_reviewed": true,
+          "reference_comparison_performed": true,
+          "blocking_technical_issue_observed": false,
+          "canonical_1_to_1_certified": false,
+          "note": "Les six PNG ont été comparés aux rendus sources et retenus. Silhouettes entières, tenue/visage/équipement lisibles ; portée limitée des références respectée. Les pixels alpha sont contrôlés séparément.",
+          "reference_limitations_open": false,
+          "mechanical_classification_open": true
+        }
+      }
+    },
+    {
+      "id": "rikiya_zr_alt_suit",
+      "name": "Rikiya Busujima — costume bleu et chapeau",
+      "game": "zombie_revenge",
+      "game_label": "Zombie Revenge",
+      "edition_scope": "Zombie Revenge — jeu original / Arcade Mode Dreamcast ; ensemble de tenues 2 Player.",
+      "category": "costume_variant",
+      "status": "static_reference_reviewed",
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot5/costumes/rikiya_zr_alt_suit_base.png",
+      "generated_file": "exec-0720120d-b07e-4190-ba87-efd1326a4735.png",
+      "sha256": "ffa985e1cca141dec576a5435e4e0e52cb5be61611c4ea4a612f8a54de24bdb2",
+      "bytes": 1484727,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        89,
+        47,
+        965,
+        1513
+      ],
+      "visible_bbox": [
+        241,
+        120,
+        802,
+        1417
+      ],
+      "visible_alpha_threshold": 127,
+      "maximum_alpha_on_canvas_edges": 0,
+      "maximum_alpha_by_edge_top_bottom_left_right": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels_at_canvas_edge": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alpha_zero_pixels": 1234867,
+      "alpha_at_background_samples": {
+        "(0, 0)": 0,
+        "(512, 0)": 0,
+        "(0, 768)": 0,
+        "(1023, 768)": 0,
+        "(512, 1535)": 0,
+        "(512, 10)": 0,
+        "(100, 768)": 0
+      },
+      "inventory_task_id": "rikiya_alts",
+      "new_identity": false,
+      "inventory_family_coverage": "partial",
+      "sources": [
+        "https://static.wikia.nocookie.net/houseofthedead/images/c/c2/BusujimaAltSkin1.jpg/revision/latest",
+        "https://www.digitpress.com/library/manuals/dreamcast/zombie_revenge.pdf",
+        "https://ultimatepopculture.fandom.com/wiki/Rikiya_Busujima"
+      ],
+      "source_ids": [
+        "rikiya_suit_hat_model",
+        "zr_dreamcast_manual",
+        "zr_rikiya_costume_identification"
+      ],
+      "source_notes": [
+        "Rendu entier : fedora bleu-gris à plume brune, cheveux noirs, costume bleu-gris, chemise noire, cravate et pochette rouges, revers olive, chaussures sombres et pistolet à canon long.",
+        "Le premier dessin coupait une chaussure ; une édition imagegen a réduit et recentré le personnage en préservant pose et tenue. Le PNG livré est la seconde sortie native."
+      ],
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/rikiya_suit_hat_model.webp",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "reference_inputs": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/rikiya_suit_hat_model.webp",
+          "sha256": "bc51857da458154f25ce80dbd3c664fd7bd5db3427e1efdf9e4bb66f8b2133d5",
+          "bytes": 19524,
+          "dimensions": [
+            442,
+            819
+          ],
+          "mode": "RGB",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true,
+          "binary_in_repository": true
+        },
+        {
+          "path": "assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "bytes": 595313,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "alpha_bbox": [
+            218,
+            55,
+            814,
+            960
+          ],
+          "visible_bbox": [
+            220,
+            57,
+            812,
+            957
+          ],
+          "visible_alpha_threshold": 127,
+          "maximum_alpha_on_canvas_edges": 0,
+          "maximum_alpha_by_edge_top_bottom_left_right": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "opaque_pixels_at_canvas_edge": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "alpha_zero_pixels": 781143,
+          "alpha_at_background_samples": {
+            "(0, 0)": 0,
+            "(512, 0)": 0,
+            "(0, 512)": 0,
+            "(1023, 512)": 0,
+            "(512, 1023)": 0,
+            "(512, 10)": 0,
+            "(100, 512)": 0
+          },
+          "role": "painting_style_only",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true,
+          "binary_in_repository": true
+        },
+        {
+          "path": null,
+          "sha256": "28c4de4ce51551e1f927931a5df6ac1eb96c2b45d0d47c900e07e599cfcfcc6b",
+          "bytes": 1754996,
+          "dimensions": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "alpha_bbox": [
+            33,
+            0,
+            1010,
+            1536
+          ],
+          "visible_bbox": [
+            176,
+            4,
+            858,
+            1536
+          ],
+          "visible_alpha_threshold": 127,
+          "maximum_alpha_on_canvas_edges": 236,
+          "maximum_alpha_by_edge_top_bottom_left_right": [
+            17,
+            236,
+            0,
+            0
+          ],
+          "opaque_pixels_at_canvas_edge": [
+            0,
+            18,
+            0,
+            0
+          ],
+          "alpha_zero_pixels": 1103288,
+          "alpha_at_background_samples": {
+            "(0, 0)": 0,
+            "(512, 0)": 0,
+            "(0, 768)": 0,
+            "(1023, 768)": 0,
+            "(512, 1535)": 0,
+            "(512, 10)": 0,
+            "(100, 768)": 0
+          },
+          "role": "rejected_generated_draft_for_framing_edit",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true,
+          "binary_in_repository": false,
+          "external_local_path": "/workspace/scratch/da9d6e4777c1/generated_images/exec-c4342ce6-ff05-4658-9dc0-48313df8a570.png",
+          "generated_file": "exec-c4342ce6-ff05-4658-9dc0-48313df8a570.png"
+        }
+      ],
+      "prompts": [
+        "Use case: stylized-concept. Create exactly ONE complete full-body illustration for the Dossier Curien 2D game costume gallery. Native RGBA, genuinely transparent background. Subject: adult Rikiya Busujima in the SUIT AND HAT alternate costume shown in reference 1 from Zombie Revenge. Reference 1 is the exact identity and clothing reference. Reference 2 controls ONLY the hand-painted arcade character-art style: crisp careful outlines, detailed shaded cloth, realistic adult proportions, controlled highlights. Do not copy Isaac's identity, cap, brown jacket, shotgun, posture or clothing. Preserve the entire subject from hat feather through both black shoes within a tall portrait canvas with generous transparent margins on every edge. No scene, floor, shadow oval, glow background, title, text, UI, label, collage, sheet or second figure. Rikiya is a lean adult Japanese man with a long sharply angular face, pronounced cheekbones and a stern concentrated expression, medium tan skin and messy black neck-length hair visible beneath a dark slate-blue fedora. Keep the short brim, indented crown, black hatband and one small brown feather at the side of the hat. His outfit is the dark slate-blue matching suit shown in reference 1: long single-breasted jacket with plain lapels, black collared shirt, vivid red necktie and small red breast-pocket triangle, slightly loose straight/flared trousers, black simple low-heeled shoes, and muted olive cuffs. No extra badges, armor, necklaces, belt ornaments, holsters or suit patterns. Keep the standing pose close to the complete source model: gentle three-quarter front view, feet apart, anatomical right arm lowered at viewer-left with the very long-barreled silver-and-dark handgun pointed down, greenish/dark grip details as seen in the source. The anatomical left arm at viewer-right is raised loosely, with index and little finger extended, middle and ring fingers folded and thumb visible; exactly one ordinary five-finger hand with no fused or duplicate fingers. Make the handgun one coherent handheld pistol with its barrel fully visible and no attached rifle stock. Retain the recognizable hat, shaggy hair, red tie and slate-blue suit palette rather than copying his shirtless default or his black leather variant. Single static wardrobe adaptation, no new identity or animation.",
+        "Use case: precise-object-edit. Edit the FIRST image only to correct its framing. Keep exactly the same single Rikiya Busujima character, identity, face, hair, feathered slate-blue fedora, slate-blue suit, black shirt, red tie and pocket square, olive cuffs, long-barreled gun, raised five-finger gesture, body proportions, pose, colors and painted style. The first image accidentally clips the bottom edge of the forward shoe and places the feather too near the top edge. Make the WHOLE figure about 18 percent smaller within the portrait canvas and center it, so the complete feather, complete gun barrel, both complete shoe outlines and both soles are visible with at least 7 percent empty transparent margin ABOVE AND BELOW and at least 8 percent on the sides. Extend only the tiny missing end of the clipped shoe naturally, using the second image solely as the original costume/shoe reference. Do not crop any part of the figure. Do not change the clothing design, expression or pose. Genuine transparent background, retaining native alpha. No floor, backdrop, shadow oval, frame, label, text, second figure or sprite sheet. The requested change is only complete framing and the tiny clipped shoe contour."
+      ],
+      "prompt_sha256": [
+        "d233cd0ded933164b62e6bf14c8aaad0253a4a7a1ae5ebff33ea45ccdaaac9ee",
+        "e723826e3e0a3c0f4218206e1ef23de8eaf83abc68e84f3e66ad4854a604788b"
+      ],
+      "limitations": [
+        "Galerie statique uniquement : aucun personnage jouable, costume sélectionnable, statistique, attaque ou animation complète ajouté.",
+        "Adaptation peinte 2D contrôlée sur les éléments visibles ; aucune certification de fidélité 1:1 aux modèles originaux.",
+        "PNG natif RGBA conservé octet pour octet ; aucun détourage, nettoyage, recadrage, redimensionnement ou réencodage du résultat généré.",
+        "La famille de tenues reste partiellement couverte ; deux images livrées ne prouvent pas un inventaire exhaustif de toutes les variantes.",
+        "Les détails de plume, visage, doigts et arme sont adaptés ; aucun nom de costume tiré d’une œuvre tierce n’est ajouté.",
+        "Le premier PNG rejeté n’est pas livré dans le dépôt ; son empreinte et son utilisation comme entrée de correction figurent dans le reçu."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot5/costumes_generated.json",
+      "generation": {
+        "tool": "image_gen built-in",
+        "date": "2026-11-20",
+        "transparent_background_requested": true,
+        "source_native_output": "/workspace/scratch/da9d6e4777c1/generated_images/exec-0720120d-b07e-4190-ba87-efd1326a4735.png",
+        "native_output_unchanged": true,
+        "pixel_edits_after_generation": false,
+        "attempts": 2,
+        "retained_outputs": 1,
+        "attempt_records": [
+          {
+            "attempt": 1,
+            "generated_file": "exec-c4342ce6-ff05-4658-9dc0-48313df8a570.png",
+            "operation": "generate",
+            "prompt": "Use case: stylized-concept. Create exactly ONE complete full-body illustration for the Dossier Curien 2D game costume gallery. Native RGBA, genuinely transparent background. Subject: adult Rikiya Busujima in the SUIT AND HAT alternate costume shown in reference 1 from Zombie Revenge. Reference 1 is the exact identity and clothing reference. Reference 2 controls ONLY the hand-painted arcade character-art style: crisp careful outlines, detailed shaded cloth, realistic adult proportions, controlled highlights. Do not copy Isaac's identity, cap, brown jacket, shotgun, posture or clothing. Preserve the entire subject from hat feather through both black shoes within a tall portrait canvas with generous transparent margins on every edge. No scene, floor, shadow oval, glow background, title, text, UI, label, collage, sheet or second figure. Rikiya is a lean adult Japanese man with a long sharply angular face, pronounced cheekbones and a stern concentrated expression, medium tan skin and messy black neck-length hair visible beneath a dark slate-blue fedora. Keep the short brim, indented crown, black hatband and one small brown feather at the side of the hat. His outfit is the dark slate-blue matching suit shown in reference 1: long single-breasted jacket with plain lapels, black collared shirt, vivid red necktie and small red breast-pocket triangle, slightly loose straight/flared trousers, black simple low-heeled shoes, and muted olive cuffs. No extra badges, armor, necklaces, belt ornaments, holsters or suit patterns. Keep the standing pose close to the complete source model: gentle three-quarter front view, feet apart, anatomical right arm lowered at viewer-left with the very long-barreled silver-and-dark handgun pointed down, greenish/dark grip details as seen in the source. The anatomical left arm at viewer-right is raised loosely, with index and little finger extended, middle and ring fingers folded and thumb visible; exactly one ordinary five-finger hand with no fused or duplicate fingers. Make the handgun one coherent handheld pistol with its barrel fully visible and no attached rifle stock. Retain the recognizable hat, shaggy hair, red tie and slate-blue suit palette rather than copying his shirtless default or his black leather variant. Single static wardrobe adaptation, no new identity or animation.",
+            "prompt_sha256": "d233cd0ded933164b62e6bf14c8aaad0253a4a7a1ae5ebff33ea45ccdaaac9ee",
+            "arguments_as_sent": {
+              "transparent_background": true,
+              "referenced_image_paths": [
+                "/workspace/scratch/da9d6e4777c1/hotd-current/docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/rikiya_suit_hat_model.webp",
+                "/workspace/scratch/da9d6e4777c1/hotd-current/assets/dossier_curien/saga/isaac_guard.png"
+              ],
+              "prompt": "Use case: stylized-concept. Create exactly ONE complete full-body illustration for the Dossier Curien 2D game costume gallery. Native RGBA, genuinely transparent background. Subject: adult Rikiya Busujima in the SUIT AND HAT alternate costume shown in reference 1 from Zombie Revenge. Reference 1 is the exact identity and clothing reference. Reference 2 controls ONLY the hand-painted arcade character-art style: crisp careful outlines, detailed shaded cloth, realistic adult proportions, controlled highlights. Do not copy Isaac's identity, cap, brown jacket, shotgun, posture or clothing. Preserve the entire subject from hat feather through both black shoes within a tall portrait canvas with generous transparent margins on every edge. No scene, floor, shadow oval, glow background, title, text, UI, label, collage, sheet or second figure. Rikiya is a lean adult Japanese man with a long sharply angular face, pronounced cheekbones and a stern concentrated expression, medium tan skin and messy black neck-length hair visible beneath a dark slate-blue fedora. Keep the short brim, indented crown, black hatband and one small brown feather at the side of the hat. His outfit is the dark slate-blue matching suit shown in reference 1: long single-breasted jacket with plain lapels, black collared shirt, vivid red necktie and small red breast-pocket triangle, slightly loose straight/flared trousers, black simple low-heeled shoes, and muted olive cuffs. No extra badges, armor, necklaces, belt ornaments, holsters or suit patterns. Keep the standing pose close to the complete source model: gentle three-quarter front view, feet apart, anatomical right arm lowered at viewer-left with the very long-barreled silver-and-dark handgun pointed down, greenish/dark grip details as seen in the source. The anatomical left arm at viewer-right is raised loosely, with index and little finger extended, middle and ring fingers folded and thumb visible; exactly one ordinary five-finger hand with no fused or duplicate fingers. Make the handgun one coherent handheld pistol with its barrel fully visible and no attached rifle stock. Retain the recognizable hat, shaggy hair, red tie and slate-blue suit palette rather than copying his shirtless default or his black leather variant. Single static wardrobe adaptation, no new identity or animation."
+            },
+            "references": [
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/rikiya_suit_hat_model.webp",
+              "assets/dossier_curien/saga/isaac_guard.png"
+            ],
+            "external_reference_inputs": [],
+            "output_sha256": "28c4de4ce51551e1f927931a5df6ac1eb96c2b45d0d47c900e07e599cfcfcc6b",
+            "retained": false,
+            "tool_refusal": false
+          },
+          {
+            "attempt": 2,
+            "generated_file": "exec-0720120d-b07e-4190-ba87-efd1326a4735.png",
+            "operation": "edit_framing",
+            "prompt": "Use case: precise-object-edit. Edit the FIRST image only to correct its framing. Keep exactly the same single Rikiya Busujima character, identity, face, hair, feathered slate-blue fedora, slate-blue suit, black shirt, red tie and pocket square, olive cuffs, long-barreled gun, raised five-finger gesture, body proportions, pose, colors and painted style. The first image accidentally clips the bottom edge of the forward shoe and places the feather too near the top edge. Make the WHOLE figure about 18 percent smaller within the portrait canvas and center it, so the complete feather, complete gun barrel, both complete shoe outlines and both soles are visible with at least 7 percent empty transparent margin ABOVE AND BELOW and at least 8 percent on the sides. Extend only the tiny missing end of the clipped shoe naturally, using the second image solely as the original costume/shoe reference. Do not crop any part of the figure. Do not change the clothing design, expression or pose. Genuine transparent background, retaining native alpha. No floor, backdrop, shadow oval, frame, label, text, second figure or sprite sheet. The requested change is only complete framing and the tiny clipped shoe contour.",
+            "prompt_sha256": "e723826e3e0a3c0f4218206e1ef23de8eaf83abc68e84f3e66ad4854a604788b",
+            "arguments_as_sent": {
+              "transparent_background": true,
+              "referenced_image_paths": [
+                "/workspace/scratch/da9d6e4777c1/generated_images/exec-c4342ce6-ff05-4658-9dc0-48313df8a570.png",
+                "/workspace/scratch/da9d6e4777c1/hotd-current/docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/rikiya_suit_hat_model.webp"
+              ],
+              "prompt": "Use case: precise-object-edit. Edit the FIRST image only to correct its framing. Keep exactly the same single Rikiya Busujima character, identity, face, hair, feathered slate-blue fedora, slate-blue suit, black shirt, red tie and pocket square, olive cuffs, long-barreled gun, raised five-finger gesture, body proportions, pose, colors and painted style. The first image accidentally clips the bottom edge of the forward shoe and places the feather too near the top edge. Make the WHOLE figure about 18 percent smaller within the portrait canvas and center it, so the complete feather, complete gun barrel, both complete shoe outlines and both soles are visible with at least 7 percent empty transparent margin ABOVE AND BELOW and at least 8 percent on the sides. Extend only the tiny missing end of the clipped shoe naturally, using the second image solely as the original costume/shoe reference. Do not crop any part of the figure. Do not change the clothing design, expression or pose. Genuine transparent background, retaining native alpha. No floor, backdrop, shadow oval, frame, label, text, second figure or sprite sheet. The requested change is only complete framing and the tiny clipped shoe contour."
+            },
+            "references": [
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/rikiya_suit_hat_model.webp"
+            ],
+            "external_reference_inputs": [
+              "/workspace/scratch/da9d6e4777c1/generated_images/exec-c4342ce6-ff05-4658-9dc0-48313df8a570.png"
+            ],
+            "output_sha256": "ffa985e1cca141dec576a5435e4e0e52cb5be61611c4ea4a612f8a54de24bdb2",
+            "retained": true,
+            "tool_refusal": false
+          }
+        ]
+      },
+      "qa": {
+        "output_visually_inspected": true,
+        "subject_and_silhouette_reviewed": true,
+        "whole_subject_silhouette_visible": true,
+        "subject_extent_note": "Plume entière, deux mains, arme et deux chaussures entièrement visibles après correction de cadrage.",
+        "visible_bounds_clear_of_canvas_edges": true,
+        "opaque_pixels_at_canvas_edge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "maximum_alpha_on_canvas_edges": 0,
+        "alpha_check": "Transparence native conservée. Les couleurs RGB de pixels transparents peuvent produire un fond apparent dans une prévisualisation qui ignore alpha ; les échantillons de fond sont alpha0. Aucune correction logicielle appliquée.",
+        "native_sha256_matches_saved_png": true,
+        "canonical_1_to_1_certified": false,
+        "reference_limitations_open": false,
+        "mechanical_classification_open": false,
+        "ui_or_engine_capture_performed": false,
+        "independent_visual_review": {
+          "reviewer": "root",
+          "date": "2026-11-20",
+          "completed": true,
+          "whole_subjects_and_identity_details_reviewed": true,
+          "reference_comparison_performed": true,
+          "blocking_technical_issue_observed": false,
+          "canonical_1_to_1_certified": false,
+          "note": "Les six PNG ont été comparés aux rendus sources et retenus. Silhouettes entières, tenue/visage/équipement lisibles ; portée limitée des références respectée. Les pixels alpha sont contrôlés séparément.",
+          "reference_limitations_open": false,
+          "mechanical_classification_open": false
+        }
+      }
+    },
+    {
+      "id": "linda_zr_alt_qipao",
+      "name": "Linda Rotta — robe blanche fleurie",
+      "game": "zombie_revenge",
+      "game_label": "Zombie Revenge",
+      "edition_scope": "Zombie Revenge — jeu original / Arcade Mode Dreamcast ; ensemble de tenues 2 Player.",
+      "category": "costume_variant",
+      "status": "static_needs_visual_reference_qa",
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot5/costumes/linda_zr_alt_qipao_base.png",
+      "generated_file": "exec-6a4ec156-5e54-4d5f-a1ea-59c11b60eaa5.png",
+      "sha256": "1cdbd2f38eeca2fcbe6dd2d6a82563b408f49c981af09a10cb6bb46bb9594a09",
+      "bytes": 1571425,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        47,
+        17,
+        1004,
+        1520
+      ],
+      "visible_bbox": [
+        275,
+        73,
+        677,
+        1481
+      ],
+      "visible_alpha_threshold": 127,
+      "maximum_alpha_on_canvas_edges": 0,
+      "maximum_alpha_by_edge_top_bottom_left_right": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels_at_canvas_edge": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alpha_zero_pixels": 1253414,
+      "alpha_at_background_samples": {
+        "(0, 0)": 0,
+        "(512, 0)": 0,
+        "(0, 768)": 0,
+        "(1023, 768)": 0,
+        "(512, 1535)": 0,
+        "(512, 10)": 0,
+        "(100, 768)": 0
+      },
+      "inventory_task_id": "linda_alts",
+      "new_identity": false,
+      "inventory_family_coverage": "partial",
+      "sources": [
+        "https://static.wikia.nocookie.net/houseofthedead/images/8/8a/LindaAltSkin1.jpg/revision/latest",
+        "https://www.digitpress.com/library/manuals/dreamcast/zombie_revenge.pdf",
+        "https://thehouseofthedead.fandom.com/wiki/Linda_Rotta",
+        "https://www.youtube.com/watch?v=B0BFu9W6VWQ"
+      ],
+      "source_ids": [
+        "linda_white_dress_model",
+        "zr_dreamcast_manual",
+        "zr_linda_costume_identification",
+        "linda_white_dress_gameplay"
+      ],
+      "source_notes": [
+        "Le rendu atteste le carré blond, la robe blanche sans manches à col haut, le motif floral rouge, les bordures sombres, la bande claire au bras gauche, les gants et les deux sangles brunes sur la cuisse droite.",
+        "Le rendu est coupé aux cuisses. Les petites vues de jeu servent au contexte ; elles ne résolvent pas les chaussures. Jambes et chaussures basses sombres sont une complétion sobre déclarée."
+      ],
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/linda_white_dress_model.webp",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/linda_white_dress_gameplay_row.png",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "reference_inputs": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/linda_white_dress_model.webp",
+          "sha256": "46858588d51a24a06588e60f6bf667547bc4a26242ea3464772070882ddc76bb",
+          "bytes": 30314,
+          "dimensions": [
+            493,
+            802
+          ],
+          "mode": "RGB",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true,
+          "binary_in_repository": true
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/linda_white_dress_gameplay_row.png",
+          "sha256": "302259b89e579274e398c61730a3b5de3edcf56b4b5100651794b0853809faef",
+          "bytes": 74269,
+          "dimensions": [
+            480,
+            90
+          ],
+          "mode": "RGB",
+          "role": "low_resolution_gameplay_context_only",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true,
+          "binary_in_repository": true,
+          "source_transform": {
+            "original": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/linda_white_dress_gameplay_storyboard_1.jpg",
+            "crop_box": [
+              120,
+              360,
+              600,
+              450
+            ],
+            "resized": false,
+            "pixel_inference": false,
+            "estimated_frame_times_seconds": [
+              230,
+              235,
+              240,
+              245
+            ]
+          }
+        },
+        {
+          "path": "assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "bytes": 595313,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "alpha_bbox": [
+            218,
+            55,
+            814,
+            960
+          ],
+          "visible_bbox": [
+            220,
+            57,
+            812,
+            957
+          ],
+          "visible_alpha_threshold": 127,
+          "maximum_alpha_on_canvas_edges": 0,
+          "maximum_alpha_by_edge_top_bottom_left_right": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "opaque_pixels_at_canvas_edge": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "alpha_zero_pixels": 781143,
+          "alpha_at_background_samples": {
+            "(0, 0)": 0,
+            "(512, 0)": 0,
+            "(0, 512)": 0,
+            "(1023, 512)": 0,
+            "(512, 1023)": 0,
+            "(512, 10)": 0,
+            "(100, 512)": 0
+          },
+          "role": "painting_style_only",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true,
+          "binary_in_repository": true
+        }
+      ],
+      "prompts": [
+        "Use case: stylized-concept. Create exactly ONE full-body, head-to-toe static gallery costume study of the adult character LINDA ROTTA wearing her actual WHITE FLORAL DRESS alternate appearance from Zombie Revenge. It is the white alternate outfit used in the arcade-derived costume set, also present in Dreamcast Arcade Mode. Native RGBA with genuinely transparent background. The FIRST reference controls her identity and every visible costume detail. The SECOND is a small row of actual gameplay thumbnails: use only for broad game context, not for invented detail. The LAST reference is ONLY the Dossier Curien hand-painted illustration style: precise controlled outlines, realistic adult proportions, careful warm/cool shading and readable clothing folds. Do not copy Isaac's identity, clothing, weapon, cap, colors or pose. Linda is a clearly adult woman in her twenties, light complexion, brown eyes, short layered honey-blonde bob with a side fringe and a composed serious expression. Preserve the exact reference outfit: short white sleeveless Mandarin-collar dress with a subtly satin-like finish, small dark edging around the collar and hem, the restrained small gold fastening near the collar, and a vertical red rose motif with green leaves and dark stems on the upper chest extending toward the waist. The dress is fully opaque, fitted naturally, with a straight short hem; a narrow black underlayer is visible just below the hem. Keep the pale grey-white wrap around her anatomical LEFT upper arm (viewer RIGHT), dark plain gloves, and TWO simple tan-brown straps around the upper RIGHT thigh (viewer LEFT), with the source's small simple buckles. Do not add a holster, gun, pouches, extra belts, jewelry or new insignia. A neutral balanced standing pose with slight three-quarter turn toward screen-left, arms comfortably at her sides and hands visible; no pinup arching, exaggerated body proportions or sexualized pose. Her original costume render ends at the thighs and the tiny gameplay row does not resolve shoe construction, so show the lower legs and plain restrained dark closed shoes without decorative detail. Footwear is a minimal unverified completion: no high heels, tall boots, laces, straps, buckles, armor, additional stockings or invented elaborate design. Keep natural adult proportions and fully visible bare lower legs. Show her entire hair, hands, all of both legs and both complete simple shoe outlines, with generous empty TRANSPARENT space. Fit the figure within the central 80 percent of the image height, leaving at least 8 percent clear space above her hair and below both soles and generous margins on both sides. No cropping. One woman only, no sprite sheet, animation grid, background, scene, floor, pedestal, oval shadow, glow cloud, vignette, text, caption, watermark, logo, border or UI. This is an explicitly documented static adaptation of the referenced costume; it is not a canonically exact reconstruction of unresolved footwear and is not a new playable costume."
+      ],
+      "prompt_sha256": [
+        "8aafd46e86f8a25b321e06a33fc351b2ed0dc6d0c0820861d0639b1400b47fd5"
+      ],
+      "limitations": [
+        "Galerie statique uniquement : aucun personnage jouable, costume sélectionnable, statistique, attaque ou animation complète ajouté.",
+        "Adaptation peinte 2D contrôlée sur les éléments visibles ; aucune certification de fidélité 1:1 aux modèles originaux.",
+        "PNG natif RGBA conservé octet pour octet ; aucun détourage, nettoyage, recadrage, redimensionnement ou réencodage du résultat généré.",
+        "La famille de tenues reste partiellement couverte ; deux images livrées ne prouvent pas un inventaire exhaustif de toutes les variantes.",
+        "QA visuelle ouverte : jambes sous le recadrage, chaussures, semelles et proportions exactes de la tenue en jeu non attestées suffisamment. Les chaussures produites sont interprétées, non certifiées canoniques.",
+        "Qipao est un identifiant de travail descriptif ; aucun nom officiel de costume n’est revendiqué."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot5/costumes_generated.json",
+      "generation": {
+        "tool": "image_gen built-in",
+        "date": "2026-11-20",
+        "transparent_background_requested": true,
+        "source_native_output": "/workspace/scratch/da9d6e4777c1/generated_images/exec-6a4ec156-5e54-4d5f-a1ea-59c11b60eaa5.png",
+        "native_output_unchanged": true,
+        "pixel_edits_after_generation": false,
+        "attempts": 1,
+        "retained_outputs": 1,
+        "attempt_records": [
+          {
+            "attempt": 1,
+            "generated_file": "exec-6a4ec156-5e54-4d5f-a1ea-59c11b60eaa5.png",
+            "operation": "generate",
+            "prompt": "Use case: stylized-concept. Create exactly ONE full-body, head-to-toe static gallery costume study of the adult character LINDA ROTTA wearing her actual WHITE FLORAL DRESS alternate appearance from Zombie Revenge. It is the white alternate outfit used in the arcade-derived costume set, also present in Dreamcast Arcade Mode. Native RGBA with genuinely transparent background. The FIRST reference controls her identity and every visible costume detail. The SECOND is a small row of actual gameplay thumbnails: use only for broad game context, not for invented detail. The LAST reference is ONLY the Dossier Curien hand-painted illustration style: precise controlled outlines, realistic adult proportions, careful warm/cool shading and readable clothing folds. Do not copy Isaac's identity, clothing, weapon, cap, colors or pose. Linda is a clearly adult woman in her twenties, light complexion, brown eyes, short layered honey-blonde bob with a side fringe and a composed serious expression. Preserve the exact reference outfit: short white sleeveless Mandarin-collar dress with a subtly satin-like finish, small dark edging around the collar and hem, the restrained small gold fastening near the collar, and a vertical red rose motif with green leaves and dark stems on the upper chest extending toward the waist. The dress is fully opaque, fitted naturally, with a straight short hem; a narrow black underlayer is visible just below the hem. Keep the pale grey-white wrap around her anatomical LEFT upper arm (viewer RIGHT), dark plain gloves, and TWO simple tan-brown straps around the upper RIGHT thigh (viewer LEFT), with the source's small simple buckles. Do not add a holster, gun, pouches, extra belts, jewelry or new insignia. A neutral balanced standing pose with slight three-quarter turn toward screen-left, arms comfortably at her sides and hands visible; no pinup arching, exaggerated body proportions or sexualized pose. Her original costume render ends at the thighs and the tiny gameplay row does not resolve shoe construction, so show the lower legs and plain restrained dark closed shoes without decorative detail. Footwear is a minimal unverified completion: no high heels, tall boots, laces, straps, buckles, armor, additional stockings or invented elaborate design. Keep natural adult proportions and fully visible bare lower legs. Show her entire hair, hands, all of both legs and both complete simple shoe outlines, with generous empty TRANSPARENT space. Fit the figure within the central 80 percent of the image height, leaving at least 8 percent clear space above her hair and below both soles and generous margins on both sides. No cropping. One woman only, no sprite sheet, animation grid, background, scene, floor, pedestal, oval shadow, glow cloud, vignette, text, caption, watermark, logo, border or UI. This is an explicitly documented static adaptation of the referenced costume; it is not a canonically exact reconstruction of unresolved footwear and is not a new playable costume.",
+            "prompt_sha256": "8aafd46e86f8a25b321e06a33fc351b2ed0dc6d0c0820861d0639b1400b47fd5",
+            "arguments_as_sent": {
+              "transparent_background": true,
+              "referenced_image_paths": [
+                "/workspace/scratch/da9d6e4777c1/hotd-current/docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/linda_white_dress_model.webp",
+                "/workspace/scratch/da9d6e4777c1/hotd-current/docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/linda_white_dress_gameplay_row.png",
+                "/workspace/scratch/da9d6e4777c1/hotd-current/assets/dossier_curien/saga/isaac_guard.png"
+              ],
+              "prompt": "Use case: stylized-concept. Create exactly ONE full-body, head-to-toe static gallery costume study of the adult character LINDA ROTTA wearing her actual WHITE FLORAL DRESS alternate appearance from Zombie Revenge. It is the white alternate outfit used in the arcade-derived costume set, also present in Dreamcast Arcade Mode. Native RGBA with genuinely transparent background. The FIRST reference controls her identity and every visible costume detail. The SECOND is a small row of actual gameplay thumbnails: use only for broad game context, not for invented detail. The LAST reference is ONLY the Dossier Curien hand-painted illustration style: precise controlled outlines, realistic adult proportions, careful warm/cool shading and readable clothing folds. Do not copy Isaac's identity, clothing, weapon, cap, colors or pose. Linda is a clearly adult woman in her twenties, light complexion, brown eyes, short layered honey-blonde bob with a side fringe and a composed serious expression. Preserve the exact reference outfit: short white sleeveless Mandarin-collar dress with a subtly satin-like finish, small dark edging around the collar and hem, the restrained small gold fastening near the collar, and a vertical red rose motif with green leaves and dark stems on the upper chest extending toward the waist. The dress is fully opaque, fitted naturally, with a straight short hem; a narrow black underlayer is visible just below the hem. Keep the pale grey-white wrap around her anatomical LEFT upper arm (viewer RIGHT), dark plain gloves, and TWO simple tan-brown straps around the upper RIGHT thigh (viewer LEFT), with the source's small simple buckles. Do not add a holster, gun, pouches, extra belts, jewelry or new insignia. A neutral balanced standing pose with slight three-quarter turn toward screen-left, arms comfortably at her sides and hands visible; no pinup arching, exaggerated body proportions or sexualized pose. Her original costume render ends at the thighs and the tiny gameplay row does not resolve shoe construction, so show the lower legs and plain restrained dark closed shoes without decorative detail. Footwear is a minimal unverified completion: no high heels, tall boots, laces, straps, buckles, armor, additional stockings or invented elaborate design. Keep natural adult proportions and fully visible bare lower legs. Show her entire hair, hands, all of both legs and both complete simple shoe outlines, with generous empty TRANSPARENT space. Fit the figure within the central 80 percent of the image height, leaving at least 8 percent clear space above her hair and below both soles and generous margins on both sides. No cropping. One woman only, no sprite sheet, animation grid, background, scene, floor, pedestal, oval shadow, glow cloud, vignette, text, caption, watermark, logo, border or UI. This is an explicitly documented static adaptation of the referenced costume; it is not a canonically exact reconstruction of unresolved footwear and is not a new playable costume."
+            },
+            "references": [
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/linda_white_dress_model.webp",
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/linda_white_dress_gameplay_row.png",
+              "assets/dossier_curien/saga/isaac_guard.png"
+            ],
+            "external_reference_inputs": [],
+            "output_sha256": "1cdbd2f38eeca2fcbe6dd2d6a82563b408f49c981af09a10cb6bb46bb9594a09",
+            "retained": true,
+            "tool_refusal": false
+          }
+        ]
+      },
+      "qa": {
+        "output_visually_inspected": true,
+        "subject_and_silhouette_reviewed": true,
+        "whole_subject_silhouette_visible": true,
+        "subject_extent_note": "Cheveux, deux mains, jambes et deux chaussures entièrement visibles ; bas du corps interprété.",
+        "visible_bounds_clear_of_canvas_edges": true,
+        "opaque_pixels_at_canvas_edge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "maximum_alpha_on_canvas_edges": 0,
+        "alpha_check": "Transparence native conservée. Les couleurs RGB de pixels transparents peuvent produire un fond apparent dans une prévisualisation qui ignore alpha ; les échantillons de fond sont alpha0. Aucune correction logicielle appliquée.",
+        "native_sha256_matches_saved_png": true,
+        "canonical_1_to_1_certified": false,
+        "reference_limitations_open": true,
+        "mechanical_classification_open": false,
+        "ui_or_engine_capture_performed": false,
+        "independent_visual_review": {
+          "reviewer": "root",
+          "date": "2026-11-20",
+          "completed": true,
+          "whole_subjects_and_identity_details_reviewed": true,
+          "reference_comparison_performed": true,
+          "blocking_technical_issue_observed": false,
+          "canonical_1_to_1_certified": false,
+          "note": "Les six PNG ont été comparés aux rendus sources et retenus. Silhouettes entières, tenue/visage/équipement lisibles ; portée limitée des références respectée. Les pixels alpha sont contrôlés séparément.",
+          "reference_limitations_open": true,
+          "mechanical_classification_open": false
+        }
+      }
+    },
+    {
+      "id": "linda_zr_alt_leather",
+      "name": "Linda Rotta — combinaison noire, Original Mode",
+      "game": "zombie_revenge",
+      "game_label": "Zombie Revenge",
+      "edition_scope": "Zombie Revenge — Dreamcast Original Mode, troisième tenue identifiée par source secondaire.",
+      "category": "costume_variant",
+      "status": "static_needs_visual_reference_qa",
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot5/costumes/linda_zr_alt_leather_base.png",
+      "generated_file": "exec-6cc4c63a-3eb2-409b-bbd6-5ff2c07a0c85.png",
+      "sha256": "e5e4a649d6c69aa5d0b10cc323eacf3a69b53c9e7887c664561dbb0071a7bf89",
+      "bytes": 1409225,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        73,
+        62,
+        952,
+        1517
+      ],
+      "visible_bbox": [
+        265,
+        65,
+        732,
+        1480
+      ],
+      "visible_alpha_threshold": 127,
+      "maximum_alpha_on_canvas_edges": 0,
+      "maximum_alpha_by_edge_top_bottom_left_right": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels_at_canvas_edge": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alpha_zero_pixels": 1235427,
+      "alpha_at_background_samples": {
+        "(0, 0)": 0,
+        "(512, 0)": 0,
+        "(0, 768)": 0,
+        "(1023, 768)": 0,
+        "(512, 1535)": 0,
+        "(512, 10)": 0,
+        "(100, 768)": 0
+      },
+      "inventory_task_id": "linda_alts",
+      "new_identity": false,
+      "inventory_family_coverage": "partial",
+      "sources": [
+        "https://static.wikia.nocookie.net/houseofthedead/images/f/fc/LindaAltSkin2.jpg/revision/latest",
+        "https://www.digitpress.com/library/manuals/dreamcast/zombie_revenge.pdf",
+        "https://thehouseofthedead.fandom.com/wiki/Linda_Rotta",
+        "https://www.youtube.com/watch?v=CEO_ng8MEtM"
+      ],
+      "source_ids": [
+        "linda_black_leather_model",
+        "zr_dreamcast_manual",
+        "zr_linda_costume_identification",
+        "linda_leather_gameplay"
+      ],
+      "source_notes": [
+        "Le rendu atteste carré blond, combinaison noire brillante à manches longues, ouverture en V, collier à petits éléments clairs, ceinture ornée, gants et bande claire au bras gauche.",
+        "Les bouts des bottes sont hors cadre. Les vignettes vidéo ne résolvent pas leur dessin ; les bouts et semelles sont complétés simplement. Vue de face, sans lettrage dorsal visible."
+      ],
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/linda_black_leather_model.webp",
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/linda_leather_gameplay_rows.png",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "reference_inputs": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/linda_black_leather_model.webp",
+          "sha256": "1be9cd165a74f297c99cfeb18ac27aece6e3e067cebff317ff12acda42d412c7",
+          "bytes": 11080,
+          "dimensions": [
+            211,
+            409
+          ],
+          "mode": "RGB",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true,
+          "binary_in_repository": true
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/linda_leather_gameplay_rows.png",
+          "sha256": "84a33c6a8cf52a833c77a2a72ea626c6222418fdda37ae0901ea095b5d2d09ca",
+          "bytes": 175642,
+          "dimensions": [
+            800,
+            180
+          ],
+          "mode": "RGB",
+          "role": "low_resolution_gameplay_context_only",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true,
+          "binary_in_repository": true,
+          "source_transform": {
+            "original": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/linda_leather_gameplay_storyboard_0.jpg",
+            "crop_box": [
+              0,
+              270,
+              800,
+              450
+            ],
+            "resized": false,
+            "pixel_inference": false,
+            "estimated_frame_times_seconds": [
+              150,
+              160,
+              170,
+              180,
+              190,
+              200,
+              210,
+              220,
+              230,
+              240
+            ]
+          }
+        },
+        {
+          "path": "assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "bytes": 595313,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "alpha_bbox": [
+            218,
+            55,
+            814,
+            960
+          ],
+          "visible_bbox": [
+            220,
+            57,
+            812,
+            957
+          ],
+          "visible_alpha_threshold": 127,
+          "maximum_alpha_on_canvas_edges": 0,
+          "maximum_alpha_by_edge_top_bottom_left_right": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "opaque_pixels_at_canvas_edge": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "alpha_zero_pixels": 781143,
+          "alpha_at_background_samples": {
+            "(0, 0)": 0,
+            "(512, 0)": 0,
+            "(0, 512)": 0,
+            "(1023, 512)": 0,
+            "(512, 1023)": 0,
+            "(512, 10)": 0,
+            "(100, 512)": 0
+          },
+          "role": "painting_style_only",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true,
+          "binary_in_repository": true
+        }
+      ],
+      "prompts": [
+        "Use case: stylized-concept. Create exactly ONE whole-body, head-to-toe illustration of the adult video game character LINDA ROTTA in her actual black leather alternate outfit from Zombie Revenge on Dreamcast, Original Mode. This is a static Dossier Curien gallery costume study. Native RGBA with a genuinely transparent background. The FIRST reference is the exact identity and costume contract; the SECOND contains tiny game frames for general silhouette only; the LAST is ONLY the painting style: carefully hand-painted arcade character art, crisp restrained outlines, realistic adult anatomy, well-controlled fabric highlights and warm/cool shading. Do not borrow Isaac's identity, clothes, gun, posture, colors, or cap. Linda is a clearly adult woman in her twenties with a light complexion, short layered blonde bob, side fringe, brown eyes and a serious composed expression. Preserve the first reference's fitted long-sleeve black leather jumpsuit, its simple open V-shaped front, high black collar, small light studs at the neck, waist belt with restrained silver ornament and narrow hanging strap, black gloves, and the pale grey-white wrap around her anatomical LEFT upper arm, visible on the viewer's RIGHT. The trousers and tall black boot shafts form a coherent dark silhouette exactly like the source. Keep black leather seams restrained; do not add armor, knee guards, tactical pouches, weapons, extra belts, new motifs or logos. The tiny game frames do not resolve exact toe/sole construction: finish the existing black boot shapes with simple closed black toes and subdued flat soles, without speculative buckles, straps, heels or decorations. Her front is shown so no back lettering is visible. No new readable text. Adapt the source to a relaxed standing three-quarter front pose turned slightly toward screen-left, both arms slightly apart from the torso with relaxed gloved hands visible; no pinup arching or exaggerated anatomy. Entire head, all fingers, both legs, BOTH complete boot outlines and soles must be visible. The figure should occupy no more than 82 percent of the image height, with at least 8 percent empty TRANSPARENT margin above the hair and below the feet, and generous side margins. This is one adult character, no duplicated body, sprite sheet, background, scenery, floor, pedestal, oval shadow, glow cloud, vignette, UI, label, logo, watermark or frame. Preserve reference identity and clothing rather than redesigning her. The full-length reconstruction below the source crop is intentionally simple and is not claimed as a one-to-one model reproduction."
+      ],
+      "prompt_sha256": [
+        "c01cfbd10e58a73e5a804fe4261cf80662fc537d0fff3d22b49cb5894e6eeb30"
+      ],
+      "limitations": [
+        "Galerie statique uniquement : aucun personnage jouable, costume sélectionnable, statistique, attaque ou animation complète ajouté.",
+        "Adaptation peinte 2D contrôlée sur les éléments visibles ; aucune certification de fidélité 1:1 aux modèles originaux.",
+        "PNG natif RGBA conservé octet pour octet ; aucun détourage, nettoyage, recadrage, redimensionnement ou réencodage du résultat généré.",
+        "La famille de tenues reste partiellement couverte ; deux images livrées ne prouvent pas un inventaire exhaustif de toutes les variantes.",
+        "QA visuelle ouverte : bouts des bottes, semelles, construction précise de la ceinture et du petit pendentif restent interprétés.",
+        "Le mot DIVA est signalé au dos par le wiki ; il n’est ni visible dans cette pose ni inventé sur la poitrine."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot5/costumes_generated.json",
+      "generation": {
+        "tool": "image_gen built-in",
+        "date": "2026-11-20",
+        "transparent_background_requested": true,
+        "source_native_output": "/workspace/scratch/da9d6e4777c1/generated_images/exec-6cc4c63a-3eb2-409b-bbd6-5ff2c07a0c85.png",
+        "native_output_unchanged": true,
+        "pixel_edits_after_generation": false,
+        "attempts": 1,
+        "retained_outputs": 1,
+        "attempt_records": [
+          {
+            "attempt": 1,
+            "generated_file": "exec-6cc4c63a-3eb2-409b-bbd6-5ff2c07a0c85.png",
+            "operation": "generate",
+            "prompt": "Use case: stylized-concept. Create exactly ONE whole-body, head-to-toe illustration of the adult video game character LINDA ROTTA in her actual black leather alternate outfit from Zombie Revenge on Dreamcast, Original Mode. This is a static Dossier Curien gallery costume study. Native RGBA with a genuinely transparent background. The FIRST reference is the exact identity and costume contract; the SECOND contains tiny game frames for general silhouette only; the LAST is ONLY the painting style: carefully hand-painted arcade character art, crisp restrained outlines, realistic adult anatomy, well-controlled fabric highlights and warm/cool shading. Do not borrow Isaac's identity, clothes, gun, posture, colors, or cap. Linda is a clearly adult woman in her twenties with a light complexion, short layered blonde bob, side fringe, brown eyes and a serious composed expression. Preserve the first reference's fitted long-sleeve black leather jumpsuit, its simple open V-shaped front, high black collar, small light studs at the neck, waist belt with restrained silver ornament and narrow hanging strap, black gloves, and the pale grey-white wrap around her anatomical LEFT upper arm, visible on the viewer's RIGHT. The trousers and tall black boot shafts form a coherent dark silhouette exactly like the source. Keep black leather seams restrained; do not add armor, knee guards, tactical pouches, weapons, extra belts, new motifs or logos. The tiny game frames do not resolve exact toe/sole construction: finish the existing black boot shapes with simple closed black toes and subdued flat soles, without speculative buckles, straps, heels or decorations. Her front is shown so no back lettering is visible. No new readable text. Adapt the source to a relaxed standing three-quarter front pose turned slightly toward screen-left, both arms slightly apart from the torso with relaxed gloved hands visible; no pinup arching or exaggerated anatomy. Entire head, all fingers, both legs, BOTH complete boot outlines and soles must be visible. The figure should occupy no more than 82 percent of the image height, with at least 8 percent empty TRANSPARENT margin above the hair and below the feet, and generous side margins. This is one adult character, no duplicated body, sprite sheet, background, scenery, floor, pedestal, oval shadow, glow cloud, vignette, UI, label, logo, watermark or frame. Preserve reference identity and clothing rather than redesigning her. The full-length reconstruction below the source crop is intentionally simple and is not claimed as a one-to-one model reproduction.",
+            "prompt_sha256": "c01cfbd10e58a73e5a804fe4261cf80662fc537d0fff3d22b49cb5894e6eeb30",
+            "arguments_as_sent": {
+              "transparent_background": true,
+              "referenced_image_paths": [
+                "/workspace/scratch/da9d6e4777c1/hotd-current/docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/linda_black_leather_model.webp",
+                "/workspace/scratch/da9d6e4777c1/hotd-current/docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/linda_leather_gameplay_rows.png",
+                "/workspace/scratch/da9d6e4777c1/hotd-current/assets/dossier_curien/saga/isaac_guard.png"
+              ],
+              "prompt": "Use case: stylized-concept. Create exactly ONE whole-body, head-to-toe illustration of the adult video game character LINDA ROTTA in her actual black leather alternate outfit from Zombie Revenge on Dreamcast, Original Mode. This is a static Dossier Curien gallery costume study. Native RGBA with a genuinely transparent background. The FIRST reference is the exact identity and costume contract; the SECOND contains tiny game frames for general silhouette only; the LAST is ONLY the painting style: carefully hand-painted arcade character art, crisp restrained outlines, realistic adult anatomy, well-controlled fabric highlights and warm/cool shading. Do not borrow Isaac's identity, clothes, gun, posture, colors, or cap. Linda is a clearly adult woman in her twenties with a light complexion, short layered blonde bob, side fringe, brown eyes and a serious composed expression. Preserve the first reference's fitted long-sleeve black leather jumpsuit, its simple open V-shaped front, high black collar, small light studs at the neck, waist belt with restrained silver ornament and narrow hanging strap, black gloves, and the pale grey-white wrap around her anatomical LEFT upper arm, visible on the viewer's RIGHT. The trousers and tall black boot shafts form a coherent dark silhouette exactly like the source. Keep black leather seams restrained; do not add armor, knee guards, tactical pouches, weapons, extra belts, new motifs or logos. The tiny game frames do not resolve exact toe/sole construction: finish the existing black boot shapes with simple closed black toes and subdued flat soles, without speculative buckles, straps, heels or decorations. Her front is shown so no back lettering is visible. No new readable text. Adapt the source to a relaxed standing three-quarter front pose turned slightly toward screen-left, both arms slightly apart from the torso with relaxed gloved hands visible; no pinup arching or exaggerated anatomy. Entire head, all fingers, both legs, BOTH complete boot outlines and soles must be visible. The figure should occupy no more than 82 percent of the image height, with at least 8 percent empty TRANSPARENT margin above the hair and below the feet, and generous side margins. This is one adult character, no duplicated body, sprite sheet, background, scenery, floor, pedestal, oval shadow, glow cloud, vignette, UI, label, logo, watermark or frame. Preserve reference identity and clothing rather than redesigning her. The full-length reconstruction below the source crop is intentionally simple and is not claimed as a one-to-one model reproduction."
+            },
+            "references": [
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/linda_black_leather_model.webp",
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/linda_leather_gameplay_rows.png",
+              "assets/dossier_curien/saga/isaac_guard.png"
+            ],
+            "external_reference_inputs": [],
+            "output_sha256": "e5e4a649d6c69aa5d0b10cc323eacf3a69b53c9e7887c664561dbb0071a7bf89",
+            "retained": true,
+            "tool_refusal": false
+          }
+        ]
+      },
+      "qa": {
+        "output_visually_inspected": true,
+        "subject_and_silhouette_reviewed": true,
+        "whole_subject_silhouette_visible": true,
+        "subject_extent_note": "Cheveux, mains et deux bottes entièrement visibles ; extrémités des bottes interprétées.",
+        "visible_bounds_clear_of_canvas_edges": true,
+        "opaque_pixels_at_canvas_edge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "maximum_alpha_on_canvas_edges": 0,
+        "alpha_check": "Transparence native conservée. Les couleurs RGB de pixels transparents peuvent produire un fond apparent dans une prévisualisation qui ignore alpha ; les échantillons de fond sont alpha0. Aucune correction logicielle appliquée.",
+        "native_sha256_matches_saved_png": true,
+        "canonical_1_to_1_certified": false,
+        "reference_limitations_open": true,
+        "mechanical_classification_open": false,
+        "ui_or_engine_capture_performed": false,
+        "independent_visual_review": {
+          "reviewer": "root",
+          "date": "2026-11-20",
+          "completed": true,
+          "whole_subjects_and_identity_details_reviewed": true,
+          "reference_comparison_performed": true,
+          "blocking_technical_issue_observed": false,
+          "canonical_1_to_1_certified": false,
+          "note": "Les six PNG ont été comparés aux rendus sources et retenus. Silhouettes entières, tenue/visage/équipement lisibles ; portée limitée des références respectée. Les pixels alpha sont contrôlés séparément.",
+          "reference_limitations_open": true,
+          "mechanical_classification_open": false
+        }
+      }
+    },
+    {
+      "id": "rikiya_zr_alt_leather",
+      "name": "Rikiya Busujima — tenue cuir, Original Mode",
+      "game": "zombie_revenge",
+      "game_label": "Zombie Revenge",
+      "edition_scope": "Zombie Revenge — Dreamcast Original Mode, troisième tenue identifiée par source secondaire.",
+      "category": "costume_variant",
+      "status": "static_needs_visual_reference_qa",
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "path": "assets/dossier_curien/gallery_2026-11-20_lot5/costumes/rikiya_zr_alt_leather_base.png",
+      "generated_file": "exec-9db50c25-ee28-4484-916e-ee96484d5d8e.png",
+      "sha256": "204fb7ff80df21547a888bf99f4e376ce6d707e7a40bc535595cce95f6e780b9",
+      "bytes": 1590612,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        25,
+        61,
+        1010,
+        1511
+      ],
+      "visible_bbox": [
+        251,
+        64,
+        765,
+        1469
+      ],
+      "visible_alpha_threshold": 127,
+      "maximum_alpha_on_canvas_edges": 0,
+      "maximum_alpha_by_edge_top_bottom_left_right": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque_pixels_at_canvas_edge": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alpha_zero_pixels": 1150860,
+      "alpha_at_background_samples": {
+        "(0, 0)": 0,
+        "(512, 0)": 0,
+        "(0, 768)": 0,
+        "(1023, 768)": 0,
+        "(512, 1535)": 0,
+        "(512, 10)": 0,
+        "(100, 768)": 0
+      },
+      "inventory_task_id": "rikiya_alts",
+      "new_identity": false,
+      "inventory_family_coverage": "partial",
+      "sources": [
+        "https://static.wikia.nocookie.net/houseofthedead/images/0/0d/BusujimaAltSkin2.jpg/revision/latest",
+        "https://www.digitpress.com/library/manuals/dreamcast/zombie_revenge.pdf",
+        "https://ultimatepopculture.fandom.com/wiki/Rikiya_Busujima"
+      ],
+      "source_ids": [
+        "rikiya_black_leather_model",
+        "zr_dreamcast_manual",
+        "zr_rikiya_costume_identification"
+      ],
+      "source_notes": [
+        "Le rendu atteste cheveux noirs volumineux, lunettes sombres, foulard blanc, blouson noir à larges revers et épaules rembourrées, pantalon noir, boucle argentée et bandes cloutées aux cuisses.",
+        "Le rendu coupe les pieds. La silhouette des chaussures fermées noires est complétée sobrement ; la pose debout trois-quarts est adaptée."
+      ],
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/rikiya_black_leather_model.webp",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "reference_inputs": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/rikiya_black_leather_model.webp",
+          "sha256": "54676b2ae6f2c8d70a12b4ea98b8266604d199f90fd40d969c60d23230deef0c",
+          "bytes": 15872,
+          "dimensions": [
+            205,
+            431
+          ],
+          "mode": "RGB",
+          "role": "subject_visual_reference",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true,
+          "binary_in_repository": true
+        },
+        {
+          "path": "assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "bytes": 595313,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "alpha_bbox": [
+            218,
+            55,
+            814,
+            960
+          ],
+          "visible_bbox": [
+            220,
+            57,
+            812,
+            957
+          ],
+          "visible_alpha_threshold": 127,
+          "maximum_alpha_on_canvas_edges": 0,
+          "maximum_alpha_by_edge_top_bottom_left_right": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "opaque_pixels_at_canvas_edge": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "alpha_zero_pixels": 781143,
+          "alpha_at_background_samples": {
+            "(0, 0)": 0,
+            "(512, 0)": 0,
+            "(0, 512)": 0,
+            "(1023, 512)": 0,
+            "(512, 1023)": 0,
+            "(512, 10)": 0,
+            "(100, 512)": 0
+          },
+          "role": "painting_style_only",
+          "used_as_imagegen_reference": true,
+          "visually_inspected": true,
+          "binary_in_repository": true
+        }
+      ],
+      "prompts": [
+        "Use case: stylized-concept. Create exactly ONE full-body, head-to-toe static gallery illustration of the adult Japanese game character RIKIYA BUSUJIMA in his actual black leather alternate outfit from Zombie Revenge, Dreamcast Original Mode. Native RGBA with a genuinely transparent background. The FIRST reference is the character and costume contract. The SECOND is ONLY Dossier Curien's visual painting style: detailed hand-painted arcade game character art, controlled crisp outlines, realistic adult proportions, readable dark materials and warm/cool shading. Never copy Isaac's identity, clothes, shotgun, cap, palette or pose. Match reference 1: an adult Japanese man in his thirties with medium-tan complexion, angular stern face, dense fluffy untidy black hair, dark sunglasses with a small metal frame and a short white scarf wrapping the neck, with its small ends lifting gently at his anatomical left shoulder. Preserve the source's black leather biker jacket, wide angular lapels, open upper chest, the two distinctive rounded padded shoulder caps and wrinkled paneled long sleeves. Dark straight leather trousers, the broad dark waist belt with its small bright silver interlocking angular buckle as visually seen, and two hanging studded black straps/panels at the outer thighs. Keep these source details in their source positions; no invented writing or new insignia. He has two bare hands, relaxed at his sides and slightly away from his body; no guns or additional accessories. Match the source's compact strong adult build without exaggerating muscles. Preserve the long dark lower legs and discreet dark boot silhouette. The original crop does not show exact toes and soles: complete them conservatively as plain closed black toes with low subdued soles, without adding speculative buckles, laces, chains, knee armor, boots with heels or new emblems. Pose: relaxed standing, gentle three-quarter front turn toward screen-right, feet apart just enough to read both complete foot outlines. Both hands must have natural coherent fingers. Show the entire hair, scarf ends, shoulders, all fingers, legs, BOTH boot outlines and both soles with ample empty transparent space. The whole figure must fit within the central 80 percent of image height, with at least 8 percent transparent margin above the hair and below the soles, and generous side margins. One figure only; no scene, floor, pedestal, shadow oval, background gradient, colored glow, text, caption, border, logo, UI, watermark, extra limbs, duplicates, collage or sprite sheet. This is a clearly identified static costume adaptation, not a newly invented costume, a playable animation or a claim that unresolved footwear is canonically exact."
+      ],
+      "prompt_sha256": [
+        "0b4b86429dc8af21235dd5e185a4443a507bc8e42d1222d0914d857f86e916a2"
+      ],
+      "limitations": [
+        "Galerie statique uniquement : aucun personnage jouable, costume sélectionnable, statistique, attaque ou animation complète ajouté.",
+        "Adaptation peinte 2D contrôlée sur les éléments visibles ; aucune certification de fidélité 1:1 aux modèles originaux.",
+        "PNG natif RGBA conservé octet pour octet ; aucun détourage, nettoyage, recadrage, redimensionnement ou réencodage du résultat généré.",
+        "La famille de tenues reste partiellement couverte ; deux images livrées ne prouvent pas un inventaire exhaustif de toutes les variantes.",
+        "QA visuelle ouverte : chaussures, semelles et géométrie fine de la boucle restent non certifiées. Le rendu ne permet pas de verrouiller un lettrage exact sur la boucle ; le ZR produit reste une interprétation graphique.",
+        "Pas de tenue Project X Zone substituée à la référence Zombie Revenge ; pas de nouvelle identité."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20_lot5/costumes_generated.json",
+      "generation": {
+        "tool": "image_gen built-in",
+        "date": "2026-11-20",
+        "transparent_background_requested": true,
+        "source_native_output": "/workspace/scratch/da9d6e4777c1/generated_images/exec-9db50c25-ee28-4484-916e-ee96484d5d8e.png",
+        "native_output_unchanged": true,
+        "pixel_edits_after_generation": false,
+        "attempts": 1,
+        "retained_outputs": 1,
+        "attempt_records": [
+          {
+            "attempt": 1,
+            "generated_file": "exec-9db50c25-ee28-4484-916e-ee96484d5d8e.png",
+            "operation": "generate",
+            "prompt": "Use case: stylized-concept. Create exactly ONE full-body, head-to-toe static gallery illustration of the adult Japanese game character RIKIYA BUSUJIMA in his actual black leather alternate outfit from Zombie Revenge, Dreamcast Original Mode. Native RGBA with a genuinely transparent background. The FIRST reference is the character and costume contract. The SECOND is ONLY Dossier Curien's visual painting style: detailed hand-painted arcade game character art, controlled crisp outlines, realistic adult proportions, readable dark materials and warm/cool shading. Never copy Isaac's identity, clothes, shotgun, cap, palette or pose. Match reference 1: an adult Japanese man in his thirties with medium-tan complexion, angular stern face, dense fluffy untidy black hair, dark sunglasses with a small metal frame and a short white scarf wrapping the neck, with its small ends lifting gently at his anatomical left shoulder. Preserve the source's black leather biker jacket, wide angular lapels, open upper chest, the two distinctive rounded padded shoulder caps and wrinkled paneled long sleeves. Dark straight leather trousers, the broad dark waist belt with its small bright silver interlocking angular buckle as visually seen, and two hanging studded black straps/panels at the outer thighs. Keep these source details in their source positions; no invented writing or new insignia. He has two bare hands, relaxed at his sides and slightly away from his body; no guns or additional accessories. Match the source's compact strong adult build without exaggerating muscles. Preserve the long dark lower legs and discreet dark boot silhouette. The original crop does not show exact toes and soles: complete them conservatively as plain closed black toes with low subdued soles, without adding speculative buckles, laces, chains, knee armor, boots with heels or new emblems. Pose: relaxed standing, gentle three-quarter front turn toward screen-right, feet apart just enough to read both complete foot outlines. Both hands must have natural coherent fingers. Show the entire hair, scarf ends, shoulders, all fingers, legs, BOTH boot outlines and both soles with ample empty transparent space. The whole figure must fit within the central 80 percent of image height, with at least 8 percent transparent margin above the hair and below the soles, and generous side margins. One figure only; no scene, floor, pedestal, shadow oval, background gradient, colored glow, text, caption, border, logo, UI, watermark, extra limbs, duplicates, collage or sprite sheet. This is a clearly identified static costume adaptation, not a newly invented costume, a playable animation or a claim that unresolved footwear is canonically exact.",
+            "prompt_sha256": "0b4b86429dc8af21235dd5e185a4443a507bc8e42d1222d0914d857f86e916a2",
+            "arguments_as_sent": {
+              "transparent_background": true,
+              "referenced_image_paths": [
+                "/workspace/scratch/da9d6e4777c1/hotd-current/docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/rikiya_black_leather_model.webp",
+                "/workspace/scratch/da9d6e4777c1/hotd-current/assets/dossier_curien/saga/isaac_guard.png"
+              ],
+              "prompt": "Use case: stylized-concept. Create exactly ONE full-body, head-to-toe static gallery illustration of the adult Japanese game character RIKIYA BUSUJIMA in his actual black leather alternate outfit from Zombie Revenge, Dreamcast Original Mode. Native RGBA with a genuinely transparent background. The FIRST reference is the character and costume contract. The SECOND is ONLY Dossier Curien's visual painting style: detailed hand-painted arcade game character art, controlled crisp outlines, realistic adult proportions, readable dark materials and warm/cool shading. Never copy Isaac's identity, clothes, shotgun, cap, palette or pose. Match reference 1: an adult Japanese man in his thirties with medium-tan complexion, angular stern face, dense fluffy untidy black hair, dark sunglasses with a small metal frame and a short white scarf wrapping the neck, with its small ends lifting gently at his anatomical left shoulder. Preserve the source's black leather biker jacket, wide angular lapels, open upper chest, the two distinctive rounded padded shoulder caps and wrinkled paneled long sleeves. Dark straight leather trousers, the broad dark waist belt with its small bright silver interlocking angular buckle as visually seen, and two hanging studded black straps/panels at the outer thighs. Keep these source details in their source positions; no invented writing or new insignia. He has two bare hands, relaxed at his sides and slightly away from his body; no guns or additional accessories. Match the source's compact strong adult build without exaggerating muscles. Preserve the long dark lower legs and discreet dark boot silhouette. The original crop does not show exact toes and soles: complete them conservatively as plain closed black toes with low subdued soles, without adding speculative buckles, laces, chains, knee armor, boots with heels or new emblems. Pose: relaxed standing, gentle three-quarter front turn toward screen-right, feet apart just enough to read both complete foot outlines. Both hands must have natural coherent fingers. Show the entire hair, scarf ends, shoulders, all fingers, legs, BOTH boot outlines and both soles with ample empty transparent space. The whole figure must fit within the central 80 percent of image height, with at least 8 percent transparent margin above the hair and below the soles, and generous side margins. One figure only; no scene, floor, pedestal, shadow oval, background gradient, colored glow, text, caption, border, logo, UI, watermark, extra limbs, duplicates, collage or sprite sheet. This is a clearly identified static costume adaptation, not a newly invented costume, a playable animation or a claim that unresolved footwear is canonically exact."
+            },
+            "references": [
+              "docs/dossier_curien/sources_art/references-2026-11-20_lot5/costumes/rikiya_black_leather_model.webp",
+              "assets/dossier_curien/saga/isaac_guard.png"
+            ],
+            "external_reference_inputs": [],
+            "output_sha256": "204fb7ff80df21547a888bf99f4e376ce6d707e7a40bc535595cce95f6e780b9",
+            "retained": true,
+            "tool_refusal": false
+          }
+        ]
+      },
+      "qa": {
+        "output_visually_inspected": true,
+        "subject_and_silhouette_reviewed": true,
+        "whole_subject_silhouette_visible": true,
+        "subject_extent_note": "Cheveux, foulard, deux mains et deux pieds entièrement visibles ; chaussures interprétées.",
+        "visible_bounds_clear_of_canvas_edges": true,
+        "opaque_pixels_at_canvas_edge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "maximum_alpha_on_canvas_edges": 0,
+        "alpha_check": "Transparence native conservée. Les couleurs RGB de pixels transparents peuvent produire un fond apparent dans une prévisualisation qui ignore alpha ; les échantillons de fond sont alpha0. Aucune correction logicielle appliquée.",
+        "native_sha256_matches_saved_png": true,
+        "canonical_1_to_1_certified": false,
+        "reference_limitations_open": true,
+        "mechanical_classification_open": false,
+        "ui_or_engine_capture_performed": false,
+        "independent_visual_review": {
+          "reviewer": "root",
+          "date": "2026-11-20",
+          "completed": true,
+          "whole_subjects_and_identity_details_reviewed": true,
+          "reference_comparison_performed": true,
+          "blocking_technical_issue_observed": false,
+          "canonical_1_to_1_certified": false,
+          "note": "Les six PNG ont été comparés aux rendus sources et retenus. Silhouettes entières, tenue/visage/équipement lisibles ; portée limitée des références respectée. Les pixels alpha sont contrôlés séparément.",
+          "reference_limitations_open": true,
+          "mechanical_classification_open": false
+        }
+      }
+    }
+  ]
+}

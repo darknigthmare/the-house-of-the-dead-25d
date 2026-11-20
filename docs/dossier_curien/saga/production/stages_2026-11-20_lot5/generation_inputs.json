@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "timezone": "Europe/Paris",
+  "batch": "2026-11-20_lot5",
+  "baseline_commit": "6da249f2c2cc9a988e31230dae1f805e3d7e1daf",
+  "generation_method": "built-in image_gen, one native output per plane",
+  "specs": [
+    {
+      "id": "prelude_square_back",
+      "stage": "prelude_square",
+      "runtime_index": 26,
+      "name": "Place d’A Prelude",
+      "prompt": "Use case: stylized-concept. Asset type: 2D fighting arena background. Adapt the street square of A Prelude in the ORIGINAL The House of the Dead 2. Images1,2,3 are actual game captures, from the opening street and the Judgment encounter; they control architecture and palette. Use the aged Italian square: three-storey worn ochre/olive stucco facades with exposed brick and stone lower courses, shallow iron balconies, dark narrow windows with shutters, terracotta roofs, modest red canvas awnings, a square crenellated brick tower with paired arched openings rising behind the buildings, and ornate black branching street lamps with pale lanterns. Muted golden-grey clouded sky and a damp dark cobblestone surface. Keep the close old-city scale of the captures. Compose one modest square with the tall crenellated tower behind the right-centre facade and a shopfront corner to the left; place one branching lamp at each side, behind the fighters. The playable foreground is level wet cobblestone paving, not a canal, bridge or asphalt highway. Gentle aged highlights, no neon, bright modern adverts, church cathedral, parked modern vehicles or remake architecture. Thin distant rainfall atmosphere is acceptable but no bright rain streaks or particles cross the combat area. Do not reproduce Zeal, Kuarl, zombies, guns or HUD. Produce one continuous wide landscape 16:9 opaque BACK plane, native about 1672x941. Detailed painted 2D fighting-game scenery in the quality of the last style reference. That last image controls ONLY painterly rendering, image ratio and the lateral combat layout, NOT subject architecture. The camera faces the setting laterally, with shallow depth and an uninterrupted level floor spanning the full lower 27 percent. The fighters contact the floor at y=81.56 percent of image height; keep x=12.5 to87.5 percent clear at this line. Architectural spacing and this continuous fighting strip are explicit adaptations of the original game view. Keep central values readable, with buildings, beds, equipment and rails BEHIND the fighting strip. Fine convincing weathered materials, completed edge-to-edge. One single scene, no panels, collage, inset images or captions. Remove all people, creatures, corpses, weapons, user interface, score, lettering, reticles, logos and watermarks from reference screenshots. No labels, readable signage, floating interface effects, white borders or vignette. Do not invent a different franchise or replace the recognizable setting with generic fantasy scenery.",
+      "references": [
+        "hotd2_prelude_chapter1-1.jpg",
+        "hotd2_prelude_boss1-1.jpg",
+        "hotd2_prelude_boss1-2.jpg"
+      ],
+      "style": "assets/dossier_curien/saga/strength_colosseum_back.png",
+      "path": "assets/dossier_curien/saga/prelude_square_back.png",
+      "generated_file": "exec-8b45ecaa-4236-4919-8035-01068246a181.png",
+      "accepted": true,
+      "visually_inspected": true,
+      "pixel_postprocessing": "none",
+      "sha256": "ae1b19b0eaf05fa4454fb552d2b180786cd608ba59d5db1daf46d754e24946f7",
+      "size_bytes": 3201924,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB"
+    },
+    {
+      "id": "overkill_hospital_back",
+      "stage": "overkill_hospital",
+      "runtime_index": 27,
+      "name": "Hôpital — Ballistic Trauma",
+      "prompt": "Use case: stylized-concept. Asset type: 2D fighting arena background. Adapt the patient ward of BALLISTIC TRAUMA in The House of the Dead Overkill Extended Cut / PS3 Japanese Director's Cut. Image1 is an actual ward gameplay view and controls the room layout: worn pale grey-blue hospital walls with a lower pale tiled band and a thin dark horizontal trim, square ceiling grid with missing panels and exposed pipes, metal overhead curtain tracks, dark hanging privacy curtains and old tubular-framed hospital beds with muted grey bedding. The dirty square floor tiles alternate dark charcoal/olive and desaturated light grey. Image2 is supporting reference for the same hospital's wall tiles, long vents, damaged ceiling and institutional double doors, not a separate room to paste in. The last image is only painting quality / lateral floor layout. Create a continuous ward viewed from the side, with two beds aligned against the rear wall, one partly concealed by a dark curtain, an open central bay and a modest closed double door toward the right. Keep every bed and its rails entirely behind the combat floor. Cool dirty fluorescent lighting with desaturated grey-green shadows; no red circular MRI boss arena, ornate mansion, futuristic lab, glowing pods, clean luxury clinic or invented medical machines. The ceiling tracks and pipes are plausible continuations of the visible ward hardware; rubble remains at the wall edges, with no piles or fallen object in the fighting lane. No patients, nurses, ghosts, body parts, blood pools, posters, medical labels or HUD. Produce one continuous wide landscape 16:9 opaque BACK plane, native about 1672x941. Detailed painted 2D fighting-game scenery in the quality of the last style reference. That last image controls ONLY painterly rendering, image ratio and the lateral combat layout, NOT subject architecture. The camera faces the setting laterally, with shallow depth and an uninterrupted level floor spanning the full lower 27 percent. The fighters contact the floor at y=81.56 percent of image height; keep x=12.5 to87.5 percent clear at this line. Architectural spacing and this continuous fighting strip are explicit adaptations of the original game view. Keep central values readable, with buildings, beds, equipment and rails BEHIND the fighting strip. Fine convincing weathered materials, completed edge-to-edge. One single scene, no panels, collage, inset images or captions. Remove all people, creatures, corpses, weapons, user interface, score, lettering, reticles, logos and watermarks from reference screenshots. No labels, readable signage, floating interface effects, white borders or vignette. Do not invent a different franchise or replace the recognizable setting with generic fantasy scenery.",
+      "references": [
+        "overkill_hospital_ps3_civ3-3.jpg",
+        "overkill_hospital_ps3_civ3-2.jpg"
+      ],
+      "style": "assets/dossier_curien/saga/strength_colosseum_back.png",
+      "path": "assets/dossier_curien/saga/overkill_hospital_back.png",
+      "generated_file": "exec-46a488b3-0c20-487c-9139-a76a0332d589.png",
+      "accepted": true,
+      "visually_inspected": true,
+      "pixel_postprocessing": "none",
+      "sha256": "cf682d28d2257aa7f32f31553df83df50ae2c41ace04b151d146d98b53d79af4",
+      "size_bytes": 2773909,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB"
+    },
+    {
+      "id": "zr_chemical_plant_back",
+      "stage": "zr_chemical_plant",
+      "runtime_index": 28,
+      "name": "Usine chimique — Zombie Revenge",
+      "prompt": "Use case: stylized-concept. Asset type: 2D fighting arena background. Adapt the CHEMICAL PLANT of Zombie Revenge on Dreamcast, from the gameplay storyboard in Image1. The first two rows of that storyboard show repeated angles of the SAME industrial room and are the visual reference; the lower-row character closeups and the whole contact-sheet grid are NOT the output composition. Retain the room's heavy weathered industrial structure: very large pale olive-beige rounded tank bodies, dark teal steel vertical columns and bracing, thick horizontal pipework, short grated service platforms with simple rusted railings and black/yellow hazard edges, discoloured square grey-green tiled floor, dirty beige concrete walls and small deep shadowed industrial openings. Pipes and tank bases are substantial, not science-fiction tubes; the room looks cramped, damp and old, with a muted green-grey industrial palette and restrained warm brown light in the rear recesses. Adapt the high oblique gameplay camera to a lower lateral fighting camera. Two large tank masses and a short grated maintenance ledge occupy the back of the scene; the ledge and its rail are behind the fighters, and the entire foreground remains flat tiled floor. Maintain a single continuous hall with readable depth; do not include sewers, water channels, giant plants, trains, an outdoor refinery, windows over a city, futuristic capsules or large explosions. Do not copy Linda, other characters, enemies, portraits, weapon pickups, score, lettered signs or the video watermark. The small storyboard gives architectural evidence; fine surface detail is a restrained painted interpretation, not a photogrammetric reconstruction. Produce one continuous wide landscape 16:9 opaque BACK plane, native about 1672x941. Detailed painted 2D fighting-game scenery in the quality of the last style reference. That last image controls ONLY painterly rendering, image ratio and the lateral combat layout, NOT subject architecture. The camera faces the setting laterally, with shallow depth and an uninterrupted level floor spanning the full lower 27 percent. The fighters contact the floor at y=81.56 percent of image height; keep x=12.5 to87.5 percent clear at this line. Architectural spacing and this continuous fighting strip are explicit adaptations of the original game view. Keep central values readable, with buildings, beds, equipment and rails BEHIND the fighting strip. Fine convincing weathered materials, completed edge-to-edge. One single scene, no panels, collage, inset images or captions. Remove all people, creatures, corpses, weapons, user interface, score, lettering, reticles, logos and watermarks from reference screenshots. No labels, readable signage, floating interface effects, white borders or vignette. Do not invent a different franchise or replace the recognizable setting with generic fantasy scenery.",
+      "references": [
+        "zr_longplay_storyboard_6.jpg"
+      ],
+      "style": "assets/dossier_curien/saga/strength_colosseum_back.png",
+      "path": "assets/dossier_curien/saga/zr_chemical_plant_back.png",
+      "generated_file": "exec-ad077a47-adb5-404a-9b64-06f114b25550.png",
+      "accepted": true,
+      "visually_inspected": true,
+      "pixel_postprocessing": "none",
+      "sha256": "ec3a86677912eb5c335b3a55391203bbfbf59349e4cf238fd510967a02c5b369",
+      "size_bytes": 2885222,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB"
+    }
+  ]
+}
