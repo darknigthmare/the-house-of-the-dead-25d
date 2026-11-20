@@ -2,13 +2,23 @@
 
 Bible de la saga · volume II · novembre 2026
 
+## Actualisation du 20 novembre 2026 — arènes et galerie
+
+Les sources de l’anthologie proposent **24 combattants, 26 parcours Histoire, 20 arènes et 29 épreuves d’archives**. Les deux arènes supplémentaires sont **Toit du train — Zombie Revenge** et **Abattoir — Creeping Flesh**. Chacune possède ses plans arrière, intermédiaire et avant ; leur sol de combat reste à 601. Leur [rapport de production](production/stages_2026-11-20/RAPPORT.md) documente les références et les choix d’adaptation 2D.
+
+La galerie contient désormais **49 fiches : les 40 entrées de la base publiée du 19 novembre et neuf nouvelles illustrations**. Le [manifeste du 20 novembre](../../../data/assets/dossier_curien_gallery_2026-11-20.json) et le chargement natif des 49 fiches ont été vérifiés. Le filtre par jeu accueille les nouvelles collections. Les fiches de Varla et Candi gardent leur statut de référence visuelle à confirmer ; la validation technique du fichier ne certifie pas sa fidélité au modèle original. Les fiches de PNJ et de costumes portent leur statut non jouable ; elles ne créent ni nouveaux profils de combat ni nouvelles tenues sélectionnables.
+
+Le [catalogue des personnages et tenues](production/catalogue_2026-11-20/PERSONNAGES_TENUES.md), son [registre détaillé](production/catalogue_2026-11-20/personnages_tenues.json) et son [snapshot de la base publiée](production/catalogue_2026-11-20/baseline_59372b6.json) remplacent les anciennes listes de manquants non datées. Gary Stewart, Daniel Curien, Emperor, Wheel of Fate, The World, Moon et Linda Rotta font déjà partie des 24 profils jouables ; leurs animations restent à compléter selon les besoins propres à chaque profil. Les masters historiques de Hangedman et Hermit existent également dans le dépôt, séparément de leurs adaptations Dossier Curien.
+
+**Cette actualisation concerne les sources.** Les paquets autonomes Godot 4.7 et 4.6.3 ainsi que les fichiers web du 19 novembre n’ont pas été reconstruits pour ces arènes et ces fiches. Les [instructions courantes](../JOUER.md) distinguent les sources de ces distributions. Les rapports et captures des volumes précédents gardent leur périmètre d’origine.
+
 ## Actualisation du 19 novembre 2026 — poses de combat
 
-Le [rapport de production du dernier lot](production/motion_2026-11-19/RAPPORT.md) complète ce volume : **30 poses individuelles** sont intégrées à Linda, Rogan, Zobio, Zobiko, Stick et Rikiya. Elles regroupent 24 nouvelles générations, quatre poses retrouvées et deux gardes EX corrigées réutilisées. Le mode compte désormais **24 combattants, 26 parcours Histoire, 18 arènes, 29 archives et 40 fiches de bestiaire**.
+Le [rapport du lot motion](production/motion_2026-11-19/RAPPORT.md) complète ce volume : **30 poses individuelles** sont intégrées à Linda, Rogan, Zobio, Zobiko, Stick et Rikiya. Elles regroupent 24 nouveaux dessins retenus, quatre poses retrouvées et deux gardes EX corrigées réutilisées. À cette date, le mode comptait **24 combattants, 26 parcours Histoire, 18 arènes, 29 archives et 40 fiches de bestiaire**.
 
 Le [manifeste motion](../../../data/assets/dossier_curien_motion.json) conserve les références, empreintes, dimensions natives, pivots et repères de canon. L’[inventaire actualisé des manquants](production/motion_2026-11-19/MANQUANTS.json) recense **277 poses minimales encore absentes**, après résolution de 22 lacunes. Les interpolations dessinées, les mouvements du bestiaire et les variantes non vérifiées dépassent ce minimum ; la fidélité 1:1 n’est pas certifiée.
 
-Les [instructions de jeu courantes](../JOUER.md) et le [paquet séparé pour Godot 4.6.3](jeu_motion_compat46/README.md) accompagnent cette révision. Les contrôles du nouveau paquet sont headless ; les planches de proportions sont des projections hors moteur. Les captures et vidéos historiques de cette bible restent rattachées à leurs livraisons d’origine.
+Les [instructions de jeu courantes](../JOUER.md) et le [paquet séparé pour Godot 4.6.3](jeu_motion_compat46/README.md) accompagnent cette révision du 19 novembre. Les contrôles de ce paquet sont headless ; les planches de proportions sont des projections hors moteur. Les captures et vidéos historiques de cette bible restent rattachées à leurs livraisons d’origine.
 
 ## Entrer dans l’anthologie
 
@@ -135,7 +145,7 @@ Secours sur le quai. Un enchaînement de trois touches rend trois secondes, une 
 
 Le parapet fixe la ligne d’appui. Le trident doit se distinguer de la rambarde, même quand le côté du joueur est inversé.
 
-Parcours principal   /   Agent G   →   Hierophant   →   Magician
+Parcours principal   /   Gary Stewart   →   Hierophant   →   Emperor
 
 ## The House of the Dead III
 
@@ -157,7 +167,7 @@ Relève. Une projection réussie restitue six points de vie à son auteur, une s
 
 La recharge de Lisa se fait cartouche par cartouche. La dernière touche d’une projection offre à Lisa le temps de décider si elle recharge ou reste au contact.
 
-Parcours principal   /   Agent G   →   Death   →   Thomas Rogan
+Parcours principal   /   Daniel Curien   →   Death   →   Wheel of Fate
 
 ## The House of the Dead 4
 
@@ -179,7 +189,7 @@ Fenêtre de ravitaillement. La première série de trois touches recharge le mag
 
 La rame éclaire les quatre mains de Justice. Sous son allonge, Kate peut alterner pression et repli, mais chaque rafale dépense plusieurs munitions.
 
-Parcours principal   /   James Taylor   →   Justice   →   Magician
+Parcours principal   /   James Taylor   →   Justice   →   The World
 
 ## The House of the Dead 4 Special
 
@@ -223,7 +233,7 @@ Ryan Taylor rejoint Kate Green à Scarecrow Mansion. La réception mondaine inte
 
 L’éclat des lustres reste dans le haut du cadre. Le rouge des rideaux encadre les acteurs et le dallage froid permet de lire les pieds.
 
-Parcours principal   /   Kate Green   →   James Taylor   →   Chariot
+Parcours principal   /   Kate Green   →   James Taylor   →   Moon
 
 ## The House of the Dead OVERKILL
 
@@ -678,19 +688,19 @@ La fidélité visée concerne les silhouettes, tenues, accessoires, lieux et sig
 
 ## Compléter la distribution
 
-Ces cibles de production prolongent les dossiers livrés. Elles indiquent où une extension modifierait réellement le combat.
+État relu le 20 novembre à partir des [profils de combat](../../../src/dossier_curien/combatant.gd), des [parcours Saga](../../../src/dossier_curien/saga.gd) et du [catalogue des personnages et tenues](production/catalogue_2026-11-20/PERSONNAGES_TENUES.md). Une illustration en galerie, un atlas historique et un profil jouable décrivent trois niveaux d’intégration distincts.
 
-| Dossier | Personnages ou gardiens à produire | Travail propre au combat |
+| Dossier | Déjà intégré dans la base publiée | Travail encore nécessaire |
 | --- | --- | --- |
-| Manoir | Hangedman, Hermit | Donner de la lisibilité aux attaques aériennes et aux déplacements de la créature à huit pattes. |
-| The House of the Dead 2 | Gary Stewart, Judgment, Tower, Strength, Emperor | Traiter le binôme de Judgment et le corps multiple de Tower. Garder une ligne d’appui lisible pour les agents. |
-| III | Daniel Curien, Fool, Sun, Wheel of Fate | Adapter un boss fixé à son environnement et les changements de plan de Fool. |
-| 4 / 4 Special | Lovers, Empress, Temperance, Star, World | Réserver de la place pour les paires, armes longues et grands volumes. |
-| Scarlet Dawn | Priestess et Moon | Mettre au point des affrontements de grande échelle avant de proposer ces silhouettes en duel libre. |
-| Overkill | Varla Guns, Candi Stryper et les mutants des autres bobines | Écrire les arcs des deux personnages de l’édition étendue et leur mise en scène propre. |
-| Zombie Revenge / EX | Linda Rotta, adversaires de rue et épreuves coopératives de Zobio et Zobiko | Distinguer une future coopération à deux du duel local déjà disponible. |
+| Manoir | Rogan, G, Chariot et Magician jouables ; masters et atlas historiques de Hangedman et Hermit disponibles. | Les adaptations de galerie de Hangedman et Hermit sont livrées le 20 novembre ; leurs profils et animations de duel restent à développer. |
+| The House of the Dead 2 | James, Gary, Hierophant et Emperor jouables. | Produire Judgment, Tower et Strength ; distinguer les fiches de PNJ des futurs profils de duel. |
+| III | Lisa, Daniel, Death et Wheel of Fate jouables. | Produire Fool et Sun ; compléter les poses des profils existants et les variantes de tenue documentées. |
+| 4 / 4 Special | Kate, Justice et The World jouables ; illustrations de Lovers, Empress, Temperance et Star présentes dans la collection EX. | Vérifier les différences propres à chaque épisode, puis créer des actions cohérentes pour les boss encore limités à la galerie. |
+| Scarlet Dawn | Ryan et Moon jouables ; tenue de réception de Ryan sélectionnable. | Produire High Priestess et vérifier les variantes d’édition ; compléter les animations des profils existants. |
+| Overkill | Isaac Washington et Jasper Guns jouables. | Les fiches de Varla, Candi et G Overkill sont livrées le 20 novembre. Tout futur profil, moveset ou parcours reste à traiter séparément. Les autres mutants restent à documenter et produire. |
+| Zombie Revenge / EX | Stick, Linda, Rikiya, Zobio et Zobiko jouables ; fiches de créatures déjà consultables. | Compléter leurs mouvements, développer les actions des sujets de galerie et traiter la coopération comme une fonction distincte du duel local existant. |
 
-L’animation à compléter concerne d’abord le déplacement, la garde basse, la préparation, la récupération, le recul et les fins dessinées des nouveaux venus. Le volume du manoir conserve les spécifications détaillées du premier lot.
+L’animation à compléter concerne notamment le déplacement, la garde basse, la préparation, la récupération, le recul et les fins dessinées. Le [minimum motion encore ouvert](production/motion_2026-11-19/MANQUANTS.json) compte 277 poses pour la distribution suivie le 19 novembre ; il ne constitue pas un inventaire exhaustif des personnages, costumes et versions de toute la saga. Le volume du manoir conserve les spécifications détaillées du premier lot.
 
 ## Le cadrage à l’épreuve
 

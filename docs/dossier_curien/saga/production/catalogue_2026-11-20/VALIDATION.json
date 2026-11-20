@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "checked_at_utc": "2026-11-20T09:10:08.401476+00:00",
+  "status": "passed_local_source_checks",
+  "base_commit": "59372b618882da17510351f2a5bd46226682eac4",
+  "scope": "Uncommitted source delta on the published base; final publication and CI are tracked separately on PR #2.",
+  "counts": {
+    "fighters": 24,
+    "story_routes": 26,
+    "stages": 20,
+    "archive_challenges": 29,
+    "gallery_cards": 49,
+    "new_gallery_cards": 9,
+    "new_stage_planes": 6,
+    "new_pngs": 15,
+    "new_png_bytes": 13466764,
+    "dossier_png_paths": 347,
+    "distinct_png_sha256": 345,
+    "selectable_alternate_costumes": 2,
+    "minimum_missing_motion_poses_unchanged": 277
+  },
+  "qa_copy": {
+    "shared_git_base": true,
+    "new_and_modified_files_copied_and_rehashed": 80,
+    "new_pngs_included": 15,
+    "new_gallery_manifest_included": true,
+    "runtime_data_scripts_assets_identical_to_main_checkout": true
+  },
+  "checks": [
+    {
+      "command": "npm test",
+      "exit_code": 0,
+      "scope": "Complete repository data/art suite including all fifteen new PNGs and the new gallery manifest",
+      "summary_log": "qa_logs/npm-test-summary.txt",
+      "full_log_sha256": "7237ccb7b563ebd910296268ec09e345e4f35e76a8036e1687e863e54d210dab",
+      "qa_data": "307/307",
+      "content_audit": {
+        "checks": 905,
+        "warnings": 6,
+        "errors": 0
+      },
+      "saga_art": {
+        "checks": 1522,
+        "pngs": 229
+      },
+      "gallery_pngs": 9,
+      "gallery_self_test_cases": 14,
+      "legacy_expansion_self_test_cases": 10,
+      "motion_self_test_cases": 11
+    },
+    {
+      "command": "godot --headless --path . --import",
+      "engine": "4.6.3.stable.official.7d41c59c4",
+      "exit_code": 0,
+      "diagnostic_errors": 0,
+      "scope": "Materialized source resources, including all new PNGs; editor cache is separate from tracked sources"
+    },
+    {
+      "command": "godot --headless --path . --script res://tests/test_saga_expansion.gd",
+      "engine": "4.6.3.stable.official.7d41c59c4",
+      "exit_code": 0,
+      "checks": 228,
+      "failures": 0,
+      "diagnostic_errors": 0,
+      "log": "qa_logs/godot-expansion-final.txt",
+      "coverage": [
+        "Linda regression scenarios",
+        "native merged gallery count49",
+        "all9new textures",
+        "game-filter dropdown signals",
+        "focus on opening and after changing filters",
+        "non-playable card behavior",
+        "panel layout",
+        "both new stage menu buttons and real duel startup",
+        "floor601 and all6native stage planes"
+      ]
+    },
+    {
+      "command": "godot --headless --path . --script res://tests/test_saga_gallery.gd",
+      "engine": "4.6.3.stable.official.7d41c59c4",
+      "exit_code": 0,
+      "checks": 18,
+      "failures": 0,
+      "diagnostic_errors": 0,
+      "log": "qa_logs/godot-gallery-final.txt",
+      "scope": "Synthetic cached texture fixtures: merge, duplicate rejection, bounded paths, false-playability rejection, game filters and stale-data clearing"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0
+    }
+  ],
+  "resolved_findings": [
+    "The old Saga visual catalogue counted223images; it now inventories229 with the6newstageplanes and their hashes/provenance.",
+    "Opening the gallery initially left no keyboard/gamepad focus because OptionButton was added directly; the selector now takes focus, and opening/filter-change behavior is covered by the integration test."
+  ],
+  "limits": {
+    "native_viewport_capture_performed": false,
+    "display_available": false,
+    "display_evidence": "DISPLAY and WAYLAND_DISPLAY absent; Xvfb/xvfb-run/Weston unavailable.",
+    "interactive_playthrough": false,
+    "physical_gamepad_test": false,
+    "pck_rebuilt": false,
+    "web_rebuilt": false,
+    "old_distribution_content_unchanged": true,
+    "canonical_1_to_1_certified": false,
+    "pending_visual_reference_reviews": [
+      "varla_guns",
+      "candi_stryper"
+    ],
+    "ci_for_new_publication": "not_yet_run_at_receipt_creation"
+  },
+  "tested_input_sha256": {
+    ".github/workflows/qa.yml": "2a562529173df7b01c3ca642f5c3ba072a7e82eb08f8ea5ae1b332014d57d3d4",
+    "assets/dossier_curien/gallery_2026-11-20/bosses/hangedman_base.png": "d992bdc6c975d9edfa670f0198899efd912fbbc5d425f3ec97dbc305ce6da658",
+    "assets/dossier_curien/gallery_2026-11-20/bosses/hangedman_base.png.import": "783914414bfe4e21befc4cb21520b696131c339267b64c5ab5cf8efc23f0503c",
+    "assets/dossier_curien/gallery_2026-11-20/bosses/hermit_base.png": "1e01872793422e3e8c6fa31daba4fde3e4d6717805aa372c97f0f2f93c48100f",
+    "assets/dossier_curien/gallery_2026-11-20/bosses/hermit_base.png.import": "de1b969c4a3ce3ec89d899f414584e0f31c5d92b0eb856053b55e1be011fdbc8",
+    "assets/dossier_curien/gallery_2026-11-20/characters/amy_crystal_base.png": "a28ea14dcfd136fc3693e350583dea2ae65b660c26fbe28f369bfd887566e53a",
+    "assets/dossier_curien/gallery_2026-11-20/characters/amy_crystal_base.png.import": "1aca79b7fa590b45a0ee3553d06224d87ee5154b4e28f1dcf2cb8635abd3c26f",
+    "assets/dossier_curien/gallery_2026-11-20/characters/candi_stryper_base.png": "9de6b8606bda6ccf661ce86e9e4c8c84f689b6cd6af5e119aefeb509a0772879",
+    "assets/dossier_curien/gallery_2026-11-20/characters/candi_stryper_base.png.import": "9d08f9b388e8d3e36c17a5a0e23ab84ec8d7c510d817ab255382fd3f271a544b",
+    "assets/dossier_curien/gallery_2026-11-20/characters/harry_harris_base.png": "e61e2e212e53707a01edd79f0997d0afc59c06186667a024f48687a12583ac5a",
+    "assets/dossier_curien/gallery_2026-11-20/characters/harry_harris_base.png.import": "5d324f9d537283866a9c673f05b9b1b83bf97376fc64752d7c7ab33320b7e024",
+    "assets/dossier_curien/gallery_2026-11-20/characters/varla_guns_base.png": "ff924469d1ea5d3d056da2766b3f4d1daa601bc6d8401a5981751e3d428cf45d",
+    "assets/dossier_curien/gallery_2026-11-20/characters/varla_guns_base.png.import": "568415dab401ae1e981db0812bb7756a11853eef4dfa202512475cd075f9303d",
+    "assets/dossier_curien/gallery_2026-11-20/costumes/g_hotd3_base.png": "6da84c2e8cb37742038ea67c45d68419f6d86519c0973c128b9287aee49005ab",
+    "assets/dossier_curien/gallery_2026-11-20/costumes/g_hotd3_base.png.import": "f1b5897a21a068ad83e4af50ce8c1ad5122f803d02c9c7f9f9bb4f8098f8d8a9",
+    "assets/dossier_curien/gallery_2026-11-20/costumes/g_overkill_base.png": "4e072e8d2a0447cab9a6052e7fc246ce4cd902c029a9cc1b4b324ed2bec1a7ae",
+    "assets/dossier_curien/gallery_2026-11-20/costumes/g_overkill_base.png.import": "877fef031e779f5fef11699443589c01689688f24f9c7c81f5a0a1536d1495ee",
+    "assets/dossier_curien/gallery_2026-11-20/costumes/rogan_hotd3_base.png": "944b1be1a12f8710a574055df08d758b1ccc3ce57a36fbc17b325714b4806a40",
+    "assets/dossier_curien/gallery_2026-11-20/costumes/rogan_hotd3_base.png.import": "0b94785993ac35674722ce392b384453506a79c9df2e2438bc8b8d285d26074e",
+    "assets/dossier_curien/saga/creeping_flesh_back.png": "e57ec22b2cdda8be359ecba99e1e762ab85d237d46f6ab16ccd1e6a29a844ee3",
+    "assets/dossier_curien/saga/creeping_flesh_back.png.import": "d79d203542f3c630fd88f0b6865c2692e91f482c15f01b81c8d81262ff3f4ed6",
+    "assets/dossier_curien/saga/creeping_flesh_front.png": "63182cc121283c16cf88c9b4b54a6560a00ff7a95660835056a5cdbd28931e41",
+    "assets/dossier_curien/saga/creeping_flesh_front.png.import": "7915808dc5a6cda3990fd9c27dd9794be6b80569a10fdb06600ae3cf7ecd6483",
+    "assets/dossier_curien/saga/creeping_flesh_mid.png": "f74dd3f54c396cb26772e9006672857d60cd6c95afcd2fab41d1ccbe0c53c659",
+    "assets/dossier_curien/saga/creeping_flesh_mid.png.import": "9275bf9db3295f1f36ea512f15cf143ad59a9e92341e6be6d3c3476267ec1927",
+    "assets/dossier_curien/saga/zr_train_back.png": "049f885fd9967c4b0d6dd6b873d529c883dd05bab535f9101b68e0bd14c8afbe",
+    "assets/dossier_curien/saga/zr_train_back.png.import": "eee964cb885be1bf4b8f056b16f209303bf9cd56d54044a529bf3323f438a2ab",
+    "assets/dossier_curien/saga/zr_train_front.png": "38d783079ab60120ad18b5c2cb57d916c487ab7f2d38eab12c0e7f99cc2fdd99",
+    "assets/dossier_curien/saga/zr_train_front.png.import": "56c8e5bdba2af3ee3cccaf6277d5f828e53b297e801cf8519c4d530a366d0419",
+    "assets/dossier_curien/saga/zr_train_mid.png": "d9e75c2ef015f536b63df712e9b9fad0e5e3773b05388a2000fd082393bf9720",
+    "assets/dossier_curien/saga/zr_train_mid.png.import": "93e910d4b0b5d533ed8ccf56dcd0ccb64a08ee7ed1ef3525edf6f38d9095616e",
+    "data/assets/dossier_curien_gallery_2026-11-20.json": "1db5a09a799ea552ad66b422723d81c84e08cb55e7647b715be683cc4ebb7ced",
+    "docs/dossier_curien/saga/CATALOGUE_VISUEL_SAGA.json": "214e7c3ce7fefec130c075000eaa74061f1e86b2dbf4f9d75ca1ba248136d8df",
+    "package.json": "84753957b23dbe358d8140104fb16907988b3f9c1b975a7c22bcf92af7bdc71c",
+    "scripts/build_dossier_curien_compat.gd": "a9d3970c7f2f54609b63a43c91e1ae3dbe95e8e0f2555a569588641e835b3d49",
+    "scripts/build_dossier_curien_pack.gd": "d6b8ebad0efb77d76d387c2ed4a34e90f29880ddc78c5ef836c3fee413fbb8f3",
+    "scripts/smoke_dossier_saga.gd": "f8e9272a02d1eaef6344b2abdf22f43c653961d17b0375f55946c2cce5caaf11",
+    "scripts/verify_dossier_curien_art.mjs": "85b48ef703b1406a3e376cfcba6d0efaf2932eaae2888ed0ad8fa8e4b0181057",
+    "scripts/verify_dossier_curien_expansion.mjs": "6c138639fd61362158aa8f0e5e3be0d199877d5d94752837ecc60e8e198017e5",
+    "scripts/verify_dossier_curien_gallery.mjs": "b46f8fe57c52812ba62a07d91a813ff3bb3438df146d9c2d9f17c252ed72dcfc",
+    "scripts/verify_dossier_curien_pack.gd": "d6fafb897a5642c5f41369f5bec2de4c417cd3d1cafea0d665bb373ee0d2a06a",
+    "src/dossier_curien/arena.gd": "551448355062bc44202a52a9ac2a09fc2a67a87100420322148e021aaceb579b",
+    "src/dossier_curien/saga.gd": "818c671737f4935847643320476bf16be857f153a25a3968db984101ce278f46",
+    "src/dossier_curien/saga_bestiary.gd": "2b5281b10e0667c56187c1bfe428f35f64ede682943796c7f242a7714648456b",
+    "tests/test_saga_expansion.gd": "9ff580faa9f65dab95bafbf8e7c75e094901cd419858e9ca09915f0dc1f73ee3",
+    "tests/test_saga_gallery.gd": "d08369057ace021646040f19041b9700e44cc7260014d22e1264de50fc9ff5a0",
+    "tests/test_saga_gallery.gd.uid": "1ea8450c3b60d527f6ca6c5f8a581d1adcc3b74a271f020e9d3ff609123536f6"
+  }
+}

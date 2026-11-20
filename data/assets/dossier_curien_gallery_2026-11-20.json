@@ -1,0 +1,1077 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "repository": "darknigthmare/the-house-of-the-dead-25d",
+  "scope": "Extension de galerie : quatre identités auparavant absentes, trois variantes de costume et deux adaptations de boss historiques. Illustrations statiques non jouables.",
+  "summary": {
+    "assets": 9,
+    "gallery_entries": 9,
+    "bytes": 7741468,
+    "playable_added": 0,
+    "animation_complete": 0,
+    "by_game": {
+      "hotd2": 2,
+      "overkill": 3,
+      "hotd3": 2,
+      "hotd": 2
+    },
+    "by_category": {
+      "npc_base": 2,
+      "character_base": 2,
+      "costume_variant": 3,
+      "boss_base": 2
+    },
+    "by_status": {
+      "static_reference_reviewed": 7,
+      "static_needs_visual_reference_qa": 2
+    }
+  },
+  "assets": [
+    {
+      "id": "amy_crystal",
+      "name": "Amy Crystal",
+      "game": "hotd2",
+      "game_label": "The House of the Dead 2",
+      "category": "npc_base",
+      "path": "assets/dossier_curien/gallery_2026-11-20/characters/amy_crystal_base.png",
+      "generated_file": "exec-a0c16d69-c369-46b6-8018-4e346a6cf2fb.png",
+      "status": "static_reference_reviewed",
+      "sources": [
+        "https://www.digitpress.com/library/manuals/dreamcast/house_dead_2.pdf",
+        "https://www.imfdb.org/images/0/06/Hod2_AmyandHarry.jpg",
+        "https://thehouseofthedead.fandom.com/wiki/Amy_Crystal"
+      ],
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20/characters/hotd2_amy_harry_game.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20/characters/hotd2_amy_manual_detail.png",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "source_notes": [
+        "Manuel Dreamcast SEGA, page imprimée4 : silhouette entière et détail rendu du PDF.",
+        "Capture originale couleur : tête, veste rouge, col gris et ceinture ; le manuel fixe la jupe et les bottes."
+      ],
+      "prompts": [
+        "Create exactly ONE isolated full-body 2D hand-painted gallery character: AMY CRYSTAL from the original The House of the Dead 2 (SEGA, not its remake). Follow the FIRST reference game screenshot: Amy is the adult brown-haired woman at LEFT wearing the SCARLET RED fitted jacket. Use the SECOND and THIRD references, official Dreamcast manual printed page4 and its rendered detail, to preserve her complete original outfit silhouette including skirt and boots. Adult woman about29, short dark brown hair swept to one side, brown eyes, composed alert expression, small triangular earrings. Grey turtleneck under fitted scarlet red hip-length jacket, wide BLACK belt across the waist with rectangular GOLD buckle, BLACK skirt ending above the knees, dark opaque tights, light-grey mid-calf boots with dark padded cuffs as suggested by the monochrome manual. Do not turn the skirt into trousers, and do not use the cream jacket alternate artwork. The manual is monochrome so exact boot colors remain a 2D reconstruction; keep their shapes simple and neutral. FOURTH reference Isaac guard is for Dossier Curien's crisp finely hand-painted arcade sprite style, controlled textured shading and grounded proportions ONLY. Pose: calm neutral agent guard facing RIGHT in three-quarter lateral view, legs slightly separated with both feet fully visible, one chrome/silver large semi-automatic pistol held securely with both hands near chest height. No firing, no injury, no pin-up stance. One complete adult human with coherent arms and fingers, generous margins above hair and outside hands and feet on a square ~1024x1024 transparent RGBA canvas, soles around92% height. No background, scene, ground, cast shadow ellipse, other characters, loose props, text, lettering, logo, UI, watermark, frame, collage or sprite sheet. This is one static NPC gallery master; stay faithful to Amy's original head, red jacket, grey collar, belt, black skirt and leg silhouette."
+      ],
+      "limitations": [
+        "Une silhouette statique de galerie ; profil de combat, mouvements, animations et sélection de costume non ajoutés.",
+        "Pose latérale créée pour Dossier Curien ; comparaison des références sans certification de reproduction 1:1.",
+        "Le bas du corps n’est visible que dans le manuel monochrome ; la couleur exacte des bottes et leurs surfaces demandent une référence couleur plus complète.",
+        "Le costume crème de certains guides n’a pas été mélangé à la veste rouge du modèle original."
+      ],
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "sha256": "a28ea14dcfd136fc3693e350583dea2ae65b660c26fbe28f369bfd887566e53a",
+      "bytes": 584451,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        17,
+        1219,
+        1238
+      ],
+      "visible_bbox": [
+        359,
+        20,
+        862,
+        1235
+      ],
+      "visible_alpha_threshold": 127,
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20/root_generated.json",
+      "reference_inputs": [
+        {
+          "workspace_input": "references_characters_2026-11-20/hotd2_amy_harry.jpg",
+          "sha256": "bad8626c7c423b03628aab9f1320ca84c847c3f2ff1e48a193f4c87ca4f7d594",
+          "bytes": 93755,
+          "dimensions": [
+            639,
+            369
+          ],
+          "mode": "RGB",
+          "used_as_imagegen_reference": true
+        },
+        {
+          "workspace_input": "references_characters_2026-11-20/hotd2_manual_pdfpage03.png",
+          "sha256": "9b693cc7bfc1a6d8338d1c6a24424df5c90436b68ab9ff00d8ab926c6c2ee1ee",
+          "bytes": 409041,
+          "dimensions": [
+            1405,
+            710
+          ],
+          "mode": "RGB",
+          "used_as_imagegen_reference": true
+        },
+        {
+          "workspace_input": "references_characters_2026-11-20/hotd2_amy_manual_detail.png",
+          "sha256": "8486fe84b441e689da242ee052d1022eec69dd0c3e673f3b7e6d9d872faac08b",
+          "bytes": 21871,
+          "dimensions": [
+            296,
+            897
+          ],
+          "mode": "RGB",
+          "used_as_imagegen_reference": true
+        },
+        {
+          "workspace_input": "hotd-current/assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "bytes": 595313,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "used_as_imagegen_reference": true
+        }
+      ],
+      "prompt_sha256": [
+        "87521e9b92d38275e1eaf2899e00366f410279438c6d99f5c5965f294e70497a"
+      ],
+      "generation_qa": {
+        "native_output_bytes_preserved": true,
+        "canonical_1_to_1_certified": false,
+        "opaque_pixels_at_canvas_edge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visual_review": "Jupe conservée, col gris, ceinture noire à boucle dorée, veste rouge ; deux pieds et canon entièrement dans le cadre."
+      }
+    },
+    {
+      "id": "candi_stryper",
+      "name": "Candi Stryper",
+      "game": "overkill",
+      "game_label": "The House of the Dead: Overkill",
+      "category": "character_base",
+      "path": "assets/dossier_curien/gallery_2026-11-20/characters/candi_stryper_base.png",
+      "generated_file": "exec-c78e39d2-f263-4166-9523-804bcaa29a3e.png",
+      "status": "static_needs_visual_reference_qa",
+      "sources": [
+        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/246580/manuals/TOTDO_STEAM_MANUAL_ENG.PDF?t=1763675367",
+        "https://blog.playstation.com/2011/08/01/house-of-the-dead-overkill-naked-terror-revealed/",
+        "https://www.imfdb.org/images/3/34/TTOTD-XM8-1.jpg",
+        "https://thehouseofthedead.fandom.com/wiki/Candi_Stryper"
+      ],
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20/characters/overkill_varla_candi_game.jpg",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "source_notes": [
+        "Portrait du manuel SEGA p20 et capture couleur du jeu (Candi à droite) vus avant la génération.",
+        "La description communautaire complète la jupe rayée, les résilles, les chaussures et l’orthèse de jambe droite ; pas de vue plein pied externe récupérée."
+      ],
+      "prompts": [
+        "Generate exactly ONE transparent full-body 2D hand-painted arcade character master of CANDI STRYPER, the adult blonde heroine from The House of the Dead: Overkill — Extended Cut. Use the FIRST reference gameplay still: Candi is the BLONDE woman on the RIGHT, not the dark-haired Varla. Match Candi's adult face, blue eyes, blonde hair arranged in two curled pigtails with RED ribbons, and pale yellow short-sleeved blouse. SECOND reference is official SEGA manual: Candi is the middle portrait on the LEFT page; use it to confirm her identity, curled pigtails and face. THIRD reference is Isaac guard from Dossier Curien, for painting technique only: fine hand-painted arcade sprite texture, crisp outline, detailed controlled shading, grounded human anatomy. Canonical documented clothing: yellow short-sleeved shirt tied above the waist, short red-and-white vertically striped skirt, red fishnet tights, practical red-and-white sneakers, a visible metal medical leg brace strapped along her anatomical RIGHT leg from thigh/knee toward ankle. The lower-body clothes and brace are reconstructed from the documented costume description, with simple readable hardware; do not change them into knee-high boots, armor or generic tactical gear. Keep all clothing opaque, adult proportions natural, restrained practical stance. Pose: neutral combat-ready guard in three-quarter lateral view facing RIGHT, both feet firmly visible, ONE large dark semi-automatic pistol held securely in both hands near chest level, alert and slightly concerned expression. Not a pin-up or erotic image. One complete adult woman only on a square ~1024x1024 transparent RGBA canvas; generous empty margins outside hair, hands, knees and soles, feet at about92% height. No scene, ground, shadow ellipse, other person, detached limbs, wheelchair, text, badge lettering, logos, watermark, UI, collage or sprite sheet. Create a recognizable static base for the game's gallery; do not copy the cropped shot or invent an alternate costume.",
+        "Clean the transparency edge of this exact Candi Stryper 2D arcade sprite. Preserve the character, adult face, expression, blond curled pigtails, red ribbons, yellow tied blouse, red-white striped skirt, red fishnet tights, single brace on HER RIGHT leg (the left side of this canvas), sneakers, handgun, stance, proportions, entire canvas and all existing details. Remove ONLY the stray bright red/yellow pixels and colored halo outside her outline, especially around hair, shoulders, elbows and shoes. Use clean natural antialiased contour pixels matching the adjacent object, with genuinely fully transparent pixels outside. Keep RGBA transparency, same complete framing, generous margins, no rescaling, no new background or ground/shadow, no added elements, no text. This is an edge cleanup of the supplied image, not a new character or alternate costume."
+      ],
+      "limitations": [
+        "Une silhouette statique de galerie ; profil de combat, mouvements, animations et sélection de costume non ajoutés.",
+        "Pose latérale créée pour Dossier Curien ; comparaison des références sans certification de reproduction 1:1.",
+        "Le bas de la tenue et l’orthèse sont une reconstruction à contrôler avec une vue canonique plein pied.",
+        "La tentative de nettoyage alpha n’a pas été retenue : elle ne résolvait pas mieux les pixels périphériques très transparents et modifiait inutilement le dessin."
+      ],
+      "attempts": [
+        {
+          "generated_file": "exec-c78e39d2-f263-4166-9523-804bcaa29a3e.png",
+          "retained": true,
+          "reason": "Dessin de base retenu après comparaison.",
+          "sha256": "9de6b8606bda6ccf661ce86e9e4c8c84f689b6cd6af5e119aefeb509a0772879",
+          "bytes": 871812
+        },
+        {
+          "generated_file": "exec-6bd931c6-1798-4b0a-a847-8c78d9ff268d.png",
+          "retained": false,
+          "reason": "Pas de gain visuel du nettoyage ; la première sortie est conservée.",
+          "sha256": "473d21f2fdb7a8054edafa9c94a362b6374eb2a7acc69296af0fea44d3e56b94",
+          "bytes": 847771
+        }
+      ],
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "sha256": "9de6b8606bda6ccf661ce86e9e4c8c84f689b6cd6af5e119aefeb509a0772879",
+      "bytes": 871812,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        14,
+        1238,
+        1230
+      ],
+      "visible_bbox": [
+        281,
+        16,
+        928,
+        1208
+      ],
+      "visible_alpha_threshold": 127,
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20/root_generated.json",
+      "reference_inputs": [
+        {
+          "workspace_input": "references_2026-11-20/varla_candi_before_katie.jpg",
+          "sha256": "56c995781f80694f4268ed846f99562c044d7d84b15f1b30791ac42fe1fb217e",
+          "bytes": 270098,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "mode": "RGB",
+          "used_as_imagegen_reference": true
+        },
+        {
+          "workspace_input": "references_2026-11-20/overkill_manual_spread_10.png",
+          "sha256": "7032b839531b3a8620fc6f7756071e5c643463266fca471c00d59bdff062248f",
+          "bytes": 727544,
+          "dimensions": [
+            953,
+            715
+          ],
+          "mode": "RGB",
+          "used_as_imagegen_reference": true
+        },
+        {
+          "workspace_input": "hotd-current/assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "bytes": 595313,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "used_as_imagegen_reference": true
+        }
+      ],
+      "prompt_sha256": [
+        "793726878421e89c8f3d39a89569f9acdd3cb54fb8f9d0da268a9eddf1197c91",
+        "14b2dbf3de5da48715c0f396d7a9619990d04f0d28bcfcfbcc27014ed6cf2381"
+      ],
+      "generation_qa": {
+        "native_output_bytes_preserved": true,
+        "canonical_1_to_1_certified": false,
+        "opaque_pixels_at_canvas_edge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visual_review": "Figure complète ; cheveux blonds et rubans rouges, chemisier jaune, jupe rayée, résilles rouges, orthèse sur la jambe droite et deux baskets visibles."
+      }
+    },
+    {
+      "id": "g_hotd3",
+      "name": "Agent G — HOTD III",
+      "game": "hotd3",
+      "game_label": "The House of the Dead III",
+      "category": "costume_variant",
+      "gallery": true,
+      "path": "assets/dossier_curien/gallery_2026-11-20/costumes/g_hotd3_base.png",
+      "sha256": "6da84c2e8cb37742038ea67c45d68419f6d86519c0973c128b9287aee49005ab",
+      "bytes": 766168,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        25,
+        65,
+        1240,
+        1202
+      ],
+      "visible_bbox": [
+        274,
+        69,
+        995,
+        1192
+      ],
+      "visible_alpha_threshold": 127,
+      "status": "static_reference_reviewed",
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "sources": [
+        "https://www.imfdb.org/wiki/The_House_of_the_Dead_III",
+        "https://www.imfdb.org/images/9/9e/HodIII_GandLisa.jpg",
+        "https://www.imfdb.org/images/3/37/HodIII_GandLisa_2.jpg",
+        "https://www.arcadeguns.com/download/HOD3_Manual.pdf"
+      ],
+      "source_notes": [
+        "Sources visuelles SEGA (rendus promotionnels ou capture du jeu) réhébergées par IMFDB ; le site hébergeur est secondaire.",
+        "Manuel SEGA PC consulté via index web ; téléchargement direct indisponible HTTP406, aucune prétention de revue visuelle de ses pages.",
+        "G uniquement ; Lisa et Death exclus. Couleurs et vieillissement recoupés entre deux rendus promotionnels."
+      ],
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20/costumes_iii/hotd3_g_lisa_art.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20/costumes_iii/hotd3_g_lisa_art2.jpg",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "reference_inputs": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20/costumes_iii/hotd3_g_lisa_art.jpg",
+          "sha256": "4bbd140e8c07d205432f74064d27f553077984b031203b1b86e685043d67b684",
+          "role": "subject_game_reference"
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20/costumes_iii/hotd3_g_lisa_art2.jpg",
+          "sha256": "299a0d5df7e92b0d1d1d9614cee2b4b6755c6354dca242911cdfa51f970a474f",
+          "role": "subject_game_reference"
+        },
+        {
+          "path": "assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "role": "painting_style_only"
+        }
+      ],
+      "prompts": [
+        "Use case: stylized-concept. Asset type: one native transparent full-body character costume master for a hand-painted 2D arcade fighting game. Produce exactly one character, completely inside the image, facing RIGHT in a relaxed ready stance with slightly flexed knees, head and shoes and entire weapon visible, generous transparent padding on every edge. Aim for a square 1024x1024 canvas. Match the crisp hand-painted arcade shading, clean silhouette and compact realistic anatomy of the LAST attached image, Isaac, strictly as STYLE reference; do not copy Isaac's identity, hat, facial hair or clothing. This is a faithful fan-made 2D adaptation of the specific game costume in the subject reference, not an invented outfit or a photograph. Natural neutral lighting. No background, floor, ground shadow, UI, typography, labels, muzzle flash, duplicate person, montage or sprite sheet. Keep genuine transparent alpha.\nSubject reference images 1 and 2 show G in The House of the Dead III. Isolate and adapt ONLY the older male agent G; omit Lisa and Death. Preserve G's older angular face and slicked-back dark hair strongly streaked with grey, pale blue long-sleeved shirt, pale grey buttoned waistcoat, yellow/gold narrow necktie, charcoal grey formal trousers and dark simple shoes. The first image gives the face and colors; the second gives his complete body and trouser/shoe silhouette. G is a lean, experienced middle-aged man, not a bodybuilder. Hold the short black pump shotgun visible in those promotional references at a low ready angle to the RIGHT, both hands naturally placed. One clean full-body three-quarter side view, face recognizable as the reference, composed into the square as a readable game sprite. Do not add a coat, hat, shoulder armor or extra holsters."
+      ],
+      "limitations": [
+        "Une image statique de galerie. Aucun profil jouable, aucune action ni tenue sélectionnable ajoutés par ce fichier.",
+        "Adaptation 2D fan-made ; ressemblance révisée sur références, fidélité1:1 non certifiée.",
+        "Fusil simplifié pour la lecture du sprite ; le rendu promotionnel et le modèle final du jeu peuvent différer.",
+        "Le rendu plein pied montre G surtout de dos ; la vue de combat trois-quarts et les plis du gilet sont une adaptation."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20/costumes_generated.json",
+      "generation": {
+        "tool": "image_gen built-in",
+        "date": "2026-11-20",
+        "transparent_background_requested": true,
+        "source_native_output": "/workspace/scratch/da9d6e4777c1/generated_images/exec-16ca1cf0-ddd5-4ceb-9360-80059b535ec3.png",
+        "native_bytes_preserved": true,
+        "attempts_retained": 1
+      },
+      "qa": {
+        "subject_and_costume_visually_inspected": true,
+        "transparent_alpha_verified": true,
+        "opaque_pixels_at_canvas_edge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "cropped_subject_detected": false,
+        "canonical_1_to_1_certified": false,
+        "in_engine_render_observed": false
+      }
+    },
+    {
+      "id": "g_overkill",
+      "name": "G — Overkill",
+      "game": "overkill",
+      "game_label": "The House of the Dead: Overkill",
+      "category": "costume_variant",
+      "path": "assets/dossier_curien/gallery_2026-11-20/costumes/g_overkill_base.png",
+      "generated_file": "exec-eb6a1c38-2103-42df-abdc-1ed3a09aba06.png",
+      "status": "static_reference_reviewed",
+      "sources": [
+        "https://www.behance.net/gallery/12504423/House-of-the-Dead-Overkill",
+        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/246580/manuals/TOTDO_STEAM_MANUAL_ENG.PDF?t=1763675367"
+      ],
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20/characters/overkill_agent_g_rick_nath.jpg",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "source_notes": [
+        "Rendu couleur plein pied publié par Rick Nath, artiste ayant participé à la direction artistique ; manuel officiel SEGA, page imprimée19.",
+        "Image source : https://mir-s3-cdn-cf.behance.net/project_modules/disp/232acb12504423.5e590efc02a1e.jpg"
+      ],
+      "prompts": [
+        "Create exactly ONE full-body 2D hand-painted arcade fighting-game gallery master of young Agent G from The House of the Dead: Overkill, on a genuine fully transparent RGBA background. The first reference is primary production artwork published by artist Rick Nath: follow that character's identity and outfit closely. Young clean-shaven light-skinned man, short dark brown close-cropped hair, distinctive rectangular dark lenses in dark red frames, tailored single-breasted BLACK suit jacket with notch lapels, open-collar warm ivory/light salmon shirt, black trousers and plain dark low dress shoes. Preserve the red inner-jacket accent visible in the reference, no necktie, no armor. The second reference is the existing Dossier Curien Isaac guard sprite: match its finely painted 2D arcade sprite technique, crisp outlined contour, textured but controlled shading, readable silhouette and human proportions, NOT its clothes, face, shotgun, hat or colors. The third reference is the official SEGA manual spread that confirms Agent G's face and outfit. Pose: one relaxed combat-ready neutral guard, three-quarter lateral view facing RIGHT, knees slightly flexed, both feet fully visible planted apart, head and torso upright. Hold ONE large dark semi-automatic pistol with both hands near chest level aimed slightly toward the right; this is a new adaptation pose, do not reproduce the two-gun poster composition. Draw every limb and all fingers coherently, with separated forearms. Square canvas about 1024x1024 with generous clear margins above hair and outside both hands and feet; whole figure visible from hair to soles, feet about 92% of canvas height. No ground, no shadow ellipse, no environment, no text, no label, no border, no watermark, no sprite sheet, no collage, no duplicate figure, no motion blur. This is a static non-playable costume study for a game gallery, not a literal screenshot. Keep age and face distinct from older Agent G in III."
+      ],
+      "limitations": [
+        "Une silhouette statique de galerie ; profil de combat, mouvements, animations et sélection de costume non ajoutés.",
+        "Pose latérale créée pour Dossier Curien ; comparaison des références sans certification de reproduction 1:1.",
+        "Variante d’époque de G ; aucune nouvelle identité.",
+        "Une arme et garde à deux mains dans l’adaptation, deux armes sur le rendu source."
+      ],
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "sha256": "4e072e8d2a0447cab9a6052e7fc246ce4cd902c029a9cc1b4b324ed2bec1a7ae",
+      "bytes": 685116,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        31,
+        30,
+        1125,
+        1230
+      ],
+      "visible_bbox": [
+        288,
+        33,
+        929,
+        1214
+      ],
+      "visible_alpha_threshold": 127,
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20/root_generated.json",
+      "reference_inputs": [
+        {
+          "workspace_input": "references_2026-11-20/overkill_artist_8.jpg",
+          "sha256": "4bdff7177599e4e1b72807527e7fa6e899cf40c2310adc0befaf9c4d7d8bfd81",
+          "bytes": 74061,
+          "dimensions": [
+            600,
+            896
+          ],
+          "mode": "RGB",
+          "used_as_imagegen_reference": true
+        },
+        {
+          "workspace_input": "hotd-current/assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "bytes": 595313,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "used_as_imagegen_reference": true
+        },
+        {
+          "workspace_input": "references_2026-11-20/overkill_manual_spread_9.png",
+          "sha256": "ee9eb899c7db94f3c11eac03a85eb7ccaf395af2cc2814a80e78b5c1927e4093",
+          "bytes": 482301,
+          "dimensions": [
+            953,
+            715
+          ],
+          "mode": "RGB",
+          "used_as_imagegen_reference": true
+        }
+      ],
+      "prompt_sha256": [
+        "9e254e0ccf14760e761f272758a0bb3b25641ed8ee5243bfc2ab7e9f1158fe4d"
+      ],
+      "generation_qa": {
+        "native_output_bytes_preserved": true,
+        "canonical_1_to_1_certified": false,
+        "opaque_pixels_at_canvas_edge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visual_review": "Figure complète ; lunettes rouges, chemise claire, veste et pantalon noirs ; mains et pieds non coupés."
+      }
+    },
+    {
+      "id": "hangedman",
+      "name": "Hangedman — Type 041",
+      "game": "hotd",
+      "game_label": "The House of the Dead",
+      "category": "boss_base",
+      "path": "assets/dossier_curien/gallery_2026-11-20/bosses/hangedman_base.png",
+      "sha256": "d992bdc6c975d9edfa670f0198899efd912fbbc5d425f3ec97dbc305ce6da658",
+      "bytes": 1332098,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        45,
+        1232,
+        1236
+      ],
+      "visible_bbox": [
+        91,
+        79,
+        1115,
+        1178
+      ],
+      "visible_alpha_threshold": 127,
+      "status": "static_reference_reviewed",
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/Hangedman",
+        "https://thehouseofthedead.fandom.com/wiki/Hangedman/Gallery"
+      ],
+      "source_notes": [
+        "Identité adaptée du master historique du projet. Les pages web servent au contrôle du design original versus Scarlet Dawn ; aucune image externe de Hangedman n’a été fournie au générateur."
+      ],
+      "references": [
+        "assets/sprites/bosses/hangedman.png",
+        "assets/dossier_curien/magician_guard.png"
+      ],
+      "reference_inputs": [
+        {
+          "path": "assets/sprites/bosses/hangedman.png",
+          "role": "Existing project identity master, inspected in full; not official Sega artwork.",
+          "sha256": "f4ad21da81f0a4b4f4459ac4f7e5f025e2298e41e458448f9ed9afefcfce5e12",
+          "bytes": 891864,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA"
+        },
+        {
+          "path": "assets/dossier_curien/magician_guard.png",
+          "role": "Existing Dossier painted-sprite style only.",
+          "sha256": "9137ceea3bbba769cc849a35ded669dac901f85383930e9893c383aa1d8c93a3",
+          "bytes": 379712,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA"
+        }
+      ],
+      "prompts": [
+        "Use case: stylized-concept. Asset type: ONE full-body transparent RGBA static gallery master for the Dossier Curien 2D game, square1024x1024 requested.\nInput1 is the project's historical HANGEDMAN Type041 sprite sheet. It is an IDENTITY/ANATOMY reference only: create ONE SINGLE FIGURE, not a grid or an animation sheet. Choose the upright hovering silhouette represented in the top row, keeping this original House of the Dead design: thin long pointed ears above a narrow bat/avian-like head, distinct round RED eye goggles, elongated narrow muzzle, a muted gray-olive leathery body, ragged dark brown membranous bat wings with articulated finger ribs, exposed dark crimson chest muscle framed by small old armor pieces, banded protective pieces on slender arms and bent legs, clawed hands and feet. Preserve the source's equipment, proportions and details; no extra armor or equipment. Do not use the broader furry Scarlet Dawn version.\nInput2 is ONLY the existing Magician Dossier sprite's painted rendering reference: clean purposeful 2D contour, fine hand-painted shading, restrained texture, readable articulation; do not copy its horns, body plates, purple palette or silhouette.\nPose: one stationary midair guarded hover, body at three-quarter lateral view facing RIGHT. Head also right. Two knees bent under the body, both clawed feet visible. TWO arms with two hands naturally held forward; TWO bat wings rise from the shoulder/back area, partially opened in a broad V, each with its own legible outline and intact tips. Exactly one head, two arms, two legs and two wings. Hands do not become wings. No bats around him.\nComposition: complete character including ear tips, wingtips, fingers and toes, comfortably within the canvas with at least7% transparent margin on every side. Centered, no clipped appendage, no tiny thumbnail. Keep silhouette comparable to the detailed reference Dossier sprite.\nConstraints: fully transparent background, no floor, cast shadow, haze, glow outside the body, environment, effects, text, labels, logo, border, watermark, diagram, grid, montage, duplicate creature, additional viewpoint or victim. This is a new free 2D gallery pose adapted from an existing project master, not an exact screenshot or a newly invented identity."
+      ],
+      "prompt_sha256_utf8": [
+        "432d0bfb6183472df9707eb1574bc3008f29f94b01a8daafab061c8a2535ecc0"
+      ],
+      "selected_generation_basename": "exec-c920c0e8-3785-45d9-84bc-5b46c5bd66d5.png",
+      "generation_method": "built-in image_gen.imagegen, native transparent output; exact PNG byte copy",
+      "limitations": [
+        "Pose de garde statique créée librement pour la galerie Dossier Curien à partir d’une identité déjà présente ailleurs dans le dépôt.",
+        "Aucune animation, sélection de combattant ou nouvelle mécanique de combat fournie.",
+        "Comparaison visuelle aux références précisées ; fidélité canonique 1:1 non certifiée."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20/bosses_generated.json",
+      "recovery_qa": {
+        "bytes_preserved": true,
+        "dimensions_and_alpha_measured": true,
+        "opaque_pixels_at_canvas_edge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "canonical_1_to_1_certified": false
+      },
+      "visual_review": {
+        "single_figure": true,
+        "facing": "three-quarter right",
+        "wings": 2,
+        "arms": 2,
+        "legs": 2,
+        "red_goggles": true,
+        "long_pointed_ears": true,
+        "whole_silhouette_visible": true,
+        "no_floor_or_hud": true
+      }
+    },
+    {
+      "id": "harry_harris",
+      "name": "Harry Harris",
+      "game": "hotd2",
+      "game_label": "The House of the Dead 2",
+      "category": "npc_base",
+      "path": "assets/dossier_curien/gallery_2026-11-20/characters/harry_harris_base.png",
+      "generated_file": "exec-68d25060-42aa-4688-8438-3eb932ae46c7.png",
+      "status": "static_reference_reviewed",
+      "sources": [
+        "https://www.digitpress.com/library/manuals/dreamcast/house_dead_2.pdf",
+        "https://www.imfdb.org/images/0/06/Hod2_AmyandHarry.jpg",
+        "https://thehouseofthedead.fandom.com/wiki/Harry_Harris"
+      ],
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20/characters/hotd2_amy_harry_game.jpg",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "source_notes": [
+        "Capture couleur du jeu : Harry à droite derrière Amy ; manuel SEGA p4 pour la silhouette et le rôle.",
+        "G Overkill n’a pas servi de référence d’identité : Harry conserve ses lunettes noires, sa cravate grise et son costume fermé."
+      ],
+      "prompts": [
+        "Generate ONE full-body isolated hand-painted 2D arcade game gallery master of HARRY HARRIS from the original SEGA The House of the Dead 2. FIRST reference gameplay screenshot: Harry is the adult male agent behind Amy on the RIGHT. SECOND reference is the official Dreamcast manual page4: Harry is the central standing man below the Amy heading, NOT seated Goldman. Match his sturdy build, broad shoulders, age around40, clean-shaven pale face, very short dark hair slicked up/back and dark BLACK sunglasses. Clothing is a slightly faded charcoal-black formal single-breasted suit, matching straight trousers, WHITE shirt, GREY necktie, plain dark grey formal shoes. Preserve the buttoned jacket, solemn face and black lens shape; no red glasses, no open collar, no leather jacket, no tactical armor, no beard. Third reference Isaac guard defines only the existing Dossier Curien style: finely painted arcade sprite, clear dark outline, controlled detailed shading, realistic human proportions rather than photographic or3D. Pose: relaxed ready guard facing RIGHT, body in three-quarter lateral view, knees very slightly flexed, one silver/chrome semi-automatic pistol gripped low at chest height with both hands, elbows readable and distinct. Both feet and all fingers fully in view, whole figure from hair to soles, generous transparent margins on a square ~1024x1024 canvas; do not crop shoes. One adult man only. Genuine transparent RGBA background, no environment, floor, cast shadow blob, text, names, badge, logo, watermark, border, UI, collage, sprite sheet, extra person, extra arms, blood or injury. This is a single static NPC gallery drawing, no claim of a complete playable fighter. Pose and exact shoe surface are an adaptation, while identity, grey tie and original suit must match the references."
+      ],
+      "limitations": [
+        "Une silhouette statique de galerie ; profil de combat, mouvements, animations et sélection de costume non ajoutés.",
+        "Pose latérale créée pour Dossier Curien ; comparaison des références sans certification de reproduction 1:1.",
+        "Pose de garde adaptée ; détail des chaussures reconstruit, les sources montrant surtout le haut et les jambes."
+      ],
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "sha256": "e61e2e212e53707a01edd79f0997d0afc59c06186667a024f48687a12583ac5a",
+      "bytes": 753901,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        16,
+        1210,
+        1254
+      ],
+      "visible_bbox": [
+        314,
+        19,
+        916,
+        1243
+      ],
+      "visible_alpha_threshold": 127,
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20/root_generated.json",
+      "reference_inputs": [
+        {
+          "workspace_input": "references_characters_2026-11-20/hotd2_amy_harry.jpg",
+          "sha256": "bad8626c7c423b03628aab9f1320ca84c847c3f2ff1e48a193f4c87ca4f7d594",
+          "bytes": 93755,
+          "dimensions": [
+            639,
+            369
+          ],
+          "mode": "RGB",
+          "used_as_imagegen_reference": true
+        },
+        {
+          "workspace_input": "references_characters_2026-11-20/hotd2_manual_pdfpage03.png",
+          "sha256": "9b693cc7bfc1a6d8338d1c6a24424df5c90436b68ab9ff00d8ab926c6c2ee1ee",
+          "bytes": 409041,
+          "dimensions": [
+            1405,
+            710
+          ],
+          "mode": "RGB",
+          "used_as_imagegen_reference": true
+        },
+        {
+          "workspace_input": "hotd-current/assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "bytes": 595313,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "used_as_imagegen_reference": true
+        }
+      ],
+      "prompt_sha256": [
+        "6d1dbed47f74a173e8e26481f1d52ec6abbf6252b37d0c00390153cd3aa56f33"
+      ],
+      "generation_qa": {
+        "native_output_bytes_preserved": true,
+        "canonical_1_to_1_certified": false,
+        "opaque_pixels_at_canvas_edge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visual_review": "Costume charbon fermé, chemise blanche, cravate grise, lunettes noires ; absence de coupe aux pieds et aux mains."
+      }
+    },
+    {
+      "id": "hermit",
+      "name": "Hermit — Type 6803",
+      "game": "hotd",
+      "game_label": "The House of the Dead",
+      "category": "boss_base",
+      "path": "assets/dossier_curien/gallery_2026-11-20/bosses/hermit_base.png",
+      "sha256": "1e01872793422e3e8c6fa31daba4fde3e4d6717805aa372c97f0f2f93c48100f",
+      "bytes": 1195918,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        31,
+        1239,
+        1254
+      ],
+      "visible_bbox": [
+        22,
+        247,
+        1229,
+        1035
+      ],
+      "visible_alpha_threshold": 127,
+      "status": "static_reference_reviewed",
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "sources": [
+        "https://www.mobygames.com/game/1218/the-house-of-the-dead/screenshots/windows/6344/",
+        "https://thehouseofthedead.fandom.com/wiki/Hermit"
+      ],
+      "source_notes": [
+        "Capture PC contribuée par Alan Chan, hébergée par MobyGames, ajoutée le11mai2000 ; source de jeu, pas une image de presse officielle.",
+        "URL média : https://cdn.mobygames.com/screenshots/10092665-the-house-of-the-dead-windows-boss-battle-with-hermit-type-6803.jpg",
+        "La palette ivoire/rouge visible dans le jeu remplace la palette très sombre de la planche historique. Le cadrage et la garde restent libres."
+      ],
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20/bosses/hermit_pc.jpg",
+        "assets/sprites/bosses/hermit-type-6803.png",
+        "assets/dossier_curien/magician_guard.png"
+      ],
+      "reference_inputs": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20/bosses/hermit_pc.jpg",
+          "role": "Real PC gameplay screenshot: ivory/red palette, six eyes, articulated legs; HUD and smoke excluded.",
+          "sha256": "cc7bbb4909872911cbc69554819cfb9c781bd90de262df38969e7ad966b9e9a7",
+          "bytes": 88679,
+          "dimensions": [
+            640,
+            480
+          ],
+          "mode": "RGB"
+        },
+        {
+          "path": "assets/sprites/bosses/hermit-type-6803.png",
+          "role": "Existing project identity master, inspected in full; not official Sega artwork.",
+          "sha256": "96da8ba814d64978ca531a24efc1127e9a361ff755c0da5bb33e8d1d0926d6a2",
+          "bytes": 1252721,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA"
+        },
+        {
+          "path": "assets/dossier_curien/magician_guard.png",
+          "role": "Existing Dossier painted-sprite style only.",
+          "sha256": "9137ceea3bbba769cc849a35ded669dac901f85383930e9893c383aa1d8c93a3",
+          "bytes": 379712,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA"
+        }
+      ],
+      "prompts": [
+        "Use case: stylized-concept. Asset type: ONE full-body transparent RGBA static gallery master for Dossier Curien, square1024x1024 requested.\nSubject: HERMIT Type6803 from the original House of the Dead, an armored eight-legged arachnid boss. Input1 is a real game screenshot from the PC version: it is the main reference for the PALE IVORY segmented carapace and legs, dark fine crack lines, deep red fleshy underside, red joints and compact red head with six small pale eyes. Remove all screenshot HUD, smoke, impacts and scenery. Do not copy screen-space foreshortening.\nInput2 is the project's historical Hermit sprite sheet, used to understand the complete carapace silhouette and its bulky rear segmented shell, compact front head and articulated legs. Create ONE figure, never a grid. It is much darker than the actual game: use the ivory/red palette from input1 rather than turning him into a black mechanical beetle. Keep the distinctive armored creature identity, not a natural hairy spider or scorpion. No metal rivets, robotic cables or tail.\nInput3 is ONLY the Magician Dossier sprite's fine painted 2D arcade rendering, clean contours and readable shading; do not copy its body shape, face, horns or colors.\nPose: full creature seen from a three-quarter side/front angle, head oriented RIGHT, static low guarded stance. Exactly EIGHT legs arranged as FOUR anatomical pairs, four emerging on each side of the thorax. Give every leg a coherent trace from its root through angular armored joints to a paired clawed foot, with clear negative gaps between the limbs. Arrange the nearest four legs and farther four legs as separate fans around the low body so all eight terminal feet can be counted. Front pair bent slightly higher and held forward in a ready guard, remaining six legs support the body in a natural stable spread. No extra legs, no missing legs, no disconnected feet, and no ordinary insect six-legged anatomy. Compact head remains visible between front limbs, with no human face. This is a non-firing stance; no web projectiles. Keep oral detail restrained to the PC screenshot, no invented huge fangs or additional tentacles.\nComposition: the entire wide squat creature with all leg tips and shell fits the square canvas with8% transparent breathing room around its complete silhouette. Do not stretch the creature vertically to fill the square. Native painted detail suitable for an in-game bestiary gallery.\nConstraints: transparent background throughout, no floor, cast shadow, environment, web, slime trail, gore splash, effects, text, label, logo, watermark, sprite sheet, collage or duplicate subject. This is a source-guided free 2D gallery guard adaptation of an existing boss identity, not a 1:1 model or a playable move set."
+      ],
+      "prompt_sha256_utf8": [
+        "5d80a54fa543476e69eeedaba92178ab5cb650f94bb926b114430d5ea7984e87"
+      ],
+      "selected_generation_basename": "exec-b712ca2b-2689-4f4f-8fc0-53cb2d4b3ab4.png",
+      "generation_method": "built-in image_gen.imagegen, native transparent output; exact PNG byte copy",
+      "limitations": [
+        "Pose de garde statique créée librement pour la galerie Dossier Curien à partir d’une identité déjà présente ailleurs dans le dépôt.",
+        "Aucune animation, sélection de combattant ou nouvelle mécanique de combat fournie.",
+        "Comparaison visuelle aux références précisées ; fidélité canonique 1:1 non certifiée.",
+        "Référence complémentaire PC : aucune équivalence détaillée arcade/Saturn/Remake revendiquée, notamment pour la bouche."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20/bosses_generated.json",
+      "recovery_qa": {
+        "bytes_preserved": true,
+        "dimensions_and_alpha_measured": true,
+        "opaque_pixels_at_canvas_edge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "canonical_1_to_1_certified": false
+      },
+      "visual_review": {
+        "single_figure": true,
+        "facing": "three-quarter right",
+        "terminal_leg_feet_counted": 8,
+        "eyes_counted": 6,
+        "ivory_shell_and_red_underside": true,
+        "whole_silhouette_visible": true,
+        "no_floor_web_or_hud": true
+      }
+    },
+    {
+      "id": "rogan_hotd3",
+      "name": "Thomas Rogan — HOTD III",
+      "game": "hotd3",
+      "game_label": "The House of the Dead III",
+      "category": "costume_variant",
+      "gallery": true,
+      "path": "assets/dossier_curien/gallery_2026-11-20/costumes/rogan_hotd3_base.png",
+      "sha256": "944b1be1a12f8710a574055df08d758b1ccc3ce57a36fbc17b325714b4806a40",
+      "bytes": 855715,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        32,
+        1230,
+        1254
+      ],
+      "visible_bbox": [
+        282,
+        62,
+        1008,
+        1201
+      ],
+      "visible_alpha_threshold": 127,
+      "status": "static_reference_reviewed",
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "sources": [
+        "https://www.imfdb.org/wiki/The_House_of_the_Dead_III",
+        "https://www.imfdb.org/images/6/60/HodIII_DanandRogan.jpg",
+        "https://www.arcadeguns.com/download/HOD3_Manual.pdf"
+      ],
+      "source_notes": [
+        "Sources visuelles SEGA (rendus promotionnels ou capture du jeu) réhébergées par IMFDB ; le site hébergeur est secondaire.",
+        "Manuel SEGA PC consulté via index web ; téléchargement direct indisponible HTTP406, aucune prétention de revue visuelle de ses pages.",
+        "Le personnage de référence est Rogan à gauche, identifié à l’écran ; Dan à droite est exclu. Teinte verte de l’éclairage de scène neutralisée."
+      ],
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20/costumes_iii/hotd3_dan_rogan.jpg",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "reference_inputs": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20/costumes_iii/hotd3_dan_rogan.jpg",
+          "sha256": "b4464925c0206115e642c7bbcd787f3f4607a60a7ea46fc2c0625e952f36cff2",
+          "role": "subject_game_reference"
+        },
+        {
+          "path": "assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "role": "painting_style_only"
+        }
+      ],
+      "prompts": [
+        "Use case: stylized-concept. Asset type: one native transparent full-body character costume master for a hand-painted 2D arcade fighting game. Produce exactly one character, completely inside the image, facing RIGHT in a relaxed ready stance with slightly flexed knees, head and shoes and entire weapon visible, generous transparent padding on every edge. Aim for a square 1024x1024 canvas. Match the crisp hand-painted arcade shading, clean silhouette and compact realistic anatomy of the LAST attached image, Isaac, strictly as STYLE reference; do not copy Isaac's identity, hat, facial hair or clothing. This is a faithful fan-made 2D adaptation of the specific game costume in the subject reference, not an invented outfit or a photograph. Natural neutral lighting. No background, floor, ground shadow, UI, typography, labels, muzzle flash, duplicate person, montage or sprite sheet. Keep genuine transparent alpha.\nSubject reference image 1 is an actual screenshot from The House of the Dead III. Adapt ONLY Thomas Rogan, the older man on the LEFT with the text label Thomas Rogan. Omit the uniformed man Dan on the right. Preserve Rogan's rugged older angular face, short swept-back brown hair with a slightly grey mature hairline, brown/olive-brown open bomber jacket, plain white crew-neck T-shirt, black belt with rectangular brass buckle, plain khaki trousers and sturdy dark brown footwear. Match the actual jacket cut and trouser proportions shown. Remove the scene's green lighting tint and use neutral natural skin tone, brown jacket and khaki fabric; do not turn him green. Rogan is a fit fifty-something man. Hold the bulky short black pump shotgun shown in the screenshot at low ready, aimed to the RIGHT with both hands placed as in the source. The last image is solely painting-style reference. Use a new clean full-body three-quarter side view, same recognizable costume. The few details hidden by screenshot subtitles should stay simple and unobtrusive. No cap, tactical vest, combat helmet, shin guards, chest armor, extra belts or invented accessories."
+      ],
+      "limitations": [
+        "Une image statique de galerie. Aucun profil jouable, aucune action ni tenue sélectionnable ajoutés par ce fichier.",
+        "Adaptation 2D fan-made ; ressemblance révisée sur références, fidélité1:1 non certifiée.",
+        "Fusil simplifié pour la lecture du sprite ; le rendu promotionnel et le modèle final du jeu peuvent différer.",
+        "Parties basses des chaussures masquées par les sous-titres de la capture : forme de chaussure sobre complétée pour une silhouette entière, sans certification de détail canonique."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20/costumes_generated.json",
+      "generation": {
+        "tool": "image_gen built-in",
+        "date": "2026-11-20",
+        "transparent_background_requested": true,
+        "source_native_output": "/workspace/scratch/da9d6e4777c1/generated_images/exec-25a0473e-c576-471d-b696-542f20cbad02.png",
+        "native_bytes_preserved": true,
+        "attempts_retained": 1
+      },
+      "qa": {
+        "subject_and_costume_visually_inspected": true,
+        "transparent_alpha_verified": true,
+        "opaque_pixels_at_canvas_edge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "cropped_subject_detected": false,
+        "canonical_1_to_1_certified": false,
+        "in_engine_render_observed": false
+      }
+    },
+    {
+      "id": "varla_guns",
+      "name": "Varla Guns",
+      "game": "overkill",
+      "game_label": "The House of the Dead: Overkill",
+      "category": "character_base",
+      "path": "assets/dossier_curien/gallery_2026-11-20/characters/varla_guns_base.png",
+      "generated_file": "exec-d4488559-e4a7-46d9-a906-2e26446b31c9.png",
+      "status": "static_needs_visual_reference_qa",
+      "sources": [
+        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/246580/manuals/TOTDO_STEAM_MANUAL_ENG.PDF?t=1763675367",
+        "https://blog.playstation.com/2011/08/01/house-of-the-dead-overkill-naked-terror-revealed/",
+        "https://www.behance.net/gallery/12504423/House-of-the-Dead-Overkill",
+        "https://www.imfdb.org/images/3/34/TTOTD-XM8-1.jpg",
+        "https://thehouseofthedead.fandom.com/wiki/Varla_Guns"
+      ],
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20/characters/overkill_varla_candi_game.jpg",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "source_notes": [
+        "Portrait du manuel SEGA p20, capture du jeu (Varla à gauche), menu publié par Rick Nath vus avant la génération.",
+        "Le wiki communautaire complète la description des bottes, tatouages, holster et pendentif ; accès au texte indexé, image plein pied non récupérée."
+      ],
+      "prompts": [
+        "Create ONE isolated full-body hand-painted 2D arcade game character master: VARLA GUNS, the adult heroine from The House of the Dead: Overkill — Extended Cut. First reference: she is the DARK-HAIRED woman on the LEFT of the gameplay still; keep her identity, long violet-black hair, side-parted fringe, pale complexion, dark eyes, dark lip color and tough composed expression. Second reference: the official SEGA manual, Varla is the top portrait on the LEFT page. Third reference: the production-art menu shows her at center; it supports the black cropped sleeveless vest, red miniskirt and right-thigh holster. Fourth reference is Isaac's existing Dossier Curien sprite: match its finely painted arcade technique, crisp silhouette, detailed controlled shading and grounded anatomy, not his face/clothes/weapon. Clothing: sleeveless short black vest over a black top, midriff visible, short deep-red skirt with a high side slit, brown leather gun belt and brown holster strapped to her anatomical RIGHT thigh, light brown knee-high western boots with purple star decorations. Dark red sunglasses rest ON TOP of her head, not over eyes. Keep the small right-upper-arm butterfly/rose tattoos, paired revolver navel motif and simple star pendant understated rather than enlarged. Treat skirt/boot details as a documented 2D reconstruction, not a new fashion redesign. Pose: practical neutral fighting guard facing RIGHT, three-quarter lateral view, weight balanced on both fully visible feet, knees modestly bent, ONE dark semi-automatic handgun held in both hands near chest height, calm ready stance. Non-erotic action-game illustration; no exaggerated anatomy or pin-up posing. Exactly one complete adult woman, all head/hair/boots/hands visible with generous transparent margins on a square 1024x1024-ish canvas. Genuine transparent RGBA background, no floor or shadow ellipse, no environment, no other characters, no extra limbs, no text, no badges, no UI, no watermark, no sprite sheet, no collage, no logos. Preserve the existing game-series identity; avoid making a generic biker heroine.",
+        "Edit this exact supplied Varla Guns sprite, preserving the complete figure, pose, face, hairstyle, red sunglasses, clothes, tattoos, right-thigh holster, boots, weapon, lighting, pixel dimensions and framing. Make ONLY these two corrections: (1) change the small silver necklace pendant from its five-point star to a SIX-POINT Star of David formed by two interlocking equilateral triangles, small and understated on the same necklace in exactly the same position, matching the documented original costume; (2) remove the unwanted bright red/yellow fringe and stray colored pixels around the outer silhouette. The silhouette must have clean natural dark/brown antialiased edges and fully transparent pixels outside, with no colored halo and no background. Retain genuine RGBA transparency. Do not crop or rescale or redraw the woman, do not change the visible right-arm butterfly/rose tattoos, do not add/remove clothing, and do not alter anatomy or gun. Single complete character, no scene, no shadow, no text."
+      ],
+      "limitations": [
+        "Une silhouette statique de galerie ; profil de combat, mouvements, animations et sélection de costume non ajoutés.",
+        "Pose latérale créée pour Dossier Curien ; comparaison des références sans certification de reproduction 1:1.",
+        "La jupe, les bottes, le holster et les détails de tatouage sont reconstruits avec une description secondaire ; une vue canonique plein pied reste nécessaire.",
+        "Le pendentif a été corrigé en étoile à six branches via ImageGen ; les pixels de la sortie retenue n’ont pas été retouchés localement.",
+        "Quelques pixels périphériques de très faible alpha subsistent ; ne pas assimiler les couleurs RGB de pixels alpha1 à un contour opaque."
+      ],
+      "attempts": [
+        {
+          "generated_file": "exec-eecf299b-2fe0-403e-a7d9-5386dc49cdf4.png",
+          "retained": false,
+          "reason": "Pendentif à cinq branches ; remplacé par la correction.",
+          "sha256": "614bc9eff25301b4a54bb857d575045964c268b7a048dc3232f0bdaaa37e2680",
+          "bytes": 699418
+        },
+        {
+          "generated_file": "exec-d4488559-e4a7-46d9-a906-2e26446b31c9.png",
+          "retained": true,
+          "reason": "Pendentif corrigé ; pose et tenue conservées.",
+          "sha256": "ff924469d1ea5d3d056da2766b3f4d1daa601bc6d8401a5981751e3d428cf45d",
+          "bytes": 696289
+        }
+      ],
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "sha256": "ff924469d1ea5d3d056da2766b3f4d1daa601bc6d8401a5981751e3d428cf45d",
+      "bytes": 696289,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        17,
+        12,
+        1230,
+        1222
+      ],
+      "visible_bbox": [
+        328,
+        15,
+        910,
+        1216
+      ],
+      "visible_alpha_threshold": 127,
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20/root_generated.json",
+      "reference_inputs": [
+        {
+          "workspace_input": "references_2026-11-20/varla_candi_before_katie.jpg",
+          "sha256": "56c995781f80694f4268ed846f99562c044d7d84b15f1b30791ac42fe1fb217e",
+          "bytes": 270098,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "mode": "RGB",
+          "used_as_imagegen_reference": true
+        },
+        {
+          "workspace_input": "references_2026-11-20/overkill_manual_spread_10.png",
+          "sha256": "7032b839531b3a8620fc6f7756071e5c643463266fca471c00d59bdff062248f",
+          "bytes": 727544,
+          "dimensions": [
+            953,
+            715
+          ],
+          "mode": "RGB",
+          "used_as_imagegen_reference": true
+        },
+        {
+          "workspace_input": "references_2026-11-20/overkill_artist_1.jpg",
+          "sha256": "bae2e396778705ebddffe0d5dcbbef3b6ab2596569f3e84ffecead557e042936",
+          "bytes": 126021,
+          "dimensions": [
+            600,
+            337
+          ],
+          "mode": "RGB",
+          "used_as_imagegen_reference": true
+        },
+        {
+          "workspace_input": "hotd-current/assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "bytes": 595313,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "used_as_imagegen_reference": true
+        },
+        {
+          "workspace_input": "generated_images/exec-eecf299b-2fe0-403e-a7d9-5386dc49cdf4.png",
+          "sha256": "614bc9eff25301b4a54bb857d575045964c268b7a048dc3232f0bdaaa37e2680",
+          "bytes": 699418,
+          "dimensions": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "used_as_imagegen_reference": true
+        }
+      ],
+      "prompt_sha256": [
+        "e39cc2850de83f5028510b5e62b43dacbd3a449f21dd9c6cd43ef384d35611af",
+        "2300d40bfa9c9d0297b56f3a1bf4f900ea34722fcad92403f193ab0adfcfc6eb"
+      ],
+      "generation_qa": {
+        "native_output_bytes_preserved": true,
+        "canonical_1_to_1_certified": false,
+        "opaque_pixels_at_canvas_edge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "visual_review": "Silhouette complète ; cheveux noirs-violets, lunettes sur la tête, haut noir, jupe rouge, holster à la cuisse droite, bottes brunes étoilées. Revue canonique détaillée encore ouverte."
+      }
+    }
+  ]
+}

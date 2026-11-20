@@ -1,0 +1,448 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "timezone": "Etc/UTC",
+  "batch": "stages_2026-11-20",
+  "repository": "darknigthmare/the-house-of-the-dead-25d",
+  "audit": {
+    "ref": "59372b6",
+    "registered_stage_count_before": 18,
+    "source": "src/dossier_curien/saga.gd",
+    "scope": "Two source-supported absent locations selected; this is not an exhaustive inventory of every level, route or camera in the saga.",
+    "registered_names_before": [
+      "Cour du manoir",
+      "Antichambre",
+      "Laboratoire de Curien",
+      "Quai de la cité inondée",
+      "Poste de sécurité EFI",
+      "Métro souterrain",
+      "Complexe déserté",
+      "Réception de Scarecrow Mansion",
+      "Fête foraine de Bayou City",
+      "Plateau de Loving Deads",
+      "Rue en quarantaine",
+      "Toit de la tour Goldman",
+      "Chambre d’incubation EFI",
+      "Passage de la tour de l’horloge",
+      "Ponton du bayou",
+      "Parvis du siège Goldman",
+      "Ruines du domaine Scarecrow",
+      "Rue dévastée de Despair"
+    ]
+  },
+  "generation_method": "Built-in image_gen.imagegen; one PNG per call; six calls in three independent pairs. No CLI fallback, SVG substitute, cropping, recoloring or pixel editing.",
+  "stages": [
+    {
+      "id": "zr_train",
+      "suggested_name": "Toit du train — Zombie Revenge",
+      "game": "Zombie Revenge",
+      "source_platform": "Dreamcast",
+      "status": "adaptation_2d",
+      "reference_keys": [
+        "zr_train_roof",
+        "zr_train_area4"
+      ],
+      "missing_basis": "Only Rue en quarantaine / revenge represented this game among the 18 registered arenas.",
+      "retained_motifs": [
+        "Weathered green-gray segmented carriage roof",
+        "Raised lengthwise service grating",
+        "Ochre railway tunnel and repeated ribs",
+        "Horizontal utility conduits"
+      ],
+      "adaptation_decisions": [
+        "Original oblique gameplay camera replaced with a lateral fighting composition",
+        "Roof and grating run horizontally to provide continuous shared foot line",
+        "Edge lighting, fittings and spacing reinterpreted to fit the project; not certified original geometry"
+      ]
+    },
+    {
+      "id": "creeping_flesh",
+      "suggested_name": "Abattoir — Creeping Flesh",
+      "game": "The House of the Dead: OVERKILL — Extended Cut",
+      "source_platform": "PlayStation 3",
+      "status": "adaptation_2d",
+      "reference_keys": [
+        "creeping_flesh_official"
+      ],
+      "missing_basis": "Only Fête foraine de Bayou City / carnival and Ponton du bayou / bayou represented Overkill locations among the 18 registered arenas.",
+      "retained_motifs": [
+        "Industrial interior overtaken by dark red organic wall growth",
+        "Ceiling metal frames and fluorescent strips",
+        "Dirty pale industrial floor tiles",
+        "Orange interior illumination"
+      ],
+      "adaptation_decisions": [
+        "Official first-person corridor recomposed as an unobstructed lateral arena",
+        "Mutants, bodies, HUD and aiming reticle excluded",
+        "Environmental infestation retained without anatomical subjects; exact wall geometry reinterpreted"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "key": "zr_train_roof",
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20/stages/zr_train_roof.png",
+      "page_url": "https://www.mobygames.com/game/4412/zombie-revenge/screenshots/dreamcast/1117675/",
+      "media_url": "https://cdn.mobygames.com/screenshots/16943467-zombie-revenge-dreamcast-on-a-train-roof.png",
+      "source_type": "Dreamcast gameplay screenshot contributed by GTramp and hosted by MobyGames; not an official publisher press image.",
+      "caption": "On a train roof",
+      "contribution_date": "2023-02-28",
+      "retrieved": "2026-11-20",
+      "role": "Main visual evidence for train roof, grating and tunnel materials; supplied to generation.",
+      "sha256": "37f52b2eeede2b57b713114943dbbf776e945600da64c439fc780914e46e186a",
+      "size_bytes": 566900,
+      "dimensions": [
+        640,
+        480
+      ],
+      "mode": "RGB"
+    },
+    {
+      "key": "zr_train_area4",
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20/stages/zr_train_area4.jpg",
+      "page_url": "https://www.mobygames.com/game/4412/zombie-revenge/screenshots/dreamcast/18302/",
+      "media_url": "https://cdn.mobygames.com/screenshots/10476653-zombie-revenge-dreamcast-area-4-the-train.jpg",
+      "source_type": "Dreamcast gameplay screenshot contributed by quizzley7 and hosted by MobyGames; not an official publisher press image.",
+      "caption": "Area 4 - The Train",
+      "contribution_date": "2001-08-16",
+      "retrieved": "2026-11-20",
+      "role": "Supporting evidence that the carriage roof is an identifiable game setting; outdoor camera not mixed into tunnel composition.",
+      "sha256": "1d74fbc42e571e14b0209994096bbc57661336d6bca85cc0e82e80d3dff3d333",
+      "size_bytes": 54704,
+      "dimensions": [
+        768,
+        480
+      ],
+      "mode": "RGB"
+    },
+    {
+      "key": "creeping_flesh_official",
+      "path": "docs/dossier_curien/sources_art/references-2026-11-20/stages/creeping_flesh_official.jpg",
+      "page_url": "https://blog.playstation.com/2011/08/30/house-of-the-dead-overkill-extended-cut-creeping-flesh-level-reveal/",
+      "media_url": "https://blog.playstation.com/tachyon/2011/08/6082364132_a6d3a0fb8e_b.jpg",
+      "source_type": "Official promotional screenshot published by PlayStation.Blog in the level-reveal article.",
+      "publication_date": "2011-08-30",
+      "retrieved": "2026-11-20",
+      "role": "Main architecture, infestation, ceiling-light and palette evidence; supplied to generation.",
+      "sha256": "d8e643057f957ff57246444bf1673f375b43969722a093e15fa3a5ef4749452a",
+      "size_bytes": 118664,
+      "dimensions": [
+        1024,
+        576
+      ],
+      "mode": "RGB"
+    }
+  ],
+  "context_sources": [
+    {
+      "url": "https://www.sega.jp/history/arcade/product/8161/",
+      "type": "Official SEGA arcade history page",
+      "scope": "Context for Zombie Revenge; its generic gameplay image was inspected but not used as a train reference."
+    }
+  ],
+  "style_references": [
+    {
+      "path": "assets/dossier_curien/saga/carnival_back.png",
+      "role": "Existing project rendering/material quality and lateral fighting layout; not a canonical source for either new stage.",
+      "sha256": "7ee88eb625e02ef5333f2ce7d14aa1d4df73b1fa0780a59130a58a0f4d28bf97",
+      "size_bytes": 2519940,
+      "dimensions": [
+        1600,
+        900
+      ],
+      "mode": "RGB"
+    }
+  ],
+  "calibration": {
+    "renderer": "src/dossier_curien/presentation.gd",
+    "back_and_overlay_rect": [
+      -38,
+      -14,
+      1356,
+      754
+    ],
+    "suggested_floor_y": 601,
+    "foot_line_normalized_y": 0.8156498673740054,
+    "drift_multipliers": {
+      "back": 17,
+      "mid": 32,
+      "front": 58
+    },
+    "center_contract": {
+      "normalized_box": [
+        0.125,
+        0.2,
+        0.875,
+        0.79
+      ],
+      "maximum_alpha": 1,
+      "pixel_box": [
+        209,
+        188,
+        1463,
+        743
+      ],
+      "rounding": "int(width_or_height * fraction), end exclusive"
+    },
+    "native_dimensions": [
+      1672,
+      941
+    ],
+    "source_pixels": "Preserved byte-for-byte; runtime scaling follows existing renderer."
+  },
+  "review": {
+    "all_six_images_visually_inspected": true,
+    "backgrounds_have_unobstructed_lateral_floor": true,
+    "no_character_or_hud_generated": true,
+    "style_compared_with_existing_carnival_stage": true,
+    "overlays_limited_to_margins": true,
+    "native_engine_capture_performed": false,
+    "runtime_motion_validation": "Pending parent integration; no native capture or full stage-playthrough claimed in this production manifest."
+  },
+  "limitations": [
+    "These are original generated 2D interpretations guided by the documented references, not extracted Sega backgrounds or certified 1:1 reproductions.",
+    "The new two locations do not imply complete saga-level coverage, alternate routes or fully recreated source stages.",
+    "The train main references are contributed Dreamcast captures, so arcade-version layout equivalence is not asserted.",
+    "The prescribed center allows alpha 0 or 1; some antialias residual alpha1 remains in the middle-plane images.",
+    "Registration, story routing, executable QA and PR publication belong to the parent task."
+  ],
+  "rejected_outputs": [],
+  "pixel_postprocessing": "None. Final PNG files are exact copies of selected ImageGen outputs; Pillow used only for metadata and alpha analysis.",
+  "files": [
+    {
+      "id": "zr_train_back",
+      "path": "assets/dossier_curien/saga/zr_train_back.png",
+      "sha256": "049f885fd9967c4b0d6dd6b873d529c883dd05bab535f9101b68e0bd14c8afbe",
+      "size_bytes": 2672712,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "pixel_postprocessing": "none",
+      "stage": "zr_train",
+      "layer": "back",
+      "prompt": "Use case: stylized-concept. Asset type: full opaque backplate for a side-view 2D fighting arena, one 16:9 landscape PNG, native 1600x900 requested.\nInput image1 is the actual Zombie Revenge train-roof gameplay reference: preserve the identifiable weathered silver/green railway carriage roof, segmented metal sheets, long raised grated maintenance walkway and warm ochre railway tunnel with repeating ribs and horizontal utility conduits. Remove every character and all game HUD. Input image2 is ONLY the existing project's painting/material quality and fighting-arena layout reference; do not copy its fairground, moon, water, tents or decorative picture-frame border.\nPrimary request: adapt the TRAIN ROOF INSIDE THE TUNNEL into a readable side-on 2D fighting stage. A long, broad carriage roof crosses the ENTIRE bottom width horizontally, with a continuous flat playable strip at about81.6% of canvas height, empty from left to right. Show riveted roof panels and the shallow service grating running horizontally rather than toward a vanishing point. The ochre tunnel wall rises behind the roof, with its curved ceiling/ribs and old dark cable conduits; recesses suggest rail travel in the upper background. Keep the train's functional shapes grounded in image1. No platform station, no street or factory floor.\nComposition: camera perpendicular to the fighting line, wide and restrained perspective, clear lateral arena. Roof starts about73% of image height, foot contact line at81.6%, and train roof/shoulder continues to the bottom edge. Small repeated details stay behind the fight area, no tall obstacle in the middle. Across x12.5%–87.5% and y20%–79%, retain moderate detail and clear silhouettes for later overlaid fighters. No deep central vanishing-point walkway that would imply walking away from camera.\nStyle: match image2's high-quality painted 2D videogame background, tangible aged metal and mineral surfaces, subtle illustrative grain, warm dim amber tunnel lamps over cool olive-gray train roof, believable atmospheric depth. A production game background, not a concept sheet.\nConstraints: no people, zombies, silhouettes, bodies, creature faces, guns, UI, numbers, lettering, logos, labels, watermarks, border, panels, screenshot frame or motion blur. Entire image opaque, no transparency. Preserve the supplied reference's setting identity while making an original 2D arena adaptation; no claim of exact original camera reproduction.",
+      "prompt_sha256_utf8": "43b89486cadd5b3de38a3fc3ffe08289310f76f1e26fdf6131e79dbc99ed8542",
+      "reference_paths": [
+        "docs/dossier_curien/sources_art/references-2026-11-20/stages/zr_train_roof.png",
+        "assets/dossier_curien/saga/carnival_back.png"
+      ],
+      "selected_generation_basename": "exec-773ce569-5ccd-4319-afaf-13c197a74296.png",
+      "accepted": true,
+      "opaque": true
+    },
+    {
+      "id": "creeping_flesh_back",
+      "path": "assets/dossier_curien/saga/creeping_flesh_back.png",
+      "sha256": "e57ec22b2cdda8be359ecba99e1e762ab85d237d46f6ab16ccd1e6a29a844ee3",
+      "size_bytes": 2433184,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "pixel_postprocessing": "none",
+      "stage": "creeping_flesh",
+      "layer": "back",
+      "prompt": "Use case: stylized-concept. Asset type: full opaque backplate for a side-view 2D fighting arena, one 16:9 landscape PNG, native1600x900 requested.\nInput image1 is the official House of the Dead OVERKILL Extended Cut Creeping Flesh screenshot. Use its industrial slaughterhouse architecture overtaken by irregular thick organic wall growth, dirty pale floor tiles, rectangular industrial ceiling frames and white strip lights, deep rust red/brown flesh-like material and orange interior illumination. Remove all mutants, people, hands and HUD. The organic infestation remains ENVIRONMENTAL MATERIAL, with no faces, eyes, teeth, limbs or creature anatomy. Input image2 is ONLY the established project's painted rendering/material quality and lateral arena layout; do not copy its fairground, moon, water, tents or decorative frame.\nPrimary request: a broad SIDE-ON FIGHTING ARENA adaptation of the infested slaughterhouse. View a long wall of the factory across the frame, its metal wall panels partly buried by heavy irregular dark wine-red organic growth; ceiling utility frames and a few white fluorescent strips are visible above. Restrained orange light in deeper wall recesses, as in the source. Keep exposed industrial panels and fixtures identifiable, not a fantasy cave. Do not invent props unrelated to the supplied source.\nComposition: empty continuous level gray industrial tiled/concrete floor across the ENTIRE lower width, beginning at74% of image height, with the fighter contact line at81.6% of height. No floor holes, bodies, piles, viscera, furniture or large obstacles in this lower strip. Camera perpendicular to the fighting line, a wide wall panorama with shallow depth; no central corridor rushing into the distance. Central x12.5%–87.5%,y20%–79% keeps its dark middle values and clear space so later characters read well. Most heavy organic shapes rise at side margins and overhead, moderate growth across rear wall.\nStyle: same detailed painted 2D videogame environment quality as image2, aged real materials, restrained cinematic exploitation-film grain, warm rusty orange versus gray-green metal. Source-guided spatial adaptation with consistent scale to the project.\nConstraints: no characters, people, zombies, cows, creatures, recognizable body parts, carcasses, guns, text, logos, HUD, reticles, numbers, signs, interface, watermarks, picture border, panels, or cutout areas. Entire image opaque. One empty environment only, no title or claim of exact original layout.",
+      "prompt_sha256_utf8": "bd610b1148e7a3d45b90f2cc41d87371f674705f7897799c1c632622c0712259",
+      "reference_paths": [
+        "docs/dossier_curien/sources_art/references-2026-11-20/stages/creeping_flesh_official.jpg",
+        "assets/dossier_curien/saga/carnival_back.png"
+      ],
+      "selected_generation_basename": "exec-1c8e37c2-5bd4-46d4-81ee-480720fceda8.png",
+      "accepted": true,
+      "opaque": true
+    },
+    {
+      "id": "zr_train_mid",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "center_box": [
+        209,
+        188,
+        1463,
+        743
+      ],
+      "center_extrema": [
+        0,
+        1
+      ],
+      "center_pixels_alpha_above_1": 0,
+      "coverage_alpha_above_1": 0.04169696291738911,
+      "bbox_alpha_above_1": [
+        0,
+        257,
+        1672,
+        680
+      ],
+      "path": "assets/dossier_curien/saga/zr_train_mid.png",
+      "sha256": "d9e75c2ef015f536b63df712e9b9fad0e5e3773b05388a2000fd082393bf9720",
+      "size_bytes": 182420,
+      "accepted": true,
+      "stage": "zr_train",
+      "layer": "mid",
+      "prompt": "Use case: stylized-concept. Asset type: ONE separate sparse transparent PNG parallax overlay for a side-view 2D fighting arena. Native16:9 landscape canvas1672x941. The input image is only a style, material, scale and lighting reference; do NOT reproduce its opaque background. Generate only the requested isolated edge props on TRUE transparent alpha.\nMandatory composition: the complete rectangle x12.5%–87.5%,y20%–79% must be totally empty/transparent, alpha0. Keep an extra safety margin. No pixel of any object, glow, shadow, haze, grain, dust, background or antialias spill in that center rectangle. Most of the canvas is transparent. No frame surrounding the scene, no connecting element across the middle, no ground plane, no text, no logo, no watermark, no people, characters, bodies or HUD. Clean antialiased edges, no cast shadow on invisible ground. Match the reference's detailed painted material rendering. Requested middle-distance elements ONLY: two short isolated old railway-tunnel conduit brackets, cropped by the extreme LEFT and RIGHT edges. Each is a narrow vertical rusted iron support holding three short dark gray horizontal utility-pipe ends, with bolts and mineral dust matching the reference tunnel. LEFT assembly completely confined to x0–6%, y26–67%; RIGHT assembly x94–100%,y30–70%. Pipes stop inside their own edge6% area. Nothing spans across the image. Slight dim amber reflection on metal, no emitted light. Preserve all the center and the entire bottom quarter as empty transparency. No masonry wall, no long arch, no train, no floor, no lamps in the middle. One PNG with both separated edge pieces in their positions.",
+      "prompt_sha256_utf8": "47c358e45172f9e845f8abdeade694b238d181687048737d87fc37ee09927174",
+      "reference_paths": [
+        "assets/dossier_curien/saga/zr_train_back.png"
+      ],
+      "selected_generation_basename": "exec-6faee2d6-cd08-4ec1-9969-20f9273fa313.png",
+      "pixel_postprocessing": "none",
+      "alpha_1_pixels": 2188,
+      "fully_transparent_pixels": 1505560
+    },
+    {
+      "id": "creeping_flesh_mid",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "center_box": [
+        209,
+        188,
+        1463,
+        743
+      ],
+      "center_extrema": [
+        0,
+        1
+      ],
+      "center_pixels_alpha_above_1": 0,
+      "coverage_alpha_above_1": 0.041919417905211295,
+      "bbox_alpha_above_1": [
+        0,
+        254,
+        1672,
+        721
+      ],
+      "path": "assets/dossier_curien/saga/creeping_flesh_mid.png",
+      "sha256": "f74dd3f54c396cb26772e9006672857d60cd6c95afcd2fab41d1ccbe0c53c659",
+      "size_bytes": 207110,
+      "accepted": true,
+      "stage": "creeping_flesh",
+      "layer": "mid",
+      "prompt": "Use case: stylized-concept. Asset type: ONE separate sparse transparent PNG parallax overlay for a side-view 2D fighting arena. Native16:9 landscape canvas1672x941. The input image is only a style, material, scale and lighting reference; do NOT reproduce its opaque background. Generate only the requested isolated edge props on TRUE transparent alpha.\nMandatory composition: the complete rectangle x12.5%–87.5%,y20%–79% must be totally empty/transparent, alpha0. Keep an extra safety margin. No pixel of any object, glow, shadow, haze, grain, dust, background or antialias spill in that center rectangle. Most of the canvas is transparent. No frame surrounding the scene, no connecting element across the middle, no ground plane, no text, no logo, no watermark, no people, characters, bodies or HUD. Clean antialiased edges, no cast shadow on invisible ground. Match the reference's detailed painted material rendering. Requested middle-distance elements ONLY: two very narrow industrial ceiling/wall pipe fragments, cropped by the extreme LEFT and RIGHT edges of the infested slaughterhouse. Each consists of a short aged gray metal conduit, mounting brackets and a small irregular rust-red organic crust partly gripping its outer side. Organic matter must look like the environmental infestation in the reference, not anatomy; no eyes, mouths, hands, body parts, animals or carcasses. LEFT assembly completely confined to x0–6%,y25–69%; RIGHT assembly x94–100%,y29–73%. Dim warm orange edge light, no halo or spill. The inner88% of width remains wholly empty. No wall, ceiling plane, floor, beams crossing center, hanging meat, chains across scene or atmosphere. One PNG with both separated edge pieces.",
+      "prompt_sha256_utf8": "82be9e8725f0654f359f34b6aeee0fc8cb2d973a72980dc6e03d3b2f91c65419",
+      "reference_paths": [
+        "assets/dossier_curien/saga/creeping_flesh_back.png"
+      ],
+      "selected_generation_basename": "exec-202fec2a-f86e-4963-97bd-feb8f1b42bf1.png",
+      "pixel_postprocessing": "none",
+      "alpha_1_pixels": 2783,
+      "fully_transparent_pixels": 1504615
+    },
+    {
+      "id": "zr_train_front",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "center_box": [
+        209,
+        188,
+        1463,
+        743
+      ],
+      "center_extrema": [
+        0,
+        0
+      ],
+      "center_pixels_alpha_above_1": 0,
+      "coverage_alpha_above_1": 0.022124101917434878,
+      "bbox_alpha_above_1": [
+        0,
+        817,
+        1672,
+        941
+      ],
+      "path": "assets/dossier_curien/saga/zr_train_front.png",
+      "sha256": "38d783079ab60120ad18b5c2cb57d916c487ab7f2d38eab12c0e7f99cc2fdd99",
+      "size_bytes": 126999,
+      "accepted": true,
+      "stage": "zr_train",
+      "layer": "front",
+      "prompt": "Use case: stylized-concept. Asset type: ONE separate sparse transparent PNG parallax overlay for a side-view 2D fighting arena. Native16:9 landscape canvas1672x941. The input image is only a style, material, scale and lighting reference; do NOT reproduce its opaque background. Generate only the requested isolated edge props on TRUE transparent alpha.\nMandatory composition: the complete rectangle x12.5%–87.5%,y20%–79% must be totally empty/transparent, alpha0. Keep an extra safety margin. No pixel of any object, glow, shadow, haze, grain, dust, background or antialias spill in that center rectangle. Most of the canvas is transparent. No frame surrounding the scene, no connecting element across the middle, no ground plane, no text, no logo, no watermark, no people, characters, bodies or HUD. Clean antialiased edges, no cast shadow on invisible ground. Match the reference's detailed painted material rendering. Requested foreground elements ONLY: two very low close-up fragments of the weathered olive-gray train roof rim, cropped naturally by the extreme LOWER LEFT and LOWER RIGHT corners. Left: a small rounded riveted sheet-metal lip with one compact old bolt bracket, confined to x0–8%,y90–100%. Right: a small worn roof-edge corner cap with a tiny dark ventilation grille, confined to x92–100%,y90–100%. Keep the camera side-on, metal surfaces matching the train roof, foreground lighting a little darker than the reference. These two tiny corner clusters do not connect to each other; every other pixel remains transparent. No long roof strip, no ground or shadows, no stones, vegetation, characters or light glow. Do not draw anything above90% of image height or inside the central84% of the width.",
+      "prompt_sha256_utf8": "37f5f5d89f3bd403ed58ed1d99cc7e588e6fdd4fbe4a8e6e6fa782fa55190bcf",
+      "reference_paths": [
+        "assets/dossier_curien/saga/zr_train_back.png"
+      ],
+      "selected_generation_basename": "exec-62bebab6-ddb5-467b-8128-ed0cb621e886.png",
+      "pixel_postprocessing": "none",
+      "alpha_1_pixels": 356,
+      "fully_transparent_pixels": 1538187
+    },
+    {
+      "id": "creeping_flesh_front",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "center_box": [
+        209,
+        188,
+        1463,
+        743
+      ],
+      "center_extrema": [
+        0,
+        0
+      ],
+      "center_pixels_alpha_above_1": 0,
+      "coverage_alpha_above_1": 0.01322844474726571,
+      "bbox_alpha_above_1": [
+        0,
+        824,
+        1672,
+        941
+      ],
+      "path": "assets/dossier_curien/saga/creeping_flesh_front.png",
+      "sha256": "63182cc121283c16cf88c9b4b54a6560a00ff7a95660835056a5cdbd28931e41",
+      "size_bytes": 102871,
+      "accepted": true,
+      "stage": "creeping_flesh",
+      "layer": "front",
+      "prompt": "Use case: stylized-concept. Asset type: ONE separate sparse transparent PNG parallax overlay for a side-view 2D fighting arena. Native16:9 landscape canvas1672x941. The input image is only a style, material, scale and lighting reference; do NOT reproduce its opaque background. Generate only the requested isolated edge props on TRUE transparent alpha.\nMandatory composition: the complete rectangle x12.5%–87.5%,y20%–79% must be totally empty/transparent, alpha0. Keep an extra safety margin. No pixel of any object, glow, shadow, haze, grain, dust, background or antialias spill in that center rectangle. Most of the canvas is transparent. No frame surrounding the scene, no connecting element across the middle, no ground plane, no text, no logo, no watermark, no people, characters, bodies or HUD. Clean antialiased edges, no cast shadow on invisible ground. Match the reference's detailed painted material rendering. Requested foreground elements ONLY: two small, low irregular edges of dark rust-red environmental organic infestation clinging to a little bent industrial metal at the extreme LOWER LEFT and LOWER RIGHT corners. Left cluster confined to x0–8%,y90–100%; right cluster confined to x92–100%,y90–100%. They are cropped by the canvas corners, as if the nearby walls continue out of frame. Material matches the thick organic growth in the supplied slaughterhouse backplate, darker in the foreground, with restrained warm side highlights. No recognizable anatomy, no eyes, teeth, limbs, organs, blood spray, creatures or carcasses. Small flat silhouettes, no long tendrils or fibers reaching inward. Every other pixel transparent, especially the complete central84% of width and everything above90%height. No floor, dust, ground shadow, haze or background.",
+      "prompt_sha256_utf8": "3e78859c1f8628b6437621259e832f37c4271ad68ee6784c047102d6faad6a2f",
+      "reference_paths": [
+        "assets/dossier_curien/saga/creeping_flesh_back.png"
+      ],
+      "selected_generation_basename": "exec-6f3e843d-3a78-4e73-8c89-e7d6f3a8500b.png",
+      "pixel_postprocessing": "none",
+      "alpha_1_pixels": 432,
+      "fully_transparent_pixels": 1552107
+    }
+  ],
+  "validation": {
+    "accepted_png_count": 6,
+    "new_stage_sets": 2,
+    "total_png_bytes": 5725296,
+    "native_dimensions_consistent": true,
+    "all_hashes_distinct": true,
+    "all_overlay_center_contracts_pass": true,
+    "all_sources_unchanged": true
+  }
+}

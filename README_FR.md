@@ -6,6 +6,14 @@ Le socle V2 fournit 38 atlas directionnels uniques de 2048×2048 RGBA, avec huit
 
 Le projet propose une campagne jouable en quatre chapitres avec embranchements, scientifiques à sauver, objets destructibles, Chariot, Hangedman, Hermit, Magician, les rematchs du dernier chapitre, trois fins, crédits, score, vies, munitions, continues et coopération locale à deux joueurs. Entraînement, Boss Rush, sélection de chapitre et classement local sont également accessibles depuis le menu; une partie non-démo terminée demande trois initiales avant d'enregistrer son score.
 
+## Dossier Curien — sources du 20 novembre 2026
+
+Le mode de combat 2D propose **24 combattants, 26 parcours Histoire, 20 arènes et 29 épreuves d’archives**. **Toit du train — Zombie Revenge** et **Abattoir — Creeping Flesh** ajoutent chacun trois plans peints à la sélection des arènes. Leur [rapport de production](docs/dossier_curien/saga/production/stages_2026-11-20/RAPPORT.md) documente les références et les choix d’adaptation.
+
+La galerie contient **49 fiches : les 40 entrées précédentes et neuf nouvelles illustrations vérifiées**. Les neuf ajouts représentent 7 741 468 octets de PNG individuels. Les fiches de Varla et Candi conservent un statut de référence visuelle à confirmer. Le sélecteur de jeu couvre les nouvelles collections ; les PNJ et variantes de costume sont explicitement non jouables. Gary Stewart, Daniel Curien, Emperor, Wheel of Fate, The World, Moon et Linda Rotta sont déjà présents dans les 24 profils de combat. Les [personnages et tenues restant à traiter](docs/dossier_curien/saga/production/catalogue_2026-11-20/PERSONNAGES_TENUES.md) sont distingués des images historiques réutilisables dans le [registre détaillé](docs/dossier_curien/saga/production/catalogue_2026-11-20/personnages_tenues.json).
+
+**Ce lot se joue depuis les sources. Les PCK Godot 4.7/4.6.3 et les fichiers web antérieurs n’ont pas été reconstruits pour les ajouts du 20 novembre.** Les [instructions courantes](docs/dossier_curien/JOUER.md) précisent le lancement et le contenu de chaque distribution ; la [bible de la saga](docs/dossier_curien/saga/BIBLE_SAGA.md) décrit les modes et les travaux restants. Les résultats de release des sections suivantes restent rattachés à leurs révisions d’origine.
+
 ## Développement après v0.5.0 — continuité connectée
 
 L’arbre de travail relie désormais les rails consécutifs par des origines spatiales communes et un raccord planaire exact de **9 mètres**. Un `connector_root` physique temporaire fournit sol, parois, arche, collisions et deux moitiés utilisant les matériaux des anciens et nouveaux décors. Le masque commence à **0,79**, avant l’intersection connue du mur Steel Door. Le chapitre 2 suit maintenant `raised_bridge`/`lower_stairs` -> `corridor_cache` -> `roof_approach` -> `roof_rescue` -> Hangedman.

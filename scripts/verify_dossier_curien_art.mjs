@@ -37,6 +37,13 @@ for (const entry of catalogue.fichiers) {
     check(existsSync(path + '.import'), `Godot import is committed: ${entry.fichier}`);
     check(existsSync(join(root, entry.source_production)), `Production reference exists: ${entry.fichier}`);
   }
+  if (entry.lot === '2026-11-20_stages') {
+    check(['back', 'mid', 'front'].includes(entry.usage), `New stage layer is identified: ${entry.fichier}`);
+    check(bytes[25] === (entry.usage === 'back' ? 2 : 6), `Native RGB backdrop or RGBA overlay: ${entry.fichier}`);
+    check(existsSync(path + '.import'), `New stage import is committed: ${entry.fichier}`);
+    check(existsSync(join(root, entry.source_production)), `New stage production reference exists: ${entry.fichier}`);
+    check(entry.statut === 'adaptation_2d_documentee', `New stage retains its documented adaptation status: ${entry.fichier}`);
+  }
 }
 for (const path of files) check(names.has(relative(artRoot, path).split(sep).join('/')), `PNG catalogued: ${path}`);
 for (const [id, pose] of Object.entries(additions.poses)) {

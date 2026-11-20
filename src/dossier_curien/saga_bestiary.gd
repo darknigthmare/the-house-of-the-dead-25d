@@ -1,30 +1,48 @@
 extends RefCounted
 
 const MANIFEST := "res://data/assets/dossier_curien_expansion.json"
+const GALLERY_MANIFEST := "res://data/assets/dossier_curien_gallery_2026-11-20.json"
 const ART_ROOT := "res://assets/dossier_curien/expansion/"
-const FILTERS := ["Tous", "Zombie Revenge", "Loving Deads EX"]
+const GALLERY_ART_ROOT := "res://assets/dossier_curien/gallery_2026-11-20/"
+const BASE_FILTERS := [
+	{"game":"", "label":"Tous"},
+	{"game":"zombie_revenge", "label":"Zombie Revenge"},
+	{"game":"hotd_ex", "label":"Loving Deads EX"}
+]
 const CATEGORIES := {
 	"character_base":"Personnage", "dialogue_portrait":"Personnage de l’histoire",
-	"boss_base":"Boss", "enemy_base":"Créature", "fighter_pose":"Pose de combat"
+	"boss_base":"Boss", "enemy_base":"Créature", "fighter_pose":"Pose de combat",
+	"npc_base":"PNJ", "costume_variant":"Variante de costume"
 }
 var assets: Array = []
+var filters: Array = BASE_FILTERS.duplicate(true)
 var filter_index := 0
 var page := 0
 var selected := -1
 
-func load_manifest(path := MANIFEST) -> bool:
+func load_manifest(path := MANIFEST, additional_path := "") -> bool:
 	assets.clear()
-	if not FileAccess.file_exists(path): return false
-	var parsed = JSON.parse_string(FileAccess.get_file_as_string(path))
-	if not parsed is Dictionary or not parsed.get("assets") is Array: return false
 	var ids := {}
+	_append_collection(path, ART_ROOT, ids)
+	var extra: String = GALLERY_MANIFEST if path == MANIFEST and additional_path == "" else additional_path
+	if extra != "": _append_collection(extra, GALLERY_ART_ROOT, ids, true)
+	assets.sort_custom(func(a: Dictionary, b: Dictionary): return str(a.get("name", a.id)).naturalnocasecmp_to(str(b.get("name", b.id))) < 0)
+	_refresh_filters()
+	return not assets.is_empty()
+
+func _append_collection(path: String, art_root: String, ids: Dictionary, gallery_only := false) -> void:
+	if not FileAccess.file_exists(path): return
+	var parsed = JSON.parse_string(FileAccess.get_file_as_string(path))
+	if not parsed is Dictionary or not parsed.get("assets") is Array: return
 	for item in parsed.assets:
 		if not item is Dictionary: continue
 		if item.get("gallery", true) == false: continue
+		if gallery_only and (item.get("playable", true) != false or item.get("animation_complete", true) != false): continue
 		var id := str(item.get("id", ""))
 		var asset_path := str(item.get("path", ""))
 		if not asset_path.begins_with("res://"): asset_path = "res://" + asset_path
-		if id == "" or ids.has(id) or not asset_path.begins_with(ART_ROOT) or ".." in asset_path.split("/"): continue
+		var parts := asset_path.trim_prefix("res://").split("/")
+		if id == "" or ids.has(id) or not asset_path.begins_with(art_root) or ".." in parts or "." in parts or "" in parts or asset_path.contains("\\"): continue
 		if not asset_path.ends_with(".png") or not ResourceLoader.exists(asset_path): continue
 		# Animation frames belong to the fighter; the gallery shows distinct subjects.
 		if item.get("category", "") in ["fighter_pose", "animation_pose"]: continue
@@ -32,17 +50,34 @@ func load_manifest(path := MANIFEST) -> bool:
 		entry.path = asset_path
 		assets.append(entry)
 		ids[id] = true
-	assets.sort_custom(func(a: Dictionary, b: Dictionary): return str(a.get("name", a.id)).naturalnocasecmp_to(str(b.get("name", b.id))) < 0)
-	return not assets.is_empty()
+
+func _refresh_filters() -> void:
+	var selected_game := str(filters[filter_index].game) if filter_index >= 0 and filter_index < filters.size() else ""
+	filters = BASE_FILTERS.duplicate(true)
+	var games := {"":true, "zombie_revenge":true, "hotd_ex":true}
+	var additions := []
+	for entry: Dictionary in assets:
+		var game := family(entry)
+		if games.has(game): continue
+		games[game] = true
+		additions.append({"game":game, "label":str(entry.get("game_label", game))})
+	additions.sort_custom(func(a: Dictionary, b: Dictionary): return str(a.label).naturalnocasecmp_to(str(b.label)) < 0)
+	filters.append_array(additions)
+	filter_index = 0
+	for index in filters.size():
+		if str(filters[index].game) == selected_game: filter_index = index
 
 func filtered() -> Array:
 	if filter_index == 0: return assets
-	var game := "zombie_revenge" if filter_index == 1 else "hotd_ex"
+	if filter_index < 0 or filter_index >= filters.size(): return []
+	var game := str(filters[filter_index].game)
 	return assets.filter(func(entry: Dictionary): return family(entry) == game)
 
 func family(entry: Dictionary) -> String:
 	var game := str(entry.get("game", "")).to_lower()
-	return "zombie_revenge" if game.contains("revenge") else "hotd_ex" if game.contains("ex") or game.contains("loving") else game
+	if game in ["zombie_revenge", "zombie revenge", "revenge"]: return "zombie_revenge"
+	if game in ["hotd_ex", "ex", "loving_deads", "loving deads ex"]: return "hotd_ex"
+	return game
 
 func show(a, requested_page := 0) -> void:
 	load_manifest()
@@ -52,32 +87,35 @@ func show(a, requested_page := 0) -> void:
 	a.edition_id = ""
 	var entries := filtered()
 	page = clampi(requested_page, 0, maxi(0, ceili(entries.size()/float(a.PAGE_SIZE))-1))
-	a.sheet("Bestiaire & personnages", "Zombie Revenge et Loving Deads EX  /  Galerie des archives")
-	var filters := HBoxContainer.new()
-	filters.add_theme_constant_override("separation", 8)
-	a.box.add_child(filters)
-	for index in FILTERS.size():
-		var choice := Button.new()
-		choice.text = ("• " if index == filter_index else "") + FILTERS[index]
-		choice.custom_minimum_size.y = 33
-		choice.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		choice.pressed.connect(select_filter.bind(a, index))
-		filters.add_child(choice)
+	a.sheet("Bestiaire & personnages", "Personnages, PNJ et variantes  /  Galerie des archives")
+	var choice := OptionButton.new()
+	choice.fit_to_longest_item = false
+	choice.custom_minimum_size.y = 33
+	choice.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	for filter: Dictionary in filters: choice.add_item(str(filter.label))
+	choice.select(filter_index)
+	choice.item_selected.connect(func(index: int): select_filter(a, index))
+	a.box.add_child(choice)
+	choice.grab_focus()
 	a.paragraph("%d fiches  ·  Les illustrations de créatures sont consultables ici ; seules les fiches marquées « Jouable » donnent accès à un combattant." % entries.size())
 	for index in range(page*a.PAGE_SIZE, mini((page+1)*a.PAGE_SIZE, entries.size())):
 		var entry: Dictionary = entries[index]
-		var kind: String = "Jouable" if fighter_id(entry) >= 0 else CATEGORIES.get(str(entry.get("category", "")), "Illustration")
+		var kind := role_label(entry)
 		a.button("%s  ·  %s" % [entry.get("name", entry.id), kind], detail.bind(a, index))
 	if entries.is_empty(): a.paragraph("Aucune fiche disponible dans cette collection.")
 	a.page_buttons(page, entries.size(), func(next_page): show(a, next_page))
 	a.button("Menu principal", a.menu)
 
 func select_filter(a, index: int) -> void:
-	filter_index = clampi(index, 0, FILTERS.size()-1)
+	filter_index = clampi(index, 0, filters.size()-1)
 	show(a)
 
 func fighter_id(entry: Dictionary) -> int:
-	return 23 if str(entry.get("id", "")) == "linda_rotta" else -1
+	return 23 if str(entry.get("id", "")) == "linda_rotta" and str(entry.get("path", "")).trim_prefix("res://") == "assets/dossier_curien/expansion/zombie_revenge_characters/linda_rotta_base.png" else -1
+
+func role_label(entry: Dictionary) -> String:
+	if fighter_id(entry) >= 0: return "Jouable"
+	return str(CATEGORIES.get(str(entry.get("category", "")), "Illustration")) + " · non jouable"
 
 func status_label(entry: Dictionary) -> String:
 	var status := str(entry.get("status", ""))
@@ -96,19 +134,23 @@ func detail(a, index: int) -> void:
 	page = selected / a.PAGE_SIZE
 	var entry: Dictionary = entries[selected]
 	a.phase = "bestiary_detail"
-	var game := str(entry.get("game_label", "Zombie Revenge" if family(entry) == "zombie_revenge" else "Loving Deads EX"))
+	var game := str(entry.get("game_label", family(entry)))
 	a.sheet(str(entry.get("name", entry.id)), game)
-	var kind: String = CATEGORIES.get(str(entry.get("category", "")), "Illustration")
+	var kind := role_label(entry)
 	a.paragraph(kind + "  ·  " + status_label(entry))
 	if fighter_id(entry) >= 0:
 		a.paragraph("Jouable dans les duels, le tournoi, l’entraînement et le Boss Rush. Son parcours Histoire rejoint les Chroniques de Zombie Revenge.")
 		a.paragraph("Pistolet et glissade armée  ·  8 cartouches")
 		a.button("Jouer Linda", play.bind(a, fighter_id(entry)))
+	elif str(entry.get("category", "")) == "npc_base":
+		a.paragraph("PNJ présenté dans la galerie. Cette illustration n’ajoute pas de combattant au duel.")
+	elif str(entry.get("category", "")) == "costume_variant":
+		a.paragraph("Variante de costume consultable dans la galerie. Elle ne peut pas être sélectionnée pour combattre ; les poses et les transitions restent à produire.")
 	else:
 		a.paragraph("Illustration de référence. Ce visuel n’est pas encore associé à une variante jouable dans le mode duel.")
 	if str(entry.get("category", "")) == "dialogue_portrait":
 		a.paragraph("Portrait destiné aux dialogues et aux scènes de l’histoire.")
-	else:
+	elif str(entry.get("category", "")) not in ["npc_base", "costume_variant"]:
 		a.paragraph("Les poses et les animations de combat continuent d’être complétées.")
 	a.paragraph("Fiche %d / %d" % [selected+1, entries.size()])
 	if selected > 0: a.button("‹  Fiche précédente", detail.bind(a, selected-1))

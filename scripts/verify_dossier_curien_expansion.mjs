@@ -118,7 +118,10 @@ function counts(assets, field) {
   return result;
 }
 
-function validate(manifest, root) {
+export function validate(manifest, root, options = {}) {
+  const artRoot = options.artRoot ?? ART_ROOT;
+  const categories = options.categories ?? CATEGORIES;
+  const games = options.games ?? GAMES;
   root = realpathSync(root);
   ensure(record(manifest) && manifest.schema_version === 1, 'Expected expansion schema_version 1');
   ensure(Array.isArray(manifest.assets) && manifest.assets.length > 0, 'Expansion assets must be a nonempty array');
@@ -130,8 +133,8 @@ function validate(manifest, root) {
     ensure(typeof asset.id === 'string' && /^[a-z][a-z0-9_]*$/.test(asset.id), `Invalid asset id: ${label}`);
     ensure(!ids.has(asset.id), `Duplicate asset id: ${asset.id}`); ids.add(asset.id);
     ensure(text(asset.name) && text(asset.game_label), `${label}: missing gallery name/game label`);
-    ensure(GAMES.has(asset.game), `${label}: unsupported gallery game`);
-    ensure(CATEGORIES.has(asset.category), `${label}: unsupported asset category`);
+    ensure(games.has(asset.game), `${label}: unsupported gallery game`);
+    ensure(categories.has(asset.category), `${label}: unsupported asset category`);
     ensure(STATUSES.has(asset.status), `${label}: unsupported quality status ${asset.status}`);
     ensure(asset.gallery === undefined || typeof asset.gallery === 'boolean', `${label}: gallery flag must be boolean`);
     ensure(asset.playable === undefined || typeof asset.playable === 'boolean', `${label}: playable flag must be boolean`);
@@ -154,7 +157,7 @@ function validate(manifest, root) {
     ensure(prompts.length > 0 || limitations.some(value => /prompt/i.test(value)), `${label}: missing original prompt must be documented`);
     for (const reference of references) checkedPath(root, reference, `${label} reference`);
     checkedPath(root, asset.provenance, `${label} provenance`);
-    const path = checkedPath(root, asset.path, `${label} asset`, ART_ROOT);
+    const path = checkedPath(root, asset.path, `${label} asset`, artRoot);
     ensure(asset.path.endsWith('.png'), `${label}: artwork must be a PNG`);
     ensure(!paths.has(asset.path), `Duplicate asset path: ${asset.path}`); paths.add(asset.path);
     const real = realpathSync(path);
@@ -172,7 +175,7 @@ function validate(manifest, root) {
     }
     totalBytes += data.length;
   }
-  const pngs = pngFiles(root);
+  const pngs = pngFiles(root, artRoot);
   for (const path of pngs) ensure(paths.has(path), `Uncatalogued expansion PNG: ${path}`);
   ensure(paths.size === pngs.length, 'Every expansion PNG must have exactly one manifest entry');
   if (manifest.summary !== undefined) {
@@ -223,10 +226,12 @@ function selfTest() {
   console.log(`DOSSIER CURIEN EXPANSION SELF-TEST: ${cases} cases passed.`);
 }
 
-const args = process.argv.slice(2);
-ensure(args.length === 0 || (args.length === 1 && args[0] === '--self-test'), 'Usage: node scripts/verify_dossier_curien_expansion.mjs [--self-test]');
-if (args[0] === '--self-test') selfTest();
-else {
-  const result = validate(JSON.parse(readFileSync(join(ROOT, MANIFEST), 'utf8')), ROOT);
-  console.log(`DOSSIER CURIEN EXPANSION VERIFIED: ${result.assets} PNGs, ${result.gallery} gallery entries, ${result.bytes} bytes; hashes, RGBA bounds, provenance and paths verified.`);
+if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  const args = process.argv.slice(2);
+  ensure(args.length === 0 || (args.length === 1 && args[0] === '--self-test'), 'Usage: node scripts/verify_dossier_curien_expansion.mjs [--self-test]');
+  if (args[0] === '--self-test') selfTest();
+  else {
+    const result = validate(JSON.parse(readFileSync(join(ROOT, MANIFEST), 'utf8')), ROOT);
+    console.log(`DOSSIER CURIEN EXPANSION VERIFIED: ${result.assets} PNGs, ${result.gallery} gallery entries, ${result.bytes} bytes; hashes, RGBA bounds, provenance and paths verified.`);
+  }
 }

@@ -83,6 +83,8 @@ func cases_and_routes() -> void:
 			verify(arena.box.get_child(1).text == Saga.ALTERNATE_STORIES[id][3], "Personal epilogue for %d" % id)
 
 func roster_and_stages() -> void:
+	verify(Fighter.PROFILES.size() == 24, "Gallery-only silhouettes preserve the 24 playable fighters")
+	verify(Saga.STAGES.size() == 20 and Saga.ART.size() == 20, "Twenty arenas have aligned art registrations")
 	for i in Fighter.PROFILES.size():
 		var profile: Dictionary = Fighter.PROFILES[i]
 		verify(arena.visuals.guard_art(i) is Texture2D, "Registered combat art for " + str(profile.id))

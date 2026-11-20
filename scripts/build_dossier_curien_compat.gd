@@ -4,7 +4,7 @@ extends SceneTree
 ## godot --headless --path CHECKOUT --script res://scripts/build_dossier_curien_compat.gd -- \
 ##   --source-root ABS_CHECKOUT --output ABS_NEW_COMPATIBILITY.pck
 
-const MANIFESTS := ["data/assets/environment_manifest.json", "data/assets/dossier_curien_additions.json", "data/assets/dossier_curien_expansion.json", "data/assets/dossier_curien_motion.json", "data/audio/audio_cues.json"]
+const MANIFESTS := ["data/assets/environment_manifest.json", "data/assets/dossier_curien_additions.json", "data/assets/dossier_curien_expansion.json", "data/assets/dossier_curien_motion.json", "data/assets/dossier_curien_gallery_2026-11-20.json", "data/audio/audio_cues.json"]
 const BACKGROUNDS := ["mansion-exterior", "mansion-hall", "curien-laboratory"]
 const PROPS := ["dead_tree", "garden_lamp", "mansion_double_door", "mansion_sconce", "lab_specimen_tank", "lab_pipe_cluster"]
 const ATLASES := ["thomas_rogan", "agent_g", "chariot", "magician"]

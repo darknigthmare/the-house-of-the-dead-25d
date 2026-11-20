@@ -1,0 +1,103 @@
+{
+  "date": "2026-11-20",
+  "scope": "Documentary baseline and two native III costume PNGs; no runtime behavior or native UI asserted.",
+  "passed": 19,
+  "failed": 0,
+  "checks": [
+    {
+      "check": "24 runtime profile records",
+      "passed": true
+    },
+    {
+      "check": "40 baseline gallery cards",
+      "passed": true
+    },
+    {
+      "check": "332 baseline image paths",
+      "passed": true
+    },
+    {
+      "check": "330 baseline unique Git blobs",
+      "passed": true
+    },
+    {
+      "check": "62 scoped task records, not identity total",
+      "passed": true
+    },
+    {
+      "check": "35 boss encounters by edition",
+      "passed": true
+    },
+    {
+      "check": "2 original selectable alternate costumes",
+      "passed": true
+    },
+    {
+      "check": "all task source IDs resolve",
+      "passed": true
+    },
+    {
+      "check": "new III costumes do not add playable profiles",
+      "passed": true
+    },
+    {
+      "check": "g_hotd3 byte count",
+      "passed": true
+    },
+    {
+      "check": "g_hotd3 SHA256",
+      "passed": true
+    },
+    {
+      "check": "g_hotd3 references are existing relative paths",
+      "passed": true
+    },
+    {
+      "check": "g_hotd3 native RGBA and transparent alpha",
+      "passed": true
+    },
+    {
+      "check": "g_hotd3 no opaque edge clipping",
+      "passed": true
+    },
+    {
+      "check": "rogan_hotd3 byte count",
+      "passed": true
+    },
+    {
+      "check": "rogan_hotd3 SHA256",
+      "passed": true
+    },
+    {
+      "check": "rogan_hotd3 references are existing relative paths",
+      "passed": true
+    },
+    {
+      "check": "rogan_hotd3 native RGBA and transparent alpha",
+      "passed": true
+    },
+    {
+      "check": "rogan_hotd3 no opaque edge clipping",
+      "passed": true
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "docs/dossier_curien/saga/production/catalogue_2026-11-20/baseline_59372b6.json",
+      "sha256": "b90ca92d605466cb9bbe885157a80387a6d0d7d61821773f902232df214dd7d4"
+    },
+    {
+      "path": "docs/dossier_curien/saga/production/catalogue_2026-11-20/personnages_tenues.json",
+      "sha256": "16b6e306e0a19bede891039ddff61a0195818f051f64b1734d1649fbe657b549"
+    },
+    {
+      "path": "docs/dossier_curien/saga/production/catalogue_2026-11-20/sources_personnages_tenues.json",
+      "sha256": "88b0be5b46a0104d8a654140accc8367f85b78ae3fa4972a6f6b6d40f982d0f1"
+    },
+    {
+      "path": "docs/dossier_curien/saga/production/catalogue_2026-11-20/costumes_generated.json",
+      "sha256": "06fd2cb8b08f82c434010b6492d8ed90f8e7f5869f63de0fea1ffb770d6985a6"
+    }
+  ],
+  "delta_validation": "15 nouveaux PNG relus, SHA256 et tailles concordants ; rapprochement détaillé dans delta_livraison.json."
+}

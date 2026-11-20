@@ -352,6 +352,7 @@ func pick_stage(i: int, page := 0) -> void:
 	for index in range(page * PAGE_SIZE, mini((page + 1) * PAGE_SIZE, order.size())):
 		var s: int = order[index]
 		button(STAGES[s], begin_at.bind(s))
+		if Saga.STAGE_NOTES.has(s): paragraph(Saga.STAGE_NOTES[s])
 	page_buttons(page, order.size(), func(p): pick_stage(i, p))
 	button("Retour", opponent_menu)
 

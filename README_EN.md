@@ -6,6 +6,14 @@ The V2 baseline provides 38 unique 2048×2048 RGBA directional atlases, with eig
 
 The project includes a playable four-chapter campaign with branches, scientists, breakables, Chariot, Hangedman, Hermit, Magician, final-chapter rematches, three endings, credits, score, lives, ammunition, continues and two-player local co-op. Training, Boss Rush, Chapter Select and a local leaderboard are also available.
 
+## Dossier Curien — November 20, 2026 source update
+
+The 2D combat mode provides **24 playable fighters, 26 story routes, 20 arenas and 29 archive challenges**. **Toit du train — Zombie Revenge** and **Abattoir — Creeping Flesh** each add three painted layers to arena selection. Their [production report](docs/dossier_curien/saga/production/stages_2026-11-20/RAPPORT.md) records the references and 2D adaptation decisions.
+
+The gallery contains **49 entries: the previous 40 cards and nine verified additional illustrations**. The nine new individual PNG files total 7,741,468 bytes. Varla and Candi retain a pending visual-reference review status. The game selector supports the added collections, and NPCs and costume variants are explicitly marked as non-playable. Gary Stewart, Daniel Curien, Emperor, Wheel of Fate, The World, Moon and Linda Rotta already belong to the 24 combat profiles. The [character and costume catalogue](docs/dossier_curien/saga/production/catalogue_2026-11-20/PERSONNAGES_TENUES.md) and its [structured register](docs/dossier_curien/saga/production/catalogue_2026-11-20/personnages_tenues.json) separate remaining production work from reusable legacy artwork.
+
+**Run this update from source. Earlier Godot 4.7/4.6.3 PCKs and web files have not been rebuilt for the November 20 additions.** The [current play instructions](docs/dossier_curien/JOUER.md) identify each distribution's content, and the [saga design document](docs/dossier_curien/saga/BIBLE_SAGA.md) describes the modes and remaining work. Release results below remain evidence for their original revisions.
+
 ## Development after v0.5.0 — connected continuity
 
 The worktree now connects consecutive rails through shared spatial origins and an exact **9-metre planar** join. A temporary physical `connector_root` provides a floor, walls, threshold arch, collisions and two halves using the outgoing and incoming set materials. The mask begins at **0.79**, before the known Steel Door wall intersection. Chapter 2 now follows `raised_bridge`/`lower_stairs` -> `corridor_cache` -> `roof_approach` -> `roof_rescue` -> Hangedman.

@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "repository": "darknigthmare/the-house-of-the-dead-25d",
+  "scope": "Two static costume gallery references for existing identities G and Thomas Rogan. Neither selectable costumes nor playable profiles are added.",
+  "summary": {
+    "assets": 2,
+    "gallery_entries": 2,
+    "by_game": {
+      "hotd3": 2
+    },
+    "by_category": {
+      "costume_variant": 2
+    },
+    "bytes": 1621883,
+    "animation_complete": 0,
+    "new_playable_profiles": 0,
+    "new_selectable_costumes": 0
+  },
+  "assets": [
+    {
+      "id": "g_hotd3",
+      "name": "Agent G — HOTD III",
+      "game": "hotd3",
+      "game_label": "The House of the Dead III",
+      "category": "costume_variant",
+      "gallery": true,
+      "path": "assets/dossier_curien/gallery_2026-11-20/costumes/g_hotd3_base.png",
+      "sha256": "6da84c2e8cb37742038ea67c45d68419f6d86519c0973c128b9287aee49005ab",
+      "bytes": 766168,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        25,
+        65,
+        1240,
+        1202
+      ],
+      "visible_bbox": [
+        274,
+        69,
+        995,
+        1192
+      ],
+      "visible_alpha_threshold": 127,
+      "status": "static_reference_reviewed",
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "sources": [
+        "https://www.imfdb.org/wiki/The_House_of_the_Dead_III",
+        "https://www.imfdb.org/images/9/9e/HodIII_GandLisa.jpg",
+        "https://www.imfdb.org/images/3/37/HodIII_GandLisa_2.jpg",
+        "https://www.arcadeguns.com/download/HOD3_Manual.pdf"
+      ],
+      "source_notes": [
+        "Sources visuelles SEGA (rendus promotionnels ou capture du jeu) réhébergées par IMFDB ; le site hébergeur est secondaire.",
+        "Manuel SEGA PC consulté via index web ; téléchargement direct indisponible HTTP406, aucune prétention de revue visuelle de ses pages.",
+        "G uniquement ; Lisa et Death exclus. Couleurs et vieillissement recoupés entre deux rendus promotionnels."
+      ],
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20/costumes_iii/hotd3_g_lisa_art.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20/costumes_iii/hotd3_g_lisa_art2.jpg",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "reference_inputs": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20/costumes_iii/hotd3_g_lisa_art.jpg",
+          "sha256": "4bbd140e8c07d205432f74064d27f553077984b031203b1b86e685043d67b684",
+          "role": "subject_game_reference"
+        },
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20/costumes_iii/hotd3_g_lisa_art2.jpg",
+          "sha256": "299a0d5df7e92b0d1d1d9614cee2b4b6755c6354dca242911cdfa51f970a474f",
+          "role": "subject_game_reference"
+        },
+        {
+          "path": "assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "role": "painting_style_only"
+        }
+      ],
+      "prompts": [
+        "Use case: stylized-concept. Asset type: one native transparent full-body character costume master for a hand-painted 2D arcade fighting game. Produce exactly one character, completely inside the image, facing RIGHT in a relaxed ready stance with slightly flexed knees, head and shoes and entire weapon visible, generous transparent padding on every edge. Aim for a square 1024x1024 canvas. Match the crisp hand-painted arcade shading, clean silhouette and compact realistic anatomy of the LAST attached image, Isaac, strictly as STYLE reference; do not copy Isaac's identity, hat, facial hair or clothing. This is a faithful fan-made 2D adaptation of the specific game costume in the subject reference, not an invented outfit or a photograph. Natural neutral lighting. No background, floor, ground shadow, UI, typography, labels, muzzle flash, duplicate person, montage or sprite sheet. Keep genuine transparent alpha.\nSubject reference images 1 and 2 show G in The House of the Dead III. Isolate and adapt ONLY the older male agent G; omit Lisa and Death. Preserve G's older angular face and slicked-back dark hair strongly streaked with grey, pale blue long-sleeved shirt, pale grey buttoned waistcoat, yellow/gold narrow necktie, charcoal grey formal trousers and dark simple shoes. The first image gives the face and colors; the second gives his complete body and trouser/shoe silhouette. G is a lean, experienced middle-aged man, not a bodybuilder. Hold the short black pump shotgun visible in those promotional references at a low ready angle to the RIGHT, both hands naturally placed. One clean full-body three-quarter side view, face recognizable as the reference, composed into the square as a readable game sprite. Do not add a coat, hat, shoulder armor or extra holsters."
+      ],
+      "limitations": [
+        "Une image statique de galerie. Aucun profil jouable, aucune action ni tenue sélectionnable ajoutés par ce fichier.",
+        "Adaptation 2D fan-made ; ressemblance révisée sur références, fidélité1:1 non certifiée.",
+        "Fusil simplifié pour la lecture du sprite ; le rendu promotionnel et le modèle final du jeu peuvent différer.",
+        "Le rendu plein pied montre G surtout de dos ; la vue de combat trois-quarts et les plis du gilet sont une adaptation."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20/costumes_generated.json",
+      "generation": {
+        "tool": "image_gen built-in",
+        "date": "2026-11-20",
+        "transparent_background_requested": true,
+        "source_native_output": "/workspace/scratch/da9d6e4777c1/generated_images/exec-16ca1cf0-ddd5-4ceb-9360-80059b535ec3.png",
+        "native_bytes_preserved": true,
+        "attempts_retained": 1
+      },
+      "qa": {
+        "subject_and_costume_visually_inspected": true,
+        "transparent_alpha_verified": true,
+        "opaque_pixels_at_canvas_edge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "cropped_subject_detected": false,
+        "canonical_1_to_1_certified": false,
+        "in_engine_render_observed": false
+      }
+    },
+    {
+      "id": "rogan_hotd3",
+      "name": "Thomas Rogan — HOTD III",
+      "game": "hotd3",
+      "game_label": "The House of the Dead III",
+      "category": "costume_variant",
+      "gallery": true,
+      "path": "assets/dossier_curien/gallery_2026-11-20/costumes/rogan_hotd3_base.png",
+      "sha256": "944b1be1a12f8710a574055df08d758b1ccc3ce57a36fbc17b325714b4806a40",
+      "bytes": 855715,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        32,
+        1230,
+        1254
+      ],
+      "visible_bbox": [
+        282,
+        62,
+        1008,
+        1201
+      ],
+      "visible_alpha_threshold": 127,
+      "status": "static_reference_reviewed",
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "sources": [
+        "https://www.imfdb.org/wiki/The_House_of_the_Dead_III",
+        "https://www.imfdb.org/images/6/60/HodIII_DanandRogan.jpg",
+        "https://www.arcadeguns.com/download/HOD3_Manual.pdf"
+      ],
+      "source_notes": [
+        "Sources visuelles SEGA (rendus promotionnels ou capture du jeu) réhébergées par IMFDB ; le site hébergeur est secondaire.",
+        "Manuel SEGA PC consulté via index web ; téléchargement direct indisponible HTTP406, aucune prétention de revue visuelle de ses pages.",
+        "Le personnage de référence est Rogan à gauche, identifié à l’écran ; Dan à droite est exclu. Teinte verte de l’éclairage de scène neutralisée."
+      ],
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20/costumes_iii/hotd3_dan_rogan.jpg",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "reference_inputs": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20/costumes_iii/hotd3_dan_rogan.jpg",
+          "sha256": "b4464925c0206115e642c7bbcd787f3f4607a60a7ea46fc2c0625e952f36cff2",
+          "role": "subject_game_reference"
+        },
+        {
+          "path": "assets/dossier_curien/saga/isaac_guard.png",
+          "sha256": "64be5ea484c49379008f91deba085c3dbcff04bdbbfc6eaa73244887b9eeec3c",
+          "role": "painting_style_only"
+        }
+      ],
+      "prompts": [
+        "Use case: stylized-concept. Asset type: one native transparent full-body character costume master for a hand-painted 2D arcade fighting game. Produce exactly one character, completely inside the image, facing RIGHT in a relaxed ready stance with slightly flexed knees, head and shoes and entire weapon visible, generous transparent padding on every edge. Aim for a square 1024x1024 canvas. Match the crisp hand-painted arcade shading, clean silhouette and compact realistic anatomy of the LAST attached image, Isaac, strictly as STYLE reference; do not copy Isaac's identity, hat, facial hair or clothing. This is a faithful fan-made 2D adaptation of the specific game costume in the subject reference, not an invented outfit or a photograph. Natural neutral lighting. No background, floor, ground shadow, UI, typography, labels, muzzle flash, duplicate person, montage or sprite sheet. Keep genuine transparent alpha.\nSubject reference image 1 is an actual screenshot from The House of the Dead III. Adapt ONLY Thomas Rogan, the older man on the LEFT with the text label Thomas Rogan. Omit the uniformed man Dan on the right. Preserve Rogan's rugged older angular face, short swept-back brown hair with a slightly grey mature hairline, brown/olive-brown open bomber jacket, plain white crew-neck T-shirt, black belt with rectangular brass buckle, plain khaki trousers and sturdy dark brown footwear. Match the actual jacket cut and trouser proportions shown. Remove the scene's green lighting tint and use neutral natural skin tone, brown jacket and khaki fabric; do not turn him green. Rogan is a fit fifty-something man. Hold the bulky short black pump shotgun shown in the screenshot at low ready, aimed to the RIGHT with both hands placed as in the source. The last image is solely painting-style reference. Use a new clean full-body three-quarter side view, same recognizable costume. The few details hidden by screenshot subtitles should stay simple and unobtrusive. No cap, tactical vest, combat helmet, shin guards, chest armor, extra belts or invented accessories."
+      ],
+      "limitations": [
+        "Une image statique de galerie. Aucun profil jouable, aucune action ni tenue sélectionnable ajoutés par ce fichier.",
+        "Adaptation 2D fan-made ; ressemblance révisée sur références, fidélité1:1 non certifiée.",
+        "Fusil simplifié pour la lecture du sprite ; le rendu promotionnel et le modèle final du jeu peuvent différer.",
+        "Parties basses des chaussures masquées par les sous-titres de la capture : forme de chaussure sobre complétée pour une silhouette entière, sans certification de détail canonique."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20/costumes_generated.json",
+      "generation": {
+        "tool": "image_gen built-in",
+        "date": "2026-11-20",
+        "transparent_background_requested": true,
+        "source_native_output": "/workspace/scratch/da9d6e4777c1/generated_images/exec-25a0473e-c576-471d-b696-542f20cbad02.png",
+        "native_bytes_preserved": true,
+        "attempts_retained": 1
+      },
+      "qa": {
+        "subject_and_costume_visually_inspected": true,
+        "transparent_alpha_verified": true,
+        "opaque_pixels_at_canvas_edge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "cropped_subject_detected": false,
+        "canonical_1_to_1_certified": false,
+        "in_engine_render_observed": false
+      }
+    }
+  ]
+}

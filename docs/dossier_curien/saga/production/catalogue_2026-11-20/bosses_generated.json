@@ -1,0 +1,253 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "repository": "darknigthmare/the-house-of-the-dead-25d",
+  "scope": "Two static Dossier gallery adaptations of boss identities already represented by historical sprite sheets. Not two new identities and not playable fighters.",
+  "summary": {
+    "assets": 2,
+    "gallery_entries": 2,
+    "new_identities": 0,
+    "bytes": 2528016,
+    "animation_complete": false
+  },
+  "assets": [
+    {
+      "id": "hangedman",
+      "name": "Hangedman — Type 041",
+      "game": "hotd",
+      "game_label": "The House of the Dead",
+      "category": "boss_base",
+      "path": "assets/dossier_curien/gallery_2026-11-20/bosses/hangedman_base.png",
+      "sha256": "d992bdc6c975d9edfa670f0198899efd912fbbc5d425f3ec97dbc305ce6da658",
+      "bytes": 1332098,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        45,
+        1232,
+        1236
+      ],
+      "visible_bbox": [
+        91,
+        79,
+        1115,
+        1178
+      ],
+      "visible_alpha_threshold": 127,
+      "status": "static_reference_reviewed",
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "sources": [
+        "https://thehouseofthedead.fandom.com/wiki/Hangedman",
+        "https://thehouseofthedead.fandom.com/wiki/Hangedman/Gallery"
+      ],
+      "source_notes": [
+        "Identité adaptée du master historique du projet. Les pages web servent au contrôle du design original versus Scarlet Dawn ; aucune image externe de Hangedman n’a été fournie au générateur."
+      ],
+      "references": [
+        "assets/sprites/bosses/hangedman.png",
+        "assets/dossier_curien/magician_guard.png"
+      ],
+      "reference_inputs": [
+        {
+          "path": "assets/sprites/bosses/hangedman.png",
+          "role": "Existing project identity master, inspected in full; not official Sega artwork.",
+          "sha256": "f4ad21da81f0a4b4f4459ac4f7e5f025e2298e41e458448f9ed9afefcfce5e12",
+          "bytes": 891864,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA"
+        },
+        {
+          "path": "assets/dossier_curien/magician_guard.png",
+          "role": "Existing Dossier painted-sprite style only.",
+          "sha256": "9137ceea3bbba769cc849a35ded669dac901f85383930e9893c383aa1d8c93a3",
+          "bytes": 379712,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA"
+        }
+      ],
+      "prompts": [
+        "Use case: stylized-concept. Asset type: ONE full-body transparent RGBA static gallery master for the Dossier Curien 2D game, square1024x1024 requested.\nInput1 is the project's historical HANGEDMAN Type041 sprite sheet. It is an IDENTITY/ANATOMY reference only: create ONE SINGLE FIGURE, not a grid or an animation sheet. Choose the upright hovering silhouette represented in the top row, keeping this original House of the Dead design: thin long pointed ears above a narrow bat/avian-like head, distinct round RED eye goggles, elongated narrow muzzle, a muted gray-olive leathery body, ragged dark brown membranous bat wings with articulated finger ribs, exposed dark crimson chest muscle framed by small old armor pieces, banded protective pieces on slender arms and bent legs, clawed hands and feet. Preserve the source's equipment, proportions and details; no extra armor or equipment. Do not use the broader furry Scarlet Dawn version.\nInput2 is ONLY the existing Magician Dossier sprite's painted rendering reference: clean purposeful 2D contour, fine hand-painted shading, restrained texture, readable articulation; do not copy its horns, body plates, purple palette or silhouette.\nPose: one stationary midair guarded hover, body at three-quarter lateral view facing RIGHT. Head also right. Two knees bent under the body, both clawed feet visible. TWO arms with two hands naturally held forward; TWO bat wings rise from the shoulder/back area, partially opened in a broad V, each with its own legible outline and intact tips. Exactly one head, two arms, two legs and two wings. Hands do not become wings. No bats around him.\nComposition: complete character including ear tips, wingtips, fingers and toes, comfortably within the canvas with at least7% transparent margin on every side. Centered, no clipped appendage, no tiny thumbnail. Keep silhouette comparable to the detailed reference Dossier sprite.\nConstraints: fully transparent background, no floor, cast shadow, haze, glow outside the body, environment, effects, text, labels, logo, border, watermark, diagram, grid, montage, duplicate creature, additional viewpoint or victim. This is a new free 2D gallery pose adapted from an existing project master, not an exact screenshot or a newly invented identity."
+      ],
+      "prompt_sha256_utf8": [
+        "432d0bfb6183472df9707eb1574bc3008f29f94b01a8daafab061c8a2535ecc0"
+      ],
+      "selected_generation_basename": "exec-c920c0e8-3785-45d9-84bc-5b46c5bd66d5.png",
+      "generation_method": "built-in image_gen.imagegen, native transparent output; exact PNG byte copy",
+      "limitations": [
+        "Pose de garde statique créée librement pour la galerie Dossier Curien à partir d’une identité déjà présente ailleurs dans le dépôt.",
+        "Aucune animation, sélection de combattant ou nouvelle mécanique de combat fournie.",
+        "Comparaison visuelle aux références précisées ; fidélité canonique 1:1 non certifiée."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20/bosses_generated.json",
+      "recovery_qa": {
+        "bytes_preserved": true,
+        "dimensions_and_alpha_measured": true,
+        "opaque_pixels_at_canvas_edge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "canonical_1_to_1_certified": false
+      },
+      "visual_review": {
+        "single_figure": true,
+        "facing": "three-quarter right",
+        "wings": 2,
+        "arms": 2,
+        "legs": 2,
+        "red_goggles": true,
+        "long_pointed_ears": true,
+        "whole_silhouette_visible": true,
+        "no_floor_or_hud": true
+      }
+    },
+    {
+      "id": "hermit",
+      "name": "Hermit — Type 6803",
+      "game": "hotd",
+      "game_label": "The House of the Dead",
+      "category": "boss_base",
+      "path": "assets/dossier_curien/gallery_2026-11-20/bosses/hermit_base.png",
+      "sha256": "1e01872793422e3e8c6fa31daba4fde3e4d6717805aa372c97f0f2f93c48100f",
+      "bytes": 1195918,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        31,
+        1239,
+        1254
+      ],
+      "visible_bbox": [
+        22,
+        247,
+        1229,
+        1035
+      ],
+      "visible_alpha_threshold": 127,
+      "status": "static_reference_reviewed",
+      "gallery": true,
+      "playable": false,
+      "animation_complete": false,
+      "runtime_role": "bestiary",
+      "sources": [
+        "https://www.mobygames.com/game/1218/the-house-of-the-dead/screenshots/windows/6344/",
+        "https://thehouseofthedead.fandom.com/wiki/Hermit"
+      ],
+      "source_notes": [
+        "Capture PC contribuée par Alan Chan, hébergée par MobyGames, ajoutée le11mai2000 ; source de jeu, pas une image de presse officielle.",
+        "URL média : https://cdn.mobygames.com/screenshots/10092665-the-house-of-the-dead-windows-boss-battle-with-hermit-type-6803.jpg",
+        "La palette ivoire/rouge visible dans le jeu remplace la palette très sombre de la planche historique. Le cadrage et la garde restent libres."
+      ],
+      "references": [
+        "docs/dossier_curien/sources_art/references-2026-11-20/bosses/hermit_pc.jpg",
+        "assets/sprites/bosses/hermit-type-6803.png",
+        "assets/dossier_curien/magician_guard.png"
+      ],
+      "reference_inputs": [
+        {
+          "path": "docs/dossier_curien/sources_art/references-2026-11-20/bosses/hermit_pc.jpg",
+          "role": "Real PC gameplay screenshot: ivory/red palette, six eyes, articulated legs; HUD and smoke excluded.",
+          "sha256": "cc7bbb4909872911cbc69554819cfb9c781bd90de262df38969e7ad966b9e9a7",
+          "bytes": 88679,
+          "dimensions": [
+            640,
+            480
+          ],
+          "mode": "RGB"
+        },
+        {
+          "path": "assets/sprites/bosses/hermit-type-6803.png",
+          "role": "Existing project identity master, inspected in full; not official Sega artwork.",
+          "sha256": "96da8ba814d64978ca531a24efc1127e9a361ff755c0da5bb33e8d1d0926d6a2",
+          "bytes": 1252721,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA"
+        },
+        {
+          "path": "assets/dossier_curien/magician_guard.png",
+          "role": "Existing Dossier painted-sprite style only.",
+          "sha256": "9137ceea3bbba769cc849a35ded669dac901f85383930e9893c383aa1d8c93a3",
+          "bytes": 379712,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA"
+        }
+      ],
+      "prompts": [
+        "Use case: stylized-concept. Asset type: ONE full-body transparent RGBA static gallery master for Dossier Curien, square1024x1024 requested.\nSubject: HERMIT Type6803 from the original House of the Dead, an armored eight-legged arachnid boss. Input1 is a real game screenshot from the PC version: it is the main reference for the PALE IVORY segmented carapace and legs, dark fine crack lines, deep red fleshy underside, red joints and compact red head with six small pale eyes. Remove all screenshot HUD, smoke, impacts and scenery. Do not copy screen-space foreshortening.\nInput2 is the project's historical Hermit sprite sheet, used to understand the complete carapace silhouette and its bulky rear segmented shell, compact front head and articulated legs. Create ONE figure, never a grid. It is much darker than the actual game: use the ivory/red palette from input1 rather than turning him into a black mechanical beetle. Keep the distinctive armored creature identity, not a natural hairy spider or scorpion. No metal rivets, robotic cables or tail.\nInput3 is ONLY the Magician Dossier sprite's fine painted 2D arcade rendering, clean contours and readable shading; do not copy its body shape, face, horns or colors.\nPose: full creature seen from a three-quarter side/front angle, head oriented RIGHT, static low guarded stance. Exactly EIGHT legs arranged as FOUR anatomical pairs, four emerging on each side of the thorax. Give every leg a coherent trace from its root through angular armored joints to a paired clawed foot, with clear negative gaps between the limbs. Arrange the nearest four legs and farther four legs as separate fans around the low body so all eight terminal feet can be counted. Front pair bent slightly higher and held forward in a ready guard, remaining six legs support the body in a natural stable spread. No extra legs, no missing legs, no disconnected feet, and no ordinary insect six-legged anatomy. Compact head remains visible between front limbs, with no human face. This is a non-firing stance; no web projectiles. Keep oral detail restrained to the PC screenshot, no invented huge fangs or additional tentacles.\nComposition: the entire wide squat creature with all leg tips and shell fits the square canvas with8% transparent breathing room around its complete silhouette. Do not stretch the creature vertically to fill the square. Native painted detail suitable for an in-game bestiary gallery.\nConstraints: transparent background throughout, no floor, cast shadow, environment, web, slime trail, gore splash, effects, text, label, logo, watermark, sprite sheet, collage or duplicate subject. This is a source-guided free 2D gallery guard adaptation of an existing boss identity, not a 1:1 model or a playable move set."
+      ],
+      "prompt_sha256_utf8": [
+        "5d80a54fa543476e69eeedaba92178ab5cb650f94bb926b114430d5ea7984e87"
+      ],
+      "selected_generation_basename": "exec-b712ca2b-2689-4f4f-8fc0-53cb2d4b3ab4.png",
+      "generation_method": "built-in image_gen.imagegen, native transparent output; exact PNG byte copy",
+      "limitations": [
+        "Pose de garde statique créée librement pour la galerie Dossier Curien à partir d’une identité déjà présente ailleurs dans le dépôt.",
+        "Aucune animation, sélection de combattant ou nouvelle mécanique de combat fournie.",
+        "Comparaison visuelle aux références précisées ; fidélité canonique 1:1 non certifiée.",
+        "Référence complémentaire PC : aucune équivalence détaillée arcade/Saturn/Remake revendiquée, notamment pour la bouche."
+      ],
+      "provenance": "docs/dossier_curien/saga/production/catalogue_2026-11-20/bosses_generated.json",
+      "recovery_qa": {
+        "bytes_preserved": true,
+        "dimensions_and_alpha_measured": true,
+        "opaque_pixels_at_canvas_edge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "canonical_1_to_1_certified": false
+      },
+      "visual_review": {
+        "single_figure": true,
+        "facing": "three-quarter right",
+        "terminal_leg_feet_counted": 8,
+        "eyes_counted": 6,
+        "ivory_shell_and_red_underside": true,
+        "whole_silhouette_visible": true,
+        "no_floor_web_or_hud": true
+      }
+    }
+  ],
+  "rejected_reference_candidates": [
+    {
+      "url": "https://www.ebay.com/itm/307234634533",
+      "media_url": "https://i.ebayimg.com/images/g/eNkAAeSwEm9pGSzQ/s-l1600.webp",
+      "reason": "Search/listing caption mentioned Hermit, but visual inspection showed Magician. Not used for either generated image."
+    }
+  ],
+  "rejected_generations": [],
+  "postprocessing": "No pixel editing, resize, crop, recolor or alpha cleanup. Pillow used for metadata only."
+}

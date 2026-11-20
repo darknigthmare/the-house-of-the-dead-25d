@@ -68,6 +68,7 @@ jobs:
             res://tests/test_saga_archives.gd \
             res://scripts/smoke_dossier_saga.gd \
             res://tests/test_saga_expansion.gd \
+            res://tests/test_saga_gallery.gd \
             res://tests/test_saga_motion.gd \
             res://tests/test_saga_rush.gd \
             res://tests/test_saga_lab.gd

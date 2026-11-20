@@ -8,7 +8,9 @@ extends SceneTree
 
 const MANIFEST_PATH := "res://data/assets/dossier_curien_expansion.json"
 const MOTION_MANIFEST_PATH := "res://data/assets/dossier_curien_motion.json"
+const GALLERY_MANIFEST_PATH := "res://data/assets/dossier_curien_gallery_2026-11-20.json"
 const ART_ROOT := "res://assets/dossier_curien/expansion/"
+const GALLERY_ART_ROOT := "res://assets/dossier_curien/gallery_2026-11-20/"
 const SCRIPT_ROOT := "res://src/dossier_curien/"
 const REQUIRED_SCRIPTS := [
 	"arena.gd", "combatant.gd", "presentation.gd", "saga.gd", "saga_bestiary.gd",
@@ -81,11 +83,12 @@ func _load_scripts() -> Dictionary:
 	return result
 
 
-func _manifest_textures(entries: Array, summary: Dictionary) -> Dictionary:
+func _manifest_textures(entries: Array, summary: Dictionary, art_root := ART_ROOT) -> Dictionary:
 	var by_id: Dictionary = {}
 	var paths: Dictionary = {}
 	var expected_gallery: Dictionary = {}
 	var declared_bytes := 0
+	var previously_loaded := texture_results.size()
 	for value: Variant in entries:
 		if not _check(value is Dictionary, "Expansion manifest entry is an object"):
 			continue
@@ -95,7 +98,7 @@ func _manifest_textures(entries: Array, summary: Dictionary) -> Dictionary:
 		if not _check(not identity.is_empty() and not by_id.has(identity), "Unique nonempty identity: " + identity):
 			continue
 		by_id[identity] = entry
-		if not _check(path.begins_with(ART_ROOT) and path.ends_with(".png") and not ".." in path.split("/") and not path.contains("\\"), "Safe expansion resource path: " + identity):
+		if not _check(path.begins_with(art_root) and path.ends_with(".png") and not ".." in path.split("/") and not path.contains("\\"), "Safe collection resource path: " + identity):
 			continue
 		_check(not paths.has(path), "One manifest entry per texture: " + path)
 		paths[path] = true
@@ -121,12 +124,12 @@ func _manifest_textures(entries: Array, summary: Dictionary) -> Dictionary:
 	_check(int(summary.get("gallery_entries", -1)) == expected_gallery.size(), "Summary gallery count equals visible subject rows")
 	if summary.has("bytes"):
 		_check(int(summary.bytes) == declared_bytes, "Summary source byte count equals its manifest receipts")
-	_check(texture_results.size() == entries.size(), "Every manifest image loaded from the actual pack")
-	counters["manifest_assets"] = entries.size()
+	_check(texture_results.size() - previously_loaded == entries.size(), "Every manifest image loaded from the actual pack")
+	counters["manifest_assets"] = int(counters.get("manifest_assets", 0)) + entries.size()
 	counters["loaded_textures"] = texture_results.size()
-	counters["expected_gallery_entries"] = expected_gallery.size()
-	counters["hidden_pose_entries"] = entries.size() - expected_gallery.size()
-	counters["declared_source_bytes"] = declared_bytes
+	counters["expected_gallery_entries"] = int(counters.get("expected_gallery_entries", 0)) + expected_gallery.size()
+	counters["hidden_pose_entries"] = int(counters.get("hidden_pose_entries", 0)) + entries.size() - expected_gallery.size()
+	counters["declared_source_bytes"] = int(counters.get("declared_source_bytes", 0)) + declared_bytes
 	return {"by_id": by_id, "expected_gallery": expected_gallery}
 
 
@@ -144,7 +147,11 @@ func _game_contract(scripts: Dictionary) -> int:
 	_check(profiles.size() == 24, "Mounted code contains the 24 combat profiles")
 	_check(cases.has("curien") and manor_routes.size() == 4, "The manor Chronicle has four routes and is counted once")
 	_check(story_count == 26, "Mounted code has 26 routes: manor + other Chronicles + alternates")
-	_check(stages.size() == 18, "Mounted code contains 18 arenas")
+	_check(stages.size() == 20, "Mounted code contains 20 arenas")
+	for prefix in ["zr_train", "creeping_flesh"]:
+		for plane in ["back", "mid", "front"]:
+			var path := "res://assets/dossier_curien/saga/%s_%s.png" % [prefix, plane]
+			_check(ResourceLoader.exists(path, "Texture2D") and ResourceLoader.load(path, "Texture2D") is Texture2D, "Mounted arena plane loads: " + path)
 	counters.merge({"fighters": profiles.size(), "chronicles": cases.size(), "manor_routes": manor_routes.size(), "alternate_stories": alternate.size(), "story_routes": story_count, "stages": stages.size()})
 	var linda_id := -1
 	for index: int in profiles.size():
@@ -322,6 +329,16 @@ func _run() -> void:
 		_finish()
 		return
 	var collection := _manifest_textures(manifest.assets, manifest.summary)
+	var extra := _read_object(GALLERY_MANIFEST_PATH)
+	if not _check(extra.get("assets") is Array and not extra.assets.is_empty() and extra.get("summary") is Dictionary, "Mounted gallery extension has subjects and a summary"):
+		_finish()
+		return
+	var additional := _manifest_textures(extra.assets, extra.summary, GALLERY_ART_ROOT)
+	for identity in additional.by_id:
+		_check(not collection.by_id.has(identity), "Gallery extension preserves distinct subject identities: " + str(identity))
+		var entry: Dictionary = additional.by_id[identity]
+		_check(entry.get("playable", true) == false and entry.get("animation_complete", true) == false and entry.get("runtime_role", "") == "bestiary", "Gallery subject remains explicitly non-playable: " + str(identity))
+	collection.expected_gallery.merge(additional.expected_gallery)
 	var linda_id := _game_contract(scripts)
 	_gallery(scripts, collection.expected_gallery, linda_id)
 	_linda(scripts, collection.by_id, linda_id)

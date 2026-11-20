@@ -86,6 +86,7 @@ func gallery_and_story() -> void:
 	check(a.fighters[0].id == 23 and a.fighters[0].ammo == 8, "Linda is a real match participant")
 	a.bestiary.show(a)
 	check(a.phase == "bestiary" and not a.bestiary.assets.is_empty() and a.fighters.is_empty(), "Bestiary opens and leaves the prior match")
+	check(a.get_viewport().gui_get_focus_owner() is OptionButton, "Opening the gallery gives keyboard/gamepad focus to the game selector")
 	var total: int = a.bestiary.assets.size()
 	for button in a.box.get_children():
 		if button is Button and button.text.begins_with("Page suivante"):
@@ -98,6 +99,7 @@ func gallery_and_story() -> void:
 			break
 	check(a.bestiary.page == 0, "Previous-page button returns to the first subjects")
 	a.bestiary.select_filter(a,1)
+	check(a.get_viewport().gui_get_focus_owner() is OptionButton, "Changing the existing collection restores focus to the rebuilt selector")
 	var revenge: Array = a.bestiary.filtered()
 	check(not revenge.is_empty() and revenge.size() < total, "Zombie Revenge filter isolates its collection")
 	for entry in revenge: check(a.bestiary.family(entry) == "zombie_revenge", "No EX subject leaks into Zombie Revenge")
@@ -214,6 +216,72 @@ func invalid_gallery_data() -> void:
 	check(not gallery.load_manifest("user://missing_collection.json"), "Missing collection fails cleanly")
 	DirAccess.remove_absolute(ProjectSettings.globalize_path(path))
 
+func gallery_extension() -> void:
+	var path := Bestiary.GALLERY_MANIFEST
+	check(FileAccess.file_exists(path), "New gallery manifest ships with the source project")
+	if not FileAccess.file_exists(path): return
+	var parsed = JSON.parse_string(FileAccess.get_file_as_string(path))
+	check(parsed is Dictionary and parsed.get("assets") is Array and not parsed.assets.is_empty(), "New gallery manifest declares its subjects")
+	if not parsed is Dictionary or not parsed.get("assets") is Array: return
+	a.bestiary.show(a)
+	check(a.bestiary.assets.size() == 49, "Native gallery contains all forty existing and nine new subject cards")
+	var loaded := {}
+	for entry in a.bestiary.assets: loaded[entry.id] = entry
+	var games := {}
+	for entry in parsed.assets:
+		check(loaded.has(entry.id), "New subject is visible in the native gallery: " + str(entry.id))
+		if not loaded.has(entry.id): continue
+		var item: Dictionary = loaded[entry.id]
+		check(a.bestiary.fighter_id(item) < 0 and a.bestiary.role_label(item).contains("non jouable"), "New card remains explicitly non-playable: " + str(entry.id))
+		check(ResourceLoader.load(item.path) is Texture2D, "Native gallery texture loads: " + str(entry.id))
+		games[a.bestiary.family(item)] = str(item.id)
+	for game in games:
+		var wanted := -1
+		for index in a.bestiary.filters.size():
+			if a.bestiary.filters[index].game == game: wanted = index
+		check(wanted >= 0, "Game is offered by the gallery selector: " + str(game))
+		if wanted < 0: continue
+		var selector: OptionButton
+		for child in a.box.get_children():
+			if child is OptionButton: selector = child
+		check(selector != null, "A bounded selector accommodates every game")
+		if selector == null: continue
+		selector.item_selected.emit(wanted)
+		check(a.bestiary.filter_index == wanted and not a.bestiary.filtered().is_empty(), "Dropdown signal selects the requested game: " + str(game))
+		check(a.get_viewport().gui_get_focus_owner() is OptionButton, "Dropdown replacement preserves keyboard/gamepad navigation: " + str(game))
+		for item in a.bestiary.filtered(): check(a.bestiary.family(item) == game, "Game selector excludes other collections")
+		await verify_sheet_layout("Gallery game " + str(game))
+		var selected := 0
+		var subjects: Array = a.bestiary.filtered()
+		for index in subjects.size():
+			if str(subjects[index].id) == str(games[game]): selected = index
+		a.bestiary.detail(a, selected)
+		var playable_button := false
+		for child in a.box.get_children():
+			if child is Button and child.text.begins_with("Jouer"): playable_button = true
+		check(not playable_button, "Gallery extension does not offer a Play action")
+		await verify_sheet_layout("Gallery detail " + str(game))
+		a.bestiary.show(a)
+
+func additional_stages() -> void:
+	check(Fighter.PROFILES.size() == 24 and Saga.STAGES.size() == 20 and Saga.ART.size() == 20, "Two new stages preserve the playable roster and align twenty art registrations")
+	a.case_id = ""
+	a.mode = 1
+	a.chosen = 0
+	for stage_index in [18,19]:
+		a.pick_stage(1, stage_index/a.PAGE_SIZE)
+		await verify_sheet_layout("Additional stage selection")
+		var choice: Button
+		for child in a.box.get_children():
+			if child is Button and child.text == Saga.STAGES[stage_index]: choice = child
+		check(choice != null and Saga.STAGE_NOTES.has(stage_index), "New stage is selectable with its documented adaptation note")
+		if choice == null: continue
+		choice.pressed.emit()
+		check(a.phase == "fight" and a.stage == stage_index and a.fighters.size() == 2, "New arena enters a real duel with both fighters")
+		check(Painter.floor_y(stage_index) == 601.0, "New stage keeps the existing fighter floor at y=601")
+		for plane in ["back","mid","front"]:
+			check(a.visuals.stage_plane(stage_index, plane) is Texture2D, "New native arena layer loads: %s/%s" % [Saga.ART[stage_index],plane])
+
 func verify_sheet_layout(label: String) -> void:
 	for tick in 3: await process_frame
 	var rect: Rect2 = a.panel.get_rect()
@@ -259,6 +327,8 @@ func run() -> void:
 	linda_low_poses()
 	invalid_gallery_data()
 	await gallery_layout()
+	await gallery_extension()
+	await additional_stages()
 	await frozen_resume_redraw()
 	a.audio_player.stop()
 	a.queue_free()

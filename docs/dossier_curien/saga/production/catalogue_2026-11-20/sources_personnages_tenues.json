@@ -1,0 +1,599 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "sources": [
+    {
+      "id": "sega_hotd2_manual",
+      "title": "SEGA — HOTD2, manuel Dreamcast",
+      "url": "https://www.digitpress.com/library/manuals/dreamcast/house_dead_2.pdf",
+      "evidence_level": "primary_rehosted",
+      "usage": "Identités et apparences de James/Gary (p3), Amy/Harry/Goldman (p4) ; exemple Amy Costume (p18).",
+      "visual_inspection": "pdf_page_4_inspected_monochrome",
+      "accessed_on": "2026-11-20",
+      "locator": "PDF index2 / page imprimée4"
+    },
+    {
+      "id": "sega_hotd3_manual",
+      "title": "SEGA — HOTDIII, manuel PC",
+      "url": "https://www.arcadeguns.com/download/HOD3_Manual.pdf",
+      "evidence_level": "primary_rehosted",
+      "usage": "Personnages pp7–8 ; graphisme du manuel non téléchargé (HTTP406), texte ouvert par index web.",
+      "visual_inspection": "not_downloaded_http406",
+      "accessed_on": "2026-11-20"
+    },
+    {
+      "id": "sega_hotd3_xbox_manual",
+      "title": "SEGA — HOTDIII, manuel Xbox",
+      "url": "https://www.gamesdatabase.org/Media/SYSTEM/Microsoft_Xbox/Manual/formated/House_of_the_Dead_3_-_Sega.pdf",
+      "evidence_level": "primary_rehosted",
+      "usage": "Biographies G et Rogan pp10–11 ; téléchargement HTTP403.",
+      "visual_inspection": "not_downloaded_http403",
+      "accessed_on": "2026-11-20"
+    },
+    {
+      "id": "sega_overkill_manual",
+      "title": "SEGA — The Typing of the Dead Overkill, manuel Steam",
+      "url": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/246580/manuals/TOTDO_STEAM_MANUAL_ENG.PDF?t=1763675367",
+      "evidence_level": "primary",
+      "usage": "G, Isaac, Varla, Candi pp19–21 ; les portraits monochromes ne fixent pas à eux seuls le costume entier.",
+      "visual_inspection": "portrait_pages_inspected_by_project",
+      "accessed_on": "2026-11-20"
+    },
+    {
+      "id": "sega_naked_terror",
+      "title": "SEGA / PlayStation Blog — Naked Terror",
+      "url": "https://blog.playstation.com/2011/08/01/house-of-the-dead-overkill-naked-terror-revealed/",
+      "evidence_level": "primary",
+      "usage": "Varla et Candi jouables dans Extended Cut ; le texte emploie aussi Candy.",
+      "visual_inspection": "official_images_available",
+      "accessed_on": "2026-11-20"
+    },
+    {
+      "id": "sega_creeping_flesh",
+      "title": "SEGA / PlayStation Blog — Creeping Flesh",
+      "url": "https://blog.playstation.com/2011/08/30/house-of-the-dead-overkill-extended-cut-creeping-flesh-level-reveal/",
+      "evidence_level": "primary",
+      "usage": "Chapitre Extended Cut, binôme Varla/Candi et nom du boss Meat Katie confirmés dans le billet SEGA.",
+      "visual_inspection": "official_images_available",
+      "accessed_on": "2026-11-20"
+    },
+    {
+      "id": "sega_overkill_press",
+      "title": "Informations SEGA reproduites par 4Gamer",
+      "url": "https://www.4gamer.net/games/142/G014263/20111212021/",
+      "evidence_level": "publisher_supplied_press",
+      "usage": "Présentations G, Isaac, Varla, Candi et images.",
+      "visual_inspection": "gallery_available_not_all_inspected",
+      "accessed_on": "2026-11-20"
+    },
+    {
+      "id": "sega_zr_manual",
+      "title": "SEGA — Zombie Revenge, manuel Dreamcast",
+      "url": "https://www.digitpress.com/library/manuals/dreamcast/zombie_revenge.pdf",
+      "evidence_level": "primary_rehosted",
+      "usage": "Trio jouable, modes de jeu et personnages pp21–25.",
+      "visual_inspection": "not_inspected",
+      "accessed_on": "2026-11-20"
+    },
+    {
+      "id": "sega_ex",
+      "title": "SEGA — Loving Deads: The House of the Dead EX",
+      "url": "https://www.sega.jp/history/arcade/product/8762/",
+      "evidence_level": "primary",
+      "usage": "Cadre du jeu et Zobio/Zobiko ; ne prouve pas le statut de chaque cameo.",
+      "visual_inspection": "not_inspected",
+      "accessed_on": "2026-11-20"
+    },
+    {
+      "id": "sega_scarlet",
+      "title": "SEGA — Scarlet Dawn",
+      "url": "https://hod.sega.jp/",
+      "evidence_level": "primary",
+      "usage": "Kate, Ryan et référence principale de cette édition.",
+      "visual_inspection": "page_opened_image_text_not_fully_extracted",
+      "accessed_on": "2026-11-20"
+    },
+    {
+      "id": "sega_reawakened",
+      "title": "SEGA Amusements — Reawakened, annonce du 28 octobre2026",
+      "url": "https://segaarcade.com/news/dare-to-experience-house-of-the-dead-reawakened",
+      "evidence_level": "primary",
+      "usage": "Existence et présentation IAAPA17–20novembre2026 ; pas de roster nominatif attesté ici.",
+      "visual_inspection": "product_only",
+      "accessed_on": "2026-11-20"
+    },
+    {
+      "id": "sega_reawakened_product",
+      "title": "SEGA Amusements — Reawakened, produit",
+      "url": "https://segaarcade.com/games/house-of-the-dead-reawakened",
+      "evidence_level": "primary",
+      "usage": "Attraction à rattacher au corpus, personnages et costumes à documenter.",
+      "visual_inspection": "not_inspected",
+      "accessed_on": "2026-11-20"
+    },
+    {
+      "id": "sega_typing_manual",
+      "title": "SEGA — The Typing of the Dead, manuel Dreamcast",
+      "url": "https://www.digitpress.com/library/manuals/dreamcast/typing_dead.pdf",
+      "evidence_level": "primary_rehosted",
+      "usage": "Édition Dreamcast ; les variantes de matériel doivent être revues sur image.",
+      "visual_inspection": "not_inspected",
+      "accessed_on": "2026-11-20"
+    },
+    {
+      "id": "sega_typing2_press",
+      "title": "Présentation SEGA2007 — Game Watch",
+      "url": "https://game.watch.impress.co.jp/docs/20070420/segat.htm",
+      "evidence_level": "publisher_event_press",
+      "usage": "Typing2 et prototype Kanji ; compléter avec captures pour chaque variante.",
+      "visual_inspection": "not_inspected",
+      "accessed_on": "2026-11-20"
+    },
+    {
+      "id": "microids_remake1",
+      "title": "Microids — The House of the Dead Remake",
+      "url": "https://www.microids.com/fr/jeu-the-house-of-the-dead-remake/",
+      "evidence_level": "primary",
+      "usage": "Édition remake1 et personnages ; apparences à séparer du jeu1996/1997.",
+      "visual_inspection": "not_inspected",
+      "accessed_on": "2026-11-20"
+    },
+    {
+      "id": "microids_remake2",
+      "title": "Microids — HOTD2 Remake, support",
+      "url": "https://support.microids.com/en/support/solutions/articles/23000029139-the-house-of-the-dead-2-remake",
+      "evidence_level": "primary",
+      "usage": "Édition remake2 ; divergence sur nationalité Amy : pas de fusion silencieuse avec manuel original.",
+      "visual_inspection": "not_inspected",
+      "accessed_on": "2026-11-20"
+    },
+    {
+      "id": "museum_saturn",
+      "title": "Play It Again — The House of the Dead Saturn",
+      "url": "https://playitagainproject.com/the-house-of-the-dead-sega-saturn/",
+      "evidence_level": "museum_research",
+      "usage": "Référence indépendante du jeu Saturn et des modes.",
+      "visual_inspection": "not_inspected",
+      "accessed_on": "2026-11-20"
+    },
+    {
+      "id": "wiki_bosses",
+      "title": "Wiki of the Dead — Bosses",
+      "url": "https://thehouseofthedead.fandom.com/wiki/Bosses",
+      "evidence_level": "secondary",
+      "usage": "Index des rencontres ; type numérique et variantes EX à corroborer.",
+      "visual_inspection": "indexed_text_only",
+      "accessed_on": "2026-11-20"
+    },
+    {
+      "id": "wiki_characters",
+      "title": "Wiki of the Dead — List of characters",
+      "url": "https://thehouseofthedead.fandom.com/wiki/List_of_characters",
+      "evidence_level": "secondary",
+      "usage": "Orientation des personnages secondaires ; aucune exhaustivité des figurants revendiquée.",
+      "visual_inspection": "indexed_text_only",
+      "accessed_on": "2026-11-20"
+    },
+    {
+      "id": "wiki_saturn",
+      "title": "Wiki of the Dead — Saturn Mode",
+      "url": "https://thehouseofthedead.fandom.com/wiki/Saturn_Mode",
+      "evidence_level": "secondary",
+      "usage": "Rogan2/G2, Sophie et chercheur sélectionnables ; modèles à documenter avant production.",
+      "visual_inspection": "indexed_text_only",
+      "accessed_on": "2026-11-20"
+    },
+    {
+      "id": "wiki_original",
+      "title": "Wiki of the Dead — Original Mode",
+      "url": "https://thehouseofthedead.fandom.com/wiki/Original_Mode",
+      "evidence_level": "secondary",
+      "usage": "Sept objets de substitution de modèle, à séparer des protagonistes narratifs.",
+      "visual_inspection": "indexed_text_only",
+      "accessed_on": "2026-11-20"
+    },
+    {
+      "id": "wiki_typing",
+      "title": "Wiki of the Dead — The Typing of the Dead",
+      "url": "https://thehouseofthedead.fandom.com/wiki/The_Typing_of_the_Dead",
+      "evidence_level": "secondary",
+      "usage": "Matériel clavier et variantes Kids2004 ; apparences exactes encore à vérifier.",
+      "visual_inspection": "indexed_text_only",
+      "accessed_on": "2026-11-20"
+    },
+    {
+      "id": "gamefaqs_zr_costumes",
+      "title": "GameFAQs — Zombie Revenge, commandes des costumes",
+      "url": "https://gamefaqs.gamespot.com/dreamcast/199400-zombie-revenge/cheats",
+      "evidence_level": "secondary",
+      "usage": "Existence de sélections de tenues ; pas de noms/couleurs ni nombre de modèles distincts inventé.",
+      "visual_inspection": "text_only",
+      "accessed_on": "2026-11-20"
+    },
+    {
+      "id": "wiki_thornheart_gallery",
+      "title": "Wiki of the Dead — Thornheart, galerie",
+      "url": "https://thehouseofthedead.fandom.com/wiki/Thornheart/Gallery",
+      "evidence_level": "secondary_index_to_game_art",
+      "usage": "Référence officielle du mini-jeu Scarlet Dawn identifiée par la galerie ; fichier pas encore inspecté.",
+      "visual_inspection": "index_only",
+      "accessed_on": "2026-11-20"
+    },
+    {
+      "id": "overkill_concept_index",
+      "title": "Index de collecte des concept arts Extended Cut",
+      "url": "https://www.k-triggerhappy.com/hodoverkill_ps3/collection.html",
+      "evidence_level": "secondary",
+      "usage": "Concept arts Papa Caesar, Jasper humain, Clement, Mother ; index non équivalent à une référence visuelle vue.",
+      "visual_inspection": "index_only",
+      "accessed_on": "2026-11-20"
+    },
+    {
+      "id": "game_hotd2_visuals",
+      "title": "Captures HOTD2 reproduites par IMFDB",
+      "url": "https://www.imfdb.org/wiki/The_House_of_the_Dead_2",
+      "evidence_level": "game_images_secondary_host",
+      "usage": "Amy et Harry couleur, capture issue du jeu ; manuel croisé pour corps complet.",
+      "visual_inspection": "downloaded_and_inspected",
+      "accessed_on": "2026-11-20",
+      "image_urls": [
+        "https://www.imfdb.org/images/0/06/Hod2_AmyandHarry.jpg"
+      ]
+    },
+    {
+      "id": "game_hotd3_visuals",
+      "title": "Rendus/captures HOTDIII reproduits par IMFDB",
+      "url": "https://www.imfdb.org/wiki/The_House_of_the_Dead_III",
+      "evidence_level": "game_images_secondary_host",
+      "usage": "G âgé, Rogan âgé, Dan ; rendu promotionnel et capture de jeu distingués.",
+      "visual_inspection": "downloaded_and_inspected",
+      "accessed_on": "2026-11-20",
+      "image_urls": [
+        "https://www.imfdb.org/images/9/9e/HodIII_GandLisa.jpg",
+        "https://www.imfdb.org/images/3/37/HodIII_GandLisa_2.jpg",
+        "https://www.imfdb.org/images/6/60/HodIII_DanandRogan.jpg"
+      ]
+    },
+    {
+      "id": "corpus_01",
+      "title": "The House of the Dead",
+      "url": "https://www.sega.jp/history/arcade/product/9038/",
+      "evidence_level": "inherited_repo_reference",
+      "usage": "Référence du corpus déjà versionnée ; réexamen des personnages non exhaustif.",
+      "visual_inspection": "not_revisited_this_audit",
+      "inherited_from": "docs/dossier_curien/saga/SOURCES_SAGA.json",
+      "registered_on": "2026-11-20",
+      "accessed_on": null
+    },
+    {
+      "id": "corpus_02",
+      "title": "The House of the Dead 2",
+      "url": "https://www.sega.jp/history/arcade/product/8991/",
+      "evidence_level": "inherited_repo_reference",
+      "usage": "Référence du corpus déjà versionnée ; réexamen des personnages non exhaustif.",
+      "visual_inspection": "not_revisited_this_audit",
+      "inherited_from": "docs/dossier_curien/saga/SOURCES_SAGA.json",
+      "registered_on": "2026-11-20",
+      "accessed_on": null
+    },
+    {
+      "id": "corpus_03",
+      "title": "The House of the Dead III",
+      "url": "https://blog.playstation.com/?p=69102",
+      "evidence_level": "inherited_repo_reference",
+      "usage": "Référence du corpus déjà versionnée ; réexamen des personnages non exhaustif.",
+      "visual_inspection": "not_revisited_this_audit",
+      "inherited_from": "docs/dossier_curien/saga/SOURCES_SAGA.json",
+      "registered_on": "2026-11-20",
+      "accessed_on": null
+    },
+    {
+      "id": "corpus_04",
+      "title": "The House of the Dead 4",
+      "url": "https://blog.playstation.com/?p=71862",
+      "evidence_level": "inherited_repo_reference",
+      "usage": "Référence du corpus déjà versionnée ; réexamen des personnages non exhaustif.",
+      "visual_inspection": "not_revisited_this_audit",
+      "inherited_from": "docs/dossier_curien/saga/SOURCES_SAGA.json",
+      "registered_on": "2026-11-20",
+      "accessed_on": null
+    },
+    {
+      "id": "corpus_05",
+      "title": "The House of the Dead 4 Special",
+      "url": "https://www.sega.jp/history/arcade/product/18157/",
+      "evidence_level": "inherited_repo_reference",
+      "usage": "Référence du corpus déjà versionnée ; réexamen des personnages non exhaustif.",
+      "visual_inspection": "not_revisited_this_audit",
+      "inherited_from": "docs/dossier_curien/saga/SOURCES_SAGA.json",
+      "registered_on": "2026-11-20",
+      "accessed_on": null
+    },
+    {
+      "id": "corpus_06",
+      "title": "House of the Dead: Scarlet Dawn",
+      "url": "https://hod.sega.jp/",
+      "evidence_level": "inherited_repo_reference",
+      "usage": "Référence du corpus déjà versionnée ; réexamen des personnages non exhaustif.",
+      "visual_inspection": "not_revisited_this_audit",
+      "inherited_from": "docs/dossier_curien/saga/SOURCES_SAGA.json",
+      "registered_on": "2026-11-20",
+      "accessed_on": null
+    },
+    {
+      "id": "corpus_07",
+      "title": "The House of the Dead: Overkill",
+      "url": "https://www.esrb.org/ratings/26030/the-house-of-the-dead-overkill/",
+      "evidence_level": "inherited_repo_reference",
+      "usage": "Référence du corpus déjà versionnée ; réexamen des personnages non exhaustif.",
+      "visual_inspection": "not_revisited_this_audit",
+      "inherited_from": "docs/dossier_curien/saga/SOURCES_SAGA.json",
+      "registered_on": "2026-11-20",
+      "accessed_on": null
+    },
+    {
+      "id": "corpus_08",
+      "title": "The House of the Dead: Overkill – Extended Cut",
+      "url": "https://blog.playstation.com/2011/07/14/the-house-of-the-dead-overkill-hunt-mutants-with-playstation-move-in-3d/",
+      "evidence_level": "inherited_repo_reference",
+      "usage": "Référence du corpus déjà versionnée ; réexamen des personnages non exhaustif.",
+      "visual_inspection": "not_revisited_this_audit",
+      "inherited_from": "docs/dossier_curien/saga/SOURCES_SAGA.json",
+      "registered_on": "2026-11-20",
+      "accessed_on": null
+    },
+    {
+      "id": "corpus_09",
+      "title": "The House of the Dead: Overkill – The Lost Reels",
+      "url": "https://ttabvue.uspto.gov/ttabvue/ttabvue-85539705-EXA-5.pdf",
+      "evidence_level": "inherited_repo_reference",
+      "usage": "Référence du corpus déjà versionnée ; réexamen des personnages non exhaustif.",
+      "visual_inspection": "not_revisited_this_audit",
+      "inherited_from": "docs/dossier_curien/saga/SOURCES_SAGA.json",
+      "registered_on": "2026-11-20",
+      "accessed_on": null
+    },
+    {
+      "id": "corpus_10",
+      "title": "Zombie Revenge",
+      "url": "https://www.sega.jp/history/arcade/product/8161/",
+      "evidence_level": "inherited_repo_reference",
+      "usage": "Référence du corpus déjà versionnée ; réexamen des personnages non exhaustif.",
+      "visual_inspection": "not_revisited_this_audit",
+      "inherited_from": "docs/dossier_curien/saga/SOURCES_SAGA.json",
+      "registered_on": "2026-11-20",
+      "accessed_on": null
+    },
+    {
+      "id": "corpus_11",
+      "title": "Loving Deads: The House of the Dead EX",
+      "url": "https://www.sega.jp/history/arcade/product/8762/",
+      "evidence_level": "inherited_repo_reference",
+      "usage": "Référence du corpus déjà versionnée ; réexamen des personnages non exhaustif.",
+      "visual_inspection": "not_revisited_this_audit",
+      "inherited_from": "docs/dossier_curien/saga/SOURCES_SAGA.json",
+      "registered_on": "2026-11-20",
+      "accessed_on": null
+    },
+    {
+      "id": "corpus_12",
+      "title": "The Typing of the Dead",
+      "url": "https://www.sega.jp/history/arcade/product/8146/",
+      "evidence_level": "inherited_repo_reference",
+      "usage": "Référence du corpus déjà versionnée ; réexamen des personnages non exhaustif.",
+      "visual_inspection": "not_revisited_this_audit",
+      "inherited_from": "docs/dossier_curien/saga/SOURCES_SAGA.json",
+      "registered_on": "2026-11-20",
+      "accessed_on": null
+    },
+    {
+      "id": "corpus_13",
+      "title": "The Typing of the Dead 2",
+      "url": "https://www.sega.jp/game/pc/?mode=view&page=6",
+      "evidence_level": "inherited_repo_reference",
+      "usage": "Référence du corpus déjà versionnée ; réexamen des personnages non exhaustif.",
+      "visual_inspection": "not_revisited_this_audit",
+      "inherited_from": "docs/dossier_curien/saga/SOURCES_SAGA.json",
+      "registered_on": "2026-11-20",
+      "accessed_on": null
+    },
+    {
+      "id": "corpus_14",
+      "title": "The Typing of the Dead: Zombie Panic",
+      "url": "https://www.sega.jp/game/?page=33",
+      "evidence_level": "inherited_repo_reference",
+      "usage": "Référence du corpus déjà versionnée ; réexamen des personnages non exhaustif.",
+      "visual_inspection": "not_revisited_this_audit",
+      "inherited_from": "docs/dossier_curien/saga/SOURCES_SAGA.json",
+      "registered_on": "2026-11-20",
+      "accessed_on": null
+    },
+    {
+      "id": "corpus_15",
+      "title": "The Typing of the Dead Online",
+      "url": "https://tod.sega-online.jp/",
+      "evidence_level": "inherited_repo_reference",
+      "usage": "Référence du corpus déjà versionnée ; réexamen des personnages non exhaustif.",
+      "visual_inspection": "not_revisited_this_audit",
+      "inherited_from": "docs/dossier_curien/saga/SOURCES_SAGA.json",
+      "registered_on": "2026-11-20",
+      "accessed_on": null
+    },
+    {
+      "id": "corpus_16",
+      "title": "The Typing of the Dead: Overkill",
+      "url": "https://store.steampowered.com/app/246580/",
+      "evidence_level": "inherited_repo_reference",
+      "usage": "Référence du corpus déjà versionnée ; réexamen des personnages non exhaustif.",
+      "visual_inspection": "not_revisited_this_audit",
+      "inherited_from": "docs/dossier_curien/saga/SOURCES_SAGA.json",
+      "registered_on": "2026-11-20",
+      "accessed_on": null
+    },
+    {
+      "id": "corpus_17",
+      "title": "K-Typing of the Dead",
+      "url": "https://dengekionline.com/data/news/2001/6/26/924274939db0e22a44e4589b07add3ef.html",
+      "evidence_level": "inherited_repo_reference",
+      "usage": "Référence du corpus déjà versionnée ; réexamen des personnages non exhaustif.",
+      "visual_inspection": "not_revisited_this_audit",
+      "inherited_from": "docs/dossier_curien/saga/SOURCES_SAGA.json",
+      "registered_on": "2026-11-20",
+      "accessed_on": null
+    },
+    {
+      "id": "corpus_18",
+      "title": "Zombie Da: Flick of the Dead",
+      "url": "https://game.watch.impress.co.jp/docs/news/531538.html",
+      "evidence_level": "inherited_repo_reference",
+      "usage": "Référence du corpus déjà versionnée ; réexamen des personnages non exhaustif.",
+      "visual_inspection": "not_revisited_this_audit",
+      "inherited_from": "docs/dossier_curien/saga/SOURCES_SAGA.json",
+      "registered_on": "2026-11-20",
+      "accessed_on": null
+    },
+    {
+      "id": "corpus_19",
+      "title": "English of the Dead",
+      "url": "https://www.nintendo.co.jp/ds/software/yznj/index.html",
+      "evidence_level": "inherited_repo_reference",
+      "usage": "Référence du corpus déjà versionnée ; réexamen des personnages non exhaustif.",
+      "visual_inspection": "not_revisited_this_audit",
+      "inherited_from": "docs/dossier_curien/saga/SOURCES_SAGA.json",
+      "registered_on": "2026-11-20",
+      "accessed_on": null
+    },
+    {
+      "id": "corpus_20",
+      "title": "The Pinball of the Dead",
+      "url": "https://www.esrb.org/ratings/7481/the-pinball-of-the-dead/",
+      "evidence_level": "inherited_repo_reference",
+      "usage": "Référence du corpus déjà versionnée ; réexamen des personnages non exhaustif.",
+      "visual_inspection": "not_revisited_this_audit",
+      "inherited_from": "docs/dossier_curien/saga/SOURCES_SAGA.json",
+      "registered_on": "2026-11-20",
+      "accessed_on": null
+    },
+    {
+      "id": "corpus_21",
+      "title": "Darts of the Dead",
+      "url": "https://www.sega.jp/topics/detail/171004_arcade_1/",
+      "evidence_level": "inherited_repo_reference",
+      "usage": "Référence du corpus déjà versionnée ; réexamen des personnages non exhaustif.",
+      "visual_inspection": "not_revisited_this_audit",
+      "inherited_from": "docs/dossier_curien/saga/SOURCES_SAGA.json",
+      "registered_on": "2026-11-20",
+      "accessed_on": null
+    },
+    {
+      "id": "corpus_22",
+      "title": "The Site of the Dead",
+      "url": "https://backup.segakore.fr/segawow/wowsports/release03818_b.html",
+      "evidence_level": "inherited_repo_reference",
+      "usage": "Référence du corpus déjà versionnée ; réexamen des personnages non exhaustif.",
+      "visual_inspection": "not_revisited_this_audit",
+      "inherited_from": "docs/dossier_curien/saga/SOURCES_SAGA.json",
+      "registered_on": "2026-11-20",
+      "accessed_on": null
+    },
+    {
+      "id": "corpus_23",
+      "title": "The House of the Dead Mobile",
+      "url": "https://www.softbank.jp/-/media/sb/sjp/en/corp/set/data/group/sbm/news/press/vodafone/pdf/050609e_2.pdf",
+      "evidence_level": "inherited_repo_reference",
+      "usage": "Référence du corpus déjà versionnée ; réexamen des personnages non exhaustif.",
+      "visual_inspection": "not_revisited_this_audit",
+      "inherited_from": "docs/dossier_curien/saga/SOURCES_SAGA.json",
+      "registered_on": "2026-11-20",
+      "accessed_on": null
+    },
+    {
+      "id": "corpus_24",
+      "title": "The House of the Dead: Nightmare",
+      "url": "https://kotaku.com/games/the-house-of-the-dead-nightmare",
+      "evidence_level": "inherited_repo_reference",
+      "usage": "Référence du corpus déjà versionnée ; réexamen des personnages non exhaustif.",
+      "visual_inspection": "not_revisited_this_audit",
+      "inherited_from": "docs/dossier_curien/saga/SOURCES_SAGA.json",
+      "registered_on": "2026-11-20",
+      "accessed_on": null
+    },
+    {
+      "id": "corpus_25",
+      "title": "The House of the Dead 2 & 3 Return",
+      "url": "https://www.nintendo.com/fr-fr/Jeux/Wii/The-House-of-the-Dead-2-3-Return-283454.html",
+      "evidence_level": "inherited_repo_reference",
+      "usage": "Référence du corpus déjà versionnée ; réexamen des personnages non exhaustif.",
+      "visual_inspection": "not_revisited_this_audit",
+      "inherited_from": "docs/dossier_curien/saga/SOURCES_SAGA.json",
+      "registered_on": "2026-11-20",
+      "accessed_on": null
+    },
+    {
+      "id": "corpus_26",
+      "title": "The House of the Dead: Remake",
+      "url": "https://www.microids.com/fr/jeu-the-house-of-the-dead-remake/",
+      "evidence_level": "inherited_repo_reference",
+      "usage": "Référence du corpus déjà versionnée ; réexamen des personnages non exhaustif.",
+      "visual_inspection": "not_revisited_this_audit",
+      "inherited_from": "docs/dossier_curien/saga/SOURCES_SAGA.json",
+      "registered_on": "2026-11-20",
+      "accessed_on": null
+    },
+    {
+      "id": "corpus_27",
+      "title": "The House of the Dead 2: Remake",
+      "url": "https://www.microids.com/fr/the-house-of-the-dead-2-remake-fr/",
+      "evidence_level": "inherited_repo_reference",
+      "usage": "Référence du corpus déjà versionnée ; réexamen des personnages non exhaustif.",
+      "visual_inspection": "not_revisited_this_audit",
+      "inherited_from": "docs/dossier_curien/saga/SOURCES_SAGA.json",
+      "registered_on": "2026-11-20",
+      "accessed_on": null
+    },
+    {
+      "id": "corpus_28",
+      "title": "House of the Dead: Scarlet Dawn – The Attraction",
+      "url": "https://www.casegajp.com/en/service/detail2.html",
+      "evidence_level": "inherited_repo_reference",
+      "usage": "Référence du corpus déjà versionnée ; réexamen des personnages non exhaustif.",
+      "visual_inspection": "not_revisited_this_audit",
+      "inherited_from": "docs/dossier_curien/saga/SOURCES_SAGA.json",
+      "registered_on": "2026-11-20",
+      "accessed_on": null
+    },
+    {
+      "id": "corpus_29",
+      "title": "House of the Dead: Scarlet Dawn – Battle Genesis",
+      "url": "https://www.segasammycreation.com/en/news/detail/39",
+      "evidence_level": "inherited_repo_reference",
+      "usage": "Référence du corpus déjà versionnée ; réexamen des personnages non exhaustif.",
+      "visual_inspection": "not_revisited_this_audit",
+      "inherited_from": "docs/dossier_curien/saga/SOURCES_SAGA.json",
+      "registered_on": "2026-11-20",
+      "accessed_on": null
+    },
+    {
+      "id": "corpus_30",
+      "title": "Winning Cash – House of the Dead Scarlet Dawn on Reels",
+      "url": "https://www.segasammycreation.com/en/games/detail/48",
+      "evidence_level": "inherited_repo_reference",
+      "usage": "Référence du corpus déjà versionnée ; réexamen des personnages non exhaustif.",
+      "visual_inspection": "not_revisited_this_audit",
+      "inherited_from": "docs/dossier_curien/saga/SOURCES_SAGA.json",
+      "registered_on": "2026-11-20",
+      "accessed_on": null
+    },
+    {
+      "id": "corpus_31",
+      "title": "House of the Dead: Reawakened",
+      "url": "https://segaarcade.com/games/house-of-the-dead-reawakened",
+      "evidence_level": "inherited_repo_reference",
+      "usage": "Référence du corpus déjà versionnée ; réexamen des personnages non exhaustif.",
+      "visual_inspection": "not_revisited_this_audit",
+      "inherited_from": "docs/dossier_curien/saga/SOURCES_SAGA.json",
+      "registered_on": "2026-11-20",
+      "accessed_on": null
+    }
+  ]
+}

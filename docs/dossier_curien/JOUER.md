@@ -2,9 +2,19 @@
 
 Depuis le jeu complet, choisissez **Dossier Curien** dans le menu d’arcade. Dans la version autonome, le menu du mode combat apparaît au démarrage.
 
-## Dernier lot du 19 novembre 2026 — 30 poses intégrées
+## Sources du 20 novembre 2026 — deux arènes et extension de galerie
 
-Ce lot complète six combattants avec **30 PNG individuels** : 24 nouvelles générations, quatre poses retrouvées et deux gardes EX corrigées réutilisées. Le jeu conserve **24 combattants, 26 parcours Histoire, 18 arènes, 29 épreuves d’archives et 40 fiches de bestiaire**. Le répertoire graphique Dossier Curien contient désormais 332 PNG.
+Les sources contiennent **24 combattants, 26 parcours Histoire, 20 arènes et 29 épreuves d’archives**. Pour les deux nouvelles arènes, ouvrez **Duel contre IA**, **Duel local** ou **Entraînement**, choisissez les combattants, puis la quatrième page des arènes : **Toit du train — Zombie Revenge** et **Abattoir — Creeping Flesh**. Ces adaptations 2D documentées utilisent chacune trois plans peints. Le [rapport des stages](saga/production/stages_2026-11-20/RAPPORT.md) présente leurs références et leurs limites.
+
+Dans **Bestiaire & personnages**, le sélecteur de jeu accueille les nouvelles collections. La galerie contient **49 fiches : les 40 entrées précédentes et neuf nouvelles illustrations dont le manifeste et le chargement natif ont été vérifiés**. Les mentions **PNJ · non jouable** et **Variante de costume · non jouable** distinguent leur rôle. Les fiches de Varla et Candi signalent une référence visuelle encore à confirmer. Une fiche supplémentaire n’ajoute pas de combattant ni de costume sélectionnable ; les deux tenues de réception de Kate et Ryan restent les variantes équipables existantes.
+
+Consultez le [catalogue des personnages et tenues](saga/production/catalogue_2026-11-20/PERSONNAGES_TENUES.md) et son [registre JSON](saga/production/catalogue_2026-11-20/personnages_tenues.json) pour distinguer les profils jouables, les illustrations, les anciens atlas réutilisables et les productions encore manquantes. Gary, Daniel, Emperor, Wheel of Fate, The World, Moon et Linda sont déjà jouables.
+
+**Pour ce lot, lancez le projet depuis les sources avec Godot 4.7.1. Les PCK et fichiers web du 19 novembre n’ont pas été reconstruits et ne contiennent pas ces deux arènes ni ces nouvelles fiches.** Leurs instructions ci-dessous restent valables pour les contenus qu’ils livrent. Les contrôles locaux des nouvelles arènes ont été exécutés avec Godot 4.6.3 en mode headless ; aucune capture viewport de ce lot n’est revendiquée.
+
+## Lot motion du 19 novembre 2026 — 30 poses intégrées
+
+Ce lot complète six combattants avec **30 PNG individuels** : 24 nouveaux dessins retenus, quatre poses retrouvées et deux gardes EX corrigées réutilisées. À sa livraison, le jeu comptait **24 combattants, 26 parcours Histoire, 18 arènes, 29 épreuves d’archives et 40 fiches de bestiaire**. Le répertoire graphique Dossier Curien contenait alors 332 PNG.
 
 | Combattant | Poses intégrées dans ce lot |
 | --- | --- |

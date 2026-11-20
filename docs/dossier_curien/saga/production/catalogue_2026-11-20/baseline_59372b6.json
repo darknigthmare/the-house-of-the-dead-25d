@@ -1,0 +1,1725 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "repository": "darknigthmare/the-house-of-the-dead-25d",
+  "baseline_commit": "59372b618882da17510351f2a5bd46226682eac4",
+  "baseline_tree": "3d8e18236ade45b9c07e9a49305cfc9628148439",
+  "method": "Arbre Git distant complet pour existence ; fichiers texte du checkout sparse pour sémantique. Les PNG absents localement ne sont pas déclarés manquants si présents dans l’arbre. Aucun hash Git n’est nommé SHA256.",
+  "counts": {
+    "dossier_png_paths": 332,
+    "dossier_unique_git_blobs": 330,
+    "playable_profiles": 24,
+    "gallery_records": 40,
+    "motion_asset_records": 30,
+    "selectable_alternate_costume_art_ids": 2
+  },
+  "duplicated_png_blobs": [
+    {
+      "git_blob_sha": "d0038d7f5e79b3b4a571b65dd872ff64df798967",
+      "paths": [
+        "assets/dossier_curien/expansion/hotd_ex/zobiko_ex_guard_v2.png",
+        "assets/dossier_curien/motion_2026-11-19/zobiko_guard.png"
+      ]
+    },
+    {
+      "git_blob_sha": "b784270ba3971c15a08e685a41b1575fadb14e78",
+      "paths": [
+        "assets/dossier_curien/expansion/hotd_ex/zobio_ex_guard_v2.png",
+        "assets/dossier_curien/motion_2026-11-19/zobio_guard.png"
+      ]
+    }
+  ],
+  "published_pngs": [
+    {
+      "path": "assets/dossier_curien/chariot_contact.png",
+      "git_blob_sha": "c22c01d31232de28b888b156d694feedeb215ffd",
+      "bytes": 525114
+    },
+    {
+      "path": "assets/dossier_curien/chariot_guard.png",
+      "git_blob_sha": "85399d4eb80be2c424c22b0b7890d601f1f1d2b8",
+      "bytes": 525129
+    },
+    {
+      "path": "assets/dossier_curien/chariot_recoil.png",
+      "git_blob_sha": "415a2f2a36a26bbce16edf1e27fa5e090d80706f",
+      "bytes": 543502
+    },
+    {
+      "path": "assets/dossier_curien/chariot_recovery.png",
+      "git_blob_sha": "f42e2e08cf05960f7bdf7b1cf8487a95060690d0",
+      "bytes": 508375
+    },
+    {
+      "path": "assets/dossier_curien/chariot_select.png",
+      "git_blob_sha": "bee2c66ef71e2a44dcc804ecf44fd623f5284c50",
+      "bytes": 1106777
+    },
+    {
+      "path": "assets/dossier_curien/chariot_windup.png",
+      "git_blob_sha": "4db5a253adabb19eb67a1fab83a7e56da3faa7f7",
+      "bytes": 524083
+    },
+    {
+      "path": "assets/dossier_curien/court_back.png",
+      "git_blob_sha": "59d2bc9b59e0813d02092c04f507ab3cd23133b4",
+      "bytes": 2603497
+    },
+    {
+      "path": "assets/dossier_curien/court_front.png",
+      "git_blob_sha": "c0de712a90b32c7a4d392ee66eacd0a34e13fe3c",
+      "bytes": 70172
+    },
+    {
+      "path": "assets/dossier_curien/court_mid.png",
+      "git_blob_sha": "6a09e8a2333d536e1c64c410f2c49b3b05216b5b",
+      "bytes": 26455
+    },
+    {
+      "path": "assets/dossier_curien/expansion/hotd_ex/empress_ex_guard.png",
+      "git_blob_sha": "c61ac7a57c9903d63a5dd02cf3d1f9e2cd9d5159",
+      "bytes": 1455187
+    },
+    {
+      "path": "assets/dossier_curien/expansion/hotd_ex/justice_ex_guard.png",
+      "git_blob_sha": "f02503dc9279aa84b5468b3360cf1374b50f5364",
+      "bytes": 2087061
+    },
+    {
+      "path": "assets/dossier_curien/expansion/hotd_ex/lovers_ex_guard.png",
+      "git_blob_sha": "803ad4b1ffd0d189d098c589337d8a007d41e5ed",
+      "bytes": 1415609
+    },
+    {
+      "path": "assets/dossier_curien/expansion/hotd_ex/star_ex_guard.png",
+      "git_blob_sha": "ce689d812655375a9cddeed60afd77ff13b72952",
+      "bytes": 1118306
+    },
+    {
+      "path": "assets/dossier_curien/expansion/hotd_ex/temperance_ex_guard.png",
+      "git_blob_sha": "ece8a68d67aec2bacb3278116065a541733e458f",
+      "bytes": 1386925
+    },
+    {
+      "path": "assets/dossier_curien/expansion/hotd_ex/zobiko_ex_guard_v2.png",
+      "git_blob_sha": "d0038d7f5e79b3b4a571b65dd872ff64df798967",
+      "bytes": 893644
+    },
+    {
+      "path": "assets/dossier_curien/expansion/hotd_ex/zobio_ex_guard_v2.png",
+      "git_blob_sha": "b784270ba3971c15a08e685a41b1575fadb14e78",
+      "bytes": 1261512
+    },
+    {
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/black_magician_idle.png",
+      "git_blob_sha": "3319b7467a9167f3a02b129d5fb950738ca34e3c",
+      "bytes": 994755
+    },
+    {
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/neclien_idle.png",
+      "git_blob_sha": "d661f72d213cd402e5bba4d3cdacc88ecdc5f0c4",
+      "bytes": 1054591
+    },
+    {
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/nikelle_idle.png",
+      "git_blob_sha": "11e77633e6c7d21b916419e05f7ecfc4d40ce56a",
+      "bytes": 1306769
+    },
+    {
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/shell_hedlin_idle.png",
+      "git_blob_sha": "1f3bdcdc828788f1857ff5f97259e0d0fbb08c3a",
+      "bytes": 949895
+    },
+    {
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/uds02_idle.png",
+      "git_blob_sha": "02aeb271dd52e121e4342916d4bb07e7820fadb6",
+      "bytes": 959283
+    },
+    {
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/uds03_idle.png",
+      "git_blob_sha": "1111a4e87889f121466496a307fcbb0041e019f2",
+      "bytes": 1170296
+    },
+    {
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/uds04c_idle.png",
+      "git_blob_sha": "0976f175a00d4cd09a7c08cb4de7c2f731451e4d",
+      "bytes": 2046506
+    },
+    {
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/uds05_idle.png",
+      "git_blob_sha": "a800d71844a6dafd0c1cd5734b609f6d62e750a3",
+      "bytes": 2009501
+    },
+    {
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/uds06b_idle.png",
+      "git_blob_sha": "62bfb13427341459e42f185d2288880f9c956e69",
+      "bytes": 1534747
+    },
+    {
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/uds_tpii_00_idle.png",
+      "git_blob_sha": "aedd096ca79d86d594078d28d204892eaccbd78e",
+      "bytes": 852042
+    },
+    {
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/uds_tpii_01_idle.png",
+      "git_blob_sha": "a353de5b9a9a936e72126934ec39fb285c67f9b7",
+      "bytes": 789265
+    },
+    {
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/warm_hedlin_idle.png",
+      "git_blob_sha": "e657dd8300515825ece29d4578726c2337da65a5",
+      "bytes": 1127545
+    },
+    {
+      "path": "assets/dossier_curien/expansion/zombie_revenge_bosses/zed_idle.png",
+      "git_blob_sha": "9fa9bf0c5729d35a9b68834efce3792e34f751e8",
+      "bytes": 1437139
+    },
+    {
+      "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_contact.png",
+      "git_blob_sha": "139a69327c11cf88af283de0bda75104fae84729",
+      "bytes": 1749143
+    },
+    {
+      "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_crouch.png",
+      "git_blob_sha": "888d4e353889d7cb17cf9611bff5e7c9f8ff143c",
+      "bytes": 1639978
+    },
+    {
+      "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_crouch_guard.png",
+      "git_blob_sha": "f510bb370cf1687e6e2ce59d5b6683273a5fbce2",
+      "bytes": 1618807
+    },
+    {
+      "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_recoil.png",
+      "git_blob_sha": "ef815ed3db8bf713d8c21466b81e0fdc87821aae",
+      "bytes": 1891358
+    },
+    {
+      "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_recovery.png",
+      "git_blob_sha": "b9d4df1b485eb1230c515ab934f2506fa335255a",
+      "bytes": 1711910
+    },
+    {
+      "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_rotta_base.png",
+      "git_blob_sha": "311090273f7ad133baa7a32b9ba06891e5dad676",
+      "bytes": 1721175
+    },
+    {
+      "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_slide_contact.png",
+      "git_blob_sha": "117bd71d99c5fbc61cc33d904e7d22bdb055dfcb",
+      "bytes": 1448958
+    },
+    {
+      "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_walk1.png",
+      "git_blob_sha": "e9583053737d671885245a6adfb2186c9a00fa70",
+      "bytes": 1700467
+    },
+    {
+      "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_walk2.png",
+      "git_blob_sha": "51884bf3c2c1e0d29a887276d1e8c7ff64fb5444",
+      "bytes": 1733897
+    },
+    {
+      "path": "assets/dossier_curien/expansion/zombie_revenge_characters/linda_windup.png",
+      "git_blob_sha": "559f43a5ea09dbaa4b31c160d0ddc16949b85edc",
+      "bytes": 1778255
+    },
+    {
+      "path": "assets/dossier_curien/expansion/zombie_revenge_characters/marco_cloud_portrait.png",
+      "git_blob_sha": "8c4aa9633e41fd6490526e9f9914969573796b5d",
+      "bytes": 1994036
+    },
+    {
+      "path": "assets/dossier_curien/expansion/zombie_revenge_characters/yoko_portrait.png",
+      "git_blob_sha": "5082bb5327627cbce83a51eb2a1ef2e5398268a7",
+      "bytes": 2154933
+    },
+    {
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/bat_zombie_base.png",
+      "git_blob_sha": "9b41844b8d9588ef81627c252098c17bfec0107c",
+      "bytes": 947565
+    },
+    {
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/biff_base.png",
+      "git_blob_sha": "3a62e88b0e47e5f3827233400543374001d0ce59",
+      "bytes": 909621
+    },
+    {
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/buddy_base.png",
+      "git_blob_sha": "4606ef3bb4b83d4cb80b1eb9bd61bfb97703a82e",
+      "bytes": 1005802
+    },
+    {
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/ebitan_base.png",
+      "git_blob_sha": "54699543c7448ad81a6efeb135d85e0e6d8ca244",
+      "bytes": 619487
+    },
+    {
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/factory_worker_1_base.png",
+      "git_blob_sha": "1cbe454d9acf1de71efb6d2c0b1517302b09eaac",
+      "bytes": 981577
+    },
+    {
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/factory_worker_2_base.png",
+      "git_blob_sha": "33ad7d23c905d6b7123cdd21e665abde7dffbffe",
+      "bytes": 1005612
+    },
+    {
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/frog_base.png",
+      "git_blob_sha": "03a6926c9c29775319b69119143e5db6c6044ad9",
+      "bytes": 1698481
+    },
+    {
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/hedgeros_base.png",
+      "git_blob_sha": "e377bcb0eb2658c390e1f5c72ae8679d099911ca",
+      "bytes": 1569249
+    },
+    {
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/hedlin_base.png",
+      "git_blob_sha": "b28e78c8853e4a1c526e3886ff59091e7f0cbf95",
+      "bytes": 1440097
+    },
+    {
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/hedrian_base.png",
+      "git_blob_sha": "c487d9548fca009ec9ac212d66cb19776ccc8a3f",
+      "bytes": 866897
+    },
+    {
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/hermonkey_base.png",
+      "git_blob_sha": "f66a37daaf028db2a8d7918e65f608e80e3e8112",
+      "bytes": 1152036
+    },
+    {
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/latch_base.png",
+      "git_blob_sha": "4ba87df6783d4b1efcff78b87faa8a7bf1e8c09a",
+      "bytes": 1753723
+    },
+    {
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/mansion_zombie_1_base.png",
+      "git_blob_sha": "01012c8983cb71409f36a9b5962a358abc053a82",
+      "bytes": 832783
+    },
+    {
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/mansion_zombie_2_base.png",
+      "git_blob_sha": "d9b638de6f59ec88890f9b1db1dde1428c766485",
+      "bytes": 872617
+    },
+    {
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/mccoy_base.png",
+      "git_blob_sha": "06d5e0232d58a978ce94939894d279850b96d9c0",
+      "bytes": 780699
+    },
+    {
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/mecha_zombie_base.png",
+      "git_blob_sha": "5308d71d105c6518b13fcdc228d4390ab067f62e",
+      "bytes": 676542
+    },
+    {
+      "path": "assets/dossier_curien/expansion/zombie_revenge_enemies/mummy_base.png",
+      "git_blob_sha": "7e818c875e608142b179c7c8949811c2124b8f85",
+      "bytes": 1545469
+    },
+    {
+      "path": "assets/dossier_curien/g_contact.png",
+      "git_blob_sha": "1d50b7bd4cfae8ecf1bd6aecc13d4d62c5d81990",
+      "bytes": 534446
+    },
+    {
+      "path": "assets/dossier_curien/g_guard.png",
+      "git_blob_sha": "34075e8e6778f4a4053cbea73c93713eb33c18f8",
+      "bytes": 318328
+    },
+    {
+      "path": "assets/dossier_curien/g_recoil.png",
+      "git_blob_sha": "437ae568f95888c7f66fc5a1e52b1f8cc412fb8b",
+      "bytes": 585946
+    },
+    {
+      "path": "assets/dossier_curien/g_recovery.png",
+      "git_blob_sha": "4a51506f693955ae7f8872ab37d2f41995c4e57f",
+      "bytes": 505987
+    },
+    {
+      "path": "assets/dossier_curien/g_select.png",
+      "git_blob_sha": "e968ee9217a7ba0f0884d21e6a0e020d3045a0cf",
+      "bytes": 978639
+    },
+    {
+      "path": "assets/dossier_curien/g_windup.png",
+      "git_blob_sha": "74d8db1241a86d6132b480f7e4ee377f7b5e691d",
+      "bytes": 506216
+    },
+    {
+      "path": "assets/dossier_curien/magician_contact.png",
+      "git_blob_sha": "0922a2509bc798fb04f05245e62de1295ef124f6",
+      "bytes": 745478
+    },
+    {
+      "path": "assets/dossier_curien/magician_guard.png",
+      "git_blob_sha": "3aaae66095a04c8b3f6d08e78bc07efaa34a0738",
+      "bytes": 379712
+    },
+    {
+      "path": "assets/dossier_curien/magician_recoil.png",
+      "git_blob_sha": "04aca6ed83d47cd4b67116e55b6c022f77eff43c",
+      "bytes": 700138
+    },
+    {
+      "path": "assets/dossier_curien/magician_recovery.png",
+      "git_blob_sha": "21ed1c2643056878698f48e8ad6636e18d9d43c1",
+      "bytes": 699226
+    },
+    {
+      "path": "assets/dossier_curien/magician_select.png",
+      "git_blob_sha": "89a75ded0c7396573517c5a866515c5a3ae6d208",
+      "bytes": 1064946
+    },
+    {
+      "path": "assets/dossier_curien/magician_windup.png",
+      "git_blob_sha": "47d6aa284aaab62eb2e810f205d6d2ac22234aa9",
+      "bytes": 669096
+    },
+    {
+      "path": "assets/dossier_curien/motion_2026-11-19/linda_block.png",
+      "git_blob_sha": "045cb979aa581c26d56e51848ad22c5bfe9e054a",
+      "bytes": 1743939
+    },
+    {
+      "path": "assets/dossier_curien/motion_2026-11-19/linda_finish.png",
+      "git_blob_sha": "cc8735ce96e7461d0771feb76d0cd6f8d0a68b90",
+      "bytes": 1532990
+    },
+    {
+      "path": "assets/dossier_curien/motion_2026-11-19/linda_jump_fall.png",
+      "git_blob_sha": "b9518d0b01db7cbf4ff606c5e83a88dc1a0f81a1",
+      "bytes": 1673285
+    },
+    {
+      "path": "assets/dossier_curien/motion_2026-11-19/linda_jump_rise.png",
+      "git_blob_sha": "36234ae65b6f6825a3602ba090d479947b51ec66",
+      "bytes": 1619241
+    },
+    {
+      "path": "assets/dossier_curien/motion_2026-11-19/linda_reload.png",
+      "git_blob_sha": "0ea7324212fc21777a4289850bb6aeba9d47f533",
+      "bytes": 1768257
+    },
+    {
+      "path": "assets/dossier_curien/motion_2026-11-19/linda_taunt.png",
+      "git_blob_sha": "cb792cd1b50c35312b627fc0878ad213493a2fdd",
+      "bytes": 1708889
+    },
+    {
+      "path": "assets/dossier_curien/motion_2026-11-19/linda_throw.png",
+      "git_blob_sha": "9f0f4c5253b85840e3f6790c51c66581121eb49b",
+      "bytes": 1682090
+    },
+    {
+      "path": "assets/dossier_curien/motion_2026-11-19/linda_victory.png",
+      "git_blob_sha": "8065ae18621ddf57722667e78e5d2cced28b8689",
+      "bytes": 1770080
+    },
+    {
+      "path": "assets/dossier_curien/motion_2026-11-19/rikiya_recovery.png",
+      "git_blob_sha": "48498966934a76df7a56894c341dc12eeb0e01eb",
+      "bytes": 816047
+    },
+    {
+      "path": "assets/dossier_curien/motion_2026-11-19/rikiya_walk1.png",
+      "git_blob_sha": "bc7b88f8e3ea06262d285de7243b302987093018",
+      "bytes": 703105
+    },
+    {
+      "path": "assets/dossier_curien/motion_2026-11-19/rikiya_walk2.png",
+      "git_blob_sha": "817eafed19378a6c8579dda8515da9c056e30789",
+      "bytes": 779531
+    },
+    {
+      "path": "assets/dossier_curien/motion_2026-11-19/rogan_crouch.png",
+      "git_blob_sha": "eb37342e44ace33ec7880004729c888b2babbf07",
+      "bytes": 1299986
+    },
+    {
+      "path": "assets/dossier_curien/motion_2026-11-19/rogan_jump_rise.png",
+      "git_blob_sha": "4d02af7b7a02dfdeb1b82af5c1c5193ee71e286b",
+      "bytes": 1276194
+    },
+    {
+      "path": "assets/dossier_curien/motion_2026-11-19/stick_recovery.png",
+      "git_blob_sha": "d28d2ced0d98edf10017dc2e8ddc748b3ccc5fbd",
+      "bytes": 773864
+    },
+    {
+      "path": "assets/dossier_curien/motion_2026-11-19/stick_walk1.png",
+      "git_blob_sha": "0cc90c42fc2ab060585985b14f25834573f93759",
+      "bytes": 750652
+    },
+    {
+      "path": "assets/dossier_curien/motion_2026-11-19/stick_walk2.png",
+      "git_blob_sha": "5a1da8f01d4e7c4644d0a5e7a1589d59203ddaa7",
+      "bytes": 770682
+    },
+    {
+      "path": "assets/dossier_curien/motion_2026-11-19/zobiko_contact.png",
+      "git_blob_sha": "f548016175f63c2b504f03eaf434126c0f5e9e7f",
+      "bytes": 986014
+    },
+    {
+      "path": "assets/dossier_curien/motion_2026-11-19/zobiko_guard.png",
+      "git_blob_sha": "d0038d7f5e79b3b4a571b65dd872ff64df798967",
+      "bytes": 893644
+    },
+    {
+      "path": "assets/dossier_curien/motion_2026-11-19/zobiko_recoil.png",
+      "git_blob_sha": "92bf404bb06dbc60d03cd5212deae1f3b06cfe4f",
+      "bytes": 1042312
+    },
+    {
+      "path": "assets/dossier_curien/motion_2026-11-19/zobiko_recovery.png",
+      "git_blob_sha": "9a7c8e990790b1c42e3bbe91af406763af801457",
+      "bytes": 848586
+    },
+    {
+      "path": "assets/dossier_curien/motion_2026-11-19/zobiko_walk1.png",
+      "git_blob_sha": "bf2b8b747388f629952795928ae12f4352562ab4",
+      "bytes": 851086
+    },
+    {
+      "path": "assets/dossier_curien/motion_2026-11-19/zobiko_walk2.png",
+      "git_blob_sha": "3b7286f2f1ce02c461219e7c17d4d0136be9a44d",
+      "bytes": 863329
+    },
+    {
+      "path": "assets/dossier_curien/motion_2026-11-19/zobiko_windup.png",
+      "git_blob_sha": "0f15567248a7b0bbcb20c064dc9771e7fbc8f455",
+      "bytes": 940478
+    },
+    {
+      "path": "assets/dossier_curien/motion_2026-11-19/zobio_contact.png",
+      "git_blob_sha": "78fd712603b52981b2adc2c0b32eed227dac8dbf",
+      "bytes": 1275049
+    },
+    {
+      "path": "assets/dossier_curien/motion_2026-11-19/zobio_guard.png",
+      "git_blob_sha": "b784270ba3971c15a08e685a41b1575fadb14e78",
+      "bytes": 1261512
+    },
+    {
+      "path": "assets/dossier_curien/motion_2026-11-19/zobio_recoil.png",
+      "git_blob_sha": "9ae529c9ff8079fa0ecb73d49a49dec45c8d1ce8",
+      "bytes": 1342546
+    },
+    {
+      "path": "assets/dossier_curien/motion_2026-11-19/zobio_recovery.png",
+      "git_blob_sha": "aea4c70540aab9ba46ed1ab86e338b87e78468f8",
+      "bytes": 1173319
+    },
+    {
+      "path": "assets/dossier_curien/motion_2026-11-19/zobio_walk1.png",
+      "git_blob_sha": "23e0aac9eb59faaab1768528ac734734d545f030",
+      "bytes": 1121270
+    },
+    {
+      "path": "assets/dossier_curien/motion_2026-11-19/zobio_walk2.png",
+      "git_blob_sha": "1006b84350368d26162a64ff52de3ffa640041e6",
+      "bytes": 1174571
+    },
+    {
+      "path": "assets/dossier_curien/motion_2026-11-19/zobio_windup.png",
+      "git_blob_sha": "cf47973a339ac959052f8fc91602adbd08decbcc",
+      "bytes": 1453092
+    },
+    {
+      "path": "assets/dossier_curien/rogan_contact.png",
+      "git_blob_sha": "b1dbcefb0ec1edb260fc0f6014ab9326b3bc06c1",
+      "bytes": 774576
+    },
+    {
+      "path": "assets/dossier_curien/rogan_ending.png",
+      "git_blob_sha": "eba9f7f79384a09a673ada302107c6d844ad78a4",
+      "bytes": 2404587
+    },
+    {
+      "path": "assets/dossier_curien/rogan_guard.png",
+      "git_blob_sha": "2f93537b6c2f169c97e5cc547741818ececce367",
+      "bytes": 469130
+    },
+    {
+      "path": "assets/dossier_curien/rogan_intro.png",
+      "git_blob_sha": "af00305c51d52bb2b0df86e86d0d122212918063",
+      "bytes": 2471758
+    },
+    {
+      "path": "assets/dossier_curien/rogan_recoil.png",
+      "git_blob_sha": "e3cba766c29638483362c8e916178615fa03219c",
+      "bytes": 820987
+    },
+    {
+      "path": "assets/dossier_curien/rogan_recovery.png",
+      "git_blob_sha": "a92a4d942f5c8c9f09056e0cc61646468bfea7ab",
+      "bytes": 745628
+    },
+    {
+      "path": "assets/dossier_curien/rogan_rival.png",
+      "git_blob_sha": "c667afac81d1c9b15a3b55c838ecfb5a7d786b4b",
+      "bytes": 2279970
+    },
+    {
+      "path": "assets/dossier_curien/rogan_select.png",
+      "git_blob_sha": "811bf4418ea39cf2cb5ae38917bd87c456dd618b",
+      "bytes": 1115708
+    },
+    {
+      "path": "assets/dossier_curien/rogan_windup.png",
+      "git_blob_sha": "325311bbcc65e452c8ca040a6c87b3491325f2b7",
+      "bytes": 683450
+    },
+    {
+      "path": "assets/dossier_curien/saga/bayou_back.png",
+      "git_blob_sha": "599caf55debfe2ddaa0cdabf19604ed8cd8124dd",
+      "bytes": 2302602
+    },
+    {
+      "path": "assets/dossier_curien/saga/bayou_front.png",
+      "git_blob_sha": "080f04b528f8a71df320bd70f9d153d7bf234395",
+      "bytes": 108997
+    },
+    {
+      "path": "assets/dossier_curien/saga/bayou_mid.png",
+      "git_blob_sha": "1658e5f8e0b241c74586d74e5562b2db0be9485f",
+      "bytes": 65285
+    },
+    {
+      "path": "assets/dossier_curien/saga/carnival_back.png",
+      "git_blob_sha": "5a3b198c0bf5050d04585f5c80e457f191f4cdcf",
+      "bytes": 2519940
+    },
+    {
+      "path": "assets/dossier_curien/saga/carnival_front.png",
+      "git_blob_sha": "57b83da1dbff60b757f6988a9b825f582c05eb20",
+      "bytes": 184224
+    },
+    {
+      "path": "assets/dossier_curien/saga/carnival_mid.png",
+      "git_blob_sha": "611567dcf5d4336db3d6467761e752fc309e0cd3",
+      "bytes": 252496
+    },
+    {
+      "path": "assets/dossier_curien/saga/citydespair_back.png",
+      "git_blob_sha": "3ab696612dff62154235c8291e58499efdda9aab",
+      "bytes": 2860346
+    },
+    {
+      "path": "assets/dossier_curien/saga/citydespair_front.png",
+      "git_blob_sha": "75e3c18b74b373845770bca30861f739f873f5ba",
+      "bytes": 153320
+    },
+    {
+      "path": "assets/dossier_curien/saga/citydespair_mid.png",
+      "git_blob_sha": "0164119c9f886eeef41f98e7169191c08153f72f",
+      "bytes": 157964
+    },
+    {
+      "path": "assets/dossier_curien/saga/clocktower_back.png",
+      "git_blob_sha": "037665802a2d0734cec59f03ab195f016acf60ac",
+      "bytes": 2548708
+    },
+    {
+      "path": "assets/dossier_curien/saga/clocktower_front.png",
+      "git_blob_sha": "c0735390511af63b61d3c90d9f79cdaaf6c59c37",
+      "bytes": 198923
+    },
+    {
+      "path": "assets/dossier_curien/saga/clocktower_mid.png",
+      "git_blob_sha": "601271d95493e560d21e8c00ebd7a8f709f6a44a",
+      "bytes": 138753
+    },
+    {
+      "path": "assets/dossier_curien/saga/daniel_contact.png",
+      "git_blob_sha": "cab102d4711fc3fbd72f6589d790b2c4d1d75cbb",
+      "bytes": 507177
+    },
+    {
+      "path": "assets/dossier_curien/saga/daniel_ending.png",
+      "git_blob_sha": "d3553438905cc258afd08ae171a0f65a6f8db91c",
+      "bytes": 1840025
+    },
+    {
+      "path": "assets/dossier_curien/saga/daniel_guard.png",
+      "git_blob_sha": "5dd3483207e54d2fe5d4caefdf89c8b7e39c1b63",
+      "bytes": 356088
+    },
+    {
+      "path": "assets/dossier_curien/saga/daniel_intro.png",
+      "git_blob_sha": "2e538c0df8c5f32710dcfe864c207ea7f10ce5d2",
+      "bytes": 1727340
+    },
+    {
+      "path": "assets/dossier_curien/saga/daniel_recoil.png",
+      "git_blob_sha": "8340bc5c58afeb7fd0c544c08c91bca293479d9f",
+      "bytes": 360635
+    },
+    {
+      "path": "assets/dossier_curien/saga/daniel_rival.png",
+      "git_blob_sha": "3e386310f86b4b0fe6d726078212fa66c6ca2a17",
+      "bytes": 1792100
+    },
+    {
+      "path": "assets/dossier_curien/saga/daniel_select.png",
+      "git_blob_sha": "249c7166c837e87093508802901c2babe0d284db",
+      "bytes": 622354
+    },
+    {
+      "path": "assets/dossier_curien/saga/daniel_walk1.png",
+      "git_blob_sha": "fc11bd2ffb96dd0f01d00d5f955f1649d91d7090",
+      "bytes": 399138
+    },
+    {
+      "path": "assets/dossier_curien/saga/daniel_walk2.png",
+      "git_blob_sha": "a25ae6aefbf413d82db6d0d35953cdafaddab901",
+      "bytes": 313168
+    },
+    {
+      "path": "assets/dossier_curien/saga/daniel_windup.png",
+      "git_blob_sha": "d65953abd9052ab8342b29be0e92c07f2b419de8",
+      "bytes": 404884
+    },
+    {
+      "path": "assets/dossier_curien/saga/death_contact.png",
+      "git_blob_sha": "1f281956b75bfe95ed6d8e89deea1ec519baba72",
+      "bytes": 1037988
+    },
+    {
+      "path": "assets/dossier_curien/saga/death_guard.png",
+      "git_blob_sha": "50c5b466c3762afe4091c5905e21934111ff0800",
+      "bytes": 828575
+    },
+    {
+      "path": "assets/dossier_curien/saga/death_recoil.png",
+      "git_blob_sha": "1cd9deee5a41b48ff734f62b12f908cc4bd94a09",
+      "bytes": 785296
+    },
+    {
+      "path": "assets/dossier_curien/saga/death_select.png",
+      "git_blob_sha": "2cacf61ebe6a66d0b034eb2e1e3c284313c18bbe",
+      "bytes": 1008740
+    },
+    {
+      "path": "assets/dossier_curien/saga/death_windup.png",
+      "git_blob_sha": "9085877a668f63a939c7fad01e0b0f5342045658",
+      "bytes": 734339
+    },
+    {
+      "path": "assets/dossier_curien/saga/efi_back.png",
+      "git_blob_sha": "632141b1fc90f44793dc9a6fcff337e5673a565b",
+      "bytes": 2510040
+    },
+    {
+      "path": "assets/dossier_curien/saga/efi_front.png",
+      "git_blob_sha": "9fa4e8ec6358eeddfa941e2fc25568ba3c6049d2",
+      "bytes": 323987
+    },
+    {
+      "path": "assets/dossier_curien/saga/efi_mid.png",
+      "git_blob_sha": "c4fa78d64ac261bf71e7ebee06da332fd38560f0",
+      "bytes": 256786
+    },
+    {
+      "path": "assets/dossier_curien/saga/emperor_contact.png",
+      "git_blob_sha": "6171f7c1450fe911581b430ae665b51d11843e37",
+      "bytes": 654149
+    },
+    {
+      "path": "assets/dossier_curien/saga/emperor_ending.png",
+      "git_blob_sha": "61f33df1690d733fd4c25938e389872fe98c32d8",
+      "bytes": 2178185
+    },
+    {
+      "path": "assets/dossier_curien/saga/emperor_guard.png",
+      "git_blob_sha": "9b5a474fff032ba20af681f7243b7dbe8139f0df",
+      "bytes": 432162
+    },
+    {
+      "path": "assets/dossier_curien/saga/emperor_intro.png",
+      "git_blob_sha": "b51846605100f088a870b70c0450c6d6a6c8ecff",
+      "bytes": 2489645
+    },
+    {
+      "path": "assets/dossier_curien/saga/emperor_recoil.png",
+      "git_blob_sha": "87a92be96e22d68c26013d22d87b87cfa04f8cd4",
+      "bytes": 507669
+    },
+    {
+      "path": "assets/dossier_curien/saga/emperor_rival.png",
+      "git_blob_sha": "189d4c880affed4e91d73c06389f5b529843bbb2",
+      "bytes": 2755218
+    },
+    {
+      "path": "assets/dossier_curien/saga/emperor_select.png",
+      "git_blob_sha": "13babad9b3096b8e03287613806238a3332fa7ff",
+      "bytes": 866192
+    },
+    {
+      "path": "assets/dossier_curien/saga/emperor_windup.png",
+      "git_blob_sha": "99fc9e3023833944f8126310ac0bdaadc7bd1941",
+      "bytes": 486400
+    },
+    {
+      "path": "assets/dossier_curien/saga/ex_back.png",
+      "git_blob_sha": "14283c7fa6222ff5ad0d266b39dc86de0c3c2724",
+      "bytes": 2445228
+    },
+    {
+      "path": "assets/dossier_curien/saga/ex_duo.png",
+      "git_blob_sha": "168b2f1975a95ee1badc9d5cf4b99527a9cabddb",
+      "bytes": 1020664
+    },
+    {
+      "path": "assets/dossier_curien/saga/ex_ending.png",
+      "git_blob_sha": "be33033f416ce677a232f1193dff2e01bb966aee",
+      "bytes": 2468076
+    },
+    {
+      "path": "assets/dossier_curien/saga/ex_front.png",
+      "git_blob_sha": "f4f6c162118f70759528dea250a01b82034cf343",
+      "bytes": 125142
+    },
+    {
+      "path": "assets/dossier_curien/saga/ex_intro.png",
+      "git_blob_sha": "731d7f146a80ef6963c134c5aa623146998a1cae",
+      "bytes": 2556069
+    },
+    {
+      "path": "assets/dossier_curien/saga/ex_mid.png",
+      "git_blob_sha": "4dd2bc1d9a4c8295db67dba0b216fd19afdf7f41",
+      "bytes": 162227
+    },
+    {
+      "path": "assets/dossier_curien/saga/ex_rival.png",
+      "git_blob_sha": "7733e681ce6302582c32f2a10e51fb17fe93544a",
+      "bytes": 2531308
+    },
+    {
+      "path": "assets/dossier_curien/saga/gary_contact.png",
+      "git_blob_sha": "df4c8eaf0fb25b1dfb48be6ecc914731ed589c69",
+      "bytes": 428757
+    },
+    {
+      "path": "assets/dossier_curien/saga/gary_ending.png",
+      "git_blob_sha": "b28e3d3d562a6020c10894bcb3bf165933f3bb4c",
+      "bytes": 2277630
+    },
+    {
+      "path": "assets/dossier_curien/saga/gary_guard.png",
+      "git_blob_sha": "f29374ecdb09c13172b68b0581660ce29328dab2",
+      "bytes": 369815
+    },
+    {
+      "path": "assets/dossier_curien/saga/gary_intro.png",
+      "git_blob_sha": "49454d9011aaac7b3f79a5a33db3a10b6690bec9",
+      "bytes": 2697057
+    },
+    {
+      "path": "assets/dossier_curien/saga/gary_melee.png",
+      "git_blob_sha": "e451788cd41abbe4a96482066defe5d927278135",
+      "bytes": 444677
+    },
+    {
+      "path": "assets/dossier_curien/saga/gary_recoil.png",
+      "git_blob_sha": "9f39d0f8f572629481bd3fd3c95cd9f6ad40956d",
+      "bytes": 492972
+    },
+    {
+      "path": "assets/dossier_curien/saga/gary_rival.png",
+      "git_blob_sha": "c76f0e76492137556733f015ed417b8d405f9467",
+      "bytes": 2889456
+    },
+    {
+      "path": "assets/dossier_curien/saga/gary_select.png",
+      "git_blob_sha": "19d1d2a9ff4084b93cf13d8e3cfa1cade1f04b81",
+      "bytes": 658062
+    },
+    {
+      "path": "assets/dossier_curien/saga/gary_walk1.png",
+      "git_blob_sha": "bb76e54bc4b6523c34f04de2022ccb8a9fcb0f0b",
+      "bytes": 400181
+    },
+    {
+      "path": "assets/dossier_curien/saga/gary_walk2.png",
+      "git_blob_sha": "c791d3748542e37f69f49e70fd08081540319610",
+      "bytes": 326946
+    },
+    {
+      "path": "assets/dossier_curien/saga/gary_windup.png",
+      "git_blob_sha": "fd3dfd5f29b0af72b7153ee95f8d7ba8bae925d1",
+      "bytes": 467122
+    },
+    {
+      "path": "assets/dossier_curien/saga/goldman_back.png",
+      "git_blob_sha": "081f68e796b3d299cd5c2ad73d8db091250824ae",
+      "bytes": 2188183
+    },
+    {
+      "path": "assets/dossier_curien/saga/goldman_front.png",
+      "git_blob_sha": "946c80da0c80135d2cd21a6351f0601590628de1",
+      "bytes": 81004
+    },
+    {
+      "path": "assets/dossier_curien/saga/goldman_mid.png",
+      "git_blob_sha": "ce1be5bf1614d00ec326c4128b7d79567c3095b6",
+      "bytes": 103790
+    },
+    {
+      "path": "assets/dossier_curien/saga/hierophant_contact.png",
+      "git_blob_sha": "031d0425a12243cd096357946ffa165cbf5379ce",
+      "bytes": 1297092
+    },
+    {
+      "path": "assets/dossier_curien/saga/hierophant_guard.png",
+      "git_blob_sha": "4e94f04e65195596319d3b36b0bb415affc18cc2",
+      "bytes": 966122
+    },
+    {
+      "path": "assets/dossier_curien/saga/hierophant_recoil.png",
+      "git_blob_sha": "b4b537f88a5a1dc59dd744dd12baf233d7603b84",
+      "bytes": 914053
+    },
+    {
+      "path": "assets/dossier_curien/saga/hierophant_select.png",
+      "git_blob_sha": "ae1f6bfe0869a29bb609de4833a74d9871cece06",
+      "bytes": 955898
+    },
+    {
+      "path": "assets/dossier_curien/saga/hierophant_windup.png",
+      "git_blob_sha": "31b46df06a62a7769fd52fa45d4ac3e8a1375895",
+      "bytes": 1432018
+    },
+    {
+      "path": "assets/dossier_curien/saga/hotd2_ending.png",
+      "git_blob_sha": "7003517a9a0e83b1e6cfe47deae13ea4d05f15d5",
+      "bytes": 2403166
+    },
+    {
+      "path": "assets/dossier_curien/saga/hotd2_final.png",
+      "git_blob_sha": "69f520e4935a32963915a2cd5f910275736585bb",
+      "bytes": 2469010
+    },
+    {
+      "path": "assets/dossier_curien/saga/hotd2_intro.png",
+      "git_blob_sha": "a3430ab864714e75d78195be5d01adea7a7b58f8",
+      "bytes": 2284968
+    },
+    {
+      "path": "assets/dossier_curien/saga/hotd2_rival.png",
+      "git_blob_sha": "75980beb32366b18cd255ae64b253b9c4515371c",
+      "bytes": 2894037
+    },
+    {
+      "path": "assets/dossier_curien/saga/hotd3_ending.png",
+      "git_blob_sha": "52775b19aa8fc0cfbe5cdf28e22b4317c5cd95bc",
+      "bytes": 2189053
+    },
+    {
+      "path": "assets/dossier_curien/saga/hotd3_final.png",
+      "git_blob_sha": "14f85c8a47e66949046fd95df21334a2501304fb",
+      "bytes": 2664184
+    },
+    {
+      "path": "assets/dossier_curien/saga/hotd3_intro.png",
+      "git_blob_sha": "d7d1f24e1a0b594cb82daed989e1df23473ec9cd",
+      "bytes": 2280051
+    },
+    {
+      "path": "assets/dossier_curien/saga/hotd3_rival.png",
+      "git_blob_sha": "fc3ab536ff5b912b476dae955503b3690e64bc78",
+      "bytes": 2336465
+    },
+    {
+      "path": "assets/dossier_curien/saga/hotd4_ending.png",
+      "git_blob_sha": "6b49bc475de5713922e632efe7cce5ddcfcfdd9a",
+      "bytes": 2570999
+    },
+    {
+      "path": "assets/dossier_curien/saga/hotd4_final.png",
+      "git_blob_sha": "b8d63a8f76ec5079393d41255e74cdd9999c6f4d",
+      "bytes": 2449527
+    },
+    {
+      "path": "assets/dossier_curien/saga/hotd4_intro.png",
+      "git_blob_sha": "a8f8b25a2a4f1c74161b4e6d006dd3e24dfdbfb8",
+      "bytes": 2197430
+    },
+    {
+      "path": "assets/dossier_curien/saga/hotd4_rival.png",
+      "git_blob_sha": "4a23e8500edba768c54fca34f2041201aca71959",
+      "bytes": 2444534
+    },
+    {
+      "path": "assets/dossier_curien/saga/isaac_contact.png",
+      "git_blob_sha": "3607f966e5e6021c398a2366ef9664a4a19151dc",
+      "bytes": 680462
+    },
+    {
+      "path": "assets/dossier_curien/saga/isaac_guard.png",
+      "git_blob_sha": "573e1601d5f8fd97bd7c9e5fa8f246c1e325f825",
+      "bytes": 595313
+    },
+    {
+      "path": "assets/dossier_curien/saga/isaac_recoil.png",
+      "git_blob_sha": "4ee57172724497b4dfdfd2849624fbaf1089f2b7",
+      "bytes": 621432
+    },
+    {
+      "path": "assets/dossier_curien/saga/isaac_select.png",
+      "git_blob_sha": "ec8e5be53b37d62d1298616830fccea1d0f632ac",
+      "bytes": 853092
+    },
+    {
+      "path": "assets/dossier_curien/saga/isaac_windup.png",
+      "git_blob_sha": "59f186260fa9a302b542a582f0147c43aac7c28e",
+      "bytes": 719251
+    },
+    {
+      "path": "assets/dossier_curien/saga/james_contact.png",
+      "git_blob_sha": "df5b08bbd371812b2ae33b006de547161faf1a6e",
+      "bytes": 533846
+    },
+    {
+      "path": "assets/dossier_curien/saga/james_guard.png",
+      "git_blob_sha": "c7cfd16926dd7c60e36a343d5fdb1e06a329f792",
+      "bytes": 457409
+    },
+    {
+      "path": "assets/dossier_curien/saga/james_recoil.png",
+      "git_blob_sha": "830d021a64e93ee92d5a40f633ec2369fc7511cd",
+      "bytes": 505768
+    },
+    {
+      "path": "assets/dossier_curien/saga/james_select.png",
+      "git_blob_sha": "e3d631386d1ca41aa117de72571c90d87daa9a79",
+      "bytes": 679334
+    },
+    {
+      "path": "assets/dossier_curien/saga/james_walk1.png",
+      "git_blob_sha": "7173cc0ad0ce3f8b499e77cbd3f8dd92ce1d926f",
+      "bytes": 685143
+    },
+    {
+      "path": "assets/dossier_curien/saga/james_walk2.png",
+      "git_blob_sha": "aedf4c2a48d821459c75b62b85f701029bbd39b3",
+      "bytes": 704524
+    },
+    {
+      "path": "assets/dossier_curien/saga/james_windup.png",
+      "git_blob_sha": "d9c73d0c5df48e83f3f566eb4b4e7c8518f797b3",
+      "bytes": 482859
+    },
+    {
+      "path": "assets/dossier_curien/saga/jasper_contact.png",
+      "git_blob_sha": "4e183c0cd9e3cf773f4f49d6a8a3d93bd94e1f36",
+      "bytes": 454913
+    },
+    {
+      "path": "assets/dossier_curien/saga/jasper_guard.png",
+      "git_blob_sha": "08132a9f3b327ddbdf3b48355cfbf625b1afce18",
+      "bytes": 321824
+    },
+    {
+      "path": "assets/dossier_curien/saga/jasper_recoil.png",
+      "git_blob_sha": "c19bfa8b40de65869202ff0dc7fca9fd29cf2e0d",
+      "bytes": 423331
+    },
+    {
+      "path": "assets/dossier_curien/saga/jasper_select.png",
+      "git_blob_sha": "70fd0e100e479ab1b0a5bb40eef74b91f167e428",
+      "bytes": 714488
+    },
+    {
+      "path": "assets/dossier_curien/saga/jasper_windup.png",
+      "git_blob_sha": "bedb593fca4f9edc3fbedd75b7809660e016a161",
+      "bytes": 291894
+    },
+    {
+      "path": "assets/dossier_curien/saga/justice_contact.png",
+      "git_blob_sha": "b93777a51352e6d565ba4a02fd90af7c355f965a",
+      "bytes": 879649
+    },
+    {
+      "path": "assets/dossier_curien/saga/justice_guard.png",
+      "git_blob_sha": "6ba5a68e0c706a72bdb6e8425f650a7b929799b0",
+      "bytes": 1150072
+    },
+    {
+      "path": "assets/dossier_curien/saga/justice_recoil.png",
+      "git_blob_sha": "75276b05cca2a3f3ef2813e63bfa47dfb0f7ff82",
+      "bytes": 1000368
+    },
+    {
+      "path": "assets/dossier_curien/saga/justice_select.png",
+      "git_blob_sha": "8b175413ced74d130e218c357bea95151d29ded5",
+      "bytes": 1050983
+    },
+    {
+      "path": "assets/dossier_curien/saga/justice_windup.png",
+      "git_blob_sha": "e758a0e57b7088a3071061357c5dfb1e91b8dae0",
+      "bytes": 968536
+    },
+    {
+      "path": "assets/dossier_curien/saga/kate_contact.png",
+      "git_blob_sha": "5c2a48eaa2158a505df8b405548d04d141f36191",
+      "bytes": 617153
+    },
+    {
+      "path": "assets/dossier_curien/saga/kate_guard.png",
+      "git_blob_sha": "e2755a55c81d5dcc42226e1cad7d36098561946c",
+      "bytes": 434811
+    },
+    {
+      "path": "assets/dossier_curien/saga/kate_recoil.png",
+      "git_blob_sha": "6506801b68519882cf5ccdf39dce743af12dea0e",
+      "bytes": 525214
+    },
+    {
+      "path": "assets/dossier_curien/saga/kate_select.png",
+      "git_blob_sha": "ce853753faf5e6bfbf28fd78e1de0ea5087d2625",
+      "bytes": 805850
+    },
+    {
+      "path": "assets/dossier_curien/saga/kate_soiree_contact.png",
+      "git_blob_sha": "a9e9700c0909ff455e7fa6a5dddbdb595a211f39",
+      "bytes": 472209
+    },
+    {
+      "path": "assets/dossier_curien/saga/kate_soiree_guard.png",
+      "git_blob_sha": "dddee6b71d8a514fa64e711845191c620ab87fed",
+      "bytes": 463685
+    },
+    {
+      "path": "assets/dossier_curien/saga/kate_soiree_recoil.png",
+      "git_blob_sha": "151fd7ca441ac8b2ac4f78e5deeed611b37b1b60",
+      "bytes": 385954
+    },
+    {
+      "path": "assets/dossier_curien/saga/kate_soiree_select.png",
+      "git_blob_sha": "cdc17deb9b844cad240873d6e4fc9a18f7201015",
+      "bytes": 751347
+    },
+    {
+      "path": "assets/dossier_curien/saga/kate_soiree_walk1.png",
+      "git_blob_sha": "1a7f54e354898878f631a2b5b0f6a61b4dc844b9",
+      "bytes": 661614
+    },
+    {
+      "path": "assets/dossier_curien/saga/kate_soiree_walk2.png",
+      "git_blob_sha": "57f7071fff09d2ab87c2cd42aae2be486c1ca273",
+      "bytes": 709783
+    },
+    {
+      "path": "assets/dossier_curien/saga/kate_soiree_windup.png",
+      "git_blob_sha": "82b98757f87ac52fb6b6cc3c003b49d48bfe5248",
+      "bytes": 517777
+    },
+    {
+      "path": "assets/dossier_curien/saga/kate_walk1.png",
+      "git_blob_sha": "cf539a9237d188e9fca915d236c987a8d08743e3",
+      "bytes": 669426
+    },
+    {
+      "path": "assets/dossier_curien/saga/kate_walk2.png",
+      "git_blob_sha": "a52a45d1e86de6457d27d93d49183e02c7fa368e",
+      "bytes": 655996
+    },
+    {
+      "path": "assets/dossier_curien/saga/kate_windup.png",
+      "git_blob_sha": "a5760173014c34b2eb88f4a2f78e55453bcdae91",
+      "bytes": 606183
+    },
+    {
+      "path": "assets/dossier_curien/saga/lisa_contact.png",
+      "git_blob_sha": "4c182d5d372cfb9fd204b95d82899f5358a546bf",
+      "bytes": 561622
+    },
+    {
+      "path": "assets/dossier_curien/saga/lisa_guard.png",
+      "git_blob_sha": "bb96f1403baa0ca40fc26eb2cfca6c489f17a606",
+      "bytes": 485820
+    },
+    {
+      "path": "assets/dossier_curien/saga/lisa_recoil.png",
+      "git_blob_sha": "559f2fcf7cedc86381a99260966b1aa3c7709c41",
+      "bytes": 514508
+    },
+    {
+      "path": "assets/dossier_curien/saga/lisa_select.png",
+      "git_blob_sha": "0a55abe8538da1212211ced06bb716e2a1dce162",
+      "bytes": 684536
+    },
+    {
+      "path": "assets/dossier_curien/saga/lisa_walk1.png",
+      "git_blob_sha": "4c9090af0709962ce278f437852da4b48998989f",
+      "bytes": 690567
+    },
+    {
+      "path": "assets/dossier_curien/saga/lisa_walk2.png",
+      "git_blob_sha": "532d961612d5b26ac5d671a14656dce052556635",
+      "bytes": 696011
+    },
+    {
+      "path": "assets/dossier_curien/saga/lisa_windup.png",
+      "git_blob_sha": "25e9f3821cc7a276b2d2323a6866ec086dbb9779",
+      "bytes": 576402
+    },
+    {
+      "path": "assets/dossier_curien/saga/moon_contact.png",
+      "git_blob_sha": "9fa29bbec902005a1978f384a3fc8582230358ad",
+      "bytes": 1143988
+    },
+    {
+      "path": "assets/dossier_curien/saga/moon_ending.png",
+      "git_blob_sha": "32936c953c1aeb801e84c1742e70ec972b096154",
+      "bytes": 2311953
+    },
+    {
+      "path": "assets/dossier_curien/saga/moon_final.png",
+      "git_blob_sha": "331c9006bf40468fd128f444d2b81923064adc96",
+      "bytes": 2341287
+    },
+    {
+      "path": "assets/dossier_curien/saga/moon_guard.png",
+      "git_blob_sha": "a5453b91523073901672552926bcbf288f4f2604",
+      "bytes": 1000546
+    },
+    {
+      "path": "assets/dossier_curien/saga/moon_intro.png",
+      "git_blob_sha": "b91e455d898dba6edd151c382cc2dafef93a9677",
+      "bytes": 2327348
+    },
+    {
+      "path": "assets/dossier_curien/saga/moon_recoil.png",
+      "git_blob_sha": "736c0f68acc3df1d996761e8bd75ed539e24eeaa",
+      "bytes": 949003
+    },
+    {
+      "path": "assets/dossier_curien/saga/moon_rival.png",
+      "git_blob_sha": "8aab305acfb36fdefa32cf967eefd3679de16524",
+      "bytes": 2252334
+    },
+    {
+      "path": "assets/dossier_curien/saga/moon_select.png",
+      "git_blob_sha": "4516d2d7da3c06af2ae8c3e36e97cd66453014fb",
+      "bytes": 1180593
+    },
+    {
+      "path": "assets/dossier_curien/saga/moon_windup.png",
+      "git_blob_sha": "3f2fdc999f07c2c98c7315a1be1236921b801ed8",
+      "bytes": 1056706
+    },
+    {
+      "path": "assets/dossier_curien/saga/moonstage_back.png",
+      "git_blob_sha": "fa247c9941a6028981b4503759ce7d2402e29f9f",
+      "bytes": 2217865
+    },
+    {
+      "path": "assets/dossier_curien/saga/moonstage_front.png",
+      "git_blob_sha": "a11f13d5e2ac5d5a7f21aefcd1bded6889c085a0",
+      "bytes": 61684
+    },
+    {
+      "path": "assets/dossier_curien/saga/moonstage_mid.png",
+      "git_blob_sha": "2bcef3b7497de64b4bcb8b86cdc7aff4354b363a",
+      "bytes": 108323
+    },
+    {
+      "path": "assets/dossier_curien/saga/overkill_ending.png",
+      "git_blob_sha": "2ef036252215ae45447cc919cf71cf4124ee69e9",
+      "bytes": 2257845
+    },
+    {
+      "path": "assets/dossier_curien/saga/overkill_intro.png",
+      "git_blob_sha": "aac1d257f7e499c4a2fb4d95963c6e6c60663d72",
+      "bytes": 2303983
+    },
+    {
+      "path": "assets/dossier_curien/saga/overkill_rival.png",
+      "git_blob_sha": "1cd9e53d112e9252cbd4600c3d96785eec1a0135",
+      "bytes": 2536561
+    },
+    {
+      "path": "assets/dossier_curien/saga/parts/lisa_goggles.png",
+      "git_blob_sha": "21fbfc7cc9c3657bf05eb719e29efd3e48e0f25d",
+      "bytes": 656545
+    },
+    {
+      "path": "assets/dossier_curien/saga/parts/lisa_shotgun.png",
+      "git_blob_sha": "fb9045ea426f03dbd45fd85bc875225dffa9912e",
+      "bytes": 315637
+    },
+    {
+      "path": "assets/dossier_curien/saga/props/efi_alarm_beacon.png",
+      "git_blob_sha": "660be96a64d2d8daf94f36f3d021e32829ad7eca",
+      "bytes": 869875
+    },
+    {
+      "path": "assets/dossier_curien/saga/props/subway_ticket_machine.png",
+      "git_blob_sha": "f27d25d02bf47eeb4f49080a0ba2f0ca23a7540c",
+      "bytes": 1310584
+    },
+    {
+      "path": "assets/dossier_curien/saga/props/venice_bollard.png",
+      "git_blob_sha": "4ce9c68111a81a9e89e67b972f420320e39fb558",
+      "bytes": 1201798
+    },
+    {
+      "path": "assets/dossier_curien/saga/props/venice_lamp.png",
+      "git_blob_sha": "3f8b135a1305ea06f50eb46740bd8bd142afa5ca",
+      "bytes": 263671
+    },
+    {
+      "path": "assets/dossier_curien/saga/props/venice_railing.png",
+      "git_blob_sha": "d350574663a4918e50550b74982e3efe4c9e0fa7",
+      "bytes": 1148715
+    },
+    {
+      "path": "assets/dossier_curien/saga/reactor_back.png",
+      "git_blob_sha": "9a2f73bb94078a0b2e5b6903be39b281519b86f2",
+      "bytes": 2260947
+    },
+    {
+      "path": "assets/dossier_curien/saga/reactor_front.png",
+      "git_blob_sha": "4dc989622be6f3519b75e650332dc103594d112f",
+      "bytes": 47262
+    },
+    {
+      "path": "assets/dossier_curien/saga/reactor_mid.png",
+      "git_blob_sha": "4639a72c7500a869a048897dcad2f7512e6b87b1",
+      "bytes": 143904
+    },
+    {
+      "path": "assets/dossier_curien/saga/revenge_back.png",
+      "git_blob_sha": "e9c36a858387f23e89ba291cfb74e1b20adee80e",
+      "bytes": 2603813
+    },
+    {
+      "path": "assets/dossier_curien/saga/revenge_ending.png",
+      "git_blob_sha": "60a64235f3cde51e2ad1ef294f1de75b3c3ec74d",
+      "bytes": 2290669
+    },
+    {
+      "path": "assets/dossier_curien/saga/revenge_front.png",
+      "git_blob_sha": "f0e2e2c1d42f0f9079c31a782b4466c10b71a34f",
+      "bytes": 164111
+    },
+    {
+      "path": "assets/dossier_curien/saga/revenge_intro.png",
+      "git_blob_sha": "9a13b92399bff721e68378f8a9f647bceec0b3dd",
+      "bytes": 2299211
+    },
+    {
+      "path": "assets/dossier_curien/saga/revenge_mid.png",
+      "git_blob_sha": "72e424d6c611af12fa67c40e079450eefd62f3fc",
+      "bytes": 155384
+    },
+    {
+      "path": "assets/dossier_curien/saga/revenge_rival.png",
+      "git_blob_sha": "77ce4699dd9b4eb95224cf822cc41d4781d3afb3",
+      "bytes": 2567658
+    },
+    {
+      "path": "assets/dossier_curien/saga/rikiya_contact.png",
+      "git_blob_sha": "3a162a8f77d298345a9ed1cb48f9045561b7dedd",
+      "bytes": 581581
+    },
+    {
+      "path": "assets/dossier_curien/saga/rikiya_guard.png",
+      "git_blob_sha": "153c6553d33d86b02b8f43937093a80fe5f00f27",
+      "bytes": 478699
+    },
+    {
+      "path": "assets/dossier_curien/saga/rikiya_recoil.png",
+      "git_blob_sha": "991311b1ebd7d86d48178411992fabb9bcdcf675",
+      "bytes": 523360
+    },
+    {
+      "path": "assets/dossier_curien/saga/rikiya_select.png",
+      "git_blob_sha": "6517778b11b1c6a52ab73f8cd6635290cc6a5450",
+      "bytes": 741907
+    },
+    {
+      "path": "assets/dossier_curien/saga/rikiya_windup.png",
+      "git_blob_sha": "a5eaa26302366b9aaa758db1deacb62a013c883c",
+      "bytes": 700193
+    },
+    {
+      "path": "assets/dossier_curien/saga/ryan_contact.png",
+      "git_blob_sha": "50519e77500ce9daf6c3ba0984bcb2eb72665fc4",
+      "bytes": 613655
+    },
+    {
+      "path": "assets/dossier_curien/saga/ryan_guard.png",
+      "git_blob_sha": "4cab6a23634818ffa04132fd9081c15bc8e29308",
+      "bytes": 474062
+    },
+    {
+      "path": "assets/dossier_curien/saga/ryan_recoil.png",
+      "git_blob_sha": "411463cd0e77013d252fe64f87b52d73e527a376",
+      "bytes": 502107
+    },
+    {
+      "path": "assets/dossier_curien/saga/ryan_select.png",
+      "git_blob_sha": "f7a63226fca109e6a7627f61c3340f6b72f98d2b",
+      "bytes": 787900
+    },
+    {
+      "path": "assets/dossier_curien/saga/ryan_soiree_contact.png",
+      "git_blob_sha": "9452382f7b2fed2810cff88d1447b4fbbd0ef7ba",
+      "bytes": 466016
+    },
+    {
+      "path": "assets/dossier_curien/saga/ryan_soiree_guard.png",
+      "git_blob_sha": "6e4de4cc603cbc5a422e112081c2f2a4111a539d",
+      "bytes": 484876
+    },
+    {
+      "path": "assets/dossier_curien/saga/ryan_soiree_recoil.png",
+      "git_blob_sha": "1d65826d2244f1b7ac5e759a34ecd3bf52b12420",
+      "bytes": 450699
+    },
+    {
+      "path": "assets/dossier_curien/saga/ryan_soiree_select.png",
+      "git_blob_sha": "ab397babcf3541c37771d27904fae78eb94b0be1",
+      "bytes": 792655
+    },
+    {
+      "path": "assets/dossier_curien/saga/ryan_soiree_walk1.png",
+      "git_blob_sha": "7dd94d89d6a215e7c1351caa95706fe60fb437c2",
+      "bytes": 665425
+    },
+    {
+      "path": "assets/dossier_curien/saga/ryan_soiree_walk2.png",
+      "git_blob_sha": "417b7e9696e5c8b5aee43a23bbaaa872002dcc46",
+      "bytes": 693236
+    },
+    {
+      "path": "assets/dossier_curien/saga/ryan_soiree_windup.png",
+      "git_blob_sha": "b57fa2f99f45ef858b3551765d5c7a16b347a568",
+      "bytes": 488887
+    },
+    {
+      "path": "assets/dossier_curien/saga/ryan_walk1.png",
+      "git_blob_sha": "b4d1bf91e395edea2f0c0276fb91f084bd709675",
+      "bytes": 656794
+    },
+    {
+      "path": "assets/dossier_curien/saga/ryan_walk2.png",
+      "git_blob_sha": "d65fe45c51127f8e8cc6f68f984f6e6db4ba1383",
+      "bytes": 665309
+    },
+    {
+      "path": "assets/dossier_curien/saga/ryan_windup.png",
+      "git_blob_sha": "7783a5c3fef66b238cf4d80e1d8fd748cd3e1f11",
+      "bytes": 595355
+    },
+    {
+      "path": "assets/dossier_curien/saga/scarlet_back.png",
+      "git_blob_sha": "bbba2236453a8f1115ed0256448e2876a2017daa",
+      "bytes": 2557808
+    },
+    {
+      "path": "assets/dossier_curien/saga/scarlet_ending.png",
+      "git_blob_sha": "efb41b7b8d15557f71fe91f259ea6bbb356f3d7e",
+      "bytes": 2142995
+    },
+    {
+      "path": "assets/dossier_curien/saga/scarlet_final.png",
+      "git_blob_sha": "0a6916f41d68fdcf01ebafda1229bb0a04f27436",
+      "bytes": 2448171
+    },
+    {
+      "path": "assets/dossier_curien/saga/scarlet_front.png",
+      "git_blob_sha": "ed7a4df56eabae8d009c589596123a7de690f58b",
+      "bytes": 157433
+    },
+    {
+      "path": "assets/dossier_curien/saga/scarlet_intro.png",
+      "git_blob_sha": "48e037fe0b99ad1a85bc922d402c31845e3f4aba",
+      "bytes": 2300030
+    },
+    {
+      "path": "assets/dossier_curien/saga/scarlet_mid.png",
+      "git_blob_sha": "7051cac11611defaac36024cc48dbc4b7b7551f0",
+      "bytes": 399966
+    },
+    {
+      "path": "assets/dossier_curien/saga/scarlet_rival.png",
+      "git_blob_sha": "a0bfe0335a2e6f3fab5ee6fb01c976b7d9f200f8",
+      "bytes": 2775469
+    },
+    {
+      "path": "assets/dossier_curien/saga/special_back.png",
+      "git_blob_sha": "b8b1eaf499d7aef430b88de9398b8740b9a783e9",
+      "bytes": 2373152
+    },
+    {
+      "path": "assets/dossier_curien/saga/special_ending.png",
+      "git_blob_sha": "abbe75b9cf82a2ffb3cc18bb467acf32e9676d05",
+      "bytes": 2369616
+    },
+    {
+      "path": "assets/dossier_curien/saga/special_front.png",
+      "git_blob_sha": "d435e37858125f6f455d1c70264f289e60419f74",
+      "bytes": 217062
+    },
+    {
+      "path": "assets/dossier_curien/saga/special_intro.png",
+      "git_blob_sha": "48a6673b306191ed5cf5cb2cf38760918345d76a",
+      "bytes": 2377610
+    },
+    {
+      "path": "assets/dossier_curien/saga/special_mid.png",
+      "git_blob_sha": "7c13f04da781c91ddc9fcde616cf7001a6e51e5a",
+      "bytes": 418446
+    },
+    {
+      "path": "assets/dossier_curien/saga/special_rival.png",
+      "git_blob_sha": "66ce1161c9d0689bdc89ce95c45648879a0c7a9c",
+      "bytes": 2408593
+    },
+    {
+      "path": "assets/dossier_curien/saga/stick_contact.png",
+      "git_blob_sha": "5654d4504ba3c4ffc70fd5f3f454f98629a73c68",
+      "bytes": 481103
+    },
+    {
+      "path": "assets/dossier_curien/saga/stick_guard.png",
+      "git_blob_sha": "dbad34f922aa7e3e3ae682c48db3660f939b1acf",
+      "bytes": 549759
+    },
+    {
+      "path": "assets/dossier_curien/saga/stick_recoil.png",
+      "git_blob_sha": "b8da576b414a713d368dc404f678ca1a91cec9e9",
+      "bytes": 544252
+    },
+    {
+      "path": "assets/dossier_curien/saga/stick_select.png",
+      "git_blob_sha": "f35ceacc43465ab5de45af48e78eb1efafc12d27",
+      "bytes": 723368
+    },
+    {
+      "path": "assets/dossier_curien/saga/stick_windup.png",
+      "git_blob_sha": "630f09116d792f73dfa48c51f2465571ff287d21",
+      "bytes": 684184
+    },
+    {
+      "path": "assets/dossier_curien/saga/subway_back.png",
+      "git_blob_sha": "3a362bd6626106b030f58c167821e5b2ef68499e",
+      "bytes": 2198165
+    },
+    {
+      "path": "assets/dossier_curien/saga/subway_front.png",
+      "git_blob_sha": "987cac98680155c170e9b0c4e60a73ee3eeb74fd",
+      "bytes": 269352
+    },
+    {
+      "path": "assets/dossier_curien/saga/subway_mid.png",
+      "git_blob_sha": "071d50c91e7a30f8622657fd052027f23ff48399",
+      "bytes": 322490
+    },
+    {
+      "path": "assets/dossier_curien/saga/venice_back.png",
+      "git_blob_sha": "89a64da4ed8d5cd5aa8f7cccc3ec072d4964025e",
+      "bytes": 2447329
+    },
+    {
+      "path": "assets/dossier_curien/saga/venice_front.png",
+      "git_blob_sha": "f9d81a19cc7ede1e99db9b5e56905dbf1b90ba5c",
+      "bytes": 109561
+    },
+    {
+      "path": "assets/dossier_curien/saga/venice_mid.png",
+      "git_blob_sha": "1307940b3d81912812d1ec2283a1994a03bf83ed",
+      "bytes": 274347
+    },
+    {
+      "path": "assets/dossier_curien/saga/wheel_contact.png",
+      "git_blob_sha": "970ba20573109025f030c01622b31ce202ecc5a8",
+      "bytes": 747660
+    },
+    {
+      "path": "assets/dossier_curien/saga/wheel_ending.png",
+      "git_blob_sha": "c34541f585fffdab7af4745b490b0e9feaa3d961",
+      "bytes": 2135569
+    },
+    {
+      "path": "assets/dossier_curien/saga/wheel_guard.png",
+      "git_blob_sha": "71491aa881915227955bc38aa7d56fdc80fbfb89",
+      "bytes": 687716
+    },
+    {
+      "path": "assets/dossier_curien/saga/wheel_intro.png",
+      "git_blob_sha": "6c92bf3453e71e260c54c28d1500797eb15198a6",
+      "bytes": 1912561
+    },
+    {
+      "path": "assets/dossier_curien/saga/wheel_recoil.png",
+      "git_blob_sha": "689ad831a81032b67c97b6994056158d6168a729",
+      "bytes": 724253
+    },
+    {
+      "path": "assets/dossier_curien/saga/wheel_rival.png",
+      "git_blob_sha": "0b4185b054dcee1ae8a9c3473f76c65f2c3dd1bb",
+      "bytes": 2468144
+    },
+    {
+      "path": "assets/dossier_curien/saga/wheel_select.png",
+      "git_blob_sha": "d549e92776d4a2cb420af41b5514dc4c3fd02e51",
+      "bytes": 798153
+    },
+    {
+      "path": "assets/dossier_curien/saga/wheel_windup.png",
+      "git_blob_sha": "f1d343121664957a65d42fe50193e785263c2e95",
+      "bytes": 683405
+    },
+    {
+      "path": "assets/dossier_curien/saga/world_contact.png",
+      "git_blob_sha": "6cdd2426792231535d4e91b69c2f7aac133f1946",
+      "bytes": 1375253
+    },
+    {
+      "path": "assets/dossier_curien/saga/world_ending.png",
+      "git_blob_sha": "1bd6a27f506664a0325f956d8239237f182a1dc4",
+      "bytes": 2374636
+    },
+    {
+      "path": "assets/dossier_curien/saga/world_final.png",
+      "git_blob_sha": "2f4c064d5bca1e9d7941f40bcc580c9a70d9a279",
+      "bytes": 2333370
+    },
+    {
+      "path": "assets/dossier_curien/saga/world_guard.png",
+      "git_blob_sha": "dc7f4d197f92a34b8c9e94be79b5c20223ee4b55",
+      "bytes": 1705199
+    },
+    {
+      "path": "assets/dossier_curien/saga/world_intro.png",
+      "git_blob_sha": "ad20dc0050bf4f2ac2f85e0fedbea2074098e0ae",
+      "bytes": 2485615
+    },
+    {
+      "path": "assets/dossier_curien/saga/world_recoil.png",
+      "git_blob_sha": "e61b64e6c7383215bed336444770a49aa93ef26c",
+      "bytes": 1550417
+    },
+    {
+      "path": "assets/dossier_curien/saga/world_rival.png",
+      "git_blob_sha": "123b5cc6777b05b6c1ba146fb6a532f8e15a944f",
+      "bytes": 2563683
+    },
+    {
+      "path": "assets/dossier_curien/saga/world_select.png",
+      "git_blob_sha": "6f96d1e9db354cc355d61d086f3daa51fd66d9ee",
+      "bytes": 1054490
+    },
+    {
+      "path": "assets/dossier_curien/saga/world_windup.png",
+      "git_blob_sha": "75c7c720374691c0a6611c0519f06966af69a9cc",
+      "bytes": 1411249
+    },
+    {
+      "path": "assets/dossier_curien/saga/worldstage_back.png",
+      "git_blob_sha": "e0db0f82af8082fc07780b08e650f2fa115081a7",
+      "bytes": 2318920
+    },
+    {
+      "path": "assets/dossier_curien/saga/worldstage_front.png",
+      "git_blob_sha": "2594fec0fb86f72a5d59bc1bbff11070df43a4d2",
+      "bytes": 102799
+    },
+    {
+      "path": "assets/dossier_curien/saga/worldstage_mid.png",
+      "git_blob_sha": "5c7684cf9d8545d546ca5298c6e58813302986ca",
+      "bytes": 73412
+    },
+    {
+      "path": "assets/dossier_curien/saga/zobiko_contact.png",
+      "git_blob_sha": "db64e9e5304901cffcce789f8d1b8cf0e719d879",
+      "bytes": 517342
+    },
+    {
+      "path": "assets/dossier_curien/saga/zobiko_guard.png",
+      "git_blob_sha": "1584200569e7101e47ecd848c461a27378114dbf",
+      "bytes": 466636
+    },
+    {
+      "path": "assets/dossier_curien/saga/zobiko_recoil.png",
+      "git_blob_sha": "2ba1918cae409ee0700acab57f39b12b79259550",
+      "bytes": 547092
+    },
+    {
+      "path": "assets/dossier_curien/saga/zobiko_select.png",
+      "git_blob_sha": "a87d69f3e563928210019bb20b2ead648af633da",
+      "bytes": 725162
+    },
+    {
+      "path": "assets/dossier_curien/saga/zobiko_windup.png",
+      "git_blob_sha": "47f9382dcc22005daadac51f94ae78a958371905",
+      "bytes": 448721
+    },
+    {
+      "path": "assets/dossier_curien/saga/zobio_contact.png",
+      "git_blob_sha": "81b4125475dc9e6c543157fc88e37c35419cfc4d",
+      "bytes": 996653
+    },
+    {
+      "path": "assets/dossier_curien/saga/zobio_guard.png",
+      "git_blob_sha": "87f6c5d574ac09933ca0b9d8e7755744d03e8491",
+      "bytes": 817776
+    },
+    {
+      "path": "assets/dossier_curien/saga/zobio_recoil.png",
+      "git_blob_sha": "e281d9121ef1394ab0f06b460c4132cea537cce1",
+      "bytes": 804397
+    },
+    {
+      "path": "assets/dossier_curien/saga/zobio_select.png",
+      "git_blob_sha": "f0b9a6883feab21080bbeadbbd52d97bdc4aa7d8",
+      "bytes": 1036392
+    },
+    {
+      "path": "assets/dossier_curien/saga/zobio_windup.png",
+      "git_blob_sha": "e074088ac0beacca5420d9b61aabe9400a027587",
+      "bytes": 872498
+    }
+  ],
+  "legacy_reuse": [
+    {
+      "subject": "sophie",
+      "paths": [
+        "assets/sprites/heroes/sophie-hotd.png",
+        "assets/sprites_v2/npcs/sophie_richards/sophie_richards__v2__action_cycle__8dirx8f.png"
+      ]
+    },
+    {
+      "subject": "curien",
+      "paths": [
+        "assets/sprites/npcs/dr-curien.png",
+        "assets/sprites_v2/npcs/dr_curien/dr_curien__v2__action_cycle__8dirx8f.png"
+      ]
+    },
+    {
+      "subject": "hangedman",
+      "paths": [
+        "assets/sprites/bosses/hangedman.png",
+        "assets/sprites_v2/bosses/hangedman/hangedman__v2__action_cycle__8dirx8f.png"
+      ]
+    },
+    {
+      "subject": "hermit",
+      "paths": [
+        "assets/sprites/bosses/hermit-type-6803.png",
+        "assets/sprites_v2/bosses/hermit/hermit__v2__action_cycle__8dirx8f.png"
+      ]
+    }
+  ],
+  "frozen_baseline_note": "Les générations du20novembre sont un delta séparé ; cet état ne doit pas être réécrit pour présenter le nouveau lot comme déjà publié."
+}

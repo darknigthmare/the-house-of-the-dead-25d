@@ -2,6 +2,8 @@
 
 *Bible du mode de combat 2D de The House of the Dead 2.5D • 18 novembre 2026*
 
+Ce volume décrit le premier lot du manoir. L’état courant — 24 combattants et 20 arènes dans les sources du 20 novembre — est présenté dans la [bible de la saga](saga/BIBLE_SAGA.md), les [instructions de jeu](JOUER.md) et le [catalogue des personnages et tenues](saga/production/catalogue_2026-11-20/PERSONNAGES_TENUES.md). Les paquets antérieurs et les captures de ce volume conservent leur propre périmètre.
+
 ## Dossier Curien
 
 Le mode de combat 2D de The House of the Dead 2.5D

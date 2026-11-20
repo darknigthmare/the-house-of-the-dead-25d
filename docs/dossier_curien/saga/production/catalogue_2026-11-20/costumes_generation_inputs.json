@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-20",
+  "method": "built-in image_gen; native transparent PNGs; no pixel postprocessing",
+  "jobs": [
+    {
+      "id": "g_hotd3",
+      "title": "Agent G — HOTD III",
+      "output": "assets/dossier_curien/gallery_2026-11-20/costumes/g_hotd3_base.png",
+      "prompt": "Use case: stylized-concept. Asset type: one native transparent full-body character costume master for a hand-painted 2D arcade fighting game. Produce exactly one character, completely inside the image, facing RIGHT in a relaxed ready stance with slightly flexed knees, head and shoes and entire weapon visible, generous transparent padding on every edge. Aim for a square 1024x1024 canvas. Match the crisp hand-painted arcade shading, clean silhouette and compact realistic anatomy of the LAST attached image, Isaac, strictly as STYLE reference; do not copy Isaac's identity, hat, facial hair or clothing. This is a faithful fan-made 2D adaptation of the specific game costume in the subject reference, not an invented outfit or a photograph. Natural neutral lighting. No background, floor, ground shadow, UI, typography, labels, muzzle flash, duplicate person, montage or sprite sheet. Keep genuine transparent alpha.\nSubject reference images 1 and 2 show G in The House of the Dead III. Isolate and adapt ONLY the older male agent G; omit Lisa and Death. Preserve G's older angular face and slicked-back dark hair strongly streaked with grey, pale blue long-sleeved shirt, pale grey buttoned waistcoat, yellow/gold narrow necktie, charcoal grey formal trousers and dark simple shoes. The first image gives the face and colors; the second gives his complete body and trouser/shoe silhouette. G is a lean, experienced middle-aged man, not a bodybuilder. Hold the short black pump shotgun visible in those promotional references at a low ready angle to the RIGHT, both hands naturally placed. One clean full-body three-quarter side view, face recognizable as the reference, composed into the square as a readable game sprite. Do not add a coat, hat, shoulder armor or extra holsters.",
+      "refs": [
+        "docs/dossier_curien/sources_art/references-2026-11-20/costumes_iii/hotd3_g_lisa_art.jpg",
+        "docs/dossier_curien/sources_art/references-2026-11-20/costumes_iii/hotd3_g_lisa_art2.jpg",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "sources": [
+        "https://www.imfdb.org/wiki/The_House_of_the_Dead_III",
+        "https://www.imfdb.org/images/9/9e/HodIII_GandLisa.jpg",
+        "https://www.imfdb.org/images/3/37/HodIII_GandLisa_2.jpg",
+        "https://www.arcadeguns.com/download/HOD3_Manual.pdf"
+      ]
+    },
+    {
+      "id": "rogan_hotd3",
+      "title": "Thomas Rogan — HOTD III",
+      "output": "assets/dossier_curien/gallery_2026-11-20/costumes/rogan_hotd3_base.png",
+      "prompt": "Use case: stylized-concept. Asset type: one native transparent full-body character costume master for a hand-painted 2D arcade fighting game. Produce exactly one character, completely inside the image, facing RIGHT in a relaxed ready stance with slightly flexed knees, head and shoes and entire weapon visible, generous transparent padding on every edge. Aim for a square 1024x1024 canvas. Match the crisp hand-painted arcade shading, clean silhouette and compact realistic anatomy of the LAST attached image, Isaac, strictly as STYLE reference; do not copy Isaac's identity, hat, facial hair or clothing. This is a faithful fan-made 2D adaptation of the specific game costume in the subject reference, not an invented outfit or a photograph. Natural neutral lighting. No background, floor, ground shadow, UI, typography, labels, muzzle flash, duplicate person, montage or sprite sheet. Keep genuine transparent alpha.\nSubject reference image 1 is an actual screenshot from The House of the Dead III. Adapt ONLY Thomas Rogan, the older man on the LEFT with the text label Thomas Rogan. Omit the uniformed man Dan on the right. Preserve Rogan's rugged older angular face, short swept-back brown hair with a slightly grey mature hairline, brown/olive-brown open bomber jacket, plain white crew-neck T-shirt, black belt with rectangular brass buckle, plain khaki trousers and sturdy dark brown footwear. Match the actual jacket cut and trouser proportions shown. Remove the scene's green lighting tint and use neutral natural skin tone, brown jacket and khaki fabric; do not turn him green. Rogan is a fit fifty-something man. Hold the bulky short black pump shotgun shown in the screenshot at low ready, aimed to the RIGHT with both hands placed as in the source. The last image is solely painting-style reference. Use a new clean full-body three-quarter side view, same recognizable costume. The few details hidden by screenshot subtitles should stay simple and unobtrusive. No cap, tactical vest, combat helmet, shin guards, chest armor, extra belts or invented accessories.",
+      "refs": [
+        "docs/dossier_curien/sources_art/references-2026-11-20/costumes_iii/hotd3_dan_rogan.jpg",
+        "assets/dossier_curien/saga/isaac_guard.png"
+      ],
+      "sources": [
+        "https://www.imfdb.org/wiki/The_House_of_the_Dead_III",
+        "https://www.imfdb.org/images/6/60/HodIII_DanandRogan.jpg",
+        "https://www.arcadeguns.com/download/HOD3_Manual.pdf"
+      ]
+    }
+  ]
+}

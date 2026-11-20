@@ -1,0 +1,1548 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "scope": "Backlog de lieux principaux, chapitres et familles de zones, croisé au registre de 20 arènes après le lot stages_2026-11-20. Aucun inventaire salle-par-salle, ni exhaustivité des mini-jeux/variantes.",
+  "audit": {
+    "baseline_before_lot": "59372b6",
+    "registry_path": "src/dossier_curien/saga.gd",
+    "expected_registered_stage_count": 20,
+    "registry_sha256_at_audit": "818c671737f4935847643320476bf16be857f153a25a3968db984101ce278f46",
+    "registered_stage_count": 20
+  },
+  "status_definitions": {
+    "existant": "Une arène dédiée à ce lieu est enregistrée et possède son art. Cela signifie une adaptation 2D disponible, jamais un chapitre complet ni une fidélité 1:1 certifiée.",
+    "adaptation_partielle": "Une évocation, une portion, ou un état d’un autre épisode existe ; les éléments explicités restent à réaliser.",
+    "absent": "Le lieu ou la zone principale est identifié dans les sources, sans arène dédiée correspondante dans les 20 entrées.",
+    "reference_requise": "L’épreuve/le contexte est connu, mais son lieu précis, ses variantes ou une référence visuelle exploitable restent à établir. Ce statut ne ferme pas le manque."
+  },
+  "groups": [
+    {
+      "id": "hotd",
+      "title": "The House of the Dead",
+      "structure": "Quatre chapitres : Tragedy, Revenge, Truth, The house of the dead. Grands lieux et une branche majeure ; les salles et tous les embranchements ne sont pas détaillés.",
+      "source_ids": [
+        "H1"
+      ],
+      "exhaustive_within_declared_scope": false,
+      "entries": [
+        {
+          "id": "hotd_cour",
+          "chapter": "Tragedy",
+          "location": "Cour et entrée du manoir",
+          "status": "existant",
+          "matched_stage_indices": [
+            0
+          ],
+          "source_ids": [
+            "H1B"
+          ],
+          "remaining_work": "Variantes de parcours et autres cadrages.",
+          "note": "Arène 0 : Cour du manoir ; présence d’une adaptation, pas du chapitre entier.",
+          "priority": "maintenance"
+        },
+        {
+          "id": "hotd_interieurs",
+          "chapter": "Tragedy / Revenge",
+          "location": "Intérieurs du manoir et annexe",
+          "status": "adaptation_partielle",
+          "matched_stage_indices": [
+            1
+          ],
+          "source_ids": [
+            "H1"
+          ],
+          "remaining_work": "Décor propre à l’annexe et aux grandes salles au-delà de l’antichambre.",
+          "note": "L’antichambre représente une seule zone intérieure.",
+          "priority": "P2"
+        },
+        {
+          "id": "hotd_egouts",
+          "chapter": "Tragedy — embranchement",
+          "location": "Égouts du domaine",
+          "status": "absent",
+          "matched_stage_indices": [],
+          "source_ids": [
+            "H1B"
+          ],
+          "remaining_work": "Choisir une capture de la branche, puis produire les plans latéraux.",
+          "note": "",
+          "priority": "P2"
+        },
+        {
+          "id": "hotd_toits",
+          "chapter": "Revenge",
+          "location": "Toits du manoir / Hangedman",
+          "status": "absent",
+          "matched_stage_indices": [],
+          "source_ids": [
+            "H1R"
+          ],
+          "remaining_work": "Produire un toit original HOTD, distinct de Goldman et de Scarlet Dawn.",
+          "note": "Les autres toits du registre ne couvrent pas cette incarnation.",
+          "priority": "P1"
+        },
+        {
+          "id": "hotd_dome",
+          "chapter": "Truth",
+          "location": "Dôme de culture / Hermit",
+          "status": "absent",
+          "matched_stage_indices": [],
+          "source_ids": [
+            "H1T"
+          ],
+          "remaining_work": "Relever le dôme et le cadre du combat, puis produire son arène.",
+          "note": "Le laboratoire générique ne représente pas ce dôme.",
+          "priority": "P1"
+        },
+        {
+          "id": "hotd_laboratoire",
+          "chapter": "Truth / The house of the dead",
+          "location": "Laboratoire de Curien",
+          "status": "existant",
+          "matched_stage_indices": [
+            2
+          ],
+          "source_ids": [
+            "H1T",
+            "H1"
+          ],
+          "remaining_work": "Autres secteurs, voies d’accès et variations finales.",
+          "note": "Arène 2 disponible ; aucune reproduction intégrale des deux chapitres.",
+          "priority": "maintenance"
+        }
+      ]
+    },
+    {
+      "id": "hotd2",
+      "title": "The House of the Dead 2",
+      "structure": "Six chapitres ; certains comportent plusieurs grands lieux et branches. La colonne lieu fixe ce qui est évalué.",
+      "source_ids": [
+        "H2"
+      ],
+      "exhaustive_within_declared_scope": false,
+      "entries": [
+        {
+          "id": "hotd2_rues",
+          "chapter": "A Prelude",
+          "location": "Rues et place de la première rencontre",
+          "status": "absent",
+          "matched_stage_indices": [],
+          "source_ids": [
+            "H2"
+          ],
+          "remaining_work": "Relever la place et les façades propres à ce chapitre.",
+          "note": "Les rues Zombie Revenge et HOTD4 ne sont pas des substituts.",
+          "priority": "P2"
+        },
+        {
+          "id": "hotd2_quai",
+          "chapter": "Muddy",
+          "location": "Canal / quai de Hierophant",
+          "status": "existant",
+          "matched_stage_indices": [
+            3
+          ],
+          "source_ids": [
+            "H2M"
+          ],
+          "remaining_work": "Autres branches, berges et cadrages.",
+          "note": "Arène 3 : Quai de la cité inondée.",
+          "priority": "maintenance"
+        },
+        {
+          "id": "hotd2_horloge",
+          "chapter": "Muddy — branche",
+          "location": "Passage de la tour de l’horloge",
+          "status": "existant",
+          "matched_stage_indices": [
+            13
+          ],
+          "source_ids": [
+            "H2M"
+          ],
+          "remaining_work": "Variantes et contexte de l’embranchement.",
+          "note": "Le passage est lié à Muddy, pas au Colisée de Despair.",
+          "priority": "maintenance"
+        },
+        {
+          "id": "hotd2_souterrain",
+          "chapter": "Darkness",
+          "location": "Voie d’eau souterraine / parcours de Tower",
+          "status": "absent",
+          "matched_stage_indices": [],
+          "source_ids": [
+            "H2D"
+          ],
+          "remaining_work": "Établir le cadrage du canal couvert et du bassin de combat.",
+          "note": "Une berge extérieure ne remplace pas cette voie d’eau.",
+          "priority": "P1"
+        },
+        {
+          "id": "hotd2_colisee",
+          "chapter": "Despair",
+          "location": "Colisée / Strength",
+          "status": "absent",
+          "matched_stage_indices": [],
+          "source_ids": [
+            "H2C"
+          ],
+          "remaining_work": "Relever l’arène, les cages et le bassin puis adapter le sol.",
+          "note": "Ne pas confondre avec Despair de HOTD4.",
+          "priority": "P1"
+        },
+        {
+          "id": "hotd2_pont",
+          "chapter": "Dawn",
+          "location": "Pont routier vers Goldman",
+          "status": "absent",
+          "matched_stage_indices": [],
+          "source_ids": [
+            "H2A"
+          ],
+          "remaining_work": "Produire la route/pont et son état HOTD2.",
+          "note": "",
+          "priority": "P2"
+        },
+        {
+          "id": "hotd2_cour_goldman",
+          "chapter": "Dawn",
+          "location": "Cour du siège Goldman, époque HOTD2",
+          "status": "adaptation_partielle",
+          "matched_stage_indices": [
+            15
+          ],
+          "source_ids": [
+            "H2A",
+            "HQ"
+          ],
+          "remaining_work": "Décliner une cour HOTD2 correspondant à Magician.",
+          "note": "Le décor15 est construit pour World dans HOTD4 ; même site narratif, autre état.",
+          "priority": "P2"
+        },
+        {
+          "id": "hotd2_interieur_goldman",
+          "chapter": "Original Sin",
+          "location": "Intérieurs, laboratoire et bureau de Goldman",
+          "status": "absent",
+          "matched_stage_indices": [],
+          "source_ids": [
+            "HQ",
+            "H2D"
+          ],
+          "remaining_work": "Sélectionner un grand intérieur représentatif.",
+          "note": "",
+          "priority": "P2"
+        },
+        {
+          "id": "hotd2_toit",
+          "chapter": "Original Sin",
+          "location": "Sommet de la tour / Emperor",
+          "status": "existant",
+          "matched_stage_indices": [
+            11
+          ],
+          "source_ids": [
+            "HQ"
+          ],
+          "remaining_work": "Autres cadrages de la séquence finale.",
+          "note": "Arène 11 : Toit de la tour Goldman.",
+          "priority": "maintenance"
+        }
+      ]
+    },
+    {
+      "id": "hotd3",
+      "title": "The House of the Dead III",
+      "structure": "Ch.0 Reminiscence ; ch.1 Chasing Shadows ; ch.2 Bewilderment, ch.3 Sensory Chaos et ch.4 Ultimate Challenge traversent trois familles choisies par le joueur, chacune avec deux variantes ; ch.5 Wheel of Fate. Les variantes ne sont pas six campagnes.",
+      "source_ids": [
+        "H3",
+        "H3V"
+      ],
+      "exhaustive_within_declared_scope": true,
+      "entries": [
+        {
+          "id": "hotd3_entree",
+          "chapter": "Reminiscence / Chasing Shadows",
+          "location": "Entrée et sécurité du centre EFI",
+          "status": "adaptation_partielle",
+          "matched_stage_indices": [
+            4
+          ],
+          "source_ids": [
+            "H3"
+          ],
+          "remaining_work": "Extérieurs et cadrages du prologue à traiter séparément.",
+          "note": "Le Poste de sécurité EFI représente une portion de cette arrivée.",
+          "priority": "P2"
+        },
+        {
+          "id": "hotd3_efi_dbr",
+          "chapter": "Chapitres 2–4 — zone au choix",
+          "location": "EFI Genome Ward / DBR Institute",
+          "status": "absent",
+          "matched_stage_indices": [],
+          "source_ids": [
+            "H3V"
+          ],
+          "remaining_work": "Produire les deux variantes ou commencer par une seule identifiée.",
+          "note": "Une chambre d’incubation finale ne couvre pas ces parcours.",
+          "priority": "P2"
+        },
+        {
+          "id": "hotd3_bio",
+          "chapter": "Chapitres 2–4 — zone au choix",
+          "location": "L2 BIO Plant / L3 BIO Lab",
+          "status": "absent",
+          "matched_stage_indices": [],
+          "source_ids": [
+            "H3V"
+          ],
+          "remaining_work": "Prioriser une zone, puis différencier clairement ses deux variantes.",
+          "note": "Deux variantes d’une famille de lieu.",
+          "priority": "P1"
+        },
+        {
+          "id": "hotd3_information",
+          "chapter": "Chapitres 2–4 — zone au choix",
+          "location": "Information Systems Department — ailes est/ouest",
+          "status": "absent",
+          "matched_stage_indices": [],
+          "source_ids": [
+            "H3V"
+          ],
+          "remaining_work": "Relever les bureaux et passages de poursuite ; différencier les ailes.",
+          "note": "",
+          "priority": "P2"
+        },
+        {
+          "id": "hotd3_incubation",
+          "chapter": "Wheel of Fate",
+          "location": "L4 / chambre d’incubation finale",
+          "status": "existant",
+          "matched_stage_indices": [
+            12
+          ],
+          "source_ids": [
+            "H3"
+          ],
+          "remaining_work": "Autres secteurs du chapitre et angles de la salle finale.",
+          "note": "Arène 12 ; sources de la chambre détaillées dans SOURCES_ARENES_III.md.",
+          "priority": "maintenance"
+        }
+      ]
+    },
+    {
+      "id": "hotd4",
+      "title": "The House of the Dead 4",
+      "structure": "Six chapitres : Escape, Lost, Emptiness, Despair, Reunion, Hope. Les lieux principaux distincts sont séparés sans inventorier chaque salle.",
+      "source_ids": [
+        "H4"
+      ],
+      "exhaustive_within_declared_scope": false,
+      "entries": [
+        {
+          "id": "hotd4_ams",
+          "chapter": "Escape",
+          "location": "Sous-sols du bureau européen de l’AMS",
+          "status": "absent",
+          "matched_stage_indices": [],
+          "source_ids": [
+            "H4E"
+          ],
+          "remaining_work": "Relever les couloirs et ascenseurs de départ.",
+          "note": "Le poste EFI appartient à III, le métro à une autre zone de 4.",
+          "priority": "P2"
+        },
+        {
+          "id": "hotd4_egouts",
+          "chapter": "Lost",
+          "location": "Égouts / parcours de Lovers",
+          "status": "absent",
+          "matched_stage_indices": [],
+          "source_ids": [
+            "H4L"
+          ],
+          "remaining_work": "Produire une galerie d’égout identifiable et la zone d’ascenseur.",
+          "note": "P1 possible après choix d’une capture.",
+          "priority": "P2"
+        },
+        {
+          "id": "hotd4_metro",
+          "chapter": "Emptiness",
+          "location": "Quai et réseau de métro",
+          "status": "existant",
+          "matched_stage_indices": [
+            5
+          ],
+          "source_ids": [
+            "H4M"
+          ],
+          "remaining_work": "Autres quais et tunnels.",
+          "note": "Le décor existe, même si la narration de simulation y fait apparaître Justice.",
+          "priority": "maintenance"
+        },
+        {
+          "id": "hotd4_train",
+          "chapter": "Emptiness",
+          "location": "Train de l’Empress",
+          "status": "absent",
+          "matched_stage_indices": [],
+          "source_ids": [
+            "H4M"
+          ],
+          "remaining_work": "Créer l’intérieur/la toiture spécifique retenue après examen des captures.",
+          "note": "Ni le quai fixe ni le train Zombie Revenge ne couvrent ce véhicule.",
+          "priority": "P2"
+        },
+        {
+          "id": "hotd4_commerces",
+          "chapter": "Despair",
+          "location": "Quartier commercial souterrain",
+          "status": "absent",
+          "matched_stage_indices": [],
+          "source_ids": [
+            "H4D"
+          ],
+          "remaining_work": "Relever les commerces et la progression vers la surface.",
+          "note": "",
+          "priority": "P2"
+        },
+        {
+          "id": "hotd4_rue",
+          "chapter": "Despair",
+          "location": "Rue dévastée / Temperance",
+          "status": "existant",
+          "matched_stage_indices": [
+            17
+          ],
+          "source_ids": [
+            "H4D"
+          ],
+          "remaining_work": "Autres secteurs et destruction animée.",
+          "note": "Arène 17 : Rue dévastée de Despair.",
+          "priority": "maintenance"
+        },
+        {
+          "id": "hotd4_pont",
+          "chapter": "Reunion",
+          "location": "Route et pont vers Goldman",
+          "status": "absent",
+          "matched_stage_indices": [],
+          "source_ids": [
+            "H4R"
+          ],
+          "remaining_work": "Produire l’état HOTD4 du trajet routier.",
+          "note": "Même axe que Dawn, mais pas la même époque.",
+          "priority": "P2"
+        },
+        {
+          "id": "hotd4_interieur_goldman",
+          "chapter": "Hope",
+          "location": "Intérieurs et bureau de Goldman",
+          "status": "absent",
+          "matched_stage_indices": [],
+          "source_ids": [
+            "H4H"
+          ],
+          "remaining_work": "Choisir le grand intérieur représentatif ; le parvis ne suffit pas.",
+          "note": "",
+          "priority": "P2"
+        },
+        {
+          "id": "hotd4_parvis",
+          "chapter": "Hope",
+          "location": "Parvis / World",
+          "status": "existant",
+          "matched_stage_indices": [
+            15
+          ],
+          "source_ids": [
+            "H4H"
+          ],
+          "remaining_work": "Phases, bris et autres cadrages.",
+          "note": "Arène 15 ; référence décrite dans SOURCES_ARENES_IV.md.",
+          "priority": "maintenance"
+        }
+      ]
+    },
+    {
+      "id": "special",
+      "title": "The House of the Dead 4 Special",
+      "structure": "Deux stages principaux. Le complexe du projet est une évocation unique, pas deux niveaux reconstitués.",
+      "source_ids": [
+        "SP1",
+        "SP2"
+      ],
+      "exhaustive_within_declared_scope": true,
+      "entries": [
+        {
+          "id": "special_approche",
+          "chapter": "Stage 1",
+          "location": "Approche extérieure / parcours routier et Justice",
+          "status": "absent",
+          "matched_stage_indices": [],
+          "source_ids": [
+            "SP1"
+          ],
+          "remaining_work": "Choisir les captures du trajet puis produire une arène propre au stage 1.",
+          "note": "",
+          "priority": "P2"
+        },
+        {
+          "id": "special_laboratoire",
+          "chapter": "Stage 2",
+          "location": "Installation de recherche / chambre de Magician",
+          "status": "adaptation_partielle",
+          "matched_stage_indices": [
+            6
+          ],
+          "source_ids": [
+            "SP2"
+          ],
+          "remaining_work": "Confronter le complexe peint aux salles du stage 2 et compléter leur identité.",
+          "note": "Arène 6 : Complexe déserté ; sa présence ne valide pas tous les lieux de Special.",
+          "priority": "P2"
+        }
+      ]
+    },
+    {
+      "id": "scarlet",
+      "title": "House of the Dead: Scarlet Dawn",
+      "structure": "Prologue Scarecrow Manor ; chapitres 1–3 Kate and Ryan, Homo sapiens, Pandora’s Box selon l’ordre des trois zones ; final A Glimmer of Hope. Les trois routes ne sont pas des campagnes séparées.",
+      "source_ids": [
+        "SDP",
+        "SD"
+      ],
+      "exhaustive_within_declared_scope": true,
+      "entries": [
+        {
+          "id": "scarlet_reception",
+          "chapter": "Scarecrow Manor — prologue",
+          "location": "Hall et réception",
+          "status": "existant",
+          "matched_stage_indices": [
+            7
+          ],
+          "source_ids": [
+            "SDP",
+            "SD"
+          ],
+          "remaining_work": "Autres vues et effondrement.",
+          "note": "Arène 7 : Réception de Scarecrow Mansion.",
+          "priority": "maintenance"
+        },
+        {
+          "id": "scarlet_annex",
+          "chapter": "Chapitres 1–3 — zone au choix",
+          "location": "Annex",
+          "status": "absent",
+          "matched_stage_indices": [],
+          "source_ids": [
+            "SD"
+          ],
+          "remaining_work": "Relever l’annexe et un espace propre au combat Chariot.",
+          "note": "La réception ne couvre pas l’annexe.",
+          "priority": "P1"
+        },
+        {
+          "id": "scarlet_laboratory",
+          "chapter": "Chapitres 1–3 — zone au choix",
+          "location": "Laboratory",
+          "status": "absent",
+          "matched_stage_indices": [],
+          "source_ids": [
+            "SDL"
+          ],
+          "remaining_work": "Sélectionner une salle caractéristique du laboratoire.",
+          "note": "Ne pas réutiliser EFI/Curien comme preuve de présence.",
+          "priority": "P1"
+        },
+        {
+          "id": "scarlet_elevator",
+          "chapter": "Chapitres 1–3 — zone au choix",
+          "location": "Elevator Lobby / toits",
+          "status": "absent",
+          "matched_stage_indices": [],
+          "source_ids": [
+            "SDE"
+          ],
+          "remaining_work": "Produire les toits ou le lobby, puis le complément restant.",
+          "note": "Le toit de Hangedman est spécifique à cette version.",
+          "priority": "P2"
+        },
+        {
+          "id": "scarlet_church",
+          "chapter": "A Glimmer of Hope",
+          "location": "Église avant destruction",
+          "status": "absent",
+          "matched_stage_indices": [],
+          "source_ids": [
+            "SD"
+          ],
+          "remaining_work": "Relever l’intérieur et la structure avant le combat final.",
+          "note": "Les ruines existantes ne couvrent pas l’état intact.",
+          "priority": "P2"
+        },
+        {
+          "id": "scarlet_ruines",
+          "chapter": "A Glimmer of Hope",
+          "location": "Ruines et terrain de Moon",
+          "status": "existant",
+          "matched_stage_indices": [
+            16
+          ],
+          "source_ids": [
+            "SDM"
+          ],
+          "remaining_work": "Autres phases et états du terrain.",
+          "note": "Arène 16 : Ruines du domaine Scarecrow.",
+          "priority": "maintenance"
+        }
+      ]
+    },
+    {
+      "id": "overkill",
+      "title": "Overkill / Extended Cut / Typing of the Dead: Overkill",
+      "structure": "Les neuf titres du parcours Extended Cut sont tous recensés ci-dessous. Cet inventaire n’implique ni toutes les extensions de trajet du mode Director’s Cut ni les mini-jeux.",
+      "source_ids": [
+        "OV",
+        "OVA"
+      ],
+      "exhaustive_within_declared_scope": true,
+      "entries": [
+        {
+          "id": "overkill_papa",
+          "chapter": "1 — Papa’s Palace of Pain",
+          "location": "Manoir/plantation de Papa Caesar",
+          "status": "absent",
+          "matched_stage_indices": [],
+          "source_ids": [
+            "OV1"
+          ],
+          "remaining_work": "Produire le grand hall ou les abords propres à Overkill.",
+          "note": "La cour Curien n’est pas ce manoir.",
+          "priority": "P1"
+        },
+        {
+          "id": "overkill_naked",
+          "chapter": "2 — Naked Terror",
+          "location": "Club, rues et bar de Bayou City",
+          "status": "absent",
+          "matched_stage_indices": [],
+          "source_ids": [
+            "OV2"
+          ],
+          "remaining_work": "Commencer par le club documenté par la capture officielle.",
+          "note": "Chapitre supplémentaire Extended Cut.",
+          "priority": "P1"
+        },
+        {
+          "id": "overkill_hospital",
+          "chapter": "3 — Ballistic Trauma",
+          "location": "Hôpital",
+          "status": "absent",
+          "matched_stage_indices": [],
+          "source_ids": [
+            "OV3"
+          ],
+          "remaining_work": "Produire un secteur hospitalier identifiable.",
+          "note": "P1 : nouvelle famille architecturale.",
+          "priority": "P1"
+        },
+        {
+          "id": "overkill_carny",
+          "chapter": "4 — Carny",
+          "location": "Fête foraine",
+          "status": "existant",
+          "matched_stage_indices": [
+            8
+          ],
+          "source_ids": [
+            "OV",
+            "OVA"
+          ],
+          "remaining_work": "Autres attractions et parcours.",
+          "note": "Arène 8.",
+          "priority": "maintenance"
+        },
+        {
+          "id": "overkill_flesh",
+          "chapter": "5 — Creeping Flesh",
+          "location": "Abattoir infesté",
+          "status": "existant",
+          "matched_stage_indices": [
+            19
+          ],
+          "source_ids": [
+            "OV5"
+          ],
+          "remaining_work": "Autres pièces, tunnel organique et variantes de combat.",
+          "note": "Lot du 20 novembre : adaptation documentée à trois plans.",
+          "priority": "maintenance"
+        },
+        {
+          "id": "overkill_train",
+          "chapter": "6 — Scream Train",
+          "location": "Train d’Overkill",
+          "status": "absent",
+          "matched_stage_indices": [],
+          "source_ids": [
+            "OV6"
+          ],
+          "remaining_work": "Choisir quai/intérieur/toit, puis produire sa propre composition.",
+          "note": "L’arène 18 est Zombie Revenge, pas Scream Train.",
+          "priority": "P1"
+        },
+        {
+          "id": "overkill_bayou",
+          "chapter": "7 — The Fetid Waters",
+          "location": "Marais / ponton du bayou",
+          "status": "existant",
+          "matched_stage_indices": [
+            14
+          ],
+          "source_ids": [
+            "OV"
+          ],
+          "remaining_work": "Autres marais et embarcations.",
+          "note": "Arène 14 ; sources dans SOURCES_ARENES_III.md.",
+          "priority": "maintenance"
+        },
+        {
+          "id": "overkill_jail",
+          "chapter": "8 — Jailhouse Judgment",
+          "location": "Prison",
+          "status": "absent",
+          "matched_stage_indices": [],
+          "source_ids": [
+            "OV8"
+          ],
+          "remaining_work": "Créer un grand secteur de cellules ou la cour.",
+          "note": "Le jeu/les sources emploient aussi la graphie Judgement.",
+          "priority": "P2"
+        },
+        {
+          "id": "overkill_lab",
+          "chapter": "9 — Overkill",
+          "location": "Laboratoire souterrain final",
+          "status": "absent",
+          "matched_stage_indices": [],
+          "source_ids": [
+            "OV9"
+          ],
+          "remaining_work": "Relever l’installation de recherche et le cadre de Mother.",
+          "note": "Les laboratoires des autres épisodes ne ferment pas cette ligne.",
+          "priority": "P2"
+        }
+      ]
+    },
+    {
+      "id": "revenge",
+      "title": "Zombie Revenge",
+      "structure": "Les sept intitulés de zones Dreamcast sont recensés. Les sous-zones, routes, boss arenas et variantes arcade ne sont pas déclarés exhaustifs.",
+      "source_ids": [
+        "ZR",
+        "ZRP"
+      ],
+      "exhaustive_within_declared_scope": true,
+      "entries": [
+        {
+          "id": "zr_woodside",
+          "chapter": "Area 1 — Woodside City",
+          "location": "Woodside City",
+          "status": "adaptation_partielle",
+          "matched_stage_indices": [
+            10
+          ],
+          "source_ids": [
+            "ZR"
+          ],
+          "remaining_work": "Aligner la rue générique sur des captures précises de Woodside.",
+          "note": "Arène 10 : Rue en quarantaine, interprétation de Zombie Revenge.",
+          "priority": "P2"
+        },
+        {
+          "id": "zr_river",
+          "chapter": "Area 2 — Underground River",
+          "location": "Rivière souterraine",
+          "status": "absent",
+          "matched_stage_indices": [],
+          "source_ids": [
+            "ZR"
+          ],
+          "remaining_work": "Relever le cours d’eau et les plateformes.",
+          "note": "Le canal HOTD2 ne couvre pas ce site.",
+          "priority": "P1"
+        },
+        {
+          "id": "zr_plant",
+          "chapter": "Area 3 — The Plant",
+          "location": "Usine / The Plant",
+          "status": "absent",
+          "matched_stage_indices": [],
+          "source_ids": [
+            "ZR"
+          ],
+          "remaining_work": "Récupérer une vue lisible de l’usine puis composer les plans.",
+          "note": "P1 : contraste avec la rue et le train déjà présents.",
+          "priority": "P1"
+        },
+        {
+          "id": "zr_train",
+          "chapter": "Area 4 — The Train",
+          "location": "Toit du train dans le tunnel",
+          "status": "existant",
+          "matched_stage_indices": [
+            18
+          ],
+          "source_ids": [
+            "ZRT",
+            "ZR"
+          ],
+          "remaining_work": "Intérieur, extérieur nocturne et autres sections du train.",
+          "note": "Lot du 20 novembre ; un segment adapté, pas toute la zone.",
+          "priority": "maintenance"
+        },
+        {
+          "id": "zr_gate",
+          "chapter": "Area 5 — The Gate",
+          "location": "The Gate",
+          "status": "absent",
+          "matched_stage_indices": [],
+          "source_ids": [
+            "ZR"
+          ],
+          "remaining_work": "Établir le cadrage exact à partir du carton et des captures suivantes.",
+          "note": "Nom conservé sans inventer de description architecturale.",
+          "priority": "P2"
+        },
+        {
+          "id": "zr_house",
+          "chapter": "Area 6 — The House of the Dead",
+          "location": "Manoir tel que parcouru dans Zombie Revenge",
+          "status": "absent",
+          "matched_stage_indices": [],
+          "source_ids": [
+            "ZR"
+          ],
+          "remaining_work": "Comparer le parcours ZR aux décors HOTD existants avant mutualisation.",
+          "note": "La présence des arènes 0–2 ne prouve pas une adaptation de ce chapitre.",
+          "priority": "P2"
+        },
+        {
+          "id": "zr_dawn",
+          "chapter": "Area 7 — The Dawn",
+          "location": "The Dawn / zone finale",
+          "status": "absent",
+          "matched_stage_indices": [],
+          "source_ids": [
+            "ZR"
+          ],
+          "remaining_work": "Choisir une vue documentée de la dernière zone.",
+          "note": "Nom de zone validé ; architecture à relever.",
+          "priority": "P2"
+        }
+      ]
+    },
+    {
+      "id": "ex",
+      "title": "Loving Deads: The House of the Dead EX",
+      "structure": "Recensement limité au laboratoire de départ et aux six mini-jeux du verso du flyer SEGA inspecté. L’ordre, les chapitres, variantes et autres épreuves restent à documenter ; aucune exhaustivité n’est annoncée.",
+      "source_ids": [
+        "EXP",
+        "EXF"
+      ],
+      "exhaustive_within_declared_scope": false,
+      "entries": [
+        {
+          "id": "ex_plateau",
+          "chapter": "Synthèse du projet",
+          "location": "Plateau générique des épreuves",
+          "status": "adaptation_partielle",
+          "matched_stage_indices": [
+            9
+          ],
+          "source_ids": [
+            "EXF"
+          ],
+          "remaining_work": "Rattacher chaque décor futur à une épreuve réellement montrée.",
+          "note": "Arène 9 est une interprétation de l’ambiance EX, pas la preuve de six mini-jeux représentés.",
+          "priority": "P2"
+        },
+        {
+          "id": "ex_laboratoire",
+          "chapter": "Départ / fuite",
+          "location": "Laboratoire de départ",
+          "status": "reference_requise",
+          "matched_stage_indices": [],
+          "source_ids": [
+            "EXP"
+          ],
+          "remaining_work": "Obtenir des captures de l’introduction et du lieu avant de cadrer l’arène.",
+          "note": "Le contexte est officiel ; la géométrie exploitable n’est pas établie.",
+          "priority": "P2"
+        },
+        {
+          "id": "ex_zombz",
+          "chapter": "Mini-jeu — ZomB’z",
+          "location": "Scène musicale / projecteurs",
+          "status": "reference_requise",
+          "matched_stage_indices": [],
+          "source_ids": [
+            "EXF"
+          ],
+          "remaining_work": "Obtenir une capture plus grande de l’épreuve.",
+          "note": "Titre du flyer ; le plateau9 n’est pas identifié à cette scène.",
+          "priority": "P2"
+        },
+        {
+          "id": "ex_bowling",
+          "chapter": "Mini-jeu — Zombie Bowling",
+          "location": "Piste de bowling",
+          "status": "reference_requise",
+          "matched_stage_indices": [],
+          "source_ids": [
+            "EXF"
+          ],
+          "remaining_work": "Obtenir une vue lisible de la piste et du fond.",
+          "note": "Traduction de travail du titre japonais.",
+          "priority": "P2"
+        },
+        {
+          "id": "ex_sumo",
+          "chapter": "Mini-jeu — sumo",
+          "location": "Dohyō / ring de sumo",
+          "status": "reference_requise",
+          "matched_stage_indices": [],
+          "source_ids": [
+            "EXF"
+          ],
+          "remaining_work": "Relever le ring et son environnement.",
+          "note": "Traduction de travail ; vignette primaire trop petite pour un contrat visuel complet.",
+          "priority": "P2"
+        },
+        {
+          "id": "ex_apples",
+          "chapter": "Mini-jeu — cueillette de pommes",
+          "location": "Verger",
+          "status": "reference_requise",
+          "matched_stage_indices": [],
+          "source_ids": [
+            "EXF"
+          ],
+          "remaining_work": "Relever arbres, terrain et barrières.",
+          "note": "Mini-jeu visible dans le flyer ; variantes non recensées.",
+          "priority": "P2"
+        },
+        {
+          "id": "ex_flying",
+          "chapter": "Mini-jeu — Flying zoneB",
+          "location": "Entrepôt / parcours de vol",
+          "status": "reference_requise",
+          "matched_stage_indices": [],
+          "source_ids": [
+            "EXF"
+          ],
+          "remaining_work": "Récupérer une capture de l’entrepôt à résolution exploitable.",
+          "note": "",
+          "priority": "P2"
+        },
+        {
+          "id": "ex_lifting",
+          "chapter": "Mini-jeu — Zombie Lifting",
+          "location": "Zone de jonglage",
+          "status": "reference_requise",
+          "matched_stage_indices": [],
+          "source_ids": [
+            "EXF"
+          ],
+          "remaining_work": "Identifier le lieu derrière les personnages et les éléments de jeu.",
+          "note": "Pas de nom de salle inventé à partir de la seule vignette.",
+          "priority": "P2"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "H1",
+      "title": "HOTD — nomenclature des chapitres du guide officiel (notice/transcription)",
+      "url": "https://thehouseofthedead.fandom.com/wiki/The_House_of_the_Dead_Official_Guide",
+      "kind": "secondary_catalogue_of_official_guide",
+      "scope": "Quatre chapitres ; la notice n’est pas une planche visuelle de référence.",
+      "consulted_on": "2026-11-20"
+    },
+    {
+      "id": "H1B",
+      "title": "HOTD — parcours et branche des égouts",
+      "url": "https://thehouseofthedead.fandom.com/wiki/The_House_of_the_Dead_%281997_video_game%29",
+      "kind": "secondary_encyclopedia",
+      "scope": "Structure du premier jeu et embranchement de Tragedy.",
+      "consulted_on": "2026-11-20"
+    },
+    {
+      "id": "H1T",
+      "title": "Truth — laboratoire et dôme de culture",
+      "url": "https://thehouseofthedead.fandom.com/wiki/Truth",
+      "kind": "secondary_encyclopedia",
+      "scope": "Checkpoint, laboratoire, dôme de culture d’Hermit.",
+      "consulted_on": "2026-11-20"
+    },
+    {
+      "id": "H1R",
+      "title": "Hangedman — lieu du combat original",
+      "url": "https://thehouseofthedead.fandom.com/wiki/Hangedman",
+      "kind": "secondary_encyclopedia",
+      "scope": "Toits du manoir ; distinguer le design original de Scarlet Dawn.",
+      "consulted_on": "2026-11-20"
+    },
+    {
+      "id": "H2",
+      "title": "HOTD2 — chapitres",
+      "url": "https://thehouseofthedead.fandom.com/wiki/The_House_of_the_Dead_2",
+      "kind": "secondary_encyclopedia",
+      "scope": "Six titres de chapitres.",
+      "consulted_on": "2026-11-20"
+    },
+    {
+      "id": "H2M",
+      "title": "HOTD2 — chapitre Muddy illustré",
+      "url": "https://www.k-triggerhappy.com/hod2/chapter2.html",
+      "kind": "gameplay_capture_walkthrough",
+      "scope": "Canaux, quai et branche de l’horloge ; captures de jeu.",
+      "consulted_on": "2026-11-20"
+    },
+    {
+      "id": "H2D",
+      "title": "HOTD2 — Darkness et sites du mode Original",
+      "url": "https://thehouseofthedead.fandom.com/wiki/Original_Mode",
+      "kind": "secondary_encyclopedia",
+      "scope": "Canaux et voie d’eau souterraine ; intérieurs de Goldman.",
+      "consulted_on": "2026-11-20"
+    },
+    {
+      "id": "H2C",
+      "title": "HOTD2 — Despair / Colisée",
+      "url": "https://thehouseofthedead.fandom.com/wiki/Despair_%28The_House_of_the_Dead_2_chapter%29",
+      "kind": "secondary_encyclopedia",
+      "scope": "Passage souterrain et Colisée de Strength.",
+      "consulted_on": "2026-11-20"
+    },
+    {
+      "id": "H2A",
+      "title": "HOTD2 — Dawn",
+      "url": "https://thehouseofthedead.fandom.com/wiki/Dawn",
+      "kind": "secondary_encyclopedia",
+      "scope": "Place, pont routier et cour du siège Goldman.",
+      "consulted_on": "2026-11-20"
+    },
+    {
+      "id": "HQ",
+      "title": "Siège Goldman — comparaison HOTD2 et HOTD4",
+      "url": "https://thehouseofthedead.fandom.com/wiki/Caleb_Goldman%27s_headquarters",
+      "kind": "secondary_encyclopedia",
+      "scope": "Même site narratif, intérieurs et états d’époque distincts.",
+      "consulted_on": "2026-11-20"
+    },
+    {
+      "id": "H3",
+      "title": "HOTDIII — chapitres et ordre des zones",
+      "url": "https://thehouseofthedead.fandom.com/wiki/The_House_of_the_Dead_III",
+      "kind": "secondary_encyclopedia",
+      "scope": "Prologue 0, chapitres 1–5, trois familles de zones choisies pour les chapitres 2–4.",
+      "consulted_on": "2026-11-20"
+    },
+    {
+      "id": "H3V",
+      "title": "HOTDIII — index illustré des six variantes de zones",
+      "url": "https://www.k-triggerhappy.com/hod3/index.html",
+      "kind": "gameplay_capture_walkthrough",
+      "scope": "EFI/DBR, L2/L3, Information Systems est/ouest ; captures consultables par zone.",
+      "consulted_on": "2026-11-20"
+    },
+    {
+      "id": "H4",
+      "title": "HOTD4 — index des six chapitres",
+      "url": "https://www.k-triggerhappy.com/hod4/index.html",
+      "kind": "gameplay_capture_walkthrough",
+      "scope": "Index et captures par chapitre.",
+      "consulted_on": "2026-11-20"
+    },
+    {
+      "id": "H4E",
+      "title": "HOTD4 — sous-sols de l’AMS",
+      "url": "https://thehouseofthedead.fandom.com/wiki/AMS_European_branch_office",
+      "kind": "secondary_encyclopedia",
+      "scope": "Lieu de départ ; distinct du métro et du poste EFI.",
+      "consulted_on": "2026-11-20"
+    },
+    {
+      "id": "H4L",
+      "title": "HOTD4 — Lost",
+      "url": "https://thehouseofthedead.fandom.com/wiki/Lost",
+      "kind": "secondary_encyclopedia",
+      "scope": "Égouts et progression vers la surface.",
+      "consulted_on": "2026-11-20"
+    },
+    {
+      "id": "H4M",
+      "title": "HOTD4 — Emptiness",
+      "url": "https://thehouseofthedead.fandom.com/wiki/Emptiness",
+      "kind": "secondary_encyclopedia",
+      "scope": "Métro, quai et train de l’Empress.",
+      "consulted_on": "2026-11-20"
+    },
+    {
+      "id": "H4D",
+      "title": "HOTD4 — Despair",
+      "url": "https://thehouseofthedead.fandom.com/wiki/Despair_%28The_House_of_the_Dead_4_chapter%29",
+      "kind": "secondary_encyclopedia",
+      "scope": "Quartier marchand souterrain et rues de la ville.",
+      "consulted_on": "2026-11-20"
+    },
+    {
+      "id": "H4R",
+      "title": "HOTD4 — Reunion",
+      "url": "https://thehouseofthedead.fandom.com/wiki/Reunion",
+      "kind": "secondary_encyclopedia",
+      "scope": "Retour routier vers Goldman, avec le pont.",
+      "consulted_on": "2026-11-20"
+    },
+    {
+      "id": "H4H",
+      "title": "HOTD4 — Hope illustré",
+      "url": "https://www.k-triggerhappy.com/hod4/chapter6.html",
+      "kind": "gameplay_capture_walkthrough",
+      "scope": "Intérieurs du siège et combat de World sur le parvis.",
+      "consulted_on": "2026-11-20"
+    },
+    {
+      "id": "SP1",
+      "title": "HOTD4 Special — stage1 illustré",
+      "url": "https://www.k-triggerhappy.com/hod4/special1.html",
+      "kind": "gameplay_capture_walkthrough",
+      "scope": "Progression extérieure/routière et Justice.",
+      "consulted_on": "2026-11-20"
+    },
+    {
+      "id": "SP2",
+      "title": "HOTD4 Special — stage2 illustré",
+      "url": "https://www.k-triggerhappy.com/hod4/special2.html",
+      "kind": "gameplay_capture_walkthrough",
+      "scope": "Installation de recherche et chambre de Magician.",
+      "consulted_on": "2026-11-20"
+    },
+    {
+      "id": "SDP",
+      "title": "Scarlet Dawn — site officiel SEGA",
+      "url": "https://hod.sega.jp/",
+      "kind": "primary_publisher",
+      "scope": "Présentation de l’infiltration du manoir et de la réception ; les noms précis des routes viennent des sources complémentaires.",
+      "consulted_on": "2026-11-20"
+    },
+    {
+      "id": "SD",
+      "title": "Scarlet Dawn — chapitres et zones",
+      "url": "https://thehouseofthedead.fandom.com/wiki/House_of_the_Dead%3A_Scarlet_Dawn",
+      "kind": "secondary_encyclopedia",
+      "scope": "Prologue, trois routes sélectionnables et final.",
+      "consulted_on": "2026-11-20"
+    },
+    {
+      "id": "SDL",
+      "title": "Scarlet Dawn — Laboratory",
+      "url": "https://thehouseofthedead.fandom.com/wiki/Laboratory",
+      "kind": "secondary_encyclopedia",
+      "scope": "Laboratoire sélectionnable et High Priestess.",
+      "consulted_on": "2026-11-20"
+    },
+    {
+      "id": "SDE",
+      "title": "Scarlet Dawn — Elevator Lobby",
+      "url": "https://thehouseofthedead.fandom.com/wiki/Elevator_Lobby",
+      "kind": "secondary_encyclopedia",
+      "scope": "Ascenseurs, toits et Hangedman.",
+      "consulted_on": "2026-11-20"
+    },
+    {
+      "id": "SDM",
+      "title": "Scarlet Dawn — confrontation finale illustrée",
+      "url": "https://k-triggerhappy.com/blog/hod_scarletdawn-moon/",
+      "kind": "gameplay_capture_walkthrough",
+      "scope": "Référence déjà employée par SOURCES_ARENES_IV.md pour les ruines.",
+      "consulted_on": "2026-11-20"
+    },
+    {
+      "id": "OV",
+      "title": "Overkill Extended Cut — index des neuf chapitres",
+      "url": "https://www.k-triggerhappy.com/hodoverkill_ps3/index.html",
+      "kind": "gameplay_capture_walkthrough",
+      "scope": "Ordre PS3 et titres des neuf chapitres.",
+      "consulted_on": "2026-11-20"
+    },
+    {
+      "id": "OVA",
+      "title": "Typing/House of the Dead Overkill — succès officiels du jeu",
+      "url": "https://steamcommunity.com/achievements/246580",
+      "kind": "primary_game_metadata",
+      "scope": "Confirme les noms des chapitres communs aux deux modes ; le dernier niveau est repris de l’index PS3.",
+      "consulted_on": "2026-11-20"
+    },
+    {
+      "id": "OV1",
+      "title": "Papa’s Palace of Pain — parcours illustré",
+      "url": "https://www.k-triggerhappy.com/hodoverkill_ps3/stage1.html",
+      "kind": "gameplay_capture_walkthrough",
+      "scope": "Manoir/plantation et sous-sol.",
+      "consulted_on": "2026-11-20"
+    },
+    {
+      "id": "OV2",
+      "title": "Naked Terror — annonce officielle",
+      "url": "https://blog.playstation.com/2011/08/01/house-of-the-dead-overkill-naked-terror-revealed/",
+      "kind": "primary_publisher_promotion",
+      "scope": "Club, rues et bar ; capture de presse.",
+      "consulted_on": "2026-11-20"
+    },
+    {
+      "id": "OV3",
+      "title": "Ballistic Trauma — parcours illustré",
+      "url": "https://www.k-triggerhappy.com/hodoverkill_ps3/stage3.html",
+      "kind": "gameplay_capture_walkthrough",
+      "scope": "Hôpital.",
+      "consulted_on": "2026-11-20"
+    },
+    {
+      "id": "OV5",
+      "title": "Creeping Flesh — annonce officielle",
+      "url": "https://blog.playstation.com/2011/08/30/house-of-the-dead-overkill-extended-cut-creeping-flesh-level-reveal/",
+      "kind": "primary_publisher_promotion",
+      "scope": "Abattoir et infestation organique ; capture fournie à la génération.",
+      "consulted_on": "2026-11-20"
+    },
+    {
+      "id": "OV6",
+      "title": "Scream Train — parcours illustré",
+      "url": "https://www.k-triggerhappy.com/hodoverkill_ps3/stage6.html",
+      "kind": "gameplay_capture_walkthrough",
+      "scope": "Train propre à Overkill.",
+      "consulted_on": "2026-11-20"
+    },
+    {
+      "id": "OV8",
+      "title": "Jailhouse Judgment — parcours illustré",
+      "url": "https://www.k-triggerhappy.com/hodoverkill_ps3/stage8.html",
+      "kind": "gameplay_capture_walkthrough",
+      "scope": "Prison.",
+      "consulted_on": "2026-11-20"
+    },
+    {
+      "id": "OV9",
+      "title": "Overkill — parcours final illustré",
+      "url": "https://www.k-triggerhappy.com/hodoverkill_ps3/stage9.html",
+      "kind": "gameplay_capture_walkthrough",
+      "scope": "Installation de recherche souterraine.",
+      "consulted_on": "2026-11-20"
+    },
+    {
+      "id": "ZR",
+      "title": "Zombie Revenge — sept cartons de zones Dreamcast",
+      "url": "https://www.mobygames.com/game/4412/zombie-revenge/screenshots/dreamcast/",
+      "kind": "contributed_gameplay_captures",
+      "scope": "Sept noms de zones lus dans la galerie ; ne pas inventer de sous-titres architecturaux pour The Gate/The Dawn.",
+      "consulted_on": "2026-11-20"
+    },
+    {
+      "id": "ZRP",
+      "title": "Zombie Revenge — fiche officielle SEGA",
+      "url": "https://www.sega.jp/history/arcade/product/8161/",
+      "kind": "primary_publisher",
+      "scope": "Contexte et sept stages ; les noms précis sont confirmés par les cartons de jeu.",
+      "consulted_on": "2026-11-20"
+    },
+    {
+      "id": "ZRT",
+      "title": "Zombie Revenge — toit du train",
+      "url": "https://www.mobygames.com/game/4412/zombie-revenge/screenshots/dreamcast/1117675/",
+      "kind": "contributed_gameplay_capture",
+      "scope": "Source du toit dans le tunnel adapté pour l’arène 18.",
+      "consulted_on": "2026-11-20"
+    },
+    {
+      "id": "EXP",
+      "title": "Loving Deads EX — fiche officielle SEGA",
+      "url": "https://www.sega.jp/history/arcade/product/8762/",
+      "kind": "primary_publisher",
+      "scope": "Fuite du laboratoire et mini-jeux coopératifs ; page en maintenance lors de l’ouverture directe du 20 novembre, contenu de recherche consulté.",
+      "consulted_on": "2026-11-20"
+    },
+    {
+      "id": "EXF",
+      "title": "Loving Deads EX — flyer SEGA, verso",
+      "url": "https://flyers.arcade-museum.com/videogames/show/5803",
+      "kind": "primary_promotional_artifact_secondary_host",
+      "scope": "Six mini-jeux montrés, pas un inventaire complet. Scan du dépôt inspecté.",
+      "consulted_on": "2026-11-20"
+    }
+  ],
+  "supplementary_scopes": [
+    {
+      "family": "The Typing of the Dead / éditions de frappe liées à HOTD2 ; The Typing of the Dead2 ; Typing Overkill ; 2&3 Return",
+      "status": "adaptation_partielle",
+      "rule": "Réutiliser les familles de lieux du jeu source lorsqu’une équivalence est établie. Ne pas multiplier automatiquement les arènes pour une même carte ; interfaces et cadrages propres restent à examiner.",
+      "source_registry": "docs/dossier_curien/saga/SOURCES_SAGA.json"
+    },
+    {
+      "family": "Remake du premier jeu / HOTD2 Remake",
+      "status": "reference_requise",
+      "rule": "Campagnes apparentées ; l’état visuel, les embranchements et les modifications propres aux remakes demandent une comparaison distincte. Les adaptations classiques ne certifient pas ces variantes.",
+      "source_registry": "docs/dossier_curien/saga/SOURCES_SAGA.json"
+    },
+    {
+      "family": "Overkill — The Lost Reels",
+      "status": "reference_requise",
+      "rule": "Inventorier les bobines mobiles réellement disponibles et leurs lieux ; ne pas recopier sans vérification les neuf chapitres PS3.",
+      "source_registry": "docs/dossier_curien/saga/SOURCES_SAGA.json"
+    },
+    {
+      "family": "The Pinball of the Dead, English of the Dead, Darts of the Dead et variantes de saisie",
+      "status": "reference_requise",
+      "rule": "Documenter tables, écrans et mini-jeux propres avant d’en déduire des arènes. Aucun nombre de nouveaux lieux n’est affirmé ici.",
+      "source_registry": "docs/dossier_curien/saga/SOURCES_SAGA.json"
+    },
+    {
+      "family": "The Site of the Dead, Mobile, Nightmare et services téléphoniques",
+      "status": "reference_requise",
+      "rule": "Recenser les écrans et lieux à partir de captures identifiables par version ; ce backlog ne transforme pas les noms de produits en lieux inventés.",
+      "source_registry": "docs/dossier_curien/saga/SOURCES_SAGA.json"
+    },
+    {
+      "family": "Attractions Scarlet Dawn, Battle Genesis / On Reels, Reawakened",
+      "status": "reference_requise",
+      "rule": "Traiter les dispositifs et missions propres dans un audit dédié. Les sources de produits sont recensées dans SOURCES_SAGA.json ; aucun lieu supplémentaire n’est déclaré confirmé ici.",
+      "source_registry": "docs/dossier_curien/saga/SOURCES_SAGA.json"
+    }
+  ],
+  "local_evidence": [
+    "src/dossier_curien/saga.gd",
+    "docs/dossier_curien/saga/SOURCES_ARENES_III.md",
+    "docs/dossier_curien/saga/SOURCES_ARENES_IV.md",
+    "docs/dossier_curien/saga/SOURCES_SAGA.json",
+    "docs/dossier_curien/saga/production/stages_2026-11-20/manifest.json",
+    "docs/dossier_curien/sources_art/references-2026-11-19/hotd_ex/flyer_back.jpg"
+  ],
+  "limitations": [
+    "Les correspondances sont un audit de production du projet, pas une mesure de couverture de chaque chapitre original.",
+    "Une ligne peut représenter une famille de variantes ; les nombres de lignes ne sont pas des nombres de nouvelles arènes à commander.",
+    "Un même décor peut être associé à plusieurs lignes avec un statut partiel ; aucun pourcentage de complétude de la saga n’est calculé.",
+    "Les sources primaires ne détaillent pas tous les lieux. Les notices secondaires et captures communautaires sont explicitement identifiées.",
+    "Aucune nouvelle image produite pour cette extension de listing."
+  ],
+  "registered_arenas": [
+    {
+      "index": 0,
+      "name": "Cour du manoir",
+      "art_key": "",
+      "representation": "adaptation_2d",
+      "canonical_1_to_1_certified": false
+    },
+    {
+      "index": 1,
+      "name": "Antichambre",
+      "art_key": "",
+      "representation": "adaptation_2d",
+      "canonical_1_to_1_certified": false
+    },
+    {
+      "index": 2,
+      "name": "Laboratoire de Curien",
+      "art_key": "",
+      "representation": "adaptation_2d",
+      "canonical_1_to_1_certified": false
+    },
+    {
+      "index": 3,
+      "name": "Quai de la cité inondée",
+      "art_key": "venice",
+      "representation": "adaptation_2d",
+      "canonical_1_to_1_certified": false
+    },
+    {
+      "index": 4,
+      "name": "Poste de sécurité EFI",
+      "art_key": "efi",
+      "representation": "adaptation_2d",
+      "canonical_1_to_1_certified": false
+    },
+    {
+      "index": 5,
+      "name": "Métro souterrain",
+      "art_key": "subway",
+      "representation": "adaptation_2d",
+      "canonical_1_to_1_certified": false
+    },
+    {
+      "index": 6,
+      "name": "Complexe déserté",
+      "art_key": "special",
+      "representation": "adaptation_2d",
+      "canonical_1_to_1_certified": false
+    },
+    {
+      "index": 7,
+      "name": "Réception de Scarecrow Mansion",
+      "art_key": "scarlet",
+      "representation": "adaptation_2d",
+      "canonical_1_to_1_certified": false
+    },
+    {
+      "index": 8,
+      "name": "Fête foraine de Bayou City",
+      "art_key": "carnival",
+      "representation": "adaptation_2d",
+      "canonical_1_to_1_certified": false
+    },
+    {
+      "index": 9,
+      "name": "Plateau de Loving Deads",
+      "art_key": "ex",
+      "representation": "adaptation_2d",
+      "canonical_1_to_1_certified": false
+    },
+    {
+      "index": 10,
+      "name": "Rue en quarantaine",
+      "art_key": "revenge",
+      "representation": "adaptation_2d",
+      "canonical_1_to_1_certified": false
+    },
+    {
+      "index": 11,
+      "name": "Toit de la tour Goldman",
+      "art_key": "goldman",
+      "representation": "adaptation_2d",
+      "canonical_1_to_1_certified": false
+    },
+    {
+      "index": 12,
+      "name": "Chambre d’incubation EFI",
+      "art_key": "reactor",
+      "representation": "adaptation_2d",
+      "canonical_1_to_1_certified": false
+    },
+    {
+      "index": 13,
+      "name": "Passage de la tour de l’horloge",
+      "art_key": "clocktower",
+      "representation": "adaptation_2d",
+      "canonical_1_to_1_certified": false
+    },
+    {
+      "index": 14,
+      "name": "Ponton du bayou",
+      "art_key": "bayou",
+      "representation": "adaptation_2d",
+      "canonical_1_to_1_certified": false
+    },
+    {
+      "index": 15,
+      "name": "Parvis du siège Goldman",
+      "art_key": "worldstage",
+      "representation": "adaptation_2d",
+      "canonical_1_to_1_certified": false
+    },
+    {
+      "index": 16,
+      "name": "Ruines du domaine Scarecrow",
+      "art_key": "moonstage",
+      "representation": "adaptation_2d",
+      "canonical_1_to_1_certified": false
+    },
+    {
+      "index": 17,
+      "name": "Rue dévastée de Despair",
+      "art_key": "citydespair",
+      "representation": "adaptation_2d",
+      "canonical_1_to_1_certified": false
+    },
+    {
+      "index": 18,
+      "name": "Toit du train — Zombie Revenge",
+      "art_key": "zr_train",
+      "representation": "adaptation_2d",
+      "canonical_1_to_1_certified": false
+    },
+    {
+      "index": 19,
+      "name": "Abattoir — Creeping Flesh",
+      "art_key": "creeping_flesh",
+      "representation": "adaptation_2d",
+      "canonical_1_to_1_certified": false
+    }
+  ],
+  "summary": {
+    "registered_arenas": 20,
+    "catalogue_rows": 61,
+    "by_status": {
+      "existant": 15,
+      "adaptation_partielle": 6,
+      "absent": 33,
+      "reference_requise": 7
+    },
+    "by_game": {
+      "hotd": {
+        "rows": 6,
+        "existant": 2,
+        "adaptation_partielle": 1,
+        "absent": 3
+      },
+      "hotd2": {
+        "rows": 9,
+        "absent": 5,
+        "existant": 3,
+        "adaptation_partielle": 1
+      },
+      "hotd3": {
+        "rows": 5,
+        "adaptation_partielle": 1,
+        "absent": 3,
+        "existant": 1
+      },
+      "hotd4": {
+        "rows": 9,
+        "absent": 6,
+        "existant": 3
+      },
+      "special": {
+        "rows": 2,
+        "absent": 1,
+        "adaptation_partielle": 1
+      },
+      "scarlet": {
+        "rows": 6,
+        "existant": 2,
+        "absent": 4
+      },
+      "overkill": {
+        "rows": 9,
+        "absent": 6,
+        "existant": 3
+      },
+      "revenge": {
+        "rows": 7,
+        "adaptation_partielle": 1,
+        "absent": 5,
+        "existant": 1
+      },
+      "ex": {
+        "rows": 8,
+        "adaptation_partielle": 1,
+        "reference_requise": 7
+      }
+    },
+    "all_registered_arenas_referenced": true,
+    "supplementary_scope_records": 6,
+    "counts_are_new_arena_quota": false,
+    "canonical_coverage_percent": null
+  }
+}

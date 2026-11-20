@@ -5,8 +5,13 @@ extends RefCounted
 const STAGES := ["Cour du manoir", "Antichambre", "Laboratoire de Curien", "Quai de la cité inondée",
 	"Poste de sécurité EFI", "Métro souterrain", "Complexe déserté", "Réception de Scarecrow Mansion",
 	"Fête foraine de Bayou City", "Plateau de Loving Deads", "Rue en quarantaine",
-	"Toit de la tour Goldman", "Chambre d’incubation EFI", "Passage de la tour de l’horloge", "Ponton du bayou", "Parvis du siège Goldman", "Ruines du domaine Scarecrow", "Rue dévastée de Despair"]
-const ART := ["", "", "", "venice", "efi", "subway", "special", "scarlet", "carnival", "ex", "revenge", "goldman", "reactor", "clocktower", "bayou", "worldstage", "moonstage", "citydespair"]
+	"Toit de la tour Goldman", "Chambre d’incubation EFI", "Passage de la tour de l’horloge", "Ponton du bayou", "Parvis du siège Goldman", "Ruines du domaine Scarecrow", "Rue dévastée de Despair",
+	"Toit du train — Zombie Revenge", "Abattoir — Creeping Flesh"]
+const ART := ["", "", "", "venice", "efi", "subway", "special", "scarlet", "carnival", "ex", "revenge", "goldman", "reactor", "clocktower", "bayou", "worldstage", "moonstage", "citydespair", "zr_train", "creeping_flesh"]
+const STAGE_NOTES := {
+	18: "Adaptation 2D documentée du toit du train de Zombie Revenge.",
+	19: "Adaptation 2D documentée de l’abattoir de Creeping Flesh, dans Overkill."
+}
 const CASES := {
 	"curien": {"name":"The House of the Dead","place":"Manoir Curien","lead":0,"stage":0,"guests":[1,2,3],
 		"rule":"Duels du manoir. Deux manches gagnantes de 60 secondes."},
